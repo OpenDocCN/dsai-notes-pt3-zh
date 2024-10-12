@@ -1,0 +1,77 @@
+# 【双语字幕+资料下载】OpenCV 基础教程，安装、原理、实战， 3小时带你搞定这个热门计算机视觉工具库！＜实战教程系列＞ - P12：第9章：人脸检测 - ShowMeAI - BV1zL411377L
+
+![](img/ee7624d5ac788edf9da2d4cad266c30a_0.png)
+
+。To detect phases， we are going to use a method proposed by Viola and Jones。
+
+This was one of the earliest methods that allowed real time object detection。
+
+So if we were to detect faces， we could collect lots of positives。
+
+ which will be the images of faces and we will also collect lot of negatives。
+
+ which will be the images of anything but faces。Using these negatives and positives。
+
+ we will train and create a casket file that will help us find faces。In our case。
+
+ we are not going to train the model， but instead we will use a pret file for faces which is provided by OpenC Now OpenC has provided some default cascades that can detect different things such as number plates。
+
+ eyes， full body， etc。If you want to learn more about creating custom cascades。
+
+ I have a separate video for that， which will be available in the description。
+
+
+
+![](img/ee7624d5ac788edf9da2d4cad266c30a_2.png)
+
+So we are importing the Lina image from the sources folder and we are displaying it using the IM show function。
+
+ So the first thing we will do is we will add our cascade。So we will write face cascade， face。Gas。
+
+ Kate。Is equals to C2 dots。Caascade classifier。 And then we have to write the name。Celes。Soer says。好。
+
+Bres。Sources， slash。Then we will write ha。Gass。Skate。Undersco frontal。Face。Underscore default dot X。
+
+ M， L。So let me check the spellings again， how。Ca。Gaiade。😔，And frontal face default。X M L。
+
+ so that looks fine。So next we are going to convert our image into grayscale， so image。
+
+Gray is equals to C2 dot CT color， and then image。 and then we have C2 dot color RGB2 gray。
+
+Then we are going to find the faces in this image using our face cascade。
+
+ so we will say the faces is equals to face。Cascade， dot detect。
+
+We will use multi scale and we will write image gray， and then we have to define the scale factor。
+
+ We will put it as 1。1， and then we have to define the minimum neighbors， which we can put it as4。
+
+ So these parameters you can change based on the results you are getting。
+
+So next we are going to create a bounding box around the faces that we have detected。
+
+ so we have to loop through all the faces that we have detected and put rectangles around them so we will write four we will directly get the parameters of our x Y and width and height。
+
+ so these are the four parameters that you require to actually create the bounding box。
+
+ so we will write X y and then width and height。And then we will say， in faces。
+
+And then we will just draw the rectangle。Let's write it on the original image。
+
+ and then we will give it the initial points， So which are x and y。
+
+ And then we have to define the corner points， the diagonal points， which would be x plus width and。
+
+Y plus height。Then we need to define the color。 So let's put it as blue。2，5，5 and 0， and。0。
+
+And then we will define a thickness。 Let's put it as2。So yeah， that's pretty much it。
+
+ So let's run it and see。 And there we go。 So now we have detected the face and we have created a bounding box around it。
+
+So if you want to detect more objects， there's a lot of cascades available online that people have trained already or you can create your own custom cascade to detect cars to detect mobile phones。
+
+ TVs anything you can think of you can detect using these cascade method Now this cascade method is not the most accurate one but it is fast so a lot of the cameras they also use these hard cascade methods to find the faces still even though it's quite an old algorithm but still it works and it works well in certain circumstances。
+
+
+
+![](img/ee7624d5ac788edf9da2d4cad266c30a_4.png)
