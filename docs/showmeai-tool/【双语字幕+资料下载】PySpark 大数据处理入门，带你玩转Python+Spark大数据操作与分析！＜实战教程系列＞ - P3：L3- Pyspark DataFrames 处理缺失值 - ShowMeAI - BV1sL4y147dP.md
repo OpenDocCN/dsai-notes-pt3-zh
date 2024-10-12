@@ -1,0 +1,249 @@
+# 【双语字幕+资料下载】PySpark 大数据处理入门，带你玩转Python+Spark大数据操作与分析！＜实战教程系列＞ - P3：L3- Pyspark DataFrames 处理缺失值 - ShowMeAI - BV1sL4y147dP
+
+。
+
+![](img/e973b83e1babc963d0d6504ca497ee4d_1.png)
+
+Hello。 my name is Krisna。 and welcome to my UD channel。 So guys。
+
+ we will be continuing the Pipar series， and I've already uploaded two videos on Pi Sp。
+
+ we had actually started the understanding of Pipar data frames today we are going to continue。
+
+ and probably this is the tutorial3， which is the part3 with respect to data frame operations in this particular video we are going to see how we can handle missing values。
+
+ null values know So in short， this many things will actually try to do we'll see how to drop columns we'll see how to drop rows then we'll see when when we are dropping rows。
+
+ probably based on null values will try to drop a rows and then we'll try to see what are the various parameters in dropping functionalities and handling missing value by mean median or mode so here I'm just going to write it as mean median and more probably So all these things we are actually going to see again。
+
+ the main thing is that I really want to show you that how we can handle the missing。😊。
+
+
+
+![](img/e973b83e1babc963d0d6504ca497ee4d_3.png)
+
+Vals， this is pretty much important because in pandas and also we try to do this in a skill。
+
+ And we have some kind of imp function。 So let's proceed。Whenever we usually start a Pi park。
+
+ When we are working with Pi park， we really need to start a Pi park session。
+
+ So I hope till now you all are familiar。 So I write for Pi park dot S Q L。 I'm going to import。
+
+Spark session。Okay， and then I'm going to create a variable with spark。
+
+ And then here I'm going to write spark session dot。Build a。North A。Okay， dot app name。
+
+ let me just keep this app name as practice。 Okay， because I'm just practicing things。
+
+ and then I write get or create and just execute this。
+
+So probably it will take some time to get executed。 Yes， it has got executed fine。 Now for this。
+
+ I've just created a very simple dataset set which looks like this。
+
+ I have a column like name age experience salary So these are all my names all the candidate names and probably they are some values which are left blank here you can see some values are left blank So we'll try to see how to probably drop an nu values or how to handle this particular missing values and nu okay。
+
+ so let's proceed so first of all， in order to read the data set I'll just write spark dot read。😊。
+
+Dot CSsv And here Im just going to use the CSsv file name test2 dot cv and it is saved in the same location where this particular file is anyhow I'll be providing the in this Github also and I'm going to use header is equal to true and probably there is also infer schemeche is equal to true so that。
+
+I'll be able to get the data set properly so probably when I am reading this you will be able to see this is my data frame that I'm actually getting if you want to see the entire data set this will be like use dot show。
+
+And this is your entire data set here。 You are having null values and are perfect。 So what。
+
+ let me do one thing。 Let me just save this in a variable。 So I'll write D F underscoreco I spark。
+
+ So if I go and now check。Dot show。This is my entire data set。 Okay， perfect。
+
+ we are pretty much good till here。 We are working fine with respect to this。
+
+ We know we have actually read some kind of data set also now， probably first。
+
+ let's start how do we drop the columns。 droppinging the columns is very， very simple。 guys。
+
+ Suppose I want to drop name column。 Then I just use D F dot drop and provide my column name like this。
+
+ right？ So column。😊，Right， column name， suppose I'll write Df dot price spark。
+
+ and here column name will be name。So let me write it as name。
+
+And I can basically go and check out my dot show。 then you'll be able to see all the features that are actually written。
+
+ this is pretty simple， which I also showed you probably in the previous session also okay。
+
+ and this is how it is basically done basically dropping your feature or columns。
+
+ but our main focus is dropping the nonvalue。 So right now。
+
+ let me just write Df dot by spark dot show。 So this is my data set right now let's see how to drop this specific rows based on the null values。
+
+ So over here， I'll just use D dot by spark dot na Okay， there is something called as N。
+
+ And then you have drop fill and replace。 So first of all， I'll start with drop。Now。
+
+ inside this particular drop， always remember if I don't give anything。Okay， and just execute it。
+
+ Here。 you'll be able to see wherever there is a null values。 those all rows will get deleted。
+
+ So here you'll be seeing that this last three rows are not present， right。
+
+ So here you can see till shubum， this particular values present。
+
+ remaining all the rows has been removed。 perfect， right， So not a problem at all。
+
+ So here you in short， what you' are doing is that whenever you use dot and a dot drop。
+
+ it is just going to drop wherever it is going to drop those rows wherever na values are actually present or null values are actually present。
+
+ Okay， perfect。 This much is fine。 If I go and search in the drop， there are two main features。
+
+ One is how and one is threshold。 And then one is subset。
+
+ So let's try to understand this particular features。 Now， first， I will start with how。😊。
+
+Any is equal to how I'll just write like this。 Okay。
+
+ so suppose if I write D F dot Pipar dot any dot drop。 and if my。
+
+How the how value can have two values，1 is any，1 is all。Okay， one is any。1 is all。
+
+Any if the value selected as any drop or row if it contains any nulls。
+
+ like even though there is just one null， okay， one null or there is two nulls or there is entire nulls。
+
+ you know， then by default， it is going to get dropped okay。
+
+But how is equal to all When do we use all that basically means suppose if in your feature， you have。
+
+ suppose if in your row， you have all the values as null。In this case， you have 361 value。
+
+ this will not get dropped， but if in a record you have all the values and well。
+
+ then only it will get dropped。 Okay， so lets see whether this will work or not。
+
+Definitely not going to work because I know all at least one values are at least the CO1 values。
+
+11 value，1 none non null values is always there right If I am using how is to all。
+
+ it is going to drop those records， which is having completely not by default。
+
+ this how value should be having any right so by default。
+
+ it is any any basically says that whether there is one null or2nal。
+
+ you are just going to drop it drop those specific records right pretty much simple。
+
+ This was what how was Now let's go ahead and try to understand with respect to threshold What is this threshold。
+
+I'll tell you what is this threshold shot。Now， let me just use this， okay。I know how is any。
+
+ but there is another one more option called as thresh。 Now， in thsh。
+
+ what we do is that suppose if I write， let's keep the threshold or as2。It basically says that。
+
+Suppose over here in this particular case， if the threshold values 2， okay， lets let's first of all。
+
+ execute it。You'll be able to see that。The last column has got deleted over here。Okay。
+
+ the sorry last row has got deleted why it has got deleted because we have kept the threshold value S2 it says that at least two non null values should be present。
+
+😊，Okay， at least two non null values。 Now， here you have two non null values， like Maian 40000。 Okay。
+
+ here， you just have one non null values。So because of that， it got deleted。
+
+ Sose if you had two non nu values over here。 see 34 and 10， this is not got deleted。
+
+ This is same over here，3410， right，34，10 you have if I go and show you 3410 over here and 38000 at least here you add three non nu values here you add two non nu values。
+
+ So here， whenever we give some threshold value as2。
+
+ that basically itll go and check whether in that specific row， at least two non nu values are there。
+
+ if it is there， it is just going to keep that row otherwise。
+
+ it is just going to delete that is what you can you can also check out with one。
+
+ So if I go and see one， then you can see that all this particular rows are there because itll just go and check。
+
+ here1 non non values are there here， it is there if I make it as three， Okay。
+
+ that's see what it will come。😊，Now， here you can see at least this is the remaining all has been deleted。
+
+ right？ See over here， you had only two non non values here also， you here you add  three。
+
+ So this is the 3410，38000 an nu。 So here you can see the value。
+
+ That is a understanding with respect to threshold。 Now， let's go ahead with the the another one。
+
+ which is called as sub。So here I'm just going to write it as subset because this is the third parameter inside my draw feature。
+
+ And remember， these all features are pretty much simple with respect to if you have worked with pans the same thing we are working away subset。
+
+In the subset， we can actually provide。Suppose I'll say in the subject， let's remove threshold。
+
+ I don't want to keep any threshold。Let's say I just want to drop N values only from a specific column。
+
+ probably only from experience column。Then I can basically give it as a subset so from the experience column you can see that wherever there was na values in the records。
+
+ all those that whole record has been deleted right so like this you can apply with respect to this。
+
+ suppose you want to apply it in age you can also apply this right wherever there was non values that whole record has got deleted in the age columns。
+
+So this is with respect to subset So I hope you are getting an idea guys。
+
+ this is pretty much good because the same thing we are trying to do right we we are actually trying to apply whatever things we actually did in pandas and this is very。
+
+ very handy when you are working with missing data okay。😊，Let's go with the next thing。 Now。
+
+ let's go and fill the missing value， filling the missing value。Now。
+
+ in order to fill the missing value again， I' will be using the Ipar dot fill。🤧。Dot okay， sorry。
+
+ any dot fill。Okay， and inside this， this fill will take two parameters。 One is value。
+
+ and the one is subset。 Okay， now suppose if I go and give value like this。
+
+ suppose I say missing value。And if I go and write dot show。
+
+Then what it is going to do wherever there is an n value is just going to replace with missing values。
+
+ So here you can see here the null value is there。 So missing value， missing value。
+
+ missing value missing。 Suppose if you really want to perform this missing value handling in only a specific column。
+
+ then you can basically write your column name also like this。So this will be my X subset。 Okay。
+
+ I can also give multiple records like this。See， I can also give multiple exs， like experience。
+
+ commarma， probably age。Goma。H。In call in list right when I give like this。
+
+ then it this kind of functionality will happen in two columns right， pretty much simple。 So guys。
+
+ now next step， what we are going to do is that we are going to take a specific column and probably we are going to handle the missing values with the help of mean of that specific column or medium of that specific column。
+
+ So right now if I go and check out my D dot spice spark here if I go and see my dot show value。
+
+This is my entire data set over here。 Now what I'm going to do is that I'm going to take this particular experience column and probably replace the null values with the mean of the experience itself。
+
+ So in order to do this， I'm going to use an impter function。 And guys。
+
+ if you know about impter function we basically use that with the help of a scale learn also in Pipar also we have an imputer function。
+
+ So I'm just going to copy and paste the code over here to make it very very simple from Pipar do Ml dot feature input impter here I'm just going to give my input columns that is age experience salary probably I want to apply for every column over here and then I'm just saying that for age experience salary I'm just going to find out this dot format do C output columns and then I'm going to keep the strategy as mean you can also change the strategy as median mode and everything。
+
+ So I'll execute this this is got execute fine and then we are just going to write fit and transform So impter dot fit D for Pipar dot transform。
+
+ So once I execute。😊，Gys here you'll be able to see that we are going to create multiple columns with underscoreco imputed as this name So here you can see age underscoreco imputed in short what we have done we have tried some kind of mean functionality over here that basically means the null values is been replaced by mean so over here you can see this null values is replaced by 28 similarly this to null value is replaced with 10 and sorry5 this is what is the experience imputed column over here you'll be seeing that wherever there is a null value is being replaced by the mean of the experience column the mean of the h column and mean of the salary column and this way you'll be able to do it if you really want to go ahead with median just go and change this mean to median and just try to execute it here now you'll be able to see the median value and here is your initial null columns which sorry here are the columns which has null values and here are all the columns which has basically the imputed values right with respect。
+
+To mean media So I hope you like this particular video guys this was with respect to tutorial3 And in this video we are tried to see how to drop columns。
+
+ how to drop rows， how to check out various parameters with respect to dropping functional and handling missing values by mean media and mode。
+
+ You can also try out mode。 It is up to you and you can definitely just try it out and try to see whether you are able to do it or not。
+
+ So I hope you like this particular video。 please just subscribe the channel if youre not subscribe I'll see all in the next video Have a great day。
+
+ Thank you and bye bye。😊。
+
+![](img/e973b83e1babc963d0d6504ca497ee4d_5.png)
