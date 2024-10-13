@@ -1,0 +1,222 @@
+# 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P7：[讲座] 在 Mac OSX M1 中安装 TensorFlow 2.5、Keras 和 Python 3.9 - ShowMeAI - BV15f4y1w7b8
+
+Hi， this is Jeff Heaton welcome to applications of Deep neural networks with Washington University and this video I'm going to show you how to set up a Mac in particular a newer Mac。
+
+ one of the M1s that have the Apple silicone rather than Intel。With。Kara's TensorFlow。
+
+ everything you need for the course in deep learning。
+
+
+
+![](img/4a3455f71b0c1dc63732e659663e9a9d_1.png)
+
+🎼The。If you have a Windows computer or if you have a older Intel Mac。
+
+ I have other videos on those which are linked in the descriptions and I suggest you take a look at one of those there's a few steps to this。
+
+ it's really not that bad and I do want to explain some of the differences between the miniforge and Minneconda versions that you will encounter with this Also if you don't want to install the actual software onto your computer you can make it through the entire course with Google Coab If you watched some of my other videos you'll know that I use Minneconda and Andcona quite a bit these are two Python platforms in particular both made by the same group。
+
+That you can use on just about any platform be it Windows， Mac or Linux In this video。
+
+ I'm going to show you how to use miniforge and miniforge is something new at least to me miniforge is supported on a variety of platforms as well but I've started using it primarily on the Apple M1 I suggest trying to get by entirely with miniforge and not necessarily even installing Anaconda because you will need both of them installed if you do want to make use of Anaconda if you're using Anaconda you're not going to necessarily or really at all。
+
+ be able to access the GPU acceleration that Apple has built into this computer So on this machine I am going to show you how to install miniforge and it'll just be miniforge without Anaconda I do actually run both of them on my Mac I might do another video on that if you're interested in seeing how to run them side by side definitely。
+
+Let me know。But the point is miniforge， if you look at the reasons that they have these。
+
+An emphasis on supporting various CPU architectures including Apple M1 Personal it annoys me a little bit that I can't run everything through Minneconda and I have to have two entire Python instances on my Mac。
+
+ but that's the way they want to do it so let's go to my classes website there's various instructions on how to do this。
+
+I am going to take you through the process that I've somewhat developed based on others this is a little different than some of the ones that you will see here but I think it's pretty streamlined and it gets you everything that you need for my course installed if you go to T81 deep learning and you go into install there's a variety of files here because for one thing they keep updating these various platforms and the instructions for how to install for my course that's changed a number of times since early 2020 when I put the first one of these out here and I don't like to put broken links on older YouTube videos so they link to to the respective version。
+
+
+
+![](img/4a3455f71b0c1dc63732e659663e9a9d_3.png)
+
+This video is going to make use of the Tensorflowlow install Mac metal。
+
+July 2021 and if I make some changes to this file that don't break the video bad enough that I feel the need to recordcord it。
+
+ then I will put a link to the the newer version of it here I'll probably if they're not breaking changes I'll probably just modify the file in place so these are the instructions。
+
+I talk about basically what I just told you about in terms of dealing with the multiple versions and dealing with miniForge。
+
+ I suggest starting by installing miniForge， I like to use homebrew to do this I'm going to show you how to install Homebrew。
+
+ it's similar to yum or Appgi if you're used to Linux。
+
+ it's kind of like the command line version of the Apple store if you want to think of it。
+
+
+
+![](img/4a3455f71b0c1dc63732e659663e9a9d_5.png)
+
+![](img/4a3455f71b0c1dc63732e659663e9a9d_6.png)
+
+For that， if you go to the Homeb page。This command right here is the installation。
+
+ that's all it takes， so we copy that and I'm going to open up a terminal。
+
+I actually do not have Homebrew installed on this Mac yet。
+
+
+
+![](img/4a3455f71b0c1dc63732e659663e9a9d_8.png)
+
+I just got this Mac and I put my stickers on it， so I guess it's mine now。Not going to send it back。
+
+So let's go ahead and paste。That into there。And we'll go ahead and press enter and it's going to run that So it wants to run as Suu obviously it needs to run as root。
+
+ so I will go ahead and enter my password and there's that it's also going to install the Xcode command line tools。
+
+That you need that for so many things on a Mac。 very useful to have。 I don't。
+
+ if you do some of the other more manual processes for installing this。
+
+ you will have to install that as a separate step。 So I'm going to go ahead and press enter。
+
+ and now it's installing Homerw。 We'll go ahead and fast forward through this。 by the way。
+
+ I'll probably need to put some more stickers on this computer。 Any suggestions。
+
+ Let me know in the comments。 Well， I'm continuing to wait for this。
+
+ Let me also discuss a few other considerations for this。 The Apple metal。
+
+ which is the Apple equivalent almost of Nvidia couda will not run everything in my course。
+
+ I would say it will run a solid 90% of it。 But some of the advanced code that I have， for example。
+
+ Gs makes use of。😊。
+
+![](img/4a3455f71b0c1dc63732e659663e9a9d_10.png)
+
+Two things in particular one is Pytororch and Pytorch currently is a lot more difficult to get working on M1。
+
+ there's currently issues open that have not been resolved yet hopefully that will improve soon but the stylegan to ADA that we make use of in this course makes use of actual Kuda code which is C99 type code that actually defines custom kernels for this so obviously that's not at all compatible with Apple metal you could certainly write this in Apple metal but Stgan2 AD just was not written that way so more advanced machine learning where it's custom written kernels the Mac M1 is great the metal is great but it's just not as big of an ecosystem as kuta so it's not going to see as much compatibility Now everything they would need for the course。
+
+
+
+![](img/4a3455f71b0c1dc63732e659663e9a9d_12.png)
+
+Is available in coab so I suggest if you are going to run it on America like I said。
+
+ a solid 9095% of this will work just fine， but some of。This will not work。
+
+ Would you be interested in a video showing what works， what doesn't on the Apple M1。
+
+ at least in my experience。 Let me know in the comments。 And also。
+
+ does this video helping you to install， Defitely give it a like。 Thank you very much。
+
+ Let's continue with the fast forward。 I really dislike processes that make you enter the same password several times it prevent you from letting them run without you watching every step。
+
+😊，Okay， it's done with all of that， this is an important step you're supposed to add home brew。
+
+To your path。 And by the way， this assumes that you're using the Z shell。 Otherwise。
+
+ some of this can be different。 Mac used to use the ba shell。
+
+ but currently they're using the Z shellll unless you specifically change that that will be the case go and run that it's modified that and we'll run that just reloads the shell。
+
+ I'll go ahead though and exit the terminal and start up a new terminal just because I don't completely trust always that everything gets reconfigured like it should Now I should have the breww command from the command line and I do So this is a lot like yum or appgi or those kind of things Let's go back to my instructions So we installed homebrew we followed that instructions they also recommend installing this I think that was basically done by brew。
+
+ but I'll go ahead and execute that execute that already installed So we're good there and then we're going to do brew install mini forge There's a variety of ways。
+
+
+
+![](img/4a3455f71b0c1dc63732e659663e9a9d_14.png)
+
+![](img/4a3455f71b0c1dc63732e659663e9a9d_15.png)
+
+![](img/4a3455f71b0c1dc63732e659663e9a9d_16.png)
+
+![](img/4a3455f71b0c1dc63732e659663e9a9d_17.png)
+
+do this， you can also download a shell command from。
+
+ you can see it in this installation process up here， so if this isn't working for you。
+
+ you may want to try that as well， but I'm going to go and copy this， run it from here。
+
+So that's going to make use of brew and it's going to install miniForge The only way that I could think of this possibly failing is if there's a new version of the Apple metal and a new version of miniforge and they're not quite compatible if I run into that I'll definitely post something about that then you would need to request to install a very specific version of miniForge we'll go ahead and fast forward through all of this distinctive base that shows you what environment you're in currently we're in the base Python environment。
+
+If I do which Python will verify that。So see we're running the Python out of mini Forge3 Ben Python so next step we're going to install Jupiter Jupiter is sort of the IDE that you'll use to execute most of the code in this course you can also use Jupiter labb or Pchar we'll go ahead and do this This will take it's already installed so that's。
+
+That's handy now what I'm going to have you do。Normally there's several things you have to install。
+
+ you have to install TensorFlow and then the metal plug。
+
+ I also have a number of handy machine learning libraries that I like to install for my course they're all general purpose。
+
+ I don't think it would really hurt you installing them。Even if you're not taking my course。
+
+ you can see them all here its。Psychit Learn， pandas， all very standard stuff。
+
+You will need this TensorFlow Apple Yaml file and you'll execute this command。
+
+I already have this loaded onto my system。So I'll go into where I have it because I did a clone on my course and you can see the YaAml file there。
+
+If you don't want all of the material for my course， just download the YaAMl file。
+
+ I have a link there and make sure you're in the same directory as it when you execute this command you'll need that YamL file that I just mentioned。
+
+If you don't want all of my course material， just download the AL file。
+
+ I have my course material already loaded and there it is。I'm going to go ahead and execute。
+
+This Conda environment create command。 It is going to go ahead and create a Tensorflow environment that has all of those packages installed as well as Tensorflow and the metal plug that's going to let you use the GPU capabilities of your M1 Mac We'll fast forward through this This tends to take a bit of time So now we will do the next step which is Conda activate Tensorflow that's also in my instructions and there we go。
+
+ we are now in Tensorflow and I'm going to install and beconda。
+
+ which lets me link this kernel that I've created Tensorflowlow kernel into Jupiter and it does all of this proceed。
+
+ Yes， we'll fast forward through this。 All right I'll show you what that is in a moment and we have to do this command here。
+
+ which is actually going to link it You can have multiple of these installed in your Jupiter and that's what I very commonly do。
+
+For different projects that I'm working on， I don't try to create one Python install that has everything I needed because that gets unwieldy and I lose track I tend to create a environment for each or often a Docker image for each depending on what I'm doing Alright。
+
+ we'll enter that It's now linked into Jupiter。 So now we'll go ahead and run Jupiter notebook。
+
+ which is the next step。In my instructions。And here we are in Jupiter notebook。
+
+ going to create a new notebook， or I could just load the。
+
+File that we were running from if you downloaded it， but I'll just go ahead and create a new。
+
+Environment of Tensorflowlow 39。 that's the environment we just created。
+
+ very important that you select that or you may not have Tensorflow installed。
+
+ So we' go back to here and we're going to copy and paste this code， which will let you know if。
+
+Everything worked。 This is where you cross your fingers。 I'll go ahead and run this takes a moment。
+
+ we'll fast forward。 You can see these three coming up here that's part of Apple metal。
+
+ which is a good sign。Saying GPU available is an even better sign。
+
+ so we are completely installed and ready to go and if you want to check it。
+
+ just load up any code that uses TensorFlow just like you normally would any of the like training the resnet would be a great example in my material go ahead and run it。
+
+ you'll see it startup。Metal device set to Apple M1， all very good sign。
+
+And if you go to the activity monitor and see the percent GPU， well there it is。
+
+ it takes it a moment to get started。 so if you don't see something on the percent GPU at first。
+
+ don't panic， it may also be downloading。So the fact that we're in EpoC2 GPU is pegged at 88% that's actually a pretty good sign。
+
+ so if you're seeing this correctly congratulations you have the GPU working Thank you for watching this video and please subscribe to my channel follow along with the course or if you're one of my students。
+
+ welcome to the course， we'll have a lot of fun this semester learning deep learning。
+
+
+
+![](img/4a3455f71b0c1dc63732e659663e9a9d_19.png)
+
+Thank you for watching this video and if this was helpful， please give the video a like。
+
