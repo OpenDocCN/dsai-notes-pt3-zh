@@ -1,0 +1,85 @@
+# 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞ - P25：L4.2- 预处理句对数据集(TensorFlow) - ShowMeAI - BV1Jm4y1X7UL
+
+How to pre pair of sentences？We are seen to toize single sentences and batch them together in the batching inputs together video。
+
+If this code looks unfamiliar to you， be sure to check that video again。
+
+Here we'll focus on tasks that classifiedify pairs of sentences。For instance。
+
+ we may want to clarify whether two texts are or phrases or not。
+
+Here is an example account from the Q question P status Det。
+
+ which focuses on identifying duplicate questions。In the first pair。
+
+ the two questions are duplicate in the second panel。
+
+
+
+![](img/1b491d69779a6742b9b5b44918621bc4_1.png)
+
+And the word classification problem is when we want to know if two sentences are logically related on that。
+
+A program called natural language inference or NI。In this example。
+
+ taken from the multianaly dataset set。Whether the pair of sentences for each possible label。
+
+ contradiction， not what or entailment， which is a fancy way of saying the first sentence implies the second。
+
+
+
+![](img/1b491d69779a6742b9b5b44918621bc4_3.png)
+
+So classifying pair or sentences is a problem worth studying。In fact， in the group benchmark。
+
+ which is an academic benchmark for text classification。
+
+ eight of the 10 data sets are focused on tasks using pairs or sentences。
+
+That's why models like Pert are often portray with a dual objective。
+
+Under top as a language modeling objective， they often have an objective when it to sentence spells。
+
+For instance， during pering， B is shownwn pairs of sentences and must predict both the value of random new mask tos。
+
+And whether the second sentence follows from the first or not。Fortunately。
+
+ took from the Toms Library as a ICPI to deal with pairs sentences。
+
+You just have to pass them as two arguments to the tokenizer。
+
+And top as the input ideas and the attention mask we studied already。
+
+ it returns a new field called token typeidees， which tells the model which tokens belong to the first sentence。
+
+And which ones belongs to the second sentence？Som in a little bit here how the input IDs align with the it tokens we correspond 2 for token type ID。
+
+ and attention mask。We can see the tokenizer also added special tokens， so we have the CS token。
+
+ su tokens from the first sentence， a step token， the token from the second sentence。
+
+ and a final step token。If we have several pair sentences。
+
+ we can toize them together by passing the list of first sentences and the list of second sentences。
+
+And also keyword arguments we studied already like patting equal to。
+
+
+
+![](img/1b491d69779a6742b9b5b44918621bc4_5.png)
+
+Zooming in as a result， we can see how the tokenizer added padding to the certain pair of sentences to make the two outputs system length。
+
+It's also properly dealt with to contain AD Ds and attention nice for the two sentences。
+
+
+
+![](img/1b491d69779a6742b9b5b44918621bc4_7.png)
+
+This is then already to pass from model。
+
+![](img/1b491d69779a6742b9b5b44918621bc4_9.png)
+
+![](img/1b491d69779a6742b9b5b44918621bc4_10.png)
+
+。Yeah。
