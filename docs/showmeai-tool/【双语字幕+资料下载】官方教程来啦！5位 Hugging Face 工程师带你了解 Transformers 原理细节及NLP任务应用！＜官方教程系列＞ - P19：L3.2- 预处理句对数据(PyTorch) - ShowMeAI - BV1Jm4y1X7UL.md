@@ -1,0 +1,81 @@
+# 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞ - P19：L3.2- 预处理句对数据(PyTorch) - ShowMeAI - BV1Jm4y1X7UL
+
+How to proposepo pairs of sentences。We have seen enough to tokenize single sentences and patch them to coverver in the patch inputs to Cavers video。
+
+If this code look infamiliar to you， be sure to check the video again。
+
+Here we all focus on tasks but classified personal sentences。For instance。
+
+ we may want to class where our two texts are parases on it。
+
+Here is an example taken from the Qa question P dataset set。
+
+ which focuses on identifying duplicate questions。In the first pair。
+
+ the two questions are duplicates in the second format。
+
+
+
+![](img/6c5fec0939d8ec492c6e56dd82094de9_1.png)
+
+Another of a per classification problem is when we want to know if two sentences are logically related or not。
+
+A problem called natural language inference or the。
+
+In this example taken from the multiana dataset set。
+
+ we have a pair of sentences for each possible label， contradiction， network or enment。
+
+ which is a fancy way of saying the first sentence implies a second。
+
+
+
+![](img/6c5fec0939d8ec492c6e56dd82094de9_3.png)
+
+So classifying pair certain is a problem worth telling。In fact， in the group benchmark。
+
+ which is an academic benchmark for text ratification。
+
+Eight of the 10 dataset sets are focused on tasks using pairs of sentences。
+
+That's why models like Bt are often betweened with a dual objective。
+
+On top of the language modeling objective， we often have an objective related to sentence pairs。
+
+For instance， during co traininging， B is shown pair of sentences and must predict both the value of randomly mask tokens and whether a second sentence flow from the first hall。
+
+Fortunately， the Tukenezer from the transformformer library has a nice API to deal with pair sentences。
+
+You just have to pass them as two arguments to the tokenizer。
+
+On top of the input ID and the attach mask we studied already。
+
+ it returns a new field called token type 8s， which tells us the model which to can spin to the first sentence。
+
+And which ones belonged to the second sentence？Zooming in a little bit。
+
+ here has the input ID aligned with the tokens we correspond to our respective token type ID and attention mask。
+
+We can see the tokenizer also added special tokens。So we have a C S token。
+
+ the tukens from the first sentence， a septukin， the tokens from the secondken sentence。
+
+ and a final septuken。If we have several pairs of sentences。
+
+ we can take an nice together bypassing the list of first sentences。
+
+ then the list of certain sentences， and all the keyword arguments we studied already。
+
+ like padding ault。
+
+![](img/6c5fec0939d8ec492c6e56dd82094de9_5.png)
+
+Zooming in as a result， we can see how the tokeniser added padding to the second pair of sentences to make the two outputs the same length and properly dealt with token type IDs and attention masks for the two sentences。
+
+This is an already2 pass straw model。
+
+![](img/6c5fec0939d8ec492c6e56dd82094de9_7.png)
+
+![](img/6c5fec0939d8ec492c6e56dd82094de9_8.png)
+
+。
