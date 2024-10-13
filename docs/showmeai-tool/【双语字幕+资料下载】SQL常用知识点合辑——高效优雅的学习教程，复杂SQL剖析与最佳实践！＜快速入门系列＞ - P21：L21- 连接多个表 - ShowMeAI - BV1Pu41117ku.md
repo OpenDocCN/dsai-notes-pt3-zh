@@ -1,0 +1,137 @@
+# 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P21：L21- 连接多个表 - ShowMeAI - BV1Pu41117ku
+
+![](img/2073790dd6021bcc01fbda62e137a44d_0.png)
+
+In this tutorial， I'm going to show you how to join more than two tables when writing a query for example。
+
+ back to our SQL store database， look at the orders table。😊。
+
+Now you know how to write a query to join this table with the customers table to return information about the customer who placed each order。
+
+ but here we also have another column status， which is similar to the customer ID column So the name of these statuses are not stored in this table there is somewhere else in the order statuses table。
+
+ Let's have a quick look here。So our orders can be either processed， shipped or delivered。
+
+ and these are the identifiers for each of these statuses Now back to our orders table。😊。
+
+In the status column， we store the order statusus ID。
+
+So now we should write a query to join the orders table be two tables。
+
+ the customer table and order statuses table， the result of this query is going to look like this。😊。
+
+So for each order we see the order ID， the date， the first and last name of the customer and finally the status of the order this is a beautiful report we can create for our users so let me show you how to write this query。
+
+😊，Back to our query editor， first we need to select the SQL store database。
+
+Now we need to select everything from。😊，The orders table， let's give it an alias。😊。
+
+Next we to join this with the customers table。An。Oh。
+
+ that customer ID should be equal to see that customer ID。Nothing new so far， exactly like before。
+
+Now here we can write another join keyword。😊，To join the order table with order statuses table。
+
+ so we type out Order statuses。And also give it an alias like O。What is our join condition Well。
+
+ back in the order table here we have is status column， so the value in this column should be equal。
+
+😊，To the order status ID column in order statuses table right， so back to the query。😊。
+
+So order table dot status should be equal to order statuses， dot order status IDd。
+
+ make sure to get the name right， don't have a typo。 otherwise you're going to get an error。
+
+ So this is how we can join three tables。 Now in the real world as you work on more complex problems。
+
+ you may end up joining even 10 tables。 So this is not uncommon in the SQL word。
+
+Now let's go ahead and execute this query。😊，First we get the columns from the orders table。
+
+ followed by the columns， from the customers table and so on。
+
+This result is so complex and hard to extract information from。😊。
+
+Let's explicitly select a few columns here。From the orders table。
+
+ we want to select the Order ID column。😊，As well as the order。Date， then from the customer table。
+
+ we want to select the first name and。The last name？And finally， from the order statuses table。
+
+ we want to select the name column now we can give this an alias like status。😊，That's better。
+
+ Let's execute the query one more time。😊，So。Here's the end result， we have order ID or the date。
+
+ the name of the customer followed by the status of the order。😊。
+
+
+
+![](img/2073790dd6021bcc01fbda62e137a44d_2.png)
+
+嗯。
+
+![](img/2073790dd6021bcc01fbda62e137a44d_4.png)
+
+Al right， for your exercise， take a look at this SQL invoicing database Here we have this table payments。
+
+ and these are the payments that each client has made towards a given invoice。
+
+ Let's take a look at the data。😊，So we have these columns like client ID that identifies the client。
+
+ so we can join this table with the client's table to see the name of the clients。😊。
+
+Next we have invoice ID， we also have date， amount and payment method。
+
+ so similarly we can join this table with the payment methods table here。
+
+ let's have a look at the data in this table， These are the payment methods credit card。
+
+ cash Paypal and wire transfer so back to the payment table I want you to write a query and join this table with the payment methods table as well as the client's table produce a report that shows the payments with more details such as the name of the client and the payment method。
+
+嗯。All at first， we need to use the SQL invoicing database。
+
+Now we can select everything from the payments table， which we call P。😊。
+
+Next' we going to join this with a client table， which we call C。😊。
+
+On P that client ID should be equal to see that client ID let me double check the column name to make sure I got it right so back to the payment table the column is called client ID。
+
+😊，We also have a column called payment method that we should join。😊。
+
+To the payment method ID column of the payment methods table， so back to the query。Once again。
+
+ we use a joint statement here。Join with payment methods。 but give it an Alias PM。
+
+On P dot payment underlying method should be equal to PMm do payment method ID。
+
+ make sure to type it out correctly， otherwise you're going to get an error。
+
+So let's go ahead and execute the query up to this point。 There you go。 Finally。
+
+ let's handpick the columns that make the most sense。So。From the payments table， let's select a date。
+
+Followed by Invoice IDd。What else do we have here？So we have client ID， invoice ID， date。
+
+ amount and payment method， I'm going to pick the amount column from here as well。
+
+ so back to the query P。 amount。😊，Now we need to add information about the client。
+
+ Let's take a look at this table， clients。So here we have columns like name， address， city and so on。
+
+ all we need here is the name column， so back to the query。😊，From the client's table。
+
+ let's select the name column and finally from the payment method table。
+
+ let's select what is that column called？😊，It's called name。So back to the query。PM， that name。
+
+So here's the end result。😊，Now we can put these columns in any order that we want。
+
+ it doesn't really matter， let's execute the query and make sure everything works。😊，So on this date。
+
+ for this invoice， we have a payment for this amount by this client using a credit card。
+
+
+
+![](img/2073790dd6021bcc01fbda62e137a44d_6.png)
+
+![](img/2073790dd6021bcc01fbda62e137a44d_7.png)
