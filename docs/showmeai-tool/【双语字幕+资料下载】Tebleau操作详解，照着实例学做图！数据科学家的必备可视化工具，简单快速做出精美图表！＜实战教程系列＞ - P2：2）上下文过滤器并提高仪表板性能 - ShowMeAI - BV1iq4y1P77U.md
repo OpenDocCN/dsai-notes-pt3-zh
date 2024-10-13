@@ -1,0 +1,111 @@
+# 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P2：2）上下文过滤器并提高仪表板性能 - ShowMeAI - BV1iq4y1P77U
+
+Hi， folks， and welcome to another episode of Tableau in two minutes。 Today。
+
+ we're going to be talking about context filters and how you can use them to improve the performance of your dashboard。
+
+ as well as how they impact what is displayed on particular sheets To do that。
+
+ we're going to connect to the superstore data set using the orders sheet。😊。
+
+
+
+![](img/54cf097445843aea9943c80d251cb297_1.png)
+
+![](img/54cf097445843aea9943c80d251cb297_2.png)
+
+Then we're going to go to sheet one。And we're going demonstrate this very simply， just using。
+
+I category， I'm sorry。 we're going to put category on the filters shelf。
+
+ We're going to select all of those。 Then we're going to take subcatego and put subcatego on the row shelf。
+
+
+
+![](img/54cf097445843aea9943c80d251cb297_4.png)
+
+And then we're going to take our sales and put it on the cons shelf。 So we have a nice list。
+
+ I like to sort this too。 Just going do it descending by the sum of the sail。 So we get a nice。
+
+ neat looking graph。 Now， say we only wanted the top  five subcategories to display in our visualization。
+
+ We can do that very easily by just applying a filter to the subcategory setting it to be the top  five by sales。
+
+😊。
+
+![](img/54cf097445843aea9943c80d251cb297_6.png)
+
+![](img/54cf097445843aea9943c80d251cb297_7.png)
+
+![](img/54cf097445843aea9943c80d251cb297_8.png)
+
+We the sum of sales clicking O。 And now you can see we have our top five categories， but。
+
+That's a little bit of a challenge。 So if we show the category filter。
+
+ you can see we have three top categories for our all of our subcategories。 And if we take these。
+
+In and out。You'll note that our top 5 is no longer a top 5。 It's sometimes a top 3。
+
+ We can even take it down to a top 1 because it's filtering out each of the categories。
+
+But not actually replacing the items， the subcategories with items from other categories。
+
+ And the reason it's doing that is because the way tableau processes a top 5 filter is it takes everything。
+
+From the database calculates the top five， in this case， the top five subcategories。
+
+And then applies the filters after it's already calculated what the top  five are。
+
+ So every time we remove a category， we just remove those items from the top 5。
+
+ and we get the top5 as they are without that category， which in this case， is only a top 3。
+
+What context filters do is context filters change the order。In which it happens so。
+
+Everything else will only be applied now that we've turned this into a context filter rate。
+
+ So you just click that and then click add to context。
+
+Everything that we do now is only going to be applied to data that has already passed through that category filter。
+
+ So what that means in the grand scheme of things is that when we uncheck one of these categories。
+
+ For example， if we uncheck furniture。We still have a top 5。
+
+ we have the top  five excluding anything from the furniture category。
+
+ because that furniture data didn't pass through our context filter。
+
+And our top 5 is being calculated on only the data that we have left。 Now。
+
+ why is this particularly important well。Obviously， it helps with the top fives。 But beyond that。
+
+ if you use this on your dashboards， particularly in ones where you're struggling for performance。
+
+ because each filter now has to be calculated on fewer values because now we don't have any data from furniture flowing through。
+
+ we only have office supplies and technology。That will speed up the processing of any subsequent filters that you have after the context filter。
+
+ It will also help speed up any calculations or anything like that。
+
+ And this can have a significant impact on how your。Visualizations， how your dashboards perform。
+
+ The other thing that it will do is it will。Only show。Values that make sense in the other filters。
+
+ so。If we look at our filter for subcategory now， So we'll show the filter， you will see that。
+
+Whenever we add or remove things。Then only values that make sense will show up in hour。
+
+Subcate filter。So there you go。 So that about does it for this episode of Tableau in  two minutes。
+
+ Go ahead and give context filters a try。 Let us know how they work for are you。
+
+ If you have any questions， please leave them in the comments。 As always。
+
+ there's a link to the data set and to the workbook in the video description。
+
+ and we will see you next time。😊。
+
+![](img/54cf097445843aea9943c80d251cb297_10.png)
