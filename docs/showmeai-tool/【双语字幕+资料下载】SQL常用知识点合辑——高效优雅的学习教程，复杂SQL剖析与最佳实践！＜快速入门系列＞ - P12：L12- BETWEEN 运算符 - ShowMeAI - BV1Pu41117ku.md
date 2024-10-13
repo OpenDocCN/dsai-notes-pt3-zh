@@ -1,0 +1,53 @@
+# 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P12：L12- BETWEEN 运算符 - ShowMeAI - BV1Pu41117ku
+
+![](img/0fd125c9f59bc110486d7eb215bf21b1_0.png)
+
+哦。In this tutorial， we're going to look at the between operator in SQA。
+
+So let's say we want to get the customers who have more than 1000 and less than 3000 points。
+
+When me rate the query is like this where points greater than thousand well more accurately greater than or equal to 100 and points less than or equal to 3000。
+
+ When we execute this query， we get。😊，How many we get four people that satisfy this criteria？
+
+Now whenever you're comparing an attribute with a range of values。
+
+ you can use the between operator and this makes your code shorter and cleaner so we can rewrite this expression like this where points between thousand00 and 3000 This is exactly equivalent to what we had before。
+
+ so these range values are also inclusive That means points is going to be greater than or equal to 1000 or less than or equal to 3000 let's execute the query。
+
+ we get the exact same result。😊。
+
+![](img/0fd125c9f59bc110486d7eb215bf21b1_2.png)
+
+嗯。
+
+![](img/0fd125c9f59bc110486d7eb215bf21b1_4.png)
+
+All right now， as an exercise， I wanted to write a query to get the customers that are born between January 1st。
+
+ 1990 and January 1st，2000。
+
+![](img/0fd125c9f59bc110486d7eb215bf21b1_6.png)
+
+![](img/0fd125c9f59bc110486d7eb215bf21b1_7.png)
+
+All right， so we start with select star。From customers， where？Burth on the line date between。
+
+ so what matters here is that we can use the between operator for date values as well。
+
+ it's not limited to using numbers。So we're birth date between now we need to supply two date values。
+
+ so as I told you before， the format for dates is four digits for the year， so 1990。
+
+ two digits for the month and two digits for the day。
+
+So the birthday should be between this value and here's a second value， 20，0，1 and 01。
+
+Let's execute this query。We get。
+
+![](img/0fd125c9f59bc110486d7eb215bf21b1_9.png)
+
+Only three people will match this criteria。Oh。
+
+![](img/0fd125c9f59bc110486d7eb215bf21b1_11.png)
