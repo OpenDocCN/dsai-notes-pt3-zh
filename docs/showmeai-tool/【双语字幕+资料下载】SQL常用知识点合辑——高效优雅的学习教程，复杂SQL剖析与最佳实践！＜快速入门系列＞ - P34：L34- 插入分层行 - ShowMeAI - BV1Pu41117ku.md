@@ -1,0 +1,115 @@
+# 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P34：L34- 插入分层行 - ShowMeAI - BV1Pu41117ku
+
+![](img/f8da00bca95829b0b487f1e08381e567_0.png)
+
+哦。So far you have only learned how to insert data into a single table in this tutorial。
+
+ I'm going to show you how to insert data into multiple tables。 Here is a really good example。
+
+ Look at the orders table。 What columns do we have here。We have the order I。
+
+ we have the customer ID so we know who has placed this order。 We know the date of the order。
+
+ We know this status， comments as well as shipping information。
+
+ but the actual items for this order are not in this table they are in the order items table So in this table we have four columns we have the order I So we know what order this item is for We have the product I。
+
+ So we know what product has been ordered at what quantity and what price So an actual order can have one or more order items。
+
+ This is what we call a parent child relationship。 So this relationship the order table is the parent and the order items table is a child So one row in the order table can have one or more children inside the order items table Now in this tutorial I'm going to show you how to insert an order and all its items So you will learn how to insert data into multiple tables。
+
+😊，Alright， back to our query editor window。 first， we need to insert the order。 So insert into。
+
+Let me close the Navigator panel。All right， we want to insert a record into the orders table。😊，Now。
+
+ what columns do we have here？So we have these columns but only the first four are required and actually the first one。
+
+ we don't want to worry about that because that's an auto increment column。
+
+ so we only want to supply values for customer ID， order date and status so back to our query。😊。
+
+We specify those columns here。Customer ID， order， date and status。Now let's apply the values。
+
+In the customer ID column， we need to add a valid customer ID。
+
+So let's have a quick look at our customers table。😊，There you go。In this table we have 11 records。
+
+ so these are the valid customer ID。Now back to our query， let's use one for customer ID。
+
+And then 2019， January， the 2 for the order date， and one for the order status， once again。
+
+ in this column， we need to insert a valid order status ID。 If we don't supply a valid I。
+
+ minus field is going to yell us。So we insert an order here。 Now we need to insert the items。
+
+ Now back to our order items table。In this table we have this order ID column。
+
+ So here's the tricky part。 As soon as we insert an order。
+
+ My skill is going to generate an I for our new order。
+
+ Now we need to be able to access that I in order to insert the items in this table how can we do that Well。
+
+ back to our query editor window。😊，In MyQ we have a bunch of built in functions and a function is basically a piece of code that we can reuse。
+
+ just like the functions or features in your TV， Every TV comes with a bunch of built in functions like power on。
+
+ power off， changed volume， changed the channel and so on。
+
+ So Myq and other database engines come with a bunch of built in functions that we can use in our programs。
+
+ One of these functions is last insert ID。We can call or execute this function by adding parenthses here。
+
+ and this will return the ID that myQ generates when we insert a new row。So before going any further。
+
+ let's just select this and make sure we get the right result。😊。
+
+Now we have a syntax error here because we didn't terminate the first statement with a semicolon。
+
+ all right， now let's execute this query。😊，Alright， so the idea of the new order is 12。
+
+Let's verify that so back to the orders table， let's look at the data on my machine I have 12 records here。
+
+ I actually created one just before recording this video。
+
+ so on your machine you're going to have 11 orders。😊，Now back to our query window。
+
+ now that we know how to get the idea of the newly inserted record。
+
+ we can use that ID to insert the child records so。We're going to write another insert statement。
+
+ insert into order items。Let's have another look at the columns in this table。
+
+So we have four columns and all of them are required。
+
+ so there is really no need to specify the column names in our insert statement。
+
+ we simply supply values for order ID， product ID， quantity and unit price。
+
+So here in the values clause， we had parentheses。What is our order， I D。
+
+ That is the value returned from calling this function。
+
+ So I'm going to cut this from here and put it here。Next we need to supply a valid product ID。
+
+ let's say product1。Quantity， let's say one and the unit price $2。95。Now let's delete this select。
+
+ we don't really need it anymore。 and let's add another set of values。 So once again。
+
+ we're going to call last insert I to get the idea of the new order。😊。
+
+We're going to change the product to product number2 and。At a different price。That's it。
+
+Now let's execute these statements and see what we get。😊，All right， so。Back to our orders table。
+
+ let's refresh the records here。 Allright， so we have a new order order number 13。 beautiful。
+
+ Now let's look at the order items table。😊，Here is the order items， let's open the table。
+
+So we should have two items for order number 13。Beautiful。
+
+ so this is how you insert hierarchical data in mySQL。😊。
+
+
+
+![](img/f8da00bca95829b0b487f1e08381e567_2.png)
