@@ -1,25 +1,37 @@
 - en: 【双语字幕+资料下载】Jupyter Notebook 超棒教程！50分钟，把安装、常用功能、隐藏功能和Terminal讲解得清清楚楚。学完新手也能玩转！
     - P8：8）菜单功能 - ShowMeAI - BV1yv411379J
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Jupyter Notebook 超棒教程！50分钟，把安装、常用功能、隐藏功能和Terminal讲解得清清楚楚。学完新手也能玩转！
+    - P8：8）菜单功能 - ShowMeAI - BV1yv411379J
 - en: It now。![](img/aed28feec306fc2072b2f30ee5bfdd03_1.png)
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在。![](img/aed28feec306fc2072b2f30ee5bfdd03_1.png)
 - en: Alright， let's take a look through these file menus really quick。 So we have
     file。 You can create a new notebook。 You can save and checkpoint。Edit。You can
     split cells。 You can merge cells。 You can cut and paste and delete。You can view。
     you can view line numbers so you can toggle line numbers on or off there。You can
     insert cells。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，让我们快速浏览一下这些文件菜单。所以我们有文件。你可以创建一个新的笔记本。你可以保存和检查点。编辑。你可以拆分单元。你可以合并单元。你可以剪切、粘贴和删除。你可以查看。你可以查看行号，所以你可以在这里切换行号的显示或隐藏。你可以插入单元。
 - en: Here under the cell menu item， you can run cells and you can change the type。If
     you want to clear an output， like， let's say that we， you know。 we want to clear
     this hello world output come up here to sell。Current output。And clear。 or if I
     wanted to clear this Dr here， you know， cell current output clear。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 在单元菜单项下，你可以运行单元并更改类型。如果你想清除输出，比如说，我们知道，我们想要清除这个 hello world 输出，来到这里，当前输出。然后清除。或者如果我想清除这个
+    Dr 这里，你知道，单元当前输出清除。
 - en: And it's as if the cell didn't run。And let's see， widgets。 We're not going to
     cover this right now。 and then you've got help。 and I'll show you right now。![](img/aed28feec306fc2072b2f30ee5bfdd03_3.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 就好像这个单元没有运行。让我们看看小部件。我们现在不打算讨论这个。然后你有帮助。我现在就给你展示。![](img/aed28feec306fc2072b2f30ee5bfdd03_3.png)

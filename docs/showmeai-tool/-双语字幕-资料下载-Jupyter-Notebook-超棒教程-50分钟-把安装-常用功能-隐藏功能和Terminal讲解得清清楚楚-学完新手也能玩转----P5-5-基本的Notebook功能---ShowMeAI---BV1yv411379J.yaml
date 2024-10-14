@@ -1,150 +1,207 @@
 - en: 【双语字幕+资料下载】Jupyter Notebook 超棒教程！50分钟，把安装、常用功能、隐藏功能和Terminal讲解得清清楚楚。学完新手也能玩转！
     - P5：5）基本的Notebook功能 - ShowMeAI - BV1yv411379J
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Jupyter Notebook 超棒教程！50分钟，把安装、常用功能、隐藏功能和Terminal讲解得清清楚楚。学完新手也能玩转！
+    - P5：5）基本的Notebook功能 - ShowMeAI - BV1yv411379J
 - en: Da。But basically， what I do as soon as I launch Jupyter notebooks is I'll come
     over here to new。And then you can just select a new Python 3 notebook here。And
     this creates a new notebook。 Let's give it a name。 We'll just call it Jupiter
     Tu notebook。![](img/3367d8727ece3a1a6aa58149b3536d89_1.png)
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: Da。但是基本上，我启动 Jupyter 笔记本后，首先会来这里选择新建。然后你可以选择一个新的 Python 3 笔记本。这会创建一个新的笔记本。我们给它命名，叫它
+    Jupiter Tu 笔记本。![](img/3367d8727ece3a1a6aa58149b3536d89_1.png)
 - en: '![](img/3367d8727ece3a1a6aa58149b3536d89_2.png)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/3367d8727ece3a1a6aa58149b3536d89_2.png)'
 - en: U here。So what is a notebook， Well， a notebook is a way to be able to write
     plain text and to be able to execute code within different cells。So you can see
     here， here's one cell。And this cell is currently going to be a code cell。 And
     you can tell it's a code cell from this right here。 you can also tell by this
     in over here on the left with the square brackets。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: U 在这里。那么，什么是笔记本呢？笔记本是一种可以编写纯文本并在不同单元格中执行代码的方式。你可以看到，这里有一个单元格。这个单元格目前将是一个代码单元格。你可以通过右侧的标识判断这是一个代码单元格，同时左侧的方括号也能表明这一点。
 - en: So if I come into this cell here， I'll just click in and I'll just do something
     simple in Python。 You know， I'll set x equals hello world。And let's print out
     X。 Now， I am going to click shift enter。And that's going to run this cell。 And
     you'll see that we now have a little one next to it。 So this is a code cell。 We
     just ran that code and it executed this Python code here。And printed out。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以如果我进入这个单元格，我会简单地在 Python 中做一些简单的事情。你知道的，我会设定 x 等于 hello world。然后我们打印出 X。现在，我将点击
+    shift enter。这将运行这个单元格。你会看到旁边有一个小数字 1。这是一个代码单元格。我们刚刚运行了这个代码并执行了这里的 Python 代码，并打印了出来。
 - en: hello world。Now， if I come down into this next cell here and I just type in
     X and hit enter。 let's see what happens。Well now you'll see that we've got this
     out here and it just and it's telling us essentially。 what is x。 So we're not
     printing X。 rather， we we're kind of returning X to the standard out here in this
     notebook。 and it's telling us， hey， X is a variable and it's actually a string。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: hello world。现在，如果我进入下一个单元格并输入 X，然后按回车。看看会发生什么。你会看到我们在这里得到了输出，它基本上告诉我们，x 是什么。我们不是打印
+    X，而是将 X 返回到这个笔记本的标准输出，它告诉我们，嘿，X 是一个变量，实际上是一个字符串。
 - en: and that string says hello world。And you'll notice that we still have access
     to this X variable。 even though we defined it up here in this previous cell。 and
     you'll see that we have the number two here beside this cell。 and this is because
     behind the scenes， what's going on is Jupiter notebooks is using a single single
     instance of Python。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 而那个字符串是 hello world。你会注意到我们仍然可以访问这个 X 变量，即使我们在之前的单元格中定义了它。你会看到这个单元格旁边有数字 2，这是因为在后台，Jupyter
+    笔记本使用的是一个单一的 Python 实例。
 - en: a single Python kernel where it's maintaining all the variables and keeping
     track of everything just like what happen in a normal Python script or in i Python
     interactive shell environment。So as soon as we define a variable anywhere in this
     notebook。 and this is actually this is one of the dangers of Jupyter Notes and
     I'll demonstrate this to you right now。I can I can define why down here， maybe
     why is。Let's say a goodbye world。 That's kind of edgy， right。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个单一的 Python 内核，它维护着所有变量并跟踪所有内容，就像在普通的 Python 脚本或 iPython 交互式 shell 环境中发生的那样。所以，只要我们在这个笔记本的任何地方定义一个变量，这实际上是
+    Jupyter 笔记本的一个危险，我现在就来演示给你看。我可以在这里定义一个变量 y，假设 y 是一个再见世界。这有点酷，对吧。
 - en: Alright， so I run this。 I haven't printed anything。 So I've just defined a variable
     why。 now。 if I come back up here to the top。And I insert a new cell。 So I insert
     cell above。 Let's insert cell above here。And now I print why。Even though this
     cell is before this cell。 so we're printing out a variable before it gets defined。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，我运行这个。我还没有打印任何东西。所以我只是定义了一个变量 y。现在，如果我回到顶部，并插入一个新单元格。插入一个上方的单元格。现在我打印 y。即使这个单元格在这个单元格之前，我们也在打印一个变量，它在被定义之前。
 - en: but Jupyter notebooks doesn't care about the ordering of the cells here。 What
     it cares about is the order of execution of the cell。 So you'll notice this little
     side number here，1，2，3，4。 So we executed this cell。We assigned the variable。And
     then it doesn't matter where we use that variable now。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是Jupyter笔记本并不关心单元的顺序。它关心的是单元的执行顺序。所以你会注意到这个小侧边编号，1，2，3，4。我们执行了这个单元，赋值变量，然后现在使用这个变量的位置并不重要。
 - en: because it's been assigned so we can use it up here if we want。 And， you know，
     this is very tricky。 I'm going to delete this cell， using the letter X。And now，
     if I print。Why， again。Well。 that still works。 It still works because even though
     we've deleted the cell where the variable assignment happened。 Y is still being
     stored in memory。 So just to show that， I'm going to type。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 因为它已经被分配，所以如果我们想可以在这里使用它。你知道，这很棘手。我将使用字母X删除这个单元。现在，如果我打印，为什么又可以呢？好吧，依然有效。它依然有效，因为即使我们删除了变量赋值的单元，Y仍然存储在内存中。为了证明这一点，我将输入。
 - en: let's type Dr really quick with。Two with parentheses here。And D， basically。Gives
     you a list of the different variables and the methods that are available to you。In
     your。Working session currently。 So in the current。In the current Python instance
     that you are working with。 So here you'll see that x and y are both defined。 These
     are the things that we've defined。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们快速输入Dr，带有两个括号。D基本上会给你一个可用的不同变量和方法的列表。在你的工作会话中。因此在你当前的Python实例中，你会看到x和y都是定义的。这些是我们定义的东西。
 - en: And there are a bunch of other things that are predefined as well。 and we're
     not going to worry about about those right now。 But I just want to show you that
     you can see which variables are there。 And these variables will stay there。Until。We
     explicitly get rid of them， we explicitly delete them。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 还有一些其他的东西是预定义的。我们现在不打算担心这些。但我只想让你看到有哪些变量。这些变量会一直存在，直到我们显式地删除它们。
 - en: Or we shut down the notebook and come back into it。 We restart the kernel。 So
     we're getting a little bit ahead of ourselves here。 So let's go back。 let's go
     back to the basics。 Let's go back to the basics， so。All right， so we have a code
     cell。So I'll say this is a code cell。All right。Now we also have markdown cells。
     So I'm going to come here。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者我们关闭笔记本然后再打开。我们重启内核。所以我们这里有点超前了。让我们回到基础。好的，我们有一个代码单元。我会说这是一个代码单元。好的。现在我们还有markdown单元。我要过来这里。
 - en: I'm going to type the letter M， but you could also come up here to this drop
     down and just select markdown。 Now， markdown is basically plain text。 So markdown
     is basically plain text。Except that you can format it using various special characters。
     And then whenever you。 whenever you execute the markdown within this Jupyter notebook，
     it will format it for you。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将输入字母M，但你也可以点击上面的下拉菜单选择markdown。现在，markdown基本上是纯文本。只不过你可以使用各种特殊字符进行格式化。当你在这个Jupyter笔记本中执行markdown时，它会为你格式化。
 - en: So markdown is basically plain text。Except you can。 And I'm going to make this
     bold format。 You can format things。Differently。Let's create a header here。 You
     can have headers， so。This is a header。Is a header 1。And say， you know， this is
     a。Header 2。😔，And here's some text。Including italics。And here's some other。Text
     with more bold。All right。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以markdown基本上是纯文本。只不过你可以。我将使其为粗体格式。你可以以不同方式格式化内容。让我们在这里创建一个标题。你可以有标题，所以这是一个标题。是一个标题1。并且说，你知道，这是一个。二级标题。😔，这里还有一些文本，包括斜体。还有其他的文本，更多的粗体。好的。
 - en: so we've done a little bit of formatting， oh， sorry。This is a header2。 There
     we go。 And you'll notice that Jupiter notebooks。Pretty helpfully。Actually does
     the formatting while you are typing it in。 so you don't even have to wait necessarily
     to execute the cell to see what's going to happen。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们做了一点格式化，哦，抱歉。这是二级标题。好了。你会注意到Jupyter笔记本非常友好，实际上在你输入时就做了格式化，所以你甚至不需要等待执行单元以查看会发生什么。
 - en: So let's make this a header two。 Now， if I click， click shift enter。You will
     see that this just becomes plain text， so it's not code。 it's just markdown。 and
     this is a way that we can describe what we are doing inside of the Jupiter notebook。Alright。
     so in the spirit of organization， I'm going to create a new cell。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们把这个设为二级标题。现在，如果我点击，按下shift和enter，你会看到这只是变成了纯文本，不是代码。它只是markdown。这是一种描述我们在Jupyter笔记本中所做事情的方式。好的，出于组织的考虑，我将创建一个新的单元。
 - en: So rather than doing insert cell above， I usually like to use keyboard shortcuts。
     I'm going to type the letter A， which inserts a cell above。 Now I'm going to type
     a letter the letter M in for markdown to create a markdown cell。 I'll hit enter。😊，And
     I will say， here is our basic introduction to markdown cells and code cells。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以与其插入上方单元，我通常喜欢使用键盘快捷键。我将输入字母 A，这样可以在上方插入一个单元。现在我将输入字母 M 以创建一个 Markdown 单元。我会按
+    Enter。😊，我将说，这里是我们对 Markdown 单元和代码单元的基本介绍。
 - en: This is a markdown cell。You can have， and let's create a list here。 actually，
     you can have lists。Ordered and unordered。You can have bold text。 You can have
     it text。 You can have code blocks。And I'll say， etc cea。And just to show you an
     example of a little code block。Let's say here's an example of a code。Block， and
     so we are going to format it like code。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个 Markdown 单元。你可以创建一个列表。实际上，你可以有列表。有序和无序。你可以有粗体文本。你可以有斜体文本。你可以有代码块。我会说，等等等。为了给你展示一个小代码块的例子。假设这里有一个代码块的例子，所以我们将其格式化为代码。
 - en: But it's not actually going to run light code， so。Let's say x equals hello world。Print
     X。There we go。So this is a markdown cell。 This is a code cell。 And in a nutshell。
     that's basically Jupiter notebook。 So everything else that we talk about here
     is going to be。Details about this setup and extensions to the setup and and additional
     things that you can do。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 但它实际上不会运行轻量级代码，所以。假设 x 等于 hello world。打印 X。就这样。这是一个 Markdown 单元。这是一个代码单元。总的来说，这基本上就是
+    Jupyter Notebook。所以我们在这里讨论的其他所有内容都将是关于这个设置的细节、设置的扩展，以及你可以做的其他事情。
 - en: But with this knowledge， I mean， you have enough， you have enough to go on already。
     these are markdown cells。 These are code cells。 There you go。 And if you ever
     want a markdown cheat sheet。 You can just Google something like markdown cheat
     sheet。This is how I find a lot of information， this is how everyone finds a lot
     of information using hand and to Google。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 但有了这些知识，我的意思是，你已经有足够的基础可以继续了。这些是 Markdown 单元。这些是代码单元。就这样。如果你想要一个 Markdown 备忘单，你可以在
+    Google 上搜索类似于 Markdown cheat sheet 的内容。这就是我找到大量信息的方式，这也是每个人使用 Google 找到大量信息的方式。
 - en: And go to markdown sheet sheet。I like this site Markdowngu do org。 is is a good
     one。 And you can see。 oh， here's how you create headings。 Here's how you create
     bold text， ordered lists。You can do links。 can， you can do tables。![](img/3367d8727ece3a1a6aa58149b3536d89_4.png)
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 去看一下 Markdown 表格。我喜欢这个网站 Markdowngu do org。这是一个很好的网站。你可以看到，哦，这里是如何创建标题的。这里是如何创建粗体文本、有序列表的。你可以做链接，可以，您可以做表格。![](img/3367d8727ece3a1a6aa58149b3536d89_4.png)
 - en: All kinds of different things。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 各种不同的内容。

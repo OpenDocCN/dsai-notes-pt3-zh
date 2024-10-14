@@ -1,37 +1,52 @@
 - en: 【双语字幕+资料下载】Jupyter Notebook 超棒教程！50分钟，把安装、常用功能、隐藏功能和Terminal讲解得清清楚楚。学完新手也能玩转！
     - P4：4）启动 Jupyter 笔记本 - ShowMeAI - BV1yv411379J
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Jupyter Notebook 超棒教程！50分钟，把安装、常用功能、隐藏功能和Terminal讲解得清清楚楚。学完新手也能玩转！
+    - P4：4）启动 Jupyter 笔记本 - ShowMeAI - BV1yv411379J
 - en: Al right， so we have Python installed now。 we have Jupiter installed。 and all
     that we need to do to launch Jupiter notebooks is type Jupiter Note。 and then
     I put an ampersand after this to run this in the background of this terminal here
     so that we can still use the terminal if we want to。Al right， And that just popped
     open a window on my other screen。 Let me drag this over here。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，我们现在已经安装了Python和Jupiter。我们需要做的就是输入Jupiter Note，然后在后面加一个&符号，这样就可以在终端后台运行，这样我们还可以继续使用终端。好的，这样在我的另一屏幕上弹出了一个窗口。让我把它拖到这里。
 - en: Let's close that out。And here we go。 Were inside of Jupiter notebooks。 and I
     launched this inside of my home directory。 So you'll actually see that we have
     access to all of the folders。 all the directories。That I have in my home directory
     and specifically where I want to create a new notebook is I'm going to go into
     this project data science folder here and you'll see that these are all the folders
     within my project data science directory。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们关闭这个。好，现在开始。我们进入了Jupiter笔记本。我在我的主目录中启动了这个。所以你会看到我们可以访问所有文件夹，所有目录。我要创建一个新笔记本的地方是这个项目数据科学文件夹，你会看到这就是我项目数据科学目录中的所有文件夹。
 - en: And let's go ahead and create a new。 I'll create a new folder。![](img/5ec68710f4c706454d59ed4075adec12_1.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们创建一个新的。我会创建一个新文件夹。![](img/5ec68710f4c706454d59ed4075adec12_1.png)
 - en: And let's rename that。 So let's call this Jupiter tutorial。![](img/5ec68710f4c706454d59ed4075adec12_3.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们重命名它。我们称它为Jupiter教程。![](img/5ec68710f4c706454d59ed4075adec12_3.png)
 - en: Now， I'll click in here。And so， this is the basic。The basic screen that you're
     going to be introduced to whenever you run Jupiter notebooks here。 So we have
     a file browser， we've got this running tab， which basically shows which， you know。
     do we have any notebooks that are running， Do we have any terminals that are running。
     and then we've got this clusters tab over here。 we're not going to do anything
     with this one。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，我会点击这里。这是你每次运行Jupiter笔记本时会看到的基本界面。所以我们有一个文件浏览器，还有这个运行标签，基本上显示了我们是否有任何正在运行的笔记本，是否有正在运行的终端。然后我们还有这个集群标签，我们暂时不需要处理它。
 - en: '![](img/5ec68710f4c706454d59ed4075adec12_5.png)'
+  id: totrans-6
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/5ec68710f4c706454d59ed4075adec12_5.png)'

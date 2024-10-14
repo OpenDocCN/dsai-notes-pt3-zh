@@ -1,121 +1,166 @@
 - en: 【双语字幕+资料下载】Jupyter Notebook 超棒教程！50分钟，把安装、常用功能、隐藏功能和Terminal讲解得清清楚楚。学完新手也能玩转！
     - P6：6）内核和变量 - ShowMeAI - BV1yv411379J
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[双语字幕+资料下载] Jupyter Notebook 超棒教程！50分钟，把安装、常用功能、隐藏功能和Terminal讲解得清清楚楚。学完新手也能玩转！
+    - P6：6）内核和变量 - ShowMeAI - BV1yv411379J'
 - en: All right。So let's create another section。 Let's talk about restarting the kernel。And
     variables。So this is going to be touching on what I mentioned earlier。About assigning
     variables。And then having access to them until you explicitly。Delete。Delete the
     variable or restart the notebook。Let's take a look at our D。 right now。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的。那么让我们创建另一个部分。我们来谈谈重启内核和变量。所以这将涉及到我之前提到的。关于分配变量。然后可以访问它们，直到你明确删除。删除变量或重启笔记本。让我们看看我们现在的D。
 - en: our directory of variables and everything we have access to。 So x and y are
     still defined。 If I do print y。This is still there。Because we haven't deleted
     it using the DEL method there。Delete why， so we haven't deleted it using that，
     and we haven't restarted the notebook。So I'm going to show you both ways really
     quick。 So first， let's go ahead and delete why。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们的变量目录以及我们可以访问的所有内容。所以x和y仍然被定义。如果我执行打印y。这仍然存在。因为我们没有使用DEL方法删除它。删除y，所以我们还没有使用那个删除它，也没有重启笔记本。所以我将很快向你展示这两种方法。首先，让我们去掉y。
 - en: So this doesn't return anything。 It just， it just deletes the variable。 Let's
     come back up here and run D again。And you'll see that y no longer exists in our
     variable。 So if we do print y。Oh， why is not defined。 It was defined。 And then
     we deleted it。 And that's what's going on here。 So let's go ahead and define why
     again。Y equals good bye world。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这并不返回任何东西。它只是删除变量。让我们回到这里，再次运行D。你会看到y不再存在于我们的变量中。所以如果我们执行打印y。哦，y未定义。它曾被定义。然后我们删除了它。这就是发生的事情。所以让我们再定义y。Y等于再见，世界。
 - en: Print Y。 that's looking good。 I went ahead and deleted that other cell using
     the X key。 I'll go ahead and delete using the X as here， as well。And if we do
     D。 you'll notice that y is now back， Y is now back。So I could close out of this
     notebook。Oh， yeah。 actually， we， we do need to save our changes。 Thank you。 Little
     pop up。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 打印Y。看起来不错。我已经使用X键删除了另一个单元。我将继续使用X在这里删除。如果我们执行D，你会注意到y现在又回来了，Y也回来了。所以我可以退出这个笔记本。哦，是的。实际上，我们确实需要保存我们的更改。谢谢。小弹窗。
 - en: So I'm gonna save our changes， command S， or you can come in here， file and
     save and checkpoint。Let's close out our notebook。And you'll notice that our notebook
     here listed inside of our Jupiter tutorial folder has a little has a little green
     book next to it。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我要保存我们的更改，命令S，或者你可以在这里文件，保存和检查点。让我们关闭我们的笔记本。你会注意到我们在Jupyter教程文件夹中列出的笔记本旁边有一个小绿色书本。
 - en: Now， this means that it's running。 and it says over here， running very helpfully。
     And if we click the running tab， you'll see that this notebook is running。 just
     said running a lot a lot of times in a row。All right， so if we go back to files。This
     means that our Python is still running under the hood here。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，这意味着它正在运行。这里说正在运行，非常有帮助。如果我们点击运行标签，你会看到这个笔记本正在运行。刚刚连续说了很多次正在运行。好吧，如果我们回到文件。这意味着我们的Python仍然在后台运行。
 - en: It's still tracking all of our variables It still got everything stored in memory。
     So if I click this notebook again and open it back up。And I come down here。To
     the Dr。 notice this number 14， This is the 14th cell that was executed before
     we saved it。Let's run it again。Now， it's the 15th cell。And we still have access
     to X and Y。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 它仍在跟踪我们所有的变量，一切仍然存储在内存中。所以如果我再次点击这个笔记本并重新打开它。然后我下来这里。到Dr。注意这个数字14，这是在我们保存之前执行的第14个单元。让我们再运行一次。现在是第15个单元。我们仍然可以访问X和Y。
 - en: So I'm not going to run this assignment cell again。 I'm not going to run the
     cell where we assign Y。 I'm going to print y。And it's still prints。 Y is still
     here。Just closing the tab does not shut down the notebook。The notebook does not
     shut down。Until you either explicitly shut it down， you can click beside it and
     click shut down in our main tab。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我不会再次运行这个赋值单元。我不会运行我们赋值Y的单元。我将打印y。它仍然打印。Y仍然在这里。仅仅关闭标签并不会关闭笔记本。笔记本不会关闭。直到你明确关闭它，你可以点击旁边，然后在我们的主标签中点击关闭。
 - en: You can also do file， close， and halt。Or you can come back to the terminal and
     you can just shut down the whole Jupiter notebook。A serviceervice that's running
     here。 You can just， you can shut the whole thing down and that will shut down
     all of your notebooks。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 你也可以做文件，关闭和停止。或者你可以回到终端，直接关闭整个Jupyter笔记本。在这里运行的服务。你可以关闭整个东西，这样就会关闭你所有的笔记本。
 - en: So the notebook keeps running。Until you tell it to stop。Another way。To kind
     of reset this notebook here is to go to kernel。 So let's go to the kernel tab
     here。And。You'll see that there are different things that we can do with the Python
     kernel here。 So I am going to click。Restar， I'm going restart the kernel。 Now。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以笔记本会继续运行。直到你告诉它停止。另一种重置这个笔记本的方法是去内核。让我们去内核选项卡。你会看到可以对 Python 内核做不同的操作。所以我将点击。重启，我现在要重启内核。
 - en: this has the same effect as shutting down the shutting down the notebook and
     then opening it back up again。So all of our variables are going to disappear。Why
     will no longer be in memory If we want Y to be equal to good by world。 we're going
     to need to run this cell again。And， and X will also no longer be in memory。 So
     this is kind of like rebooting your computer。 It's rebooting the notebook and
     you kind of lose。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 这和关闭笔记本再重新打开是一样的效果。所以我们所有的变量都会消失。为什么不再在内存中。如果我们想让 Y 等于“你好，世界”。我们需要再次运行这个单元。而且，X
+    也将不再在内存中。所以这就像重启你的电脑。这是重启笔记本，你会失去一些内容。
 - en: you lose the variables that are here in memory。 So let's go。 Let's save it。![](img/8143106a5aad5bd9fb9cf7a814fb2830_1.png)
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 你会失去这里内存中的变量。那么我们开始吧。让我们保存它。![](img/8143106a5aad5bd9fb9cf7a814fb2830_1.png)
 - en: Let's go to kernel， restart。![](img/8143106a5aad5bd9fb9cf7a814fb2830_3.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们去内核，重启。![](img/8143106a5aad5bd9fb9cf7a814fb2830_3.png)
 - en: Let's restart this kernel。All right， flashed up blue here。 Colonel is ready。Now
     let's run D and see what happens to this number here。Boom back down to one。That
     is telling us。That this is a new version of Python under the hood here。 And you
     will notice that X and y are both now gone because this is this kind of like closing
     out of Python。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们重启这个内核。好的，这里闪烁成蓝色。内核准备好了。现在让我们运行 D，看看这个数字会发生什么。砰，回到一。这告诉我们。这是一个新版本的 Python。在这里，你会注意到
+    X 和 Y 现在都消失了，因为这就像关闭 Python 一样。
 - en: And opening it back up again。 So if I go down here to print why。Then we're going
     to get name Y is not defined because we're dealing with a new Python kernel here。And
     we haven't defined it yet。So this is pretty important for Jupiter notebooks。And
     this is a reason why， if you can。Try to run your cells。 I' I'm going to restart。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后再重新打开它。所以如果我下去打印 Y。我们会得到“名称 Y 未定义”，因为我们正在处理一个新的 Python 内核，而我们还没有定义它。因此，对于
+    Jupyter 笔记本来说，这一点非常重要。这就是为什么，如果可以的话。尽量运行你的单元。我将要重启。
 - en: restart again here。Try to write and run your cells from beginning to end so
     that everything makes sense when you run it。 one cell at a time， from cell to
     cell to cell to cell。Because。If you assign the variable。 Y right here。And then
     you print it up here before you've assigned it。This will technically work。If you've
     already run this cell and then you come back up here and run this cell。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里再重启一次。尽量从头到尾写并运行你的单元，这样在运行时一切都能理解。一次一个单元，从单元到单元再到单元。因为。如果你在这里分配了变量 Y。然后在分配之前在这里打印它。这在技术上是可行的。如果你已经运行了这个单元，然后再回到这里运行这个单元。
 - en: And this is why Jupiter Notes can get pretty messy if you're not careful。 if
     you're not careful because。Then if you restart this。This notebook will now not
     be able to run in the kind of chronological logical order here。 because as soon
     as it hits this cell， well， we're trying to print it before we assign it。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是为什么如果不小心，Jupiter Notes 可能会变得相当混乱的原因。如果你不小心的话。那么如果你重启这个。这本笔记本现在无法按这种时间顺序逻辑运行。因为一旦到达这个单元，我们就试图在分配之前打印它。
 - en: So typically， you want your notebooks to flow in a nice logical order beginning
     to end。And if you keep that straight， that's gonna make you a Jupyter notebook
     wizard because I think a lot of people。 a lot of people forget that。 So you've
     probably already learned more about Jupiter notebooks than a bunch of people who
     are using them。 because you've now learned all about the kernel and how that relates
     to storing your variables。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 通常情况下，你希望你的笔记本在一个良好的逻辑顺序中流畅地进行，从头到尾。如果你保持这种顺序，那将使你成为一个 Jupyter 笔记本的高手，因为我认为很多人。很多人都忘记了这一点。所以你可能已经学到了比很多使用
+    Jupyter 笔记本的人更多的知识。因为你现在已经了解了内核以及它与存储变量的关系。
 - en: '![](img/8143106a5aad5bd9fb9cf7a814fb2830_5.png)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8143106a5aad5bd9fb9cf7a814fb2830_5.png)'
