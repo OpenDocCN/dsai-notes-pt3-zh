@@ -1,77 +1,105 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P16：L2.5- 使用Pandas进行Keras深度学习的特征工程
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P16：L2.5- 使用Pandas进行Keras深度学习的特征工程
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeff Hean。 Wele to applications of Deep neural networks with Washington
     University。 In this video， we're going to talk about how to do feature engineering
     with pandas in Python。 This allows you to prepare the data set， especially when
     you have tabular data。 Now。 this is not dealing with feature engineering for images，
     audio or natural language processing。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是 Jeff Hean。欢迎来到华盛顿大学的深度神经网络应用视频。在这个视频中，我们将讨论如何在 Python 中使用 Pandas 进行特征工程。这使你能够准备数据集，特别是当你有表格数据时。现在，这并不涉及图像、音频或自然语言处理的特征工程。
 - en: But how to get column type data in a format that the neural network might be
     more predictive。 There's many different ways that you can do feature engineering。
     and this is often cited as one of the top ways to get highly accurate models and
     competitions such as Cale for the latest on my AI course and projects。 click subscribe
     in the bell next to it to be notified of every new video。 Now。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 而是如何将列类型数据转换为神经网络可能更具预测性的格式。你可以通过许多不同的方法进行特征工程，这通常被认为是获得高度准确模型的最佳方式之一。如果你想了解我最新的
+    AI 课程和项目，请点击旁边的订阅按钮，以便在每个新视频发布时接收通知。现在。
 - en: we're gonna to look at some more advanced feature engineering and other ways
     that you can engineer features using pandas。 You can do calculated fields。 We've
     seen a little bit of this before but say you wanted to have the weight and kilograms
     or just some other calculation based on one of these。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将进一步探讨一些更高级的特征工程以及你如何使用 Pandas 进行特征设计。你可以做计算字段。我们之前见过一点，但假设你想要以千克为单位的重量或基于其中某一项的其他计算。
 - en: 😊。![](img/67ac64434331d97f18d58b06a5301951_1.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/67ac64434331d97f18d58b06a5301951_1.png)
 - en: '![](img/67ac64434331d97f18d58b06a5301951_2.png)'
+  id: totrans-5
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/67ac64434331d97f18d58b06a5301951_2.png)'
 - en: You can run this for the autompG and now you have the weight in kilograms。 this
     would probably not be too useful of an engineered feature because it would be
     extremely highly correlated to the weight。In pounds like the data set originally
     had。 but nonetheless you could。 you could engineer something like that， Usually
     you'd want something where you're dividing weight by something else or in some
     way normalizing。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以运行这个自动化程序，现在你得到了以千克为单位的重量。这可能不是一个太有用的工程特征，因为它与原始数据集中以磅为单位的重量高度相关。不过你仍然可以尝试。你可以设计类似的东西，通常你会想要某种方式将重量与其他东西相除或进行某种归一化。
 - en: A very common way for feature engineering and I do this a lot in my day job。
     but it's something called augmentation， so we're going to take additional data
     that we might get from an API externally。 and we're going to augment our data
     with that because that additional data will likely give us additional predictive
     power in our neural network。Now usually you have to pay for this additional data。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是特征工程中非常常见的方法，我在日常工作中经常这样做。这被称为增强，我们将从外部 API 获取额外的数据。我们将用这些额外的数据来增强我们的数据，因为这些额外的数据可能会给我们的神经网络带来额外的预测能力。通常情况下，你需要为这些额外的数据付费。
 - en: sometimes you can find it for free Google API Keys has all sorts of such data
     and I am going to use this data to deal with addresses。 so I'm going to give you
     an example here of how I might augment a data set for addresses。Now to do this，
     you're going to need a Google key。And the last time I put one of these in here。
     I got several requests of can you give me your Google key， you're basically asking。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时你可以找到免费的 Google API 密钥，那里有各种此类数据。我将使用这些数据来处理地址。现在我将给你一个如何增强地址数据集的示例。要做到这一点，你需要一个
+    Google 密钥。而上次我把这些放进来的时候，我收到了很多请求，问我能否给你我的 Google 密钥，你基本上是在问。
 - en: can you give me a conduit into your credit card that I can charge and sadly
     the answer is no。But I am going to。Put my Google key in here。Burrrring it out，
     obviously。And run that。And now we have my Google key in there， I'm going to remove
     it。Just so that I don't accidentally save it。With it in there。By the way， that's
     a catastrophe。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 你能给我一个可以收费的信用卡通道吗？遗憾的是，答案是不能。不过我会把我的 Google 密钥放在这里。显然，我会把它移走。现在我们已经把我的 Google
+    密钥放进去，我会把它移除。以免我不小心保存它。顺便说一下，这真是个灾难。
 - en: you check something into GitHub with a API key for something like AWS。 Bitcoin
     miners and other unscrupulous people， not that all Bitcoin miners are unscrupulous。Well
     basically find your credentials and you'll have like a $20，000 bill within a day，
     so that's bad。Don't do that。 Don't ever check private keys into GitHub。 It's done
     all the time， though。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 你在GitHub上使用AWS等的API密钥上传东西。比特币矿工和其他不法分子，虽然并不是所有比特币矿工都是不法的。基本上找到你的凭据，你可能会在一天内收到2万美元的账单，这可不好。不要这样做。永远不要将私钥上传到GitHub，尽管这常常发生。
 - en: So what we're going to do is deal with addresses you might have an address like
     one Brookings Drive。 St。 Louis Missouri Oh by the way， if you want to get your
     own Google key to do this。 go to Google API keys and get one for something called
     Gecode。So here what we're going to do is I'm going to put in the address of Washington
     University on Brookings Drive。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们要做的是处理地址，你可能有一个地址，比如布鲁金斯大道1号，圣路易斯，密苏里州。哦，顺便提一下，如果你想获取自己的谷歌密钥来做这个，去谷歌API密钥那里获取一个名为Gecode的密钥。这里我们要做的是，我将输入华盛顿大学在布鲁金斯大道的地址。
 - en: and I am going to ping Google， putting my key into there。Get my response back
     and then parse it out。 and I will actually be able to get the location。In latitude
     and longitude of Washington University。Latitude， this longitude that， so that's
@@ -79,53 +107,71 @@
     features。It's going to show you how east and west versus how north and south something
     is I've built data sets where I've used those two as features and they're quite
     useful。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将向谷歌发送请求，把我的密钥放进去。获得我的响应后解析出来。实际上，我将能够获取华盛顿大学的经纬度。纬度，这个经度，所以这很酷。我现在可以得到一个经纬度。现在你可以将其用作特征。这将向你展示东西在东西和南北之间的定位。我建立过使用这两个特征的数据集，它们非常有用。
 - en: In the insurance industry where I work， we're always interested in unhealthy
     habits like smoking。 so we very often will build models that will tell us the
     probability of somebody smoking。Latitude and longitude， are they predictive of
     smoking well here's the CDC's chart of the United States and which states smoke
     a lot versus don't。 so yes， locations very predictive of if you smoke or not。You'll
     want other features in that model。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我工作的保险行业，我们总是对不健康的习惯感兴趣，比如吸烟。因此，我们经常构建模型，告诉我们某人吸烟的概率。纬度和经度是否能预测吸烟情况，这里是CDC关于美国各州吸烟率的图表，因此是的，位置非常能预测你是否吸烟。你还会在那个模型中想要其他特征。
 - en: but you can see location means a lot what we're going to do is use that latitude
     and longitude to calculate distances between cities。This might let you calculate
     how far somebody is from say a metropolitan center or something such as this this
     is a formula in triometry that calculates the great circle distance between any
     two points on a sphere I'm not going to go into why that works or how that works。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 但你可以看到位置意味着很多，我们将使用纬度和经度来计算城市之间的距离。这可能让你计算某人距离某个都市中心的远近，或者类似的东西。这是一个三角学公式，计算球体上任意两点之间的最短距离，我不打算深入讨论它为何有效或如何有效。
 - en: But this basically then gives you a calculation of the distance between between
     two latitudes and longitudes。So I'll go ahead and run this。And it tells me the
     distance between say St Louis。 Missouri and Fort Lauderdale， Florida。Is 1684 kilometers，
     if youd prefer that in impmperial。 then you can convert to miles。But you might
     want to look at the distance between， say。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 但这基本上给你提供了两个纬度和经度之间距离的计算。所以我会继续运行这个。它告诉我圣路易斯，密苏里州和劳德代尔堡，佛罗里达州之间的距离是1684公里，如果你想要英制单位，可以转换为英里。但你可能想看看，比如说。
 - en: a person's address and major metropolitan area， the distance between one company
     and a nearby competitor。 a distribution center， retail outlet。This code calculates
     how far Washington University is from a bunch of other universities。In the United
     States。This would work internationally as well。Google Gecode does that。And this
     is how far away we are to other universities， I just pick these guys at random。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个人的地址和主要都市区，某公司与附近竞争对手之间的距离。一个配送中心，零售店。这段代码计算华盛顿大学与其他大学的距离。在美国。这在国际上也有效。谷歌Gecode可以做到这一点。这是我们与其他大学的距离，我只是随机挑选了这些学校。
 - en: So this is yet another way that you can make use of something that's very， I
     mean think about it。 how would you normalize and address to put it into the feature
     vector that would be very difficult。This gives you a way that you might be able
     to do that。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这又是你可以利用的一种方式，想想看，如何将其标准化并地址以放入特征向量，这将是非常困难的。这给了你一种可能的方法来实现这一点。
 - en: '![](img/67ac64434331d97f18d58b06a5301951_4.png)'
+  id: totrans-18
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/67ac64434331d97f18d58b06a5301951_4.png)'
 - en: Thank you for watching this video。 The first two modules of this course。 which
     you have now concluded watching， all cover some of the Python preliminaries。 and
     the next video will start to actually get into Tensorflowlow and Kes。 This content
     changes often。 so subscribe to the channel to stay up to date on this course and
     other topics and artificial intelligence。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 感谢观看这个视频。本课程的前两个模块，你现在已经观看完毕，涵盖了一些Python基础知识。接下来的视频将开始真正深入TensorFlow和Keras。这些内容经常变化，所以请订阅频道以保持对本课程和其他人工智能主题的最新了解。
 - en: 😊。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。

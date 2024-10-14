@@ -1,85 +1,116 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P19：L3.3- 保存和加载Keras神经网络模型
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P19：L3.3- 保存和加载Keras神经网络模型
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi this is Jeff Heaton， welcome to applications of Deep neural Networks with
     Washington University In this video we're going to see how to load and save Kara's
     neural networks from disk。Once you spent all this time training a neural network，
     you want to actually be able to save a copy。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是杰夫·希顿，欢迎来到华盛顿大学深度神经网络应用的课程。在这个视频中，我们将看到如何从磁盘加载和保存 Keras 的神经网络。一旦你花了这么多时间训练一个神经网络，你希望能够保存一个副本。
 - en: This is also useful for when you save a copy of a trained neural network that
     you're going to deploy to a web application or web service。 like we'll see later
     in this semester。![](img/fcb55d43d6ed5e04848ece71f7dd4972_1.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 这在你保存一个经过训练的神经网络副本并将其部署到网页应用或网络服务时也很有用。就像我们在本学期稍后会看到的那样。![](img/fcb55d43d6ed5e04848ece71f7dd4972_1.png)
 - en: For the latest on my AI course and projects， click subscribe and the bell next
     to it to be notified of every new video Now when you save and load to Kira's neural
     network。 you have several different file types that you can choose from。And two
     of these are textuals。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 有关我的 AI 课程和项目的最新信息，请点击订阅以及旁边的铃铛，以便收到每个新视频的通知。现在，当你保存和加载 Keras 的神经网络时，你可以选择几种不同的文件类型。其中两个是文本格式。
 - en: so you can actually open up the file and look at it in a text editor and see
     the components of the neural network。I usually don't do that， but you can if you
     wanted to so you could。Like in JSON。 there's plenty of tools that will read and
     write JSON。 so you could actually access the save state of the neural network
     directly。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，你实际上可以打开文件并在文本编辑器中查看神经网络的组件。我通常不这样做，但如果你想的话，可以这样做。在 JSON 中，有很多工具可以读取和写入 JSON，所以你可以直接访问神经网络的保存状态。
 - en: So Yaml is a format that only stores the structure of the neural network， it
     does not store weights。Similarly， JO does not store the weights either。That's
     why I don't use those first two that often。 unfortunately， those are the textual
     formats that are easiest to read。 HD F 5 not to be confusedfuse with HDFS， which
     is a spark and Hadoop format。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以 Yaml 是一种仅存储神经网络结构的格式，不存储权重。类似地，JSON 也不存储权重。这就是为什么我不常用前两个格式。不幸的是，这些是最容易阅读的文本格式。HDF5
+    不要与 HDFS 混淆，后者是 Spark 和 Hadoop 的格式。
 - en: That is the usual format that I will store these to。The first two。 you can use
     if you don't need to store the actual weights。This demonstrates how you would
     do this。So here we're opening the auto MPG data set that we had before。 we're
     going to build almost exactly the same neural network that we built before。We're
     going to。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我通常存储这些内容的格式。前两个选项，如果你不需要存储实际的权重，可以使用。这演示了你如何做到这一点。所以这里我们正在打开之前的数据集 auto MPG。我们将构建几乎完全相同的神经网络。
 - en: Do the predictions and calculate the root mean square error。And print that out。We're
     going to save that neural network to network Json file。 which will go to the same
     directory as your， as your work book。 We'll save it as Json willll save it as
     Yaml and we'll save it as H 5。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 进行预测并计算均方根误差，并打印出来。我们将把这个神经网络保存到网络 JSON 文件中，它将与您的工作簿位于同一目录。我们将保存为 JSON，保存为 Yaml，保存为
+    H5。
 - en: and we can go ahead and run that。And it's complete now notice the RMSE 7。17。Every
     time you run this。 you're going to get a slightly different RMSC。 that's actually
     a slightly bad one。 you can definitely do better than that， but it's good enough
     to test this feature。Now we're going to load it。And notice the values are exactly
     the same。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以继续运行这个。现在注意 RMSE 为 7.17。每次你运行这个，你都会得到一个稍微不同的 RMSC。这实际上是一个稍微差的结果，你绝对可以做得更好，但对于测试这个功能来说已经足够好了。现在我们将加载它。注意值完全相同。
 - en: That shows that this was really saved to a disk file and brought back。 because
     if you re ran it and retrained it， those would be completely different values。
     and that that would not work very well。Now this technique is going to be used
     throughout this class。 in fact， in the next section that's coming up， early stopping
     we'll see that we can program the neural network to use only as many epoes it
     actually needs。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 这表明它确实是保存到了磁盘文件并被读取回来。因为如果你重新运行并重新训练，那些将是完全不同的值，而这样做效果不好。现在这个技术将在整个课程中使用。实际上，在接下来的部分“早期停止”中，我们将看到可以编程神经网络仅使用其实际需要的训练周期。
 - en: and it will actually stop and save the neural network at the optimal point then
     you can reload the optimal weights later。We're also later in this class going
     to see how we can deploy a neural network to a web application or similar。And
     being able to save your train neural network is very useful。So that you can deploy
     it into into the cloud or into something else。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 它实际上会在最佳点停止并保存神经网络，然后你可以稍后重新加载最佳权重。在本课程的后面，我们还将看到如何将神经网络部署到网络应用程序或类似的地方。能够保存你训练的神经网络非常有用，以便将其部署到云端或其他地方。
 - en: Now that you've seen how to save and load Car's neural networks。 we're going
     to look in the next video about how to use early stopping to stop the neural network
     before it overfits saving and loading comes into play here because the neural
     network saved。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在你已经看到如何保存和加载汽车的神经网络。我们将在下一个视频中讨论如何使用早停法在神经网络过拟合之前停止它，保存和加载在这里起作用，因为神经网络已被保存。
 - en: '![](img/fcb55d43d6ed5e04848ece71f7dd4972_3.png)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/fcb55d43d6ed5e04848ece71f7dd4972_3.png)'
 - en: When it reaches the optimal values and you need to reload it later。 Thank you
     for watching this video。 This content changes often。 So subscribe to the channel
     to stay up to date on this course and other topics in artificial intelligence。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 当它达到最佳值时，你需要稍后重新加载它。感谢观看本视频。该内容经常变化。因此，请订阅频道，以便及时了解本课程和其他人工智能主题的最新信息。

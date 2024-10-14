@@ -1,203 +1,267 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P15：L2.4- 在 Pandas 中为 Keras
     使用 Apply 和 Map - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P15：L2.4- 在 Pandas 中为 Keras
+    使用 Apply 和 Map - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeffine and welcome to applications of Deep neural networks with
     Washington University In this video。 we're going to look at how to use apply and
     map functions together with pandas。 This allows you to write Lambda functions
     or other functions that will be executed across your entire data frame。 This allows
     you to do relatively complicated transformations to your data frame that might
     be very useful for feature engineering。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是Jeffine，欢迎来到华盛顿大学的深度神经网络应用课程。在这段视频中，我们将看看如何结合使用apply和map函数与pandas。这允许你编写将执行在整个数据框上的Lambda函数或其他函数。这使你能够对数据框进行相对复杂的转换，这对特征工程可能非常有用。
 - en: which allows you to represent the data in ways that will allow your neural network
     to be more predictive for the latest on my AI course and projects。 click subscribescribe
     and the bell next to it to be notified of every new video。 applyly and map or
     two functions that are provided by a pandas data frame that you can use directly
     on these。 Now we've seen map already for just general Python data structures lists
     in particular。😊。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 它允许你以能使你的神经网络更具预测能力的方式表示数据。有关我最新的AI课程和项目，请点击订阅并点击旁边的铃铛，以便在每个新视频发布时收到通知。apply和map是pandas数据框提供的两个函数，你可以直接在这些数据上使用。现在我们已经看到map在一般Python数据结构列表中的应用。😊
 - en: '![](img/5e8029765ef65f0d9c303a190e424729_1.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/5e8029765ef65f0d9c303a190e424729_1.png)'
 - en: But map can be used with data frames to do similar types of transformations
     for more advanced feature engineering that you'll probably have to do with some
     of the projects in this class。Apply and map can be very， very useful and we'll
     look at a specific case。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是map可以与数据框一起使用，进行类似的转换，这对于你在本课程中的某些项目可能需要的更高级的特征工程非常有用。apply和map可以非常非常有用，我们将看一个具体的案例。
 - en: In the later part about how to do just that。So let's go ahead and load in the
     autompG data set。We are going to do a very simple mapping on it。 This is one of
     the most common things that you will do with for maps。 This is similar to a decode。In
     SQL。What we're going to do is this origin value that you have here specifies the
     region that the car was from。 One is North America。2 is Europe， and3 is Asia。So
     what we're going to do for this is we're going to take the origin。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 在后面的部分中，我们将讲解如何做到这一点。现在我们来加载autompg数据集。我们将对其进行非常简单的映射。这是你进行映射时最常见的操作之一。这类似于SQL中的解码。我们要做的是，您这里的原始值指定了汽车的来源地区。1是北美，2是欧洲，3是亚洲。因此，我们将对原始值进行处理。
 - en: We're going to create a column called originig name and we're going to fill
     it in all cases where this is what the map will do。 it's going to look up the
     origin value and it's going to replace it with North America for one。 Europe for
     two and Asia for three， so let's run that。And if I scroll that over a little bit。
     you can see North America， North America， Asia for that three。Asia， Europe is
     two。And so on。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将创建一个名为originig name的列，并在所有情况下填充它，这就是map所要做的。它将查找原始值，并将其替换为北美（1）、欧洲（2）和亚洲（3），那么我们来运行一下。如果我稍微滚动一下，你可以看到北美、北美，3是亚洲，2是欧洲，依此类推。
 - en: So this can be a very good way to summarize values if you could actually。I mean。
     say you had numbers in here that were all the 50 states。Of the United States of
     America。 you could put a bunch of values in here that go to the same thing。 You
     could do one to North America，2 to North America or even state names， Missouri
     to North America。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，如果你能够实际做到这一点，这可以是一个非常好的总结值的方法。我的意思是，假设你在这里有所有美国50个州的数字。你可以在这里放一堆值，它们指向同样的东西。你可以用1指向北美，用2指向北美，甚至是州名，密苏里州指向北美。
 - en: California to North America， New York， to North America and so on and so forth。
     Whereas if you saw France， it would go to Europe。 So you can also use this to
     to summarize。 apply is another。Thing that you can use。With these data sets。Apply
     basically takes a function。 typically a lambda and runs it against every single。Row
     in the data。So here。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 加利福尼亚到北美，纽约到北美，等等。如果你看到法国，它就属于欧洲。因此，你也可以用这个来进行总结。apply是另一个你可以使用的东西。对于这些数据集，apply基本上是将一个函数，通常是一个lambda，应用于数据中的每一行。所以这里。
 - en: let's go ahead and run this， this is calculating something that I call an efficiency。It's
     basically the displacement divided by the horsepower。So how big is your engine
     versus how much horsepower do you actually get？
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们继续进行计算，这个我称之为效率的指标。它基本上是位移除以马力。你的发动机有多大，实际能获得多少马力？
 - en: And this gives you a general indication of the efficiency of the car。 So we
     could add that in to the data set。 This shows how you're。 you're sort of engineering
     a feature based on。Based on this ratio。Here I'll show you a more complex example
     of feature engineering。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 这给你提供了汽车效率的一般指示。因此，我们可以将其添加到数据集中。这显示了你如何基于这个比率进行特征工程。这里我将展示一个更复杂的特征工程示例。
 - en: This was actually an assignment in previous semesters。You'll probably see an
     assignment about like this one in this semester。This basically is using a data
     set that we have here from the IRS。 which is a United States government。Taxaing
     authority。And we're going to。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 这实际上是前几个学期的一个作业。你可能会在这个学期看到类似的作业。这基本上使用了来自美国国税局的数据集，这是一个美国政府的税务机构。我们将会。
 - en: there's also more data documentation on here if you care to read about it。 but
     this is basically a data set that gives you the estimated adjust gross income。Plus。
     other things for zip codes in the United States， so the fields that you care about
     are state。 which is the state example， Missouri。Zip code。Is the zip code of within
     that state？
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里还有更多数据文档，如果你有兴趣阅读。但这基本上是一个数据集，提供了估计的调整后总收入以及美国邮政编码的其他信息，所以你关心的字段是州，举例来说是密苏里州。邮政编码是该州内的邮政编码。
 - en: AGI Stub are six different income brackets。So one is the lowest income， six
     is the highest income。Each zip code is going to have six rows for it then they
     give you a count， which is in one。Of the number of people in each of those income
     brackets。 so that gives you sort of a distribution of wealth in that particular
     zip code。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: AGI Stub 有六个不同的收入区间。所以一是最低收入，六是最高收入。每个邮政编码将有六行数据，然后它们会给你一个计数，即每个收入区间的人数。因此，这为特定邮政编码提供了一种财富分布的概念。
 - en: What we're going to try to do is put those bands back together so that you have
     a。Estimate of what what the overall AGI is for that that particular zip code，
     so this is a reduction。 you've got zip code， you've got six rows for each zip
     code。 you want to crunch that down to just one row per zip code and just give
     an overall estimate of the adjust roasted income。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们要尝试将这些区间组合在一起，以便你能估算该特定邮政编码的整体 AGI，因此这是一个简化。你有邮政编码，每个邮政编码有六行数据。你想将其缩减为每个邮政编码仅一行，并给出调整后总收入的整体估算。
 - en: And this is kind of what the file looks like。 See you've got 63017。 this is
     a zip code that I work in。AGI Stub， so that's your six values they have for each
     and then the count。So the second to the highest is the largest income。And this
     shows this particular income if you do probably the most。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是文件的样子。你看到的邮政编码是63017。这是我工作的邮政编码。AGI Stub，所以这是你为每个邮政编码拥有的六个值，然后是计数。因此，第二高的是最大的收入。这显示了这个特定收入，如果你做得最多。
 - en: Famous zip code in in the United States of America，90210， it'd probably be pretty
     high。 because that's a very affluent zip code。 So you see a lot of numbers down
     here。 What we're going to do to put it back together。 These are this is the bands
     for each of these1 is 1 to 25 k 6 is 200000 or more。 Now， one of the issues with
     putting this back together is 200000 or more。 That's the R more。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 在美国著名的邮政编码90210，可能会非常高，因为那是一个非常富裕的邮政编码。所以你在这里看到很多数字。我们将如何将其组合起来。这些是每个区间的带，1
+    是 1 到 25k，6 是 20万美元或更多。现在，将这些重新组合的一个问题是20万美元或更多。
 - en: that's a pretty big category that could be up to， I don't know， probably many
     millions of dollars。 However， much those guys are making。 So what we're going
     to do is we're going to establish a median for each of these ranges。125。 Now this
     last one since we don't know what the ceiling is 2，12500。 That's probably the
     biggest flaw in this estimate that I'm that I'm putting together。 But you。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个相当大的类别，可能高达，我不知道，可能是几百万美元。不过，这些人赚了多少都不清楚。所以我们要做的是为每个区间建立一个中位数。125。由于我们不知道上限是什么，12500。这可能是我整理的估算中最大的缺陷。但你。
 - en: you can see about where those are at。 So the way that we can estimate6，3，0，17s。
     average Agi。Is we're going to basically sum all those in ones。 So that's our total
     count。 We're going to add those all up。 We're going to total up the Agis， but
     waiting them by the medians。 So we're going to take the count of people that。So
     the 4710 times 12500 because that's how many people are in bandand one。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到这些大致在哪里。因此，我们可以估算6，3，0，17的平均AGI。基本上，我们将这些值相加。所以这就是我们的总计。我们会把这些全部加起来。我们将总计AGI，但按照中位数加权。因此，我们将考虑人数。4710乘以12500，因为这是乐队一的总人数。
 - en: that's the median for band one。Band two， there were two 2780 and 37500 was the
     median for that one。 so we're essentially this is sort of a weighted weighted
     sum you have here。And then we're going to divide those， and that gives us the
     average income for this zip code is around 88。000。Which seems reasonably correct。This
     is good too because this gives us a value that we can check by hand because we
     calculated this by hand。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是乐队一的中位数。乐队二的中位数是2780和37500。因此，这实际上是一个加权和。然后我们将进行除法，这样我们得到的这个邮政编码的平均收入大约是88,000。这看起来是合理的。因为我们手动计算了这个，所以这也很好，因为它给了我们一个可以手动检查的值。
 - en: so our automated process that's going to calculate for everything single zip
     code should come up with the same value。 So we're going to load that data set
     into Ram it it's big and gigantic you'd probably want to stream it。 but this is
     this is loading the entire data frame It'll be loaded in a second。That might have
     took a while。 That took probably 20 seconds for me。 Now what we're going to do。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们自动化的过程将计算每一个邮政编码应该得出相同的值。因此，我们将把这个数据集加载到内存中，它非常庞大，你可能想要进行流式处理。但是这是加载整个数据框，马上就会加载完成。这可能需要一段时间。我花了大约20秒。现在我们要做的事情是。
 - en: So this is going to show you a good example of using multiple of these techniques
     together。 Now this data set does have some junk data in it。 So we have zip codes
     that are0 and 9999。 There's no such zip codes。 they do have a purpose in the data
     file， but we're simply not using them。So we are going to get all the rows， that's
     what Lo does for us。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将向你展示一个很好示例，展示如何将多种技术结合使用。现在这个数据集确实有一些垃圾数据。因此，我们有邮政编码是0和9999。不存在这样的邮政编码。它们在数据文件中确实有用途，但我们不打算使用它们。因此，我们将获取所有的行，这就是Lo为我们做的。
 - en: where the data frame is not equal to zero zip code and the zip code is not equal
     to 9999。And we're also going to only pull back these fields。 so we're chopping
     this thing down horizontally and vertically。 we're getting rid of a bunch of columns
     and all the rows that have these invalid zip codes。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据框不等于零邮政编码，且邮政编码不等于9999。我们还将仅拉取这些字段。因此，我们在横向和纵向上缩减这个数据，去掉了很多列和所有这些无效邮政编码的行。
 - en: You run that。This is actually very quick and now the data frame has been modified
     if you were to display the data frame。You'll see that it has literally just these
     four。And the invalid ones are also gone。 but we're not going to go hunting for
     them。What we're now going to do is we're going to take all of these AGI stubs
     and replace those with the medians。Those medians that I gave you one，36， so this
     is a brilliant application of the map。We run that。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 你运行这个。这实际上是非常快速的，现在数据框已经被修改，如果你显示数据框，你会看到它实际上只剩下这四个。无效的也被去掉了。但我们不会去寻找它们。我们现在要做的是将所有这些AGI桩替换为中位数。那些我给你的中位数是1，36，所以这是一个出色的映射应用。我们运行它。
 - en: Again， it's very， very quick。And if we look at this。 we now see that those should
     have transformed and they have the AGI stubs are now。Those actual income medians。
     Next， we group it by zip code。 and for each of those zip codes now。 we can basically
     perform a lambda。 So this is a great use for apply。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 再一次，它非常非常快。如果我们查看一下，我们现在看到这些应该已经转化了，它们现在是AGI桩。那些实际的收入中位数。接下来，我们按邮政编码分组。对于每一个邮政编码，我们基本上可以执行一个lambda。因此，这是一个很好的应用场景。
 - en: We're going to do apply across it and we're going to basically sum because we
     want to sum up all of the values。😊，In each of those zip codes， but we're going
     to sum them weighted。 so we're going to basically wait the n1。 So how many of
     them we have。 say the 30 there multiplied by the AGI Stub， and then we're dividing
     the whole thing by in one。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将对其进行apply操作，基本上进行求和，因为我们想要对所有值进行求和。在每一个邮政编码中，但我们将进行加权求和。因此，我们将基本上按照n1进行加权。假设有30个，然后乘以AGI桩，最后将整个结果除以n1。
 - en: which。Which is the sum of the N1s， actually， you can see the sum there for that
     entire zip code。Then we reset the index so that the row numbers align like we've
     seen before。We run that。That does take just a few seconds。 Let's see what that
     actually did。 We now pretty much have the data set where we want it to be。Zip
     code。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是N1的总和，实际上，你可以在整个邮政编码的总和中看到。然后我们重置索引，使行号对齐，如我们之前所见。我们运行那个。那确实需要几秒钟。让我们看看这实际上做了什么。我们现在几乎拥有了我们想要的数据集。邮政编码。
 - en: and this is the average for each of those。The column headers are a little bit
     sloppy， zip code。 that's good， but zero， what's zero， zero should be our average
     AGI。Our AGI estimate。We'll just rename those two columns and then we display the
     top。And we can see now we've got this nice output。 You'd probably want a two CSsv
     then。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是每个的平均值。列标题有点杂乱，邮政编码。还不错，但零，零是什么，零应该是我们的平均AGI。我们的AGI估算。我们将重新命名这两列，然后显示顶部。现在我们可以看到有这个漂亮的输出。你可能想要一个两个CSsv。
 - en: and that that would be a completely valid submission for that previous assignment
     that I ran in。Last semester。We'll look up our zip code that we calculated by hand，
     and that matches our 88。689 that we had before。 Thank you for watching this video
     In the next video。 we're going to continue with using pandas and talk about feature
     engineering， which is how you。😊。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 这完全是我之前进行的作业的有效提交。上个学期。我们将查找我们手动计算的邮政编码，它与我们之前的88.689匹配。感谢观看这个视频。在下一个视频中，我们将继续使用pandas，并讨论特征工程，也就是如何你。😊
 - en: '![](img/5e8029765ef65f0d9c303a190e424729_3.png)'
+  id: totrans-29
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/5e8029765ef65f0d9c303a190e424729_3.png)'
 - en: Represent your data set in a way that helps the neural network to be more predictive。
     This content changes often， so subscribe to the channel to stay up to date on
     this course and other topics in artificial intelligence。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 以有助于神经网络更具预测性的方式表示你的数据集。这个内容经常变化，所以请订阅频道以保持对本课程和其他人工智能主题的最新了解。

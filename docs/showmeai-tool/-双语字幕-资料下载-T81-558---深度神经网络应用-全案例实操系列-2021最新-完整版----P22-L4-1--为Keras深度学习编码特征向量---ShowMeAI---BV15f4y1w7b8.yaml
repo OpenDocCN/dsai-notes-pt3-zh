@@ -1,8 +1,11 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P22：L4.1- 为Keras深度学习编码特征向量
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P22：L4.1- 为Keras深度学习编码特征向量
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeff Heaton， welcomecome to applications of Deep neural Network
     with Washington University。In this video， we're going to begin looking at tabular
     data。This is data that is not a computer image or audio or any really complicated
@@ -10,154 +13,201 @@
     data that looks like something coming from Microsoft Excel where you've got columns
     and rows and you're going to try to predict one of those columns based on the
     others。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是杰夫·希顿，欢迎来到华盛顿大学的深度神经网络应用课程。在这个视频中，我们将开始查看表格数据。这是数据，不是计算机图像或音频，也不是深度神经网络特别擅长的复杂数据输入，而是看起来像来自Microsoft
+    Excel的数据，其中有列和行，你将尝试根据其他列预测其中一列。
 - en: To put data like that into a deep neural network， usually each row is one input
     or one set of inputs to the input neurons of that neural network。The set of all
     of those numbers coming into the neural network， one row is called a feature vector。All
     data that comes into the neural network needs to be a numeric form。 In this video。
     we're going to see how to build that feature vector for the latest on my AI course
     and projects。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 将这样的数据输入深度神经网络时，通常每一行是一个输入或一组输入，输入到该神经网络的输入神经元中。所有进入神经网络的数字集合，其中一行被称为特征向量。所有进入神经网络的数据都需要是数字形式。在这个视频中，我们将看到如何为我最新的AI课程和项目构建该特征向量。
 - en: click subscribe and the bell next to it to be notified of every new video。 For
     this example。 we're going to see how to encode a feature vector。 We're going to
     use the simple data set that we've seen before。😊。![](img/04abe3c48902ea74356b7dd00d915cc9_1.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 点击订阅并按旁边的铃铛，以便在每个新视频发布时收到通知。对于这个例子，我们将看到如何编码一个特征向量。我们将使用之前见过的简单数据集。😊。![](img/04abe3c48902ea74356b7dd00d915cc9_1.png)
 - en: I'll run that， and it shows you basically。This the makeup of this of this data
     set。 we've already talked about this one before， but just quickly。 it has some
     categoricals like job and area。 So those need to go into dummy variables and the
     value that you're trying to predict is for each of these individuals。 what product
     did they buy， ABC or D。Think it goes up to D。Now。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将运行这个程序，它基本上向你展示了这个数据集的构成。我们之前已经讨论过这个数据集，但我会快速回顾一下。它有一些分类变量，比如职业和地区。因此，这些需要转化为虚拟变量，而你试图预测的值是对于每个个体，他们购买了哪个产品，A、B、C或D。记得产品的范围是到D的。现在。
 - en: with this data set to make it for a neural network， there's some things you
     need to consider。 So the column that you seek， at least if you're doing classification，
     is the product。 there's an ID column which we have here。 That's not useful to
     you。 so you're going to get rid of that one。And then many of these fields are
     numeric and may not need further processing。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用这个数据集为神经网络准备数据时，有一些需要考虑的事项。因此，如果你进行分类，所需的列是产品。这里有一个ID列，这对你没有用，所以你将去掉这一列。许多字段是数字的，可能不需要进一步处理。
 - en: But we'll see that's not entirely true， a neural network。2 things you can do
     to numeric values that will really help the neural network。 One is put them in
     consistent ranges。 The fact that income that is in a much bigger range。 tens of
     thousands。Versus age， which is under 100 that hurts the predictive power of the
     neural network。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我们会看到这并不完全正确，神经网络。有两件事可以对数字值进行处理，这将非常有助于神经网络。第一是将它们放在一致的范围内。收入的范围要大得多，达到数万，而年龄则在100以下，这会削弱神经网络的预测能力。
 - en: so getting those into consistent ranges will definitely help。I'll show you an
     example of that in a later video where we adjust just that and the predictiveor
     power goes up considerably。The other thing you can do is center these about zero。Now。
     centering them about zero doesn't help as much as the range， but it is useful
     to the neural network。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，将这些数据调整到一致的范围肯定会有所帮助。我会在以后的一个视频中给你展示一个例子，我们就调整这一点，预测能力会显著提升。你还可以做的另一件事是将这些数据中心化到零附近。现在，中心化到零虽然没有范围调整那么有效，但对神经网络是有用的。
 - en: There you want to have some negative values and some positive values preferably
     about the same number of negative values as you do positive。 so it's centered
     about 0。A quick way to do both of these is to use a Z score and encode those to
     the Z score because the z score is plus or minus the standard deviations from
     the mean。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，你希望有一些负值和一些正值，最好负值和正值的数量大致相同，因此数据中心围绕0。快速实现这两个目标的方法是使用Z分数，并将其编码为Z分数，因为Z分数是距离均值的标准差的正负值。
 - en: So we'll go ahead and calculate the dummy variables for say job。When we run
     this。 we can see that we get all the dummies coming out here。 each each row is
     one。Set of dummy variables。 so you have 2000 rows， a 2000 rows in that original
     data set and 33 dummies because each of those。The job had 33 different job types。The
     next thing you're going to want to do is merge that into the dataset set so that
     you have a data set with those dummy variables in there。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将继续计算例如工作职位的虚拟变量。当我们运行这个时，可以看到所有的虚拟变量都在这里，每一行是一个虚拟变量集，因此你在原始数据集中有2000行，而有33个虚拟变量，因为每个工作职位有33种不同的职位类型。接下来你需要做的是将其合并到数据集中，这样你就会有一个包含这些虚拟变量的数据集。
 - en: we're also going to drop the job column。 Aes one in both of these pieces were
     dealing with columns。And there you can see the dummy variables added to this。
     see where it's nice that we had job under bar in front of it is that prefix specified
     specified right here。Without that， we would have just PQ， PE just merged right
     into the data set。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还会删除工作职位这一列。因为在这两个部分中我们都在处理列。你可以看到虚拟变量已添加到此处，前面有工作下划线作为前缀，正是这个前缀在这里指定的。如果没有这个，我们将仅仅得到PQ，PE，直接合并到数据集中。
 - en: and it would be very hard to keep track that those actually came from the job。We
     put area in by similar means now we have both job and area。 so this is great that
     we have that prefix area and job。Otherwise。 those two would kind of blend together
     a bit。Income， we do have some missing values for income。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 而且，很难跟踪这些实际上来自工作职位的信息。我们用类似的方法引入区域，现在我们同时拥有工作和区域。这是很好的，因为我们有了前缀区域和工作。否则，这两者会有点混合在一起。关于收入，我们确实有一些缺失值。
 - en: so we're going to extract the median from income and put that in to the missing
     values。So now we have complete values for income。 Now， ideally you would probably
     not。 you'd probably want to get a little fancier with this and have multiple medians。
     maybe you would break the age this income probably correlates to age。And you would。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将从收入中提取中位数，并将其放入缺失值中。现在我们拥有了完整的收入值。理想情况下，你可能不会。你可能希望在这方面做得更复杂一些，拥有多个中位数，也许你会将年龄划分，这样收入可能与年龄相关。你会这样做。
 - en: Break the age into multiple bands。 You would calculate the median for each of
     those bands。 and then put。Intelligently choose a medium value to fill in the missing
     values。Where you were using that band to pick it。That gives you a more meaningful。Missing
     value。We can see that we have all of the columns in the data frame。And we can
     now get our X columns。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 将年龄划分为多个区间。你需要计算每个区间的中位数，然后智能地选择一个中间值来填补缺失值。使用该区间来进行选择，这样可以得到更有意义的缺失值。我们可以看到数据框中包含了所有的列，现在可以获取我们的X列。
 - en: We do that by getting the same columns that we had up here。 But we're going
     to drop product because products， what we're trying to predict。 Two problems with
     including product。 One is， if that's truly what you're trying to predict， then。That
     would be target leak， and it would be trivial for your neural network to predict
     it。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们通过获取与之前相同的列来处理这个问题。但是我们将删除产品，因为产品是我们试图预测的对象。包含产品存在两个问题。如果这确实是你想预测的内容，那么这就是目标泄露，神经网络预测它将是微不足道的。
 - en: You'd probably get a perfect score on your neural network， perfect score from
     the neural network。 not a perfect score for me because you would be producing
     a useless neural network。If you're trying to predict which product the person
     bought and you also tell the neural network which product the person bought。 that's
     targetrget leak and。The neural network can do that perfectly because you've told
     it the answer already。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可能会在神经网络上获得完美的分数，来自神经网络的完美分数。但对我来说并不是完美的分数，因为你会生成一个无用的神经网络。如果你试图预测一个人购买了哪个产品，同时也告诉神经网络这个人购买了哪个产品。这就是目标泄露。神经网络可以完美地做到这一点，因为你已经提前告诉了它答案。
 - en: And you want to drop ID because ID is just numerically increasing value， and
     it's not that useful。So here's the final set。Of the names of the individual values
     that go into the feature vector for x。Now we need to convert it into a lumpumpy
     array because neural networks like numeric values to come in。We just put in that
     same。X columns calculation that we do there。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 你要删除ID，因为ID只是数值递增的值，并不是很有用。这里是最终的特征向量x中各个值的名称集合。现在我们需要将其转换为numpy数组，因为神经网络喜欢数值输入。我们只需将之前的x列计算放入其中。
 - en: We get the actual lumpy matrix for x so that we have a number of rows equal
     to the size of the data set and a number of columns equal to size of the feature
     vector。We're going to convert the product into dummies， and that's going to become
     the Y。We keep a list of the actual textual values of the products， product ABC。
     since there's only one categorical， one set of dummies。 We don't put a prefix
     on this。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们得到了实际的numpy矩阵x，使得行数等于数据集的大小，列数等于特征向量的大小。我们将产品转换为虚拟变量，这将成为Y。我们保留实际文本值的列表，产品为ABC。由于只有一组分类，我们不在其上添加前缀。
 - en: So we don't do products A， products B and so on。 Then we get the matrix that
     is the y values。 So that is going to be a number of rows equal to the size of
     the data set and number of columns equal to the products that we're classifying。We
     run this。And we run this so that we can see X and Y。X is very numeric。 that's
     just what the neural network likes， and Y you can see is definitely dummy variables。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，我们不会做产品A、产品B等。然后我们得到y值的矩阵。所以行数等于数据集的大小，列数等于我们正在分类的产品。我们运行这个。以便查看X和Y。X是非常数值的，这正是神经网络所喜欢的，而Y则明显是虚拟变量。
 - en: And that is how you calculate the x and Y for a classification neural network。
     make sure that for the classification neural network， you're using categorical
     cross entropy。And a softm function。 Now， there's only two categories。 that's kind
     of a special case。 and we'll see that。In a later video for this module。That you'd
     use a binary。Type loss function。Now。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是如何为分类神经网络计算x和Y。确保在分类神经网络中使用分类交叉熵和softmax函数。现在，只有两个类别。这算是一种特殊情况，我们将在该模块的后续视频中看到。你将使用二元类型损失函数。
 - en: if。You are dealing with a regression。X and Y。 then you would make Y be the income
     values。 and you would make X be。Just like it was previously。 So you'd make sure
     that you were calculating。The actual values for income and not making that dummy
     variables。 So it's not really a matrix。 It'd be kind of a。A large column matrix
     where you have one column and one row for every single value in the data set。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你处理的是回归，X和Y，那么你将使Y成为收入值，而X则与之前一样。所以你需要确保计算的是收入的实际值，而不是虚拟变量。因此，它不是真正的矩阵，而是一个大型列矩阵，每个数据集中的每个值都有一列和一行。
 - en: Now， also with income， if that were the target， be careful because some of the
     income values are missing。 usually if the column is your target and you have missing
     values in your target。 often you drop those rows for training because you don't
     necessarily want to be training on these in on these median incomes that you。That
     you estimated for it。 Thank you for watching this video on feature vector creation。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，如果收入是目标，请小心，因为某些收入值是缺失的。通常，如果列是你的目标并且在目标中有缺失值，通常会在训练时删除这些行，因为你不一定想在这些中位数收入上进行训练。感谢观看此视频关于特征向量创建。
 - en: Now that we have a feature vector。 The next part is going to show you how to
     actually form a neural network around that。 train it and produce a prediction。
     This content changes often。 So subscribe to the channel to stay up to date on
     this course and other topics and artificial intelligence。😊。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们有了特征向量。接下来的部分将向你展示如何实际围绕它形成一个神经网络，训练它并生成预测。此内容经常更改。因此，请订阅频道以保持更新，了解本课程及其他人工智能主题。😊
 - en: '![](img/04abe3c48902ea74356b7dd00d915cc9_3.png)'
+  id: totrans-23
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/04abe3c48902ea74356b7dd00d915cc9_3.png)'

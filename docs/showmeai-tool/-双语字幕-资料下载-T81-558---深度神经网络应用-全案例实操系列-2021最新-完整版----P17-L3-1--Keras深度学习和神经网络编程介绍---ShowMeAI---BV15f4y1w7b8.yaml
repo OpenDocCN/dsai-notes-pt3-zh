@@ -1,26 +1,35 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P17：L3.1- Keras深度学习和神经网络编程介绍
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P17：L3.1- Keras深度学习和神经网络编程介绍
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi this is Jeffy and welcome to applications of Deep neural networkss with Washington
     University in this video we're going to have a general introduction to deep neural
     networks and conceptually how they work。This will allow us to build upon the Python
     that we learn in previous parts of this course and to actually construct neural
     networks for the latest on my AI course and projects。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是Jeffy，欢迎来到华盛顿大学深度神经网络应用的视频，在这段视频中，我们将对深度神经网络进行一般介绍，以及它们的概念如何运作。这将使我们能够在本课程之前部分学习的Python基础上构建，实际上构建出神经网络，以便于我AI课程和项目的最新进展。
 - en: click subscribe in the bell next to it to be notified of every new video。 neuralural
     networks have been around for a while。 Deep learning is just the ability to train
     neural networks that are very deep。😊。![](img/8444b070a2a80e4ecb951689e6339e17_1.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 点击旁边的小铃铛订阅，以便收到每个新视频的通知。神经网络已经存在一段时间了。深度学习就是训练非常深的神经网络的能力。😊！[](img/8444b070a2a80e4ecb951689e6339e17_1.png)
 - en: You might have seen other machine learning models and other classes like support
     vector machines and gradient boostting and XG Bot and light GBBM and all these
     various ways of training a model based on data。Neurural networks can be drop in
     replacements for other models like this。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可能见过其他机器学习模型和其他类别，比如支持向量机、梯度提升、XGBoost和LightGBM，以及所有这些基于数据训练模型的不同方式。神经网络可以作为这些模型的替代品。
 - en: The neural network simply takes in the data that you would have normally sent
     to a support vector machine or other model。And outputs either a classification
     result where it attempts to classify or determine the type of what the input was
@@ -28,158 +37,204 @@
     you're trying to have the neural network predict from。However， neural networks，
     their real power lies in their ability to take end data and produce data in ways
     that don't fit into your typical classification and regression。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 神经网络简单地接受你通常会发送给支持向量机或其他模型的数据，并输出分类结果，试图对输入的内容进行分类或确定类型。或者它可以进行回归，并根据你想让神经网络预测的数据输出一个数字。然而，神经网络的真正强大之处在于它们能够处理最终数据并以不适合典型分类和回归的方式生成数据。
 - en: Type models， for example， you can input an image into a neural network。 You
     can even have a neural network， accept an image and produce another image。So it
     gets very。Expressive what you can actually do with the neural network is the input
     can be just about anything and the output can be just about anything。 and the
     input and output by no means have to be of the same type。In other models， you
     would。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 类型模型，例如，你可以将图像输入到神经网络中。你甚至可以让神经网络接收一张图像并生成另一张图像。因此，神经网络所能做的非常富有表现力，输入几乎可以是任何东西，输出也可以是任何东西，输入和输出并不一定要是同一类型。在其他模型中，你会。
 - en: Simply send in a one dimensional vector so a list of predictors。You can also，
     though。 with a neural network， pass in a 2D matrix。 Now， this is where you start
     to pass in。 say an image with a grid of pixels。 The power of the neural network
     is that it realizes the pixels that are near each other are more important to
     each other。 whereas the other model types。 change in the order of the input factor
     really has no effect on anything。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 只需发送一个一维向量，即一组预测变量。然而，使用神经网络，你也可以传入一个二维矩阵。现在，这就是你开始传入，比如一个带有像素网格的图像的地方。神经网络的强大之处在于它意识到相邻的像素彼此之间更重要，而其他模型类型中，输入因素的顺序变化对任何事情都没有影响。
 - en: It can also pass in a 3D matrix or 3D tensor。This is would essentially be a
     color image where that third dimension is specifying the color of the individual
     pixels that you're passing in。And dimensions， it can be used in several different
     ways with neural networks when you talk about the dimensionality of the neural
     network。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 它也可以传入一个三维矩阵或三维张量。这本质上是一幅彩色图像，其中第三维指定你传入的单个像素的颜色。而在谈论神经网络的维度时，这种维度可以以几种不同的方式使用。
 - en: Usually you're talking about what the input vector or input matrix looks like。
     how many input neurons do you have and how are they arranged， are they a grid
     or they a box？
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 通常你会谈论输入向量或输入矩阵的样子。你有多少个输入神经元，它们是如何排列的，是网格还是盒子？
 - en: Dimenssions can also refer to the number of weights that are in a neural network。Now。
     traditional models。You would talk about regression and classification and neural
     networks do this too。 the output neurons of the neural network become either the
     single regression output or the classification。So a regression neural network
     like you see here， now these are two example neural networks that I put together。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 维度也可以指神经网络中的权重数量。现在，传统模型中会谈到回归和分类，神经网络也是如此。神经网络的输出神经元变成单一的回归输出或分类输出。所以像你这里看到的回归神经网络，这里有两个我组合在一起的示例神经网络。
 - en: I work in the life insurance industry so you'll see a number of examples from
     me sort of in an insure tech sort of way where you've got。Inputs that are related
     to medical records and other things that you'd be interested in for life insurance。Here
     you're asking the neural network to predict the maximum face amount。 So how much
     should we insure somebody for， what's the maximum amount we would go on the risk
     for with an individual。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我在寿险行业工作，因此你将看到我提供的许多例子，类似于保险科技的方式，其中包含与医疗记录等相关的输入，这些是你在寿险中感兴趣的内容。在这里，你请求神经网络预测最大保额。那么我们应该为某人投保多少，针对个人的最大风险金额是多少。
 - en: Classification neural networks， those produce classes。 so we would maybe have
     a preferred standard substandard or a decline。That just puts the the potential
     insurance app into the correct bucket。 So regression classification。 These are
     your traditional types of model， and we'll see later on in this class that neural
     networks can have much more complicated outputs than just。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 分类神经网络会产生类别。因此我们可能会有一个优选标准、次标准或下降。这只是将潜在的保险申请放入正确的桶中。因此，回归分类。这些是你传统的模型类型，我们将在本课程后面看到，神经网络可以产生比这更复杂的输出。
 - en: Classification or regression， a neural network can even be both classification
     and regression at the same time。The output neurons， so the ones on the far right，
     here there's just one。 if it's a regression neural network， it's always going
     to be just one output neuron。Here we have additional output neurons， one output
     neuron for each class。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 分类或回归，神经网络甚至可以同时进行分类和回归。输出神经元，也就是最右侧的那些，这里只有一个。如果是回归神经网络，它总是只有一个输出神经元。这里我们有额外的输出神经元，每个类别对应一个输出神经元。
 - en: That's how you can tell a classification neural network if it's a binary classification
     neural network。 meaning it's only classifying between two things， usually it'll
     just have one output neuron and that specifies the probability of it being one
     of those classes。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以通过神经网络的分类方式来判断它是否是一个二分类神经网络，这意味着它只是在分类两个事物，通常它只有一个输出神经元，指定了它属于其中一个类别的概率。
 - en: However， if you're dealing with a multi class classification with。With three
     or more classes。 usually you're going to。You're going to have one output neuron
     per class。 You would never have a single class classification neural network because
     there's just one class。 it would always be that class， so you can have to have
     at least two classes so that there's at least something to differentiate between
     for the neural network to classify。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，如果你在处理多类别分类，类别数为三或更多，通常你会为每个类别有一个输出神经元。你绝不会有单一类别的分类神经网络，因为只有一个类别。它总是那个类别，因此你至少需要有两个类别，以便神经网络有区别的对象进行分类。
 - en: This is the structure of a neural network。They have multiple layers。 Now we'll
     see that there are additional layer types and other things that will make this
     more complicated。 but for tabular neural networks， this is where the input to
     it looks sort of like rows and columns from Excel。 This is what it'll look like。You're
     going to have your input layer。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是神经网络的结构。它们有多个层。现在我们将看到还有其他类型的层和其他会使其更复杂的内容。但对于表格神经网络来说，它的输入看起来有点像Excel中的行和列。这就是它的样子。你会有输入层。
 - en: These input neurons are the values that come into the neural network。 Then you're
     going to have several hidden layers， finally going to the output layer。These are
     bias neurons， you don't send input into those directly， they are simply there。2。To
     give the neural network additional predictive power。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些输入神经元是进入神经网络的值。接下来，你会有几个隐藏层，最后到达输出层。这些是偏置神经元，你不会直接向它们发送输入，它们仅仅是存在于这里，以增强神经网络的预测能力。
 - en: we'll see exactly what bias neurons are for in a moment， they handle。They handle
     a situation where the inputs are both zero。 but you don't necessarily want the
     output to also be zero。The arrows are the weights between the various entities
     in the。And the neural network。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们马上会看到偏置神经元的具体作用，它们处理输入都为零的情况。但你并不一定希望输出也为零。箭头是神经网络中各个实体之间的权重。
 - en: In hidden layers， you can have lots of hidden layers in deep learning， hundreds
     of them。It's usually four types of neurons and a neural network input neurons
     take in the input to the rest of the neural network。Hidden neurons， neither they're
     hidden because they're between the input and output neurons。 input neurons receive
     the input for the neural network。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 在隐藏层中，你可以在深度学习中有很多隐藏层，数以百计。通常有四种类型的神经元，神经网络中的输入神经元接收其余神经网络的输入。隐藏神经元，因为它们位于输入和输出神经元之间。输入神经元接收神经网络的输入。
 - en: outputput neurons receive the output that are sent out of the neural network
     hidden or between that。Context neurons will see more about those when we get into
     time series and recurrent neural networks。 they maintain state between calls to
     the neural network。And then bias neurons。 they are essentially like the y intercept
     and。Traditional mathematics， linear。Linear equations。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 输出神经元接收从神经网络发送出的输出，或者在这之间。上下文神经元在我们进入时间序列和递归神经网络时会更多了解它们。它们在对神经网络的调用之间保持状态。然后是偏置神经元，它们本质上就像y截距和传统数学中的线性方程。
 - en: You also have several layer types that these neurons go into。 there's the input
     layer that receives the input， the output layer that sends the output from the
     neural network and then the hidden layers between that。In a later part， we're
     going to manually calculate the output from a neural network。But for now。 we'll
     see that the calculation that a neural network actually goes through is not that
     complex。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 你还有几种层类型，神经元会进入这些层。输入层接收输入，输出层发送神经网络的输出，然后是隐藏层。在后面的部分，我们将手动计算神经网络的输出。但现在，我们会看到神经网络实际经历的计算并不复杂。
 - en: It's essentially a weighted sum passed into a activation function。So the input
     to calculating one hidden neuron。Or an output neuron in the neural network。Essentially
     takes in the feature vector or the vector coming into it。 So if we were calculating
     for this neuron down here。The input vector would be 1，2，3。 these values。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 它本质上是一个加权和，传递到激活函数。所以计算一个隐藏神经元或神经网络中的输出神经元的输入，本质上是接收特征向量或进入它的向量。如果我们为下面的这个神经元计算，输入向量就是1，2，3。这些值。
 - en: and essentially， you would multiply input 1 times weight 1， input 2 times weight
     2。And put three times weight three。Some those altogether。That value then gets
     passed into the activation function， and that becomes the output of that neuron。And
     that's what this equation is basically showing you here。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 本质上，你会将输入1乘以权重1，输入2乘以权重2，输入3乘以权重3。将这些相加。然后这个值传递到激活函数，这就是该神经元的输出。这个方程基本上就是在向你展示这个。
 - en: It' essentially the summation of all of thetas， thetas or weights， times， all
     of the x's。 the x's are inputs， and then phi is the the activation function。 And
     this is basically done over and over and over again to calculate every hidden
     and output neuron。In the neural network。This gives you an example of this， the
     input is one and 2。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 它本质上是所有θ的总和，θ或权重，乘以所有的x。x是输入，然后φ是激活函数。这基本上在神经网络中反复进行，以计算每个隐藏和输出神经元。这给你一个示例，输入是1和2。
 - en: Now this third neuron here， that's actually your bias neuron。And the way that
     it gets represented as the bias neuroon is we cancateate a one onto the end of
     this。 So one is going into one first neuron 2 goes into the second and this one。Goes
     into the third。Neuron that becomes basically the bias。 So whatever this weight
     is just gets added to it kind of like an intercept。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在这个第三个神经元，实际上是你的偏置神经元。它作为偏置神经元的表示方式是将一个一连接到末尾。所以一个输入到第一个神经元，二输入到第二个，这个则输入到第三个。这个神经元基本上就是偏置。因此，这个权重会被加上，就像一个截距。
 - en: Since this is one， we're multiplying one times the third weight。 That's basically
     how bias neurons neurons work。We might have this as our weights。 So those might
     be the three weight values。 The third one would be called the bias value。 We multiply
     each of these inputs by each of these weight values in summit。 and this 0。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 由于这是1，我们将1乘以第三个权重。这基本上是偏置神经元的工作方式。我们的权重可能是这样。因此，这可能是三个权重值。第三个称为偏置值。我们将这些输入乘以每个权重值并求和。这是0。
 - en: 8 becomes the summation that is then passed to the activation function。Activation
     functions are just functions that introduce non linearity into the neural network。
     so that everything's not linear rectified linear unit。 we will see is the most
     popular of the activation functions in modern deep。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 8变成了被传递到激活函数的总和。激活函数只是引入非线性的函数到神经网络中，使得一切都不是线性的修正线性单元。我们将看到这是现代深度学习中最流行的激活函数之一。
 - en: Deep learning and other family members related to rectified linear units like
     the leaky。Ralue。Soft Mac is always used in classification neural networks for
     the final output。Of the neural network。 this ensures that all of the output neurons
@@ -187,80 +242,106 @@
     of the classes that the neural network is trying to classify in softftmax just
     ensures that all those probabilities are truly probabilities and they add up to
     one as probabilities usually do。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 深度学习及其他与修正线性单元相关的家族成员，如leaky ReLU。softmax通常用于分类神经网络的最终输出。这确保了所有输出神经元的总和为1，因为你希望这些输出神经元代表神经网络试图分类的每个类的概率，softmax确保这些概率是真正的概率，并且加起来为1，正如概率通常应有的那样。
 - en: The rectified linear unit is a pretty simple activation function， but extremely
     effective。You're essentially taking the max of0 and x， so x is the value that
     was passed in。Softmax looks like this， again， it's essentially summing them together。
     dividing each one by the summation， that normalization is what ensures that they
     add up all to 1。0。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 修正线性单元是一个相当简单的激活函数，但极其有效。你实际上是在取0和x的最大值，所以x是传入的值。softmax看起来像这样，它本质上是将它们相加，然后将每个值除以总和，这种归一化确保它们加起来都为1。
 - en: By the way， if you'd like to experiment with the softftmax and see how these
     individual values are created。 I have a JavaScript example that I have a link
     to right here。And why is the rectified linear unit？
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 顺便说一下，如果你想实验一下softmax并看看这些单独的值是如何生成的。我有一个JavaScript示例，链接就在这里。那为什么是修正线性单元呢？
 - en: So popular， why is this such a popular？Actation function。Used to be before the
     deep learning days。 the most common activation functions were the hyperbolic tangent
     and sigmoid。Sigmoid is shown here。So as you would input values into it， it would
     have the squashing effect。As you went to negative infinity or positive infinity，
     And that was desired behavior that worked。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么受欢迎的原因是什么呢？为什么这是如此受欢迎的激活函数？在深度学习之前，最常用的激活函数是双曲正切和sigmoid。这里显示的是sigmoid。当你将值输入到它时，它会产生压缩效果。无论是负无穷大还是正无穷大，这种行为都是所期望的。
 - en: that worked quite well。Well， you're typically optimizing these neural networks
     through。 through gradient descent。 So you're taking the derivative of the error
     function。 So this is the error function。As we change a weight。 So as we change
     one weight， the error goes up。 The error goes down。You'd like to get the error
     at the minimum location。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 这工作得很好。通常，你是通过梯度下降优化这些神经网络。因此，你是在计算误差函数的导数。这是误差函数。当我们改变一个权重时，误差会上升，误差会下降。你希望将误差降到最小。
 - en: except you can't see this entire graph at once。 You'd have to literally calculate
     the neural network for every number between。A reasonable range。 You only really
     see the dot that you're actually odd。 but that's what the derivative is for in
     calculus。 You take the derivative。 and it gives you the slope or the instantaneous
     rate of change of wherever the weight is at。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 只不过你无法一次看到整个图形。你实际上必须为合理范围内的每个数字计算神经网络。你只能看到你实际上所处的点，但这就是微积分中的导数的作用。你取导数，它会给你权重所在的瞬时变化率或斜率。
 - en: And you can tell by the slope of this value。 This has a negative slope。 So that
     means we need to increase the weight to move towards the minimum。 You're always
     changing the weight by the inverse of the sign of the of the slope or the gradient。
     This is typically called gradient in machine learning。So if we look at the derivative。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以通过这个值的斜率来判断。这有一个负斜率。这意味着我们需要增加权重以朝向最小值移动。你总是通过斜率或梯度的符号的反向来改变权重。这通常在机器学习中被称为梯度。因此如果我们查看导数。
 - en: Of the sigmoid function， you can see it by the dashed line。Notice how it quickly
     converges to zero this since that derivative is called a gradient。The fact that
     it would go to0 or vanish means we would have a vanishing gradient。 This is the
     vanishing gradient problem。In the deep learning solved。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 在sigmoid函数中，你可以通过虚线看到它。注意它是如何迅速收敛到零的，因为那个导数被称为梯度。它会到0或消失的事实意味着我们会有消失梯度。这是消失梯度问题。在深度学习中解决了。
 - en: one of the many problems that it mostly solved。Because this saturates to 0。
     it's not as desirable as the。As the re that the rectified linear unit doesn't
     saturate to 0。 like the sigmoid function does in both directions。 We'll look at
     why bias neurons are needed。Essentially， they are the intercept。Like when you
     previously worked with Y equals Mx plus K linear equations。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是它主要解决的众多问题之一。因为它饱和到0，所以不如。因为修正线性单元在两个方向上都不会饱和到0，就像sigmoid函数那样。我们将看看为什么需要偏置神经元。本质上，它们是截距。就像你之前处理的Y等于Mx加K线性方程。
 - en: If you look at this one， this is an example of when we change the weight。 If
     you notice we change the weight， it's effectively changing the slope。And you really。
     the line always has to pass through zero。When the input is。So all of these pass
     through zero。 there's no way to really shift that。When you change the bias neuron，
     now you're shifting。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你查看这个，这就是我们改变权重的一个例子。如果你注意到我们改变了权重，它实际上改变了斜率。并且你真的。线总是必须通过零。当输入是。因此所有这些都通过零。没有办法真正改变这一点。当你改变偏置神经元时，现在你在移动。
 - en: you're not affecting the slope。 So using those two together， you can really。
     you can affect the slope and you can shift it。 You can move it。And then all of
     those neurons together can contribute in sort of the additive effect of all of
     the neurons。Let's this line then break and basically approximate any function。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 你并没有影响斜率。因此将这两者结合使用，你实际上可以。你可以影响斜率并进行移动。你可以移动它。所有这些神经元一起可以以某种加法效果贡献所有神经元。让我们让这条线断开并基本上近似任何函数。
 - en: '![](img/8444b070a2a80e4ecb951689e6339e17_3.png)'
+  id: totrans-38
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8444b070a2a80e4ecb951689e6339e17_3.png)'
 - en: Thank you for watching this video。 Now that we've seen a general introduction
     to deep neural networks。 We're ready to start to look at Tensorflow and Cars and
     see how these are actually implemented in Python so that you can make use of them。
     This content changes often。 So subscribe to the channel to stay up to date on
     this course and other topics in artificial intelligence。😊。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 感谢观看这个视频。现在我们已经看到深度神经网络的一般介绍。我们准备开始查看Tensorflow和汽车，看看这些是如何在Python中实现的，以便你可以利用它们。这个内容经常变化。所以请订阅频道，以便及时了解本课程和其他人工智能主题。😊
