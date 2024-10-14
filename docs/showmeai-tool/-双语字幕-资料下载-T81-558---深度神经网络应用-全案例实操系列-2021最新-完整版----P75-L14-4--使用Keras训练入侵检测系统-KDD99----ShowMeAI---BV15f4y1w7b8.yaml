@@ -1,93 +1,128 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P75：L14.4- 使用Keras训练入侵检测系统(KDD99)
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P75：L14.4- 使用 Keras 训练入侵检测系统(KDD99)
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeffy and welcome to applications of deep neural networkss with
     Washington University。 In this video， we're going to look at intrusion detection
     systems and how you could use the KDd 99 data set to actually train one of those
     for the latest on my AI course and projects。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是 Jeffy，欢迎来到华盛顿大学的深度神经网络应用。 在这个视频中，我们将查看入侵检测系统，以及如何使用 KDD 99 数据集来实际训练其中一个，了解我
+    AI 课程和项目的最新动态。
 - en: click subscribe and the bell next to it to be notified of every new video。 We're
     going to look at how to build an intrusion detection system。 So to do this。 we
     need a data set。 We're going to use the same data set that we use for anomaly
     detection。 This is the KD 99 data。 I'll briefly reintroduce the data just so that
     these videos can be done in any order。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 点击订阅和旁边的铃铛，以便收到每个新视频的通知。我们将看看如何构建一个入侵检测系统。要做到这一点，我们需要一个数据集。我们将使用与异常检测相同的数据集。这是
+    KDD 99 数据。我会简要重新介绍这个数据，以便这些视频可以按任何顺序完成。
 - en: but this is a data from 1999。 so it's 20 years old。 So be aware of that。 It's
     a good example data set for security。 I wouldn't train any sort of current security
     detection systems on it because the nature of the attacks have probably changed
     a bit in 20 years understatement of the year。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 但这是 1999 年的数据。所以它已经 20 年了。请对此有所了解。这是一个很好的安全示例数据集。我不会在上面训练任何当前的安全检测系统，因为 20 年来攻击的性质可能已经有所改变，这真是年内的低调说法。
 - en: perhaps but what we're going to do is go。![](img/887797a233be9af651c0ac5f552f8389_1.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 也许，但我们要做的是去。![](img/887797a233be9af651c0ac5f552f8389_1.png)
 - en: Go ahead and read in the KDD 99 data set and we are going to that's done up
     here。 I can't just build this data into the class because I don't own it so you
     do have to download it if you're doing Google Coab。 you'll probably load it into
     your G drive。And these are all the data columns that we're going to use。 Let me
     just go ahead and run this。 And it shows you the first few rows。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 继续读取 KDD 99 数据集，我们在这里完成了。我不能将这个数据直接构建到类中，因为我不拥有它，所以如果你在使用 Google Colab，你确实需要下载它。你可能会将它加载到你的
+    G 驱动器中。这些都是我们将要使用的数据列。让我继续运行这个。它会显示前几行。
 - en: You can tell this is very TCPI internet sort of sort of data。 We can run this
     code that I give you here that helps you to analyze it。 This just gives me a first
     look at this data to give me an idea of how I am going to actually encode it。
     Okay， here is the analysis of this。 I find this somewhat useful to just dump on
     data sets that I'm looking at。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看出这是一种非常 TCPI 互联网类型的数据。我们可以运行我给你的这段代码，帮助你分析它。这只是让我初步了解这些数据，以便我知道如何编码它。好的，这里是这个的分析。我发现这对我查看的数据集非常有用。
 - en: And you can see basically like protocol type。 It shows you essentially the breakdown
     57% or ICmpP TCP is 38% and so on。And it lets you get an idea of how many。Similar
     values you have。 This guides me as far as creating categoricals versus continuous。
     so like source bytes down here 0%。 so is 0% repetition really on that， you're
     not seeing any real duplicates。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以基本上看到像协议类型这样的内容。它显示了 57% 的 ICmpP，TCP 是 38% 等等。这让你对拥有多少相似值有了一个了解。这在创建分类变量与连续变量时为我提供了指导。因此，像下方的源字节为
+    0%。所以，0% 的重复真的没有看到任何真实的重复。
 - en: so it can't find categorical values on the other ones。 once I have this。 I go
     ahead and use these same two functions that I showed you for anomaly detection。
     we're going to encode the using Z scores and using dummies。 So all the values
     that I determine to be categorical。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以它无法在其他数据中找到分类值。一旦我有了这个。我继续使用我为异常检测展示的同样两个函数。我们将使用 Z 分数和虚拟变量来编码。因此，我确定为分类的所有值。
 - en: I'm going to encode dummy all the continuous values， I'm going to encode Z score。Now。
     if you are dealing with something where you need high accuracy， this is usually
     just the first very。 very first step。 you'll get more creative on your encoding
     and feature engineering。 So that basically creates the feature vector。 And now
     I'm ready to actually train the neural network on it。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将对所有连续值进行虚拟编码，我将编码 Z 分数。现在，如果你处理的是需要高准确度的东西，这通常只是第一步。你会在编码和特征工程上更加创新。因此，这基本上创建了特征向量。现在我准备在它上面实际训练神经网络了。
 - en: I'm training it to predict the outcome。 and the outcome is either normal or
     a number of different types of attack that can be sent at this。 Now we're using
     categorical cross entropy。 So I'm trying to even predict the attack type。 it is
     training the network。 I will fast forwardward this。 This group I will show us
     the outcomes that we can potentially have。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我正在训练它来预测结果。结果要么是正常，要么是可以发送的多种不同类型的攻击。现在我们使用的是分类交叉熵。因此我甚至在尝试预测攻击类型。它正在训练网络。我将快进这一部分。这个组我将展示我们可能获得的结果。
 - en: So these are all the different types of attack like Smurf was very popular at
     that point。😊。Normal is 97，000 of them， so there's pretty many normal cases。 some
     of these are very rare like pearin and spy。But these are essentially what we're
     trying to classify as now that the neural network is trained。 we can measure its
     accuracy， it is very accurate， 0。997。Now。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这些都是不同类型的攻击，例如Smurf在那时非常流行。😊。正常情况有97,000个，因此正常案例相当多。一些攻击类型非常罕见，比如pearin和spy。但这些基本上是我们现在试图分类的内容，现在神经网络已经训练完毕。我们可以测量它的准确性，准确率非常高，0.997。现在。
 - en: this is another thing to keep in mind with the KDD99 data set it is。It's been
     out there for a while。 it's not really that hard to get a good score on it the
     the data separate very very well into those various classes once this data set
     had been studied and really well understood it's interesting you do still see
     papers even in 2019 where people are talking about。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 这也是使用KDD99数据集时需要记住的另一件事。它已经存在了一段时间。获得良好分数并不困难，因为数据在这些不同类别中分隔得非常好。一旦这个数据集经过研究并真正理解后，值得注意的是，即使在2019年，你仍然会看到一些论文讨论。
 - en: A 99% accuracy on this particular data set like it's anything of any research
     significance this is largely an example data set for intrusion detection and other
     security features at least in 2019 so definitely be aware of that but it does
     make for a good example of these types of technology This content changes often
     so subscribe to the channel to stay up to date on this course and other topics
     in artificial intelligence。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个特定数据集上达到99%的准确率就像是任何具有研究意义的东西。这在很大程度上是一个用于入侵检测和其他安全特征的示例数据集，至少在2019年，所以一定要意识到这一点，但它确实为这些类型的技术提供了很好的示例。此内容经常更改，因此请订阅频道以便及时了解本课程和其他人工智能主题。
 - en: '![](img/887797a233be9af651c0ac5f552f8389_3.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/887797a233be9af651c0ac5f552f8389_3.png)'
