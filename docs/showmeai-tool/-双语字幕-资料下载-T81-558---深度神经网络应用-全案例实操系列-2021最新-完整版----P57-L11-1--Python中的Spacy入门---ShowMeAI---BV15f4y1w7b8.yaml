@@ -1,8 +1,11 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P57：L11.1- Python中的Spacy入门
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P57：L11.1- Python中的Spacy入门
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeff Heaton welcome to applications of deep neural networkss with
     Washington University Now we're going to start a look at natural language processing
     with Cars in particular we're going to begin by looking at some tools that help
@@ -12,89 +15,117 @@
     it reproduces that the second way that you can deal with it is on the word level
     and we dealt with it on the word level for the captioning really you can make
     both techniques any type of problem Word level NLP can be good because。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是杰夫·希顿，欢迎来到华盛顿大学的深度神经网络应用课程。现在我们将开始探讨自然语言处理，特别是汽车相关的内容。我们将首先看看一些工具，这些工具帮助我们在将数据预处理到神经网络之前进行处理。我们将讨论Spacy，这是关于AI课程的最新内容，并提醒你注意我们主要处理自然语言的内容，它涉及字符、率、故事，基本上是对其的再现。处理它的第二种方法是按词级进行，而我们确实在字幕中按词级处理过，实际上你可以将这两种技术应用于任何类型的问题，词级NLP可以很好地处理。
 - en: '![](img/ff26651c6e28d6ee53469ef48ed52d86_1.png)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ff26651c6e28d6ee53469ef48ed52d86_1.png)'
 - en: You can use additional libraries available to you in Python to actually process
     those words before they go into the actual neural network。 characteract level
     has its advantages because you're not doing that because you're letting the neural
     network actually figure out all of the things about English suffixes prefixes
     all these grammatical type expression。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以使用Python中可用的额外库，在将这些单词送入实际的神经网络之前对其进行处理。字符级别有其优点，因为你并不在处理这些问题，因为你让神经网络自己去弄清楚英语后缀、前缀以及所有这些语法类型的表达。
 - en: Some techniques are better for others。 The more historic method for natural
     language processing was heavy grammatical analysis。 The more modern and newer
     techniques are pretty much end to end where the neural networks operate on the
     raw text directly。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 一些技术对于其他技术来说更好。自然语言处理的传统方法是进行大量的语法分析。而现代的新技术几乎是端到端的，神经网络直接在原始文本上操作。
 - en: However， you still will sometimes do some processing at the word level。 So we're
     going to see how to use some of the python packages to work with the actual words
     that are in your text before you actually send them on the neural network。 As
     far as natural language processing libraries available for Python I mean other
     than Tensorflow there are several but。Two of the ones that I've seen particularly
     stand out in Caagle competitions and related literature to this are NLTK and Spacey。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，你有时仍然会在词级上进行一些处理。因此，我们将看到如何使用一些Python包来处理文本中的实际单词，在将它们发送到神经网络之前。关于可用于Python的自然语言处理库，除了Tensorflow，还有几个，但是我看到的两个特别突出的是NLTK和Spacey，这在Kaggle比赛及相关文献中得到了体现。
 - en: NLTK was around for longer than Spacey。 It's been used for quite some time。
     I've used both of these at this point， I prefer spacey。 and that's the one that
     we will be using for the class。 It's a little more object oriented and object
     oriented in a good way。 believe me。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: NLTK的出现时间比Spacey更早，已经使用了一段时间。目前我都使用过这两者，我更喜欢Spacey。这就是我们在课堂上将使用的工具。它更面向对象，而且这种面向对象的方式很好，相信我。
 - en: there can be objectoriented in a bad way， meaning that it literally transforms
     the words into individual objects that give you a fair amount of information about
     these individual words。 Now， installing spacey， it should have already been installed
     when you went through in module1 and did all the Pip installs that I gave you
     for this class。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 这可能会以一种糟糕的面向对象方式实现，意味着它实际上将单词转换为个体对象，从而提供关于这些单词相当多的信息。现在，安装Spacey时，它应该在你通过模块1并完成我给你的所有Pip安装时已经安装过。
 - en: Spacey was one of the packages that I specify that you should install。 However。
     if you just install Spacey， it won't work。 It needs a lexicon dictionary。 And
     I'll suggest that you install the English one for this class because that's what
     we're using。 if you haven't。Stall the dictionary。 most likely you haven't when
     you try to run the code in this module。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: Spacey是我指定的你应该安装的包之一。然而，如果你只是安装Spacey，它是无法工作的。它需要一个词典。我建议你为这门课安装英语词典，因为这正是我们要使用的。如果你还没有安装词典，可能在运行这个模块中的代码时你没有。
 - en: you're going to get an error such as this to install spacey dictionary。 This
     is the command that I found works about the best if you run into problems。 you
     may want to Google them or post something in in the class piazza or Sla and I'll
     see what I can do as far as if you're getting a specific error and also post something
     in the comments。 I've run into just about every error imaginable。 well that's
     not true。 somebody always surprises me。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 你会遇到一个错误，比如要安装 spacey 字典。这是我发现的最佳命令，如果你遇到问题，你可能想要谷歌搜索它们，或者在课堂的 Piazza 或 Sla
+    上发帖，我会看看如果你遇到特定错误我能做些什么，同时在评论中发帖。我遇到过几乎所有可以想象的错误。嗯，这不是事实，总是会有人让我感到惊讶。
 - en: but I can't necessarily always debug everything because I have to have it physically
     on my computer giving you problem。 So believe me if you get an error。 Google is
     your friend just copy and paste this and put it into Google and you'll probably
     be taken prompt to stack overflow Some of the terms that you will hear with this
     tokenization is a big one And tokenization is where you take sentences and you
     break them into the individual work。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我并不总能调试所有内容，因为我需要在我的计算机上实际运行它给你带来问题。所以相信我，如果你遇到错误，谷歌是你的朋友，只需复制并粘贴这段内容到谷歌，你可能会被引导到
+    Stack Overflow。你将会听到的一些术语，像这种**分词**是一个重要的概念，分词就是将句子拆分成单个单词。
 - en: More difficultifficult than it sound。 Let me just put a cell above here。 Consider
     some of these sentences。 If I just gave you the sentence。 this is a test period
     that'd be easy to token the words are this is and a test。 So's four words in there。
     you will then get more complicated sentences like okay but what about this。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 这比听起来更困难。让我在这里放一个单元格。考虑一下这些句子。如果我给你这个句子：这是一个测试，那将很容易进行分词，单词是“这”、“是”和“一个测试”。所以里面有四个单词。然后你会得到更复杂的句子，比如“好的，但这怎么样？”
 - en: Now you need to decide how are you going to tokenize this。 You may not want
     to lose that comma。 that comma might be useful or maybe you want the comma to
     go away。 So if you're breaking this into a list of word。 it might be okay comma
     but what about this。 So you have to decide if you're breaking on white space or
     not。 then you have things like this。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在你需要决定如何进行分词。你可能不想失去那个逗号。那个逗号可能是有用的，或者你可能希望逗号消失。所以如果你把它拆分成一个单词列表，可能会变成“好的，但这怎么样？”所以你必须决定是基于空格进行拆分还是其他。然后你会遇到像这样的东西。
 - en: if you're breaking on punctuation， now it's going to be u is a word S is a word
     and a is a word you would like to keep that together。 but unless you have some
     knowledge of the language， you won't really know what is going on here。 these
     will just seem like three sort of disjo。Letters and that's why you have to install
     the dictionary for this。 You also have to deal with things like， okay， I don't
     typically hyphenate data。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你是基于标点符号进行分词，现在将会是 u 是一个单词，S 是一个单词，a 是一个单词，你希望把它们放在一起。但是，除非你对语言有一些知识，否则你真的不知道这里发生了什么。这些看起来只会像是三个有点不连贯的字母，这就是为什么你需要为此安装字典。你还需要处理像这样的事情，好的，我通常不会对数据使用连字符。
 - en: but you may not want to break those into two words。 So if deal hyphens like
     that。 But sometimes hyps do like if you're going to do an dash or something like
     that where you do a rapid shift。 you wouldn't want to combine that into this no。
@@ -102,84 +133,109 @@
     I will do this or maybe that sounds good So these are some of the issues that
     you will run into when you're trying to tokenize sentences and look at the example
     one that I have here。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 但你可能不想把它们分成两个单词。所以如果处理带有连字符的情况。但是有时连字符确实会，比如如果你要做一个短破折号或类似的东西，你不会想把它合并为这个，因为它在句子中进行了一次突变。我觉得我会这样做。等一下，我会这样做，或者也许那听起来不错。这些是在尝试分词句子时你会遇到的一些问题，看看我在这里的示例。
 - en: There's the U period K period。 So you don't you want that to stay together。
     and the dollar sign。 you might be tempted to strip that off。 but that does give
     you information about that one。 So we can run this and I will show you how spacey
     tokenize tokenizing is probably one of the most common things that you will do
     with word level。Natural language process。 Another common one that you'll do is
     it will strip the words to the root form。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有 U. K.。所以你想让它保持在一起。而美元符号。你可能会想去掉它，但它确实给你提供了有关那个词的信息。所以我们可以运行这个，我会告诉你 spacey
+    的分词是你在词级别的自然语言处理过程中最常做的事情之一。另一个常见的操作是将单词简化为其根形式。
 - en: So buying would become by。 Now you're losing some information there。 But that
     way。 if you're doing simple lookup， look would become look rest of these are all
     in their base form。 but this breaks it up into a nice set of words for you。 So
     you don't have to parse it and do the tokenization yourself。 believe me。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以“buying”会变成“by”。这样你就会失去一些信息。但如果你进行简单查找，“look”会变成“look”，其余的都是它们的基本形式。但这将其分解成一个漂亮的词组，这样你就不必自己解析和进行标记化。相信我。
 - en: never look for spaces and use regular expressions and do tokenization yourself。
     It's actually a pretty hard problem that requires a dictionary to be loaded。 that
     way you can keep things like UK together。 This is also kind of neat。 I don't use
     this as much。 I prefer the end to end where I'm not dealing with English grammatical
     forms like verbs and adjectives and things like this。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 别找空格，使用正则表达式并自己进行标记化。这实际上是一个相当困难的问题，需要加载字典。这样你就可以将“UK”这样的词放在一起。这也挺有趣的。我不常用这个。我更喜欢端到端的方法，不用处理英语的语法形式，比如动词、形容词等等。
 - en: This gives you space these best guess at what these words are。 Now the problem
     though。 is it's contextual。 So word can operate sometimes as either a noun or
     a verb。 It just depends on how the words being used。 So this can be very difficult。
     It's not just a simple lookup。 This can also be useful because this can let you
     very quickly figure out what。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 这给了你空间，可以对这些词做出最佳猜测。但问题在于，它是上下文相关的。因此，词语有时可以作为名词或动词使用。这完全取决于词语的使用方式，所以这可能非常困难。这不仅仅是简单的查找。这也很有用，因为这可以让你快速弄清楚。
 - en: Different words are as far as that their're numbers。 There's other ones in here
     too。 you can like none。 There's a few other likes。 I can't think of another one
     offhand。 but it lets you know if the word is like something so true。 The one in
     the dollar sign1 is like a number Also billion is even though it's a word is like
     a number of root if you want to go more hardcore on grammar you can even get them
     the sentences diagram for you。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 不同的词在数量上是有差异的。这儿还有其他一些，比如“none”。还有几个我一时想不起的，但它让你知道这个词是否像某些东西。所以“$1”就像一个数字。虽然“billion”是一个词，但在语法上也像是数字的根。如果你想更深入地研究语法，甚至可以让它为你图示句子。
 - en: So if you run this I want a laptop an iPad laptop and a dog So I was trying
     to see if it could figure out that list of words there sort of does and it gives
     you a English sentence diagram and you get this actually as a traversible tree
     that you can use in your code as well。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以如果你运行这个，我想要一个笔记本电脑、一个iPad和一只狗。我想看看它是否能搞清楚那个词组，结果有点成功了，它给了你一个英语句子的图示，你实际上可以将其用作可遍历的树，这样你可以在代码中使用。
 - en: I usually don't use these， but it can be kind of interesting sometimes to see
     the diagram of a sentence really complicated sentences automatic diagrams tend
     to tend to fail often enough by the way。 one thing that is easy to run into as
     a problem when you run this diagram。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 我通常不使用这些，但有时看到句子的图示，尤其是复杂句子的自动图示，还是挺有趣的。顺便提一下，这些图示往往会失败，运行这个图示时，有一个常见的问题。
 - en: Notice that star is still there。 So if you try to run this next thing， print
     out the sentence。 you tend to think why is my print taking so long。 Well。 it's
     because this guy up here is still running because it has to start a web server
     to actually display that to you and you can see that is evident by that So it's
     good to just break that and now you can run these other thing This is what I was
     telling you before where you take the words back to their root level。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意“star”仍然在这里。所以如果你尝试运行下一个步骤，打印出句子，你可能会想，为什么我的打印这么慢。嗯，是因为上面这个家伙仍在运行，因为它需要启动一个网络服务器来实际显示给你，你可以从中看出。所以最好将其断开，现在你可以运行其他的。这就是我之前告诉你的，你可以将词语还原到它们的根层次。
 - en: this is very useful。 I will use this often because then you don't have to worry
     about like hanging hanging All those would go to hang and this is just a list
     you can iterate over that and handle those as you want stop words This is a very
     common term in natural language processing you can see all the stop words here。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 这非常有用。我会经常使用这个，因为这样你就不必担心像“hanging”这样的问题。所有这些都会变成“hang”，而这只是一个你可以遍历的列表，可以根据需要处理那些停用词。停用词是自然语言处理中的一个非常常见的术语，你可以在这里看到所有的停用词。
 - en: these are words that are very common in English but have usually and I emphasize
     usually very little value So the stop words are often removed or deemphasize and
     this is just a list of the stop words So very common thing that you would do as
     you would loop over。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些是英语中非常常见的词，但通常（我强调通常）价值很低。所以停用词通常被移除或降重，这只是停用词的一个列表。因此，你通常会做的事情是遍历这些。
 - en: Sentence like this and remove the stop words。 You're using relatively simple
     word counts and statistical analysis for your natural language processing probably
     need to remove the stop words。 An example， though I ran into this when I was competing
     in a natural language processing on Cale I was printing out the sentences that
     my program was not parsing correctly And one sentence in particular it was kind
     of interesting。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 像这样的句子并移除停用词。你在进行自然语言处理时使用相对简单的词频统计和统计分析，可能需要移除停用词。不过，我在参加Cale的自然语言处理竞赛时遇到过一个例子，我打印出了我的程序没有正确解析的句子。其中有一个句子特别有趣。
 - en: It was what is I Well， what is I， It's the part of the company that handles
     the computer and data systems for the corporation。 Well， the first thing that
     my program was doing putting everything to lowercase。 What is it Okay。 that's
@@ -187,22 +243,30 @@
     to show me at class a new electronic device and laid it on my desk I'd be like
     what is it So just dripping everything to lowercase can get you in trouble And
     then when I converted that sentence to。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 那是什么呢？嗯，是什么呢？这是公司中负责计算机和数据系统的部分。嗯，我程序做的第一件事是将所有内容转换为小写。那是什么？好吧，那是一个完全不同的问题。就像我不知道你在课堂上带来了什么新的电子设备放在我桌子上，我会问那是什么。所以仅仅把所有内容转换为小写可能会让你陷入麻烦。然后当我将那个句子转换时。
 - en: Remove the stop wordss， it became this。A blank line because all three of those
     words were removed because they're all stop words。 So this is a legitimate question
     that's asking something。 what is what is it。 but you have to realize these common
     acronyms and not just strip it or you're going to lose every time you make a transformation
     and remove junk or clean up every time you clean something you're losing information
     and maybe that information is not valuable。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 移除停用词后，它变成了这样。由于这三个词都是停用词，因此产生了一个空行。所以这是一个合法的问题，询问的是某件事情。那是什么呢？但你必须意识到这些常见的缩略语，而不仅仅是去除它们，否则每次进行转换和清理时都会丢失信息，也许那些信息并不重要。
 - en: but you have to you have to be aware of these things in natural language process。![](img/ff26651c6e28d6ee53469ef48ed52d86_3.png)
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 但你必须对这些自然语言处理的事项保持警觉。![](img/ff26651c6e28d6ee53469ef48ed52d86_3.png)
 - en: Thank you for watching this video。 In the next video。 we're going to talk about
     more natural language processing tools， particularly word to Vec。 This content
     changes often。 so subscribe to the channel to stay up to date on this course and
     other topics in artificial intelligence。😊。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 感谢你观看这个视频。在下一个视频中，我们将讨论更多自然语言处理工具，特别是Word2Vec。这个内容经常变化，因此请订阅频道以保持更新，了解本课程和其他人工智能主题。😊

@@ -1,27 +1,36 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P55：L10.4- 使用Keras和TensorFlow进行图像描述生成
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P55：L10.4- 使用Keras和TensorFlow进行图像描述生成
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeff Heaton。 Welcome to applications of Deep neural networks with
     Washington University。 In this video， we're going to look at an interesting combination
     of convolution neural networks in LSTM that allows us to caption images。 to see
     several things going on in the image and describe it in a sentence for the latest
     on my AI course and projects。 Click subscribe in the bell next to it to be notified
     of every new video。 imageage captioning。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，这是杰夫·希顿。欢迎来到华盛顿大学深度神经网络的应用。在这个视频中，我们将探讨卷积神经网络与LSTM的有趣结合，这使我们能够为图像添加描述，以便看到图像中的多个元素并用一句话来描述它。要获取我最新的AI课程和项目，请点击旁边的铃铛订阅，以便收到每个新视频的通知。图像描述生成。
 - en: at least where I first saw it was with Andre Carpathy's dissertation。 Now。 we
     talked about this guy before in the last section， some of the LSTM text generation
     came from him。 and he did some very， very interesting work with that as well。
     So a very interesting guy researcher now works for Tesla。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 至少我第一次看到的是安德烈·卡帕西的论文。我们在上一节中提到过这个人，一些LSTM文本生成的内容来自于他。他在这方面也做了一些非常有趣的工作。所以这位研究者非常有趣，现在为特斯拉工作。
 - en: who created a lot of the code for some of this computer vision software that
     we're dealing with right now。 This is an image actually from his dissertation，
     or at least from his website showing what the captioning does。😊。![](img/2287d406430b06732c757e98a8dcb007_1.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 他为我们现在处理的一些计算机视觉软件创建了大量代码。这实际上是他论文中的一幅图像，或者至少是他网站上的一幅图像，展示了描述生成的效果。😊。![](img/2287d406430b06732c757e98a8dcb007_1.png)
 - en: Typically before captioning， we would try to just classify something as say
     a cat。 Well。 there's also a skateboard in here。 and there's a few other things
     as well door and they're just partial pieces。 later then we got into multi-imaging
@@ -30,15 +39,19 @@
     be able to actually write a caption for these。 Now we're going to use heavy transfer
     learning because this would take forever to train this thing from the ground up
     even with the transfer learning。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 通常在生成描述之前，我们会尝试将某物分类为猫。然而，这里还有一个滑板，以及其他一些部分，比如门。后来我们进入了多图像分类，所以我们会说猫和滑板，就像是黄色。现在我们想要实际将文本生成与图像分类结合起来，能够为这些图像写描述。我们将使用重度迁移学习，因为从头开始训练这个东西会耗费很长时间，即使使用迁移学习。
 - en: we're going to use a relatively small image set and it's not going to be perfect。
     but it will generate captions that have some that have pretty good meaning for
     what they're looking at they won't be perfect。 We'll see that when we use images
     like I have a set of images。 the photos directory that's in the Github。Repository
     for this course that are just personal family photos that I use in machine learning。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将使用相对较小的图像集，它不会完美，但会生成一些具有相当好意义的描述。它们不会完美。当我们使用我在这个课程的GitHub上存放的个人家庭照片时，我们会看到这一点。
 - en: you've seen a number of them in this class， some of them are by dog Hickory
     and these are good tests for that because they're completely outside of imagenet
     and they're just things that I have that are pictures that I chose because I thought
@@ -50,99 +63,128 @@
     instead of inception but for this one inception works better I'll get into what
     the actual differences when we get down to that part and then glove that is a
     natural language processing embedding。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 你在这个课程中见过很多这样的例子，其中一些来自狗Hickory，它们是非常好的测试，因为它们完全不在Imagenet中，而且都是我选择的照片，因为我认为从机器学习的角度来看，它们很有趣，有些可能并不容易被这些神经网络分类。现在我们将从Inception
+    V3和GloVe进行迁移。Inception V3是众多经过Imagenet训练的神经网络之一，MobileNet我们在这个课程中也用过几次。现在我已设置为可以使用MobileNet而不是Inception，但在这个案例中Inception表现更好。我会在到达那部分时详细说明实际的区别，GloVe是自然语言处理的嵌入。
 - en: We'll be learning more about those in the next module when we get into natural
     language processing。 This is essentially how this is going to work。 It's actually
     pretty similar to the text generation that we did in the previous chapter。 But
     instead of just generating random sort of nonsense sentences。 now we're going
     to actually generate us sentences。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将在下一个模块中学习更多关于这些内容的知识，当我们进入自然语言处理时。这基本上就是它的工作方式。实际上，这与我们在上一章中进行的文本生成非常相似。但现在我们不仅仅是生成随机的无意义句子，而是实际上要生成有意义的句子。
 - en: you can see why we started with the previous part and learned how to just teach
     the neural networks。 The basics of grammar and how to string things together。
     And really。 we're just guiding them to the knowledge of grammar。 We're not actually
     teaching them grammar。 believe me， the early days of natural language process
     was obsessed with teaching the neural networks all about or preprocessing based
     on grammar rules and codifying the grammar rules。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以理解我们为什么从前面的部分开始，并学习如何仅教授神经网络。语法的基础以及如何将内容组合在一起。实际上，我们只是在引导它们了解语法知识。我们并不是在真正教它们语法。相信我，早期的自然语言处理痴迷于教神经网络所有关于语法规则的知识，并将语法规则编码化。
 - en: and believe me， thats that's very difficult。 Now， the idea is to use big data。
     large corpes of text and to be able to let the neural network。Learn the language
     for themselves。 This is how it works。 Now， previously， what we would do when we
     were generating the nonsense sentences is we would put in maybe 20 characters。
     Well now we're not doing this character based。 We're doing it word based。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 相信我，这非常困难。现在，想法是使用大数据，大量文本，让神经网络自己学习语言。这就是它的工作方式。以前，我们在生成无意义句子时会输入大约20个字符。现在我们不再基于字符，而是基于词。
 - en: We could do captions character based。 it would require potentially more training。
     and this is just simply the technique I am using at this point。 if you'd like
     to try it in character based， Id definitely encourage you。 and I'd be curious
     to see what results you got。 you could definitely use this code as a starting
     point for this。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以基于字符做字幕。这可能需要更多的训练，而这就是我目前正在使用的技术。如果你想尝试基于字符的方法，我绝对鼓励你。我也很好奇你会得到什么结果。你可以使用这段代码作为起点。
 - en: but since it is now word based， we are going to present a vector。 So this this
     is going into the neural network。 and the individual elements are not characters。
     they're words and we have a special token word called start， this is what kicks
     the whole thing off。 So instead of giving it a seed like we did before。 since
     we needed to generate the entire caption。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是由于现在是基于词的，我们将呈现一个向量。这将输入到神经网络中，单个元素不是字符，而是单词，我们有一个特殊的标记词叫做“start”，这就是一切的起点。因此，与之前给种子不同，因为我们需要生成整个字幕。
 - en: we really can't seed it because we don't we don't know how the captions。start
     so all captions start with the word start， which is and not even the real word
     start。 This is just token that we're using。 And then we initially send it just
     start but here's the trick。 neural networks can accept many different inputs and
     multiple things。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们真的无法给它种子，因为我们不知道字幕是如何开始的。所有字幕都以单词“start”开头，而这甚至不是实际的单词“start”。这只是我们使用的一个标记。然后我们最初只发送“start”，但这是诀窍。神经网络可以接受许多不同的输入和多个内容。
 - en: So we're input to this is really very similar to the previous part。 but we're
     putting an entire image into it too So there's two inputs that are coming in and
     we'll see that the Kira's functional API as opposed to sequence is absolutely
     necessary for this。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们的输入实际上与前面的部分非常相似，但我们也输入了整张图像。所以有两个输入进来，我们会看到Kira的功能性API与序列相比在这里绝对是必要的。
 - en: So we use the model and Kira's functional API for Resnet and for a couple of
     other things so far in this course。 but we will definitely be using model and
     functional API for this because this is a fairly complicated neural network are
     giving it a picture and then we gradually build this up just like we did in the
     previous part。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们使用模型和Kira的功能性API来处理Resnet以及目前课程中的其他几个部分。但我们肯定会使用模型和功能性API，因为这是一个相当复杂的神经网络，我们给它一张图片，然后像在前面的部分一样逐步构建这个网络。
 - en: So we pass its start。A picture of a dog running in the grass。 that's actually
     my dog。 And then the neural network takes both of those。 and it returns probabilities。
     And it'll say， okay。 I think maybe the next， the next one is runs。 Now this is
     if we had put in a and dog here。 So start a dog runs would be the highest probability。
     Now。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们从开始部分开始。一张狗在草地上奔跑的照片。那实际上是我的狗。然后神经网络会接收这两者，并返回概率。然后它会说，好吧。我想下一步可能是“跑”。现在，如果我们在这里输入“a”和“狗”，那么“开始一只狗跑”将是最高概率。现在。
 - en: this is really long because this list of dummy variables is every single word
     that is in this thing vocabulary。 we'll see the size of the vocabulary in a moment。
     but a lot of dummy variables。 So this is the overall structure of what we're going
     to build。 and we're going to train this neural network。 obviously using the transferred
     learning so that we don't have to train this literally from scratch。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 这真的很长，因为这组虚拟变量包含了这个词汇表中的每一个单词。我们稍后会看到词汇表的大小，但有很多虚拟变量。所以这是我们要构建的整体结构，我们将训练这个神经网络，显然使用迁移学习，这样我们就不必从头开始训练。
 - en: that would be that would be Hughes always use transferred learning if you can。
     I am not going to actually run this code。 It takes this probably I would seem
     to remember about two hours。3 hours。 maybe for to actually train this neural network。
     So I've got it all。Ran and the version that is up on Github should be pre-ran
     with this。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么你应该总是使用迁移学习，如果可以的话。我不会实际运行这段代码。根据我的记忆，大约需要两个小时或三小时来训练这个神经网络。所以我已经把它全部运行过了，Github上上传的版本应该是预先运行过的。
 - en: Now you might see some different captions。 if you compare what you're seeing
     in this video to the actual website。 because if I rerun this， this is all stochastic。
     So you can get you can definitely get different results。 And I tend to rerun these
     as the semester progresses as different versions of Tensorflow come out So you'll
     see different results。 these are all the imports that you need。 the only thing
     that's somewhat interesting here is these are the start in in tokens。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在你可能会看到一些不同的标题。如果你将这段视频中的内容与实际网站进行比较，因为如果我重新运行，这一切都是随机的。所以你绝对可以得到不同的结果。随着学期的进展，我会倾向于重新运行这些，因为不同版本的Tensorflow会出现。所以你会看到不同的结果。这些是你需要的所有导入，唯一有点有趣的是这些是开始和“in”标记。
 - en: So we start it up here with the start token and it keeps adding additional words。
     So we put in just start， it would hopefully give us a then we would give a start
     and a it would hopefully give us dog then we give a start a and dog and it would
     hopefully give us runs and it continues。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们在这里用开始标记启动它，并不断添加额外的单词。如果我们仅输入“开始”，它会希望给我们一个，然后我们再输入“开始”和“a”，它会希望给我们“狗”，然后我们给出“开始”、“a”和“狗”，它会希望给我们“跑”，然后继续。
 - en: eventually it'll give us an in token。 So either we hit the wall here and run
     out of space。 that'll stop us or we get a in token。 So this is how the output
     of the neural network can be very not fixed length。If you need a neural network
@@ -152,226 +194,292 @@
     Epochs that's simply how many epos we're going train it for we're not using early
     stopping or anything like that use inception is true if you want to try mobilenet
     just put false in there doesn't work as well。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 最终它会给我们一个“in”标记。所以要么我们在这里撞墙而没有空间，要么我们得到一个“in”标记。这就是神经网络的输出可以是非常不固定长度的原因。如果你需要一个神经网络生成一个句子或提供一些不固定长度的内容，这就是你通常需要做的。你需要逐步构建，让神经网络为你不断添加新的元素。Epochs指的是我们将训练它的周期数，我们不使用提前停止或其他任何东西。如果你想尝试mobilenet，只需将这里的值设为false，这样效果不好。
 - en: I have my hours minutes string because we we time how long these things take
     definitely use coab for this。 the GPU is your friend or if you have your own faster
     GPU definitely use that。 You're going to need to download some data sets for this
     So here I have the path content my drive Now you might need to change this if
     you're putting your stuff in different locations。 but you'll need to create the
     directories for for each of those in that folder。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 我有我的小时和分钟字符串，因为我们会计时这些事情花费了多长时间，绝对要使用coab。GPU是你的朋友，如果你有自己的更快的GPU，绝对要使用它。你需要下载一些数据集。所以在这里我有路径内容在我的驱动器上。现在，如果你将你的东西放在不同的位置，可能需要更改这个路径，但你需要为该文件夹中的每一个目录创建目录。
 - en: you can see from the source code they're all just named this and then you need
     to create a data directory that's where it's going to create the。Output files
     those should all be directly off of captions。 So unzip these these two and put
     them there。 By the way。 getting a hold of the flicker8k data set for this can
     be a little tricky。 read the article here。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以从源代码中看到，它们的名称都是这个，然后你需要创建一个数据目录，输出文件将创建在这里。这些文件应该直接来自标题。因此，解压这两个文件并放到那里。顺便说一下，获取
+    flicker8k 数据集可能有点棘手。可以在这里阅读相关文章。
 - en: there's some copyright questions around that one。 So its it's difficult。 It's
     not difficult to get a hold of。 I can't put it into my Github repository because
     it it's not mine。 So if you click that link， you can find out exactly how to get
     a hold of it。 So we're going to clean this data set and begin to process it the
     data set by the way。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 关于这个问题有一些版权问题。因此，这很复杂。并不是说很难获得。我无法将其放入我的 GitHub 存储库，因为它不是我的。所以如果你点击那个链接，你可以准确找到如何获取它的方法。因此，我们将清理这个数据集，并开始处理它，顺便说一句。
 - en: what this data is， is it's from Flickr。 it has 8000 images and captions for
     them。 So it's exactly what we need and we need to basically break this up and
     what we're doing here is we're cleaning up the descriptions。 We're essentially
     converting them to lower。re for this null punctuation。 These are punctuations
     we're removing certain punctuation。 We are essentially removing。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个数据来自 Flickr。它有 8000 张图像及其对应的标题。因此，这正是我们需要的，我们需要将其拆分，而我们在这里所做的就是清理描述。我们基本上将其转换为小写，并去掉标点符号。这些是我们正在移除的某些标点符号。我们基本上是在移除。
 - en: Very short words here。 We're removing words that do not have alpha alphabetic
     components to them。 and we're gradually figuring out the length。 So we need to
     know what that maximum caption size is because that's going to be our sequence
     length。 and we gradually build up our dictionary of these。 Then we can print out
     what we collect。 So look up is essentially the number of unique words and then
     the number of words in our dictionary and the max length。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里是一些非常简短的词。我们正在移除那些没有字母组成的词，并逐渐确定长度。因此，我们需要知道最大标题长度，因为这将是我们的序列长度。然后我们逐渐构建这些词的字典。接着，我们可以打印出我们收集到的内容。因此，查找的实质是独特词汇的数量以及我们字典中的词汇数量和最大长度。
 - en: the max caption length。 Then we load the glove embeddings。 Now what the glove
     embeddings are is essentially vectors for each of the words in the vocabulary。And
     each of those vocabulary words is going to have a corresponding vector。 and those
     are the features that well put into the neural network to actually do the predictions
     rather than doing。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 最大标题长度。然后我们加载 GloVe 嵌入。GloVe 嵌入基本上是词汇中每个词的向量。这些词汇中的每个词都将有一个相应的向量，这些就是我们放入神经网络进行预测的特征，而不是直接进行。
 - en: say the index numbers or dummies。 This is much better than using a dummy variable
     for each vocabulary word because there's a lot of vocabulary words and that would
     be a lot of additional data there。 We do use dummies for the vocabulary words
     on the output from the neural network。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 说索引号码或虚拟变量。这比为每个词汇使用一个虚拟变量要好得多，因为词汇中有很多词，这将会产生大量的额外数据。我们确实在神经网络的输出中使用了词汇的虚拟变量。
 - en: but we do not on the input。 The other advantage is those vectors of the words，
     similar words。 the vectors will be closer to each other in Euclidean space。 So
     using linear algebra where you're basically calculating distances between two
     vectors。 two similar words will be fairly close in space。 we read in all of the
     image names。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我们不会在输入中使用。另一个优点是，这些词的向量，相似的词，向量在欧几里得空间中会更接近。因此，利用线性代数，你基本上是在计算两个向量之间的距离。两个相似的词在空间中会相当接近。我们读取所有的图像名称。
 - en: We're basically getting ready to load everything。 We have 6000 images in the
     training set 1000 in the test。 and then we build up all of these descriptions
     So there。Are going to start with the start token。 Then they're going to have the
     actual words of the caption and they're going to end with stop。 So this is how
     we basically start and stop the captioning process as we build the sequence like
     we saw up in the diagram earlier。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们基本上准备加载所有内容。训练集中有 6000 张图像，测试集中有 1000 张。然后我们构建所有这些描述。因此，将从开始标记开始。接着会有标题的实际词汇，并以停止结束。这就是我们基本上如何开始和结束标题生成过程的方法，正如我们在之前的图表中所看到的那样。
 - en: Now， I have the code here to use inception or to use mobilenet。 this number
     in the output dimensions， that is really the reason why。 So this turns each of
     the images。 So using inception， if you use inception just straight up。 it would
     return 1000 probabilities because there's 1000 images in imagenet and each of
     those images。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，我这里有代码可以使用inception或mobilenet。这输出维度中的这个数字，确实是原因所在。所以这会转换每一张图片。使用inception，如果你直接使用inception，它会返回1000个概率，因为imagenet中有1000张图片，每一张图片。
 - en: it would give you the probability that the image is one of those。 We strip that
     layer off and below that is a 2048 densely connected layer。 And we use basically
     those outputs like we saw earlier in feature engineering from transfer。Learning
     we use that as feature engineering。 so this 2048 vector that comes out out of
     inception with the top top layers sheared off。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 它会给你这个图像是其中之一的概率。我们去掉了那一层，下面是一个2048维的密集连接层。我们基本上像之前在迁移学习中的特征工程中看到的那样使用这些输出。我们将其用作特征工程。因此，这个从inception中输出的2048维向量，上面的一些层被去掉了。
 - en: And that's what we're doing here。 we're removing two layers。 Those become essentially
     engineered features for those images。 And again。 it it's like with glove that
     2048 vector similar images should be closer together in vector space。 notice how
     many of the output dimension is here。 There's not densely connected layers there
     because the mobile net is trying to be very compatible with mobile devices and
     power consumption。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是我们在这里做的。我们去掉了两个层。这些本质上成为了这些图像的工程特征。再说一次，就像使用glove一样，2048维的相似图像在向量空间中应该更接近。注意这里输出维度有多少。因为mobile
+    net试图与移动设备和功耗非常兼容，所以那里没有密集连接的层。
 - en: So your number of dimensions when you shear off those top layers explodes and
     you've got 50 That's not ideal for feature engineering because that's going to
     be a very sparse vector。 at least when I've inspected on many of those will be0
     and you won't get quite you just will not get as good a results as using the 2048。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以当你去掉那些顶层时，你的维度数量会激增，而你有50。这对于特征工程来说并不是理想的，因为这会是一个非常稀疏的向量。至少我在许多实例中检查时，会发现很多维度为0，结果不会那么好，使用2048维的结果会更好。
 - en: you're welcome to experiment with it though and the code should all work。 These
     are the key constant。That you need to change the height and the width because
     different transferred neural networks are trained for different image sizes and
     it prints out a summary。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 不过你可以进行实验，代码应该都能正常工作。这些是你需要更改的关键常量。你需要改变高度和宽度，因为不同的迁移神经网络是为不同的图像大小训练的，它会打印出摘要。
 - en: This is quite long。 It's a long neural network that we transfer in。 We're going
     to create the training sets。 So for each image， we need to encode it。 and we're
     basically encoding the image to whatever that output dimension size is。 Now this
     is what it is。 you can't change that constant and change the output size。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 这相当长。它是我们迁移的一个长神经网络。我们将创建训练集。因此，对于每张图像，我们需要对其进行编码。我们基本上是将图像编码为输出维度的大小。现在就是这样。你无法改变那个常量和输出大小。
 - en: So we're essentially taking the image。 we're resizing it to a standard size。
     We're not worried about keeping the aspect ratio。 The transferred neural network
     tends to figure that out。 We do any preprocessing that the transferred neural
     network needs。 We expand the dimensions here。 We're essentially taking the long
     string that these images are loaded in。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们本质上是在处理图像。我们将其调整为标准大小。我们不担心保持宽高比。迁移的神经网络往往会解决这个问题。我们进行迁移神经网络需要的任何预处理。我们在这里扩展维度。我们基本上是将这些图像加载时的长字符串处理。
 - en: and putting it back into the grid that a image really should be。 Here is where
     we perform any preprocessing actually not up here。 that's essentially converting。To
     an array and then we call the either mobilenet inception to predict。 that's where
     it turns into that 2048 vector。 and then we reshape it so it's in the right size。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 并将其放回到图像应该真正处于的网格中。在这里，我们实际上执行任何预处理，而不是在这里。那基本上是转换为数组，然后我们调用mobilenet或inception进行预测。那是如何变成2048维向量的。然后我们将其重塑为正确的大小。
 - en: essentially for prediction or for input into the neural network This is where
     we generate the training set This is where we call this over and over this can
     take some time So we actually pickle the training set after we load so we're loading
     all those JpeEgs or PGs or whatever that image data is and turning them into the
     2048 vectors that this thing crunches them down into。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 本质上是为了预测或输入到神经网络中。这是我们生成训练集的地方。这是我们反复调用的地方，这可能需要一些时间。因此，在加载后我们实际上会将训练集进行序列化，所以我们正在加载所有这些JpeEgs或PGs，或者那些图像数据，并将它们转化为这个东西压缩成的2048个向量。
 - en: So this is a lot of image process doesn't take necessarily a tremendous amount
     of time but it can take a while this is where we process the captions and we get
     them into a similar structure Now we have 30000 captions because there's up to
     five different captions provided for each image that's just the way the data is
     So each image is actually multiple caption which which is kind of nice We're going
     to get rid of。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这大量的图像处理不一定需要花费巨大的时间，但可能会花一些时间，这就是我们处理标题的地方，我们将它们整理成相似的结构。现在我们有30000个标题，因为每张图像最多提供五个不同的标题，这就是数据的方式。因此，每张图像实际上都有多个标题，这样挺不错的。我们将去掉一些。
 - en: Wds that don't occur that often。 So our vocabulary drops down to just 1651。
     That helps a lot。 And we build up two indexes。 each of those 1651 words that we're
     dealing with。 which we also add to the tokens。 We have one that takes an index
     number and gives you a word back and a similar one that takes a word and gives
     you an index back。 So you've got a double directional sort of dictionary to look
     these words up in。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 不经常出现的单词。因此我们的词汇量降到了1651。这帮助了很多。我们建立了两个索引。每一个我们处理的1651个单词，这也添加到标记中。我们有一个根据索引号返回单词的索引，还有一个根据单词返回索引的类似的索引。因此，你有一个双向的字典来查找这些单词。
 - en: We do add two to the max length that accounts for this start and end token。
     And then this is what it looks like really using the data generator。 We're going
     to start would just start。 It should so we're calling that neural network multiple
     times。 call it would just start it adds a So this is what the training set actually
     looks like。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们会将最大长度加上两个，以考虑这个开始和结束标记。然后这就是使用数据生成器的实际样子。我们将开始，只需开始。它应该，所以我们多次调用那个神经网络。调用它会开始添加一个。所以这就是训练集的实际样子。
 - en: So just one picture。 and one caption。 The idea here is this training sets going
     to be gigantic。 So for each image。 This is just one image。 This is hickory。 my
     dog running on the grass。 He's not in the data set， but I'm using him as an example。
     for this one。 we would have five different captions of him。 We would have maybe
     like。Budog runs on the grass。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以只是一张图片和一个标题。这里的想法是这个训练集将是巨大的。因此对于每张图像，这只是一个图像。这是我的狗在草地上跑的情景。它不在数据集中，但我用它作为例子。对于这一张，我们将有五个不同的标题。我们可能会有像“狗在草地上跑”这样的标题。
 - en: dog running all these different variants of what the caption could be But for
     each of these。 this is showing just one caption。 We need to generate all the phases
     of it。 We need to generate with this image and just start return A with this image
     start an a return dog with this image。 start a dog return runs。 there are a lot
     of data in this training set。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 狗跑动的所有这些不同变体可能是什么样的标题。但对于每一个，这里只展示一个标题。我们需要生成它的所有阶段。我们需要生成这个图像并开始返回“狗”，然后用这个图像开始返回“狗”。开始“狗”，返回“跑”。在这个训练集中有很多数据。
 - en: So we're going to use something called a generator to make it not so insane
     in terms of the RA requirement。 and then you'd get your second image because the
     data set has 5，6000 of these， So each one of those。 youd be you'd have to literally
     duplicate the image in the training set five times for each of the five captions。
     and then each of the captions gets a number of additional entry。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将使用一种叫做生成器的东西，以使其在RA要求方面不那么疯狂。然后你将得到你的第二张图片，因为数据集中有56000个这样的。所以每一个，你必须真的在训练集中将图像复制五次，以对应每个标题的五个版本。然后每个标题还会有一些额外的条目。
 - en: So you would need to duplicate that picture get again for each of these intermediate
     places。 It's a lot of data。 So we use a data generator。 The data generator is
     what we're going to。not generate this big matrix like we did before to pass in。
     And essentially what's going on here is it's looping through all of the keys。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以你需要为每一个中间位置复制那张图片。这是大量的数据。所以我们使用数据生成器。数据生成器是我们将要使用的。不会像之前那样生成这个大矩阵来传入。基本上，这里发生的事情是它在遍历所有的键。
 - en: Those are essentially all of the images that we have。 And then for each one
     we're looping through all the description。 So there's five of them。 And then we
     generate。 So these are percent of the dimensions we need to generate one for each
     picture。 one for each description。 And then one for each combination of those
     words in there so that we catch all the intermediate form。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些基本上是我们拥有的所有图像。然后对于每一个图像，我们循环遍历所有描述。因此有五个描述。然后我们生成。这些是我们需要为每张图片生成一个、为每个描述生成一个的维度的百分比。然后是这些词的每种组合，以便我们捕捉到所有的中间形式。
 - en: And we're also mindful of how many photos we want per batch that's a training
     hyperparameter。 The way that this works is this is this big loop is not being
     ran just straight out and generate。 it would just dump a ton of data if it did。
     That's what the yield command in Python does。 This is essentially a dynamic collection
     that you're building。 and every time you hit yield。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还考虑到每批次希望有多少张照片，这是一个训练超参数。这个大的循环并不是直接运行并生成的。如果这样做，它会倾倒大量数据。这就是Python中yield命令的作用。这基本上是一个动态集合，你正在构建，每次你触发yield时。
 - en: It essentially keeps this loop sort of in freeze dry eye mode。 So it just freezes
     it。 And lets the program go on with what it's doing。 And then the next time this
     gets。CalledIt goes right back to here and restarts the loops exactly where they
     were and returns。 returns it。 These are the glove embedding so that we have those
     available so that we can turn those words into the 200 per word。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 它基本上让这个循环保持在冷冻干燥模式。所以它只是冻结它，并让程序继续进行它的工作。然后下次这个被调用时，它会回到这里，并从上次循环的确切位置重新开始并返回。返回它。这些是GloVe嵌入，以便我们可以将这些单词转换为每个单词的200个值。
 - en: You have to set that constant。 You can't change that that is fixed by glove。
     And then we essentially just build the inputs for all of those caption words that
     we have and look them all up。 And you can see then essentially the shape of this。
     So we're using a embedding layer。 We have 1652 words。 and each of those 1652 words
     has 200 elements。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 你必须设置那个常量。你不能改变它，因为它是由**GloVe**固定的。然后我们基本上只是构建所有那些我们拥有的标题词的输入，并将它们全部查找。你可以看到这个的基本形状。所以我们使用了一个嵌入层。我们有1652个单词，每个单词都有200个元素。
 - en: Those 200 elements are the vectors that glove turns each of the words into so
     that similar words will be closer in vector space。 This is using something called
     akira's embedding layer。 We will learn more about this in the next module when
     you get an NLP。 that these are great。 This lets you do this whole lookup inside
     of ks and let ks do it internally。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 这200个元素是GloVe将每个单词转化为的向量，因此相似的单词在向量空间中会更接近。这使用了一种叫做**Akira**的嵌入层。我们将在下一个模块中学习更多关于这个的知识，当你学习NLP时。这些非常好。这让你在内部进行整个查找。
 - en: This is what the neural network looks like。😊，So input1 is going to be your image
     input2 is that gradually increasing caption that you're going to send in each
     time。 This is where the embedding layer comes in。 It uses the vocabulary size
     and it uses this embedding matrix that we had created that essentially becomes
     the weights of that layer we'll see that we transfer this in in a moment When
     we create it here we don't transfer it in。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是神经网络的样子。😊 输入1是你的图像，输入2是你将每次发送的逐渐增加的标题。这就是嵌入层的作用。它使用词汇量大小，并利用我们创建的嵌入矩阵，这个矩阵基本上成为那个层的权重，我们稍后会看到我们在这里创建它时并没有转移它。
 - en: it's initialized with random weights， but it's essentially a matrix of this
     size so that it can do those lookups for you。 it'll look up each of those words
     and put in the correct 200 values。 we've got some dropout layers going on and
@@ -379,126 +487,164 @@
     for O text generation in the previous part we set up we basically add these to
     the neural network we had a final dense 256 layer and then the final output layer
     is going to be the vocab size because you've got dummy variables coming out of。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 它用随机权重初始化，但基本上是一个这种大小的矩阵，以便为你执行那些查找。它会查找每个单词并填入正确的200个值。我们有一些丢弃层，并且我们有256的LSTM，这实际上非常类似于我们在前一部分用于文本生成的LSTM层。我们基本上将这些添加到神经网络中，我们有一个最终的256密集层，最后的输出层将是词汇大小，因为你有虚拟变量输出。
 - en: Essentially， then we create a model so this is using the kas functional API
     so that we can have the inputs。 we can have multiple inputs， inputs one and inputs
     multiple inputs here when I'm talking about it is like maybe three pictures coming
     in or one picture in a caption or three pictures in a caption who knows however
     you want to set it up。
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 本质上，我们创建一个模型，这使用的是Keras功能性API，以便我们可以有输入。我们可以有多个输入，输入一个和多个输入，当我谈论它时，比如说可能有三张图片进来，或者一张图片和一个标题，或者三张图片加一个标题，随你如何设置。
 - en: This is the summary of our network that I just described。 This is very important。
     This is where we're basically taking that embedding matrix from glove and putting
     that we are just putting that right into the weights of the neural network。 So
     we're overr the weights of the neural network。 and it becomes a lookup for us。
     whenever it sees word 5。 for example， itll go to the column row。
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我刚才描述的我们网络的摘要。这非常重要。这是我们基本上从GloVe获取嵌入矩阵并将其直接放入神经网络权重中的地方。所以我们覆盖了神经网络的权重。它为我们提供了一个查找，当它看到单词5时，例如，它会去到列行。
 - en: depending on on the orientation that matrix and place that into the feature
     vector。 we can pile the entire neural network for categorical cross entropy because
     it is a classification neural network。 We're now going to train it the batch size
     of three。Do I got this from some of the original papers。 We're basically doing
     it。 So we have those 10 epochs。
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 根据矩阵的方向，将其放入特征向量。我们可以为分类交叉熵构建整个神经网络，因为这是一个分类神经网络。我们现在将以批量大小为三进行训练。这是我从一些原始论文中获得的。我们基本上正在进行这个。因此，我们有10个训练周期。
 - en: We are going to do 20 epochs at this learning rate and then a final epoch。 we're
     sort of decreasing the learning rate。 we could also use a scheduler for this。
     but this is pretty pretty straightforward。 Now we do save the neural network。
     If we see it already exists， we just load it。 we don't rebuild it because this
     part's going to take a bit of time。
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将在这个学习率下进行20个训练周期，然后是最后一个周期。我们正在减少学习率。我们也可以为此使用调度程序，但这相当简单。现在我们保存神经网络。如果我们看到它已经存在，我们只需加载它。我们不重建它，因为这部分会花费一些时间。
 - en: Now， when we need to actually generate the caption， this is the function that's
     going to do it。 This is actually somewhat similar to the function that we had
     in the previous part where we were just generate random text。 it's going to go
     in a range up to the max length that is going to build a sequence essentially
     just with the just with the start tag starting。 it is going to pad the sequence
     because it has to go to the to the end。 essentially with with zeros。
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，当我们需要实际生成标题时，这就是将要执行的函数。这实际上与我们在前面部分生成随机文本的函数有些相似。它将构建一个序列，长度达到最大值，基本上就是从起始标签开始。它会用零填充序列，因为必须到达末尾。
 - en: We're going to request a prediction。 Our max gets us of those。Those predictions。
     which of them is has the highest probability， because that's the word that we're
     going to add。 Then we add a space to it。 If we've gotten the stop token， then
     we stop and we continue。 and then finally， we split this out and return a textual
     string that tells us essentially what the caption was。
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将请求一个预测。我们的最大值获取这些预测中概率最高的那个，因为那就是我们要添加的单词。然后我们加一个空格。如果我们得到了停止标记，那么我们就停止并继续。最后，我们将其分离并返回一个文本字符串，告诉我们标题基本上是什么。
 - en: Now if we call this and evaluate it。 These are some actual results。 So you see
     these two people riding on a bike together。 It says man and white shirt is standing
     by a woman in a blue hat。 Okay close。 it had a decent idea what's going on。 If
     we look at some more of these， another inside of here。
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在如果我们调用这个并评估它。这是一些实际结果。你可以看到这两个人一起骑自行车。它说，穿白衬衫的男人站在一个戴蓝色帽子的女人旁边。好吧，接近。它对正在发生的事情有个不错的想法。如果我们查看更多这些，这里还有另外一个。
 - en: There is a dog being barraged by tennis balls。 dog is chasing a ball。 Okay，
     yeah。 he's kind of jumping at it。 I'll buy that。 There' is a dog on concrete or
     maybe snow。 Two dogs are running through grass。 Okay， new is a dog。 black and
     white dogs running through the snow。 This is the most spot on one that I've seen
     yet of the three。
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 有一只狗被网球轰炸。狗在追逐一个球。好吧，是的。它有点跳跃着去追。可以接受。有一只狗在混凝土上或者可能是在雪上。两只狗在草地上奔跑。好吧，现在是一只狗。黑白狗在雪中奔跑。这是我看到的三个中最准确的一个。
 - en: So that's very good。 Again， these are not perfect。Would have to expend considerably
     more training and probably get a bigger data set to really get these a lot a lot
     better。 Look like two guys walking with some strange graffiti on the ground。 man
     in black coat is standing next to women in black jacket fairly close。
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这很好。再说一次，这些并不完美。需要投入更多训练，可能还要更大的数据集，才能让这些更好。看起来有两个家伙走在地上，旁边有一些奇怪的涂鸦。穿黑色外套的人站在穿黑色夹克的女人旁边，距离相当近。
 - en: It wasn't figuring out the genders。 but it got the gender right on one guy。
     two kids playing on a trampoline。 little boy in red shirt is jumping off of a
     swing。 I can get that。 maybe he's maybe there's a swing back there。 but I did
     rerun this a few times and it was picking up on the trampoline。 So that's kind
     of neat that it can see that sometimes two women in a bikini near a shoreline。
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 它没有搞清楚性别，但在一个男孩身上搞对了性别。两个孩子在蹦床上玩。穿红色衬衫的小男孩正在从秋千上跳下来。我可以理解。也许那儿有个秋千。但我重新运行了几次，它确实注意到了蹦床。所以它能看见这些东西，真不错，有时有两个穿比基尼的女人在海岸线附近。
 - en: So group of young people。 Okay I'll buy that are climbing up rock into the water。
     So you can see it's figuring out sees rocks it sees water。 It's neat that it's
     getting the grammar right into the water。 so I mean it's putting articles in front
     of things like it should。
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 一群年轻人。好吧，我相信他们正在爬上岩石进入水中。所以你可以看到它正在弄清楚，看到岩石，看到了水。很有趣的是它把语法弄对了，进入水中。所以我想它在东西前加了冠词，做得很好。
 - en: It's a dog dog is running through grass。 So okay on these pictures that it was。Now。
     it wasn't trained with these。 These are from the same set。 This is from the test
     set。 If you evaluate them on some of my photos， which are here from from Github。
     it doesn't do quite as well。 Now， this is kind of mean。
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是只狗，狗在草地上跑。所以好吧，这些照片是这样的。现在。它并没有用这些进行训练。这些来自同一组。这是测试集。如果你在我一些照片上评估它们，这些来自GitHub，它的表现不太好。现在，这有点残酷。
 - en: but this is what you do to test these things out and to show the limitations。
     I am standing next to this is at a university in Florida。 this is actually the
     university that I graduated with my doctorate that。 And this that's a tardis。
     if you've ever watched Doctor。 Ho， that is that's a whole thing in Dr。 Ho， But
     it's a phone booth。
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 但这就是你测试这些东西并展示局限性的方法。我站在这里，这是佛罗里达的一所大学。其实这是我获得博士学位的大学。那是个塔迪斯（TARDIS）。如果你看过《神秘博士》，那就是里面的东西。但这只是一个电话亭。
 - en: probably didn't have any tardiss let maybe phone booths and it' training set。
     So man in black shirt。 it's actually a blue shirt， but I blame the camera for
     that。 and jeans， it's seen my jeans。 So that's cool on the street。 Okay， it probably
     thought these things usually occur on a street。 but it was actually inside of
     a building， but that's actually pretty good。
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 可能没有塔迪斯，只有电话亭在训练集中。所以穿黑色衬衫的人。其实是蓝色衬衫，但我把责任推给了相机。还有牛仔裤，我的牛仔裤可见。所以在街上看起来很酷。好吧，它可能认为这些事情通常发生在街上。但实际上是在建筑物内部，但这实际上还不错。
 - en: This is me sitting there man in black shirt。Not even close。 and tie。 I only
     wear a tie if I am forced to cast drink。 I am， I'm not drinking。 This is my mother's
     dog。 Two dogs are fighting in the grass。 I don't know the dog maybe a split personality
     going on Now I noticed in the flickr data set。 a lot of them had people doing
     actions。 There's no people in here。
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我坐在那里的样子，穿黑色衬衫的人。甚至一点也不接近。我只在被迫出席时才会系领带。我现在不喝酒。这是我母亲的狗。两只狗在草地上打斗。我不知道那只狗，也许正在经历双重人格。我注意到在Flickr数据集中，很多照片都有人的动作。这儿没有人。
 - en: This is a bed and breakfast that my wife and I visited， and we just took a picture
     of it。 So it's completely just a landscape shot。 There's no workers。 there are
     steps here。 So maybe this is my wife， I and my dog man in a red shirt。 So it's
     talking about my wife who is not a man。 She is a woman is sitting on a stool with
     his shoes。
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我和妻子参观的一家民宿，我们刚拍了张照片。所以这完全是一幅风景照。没有工作人员。这儿有台阶。也许这是我、我的妻子和穿红色衬衫的狗。这里说的是我的妻子，她不是男人。她是个女人，坐在凳子上，穿着他的鞋子。
 - en: not even close。 This is me sitting on。 I like this rock。 It's at Washington
     University。 I call it the github rock because it looks pretty similar to Github
     with all those green squares。 man in swim trunks。 I am not in swim trunks in the
     middle War shoe。 I would might lose my job is holding drink in his hand。 Yeah
     it really wants me to get。
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 远远不够。这是我坐着的样子。我喜欢这块石头。它在华盛顿大学。我称它为 GitHub 岩石，因为它看起来很像 GitHub 的那些绿色方块。穿着泳裤的人。我并不是穿着泳裤在战争鞋中间。我可能会因为手里拿着饮料而失去工作。是的，它真的让我想要得到。
 - en: I am not in the middle of the university with swim trunks and a drink so anyway。
     these are just trying it on some of the images so up to date on this course and
     other topics and artificial intelligence。![](img/2287d406430b06732c757e98a8dcb007_3.png)
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 我并不是穿着泳裤、手里拿着饮料在大学的中间，所以无论如何。这只是尝试在一些图片上，所以在这门课程和其他主题及人工智能方面保持最新。![](img/2287d406430b06732c757e98a8dcb007_3.png)

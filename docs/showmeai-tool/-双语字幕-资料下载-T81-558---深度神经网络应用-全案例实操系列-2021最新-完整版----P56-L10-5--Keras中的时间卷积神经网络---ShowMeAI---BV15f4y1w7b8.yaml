@@ -1,118 +1,157 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P56：L10.5- Keras中的时间卷积神经网络
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P56：L10.5- Keras中的时间卷积神经网络
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeff Eaton， welcome to applications of Deep neural Networks with
     Washington University。You know what？LSTMs GUs and recurrent neural networks in
     general are definitely losing some favor in terms of time series prediction。 even
     though these were sort of the original deep learning and even traditional with
     Element and Jordan networks being introduced for time series。 But guess what，
     convolution neural networks can do this stuff to。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是杰夫·伊顿，欢迎来到华盛顿大学的深度神经网络应用课程。你知道吗？ LSTM、GU 和一般的递归神经网络在时间序列预测中确实失去了某些青睐，尽管这些是最初的深度学习，甚至传统的元素和乔丹网络被引入用于时间序列。但你猜怎么着，卷积神经网络也能处理这些事情。
 - en: for the latest on my AI course and projects， click subscribe in the bell next
     to it to be notified of every new video。 You normally think of convolution neural
     networks as images。 or at least you did a couple of years ago。![](img/00724811073eaf12285e83eecc6afed0_1.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 有关我的 AI 课程和项目的最新信息，请点击旁边铃铛的订阅，以便在每个新视频发布时收到通知。你通常会将卷积神经网络视为图像，或者至少你几年前是这样想的。![](img/00724811073eaf12285e83eecc6afed0_1.png)
 - en: CNNs are being applied to all sorts of things now。 Time series in particular
     and a lot of recent research is really giving CNNs the upper hand for some of
     the really complex time series and natural language processing things。 So I'm
     going to show you how to make use of temporal CNNs Kiras doesn't have as advanced
     of prebuilt libraries for these as I as I would have hoped one of the best ones
     is I have the link to it here。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，CNN 被应用于各种各样的事物。特别是时间序列，很多最新研究确实使 CNN 在一些复杂的时间序列和自然语言处理任务中占据优势。所以我将向你展示如何使用时间卷积神经网络，Keras
+    在这方面并没有我希望的那么先进的预构建库，其中最好的一个链接在这里。
 - en: but it's currently not available for Tensorflow 2。0。 I suspect that'll be rectified
     by the time the semester starts。 So I'll give you an update on that when we reach
     this point in the semester。 So for this part what we're going to do is we're going
     to take those two examples that I gave you before on time series。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 但目前在 Tensorflow 2.0 上不可用。我怀疑在学期开始时会得到纠正。所以当我们达到学期的这个节点时，我会给你更新。对于这一部分，我们将使用我之前给你提供的关于时间序列的两个示例。
 - en: So this time series sort of toy data that I have here and then。Also， the sunspots
     example。 and we'll show that both of those that we did in LSTM， you can use almost
     exactly。The same code。 And just swap out the CNN for the LSTN。 The data comes
     in in really the same format that I told you about setting up the 3D tensor for
     the input still applies。 We're setting up the 3D tensor here。 And this is the
     same example。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，这里我有的时间序列玩具数据，以及日斑的示例。我们会展示我们在 LSTM 中做的这两个，几乎可以使用完全相同的代码。只需将 CNN 替换为 LSTN。数据实际上以我之前告诉你的设置3D张量输入的格式进入，仍然适用。我们在这里设置3D张量。这是同样的示例。
 - en: This is training on potentially a car going in front of looking at just a small
     sort of laser beam。 So we can see okay， the car of color 1 is here。And so that's
     why the Y classifies as one。 The car of color2 is here。 It classifies to two is
     here。 I discuss this dataset set in part 2 of module 10。 If you， if you want more
     detail on that。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是关于潜在汽车的训练，正前方只看着一小束激光。所以我们可以看到，颜色1的汽车在这里。因此，Y 被分类为1。颜色2的汽车在这里，被分类为2。如果你想了解更多细节，我在模块10的第二部分讨论了这个数据集。
 - en: it's just a toy dataset set to show you really how to use a LSTM except in this
     case。 we've swapped out the LSTM。 We're using the con1 D。 and that is essentially
     the temporal convolution that that's built into Kis。 Now the more advanced ones
     of these。 and I'll update you on where that library is at when we reach this point
     in the semester is using something called residual。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 这只是一个玩具数据集，用于真正展示如何使用 LSTM，但在这种情况下，我们替换掉了 LSTM。我们使用的是 con1D。这本质上是内置于 Keras 的时间卷积。更高级的版本，我会在我们达到学期的这个节点时更新你该库的进展，是使用一种叫做残差的东西。
 - en: which is very much what we used in Resnet For now， and for this entire semester，
     we will use con1D。 I'm not going to swap that out at you。On the last minute。 because
     I always lock the versions at the beginning of the semester。 believe me。 Tensorflowlow
     and Kias can evolve considerably in a semester。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 这非常接近我们在 Resnet 中使用的内容。现在，在整个学期中，我们将使用 con1D。我不会在最后一分钟更换，因为我总是在学期开始时锁定版本。相信我，Tensorflow
+    和 Kias 在一个学期内可能会有很大变化。
 - en: The stuff is moving at the speed of light。 So let me go ahead and run this。
     It's going to train just like it did with the LSTM。 And the idea is。 I could put
     a car anywhere on any of these。 And it would learn that okay， two of these together。
     or maybe even three of these together。 Maybe it's a long car can be detected as
     a two or as a three or whatever。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些东西以光速移动。所以让我继续运行。它将像LSTM一样训练。我的想法是，我可以在这些中的任何一个地方放一辆车。它会学习到，好的，这两个在一起，或者甚至三个在一起。也许是一辆长车可以被识别为二或三等。
 - en: whatever color it is。 No RGB encoding at all。 Just one is one color， two is
     another color。 Again。 this is a toy example。 And it looks like it has trained。
     Okay， so let's try it out。 I have the car kind of halfway off the。😊，Off the edge
     of the vector， but we'll run it。 It still says that it's。one type of car。 If I
     moved the car， maybe it took it。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 不管是什么颜色，完全没有RGB编码。只是一个是一个颜色，两个是另一个颜色。同样，这只是一个玩具示例。看起来它已经训练好了。好吧，让我们试一下。我把车子放在了向量的边缘上，但我们还是运行一下。它仍然表示这是某种类型的车。如果我移动车子，或许它就会改变。
 - en: took the picture earlier， and it was over here。 it should still return a one
     works very similar to the。 to the previous。Example that was using a LSTM。Sunspots。If
     you want the full description on the Sunspot data， refer back to part two of this
     module。 but it's essentially the number of sunspots per month。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 早些时候拍的照片就在这里。它应该仍然返回一个，工作方式与之前的示例非常相似，之前使用的是LSTM。如果你想要Sunspot数据的完整描述，请参考该模块的第二部分。但本质上这是每月的日冕数。
 - en: And we're trying to predict those because that goes up and down。 I have the
     links to the data files here， because。The data file is provided by the government。
     So you need to download this and actually copy it to to your folder。 I put it
     in the data directory。 but you can put it really anywhere。 I'm going to go ahead
     and run this。 I already have it loaded。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们试图预测这些，因为它会上下波动。我在这里有数据文件的链接，因为数据文件是由政府提供的。因此，你需要下载并将其复制到你的文件夹中。我把它放在数据目录下，但你可以放在任何地方。我现在就运行这个，已经加载好了。
 - en: This is what the Spot data looks like。're going we're dealing mainly with the
     the year month and looking at the Spot value。 Now in these early years， they don't
     necessarily always have the value。 And here we're trimming those values that So
     the early early years that are missing the observations。 We're going to split
     it into test and train anything before 2000 is trained。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是Spot数据的样子。我们主要处理年份和月份，查看Spot值。在这些早期年份，它们不一定总是有值。这里我们修剪掉那些缺失观测值的早期年份。我们将其分为测试集和训练集，2000年前的都是训练集。
 - en: Anything after 2000 is test。 We're going to convert those to sequences。 just
     like we've done previously， this is just time series encoding。 So we are dealing
     with sequence size of 25。 So we are breaking this up into groups of 25。 and then
     we try to predict the 26th one。 And there's a lot of different groups of。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 2000年后的数据是测试集。我们将这些数据转换为序列，和之前做的一样，这只是时间序列编码。因此，我们处理序列大小为25。所以我们将其分成25组，然后尝试预测第26个。这有很多不同的组。
 - en: that we can pull from that data。 We can look and see what the Xtrain looks like。
     so it has those sequences in there。 the 25。 So that's how many sunspots initially
     so 253。240 all these sunspots and then y is just an array and that would be the
     sunspot that would come after the train sequence had come in。 This is where we
     build a model and train。 This does use early stopping。 I'll just fast forward
     this。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以从数据中提取的信息。我们可以查看Xtrain的样子，所以它包含那些序列。25。这是最初的日冕数，所以253、240，所有这些日冕，然后y只是一个数组，表示在训练序列之后的日冕数。这是我们构建模型和训练的地方。这使用了提前停止功能。我会快进这部分。
 - en: So let's run an RMSE on this using the training set。 So let's run an RC on the
     test set to see how well this is performing RC of 21 is actually pretty decent。
     That's the number of sunspots。 These are in the hundreds。 So it's reasonable accuracy。
     This content changes often。 So subscribe to the channel to stay up to date on
     this course and other topics and artificial intelligence。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们在训练集上运行RMSE。然后在测试集上运行RC，看看表现如何，21的RC实际上相当不错。这是日冕数，这些数值在几百左右。所以准确性是合理的。这个内容经常变化，所以请订阅频道以保持对该课程及其他人工智能主题的最新了解。
 - en: '![](img/00724811073eaf12285e83eecc6afed0_3.png)'
+  id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/00724811073eaf12285e83eecc6afed0_3.png)'

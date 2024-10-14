@@ -1,22 +1,29 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P54：L10.3- 使用Keras和TensorFlow生成文本
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P54：L10.3- 使用Keras和TensorFlow生成文本
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeff Heaton。 Welcome to applications at Deep neural Networks with
     Washington University In this module。 we're going to take a look at text generation
     using LSTMs。 We're going to see how we can create whimsical。😊，Randomized generations
     created from text documents。 so you could give it， for example， William Shakespeare's
     works。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是杰夫·希顿。欢迎来到华盛顿大学的深度神经网络应用模块。在这一模块中，我们将看看如何使用LSTM进行文本生成。我们将看到如何从文本文件创建奇思妙想的😊随机生成。
 - en: and it would generate Shakespeare Ask text for you。More interestingly， too。
     you could give it source code and it would generate。Reasonably valid， though not
     compilable。 C source code based on the C code that it was trained on。Now。 this
     somewhat whimsical use for LSTM has gotten definitely some publicity in the last
     couple of years。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 它会为你生成莎士比亚风格的文本。更有趣的是，你可以给它源代码，它会生成合理有效的，虽然不能编译的C源代码，这些是基于它所训练的C代码生成的。现在，这种LSTM的奇思妙想用法在过去几年中确实得到了不少关注。
 - en: it does lead into the next part where we get into using the same sort of technology
     to generate captions for pictures for the latest on my AI course and projects
     click subscribe and the bell next to it to be notified of every new video。 we're
@@ -28,187 +35,246 @@
     to do we're going take a baby steps so to speak and we're going to look at how
     a LSTM can be trained on any sort of text and it will output random nonsensical
     text。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 这引出了下一部分，我们将使用同样的技术为图片生成字幕。要获取我最新的AI课程和项目，点击订阅并点击旁边的铃铛，以便在每个新视频发布时收到通知。在这一部分和下一部分中，我们都将利用这项技术，在那里我们会做字幕生成，基本上是神经网络，或者实际上是几个神经网络可以查看图像并为其生成字幕，比如你可能会看到一只狗在草地上奔跑，神经网络会字面上写出“狗在草地上奔跑”。在这一部分中，我们将采取婴儿步伐，看看如何训练LSTM在任何类型的文本上，并输出随机的无意义文本。
 - en: '![](img/12a40ad6cb8e26a4cb77c05d5b96a105_1.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/12a40ad6cb8e26a4cb77c05d5b96a105_1.png)'
 - en: Very much in that format。 Now this uses all the same technology and builds us
     up to doing something more useful where we're going to actually generate the captions。
     but this is sort of the first step for it。 This was really popular a couple of
     years back。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 非常多以这种格式。现在这使用了所有相同的技术，并使我们能够做一些更有用的事情，即实际生成字幕，但这算是第一步。这在几年前非常受欢迎。
 - en: there is a classic sort of blog post I guess you would call it called the unreasonable
     effectiveness of recurrent neural networks I am going to show you this one really
     quickly because some of the examples here。 just the different types of text that
     can be generated。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 有一篇经典的博客文章，我想你会称之为“递归神经网络的非理性有效性”。我将很快给你展示这一点，因为这里的一些例子展示了不同类型的文本可以被生成。
 - en: This is Andre Carpathy's blog when he was a student at Stanford University working
     on his PhD incidentcidentally the captioning technology that we'll be looking
     at in the next part was also very much pioneered by him So one of the first things
     that he tried to generate was there's essays by Paul Graham you can read right
     here basically he created the LSTM and it was able to just randomly generate this
     sort。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是安德烈·卡帕西的博客，当他还是斯坦福大学的学生时正在攻读博士学位，偶然间，他所研发的字幕技术也在下一部分中有着重要的地位。所以他尝试生成的第一件事情就是保罗·格雷厄姆的文章，你可以在这里阅读，基本上他创造了LSTM，它能够随机生成这样的文本。
 - en: Of text。 now it's nonsensical。 this the surprised in investors weren't going
     to raise money。 I'm not the company with the time they're all。If you're not paying
     attention。 it looks like legitimate text and it even puts in captions。 and if
     you think about what's really going on here。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在的文本是无意义的，这让投资者感到惊讶，他们不会筹集资金。我并不是在与公司的时间相处，他们都是。如果你没有注意，这看起来像是合法的文本，它甚至插入了字幕。如果你想想这里到底发生了什么。
 - en: what's really fascinating is this neural network had to learn this from scratch。
     it doesn't know English。 it learned where to put apostropphes， it learned how
     to use commas。 it learned how to use periods at the end of sentences。 It learned
     how to put capital letters at the beginnings of sentences。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 真正令人着迷的是，这个神经网络必须从零开始学习。它并不知道英语。它学会了如何放置撇号，学会了如何使用逗号，学会了在句子末尾使用句号。它学会了在句子开头使用大写字母。
 - en: So it picked up a lot of grammar on its own。 and it learns this grammar by reading
     text。 not by having grammatical rules， hardcoded into the program。 hardcoding
     of grammatical rules and parse trees were very common in natural language processing
     probably a decade ago。 but with the advent of neural networks and deep neural
     networks in recurrent neural networks like we're dealing with here。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，它自学了很多语法。它通过阅读文本学习这些语法，而不是通过将语法规则硬编码到程序中。十年前，自然语言处理中的语法规则和解析树的硬编码非常常见。但随着神经网络和深度神经网络，以及我们正在处理的循环神经网络的出现。
 - en: there's much better ways to do this。 We'll also see you also had the neural
     networks generate Shakespeare。 Now what's very interesting。This is if you've read
     Shakespeare before， it's it's plays， it's drama。 So it's actors speaking different
     parts。 So this is very much what Shakespeare would look like。 You have a name。
     you have what that person is going to say the next name。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 还有更好的方法来做到这一点。我们也会看到神经网络生成莎士比亚的作品。现在非常有趣的是，如果你以前读过莎士比亚，这是戏剧，这是演员们说不同的角色。这非常像莎士比亚的样子。你有一个名字，你有那个人接下来要说的话的下一个名字。
 - en: what they're going to say and so on。 And the recurrent neural network was able
     to figure out the general format of a Shakespearean play and wrote this out。 This
     is not real Shakespeare， but it's meant to look kind of like Shakespeare。 aas。
     I think I shall be become now there it didn't figure out something on English
     that would be all one word become approached in the day when little。 I mean， it's
     it's nonsense， but it's string together these words correctly。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 它会预测接下来会说什么。循环神经网络能够弄清楚莎士比亚戏剧的总体格式，并将其写出来。这并不是真正的莎士比亚，但它的样子有点像莎士比亚。我想我现在应该变成这里面，它没有弄清楚英语的某些东西，所有的一词变成了“成为”，接近一天时的“小”。我是说，这就是无意义，但它正确地将这些单词串在一起。
 - en: It's putting it's using the articles correctly。 It often figures out verb agreement
     and other aspects of this。 It usually punctuates the sentences correctly。 So this
     was generating Shakespeare。 The Wikipedia generation was。imIf you've ever looked
     at view source on a Wikipedia page。 it shows you the media Wiki markup。 So if
     you ever wanted to write a page on Wikipedia。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 它正确使用冠词。它通常能够弄清楚动词的一致性和其他方面。它通常能正确标点句子。所以这是生成莎士比亚的内容。维基百科生成的内容是。如果你曾经查看过维基百科页面的源代码，它显示你媒体维基标记。所以如果你曾想在维基百科上写一篇文章。
 - en: you'd write in this form。 you put the double bracket that just means linked
     so this is linked to the John Claire article off in Wikipedia somewhere else。
     So it's emulating the Wikipedia form， which is which is very cool and it also
     starts to figure out what URLs look like it has no idea what a URL was before
     reading this and this is not even a real page on Yahoo if you tried to go to it
     even back when this was generated。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 你会用这种形式书写。你放入双括号，这意味着链接，因此这链接到维基百科某处的约翰·克莱尔文章。所以它模拟了维基百科的形式，这非常酷，并且它也开始弄清楚URL的样子。在阅读这些内容之前，它对URL一无所知，而这甚至不是Yahoo上的真实页面，如果你尝试访问，即使在生成时也是如此。
 - en: it would give you an error。 it's essentially a hallucinization of of the Record
     neural network。 I believe is what Andre called it in here。 It figures out other
     interesting parts of Wikipedia notation I found this one very interesting。 If
     youve worked with academic papers， particularly for publication and academic journal。And
     conferences， I'm sure you've dealt with latex latex is very good for mathematically
     rich text。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 这会给你一个错误。它本质上是记录神经网络的幻觉。我相信这是安德烈在这里称之为的。它弄清楚了维基百科符号的其他有趣部分，我觉得这个非常有趣。如果你曾经处理过学术论文，特别是为了发表和学术期刊，以及会议，我相信你已经处理过LaTeX，LaTeX对于富含数学的文本非常有效。
 - en: And here the recurrent neural network was trained on a bunch of latex and was
     then asked to generate its own latex。 And as if you read the blog post for more
     detail on it。 it was mostly compileilable。 There were some errors that the authors
     had to fix。 but it was able to generate very mathematically looking latex， even
     diagrams。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里的递归神经网络在一堆 LaTeX 文档上进行了训练，然后被要求生成自己的 LaTeX。就像如果你阅读博客文章可以获得更多细节一样，它大多数情况下是可以编译的。虽然有一些错误需要作者修复，但它能够生成非常像数学的
+    LaTeX，甚至还有图表。
 - en: So this is all just hallucinating from the text that it's read。 So it's almost
     like a child stringing together words and starting to figure out English。 This
     is this is essentially what's what's going on。 And the next part。 we'll see how
     we use the same technology to really conjure up actual real English。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这一切都是从它所阅读的文本中产生的幻觉。这几乎就像一个孩子拼凑单词并开始理解英语。这就是正在发生的事情。在接下来的部分中，我们将看到如何使用相同的技术真正生成真实的英语。
 - en: And this is what late source code looks like if you've never seen it before。
     This essentially generates much of this up here。 This is probably a shortened
     form of it。 I found this one absolutely fascinating。 They took。Source code written
     in C and trained the recurrent neural network on lots and lots and lots of C source
     code。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你以前没有见过，这就是 LaTeX 源代码的样子。这基本上生成了上面的大部分内容。这可能是它的简化形式。我觉得这个非常迷人。他们用 C 语言编写了源代码，并在大量
+    C 源代码上训练了递归神经网络。
 - en: And then they told it to just dream up C source code of its own。 This looks
     if you've not worked with C before， I mean it's very similar Java ja in its overall
     syntax and it's amazing how much the recurrent neural network picked up on look
     it's all properly tabbed。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后他们告诉它自己梦见 C 源代码。如果你以前没有接触过 C，实际上它的整体语法与 Java 非常相似，令人惊讶的是递归神经网络吸收了多少，看，它的缩进都是正确的。
 - en: I mean that is that is pretty cool it's declaring variables it's doing checks
     now it does tend to use local variables that it's never defined So that is an
     issue there but it's learning how to do the pointer syntax correctly。 it's putting
     semicolons in all the right places it's using brackets when it needs so that's
     multiple lines that needs a bracket that's a single line it does not。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 我是说，这真的很酷，它在声明变量，它在进行检查。现在它确实倾向于使用一些从未定义的局部变量。所以这是个问题，但它正在学习如何正确使用指针语法。它在所有正确的位置放置了分号，当需要时使用括号，对于需要多行的内容使用括号，对于单行则不使用。
 - en: So it's almost spooky how much it's really figuring out about source code it
     puts in comments that have random text in it it's sort of doing what what the
     predecessor won just higher up on the screen that was generating Shakespeare It's
     learning to generate random。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 这几乎是令人毛骨悚然的，它对源代码的理解达到了什么程度，它在注释中加入了随机文本，这种方式类似于先前生成莎士比亚的程序。它正在学习生成随机内容。
 - en: English text for comments。 So now let's see how we can generate text just like
     this。 These are just my imports。 I'm gonna go ahead and run that。 Nothing too
     unusual going on there。 I am going to read in a text document。 So an entire book。
     We're gonna use just one book to train it on。 So it won't be perfect that it'll
     come up with some interesting stuff。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 英语文本用于评论。那么现在我们来看看如何生成这样的文本。这些只是我的导入。我将继续执行这个。没有什么特别的事情发生。我将读取一个文本文件。也就是一本完整的书。我们将只用一本书来训练它。所以它不会完美，但会产生一些有趣的东西。
 - en: We're going to use the book Treasure Island。 So Treasure Island was written
     some time ago。 and what's neat about this book。 It's a children's book。 but it
     pretty much set the stage from pirate stories thereafter。 I mean。 one leggged
     pirates Pirates with parrots on their shoulders。 Xmarks the spot。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将使用《金银岛》这本书。所以《金银岛》是在很久以前写的。这本书的特别之处在于，它是一本儿童书，但几乎为此后的海盗故事奠定了基础。我的意思是，独腿海盗、肩膀上有鹦鹉的海盗，"X"
+    标记着地点。
 - en: All this came from Treasure Island。 I read it as a child。 It is a very interesting
     book。 and I was not a big fiction reader， highly recommend if you're interested
     in pirate。 but let's see if we can generate Pirate stories using neural networks。
     I'm going to read in the text of it。 and you can see it's coming here。 It's from
     Project Gutenberg。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 所有这些都来自《金银岛》。我小时候读过这本书。这是一本非常有趣的书，而我并不是一个喜欢读小说的人，强烈推荐给对海盗感兴趣的人。但我们来看看能否用神经网络生成海盗故事。我将读取它的文本。你可以看到它来自古腾堡计划。
 - en: which is a lot of English。 maybe other languages I haven't kept up with Gutenberg。
     They have the book。Text online。 So it's it's great for natural language processing
     projects。 I'm going to take this raw text that you saw loaded in up here and do
     some conversions on it。 I'm going to remove anything that is not ASciI。 So0 to
     127。 By the way。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 其中包含大量的英语。也许还有其他语言，我没有跟上古腾堡项目。他们有这本书。在线文本。所以这对于自然语言处理项目非常棒。我将使用您在上面看到的原始文本，并对其进行一些转换。我会删除任何非ASCII字符。范围是0到127。顺便提一下。
 - en: everything I'm doing on this is very much English based。 but I have seen LSTms
     applied to other languages such as Chinese and Japanese and Asian languages as
     well。 So if you're interested in doing this sort of text generation。 you can generate
     this on really nearly anything。 You saw in a previous part。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 我所做的一切都非常基于英语。但我见过LSTM被应用于其他语言，比如中文、日文和其他亚洲语言。所以如果您对这种文本生成感兴趣，几乎可以在任何内容上生成。您在前面的部分中看到。
 - en: I showed just an example， not the actual code， but link to somebody's example
     that was generating Chinese fonts using Gs。 So I'm going to pull that in， get
     the process text， run this part， it tells me the corpus length。 So this is the
     length of that document of Tresure Island。 There's a total of 60 different characters，
     especially since I stripped a lot of the non ASi ones。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 我只是展示了一个例子，而不是实际的代码，而是链接到某人的例子，该例子使用Gs生成中文字体。所以我会引入这个，获取处理后的文本，运行这一部分，它告诉我语料库的长度。这是《孤岛惊魂》文档的长度。总共有60个不同的字符，尤其是因为我剔除了很多非ASCII字符。
 - en: and by the way， this is all very much。😊，ode here is based on one of the Kira's
     examples。 made a few changes to it， but this is I have the link to the to the
     original example up higher if you want。 you can basically run this code on just
     about any text I ran it on Treasure Island。 The original code was actually looking
     at Nietzsches a philosopher and generate additional text。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 顺便说一下，这一切都非常不错。😊 这段代码基于Kira的一个示例。我对其进行了少许更改，但如果您需要，我在上面有原始示例的链接。基本上，您可以在几乎任何文本上运行这段代码，我在《孤岛惊魂》上运行了它。原始代码实际上是查看哲学家尼采并生成额外的文本。
 - en: it looks like it's fromnietzsche。 So when you run this part here。 it is using
     the max length of 40 that is your sequence size。 We're going to grab 40 character
     blocks of this text as we go through and we are going to then give it the next
     character。 So the 40 first character after that and it is going to use that to
     essentially train it。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 看起来是来自尼采的。所以当您运行这一部分时，它使用的最大长度是40，这是您的序列大小。我们将抓取这个文本的40个字符块，然后给它下一个字符。所以在那之后的第40个字符，它将用来训练模型。
 - en: So given these 40 characters try to generate the next character and that's how
     we're going to actually generate it then we're going to pick 40 characters of
     real text as the seed to start。Then it'll generate the 41st character then we
     give it 39 characters of the seed and the 41st。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 给定这40个字符，尝试生成下一个字符，这就是我们实际生成文本的方式。然后我们将选择40个真实文本字符作为种子开始。接着，它会生成第41个字符，然后我们给它39个种子字符和第41个字符。
 - en: the 41st that it had generated， then it generates to the next one so it keeps
     generating more and more and eventually we're out of the seed and it's all generated
     text because it generated the first character then second。 third fourth and so
@@ -216,28 +282,38 @@
     entire file breaking it into 40 character chunks with the 41st as the y step size
     that just means move forward three characters for each of those 40 character chunks
     that that you grab if you put a one in here。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 生成的第41个字符，然后它生成下一个字符，因此它会不断生成更多，最终我们会超出种子，得到的都是生成的文本，因为它生成了第一个字符，然后是第二个、第三个、第四个，依此类推。我们将看到实际的代码，但基本上这是遍历整个文件，将其分成40个字符的块，第41个作为y步长，这意味着对每个抓取的40个字符块向前移动三个字符，如果您在这里输入1。
 - en: it would grab as many sequences it could because it would keep shifting it by
     just one character and you would get even more redundant sequences because youd
     get those same when I mean if you were scooting over by one you would get 39 of
     the same characters when you shifted。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 它会抓取尽可能多的序列，因为它只会将其移动一个字符，您将得到更多冗余序列，因为如果您向前移动一个字符，您将获得39个相同的字符。
 - en: Fward by one。 So we'll run this and that reduces Treasure Island into 132000
     of these these sequences。 And if you print out one of these see that's showing
     you real good example of it the project Gutenberg of ebook treasure and then see
     a shifts over three。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 向前移动一个。因此我们将运行这个，它将《金银岛》减少为 132000 个这样的序列。如果你打印出其中一个，可以看到这很好地展示了项目 Gutenberg
+    的电子书《金银岛》，然后看到它向右移动了三个。
 - en: So these are all of the inputs and then it's going to be trained to predict
     what that next character would be。 Now we're going to vectorize it。 this changes
     it into the actual x and y that is going to go into there that takes a moment
     to run。 it's not too bad。 we're using essentially indices。 So if we did if we
     look at the shapes of these Those are all those sequences that you had40 is the
     input vector and 60 or the dummy variables for the output。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这些都是输入，然后它将被训练以预测下一个字符是什么。现在我们将进行向量化。这将其转换为实际的 x 和 y，接下来会用到，运行需要一点时间，但还不错。我们实际上使用的是索引。所以如果我们看一下这些形状，所有这些序列，40
+    是输入向量，60 是输出的虚拟变量。
 - en: So the output of this is basically going to be a dummy variable of those 60
     characters。 remember I said there were 60 different possible characters that could
     pop up in treasuresure Island。 this is basically coming up with those。Then the
@@ -247,51 +323,71 @@
     dummy variables So this is where these get a little bit wasteful I mean imagine
     if I had the full 255 ASI set it would be 255 dummy variables this would be insane
     with Uniicode and just to see the dummy variables。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这个输出基本上将是这 60 个字符的虚拟变量。记得我说过可能会在《金银岛》中出现 60 个不同的字符。这基本上是生成这些字符的。然后 Y 形状非常简单。它是
+    132000，但这些都是相同的虚拟变量。这些都是预期字符。所以所有在训练数据中出现的 60 个字符以及输出字符都表示为虚拟变量。这就是这些变得有点浪费的地方。我是说，如果我有完整的
+    255 ASI 集，那将是 255 个虚拟变量，这简直疯狂，尤其是使用 Unicode，看看这些虚拟变量。
 - en: these are basically the output So one is true the rest of false that is saying
     thats this particular character is the next one that is expected the LSTM model
     itself is relatively simple。 I grab the hyperpara right from the example in Car
     we have one LSTM layer that has 128 I'm really not even using dropout or anything
     like that I've seen some examples that do make use of that and the example trained
     this with RMS you could probably。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些基本上是输出。所以一个是真的，其余都是假的，这表示这个特定的字符是下一个预期的字符，LSTM 模型本身相对简单。我直接从示例中获取超参数，在 Car
+    中我们有一个 LSTM 层，包含 128 个神经元，我实际上没有使用 dropout 或其他类似的东西，我见过一些例子确实使用了这些，示例使用 RMS 进行了训练，你可能可以。
 - en: This with Adam just as well。 I'm going go ahead run this so that it starts training
     the neural network while I'm explaining some of it because it does take it a little
     while to run。 you'd probably want to run this on your on a GPU on Google coab
     or something like that。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用 Adam 也是如此。我将继续运行这个，让它开始训练神经网络，同时我解释一些内容，因为运行需要一点时间。你可能想在 Google Colab 或类似的地方在
+    GPU 上运行这个。
 - en: Okay so here's the summary of it that largely echoes just what we just what
     we had there。 despite those stars it has actually already made it through these
     This is the sample function。 This is what actually generates the text。 So you
     pass it pres Pres are the output neurons。 So those are going to be the 60 values
     in the case of Treasure Island。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，这里是总结，这在很大程度上呼应了我们刚才提到的内容。尽管有这些星号，它实际上已经通过了这些。这是样本函数。这实际上是生成文本的。因此，你传递的 pres
+    是输出神经元。这将在《金银岛》中是 60 个值。
 - en: this is going to be 60 probabilities。 So whichever of those 60 output neurons
     has the highest value。 that is the character that has the highest likelihood。
     However。 we don't just do it thats simply we do normalize those output neurons
     into a softm so that their probability so they sum to 10 and then we。Have something
     else called temperature Now temperature is what Andrea called it in his blog post
     that I was showing you earlier essentially 1。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将是 60 个概率。所以这 60 个输出神经元中值最高的就是具有最高可能性的字符。然而，我们并不是简单地这样做，我们将这些输出神经元规范化为 softm，使它们的概率相加为
+    10，然后我们有一个叫温度的东西。现在温度就是安德烈在他之前展示给你看的博客文章中提到的东西，本质上是 1。
 - en: 0 is going to be the most conservative。 it'll pretty much take the character
     with the highest probability zero will be somewhat more random we'll see the examples
     of whats what that's producing the zero will have more grammatical errors but
     we'll produce more interesting text and we we'll go we'll look at some examples
     in between as well you can actually set that to even higher than than 1。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 将是最保守的。它几乎会选择概率最高的字符，零则会稍微更随机，我们将看到它产生的示例，零会有更多的语法错误，但会生成更有趣的文本，我们将看看其中的一些例子，你实际上可以将其设置得更高，甚至高于1。
 - en: 0 to make it even more conservative This is essentially a softm function it's
     essentially doing a summation and then and ensuring that all of those probabilities
     actually add up to 1。0 This is the text generator So we hook this up as a callback
     at the end of each epoch So this is kind of useful since this takes a while for
     this neural network to train I think we train it for six。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 0为使其更保守，这本质上是一个softmax函数，它基本上是在做一个求和，并确保所有这些概率加起来确实等于1。0这是文本生成器，所以我们在每个epoch结束时将其作为回调挂接上。这是非常有用的，因为这个神经网络训练需要一些时间，我想我们训练了六个epoch。
 - en: Upo we can see how well it is generating at the end。 So essentially what we
     are doing is we display it for these temperatures。 This is 0。2 pretty liberal
     up to 1。2 pretty conservative very conservative and we essentially generate the
@@ -299,24 +395,30 @@
     is going to be used to prime the pump so to speak those 40 characters are the
     first characters that will be used to generate the next character and then it
     keeps going from there。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以看到它在最后生成的效果。因此，基本上我们为这些温度展示它。这是0.2，比较宽松，到1.2则相对保守，非常保守，我们基本上生成种子。因此，种子来自我们处理过的文本《金银岛》，这个种子将用于启动生成，换句话说，这40个字符是用于生成下一个字符的第一个字符，然后它会继续下去。
 - en: then we're going to generate it for the next 400 characters and we build that
     up as the input sequence to the neural network and we predict as we predict we
     add whatever we generate as we predict we add the next character onto what we
     generate it so we keep adding more and more characters onto it and eventually
     the seed rolls off the edge because the first character is removed because as
     soon as we add a generate a character onto the end。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将为接下来的400个字符生成内容，并将其构建为输入序列供神经网络使用，在我们进行预测时，我们将生成的内容加到我们预测的下一个字符上，因此我们不断添加更多的字符，最终种子会从边缘滑落，因为第一个字符被移除，因为一旦我们在末尾添加一个生成的字符。
 - en: We have to pop something off the beginning so that it stays in the 400 range
     and then we print out the text as as we did。 So this will literally output the
     text as it is training the neural network we make that function we just looked
     at as a lambmbda callback so that we it can be called by Kiras as it's running
     and then we essentially fit it kind of like we've seen before because we have
     that callback。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们必须从开始的部分弹出一些内容，以保持在400范围内，然后我们像以前一样打印文本。所以这实际上会输出训练神经网络时的文本，我们把刚才看到的函数作为一个lambda回调，这样在Keras运行时就可以调用它，然后我们基本上像之前看到的那样拟合它，因为我们有那个回调。
 - en: this is what the output's going to look like This is the very first epoch you
     can see it was it was training here and here is the generated text this probably
     got a hold of some of the media wiki but information can be found at found captain
@@ -325,8 +427,10 @@
     usually that sort of thing This was with a very low temperature so this will be
     the lower quality or most least conservative if we go to the most conservative
     the 1。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是输出的样子。这是第一次epoch，你可以看到它在这里进行训练，这里是生成的文本，这可能获取了一些媒体维基的信息，但可以在“声音的船长”找到。现在请记住，神经网络是在第一次epoch上，它的训练效果不是很好，但看看，它已经搞清楚了名词前通常会有的“the”这类事物。这是使用非常低的温度，所以这将是质量较低或最不保守的。如果我们去最保守的1.0。
 - en: 2。Information can be found at the following still not very good because it's
     really just just starting。 We've done a second epoch third epoch it continues
     to train and it keeps showing you as it goes。ll it'll end at 60 so five of 60
@@ -340,12 +444,18 @@
     can really pick up English and things in it in the next part we'll see how we
     can generate next part we' see how we can generate captions from images Thank
     you for watching this video and the next video。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 2。信息可以在以下位置找到，尽管目前的效果仍然不佳，因为它实际上刚刚开始。我们已经进行了第二个周期和第三个周期，它继续训练，并随着进程不断展示结果。它将在60时结束，因此五个中的60我们不会让这个东西完全运行，但我们可以看到它正在生成自己的海盗故事。这听起来像是海盗的谈话，实际上我不认为这在语法上是正确的。这听起来像是关于你的故事，我并不擅长用海盗口音说话。在这里，你可以看到它实际上是作为查询神经网络时输出的。这是文本生成的一个很好的例子。除了显示它确实能够掌握英语及其相关内容之外，这并没有特别的用处。在下一部分中，我们将看到如何从图像生成标题。感谢观看本视频以及下一个视频。
 - en: '![](img/12a40ad6cb8e26a4cb77c05d5b96a105_3.png)'
+  id: totrans-47
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/12a40ad6cb8e26a4cb77c05d5b96a105_3.png)'
 - en: We're going to look at how we can use the same technology to label pictures
     and to generate captions to describe what is going on in that picture。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将探讨如何使用相同的技术来标记图片并生成描述该图片内容的标题。
