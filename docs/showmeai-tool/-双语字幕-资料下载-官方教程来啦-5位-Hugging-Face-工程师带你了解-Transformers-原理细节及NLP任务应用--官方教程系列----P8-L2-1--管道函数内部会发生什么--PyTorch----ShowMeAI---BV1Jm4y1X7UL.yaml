@@ -1,96 +1,134 @@
 - en: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
     - P8：L2.1- 管道函数内部会发生什么？(PyTorch) - ShowMeAI - BV1Jm4y1X7UL
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】官方教程来了！5 位 Hugging Face 工程师带你了解 Transformers 原理细节及 NLP 任务应用！＜官方教程系列＞
+    - P8：L2.1- 管道函数内部会发生什么？(PyTorch) - ShowMeAI - BV1Jm4y1X7UL
 - en: What happens inside the by function？In this video， we'll look at what actually
     happens when we use the pipeline function of the Transforms library。Now specifically，
     well look at the sentiment analysis pipeline and then it went from the two following
     sentences so the positive and negative labels were respective scores。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 函数内部发生了什么？在这个视频中，我们将看看当使用 Transforms 库的管道函数时实际发生了什么。现在特别地，我们将看看情感分析管道，然后它从以下两个句子中得出正负标签的相应分数。
 - en: As we've seen in the pipeline plan presentation。There are three stages in the
     pipeline。First。 we convert a verex to numbers the model can make signs of using
     a tokenizer。Then those numbers go through the model which outputs lows。Finally。
     the first processing steps transform Vo gate into labels and scores。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们在管道计划演示中看到的，管道中有三个阶段。首先，我们将一个顶点转换为模型可以使用的数字，通过 tokenizer。然后这些数字通过模型输出。最后，第一处理步骤将
+    Vo gate 转换为标签和分数。
 - en: Let's look in details at those three steps and how to replicate their music
     the Transformerss library。 beginning with the first stage tokenization。So organization
     process has several steps first。 the text is split into small chunks called tokens。They
     can be words， part of words。 or punctuation symbols。Then the tokenizer will add
     some special tokens if the model expected。Here。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们详细看看这三步以及如何复制它们在 Transformers 库中的音乐。首先从第一个阶段的标记化开始。所以组织过程有几个步骤，首先将文本拆分为称为标记的小块。它们可以是单词、单词的一部分或标点符号。然后，tokenizer
+    如果模型预期会添加一些特殊标记。
 - en: the model used expect a seal token at the beginning and a sep token at the end
     of the sentence to classify。Lastly， the tokenazer patches each token to its unique
     ID in the vocabulary of the portrayed model。To load such a tokenizer， the transformformers
     library provides the Utokenizer API。The most important method of this class is
     from Pretrained。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型期待在句子的开头有一个 seal token，在句子的结尾有一个 sep token 进行分类。最后，tokenazer 将每个 token 匹配到所描绘模型词汇中的唯一
+    ID。要加载这样的 tokenizer，Transformers 库提供了 Utokenizer API。这个类最重要的方法是 from Pretrained。
 - en: which will download and cache the configuration and the vocabulary associated
     to a given checkpoint。Here， the checkpoint used by default for the sentiment analysis
     pipeline is distber based case fine tuned SS2 English。 which is a bit of a mouthful。We
     instant to tookken associated with a checkpoint。 and feed it to the two sentences。Since
     the two sentences are not of the same size。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将下载并缓存与给定检查点相关的配置和词汇。这里，情感分析管道默认使用的检查点是基于 distber 的微调 SS2 英文。这有点冗长。我们实例化与检查点相关的
+    token，并将其输入到两个句子中。由于这两个句子的大小不同。
 - en: well need to pad the shest one to be able to build an array。This is done by
     the tokenizer with the option padding equal true。With truation equal2。 we ensure
     that any sentence longer and the maximum the middle can handle is truncated。Lastly。
     the return tensil option tells the tokenizer to return the byytch tensil。Looking
     at a result。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们需要填充最后一个以便能够构建一个数组。这是通过 tokenizer 完成的，选项填充为 true。通过 truation 等于 2，我们确保任何比最大中间长度长的句子都会被截断。最后，返回
+    tensil 选项告诉 tokenizer 返回批处理 tensil。看结果。
 - en: we see we have a dictionary with two keys， input ID contains the ideas of both
     sentences with zero where the padding is applied。The second key attention mask
     indicates where patting has been applied。 so the model does not pay attention
     to it。This is all what is inside the token step。Now let's have a look at the second
     step。三もど。As also to an。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们看到我们有一个包含两个键的字典，输入 ID 包含两个句子的想法，填充应用的位置为零。第二个键注意掩码指示了填充的位置，以便模型不关注它。这就是标记步骤中的所有内容。现在让我们看看第二步。三もど。也如同一个。
 - en: there is a notomod API with from prettrain method。 it would download and cache
     the configuration of the model， as well as the pretrain weight。However。 the Automod
     API will only instantiate the body of the model。 that is the part of the model
     that is left once the pro traininging head is removed。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 有一个 notomod API，使用 pretrain 方法。它将下载并缓存模型的配置以及预训练权重。然而，Automod API 只会实例化模型的主体，也就是在去掉预训练头之后剩下的部分。
 - en: It will output a high dimensional tensor， that is a representation of the sentence's
     past。 but which is not directly useful for our classification program。Here， the
     tensor has two sentences。 each of 16 tokens， and the last dimension is the Indian
     size of our model， 768。To get an output linked to our classification problem。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 它将输出一个高维张量，即句子过去的表示，但对于我们的分类程序来说并不直接有用。在这里，张量包含两个句子，每个句子有16个标记，最后一个维度是我们模型的印度大小，768。为了得到与我们的分类问题相关的输出。
 - en: we need to use the Automodal for sequence classificationification class。It works
     exactly as you to model class， except that12 build a model with a classification
     head。😊。Praise one auto class for each common NLP task in the transformformers
     library。Here。 after giving all models of two sentences。We get a tensor of size
     2 by2。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们需要使用Automodal进行序列分类类。它的工作方式与模型类完全相同，除了它构建了一个带有分类头的模型。😊在transformers库中，每个常见的NLP任务都有一个自动类。在这里，在给出两个句子的所有模型后，我们得到一个大小为2乘2的张量。
 - en: one result for each sentence and for each possible level。Those outputs are not
     probabilities yet。 we can see they don't sum to one。This is because each model
     of the transformformers's library returns look it。To make sense of look it， we
     need to dig into the third and last step of the pipeline。Plus processing。To conduct
     Lo into probabilities， we need to apply a softmax layers to them。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 每个句子和每个可能级别的一个结果。这些输出尚未是概率，我们可以看到它们的总和不为1。这是因为每个transformers库的模型返回的是这样的结果。要理解这些结果，我们需要深入探讨管道的第三个也是最后一个步骤，处理。为了将其转化为概率，我们需要对它们应用softmax层。
 - en: As we can see， this transforms them into positive number that's a up to1。The
     last step is to know which of those corresponds to the positive of the negative
     label。This is given by the I2lipol field of the model cong。The first probabilityba
     is index0。 correspond to the negative level and the seconds index1 correspond
     to the positive level。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们所看到的，这将它们转换为正数，最多为1。最后一步是知道其中哪个对应于正标签或负标签。这是通过模型的I2lipol字段给出的。第一个概率ba的索引0对应于负级别，第二个索引1对应于正级别。
 - en: This is how our classifier built with the pipeline function pickeded with labels
     and compute those scores。😊，Now that you know how each step works， you can easily
     tweak them to your needs。![](img/be1ca15e381cec8388260069320209cf_1.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是我们的分类器如何通过管道函数构建，带有标签并计算这些分数。😊现在你知道每个步骤是如何工作的，你可以轻松调整它们以满足你的需求。![](img/be1ca15e381cec8388260069320209cf_1.png)
 - en: '![](img/be1ca15e381cec8388260069320209cf_2.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/be1ca15e381cec8388260069320209cf_2.png)'
 - en: 。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 。

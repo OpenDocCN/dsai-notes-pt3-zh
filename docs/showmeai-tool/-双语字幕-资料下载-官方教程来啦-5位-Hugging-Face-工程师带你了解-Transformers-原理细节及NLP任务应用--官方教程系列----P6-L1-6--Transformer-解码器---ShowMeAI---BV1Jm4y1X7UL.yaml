@@ -1,82 +1,110 @@
 - en: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
     - P6：L1.6- Transformer：解码器 - ShowMeAI - BV1Jm4y1X7UL
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】官方教程来啦！5位Hugging Face工程师带你了解Transformers原理细节及NLP任务应用！＜官方教程系列＞ - P6：L1.6-
+    Transformer：解码器 - ShowMeAI - BV1Jm4y1X7UL
 - en: In this video， we'll study the decoder architecture。An example of a popular
     decoder only architecture is GPT2。In order to understand how decoders work。 we
     recommend taking a look at the video regarding encoders， they're extremely similar
     to decoders。One can use a decoder for most of the same tasks as an encoder。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这段视频中，我们将研究解码器架构。一个流行的仅解码器架构示例是GPT2。为了理解解码器的工作原理，我们建议查看有关编码器的视频，它们与解码器非常相似。解码器可以用于大多数与编码器相同的任务。
 - en: albeit with generally a little loss of performance。Let's take the same approach
     we have taken with the encoder to try and understand the architectural differences
     between an encoder and ID decor。We'll use a small example using three words。 We
     pass them through their decoder。We retrieve a numerical representation for each
     world。Here， for example。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管通常会有一点性能损失。让我们采用与编码器相同的方法，试图理解编码器和ID解码器之间的架构差异。我们将使用三个单词的小示例。我们将它们传递通过解码器。我们为每个单词检索数值表示。这里，例如。
 - en: the decoder converts the three words welcomee to NYC and these are three sequences
     of numbers。The decoder outputs exactly one sequence of numbers per input word。This
     numerical representation can also be called a feature vector or a feature tensor。Let's
     dive in this representation。It contains one vector per word that was passed through
     the decoder。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 解码器将三个单词“welcome to NYC”转换为三个数字序列。解码器为每个输入单词输出恰好一个数字序列。这种数值表示也可以称为特征向量或特征张量。让我们深入探讨这种表示。它包含每个通过解码器传递的单词的一个向量。
 - en: Each of these vectors is a numerical representation of the word in question。😊。The
     dimension of that vector is defined by the architecture of the model。Whether a
     decoder differs from the encoder is principally with its self attention mechanism。
     it's using what is called masked self attention。Here， for example， if we focus
     on the word 2。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些向量是所讨论单词的数值表示。😊 向量的维度由模型的架构定义。解码器与编码器的主要区别在于其自注意机制，它使用所谓的掩码自注意。这里，例如，如果我们关注单词“2”。
 - en: we'll see that this vector is absolutely unmodified by the NYC word。That's because
     all the words on the right， also known as the right context of the word is masked。Rather
     than benefiting from all the words on the left and right， so the bidirectional
     context。 decoders only have access to a single context。Which can be the left context
     or the right context。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们会看到这个向量绝对不受“NYC”一词的影响。这是因为右侧的所有单词，也称为单词的右上下文，都被掩码处理。解码器只访问单个上下文，可能是左上下文或右上下文，而不是从左右两侧的所有单词中受益。
 - en: The mask self attention mechanism differs from the self attention mechanism
     by using an additional mask to hide the context on either side of the word。The
     words numerical representation will not be affected by the words in the hidden
     context。So when should one use a decoder decoders like encoders can be used as
     standalone models。 as they generate a numerical representation， they can also
     be used in a wide variety of tasks。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 掩码自注意机制通过使用额外的掩码来隐藏单词两侧的上下文，与自注意机制有所不同。单词的数值表示不会受到隐藏上下文中单词的影响。因此，何时使用解码器就显得重要，解码器和编码器一样可以作为独立模型使用。由于它们生成数值表示，因此可以应用于各种任务。
 - en: However， the strength of a decoder lies in the way a word can only have access
     to its left context。Having only access to their left contacts， they are inherently
     good at tax generation。 the ability to generate a word or a sequence of words，
     given a known sequence of words。😊。This is known as causal language modeling or
     natural language generation。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，解码器的强大之处在于单词仅能访问其左上下文。仅能访问左侧上下文，使其在生成文本方面天生优秀，能够根据已知单词序列生成单词或单词序列。这被称为因果语言建模或自然语言生成。😊
 - en: Here's an example of how causal language modeling works。 We start with an initial
     word， which is my。We use this as input for the decoder。😊，The model outputs a vector
     of numbers。 and this vector contains information about the sequence， which is
     here a single word。We apply a small transformation to that vector so that it maps
     to all the words known by the model。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是因果语言建模如何工作的一个例子。我们从一个初始单词开始，即“my”。我们将其作为解码器的输入。😊 模型输出一个数字向量，这个向量包含关于序列的信息，在这里是一个单词。我们对这个向量进行小的转换，使其映射到模型已知的所有单词。
 - en: which is a mapping that will seeator called a language modeling head。We identify
     that the model believes that the most probable following word is name。We then
     take that new word and add it to the initial sequence。From my， we are now at my
     name。This is where the autoregressive aspect comes in。😊。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一种映射，被称为语言模型头。我们确定模型认为最可能的下一个单词是“name”。然后，我们将这个新单词添加到初始序列中。从“my”开始，我们现在的序列是“my
+    name”。这就是自回归方面的体现。😊。
 - en: Outtoregressive models reuse their past outputs as inputs and the following
     steps。Once again。 we do the exact same operation。We cast that sequence through
     the decoder and retrieve the most probable following word。In this case， it is
     the word is。We repeat the operation until we're satisfied。Starting from a single
     word， we've now generated a false sentence。 We decided to stop there。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 自回归模型将过去的输出重用作为输入，接下来的步骤也一样。我们再次进行相同的操作。我们通过解码器处理该序列，并提取出最可能的下一个单词。在这种情况下，是单词“is”。我们重复这一操作，直到感到满意。从一个单词开始，我们现在生成了一个错误的句子。我们决定在此停止。
 - en: but we could continue for a while。 GP T2， for example， has a maximum context
     size of 1024。 We could eventually generate up to 1024 words， and the decoder would
     still have some memory of the first words and as sequence。😊。![](img/dfd8577ffd03c9ab167585435c2c2709_1.png)
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我们可以继续一段时间。例如，GPT-2的最大上下文大小为1024。我们最终可以生成多达1024个单词，解码器仍然会对前面的单词和序列有一定的记忆。😊。![](img/dfd8577ffd03c9ab167585435c2c2709_1.png)
 - en: 嗯。![](img/dfd8577ffd03c9ab167585435c2c2709_3.png)
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗯。![](img/dfd8577ffd03c9ab167585435c2c2709_3.png)

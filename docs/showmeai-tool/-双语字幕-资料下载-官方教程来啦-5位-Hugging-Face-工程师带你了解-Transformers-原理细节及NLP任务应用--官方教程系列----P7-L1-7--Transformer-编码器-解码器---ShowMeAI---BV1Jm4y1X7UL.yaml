@@ -1,125 +1,166 @@
 - en: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
     - P7：L1.7- Transformer：编码器-解码器 - ShowMeAI - BV1Jm4y1X7UL
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及 NLP 任务应用！＜官方教程系列＞
+    - P7：L1.7- Transformer：编码器-解码器 - ShowMeAI - BV1Jm4y1X7UL
 - en: In this video， we'll study the encoder decoder architecture。An example of a
     popular encoder decoder model is T5。In order to understand how the encoder decoder
     works。 we recommend you check out the videos on encoders and decoders as the standalone
     models。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个视频中，我们将研究编码器-解码器架构。一个流行的编码器-解码器模型的例子是 T5。为了理解编码器-解码器的工作原理，我们建议您查看关于编码器和解码器的独立模型视频。
 - en: Understanding how they work individually will help understanding how an encoder
     decoder works。Let's start from what we've seen about the encoder。The encoder takes
     words as inputs。 casts them through the encoder， and retrieves a numerical representation
     for each word cast through it。We now know that this numerical representation holds
     information about the meaning of the sequence。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 理解它们各自的工作原理将有助于理解编码器-解码器的工作原理。让我们从我们所了解的编码器开始。编码器将单词作为输入，经过编码器处理，并为每个经过的单词检索一个数值表示。我们现在知道这个数值表示包含关于序列意义的信息。
 - en: Let's put this aside and add the decoder to the diagram。In this scenario。 we're
     using the decoder in a manner that we haven't seen before。We're passing the outputs
     of the encoder directly to it。Additionally to the encoder outputs。 we also give
     the decoder a sequence。When prompting the decoder for an output with no initial
     sequence。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们把这个放到一边，给图表添加解码器。在这种情况下。我们以一种前所未见的方式使用解码器。我们将编码器的输出直接传递给它。此外，除了编码器输出之外，我们还给解码器一个序列。当请求解码器输出没有初始序列时。
 - en: we can give it the value that indicates the start of a sequence。😊。And that's
     where the anchor decor magic happens。😊，The encoder accepts a sequence as input。It
     computes a prediction and outputs a numerical representation。😊。Then it sends that
     over to the decoder。It has， in a sense， encoded that sequence。And the decoder。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以给它一个表示序列开始的值。😊。这就是锚点装饰魔法发生的地方。😊，编码器接受一个序列作为输入。它计算一个预测并输出一个数值表示。😊。然后将其发送给解码器。从某种意义上说，它已经对该序列进行了编码。然后解码器。
 - en: in turn， using this input alongside its usual sequence input will take a stab
     at decoding the sequence。The decoder dedes a sequence， and outputs a word。As of
     now。 we don't really need to make sense of that word， but we can understand that
     the decoder is essentially decoding what the encoder has output。The start sequence
     here， the startup sequence word here indicates that it should start decoding the
     sequence。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 反过来，使用这个输入和它通常的序列输入将尝试解码序列。解码器解码一个序列，并输出一个单词。到目前为止，我们不需要真正理解那个单词，但我们可以理解解码器本质上是在解码编码器的输出。这里的开始序列，这里启动序列的单词表明它应该开始解码序列。
 - en: Now that we have both the encoder numerical representation and an initial generated
     word。 we don't need the encoder anymore。As we have seen before with the decoder。
     it can act in an autoregressive manner。The word it has just output can now be
     used as an input。This。 in combination with the numerical representation output
     by the encoder。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们有了编码器的数值表示和一个初始生成的单词。我们不再需要编码器。正如我们之前看到的，解码器可以以自回归的方式工作。它刚刚输出的单词现在可以用作输入。这与编码器输出的数值表示相结合。
 - en: can now be used to generate a second word。Please note that the first word is
     still here as the model still outputs it。 However， we have grade it out as we
     have no need for it anymore。😊，We can continue on and on。 for example， until the
     decoder outputs a value that we consider a stopping value。 like a dot meaning
     the end of a sequence。Here we've seen the full mechanism of the encoder decoder
     transformer。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在可以用来生成第二个单词。请注意，第一个单词仍然存在，因为模型仍然输出它。然而，我们已将其灰化，因为我们不再需要它。😊，我们可以继续下去。例如，直到解码器输出我们认为的停止值，比如一个句号，表示序列的结束。在这里，我们看到了编码器-解码器变换器的完整机制。
 - en: let's go over one more time。 We have an initial sequence that is sent to the
     encoder。😊。That encoder output is then sent to the decoder for it to be decoded。While
     it can now discard the encoder after a single use。 the decoder will be used several
     times until we have generated every word that we need。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们再回顾一次。我们有一个发送到编码器的初始序列。😊。然后，该编码器输出被发送到解码器进行解码。虽然在单次使用后它可以丢弃编码器，但解码器将被多次使用，直到生成所需的每一个单词。
 - en: So let's see a concrete example with translation language modeling， also called
     transduction。 which is the act of translating a sequence。Here we would like to
     translate this English sequence welcome to NYYC in French。We're using a transformer
     model that is trained for that task explicitly。 we use the encoder to create a
     representation of the English sentence。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们来看一个具体的例子，关于翻译语言建模，也称为转导。这是翻译一个序列的行为。在这里，我们想把这句英语序列“welcome to NYYC”翻译成法语。我们使用一个专门为这个任务训练的变换器模型。我们使用编码器来创建英语句子的表示。
 - en: we cast this to the decoder with the use of the start sequence word。 we ask
     it to output the first word。It outputs B avenue， which means welcome。And we then
     use B avenue as the input sequence for the decoder。This alongside the encoder
     numerical representation， allows the decoder to predict the second word a。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们通过使用起始序列单词将其传递给解码器。我们请它输出第一个单词。它输出“B avenue”，这意味着欢迎。然后我们将“B avenue”作为解码器的输入序列。这个与编码器的数值表示结合，允许解码器预测第二个单词“a”。
 - en: which is two in English。😊，Finally， we ask the decoder to predict a third word，
     it predicts NYC。 which is correct， we've translated the sentence。Where the encoder
     decoder really shines is that we have an encoder and a decoder。 which often do
     not share weights。Therefore， we have an entire block。 the encoder that can be
     trained to understand the sequence and extract the relevant information。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 在英语中，这是两个单词。😊 最后，我们请解码器预测第三个单词，它预测了“NYC”。这是正确的，我们已经翻译了这个句子。编码器和解码器真正出色的地方在于，我们有一个编码器和一个解码器，它们通常不共享权重。因此，我们有一个完整的块，即编码器，可以被训练来理解序列并提取相关信息。
 - en: For the translation scenario we've seen earlier， for example。 this would mean
     parsing and understanding what was said in the English language。It would mean
     extracting information from that language and putting all of that in a vector
     dense in information。😊，On the other hand， we have the decoder whose sole purpose
     is to decode the numerical representation output by the encoder。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于我们之前看到的翻译场景，例如，这意味着解析和理解用英语说的内容。这将意味着从该语言中提取信息，并将所有这些信息放入一个信息密集的向量中。😊 另一方面，我们有解码器，其唯一目的是解码编码器输出的数值表示。
 - en: This decoder can be specialized in a completely different language or even modality
     like images or speech。Encos， decoders are special for several reasons。Firstly。
     they are able to manage sequence to sequence tasks like translation that we have
     just seen。Secondly。 the weights between the encoder and the decoder parts are
     not necessarily shared。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个解码器可以专门用于完全不同的语言，甚至是图像或语音等模态。编码器和解码器有几个特别的原因。首先，它们能够管理像我们刚刚看到的翻译这样的序列到序列的任务。其次，编码器和解码器部分之间的权重不一定是共享的。
 - en: Let's take another example of translation。Here where translating transformers
     are powerful in French。Firstly， this means that from a sequence of three words。
     we're able to generate a sequence of four words。One could argue that this could
     be handled with a decoder that would generate the translation in an autoregressive
     manner。And they would be right。Another example of where sequence to sequence transformers
     shine is in summarization。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们再举一个翻译的例子。在这里，翻译变换器在法语中很强大。首先，这意味着从三个单词的序列中，我们能够生成四个单词的序列。有人可能会争辩说，这可以通过一个以自回归方式生成翻译的解码器来处理。他们是对的。另一个序列到序列变换器出色的例子是摘要生成。
 - en: Here we have very very long sequence， generally a full text， and we want to
     summarize it。Since if the encoder and decoders are separated， we can have different
     context lengths， for example。 a very long context for the encoder which handles
     the text and a smaller context for the decoder。 which handles the summarized sequence。There
     are a lot of sequence to sequence models。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，我们有非常非常长的序列，一般是一整篇文本，我们想要对其进行总结。由于编码器和解码器是分开的，我们可以有不同的上下文长度，例如，编码器处理文本时的非常长的上下文，以及解码器处理摘要序列时的较小上下文。序列到序列模型有很多。
 - en: This contains a few examples of popular encoder decoder models available in
     the Transformers library。Additionally， you can load an encoder and a decoder inside
     an encoder decoder model。😊，Therefore。 according to the specific task you are targeting，
     you may choose to use specific encoders and decoders which have proven their worth
     on these specific tasks。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 这包含了一些在变换器库中流行的编码器-解码器模型的示例。此外，你可以在编码器-解码器模型中加载编码器和解码器。😊 因此，根据你所针对的特定任务，你可以选择使用在这些特定任务上证明其价值的特定编码器和解码器。
 - en: '![](img/cce5d73b05cbf648b5982557ff9b6810_1.png)'
+  id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/cce5d73b05cbf648b5982557ff9b6810_1.png)'
 - en: 。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 。
 - en: '![](img/cce5d73b05cbf648b5982557ff9b6810_3.png)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/cce5d73b05cbf648b5982557ff9b6810_3.png)'
