@@ -1,13 +1,16 @@
 - en: 【双语字幕+资料下载】“当前最好的 TensorFlow 教程！”，看完就能自己动手做项目啦！＜实战教程系列＞ - P3：L3- 具有顺序和功能 API
     的神经网络 - ShowMeAI - BV1em4y1U7ib
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
 - en: How's it going guys， hope you're doing awesome and welcome back to tutorial
     Nuummerro Tres。![](img/bccade0d8176d09f2f705cdf71207aea_1.png)
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/bccade0d8176d09f2f705cdf71207aea_2.png)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
 - en: So we're at the point where we're going to create a basic neural network now
@@ -21,19 +24,23 @@
     more depth and explanations I recommend these video lectures by Andrew g from
     course one and two of the deep learning specialization all of these three playlists
     are going to be in the video description so with that said。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
 - en: let's get started with the code we're going import Tensorflow as TF and before
     we do that actually we're going to import OS。![](img/bccade0d8176d09f2f705cdf71207aea_4.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/bccade0d8176d09f2f705cdf71207aea_5.png)'
+  id: totrans-5
   prefs: []
   type: TYPE_IMG
 - en: And then we're going to do OS do and Veron and we're going to do TFF CPP min
     log level and we're going to set that equal to2 and essentially this will ignore
     information information messages from Tensorflow but we will still get error messages
     and and so on then we're going。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
 - en: From TensorFlow import Kas so let me just explain what CARS is since TensorFlow
@@ -43,6 +50,7 @@
     on sort of the flexibility that you need when creating your model you're going
     to use different APIs of CAS and more specifically in this video we're going to
     take a look at the sequential API of CAS and the functional API。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
 - en: Then we're going to do from Tensorflow cares import layers to import the dataset
@@ -55,12 +63,15 @@
     you're run into any trouble running this on a GPU then you should try and copy
     paste these two line tray here but if you don't have any issue then you shouldn't
     have to copy them in Also I noticed that this here should just be 1 f so Tf。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/bccade0d8176d09f2f705cdf71207aea_7.png)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
 - en: '![](img/bccade0d8176d09f2f705cdf71207aea_8.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
 - en: Alright， so anyways， let's move on now and let's actually start with loading
@@ -68,6 +79,7 @@
     X train and then Y train for the labels and also X test and Y test。And we do that
     by just emminist load data， and then let's print X dot shape。And also。 print Y
     train that shape。So we have 60，000 images where they are all 28 by 28。Now。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
 - en: one thing here is that we're going to send them to a neural network。 So we need
@@ -75,6 +87,7 @@
     So how we can do that is by doing x train equals to。Xtrain dot reshape-1 and then
     784。 so this minus1 here means keep whatever the value is on that dimension。 So
     in this case 60。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
 - en: 000 and then put so this is going to be 28 times 28。 so we're going to flatten
@@ -83,6 +96,7 @@
     is we can do s type and then float 32 just to minimize some of the computation
     and then we also want to normalize the value so that they are rather than being
     between 0 and 255。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
 - en: we want to make them between 0 and 1 for faster training so we're going to divide
@@ -91,6 +105,7 @@
     to be nuy arrays， you could do something like xtrain equals Tf convert to tensor
     and then you could do Xtrain and similarly for ytrain etc。 but actually this is
     going to be done internally by Tensorflow。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
 - en: so if it's in nuy arrays we don't have to bother too much。 the conversion is
@@ -98,6 +113,7 @@
     to do now is actually create a model。 so we're going to create a basic neural
     network and we're going to use the sequential API of KRS and how you can view
     the sequential API is that it's very convenient but not very flexible right。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
 - en: Very convenient， not very flexible。 So what I mean by that is， for example。
@@ -105,6 +121,7 @@
     limitation。 But if if if you have one input to one output， then sequential is
     exactly what you want to use。 So how we create this is we do model equals ks dot
     sequential。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
 - en: And then we're gonna send in a list and that list is going be the layers so
@@ -114,12 +131,14 @@
     equals then we're going to use the reL activation function and then you sort of
     write them just as the layers and then it's going to be automatically sent through
     those layers so for example we want another layer。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
 - en: another fully connected layer with the layer do denses and let's say we want
     256 nodes in that one and then activation equals re and then for the sort of the
     output layer the last layer we want to have layer dens and we want to map it to
     10 nodes right one node for each digit and on this one let we don't want an activation。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
 - en: Function because this is our output layer。We're going to use softmax on the
@@ -130,6 +149,7 @@
     categorical cross entropy。And then we're gonna have an argument that says from
     logicit equals true and this is because we do not have a softmax activation so
     when we do from logics equals true。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
 - en: it's going to send it in to a softmax first and then it's going map it to sparse
@@ -137,6 +157,7 @@
     when it's a sparse categorical it means that the labels so the ytrain labels are
     just an integer for that for the correct label so for example if it's a digit
     of threes if it's a digit of three。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
 - en: then the y train of that specific example will just be three if you remove the
@@ -144,18 +165,21 @@
     one hot encodings。But that's not what we have in our case。And then we can specify
     the optimizer， so we're going to do Ks。 optimizeims。adom。 and then as argument
     we can send in the learning rate， so let's do 0。001。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
 - en: And then we can sort of specify the metrics as well。 and in our case we want
     to have the metric to be accuracy so that CA keep tracks during training。 what
     is the running accuracy so far？Then after using model。compile， we can do model。fit。
     so you could view it that model。compile specifies the network configurations。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
 - en: so what loss functions， what optimizes and so on， and then in model dofit we
     actually specify more of the concrete training of that network。We want to send
     in x train and y train， and then we want to specify the batch size that it's going
     to be trained on。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
 - en: So let's say 32。 and then let's say we want to train for5 epos。And then we can
@@ -164,6 +188,7 @@
     want to evaluate it so we're going to do model that evaluate and we're going to
     send in the x x test y test batch size equals 32 and then verbos right so we don't
     need to specify the epochs here。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
 - en: we're just going to train it for one epoch。So if we run this now。So just running
@@ -171,6 +196,7 @@
     set which is reasonably okay right so what I want to talk about now as we can
     do if we specify the input first of all so we do cares that input and we specify
     the shape of that input。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
 - en: so in our case 28 by 28。Then we can actually do model dot。 so we can do print
@@ -179,6 +205,7 @@
     network so for example we have 512 nodes in our first layer we have 400。000 parameters
     there and then we can see 256 130 and 130k and then output we have 10 nodes with
     2。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
 - en: 5k parameters， if we would， for example， if we would remove this input this
@@ -186,6 +213,7 @@
     we could print model that summary but we would have to do it after the model that
     fit so after we've actually send something to the model so using this carad input
     lets you do model that summary and get more information about the model itself。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
 - en: You could also so now we created the model where we did sequential and then
@@ -193,6 +221,7 @@
     equals Ks dot sequential。And then you could sort of add one layer at a time， so
     you could do model。 add kas input。 for example， and then shape 784。And then we
     could model dot add layers dot then。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
 - en: So let's do the same network and then activation equals relu。And then mod let
@@ -202,6 +231,7 @@
     a more is a common debugging tool So for example maybe not for these very simple
     neural networks but when you're building more complex models and you want to see
     sort of layer by layer。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
 - en: how much how much the input is changed for those specific layers。 you could
@@ -211,6 +241,7 @@
     we can only map one input to one output this doesn't mean that the sequential
     API is bad in any way if you can use the sequential API you should right So this
     is sort of。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
 - en: If you can't use it， what should you do then， and that's when we go to the functional
@@ -218,6 +249,7 @@
     input and multiple outputs。 So let me show you how that works。 we're going to
     first specify the input。 so we're going to carry out that input and then shape
     784。And then we are going to do x equals。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
 - en: Layers do dens， 512 so we're going to build the exact same network and then
@@ -228,6 +260,7 @@
     send in the previous layer so this would be x in our case and then for the outputs
     we're going to do outputs equals layers do dens and then we're going to do 10
     nodes and yeah just to mix things up let's do activation equals softmax。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
 - en: And then do X on that。Now， just because we used activation equals softmax here。
@@ -235,12 +268,14 @@
     which is also the the default default argument so we we could also just as well
     remove this entirely。 So let's rerun this now and see that it works。Allright so
     I'm sorry about that I forgot one one line here which is very essential。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
 - en: so one thing we saw here is that the accuracy didn't improve。 which if you think
     about it here we didn't use we didn't use Softmax on this model and this is the
     one that we latest defined so you could see sort of here how important using Softmax
     is but anyways。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
 - en: What we need to do here is we need to do model equals ks dot model。 then we
@@ -248,6 +283,7 @@
     that's all we have to do。 and it' it's going to take these inputs that we defined
     here and these outputs and build the model。 And now if we run this， this should
     hopefully work。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
 - en: So as we see now we get something very similar to the first time we ran the
@@ -257,6 +293,7 @@
     name equals first layer name equals second layer and then if you run model dot
     summary we will see right here that that the first layer。 first dense layer， since
     that's the one we named it's going to be named first layer and then second layer。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
 - en: Now I also want to show some details of how to extract specific layer outputs
@@ -266,6 +303,7 @@
     right here。 So what we're going do is we're going to overrite this model and we're
     going do model equals kos dot model then we're going to do input and input equals
     model do input and then outputs。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
 - en: we're going to specify model dot layers and then if we do minus1。 that's going
@@ -274,6 +312,7 @@
     then we could do something like。Like feature equal model dot predict so model
     that predict is for for a specific one that we send in so let's do xtrain in this
     case we're sending in multiple examples actually all 60。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
 - en: 000 but anyways we can do print feature dot shape and then we would obtain all
@@ -283,6 +322,7 @@
     could specify my layer and then dot output so if we would run that we would get
     the exact same we are just getting the layer based on the name of that specific
     layer also。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
 - en: You could get all of them so you could do layer do output for layer in model
@@ -292,12 +332,14 @@
     layer the second layer and then the third layer so this might be useful sometimes
     when you're debugging and so on yeah so let's remove those actually so that the
     code is actually working as we wrote it from the beginning。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
 - en: Here are a couple of suggestions to play with the code and to get some more
     experience so the first is that you can try and see what accuracy you can get
     by increasing the model size training for model training for longer etc。 and you
     should be able to get over 98。1% at least on the test set。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
 - en: And my second suggestion is try using different optimizers than at for example。
@@ -309,8 +351,12 @@
     we're going to learn how to do convolutional neural networks in the next video
     so with that said thank you so much for watching and I hope to see you in the
     next video。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 我的第二个建议是尝试使用不同的优化器，比如说尝试带动量的梯度下降、Adam和RMSProp。看看哪个能给你带来最佳结果。第三个问题是，如果你去掉数据的归一化，是否会有任何区别。这些是使用Keras创建神经网络的一些基础，利用顺序模型和函数式API。在未来的视频中，我将展示更复杂的函数式API示例。但在此之前，我们将学习如何构建卷积神经网络。所以谢谢你的观看，希望在下一个视频中再见到你。
 - en: '![](img/bccade0d8176d09f2f705cdf71207aea_10.png)'
+  id: totrans-43
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bccade0d8176d09f2f705cdf71207aea_10.png)'

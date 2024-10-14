@@ -1,21 +1,30 @@
 - en: 【双语字幕+资料下载】“当前最好的 TensorFlow 教程！”，看完就能自己动手做项目啦！＜实战教程系列＞ - P18：L18- 图像的自定义数据集
     - ShowMeAI - BV1em4y1U7ib
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】“当前最好的 TensorFlow 教程！”，看完就能自己动手做项目啦！＜实战教程系列＞ - P18：L18- 图像的自定义数据集
+    - ShowMeAI - BV1em4y1U7ib
 - en: In this video， we will learn various ways that we can efficiently load a custom
     image dataset set。 Perhaps you've scraped this data online， or maybe you've created
     it yourself。 So I'm going to show you three different methods which are all efficient
     and good methods。 but one might be more convenient depending on how your dataset
     is already structured。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个视频中，我们将学习多种高效加载自定义图像数据集的方法。也许你已经在线抓取了这些数据，或者自己创建了它。因此，我将向你展示三种不同的方法，这些方法都是高效且良好的，但其中一种可能更方便，具体取决于你的数据集结构。
 - en: '![](img/5a48387aad10b0cf4a2d2bc3dacad647_1.png)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/5a48387aad10b0cf4a2d2bc3dacad647_1.png)'
 - en: '![](img/5a48387aad10b0cf4a2d2bc3dacad647_2.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/5a48387aad10b0cf4a2d2bc3dacad647_2.png)'
 - en: So the first method is that we have images in different subfolders so as usual
     we have a good old MNT and in this case we have you know the folder 01 to eta
     up to9 so if you just take a look at one subfoldder in this case we just have
@@ -27,14 +36,20 @@
     let's say cats and then you would have another one for dogs in this case it just
     so happens that the labels are exactly what the class names are so stepping into
     the code these are all the imports that we're going to use and then I'm actually。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 第一个方法是我们将图像放在不同的子文件夹中。通常我们会有一个好的老MNT，在这种情况下，我们有01到9的文件夹。如果你查看其中一个子文件夹，我们只有五张图像，但当然你可以想象有很多张。在这里，我们有所有与该类对应的图像，对于第九个文件夹，我们有数字9，当然在这种情况下，标签与类名完全相同，但你也可以想象其他情况，比如说猫和狗的数据集，那么你只需将0替换为猫，然后再为狗创建一个文件夹。在这种情况下，标签正好就是类名。因此，进入代码，这些是我们将使用的所有导入。
 - en: '![](img/5a48387aad10b0cf4a2d2bc3dacad647_4.png)'
+  id: totrans-5
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/5a48387aad10b0cf4a2d2bc3dacad647_4.png)'
 - en: '![](img/5a48387aad10b0cf4a2d2bc3dacad647_5.png)'
+  id: totrans-6
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/5a48387aad10b0cf4a2d2bc3dacad647_5.png)'
 - en: going to show you two methods to load this data so let's start with specifying
     what we want as the image height so image height is going to be 28。 the image
     width is going to be 28 as well and then let's say we want the batch size of two
@@ -42,81 +57,111 @@
     k sequential model just to make sure or let me actually copy paste that in so
     this is just to demonstrate that this works and that we can overfit this small
     data set and then let's go to the first method。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将向你展示两种加载此数据的方法，因此我们先指定图像高度，图像高度将是28，图像宽度也将是28。然后我们设定批处理大小为2，因为我们只有这么少的示例。同时，我们还将创建一个非常简单的k序列模型，只是为了演示这能工作，并且我们可以对这个小数据集进行过拟合。现在让我们进入第一种方法。
 - en: which is using data set from directory So what we're going to do to use this
     is the Ds train is Tf ks that preprocessing that image。Data set from directory。Allright，
     and then first of all。 we're gonna specify the folder for where all of the images
     are or rather where the subfolds are。 So that's in this case that's in data。 and
     then it's in Mist subfolds。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将使用来自目录的数据集。因此，我们要做的是将Ds train作为Tf ks，处理这个图像。来自目录的数据集。首先，我们要指定图像所在的文件夹，或者说子文件夹的位置。在这个例子中，它位于data中，然后在Mist子文件夹下。
 - en: then we're gonna do labels is inferred。 and and that just means that the labels
     are inferred from the structure of the subfolds in alphabetical order。 And then
     label mode， we're gonna specify to integer。 and you have a different options here。
     but integer is the most common one but you can also use categorical or binary
     and that would mean that this would be a categorical vector。 So basically it would
     be for you know one hot encodings anyways。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将进行标签推断。这意味着标签是根据子文件夹的结构按字母顺序推断的。接着我们将指定标签模式为整数。这里有不同的选项，但整数是最常见的选项，你也可以使用类别或二进制，这意味着这将是一个类别向量。所以基本上这会用于一热编码等等。
 - en: then you can also send in something called class names。 So in this case our
     class names would just be0，1 to3 etc， right this makes sense。 But let's say that
     we would replace 1 and 0 here。 That means that index。0 would actually represent
     the digit1。 but of course， that would be kind of confusing。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后你还可以发送一些叫做类名的东西。所以在这种情况下我们的类名将是 0，1 到 3 等等，这样理解是对的。但假设我们在这里替换 1 和 0。这意味着索引
+    0 实际上代表数字 1。但是，当然，这会有点混淆。
 - en: So let's just change those back。 Then we can specify color mode。 And in this
     case。 we're gonna specify grayscale。 You can also specify RGB here。 and then you
     specify the batch size。 let's say two。 rather we had argument。 Yeah， we had batch
     size equals here。 So we let's do batch size。Which is going to be two。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们把那些改回去。然后我们可以指定颜色模式。在这种情况下。我们要指定灰度。你也可以在这里指定 RGB。然后你指定批量大小。假设是两个。我们有参数。是的，我们这里有批量大小等于。所以我们来做批量大小。将是两个。
 - en: and then we can do image size is going to be image height and then image width。And
     it's。 it's going to， so it's going to reshape if。Not in this size。Then we're going
     to do shuffle equals true so that we get a randomized order。 then we can specify
     a seed， and this is important if you want to have。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们可以做图像大小，将是图像高度和图像宽度。它会重新调整大小，如果不是这个尺寸。然后我们将设置 shuffle 等于 true，以便我们获得随机顺序。然后我们可以指定种子，如果你想要的话，这很重要。
 - en: let's say you're splitting it into a validation set and a training set and you
     want the exact same training and validation set every time you run it then it's
     important to set the seed。 and then we can also do something like validation split。Let's
     set it to 0。1。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设你将其分为验证集和训练集，并且每次运行时希望得到完全相同的训练和验证集，那么设置种子是很重要的。然后我们也可以做类似验证拆分的事情。让我们将其设置为
+    0.1。
 - en: so 10% of the images are going to be in a validation data。Then to make sure
     that this is the training， we can specify subset equals training。![](img/5a48387aad10b0cf4a2d2bc3dacad647_7.png)
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以 10% 的图像将会在验证数据中。然后为了确保这是训练，我们可以指定子集等于训练。![](img/5a48387aad10b0cf4a2d2bc3dacad647_7.png)
 - en: Training。😔，And then what we would do for the validation is simply just copy
     paste all of that。![](img/5a48387aad10b0cf4a2d2bc3dacad647_9.png)
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 训练。😔 然后我们对验证所做的只是简单复制粘贴所有内容。![](img/5a48387aad10b0cf4a2d2bc3dacad647_9.png)
 - en: And then we would， first of all， change the name to， let's say， D validation。And
     then right here we would split it to validation and this way it's going to randomly
     split it into a validation data that is 10% of the original data that's in the
     subfolds。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们首先将名称更改为，比如说，D validation。然后在这里我们会将其拆分为验证，这样它将随机拆分为原始数据的 10% 的验证数据，存放在子文件夹中。
 - en: So now when we have used this image data set from directory It's going to be
     in a tensorflow data set format and now we know exactly what to do from previous
     videos So let's say we wanted to do some data augmentation then that would be
     pretty straightforward。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在当我们使用来自目录的这个图像数据集时，它将会是一个 TensorFlow 数据集格式，现在我们知道该怎么做来自之前的视频。假设我们想做一些数据增强，那将是相当简单的。
 - en: we would do， as we did in the data augmentation tutorial and let me just give
     a simple example。 we would do image is Tf image random。Brightness， and then let's
     send in X。Specify some max delta。 and then we would return image and Y。So that's
     just a very， very simple data augmentation。 We would do DS S train equals。D Strain
     dot map and then augment。😔。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将像在数据增强教程中那样做，给我一个简单的例子。我们会使用图像是 Tf 图像随机的 **亮度**，然后让我们传入 X。指定一些最大增量。然后我们会返回图像和
+    Y。所以这只是一个非常简单的数据增强。我们会做 DS S train 等于 D Strain.dot map 然后 augment。😔
 - en: And then let's say you wanted to train on this。 You would do four epochs in
     range of， I don't know。10 or the number of epochs of your choice。 So let's just
     be clear here。 This is for custom loops。And then you would do for x and Y in the
     S train。 and then you would do， you know， train here。 But let's just do。A pass
     on that right now， but that's we've covered this in previous tutorials。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后假设你想要训练这个。你会在范围内进行四个时期，我不知道，10 或你选择的时期数。所以让我们明确一下。这是为自定义循环而做的。然后你会对 S train
+    中的 x 和 Y 进行操作。然后你会进行训练。但现在我们先不深入这个，但我们在之前的教程中已经讨论过了。
 - en: And then， of course， if want， if you wanted to do with model dot compile， that
     works as well。 So you would just， let me， I'm just gonna copy it in so that we
     don't have to。Spend unnecessary necessary time on this so then and again this
@@ -128,71 +173,94 @@
     these 45 rather none of these images inside of these 45 are going to be equal
     to the5 for the validation so they are unique and we not we're not training on
     the images for the validation data。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然，如果你想要使用model.dot compile，那也是可以的。所以你只需要，让我复制一下，这样我们就不必在这上面花费不必要的时间。所以再一次，这些在之前的教程中都有介绍，但在这里我们用Adam优化器和稀疏分类交叉熵来编译模型，然后我们用model.fit进行10个周期的训练。假设我们只需运行这个，我们可以在这里看到它找到50个文件，然后使用其中45个进行训练，而验证使用其中5个。为了明确，这45个中没有任何一张图片会与这5个用于验证的图片相同，因此它们是独特的，我们没有在验证数据上进行训练。
 - en: Alright， and then we can see just every110 box。 we have 100% training accuracy。
     which means that we overfit to those 45 training examples。 Alright， so that's
     the method one。 and that works fine。 then for the method 2。We're going to use
     image data generator and then flow from directory and what we're going to do first
     is define this image data generator。So we're going to do data generator。Is image
     data generator， and we imported this at the top。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，然后我们可以看到每110个框，我们有100%的训练准确率。这意味着我们对这45个训练样本过拟合。好的，这就是方法一。这个方法很好。然后对于方法二，我们将使用图像数据生成器，然后从目录中流式传输。我们首先要定义这个图像数据生成器。所以我们要做的是data_generator=ImageDataGenerator，我们在顶部导入了这个。
 - en: so we imported this right here on this line。So we're going to do image data
     generator and then we're going to do。 first of all， we're going to specify rescale
     and we're going to do one divided by 255。And we're just doing this to make sure
     that it's in float。But we're going to divide by 255 to normalize the images and
     then we can specify a lot of data augmentation inside of this image data generator。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们在这一行导入了这个。所以我们要做的是图像数据生成器，首先，我们将指定重缩放，并将其设置为1/255。我们这样做是为了确保它是浮点数。我们将通过255进行除法来标准化图像，然后我们可以在这个图像数据生成器中指定很多数据增强。
 - en: so let's just give an example we can do rotation range and there are a ton of
     different arguments that you can send into this I'm going to put the documentation
     part on the screen so you can see but there's really a lot so there are more than
     what I'm showing you right here。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们来举个例子，我们可以做旋转范围，并且你可以传入很多不同的参数。我会把文档部分放在屏幕上，让你可以看到，但实际上有很多，所以比我现在展示的要多。
 - en: '![](img/5a48387aad10b0cf4a2d2bc3dacad647_11.png)'
+  id: totrans-24
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/5a48387aad10b0cf4a2d2bc3dacad647_11.png)'
 - en: But then you can do something like zoom range and you can do in a twople， let's
     say 0。990。99。 And what this is going to do is zoom out 1% and then zoom out 1%
     in a within that range。 but it's going to do it randomly。 So I mean， that's very，
     very few right let's do 5% at least。And then we can do horizontal flip and we
     can set it to false。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后你可以做像缩放范围这样的操作，假设是0.99到0.99。这将意味着缩小1%，然后在这个范围内再缩小1%。但是这将是随机进行的。所以，我的意思是，这非常，非常少，让我们至少设定5%。然后我们可以进行水平翻转，并将其设置为false。
 - en: we don't want to flip the digits that would ruin some of them。So then we can
     do vertical flip as well。 And again， they are false by default。 I'm just kind
     of showing you how you would do it。you can specify more things like data format
     and we can do channels last。 and this is kind of the standard way Tensorflow wanted
     in。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们不想翻转数字，这会毁掉其中的一些。因此我们也可以进行垂直翻转。默认情况下，它们也是false。我只是展示一下你会怎么做。你可以指定更多内容，比如数据格式，我们可以设置通道为最后。这是TensorFlow希望的标准方式。
 - en: but you can you can also have channels first， if you'd like。And then you can
     also specify validation split similarly to what we did above。 but let's just set
     0 for this for now。 and then D type is going to be TF float 32。![](img/5a48387aad10b0cf4a2d2bc3dacad647_13.png)
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是如果你愿意，你也可以先有通道。然后你也可以像我们之前那样指定验证拆分。不过我们现在就将这个设置为0。然后D类型将是TF float 32。![](img/5a48387aad10b0cf4a2d2bc3dacad647_13.png)
 - en: And then when we have the data the image data generator。 we're going to construct
     this train generator because you know so far we haven't specified the directory
     for any of the images。 so now we've just sort of specified how we want the data
     to be processed。So what we do is we do datagen。 flow from directory， all right。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我们有数据的图像数据生成器时，我们将构建这个训练生成器，因为到目前为止我们尚未为任何图像指定目录。所以现在我们只是指定了数据处理方式。因此我们所做的就是使用
+    datagen。通过目录流动。
 - en: so we do flow from directory on this data generator， on this image data generator
     object。And then here we specify data and then mist subfolders again， and then
     target size。We're gonna specify image。Image height， image width。Then we specify
     the batch size。 let's say batch size， which is two color mode， gray scale in this
     case。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们通过目录从这个数据生成器流动，在这个图像数据生成器对象上。然后在这里我们指定数据，然后再指定子文件夹，然后是目标大小。我们将指定图像。图像高度，图像宽度。然后我们指定批大小。假设批大小为二，颜色模式为灰度。
 - en: but you can set it to RGB as well， class mode is going to be a sparse and it's
     going to be sparse because we want it to be in a you know the integer representing
     that one。 we don't want one hot encodings。And then we can do shuffle again we
     want the data to be randomized then we can do subset training and in this case
     since we're setting the validation split to zero。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 但你也可以将其设置为RGB，类别模式将是稀疏的，这样做是因为我们希望它是一个表示那一个的整数。我们不想要独热编码。然后我们可以再次进行随机化，我们希望数据被随机化，然后我们可以做子集训练，在这种情况下，由于我们将验证分割设置为零。
 - en: this is going to be the entire one but you could specify you could just as we
     did previously you could copy this and then specify validation generator and then
     specify validation right here so if you're using a validation data here you're
@@ -201,64 +269,85 @@
     a training folder and then a validation folder you would just change the folder
     right here and perhaps you don't want to do data augmentation so you would have
     to then also specify a new data generator。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将是整个过程，但你可以像之前那样复制这个，然后指定验证生成器，然后在这里指定验证。所以如果你在这里使用验证数据，你将只需复制粘贴所有内容，然后指定子集为验证。假设你将它们放在不同的文件夹中，你将有一个训练文件夹和一个验证文件夹，你只需在这里更改文件夹，也许你不想进行数据增强，因此你还需要指定一个新的数据生成器。
 - en: But yeah， so then we're going to do specify see as well。 which is important
     if we want the same result for different runs。And then， yeah。 so that's it for
     the actual generator。Let me just show you an example example。 so let's do a training
     loop。And let's just do pass。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 但对，所以我们将指定 see，这在我们希望不同运行得到相同结果时很重要。然后，好的。这就是实际生成器的内容。让我给你展示一个示例。我们来做一个训练循环。让我们只是执行传递。
 - en: but here you could specify one sort of one training step。And then I'm gonna
     show you， first of all。 with custom loops。 And then this is a little bit different
     than what we saw previously。 So let's say in range of I don't know，10 again or
     number of epos of your choice。 What we got to do here is we got to count the number
     of batches。 So let's say we start at0。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 但在这里你可以指定一个训练步骤。然后我将首先向你展示自定义循环。这与我们之前看到的稍有不同。所以假设在我不知道的范围内，再做10次或者你选择的训练周期。我们需要在这里计算批次数。因此假设我们从0开始。
 - en: We're gonna do4 x and y in D S train。 we're gonna iterate up the number of batches
     by one right。 So we've now gone through one more batch。 So we're gonna step one。
     Then we're gonna。Do training。 so we're going to call training。Right here and again。
     this is in the custom loops tutorial if you're unfamiliar with this。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将执行4 x 和 y 在 D S 训练中。我们将通过增加批次数来迭代一次。现在我们已经处理了一个额外的批次。我们将步进一次。然后我们将进行训练。因此，我们将在这里调用训练，并且这在自定义循环教程中，如果你对此不熟悉的话。
 - en: And then we're going to do if no batches is greater equal to 25。 So basically
     if it's equal to 25。And why I'm choosing 25 here is because that's the length
     of our data set or to be specific。 the length of our train data set divided by
     the batch size。So if that's the case。 then we've now gone through the entire data
     set and we need to break。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们要检查如果批数大于等于25。因此基本上如果等于25。我选择25的原因是因为那是我们的数据集长度，或者更具体地说，是我们的训练数据集长度除以批大小。所以如果是这种情况。那么我们现在已经遍历了整个数据集，我们需要中断。
 - en: And the reason we need to break is because we have a generator object that's
     going to go on forever if we don't break。 So this is how you would specify the
     custom training loop set up and。Let me just copy in the code。Right heres to save
     some time。 So let me go through it。 if you would do model compile。 Yes。 were redoing
     model compile just to reset the optimizer state。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们需要中断的原因是因为我们有一个生成器对象，如果不中断它将永远运行。所以这是你如何指定自定义训练循环设置的方式。让我复制一下代码。节省一些时间。让我过一下，如果你要进行模型编译。是的，我们重新进行模型编译只是为了重置优化器状态。
 - en: so then we would have atom sparse categorical columnmetric accuracy nothing
     odd here and then when we do model fit。 we send in the train generator that we
     you know constructed over here and then we do steps per epoch which is exactly
     the same as we did here if the number of batches equals 25 So the steps per epoch
     is 25 verbose equals2 just that is normal and then。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将使用稀疏分类列度量准确率，这里没有什么奇怪的，然后当我们进行模型拟合时，我们将发送我们在这里构建的训练生成器，然后进行每个时期的步骤，与这里的步骤完全相同，如果批量数量为25。那么每个时期的步骤是25，verbose设置为2，这很正常。
 - en: If we had a validation generator， we would do validation data is equal to that
     validation generator。 and then again the validation steps would be similarly as
     the steps per epoch。 which is the length of validation set divided by the batch
     size。 Allright。 so that hopefully gives you a clear view of two different methods
     that you can use assuming that the data is structured in a subfold way。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们有一个验证生成器，我们会将验证数据设置为等于该验证生成器。然后验证步骤将与每个时期的步骤类似，即验证集的长度除以批量大小。好的。这希望能为你提供两种不同方法的清晰视角，假设数据是以子文件夹的方式结构化的。
 - en: '![](img/5a48387aad10b0cf4a2d2bc3dacad647_15.png)'
+  id: totrans-39
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/5a48387aad10b0cf4a2d2bc3dacad647_15.png)'
 - en: So the second way that your dataset might be structured is that you have all
     of the images in a folder and then you have a corresponding CSV file and a CSV
     file tells you the fine name and then the label so for example。 in this case it
     says that 0 underscore 1 JPEG is a target labels so the digit is0。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 第二种你的数据集可能结构化的方式是，你将所有图像放在一个文件夹中，然后有一个对应的CSV文件，CSV文件告诉你文件名和标签。例如，在这种情况下，它说明0_1
+    JPEG是目标标签，所以数字是0。
 - en: the label of that is0， and then it does that for all of the images in the folder
     and it gives all of the corresponding labels。So if that's the way which is also
     a common way to structure your data。 then I'm going show you exactly what you
@@ -267,35 +356,49 @@
     going to specify the directory so the red oh my God the directory is data and
     then Mmunist images CSv that's just what I decided to call it and the first thing
     we're going to do is we're going to do data frame is pandas do read CSV。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 标签是0，然后对文件夹中的所有图像都这样处理，并给出所有对应的标签。所以如果这是数据结构化的一种常见方式，那么我将告诉你该如何进行。接下来是代码，这些是我们将要使用的导入，我想这没有什么奇怪的。我们要做的第一件事是指定目录，哦我的天，目录是数据，然后是Mmunist
+    images CSV，这就是我决定的名称。我们要做的第一件事是使用pandas读取CSV以创建数据框。
 - en: '![](img/5a48387aad10b0cf4a2d2bc3dacad647_17.png)'
+  id: totrans-42
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/5a48387aad10b0cf4a2d2bc3dacad647_17.png)'
 - en: '![](img/5a48387aad10b0cf4a2d2bc3dacad647_18.png)'
+  id: totrans-43
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/5a48387aad10b0cf4a2d2bc3dacad647_18.png)'
 - en: And then so we're going to read the CSE file with pandas。 We're going to specify
     the directory and we're going to do。Then we're going to add train dot CSV。 Now
     that we have the CSV file， what we can do is we can do file paths。We can do data
     frame and then we can obtain from that column， remember we call that column file
     name。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将使用pandas读取CSV文件。我们将指定目录，然后进行。然后我们将添加train.csv。现在我们有了CSV文件，我们可以处理文件路径。我们可以创建数据框，然后从该列中获取，记住我们称之为文件名的那一列。
 - en: And then we can do that values。 That's gonna to give us all of right， let me。
     let me print it actually。 It's going to become a little bit clearer， I think。So。Like
     that。What。Oh file pads。 All right， so as you can see here， we basically get a
     list of all of the the file names and in this way。 and in this case， they're actually
     pretty nice formatted。 you have you know。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们可以处理这些值。这将给我们所有的正确结果，让我实际打印一下。这样会更清晰。我想。所以，像这样。哦，文件路径。好的，正如你所看到的，我们基本上得到了所有文件名的列表，在这种情况下，它们格式很好。你知道。
 - en: you have the label right here and then you have the index for that one。 So this
     is a a digit0。 digit0， digit1 and so on。 But anyways， then we have the file pads
     and we can get the labels。 we can do that by doing pretty much same thing， but
     we do label and then we do dot values。Now that we have the file pads and the labels
     and the labels in this case are going to be integer。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 你在这里有标签，然后你有那个的索引。所以这是 digit0、digit0、digit1，依此类推。不过，不管怎样，我们有文件路径，我们可以获取标签。我们可以通过做几乎相同的事情来做到这一点，但我们做标签，然后我们做
+    dot values。现在我们有了文件路径和标签，而在这种情况下，标签将是整数。
 - en: what we do then is we do Dtrain is Tf dot data do data set dot from tensor slices
     All right so what we do then is we send in the file pads。And then the labels。
     all right， and we do this because。The first one in this。 so the first value in
@@ -303,50 +406,71 @@
     this labels list。 so that we use from from tensor slices to sort of map them together
     similar to as you would do zip in Python What we do then is we do a function for
     read image。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们做的是 Dtrain 是 Tf dot data do data set dot from tensor slices。好吧，所以我们做的是发送文件路径。然后是标签。好的，我们这样做是因为在这个列表中，第一个值将等于这个标签列表中第一个元素的标签。因此我们使用
+    from from tensor slices 将它们映射在一起，类似于你在 Python 中使用 zip。然后我们做一个读取图像的函数。
 - en: So we send in the image file and we also send in the label。 So the first thing
     we do is we do Tf do o do read file。 So we're going to read that file from that
     image file。And also， rather。 we need to specify the directory first and then we
     need to add the image file。Right。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们发送图像文件，也发送标签。我们首先做的是 TF do o do 读取文件。所以我们将从图像文件中读取那个文件。此外，我们需要先指定目录，然后添加图像文件。对吧。
 - en: so we're reading that file， then we're going do TF dot image dot decocode image。And
     then we're going to send in that image， we're going to do channels equals1 because
     we have grayscale。 then we're going to do D type is Tf floatat 32， and then we
     just return image and then the label。And just for illustration， let me also show
     you， or rather not show you would。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们正在读取那个文件，然后我们将做 TF dot image dot decode image。接下来我们将发送图像，通道设置为 1，因为我们有灰度图像。然后我们将
+    D type 设置为 Tf floatat 32，然后我们只返回图像和标签。为了说明，让我也给你展示一下，或者说不展示你将会。
 - en: you would do something like define augment。 if you want data augmentation， you
     do image and label。 and then。I guess data augmentation here， but in this case
     let's just return image and label and then you would do map similarly as we did
     before。 so DSre dot map， we would send that to read image and then you know dot
     map augment and then we can do dot batch of two。Yeah。So now that we have the Ds
     train。 so that that's all for loading the data。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以定义增强。如果你想要数据增强，你需要图像和标签。然后，我想这里是数据增强，但在这种情况下，我们只返回图像和标签，然后你会像之前一样做映射。所以 DSre
+    dot map，我们会发送给读取图像，然后你知道的 dot map augment，然后我们可以进行两个的 dot batch。好的。因此，现在我们有了 Ds
+    train。这就是加载数据的全部内容。
 - en: And I just want to show you how you would set it up for training and it's pretty
     basic。 We would do forpoC in range of 10。Then we would do4 x and Y in DS S train。
     So we would train here。 in this case， we're just going do pass or。Let's do print。
     Now， let's just do pass。 Alright。 so then let me copy in just to show you that
     it works， so。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 我只想给你展示如何为训练设置，它非常基本。我们将做 for poC 在 10 的范围内。然后我们将做 4 x 和 Y 在 DS S train。因此我们将在这里训练。在这种情况下，我们只会
+    pass。让我们做打印。现在，让我们只做 pass。好的。那么让我复制一下，给你展示它是如何工作的。
 - en: Here we have the same model as we saw previously， simple model。And then we have
     model compile。 and then model fit。And all of this should be very familiar from
     previous videos。 then if we just run it。We can see that we're overfitting pretty
     quickly because we have so few images。 but that's kind of what we expect。So that's
     the method to。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里我们有与之前看到的相同的模型，简单模型。然后我们有 model compile。接下来是 model fit。所有这些在之前的视频中应该非常熟悉。然后如果我们运行它，我们可以看到我们很快就过拟合了，因为图像太少了。但这正是我们所期待的。这就是方法。
 - en: and hopefully this gives you a nice way to a nice general way how you would
     do this。![](img/5a48387aad10b0cf4a2d2bc3dacad647_20.png)
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 希望这能给你一个很好的方法，展示如何做到这一点。![](img/5a48387aad10b0cf4a2d2bc3dacad647_20.png)
 - en: '![](img/5a48387aad10b0cf4a2d2bc3dacad647_21.png)'
+  id: totrans-54
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/5a48387aad10b0cf4a2d2bc3dacad647_21.png)'
 - en: Alright， so the third way is if you would just have all of the images in a single
     single folder。 so in this case we have no CSV file， we just have all of them thrown
     into a single folder but we're assuming here that there is some nice format so
@@ -354,92 +478,124 @@
     in this case we as we said before the first digit here is representing the class
     of that image and in the second value is just the index so we can actually just
     from the file name。
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，第三种方式是如果你将所有图像放在一个单独的文件夹中。因此在这种情况下，我们没有CSV文件，只是将所有文件放在一个文件夹中，但我们假设这里有某种良好的格式，以便我们可以通过文件名解释该图像的标签。因此在这种情况下，正如我们之前所说，首位数字代表图像的类别，第二个值只是索引，因此我们实际上可以仅通过文件名进行处理。
 - en: we can interpret what the label should be for that image。![](img/5a48387aad10b0cf4a2d2bc3dacad647_23.png)
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以解释该图像的标签应该是什么。![](img/5a48387aad10b0cf4a2d2bc3dacad647_23.png)
 - en: So going to the code， these aret inputs that we're going to use， we're also
     going to use Pathlib。 it's in the standard library， and I'm going to show you
     in just in a minute what we are going to use it for。So let's start with specifying，
     I guess， the batch size， let's do two and then image height is 28。 image width
     is 28。And then we're going to specify the directory。
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以进入代码，这些是我们将要使用的输入，我们还将使用`Pathlib`。它在标准库中，我将在稍后给你展示我们将用它做什么。因此，让我们开始指定，我想，我们将批大小设置为2，然后图像高度为28，图像宽度为28。接下来我们将指定目录。
 - en: which is data and then emist images only。 So first of all。 to create the Tensorflow
     data set we're going to do Ds train is Tf dot data dot data dot list files。Then
     we're going to do a string， and here were going to specify we're going to use
     the pathlib。So not to go too much in depth， this is we're using pathlib here because
     that is the format that list files wants the defaulted directory in。
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 也就是数据，并且仅限于EMNIST图像。因此首先，要创建TensorFlow数据集，我们将执行`Ds_train = TF.data.Dataset.list_files`。然后我们将执行一个字符串，在这里我们将指定使用`pathlib`。所以不深入探讨，我们使用`pathlib`是因为这是`list_files`希望的默认目录格式。
 - en: So we're just going to do pathlib。t path then we're going to do the directory。Then
     we're going do plus， and then。t Jpeg， al right。 so it's basically going to find
     all of the files in that directory which is right here that ends with a JpeEg
     file。 Alright， so what you would do then is we would define a process to actually
     you know。
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将使用`pathlib.Path`，然后获取目录。接着加上`.jpeg`，好的。所以它基本上会找到该目录中以`.jpeg`结尾的所有文件。好的，那么你接下来要做的是定义一个处理函数。
 - en: given the file pad， we need to process the image just as we saw for for from
     the previous file So we're going to do define process path。We're gonna send in
     the file pack。And then we're going to do image is TFI O read file of the file
     path。Then we're going to do image is Tf image dodecode JpeEG of that image， and
     then channels equals1。Then for the labels and this is going to depend on the file
     format of of your images。
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 给定文件路径，我们需要处理图像，就像我们在之前的文件中看到的那样。因此，我们将定义处理路径。我们会发送文件包。然后我们将使用`TFIO.read_file`读取文件路径中的图像。接着我们会进行`TF.image.decode_jpeg`，然后通道设置为1。然后，标签将取决于图像的文件格式。
 - en: so this is going to be different for every scenario I'm just showing you one
     way。 So label here is TF strings dots we're going do Tf strings dot split we're
     going to do the file path and then we're going to specify the split So in this
     case we're splitting by the path separator I believe it's called and then in our
     case。
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这对于每种场景都是不同的，我只是给你展示一种方法。因此这里的标签是`TF.strings`，我们将执行`TF.strings.split`，我们将使用文件路径，然后指定分割。所以在这种情况下，我们是按路径分隔符分割的，我认为它被称为，然后在我们的情况下。
 - en: Maybe I can actually do this。 So for x and y in the S train， I can do as to
     Y print。 Y TF strings do split。And then or rather， we just have a file path， so
     file path。So we're gonna split the file path。By this and you're just going to
     see what it looks like。And in this way， I think you can easier follow the the
     logic I had。 So here we have data。
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 也许我可以这样做。因此对于`x`和`y`在`S_train`中，我可以执行`Y.print`。`Y.TF.strings.split`。而且或者说，我们只是有一个文件路径，所以文件路径。我们将通过这个来分割文件路径。你将看到它的样子。通过这种方式，我认为你可以更容易地跟随我所采用的逻辑。所以这里我们有数据。
 - en: emmin images only。 and then we have this。 And， of course。 here is the important
     information about the file。 So what we're going to do is we're going to take the
     the second index of this list。 So we're going to take this part。Now in our case，
     and this is dependent on your dataset again。 but in our case we can just take
     this one right here and convert it to a number。
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 仅限于emmin图像。然后我们有这个。当然，这里是关于文件的重要信息。那么我们要做的是取这个列表的第二个索引。我们将取这部分。在我们的情况下，这取决于您的数据集，但在我们的情况下，我们可以直接取这个并将其转换为数字。
 - en: so how we can do that is let's see we can do label is Tfstrs。 substr of label
     position zero and then the length is one and if you would have you know varying
     length of of your class names and you could perhaps you split again if you would
     have something like you know cats。
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么我们如何做到这一点呢？让我们看看，我们可以做label是`Tfstrs.substr`，从label位置零开始，长度为一。如果您的类名称长度不一，您可以再次分割，例如，如果您有像猫这样的东西。
 - en: dogs， horses something like that， and you would have that these two are different
     in length you would need to split it some in some way。But this is just how you
     would handle strings。And then label， we can do TF strings do2 number。 and we send
     in the label and we can also specify the out type to be TF in 64。So in in this
     case。 then we have processed image and also the label。 So then what we would do。Is
     DSstrain is DSstrainin。
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 狗，马之类的，如果这两者的长度不同，您需要以某种方式进行分割。但这只是处理字符串的方式。然后label，我们可以使用`TF strings do2 number`，传入label，并且我们也可以指定输出类型为TF
+    in 64。所以在这种情况下，我们有处理过的图像和标签。那么我们要做的是`DSstrain`是`DSstrainin`。
 - en: map。And then we would just do a process path。And then we would do batch and
     then send in the batch size。Alright， and then I'm gonna copy the model again and
     just make sure that this works。 So we have。 you know， again， the model that we
     have previously simple model。 we have model compile similar as before model that
     fit and we send in that D S train。
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 映射。然后我们只需做一个处理路径。接着我们会进行批处理并传入批量大小。好的，我将再次复制模型，确保它能正常工作。因此，我们有，您知道的，之前的简单模型。我们模型编译与之前相似，模型拟合，并传入`D
+    S train`。
 - en: So let's run it to make sure it works。 Oh yeah。 So here we need to also take
     index2。 So let's rerun it。All right， so then we see after tinyny buck， we'll get
     100% training accuracy。All right， so thank you so much for watching the video
     that was three ways that you can load a custom data set for images in TensorFlow
     hopefully you found the video useful and I hope to see you in the next video。
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们运行一下，确保它能正常工作。哦，对了。这里我们还需要取`index2`。所以让我们重新运行一下。好的，我们看到在tiny buck之后，我们将获得100%的训练准确率。非常感谢您观看这个视频，这里介绍了三种加载自定义图像数据集的方法，希望您觉得这个视频有用，期待在下个视频中见到您。
 - en: '![](img/5a48387aad10b0cf4a2d2bc3dacad647_25.png)'
+  id: totrans-68
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/5a48387aad10b0cf4a2d2bc3dacad647_25.png)'
 - en: '![](img/5a48387aad10b0cf4a2d2bc3dacad647_26.png)'
+  id: totrans-69
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/5a48387aad10b0cf4a2d2bc3dacad647_26.png)'

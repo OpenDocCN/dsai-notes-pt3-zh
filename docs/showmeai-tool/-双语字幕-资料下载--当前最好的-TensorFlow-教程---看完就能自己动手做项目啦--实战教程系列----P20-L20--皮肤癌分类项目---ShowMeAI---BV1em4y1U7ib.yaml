@@ -1,71 +1,98 @@
 - en: 【双语字幕+资料下载】“当前最好的 TensorFlow 教程！”，看完就能自己动手做项目啦！＜实战教程系列＞ - P20：L20- 皮肤癌分类项目 -
     ShowMeAI - BV1em4y1U7ib
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】“当前最好的 TensorFlow 教程！”，看完就能自己动手做项目啦！＜实战教程系列＞ - P20：L20- 皮肤癌分类项目 -
+    ShowMeAI - BV1em4y1U7ib
 - en: 🎼Welcome to the final video in this tutorial series。 So in this video。 I want
     to go through a project example， which has been the goal since the start of these
     tutorials。 namely， that we build a solid foundation in Tensorflow so that we feel
     confident of starting our own project。 So in this project， we want to build a
     network that can classify if images of skin lesions are benign。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 🎼欢迎来到本系列教程的最后一部视频。在这个视频中，我想通过一个项目示例，这也是这些教程开始时的目标，即我们构建一个扎实的 Tensorflow 基础，以便自信地开始自己的项目。在这个项目中，我们希望建立一个网络，可以分类皮肤病变的图像是良性还是恶性。
 - en: meaning they are non harmful or if they're malignant and are actually cancer。
     So as with any project， we will probably encounter some issues or problems along
     the way。 and we'll see ways of how to solve those。![](img/475fe094519811d342f56f12ace25357_1.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 这意味着它们是无害的，或者如果它们是恶性的，那实际上就是癌症。因此，像任何项目一样，我们在过程中可能会遇到一些问题，我们将看到如何解决这些问题。![](img/475fe094519811d342f56f12ace25357_1.png)
 - en: '![](img/475fe094519811d342f56f12ace25357_2.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/475fe094519811d342f56f12ace25357_2.png)'
 - en: '![](img/475fe094519811d342f56f12ace25357_3.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/475fe094519811d342f56f12ace25357_3.png)'
 - en: '![](img/475fe094519811d342f56f12ace25357_4.png)'
+  id: totrans-5
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/475fe094519811d342f56f12ace25357_4.png)'
 - en: So the first thing in any project is to obtain some data and after some googling。
     I found a dataset set called the IIic data set。 So let me show you how to download
     it。 So we're going to search IIac training data。And we're just going to open up
     this link。 It's going to be in the video description as well。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 所有项目中的第一件事是获取一些数据，经过一些谷歌搜索，我发现了一个名为 IIic 数据集的数据集。让我给你展示一下如何下载它。我们将搜索 IIac 训练数据。我们只需打开这个链接，它也会在视频描述中。
 - en: And all we got to do is we got to enter our email address and after doing that
     we'll get sort of access to training data with the inputs as JpeEG images and
     then also a CSV file of entries of the age sex and the location of where the skin
     lesion was on that person。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们要做的就是输入我们的电子邮件地址，完成后，我们将获得带有输入的训练数据，格式为 JPEG 图像，并且还有一个 CSV 文件，记录了皮肤病变所在的年龄、性别和位置。
 - en: and also the ground roof if the actual lesion was millignant or benign。And then
     we have a test data。 so we have 25，000 images of those， and then we have a test
     data set of 8，200 images。 but those as you can see they don't have a ground truth
     label and that is because this IsIic is actually a challenge。 IsIac challenge
     is， what kind of accuracy do they get on these 8，200 images？So in this video。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 还有如果实际病变是恶性或良性的标注。然后我们有测试数据，所以我们有 25000 张这样的图像，还有一个包含 8200 张图像的测试数据集，但正如你所看到的，它们没有真实标签，这是因为这个
+    IsIic 实际上是一个挑战。IsIac 挑战是，他们在这 8200 张图像上能获得什么样的准确率？因此在这个视频中。
 - en: we're going to do it a little bit differently。 We're going to take just these
     25000 images。 We're gonna split that into a test set and a training and a validation
     set。 And then we're gonna see what accuracy would get。 So on the actual challenge
     here。 we would probably get a little bit better performance since we would have
     a little bit more data But I think that's you know。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们会稍微改变一下方法。我们将选择这 25000 张图像，将其分成测试集、训练集和验证集。然后我们将看看能获得什么准确率。因此，在实际挑战中，由于我们会有更多的数据，我们可能会获得更好的性能，但我认为这就是。
 - en: this is。Good enough， you know， we have quite a lot of images anyways。 So to
     download them。 we're just gonna press the these three。 and in this case， you know，
     since we have so many images。 it's actually， you know，10 gigabytes。 it's gonna
     take a while to download。So after downloading them。 we get all of these three
     files and so we get one folder right here with sort of all of the images and then
     we have two CSV files。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 这已经足够好了，你知道，我们有很多图像。因此，要下载它们，我们只需按下这三个按钮。在这种情况下，你知道，由于我们有很多图像，实际上是 10GB，下载会花一些时间。所以在下载后，我们会得到这三个文件，并且我们会得到一个包含所有图像的文件夹，然后还有两个
+    CSV 文件。
 - en: so we have the ground truth。And that looks like this。 So we have the image。
     the file name of the image。 and then we get first the first column is if it's
     malignant or not。 so0 is for benign，1 is for malignant。 And then they also have
     some different categories for the actual。What type of skin lesion it is， but we're
     going to simplify this a little bit and we're actually just going to care about
     these two right here。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们有真实值。看起来是这样的。我们有图像，图像的文件名，然后第一列是它是否是恶性的。所以0代表良性，1代表恶性。然后他们还对实际情况有不同的类别。是什么类型的皮肤病变，但我们会简化一下，实际上我们只关心这两个。
 - en: so all we care about is is the skin lesion actually cancer or not。 not what
     type of skin lesion it is。And then right here we have the training metadata。 so
     if we open that we get the file name and then we get the age of that person and
@@ -73,258 +100,347 @@
     simplify it a little bit more and we're going to ignore this file completely so
     we're just going to get an image and not the additional information about the
     age。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们关心的只是皮肤病变是否实际上是癌症，而不是它是什么类型的皮肤病变。然后在这里我们有训练元数据。所以如果我们打开它，我们得到文件名，然后我们得到那个人的年龄以及它的位置，性别我们在这个视频中也将进一步简化，我们将完全忽略这个文件，所以我们只会获取图像，而不包含关于年龄的额外信息。
 - en: but if you want to improve the accuracy， I can only imagine that having this
     information would only improve the model。So I've just edited the file names and
     then the folder to images and then we have labels and then this additional information
     that we can remove since we're not going to use that So you know first of all
     what we have to do now is we have to create a training set。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是如果你想提高准确性，我只能想象拥有这些信息会使模型更好。因此，我只是编辑了文件名，然后将文件夹更改为图像，然后我们有标签，再加上我们可以移除的额外信息，因为我们不会使用这些。因此，首先我们现在需要做的是创建一个训练集。
 - en: a test set and a validation set so we got to make some processing script that
     can take these images in a single folder and put them and you can do this in different
     ways but my idea is that we put them in for example。 a train folder and then in
     this train folder we have we create two additional folder one for benign and then
     one for malignant。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个测试集和一个验证集，因此我们需要编写一些处理脚本，可以将这些图像放在一个文件夹中，然后你可以用不同的方式来做，但我的想法是把它们放在一个例如训练文件夹中，然后在这个训练文件夹中，我们创建两个额外的文件夹，一个用于良性，另一个用于恶性。
 - en: And then we we're going to place all the files that are benign for the training
     set in this folder and all the malignant in that one and from this we can use
     image data generator。 which we've seen in previous tutorials to load this in this
     case this custom image data set so let me remove this folder and we're going to
     create a script that does all of that for us。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将所有良性文件放入这个文件夹中用于训练集，而所有恶性文件放入那个文件夹中，然后我们可以使用图像数据生成器，正如我们在之前的教程中所见，以加载这个自定义图像数据集，所以让我删除这个文件夹，我们将创建一个为我们完成所有这些的脚本。
 - en: '![](img/475fe094519811d342f56f12ace25357_6.png)'
+  id: totrans-16
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/475fe094519811d342f56f12ace25357_6.png)'
 - en: Alright， so these are all the imports we're going to use for this。 and we're
     going to call this process data。So first of all。 one thing we're going to do is
     we're going to set a seed。 we're going to set it to one just so that we get the
     exact same split if we would run the script multiple times。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，这些是我们将要使用的所有导入。我们将调用这个过程为数据处理。因此首先，我们要做的一件事是设置一个种子。我们将其设置为1，以便在多次运行脚本时获得完全相同的拆分。
 - en: then we're going to do random seed of this seed。And then we're going to specify
     the directory of the images。 So we're gonna to do directory is。I as I see， that's
     what I call the the folder where I put the image folder and all of that stuff。
     So in Isaac that then in that folder there's going to be one images folder。And
     we're also going to specify the train， which is going to be。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将对这个种子进行随机种子处理。接着我们将指定图像的目录。因此我们要做的目录是。我称之为存放图像文件夹和所有那些东西的文件夹。因此在Isaac中，在那个文件夹中会有一个图像文件夹。我们还将指定训练集，这将会是。
 - en: let's put it in a folder in data and it's going to be in a train subfold。 Then
     we're going to get a test and we're going to do data test。And then we're going
     to have a validation as well。 So we're going to put that in data validation and
     then。We're gonna， if those folders don't exist， we have to create them。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将把它放入数据的一个文件夹中，并且它将位于训练的子文件夹中。然后我们将获取测试数据，并将进行数据测试。然后我们还会有一个验证集。所以我们将把它放入数据验证中。如果这些文件夹不存在，我们需要创建它们。
 - en: So we're going to use OS make directories。 we're going to do train。 and then
     we're going to add benign and we're going to do one more。For train。 and then malignant。And
     then let's copy paste that and we're going to copy paste that and we're going
     to do that for the training and then the validation。I rather de testest set and
     then validation。 So test。Test。😔，And then validation。Validation All right。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将使用 OS 创建目录。我们将创建训练文件夹，然后添加良性，并且我们将再做一个。用于训练的恶性文件夹。然后我们复制粘贴这个，并且我们将为训练和验证做这个。我更倾向于测试集，然后是验证。所以测试。测试。😔，然后验证。验证，好的。
 - en: so now we should have all the folders that we need placed in a data folder and
     inside those we have three subfolders with train test and validation and inside
     those we have two additional for benign and malignant。One thing we're going to
     do now is we're going to count how many examples that we're going to put in each
     so we're going to test examples。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们应该在数据文件夹中放置所有需要的文件夹，并且在这些文件夹内，我们有三个子文件夹：训练、测试和验证，并且在这些文件夹内，我们还有两个额外的文件夹：良性和恶性。我们现在要做的一件事是统计我们要放入每个文件夹的示例数量，因此我们将测试示例。
 - en: equals train examples， equals validation examples， which are all initialized
     with zero。Then we're going to do four line in open， we're going to read that CSsv
     file labels。 CSsv right that contains if it's actually malignant or benign。Then
     we're going to do that read lines。And we're going to read from the first row beyond
     and to the end because we don't want the first。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 等于训练示例，等于验证示例，所有的初始化为零。然后我们要在打开的环境中执行四行操作，我们将读取那个 CSV 文件的标签。CSV 文件包含它是否实际上是恶性的或良性的。接下来我们要读取这些行。我们将从第一行之后一直读取到最后一行，因为我们不想要第一行。
 - en: which is just information about the columns。Then we're going to split this line。
     we're doing line dot split， and we're going to do it by comma because since it's
     CSV file。 it's comma separated。And we're going to get the image file。 which is
     going to be split line of the first index。Then if it's benign or malignant。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 第一行只是关于列的信息。然后我们将分割这一行。我们正在进行行的分割，并且会按逗号分割，因为这是 CSV 文件。它是以逗号分隔的。我们将获取图像文件，它将是分割行的第一个索引。如果它是良性还是恶性。
 - en: that's going to be split line of index 1。Alright， so now when we're actually
     making the split we need to decide how many should the test set have and how many
     should the validation set have。 and in this case I'm going to place 80% on training
     and 10% on validation and then the rest 10% on the test set。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将是分割行的索引 1。好的，所以现在当我们实际进行分割时，我们需要决定测试集应该有多少示例，验证集应该有多少示例。在这种情况下，我将把 80% 放在训练上，把
+    10% 放在验证上，然后将剩余的 10% 放在测试集上。
 - en: So we're going to get some random number and we're going to do random that random。
     which is a uniform random number between 0 and 1。And we're going to check if the
     random number。Is less than 0。8， then we're going to set the location to be the
     training。And we're going to do training examples plus equals  one。Or if they random
     number。Is less than 0。9。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将获取一些随机数，并将进行随机选择，这将是 0 到 1 之间的均匀随机数。然后我们将检查这个随机数是否小于 0.8，如果是，那么我们将设置位置为训练。并且我们将训练示例加
+    1。或者如果随机数小于 0.9。
 - en: Right， it's gonna go to disk。 first of all， if it's less than0。8。 then we're
     just gonna check if it's less than 0。9， which essentially means that if it's between
     0。8 and0。9。Then we're going to set it to the validation。And we're going to iterate
     up validation examples with one。And then otherwise。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，它将转到磁盘。首先，如果它小于 0.8，那么我们将检查它是否小于 0.9，这实际上意味着如果它在 0.8 和 0.9 之间。然后我们将其设置为验证。并且我们将迭代验证示例加
+    1。否则。
 - en: it's going to be between 0。9 and 1。 Then we're just going to set the location
     to be the test set。Yeah， so then we're going to iterate up test examples。By one。Alright。
     so now we're going to do if int of float of benign or malignant and we got to
     do this because this right here is a 0。0， so we got to convert that first off
     float and then an integer I tried using just integer of that but it didn't work。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 它将介于0.9和1之间。然后我们只是将位置设置为测试集。是的，然后我们将以每次1的方式迭代测试示例。好的。现在我们将做的是如果良性或恶性的浮动整数，我们得这样做，因为这里是0.0，所以我们得先转换为浮动，然后是整数。我尝试仅使用整数，但没有成功。
 - en: So then we're going to do if this is zero， we're going to use chatill。copy。
     so I'm not going to actually move the files if you would if there would be some
     mistake。 so I'm just going to copy them and then you could remove the file if
     this works。So we're going to do Isaac images， and then we're going to do plus
     the image file and then plus。JPEG。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后，如果这是零，我们将使用chatill.copy。所以我并不打算实际移动文件，如果有任何错误。我只是将它们复制，然后如果这个可行，你可以删除文件。所以我们将处理Isaac图像，然后加上图像文件再加上.JPEG。
 - en: that's the file format for the image。And then we're going to move it to location。Plus
     bin9。Plus。 image file plus， and then dot Jpeg。All right， so we're moving it from
     this location to this location where this location is dependent on this random
     number。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是图像的文件格式。然后我们将其移动到位置。加上bin9，加上图像文件，然后是.JPEG。好的，所以我们是从这个位置移动到这个位置，而这个位置依赖于这个随机数。
 - en: so it's either in the train test or validation。Allright。 so the other scenario
     is if the and you could use Els here。 I'm just going to use Elsif integer of float
     of benign malignant is equal to one。Then we're gonna do shutter left copy。 and
     we're gonna do， I mean， we could copy paste this。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以它要么在训练测试中，要么在验证中。好的。那么另一个场景是，如果你可以在这里使用Els。我要使用Elsif整数的良性恶性等于一。然后我们将进行左侧复制。我们可以直接复制粘贴这个。
 - en: And here it's gonna be pretty much exactly the same thing as it， except it's
     not gonna be benign。 It's gonna be malignant。And then in the end， we can do print。
     can do an F string number of training examples because we counted those， right？
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里将基本上和它一样，只是它不会是良性，而是恶性。最后，我们可以打印。可以用F字符串显示训练示例的数量，因为我们已经计算过了，对吧？
 - en: We can do training examples like that。 And then we could copy， paste that and。Just
     do it for the。For the validation and test set as well。So we can do a number of
     test examples is going to be test examples。A numberumb of validation examples
     is going to be validation examples。Alright。 so hopefully this script should work
     now， and I'm just gonna run it and we'll see what we get Alrighty。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以这样处理训练示例。然后我们可以复制，粘贴，并为验证和测试集做同样的事情。所以我们可以设置测试示例的数量，验证示例的数量也会相应。好的。希望这个脚本现在可以工作，我将运行它，看看我们得到什么，好的。
 - en: So now we， if I'm gonna pull up that folder， we'll see that there's a folder
     here called data。 and then inside that we have all of the splits。 and so for the
     test set we have benign or malignant and then we have all of the folders belonging
     to that one right there。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，如果我打开那个文件夹，我们会看到这里有一个名为数据的文件夹。然后在里面我们有所有的拆分。因此对于测试集，我们有良性或恶性，然后我们有属于那个文件夹的所有文件。
 - en: Alright， so now we've actually process the data。 now we can move on to this
     train I I script。![](img/475fe094519811d342f56f12ace25357_8.png)
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，现在我们实际上处理了数据。现在我们可以继续这个训练脚本。![](img/475fe094519811d342f56f12ace25357_8.png)
 - en: '![](img/475fe094519811d342f56f12ace25357_9.png)'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/475fe094519811d342f56f12ace25357_9.png)'
 - en: And first of all， I've just copied in all of the imports not to waste time on
     that。 and we've used all of them in previous videos， but if you haven't， you can，
     of course。 you can just install them。Alright， so first of all， let's see we had
     all of the the examples。 So I'm gonna first write those out。 So training examples
     we have are 20225。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，我已经复制了所有导入，以免浪费时间。我们在之前的视频中都用过它们，但如果你没有，可以当然安装它们。好的，首先，让我们看看我们有所有的示例。所以我将首先写出这些。训练示例是20225。
 - en: We have test examples to be 2551 and then validation examples。 We use 2555。Then
     we have we're going to specify the image height。 which is going to be the image
     width and we're going to set that to 224。 so I think some of them are actually
     you know above 1000 pixels might even be larger than that。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们有测试示例是2551，然后是验证示例。我们使用2555。接着，我们将指定图像高度，这将是图像宽度，我们将其设置为224。因此，我认为其中一些实际上可能超过1000像素，甚至更大。
 - en: so we're going to resize all of them to be in that 224 times 224 pretty standard
     pixel height and width。Then we're going to specify batch size， we're going to
     specify 32。And then we need an actual model for this。 And you have many options
     here。 You can use Resnet。 You can use inceptionnet， you can use。Many， many different
     efficient nets。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，我们将把所有图像调整为224乘224，这是相当标准的像素高度和宽度。然后我们将指定批处理大小，我们将指定为32。接着我们需要一个实际的模型。你在这里有很多选择。你可以使用Resnet，使用Inceptionnet，或者许多不同的Efficient
+    nets。
 - en: I'm gonna use one that it's a little bit weird。 I'm gonna use one that's called
     Nonet nacenet。 I'm I'm not really sure how pronounce it。 but anyways's I't I hadn't
     heard of this before。 it's just fun to try out new ones sometimes and I don't
     think this is the best。 I think you can use efficient net and it should be a lot
     better。 Alright。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 我会使用一个有点奇怪的模型。我会使用一个叫做Nonet nacenet的模型。我不太确定如何发音。不过，我之前没听说过这个模型。有时候尝试新东西是很有趣的，我不认为这是最好的选择。我认为你可以使用Efficient
+    net，它会更好。好吧。
 - en: so how you load it is model equals kos dot sequential。 and we're gonna create
     all an entire model now。 So we're gonna do we're gonna use Tensorflow hub as we've
     seen previously。 we're gonna use hub dot k layer。And I'm just going to copy paste
     that link and so if we get it from this URL。 I'm going to copy paste I'm going
     to paste this in the video description as well。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 加载模型的方式是model equals kos dot sequential。我们现在将创建整个模型。所以我们将使用Tensorflow hub，正如我们之前看到的，我们将使用hub
+    dot k layer。我将复制粘贴这个链接，如果我们从这个URL获取它，我会在视频描述中粘贴这个链接。
 - en: but so this gets the feature vector of that one and then we're going to do comma
     and we're going to do trainable equals true so we're going to train that one as
     well。Then we're going to do layers flatten and this is actually not needed。 I
     think it's already flattened， Yes， we can remove that line and then we're going
     to do layers that dense one and we're going to have activation to be sigmoid。And
     this is because we only have two classes。Alright。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 这样可以获得特征向量，然后我们将使用逗号并设置trainable equals true，所以我们也会训练这个。接着我们将执行layers flatten，其实这并不是必须的。我认为它已经是扁平化的，是的，我们可以删除这一行，然后我们将执行layers
+    dense one，并且我们将激活函数设置为sigmoid。这是因为我们只有两个类。好吧。
 - en: so normally you would perhaps use this pretrained and then you could add you
     know。 a couple of layers。 in this case， we're gonna train the entire thing with
     this pretrained and we're just gonna have a single dense layer。 So， you know，
     I'm not building the biggest model here and this nasnet is not really that big。
     but it's gonna to work fine for demonstrating， you know we're still gonna get
     okay performance。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 通常你可能会使用这个预训练的模型，然后可以添加一些层。在这种情况下，我们将用这个预训练模型训练整个模型，并且我们只会有一个单一的全连接层。所以，你知道，我并不是在构建最大的模型，这个Nasnet其实也不大。但它会很好地用于演示，你知道，我们仍然会获得不错的性能。
 - en: So then we're going to do train data generator， we're going to specify image
     data generator。 just as we've seen in previous videos， we're going to first do
     rescale to be one divided by 255。We're going to do a rotation range to specifying
     the data augmentation。 let's say 15 degrees。 You could perhaps do more here as
     well to get more data augmentation。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将进行训练数据生成器，我们将指定图像数据生成器。正如我们在之前的视频中看到的，我们将首先将比例调整为1除以255。我们将设置旋转范围来指定数据增强，假设为15度。你也可以在这里做得更多，以获得更多的数据增强。
 - en: but 15 seems like a good value and then zoom range we're going to do 095095
     and this means it's going to zoom out randomly out5 degrees and then in5 degrees
     we're going to specify horizontal flip to be true and then vertical flip is equal
     to true because no matter how you either rotate or flipped image it's if it's
     a cancer cell it's still going to be a cancerous cell if you flip it vertically
     which is not the case for let's say an image digit of6 or9 for example。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 但15似乎是一个不错的值，然后缩放范围我们将设置为0.95到0.95，这意味着它将随机缩小5度，然后放大5度，我们将指定水平翻转为真，垂直翻转也为真，因为无论你如何旋转或翻转图像，如果它是癌细胞，翻转后仍然是癌细胞，这与图像数字6或9的情况并不相同。
 - en: but in this case it works。 So we're going to do data format is channels。Last。We're
     gonna do validation split， and we're not gonna actually have a validation split。
     So we're gonna do D type is T F flow 32。Then we're going to do validation data
     generator and we're going to do image data generator So by the way。 why we don't
     use a validation split here is because if we would do that。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 但在这种情况下是可行的。所以我们将数据格式设为通道最后。我们将进行验证拆分，但实际上并不进行验证拆分。因此我们将数据类型设为TF flow 32。然后我们将进行验证数据生成器，并且我们将使用图像数据生成器。顺便说一下，为什么这里不使用验证拆分是因为如果我们这样做的话。
 - en: then this all of this data augmentation would be applied to the validation set
     as well。 which is not what we want， we want a validation set to resemble the test
     set and the test set won't have any data augmentation。So here we're just going
     to do rescale， which is one。1， divided by 55。 And then we're gonna do T F flow
     32。And then we're going to do the same for the test data generator。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后所有这些数据增强也将应用于验证集，这并不是我们想要的，我们希望验证集与测试集相似，而测试集将没有任何数据增强。所以这里我们只将重缩放为1/55。然后我们将进行TF
+    flow 32。然后我们将对测试数据生成器做同样的操作。
 - en: Image data generator of。Rescale is 1 divided by 255， and then D type is TF flow
     32。All right。 so now we have the data generator specifying how to load image and
     then also or rather not specifying specifying what we should do when we got an
     image with a data augmentation。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 图像数据生成器的重缩放为1除以255，然后数据类型为TF flow 32。好的，现在我们有数据生成器来指定如何加载图像，并且实际上并没有指定我们在获得带数据增强的图像时应该做什么。
 - en: Then we're going to do a train generator is train。Data generator do flow from
     directory。And here we specify data train， that's the folder right。And then target
     size is going to be equal to image。Height， image width。And is going to rescale
     if it's not indecise。Then we're going to do batch size is equal to batch size。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将进行train generator是train.data generator do flow from directory。这里我们指定数据训练，也就是文件夹对吧。然后目标大小将等于图像高度，图像宽度。如果不是指数则将进行重缩放。然后我们将批量大小设为批量大小。
 - en: Color mode is going to be RGB， and I think it's RGB by default default as well。
     and then we're going to do class mode is going to be binary。And then shuffle equals
     true。And then we're also going to set a Cd to this。Alright。 so let's copy this
     and we're going to use it for the the validation as well and the test set。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 颜色模式将为RGB，我认为默认也是RGB。然后我们将类模式设为二进制。然后shuffle设为true。然后我们也将设置一个Cd。好的，所以让我们复制这个，我们也将用于验证和测试集。
 - en: So copy paste that。Cpy paste that。 Then we're gonna do， let's see， validation
     validation generator。 is' going to be validation data generator。 And then we just
     gotta change this to validation。 but the rest should be exactly the same。 and
     then test generator。Test data generator。And then we change this to test right
     here。Alright， so now we have all of those。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以复制粘贴。然后我们将进行验证生成器，它将是验证数据生成器。然后我们只需将其更改为验证，但其余部分应完全相同。然后是测试生成器，测试数据生成器。然后我们将这里更改为测试。好的，现在我们拥有所有这些。
 - en: and we're going do model dot compile。 We're gonna specify let's compile。 We're
     gonna specify the optimizer。 and we're gonna use Kaas optimizers dot at。And we're
     going to specify the learning rate to be 3 e minus4。We're going to do loss is
     a car that lose that binary cross entropy。And then from Loit equals false。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将进行model.dot compile。我们将指定编译。我们将指定优化器，并使用Kaas optimizers.dot at。我们将学习率设置为3e-4。我们将损失设为binary
+    cross entropy。然后从Loit等于false。
 - en: Then metrics is just going to be in this case， it's just going to be we're just
     going to put accuracy。Alright so I just want to say a couple of words also on
     this how we're loading the data in this case we're using this image data generator。
@@ -332,179 +448,237 @@
     it if it's structured in this manner that we put it in and I think making it to
     a Tenorflow data set and and performing the data augmentation like that would
     be more efficient and。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后指标在这种情况下只是准确性。好的，我还想说几句关于我们如何加载数据的事。在这种情况下，我们使用的是图像数据生成器。但如果你看过我关于图像的自定义数据集，我展示了两种方法，如果按这种方式结构化，我认为将其转换为TensorFlow数据集并进行数据增强会更有效。
 - en: If you want to improve the performance and how fast this runs and loads the
     data and so on。 I think using it doing it that way is faster。 but I think this
     is a little bit more convenient So I'm using it here but just know that you can
     definitely improve the performance of this and the reason why you can improve
     it is because you can do this this number of parallel calls of loading the data
     and you can do pre-fetching and and all of that stuff。
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你想提高性能，以及这个程序运行和加载数据的速度，我认为这样做会更快。但我觉得这样稍微方便一些，所以我在这里使用它，但请知道你绝对可以提高它的性能。你能改善它的原因是你可以并行加载数据，并且可以进行预取等操作。
 - en: All right so now that we have the model we're gonna to do model do fit we're
     gonna send the train generator we're gonna set epochs to I don't know let's just
     set it to one first of all。 then we're going do steps per epoch we're gonna do
     train examples。
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，现在我们有了模型，我们将进行模型拟合，我们将发送训练生成器，我们将周期设置为，我不知道，先设置为1。然后我们将进行每个周期的步骤，我们将进行训练示例。
 - en: Divided by batch size and integer division。 And then we're gonna do validation
     data。Is validation generator。Validation steps is validation examples。Divided by
     batch size。 Alright。 so let's just start with that and， and make sure that this
     runs。 And we're gonna improve this very soon。Al right， so I'm actually going stop
     the training right there。
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 按批次大小进行整除。然后我们要进行验证数据。验证生成器。验证步骤是验证示例。按批次大小进行划分。好的，那我们就先从这里开始，并确保它能够运行。我们会很快改进这个。好的，所以我实际上要在这里停止训练。
 - en: It's only ran for 15 batches， but so we get the accuracy and it's already 77%。
     All right。 so if you hadn't thought about this， then what is good accuracy right
     if you normally if it's two classes that would be 50% over 50% is better than
     just guessing So that would mean that this is a very good model after just 15
     batches。
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 它只运行了15个批次，但我们得到了准确率，已经是77%。好的，如果你没有考虑过这一点，那么什么是好的准确率呢？通常如果是两个类，那就是50%，超过50%就比单纯猜测要好。因此，这意味着在仅仅15个批次后，这是一个非常好的模型。
 - en: So that would work fine if you're using Mist or something where the classes
     are actually balanced but in this case we have very。 very imbalanced data So you
     know maybe less than 1% or 1% of cases are actually malignant and the vast majority。99%
     are benign cases。So accuracy in this case is going to be a very flawed metric。
     And this is an example of a of a problem that you can encounter when doing a project。
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你使用的是像Mist这样的工具，类是平衡的，那样是可以的，但在这种情况下，我们的数据非常不平衡。你知道，可能不到1%或1%的案例实际上是恶性的，而绝大多数，即99%是良性案例。所以在这种情况下，准确性将是一个非常有缺陷的指标。这是你在做项目时可能遇到的问题的一个例子。
 - en: The initial thought of just using accuracy。um。We realize pretty quickly that
     this is a flawed one。![](img/475fe094519811d342f56f12ace25357_11.png)
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 最初只考虑使用准确性。嗯。我们很快意识到这是一个缺陷。![](img/475fe094519811d342f56f12ace25357_11.png)
 - en: Alright， so for what we're going to do， we're going to introduce new metrics
     that we're going to use and I'm going to link to these two lectures by Andrew
     Ug where he explains why we can't use those metrics when we have skewed classes
     like in this case and then also what we can do instead which is using precision
     and recall So these are going to be in the description I recommend you watch them
     and it's going to make a lot more sense what we're going do next。
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，接下来我们要引入一些新指标，我将链接到Andrew Ug的两场讲座，他在讲解为什么在我们有偏斜类的情况下不能使用这些指标，以及我们可以做些什么，比如使用精确度和召回率。它们将在描述中，我建议你观看，这将让我们接下来的内容更加清晰。
 - en: '![](img/475fe094519811d342f56f12ace25357_13.png)'
+  id: totrans-60
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/475fe094519811d342f56f12ace25357_13.png)'
 - en: So we're gonna introduce these new metrics。 We're gonna do metrics is cars dot
     metrics。 and we can use， we can still use this binary accuracy。 We're gonna set
     name equals。Accuracy。 we're still going to use that， but it's not really important。
     it's not not we can just as well remove this， it's not telling us much。
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将引入这些新度量。我们将执行metrics等于Keras.metrics。我们仍然可以使用二进制准确率。我们将设置name等于准确率。我们仍会使用它，但这并不是特别重要。我们可以删除这个，因为它并没有告诉我们太多信息。
 - en: And then we can instead use precision， and we're just going to name it precision。And
     then we can use charismetric recall。Recall another metric。 which I'm not sure
     if he goes into in those two videos is a Karas metrics AU。 and I recommend that
     you just Google what those are。
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们可以使用精度，并将其命名为精度。然后我们可以使用Keras度量召回率。召回率是另一个度量，我不确定他在那两个视频中是否有提到Keras度量AU。我建议你谷歌一下这些是什么。
 - en: I'm not going go in depth and that would be a separate video。 So I'm just focusing
     on on how to use them in this video。So then we would set this metric right here。
     We're gonna， let's see。We're just gonna set metrics。All。 so now we have these
     improved metrics。嗯。And then in the end。
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 我不会深入探讨，这会是另一个视频。所以我只专注于如何在这个视频中使用它们。然后我们在这里设置这个度量标准。我们将要设置度量标准。所有。现在我们有了这些改进的度量标准。嗯。最后。
 - en: we could perhaps do you model that evaluate on the validation generator。And
     let's say verbose equals 2， so let's do that for this as well。 and then maybe
     we want to evaluate on the test generator as well。So I actually have a model that
     I've trained， I think I've trained for 50 epochs or so。
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以在验证生成器上评估你的模型。假设verbose等于2，那么我们也做这个。然后可能我们还想在测试生成器上进行评估。实际上我有一个我训练过的模型，我想我训练了大约50个周期。
 - en: so I'm going to load that one to save some time so we're going to do model equals
     Kras models that load model Isaac model it's in that directory So you know this
     right here is the exact model that I've used I've just trained it for a bit longer
     and we're going use this as as a part of our pretraining or whatever。
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我将加载那个模型以节省一些时间，我们将执行model等于Kras models加载模型Isaac model，它在那个目录里。所以你知道这里就是我使用的确切模型，我只是训练了更长时间，我们将把它用作我们的预训练的一部分或其他什么。
 - en: So then we can just keep this epoch equals one。Otherwise， we would have to train
     it。 you know for 50 ps or so。 And then we're going to get this。 this evaluate
     on the validation in the test generator。 One thing I'm also going to show you
     is how to plot a R O C curve because there's going to be a。
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们可以将这个epoch保持为一。否则，我们将不得不训练大约50个周期。然后我们将在验证生成器和测试生成器上进行评估。我还将向你展示如何绘制ROC曲线，因为将会有一个。
 - en: So a ROC curve is going to predict true positive rate versus false positive
     rate。 so there's going to be a trade off between those two。 and so we're going
     to plot a curve to exactly see how this trade off plays out。So I'm going to define
     plot R OC。 We're going to send in labels and then some data。
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: ROC曲线将预测真阳性率与假阳性率之间的关系。因此这两者之间会存在权衡。我们将绘制一条曲线来确切地看到这种权衡是如何进行的。所以我要定义绘制ROC。我们将发送标签和一些数据。
 - en: Then we're going to do predictions is equal to model dot predict on that data。Then
     we're going to do false positive rate， true positive rate。 we're going to get
     that from RC curve from SK learn where all we're going to need to do is send in
     these labels and then the predictions for those labels。 and we're going to do
     PLT dot plot we're going to do 100 times false positive rate to get a percentage
     and then true positive rate as the Y axis。
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将执行predictions等于model.predict在那个数据上。接着我们将计算假阳性率和真阳性率。我们将从SK学习的ROC曲线中获取，所需的仅是发送这些标签和那些标签的预测。然后我们将执行PLT.plot，假阳性率乘以100来获得百分比，真阳性率作为Y轴。
 - en: So x label in this case is going to be false positives。In present。Ploot y label
     is gonna be true。Positives。Again， in percent。Then we're just going to do PLT do
     show。so。What we need to send in here is the the actual labels， but we only have
     a generator。 so we're going to do test labels this Nier array and empty nuier
     array。
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种情况下，x轴标签将是假阳性。y轴标签将是真阳性。同样，以百分比表示。然后我们只需执行PLT.show。我们需要在这里发送实际标签，但我们只有一个生成器。因此，我们将执行测试标签这个空的Numpy数组。
 - en: We're going to do number of batches equals 0， then we're going to do four， you
     know。 iterate through the test generator。So in test generator。Test labels is going
     to be NP dataend test labels2， and then we're going to append Y to test labels。So
     we' got to iterate upn batches plus equals1。 we're going to do if numb batches。
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将批次数量设为0，然后我们将迭代测试生成器。因此在测试生成器中，测试标签将是NP数据和测试标签2，然后我们将Y附加到测试标签上。因此，我们必须迭代，批次数量加1。如果批次数量。
 - en: Is math that seal of test examples。Divide by batch size。So this is just to get
     all of the examples from the test set to a single nuier array。Then we're gonna
     break。 Allright。 So now we， we， you know。 we have the the test labels and then
     we have the data。 So what we can do。
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 数学上，这是测试样本的总数除以批量大小。因此这只是将测试集中的所有示例整合成一个数组。然后我们将中断。好的。因此现在我们有测试标签，然后有数据。那么我们可以做什么呢？
 - en: we can deploy plot R O C of test labels， and then we're consenting the test
     generator。And this is going to give us that R O C curve on a graph。So not only
     are we getting all of the metrics right here。 but we're also going to get a nice
     plot at the end。 And I think I I commented that model。 Yeah。
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以绘制测试标签的R O C曲线，然后我们正在处理测试生成器。这将在图上给我们那个R O C曲线。因此，不仅在这里获得所有指标，我们还将在最后得到一个漂亮的图。我想我评论了那个模型。是的。
 - en: so we're loading this model right here。But of course， if you want。 you can train
     this for a little bit。 and then you're just gonna save that model。 So what we're
     going to use to， to save it to make sure that we don't lose the model so far is
     we're gonna to go to this metrics right here and we're gonna do no。 wait it's
     in fit。 Yeah， so we're got to go here。Callbacks is equal to ks。Dot callllbacks。
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们在这里加载这个模型。但当然，如果你想的话，可以稍微训练一下。然后你只需保存那个模型。因此我们将使用这个来保存，以确保不丢失到目前为止的模型，我们要去这个指标，并且我们要做的不等于。等等，确实是在fit中。是的，我们要去这里。回调等于ks.Dot
+    callbacks。
 - en: model checkpoint。And we're just gonna specify to Isaac model。So this is going
     to save the current model every epoch。So let's run this and hopefully everything
     should be working。Alright。 so here we get all of the values from that training
     epoch and as you can see we we've trained quite a lot and it's overfit on the
     training data。
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型检查点。我们将指定给以撒模型。这将每个周期保存当前模型。现在运行这个，希望一切正常。好的，因此我们从该训练周期获得所有值，正如你所见，我们已经训练了很多，且在训练数据上过拟合了。
 - en: which means that we might benefit from introducing more regularization。But then
     we also get the validation accuracy， validation precision and so on。 and then
     we also get the plot， which looks like this。And one thing here is that as you
     can see。 we have this validation A U， which is about 86%。 And that means that
     that' that's the area under this curve。
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 这意味着我们可能需要引入更多的正则化。但我们也得到了验证准确率、验证精确度等等。然后我们还得到了这个图，长得像这样。这里有一点，正如你所看到的，我们的验证A
+    U大约是86%。这意味着这是该曲线下的面积。
 - en: which is a common sort of。Which is a common metric that people oftentimes use。
     So running and evaluated on the test set， we can see that we get a。A precision
     of about 6073%。 So what this means practically is that if you go to a doctor and
     he has a precision of 70%。 that means that。If he says you have cancer， he is correct
     in 73% of the cases。And then for recall。
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一种常见的指标，通常人们会使用。因此在测试集上运行并评估，我们可以看到我们得到了约6073%的精确度。因此，实际上这意味着如果你去看医生，而他有70%的精确度。这意味着如果他说你有癌症，他在73%的情况下是正确的。然后是召回率。
 - en: it means that if you go to his office and you have cancer。 he's going to tell
     you in 54% of the cases that you actually do have cancer。And then the AU see in
     this case， which is sort of a sumization metric， is about 87% on the test set。![](img/475fe094519811d342f56f12ace25357_15.png)
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 这意味着如果你去他的办公室，而你有癌症。他在54%的情况下会告诉你你实际上有癌症。然后在这种情况下的A U C，这是一种汇总指标，大约是87%在测试集上。![](img/475fe094519811d342f56f12ace25357_15.png)
 - en: Alright， so interestingly enough， this is also a kle challenge where the prize
     money is 300000。rather，$30，000 for the winner and this is exactly the data set
     that we just saw except that they're using the train data and then when they send
     in their model。
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，值得注意的是，这也是一个奖金为$30,000的挑战。这正是我们刚才看到的数据集，只不过他们使用的是训练数据，然后在提交模型时。
 - en: it's tested on this unknown test data。And so we can see the leader board right
     here。 they have a score right here and the score here is actually what we calculated
     here for the Auc that's the score which is this right here area under receiver
     operating characteristic curve which is exactly what Tensorflow computes so what
     did we get。
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 它是在这个未知的测试数据上进行测试的。因此我们可以在这里看到排行榜。他们在这里的分数，而这里的分数实际上是我们为AUC计算的分数，这个分数是接收操作特征曲线下的面积，这正是TensorFlow计算的。那么我们得到了什么呢？
 - en: we got 0 about 87 and they have 95 So as you can see their model is a lot better
     and also I want to say that these results aren't necessarily comparable because
     we don't have the same test set and we haven't trained on exactly the same data。
@@ -512,23 +686,33 @@
     use the entire training data nonetheless it's very interesting to see sort of
     and compare at least as an approximation for how good our model is but we are
     very far away from winning that。
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们得到了0分，约87分，而他们得到了95分。因此，正如你所看到的，他们的模型要好得多。我还想说，这些结果不一定可比，因为我们没有使用相同的测试集，并且我们并没有在完全相同的数据上进行训练。实际上，我们只是在他们训练的子集上进行训练，因为他们可能使用了整个训练数据。不过，看到这种情况并进行比较，至少作为我们模型好坏的一个近似是非常有趣的，但我们离获胜还有很大距离。
 - en: '![](img/475fe094519811d342f56f12ace25357_17.png)'
+  id: totrans-81
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/475fe094519811d342f56f12ace25357_17.png)'
 - en: '![](img/475fe094519811d342f56f12ace25357_18.png)'
+  id: totrans-82
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/475fe094519811d342f56f12ace25357_18.png)'
 - en: 0000 but maybe you can train a bigger model， maybe you can do some more data
     augmentation and perhaps you can get the accuracy over 90% or something like that
     so that's it for this video hopefully're able to follow this this project example
     and I also hope that you've learned a lot from these Tensorflowlow tutorials and
     that you feel that you're ready now to start doing your own project and create
     stuff in TensorFlow。
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 0000，但也许你可以训练一个更大的模型，可能你可以做一些数据增强，或许你可以将准确率提高到90%以上，或者类似的水平。所以这就是本视频的内容，希望你能够跟上这个项目示例。我也希望你从这些TensorFlow教程中学到了很多，并且你觉得自己现在准备好开始做自己的项目，并在TensorFlow中创建东西。
 - en: So thank you so much for watching this video and these tutorial videos。I hope
     to see you in the future in another TensorFlow tutorial。![](img/475fe094519811d342f56f12ace25357_20.png)
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 非常感谢你观看这个视频和这些教程视频。我希望在未来的另一个TensorFlow教程中再见到你。![](img/475fe094519811d342f56f12ace25357_20.png)
