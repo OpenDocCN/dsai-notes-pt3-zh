@@ -4,6 +4,8 @@
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P39：L7.3- 使用NVIDIAStyleGAN2-
+    ADAPyTorch和Python3生成人脸 - ShowMeAI - BV15f4y1w7b8
 - en: Welcome to applications of deep neural networks with Washington University In
     this video。 we're going to take a look at using NviDdia stylegan 2 AD for Ptorrch
     to get some really quality G face images。 Now， previously we saw that we could
@@ -13,11 +15,13 @@
   id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 欢迎来到华盛顿大学的深度神经网络应用。在这个视频中，我们将看看如何使用NviDdia stylegan 2 AD for Ptorrch来获取一些非常高质量的G面孔图像。现在，以前我们看到可以使用我们自己定制的神经网络生成GN，但面孔看起来并不是特别好。要真正获得高质量的面孔，如stylegan所示，需要大量的计算能力和聪明的算法。
 - en: So we're going to look at Stgan2 AD Ptorrch， which is really the latest technology
     in this area。![](img/c3dd1d946bd070469333fc209ecae79b_1.png)
   id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将要查看Stgan2 AD Ptorrch，这确实是该领域最新的技术。![](img/c3dd1d946bd070469333fc209ecae79b_1.png)
 - en: 🎼。Okay， let's have a look at the code。 So this is the module that there's a
     link to in the description。 And I do put the note here。 This module requires pytorch。
     So most of this course that I teach you is in Tensorflowkis。 There's two parts。
@@ -25,6 +29,7 @@
   id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 🎼。好的，我们来看看代码。这是描述中有链接的模块。我在这里提到一下，这个模块需要pytorch。因此，我教你的这门课程大部分是在Tensorflow中进行的。至少在录制这个视频时，有两个部分我确实使用了pytorrch。
 - en: That is for reinforcement learning and also for stylegan。 This is mainly just
     because。These two very important libraries in this case， stylegan in the case
     of reinforcement learning。 stable baselines have made the switch to Pytorch and
@@ -35,6 +40,7 @@
   id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是针对强化学习以及stylegan的。这主要是因为这两个非常重要的库，在强化学习的情况下是stylegan。稳定基线已经切换到Pytorch，实际上神经网络几乎在你所做的一切之下，因此你几乎不会注意到它。我在这门课程中添加了更多Pytorch组件作为可选方向，以便你能看到一些与Pytorch相同的技术，Pytorch正在获得很多势头，特别是在研究领域。
 - en: it's a very used technology are a framework for implementing deep learning all
     the underlying underpinnings are the same thing even the pickle files that I created
     with the old version of stylegan before NviIDdia made the switch to Pytorch the
@@ -42,6 +48,7 @@
   id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一种非常常用的技术，是实现深度学习的框架，所有的基本原理都是相同的，即使是我在NviIDdia切换到Pytorch之前用旧版本stylegan创建的pickle文件，这些pickle文件。
 - en: the saved neural networks can just be loaded right into Pytorch So the underlying
     technologies are all the same essentially between these Now you'll see with stylegan2
     AD there are all these very。 very high quality faces that you can generate these
@@ -49,6 +56,8 @@
   id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 保存的神经网络可以直接加载到Pytorch中。因此，这些技术的基本原理在这些之间都是相同的。现在你会看到，使用stylegan2 AD可以生成所有这些非常高质量的面孔，这些都不是现实中的人，它们是通过stylegan
+    to ADA生成的，顺便说一下。
 - en: the AD on the end that's augmented essentially you see it here with。CaSo maybe
     there is just one picture of the cat in the original one， but as they train。 they
     put a higher probability of augmentation happening and augmentation is one of
@@ -60,6 +69,7 @@
   id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 结尾的AD代表增强，你在这里可以看到。可能在原始版本中只有一张猫的图片，但随着训练，他们提高了增强发生的概率，增强是计算机视觉领域的一项重大突破，它通过旋转和其他变形来扩增图像，以便在训练这些GS时拥有额外的训练数据，我会向你展示一些我在这门课上从头训练的ganNs，我们主要讨论的是从已经训练好的网络生成你的owngans。
 - en: you need high end GPU and I mean you can do with coab but coLab Pro really buts
     it takes a lot of compute most of the GNs that I generated were done on highend
     GPUs that I let run four days generating these but here you can see the images

@@ -1,96 +1,125 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P43：L8.2- 使用Scikit-Learn和Keras构建集成模型
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P43：L8.2- 使用Scikit-Learn和Keras构建集成模型
+    - ShowMeAI - BV15f4y1w7b8
 - en: '![](img/a5e310b66ad5b4d0e89ea1a7cc4dbf83_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a5e310b66ad5b4d0e89ea1a7cc4dbf83_0.png)'
 - en: Hi， this is Jeff Heaton， welcome to applications of Deep neural Networks with
     Washington University in this video we're going to look at ensembles。We're going
     to do in particular heterogeneous ensembles this lets you take。Models that are
     not of the same type and combine them together for even stronger results for the
     latest on my AI course and projects。 click subscribe and the bell next to it to
     be notified of every new video。 Now。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是杰夫·希顿，欢迎来到华盛顿大学的深度神经网络应用。在这个视频中，我们将研究集成方法。我们将特别关注异构集成，这让你可以结合不同类型的模型以获得更强的结果。想了解我最新的AI课程和项目，请点击订阅及旁边的铃铛，以便接收每个新视频的通知。
 - en: we're going look at a couple of techniques that might be very helpful to you
     for this semester's kle competition。 This allows you to use neural network with
     ensembles。 ensemmbling is a very important aspect of kggle。 This is where you
     create heterogeneous ensembles。 Now， ensemmbling is something that's built into
     many machine learning algorithms such as random forest。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将看看一些对你在本学期Kaggle比赛中非常有帮助的技巧。这允许你使用神经网络与集成。集成是Kaggle中的一个非常重要的方面。这就是你创建异构集成的地方。现在，集成是许多机器学习算法（如随机森林）内置的功能。
 - en: Random forests do ensemmbling just part of itself。 It includes trees and these
     trees are ensemled with each other。 because there's not multiple different types
     of model in this。 that's referred to as a homogeneous ensemble。 Now。 we're going
     to look at evaluating feature importance First。 This is a good paper that talks
     to you about how to do feature perturbation ranking。 This is a very。😊。![](img/a5e310b66ad5b4d0e89ea1a7cc4dbf83_2.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 随机森林在自身的基础上就进行集成。它包括树，而这些树是彼此集成的。因为这里没有多种不同类型的模型，所以这被称为同质集成。现在，我们将首先评估特征重要性。这是一篇很好的论文，告诉你如何进行特征扰动排名。这是一个非常。😊。![](img/a5e310b66ad5b4d0e89ea1a7cc4dbf83_2.png)
 - en: Popular technique that can be used across any type of regression or classification
     algorithm。 It does not use any internals to the actual model。 This is also an
     interesting paper because it has both Dr。 Joy and Dr Death in it interesting part
     about the names of the authors of the paper These are some of the other methods
     that you can use to evaluate feature importance。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一种可以用于任何类型回归或分类算法的流行技术。它不使用实际模型的任何内部。这也是一篇有趣的论文，因为里面有乔伊博士和德斯博士，作者名字的有趣之处。这些是你可以用来评估特征重要性的其他一些方法。
 - en: which input is the most important。 Now this is dealing mainly with tabular data
     where you have columns like you would see in Excel。 if you're dealing with image
     data feature importance is a lot more difficult to really determine it's not like
     one pixel is more important。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 哪个输入是最重要的。现在主要是处理表格数据，你会看到类似于Excel中的列。如果你处理的是图像数据，特征重要性就更难以确定，并不是一个像素更重要。
 - en: say than another pixel。 This is also a paper up here that I was involved in
     where we publish code that could be used with Tensorflow to implement some of
     these algorithms up here。 So this is a function that just introduces and gives
     you a basic perturbation ranking algorithm。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 说得比另一个像素更重要。这也是一篇我参与的论文，我们发布了可以与TensorFlow一起使用的代码来实现一些这些算法。这是一个仅介绍并提供基本扰动排名算法的函数。
 - en: ''' go ahead and run it so that it''s loaded the way that this。Is actually pretty
     simple。 I have a separate video that''s not part of this course。 but it''s a video
     that I put together on how perturbation ranking works。 I''ll put a link to that
     so that you can access that if you would like to read up more on the internals
     of it。'
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: '''继续运行它，这样它就会以这种方式加载。其实这非常简单。我有一个单独的视频，不是这个课程的一部分，但我制作了一个关于扰动排名如何工作的影片。如果你想深入了解其内部工作，我会提供一个链接供你访问。'
 - en: But essentially what this is going to do is it's going to go through each column
     of the data set and shuffle them1 by one by one。 we're going to use the same neural
     network to evaluate all the columns。 but we're going to score at once for each
     column。 So say there are 10 columns in your x10 predictors。 You want to know which
     of those 10 is the most important。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 但本质上，这个过程将逐列遍历数据集并逐一打乱。我们将使用同一个神经网络来评估所有列，但我们将为每一列一次性评分。所以假设你的数据集中有10列，即10个预测变量。你想知道这10个中哪个是最重要的。
 - en: You start with the first one and you shuffle those you perturb them so that
     column1 is randomized that effectively destroys column1。 but the max and the men，
     the standard deviation the mean the median and all that is still exactly the same。
     So you're not introducing any sort of bias， but yet you're destroying one of the
     columns。 Now you evaluate the error。On that neural network producing predictions
     with that column randomized like that。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 你从第一个开始，打乱这些列，你对列1进行扰动，这样列1就被随机化，这有效地摧毁了列1。但最大值、最小值、标准差、均值、中位数等仍然完全相同。所以你没有引入任何偏差，但却摧毁了一列。现在你评估误差。在那个随机化列的神经网络上生成预测。
 - en: If column1 was not very important， then the score is not going to drop much。
     Your accuracy or your log loss or whichever one you're using if column1 was very
     important。 then shuffle in it is going to really， really hurt your score。 So that's
     why this perturbation rank。 it's essentially looping for I in the range of how
     many columns we have。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果列1并不是非常重要，那么分数不会大幅下降。你的准确率或日志损失，或者你使用的其他指标，如果列1非常重要，那么打乱它将真正、真正伤害你的分数。所以这就是为什么要进行扰动排名。它基本上是对我们拥有的列数进行循环。
 - en: we make a copy of the column because we're about to shuffle it then we shuffle
     it effectively destroying it。 but we have a copy so that we can we don't want
     to be like a tornado it'll lightnt a path of destruction across the countryside。
     we want to restore it and not be a tornado。 So then we look at if it's regression。
     if it's regression， we do a prediction on this and we look at the mean squared
     error。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们复制这一列，因为我们即将打乱它，然后有效地摧毁它。但我们有一个副本，所以我们不想像龙卷风一样，它会在乡间留下毁灭的痕迹。我们想要恢复它，而不是成为龙卷风。接着我们查看是否是回归问题。如果是回归，我们会对此进行预测，并查看均方误差。
 - en: if it is a classification， then we predict the probabilities and we do log loss。
     Both of those give us an error that we want to minimize。And we keep track of our
     errors and then we restore the column that we previously destroyed。 We determine
     what the max error was and we basically calculate the importance of each of these
     relative to how close it was to the maximum error。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果是分类问题，那么我们预测概率并计算日志损失。这两者都会给我们一个希望最小化的误差。我们跟踪我们的误差，然后恢复我们之前摧毁的列。我们确定最大误差是什么，然后基本上计算这些列相对于其接近最大误差的相对重要性。
 - en: the maximum error， the column that resulted in the maximum error is the most
     important column so the most important column is going to have a 1。0 for importance
     all the others will be some proportion of that。 we're going to run the iris data
@@ -101,8 +130,10 @@
     predicting what ir you're dealing with and then it drops considerably you will
     only know which column is the most important you won't know how important the
     most important column is you just have a ranking of these so。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 最大误差，导致最大误差的列是最重要的列，因此最重要的列的重要性将为1.0，其他列会是其某个比例。我们将用鸢尾花数据集来运行这个适合的神经网络，因此我们现在有了一个适合该数据集的模型，然后我将获得完美的准确率。这在鸢尾花数据集中并不难做到，然后我将运行，你可以基本上看到重要性，所以花萼长度是预测你正在处理的鸢尾花种类的最重要列，然后它的影响急剧下降。你只会知道哪个列是最重要的，而不知道最重要列的重要性到底有多大，你只是得到这些列的排名。
 - en: You'll never see anything higher or lower than 1。0 for the most important column
     We can also do this on regression。 We'll use the miles per gallon database because
     that is a pretty simple one。 you can apply this to much， much more complicated
@@ -110,117 +141,153 @@
     your kggle because you might have 2030。40100 columns and it needs to run across
     each of those Now after running this we can see which of the various fields are
     most important to the miles per gallon neural network we can see that the displacement。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 你永远不会看到比1.0更高或更低的最重要列。我们也可以在回归上做到这一点。我们将使用每加仑多少英里的数据库，因为这是一个相当简单的例子。你可以将其应用于更复杂的神经网络，如果你在Kaggle上进行此操作，可能会花费更长的时间，因为你可能有20、30、40、100列，并且需要在每一列上运行。现在，在运行此后，我们可以看到哪些字段对每加仑多少英里的神经网络最重要，我们可以看到位移。
 - en: which is just the cubic inches or some other volume of measure for the engine
     is the most important next is horsepower weight year so on and so forth cylinders
     would be already represented by the displacement so it's not too surprising to
     me that that is a less important one but you'll notice most of these are period
     close in terms of their overall importance to that Now we're going to take a。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是立方英寸或其他发动机体积测量的最重要特征，接下来是马力、重量、年份等等。气缸将通过位移表示，所以我不太惊讶这是一个较不重要的特征，但你会注意到大多数特征在整体重要性方面相对接近。现在我们将采取一个行动。
 - en: At the biological response data set that is provided by Cale。 because I'm going
     to use this as an example of how to build an ensemble。 If we open this one up。
     I'm not going to do it， but I have a link there that you can look at。 It's basically
     got nearly 1700 columns and maybe 3000 or so rows。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是Cale提供的生物响应数据集。因为我将以此作为构建集成的示例。如果我们打开这个数据集，我不会实际操作，但我有一个链接可以供你查看。它基本上有近1700列和大约3000行。
 - en: So it's got a tremendous amount of columns Feature importance could be useful
     to maybe remove some of those。 Unfortunately， most of them are pretty important。
     What we're going to look at here is how we can combine these。Into a ensemble。
     And by these， I mean several different models like neural network， random forest。
     gradient boosting and so on。 So I'm going to go ahead and run this。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以它有大量的列。特征重要性可能有助于移除其中一些。不幸的是，大多数都是相当重要的。我们要关注的是如何将这些组合成一个集成。这里的“这些”是指几种不同的模型，比如神经网络、随机森林、梯度提升等。所以我会继续运行这个。
 - en: which will essentially open these， these files。 I have them resident here on
     a local drive。 These are kagle files。 So I can't actually put them in a place
     that would let you access them。 You need to download them yourself from Kagal。
     I just put them in a data directory。 You can really put that any location you
     want。 And I run that。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将基本上打开这些文件。我将它们保存在本地驱动器上。这些是Kaggle文件。因此我实际上不能将它们放在一个可以让你访问的地方。你需要自己从Kaggle下载它们。我只是把它们放在数据目录中。你可以把它放在任何你想要的位置。我会运行这个。
 - en: You can see here when I print out the shape of this。 It's really a fairly square
     data set， which is。 which is difficult where you've got nearly as many columns
     as you do row 3700 rows 17，7，7 columns。 So let's go ahead and we're going to run
     this， fit a neural network on this and get some predictions。 This is a classification。Neural
     network， because it is basically telling us if a biological response happened
     or not。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以在这里看到，当我打印出这个数据集的形状时，它实际上是一个相当方形的数据集，这很困难，因为列几乎和行一样多，3700行和1777列。我们继续运行这个，拟合一个神经网络并获取一些预测。这是一个分类神经网络，因为它基本上告诉我们是否发生了生物响应。
 - en: You can see that the validation log loss is around 0。55。 log losses is what
     Cagel is actually using for this particular one to rank it。 The validation accuracy
     is around 76%。 So not good not horrible。 We'll look at the feature。 importance
     for this one。 It essentially， most of these are in the 90s。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到验证的日志损失大约是0.55。日志损失是Kaggle实际用于排名的。验证准确率大约为76%。所以，这并不好，也不算太糟。我们会看看这个的特征重要性。基本上，大多数特征都在90以上。
 - en: And even past into the 1700s is also 90s。 So they're all important。 So that
     is very difficult with this particular one。 ensembles were very critical to getting
     a good score for this one for the actual kagle competitors who worked on it。 So
     I am going to start by just introducing some code that I have here。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 甚至追溯到1700年代也有90年代的数据。因此它们都是重要的。这对于这个特定的任务来说非常困难。集成对获得良好的得分至关重要，特别是对参与这个竞赛的Kaggle竞争者来说。因此，我将开始介绍一些我这里的代码。
 - en: and you can use this to build up an ensemble。 You see here I have code that
     builds a artificial neural network。 I'm going go ahead and run this because it
     takes it a little while to run and explain what's going on while it is actually。This
     builds the artificial neural network。 I am giving it a number of classes here。
     Typically you'll want this is really just placeholder code。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以利用这个来构建一个集成。你看到这里我有构建人工神经网络的代码。我将继续运行这个，因为它需要一些时间，并在实际运行时解释发生了什么。这构建了人工神经网络。我在这里给出了一个类别的数量。通常你会希望这仅仅是占位符代码。
 - en: you'll want to put in more dense layers than I have here。 I also calculate the
     log loss multi log loss。 that's a type of error calculation that we saw earlier
     in the modules。 and the stretch code here is basically used to normalize the y
     ranges that are predicted。 So it's it's type of averaging or normalization to
     stretch it out。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 你将需要比我在这里更多的稠密层。我还计算了对数损失多重对数损失。这是一种我们在早期模块中看到的错误计算类型。这里的拉伸代码基本上用于规范化预测的y范围。因此，它是一种平均或规范化的方式来拉伸它。
 - en: This is a technique that I've seen in a couple of kggs。 I copied it from one
     of the winning solutions here。 you'll want to look if you're doing a regression
     or single classification like this it might be useful to you。 I am going to use
     the stratified kfold Basically that is making sure that each of our folds are
     balanced in the same way that the training set is Otherwise you might introduce。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一种我在几个Kaggle比赛中看到的技术。我从这里一个获胜方案中复制了它。如果你在做回归或像这样的单一分类，这可能对你有用。我将使用分层K折交叉验证，基本上是确保我们的每一折在训练集中的分布是平衡的，否则你可能会引入。
 - en: Inconsistencies， if you have， say 20% positive in the overall training set。
     you want 20% positive in each of those kfolds。 Otherwise your ground truth is
     going to be off。 I have information on the stratified kfold in the previous module
     that talks about。How to do cross validation Here we have a list of models and
     these models。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 不一致性，比如说在整体训练集中有20%的正样本。你希望在每个K折中也有20%的正样本。否则你的真实标签会偏离。我在之前的模块中有关于分层K折交叉验证的信息，讨论了如何进行交叉验证。这里有一个模型列表，这些模型。
 - en: these are all the ones that you want to ensemble together。 So I am building
     an ensemble of the kras classifier to we basically build that artificial neural
     network that we have up there。 random forest classifier a couple of times and
     also extra trees。 which is a type of random forest and then also gradient boosting。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些都是你想要组合在一起的。因此，我正在构建一个克拉斯分类器的集成，基本上是构建我们上面提到的人工神经网络。随机森林分类器运行了几次，还有额外的树，这是一种随机森林，然后还有梯度提升。
 - en: I load my data sets and I run across all of these and build up the ensemble。
     I have other videos that I'll link to that get into really the mechanics of what
     this is all doing overall what is happening here is it's building up a data set
     where each of these model predictions is one column So since we have  one。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 我加载我的数据集，然后在这些模型上运行，并构建集成。我还有其他视频会链接到这些内容，深入讲解这背后的机制。总体上，发生的事情是构建了一个数据集，其中每个模型的预测都是一列。因此，我们有一个。
 - en: 2，3，4，56，7 we have 7 of those。 you're going to essentially have seven columns
     the Y is going to be the real。😊，From the data set， whether the biological response
     happened or not。 and you're essentially training a linear regression across all
     of these。 So using the outputs。 the predictions from all of these classifiers
     to predict what the actual output would be。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 2，3，4，56，7，我们有7个这样的。你将基本上有七列，Y将是真实的😊，来自数据集，生物反应是否发生。你实际上是在所有这些上训练线性回归。因此，利用所有这些分类器的输出和预测来预测实际的输出。
 - en: You're using these models as inputs to another model。 which is the ensembling
     model to form that prediction， Then we blend it together。 we're using logistic
     regression to do that。It's a type of linear regression。 And we build that fit
     based on that。 And then we finally build our prediction file based on the output
     from that linear regression。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 你正在将这些模型用作另一个模型的输入，即集成模型来形成预测，然后我们将其混合在一起。我们使用逻辑回归来实现这一点。这是一种线性回归。我们根据此建立适合度，最后基于线性回归的输出构建我们的预测文件。
 - en: Here you can see we're basically going through all of the folds on each of these
     various model types and it continues At the end。 it will give you the final submission
     file that you will actually send to Cagel。 Thank you for watching this video in
     the next video。 we're going to take a survey of all of the hyperparameters that
     make up neural networks and see how you can better optimize those。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，你可以看到我们基本上正在查看这些不同模型类型的所有折叠，最后它将给出你实际上会发送给Cagel的最终提交文件。感谢你观看本视频，在下一个视频中，我们将对构成神经网络的所有超参数进行调查，看看你如何更好地优化这些参数。
 - en: This content changes often。 So subscribe to the channel to stay up to date on
     this course and other topics in artificial intelligence。😊。![](img/a5e310b66ad5b4d0e89ea1a7cc4dbf83_4.png)
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 该内容经常变化。因此，请订阅频道，以便随时了解本课程和其他人工智能主题的最新动态。😊！![](img/a5e310b66ad5b4d0e89ea1a7cc4dbf83_4.png)
