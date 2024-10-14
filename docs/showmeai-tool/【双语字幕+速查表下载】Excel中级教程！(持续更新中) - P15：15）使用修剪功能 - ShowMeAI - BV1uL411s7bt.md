@@ -1,0 +1,79 @@
+# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P15：15）使用修剪功能 - ShowMeAI - BV1uL411s7bt
+
+![](img/f1c0d687520ce7e4db352b23c24fc96e_0.png)
+
+In this short tutorial， I want to show you an Excel function that is a little known function。
+
+ but I find it to be pretty useful。 and it is the trim function。 So here we have in this spreadsheet。
+
+ a list of movies。 We have the title of the movie category rating and the year it came out。
+
+ But this spreadsheet was sent to me by someone else。
+
+ and any time you're sharing spreadsheets with someone when you're receiving someone else's spreadsheet。
+
+ there's always a risk that when you get their spreadsheet that there will be some mistakes and some errors。
+
+ And you can see here for some reason， this spreadsheet comes with way too many spaces。
+
+ I have blank spaces at the beginning of some of these entries。
+
+ I have extra spaces in the middle of some of these entries。
+
+ and also at the end of some of these entries， there are some extra spaces。
+
+ you can see here the movie elf， it looks like has four extra spaces at the end。
+
+ And so I would like to clean up the data。In this spreadsheet but I don't want to have to click in each cell and hit the backspace button to fix those mistakes that's gonna to be a lot of work So instead what I'm going to do is simply insert a new column so I'm going to right click on column B and then click insert and that gives me a brand new column and it pushes the data that was there to the right and I'll just create a formula so I'll click in cell B2 and I'll start my formula the way I always do with an equal sign and then the function trim left parenthesis and then I'm just going simply click on cell A2 now of course I could have just typed a2 in the cell so either way either type it or click on the cell I'm supposed to put a right parenthesis there but I don't have to so I'm not going to in this case I'll tap enter on the keyboard and look what it did it cleaned up this record that had extra spaces at the beginning of the entry and。
+
+Also， in between these two words， it's trimmed out those extra spaces。
+
+ and it looks just the way I want it to look。 So now I need to go to B3 and do the same thing again。
+
+ right？ Actually， no， I don't have to do the same thing again and again and again。
+
+ All I have to do is click on cell B2， go to the lower right hand corner of that cell。
+
+ And as you can see there in the lower right corner， we have a little green square。
+
+ That's called the autofill handle。 And I'm going to put my mouse on the autofill handle until the mouse pointer turns into a black plus sign。
+
+ And then I'll just click and drag and pull that down all the way to the bottom of my data。
+
+ And then look what happens。 It cleaned up all of the data。 all the way up and down column A。
+
+ This is exactly how I want the data to look。 No extra spaces。 Now I have a problem， though。
+
+ of having duplicate data。 I have column A。 and I have column B。And when you do this。
+
+ you might be tempted to just delete column A。 but watch what happens if I right click on column A and delete everything that's there。
+
+ It ruins what was column B。 You can see it moved it to the left。 and it ruin the data。 Why， Well。
+
+ because this data relies on this data。 cell B2 is a formula。 And you can see that formula。
+
+ If you double click on it or look here on the formula bar。 And so this cell relies on cell A 2。
+
+ when I delete the contents of cell A2。 It ruins the formula。 So I seem to have a problem here。 Well。
+
+ there is a solution。 I can right click on column B and simply copy。
+
+ and then I'll right click on column A and paste special。 when you click on paste special。
+
+ it gives you some options。 I want to paste it。 not as all not as formulas but as values。
+
+ So I select that， click O， And now I have a pasted version of this data。 but。
+
+If you double click on it， you can see that the data now in column A is not part of a formula。
+
+ It doesn't depend on any other cell or column。 So at this point， I can right click on column B。
+
+ deletelete it and my data is fine。 So the trim function is a great way to clean up data。
+
+ But as you can see there are some steps involved。 knowing how to use this trim function has helped me several times。
+
+ And I hope that you've found this tutorial to be helpful。 If you have。
+
+ please click the like button below。
+
+![](img/f1c0d687520ce7e4db352b23c24fc96e_2.png)

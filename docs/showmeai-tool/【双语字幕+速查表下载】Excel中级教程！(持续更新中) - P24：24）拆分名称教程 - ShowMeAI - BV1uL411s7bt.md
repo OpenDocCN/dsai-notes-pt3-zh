@@ -1,0 +1,87 @@
+# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P24：24）拆分名称教程 - ShowMeAI - BV1uL411s7bt
+
+In this Excel tutorial， we're going to look at how to split names in Excel。
+
+ And this video is one in a series that I've made about Excel。
+
+ So if you haven't watched my other Excel tutorials， please do so as soon as humanly possible。
+
+ But in this particular video， what we're going to be doing is looking at how to split names。
+
+ And this is a common problem in Excel。 Maybe you're working in a worksheet like this one which has people's last names followed by a comma。
+
+ and then their first names。 And this is very， very common when working with data。
+
+ and it's kind of nice to have it this way， you can sort and alphabetize this information because it's listed as last name comma first name。
+
+ It's pretty nice。 But from time to time， it becomes important to separate these out and put the first name in column B。
+
+ for example， And how do you do that if you don't want to go into each cell one at a time and delete and then copy paste and put in the first name over here in column。
+
+
+
+![](img/29d093560c283260280d0e2e9f8c3daf_1.png)
+
+how do I separate these out？ Another common problem is having data like this。 First name， space。
+
+ last name。 And in some ways， this is even worse， because it makes alphabetizing by last name very difficult。
+
+ Okay， so let's look at how to solve these problems。 I'm going to go back in to my first example。
+
+ Last name comma first name。 And like I said this is not terrible。
+
+ But what if I wanted to find out how many people in this list have the first name of Jonathan or have the first name of Mary or whatever。
+
+ It would be hard to do that with the first name and last name in the same column。
+
+ So the way to solve this problem is to click on the column letter that would be column a in this case。
+
+ And then all I have to do is make sure I'm on the data tab the data ribbon。
+
+ and I go to the data tools group and look for text to columns。 I just click on that。
+
+ and I get a pop up that appears， it's the convert text to columns wizard。
+
+There's three steps first step is I have to choose which of these two descriptions best describes my data I it delimited characters such as commas or tabs separate each field so let's think about this Is it true that I have commas or tabs separating each field Yeah I do I have commas between each one of these So I'm going to stick with delimited and then I'll click next and then it says this screen lets you set the delimiters your data contains and by default it's got tab selected I'm going to uncheck tab and then I'll just go down and choose comma and as soon as I did that notice what happened it showed me down here a data preview and it showed me that it's going work Now before I click next。
+
+ notice that it says treat consecutive delimiters as one so for example space there is also a space between the last name and the first name and I will have this checked treat consecutive delimiters as。
+
+OneAnd so what that should do is it should get rid of this extra space between them。
+
+ So now I'll click next and now if I want to， I can set the column data format。
+
+ So I want to leave it as just general text but if I wanted to I could specify it specifically as text or as a date and I could choose the format for that date that I want to use So I'll just leave it at general and I'll click finish and look what it did。
+
+ it's successfully split the names。 the last names are here。 the first names are here。
+
+ it got rid of the commas and it got rid of the extra space with one exception。
+
+ It looks like Eselle had two spaces between her last name。
+
+ the comma and the first name and so I'm just going to delete that and now I've got perfectly split names let's look now at the other problem first and last names and the only thing separating them is a space it's almost the same I just click here on the column letter and then I go to data text to columns again it's really。
+
+Delimitted again。 so I'll click next this time instead of comma， I'll just check space。
+
+ I can uncheck treat consecutive delimiters as one in this case。 and then I'll just click next。
+
+ I don't really want to change any of this。 I'll click finish and it splits those names perfectly。
+
+ Now that I've done this Now that I've split the names。
+
+ If I wanted the last name to be in the first column。 It's easy to do。
+
+ All I need to do is go here to column a right click in the column letter and cut and then go over to column C right click and paste。
+
+ and you can see what that did。 it just copy pasted the first name from column A to column C。
+
+ I could even just right click now on a and delete that entire column and now I've got last names in column A first names in column B。
+
+ So text to columns really is pretty simple， pretty easy。
+
+ but it's a nice Excel feature that a lot of people don't know exist。 So thanks for watching。
+
+ I hope you enjoyed this video If you did， please click the like button below。
+
+
+
+![](img/29d093560c283260280d0e2e9f8c3daf_3.png)
