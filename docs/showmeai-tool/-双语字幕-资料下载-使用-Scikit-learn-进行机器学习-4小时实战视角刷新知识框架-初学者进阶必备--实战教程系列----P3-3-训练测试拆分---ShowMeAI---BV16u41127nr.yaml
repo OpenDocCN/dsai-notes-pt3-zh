@@ -1,19 +1,26 @@
 - en: 【双语字幕+资料下载】使用 Scikit-learn 进行机器学习，4小时实战视角刷新知识框架，初学者进阶必备！＜实战教程系列＞ - P3：3）训练测试拆分
     - ShowMeAI - BV16u41127nr
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】使用 Scikit-learn 进行机器学习，4小时实战视角刷新知识框架，初学者进阶必备！＜实战教程系列＞ - P3：3）训练测试拆分
+    - ShowMeAI - BV16u41127nr
 - en: '![](img/816ece20f67a7bafdafc76312ab6259f_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/816ece20f67a7bafdafc76312ab6259f_0.png)'
 - en: So last time I talked about this issue of basically evaluating our model on
     the same data we fit it to。 right the model can effectively memorize an answer
     and look like it is doing well even if it didn't really learn anything。And so
     the way we'll deal with this problem is we'll use something an SK learn called
     a train test split。 and this is a general strategy， but this specific method will
     make it easy for us。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以上次我讨论了在同一数据上评估我们模型的问题。模型实际上可以有效地记忆答案，看起来表现良好，即使它并没有真正学到任何东西。我们将通过使用一种SK学习中的训练测试拆分来解决这个问题。这是一种通用策略，但这种特定方法会让我们更容易。
 - en: And what we'll do is I'll take our original data frame and give us back two
     data frames。We'll train our model to one data frame and then we'll evaluate it
     on the other one on the data the model has not seen before。 and so it's a better
@@ -21,19 +28,25 @@
     I can pass into this one is I can say well what ratio of my data would I like
     to go into my test set I can say other things like try to stratify the data like
     let's say I was dealing with something categorical。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将这样做，我将获取我们的原始数据框，并返回两个数据框。我们将把我们的模型训练在一个数据框上，然后在另一个未见过的数据上进行评估。因此，这更好地测试它的表现。因此我可以看到我可以传递许多内容，其中之一是我可以说我希望我的数据中有多少比例进入测试集，我还可以说其他事情，比如尝试对数据进行分层，例如假设我处理的是某种分类数据。
 - en: I might want to make sure that I'd have a similar number of categories on both
     sides I'm not trying to do that here。 but I will specify a trained test set。![](img/816ece20f67a7bafdafc76312ab6259f_2.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我可能想确保两边的类别数量相似，虽然我在这里并没有尝试这样做。但我会指定一个训练测试集。![](img/816ece20f67a7bafdafc76312ab6259f_2.png)
 - en: So let me import this thing， I'm going to say。From SKLn import oh it's SKLn。t
     model selection。Import。 train， test， split。Okay， and then I'm going to say try
     and test split。And I'm going to try to try split on my data frame that I have
     originally。And。Basically。 it's returning something called an array with two data
     frames in it。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我导入这个东西，我要说。从SKLn导入哦是SKLn。t模型选择。导入。训练，测试，拆分。好的，然后我要说尝试和测试拆分。我将尝试在我原始的数据框上进行拆分。基本上，它返回一个包含两个数据框的数组。
 - en: and so the way I can capture this is I can say well I have my train data frame
     and my test data frame is order is to to return them in。And so let me take a look
     at these。 Here's my train data frame。And then here is my test data frame。And you
@@ -41,25 +54,32 @@
     I'm dealing with different data right so this is the data frame that my model
     is going to learn from and then this other one is the one I'm going to use to
     actually make sure it learns something。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我可以这样理解，我有我的训练数据框和测试数据框，它们的顺序是返回它们。让我看看这些。这里是我的训练数据框。然后这是我的测试数据框。你可以看到它们有点打乱了，如果我看索引的话。我正在处理不同的数据，所以这是我的模型将要学习的数据，而另一个是我实际确保它能学到东西的数据。
 - en: And so I can see right now if I look at this， there's 6，300 down here and then
     19，000 up here。And that's because the default split is 0。25， so I could do something
     like this if I want。And then that would make this first one bigger and the next
     one smaller。 So I'm going to do that。 Oh。 and then let me just see what I did
     wrong here。 I think I actually have to say test size。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以现在我可以看到，如果我看这个，下面是6300，上面是19000。这是因为默认的拆分是0.25，所以如果我愿意，可以这样做。然后这会让第一个数据框变大，第二个变小。所以我将这样做。哦，接下来让我看看我做错了什么。我想我实际上需要指定测试大小。
 - en: So I'm going say test size equals that。And then this is going to be a little
     bit bigger。 more data to test on。And then a little bit less data to train on and
     so there's some trade offs there。Anyway， now what I'm going to do is I'm going
     to head back to this example that I had earlier where I was doing my training
     and ideas instead of fitting and scoring on the same data。 I'm going to fit to
     my training data and then score on my test data。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我将设置测试大小等于这个。然后这将会大一点。用于测试的数据更多。而训练的数据则稍少，所以这里有一些权衡。无论如何，现在我将回到我之前的例子，在那里我做了训练，而不是在同一数据上进行拟合和评分。我将拟合我的训练数据，然后在我的测试数据上进行评分。
 - en: so I'm just to do it again from scratch for review and I'm going to say LR equals
     linear。Regression。![](img/816ece20f67a7bafdafc76312ab6259f_4.png)
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
 - en: And oh， there we go， and that I say Lr。 fit。And I have my train。Data frame。
@@ -67,22 +87,26 @@
     so that's the general strategy。 And then what I want to do is I want to score
     it。 when I'm scoring it， I'm going to give it a Y column and an。And an ex colony。
     And I'm sorry。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
 - en: I have to say， train Diaf here。I'm going to give it that same information。 but
     now I'm going to be doing the test data frame。Where as I may say test data frame
     and then same thing down here， test data frame。And then what I'm going to do is
     for this。Imra passing in a list of columns， like before。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
 - en: And what was I doing last time I was looking at this positive。A seven day average。
     And somebody' may pass that in。Just like that and the same thing here。 and then
     over here I can just look at that thing that I'm trying to predict my Y。 which
     was this thing。When me pass that in and then the same here。 I'm going to do that。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
 - en: and I see that。 okay， my score is 0。16。Whereas what would happen if I wanted
     to run it on my original training data frame？
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
 - en: Like that training data frame。And here it does better on the data I trained
@@ -90,6 +114,7 @@
     better the data it learned from instead of some new data it hasn't seen before
     and so that of course is a concern。And so there's different things I can try to
     do to avoid that and we'll eventually talk about some of those things this semester。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
 - en: Hello， today I'm going to be talking more about how we can determine whether
@@ -99,6 +124,7 @@
     weeks out based on the current number of cases and so let me just quickly review
     what I did last time we were doing a train test split on our data frame and our
     data framework look like this right here。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
 - en: And it was per county。 And then there's every day and the year there。Then I
@@ -106,6 +132,7 @@
     model。And then I did two things with it， I fit it to my training data。And then
     I scored it on my testing data， and these were the two pieces my training data
     and testing data came from here and so when I was doing this。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
 - en: what I basically did is I put in my Y values， which is what I'm ultimately trying
@@ -113,12 +140,14 @@
     I know right now， so for example。 right now I know the seven day rolling average
     of positive test cases and then two weeks out I'm trying to predict well how many
     deaths will there be。This can be a single series， which is why we just put a string。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
 - en: I'm in the brackets after the data frame。Here we actually have to pass in a
     full data frame because in general we might have multiple features and when I
     pass in a list to the brackets after a data frame while I get a smaller data frame。
     that's why I have the double brackets there。 So anyway， so I have this 0。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
 - en: 2 and and we know that the score will somewhere be be somewhere between 0 and1。
@@ -127,6 +156,7 @@
     to talk about today And then the other thing that you might notice is if I rerun
     this a few times Oh and now I'm at 27%  32%。 24%， 242826。So you can see that based
     on how I do this train test split。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
 - en: I can do very different numbers and so that doesn't give us a lot of assurance
@@ -134,6 +164,7 @@
     kind of a hint of what the problem is if I look at train DF and I look at this
     column here。 which is the thing we're trying to predict。嗯。Let me do that。So I
     have all those numbers there。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
 - en: Let me look at the variance of that column variance are just kind of a measure
@@ -142,19 +173,23 @@
     they have quite different variances。 and if I run this again。While instrument
     randomly shake out differently now the test data actually has a higher variance
     than than the training data。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
 - en: and we eventually look at how this scoring function works。 but it turns out
     that it's very much based on this variance。Which is why we have such a noisy measure。
     So let me head over to the slides and try to give a preview of the things we're
     going to talk about today。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/816ece20f67a7bafdafc76312ab6259f_6.png)'
+  id: totrans-23
   prefs: []
   type: TYPE_IMG
 - en: We're going to be learning for new functions related model evaluation。 so first
     we're going to learn these two functions here， which will let us score our models。![](img/816ece20f67a7bafdafc76312ab6259f_8.png)
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
 - en: Second， if our model is trying to mediocre like mine is right， I mean 0。2 is
@@ -162,17 +197,21 @@
     using something called the permutation test score for that。 and then finally。To
     get a less noisy measure， we're going to be doing something called cross value
     scoring。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/816ece20f67a7bafdafc76312ab6259f_10.png)'
+  id: totrans-26
   prefs: []
   type: TYPE_IMG
 - en: And so let me start here with these two metrics here。 I have this R2 score and
     mean absolute error。 and we'll talk about how those work。![](img/816ece20f67a7bafdafc76312ab6259f_12.png)
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
 - en: If I go back to my slides or go back to my notebook right here。I'm doing the
     scoring here。 I can also up here， I can say， from SKL dot matrix。![](img/816ece20f67a7bafdafc76312ab6259f_14.png)
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
 - en: Import。There's a couple things I want to do。 I want to do the R2 score， and
@@ -180,56 +219,77 @@
     kind of like this。 I'll call the metrics function。And then I'll say something
     like， I mean。 I should just check this here quick。I'll say something like I had
     to make sure the order is different between my true and my predicted。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 导入。 我想做几件事。 我想计算 R2 分数，然后是平均绝对误差分数。 所有这些指标的工作方式大致如下。 我会调用指标函数。 然后我会说类似于，我的意思是。
+    我应该在这里快速检查一下。 我会说，我必须确保我的真实值和预测值之间的顺序是不同的。
 - en: I'll say you know what are the true values and then my predicted values。And
     so for example， up here。 I know that these are my true values。And。Then my predicted
     values， Well。 how do I forget my predicted values， I could just say， well， model。
     please predict for me what these y values should be based on these x values that
     I'm going give you。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 我会说，真实值是什么，然后是我的预测值。 所以例如，在这里。 我知道这些是我的真实值。 然后我的预测值，嗯。 我该如何忘记我的预测值，我可以简单地说，模型。
+    请为我预测这些 y 值应该基于我将给你的 x 值。
 - en: All so I'm going to do that， and so here I'm putting in x values and it's going
     to return back to me Y values。And this weird anything thing that we'll eventually
     talk about。 but I could take this and I could put this right here。And so that
     I could use lots of different metric functions here， I could， for example。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我将这样做，在这里我输入 x 值，它将返回给我 Y 值。 还有这个奇怪的东西，我们最终会谈到。 但我可以把这个放在这里。 这样我就可以在这里使用很多不同的指标函数，例如。
 - en: use the R2 score。Right here and guess what， it turns out that this square here
     that's associated with the model is just defaultfiling to use R2 score。 there's
     lots of different metrics I could have used instead， but this one is the default
     one。So let's talk a little bit about。Let's talk a little bit about how this were
     computed。 So the idea of it is that this is the thing I'm trying to predict right
     So this is my why column。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用 R2 分数。 就在这里，结果是与模型相关的这个平方默认使用 R2 分数。 我可以使用很多不同的指标，但这个是默认的。 所以让我们谈谈。 让我们稍微谈谈这个是如何计算的。
+    所以它的想法是，这是我想预测的东西。 所以这是我的 y 列。
 - en: And somebody going say why is here。And I can just peek at that。 What I want
     to do is I want to look at basically the squared residuals of this column relative
     to the mean。 and so what does that mean。 So I can take this。 and I can subtract
     off the mean of this。And then if I want to， I can square all of that。So this is
     really a measure of kind of how bad the system is if I add all of these things
     off。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 有人会说，为什么在这里。 我可以瞥一眼。 我想做的是查看这一列相对于均值的平方残差。 那是什么意思。 我可以取这个。 然后减去这个的均值。 然后如果我想，我可以对所有这些进行平方。
+    所以这实际上是衡量系统有多糟糕的一个标准，如果我把所有这些东西加起来。
 - en: So this is really well the variance of the system except I'm summing instead
     of averaging。Right so this was my original kind of total error or variance in
     the system I might think of it as I'm just adding out so I wasm trying a sum of
     squares。🤧And then what I want to think about is what if instead of vugh。Measuring
     the distance from each shn。Each value to the mean。 What if I measure the distance
     to my actual prediction。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这实际上是系统的方差，只是我在求和而不是平均。 对，所以这是我原本的总误差或系统的方差，我可以认为我只是在添加，所以我在尝试平方和。🤧然后我想考虑的是，如果不是测量每个值与均值的距离。
+    而是测量到我实际预测的距离。
 - en: So it'll be very similar here， I can say， what is kind of left over。If I subtract
     off my predictions。 how do I get my predictions， Well， that's this right here。
     I'm going to grab this piece。And let me have my predictions here。Yeah， then let
     me take a look at that。So the way I really think about it is that originally this
     was how much variance I had in the system and this is how much I have。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以在这里会非常相似，我可以说，剩下的是什么。 如果我减去我的预测。 我如何获得我的预测，嗯，这就是在这里。 我会抓取这一部分。 让我把我的预测放在这里。
+    是的，然后让我看看。 所以我真正的想法是，最初这是我在系统中的方差，而这是我现在的方差。
 - en: After I， after I do predictions rather than just subtracting off the mean。And
     so what I could do is what I could say。嗯。I could say， well， how much is remaining。
     so I could say leftover divided by the total。And。Why is that？Oh， let me just put
     that here。I can say that left over divided by the total， and I'm like， okay。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
 - en: why left 79% of the variance on the table basically？Which means that I took
@@ -237,6 +297,7 @@
     this is the the math that people will really kind of use to evaluate how good。A
     regression is typically we can do that more simply with R2 score。 and even more
     simply that's the default vi say linear a regression dot score。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
 - en: Let me give you an example of another metric people might use。So maybe I want
@@ -244,12 +305,14 @@
     to this piece。RightSo this is all of the errors。And if I want to get the average。
     I should probably just think about the absolute error。And then I could take the
     mean of that。Right。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
 - en: so this would be the average。Absolute error。And it turns out that that is just。Rather
     than be collectulating that myself， I could just grab this mean absolute error
     here。 there's lots of different metrics in here and I think if I hit shift tab。Well。
     maybe it's just regular tab。 I can see all the different metrics that come here。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
 - en: And most of them I have never used。 so I paste this here and I see， well， that's
@@ -257,12 +320,14 @@
     not the same number。Because on。I wanted to get the error of my predictions not
     relative to the mean。 and so I'm sorry this was the thing that I wanted to， this
     is the thing I had wanted to grab。Right。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
 - en: so I wanted to say。You know， here are all my errors。 take the absolute value
     of them。 right some errors are positive or negative。 I just want to have the absolute
     value。 then I have the average。And why is that。嗯。In balance syntax。 that usually
     probably means I have a mismatch in terms of my parentheses。I see。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
 - en: So this one has is matched up there。 So I don't know why I grab that squared。
@@ -270,6 +335,7 @@
     and I'm picking the average。 and I'll thankfully， okay， well actually get the
     same thing that I have down here。And so again。 right， this is just a shortcut
     for this kind of more complicated math。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
 - en: but it's another metric in terms of how these metrics work。呃。This one is kind
@@ -278,9 +344,12 @@
     is it right here when I'm doing the R R squared score。 because that one is squaring
     my errors， this will tend to make it look worse if I have a few errors that are
     really big as opposed to many small errors。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
 - en: Okay， so those were a couple metrics， which was one of the things we wanted
     to answer in the slide。 I'm just going to head back here。![](img/816ece20f67a7bafdafc76312ab6259f_16.png)
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，这些是几个指标，这是我们想在幻灯片中回答的内容之一。我将返回这里。![](img/816ece20f67a7bafdafc76312ab6259f_16.png)

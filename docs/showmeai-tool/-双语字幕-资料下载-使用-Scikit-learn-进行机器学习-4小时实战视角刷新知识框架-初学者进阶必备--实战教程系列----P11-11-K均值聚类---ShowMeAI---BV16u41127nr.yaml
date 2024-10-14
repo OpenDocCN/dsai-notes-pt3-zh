@@ -1,26 +1,35 @@
 - en: 【双语字幕+资料下载】使用 Scikit-learn 进行机器学习，4小时实战视角刷新知识框架，初学者进阶必备！＜实战教程系列＞ - P11：11）K均值聚类
     - ShowMeAI - BV16u41127nr
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】使用 Scikit-learn 进行机器学习，4小时实战视角刷新知识框架，初学者进阶必备！＜实战教程系列＞ - P11：11）K均值聚类
+    - ShowMeAI - BV16u41127nr
 - en: Okay。![](img/8fbf50c44e48638bdf2bd3d414bd41f5_1.png)
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的。![](img/8fbf50c44e48638bdf2bd3d414bd41f5_1.png)
 - en: we've been doing a lot of supervised learning lately in particular we've been
     doing regression and classification now I'm going give an example of unsupervised
     learning problem which is clustering and in clustering might feel like you it
     have some similarities to classification in classification sometimes I would show
     these scatter plots where there's different kinds of points and you those points
     were labeled right maybe there's some red points and some blue points。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 最近我们做了很多监督学习，尤其是回归和分类，现在我将给出一个无监督学习问题的例子，即聚类。在聚类中，可能会觉得它与分类有一些相似之处，在分类中，有时我会展示这些散点图，其中有不同类型的点，而这些点是有标签的，也许有一些红点和一些蓝点。
 - en: whatever and we were trying to find boundaries or rules to separate the different
     kinds of data points that we had and we did that based on some predetermined labels
     that came with the data you know which trying to point as which。In clustering，
     we might simulate have some sort of scatter of data or the multidimensional equivalent
     of that。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们试图找到一些边界或规则，以区分我们所拥有的不同类型的数据点，并且我们是基于随数据附带的一些预设标签来进行的，你知道的，这就是在指向哪个。在聚类中，我们可能会模拟一些数据的散布，或者它的多维等价物。
 - en: but the difference is is that there's no preexisting labels on the data。 that's
     what makes this an unsupervised learning problem。The algorithm itself gets to
     choose the labels and and so there's you know a million different ways you can
@@ -29,35 +38,47 @@
     kind of grouping similar data together and there's ways to measure that So clustering
     is this general problem there's lots of different clustering algorithms by far
     the most famous is k means so that's where I'm going to start。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 但不同之处在于，数据上没有预先存在的标签。这就是为什么这被称为无监督学习问题。算法本身选择标签，因此你知道，存在无数种方法可以将标签应用于现有数据集。但我们仍然有一些约束，或者我应该说一个目标，我们的目标是选择这些标签，以便将相似的数据聚集在一起，并且有方法来衡量这一点。所以聚类是这个一般问题，有许多不同的聚类算法，迄今为止最著名的是
+    K 均值，所以我将从这里开始。
 - en: And so I'm doing some imports here， eventually I'm going to be using the K means
     that comes an SKL。 but to help you understand how the algorithm works。 I'm actually
     just going to write the code from scratchch in this video before we actually started
     using this one。So in SK learn there's this data sets submodule that can make blobs
     or these blobs are basically clusters。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，我在这里做一些导入，最终我将使用 SKL 中的 K 均值。但为了帮助你理解算法是如何工作的，我实际上会在这个视频中从头开始编写代码，而不是直接使用这个。所以在
+    SKlearn 中有这个数据集子模块，可以生成 blobs，或者说这些 blobs 基本上是聚类。
 - en: you tell how many points you want， how many kind of different centers they cluster
     around and then something about standard deviation and that returns two things
     it returns acts。 which is actually two columns。An x0 and x1。 and then a y， which
     is indicating。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 你告诉它你想要多少个点，围绕多少种不同的中心聚类，然后关于标准差的一些信息，返回两个东西，返回 x，实际上是两列，x0 和 x1，然后是一个 y，表示。
 - en: What cluster or blob each of these points was part of right and so I don't really
     care about why I'm just going to throw that away I'm going to throw all those
     two x values in here and then I have this data frame just like here and so what
     we're going to be working towards is trying to find are there clusters of different
     points in here where it's kind of centered around something。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 每个点属于哪个聚类或 blob，所以我不太关心为什么，我只是将这些丢掉。我将这两个 x 值放在这里，然后我有这个数据框，就像这里一样，我们要努力寻找的是这里是否有不同点的聚类，它们是否集中在某个地方。
 - en: And so let me let me scroll down a little bit before I look at this code and
     so here's a picture of those points that God generated you can see it's pretty
     random although they kind of kind of center around three different points I'm
     just putting a question mark here for now because these are unlabeled right there's
     no real category I just have these two。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我在查看这段代码之前先往下滚动一下，这里是那些生成的点的图片，你可以看到它们是相当随机的，虽然它们大致集中在三个不同的点周围。我暂时在这里放一个问号，因为这些是没有标签的，对吧，没有真实的类别，我只有这两个。
 - en: X is0 along the x axis and x1 along the y axis，' for my coordinates。And so ultimately
     to do this I have know I'm doing a data frame plot scatter like we've done lots
     of times before。 the reason I'm writing this special function here。 kms scatter
@@ -68,19 +89,27 @@
     called label if there is one right not necessarily right and so this is automatically
     even be plotting well I just have the comment here I'm going to be plotting x0
     along x axis。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: X 是 x 轴上的 x0，y 轴上的 x1，作为我的坐标。因此，最终要做到这一点，我需要知道我正在做一个数据框的散点图，就像我们之前做过的很多次一样。我在这里写这个特殊的函数的原因是，kms
+    scatter KN 代表 k 均值，我会多谈谈为什么我们有这个名字，因为我可能不想为不同的点显示不同的符号，而且没有简单的方法来指定一个列作为符号类型。因此我们必须循环遍历，这将由一个名为
+    label 的列决定，如果有的话，对吧，不一定是对的。所以这将自动进行绘图，我只是在这里评论一下，我将绘制 x0 在 x 轴上。
 - en: And and so on and so forth， right， so I'm going to be using this as I go forward。All
     right。 so you can probably already see there's three clusters here and what we
     actually know that is we randomly generated the data。 but how can we find kind
     of good indicators for where those are and those indications that are't going
     to be called centroids。 we're going to ultimately try to say， well here's the
     center of these three clusters。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 而且等等，对吧，所以我将继续使用这个方法。好的，所以你可能已经看到这里有三个集群，而我们实际上知道的是我们随机生成了数据。但我们如何找到这些集群的良好指标呢？这些指标将不会被称为质心。我们最终会尝试说，好吧，这里是这三个集群的中心。
 - en: That we discovered， how can we do that automatically？
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们发现了这些，如何自动完成呢？
 - en: And it' that' a hard problem trying to find the three best points， an easier
     problem in general。 right than finding the best answer is to just take a bad answer
     and make it slightly better if you know how to do that and you can repeat it well
@@ -88,44 +117,57 @@
     that we use for gradient at thescent is very pervasive in learning and it's the
     strategy we're going to use now for the K K means right so we' we take a bad answer
     and the bad answer looks like this。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 而且，找到三个最佳点是一个困难的问题，通常比找到最佳答案更简单。对吧，稍微改善一个糟糕的答案，如果你知道怎么做，并且可以重复，通常会给我们一个不错的答案。这是我们在梯度下降中使用的策略，在学习中非常普遍，这是我们现在将为
+    K 均值使用的策略，因此我们会取一个糟糕的答案，而这个糟糕的答案看起来是这样的。
 - en: I'm just going to randomly choose some starting points。And assign the each a
     different symbol。And for now I'm just trying to assume that I may have three points，
     three clusters here。 we'll eventually revisit that assumption， and may scatter
     it down here and so you can see that this is where it thinks those three clusters
     are and of course that's horrible right that's not where the three clusters are
     so how can we automatically identify the centers of those three clusters。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将随机选择一些起始点，并为每个点分配一个不同的符号。目前我只是试图假设我可能有三个点，三个集群。我们最终会重新审视这个假设，然后可能在这里分散。所以你可以看到，这里是它认为的三个集群的位置，当然，这很糟糕，对吧，这并不是三个集群的位置，那么我们如何自动识别这三个集群的中心呢？
 - en: And so the strategy that we're going to use is we're going to alternate between
     doing two things First we're going to do something called assignment。 which is
     taking each of these points and putting it in the cluster just saying it's going
     in the cluster with the centroid that's nearest to it right so these three things
     are centroids。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将使用的策略是，我们将在做两件事之间交替进行。首先，我们将做一个叫做分配的事情，这就是将每个点放入集群中，仅仅是说它进入了离它最近的质心所在的集群，对吧，所以这三个东西就是质心。
 - en: 哦。Centroid is kind of a twodial mean right so it's the average x0 and average
     x1 right or the centroids and so the K means that's the name of this algorithm
     right so in this case K is just a variable and so really we have three means or
     three centroids right we want to find the best locations of those so it's like
     I was saying where I assign each of these points to the centroid that's closest
     to it。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。质心是一种二维平均值，对吧，所以它是平均的 x0 和平均的 x1，作为质心。因此，K 均值是这个算法的名称，对吧，所以在这种情况下 K 只是一个变量，因此我们实际上有三个均值或三个质心，我们想要找到它们的最佳位置。所以就像我所说的，我会将这些点分配给离它最近的质心。
 - en: And that's a point assignment and then the other step we're going to do is we're
     going to update where these centroids are so that they get closer to the values
     that are assigned to them。 and we keep alternating back and forth between deciding
     which points go with which centroid and then where the centroids are and eventually
     it should hopefully converge and try to discover these three points。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一种点分配，接下来的步骤是更新这些质心的位置，使它们更接近分配给它们的值。我们不断交替决定哪些点与哪个质心相对应，然后质心在哪里，最终希望它能收敛并尝试发现这三个点。
 - en: And so to do this， I'm going to be building a new class， right。 and I'm just
     trying to call my class KN。And I'm going to have it inette method。And maybe what
     I'm going to do is pass in the data frame all my data。 and then people in a lot
     of these implementations， they would specify something like。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以为了做到这一点，我将构建一个新类，对吧。我只是想把我的类命名为KN。我将有一个初始化方法。也许我将传入所有数据的数据框。很多这些实现中，人们会指定一些东西，比如。
 - en: well how many clusters are there for simplicity Ive already created this data
     frame。Of。 of clusters right here， which if I。I look at that what I have for my
     clusters。 I already have the data for these three points where I kind of did that
@@ -134,14 +176,19 @@
     to say that selft clusters equals clusters and I'm going be making a lot of changes
     to these things and I don't want to change the original data so I'm going to make
     copies of these data frames。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，简单起见，聚类有多少个？我已经创建了这个数据框。聚类就在这里，如果我查看我的聚类。我已经为这三个点准备了数据，我做了这个，所以我就暂时把它放在我的类外面，以保持代码稍微干净一点，所以我要抓住这些东西，所以我要说self的聚类等于聚类，我将对这些进行很多更改，我不想更改原始数据，所以我要复制这些数据框。
 - en: Just like so and maybe let's just see that we actually have something here。
     I'm just curious what is in this label right time I say self do labels equals。Solf
     dot clusters。 and I want to look at that label column。Just like that， and maybe
     I'll just convert that to a list。Like so， and then me print that soft dot labels。Okay。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 就像这样，也许我们看看这里实际上有没有东西。我只是好奇这个标签里有什么，当我说self的标签等于。self.dot clusters。我想看看那个标签列。就这样，或许我会把它转换为列表。像这样，然后我打印出self.dot
+    labels。好的。
 - en: so I want to create one of these things that hand。And I need to pass in my data
     frame of all my points and then my and then my clusters and I do that and。And
     what am I I doing there as a little silly of me。 I want to save that in that variable
@@ -149,93 +196,125 @@
     to be simple right so I can easily plot these typically people just kind of arbitrarily
     call these clusters one and three remember there's not any label in the original
     data。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我想创建一个这样的东西。然后我需要传入我的所有点的数据框，然后是我的聚类，然后我这样做。嗯，我在那里的做法有点傻。我想把它保存在那个变量中，嗯，那是我的三个聚类，我只是选择了一些简单的聚类名称，这样我就可以轻松绘制这些，通常人们只是随便称这些聚类为一和三，记住原始数据中没有任何标签。
 - en: the original data looks like。Looks like this thing right where I have 100 rows。And
     then my cluster is actually kind of look similar， right。 I have the x x values
     specify minus the center and then also the label。Okay。 so one of the first things
     that I want to do is I might want to be able to plot this。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 原始数据看起来像。看起来就像我有100行的这个东西。然后我的聚类实际上看起来也相似，对吧。我有x x值，指定减去中心，然后还有标签。好的。所以我想做的第一件事是，我可能想绘制这个。
 - en: As we go because we're going to be making changes right so I want to grab this
     code that I had before to just see what's drawing on。Just like so， and I'm going
     have plot that and。And let me see here。 I guess I can't use data frameraaming
     clusters because these are attributes now。 and I don't want those versions。 I'm
     going to say self Df。And it got clusters。And there we go。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着我们进行的更改，我想抓住之前的代码，看看有什么绘制。就这样，我会绘制它。让我看看。我想我不能使用数据框的聚类，因为这些现在是属性。我不想要那些版本。我会说self
+    Df。然后它有聚类。好了。
 - en: right our kind of initial state of the system that we want to make better。And
     so remember。 there's these two phases that I talked about， we're going to have
     something where we assign the points。So that's maybe one step we're going to do
     and what we're doing here is we're really kind of drawing from clusters。Two points
     right based on where our cluster， maybe I should tell them centroids are where
     our centroids are。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 对，我们想要改进的系统的初始状态。所以记住，我提到的这两个阶段，我们会有一个分配点的步骤。这可能是我们要做的第一步，而我们在这里实际上是在从聚类中提取两点，基于我们的聚类，也许我应该告诉他们，中心点的位置在哪里。
 - en: that's trying to affect well what happens in our points we're going to assign
     each point to a centroid when I have that。And another thing I may have。Is update。Of
     the centers。just by alternating calling this and this and this and then this。
     we're ultimately going to end up with a good solution to this problem。Okay， so
     first off。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是试图影响我们点的分配，我们将为每个点分配一个中心点。当我有这个时，另一个我可能会有的事情是更新中心。通过交替调用这个、这个、这个，最终我们会找到这个问题的良好解决方案。好的，首先。
 - en: how do I do the centroid assignment， that's maybe the harder one。 this function
     here is maybe a little bit easier。And so well， what I want to do here。 right is
     I want for each of these points， I want to assign it。To one of the clusters。 Okay。
     and and it needs to be the closest one。 So maybe the first thing I'm going to
     do is here。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 如何进行中心点分配，这可能是更困难的一个。这段函数可能简单一点。所以我想在这里做的是，对于这些点，我想将它们分配到一个聚类中。好的，并且需要是最近的那个。所以也许我首先要做的事情是。
 - en: let me just do this K and that data frame。 I going add some columns here。 right。
     This is one of the reasons why I copyied that data frame when I started。 I may
     add a column for each cluster that specifies how close this point is。To that cluster
     and then once I've added those three columns it'll add yet another column that
     says。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我做这个 K 和那个数据框。我会在这里添加一些列。这是我开始时复制那个数据框的原因之一。我可能会为每个聚类添加一列，指定这个点与那个聚类的接近程度，然后一旦我添加了这三列，它将再添加另一列说明。
 - en: well， which one is the closest， which one do I actually want to be in？
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，哪个是最近的，哪个我实际上想要在里面？
 - en: Okay I'm going to do something like that this， I'm going to say loop over all
     the clusters right or I guess the labels。And， and somebody I say for bus and。Well，
     let me loop over this thing。Like so maybe let me just read this。And the way I
     want to loop over it is I'm going to do E tus。🤧Excuse me。And this is right give
     me named tus， so let me do this。Can signed points。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，我要做类似这样的事情，我将遍历所有的聚类，或者说标签。然后，我可能会这样说，好的，让我遍历这个东西。就像这样，可能让我先读一下。我要遍历它的方式是我将做
+    E tus。🤧抱歉。这是给我命名的中心点，所以让我来做这个，已分配的点。
 - en: Then may be looping over these name tus。 And so I know where the center of each
     of these things are。 Okay， and and so now I want to update right I'm updating
     my points in my data frame。And so what I'm going to do is I'm going to look at
     these columns， I'm going to say x0。🤧And I want to compute for each row here the
     distance between that along the x0 axis and that center。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后可能会遍历这些命名的中心点。所以我知道这些东西的中心在哪里。好的，所以现在我想更新，我在数据框中更新我的点。我将查看这些列，看看 x0，并且我想计算每一行在
+    x0 轴上与中心之间的距离。
 - en: right so I'm going to take that minus x0。And I'm going to say that as x0 to
     F。And then I'm going to do the same thing。Along other dimension。And and then what
     I ultimately want to do， let me apologies。 What I ultimately want to do is I want
     to compute the the distance between between these points in the center of the
     cluster。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，我要将那减去 x0，然后我会说那是 x0 到 F。接下来我要做同样的事情，沿着其他维度。然后我最终想要做的，让我道个歉。我最终想要做的是计算这些点之间的距离，这些点位于聚类的中心。
 - en: right So I have I have the differences align these two dimensions。 So the distance。It
     is going to be like this， it's going to be x0 de squared。Plus x1， the。Squared。
     and then taking the square root of all that ass a Euclidean distance。0。5 to take
     this square root。And let me think here， so this is an individual number。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，我已经计算出了这两个维度之间的差异。所以距离将是这样，它将是 x0 的平方加上 x1 的平方，然后取所有这些的平方根，作为欧几里得距离。0.5 来取平方根。让我想想，所以这是一个单独的数字。
 - en: RightI'm looping so but for each pass or loop it's an individual number， this
     is a whole column。 so this is a column， this is a column， really I'm computing
     all the distances at once。哎。And sometimes I say self D。And let me come back to
     this。 This is going to be those distance as I'm adding that new column and what
     I may use for this column name is the cluster that I'm currently in。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 对，我在循环，但是对于每次通过或循环，它是一个单独的数字，这是整列。所以这是一个列，这是一个列，实际上我是在一次计算所有距离。哎。有时候我说 self
+    D。让我回到这个。这将是我添加新列时的那些距离，而我可能会用的列名是我当前所在的聚类。
 - en: Yes， I'm just going to put cluster here。And so now if I run this。I'm not printing
     anything right now。 You know what， let me just clean up this too。 I don't need
     that anymore or better yeah just delete it right and let me look at what happens
     to the data frame after I run that。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的，我将把聚类放在这里。所以现在如果我运行这个。我现在没有打印任何东西。你知道吗，让我把这个也清理一下。我不再需要它，或者更好，直接删除它，然后让我看看在我运行后数据框发生了什么。
 - en: Something horrible， which is。Well it's adding these weird things。 which what
     I really want to you is was to be the cluster name。I do that。And now this is great
     right I can see that I my x0 my x1 and that's a point right and I can say well
@@ -244,98 +323,132 @@
     what I want to want this one to be in right so what I'm going to do right is after
     I've looped and I computed these three columns as I'm going say cell that data
     frame。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 一些可怕的东西，也就是。好吧，它添加了这些奇怪的东西。我真正想要的是聚类名称。我这样做了。现在很好，我可以看到我的 x0 和 x1，这就是一个点，我可以说，那离所有聚类有多远？离加号聚类有多远？离
+    x 聚类有多远？它离所有聚类最近，所以这就是我最终想要的。所以我将做的是，在我循环并计算这三列后，我会说单元格那个数据框。
 - en: And label。I want it to be one of these three。 You know what。 let me just try
     poke around down here first to see how I can get to that。嗯。What I really want
     to look at is I want to look at。I want to look at those three columns there and
     figure out， well。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 而标签。我希望它是这三者之一。你知道吗，让我先试着在这里探索一下，看看我如何能做到这一点。嗯。我真正想看的，是我想查看那三列，想弄清楚，嗯。
 - en: which of these columns has the smallest value in each case。 And and it turns
     out that there is a pans function that does that very easily。 and it's called
     index。And right， and and normally what that's doing right is it's growing column
     by column and telling me。 oh， the smallest value in the old column is at position
     11。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 哪一列在每种情况下具有最小值。而且结果是有一个非常简单的 pans 函数可以做到这一点。它被称为索引。对，通常它的作用是逐列增长并告诉我。哦，旧列中的最小值位于位置
+    11。
 - en: smallest value in the plus column is at position a 78。 that not quite what I
     want right I wanted to go horizontally right So I want to find out all which you
     know instead of looking at these index values over here on the right。 I really
     want to look at the column。Coollumn index here instead and say， well， which of
     these。 which column gives me the smallest。And so I'm going to paste this back
     instead of saying access equals 0。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 加号列中的最小值位于位置 a 78。这不是我想要的，我想要水平移动。所以我想找出所有的，而不是查看右侧这些索引值。我真的想查看这里的列索引，并说，嗯，这些列中哪一列给我最小值。因此，我将粘贴这个，而不是说访问等于
+    0。
 - en: I'm going to say access， know it's vertical， I'm going to say access is equal
     one which is horizontal。 and then I can get all of these classes so I'm going
     to put this back up in here。And。 and I may run this again， right so。Look at my
     data frame。I run that and I can see okay great so I have my original data which
     never changes by the way right the data never changes then I compute the distance
     to each of these clusters and then based on that I'm like。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 我要说访问，你知道它是垂直的，我要说访问等于 1，也就是水平的。然后我可以获得所有这些类，所以我将把它放回这里。我可能会再次运行这个，对吧。看看我的数据框。我运行它，我可以看到，好的，太棒了，我有我的原始数据，顺便说一下，这些数据从未改变。然后我计算与每个聚类的距离，然后根据这个我想。
 - en: okay well this first one， oh is the smallest number so that's an O cluster same
     thing for the second one。 the third one， the smallest value of these three is
     under the x columns that's in the X cluster。I've been able to assign all of these
     points。And and so let me just show you what's going to happen。 right， let me。Youre
     on this again， so here are the points if I do the assignment of points。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，第一个，这是最小的数字，所以这是一个 O 集群，第二个也是同样的。第三个，这三个中最小的值在 x 列下，也就是在 X 集群中。我已经能够分配所有这些点了。那么，让我给你展示一下接下来会发生什么。对了，让我。你又在这里，所以如果我进行点的分配，这里就是这些点。
 - en: you may see that I have question marks。It's saying what each of these are right
     so you see that this circular cluster is really big。 it's actually kind of capturing
     most of these and then this one kind of has opposite problem we have one actual
     cluster and it's being shared between the plus points and the X points over here
     but it is some clustering and now that we've actually kind of started with a bad
     answer。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可能会看到我有问号。它在说这些到底是什么，所以你会看到这个圆形集群真的很大。它实际上捕捉了大部分这些点，而这个则有相反的问题，我们有一个实际的集群，它在这里的加号点和
+    X 点之间共享，但这确实有一些聚类，而现在我们已经开始了一个不太好的答案。
 - en: we can make it we can make it better and the way I'd like to make it better
     is that now that I've kind of decided well which points are in the circle cluster。
     I can kind of find where that circle cluster is right I can see that at this red
     circle here。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以改进一下，我想改进的方式是，现在我已经决定哪些点在圆形集群中。我可以找到那个圆形集群的位置，我可以看到在这个红色圆圈这里。
 - en: that's not a very good real center because that's way to the right of all the
     points that it's representing。And so that one's maybe a little bit easier now
     we're actually going to update these center points。Okay， let me before I do that
     let me do one other thing sometimes notice I'm calling this one and I'm calling
     this one and each time I say KN。 KN， KN。WhenWhen people don't have to return anything
     from their functions， right。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 这不是一个很好的真实中心，因为它位于所有代表点的右侧太远。因此，那个可能更容易一些，现在我们实际上要更新这些中心点。好的，让我在那之前再做一件事，有时我注意到我在调用这个和那个，每次我说
+    KN。KN，KN。当人们不需要从他们的函数中返回任何东西时，对。
 - en: I don't return anything here。What people will often do。 right sometimes they'll
     see this is they'll just return self。RightAnd and the advantage of that is when
     I call this， it does some stuff。And then it returns Km。 and because it's returning
     KM， I can just try to chain this along like that。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 我这里不返回任何东西。人们通常会这样做。对，有时他们会看到这一点，他们只会返回 self。这样做的好处是，当我调用它时，它会做一些事情。然后返回 Km。因为它返回的是
+    KM，我可以像这样尝试链式调用。
 - en: that's one reason you often see people just returning self in a method。 and
     it ultimately we're going to be doing the same thing down here。 but let's actually
     update these centers。And try to do something。And the easiest way to do this。Is
     with a group by， right， I want to。If I go back here。系咩。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是你经常看到人们在方法中只返回 self 的一个原因。最终我们在这里会做同样的事情。但让我们实际更新这些中心点，尝试做点什么。最简单的方法是进行分组，对，我想要。如果我回到这里。系咩。
 - en: Let me do this and look at that data frame again。Ultimately。 what I want to
     do is I want to find the new centroids。 which are kind the average of these columns
     for each label。 And so the way I can do that is I can take group by。为何。That lives
     me。This weird。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我这样做，再看看那个数据框。最终，我想做的是找到新的质心，这些质心是每个标签的这些列的平均值。我要做到这一点的方法是进行分组。
 - en: let me just stop plotting for a moment。 That gives me this weird data group
     by object。But then what I can do is I can compute the means on it。It's like so。
     so this when I do a group by right， that's when I go to the index。Right over here
     on the left。 them by getting the mean over all these other columns。 And you know
     what。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我先暂停绘图。这让我得到一个奇怪的数据按对象分组。但接下来我可以在上面计算均值。就这样。所以，当我进行分组时，对，我会去索引。就在这里，左侧。通过对所有其他列求均值来得到它。你知道吗。
 - en: there's too much stuff there， right， because when I'm competing centroids。 I
     don't really care about the averages of these anymore。 I'm just going to do this。S
     a。I just want my。My X columns。All right， and then then the last thing that's a
     little bit weird is you noticed before。 like when I started label was just a regular
     column， the group by made it not a column。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 那里东西太多了，对吧，因为当我在计算中心点时，我不再关心这些的平均值。我就这样做。S a。我只想要我的X列。好的，然后最后一件有点奇怪的事情是你之前注意到了。就像我开始时，标签只是一个普通列，分组使它变成了不是一列。
 - en: it made it an index。But I didn't really want that， so I'm just going to do a
     reset index here。Right so this little line here right this one line is a quick
     way to compute what I'd like the new clusters to。 you see it has all the same
@@ -344,22 +457,28 @@
     to it right I'm actually saying。 well let's put our clusters at the center or
     our centroids at the center of the cluster of data that they're representing right
     so this one' is going to be very simpler the self-like clusters equals that。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 它让它变成了索引。但我其实并不想这样，所以我只是在这里重置索引。对，所以这一小行代码是快速计算我想要的新聚类的方式。你会看到它与之前的标签x0和x1有相同的数据，但现在我知道我的数据最初是随机的，对吧？糟糕，现在我实际上对它有了一些意义。对，我实际上是说。好吧，让我们把我们的聚类放在数据所代表的中心或中心点上，所以这个将会简单得多，像聚类等于那个。
 - en: And。ItMaybe let me just on。Andm I split this off right so I'm just try to say
     clusters equals that。And doft dot clusters equals。Right， so the first step is
     understanding'm just the mean。Or the centers right of each label， and then just
     try pulling out the columns I want and fixing it up so it's in the original shape。
     right？Let me do this I haven't told it yet right I just called the one we did
     before。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后。可能让我来吧。我把这个分开，所以我只是想说聚类等于那个。然后做`dot clusters`等于。对，所以第一步是理解每个标签的均值或中心，然后试着提取我想要的列，并修复它，使其恢复到原始形状。对吧？让我这样做，我还没告诉它，我只是调用了我们之前做的那个。
 - en: that's the one we usually start with， but now I can can do this right after
     I've assigned those points now I can run the other function and make it better
     right so maybe let me actually you do this and I just plot it here and not plot。But
     let me just look at the original。 So the first off， I don't know anything right。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我们通常开始的地方，但现在我可以在分配了那些点之后做这个，现在我可以运行另一个函数让它更好。所以也许让我实际上这样做，我只是在这里绘图，而不是绘图。但让我看看原始数据。首先，我什么都不知道。
 - en: it's just everything's random。And I do an assign points。That's good。 And then
     after signing the points， then I want to。Do what I want to update the centers。Let
     me just do a quick experiment， I wonder if I can just even put this together in
@@ -367,8 +486,10 @@
     things right。so the data started looking like this， I'm going to assign the points
     to a cluster and then update the cluster centroids right so here I update the
     points。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 这只是所有的东西都是随机的。我做了一些点的分配。这很好。然后在分配了点之后，我想更新中心。让我快速做一个实验，我想知道我是否可以把这一切放在一起，这样会让我生活更简单，太好了，我可以看到这两个东西对吧。所以数据开始看起来像这样，我要把点分配到一个聚类中，然后更新聚类的中心点，对吧，所以在这里我更新了这些点。
 - en: And then you can see。Wait a minute。 What happened here。 Let me just try to start。
     I ran it twice。 I'm sorry。嗯。right so you can see the first thing it did right
     is it assign the points and then it moved it over。 you can kind of see that， you
@@ -376,21 +497,27 @@
     you can see that a couple things happened right like this this red circle moved
     to the left to be closer to we're supposed to be and then this plus is kind of
     encroing and there's no reason for it to be hanging so far out。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后你可以看到。等一下。这里发生了什么？让我试着开始。我运行了两次。抱歉。嗯。对，所以你可以看到它做的第一件事是分配点，然后它把它移动过来。你可以看到这个第一个是分配点，第二个在更新中心点，你可以看到发生了一些事情，比如这个红色圆圈向左移动，靠近它应该在的位置，而这个加号有点靠近，没有理由让它挂得那么远。
 - en: And so if I run these two steps again。Like this， that's going get even even
     better， right。 so I'm going to run that again and now what you see， right is not
     that much happened。Not much well the red points that move originally， right。 and
     that much happened over here on the left。But but you see what happened down here，
     right。
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以如果我再次运行这两个步骤。像这样，这会变得更好，对吧。所以我会再次运行，现在你看到的，不是发生了太多。最初移动的红点不多，而左边这里没有太多发生。但你看到下面发生了什么。
 - en: this plus sign。And I grabbed some more points after it moved in。And so since
     drivinging those points， x is remaining points。I kind of have a great center of
     gravity more to the left right so when I update again。 I'm kind of bumping that
     ax a little bit more to the left right and if I keep running this。
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个加号。我抓住了一些更多的点在它移动之后。因此，由于驱动这些点，x 是剩余的点。我有点将重心更多地向左，所以当我再次更新时，我有点把 ax 再往左推一点，如果我继续这样运行。
 - en: It should keep pumping it farther and farther over， right if I keep。Updating
     this。 it might take a few times。I don't know what I got stuff there There we go
     And and so you can try to actually see I've hit run into a problem here and and
@@ -400,48 +527,66 @@
     it basically has to get worse before gets's better right so trying to hit what
     we might call a local minimum And so while how do I solve that it turns out there's
     not a bug in my code I got unlucky。
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 它应该继续向更远处泵送，没错，如果我继续。更新这个。可能需要几次。我不知道我在那儿得到了什么。好了，所以你可以尝试实际看看，我遇到了一个问题，问题是我遇到了一个局部最小值，我能清楚地看到，如果这个红点，红圈抬到顶部会更好，然后这个
+    actx 抓住下面的聚类，但它没有这样做，因为基本上它必须变得更糟才能变得更好，所以尝试达到我们可能称之为局部最小值。而解决这个问题的方法是，结果并不是我的代码有bug，我只是运气不好。
 - en: And I was anticipating this it all happen， but it's a nice opportunity to talk
     about it。 And I got unlucky because of where。Where these starting clusters were
     right I kind of randomly decided where the starting clusters were and they happen
     to be a point where it didn' kind of gravitate towards the three actual clusters
     and it turns out that this is a problem in every implementation if I go to the
     real one。
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 我预期这一切会发生，但这是一个谈论它的好机会。我运气不好是因为这些起始聚类的位置。我有点随机决定了起始聚类的位置，它们恰好在一个不太吸引这三个实际聚类的点上，而这在每个实现中都是一个问题，如果我去真正的实现。
 - en: It will have this thing here， which is the number of times we should try running
     the algorithm。And and each time right it's kind of starts off with different starting
     points and then randomly updates it and the hope that it converges right and so
     then it'll take the best of those And so I wasn't anticipating that it happening
     during the demo right because it didn't happen when I practice before。
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 它会有这个东西，表示我们应该尝试运行算法的次数。每次它都会从不同的起始点开始，然后随机更新，希望它能够收敛，然后它会选择其中最好的一次。我没有预料到它会在演示中发生，因为在我之前的练习中并没有发生。
 - en: but I'm going to redo it now so I'm going to leave my data alone and I'm going
     to see what happens。When I come up， I kind of randomly generate my starting points。Though
     I may start with these as my three starting points now。 and remember the default
     right when we're eventually using SK learnn is wherere going to start over 10
     different times and see what happens each time。
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我现在要重做，所以我要让我的数据保持不变，看看会发生什么。当我开始时，我有点随机生成我的起始点。尽管我现在可能将这三个作为我的起始点。记住，默认情况下，当我们最终使用
+    SK learn 时，会从 10 个不同的起始点开始，看看每次会发生什么。
 - en: That when I run Ns。Let me。You know what， let me。I don't want to have any old
     plots that are confusing。 confusing things。I going to do this。 I may say， that's
     my starting point， I I say can。Sign points plot。That was what it was called， write
     assign points and then update。Second stop update centers， right so I'm going to
     do that。
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我运行 Ns。让我。你知道吗，让我。我不想有任何旧图，弄混淆了事情。我会这样做。我可能会说，这是我的起始点，我可以。标记点绘制。那就是它被称为的，标记点然后更新。第二步更新中心，所以我会这样做。
 - en: And okay I can see that I assigned the points and then updated the centers and
     now I can see I got luckier this time and it's not perfect right I can see that
     at this point there's still some weirdness right that this one is reassigned over
     here。 but if I keep even just a couple passes it actually quickly finds out where
     the three clusters are right and usually be somewhere in between there maybe it
     takes a few times actually converge on the right thing。
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，我可以看到我分配了点，然后更新了中心，现在我可以看到这次我运气更好，虽然不完美，对吧，我可以看到此时仍然有一些奇怪的地方，尤其是这个在这里被重新分配了。但如果我继续进行几轮，它实际上很快就能找到三个聚类的位置，通常会在这之间，也许需要几次才能真正收敛到正确的地方。
 - en: '![](img/8fbf50c44e48638bdf2bd3d414bd41f5_3.png)'
+  id: totrans-61
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8fbf50c44e48638bdf2bd3d414bd41f5_3.png)'
 - en: Okay。![](img/8fbf50c44e48638bdf2bd3d414bd41f5_5.png)
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的。![](img/8fbf50c44e48638bdf2bd3d414bd41f5_5.png)
