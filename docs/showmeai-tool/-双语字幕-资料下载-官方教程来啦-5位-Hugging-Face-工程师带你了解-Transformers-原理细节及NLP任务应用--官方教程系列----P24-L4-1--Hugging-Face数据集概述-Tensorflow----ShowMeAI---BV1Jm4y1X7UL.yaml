@@ -1,69 +1,95 @@
 - en: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
     - P24：L4.1- Hugging Face数据集概述(Tensorflow) - ShowMeAI - BV1Jm4y1X7UL
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】官方教程来啦！5位Hugging Face工程师带你了解Transformers原理细节及NLP任务应用！＜官方教程系列＞ - P24：L4.1-
+    Hugging Face数据集概述(Tensorflow) - ShowMeAI - BV1Jm4y1X7UL
 - en: The E phase dataset sets library， a quick overview。So you can F dataet library。
     is a library that provides an API to quickly download many public's data sets
     and pre them。In this video， we'll explore to do that。So don part is easy with
     a load data set function。You can directly download and cache the dataset set from
     its silent if I own the dataset set hub。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: E phase数据集库的快速概述。你可以F数据集库，这是一个提供API以快速下载许多公共数据集并预处理它们的库。在这个视频中，我们将探讨如何做到这一点。所以部分是通过load
+    data set函数轻松完成的。你可以直接从其网站下载并缓存数据集，如果我拥有数据集集的中心。
 - en: Here we fetch she I our PC data set from the crew benchmarkch。It's a dataset
     set containing pair sentences， where the task is to determine the paras。The object
     returned by the Lu dataset function is the dataset diict。 which is a sort of dictionary
     containing each split of a dataset。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里我们从crew benchmarkch获取我们的PC数据集。它是一个包含成对句子的集合，任务是确定配对。Lu数据集函数返回的对象是数据集字典，这是一种包含每个数据集切分的字典。
 - en: We can access each split by indexing with its name。This split is then an instance
     of the datasetet class with cons。Here， sentence1， sentence2。 level and IDX， and
     ruless。You can access a given element by its index。The amazing thing about the
     Uing phase Data library is that everything is safe to disk using upper Sharo。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以通过索引名称访问每个切分。这个切分是数据集类的一个实例，包含句子1、句子2、级别和IDX，以及规则。你可以通过索引访问给定元素。Uing phase数据库的惊人之处在于，一切都是安全地使用上层Sharo保存到磁盘的。
 - en: Which means that even if your dataset is huge， you won't get out of run。When
     these statements are request areed in memory。Accessing a slice of your dataset
     is as easy as one element。The result is when the dictionary with list of values
     for each case。Here a list of labels。 the list of first sentences， and the list
     of second sentences。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 这意味着即使你的数据集庞大，你也不会耗尽内存。当这些语句在内存中请求时，访问数据集的一个切片就像访问一个元素一样简单。结果是一个字典，包含每个案例的值列表。这里是标签列表、第一句的列表和第二句的列表。
 - en: The features attributee to a data set gives us more information about its columns。In
     particular。 we can see here it gives us a correspondence between the integers
     and names of the labels。0 stands for net equivalent and one for equivalent。To
     purposes all the elements of a data set。 we need to tokenize them。Have a look
     at the video， preed sentence pairs for a refresher。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据集的features属性为我们提供了关于其列的更多信息。特别地，我们可以看到它在这里提供了整数和标签名称之间的对应关系。0代表净等价，1代表等价。为了处理数据集的所有元素，我们需要对其进行分词。看看视频，预处理句子对以进行复习。
 - en: But you just have to send the two sentences to the documentkenizer with some
     additional keyword argument。Here we indicate the maximum length of 128 and pad
     inputs shorter than these length fromcate inputs that are longer。We put all of
     these in the tokenized function that we can directly apply to all the sps in our
     data set with the map method。As long as the function returns the dictionary object。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 但你只需要将这两句发送给文档分词器，并附加一些关键字参数。这里我们指定最大长度为128，并将短于此长度的输入进行填充，长于该长度的输入则被截断。我们将所有这些放入分词函数中，可以直接通过map方法应用于数据集中的所有sps。只要函数返回字典对象。
 - en: the map method will add new columns as needed or update existing ones。To speed
     up preposing and take advantage of the fact that autocanizer is backed by rust。
     thanks to the tick phase tokenizer's library， we can process several elements
     at the same times in autoized function using the batch called true argument。Since
     the tokenizer can list of first or second sentences。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: map方法会根据需要添加新列或更新现有列。为了加快预处理，并利用分词器由rust支持的事实，感谢tick phase分词器的库，我们可以使用batch为true参数在自动化函数中同时处理多个元素。因为分词器可以列出第一句或第二句。
 - en: the tokenase function does not need to change from this。You can also use multi
     processingces with the map method， check out its documentation link below。Once
     this is done， we are almost ready for training。We just remove the columns we don't
     need anymore with the remove columns method。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 分词函数不需要从这里改变。你还可以使用多处理和map方法，查看下面的文档链接。完成后，我们几乎准备好进行训练。我们只需使用remove columns方法移除不再需要的列。
 - en: We name label2 labels since the model from the Tom library expect that。And set
     the output format with desired backend， torch， pencilsor F on impact。If needed。
     we can also generate a short sample of a data set using the select method。![](img/f6041b007d37d801ffac34c82c22471c_1.png)
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将label2命名为labels，因为Tom库中的模型期望如此。并设置所需后端的输出格式，torch，pencilsor F影响。如果需要，我们还可以使用select方法生成数据集的短样本。![](img/f6041b007d37d801ffac34c82c22471c_1.png)
 - en: '![](img/f6041b007d37d801ffac34c82c22471c_2.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f6041b007d37d801ffac34c82c22471c_2.png)'
 - en: 。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 。

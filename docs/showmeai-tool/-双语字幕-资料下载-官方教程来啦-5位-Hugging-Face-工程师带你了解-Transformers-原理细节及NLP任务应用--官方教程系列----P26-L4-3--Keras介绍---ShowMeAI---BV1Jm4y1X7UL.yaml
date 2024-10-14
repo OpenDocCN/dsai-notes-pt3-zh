@@ -1,73 +1,105 @@
 - en: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
     - P26：L4.3- Keras介绍 - ShowMeAI - BV1Jm4y1X7UL
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
+    - P26：L4.3- Keras介绍 - ShowMeAI - BV1Jm4y1X7UL
 - en: '![](img/eb8701c93d4ca852bec8b5e00e0fc6a1_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/eb8701c93d4ca852bec8b5e00e0fc6a1_0.png)'
 - en: In this video， I'm going to give you a very quick introduction to how our transformer
     models work together with TensorFlow and Kas。The very short explanation is that
     all of our TensorF models are also Keis model objects。 and so they have the standard
     KeIS model API。😊，If you're an experienced machine learning engineer who's used
     Kais a lot。 that's probably all you need to know to start working with them， but
     for everyone else。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个视频中，我将给你一个关于我们的 Transformer 模型如何与 TensorFlow 和 Keras 协同工作 的简要介绍。非常简单的解释是，我们所有的
+    TensorFlow 模型也是 Keras 模型对象，因此它们拥有标准的 Keras 模型 API。😊 如果你是一个有经验的机器学习工程师，已经频繁使用 Keras，那可能这就是你开始与之合作所需知道的一切，但对于其他人来说。
 - en: including the prodigal Pytorrch engineers out there who are returning to the
     fold。 I'm going to quickly introduce Keis models and how we work with them。In
     other videos。 which I'll link below， I'll run through training with Keis models
     in more detail， but first。 at a high level， what is a Keis model？
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 包括那些回归的浪子 PyTorch 工程师。我将迅速介绍 Keras 模型以及我们如何与它们合作。在我下面链接的其他视频中，我将更详细地讲解 Keras
+    模型的训练，但首先，从高层次上看，Keras 模型是什么？
 - en: '![](img/eb8701c93d4ca852bec8b5e00e0fc6a1_2.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/eb8701c93d4ca852bec8b5e00e0fc6a1_2.png)'
 - en: So your model basically contains your entire network。 it contains the layers
     and the weights for those layers and also tells the model what to do with them。
     so it defines the whole path all the way from your inputs to your outputs。If you've
     used Keis before， you probably started using model objects by building them out
     by hand。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，你的模型基本上包含了整个网络。它包含这些层和层的权重，并且还告诉模型如何处理这些权重。因此，它定义了从输入到输出的整个路径。如果你以前使用过 Keras，可能是通过手动构建模型对象来开始的。
 - en: you added one layer after another， maybe using the model dot ad or the functional
     approach。And there's nothing wrong with that。 you can lots of great models are
     built that way。 but you can also preload an entire model weights and all。 And
     this is really helpful because if you as you can see here。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以一个层一个层地添加，也许使用 model.dot.add 或功能性方法。这没什么错，很多出色的模型都是这样构建的。但你也可以一次性加载整个模型，包括权重。这非常有帮助，因为如你所见。
 - en: if you try reading the paper or if you try looking at the code。 you'll see the
     inside of a transformer is pretty complex and writing it all out from scratch
     and getting it right would be hired even for an experienced machine learning engineer。
     but because it's all packed inside a model， you don't need to worry about that
     complexity on that if you don't want to。 if you're a researcher if you want to
     really dig in there， you can。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你尝试阅读论文或查看代码，你会发现 Transformer 的内部结构相当复杂，从头开始编写并准确实现这一切对于一位有经验的机器学习工程师来说也是一项艰巨的任务。但因为这一切都打包在模型内部，如果你不想担心那种复杂性，你就不需要担心。如果你是一名研究人员，想深入探讨，当然可以。
 - en: but you can also just load a pre-trained preconfigured transformer model in
     just one line of code。😊。![](img/eb8701c93d4ca852bec8b5e00e0fc6a1_4.png)
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 你还可以仅用一行代码加载一个预训练的、预配置的 Transformer 模型。😊。![](img/eb8701c93d4ca852bec8b5e00e0fc6a1_4.png)
 - en: And when I mentioned earlier about the KaIS API， the advantage of it is that
     whether you write your own model from scratch or load a pre-trained one。 you interact
     with the model through that same API so you use exactly the same few methods and
     you're going to see them again and again these methods like fit。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我早些时候提到 Keras API 时，它的优势在于，无论你是从头开始编写自己的模型，还是加载一个预训练的模型，你都通过相同的 API 与模型互动，因此你使用的正是那些少数相同的方法，你会一次又一次地看到这些方法，比如
+    fit。
 - en: compile and predict and like I mentioned will see cover concrete examples of
     how to use those methods in the videos I'll link below For now。 the key thing
     to take away from this video if you've never seen Keis before is that this neat
     encapsulation means that all the complexity of a huge neuralnet becomes manageable
     because you interact with it in exactly the same way using exactly the same methods。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 编译和预测，正如我提到的，我们将看到具体的示例，展示如何在我下面链接的视频中使用这些方法。现在，要从这个视频中带走的关键点是，如果你以前从未见过Keras，那么这种整洁的封装意味着庞大的神经网络的所有复杂性变得可管理，因为你以完全相同的方式与之互动，使用完全相同的方法。
 - en: '![](img/eb8701c93d4ca852bec8b5e00e0fc6a1_6.png)'
+  id: totrans-11
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/eb8701c93d4ca852bec8b5e00e0fc6a1_6.png)'
 - en: Whether it's a huge pretrained language model or a simple model you wrote out
     by hand。![](img/eb8701c93d4ca852bec8b5e00e0fc6a1_8.png)
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 无论是一个巨大的预训练语言模型，还是你手动编写的简单模型。![](img/eb8701c93d4ca852bec8b5e00e0fc6a1_8.png)
 - en: 。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 。

@@ -1,71 +1,103 @@
 - en: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
     - P25：L4.2- 预处理句对数据集(TensorFlow) - ShowMeAI - BV1Jm4y1X7UL
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
+    - P25：L4.2- 预处理句对数据集(TensorFlow) - ShowMeAI - BV1Jm4y1X7UL
 - en: How to pre pair of sentences？We are seen to toize single sentences and batch
     them together in the batching inputs together video。If this code looks unfamiliar
     to you， be sure to check that video again。Here we'll focus on tasks that classifiedify
     pairs of sentences。For instance。 we may want to clarify whether two texts are
     or phrases or not。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 如何处理句子对？我们看到将单个句子进行归类并在批量输入视频中一起批量处理。如果这段代码对你来说不熟悉，一定要再看一遍视频。这里我们将专注于分类句子对的任务。例如，我们可能想要澄清两个文本是否是短语。
 - en: Here is an example account from the Q question P status Det。 which focuses on
     identifying duplicate questions。In the first pair。 the two questions are duplicate
     in the second panel。![](img/1b491d69779a6742b9b5b44918621bc4_1.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是来自Q问题P状态Det的一个示例，专注于识别重复问题。在第一个对中，这两个问题是重复的，在第二个面板中。![](img/1b491d69779a6742b9b5b44918621bc4_1.png)
 - en: And the word classification problem is when we want to know if two sentences
     are logically related on that。A program called natural language inference or NI。In
     this example。 taken from the multianaly dataset set。Whether the pair of sentences
     for each possible label。 contradiction， not what or entailment， which is a fancy
     way of saying the first sentence implies the second。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 词分类问题是当我们想知道两个句子在逻辑上是否相关。一个名为自然语言推理（natural language inference，NI）的程序。在这个例子中，取自多分析数据集，判断每对句子是否符合可能的标签：矛盾、无关或蕴涵，这是一种
+    fancy 的说法，表示第一个句子暗示第二个句子。
 - en: '![](img/1b491d69779a6742b9b5b44918621bc4_3.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1b491d69779a6742b9b5b44918621bc4_3.png)'
 - en: So classifying pair or sentences is a problem worth studying。In fact， in the
     group benchmark。 which is an academic benchmark for text classification。 eight
     of the 10 data sets are focused on tasks using pairs or sentences。That's why models
     like Pert are often portray with a dual objective。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，分类句子对是一个值得研究的问题。实际上，在小组基准测试中，这是一个学术性文本分类基准，10个数据集中的8个集中在使用句子对的任务上。这就是为什么像Pert这样的模型通常呈现出双重目标。
 - en: Under top as a language modeling objective， they often have an objective when
     it to sentence spells。For instance， during pering， B is shownwn pairs of sentences
     and must predict both the value of random new mask tos。And whether the second
     sentence follows from the first or not。Fortunately。 took from the Toms Library
     as a ICPI to deal with pairs sentences。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 在作为语言建模目标的顶层，它们通常在句子拼写方面有一个目标。例如，在对比过程中，B会被展示一对句子，并必须预测随机新掩码的值，以及第二个句子是否从第一个句子推导而来。幸运的是，取自Toms库作为ICPI来处理句子对。
 - en: You just have to pass them as two arguments to the tokenizer。And top as the
     input ideas and the attention mask we studied already。 it returns a new field
     called token typeidees， which tells the model which tokens belong to the first
     sentence。And which ones belongs to the second sentence？Som in a little bit here
     how the input IDs align with the it tokens we correspond 2 for token type ID。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 你只需将它们作为两个参数传递给分词器。而作为输入的 top 和我们已经研究过的注意力掩码，它会返回一个名为 token type ID 的新字段，告诉模型哪些
+    token 属于第一个句子，哪些属于第二个句子？在这里稍微看看输入 ID 如何与我们对应的 token type ID 对齐。
 - en: and attention mask。We can see the tokenizer also added special tokens， so we
     have the CS token。 su tokens from the first sentence， a step token， the token
     from the second sentence。 and a final step token。If we have several pair sentences。
     we can toize them together by passing the list of first sentences and the list
     of second sentences。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 以及注意力掩码。我们可以看到分词器还添加了特殊 tokens，所以我们有 CS token，从第一个句子的 su tokens，一个步骤 token，来自第二个句子的
+    token，以及最后的步骤 token。如果我们有多个句子对，可以通过传递第一个句子列表和第二个句子列表将它们一起处理。
 - en: And also keyword arguments we studied already like patting equal to。![](img/1b491d69779a6742b9b5b44918621bc4_5.png)
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 同时，关键词参数我们已经研究过，比如填充等于。![](img/1b491d69779a6742b9b5b44918621bc4_5.png)
 - en: Zooming in as a result， we can see how the tokenizer added padding to the certain
     pair of sentences to make the two outputs system length。It's also properly dealt
     with to contain AD Ds and attention nice for the two sentences。![](img/1b491d69779a6742b9b5b44918621bc4_7.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 放大后，我们可以看到分词器如何为特定的句子对添加填充，使两个输出系统长度一致。它还恰当地处理了AD Ds和关注机制，以适应这两个句子。![](img/1b491d69779a6742b9b5b44918621bc4_7.png)
 - en: This is then already to pass from model。![](img/1b491d69779a6742b9b5b44918621bc4_9.png)
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就已经可以从模型中传递出去。![](img/1b491d69779a6742b9b5b44918621bc4_9.png)
 - en: '![](img/1b491d69779a6742b9b5b44918621bc4_10.png)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1b491d69779a6742b9b5b44918621bc4_10.png)'
 - en: 。Yeah。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 。是的。
