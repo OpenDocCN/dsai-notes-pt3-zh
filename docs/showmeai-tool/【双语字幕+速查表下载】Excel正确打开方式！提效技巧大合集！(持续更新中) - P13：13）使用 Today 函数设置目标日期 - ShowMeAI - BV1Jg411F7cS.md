@@ -1,0 +1,97 @@
+# 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P13：13）使用 Today 函数设置目标日期 - ShowMeAI - BV1Jg411F7cS
+
+![](img/d8974f7ce33cfe5ad17d3a61064b8aa3_0.png)
+
+In this tutorial， I'm going to show you an Excel function。 and that function is the today function。
+
+ Let's look at how it works。 I've got a spreadsheet here that we'll be using in just a minute。
+
+ but for now， I'm just going to go down in the lower right corner and zoom in a little bit。
+
+ I'd like to get to about 1070%。 and I'll just click in a cell。 let's say cell B3。
+
+ and I'll just type equals。 So this cell equals today。
+
+ and then all you have to do is type a left parenthesis and a right parenthesis。
+
+ and then tap enter or return on your keyboard。 and it gives you today's date。
+
+ So thinking about this， how could this be useful。 Well， maybe you'll be printing your spreadsheet。
+
+ And every time you print， you want to know what day it was when you printed it。
+
+ You want a record of that。 You could just make a cell that has this function and formula in it and then go ahead and print and the date will always be printed there。
+
+ So that's just one example。 There are many situations。
+
+In which using the today function would be useful。 But just for fun， I've put in some holidays here。
+
+ and I'd like it to automatically generate how many days until those holidays。 Now。
+
+ I hope that you'll see that you could also use this for other things。
+
+ maybe there's a target date coming up。 an event that's approaching that your team is looking forward to or working toward you could do the same kind of thing。
+
+ So the first thing I'm gonna do is delete this。 We don't need that sitting there。
+
+ And let's say this spreadsheet has all sorts of other data already on it。
+
+ I wouldn't want to interfere with the data that's already there。
+
+ So what I'm gonna do is I'm gonna go down here to the lower left corner。
+
+ click the plus sign to get sheet number two。 And again， I'll zoom in a bit。
+
+ and I'll just put in my formula here equals today left and right parentheses hit enter or return。
+
+ So that's always going generate today's date every time I open the spreadsheet。
+
+ And then I'll click here on B and I'll type in the date for Halloween。
+
+ So there it is And now all I have to do is go back to。Sheheet1 and click here in cell E2。
+
+ and I'll type equals。 So this cell equals， and then I'll just click here on sheet2 in the lower left。
+
+ it equals this date and notice what is entered here on the formula bar。
+
+ It's just put the cell reference from sheet 2。 So this cell。
+
+ and then I'll just click up there and type minus this cell。
+
+ and then I'll tap enter or return on the keyboard。 there are 26 days until Halloween。
+
+ Now I can easily do the same thing for Thanksgiving giving Christmas and New Year's Day。
+
+ As far as my formula up here is concerned。 all I have to do is click on it and then click on the lower right corner and use the autofill handle to click and drag and copy this formula down all the way to4。
+
+ But now I need to enter the dates for these three additional holidays。
+
+ So give me a minute to do so and then I'll resume the video。 Allright。
+
+ you can see that I've entered all of those dates for the upcoming holidays。
+
+ Now I can just go to sheet。1， and repeat the process that I did up here for Halloween。
+
+ Just click type equals， and then go to sheet2。 It equals Thanksgiving Day minus today's date。
+
+ tap enter， Sam for Christmas。 This cell is equal to sheet2 Christmas day。
+
+ And then I go up here to the formula bar。 minus today's date， enter and New Year's Day。
+
+ This cell is equal to sheet 2， New Year's Day， minus today's date。 tap enter。
+
+ And now I have a built in tracker， letting me know how many days until certain exciting target dates。
+
+ And the way I've set this up。 these target dates are set in sheet2。
+
+ And that way it's separate away from the data that I'll be using on a day to day basis here in this spreadsheet。
+
+ So I hope that you'll identify ways that you can use this。 maybe add it to your spreadsheets。
+
+ letting you know when something is due。Maybe it could be a reminder for when certain data needs to be posted or certain goals need to be accomplished。
+
+ Thanks for watching。 I hope you found this tutorial to be helpful。 If you did。
+
+ please click the like。
+
+![](img/d8974f7ce33cfe5ad17d3a61064b8aa3_2.png)
