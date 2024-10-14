@@ -1,97 +1,132 @@
 - en: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
     - P31：L5.2- 推送(模型)到hub API - ShowMeAI - BV1Jm4y1X7UL
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】官方教程来了！5位Hugging Face工程师带你了解Transformers原理细节及NLP任务应用！＜官方教程系列＞ - P31：L5.2-
+    推送(模型)到hub API - ShowMeAI - BV1Jm4y1X7UL
 - en: Let's have a look at the push to everyPI。Just before recording this video。 I
     mentioned the bad model and to the C M PCC dataset set。We won't go over the find
     your code here because you can find it in any transformer tutorial or by looking
     at the videos link below。What interests us here is what happens when the training
     is finished and we've got metrics we're happy about。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们来看看推送到每个API。就在录制这个视频之前，我提到了坏模型和C M PCC数据集。我们在这里不会详细讨论代码，因为你可以在任何Transformers教程中找到它，或者查看下面的视频链接。我们关心的是当训练结束且我们得到了满意的指标时会发生什么。
 - en: This video requires you to one sign up for an account under the Eingfeaz。go
     website and two。 have your authentic taken to that website stored， which can easily
     be done by typing Erfacese CI login into a terminal or like this in a Coab notebook
     by using an exclamation mark。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个视频要求你首先在Hugging Face网站上注册一个账户，其次，你需要将你的身份验证令牌存储到该网站，这可以通过在终端中输入`huggingface-cli
+    login`或在Colab笔记本中使用感叹号的方式轻松完成。
 - en: This command won't work if you are using a regular Jupiter notebook。 so if you
     are using that and don't have access to a terminal。 you'll need to copy your access
     token from the Ugenfeest。go website into the training arguments。 I'll show you
     where exactly in a little bit。With that done。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你使用的是常规的Jupyter笔记本，该命令将不起作用。因此，如果你在使用它且没有访问终端的权限，你需要将你的访问令牌从Hugging Face网站复制到训练参数中。我稍后会告诉你确切的位置。完成后。
 - en: the pusher API willarrow to a to the face our model， its configuration。 and
     the associated tokenizer。To use it inside the trainer。 you have to make sure to
     set push2 equal2 inside the training argument。We can specify a Mo ID for repository。Which
     will defaultote to the name of the output here if we don't say anything。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 推送API将允许我们将模型及其配置和相关的tokenizer推送到hub。要在训练器中使用它，必须确保将push2设置为训练参数中的equal2。如果不指定Mo
+    ID，默认将使用输出的名称。
 - en: We can push to an organization as long as we're a member of that organization。
     and this is where your aging Fe account should be past if you need to。Weeverof
     is done。 we can call Twinner that pushtub once the training is finished。In future
     developments。 we'll add the ability to automatically push to the app at the end
     of each epoC or every given number of steps。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 只要我们是该组织的成员，就可以推送到组织。如果需要，这里应该是你的Hugging Face账户所在的位置。推送完成后，我们可以在训练结束时调用Twinner来执行推送。未来的发展中，我们将添加在每个epoch结束或每给定步数后自动推送到应用的功能。
 - en: so stay tuned。The command returns a URL for a specific commit which well be
     able to inspect if we copy it in our browser just before checking that。 not that
     if you are not using the trainer API， you can directly push your model and your
     tokenazer to the by using the push to have method。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以请继续关注。该命令返回特定提交的URL，我们可以在浏览器中检查，如果我们在检查之前复制它。请注意，如果你不使用训练器API，你可以通过使用push方法直接推送模型和tokenizer。
 - en: By passing the commator in my browser， I can access my repository called Fine
     should beltt MPC as expected。And see， that of filess have been added。A model count，
     the configuration of the model。 the model weight， the tons of bond runs， and all
     the files required by the tokenizer。The trainer drafted a model card follows，
     which contained the final results on the evaluation set。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过在浏览器中访问该提交，我可以访问名为Fine-tuned MPC的仓库，并看到已添加的文件。包括模型计数、模型配置、模型权重、运行的日志以及tokenizer所需的所有文件。训练器草拟的模型卡包含了评估集上的最终结果。
 - en: the training output parameters， the intermediate training results。 as well as
     the frameworks I was using。If I click editit model card to see the raw content。
     I can see the trainer also generated a table of metadata that the Ugingfaceco
     website is going to use to properly apply field first to my model。I can also directly
     access the tons board runss inside the model hub by clicking training metrics
     here。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 训练输出参数、中间训练结果以及我使用的框架。如果我点击编辑模型卡以查看原始内容，可以看到训练器还生成了一张元数据表，Hugging Face网站将使用这些数据来正确应用领域到我的模型中。我还可以通过点击这里的训练指标直接访问模型库中的运行情况。
 - en: Now that the model is in developed， we can use it from anywhere with the from
     betweentrain method。We just have to use the identifier from the E and we can see
     that the model configuration and weights are automatically downloaded。We can use
     this model as we would any transformers model， for instance。 by readinging it
     in a pipeline。Since the MRPC dataset set is a dataset set of parallel sentences。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在模型已经开发完成，我们可以通过`from betweentrain`方法从任何地方使用它。我们只需使用E中的标识符，就可以看到模型配置和权重会自动下载。我们可以像使用任何变换器模型一样使用这个模型，例如，通过在管道中读取它。由于MRPC数据集是一组平行句子。
 - en: where the task is to determine if two sentences are paras of one another or
     not。 we use it on two sentences separated by S。It's a little bit disappointing
     to see that it's predicting label zero。That's because I didn't specify any label
     when I created the model configuration。Fixing this is super easy with a push to
     a APIP。First。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 任务是确定两个句子是否相互为段落。我们在两个句子之间用S进行操作。看到它预测标签为零有点令人失望。这是因为我在创建模型配置时没有指定任何标签。修复这个问题通过推送到APIP是非常简单的。首先。
 - en: we can fix the configuration locally by setting label to AD and add to label
     with a proper value。 then we can push the fixed con to our report with the push
     to a method。Once again。 please return the URL of a commit， which we could inspect
     and see the exact inside the config。And note that the command is going super fat
     because I'm using the same local folder as before。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以通过将标签设置为AD并用适当的值添加到标签，来在本地修复配置。然后我们可以通过推送到某个方法，将修复后的内容推送到我们的报告中。再一次，请返回一个提交的URL，以便我们可以检查并查看配置的具体内容。请注意，由于我使用的是之前的相同本地文件夹，命令执行得非常快。
 - en: which on which my report is already clone。Once this is done and we create a
     new pipeline。 we can see the new configuration is automatically downloaded thanks
     to the building pursuing system and we get the new label。We can also play with
     the model directly on its model card。Bypaing the text was using and clicking Comp。I
     just have to wait a little bit of time before the model is loaded on the inference
     API and displays the result。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 我报告的克隆已经完成。一旦完成并创建新的管道，我们可以看到新的配置会自动下载，这要感谢构建追踪系统，并且我们得到了新的标签。我们也可以直接在模型卡上与模型进行互动。通过使用文本并点击Comp。我只需等一段时间，直到模型在推理API上加载并显示结果。
 - en: When the mod is loadedted， we can double check， we get the same results as before。
     directly on the Wiidget。![](img/6cf4bd9efdb86360f2e26a7c6c7e3239_1.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 当模型加载完成后，我们可以进行双重检查，确认我们得到的结果与之前相同，直接在Wiidget上！[](img/6cf4bd9efdb86360f2e26a7c6c7e3239_1.png)
 - en: Try to push to a VPA on your models today。![](img/6cf4bd9efdb86360f2e26a7c6c7e3239_3.png)
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 尝试今天将模型推送到VPA上！[](img/6cf4bd9efdb86360f2e26a7c6c7e3239_3.png)
 - en: Yeah。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的。

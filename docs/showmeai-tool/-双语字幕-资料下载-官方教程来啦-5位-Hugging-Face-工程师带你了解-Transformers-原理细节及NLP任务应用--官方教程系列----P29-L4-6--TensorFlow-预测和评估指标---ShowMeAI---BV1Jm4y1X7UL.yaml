@@ -1,90 +1,125 @@
 - en: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
     - P29：L4.6- TensorFlow 预测和评估指标 - ShowMeAI - BV1Jm4y1X7UL
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】官方教程来了！5位 Hugging Face 工程师带你了解 Transformers 原理细节及 NLP 任务应用！＜官方教程系列＞
+    - P29：L4.6- TensorFlow 预测和评估指标 - ShowMeAI - BV1Jm4y1X7UL
 - en: In our other videos。 and as always， there'll be links below if you want to check
     those out。 We showed you how to initialize and finet a transformer model in Tensorflow。
     So the question now is。 what can we do with a model after we train it。 The obvious
     thing to try is to use it to get predictions for new data。 So let's see how to
     do that， Again， if you're familiar with Kais。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们其他的视频中，和往常一样，如果你想查看这些，下面会有链接。我们展示了如何在 Tensorflow 中初始化和微调一个 transformer 模型。那么现在的问题是，训练后我们可以用这个模型做什么？显然要尝试的是用它对新数据进行预测。那么让我们看看怎么做，再次，如果你熟悉
+    Kais。
 - en: The good news is that because these are just standard caris models。 we can use
     the standard Keis predict method as shown here。😊。You simply pass in tokenized
     text to this method like you'd get from a tokenizer and you get your results。Our
     models can output several different things， depending on the options you said。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 好消息是，因为这些只是标准 caris 模型，我们可以使用标准的 Keis 预测方法，如此处所示。😊。你只需将标记化的文本传递给这个方法，就像你从标记器中得到的结果一样，你就能获得你的结果。我们的模型可以根据你设置的选项输出几种不同的内容。
 - en: but most of the time， the thing you want is the output logts。 If you haven't
     come across them before， Los sometimes pronounced logits。 because no one's sure
     are the outputs of the last layer of the network because before a softm has been
     applied。 So if you want to turn the logics into the model's probability outputs。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 但大多数时候，你想要的东西是输出 logts。如果你之前没有遇到过，它们有时被称为 logits，因为没有人确定，它们是网络最后一层的输出，因为在应用
+    softm 之前。所以如果你想将 logics 转换为模型的概率输出。
 - en: you just apply a softm like so。What if we want， But what if we want to turn
     those probabilities into class predictions。 Again， it's very straightforward。
     We just pick the biggest probability for each output。 and you can get that immediately
     with the Argm function。 Argmax will return the index of the largest probability
     in each row。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 你只需像这样应用一个 softm。那么如果我们想把这些概率转化为类预测呢？再次，这非常简单。我们只需为每个输出选择最大的概率，并且你可以立即通过 Argm
+    函数获得这一结果。Argmax 将返回每一行中最大概率的索引。
 - en: which means that it will get a vector of integers， So 0。 if the largest probability
     was in the zeroth position，1 in the first position and so on。 So these are our
     class predictions indicating class 0， class 1 and so on。 In fact。 if class predictions
     are all you want。 you can skip the softm step entirely because the largest logic
     will always be the largest probability as well。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 这意味着它将得到一个整数向量，如果最大概率在第零位置，则为 0，在第一位置则为 1，依此类推。因此这些是我们的类预测，表示类 0，类 1 等。实际上，如果你只想要类预测，你可以完全跳过
+    softm 步骤，因为最大 logits 总是最大概率。
 - en: 😊，So if probabilities and class predictions are all you want。 then you've seen
     everything you need at this point。 but if you're interested in benchmarking your
     model or using it for research。 you might want to delve deeper into the results
     you get and one way to do that is to compute some metrics for the model's predictions。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，所以如果你只想要概率和类预测，那么此时你已经看到了所有需要的内容。但如果你对基准测试你的模型或用于研究感兴趣，你可能想深入探讨一下你得到的结果，计算模型预测的一些指标是一种方法。
 - en: If you're following along with our dataset sets and fine tuning videos。 we got
     our data from the MRRPC data， which is part of the blue benchmark。Each of the
     blue dataset sets， as well as many other datasets in our datasets light hub has
     some predefined metrics。 and we read we can load them easily with the dataset's
     load metric function。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你正在跟随我们数据集和微调视频，我们的数据来自 MRRPC 数据集，它是 blue 基准的一部分。每个 blue 数据集，以及我们数据集灯塔中的许多其他数据集都有一些预定义的指标，我们可以使用数据集的加载指标函数轻松加载它们。
 - en: For the M or PC dataset set， the built in metrics are accuracy。 which just measures
     the percentage of time the model's prediction was correct， and the F1 score。 which
     is a slightly more complex measure that measures how well the model trades off
     precision and recall。To compute those metrics to benchmark our model， we just
     pass them the model's predictions under the ground truth labels and we get our
     results in a straightforward dip Python dit。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于 M 或 PC 数据集，内置指标是准确率，衡量模型预测正确的时间百分比，以及 F1 分数，这是一种稍微复杂的度量，衡量模型在精确率和召回率之间的权衡。为了计算这些指标来基准我们的模型，我们只需将模型的预测与真实标签进行对比，便能简单地得到结果。
 - en: 😊，If you're familiar with Keis， though， you might notice that this is a slightly
     weird way to compute metrics because we're only computing metrics at the very
     end of training。 but in Keis， you have this built in ability to compute a wide
     range of metrics on the fly while you're training。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，不过如果你熟悉 Keras，你可能会注意到，这是一种计算指标的稍微奇怪的方法，因为我们只在训练结束时计算指标。但在 Keras 中，你可以在训练过程中实时计算多种指标。
 - en: which gives you a very useful insight into how training is going。So if you want
     to use built in metrics， it's very straightforward and you use the standard careis
     approach again。 you just pass a metric argument to the compile method。 As with
     things like loss and optimizer。 you can specify the metrics you want by string
     or you can import the actual metric objects and pass specific arguments to them。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 这让你对训练进展有非常有用的洞察。所以如果你想使用内置指标，这非常简单，你再次使用标准的 Keras 方法。你只需将指标参数传递给编译方法。与损失和优化器类似，你可以通过字符串指定所需的指标，或者导入实际的指标对象并传递具体参数给它们。
 - en: but note that unlike loss and accuracy， you have to supply metrics as a list。
     even if there's only one metric you want。Once a model has been compiled with a
     metric。 it will report that metric for training， validation and predictions。Assuming
     there are labels passed to the predictions， you can even write your own metric
     classes。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 但请注意，与损失和准确率不同，你必须将指标作为列表提供。即使你只想要一个指标。一旦模型编译了一个指标，它将报告该指标用于训练、验证和预测。假设有标签传递给预测，你甚至可以编写自己的指标类。
 - en: although this is a bit beyond the scope of this course。 I'll link to the relevant
     T F docs below because it can be very handy if you want a metric that isn't supported
     by default in Caris。 such as the F1 score。![](img/beadff4afadc3bf0228241989afe4e3f_1.png)
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然这有点超出本课程的范围，但我会在下面链接相关的 TensorFlow 文档，因为如果你想要一个在 Caris 中不受支持的指标（如 F1 分数），这将非常方便。![](img/beadff4afadc3bf0228241989afe4e3f_1.png)
 - en: 。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 。
 - en: '![](img/beadff4afadc3bf0228241989afe4e3f_3.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/beadff4afadc3bf0228241989afe4e3f_3.png)'

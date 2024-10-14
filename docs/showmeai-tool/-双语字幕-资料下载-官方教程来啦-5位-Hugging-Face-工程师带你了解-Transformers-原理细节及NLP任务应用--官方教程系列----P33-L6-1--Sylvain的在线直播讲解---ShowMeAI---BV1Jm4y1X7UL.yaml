@@ -1,67 +1,87 @@
 - en: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
     - P33：L6.1- Sylvain的在线直播讲解 - ShowMeAI - BV1Jm4y1X7UL
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
+    - P33：L6.1- Sylvain的在线直播讲解 - ShowMeAI - BV1Jm4y1X7UL
 - en: But yeah I think it's time to begin so welcome to thefi course and we're going
     to let you the chapter 1 together and this is really the place to ask any questions
     you might have so please do so in the chat I'm going to make some booth every
     five to 10 minutes and go through the chats read the question and answer them
     to the best of my knowledge。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 不过我觉得是时候开始了，欢迎来到这个课程，我们将一起学习第一章，这里是提问的最佳场所，请在聊天中提问，我会每五到十分钟查看一次聊天，阅读问题并尽量回答。
 - en: So the urging for his course。And this session will go over chapter1 as I said。
     and this chapter is meant as a very general introduction to what transformer models
     can do so you don't need to worry about setting up be just yet a few good samples
     will to see how you can run them in coab directly。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个课程的目的如我所说，这一节将涵盖第一章，这一章旨在非常一般性地介绍变换模型的功能，所以你不需要担心目前的设置，几个好的样本将展示如何在coab中直接运行它们。
 - en: Or the Greenface website。I'm not going to watch review the introduction video
     because you can do that on your own time and there's not really anything informative
     in it。 and so the goal of the first section of the course， which is probably right
     now。 which is this section in pink is to。Introduce you to transform models the
     web Strer went today and then teach you how to download the pretrain model from
     the Eb。 find unit on your own data for text classification tasks。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一个是Greenface网站。我不会再看介绍视频，因为你可以在自己的时间里观看，视频内容没有什么信息。第一部分的目标，可能就是现在这个粉色部分，是为了向你介绍变换模型，今天的网络结构，并教你如何从Eb下载预训练模型，找出自己的数据以进行文本分类任务。
 - en: And thenluute the result back to the model heb。And then see section 2 will dive
     a little bit deeper and consider all NLP tag can adjust text classification and
     when the last part of the course is going to dive even a little bit deeper。 so
     part two should be released in the fall and part three should be released at the
     beginning of next year。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后将结果传回模型。在第二部分，我们将更深入探讨所有NLP任务如何调整文本分类，而课程的最后一部分将进一步深入。因此第二部分将在秋季发布，第三部分将在明年初发布。
 - en: And so once you've finished this part of the course。 you should be able to download
     the between model Once you it on your own problem。 and then。Create either a smaller
     uploadlet the result back to the hub。 And so you should。Look at the forum。Which
     I'm gonna。Show you dressed here at discuss the phase。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦你完成了这部分课程，你应该能够下载该模型，并在自己的问题上进行使用。然后，创建一个较小的上传，结果将传回中心。因此你应该查看论坛，我将展示如何讨论这个阶段。
 - en: go which is where you will be able to ask any question you have after this live
     stream in the course category there is one to big per chapter for all your questions
     and then there is also one to pick I'm going to follow very closely which is。So
     chair your projects topic on which you should definitely share anything you built
     after following the first section of the course。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，你将在这个直播结束后，可以在课程类别中提出任何问题，每章都有一个讨论区供你提问，并且我会密切关注另一个讨论区，所以请分享你的项目主题，确保分享在学习课程第一部分后所做的任何构建。
 - en: 嗯。Alrighty。So let's dive in case I don't see any general questions for now with。The
     beginning of chapter1。So。Transformer models are all about doing NLP task andLP
     stands for natural language processing。 and it's a field that's related to everything
     language。So the the goal of NLP task is either to classify some text。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗯，好的。那么让我们深入探讨吧。如果现在没有任何一般性问题，我们就开始第一章。变换模型主要用于处理NLP任务，而NLP代表自然语言处理，这是一个与语言相关的领域。因此，NLP任务的目标是对一些文本进行分类。
 - en: so for instance getting the sentiment of a review， detecting if an email is
     spam。 detecting if a comment someone posted online is rather nice or rather not
     nice if a sentence is grammatically correct。 etctera， etcter。Our task could be
     classifying edge word in the text， so for instance。 being able to pass the gramatic
     component to be able to see if that word is a person or a location or an organization。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，获取评论的情感，检测邮件是否为垃圾邮件，判断某个在线评论是友好还是不友好，判断句子是否语法正确，等等。我们的任务可以是对文本中的词汇进行分类，例如，能够解析语法成分，以判断这个词是人名、地点还是组织。
 - en: Another type of NLP task is generated text content。 so completing a prompt which
     is what Jo smartF does when you're trying to compose a message。 usually it suggests
     using X and even Gmail does that now on email。嗯。Fillling the B syn text。 which
     is another kind of text generation。Another kind of task is to extract an answer
     from a text。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
 - en: so given a very long text and then a question being able a model。 being able
@@ -69,12 +89,14 @@
     the context or generating these new sentences from an input text。 So this is for
     instance， generating translation of a text summarizing a text I saw not over recently
     on making a new text in and of style。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
 - en: for instance， a casual style or more。嗯。Foral style。So those are all the kind
     of enLP testque tackle in the course， especially in section2。And so it's rather
     challenging because a computer doesn't process information the same way as we
     do。 And so a new transformer model let you deep learning to。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
 - en: Are able to from like a few from a few samples that you have label for are able
@@ -83,6 +105,7 @@
     special rules if I see this world maybe it means its's positive if I see this
     world maybe it means it's negative etctera right。 so that's not what's done now
     this is mostly using transformable models with a again face library。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
 - en: And those models， you should， if you have not yet you should follow an introduction
@@ -92,18 +115,22 @@
     are fed they make valueless function or ametric a little bit better at each step
     and so we get at the end a model that is kind of a black box。But we can use and
     generalize fairly well on data， but looks like the data on the training set。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
 - en: So let's look at what this model can do in practice。 so there are two ways we'll
     be able to do that the first way is by clicking on this open in color button。So
     Collab is a platform maintained by Google which provides free access to resources
     like GPUs or TUs in a Jupy down the book environment。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_1.png)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
 - en: So， you can execute。Good directly。![](img/1b5e5fce582c60e42117fe3a72e59e6a_3.png)
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
 - en: Inside it。And so the first cell needs to be executed to install all the library
@@ -113,6 +140,7 @@
     of companies now those are examples of company that are using the Gface model
     app to have to share as models we have pretrained and probably to use them internally
     as well。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
 - en: And the Transformless library is the main interface library that provide access
@@ -123,20 +151,27 @@
     will need to do to access the forum and to be able to play around with all the
     models is create give a second following the link here on the 6 of the chapter
     1。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: Transformers 库是提供访问这些模型的主要接口库。我们将快速浏览一下。稍后模型应用是所有后训练模型的所在，它是整个生态系统的一部分，我们将能够在稍后的模型应用中运行与在
+    Coab 笔记本上尝试的相同代码。您需要做的事情是访问论坛并能够玩弄所有模型，点击章节 1 中的链接。
 - en: And so we'll have a look first at the higher higher level API object。 which
     is called the pipeline plan function。![](img/1b5e5fce582c60e42117fe3a72e59e6a_5.png)
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们首先来看更高层次的 API 对象，称为管道计划函数。![](img/1b5e5fce582c60e42117fe3a72e59e6a_5.png)
 - en: I'm going just give a littleelps few minutes。Just going to give a few minutes
     for the video to both。For the video to load itself a little bit and take the time
     to answer any questions that you have let miss horse through the chat。I so， there
     were a few。So the first question I see is there still a place for LSTM models
     approaches like OMF。 if so where do they outperform transformer models or at least
     should be considered that's a very very good questions。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 我会给大家几分钟时间。只是想给视频一些加载时间，并且回答你们在聊天中提出的任何问题。所以，我看到的第一个问题是，LSTM 模型（如 OMF）是否仍然有用？如果有，它们在哪些方面优于变压器模型，或者至少应该被考虑？这是一个非常好的问题。
 - en: very good question right and there is definitely still a place for LSTM model。The
     main reason transformer models are heavily used right now is that the computation
     is more efficient especially on hardwarePUs and TUs。 because LSTMs rely on a recurrent
@@ -146,37 +181,49 @@
     it was performedform that transformers and that task in which I think is linked
     to the fact that the EMDB reviews very long and transformer models are good with
     input that go up to the sequence like we can manage。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 非常好的问题，确实仍然有 LSTM 模型的应用。当前变压器模型被广泛使用的主要原因是计算效率更高，尤其是在硬件 TPU 和 GPU 上，因为 LSTM
+    依赖于递归机制，而这种机制的优化相对较难。不过，例如，LSTM 在 EMDB 数据集上取得了非常好的先进结果，该数据集用于电影评论分类。最近才发现变压器模型在该任务上的表现，我认为这与
+    EMDB 评论非常长有关，而变压器模型在处理较长序列时表现良好。
 - en: usually it's 512 but for 12 to sorry， but yeah if you have things that are longer
     than that it looks like LSTM models can see。It'll be a very good fit。Another question，
     I'm going to answer it just after this video because it's about the pipeline。So
     yeah， let's watch the video， I'm going to disappear from the screen so you can
     watch with me being in the way and I'll come back after the video。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 通常来说，它是 512，但对于 12 来说，如果有超过这个长度的内容，似乎 LSTM 模型可以看到。这将是一个非常好的选择。另一个问题，我会在这个视频之后回答，因为它是关于管道的。所以，嗯，让我们先看视频，我会从屏幕上消失，这样你们可以不受干扰地观看，视频结束后我会回来。
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_7.png)'
+  id: totrans-23
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_7.png)'
 - en: 。It's pipe end function。The pipeline function is the most I level API of the
     Transformers library。It groupgroup together all the steps to go from moretex to
     usable predictions。The model used is at the core a pipeline， but the pipeline
     also include all the necessary prepoing since the model does not expect texts
     but number。As well as some post processing to make the output of the model human
     readable。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是管道结束函数。管道函数是 Transformers 库中最高层次的 API。它将所有步骤组合在一起，从文本到可用的预测。使用的模型本质上是一个管道，但管道还包含所有必要的预处理，因为模型并不期望文本，而是数字。同时还包括一些后处理，使模型的输出易于人类理解。
 - en: Let's look at the first phase on Paul with the sentiment analysis pipeline。This
     pipeline performs text classification on a given input and determines if it's
     positive or negative。Here it attributed the positive label on the given text，
     with a confidence of 95%。You can pass multiple texts to the same pipeline， which
     will be processed and passed through the model together as a batch。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
 - en: The output is a list of individual results in the same order as the input text。Here
     we find the same label on score for the first text。 and the second text is church
     negative with a confidence of 99。9%。The zero shot classification pipeline is a
     more general text classification pipeline。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
 - en: It allows you to provide the labels you want。Here we want to classify our input
@@ -185,6 +232,7 @@
     84%。Moving on to our tasks， the text generation pipeline will to complete a given
     prompt。The output is generated with a bit of randomness， so it changes each time
     you call the generator object on a given prompt。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
 - en: Up until now， we've used the Biman APIpi with a default model associated to
@@ -192,12 +240,14 @@
     tune on this task。Oh。Going on the model H， again F dogo slash models。You can filter
     the available models by task。The defaultform adults used in our previous example
     was GPT2。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
 - en: but were many more models available and not just in English。Let's go back to
     the next generation pipeline and load it with another model， distill JPT2。This
     is a lighter version of GT2 created by the Eingface team。When applying the pipeline
     to a given prompt， we can specify several arguments。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
 - en: Such as the maximum length of the generated text， all the number of sentences
@@ -206,6 +256,7 @@
     field mass pipeline is a pering objective of Bro， which is to guess the value
     of mass qua。In this case， we ask the two most likely values for the missing words
     according to the model。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
 - en: and get mathematical or computational as possible answers。And a task transform
@@ -213,6 +264,7 @@
     as a wall。One example of this is named entity recognition。Which is the task of
     identifying entities such as persons。 organizations or locations in a sentence。Here，
     the model correctly finds the person， sva。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
 - en: the organization， Gface， as well as the location Brooklyn inside the input text。The
@@ -221,6 +273,7 @@
     task available with the byg API is extractive question and sorry。Providing a context
     and a question， the model will identify the span of text in the context containing
     the answer to the question。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
 - en: Getting short summaries of very longats is also something the Transers library
@@ -229,12 +282,15 @@
     to get the English version of our quick text。Here is a brief summary of all the
     tasks we've looked into in this video try them out through the influence switchts
     in the modern hub。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_9.png)'
+  id: totrans-34
   prefs: []
   type: TYPE_IMG
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_10.png)'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
 - en: Yeah。Sorry about the song at the beginning so I'm trying to get better wrong
@@ -243,9 +299,11 @@
     trying to find a solution but I don't know what it could be it so it could be
     a little bit better the next video I tried minimizing OS and footage could be
     better。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_12.png)'
+  id: totrans-37
   prefs: []
   type: TYPE_IMG
 - en: So the question I skipped before the video was when you do pipeline sentiment
@@ -253,6 +311,7 @@
     help much。 Pat true its not in the documentation and we should probably make an
     effort to have it better document it the best way to do that is to inspect a source
     code for now。Which I'm going to show you in one second。So， you need to go。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
 - en: Into pipelines in it and that's a great question we actually make it more accessible
@@ -261,6 +320,7 @@
     that is used so here we are using the text classification and sentimentalizes
     have the same default as the model that was used is this still well based in case
     find you in SS2 English。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
 - en: Don't know why the person didn't pick a short name， but。That's the name of it。Let
@@ -268,14 +328,17 @@
     on the chat。 or you can follow on the on the course chapter at the same time and
     look at them directly in and of our brother。Okay， it looks like there are number
     of our questions， so let's continue。So this chapter。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
 - en: So the rest of this section is just a good samples but shown in the video。 So
     I'm not going to go through that Instead， I'm going to look at my call up， which
     hopefully。Should as。![](img/1b5e5fce582c60e42117fe3a72e59e6a_14.png)
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
 - en: I need to restart own time， all lovely。![](img/1b5e5fce582c60e42117fe3a72e59e6a_16.png)
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
 - en: So hopefully it's not going to take a long time to reinstall everything。好好好。Why
@@ -283,14 +346,17 @@
     we have installed the Transformers library， we can run the first cell， for instance。
     which add the same good as in the video and yeah。V is a book with the last version
     of To show which was just released now。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
 - en: and so we can't run anything on Collab。So that's also lovely。Not sure if we
     can get this。you know your version somehow。あ。Okay， so hopefully the Pytoch works
     folks will fix the bug very soon and you will all be able to run all the collapse
     pretty easily in the meantime。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们无法在Collab上运行任何东西。这也很棒。不确定我们能否以某种方式获取你的版本。あ。好的，所以希望Pytoch的工作人员能尽快修复这个bug，你们都能在此期间轻松运行所有的collapse。
 - en: I'm going to try to show you the same thing in a tripyter notebook and'm going
     where I'm not going do something that can run it。Ge。So let me just go。 I'm not
     gonna be here。So if you prefer winning notebooks locally。 everything is in the
@@ -298,49 +364,64 @@
     sub folder and when you have chapter by chapter or directly for the videos。So
     let's look。At the same notebook I was trying to run in Collab。Zoom in a little
     bit。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将尝试在tripyter笔记本中向你展示同样的事情，我不打算做可以运行的事情。Ge。所以让我去。我不会在这里。所以如果你更喜欢在本地赢得笔记本。所有内容都在名为Notes的报告中，里面有一个Eing
+    F Or，使用这个笔记本你有一个课程子文件夹，当你按章节或直接用于视频时。所以让我们看看。我们尝试在Collab中运行的同一个笔记本。放大一点。
 - en: Let is done less， okay。So after running the install。 which I don't need to do
     because it's my have everything installed。 you can run the code that we were seeing
     on the video you can play around and put another sentence。 try with several sentences
     at the same time。Twice as there wrote classificationification pipeline and all
     the pipeline were saw in the video。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们减少一点，好吗。所以在运行安装后。我不需要这样做，因为我已经安装好一切。你可以运行我们在视频中看到的代码，可以随意更改，试试其他句子，同时尝试多个句子。两次那里写的分类管道，和我们在视频中看到的所有管道。
 - en: 😊，As the next。The other way you could try all of that is model ever。嗯。spec ed。不得有你怎么样。诶。Where
     you can go so the model appears do co s models and where you can click on any
     model。 So for instance， if we go and the distill be based on case fine turn SS
     to English。 which we saw as a default model for the sentiment analysis pipeline。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，接下来。你可以尝试所有这些的另一种方式是模型。嗯。规范教育。不得有你怎么样。诶。你可以去的地方，所以模型会出现，你可以点击任何模型。例如，如果我们去，并将蒸馏基于案例好的转成英语。这是我们看到的情感分析管道的默认模型。
 - en: we can go there and whereas a small wet where we can。Try it on any sentence。And
     gets the same results。So。You've got oh meta table。 so you've got at least three
     different ways of trying all the good samples。 So on the with the inference API
     and the website， sometimes when you were when you're trying a model you have a
     small progress by here while it's loading and then you can try it on b or sentences
     in a。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以去那里，在一个小湿地方，我们可以。在任何句子上试试。并得到相同的结果。所以。你有哦元表。所以你至少有三种不同的方法来尝试所有的好样本。在推理API和网站上，有时当你尝试一个模型时，你会看到小进度条在加载，然后你可以在b或句子中试试。
 - en: So。Let's go。Back to the course。On the next section。About how transformer models
     work so transformer models are pretty recent。 So the architecture in itself was
     released in a paper in 2017 and then the first pretrain model was G。And was released
     by Open AI in June 2018， a second betweentrain model Westbro released by Google
     in October 2018 and then it kind of accelerated like here are just a few samples
     of model。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以。让我们。回到课程。下一部分。关于变换器模型如何工作的，变换器模型是相当新的。所以架构本身是在2017年的一篇论文中发布的，第一个预训练模型是G。由Open
+    AI在2018年6月发布，第二个预训练模型Westbro在2018年10月由谷歌发布，然后它有点加速了，这里只是几个模型的示例。
 - en: but there are many， many more。That were released and even though so we would
     need at least like to to have this image be twice or three times as big to be
     able to put every model that was released between 2019 and right now。It's really
     hard to follow the base at which everything is released。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 但还有很多，很多更多。那些已经发布，尽管如此，我们至少需要这个图像变成两倍或三倍大，以便能够放下自2019年至今发布的每一个模型。真的很难跟上发布的基础。
 - en: but the transformformers library as I think 60 different architectures now and
     is trying to add as soon as the papers are released。And so what we're going to
     look at here is not what's inside a transformable model in details。 in details，
     but a little bit of an overview and there are three types of transformer models
     which we're going to explore in this section。 so we are GT model GT like model
     that are called ons or autoregressive models。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
 - en: Wwhichch are transformable models that are basically to generate text。 look
@@ -349,12 +430,14 @@
     of transformer model is the be like model a GT like sorry it's not the noncodeders
     model it's a decoders model。 sorry autoregressive or decoders model for GT bet
     like its encodecoder model or autoencoing models。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
 - en: so those models are best suited to classify things so generate a9 representation
     of the sentence which allows you to either classify the whole sentence。 classify
     every words in the sentence are they also very good for the extractive question
     and throwinging task we talked about earlier。
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
 - en: And the last type of model are the sequence to sequence transformer models are
@@ -362,6 +445,7 @@
     to sequence text such as translation。 sumorization， basically writing a new text
     from an input text。So all those transformer models are language models and the
     main difference between the first two types。
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
 - en: the encodeders and the decoders is that the decoders are portrayed by kissing
@@ -371,6 +455,7 @@
     models are super big so we started with like open AGTD with tests rather than
     tell millions of parameters and now we have models with like billions or tens
     of billions of parameters。
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
 - en: Which is why it's very important to reuse this model， which is the whole point
@@ -379,11 +464,13 @@
     a lot of compute so a lot of later bra animated a lot of CO2 and you reuse that
     model to find unit on a new tasks。 the task that you want to work with and。Yeah，
     so by reducing the model instead of training a new one from scratch。
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
 - en: you're saving compute， you're saving money and you need less data than what
     the model always be trained on。Let you see our new questions。Very one question
     is GT3 the only model that allows you to do zero short learning？
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
 - en: So that is how this model was advertised， it's not the only one because T5 for
@@ -393,12 +480,15 @@
     answered already So let's go and watch the transfer learning video I hope this
     one is going to be a little bit better than the previous one and or in the chat
     like will share the link if you want to watch it directly if it's too leg。
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_18.png)'
+  id: totrans-59
   prefs: []
   type: TYPE_IMG
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_19.png)'
+  id: totrans-60
   prefs: []
   type: TYPE_IMG
 - en: What is transfer learning？The idea of transfer learning is to leverage signal
@@ -406,24 +496,28 @@
     A will be trained specifically for task A。Now let's say you want to train Ad all
     B for a different task。One option would be to train the model from scratch。This
     could take lots of computation。
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
 - en: time and data。Instead， we could initialize Model B with the same weights as
     Model A。 transferring the knowledge of Model A on T P。When trend from scratch。
     all the middle's weights are initialized randomly。In this example。 we are training
     a belt model on the task of recognizing if two sentences are similar on it。
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
 - en: On the left， it's trained from scratch。And on the right， it's venting a proed
     model。As we can see。 using transfer learning on the preed model yields better
     results。And it doesn't matter if we train longer， so training from scratch is
     kept around 70% accuracy。 or the betweentrain would all beat the 86% easily。
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
 - en: This is because portraytrained models are usually trained on large amounts of
     data but provides a model with a statistical understanding of the language used
     during portraytraining。In computer visions， transfer learning has been applied
     successfully for almost 10 years。
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
 - en: Models are frequently proed on ImageNet by a asset containing 1。2 million of
@@ -431,12 +525,14 @@
     unlabeled data is called supervised learning。In natural language processing。 transfer
     learning is a bit more recent。A key difference with ImageNet is that the training
     is usually self supervised。
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
 - en: Which means it doesn't require humanation for the labels。A very common portraying
     objective is to guess the next word in a sentence。Which only requires lots and
     lots of text。GPT2， for instance。 was retrieveed this way using the content of
     45 million links posted by users on web。
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
 - en: Another example of selfupvised per training objective is to predict the value
@@ -444,6 +540,7 @@
     done in school。Brt was between this way using the English Wikiped and had100 and
     published books。In practice。 transfer learning is applied on a given model by
     throwing away its head。
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
 - en: that is its last layers focused on the per training objective。And' with a new
@@ -452,12 +549,14 @@
     it with a classifier with two outputposts since our task at two levels。To be as
     efficient as possible， the protrained model used should be as similar as possible
     to the task it's fine tune on。
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
 - en: For instance， if the problem is to classify German sentences。It's best to use
     a German portraying model。But with the good comes to bad。 the proed model does
     not only transfer its knowledge， but also any bias it may contain。ImageNe mostly
     contains images coming from the United States and Western Europe。
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
 - en: so models fine tuned with it usually will perform better on images from these
@@ -465,19 +564,24 @@
     was between using the guess and X world objectives。Changing the gender of the
     prone from E Westbury to she Westbury changed the predictions from mostly neutral
     objectives。
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
 - en: To almost only physical ones。In the model code of the GT2 Mor。 Open AI also
     acknowledges its bias and discourages its use in systems that interact with humans。![](img/1b5e5fce582c60e42117fe3a72e59e6a_21.png)
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_22.png)'
+  id: totrans-72
   prefs: []
   type: TYPE_IMG
 - en: 嗯。![](img/1b5e5fce582c60e42117fe3a72e59e6a_24.png)
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_25.png)'
+  id: totrans-74
   prefs: []
   type: TYPE_IMG
 - en: Okay， so let me see if there are any questions on the video。😔，I don't think
@@ -487,6 +591,7 @@
     name， as the name indicates it was fine tuned on the62 dataset set which is a
     dataset set containing sentences and you have to classify them between positive
     and negative。
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
 - en: And。Unlesss are are any new questions， I don't think so we're already to dive
@@ -494,12 +599,14 @@
     of that video in the chat。 I hope it's not too leggy again， so this video is going
     to introduce as the difference between Odo decos and sequence to sequence transformer
     model we briefly talked about before。
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
 - en: Let's study the transformer architecture。This video is the introductory video
     to the Ens。 decoders and Ender decoder series of videos。In the series。 we'll try
     to understand what makes a transformer network and we'll try to explain it in
     simple high level terms。No advanced understanding of neural networks is necessary。
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
 - en: but an understanding of basic vectors and tensors may help。To get started。 we'll
@@ -507,6 +614,7 @@
     All you need by Vawaing it up。As we'll see here， we can leverage only some parts
     of it according to what we're trying to do。We want to dive into these specific
     layers， building up that architecture。
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
 - en: but we' try to understand the different ways this architecture can be used。Let's
@@ -514,6 +622,7 @@
     the encoder and on the right。 the decoder。These two can be used together， but
     they can also be used independently。Let's understand how these work。The encoder
     accepts inputs that represent text。
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
 - en: it converts these text， these words into numerical representations。These numerical
@@ -521,6 +630,7 @@
     the self attention mechanism as its main component。And we recommend you check
     out the video on encoders specifically to understand what is this numerical presentation
     as well as how it works。
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
 - en: 😊，We'll study the self attention mechanism in more detail， as well as its bidirectional
@@ -528,6 +638,7 @@
     uses a similar mechanism as the encoder， which is the masked self attention as
     well。It differs from the encoder due to its unititedirectional feature and is
     traditionally used in an autoregressive manner。
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
 - en: Here too， we recommend you check out the video on decoders。 especially to understand
@@ -536,26 +647,32 @@
     a high level representation of those inputs。These outputs are then passed to the
     decoder。 The decoder uses the encoder's outputs and alongside other inputs to
     generate a prediction。
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
 - en: And then predict an output， which is will reuse in future iterations， hence
     the term autoregressive。Finally， to get an understanding of encoder decoders as
     a whole。 we recommend you check out the video on encoder decoder。![](img/1b5e5fce582c60e42117fe3a72e59e6a_27.png)
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_28.png)'
+  id: totrans-84
   prefs: []
   type: TYPE_IMG
 - en: 。
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_30.png)'
+  id: totrans-86
   prefs: []
   type: TYPE_IMG
 - en: Okay so that was the general introduction and so basically this is the diagram
     you have to remember about the general transformformers architecture and so what
     is an encode decoder or an encode decoder model we dive into that a little bit
     more just before going there we briefly talked about attention which was in the。
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
 - en: diagramia for the original paper， so the core of the architecture the transformer
@@ -568,6 +685,7 @@
     the context around it so for instance you might need the gender of if the word
     are none you may need its gender which would be the word before you may need some
     words after。
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
 - en: So that attention layer is where on top of computing some contextual representation
@@ -576,14 +694,18 @@
     really pay attention to it will have videos coming in section 2 and section 3
     of the calls that go into more details of what attention layer is but that's the
     I level1 introduction。
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以注意力层是计算给定世界的一些上下文表示的地方。它用于告诉所有与这个特定单词相关的内容，尤其是这个单词，虽然这个世界不太有用，但这个你真的应该关注，它将在第2节和第3节中有视频，详细讲解注意力层是什么，但这就是我对第一层的介绍。
 - en: And the key difference between encode codeos and decoders is thattting on codes
     as the attention mechanism is allowed to look at every word in the sentence。 So
     the word before and the word after， that's because like the bird model when you
     need to。Detect。
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 编码器和解码器之间的关键区别在于，编码器的注意力机制可以查看句子中的每个单词。因此，前面的单词和后面的单词，因为像鸟模型那样，当你需要检测时。
 - en: sorry to guess what is the value of a mask word， it's useful to look at what
     was before and also what we after。The decoders models like GT have to predict
     the next world。 so if they were allowed to look at the word after it would be
@@ -591,8 +713,10 @@
     before in the sentence so for instance when trying to guess silver as the attention
     layer can only look at my name and is they can't look at what is after in the
     sentence。
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 抱歉，要猜测一个掩码词的值，查看前面的内容以及后面的内容是有用的。解码器模型如GT必须预测下一个单词。所以如果它们被允许查看后面的单词，那将是作弊。因此在这些模型中，注意力层只允许查看句子中前面的内容。例如，当试图猜测“银”时，注意力层只能查看“我的名字”，而不能查看句子中的后面内容。
 - en: Yeahそ。We are going to switch to the next。Section of this chapter on Ocuoss models，
     but before that。 let me see if there are any questions。On the decoder diagram。
     what does the output shifted right refer to， please。Let me check that diagram。This。
@@ -604,47 +728,58 @@
     the first word of the sentence then it will have the first word of the sentence
     to try begin to get the second word of the sentence then it will have the first
     word in the sentence to get the third word in the sentence。
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的，我们将切换到本章关于Ocuoss模型的下一节，但在此之前，让我看看是否有任何问题。在解码器图中，输出右移指的是什么，请问。让我检查一下那个图。这里。因为我们正在训练一个翻译模型，请记住这是变换器模型的原始架构，所以当你翻译一个英文短语句子时，输出是一个法语句子。因此，这里的标签你这个变换器模型的部分是解码器，它会尝试猜测下一个单词，所以它会从无开始，然后尝试开始句子的第一个单词，然后它将有句子的第一个单词来尝试获取句子的第二个单词，然后它将有句子的第一个单词来获取句子的第三个单词。
 - en: etctera et cetera so that's where the shift right means it means that here we
     have the output so the text in the desired language shifted one token to the right。And
     another question was， can you provide a quick overview intuition of oh a digital
     version of a model like distber is able to maintain accuracy while being significantly
     sorry。
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 等等，所以右移的意思是我们有输出，即所需语言的文本右移一个标记。还有另一个问题，你能否提供一个快速的直观概述，说明数字版本的模型如distber如何在显著减轻的情况下保持准确性。
 - en: more lightweight so quick overview intuition。Sure。In general。 transformer models
     or deep learningruning models have lots of parameters， several millions。 but a
     lot of those parameters are either redundant or not necessarily really useful
     and so for instance varies a lot of research into pruning transformers networks
     so pruning means removing some of those weights to be able to go faster especially
     at eachfer。
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 快速概述直观。好的。一般来说，变换器模型或深度学习模型有很多参数，数百万个。但其中很多参数要么是冗余的，要么并不一定真正有用，因此例如有很多研究致力于修剪变换器网络，修剪意味着移除一些权重以便能够更快，尤其是在每个时刻。
 - en: distillation is another way of reducing the size so the process is to have a
     smaller model try to get some output as a bigger model and it works reasonably
     well to still have some good performance。So that's because the intriition behind
     it is that a very big model as lots of parameters。
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
 - en: but not all of those parameters are really useful。And so let's dive into the
     encoders model so we have three more videos， encoders。 decos and then sequence
     to sequence model。![](img/1b5e5fce582c60e42117fe3a72e59e6a_32.png)
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
 - en: We put it in full screen， and design。![](img/1b5e5fce582c60e42117fe3a72e59e6a_34.png)
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
 - en: In this video， we'll study the encoder architecture。An example of a popular
     encoder only architecture is Bt， which is the most popular model of its kind。Let's
     first start by understanding how it works。We'll use a small example using three
     words。 We use these as inputs and pass them through the encoder。
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
 - en: We retrieve a numerical representation of each word。Here， for example。 the encode
     converts those three words welcomee to NYC in these three sequences of numbers。The
     encode outputs exactly one sequence of numbers per input word。This numerical representation
     can also be called a feature vector or a feature tensor。
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
 - en: Let's dive in this representation。 It contains one vector per word that was
@@ -652,12 +787,14 @@
     of the word in question。The dimension of that vector is defined by the architecture
     of the model for the base bird model。 it is 768。These representations contain
     the value of a word， but contextualized。For example。
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
 - en: the vector attributed to the word2 isn't the representation of only the two
     word。It also takes into account the words around it， which we call the context。As
     in it looks to the left context， the words on the left of the one we studying。
     hear the word welcome， and the context on the right， here the word NYC。
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
 - en: and it outputs a value for the word given its context。It is therefore a contextualized
@@ -665,12 +802,14 @@
     within the text。It does this thanks to the self attention mechanism。The self attention
     mechanism relates to different positions or different words in a single sequence
     in order to compute a representation of that sequence。
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
 - en: As we've seen before， this means that the originalot representation of a word
     has been affected by other words in the sequence。We won't dive into these specifics
     here， but we' offer some further readings if you want to get a better understanding
     at what happens under the hood。
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
 - en: So when should one use an encode？Encodeders can be used as tenderalone models
@@ -678,6 +817,7 @@
     model， is a standalone anchor model。 and at the time of release it be the state
     of the art in many sequence classification tasks。 question answering tasks， and
     masked language modeling to only cite a few。😊。
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
 - en: The idea is that encoders are very powerful at extracting vectors that carry
@@ -685,11 +825,13 @@
     road by additional neurons to make sense of it。Let's take a look at some examples
     where encodes really shine。First of all。 mask language modeling or MLM。It's the
     task of predicting a hidden word and a sequence of word。Here。
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
 - en: for example， we have hidden the word between my and is。This is one of the objectives
     with which Bert was trained。 It was trained to predict hidden words in a sequence。Encodes
     shine in this scenario in particular as bidirectional information is crucial here。
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
 - en: If we didn't have the words on the right， is it Silva and the dot。 then there
@@ -697,6 +839,7 @@
     word。The encoder needs to have a good understanding of the sequence in order to
     predict a masked word。 as even if the text is grammatically correct。It does not
     necessarily make sense in the context of the sequence。
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
 - en: As mentioned earlier， encodes are good at doing sequence classification。😊。Sentiment
@@ -704,6 +847,7 @@
     the sentiment of a sequence。It can range from giving a sequence a rating from
     one to five stars if doing review analysis to giving a positive or negative rating
     to a sequence。
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
 - en: which is what is shown here。For example， here， given the two sequences。 we use
@@ -711,12 +855,15 @@
     classes。 positive and negative。While the two sequences are very similar containing
     the same words。 the meaning is entirely different， and the encoder model is able
     to grasp that difference。
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_36.png)'
+  id: totrans-110
   prefs: []
   type: TYPE_IMG
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_37.png)'
+  id: totrans-111
   prefs: []
   type: TYPE_IMG
 - en: 嗯。So that was it forcodo's model， some examples are Albertt， Bt， distill Bt，
@@ -724,18 +871,22 @@
     decoderos and just before that let me check if there are any questions。Don't see
     any new questions in the chat， don't forget that you can ask any questions in
     the chat that's kind of the point of having the live session。
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_39.png)'
+  id: totrans-113
   prefs: []
   type: TYPE_IMG
 - en: Yeah。![](img/1b5e5fce582c60e42117fe3a72e59e6a_41.png)
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
 - en: In this video， we'll study the decoder architecture。An example of a popular
     decoder only architecture is GPT2。In order to understand how decoders work。 we
     recommend taking a look at the video regarding encoders， they're extremely similar
     to decoders。One can use a decoder for most of the same tasks as an encoder。
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
 - en: albeit with generally a little loss of performance。Let's take the same approach
@@ -743,6 +894,7 @@
     between an encoder and ID coder。We'll use a small example using three words。 We
     pass them through their decoder。We retrieve a numerical representation for each
     word。Here， for example。
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
 - en: the decoder converts the three words welcomee to NYC and these are three sequences
@@ -750,6 +902,7 @@
     numerical representation can also be called a feature vector or a feature tensor。Let's
     dive in this representation。It contains one vector per word that was passed through
     the decoder。
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
 - en: Each of these vectors is a numerical representation of the word in question。😊。The
@@ -757,6 +910,7 @@
     decoder differs from the encoder is principally with its self attention mechanism。
     it's using what is called masked self attention。Here， for example， if we focus
     on the word 2。
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
 - en: we'll see that this vector is absolutely unmodified by the NYC word。That's because
@@ -764,6 +918,7 @@
     than benefiting from all the words on the left and right， so the bidirectional
     context。 decoders only have access to a single context。Which can be the left context
     or the right context。
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
 - en: The mask self attention mechanism differs from the self attention mechanism
@@ -772,6 +927,7 @@
     context。So when should one use a decoder decoders like encoders can be used as
     standalone models。 as they generate a numerical representation， they can also
     be used in a wide variety of tasks。
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
 - en: however， the strength of a decoder lies in the way a word can only have access
@@ -779,6 +935,7 @@
     good at text generationration。 the ability to generate a word or a sequence of
     words， given a known sequence of words。😊。This is known as causal language modeling
     or natural language generation。
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
 - en: Here's an example of how causal language modeling works。 We start with an initial
@@ -786,12 +943,14 @@
     of numbers。 and this vector contains information about the sequence， which is
     here a single word。We apply a small transformation to that vector so that it maps
     to all the words known by the model。
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
 - en: which is a mapping that we'll see later called a language modeling head。We identify
     that the model believes that the most probable following word is name。We then
     take that new word and add it to the initial sequence。From my， we are now at my
     name。This is where the autoregressive aspect comes in。😊。
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
 - en: Outtoregressive models reuse their past outputs as inputs and the following
@@ -799,6 +958,7 @@
     the decoder and retrieve the most probable following word。In this case， it is
     the word is。We repeat the operation until we're satisfied。Starting from a single
     word， we've now generated a full sentence。We decided to stop there。
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
 - en: but we could continue for a while。 GP T 2， for example， has a maximum context
@@ -808,6 +968,7 @@
     use larger sentences more than 512 words as inputs for encodes。 great question
     so it depends but most of the time no for instance spt as a maximum length of
     512 so you can't use larger sentences than that。
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
 - en: Some newer models like Longformer， for instance， can accept a longer context。
@@ -816,12 +977,14 @@
     into several parts of 512 worlds and then if you get a representation。 you pass
     each of those chunk to the model so you get a representation for each of those
     checks and you can。
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
 - en: for instance， average where you get at the end to try to train a classifier
     for larger sentences。 but that's kind of the only way， either a specific model
     that has been trained to have longer inputs such as longform or splitting your
     inputs input bits。
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
 - en: So another question， how does the mask language modeling objective deal with
@@ -829,6 +992,7 @@
     Pipe becomes。Ci。😊，AshAsh plane。 so you will see about that for those who are more
     beginners。 you will see about that separation in the next chapter with the Tokenals
     video。
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
 - en: If not using wall wall masking then the model can cheat and see parts of the
@@ -836,24 +1000,28 @@
     have several versions of PE there is one that has been pretrained with wall wall
     masking and another one that has been trained without that it would be cheating
     for the ash ash plane because the model。
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
 - en: I mean it would be cheating where we're kissing C， sorry when you've got the
     ash ash plane in the context。 when you're trying to guess ash ash plane and you've
     got the shifts because in the context it's less cheating because the model has
     to guess that the model did not hand there。
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
 - en: but it's true that using world wall masking would remove that kind of specific
     bias and cheating we've seen。Weve the upper ris。Okay， so let's look at the last
     video and then I'll answer to more question after the last video on sequence to
     sequence transformable laws which combine both theionders and the decoders。
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
 - en: In this video， we'll study the encoder decoder architecture。An example of a
     popular encoder decoder model is T5。In order to understand how the encoder decoder
     works。 we recommend you check out the videos on encoders and decoders as a standalone
     models。
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
 - en: Understanding how they work individually will help understanding how an encoder
@@ -861,6 +1029,7 @@
     words as inputs。 casts them through the encoder， and retrieves a numerical representation
     for each word casts through it。We now know that this numerical representation
     holds information about the meaning of the sequence。
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
 - en: Let's put this aside and add the decoder to the diagram。In this scenario。 we're
@@ -868,12 +1037,14 @@
     of the encoder directly to it。Additionally to the encoder outputs。 we also give
     the decoder a sequence。When prompting the decoder for an output with no initial
     sequence。
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
 - en: we can give it the value that indicates the start of a sequence。😊。And that's
     where the anchor to decor magic happens。😊，The encoder accepts a sequence as input。It
     computes a prediction and outputs a numerical representation。😊。Then it sends that
     over to the decoder。It has， in a sense， encoded that sequence。And the decoder。
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
 - en: in turn， using this input alongside its usual sequence input will take a stab
@@ -882,6 +1053,7 @@
     the decoder is essentially decoding what the encoder has output。The startup sequence
     here， the startup sequence word here indicates that it should start decoding the
     sequence。
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
 - en: Now that we have both the encoder numerical representation and an initial generated
@@ -889,6 +1061,7 @@
     it can act in an autoregressive manner。The word it has just output can now be
     used as an input。This。 in combination with the numerical representation output
     by the encoder。
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
 - en: can now be used to generate a second word。Please note that the first word is
@@ -896,12 +1069,14 @@
     have no need for it anymore。😊，We can continue on and on。 for example， on the decoder
     outputs a value that we consider a stopping value。 like a dot meaning the end
     of a sequence。Here we've seen the full mechanism of the encoder decoder transformer。
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
 - en: let's go over one more time。 we have an initial sequence that is sent to the
     encoder。😊。That encoder output is then sent to the decoder for it to be decoded。While
     it can now discard the encoder after a single use。 the decoder will be used several
     times until we have generated every word that we need。
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
 - en: So let's see a concrete example with translation language modeling， also called
@@ -909,12 +1084,14 @@
     translate this English sequence We to NOIC in French。We're using a transformer
     model that is trained for that task explicitly。 we use the encoder to create a
     representation of the English sentence。
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
 - en: we cast this to the decoder with the use of the start sequence word。 we ask
     it to output the first word。It outputs the avenue， which means' welcome。And we
     then use B avenue as the input sequence for the decoder。This alongside the encoder
     numerical representation， allows the decoder to predict the second word a。
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
 - en: which is two in English。😊，Finally， we ask the decoder to predict a third word，
@@ -922,6 +1099,7 @@
     decoder really shines is that we have an encoder and a decoder。 which often do
     not share weights。Therefore， we have an entire block。 the encoder that can be
     trained to understand the sequence and extract the relevant information。
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
 - en: For the translation scenario we've seen earlier， for example。 this would mean
@@ -929,6 +1107,7 @@
     extracting information from that language and putting all of that in a vector
     dense in information。😊，On the other hand， we have the decoder whose sole purpose
     is to decode the numerical representation output by the encoder。
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
 - en: This decoder can be specialized in a completely different language or even modality
@@ -936,6 +1115,7 @@
     theyre able to manage sequence to sequence tasks like translation that we have
     just seen。Secondly。 the weights between the encoder and the decoder parts are
     not necessarily shared。
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
 - en: Let's take another example of translation。Here where translating transformers
@@ -944,6 +1124,7 @@
     be handled with a decoder that would generate the translation in an autoregressive
     manner。And they would be right。Another example of where sequence to sequence transformers
     shine is in summarization。
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
 - en: 😊，Here we have very very long sequence， generally a full text， and we want to
@@ -951,6 +1132,7 @@
     context lengths， for example。 a very long context for the encoder which handles
     the text and a smaller context for the decoder。 which handles the summarized sequence。There
     are a lot of sequence to sequence models。
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
 - en: This contains a few examples of popular encoder decoder models available in
@@ -958,22 +1140,27 @@
     an encoder decoder model。😊，Therefore。 according to the specific task you're targeting，
     you may choose to use specific encoders and decoders which have proven their worth
     on these specific tasks。
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_43.png)'
+  id: totrans-148
   prefs: []
   type: TYPE_IMG
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_44.png)'
+  id: totrans-149
   prefs: []
   type: TYPE_IMG
 - en: Yeah。Okay， so let's see if we have any questions。Oh， okay。 is pararaing kind
     of decodder problem or both encodeder decodder problem？
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
 - en: And is there any pipeline available for same？So paraphrasing so generating a
     similar task to the input will be more like an encode or decoder pronym。 however，
     it seems that it's going to be very hard to train a model on that task specifically
     because it's going to have a tendency to want to include the same thing it received。
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
 - en: Unless you want to parase in another style， for instance。 going from formal
@@ -982,6 +1169,7 @@
     Cha1， which is the last section of the chapter and talk a little bit about bias
     and limitations of the transformer models。So like any deep learning model in general
     transformers are just one specific case。
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
 - en: but it's really a problem for all kind of deeping model so there are powerful
@@ -990,18 +1178,21 @@
     output this was more controlled by the training they cut and the training data
     they receive but if you don't take any precautions you can have those models make
     predictions that you don't necessarily want in the app deploy so for instance。
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
 - en: let's just have a very quick look at what B which has been retrained on the
     objective of thin maskQu and just have a similar example to the one we saw in
     the transfer learning video with GPT where we just change the gender of the sentence
     so if you put this man works as a。
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
 - en: Cass the word or this woman man works as a guess the word for man。 we get like
     some kind of neutral jobs。Probably moree stere stetype， stereotypically male，
     for women。 we get very stereotypically female jobs and prostitute。 which is necessarily
     something we would want our model to output as one of the top five possibilities。
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
 - en: So and that model was not trained on data but was particularly flagged as problematic。
@@ -1013,6 +1204,7 @@
     done with the bird paste and case checkpoint specifically and completely reproducible
     because there is no randomness in the prediction so if you're go a notebook on
     tris you're going to get those results。
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
 - en: So this is present in any model in some way or novel and it's also going to
@@ -1022,30 +1214,38 @@
     production by taking some care to analyze the results that you get and potentially
     if you see that you have some predictions you would like to avoid try to correct
     your training data to add more samples。
+  id: totrans-157
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以在某种程度上，这在任何模型中都是存在的，或者说是新的，并且在你的微调后也会持续存在。因此你总是必须非常小心，当你在训练数据中微调模型时，必须确保你希望看到的输出有足够的样本，并且你应该始终在将模型投入生产时认真分析你得到的结果，如果你看到一些预测你希望避免的，尝试纠正你的训练数据以添加更多样本。
 - en: To add more samples that would correct the bias of your model。And that's it
     for chapter one。 let me see if there are more questions。In the chat otherwise
     we're going to be ready to tune out so once you have finished this video don't
     hesitate to take a quiz I'm not going to do that on the video to be sure that
     you understood all the terms that were all the content sorry but we saw in this
     chapter there are two left sessions。
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: 添加更多样本以纠正你模型的偏差。这就是第一章的内容。让我看看还有没有更多问题。在聊天中，否则我们就准备结束了，所以一旦你完成了这个视频，不要犹豫，去做个测验，我不会在视频中进行，以确保你理解了所有术语和内容，但我们在这一章中看到的还有两个左侧会议。
 - en: That you can find again on the forum。 This is not the forum anymore。There are
     two live session next week for Cha 2， be sure to try and wide on the other so
     there's going to be one with me and next Wednesday hopefully all the technical
     issues will be resolved because I'm going to take a little bit of care to make
     sure it works a little bit better especially for the videos and so。
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以在论坛上再次找到。这已经不是论坛了。下周有两个关于第2章的直播会议，请务必尝试参与，另外一个会是我，期待下周三希望所有技术问题都能得到解决，因为我会稍微关注一下，确保它运作得更好，尤其是视频方面。
 - en: The first one is going to be with Lewis on morning European time on Wednesday
     and the second one is going to be on next first day at the same time as this one。Take
     the time to create an account there if hub to play with the hopefully the bug
     in codeab is going to be sold very soon and you can play with also code on that
     platform。
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: 第一个会议将是与Lewis在欧洲时间周三的早晨，第二个会议将在下周四的同一时间进行。请花时间在那里创建一个账户，如果hub上有问题，希望codeab的bug能很快解决，你也可以在那个平台上进行代码实验。
 - en: otherwise you can always use。The inference API on the website and also think
     about a project that you'd like to run。And to try your skills on as you learn
     more using the course。 so of anything related to text classification， because
@@ -1053,15 +1253,23 @@
     kind of model you would like to build doing something that you could then share
     with the community and then in the next fews will help you with the course to
     do that in practice。
+  id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: 否则你总是可以使用网站上的推理API，并考虑一个你想要运行的项目。在你学习课程的过程中，尝试你的技能，因此与文本分类相关的任何内容，因为这部分课程将集中于此。但试着想想你想构建什么样的模型，做一些你可以分享给社区的事情，然后在接下来的几周内，这将帮助你在实践中完成课程。
 - en: Let me check when last time we got questions。And。Yeah， I think that's kind of
     whole。Okay。 thanks a lot for following and see you next week。![](img/1b5e5fce582c60e42117fe3a72e59e6a_46.png)
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我检查一下上次我们有什么问题。嗯，我想这大概就是全部了。好的，非常感谢你的关注，下周见！![](img/1b5e5fce582c60e42117fe3a72e59e6a_46.png)
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_47.png)'
+  id: totrans-163
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_47.png)'
 - en: 嗯。
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗯。

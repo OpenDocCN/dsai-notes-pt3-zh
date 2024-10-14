@@ -1,43 +1,58 @@
 - en: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
     - P28：L4.5- 使用 TensorFlow 进行学习率调度 - ShowMeAI - BV1Jm4y1X7UL
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及 NLP 任务应用！＜官方教程系列＞
+    - P28：L4.5- 使用 TensorFlow 进行学习率调度 - ShowMeAI - BV1Jm4y1X7UL
 - en: In our other videos， we talked about the basics of fine tuning a language model
     with Tensorflow。 And as always， when I refer to videos， I'll link them below。
     But still， can we do better。 So here's the code from our model fine tuning video。
     And while， while it works。 we could definitely tweak a couple of things。 by far。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们其他的视频中，我们谈到了如何使用 Tensorflow 微调语言模型的基础知识。每当我提到视频时，我会在下面链接它们。但仍然，我们能做得更好吗？所以这是我们模型微调视频中的代码。虽然它能工作，但我们绝对可以调整几个地方。
 - en: the most important thing is the learning w In this video， we'll talk about how
     to change it。 which will make your training much more consistently successful。😊，In
     fact。 there are two things we want to change about the default learning rate for
     at。 The first is that it's way too high for our models。 So by default。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 最重要的是学习率。在这个视频中，我们将讨论如何改变它，这将使你的训练更加一致成功。😊实际上，我们想改变默认学习率的两个方面。首先，对于我们的模型来说，它的值太高了。因此默认情况下。
 - en: Adam uses a learning rate of 10 to the -3， which is very high for training transformers。
     We're going to start at 5 by 10 to the-5， which is 20 times lower than the default。
     And secondly。 we don't just want a constant learning rate。 We can get even better
     performance if we decay the learning rate down to a tiny value。 or even to 0 over
     the course of training。 So that's what this polynomial decay schedule thing is
     doing。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: Adam 使用的学习率是 10 的 -3 次方，对于训练变换器来说非常高。我们将从 5 乘以 10 的 -5 次方开始，比默认值低 20 倍。其次，我们不仅仅想要一个恒定的学习率。如果我们将学习率逐渐降低到一个很小的值，甚至在训练过程中降到
+    0，我们可以获得更好的性能。所以这就是这个多项式衰减调度的作用。
 - en: So that name might be intimidating， especially if you only vaguely remember
     what a polynomial is from Atslas。 So I'll show you what that decay looks like
     in a second。 But first we need to tell the scheduler how long training is going
     to be。 So that it decays of the right speed， And that's what this code here is
     doing。😊。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这个名称可能让人望而生畏，特别是如果你只模糊地记得来自 Atslas 的多项式是什么样子。那么我会在稍后给你展示这个衰减的样子。但首先我们需要告诉调度器训练将持续多长时间，以便它以正确的速度衰减，这就是这段代码的作用。😊
 - en: So we're computing how many mini batches the model is going to see over the
     entire training run and to compute that。 we're taking the size of the training
     set， dividing it by the batch size which gives us the number of batches per epoch。
     and then we're multiplying that by the number of epochs to get a total number
     of batches。 it's going to see over the whole training run。😊，So once we know how
     many batches。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，我们在计算模型在整个训练过程中将看到多少个小批次。为此，我们取训练集的大小，除以批次大小，得到每个 epoch 的批次数，然后将其乘以 epoch
+    数，以获得整个训练过程中的总批次数。😊所以一旦我们知道了多少批次。
 - en: how many training steps we're taking， we just pass all of that information to
     the scheduler and we're ready to go。So what does the polynomial decay schedule
     look like？With default options。 it's actually just a linear schedule， so it looks
@@ -46,23 +61,31 @@
     the very end of training So why do they call it polynomial and not linear Well
     if you tweak the options you can get a higher order at a truly polynomial decay
     schedule but there's no need to do that right now by default。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们要进行的训练步骤数量，我们只需将所有这些信息传递给调度器，就准备好了。那么多项式衰减调度看起来是什么样的？使用默认选项时，它实际上只是一个线性调度，因此看起来像这样。它从我们的初始值开始，即
+    5 乘以 10 的 -5 次方，或者 5 e -5，然后以恒定速率衰减，直到在训练结束时达到 0。那么为什么叫它多项式而不是线性呢？如果你调整选项，可以得到一个更高阶的真正多项式衰减调度，但现在没有必要这样做，默认情况下。
 - en: you get a linear schedule and if you were aware that a linear function is a
     special case of a polynomial you can feel proud。😊，So that aside， how do we actually
     use the scheduler。 So easily， we just pass it to Adam。 You'll notice the first
     time when we compiled the model， we just pass the string at。 Curris recognizes
     the names of common optimizers and loss functions if you pass them with strings
     So it saves time and it avoids imports to do it that way。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 你会得到一个线性调度，如果你知道线性函数是多项式的特殊情况，你可以感到骄傲。😊那么，撇开这些，我们如何实际使用调度器呢？我们只需将其传递给 Adam。你会注意到第一次我们编译模型时，我们仅仅传递了字符串。Curris
+    会识别常见优化器和损失函数的名称，所以用字符串传递可以节省时间，避免导入。
 - en: if you only want the default settings。 but we're professional machine learners
     now with our very own learning rate schedule So we have to do things properly。
     So the first thing we do is we import the optimizer。 Then we initialize it with
     our scheduler in the learning rate argument。 and then we compile the model using
     our new optimizer and whatever loss function you want。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你只想要默认设置。但我们现在是专业的机器学习者，拥有自己的学习率调度，所以我们必须做好事情。我们做的第一件事是导入优化器。然后用学习率参数初始化它。接着，我们使用新的优化器和你想要的任何损失函数编译模型。
 - en: we'll leave that unchanged。 This will be sparse categorical cross entropy。 if
     you're following long from the fine tuning video。 but it can be anything else
     that you're using yourself。😊。So now we have a high performance model ready to
@@ -71,16 +94,24 @@
     we actually don't need to change anything about the fit I call at all。 we just
     call fit here exactly the same command we used before if you've seen in other
     videos。😊。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将保持不变。这将是稀疏分类交叉熵。如果你在观看微调视频时长时间跟随。但它可以是你自己使用的任何东西。😊。所以现在我们有一个准备好的高性能模型。剩下的就是像之前一样拟合模型。请记住，因为我们已经用新的优化器和新的学习率编译了模型。我们实际上不需要对调用的拟合做任何更改。我们只需在这里调用与之前视频中使用的完全相同的命令。😊。
 - en: But now we get a beautiful training with a nice， smooth。 a good initial learning
     rate and a solid learning rate decaying。And you will get much better performance
     as a result。![](img/23f9dd7967986f28f1dcc38c80344a1b_1.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是现在我们得到了一个美丽的训练，顺畅而良好。一个好的初始学习率和稳定的学习率衰减。因此你将获得更好的性能。![](img/23f9dd7967986f28f1dcc38c80344a1b_1.png)
 - en: 。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 。
 - en: '![](img/23f9dd7967986f28f1dcc38c80344a1b_3.png)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/23f9dd7967986f28f1dcc38c80344a1b_3.png)'

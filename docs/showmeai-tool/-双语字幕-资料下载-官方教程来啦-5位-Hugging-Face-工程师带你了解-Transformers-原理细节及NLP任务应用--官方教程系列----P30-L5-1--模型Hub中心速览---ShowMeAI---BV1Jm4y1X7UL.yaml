@@ -1,92 +1,133 @@
 - en: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
     - P30：L5.1- 模型Hub中心速览 - ShowMeAI - BV1Jm4y1X7UL
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
+    - P30：L5.1- 模型Hub中心速览 - ShowMeAI - BV1Jm4y1X7UL
 - en: In this video， we're going to go over the Huging F model H navigation。This is
     the Huging phase。t co landing page。To access the Model hub， click on the Models
     tab in the upper right corner。You should be facing this web interface， which can
     be split into several parts。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个视频中，我们将介绍 Huging F 模型 H 的导航。这是 Huging Face 的主页。要访问模型库，请点击右上角的模型选项卡。你应该会看到这个网页界面，可以分为几个部分。
 - en: '![](img/bdba16451070db4a97f5f64c01c66332_1.png)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bdba16451070db4a97f5f64c01c66332_1.png)'
 - en: On the left， you will find categories which you can use to tailor your model
     search。The first category is the tasks。Mugles on the hub may be used for a wide
     variety of tasks。 These include natural language processing tasks such as question
     answering or text classification。 but it isn't only limited to an LP。Other tasks
     from other fields are also available。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 在左侧，你会找到可以用来调整模型搜索的类别。第一类是任务。模型库中的模型可用于多种任务，包括自然语言处理任务，如问答或文本分类，但不仅限于此。其他领域的任务也可用。
 - en: such as image classification for computer vision or automatic speech recognition
     for speech。The second category is the libraries。Moels on the hub usually share
     one of three backbones， pytorrch。 Tensorflowlow， or jacks。However， other backbones
     such as rust or onyx， also exist。Finally。 this tab can also be used to specify
     from which high level framework the models comes。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 如计算机视觉中的图像分类或语音中的自动语音识别。第二类是库。模型库中的模型通常共享三种骨干网之一：pytorrch、Tensorflowlow或jacks。然而，其他骨干网，如rust或onyx，也存在。最后，此选项卡也可用于指定模型来自哪个高层框架。
 - en: This includes transformers， but it isn't limited to it。 The model hub is used
     to host a lot of different frameworks models。 and we are actively looking to host
     other frameworks models。The third category is the datasets tab。Selecting a dataset
     set from this tab means filtering the models so that they were trained on that
     specific dataset。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 这包括变压器，但不局限于此。模型库用于托管许多不同框架的模型，我们也在积极寻找托管其他框架模型的机会。第三类是数据集选项卡。从该选项卡中选择数据集意味着过滤出在特定数据集上训练的模型。
 - en: The fourth category is the languages tab。Selecting a language from this tab
     means filtering the models so that the handle of the language selected。Finally，
     the last category allows to choose the license with which the model is shared。![](img/bdba16451070db4a97f5f64c01c66332_3.png)
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 第四类是语言选项卡。从此选项卡中选择一种语言意味着过滤出处理所选语言的模型。最后，最后一类允许选择与模型共享的许可证。![](img/bdba16451070db4a97f5f64c01c66332_3.png)
 - en: '![](img/bdba16451070db4a97f5f64c01c66332_4.png)'
+  id: totrans-7
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bdba16451070db4a97f5f64c01c66332_4.png)'
 - en: On the right， you'll find the models available on the Model H。![](img/bdba16451070db4a97f5f64c01c66332_6.png)
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 在右侧，你会找到可在模型H上使用的模型。![](img/bdba16451070db4a97f5f64c01c66332_6.png)
 - en: The models are ordered by download by default。When clicking on a model。 you
     should be facing its model card。The model card contains information about the
     model。 its description intended use， limitations and biases。It can also show code
     snippets on how to use the model as well as any relevant information， training。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型默认按下载量排序。点击一个模型后，你将看到其模型卡。模型卡包含有关模型的信息，包括其描述、预期用途、限制和偏见。它还可以显示如何使用模型的代码片段及任何相关信息，训练情况。
 - en: procedure， data processing， evaluation results or copyrights。This information
     is crucial for the model to be used。 the better craft to a model card is the easier
     it will be for other users to leverage your model and their applications。![](img/bdba16451070db4a97f5f64c01c66332_8.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 过程、数据处理、评估结果或版权。这些信息对模型的使用至关重要，越精心制作的模型卡，其他用户就越容易利用你的模型及其应用。![](img/bdba16451070db4a97f5f64c01c66332_8.png)
 - en: On the right of the model card is the inference API。This inference API can be
     used to play with the model directly。Feel free to modify the text and click on
     Comp to see how would the model behave to your inputs。![](img/bdba16451070db4a97f5f64c01c66332_10.png)
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型卡的右侧是推理API。这个推理API可以直接与模型进行交互。可以随意修改文本并点击Comp，查看模型对你输入的反应。![](img/bdba16451070db4a97f5f64c01c66332_10.png)
 - en: '![](img/bdba16451070db4a97f5f64c01c66332_11.png)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bdba16451070db4a97f5f64c01c66332_11.png)'
 - en: At the top of your screen lies the model tags。😊，These includes the model task
     as well as any other tag that is relevant to the categories we have just seen。😊。![](img/bdba16451070db4a97f5f64c01c66332_13.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 在屏幕顶部是模型标签。😊这些标签包括模型任务以及与我们刚才看到的类别相关的其他标签。😊。![](img/bdba16451070db4a97f5f64c01c66332_13.png)
 - en: The files and version tab displays the architecture of the repository of that
     model。Here we can see all the files that define this model。You will see all usual
     features of a getT repository， the branches available。Do you commit history。As
     well as the committed di。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 文件和版本选项卡显示了该模型的仓库架构。这里我们可以看到定义该模型的所有文件。你将看到 getT 仓库的所有常规功能，包含可用的分支、提交历史以及提交的差异。
 - en: '![](img/bdba16451070db4a97f5f64c01c66332_15.png)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bdba16451070db4a97f5f64c01c66332_15.png)'
 - en: Three different buttons are available at the top of the model card。The first
     one shows how to use the inference API programmatically。![](img/bdba16451070db4a97f5f64c01c66332_17.png)
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型卡的顶部有三个不同的按钮。第一个展示了如何以编程方式使用推理 API。![](img/bdba16451070db4a97f5f64c01c66332_17.png)
 - en: '![](img/bdba16451070db4a97f5f64c01c66332_18.png)'
+  id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bdba16451070db4a97f5f64c01c66332_18.png)'
 - en: The second one shows how to train this model in sage maker。And the last one
     shows how to load that model within the appropriate library for Bt。 this is transformers。![](img/bdba16451070db4a97f5f64c01c66332_20.png)
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 第二个展示了如何在 SageMaker 中训练这个模型。最后一个展示了如何在适当的库中加载该模型，适用于 Bt。这就是 transformers。![](img/bdba16451070db4a97f5f64c01c66332_20.png)
 - en: 嗯。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗯。
