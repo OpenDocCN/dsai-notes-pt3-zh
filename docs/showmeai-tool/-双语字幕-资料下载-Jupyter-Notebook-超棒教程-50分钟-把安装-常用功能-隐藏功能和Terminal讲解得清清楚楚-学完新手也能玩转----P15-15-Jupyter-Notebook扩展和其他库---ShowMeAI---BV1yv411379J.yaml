@@ -1,98 +1,140 @@
 - en: 【双语字幕+资料下载】Jupyter Notebook 超棒教程！50分钟，把安装、常用功能、隐藏功能和Terminal讲解得清清楚楚。学完新手也能玩转！
     - P15：15）Jupyter Notebook扩展和其他库 - ShowMeAI - BV1yv411379J
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Jupyter Notebook超棒教程！50分钟，把安装、常用功能、隐藏功能和Terminal讲解得清清楚楚。学完新手也能玩转！
+    - P15：15）Jupyter Notebook扩展和其他库 - ShowMeAI - BV1yv411379J
 - en: And that is pretty much it for our Jupiter notebook tutorial here。 So I want
     to leave you with a couple other resources。 I'm not gonna go into into too much
     depth here because I think you've gotten a really good foundation that you can
     start with。 but I want to make you aware of these， in case they are helpful for
     what you want to do with Jupyter notebooks。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 这基本上就是我们这里的Jupyter笔记本教程。所以我想给你留几个其他资源。我不会深入讲解，因为我认为你已经打下了很好的基础，可以开始了，但我想让你知道这些，以防它们对你想要做的事情有帮助。
 - en: So the first tool which is part of the Jupiter notebooks installation， I believe
     is in be convert。 So notebook convert here。 So this basically helps you convert
     notebooks to other formats。 like it says here， very helpfully。 you can convert
     to Pdfs， you can convert to latex Hml， etc ceter。 This can be very， very handy。
     The second resource I want to point you to is in B format。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以第一个工具，我相信是Jupyter笔记本安装的一部分，是nbconvert。所以这里的notebook convert。这基本上帮助你将笔记本转换为其他格式。正如这里所说，非常有帮助。你可以转换为PDF，可以转换为LaTeX、HTML等等。这会非常方便。第二个我想指出的资源是B格式。
 - en: '![](img/fada9b10c7f63ddff8bee1e0b3c83e54_1.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/fada9b10c7f63ddff8bee1e0b3c83e54_1.png)'
 - en: So if you Google in B format and then click here the Jupyter notebook format
     and specifically this Python API for working with notebook files。![](img/fada9b10c7f63ddff8bee1e0b3c83e54_3.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以如果你在B格式中搜索，然后点击Jupyter笔记本格式，特别是这个用于处理笔记本文件的Python API。![](img/fada9b10c7f63ddff8bee1e0b3c83e54_3.png)
 - en: So this is also something that just comes with your Jupyter notebook installation。And
     this is a way to programmatically work with notebook files within Python scripts。
     So。 for example， imagine that you want to create a certain type of Jupyter notebook。
     Maybe you want to create。Various code cells and different kinds of markdown cells
     based on the type of data that you have。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 这也是随你的Jupyter笔记本安装提供的。这是一种在Python脚本中以编程方式处理笔记本文件的方法。因此，例如，想象一下你想创建某种类型的Jupyter笔记本。也许你想创建不同类型的数据对应的各种代码单元和不同类型的markdown单元。
 - en: And you， you have some logic for how you want to create the Jupyter notebook
     itself。 Well。 in B format can help you do that。Additionally， you can read in existing
     notebooks and edit them and then save them back out as Jupiter notebooks。 So this
     is very， very helpful for programmatically working with different Jupiter notebooks。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 你有一些逻辑来决定如何创建Jupyter笔记本。好吧，B格式可以帮助你做到这一点。此外，你可以读取现有笔记本并编辑，然后将其保存为Jupyter笔记本。这对于以编程方式处理不同的Jupyter笔记本非常有帮助。
 - en: '![](img/fada9b10c7f63ddff8bee1e0b3c83e54_5.png)'
+  id: totrans-7
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/fada9b10c7f63ddff8bee1e0b3c83e54_5.png)'
 - en: And this resource here， combined with this next one， paper mill can be a very
     powerful combination。So paper mill does not come with Jupiter Notes natively，
     you have to install it separately。![](img/fada9b10c7f63ddff8bee1e0b3c83e54_7.png)
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 而这个资源，加上下一个，paper mill可以形成非常强大的组合。所以paper mill并不是Jupyter笔记本自带的，你需要单独安装。![](img/fada9b10c7f63ddff8bee1e0b3c83e54_7.png)
 - en: But paper mill lets you parameterize notebooks and execute notebooks。 So whenever
     I say parameterize。This means passing variables into the notebook。So let's say
     that you have an experiment inside of a Jupyter notebook and you want to run it
     with different sets of parameters。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是paper mill让你可以参数化笔记本并执行笔记本。所以每当我说参数化，这意味着将变量传入笔记本。所以假设你在Jupyter笔记本中有一个实验，想用不同的参数集运行它。
 - en: Well， you can use paper mill to pass in different values of your parameters
     to the notebook and then automatically execute the whole notebook and spit out
     kind of a final。Completed， executed Jupyter notebook on the output side of things。![](img/fada9b10c7f63ddff8bee1e0b3c83e54_9.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，你可以使用paper mill将不同的参数值传入笔记本，然后自动执行整个笔记本，最终输出一个完成的、执行过的Jupyter笔记本。![](img/fada9b10c7f63ddff8bee1e0b3c83e54_9.png)
 - en: Or thinking about it with in B format， you could dynamically create a certain
     type of notebook with In B format using Python。 you could then execute that notebook
     using paperm。 and then maybe you could convert that notebook into a PDFf。 and，
     you know。 maybe automatically email it out or something like that。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者从B格式考虑，你可以使用Python动态创建某种类型的笔记本，然后使用paper mill执行该笔记本，也许你可以将该笔记本转换为PDF，并且，知道吗？也许自动发送电子邮件之类的。
 - en: So this is kind of a way that these extensions are very powerful and can be
     used in conjunction with one another。![](img/fada9b10c7f63ddff8bee1e0b3c83e54_11.png)
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这是一种这些扩展非常强大且可以相互结合使用的方式。![](img/fada9b10c7f63ddff8bee1e0b3c83e54_11.png)
 - en: '![](img/fada9b10c7f63ddff8bee1e0b3c83e54_12.png)'
+  id: totrans-13
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/fada9b10c7f63ddff8bee1e0b3c83e54_12.png)'
 - en: '![](img/fada9b10c7f63ddff8bee1e0b3c83e54_13.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/fada9b10c7f63ddff8bee1e0b3c83e54_13.png)'
 - en: '![](img/fada9b10c7f63ddff8bee1e0b3c83e54_14.png)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/fada9b10c7f63ddff8bee1e0b3c83e54_14.png)'
 - en: Now， the very last thing I want to leave you with。Is just if you Google Jupiter
     notebook extensions。And then come to this i Python contri Jupiter contri in B
     extensions。And let's see specifically。 here is a link to the documentation。![](img/fada9b10c7f63ddff8bee1e0b3c83e54_16.png)
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，我想留给你们的最后一件事就是。如果你在谷歌上搜索Jupyter笔记本扩展，然后来到这个i Python contri Jupiter contri
+    in B扩展。让我们具体看看。这里是文档的链接。![](img/fada9b10c7f63ddff8bee1e0b3c83e54_16.png)
 - en: So any kind of functionality that you want with in Jupyter notebooks might exist
     with a Jupyter notebook extension。 So there are all kinds of things that you can
     do here from let's see。 code font size to automatically liing your code。To let's
     see here， do do do do。You've got all kinds of different extensions in here。 you
     have a spell checker。You have this， oh。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以你在Jupyter笔记本中想要的任何功能可能都可以通过Jupyter笔记本扩展实现。所以在这里你可以做各种各样的事情，比如说代码字体大小，自动对齐代码。让我们看看，你有各种不同的扩展。你有拼写检查器。你有这个，哦。
 - en: the hinter land one， which gives you code hints or autocompte for your code，
     all kinds of， oh yeah。 code folding here。All kinds of different extensions for
     Jupiter notebooks that you can check out here。 so if you want certain functionality，
     it might exist here。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: hinter land one，提供代码提示或代码自动补全，各种各样的，哦对了。这里有代码折叠。你可以在这里查看各种不同的Jupyter笔记本扩展。如果你想要某种功能，它可能就在这里存在。
 - en: '![](img/fada9b10c7f63ddff8bee1e0b3c83e54_18.png)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/fada9b10c7f63ddff8bee1e0b3c83e54_18.png)'

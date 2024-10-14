@@ -1,101 +1,152 @@
 - en: 【双语字幕+资料下载】Jupyter Notebook 超棒教程！50分钟，把安装、常用功能、隐藏功能和Terminal讲解得清清楚楚。学完新手也能玩转！
     - P2：2）Jupyter Notebook示例 - ShowMeAI - BV1yv411379J
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Jupyter Notebook 超棒教程！50分钟，把安装、常用功能、隐藏功能和Terminal讲解得清清楚楚。学完新手也能玩转！
+    - P2：2）Jupyter Notebook示例 - ShowMeAI - BV1yv411379J
 - en: I am going to drag over here。 I have a， this is a a Github repository here。
     a gallery of interesting Jupyter notebooks。 So if you're interested in asking
     the question。 what all are Jupyter notebooks used for。 Well， the answer is they're
     used for about anything that you might want to do with data and Python。 So specifically
     this this person， or I guess this has probably been compiled by a lot of different
     people。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将把它拖到这里。我有一个，这是一个Github代码库，里面有一些有趣的Jupyter Notebook画廊。如果你对Jupyter Notebook的用途感到好奇。那么，答案是它们可以用于你可能想用数据和Python做的任何事情。具体来说，这个人，或者我想这可能是由许多人汇编的。
 - en: 😊。![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_1.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_1.png)
 - en: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_2.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_2.png)'
 - en: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_3.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_3.png)'
 - en: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_4.png)'
+  id: totrans-5
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_4.png)'
 - en: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_5.png)'
+  id: totrans-6
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_5.png)'
 - en: They have helpfully compiled a lot of different notebooks here。 So let's see，
     let's see。 We've got some general Python programming， scientific computing。 I'm
     going to scroll down to where are we Ma learning， statistics and probability。
     Let's take a look。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 他们在这里汇总了许多不同的笔记本。让我们看看，我们有一些通用的Python编程和科学计算。我将滚动到我们学习统计学和概率的地方。让我们来看看。
 - en: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_7.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_7.png)'
 - en: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_8.png)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_8.png)'
 - en: At that， so。If I open up， let's say this face recognition on a subset of labeled
     faces in the wild dataset set。![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_10.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，如果我打开这个在“野外数据集中标记的人脸子集”上的面部识别。![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_10.png)
 - en: You'll see here that using this nice little inB viewer URL。 we're able to see
     this person's Jupyter notebook and see exactly the code that they used。 see exactly
     what they did。![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_12.png)
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 你会看到，使用这个不错的inB查看器URL，我们能够查看这个人的Jupyter Notebook，确切地看到他们使用的代码，确切地看到他们做了什么。![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_12.png)
 - en: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_13.png)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_13.png)'
 - en: And see the images of the results。 See the graphs from the data that they're
     using。![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_15.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 并查看结果的图像。查看他们使用的数据的图表。![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_15.png)
 - en: And you can use normal text here to divide it up into section。 So this is why
     this is why Jupyter notebooks have become more and more popular within the scientific
     community and also for data scientists。 generally speaking， is because you're
     able to in a single notebook。 do some experiments you're able to do some modeling。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以在这里使用普通文本将其划分为多个部分。这就是为什么Jupyter Notebook在科学界和数据科学家中越来越受欢迎的原因。一般来说，这是因为你能够在一个笔记本中进行一些实验，进行一些建模。
 - en: you're able to you're able to do you know whatever kind of transformations and
     manipulations with your data that you want and and train a model that does that
     does predictions。![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_17.png)
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以对你的数据进行任何你想要的转换和操作，并训练一个能够进行预测的模型。![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_17.png)
 - en: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_18.png)'
+  id: totrans-16
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_18.png)'
 - en: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_19.png)'
+  id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_19.png)'
 - en: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_20.png)'
+  id: totrans-18
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_20.png)'
 - en: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_21.png)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_21.png)'
 - en: And you're able to write up some context about it。 And you can share that notebook
     with others。 So it's， it's a really great way。😊。![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_23.png)
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以写一些关于它的背景信息。你还可以与其他人分享这个笔记本。所以，这是一种非常好的方式。😊。![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_23.png)
 - en: To make your work more visible to others more transparent。 And， you know。 you
     can share this notebook with anybody。 They don't have to be technically minded。
     they don't。 you don't have to create a web application or anything you don't have
     to create a whole website to just share some analysis that you wanted to do。 So
     Jupiter notebooks are very handy for a lot of different things And I'm not sure
     what you want to use them for。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 让你的工作对他人更加可见和透明。而且，你知道的。你可以与任何人分享这个笔记本。他们不需要具备技术背景。你不需要创建一个网络应用程序或任何东西，你也不需要创建一个完整的网站来分享你想做的一些分析。因此，Jupiter笔记本在许多不同的场合都非常方便，而我不确定你想用它们做什么。
 - en: but I'm sure it's very interesting and useful。 So let me show you how to use
     Jupiter notebooks。 Let's go ahead and dive。![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_25.png)
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 不过我相信这一定非常有趣且有用。所以让我来告诉你如何使用Jupiter笔记本。让我们开始深入探讨吧。![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_25.png)
 - en: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_26.png)'
+  id: totrans-23
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_26.png)'
 - en: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_27.png)'
+  id: totrans-24
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bebfc5b1a8153c6a7ba708b3cb0c3183_27.png)'

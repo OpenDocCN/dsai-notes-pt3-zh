@@ -1,63 +1,96 @@
 - en: 【双语字幕+资料下载】Jupyter Notebook 超棒教程！50分钟，把安装、常用功能、隐藏功能和Terminal讲解得清清楚楚。学完新手也能玩转！
     - P11：11）在 Jupyter Notebook中使用终端命令 - ShowMeAI - BV1yv411379J
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Jupyter Notebook 超棒教程！50分钟，把安装、常用功能、隐藏功能和 Terminal 讲解得清清楚楚。学完新手也能玩转！
+    - P11：11）在 Jupyter Notebook 中使用终端命令 - ShowMeAI - BV1yv411379J
 - en: Alright， let's go ahead and move on。 We've just got a couple more things to
     do inside the notebook。 And then we're going to do a tour of the other things
     you can do in Jupyter notebooks outside of the notebook。 And then I've got some
     extensions to show you。 and then we'll be done。 So we're getting pretty close
     here， so。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，我们继续吧。我们在笔记本里还有几件事要做。然后我们将进行一次关于在 Jupyter 笔记本外部可以做的其他事情的 tour。接着我会给你展示一些扩展功能，然后我们就完成了。所以我们快到了。
 - en: '![](img/bf0b1fbde882381507b11138c74d9d67_1.png)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bf0b1fbde882381507b11138c74d9d67_1.png)'
 - en: '![](img/bf0b1fbde882381507b11138c74d9d67_2.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bf0b1fbde882381507b11138c74d9d67_2.png)'
 - en: Alright， so running bash or terminal。![](img/bf0b1fbde882381507b11138c74d9d67_4.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，所以运行 bash 或终端。![](img/bf0b1fbde882381507b11138c74d9d67_4.png)
 - en: Commands here。So a nice thing about Jupiter notebooks， Jupiter notebooks。Is
     that even though we're running Python here。Jupiter Notes allows you to run bash
     commands。 so for example。Even though this LS。Is a bash command， It doesn't require
     this special syntax。 which I'm about to show you。Which is the exclamation point。
     So typically。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里的命令。关于 Jupyter 笔记本的一件好事是，即使我们在这里运行 Python，Jupyter 笔记本也允许你运行 bash 命令。所以举个例子，即使这个
+    LS 是一个 bash 命令，它也不需要我即将展示的这种特殊语法，也就是感叹号。所以通常来说。
 - en: if you're running normal bash or terminal commands。 you're going to use this
     exclamation point to tell Jupyter notebooks that you want to run a bash command。
     So let's say we want to make a directory。 So we' want to make their。Just， you
     know， test directory。 something like that。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你运行普通的 bash 或终端命令，你将使用这个感叹号告诉 Jupyter 笔记本你想要运行一个 bash 命令。所以假设我们想要创建一个目录。我们想要创建一个测试目录，类似这样的。
 - en: '![](img/bf0b1fbde882381507b11138c74d9d67_6.png)'
+  id: totrans-7
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bf0b1fbde882381507b11138c74d9d67_6.png)'
 - en: Now if I run LS。![](img/bf0b1fbde882381507b11138c74d9d67_8.png)
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在如果我运行 LS。![](img/bf0b1fbde882381507b11138c74d9d67_8.png)
 - en: You'll see that we've just created a new test directory。 And if I come back
     out here to our Jupyter notebooks， our main window。 you'll see that here is our
     test directory。 So we were able to run a batchsh command inside of Jupyter notebooks。
     You can also do this if you need to install a new package， for example。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 你会看到我们刚刚创建了一个新的测试目录。如果我回到我们的 Jupyter 笔记本主窗口，你会看到这里是我们的测试目录。所以我们能够在 Jupyter 笔记本中运行一个
+    batchsh 命令。如果需要安装新包，比如说，你也可以这样做。
 - en: like let's say you want to Pip install the data visualization library， Cborn。
     Well。 you could do that right within the Jupyter notebook if you wanted。😊。![](img/bf0b1fbde882381507b11138c74d9d67_10.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 比如说你想安装数据可视化库 Cborn。你可以在 Jupyter 笔记本里直接做到这一点。😊。![](img/bf0b1fbde882381507b11138c74d9d67_10.png)
 - en: '![](img/bf0b1fbde882381507b11138c74d9d67_11.png)'
+  id: totrans-11
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bf0b1fbde882381507b11138c74d9d67_11.png)'
 - en: '![](img/bf0b1fbde882381507b11138c74d9d67_12.png)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bf0b1fbde882381507b11138c74d9d67_12.png)'
 - en: Although you could also just hop back out to the terminal to do that。 So， you
     know， you don't。 you don't need to do this in here necessarily， but。![](img/bf0b1fbde882381507b11138c74d9d67_14.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然你也可以直接跳回终端去做这个。所以，你知道，你不一定要在这里做这个，但。![](img/bf0b1fbde882381507b11138c74d9d67_14.png)
 - en: And there you go。![](img/bf0b1fbde882381507b11138c74d9d67_16.png)
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 就这样。![](img/bf0b1fbde882381507b11138c74d9d67_16.png)

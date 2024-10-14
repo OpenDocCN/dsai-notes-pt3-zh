@@ -1,68 +1,99 @@
 - en: 【双语字幕+资料下载】Jupyter Notebook 超棒教程！50分钟，把安装、常用功能、隐藏功能和Terminal讲解得清清楚楚。学完新手也能玩转！
     - P10：10）使用 pandas 加载和显示数据 - ShowMeAI - BV1yv411379J
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[双语字幕+资料下载]Jupyter Notebook 超棒教程！50分钟，把安装、常用功能、隐藏功能和Terminal讲解得清清楚楚。学完新手也能玩转！
+    - P10：10）使用 pandas 加载和显示数据 - ShowMeAI - BV1yv411379J'
 - en: '![](img/40f6b2bf3ea276bf57a2926301aad74e_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/40f6b2bf3ea276bf57a2926301aad74e_0.png)'
 - en: Alright， one of the main things that you are probably gonna to be doing in Jupyter
     notebooks is looking at and transforming and cleaning data。 So let's load some
     data using pandas and see how that looks。 So load。Data using pandas。 So the first
     thing I'm going to do is I'm going to import pandas as PD D。And if you watch some
     of the other project data science videos， this Jupyter notebook right now。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，你在 Jupyter 笔记本中可能会做的主要事情之一是查看、转换和清理数据。所以让我们使用 pandas 加载一些数据，看看效果如何。所以加载。使用
+    pandas 加载数据。所以我要做的第一件事是将 pandas 导入为 PD D。如果你看过其他一些项目数据科学的视频，这个 Jupyter 笔记本现在。
 - en: as we are currently designing it is a mess， this is a disaster。I would definitely
     recommend watching some of the other videos to see kind of how to use a Jupyter
     notebook in a nice。Flow for a project。 typicallyyically I have all my imports
     at the very top of the Jupiter notebook。 and I keep them all there。But for now，
     this is just about using Jupyter notebooks。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 因为我们目前的设计是个乱七八糟，这真是一场灾难。我绝对推荐观看其他一些视频，看看如何以良好的流程使用 Jupyter 笔记本进行项目。通常我会把所有的导入放在
+    Jupyter 笔记本的最顶部。我将它们全部保留在那里。但现在，这只是关于使用 Jupyter 笔记本。
 - en: So we're just gonna do the import right down here。 So I need some data。 Let
     me go。 let me go grab some data。 So let's go to， if you Google， let's see Caggle
     heart disease。So I believe this heart disease UCI data set， this is one that we
     use in another project data science video。 I think the map plot Lib tutorial may
     let's download this data。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们就在这里做导入。所以我需要一些数据。让我去找一些数据。让我们去，如果你在谷歌上搜索，让我们看看 Caggle 心脏病。所以我相信这个心脏病 UCI
+    数据集，这是我们在另一个项目数据科学视频中使用的一个。我认为 map plot Lib 教程可能让我们下载这个数据。
 - en: '![](img/40f6b2bf3ea276bf57a2926301aad74e_2.png)'
+  id: totrans-5
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/40f6b2bf3ea276bf57a2926301aad74e_2.png)'
 - en: We'll click here。Unzip it。Let me drag over my download screen， all right， heart。tcsv。So
     I'll come back over here to my terminal really quick。 And I'm just gonna use the
     terminal to move this file。 So I'll move from my home directory。 from downloads
     to。Home project， data science， Jupiter tutorial。 Oh， and actually。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将在这里点击。解压它。让我把下载界面拖过来，好的，heart.tc CSV。所以我很快回到我的终端。我只是要使用终端来移动这个文件。所以我将从我的主目录移动。从下载到。Home
+    project，数据科学，Jupiter 教程。哦，实际上。
 - en: I don't want to move the whole downloads folder。 I want to move heart do CSV。
     There we go。Alright。 so I run this， you'll see that Heart dot CSsV disappears
     from my downloads folder。 let's close that out。Come back over to Jupiter Notes。Now。
     the first thing I'm going to do is I'm going to run LS。 Now， LS is actually a。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 我不想移动整个下载文件夹。我想移动 heart do CSV。好了。这样。好的。所以我运行这个，你会看到 Heart.dot CSsV 从我的下载文件夹中消失。我们来关闭它。回到
+    Jupiter 笔记本。现在。我要做的第一件事是运行 LS。现在，LS 实际上是一个。
 - en: this is a terminal command。 This is like a bash command to list out the contents
     of the directory that you're currently in。 but it also works in Jupyter notebook
     code cells， which is really nice。 so you can you can type LS。😊，And print out the
     contents of the current directory that you're in。 so you'll see here is our heart。csv
     data。I will do DF equals P D dot read， CSV。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个终端命令。这就像一个 bash 命令，用于列出你当前目录中的内容。但它也可以在 Jupyter 笔记本的代码单元中使用，这真的很好。所以你可以输入
+    LS。😊并打印出你当前目录的内容。所以你会看到我们的 heart.csv 数据。我将做 DF 等于 P D 点 read，CSV。
 - en: I'm just going to read in our data here。So we read this， you'll see that it
     executes fine。 Now。 if I just do D F。Here is how Jupiter notebooks displays this
     data。 So this is pretty nice。 actually。 You can see that if you hover over a row
     of data， it highlights it。You'll see that the rows are kind of nice。 You've got
     this alternating gray white。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将直接读取我们的数据。所以我们读取这个，你会看到它执行得很好。现在，如果我只做 D F。这里是 Jupiter 笔记本如何显示这些数据。所以这真的不错。实际上。你可以看到，如果你将鼠标悬停在数据行上，它会高亮显示。你会看到这些行看起来很不错。你有这种交替的灰白色。
 - en: so you can see the data pretty easily。 I'll do DF dot head just to look at the
     first five rows of data。And and the columns are all nice and bolded here。 so you
     can see。What the column names are and which columns go with which which data here。So
     that's one of the nice things about using Jupyter notebooks with pandas for reading
     in your data。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 这样你就可以很容易地看到数据。我将使用`DF dot head`来查看前五行数据。列名都很清晰并且是粗体的，所以你可以看到列名是什么，以及哪些列对应于这些数据。这是使用Jupyter笔记本和pandas读取数据的一个优点。
 - en: '![](img/40f6b2bf3ea276bf57a2926301aad74e_4.png)'
+  id: totrans-11
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/40f6b2bf3ea276bf57a2926301aad74e_4.png)'

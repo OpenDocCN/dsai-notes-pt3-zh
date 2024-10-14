@@ -1,38 +1,55 @@
 - en: 【双语字幕+资料下载】Jupyter Notebook 超棒教程！50分钟，把安装、常用功能、隐藏功能和Terminal讲解得清清楚楚。学完新手也能玩转！
     - P13：13）Notebook之外的其他功能 - ShowMeAI - BV1yv411379J
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Jupyter Notebook 超棒教程！50分钟，把安装、常用功能、隐藏功能和Terminal讲解得清清楚楚。学完新手也能玩转！
+    - P13：13）Notebook之外的其他功能 - ShowMeAI - BV1yv411379J
 - en: The future。 Alright， so let's save this notebook。 So I'll command S saveve the
     notebook。 Let's close out of it。 I'll go ahead and shut it down。![](img/d72178757d53895fcc91159e5e553095_1.png)
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 未来。好吧，让我们保存这个笔记本。所以我会命令S保存笔记本。让我们关闭它。我会先关闭它。![](img/d72178757d53895fcc91159e5e553095_1.png)
 - en: I'll delete this。Test directory that I created inside there。![](img/d72178757d53895fcc91159e5e553095_3.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 我会删除这个。测试目录是在里面创建的。![](img/d72178757d53895fcc91159e5e553095_3.png)
 - en: And let's show you a couple other things in here， and then I'll leave you with
     some resources and we' be done。Alright， so if you go over here to the right under
     this new button。 you'll also notice that we have options under other for a text
     file。And a terminal。 So if you want to run terminal right here within Jupyter
     Notes， you have that ability。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们在这里展示一些其他内容，然后我会给你一些资源，我们就结束了。好吧，如果你到右边这个新按钮下面去，你会注意到我们在其他选项下有一个文本文件和一个终端。所以如果你想在Jupyter笔记本中运行终端，你可以这样做。
 - en: And in my case， you'll notice that this looks very similar to my terminal that
     I have out here。 So it is running Zish so I can， you know， I can do LS and print
     out all of the directories here。![](img/d72178757d53895fcc91159e5e553095_5.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我的情况下，你会注意到这看起来非常类似于我在这里的终端。所以它正在运行Zish，所以我可以，你知道，我可以使用LS命令打印出这里所有的目录。![](img/d72178757d53895fcc91159e5e553095_5.png)
 - en: If I wanted to， if I was using version control with git。 I could do that or
     anything else that I wanted to do inside of this terminal here。 So I'll go ahead
     and exit out of this。 You'll notice that this has closed now。![](img/d72178757d53895fcc91159e5e553095_7.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我想的话，如果我使用git进行版本控制，我可以在这个终端中做那样的事情或其他任何我想做的事情。所以我会退出这个。你会注意到这个现在已经关闭了。![](img/d72178757d53895fcc91159e5e553095_7.png)
 - en: And under running， there are no terminals running because I exited out if we
     had left it running。Let's just keep that open for a second。And refresh。 There
     you go。 You'll see that we have one terminal running。 Now。 I'll go ahead and shut
     this down。![](img/d72178757d53895fcc91159e5e553095_9.png)
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 在运行中，没有终端在运行，因为我已经退出了，如果我们让它保持运行。让我们保持这个打开一秒钟。然后刷新。这样你就会看到我们有一个终端在运行。现在。我会关闭它。![](img/d72178757d53895fcc91159e5e553095_9.png)
 - en: And that closes it for us， as well。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 这对我们来说就结束了。

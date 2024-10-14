@@ -1,59 +1,88 @@
 - en: 【双语字幕+资料下载】Jupyter Notebook 超棒教程！50分钟，把安装、常用功能、隐藏功能和Terminal讲解得清清楚楚。学完新手也能玩转！
     - P12：12）Jupyter Notebook魔术命令 - ShowMeAI - BV1yv411379J
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Jupyter Notebook 超棒教程！50分钟，把安装、常用功能、隐藏功能和Terminal讲解得清清楚楚。学完新手也能玩转！
+    - P12：12）Jupyter Notebook魔术命令 - ShowMeAI - BV1yv411379J
 - en: Alright， so the last thing I'll show you before we save and exit out of the
     notebook here is magic commands。 Now， this is kind of a cool name。 Magic commands
     makes you feel pretty powerful， and it does。 because these are pretty cool， so。😊。![](img/48c3eb139983bc807bec7c1942f7eacd_1.png)
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，那么在我们保存并退出笔记本之前，我要给你展示的最后一件事是魔术命令。现在，这是个很酷的名字。魔术命令让你感觉非常强大，确实如此。因为这些命令非常酷，所以。😊。![](img/48c3eb139983bc807bec7c1942f7eacd_1.png)
 - en: I will， let's see。 Let me copy over this link here。 Or actually。 if you just
     Google Jupiter magic commands。![](img/48c3eb139983bc807bec7c1942f7eacd_3.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 我会，看看。让我复制这个链接。或者其实。如果你只是谷歌一下Jupyter魔术命令。![](img/48c3eb139983bc807bec7c1942f7eacd_3.png)
 - en: Should pop up here right at the top， built in magicic commands。![](img/48c3eb139983bc807bec7c1942f7eacd_5.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 应该在这里的顶部弹出，内置的魔术命令。![](img/48c3eb139983bc807bec7c1942f7eacd_5.png)
 - en: So these are things that are not part of your standard Python that you can do。![](img/48c3eb139983bc807bec7c1942f7eacd_7.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这些都是你在标准Python中无法做到的事情。![](img/48c3eb139983bc807bec7c1942f7eacd_7.png)
 - en: In Jupiter notebooks。 So， for example， let's scroll down。![](img/48c3eb139983bc807bec7c1942f7eacd_9.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 在Jupyter笔记本中。所以，例如，让我们向下滚动。![](img/48c3eb139983bc807bec7c1942f7eacd_9.png)
 - en: To a cool one， which is debug。So。Debug， for example， let's say that we break
     some code。![](img/48c3eb139983bc807bec7c1942f7eacd_11.png)
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 有一个很酷的，叫debug。所以。Debug，例如，假设我们让某段代码崩溃。![](img/48c3eb139983bc807bec7c1942f7eacd_11.png)
 - en: So maybe I will say， you know， in this cell， let's say x equals。Hello worlds。And
     then we'll maybe say y equals true。And maybe if y well。 then let's try to do z
     equals 1 divided by 0。 So let's， let's break， let's break this code here。![](img/48c3eb139983bc807bec7c1942f7eacd_13.png)
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以也许我会说，你知道，在这个单元中，假设x等于。Hello world。然后我们可能会说y等于true。也许如果y，那么我们尝试z等于1除以0。让我们，打破这个代码。![](img/48c3eb139983bc807bec7c1942f7eacd_13.png)
 - en: '![](img/48c3eb139983bc807bec7c1942f7eacd_14.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/48c3eb139983bc807bec7c1942f7eacd_14.png)'
 - en: So we run this。This breaks。Let's type in debug， shall we because we want to
     debug our code。And this drops us in to this cell at the point of execution， right
     where our code broke。So if I print out why， for example。Then you see that y is
     true。 Maybe I want to try z equals 1 over0。 and you'll see that we get that zero
     division error。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们运行这个。这会崩溃。让我们输入debug，好吗，因为我们想调试我们的代码。这样我们就能在代码崩溃的执行点进入这个单元。如果我打印出y，比如说。那么你会看到y为真。也许我想尝试z等于1除以0。你会看到我们得到了零除错误。
 - en: And so you're able to be dropped right into where your code breaks using this
     handy dandy Dbug magic command。 Now， there are a ton of other magic commands here。![](img/48c3eb139983bc807bec7c1942f7eacd_16.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以你能够直接进入代码崩溃的地方，使用这个方便的Dbug魔术命令。现在，这里有很多其他魔术命令。![](img/48c3eb139983bc807bec7c1942f7eacd_16.png)
 - en: '![](img/48c3eb139983bc807bec7c1942f7eacd_17.png)'
+  id: totrans-11
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/48c3eb139983bc807bec7c1942f7eacd_17.png)'
 - en: For example， you can save out various portions of your Jupyter notebook。 You
     can change how the notebook runs all kinds of interesting stuff。 You can look
     at the history of what you've been running。All kinds of cool stuff。I would recommend
     at least scrolling through these so that you have an awareness of them in case
     you need to use them in。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，你可以保存Jupyter笔记本的各个部分。你可以改变笔记本的运行方式，各种有趣的东西。你可以查看你运行过的历史记录。各种酷炫的东西。我建议至少浏览一下这些，以便在需要时能使用它们。
 - en: '![](img/48c3eb139983bc807bec7c1942f7eacd_19.png)'
+  id: totrans-13
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/48c3eb139983bc807bec7c1942f7eacd_19.png)'
