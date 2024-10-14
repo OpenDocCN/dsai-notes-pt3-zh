@@ -1,212 +1,289 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P10：[讲座] 使用 Google CoLab
     进行深度神经网络课程应用 - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P10：[讲座] 使用 Google CoLab
+    进行深度神经网络课程应用 - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeff Heaton。 Welcome to applications of deep neural networks with
     Washington University。 In this video， I'm going to introduce Google Coab。 and
     I'm going to show you how to make use of Google Coabab to run the various modules
     from this course and also how to use it to submit assignments。😊，Most things will
     work in Google Coab。 In fact， most things in this course will run quite a bit
     faster in Google Coab due to the fact that it gives you a GPU。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是Jeff Heaton。欢迎来到华盛顿大学的深度神经网络应用。在这段视频中，我将介绍Google CoLab，并展示如何使用Google CoLab运行本课程的各种模块，以及如何使用它提交作业。😊，大多数功能在Google
+    CoLab中都能正常运行。事实上，由于它为你提供GPU，本课程的大部分内容在Google CoLab中运行会快得多。
 - en: Now you might have a superior GPU to Google Coabab on your local machine。 and
     if that's the case。 then I definitely encourage you to install the GPU edition
     of Tensorflow on your actual computer。 however， it can be somewhat complex to
     get the GPU working in TensorFlow For the latest on my AI course and projects。
     click subscribe in the bell next to it to be notified of every new video。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，你的本地机器可能有比Google CoLab更强的GPU，如果是这样的话，我确实鼓励你在你的电脑上安装Tensorflow的GPU版。然而，在TensorFlow中让GPU工作可能有点复杂。要了解我AI课程和项目的最新信息，请点击旁边的铃铛订阅，以便收到每个新视频的通知。
 - en: '![](img/9b3166bd64e1d412ba7306144df7359f_1.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/9b3166bd64e1d412ba7306144df7359f_1.png)'
 - en: Google Coab can be a great way to get through this course。 You can do the entire
     course completely in the cloud using Google Coab。 just a few things you need to
     be aware of。 And that's what I'm going to take you through this video。 First of
     all， just to get into Google Coab。 I recommend just do a Google search on Google
     coab and it'll take you right to it。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: Google CoLab可以是完成这门课程的好方法。你可以完全在云中使用Google CoLab完成整个课程。只需注意一些事情。这就是我将在这个视频中向你展示的。首先，为了进入Google
+    CoLab，我建议你在Google上搜索Google CoLab，它会直接带你去。
 - en: It's coab research， Google co I've also got a link to it on my course website。
     Now when it pops you into Google Coab， you're gonna see a lot of things going
     on here。 I have used this for a number of different things。 So I'll have a lot
     more files in here probably than you will。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是Coab研究，Google CoLab，我在我的课程网站上也有相关链接。现在，当你进入Google CoLab时，你会看到许多事情在进行中。我用这个做了很多不同的事情。所以这里的文件可能会比你拥有的多得多。
 - en: All of your notebooks that you're going to work on。 are going to be stored in
     your Google Drive。 So let's go ahead and show you how you could get say the very，
     very first module 1 course 1。 Click on Github and you will type Jeff Heaton all。😊。![](img/9b3166bd64e1d412ba7306144df7359f_3.png)
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 你将要使用的所有笔记本都会存储在你的Google Drive中。那么我们来展示一下如何获取第一个模块的第一个课程。点击Github，你会输入Jeff Heaton所有。😊。![](img/9b3166bd64e1d412ba7306144df7359f_3.png)
 - en: ord that is the name of my Github repository。 Now， you might get something like
     this。 This is actually the first time Ive I've seen this。 Apparently。 I have been
     using Github in conjunction with coab enough that they want me to authorize the
     API access。 This is just fine， I will go ahead and click that。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: ord是我Github代码库的名称。现在，你可能会看到这样的内容。这实际上是我第一次看到这个。显然，我已经足够频繁地将Github与CoLab结合使用，以至于他们想让我授权API访问。这没问题，我会点击这个。
 - en: and authorize Google Coab wants me to log into here。 Okay， now we're authorized。
     it probably won't ask you for that at first， But if it does definitely go ahead
     and author so that you can get to things。 Now it'll say Jeff Heaton。 and it gives
     you all of my repositories。 And there is a considerable number of these。 This
     is the one you want。 T 81，5，58 deep learning。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 并授权Google CoLab要求我登录。好吧，现在我们已授权。起初可能不会问你，但如果问了，请务必继续授权，以便你可以访问相关内容。现在会显示Jeff
+    Heaton，并给你我的所有代码库。这些库有相当多。这是你需要的，T81，558深度学习。
 - en: That's the course number at Washington University。 The first things you'll see
     up here are the assignments。 and these assignments will get to that in a moment。Let's
     go ahead and just open up class1 module 1。 This is a notebook。 So it opens up
     here and you can basically see this right now。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是华盛顿大学的课程编号。你会首先看到作业，稍后我们会详细讲解这些作业。现在我们就打开第一个模块的第一个课。这个是一个笔记本，所以它在这里打开，你现在基本上可以看到这个。
 - en: it is not saved to your G drive。 If you want to copy it to G drive and that's
     a good idea。 you'll have to do that when you submit assignments， but let's just
     go ahead and copy that。 So it'll create a copy of it。 You'll see the name of here。
     It says copy of T 81。 That is literally going right into your G drive。 If we go
     into G drive。 And again。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 它没有保存到你的G驱动。如果你想将其复制到G驱动，这是个好主意。你需要在提交作业时这样做，但我们先复制它。所以它会创建一个副本。你会看到这里的名称。它说是T
+    81的副本。这实际上直接进入你的G驱动。如果我们进入G驱动。再一次。
 - en: I have all sorts of things in my Google Drive that you probably will not。 but
     you'll have a directory called coabab notebooks。 This is where Google coabab places
     all of your notebooks。 So here's the copy of this one。 I would suggest renaming
     it to to something else。 So here we are in Google coab。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我在我的Google驱动中有各种各样的东西，你可能没有。但你会有一个叫做Coab笔记本的目录。这是Google Coab放置所有笔记本的地方。所以这是这个副本。我建议将其重命名为其他名称。所以我们现在在Google
+    Coab中。
 - en: I'm going to scroll through this one。 I've got an entire video where I talk。![](img/9b3166bd64e1d412ba7306144df7359f_5.png)
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 我要浏览这个。我有一个完整的视频讲解。![](img/9b3166bd64e1d412ba7306144df7359f_5.png)
 - en: About the intro to this class， but this little bit of Python code here to run
     for the Python versions。Now， notice here， it is 2。0。0。 Google， at least as of
     this recording has not yet updated coabab to 2。0 of Tensorflowlow， I suspect that'll
     happen sometime this semester。 So this is why I end up rerecording this video
     just about every single time。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 关于这门课的介绍，但这里有一小段Python代码可以运行Python版本。现在，请注意，这里是2.0.0。Google，至少在录制时，还没有将Coab更新到TensorFlow
+    2.0，我怀疑这学期会发生。所以这就是为什么我几乎每次都要重新录制这个视频。
 - en: I'm going to run this and we'll see that it'll go to one of the1。 something
     versions of it。 Yeah。 so 1。14， which is a pretty recent version。 I've made sure
     that all the code in here。 or at least most of it is compatible with coabab。 The
     parts that aren't。 which is probably less than 10% of the course。 I give you a
     warning as to why that is。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将运行这个，我们将看到它将去到它的某个版本之一。是的，所以1.14，这是一个相当新的版本。我已经确保这里的所有代码，或者至少大部分与Coab兼容。那些不兼容的部分，可能不到课程的10%，我会警告你为什么会这样。
 - en: and I also don't make any of the assignments require any features that are not
     supported by Google Coab。 Now， notice here， it says GPU is not available。 This
     is a really cool thing about Google Coab。 Let's go to runtime。 change runtime
     type。 We'll leave that。The same。 But let's put in a GPU。 Now it says GPU is available。
     Later on， this will really save you some time in executing these programs。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 我也没有让任何作业需要Google Coab不支持的功能。现在，请注意，这里说GPU不可用。这是Google Coab一个很酷的特点。我们去运行时。更改运行时类型。我们保持不变。但我们放入一个GPU。现在它说GPU可用。稍后，这真的会为你节省一些执行这些程序的时间。
 - en: So this shows you how to basically get the course modules over to Google coab
     if you want to run them unfortunately。 you need to copy them sort of one at a
     time like this。 You could download and this would be a quick way to do it。 You
     could download the entire Github repository and basically just copy the files
     into your G drive and then they would show up and they would be available。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这向你展示了如何基本上将课程模块转移到Google Coab，如果你想运行它们。不幸的是，你需要像这样一个一个地复制。你可以下载，这将是一个快速的方法。你可以下载整个Github库，基本上只需将文件复制到你的G驱动，然后它们就会显示出来并可用。
 - en: Now let's see how to actually submit an assignment using Google coab。 So if
     we go back to coabab and we essentially try to open a notebook。 We'll go right
     back to Github just like we were before。 It's annoying。 it wants me to keep reauthorizing
     that。 It defaults to the assignments。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们看看如何使用Google Coab提交作业。所以如果我们回到Coab，我们基本上尝试打开一个笔记本。我们会像之前一样回到Github。这很烦人。它希望我不断重新授权。它默认为作业。
 - en: and that's just because assignment starts with a so we're。![](img/9b3166bd64e1d412ba7306144df7359f_7.png)
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 这只是因为作业以一个开始，所以我们。![](img/9b3166bd64e1d412ba7306144df7359f_7.png)
 - en: '![](img/9b3166bd64e1d412ba7306144df7359f_8.png)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/9b3166bd64e1d412ba7306144df7359f_8.png)'
 - en: Going to do the class1 assignment real quick here I've opened it up and we absolutely
     have got to copy it to your Google Drive or it won't work。 You will want to change
     the name of it。 Don't do copy of just call it assignment and I'm gonna assignment
     J Heaton。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将快速完成class1作业，我已经打开它，我们绝对必须将其复制到你的Google驱动，否则它将无法工作。你会想要更改它的名称。不要用副本，只称其为作业，我将命名为J
+    Heaton作业。
 - en: make that your own name and class1 put your name in here。 and here's the instructions。
     some common problems that will go on。 you're going to basically use this submit
     function。 So go ahead and run this so that the submit function is built。 This
     is simply a function that I provide for you。 We're not going to talk really about
     how it works。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 把你的名字放到这里，替换为你的名字和class1。这是指令。一些常见问题会出现。你将基本上使用这个提交功能。所以继续运行这个，以构建提交功能。这只是我为你提供的一个功能。我们不会详细讨论它的工作原理。
 - en: It's more just a utility for using this course。 This is an important part。 You'll
     want to do this so that you can basically use files from your Google coab inside
     of your notebook。 This will let you be able to submit your assignments and also
     some of the coursework has you down。load a Cv file as your input data or images
     or other things。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 这更多是用于使用这个课程的工具。这是一个重要部分。你需要这样做，以便基本上可以在你的笔记本中使用来自Google CoLab的文件。这将让你能够提交作业，还有一些课程要求你下载一个Cv文件作为输入数据，或者是图像或其他东西。
 - en: You'll need to copy those to your Google G drive and then access it through
     this。 So let's see how that works。 We're going to go ahead and run this。 And it
     is going to ask me to authenticate this as well。 I need an authorization code
     from Google。 I click this。 And here is my authorization code。 I don't believe
     you can do anything bad with this because I don't think they last very long。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 你需要把那些文件复制到你的Google G驱动器，然后通过这个访问。所以让我们看看这怎么运作。我们将继续运行这个，它也会要求我进行身份验证。我需要一个来自Google的授权码。我点击这个。这里是我的授权码。我不认为你能用这个做什么坏事，因为我认为它们持续的时间不长。
 - en: but I'm going to go ahead and blur this just to be safe。 put it into here， press
     enter。 and now it's mounted。 It's mounted at this location。 So you'll want to
     prefix your files with thatlash contentlash drive just prove that it's really
     there。 I can run exclamation point L。 So that's the Unix Ls command。 So I'm listing
     the files in here。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 不过我会模糊处理这个，以确保安全。把它放到这里，按回车，现在它已经挂载。它挂载在这个位置。所以你需要用那个路径前缀你的文件，以证明它确实在那里。我可以运行感叹号L。所以这是Unix的ls命令。我在这里列出文件。
 - en: And here's these these files that I've created。 You are also given an API key
     with this course。 And I send this。Really just to the students who are taking the
     course。 If you're a member of the general Internet。 there are， if you look on
     my linked Patreon site。 there are some levels that will give you access to this
     if you're interested in that。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我创建的文件。你还会在这个课程中获得一个API密钥。我发给这些信息，实际上只是给参加课程的学生。如果你是普通互联网用户，可以在我的Patreon链接上查看，有些等级可以让你获得访问权限，如果你对此感兴趣的话。
 - en: but this API key。 The one that I have in there is actually not a real one。 It
     was a real one at some point。 but I essentially swap them out so that I don't
     have everybody submitting on my one demo key。 So by the time the course starts
     by the time you're watching this video。 This will no longer be a valid key。 I'm
     going to run this program。 assignmentment one is very easy。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 但这个API密钥，我里面的那个实际上并不是真正的密钥。曾经是一个真实的密钥，但我基本上把它们换掉了，以免所有人都用我的演示密钥提交。所以在课程开始时，当你观看这个视频时，这将不再是有效的密钥。我将运行这个程序，作业一非常简单。
 - en: It's just proving that you can go through the motions and actually get a python
     program running and submit it。 I run it here， Now you might get an error like
     this， this is important。 So it's saying users Jheton file I found it needs to
     know where your notebook file is so that it can send it。 This is more for Mac
     Linux。 So switch。To this one for coabab。 Now， you will need to modify this。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 这只是证明你能够进行操作，并实际运行一个Python程序并提交它。我在这里运行，现在你可能会遇到这样的错误，这是重要的。所以它在说用户Jheton文件，我发现它需要知道你的笔记本文件在哪里，以便能够发送它。这更多是针对Mac和Linux。所以切换到这个用于CoLab。现在，你需要修改这个。
 - en: perhaps。 So don't you won't have your name。 It'll be whoever your name is。 So
     J Heaton underbar class 1。 So wherever this is named， it'll probably be this pretty
     exactly。 but make sure you put your name in there。 And now we can try to submit
     it again。 and it worked。Success， you have submitted assignment1。 This is just
     a demo account。 that's actually my wife's name。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 也许。所以你不会有你的名字。它将是你的名字，比如J Heaton_underbar class 1。所以不管这个文件叫什么，它应该会与这个非常相似。但确保把你的名字放进去。现在我们可以再试一次提交，它成功了。成功，你已提交作业1。这只是一个演示账户，实际上是我妻子的名字。
 - en: You have submitted this assignment four times， which is fine。 So you can submit
     these as many times as you want。 if you get warnings down here telling you that
     there's something wrong with it definitely fix those warnings because they will
     that will surely cause you to lose points。 Now， sometimes it'll say that your
     value is off from mine by some number if that's like 0。0123。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 你已经提交了这份作业四次，这很好。所以你可以随意提交这些。如果下方有警告告诉你有问题，一定要修复这些警告，因为这肯定会导致你失分。现在，有时它会说你的值与我的值相差某个数字，如果是像0.0123这样的小数。
 - en: something like that， a small small number。It probably doesn't matter， but again。
     no guarantees on your actual grade from the auto assessor。 It's just there to
     help you out。 to give you。A chance to not lose points on easily corrected issues。
     These are due each week。 Make sure that you submit them。 If you submit them late，
     you'll lose points。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 像那样，数字非常少。可能没关系，但再说一遍。对你实际成绩的自动评估没有保证。这只是为了帮助你，给你一个不因容易纠正的问题而失分的机会。这些每周都有截止日期。确保你按时提交。如果你迟交，会失去分数。
 - en: That's just the way that that works。 If you submit them too late， you will get
     no points at all。 So make sure that you。Stay on top of these。 This is a hybrid
     course。 so it's very important that you stay up with it on a week to week basis。And
     not just try to ask。Turn everything in on the last last day of course。 You can
     also check your submission。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是运作的方式。如果你提交得太晚，你将根本得不到分数。所以确保你能掌握这些。这是一个混合课程，因此每周跟上进度非常重要，而不仅仅是在课程最后一天提交所有内容。你也可以检查你的提交情况。
 - en: This is just some additional code。 You put your key in there and you can make
     sure that I've gotten an assignment or not。 now you won't see these pop into canvas
     until I actually grade them。 and then it becomes part of your your actual course
     grade。 Okay。 that is how you make use of Google coab。 This is a very good option
     for if you don't want to go through all the trouble of installing Python and the
     various utilities on your computer。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 这只是一些额外的代码。你把你的密钥放在这里，你可以确保我是否收到了作业。现在在我实际评分之前，你不会看到这些出现在canvas上，然后它就成为你实际课程成绩的一部分。好的，这就是你如何使用Google
+    Colab。这是一个很好的选择，如果你不想麻烦地在电脑上安装Python和各种工具。
 - en: And this gets you access to a pretty good GPU。 This content changes often。 So
     subscribe to the channel to stay up to date on this course and other topics and
     artificial intelligence。![](img/9b3166bd64e1d412ba7306144df7359f_10.png)
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 这让你可以访问相当不错的GPU。这些内容经常更改。所以订阅频道，以便随时了解这门课程和其他人工智能主题的最新动态。![](img/9b3166bd64e1d412ba7306144df7359f_10.png)

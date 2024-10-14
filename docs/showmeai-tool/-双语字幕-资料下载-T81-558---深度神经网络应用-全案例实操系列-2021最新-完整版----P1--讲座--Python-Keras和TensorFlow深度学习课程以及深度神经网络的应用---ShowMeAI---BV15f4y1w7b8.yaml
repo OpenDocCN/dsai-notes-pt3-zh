@@ -1,104 +1,143 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P1：[讲座] Python、Keras和TensorFlow深度学习课程以及深度神经网络的应用
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P1：[讲座] Python、Keras和TensorFlow深度学习课程以及深度神经网络的应用
+    - ShowMeAI - BV15f4y1w7b8
 - en: The thing that makes deep neural networks as are fantastic technology is that
     they can accept input in just about any format that can take in tabular data。
     images， text， and even audio。They then process this information。 perform all sorts
     of mathematical magic， and then they output either a decision or a number rating。
     but they can also output much of the same type of data that they got in。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 深度神经网络之所以成为令人惊叹的技术，是因为它们可以接受几乎任何格式的输入，包括表格数据、图像、文本，甚至音频。然后它们处理这些信息，进行各种数学魔法，然后输出决策或评分，但它们也可以输出与接收到的数据相同类型的数据。
 - en: They can output tabular data， images， text or audio。😊，In my class。 applications
     of deep neural networks， I'll show you how to apply these neural networks to everyday
     problems。 Everything in this course is taught using Jupiter notebooks in Python。
     As you can see。 you can look at your code Intermixed with information from my
     course and see the actual results from your programs as you run them。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 它们可以输出表格数据、图像、文本或音频。😊，在我的课堂上，深度神经网络的应用，我会展示如何将这些神经网络应用于日常问题。这个课程中的一切都是通过 Python
+    的 Jupiter notebooks 教授的。如你所见，你可以看到你的代码与我课程中的信息交织在一起，并在运行程序时看到实际结果。
 - en: Now， some of the applications that will create our video game like and will
     require video。 So for those will run them actually outside of a Jupyter notebook
     and directly from Python。![](img/65ac78653c1a84416ac737ec4a875fe7_1.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，一些创建我们视频游戏的应用将需要视频。因此，这些将实际在 Jupyter notebook 外部直接从 Python 运行。![](img/65ac78653c1a84416ac737ec4a875fe7_1.png)
 - en: '![](img/65ac78653c1a84416ac737ec4a875fe7_2.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/65ac78653c1a84416ac737ec4a875fe7_2.png)'
 - en: Everything is ensured to be compatible with Google coab so that you can run
     it with a free GPU。 if needed， The GP， believe me， can save hours and hours on
     your training times。 I'll show you a lot of graphics and other cool things in
     this video。 everything comes from what we do in class。 So there's no video magic。
     Now， to put me in。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 一切都确保与 Google colab 兼容，这样你就可以使用免费的 GPU 运行它。如果需要的话，GPU，相信我，可以为你的训练时间节省数小时。这个视频中我会展示很多图形和其他酷炫的东西。一切都来自我们在课堂上的内容，所以没有视频魔法。现在，让我加入进去。
 - en: I do need a little bit of green screen magic。 But believe me。 the neural networks
     need no such processing to look great。😊。![](img/65ac78653c1a84416ac737ec4a875fe7_4.png)
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我确实需要一点绿幕魔法。但相信我，神经网络不需要任何处理就能看起来很棒。😊。![](img/65ac78653c1a84416ac737ec4a875fe7_4.png)
 - en: The GN is one type of neural network that we'll look at in this course。 GN stands
     for generative adversarial neural network。 GNs are typically used to generate
     faces。 although they can generate any sort of fake data that they're trained on。
     A G works by having two neural networks。 The first neural network is the generator。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: GN 是我们在这门课程中要研究的一种神经网络。GN 代表生成对抗神经网络。GN 通常用于生成面孔，尽管它们可以生成任何类型的假数据。一个 GN 通过两个神经网络工作。第一个神经网络是生成器。
 - en: It essentially takes random numbers and generates faces。 The second neural network
     is the discriminator， it essentially tells if the generator is producing correct
     faces or not。 These two go back and forth and wage and adversarial war。Once they're
     done。 you have a generator that is able to take really lots of different random
     numbers and keeps generating pretty realistic looking faces。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 它本质上是将随机数字生成面孔。第二个神经网络是判别器，它本质上告诉我们生成器是否在生成正确的面孔。这两个网络交替进行，进行对抗性战争。一旦它们完成，你就会得到一个能够接受许多不同随机数字并持续生成相当真实面孔的生成器。
 - en: reinforcement learning， particularly when you apply it through deep learning
     is a very powerful technique that allowed Google Alpha0 to beat Stockfish at essentially
     master all of chess in a short amount of time。 In this course， will take a look
     at Atari video games using the AI gym and create reinforcement programs that learn
     how to play these games by looking at both the actual video image of what's going
     on in the game and in some cases。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 强化学习，特别是当通过深度学习应用时，是一种非常强大的技术，使得 Google AlphaZero 能在短时间内击败 Stockfish，基本上掌握所有国际象棋。在这个课程中，我们将利用
+    AI gym 查看 Atari 视频游戏，并创建通过观察游戏中实际视频图像学习如何玩这些游戏的强化程序。
 - en: the Ram state of the actual video games。![](img/65ac78653c1a84416ac737ec4a875fe7_6.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 实际视频游戏的内存状态。![](img/65ac78653c1a84416ac737ec4a875fe7_6.png)
 - en: Who's a good boy， Hickory？Just like training your pet， when you use reinforcement
     learning。 you provide rewards to the neural network for performing a good job
     or doing something that leads to a favorable outcome neural networks are also
     very good at generating supplementliminal messages for advertising。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 谁是乖孩子，希克里？就像训练宠物一样，当你使用强化学习时，你会为神经网络提供奖励，以便它们表现良好或做出有利的结果，神经网络在生成广告的潜在信息方面也非常擅长。
 - en: Okay， well， sorry。 I had to try。 Remember when I said neural networks can accept
     any type of input。 Well， guess what， they can actually accept multiple types of
     input at the same time。 This is how image capturing works。 to create a neural
     network that is capable of writing a caption for a image。 What you do is you create
     a neural network that accepts two different types of input。 a photo。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，抱歉。我必须尝试。还记得我说神经网络可以接受任何类型的输入吗？好吧，猜猜看，它们实际上可以同时接受多种类型的输入。这就是图像捕捉的工作原理。为了创建一个能够为图像编写标题的神经网络，你需要创建一个接受两种不同类型输入的神经网络，一个是照片。
 - en: and then a sequence and that sequence is a set of evergrow words。 First。 you
     pass it in with just an empty array and a start token。 and then it adds words
     describing what that picture is supposed to be。 Yolo， you only look once。 This
     is an amazing technology that you can see running all around me。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一个是一个序列，而那个序列是一组不断增长的单词。首先，你用一个空数组和一个起始标记传入，然后它会添加描述那张图片的词汇。Yolo，你只需看一次。这是一项你可以在我周围看到的惊人技术。
 - en: It's classifying objects multiple objects and doing it very efficiently because
     it only needs to look once。 We'll see how you can transfer this technology into
     your Python program。 and receive the actual coordinates and class。😊，Of what see
     going on around you。Yellow can be fooled here。 It cant tell the difference between
     my dog and a stuffed animal。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 它正在高效地对多个对象进行分类，因为它只需查看一次。我们将看到如何将这项技术转移到你的Python程序中，并获取实际坐标和类别。😊，你周围发生的事情。黄色在这里可能会被欺骗。它无法区分我的狗和一个填充玩具。
 - en: It also has trouble telling billboards and things that have people on it and
     thinking their people。 This billboard might be very concerning to a self driving
     car who thinks it's about to get broad sideed。 But wait， there's more。 This video
     was only able to show you the highlights from this course。 Here's a complete list
     of some of the other topics that we'll cover as well。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 它在识别广告牌和带有人物的东西时也有困难，并且认为它们是人类。这个广告牌可能会让自驾车感到担忧，以为它即将遭遇侧撞。但是，等等，还有更多。这段视频只能向你展示这门课程的亮点。以下是我们将要覆盖的一些其他主题的完整列表。
 - en: Thanks for watching this video。 If you have any questions about this course。
     just leave something in the comment， please subscribe to this channel so that
     you are updated whenever new videos are added to this course All the information
     is available in the playlist and in GiHub。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 感谢观看这段视频。如果你对这门课程有任何问题，请在评论中留言，欢迎订阅这个频道，以便在有新视频添加到此课程时获得更新。所有信息都可以在播放列表和GitHub中找到。
 - en: '![](img/65ac78653c1a84416ac737ec4a875fe7_8.png)'
+  id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/65ac78653c1a84416ac737ec4a875fe7_8.png)'

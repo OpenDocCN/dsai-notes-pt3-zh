@@ -1,105 +1,145 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P9：L9- WHERE 用法 - ShowMeAI
     - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P9：L9- WHERE 用法 - ShowMeAI
+    - BV1Pu41117ku
 - en: '![](img/ff2e7e12377dd7f5a0561f67e97f91d5_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ff2e7e12377dd7f5a0561f67e97f91d5_0.png)'
 - en: 哦。In this tutorial we're going to look at the where clauses in SQL so earlier
     I told you that we use the where clauses to filter data。 for example， let's say
     we only want to get the customers with points greater than 3000。 so here in the
     word clause we can type out a condition like this。😊，Points greater than 3000。
     When we execute this query， the query execution engine in my skill is going to
     iterate over all the customers in the customer's table。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。在本教程中，我们将查看SQL中的WHERE子句，所以之前我告诉过你我们使用WHERE子句来过滤数据。例如，假设我们只想获取积分大于3000的客户。那么在WHERE子句中，我们可以输入这样的条件。😊
+    积分大于3000。当我们执行这个查询时，我的技能中的查询执行引擎将遍历客户表中的所有客户。
 - en: for each customer， is's going to evaluate this condition。 If this condition
     is true。 it will return that customer in the result set。 So let's go ahead and
     execute this。😊。And here is the result， as you can see， we have only two customers
     with points greater than 3000。 So this is what we call the greater than operator，
     which is one of the comparison operators in SQL。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于每个客户，它会评估这个条件。如果这个条件为真，它将返回该客户的结果集。所以让我们继续执行这个查询。😊 这是结果，如你所见，我们只有两个积分大于3000的客户。这就是我们所称的“大于”运算符，它是SQL中的比较运算符之一。
 - en: Let me show you the complete list of comparison operators so。😊。We have greater
     than greater than or equal to， we have less than less than or equal to。 here's
     the equality operator and。For not equality。 we can use an exclamation followed
     by an equal sign or something like this。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我给你展示完整的比较运算符列表。😊 我们有大于、大于等于，还有小于、小于等于。这里是等于运算符，和不等于运算符。我们可以使用一个感叹号后面跟一个等号，或者像这样。
 - en: So both these are not equal operators。 Let me show you a few examples of these
     operators So I'm going to delete all this and bring back the previous query。 Let's
     say we want to get only the customers in the state of Virginia。 So we can change
     our condition to something like this where state equals。Virginia note that I've
     put Virginia in quotes because this is what we call a string。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这两个都是不等于运算符。让我给你展示一些这些运算符的例子。所以我将删除所有内容，恢复到之前的查询。假设我们只想获取弗吉尼亚州的客户。那么我们可以将条件更改为这样的形式，即状态等于弗吉尼亚。注意我把弗吉尼亚放在引号中，因为这就是我们所称的字符串。
 - en: a string is a sequence of characters， so whenever you're dealing with a sequence
     of characters or basically textual data。 you need to enclose your values with
     either single or double quotes but quite often by convention we use single quotes。So
     let's execute this query。😊，And here's the result。 you can see we only have these
     two customers with ID1 and 2 who are located in Virginia。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 字符串是一串字符，所以每当你处理一串字符或基本文本数据时，你需要用单引号或双引号括起来，但通常习惯上我们使用单引号。所以让我们执行这个查询。😊 这是结果。你可以看到，我们只有这两个位于弗吉尼亚的客户，ID为1和2。
 - en: And it doesn't matter if we use uppercase or lowercase characters。 so if we
     type out VA in lowercase and execute the query， we get the exact same result。Now。
     what if we want to get all the customers outside of the state of Virginia。 we
     can use the not equal operator so we can either prefix this with an exclamation。😊，Or
     use。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 而且不管我们使用大写字母还是小写字母，所以如果我们以小写输入VA并执行查询，我们会得到完全相同的结果。那么，如果我们想获取所有不在弗吉尼亚州的客户呢？我们可以使用不等于运算符，因此我们可以在前面加上感叹号。😊
+    或者使用。
 - en: This utter notation。Either way， we get the same result。So these are the customers
     that are not located in Virginia。Now we can use these comparison operators with
     date values as well。 For example。 let's say we want to get only the customers
     born after January 11990。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 这种表示法。无论如何，我们得到相同的结果。所以这些是未位于弗吉尼亚的客户。现在我们也可以将这些比较运算符与日期值一起使用。例如，假设我们想获取只在1990年1月1日之后出生的客户。
 - en: so we change our condition2 birth date greater than once again we use quotes
     for representing date values。 even though dates are actually not strings， but
     in the SQL language we should enclose dates with quote So here we type out 1990
     dash01 for January dash01 for day。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们再次将条件2更改为出生日期大于，我们使用引号来表示日期值。尽管日期实际上并不是字符串，但在SQL语言中，我们应该用引号括起来。因此这里我们输入1990-01表示一月，-01表示日期。
 - en: So this is the standard or the default format for representing dates in MyqL4
     digits for the year。2 digits for the month and two digits for the day。So let's
     go ahead and execute this query。 I actually made a mistake here。 so we don't see
     the result Instead we see the action output or the output window。 If you scroll
     to the bottom， you can see the details of the error。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这是在MySQL中表示日期的标准或默认格式：年份4位，月份2位，日期2位。我们来执行这个查询。其实我这里犯了一个错误，所以我们看不到结果，反而看到了操作输出或输出窗口。如果你滚动到底部，可以看到错误的详细信息。
 - en: So here I use the wrong name for the column。😊，We should separate these two words
     with an underscored。 That is the name of our column。 So let's execute the query
     one more time。 So we only have three customers born after January 11990。 So these
     were examples of comparison operators in SQL in the next tutorial I'm going to
     show you how to combine multiple conditions when filtering data。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这里我用了错误的列名。😊，我们应该用下划线分开这两个词。这就是我们的列名。所以我们再执行一次查询。我们只有三位客户是在1990年1月1日后出生的。所以这些是SQL中比较运算符的例子，在下一个教程中，我将向你展示如何在过滤数据时结合多个条件。
 - en: All right， here's your exercise， I want you to write a query to get the orders
     that are placed this year。 so look at the orders table， see what columns do we
     have there and based on that write to query with a where clause。😊，So here's the
     orders table in this table we have this column order date。 we can use this column
     to see the orders that are placed this year， so here's our query。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，这是你的练习，我希望你写一个查询，获取今年下的订单。所以查看订单表，看看我们有哪些列，并基于此写出带有条件的查询。😊，这里是订单表，我们有这个列“订单日期”。我们可以用这个列来查看今年下的订单，所以我们的查询是。
 - en: select star from orders where order unalign date is greater than or equal to
     January 1t。 2019 assuming this is the current year， so 201901，01。😊，Now， since
     currently we are in the year 2019。 this query will return all the orders placed
     this year。 but next year this query is not going to give us the right result。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: select star from orders where order_unalign_date is greater than or equal to
+    January 1, 2019，假设这是当前年份，所以2019-01-01。😊，现在，由于我们当前在2019年，这个查询将返回今年下的所有订单，但明年这个查询将不会给我们正确的结果。
 - en: but don't worry about it later in the course， I will show you how to write a
     query to get the orders placed in the current year。 So for the purpose of this
     exercise， this is a valid solution。 Now let's execute this query and see what
     we get。😊，So we have only one order。 order ID one that is placed in the current
     year。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 但别担心，在课程后面，我会教你如何写查询以获取当前年份的订单。所以为了这个练习，这是一种有效的解决方案。现在我们来执行这个查询，看看我们得到什么。😊，所以我们只有一个订单，订单ID为1，是在当前年份下的。
 - en: '![](img/ff2e7e12377dd7f5a0561f67e97f91d5_2.png)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ff2e7e12377dd7f5a0561f67e97f91d5_2.png)'
 - en: Oh。![](img/ff2e7e12377dd7f5a0561f67e97f91d5_4.png)
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。![](img/ff2e7e12377dd7f5a0561f67e97f91d5_4.png)
 - en: 哦。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。
