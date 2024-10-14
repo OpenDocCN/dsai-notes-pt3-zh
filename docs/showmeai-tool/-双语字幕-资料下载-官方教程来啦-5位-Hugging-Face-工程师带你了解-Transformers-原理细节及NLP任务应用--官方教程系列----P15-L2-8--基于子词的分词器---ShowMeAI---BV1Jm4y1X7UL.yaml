@@ -1,69 +1,95 @@
 - en: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
     - P15：L2.8- 基于子词的分词器 - ShowMeAI - BV1Jm4y1X7UL
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】官方教程来啦！5位Hugging Face工程师带你了解Transformers原理细节及NLP任务应用！＜官方教程系列＞ - P15：L2.8-
+    基于子词的分词器 - ShowMeAI - BV1Jm4y1X7UL
 - en: Let's take a look at subward based tokenization。Understanding why sub word based
     tokenization is interesting requires understanding the flaws of word based and
     character based tokenization。If you haven't seen the first videos on word based
     and character based tokenization。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们来看看基于子词的分词。理解为什么基于子词的分词有趣，需要理解基于单词和基于字符的分词的缺陷。如果你还没有看过关于基于单词和基于字符的分词的第一部视频。
 - en: we recommend you check them out before looking at this video。Subward based tokenization
     lies in between characteror based and word based tokenization algorithms。The idea
     is to find a middle ground between very large vocabularies。 a large quantity of
     out of vocabulary tokens， and a loss of meaning across very similar words。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们建议您在查看此视频之前查看它们。基于子词的分词处于基于字符和基于单词的分词算法之间。其想法是在非常大的词汇量、较大量的超出词汇的标记以及在非常相似的单词之间丧失意义之间找到中间地带。
 - en: for word based tokens and very long sequences as well as less meaningful individual
     tokens for character based tokenizers。These algorithms rely on the following principle。Frequently
     used words should not be splin into smaller subwords。 while rare words should
     be decomposed into meaningful subs。An example is the word dog。 we would like to
     have our tokenizer to have a single ID for the word dog。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于基于单词的标记和非常长的序列，以及基于字符的分词器的单个标记，这些算法依赖于以下原则。常用词不应被拆分成较小的子词，而稀有词应被分解成有意义的子词。一个例子是单词dog。我们希望我们的分词器为单词dog保留一个唯一的ID。
 - en: rather than splitting it into characters DONG。However， when encountering the
     word dogs。 we would like our tokenizer to understand that at the root。 this is
     still the word dog with an added S that slightly changes the meaning while keeping
     the original idea。Another example is a complex word like tokenization， which can
     be split into meaningful subwords。😊。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 而不是将其拆分成字符DONG。然而，当遇到单词dogs时，我们希望我们的分词器理解，根本上，这仍然是单词dog，加上一个S，这稍微改变了意义，同时保持了原始想法。另一个例子是像tokenization这样复杂的词，可以拆分成有意义的子词。😊。
 - en: The root of the word is token， and Iization completes the root to give it a
     slightly different meaning。😊，It makes sense to split the word into two token as
     the root of the word labeled as the start of the word andization as additional
     information labeled as a completion of the word。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 单词的根是token，iization完成根部，赋予其稍微不同的含义。😊，将单词拆分成两个token是合理的，将标记为单词开头的词根和标记为单词完成的附加信息的ization。
 - en: In turn， the model will now be able to make sense of token in different situations。It
     will understand that the words token， tokens， tokenizing and tokenizations have
     a similar meaning and are linked。It will also understand that tokenization， modernization，
     and immunization。 which all have the same suffixes， are probably used in these
     same syntactic situations。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 反过来，模型现在能够在不同情况下理解token。它将理解单词token、tokens、tokenizing和tokenizations具有相似的含义并且是关联的。它还将理解tokenization、modernization和immunization，这些都有相同的后缀，可能在相同的句法情况下使用。
 - en: Subword based tokenrs generally have a way to identify which tokens are a start
     of word and which tokens complete start of wordss。So here token as the start of
     a word and hash hashization as completion of the word。Here the hash hash prefix
     indicates that Iization is part of award word rather than the beginning of it。😊，The
     hash hash comes from the bird tokenizer based on the word peace algorithm。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 基于子词的分词器通常有办法识别哪些标记是单词的开始，哪些标记是完成单词的。这里的token是单词的开始，hash hashization是单词的完成。这里的hash
+    hash前缀表示iization是一个单词的一部分，而不是它的开头。😊，hash hash来自于基于单词peace算法的鸟类分词器。
 - en: Other tokens use other prefixes which can be placed to indicate part of words
     like in here or start of words instead。There are a lot of different algorithms
     that can be used for subway tokenization。 and most models obtaining state of the
     art results in English today use some kind of subward tokenization algorithms。These
     approaches help in reducing the vocabulary sizes by sharing information across
     different words。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 其他标记使用其他前缀，可以放置在这里表示部分单词或单词的开始。有很多不同的算法可以用于基于子词的分词，而如今大多数模型在英语中取得了最先进的结果，都使用某种基于子词的分词算法。这些方法通过在不同单词之间共享信息，帮助减少词汇量。
 - en: having the ability to have prefixes and suffixes understood as such。They keep
     meaning across very similar words by recognizing similar tokens， making them up。![](img/682dd3ed84761ab915a2a8c8a20c6be7_1.png)
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 具备将前缀和后缀理解为这样的能力。通过识别相似的标记，它们在非常相似的词汇中保持意义，构造出新词。![](img/682dd3ed84761ab915a2a8c8a20c6be7_1.png)
 - en: '![](img/682dd3ed84761ab915a2a8c8a20c6be7_2.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/682dd3ed84761ab915a2a8c8a20c6be7_2.png)'
 - en: Yeah。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的。

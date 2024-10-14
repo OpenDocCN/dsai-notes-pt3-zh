@@ -1,29 +1,44 @@
 - en: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
     - P12：L2.5- Tokenizers分词器概述 - ShowMeAI - BV1Jm4y1X7UL
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及 NLP 任务应用！＜官方教程系列＞
+    - P12：L2.5 - Tokenizers 分词器概述 - ShowMeAI - BV1Jm4y1X7UL
 - en: In the next few videos， we'll take a look at the tokens。In natural language
     processing。 most of the data that we handle consists of raw text。 However。 machine
     learning models cannot read or understand text in its raw form。They can only work
     with numbers。So the tokenizer objective will be to translate the text into numbers。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 在接下来的几段视频中，我们将查看令牌。在自然语言处理领域，我们处理的大部分数据由原始文本组成。然而，机器学习模型无法以原始形式读取或理解文本。它们只能处理数字。因此，分词器的目标是将文本转换为数字。
 - en: There are several possible approaches to this conversion。 and the objective
     is to find the most meaningful representation。We'll take a look at three distinct
     organization algorithms。 We compare them one to one。 So we recommend you take
     a look at the videos in the following order。 first， word based。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 有几种可能的方法来进行这种转换，目标是找到最有意义的表示。我们将查看三种不同的组织算法。我们将逐一进行比较。因此，我们建议你按以下顺序观看视频。首先，基于词的。
 - en: followed by character based， and finally， sub word based。😊。![](img/6c883a64f121aa7d5774c3337aefd2f1_1.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后是基于字符的，最后是基于子词的。😊！![](img/6c883a64f121aa7d5774c3337aefd2f1_1.png)
 - en: '![](img/6c883a64f121aa7d5774c3337aefd2f1_2.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6c883a64f121aa7d5774c3337aefd2f1_2.png)'
 - en: 。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 。
 - en: '![](img/6c883a64f121aa7d5774c3337aefd2f1_4.png)'
+  id: totrans-6
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6c883a64f121aa7d5774c3337aefd2f1_4.png)'

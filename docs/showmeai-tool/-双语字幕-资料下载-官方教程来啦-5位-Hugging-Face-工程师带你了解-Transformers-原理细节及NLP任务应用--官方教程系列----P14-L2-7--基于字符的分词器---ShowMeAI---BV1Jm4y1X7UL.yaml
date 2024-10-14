@@ -1,61 +1,82 @@
 - en: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
     - P14：L2.7- 基于字符的分词器 - ShowMeAI - BV1Jm4y1X7UL
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
+    - P14：L2.7- 基于字符的分词器 - ShowMeAI - BV1Jm4y1X7UL
 - en: Before diving in character based tokenization， understanding why this kind of
     tokenization is interesting requires understanding the flaws of word based tokenization。If
     you haven't seen the first video on the word based organization。 we recommend
     you check it out before looking at this video。😊，Okay。 let's take a look at character
     based tokenization。😊。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 在深入了解基于字符的分词之前，理解这种分词的有趣之处需要了解基于词的分词的缺陷。如果你还没有看到关于基于词的组织的第一部视频，建议你在观看这个视频之前先去看看。😊好的，让我们看看基于字符的分词。😊
 - en: We now split our text into individual characters rather than words。😊。There are
     generally a lot of different words and languages， while the number of characters
     stays low。To begin， let's take a look at the English language。It has an estimated
     170，000 different words。 so we would need a very large vocabulary to encompass
     all words。😊。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们现在将文本拆分为单个字符而不是单词。😊一般来说，有很多不同的单词和语言，而字符的数量相对较少。首先，让我们看看英语。它估计有170,000个不同的单词，因此我们需要一个非常大的词汇来涵盖所有单词。😊
 - en: Where they character based vocabulary， we can get by with only 256 characters。
     which includes letters， numbers and special characters。Even languages with a lot
     of different characters like the Chinese languages can have dictionaries with
     up to 20。000 different characters， but more than 375，000 different words。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 在基于字符的词汇中，我们只需256个字符即可，这包括字母、数字和特殊字符。即使是字符众多的语言，如汉语，也可以拥有多达20,000个不同字符的字典，但不同的单词超过375,000个。
 - en: So character based vocabularies let us use fewer different tokens than the word
     based tokenization dictionaries we would otherwise use。😊，These vocabularies are
     also more complete than their word based vocabulary counterparts。As our vocabulary
     contains all characters used in a language。 even the words unseen during the tokenizer
     training can still be tokenized。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以基于字符的词汇让我们使用比基于词的分词字典更少的不同令牌。😊这些词汇也比它们的基于词的词汇更完整，因为我们的词汇包含了语言中使用的所有字符，甚至在分词器训练期间未见过的单词仍然可以被分词。
 - en: so out vocabulary tokens will be less frequent。😊，This includes the ability to
     correctly tokenize misspelled words rather than discarding them as unknown straight
     away。😊，However， this algorithm isn't perfect either。😊，Intuitively。 characters
     do not hold as much information individually as a word will hold。😊，For example。
     let's hold more information than its first data L。Of course， this is not trueful
     for all languages。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们的词汇令牌会更少出现。😊这包括正确标记拼写错误的单词的能力，而不是立即将其视为未知。😊然而，这个算法也并不完美。😊直观地说，字符单独所承载的信息不如一个单词所承载的信息多。😊例如，让我们持有比其首个数据L更多的信息。当然，这并不适用于所有语言。
 - en: as some languages likeideogram based languages， have a lot of information held
     in a single character。😊，But for others like Roman based languages， the model will
     have to make sense of multiple tokens at a time to get the information otherwise
     held in a single word。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 因为一些语言（如表意文字语言）在单个字符中承载了很多信息。😊但对于像罗马字母这样的语言，模型必须同时理解多个令牌才能获取原本在单词中承载的信息。
 - en: This leads to another issue with character based tokenizers。 Their sequences
     are translated into very large amounts of tokens to be processed by the model。And
     this can have an impact on the size of the context the model will carry around。
     and it will reduce the size of the text we can use as input for a model， which
     is often limited。😊。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 这导致了基于字符的分词器的另一个问题。它们的序列被转换为大量的令牌供模型处理。这可能会影响模型携带的上下文大小，并减少我们可以用作模型输入的文本大小，这通常是有限的。😊
 - en: This organization， while it has some issues， has seen some very good results
     in the past。 and so it should be considered when approaching a new problem as
     it solves issues encountered in the word based algorithm。![](img/6a739a8b766233902cc0ce2bd62c0279_1.png)
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个组织虽然有一些问题，但在过去取得了一些非常好的结果。因此，在面对新问题时，应考虑它，因为它解决了基于词的算法中遇到的问题。![](img/6a739a8b766233902cc0ce2bd62c0279_1.png)
 - en: 嗯。![](img/6a739a8b766233902cc0ce2bd62c0279_3.png)
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗯。![](img/6a739a8b766233902cc0ce2bd62c0279_3.png)

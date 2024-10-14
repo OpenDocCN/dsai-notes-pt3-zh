@@ -1,71 +1,97 @@
 - en: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
     - P16：L2.9- Tokenizer流水线处理 - ShowMeAI - BV1Jm4y1X7UL
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
+    - P16：L2.9- Tokenizer流水线处理 - ShowMeAI - BV1Jm4y1X7UL
 - en: So took a nice pipeline。In this video， while look at how tokenizer converts
     four text to numbers that a transformer model can make sense of。 like when we
     execute this good。Here is a quick overview of what happens inside the Tokener
     object。First， the text is split into tuets， which are words， parts of words， or
     punctuation symbols。Then the tokenizer adds potentent special tokens and converts
     each token to our unique respective ID。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以有了一个良好的流水线。在这个视频中，我们将看看标记器如何将文本转换为模型可以理解的数字，就像当我们执行这个好的例子时。这里是Tokener对象内部发生事情的快速概述。首先，文本被拆分成单元，这些单元可以是单词、词的一部分或标点符号。然后标记器添加潜在的特殊标记，并将每个标记转换为我们唯一的各自ID。
 - en: as defined by the touckenizer's vocabulary。As we'll see doesn't quite happen
     in this order。 but doing it like this is better for her understandings。The first
     step is to split our input text into tokens， we use the tokenized method for this。To
     do that， the tokenizer may first perform some operations like lower casing or
     words。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如标记器的词汇所定义的。正如我们将看到的，这个顺序并不是完全如此，但这样做对她的理解更好。第一步是将输入文本拆分为标记，我们使用标记化方法来实现这一点。为此，标记器可能首先执行一些操作，比如小写或处理单词。
 - en: and follow a set of rules to split the result in small chunks of text。Most of
     the transformer models use a sub word organization algorithm。Which means that
     one given word can be split in several tokens， like tokens here。Look at the tokenization
     algorithms video linked below for more information。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 并遵循一套规则将结果拆分成小块文本。大多数转换模型使用子词组织算法。这意味着一个给定的单词可以拆分为多个标记，就像这里的标记。有关更多信息，请查看下面链接的标记化算法视频。
 - en: The ash ash prefix we see in front of Is is a convention used by bird to indicate
     histoken is not the beginning of the world。Other tokenrs may use different convention
     however。For instance。 Albert tokens will add a long underscore score in front
     of all the tokens that had its space before them。Which is a convention shared
     by his all sentence best tors。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们在“Is”前面看到的ash ash前缀是鸟类用来表示其标记不是世界开始的一个约定。然而，其他标记器可能使用不同的约定。例如，Albert标记器将在所有其前面有空格的标记前添加一个长下划线。这是所有句子最佳标记器共享的约定。
 - en: The second step of the tokenization pipeline is to map those tokens to wear
     respective IDs。 as defined by the vocabulary of the tokenizer。This is why we need
     to download a file when we instant hit a tokenizer with the form between method。We
     have to make sure we use the same mapping as when the model was portrayed。To do
     this。 we use the convert tos to IDs method。You may have noticed that we don't
     have the exact same results as in our first slide。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 标记化流水线的第二步是将这些标记映射到各自的ID，正如标记器的词汇所定义的。这就是为什么当我们瞬时使用某种形式的方法接触标记器时需要下载一个文件。我们必须确保使用与模型展示时相同的映射。为此，我们使用将转换为ID的方法。你可能已经注意到，我们没有得到与第一张幻灯片完全相同的结果。
 - en: On not， as this look like a list of random numbers anyway。 in which case allow
     me to refresh your memory。We the number at the beginning and the number at the
     end that are missing。Those are the special tos。The special tokens are added by
     the proper formalal method。 which knows the indices of a token in the vocabulary
     and just adds the proper numbers in the input IDs list。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 这看起来像是一串随机数字。在这种情况下，请让我提醒你一下。我们缺少的在开头和结尾的数字。那些就是特殊标记。特殊标记是通过适当的形式化方法添加的，该方法知道词汇中标记的索引，并在输入ID列表中添加适当的数字。
 - en: You can look at the special tokens and more generally at oh the tokenizer has
     changed your text by using the deco method and the output of the tokenizer object。As
     for the prefix for beginning of Worlds part of world。 will special token vary
     depending on which tokenr you' are using。So B tokener uses CLS on set。 but the
     Robertta tokener uses HTML Tml like on calls S and/lash S。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以查看特殊标记，更一般地说，通过使用deco方法和标记器对象的输出来观察标记器如何改变了你的文本。至于“世界”部分的前缀，特殊标记是否会因你使用的标记器而有所不同。B标记器在集合上使用CLS，但Robertta标记器在调用S和/lash
+    S时使用HTML Tml。
 - en: Now that you know how the tocanazer works， you can forget all was intermediately
     admitted and only remember that you just have to call it on your input texts。The
     output of the tokenizer don't just contain the input ID， however。Purun where the
     attention mask is， check out the batch input Together video。To learn about tokyotype
     ideas， look at the process Pers or sentences video。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在你知道了分词器的工作原理，你可以忘记所有中间的内容，只需记住你只需在输入文本上调用它。分词器的输出不仅仅包含输入ID，然而。有关注意力掩码的位置，请查看批量输入视频。要了解分词类型的想法，请查看过程、句子视频。
 - en: '![](img/f96aeead006553fe4505b3ad571eca03_1.png)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f96aeead006553fe4505b3ad571eca03_1.png)'
 - en: '![](img/f96aeead006553fe4505b3ad571eca03_2.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f96aeead006553fe4505b3ad571eca03_2.png)'
 - en: 。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 。

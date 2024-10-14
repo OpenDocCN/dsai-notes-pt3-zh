@@ -1,60 +1,83 @@
 - en: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
     - P13：L2.6- 基于词的分词器 - ShowMeAI - BV1Jm4y1X7UL
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
+    - P13：L2.6- 基于词的分词器 - ShowMeAI - BV1Jm4y1X7UL
 - en: Yes。Let's take a look at word based tokenization。World based organization is
     the idea of splitting the raw text into words by splitting on spaces or other
     specific rules。Like punctuation。In this algorithm， each word has a specific number
     or ID attributed to it。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的。让我们来看看基于词的分词。基于词的组织思想是通过在空格或其他特定规则（如标点符号）处分割原始文本来将其拆分成单词。在这个算法中，每个单词都有一个特定的编号或ID。
 - en: Here lets has VI 250， Du has 861 and tokenization followed by an exclamation
     mark has a 345。😊。This approach is interesting， as the model has representations
     that are based on entire words。The information held in a single number is high，
     as a word contains a lot of contextual and semantic information。However， this
     approach does have its limits。😊，For example。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有 VI 250，Du 有 861，带有感叹号的分词是 345。😊。这个方法很有趣，因为模型的表示是基于整个单词的。单个数字所承载的信息量很大，因为一个单词包含了很多上下文和语义信息。然而，这种方法确实有其局限性。😊，例如。
 - en: the word dog and the word dogs are very similar， and their meaning is close。The
     word based tokenization hall， however， will attribute entirely different ideas
     to these two words。 and the model will therefore learn two different embeddings
     for these two words。This is unfortunate。 as we would like the model to understand
     that these words are indeed related。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 单词 dog 和单词 dogs 非常相似，且它们的含义相近。然而，基于词的分词器会对这两个词赋予完全不同的概念。因此，模型将为这两个词学习到两个不同的嵌入。这是非常遗憾的，因为我们希望模型理解这两个词确实是相关的。
 - en: And that dogs is simply the plural form of the word dog。Another issue with this
     approach is that there are a lot of different words in an language。If we want
     our model to understand all possible sentences in that language。 then we will
     need to have an ID for each different word。And the total number of words。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 而 dogs 仅仅是单词 dog 的复数形式。这个方法的另一个问题是，语言中有很多不同的单词。如果我们希望模型理解该语言中的所有可能句子，那么我们需要为每个不同的单词分配一个ID。总的单词数量。
 - en: which is also known as the vocabulary size， can quickly become very large。This
     is an issue because each ID is mapped to a large vector that represents the words
     mean。And keeping track of these mappings requires an enormous number of weights。When
     the vocabulary size is very large。😊，If we want our models to stay lean。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 这也被称为词汇大小，可以迅速变得非常庞大。这是个问题，因为每个ID都映射到一个大型向量，该向量表示单词的含义。跟踪这些映射需要大量的权重。当词汇大小非常大时。😊，如果我们希望我们的模型保持简洁。
 - en: we can opt for our tokenizer to ignore certain words that we don't necessarily
     need。For example。 here， when training our tokenizer in text， we might want to
     take only the 10。000 most frequent words in that text， rather than taking all
     words from in that text or all language's words。To create our basic vocabulary。The
     tokenizer will know how to convert those 10。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以选择让分词器忽略某些我们不一定需要的单词。例如，在训练我们的分词器时，我们可能只想取文本中最常见的10,000个单词，而不是从文本中取所有单词或所有语言的单词。以创建我们的基础词汇。分词器会知道如何将这10个词转换为数字。
 - en: 000 words into numbers， but any other word will be converted to the out of vocabulary
     word。 or like shown here， the unknown word。Unfortunately， this is a compromise。
     the model will have the exact same representation for all words that it doesn't
     know。😊。Which can result in a lot of lost information if many unknown words are
     present。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 000个单词被转换为数字，但任何其他单词将被转换为超出词汇表的词。或者像这里所示，未知词。不幸的是，这是一种折衷。模型对所有它不知道的单词将具有完全相同的表示。😊。如果存在许多未知词，可能会导致大量信息的丢失。
 - en: '![](img/2d2fd0eb1726791600f98ab3dc5465fa_1.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/2d2fd0eb1726791600f98ab3dc5465fa_1.png)'
 - en: '![](img/2d2fd0eb1726791600f98ab3dc5465fa_2.png)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/2d2fd0eb1726791600f98ab3dc5465fa_2.png)'
 - en: Yeah。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的。
