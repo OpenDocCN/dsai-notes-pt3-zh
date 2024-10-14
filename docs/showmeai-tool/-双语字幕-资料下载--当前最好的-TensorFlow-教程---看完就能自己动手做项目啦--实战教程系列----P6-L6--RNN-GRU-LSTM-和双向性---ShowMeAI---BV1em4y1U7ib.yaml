@@ -1,33 +1,48 @@
 - en: 【双语字幕+资料下载】“当前最好的 TensorFlow 教程！”，看完就能自己动手做项目啦！＜实战教程系列＞ - P6：L6- RNN、GRU、LSTM
     和双向性 - ShowMeAI - BV1em4y1U7ib
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】“当前最好的 TensorFlow 教程！”，看完就能自己动手做项目啦！＜实战教程系列＞ - P6：L6- RNN、GRU、LSTM
+    和双向性 - ShowMeAI - BV1em4y1U7ib
 - en: What is going on guys hope you're doing awesome， roll that intro and then let's
     do some RNN and shit。![](img/7a25be1c8cdf0d1403f6e221e59c1458_1.png)
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，希望你们过得不错，放上引言，然后我们来聊聊 RNN 等等。![](img/7a25be1c8cdf0d1403f6e221e59c1458_1.png)
 - en: '![](img/7a25be1c8cdf0d1403f6e221e59c1458_2.png)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/7a25be1c8cdf0d1403f6e221e59c1458_2.png)'
 - en: '![](img/7a25be1c8cdf0d1403f6e221e59c1458_3.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/7a25be1c8cdf0d1403f6e221e59c1458_3.png)'
 - en: Alright， so I got the usual imports that we normally have。 This is for ignoring
     the Tensorflow messages that can be quite annoying。 although we'll still get error
     messages and then Tensorflowlow Kas layers to construct our layers and then the
     emminis data set and then this is just so that the if you have any trouble running
     on a GPU these two lines will most likely help you。 Allright， so let's let's start
     with what we actually want to do。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，我有我们通常需要的导入。这是为了忽略可能相当烦人的 Tensorflow 消息。尽管我们仍然会收到错误消息，然后使用 Tensorflow 的层构建我们的层，还有
+    emminis 数据集。这只是为了如果你在 GPU 上运行时遇到任何问题，这两行通常会帮助你。好的，我们来开始我们实际想做的事情。
 - en: we're going to start with loading our data so we're going to do Xtrain。Y train
     and then X test。 Y test。Is equal to Ms dot load data， then we're going to do xtrain
     equals xtrain as type float 32。 Currently it's float 64 just to save on own computation，
     we're going to convert it。 and then we're going to normalize by dividing by 255，
     So it's in between 0 and 1。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将开始加载数据，因此我们将做 Xtrain，Y train，然后 X test，Y test。等于 Ms.dot.load data，然后我们将 Xtrain
+    设置为 float 32 类型。当前是 float 64，为了节省计算，我们将其转换。然后我们将通过除以 255 来归一化，使其位于 0 到 1 之间。
 - en: And let's do the same for the the test set。 So flow 32， divided by 255。 So what
     we're doing here is that we have。We have an image of 28 by 28 pixels and how this
     is going to work when we're going to send it in to an RN or a GRU or an LSTM。
@@ -37,14 +52,20 @@
     first row of the image and send that in and then for the second time step it's
     going to take the second row and send that in and just to be clear you wouldn't
     use sequence models to handle images。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于测试集也做同样的处理。所以流 32，除以 255。那么我们这里做的是什么呢？我们有一张 28x28 像素的图像，当我们把它送入 RNN、GRU 或
+    LSTM 时，会是怎样的呢？我们会用这三种模型，但实际上我们会针对每个时间步展开图像的一行。比如对于特定的时间步，假设第一个时间步，它将取图像的第一行并发送，然后对于第二个时间步，它将取第二行并发送。为了澄清，你不会使用序列模型来处理图像。
 - en: It's not the best model for it， you would use a commnet that we covered two
     videos ago but。It works to use RNN。 and as we'll see， will'll get reasonable performance。
     although this is more to illustrate how you would actually。Implement an R N and
     a GR U and LSTM in Tensorflow。 and the data set is not the optimal one。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 这不是最好的模型，您可以使用我们在两段视频前讨论的 CNN，但使用 RNN 也能奏效。正如我们将看到的，尽管数据集并不理想，但我们将获得合理的性能。这更多是为了说明如何在
+    Tensorflow 中实际实现 RNN、GRU 和 LSTM，而数据集并不是最佳选择。
 - en: but we're just picking in a simple one to illustrate this example。 Al right，
     so with that said。 let's actually do our model， we're going to do kos dot sequential。We're
     going to do model that add and then specify the input。 in this case。 we're going
@@ -52,8 +73,11 @@
     have to have a specific number of time step right so we have 28 pixels in each
     time step and then in this case we actually have 28 time step but we don't have
     to specify that dimension。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 不过我们只是选择一个简单的例子来说明。好的，话不多说，实际上我们要做我们的模型，我们将使用 keras 的 sequential。我们会添加模型，然后指定输入。在这种情况下，我们将指定
+    none 和 28。这里指定 none 是因为我们不需要一个特定的时间步数，所以我们每个时间步有 28 个像素，而在这种情况下，我们实际上有 28 个时间步，但不需要指定该维度。
 - en: And then we're going to do model。 add and then layers simple Rn。 So that's just
     for a basic Rn。 and then let's say 512 nodes。And then as an additional argument
     we can do return sequences equals true so that it's returning the output from
@@ -61,8 +85,12 @@
     other so the output from this RnN is going to be 512 nodes and then return sequences
     it's going to output 512 for each time step in this case we're going to have 28
     time steps and then we can also do activation we can set it to Relu。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将创建一个模型。添加简单的 Rn 层。所以这只是一个基础的 Rn。然后假设有 512 个节点。作为附加参数，我们可以设置 return sequences
+    为 true，这样它将返回每个时间步骤的输出，这样我们可以在多个 RnN 层之间叠加，所以这个 RnN 的输出将是 512 个节点，然后返回序列在这种情况下会输出每个时间步骤的
+    512，因为我们将有 28 个时间步骤，然后我们也可以进行激活，将其设置为 Relu。
 - en: And then we can add another one， we can demand let add layers simple R n， and
     let's do 512 again。 and we're going to set activation equals Relu。And then for
     the output layer we're going to do model add layers。 dense and we're going to
@@ -70,8 +98,12 @@
     on this second simple Rnn so here for the output we don't have return sequences
     equals true。 meaning that it's going to pass every time step and then at the last
     the last output of this simple Rnn here。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们可以再添加一个，可以要求添加简单的 Rn 层，我们再做一次 512。我们将设置激活为 Relu。对于输出层，我们将添加模型层。dense，我们将有
+    10 个输出节点，因此你会注意到在这个第二个简单的 RnN 中，我们没有设置 return sequences。因此对于输出我们没有 return sequences
+    等于 true。意味着它将传递每个时间步骤，然后在这个简单的 RnN 的最后输出。
 - en: we're going to take a layer dense on top of that one and we're going to have
     10 output nodes。Let's do print model summary first so as we can see here on the
     model summary for this first Rnn we're gonna to have none none and then 512 so
@@ -84,30 +116,45 @@
     state when it's past all of the input and then at the end we just have a layer
     on top of that one So all that's left now is for us to do model do compile and
     we're going to specify a loss function and ks do losses sparse category。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将在上面添加一个 dense 层，并将有 10 个输出节点。首先做打印模型摘要，所以我们可以看到这里的模型摘要，对于第一个 RnN，我们将有 none
+    none，然后是 512，所以我们将有 512 个输出节点，每个时间步骤都有。我们之所以有 none 和 none，是因为我们有一个是针对批次的，另一个是针对隐藏状态的。我认为这个是针对批次的，另一个是针对隐藏状态的。然后在第二个层中，我们没有设置
+    return sequences 为 true，因此我们只有 none 对于批次，然后从最后的隐藏状态得到 512 个节点，当它处理所有输入时。最后我们只需要在此基础上添加一层。因此，现在我们要做的就是模型编译，并指定损失函数，使用
+    ks 的损失 sparse category。
 - en: croros entropy then we're going to set from logics equals true because we do
     not have a softmax on our dense layer at the end and then optimizer。 we're going
     to Kas do optimizers do atom。And let's set the learning rate to 0。001。And then
     metrics。 we're just going keep track of the accuracy。 All that's left now is for
     us to do model that's fit on the training set。And then specifying the batch size，
     let's say 64。 and then let's run for 10pos。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: croros entropy，然后我们将设置 from logics 为 true，因为我们在最后的 dense 层没有 softmax。然后优化器，我们将使用
+    ks 的优化器，设置为 atom。我们将学习率设置为 0.001。然后指标，我们只需跟踪准确性。现在我们要做的就是在训练集上使用模型进行拟合。然后指定批量大小，假设为
+    64。然后让我们运行 10 次。
 - en: And verbo equals2 just for printing every epoch。 And then at the end。 we want
     to do an evaluation on our test set。 So we're going to send an X test and then
     the labels Y test。We're also going to specify the batch size 64， and then again
     verboos equals。Equals 2。Alright。 so let's run that and see if this works。Alright，
     so after 10 epos we got 98% on on the training set and almost 98% on the test
     set as well。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 而 verbo 等于 2 只是为了每个周期打印。然后在最后，我们想对我们的测试集进行评估。所以我们将发送 X 测试和标签 Y 测试。我们还将指定批量大小为
+    64，然后再次设置 verboos 等于 2。好吧。那么我们来运行一下，看看是否能成功。好吧，在 10 个周期后，我们在训练集上得到了 98%，在测试集上也接近
+    98%。
 - en: I just want to say here that we used an activation REL。 the default when training
     recurrent networks is that you use 10h。 so I don't know if that would work better
     in this case， but anyways。Just wanted to mention that。 So if you wouldn't specify
     an activation function。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 我想在这里提到，我们使用了ReLU激活函数。训练递归网络的默认设置是使用tanh。我不知道在这种情况下是否会更好，但无论如何，我只是想提一下。如果你不指定激活函数。
 - en: it would default B 10h when when building these recurrent nets。 So also one
     thing here is that it took a little bit longer than I thought to run this so let's
     just use 256 for our next models what we want to do now is pretty much the same
@@ -118,29 +165,37 @@
     Rnns although now we're using half of the units and then we're using 10h instead
     of RElu but the point is not really to compare the to just see that it works and
     and show you how to use simple Rnn GRU and then。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 在构建这些递归网络时，默认是使用tanh。因此，还有一点是，运行这个过程比我想象的要长一些，所以我们在下一个模型中使用256个单元。我们现在想做的基本上是一样的，但我们想构建一个GRU。我们要做的就是将这个简单的RNN更改为GRU，这几乎就是你需要做的全部。因此，如果我们现在重新运行，我们可以看看结果。我想这不是一个公平的比较，但GRU的性能应该优于简单的RNN，尽管我们现在使用了一半的单元，并且使用tanh而不是ReLU，但重点并不是比较，而是展示它的有效性，以及如何使用简单的RNN和GRU。
 - en: LSTM， which is quite simple as well， we're just going to change this to an LSTM，
     but anyways。 then I also want to show you how to do a bidirectional layer。Alright，
     so after 10pos we had 99。5% on the training and we get close to 99% on the test
     set。 which is quite good actually it's two layered GRus with 256 units I mean
     to get that is pretty decent actually so let's now change this to an LSTM and
     see if it's an improvement so。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: LSTM相对简单，我们只需将其更改为LSTM，但无论如何。我还想展示如何实现双向层。好的，在10个epoch后，我们在训练集上达到了99.5%，在测试集上接近99%。这实际上相当不错，两个层的GRU，256个单元，能达到这个水平确实不错，所以现在我们将其更改为LSTM，看看是否有所改善。
 - en: LSTMs and GRUs are equivalent in terms of performance。 I think LSTMs are a little
     bit better than GRUs， but let's see if that's the case on this data set。Alright，
     so it seems that we get pretty much the identical performance。 LSTMs were a little
     bit better， perhaps on the test head， but pretty much the same。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: LSTM和GRU在性能上是等效的。我认为LSTM稍微优于GRU，但让我们看看在这个数据集上是否如此。好的，似乎我们的性能几乎是相同的。LSTM稍微好一些，也许在测试集上，但大体上是一样的。
 - en: So what we want to do now is we want to add instead of using just a one directionional
     LSTM。 We want to use a bidirectional and it's pretty easy to add that as well。
     we're just going do layers do bidirectional and let's do it like this。 and then
     like this。 So we're just gonna add layers bidirectional and then we're gonna send
     in that LSTM layer。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们现在想做的是，不仅使用单向LSTM，而是使用双向LSTM，添加它非常简单。我们只需添加双向层，就像这样。然后像这样。因此，我们将添加双向层，然后发送LSTM层。
 - en: And let's do that for the second one。OrRather， let's do。Alright。 so let's let's
     first do Mo print a model that summary and just see how it looks like。Alright。
     so I'm not going to let this train。 So what we get here is as you can see since
@@ -148,22 +203,28 @@
     256。 So what it's doing here is we're specifying the number of nodes for each
     hidden for each of its computation for each hidden state in the LSTM to be 256
     nodes。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们为第二个节点这样做。或者说，让我们开始吧。那么我们先打印一个模型总结，看看它的样子。好的，我不打算让它训练。所以从这里可以看出，由于我们添加了这个双向层，我们将得到512个节点，而不是256个。因此，我们在LSTM中为每个隐藏状态的计算指定的节点数量是256。
 - en: but since we add this bidirectional we're going have one going forward and one
     going backwards So this is going get doubled in the amount of nodes as we see
     here。 So what we can do then is for the second one we can do also a layers that
     bidirectional and then。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是，由于我们添加了双向结构，我们将有一个向前和一个向后的节点。所以这里的节点数量会加倍。如你所见，我们可以对第二个节点也进行双向层的操作。
 - en: We can add that。😔，Right there and that's also going to have 512 nodes。 So let's
     run that and see if the bidirectional is any better than the one direction just
     having one direction on the LSTM。After 10 epos， we see that the performance is
     about the same as just using one direction so the bidirectional didn't really
     help and。And I'm not really sure why that is maybe it just needs more training
     or it just doesn't help that much。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以添加这个。😔，就在这里，这也将有512个节点。那么我们来运行一下，看看双向是否比单向的LSTM好。经过10个epoch，我们看到性能与单向使用基本相同，所以双向并没有真正起到帮助作用。我也不太确定为什么，可能只是需要更多的训练，或者它并没有那么大的帮助。
 - en: For this particular dataset， but in general using bidirectional as more of a
     default is a good option。 but anyways that was the basics of how to do a simple
     RN a GRU LTM and then also how to add bidirectality and in this scenario we use
@@ -172,8 +233,12 @@
     as padding the data and masking the data for each batch and we're going to cover
     that in future videos when we're going to load more complex data and loading more
     custom data。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于这个特定的数据集，但通常情况下，使用双向作为默认设置是一个不错的选择。不过无论如何，这就是如何进行简单的RN、GRU和LSTM的基础知识，以及如何添加双向性。在这个场景中，我们使用了MNIS数据集，所以使用Ms数据时我们给自己提供了很大的便利。在训练更复杂的数据时，你需要考虑更多的事情，比如为每个批次填充和屏蔽数据，我们将在未来的视频中讨论，当我们加载更复杂和自定义的数据时。
 - en: So with that said thank you for watching and I hope to see you in the next video。![](img/7a25be1c8cdf0d1403f6e221e59c1458_5.png)
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 感谢观看，希望在下一个视频见到你！![](img/7a25be1c8cdf0d1403f6e221e59c1458_5.png)

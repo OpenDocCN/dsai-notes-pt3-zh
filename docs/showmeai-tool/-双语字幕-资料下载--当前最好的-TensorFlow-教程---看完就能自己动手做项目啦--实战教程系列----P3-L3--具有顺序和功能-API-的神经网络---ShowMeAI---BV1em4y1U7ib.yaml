@@ -4,15 +4,19 @@
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】“当前最好的 TensorFlow 教程！”，看完就能自己动手做项目啦！＜实战教程系列＞ - P3：L3- 具有顺序和功能 API
+    的神经网络 - ShowMeAI - BV1em4y1U7ib
 - en: How's it going guys， hope you're doing awesome and welcome back to tutorial
     Nuummerro Tres。![](img/bccade0d8176d09f2f705cdf71207aea_1.png)
   id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好吗，希望你们一切都好，欢迎回到教程 Nuummerro Tres。![](img/bccade0d8176d09f2f705cdf71207aea_1.png)
 - en: '![](img/bccade0d8176d09f2f705cdf71207aea_2.png)'
   id: totrans-2
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bccade0d8176d09f2f705cdf71207aea_2.png)'
 - en: So we're at the point where we're going to create a basic neural network now
     building and training neural nets has a lot of theory to it and you can follow
     this video and build a neural network but of course I also want you to truly understand
@@ -27,15 +31,19 @@
   id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们要创建一个基本的神经网络，构建和训练神经网络有很多理论。你可以跟随这个视频构建神经网络，但当然我也希望你真正理解我们在做什么。因此，为了保持这些视频简洁明了，我将向你推荐不同的优秀资源，以便你能更深入地了解理论，我真的建议你首先这样做。我推荐的第一个资源是
+    31 个关于神经网络的系列视频，这些视频非常适合建立直觉和理解。如果你想要更深入的解释，我推荐安德鲁·吴的深度学习专业课程的第一和第二个课程的这些视频讲座，这三个播放列表都将在视频描述中列出。
 - en: let's get started with the code we're going import Tensorflow as TF and before
     we do that actually we're going to import OS。![](img/bccade0d8176d09f2f705cdf71207aea_4.png)
   id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们开始导入代码，我们将导入 Tensorflow，作为 TF，实际上在这之前我们要导入 OS。![](img/bccade0d8176d09f2f705cdf71207aea_4.png)
 - en: '![](img/bccade0d8176d09f2f705cdf71207aea_5.png)'
   id: totrans-5
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bccade0d8176d09f2f705cdf71207aea_5.png)'
 - en: And then we're going to do OS do and Veron and we're going to do TFF CPP min
     log level and we're going to set that equal to2 and essentially this will ignore
     information information messages from Tensorflow but we will still get error messages
@@ -43,6 +51,7 @@
   id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们要做的是 OS 并且做 Veron，我们将设置 TFF CPP min log level 等于 2，这样将忽略 Tensorflow 的信息消息，但我们仍然会收到错误消息等等，然后我们就可以继续。
 - en: From TensorFlow import Kas so let me just explain what CARS is since TensorFlow
     2。0 KaRS is integrated with TensorFlow and is the official higher level API and
     is essentially the go to when we're building neural networks and models in TensorFlow
@@ -53,6 +62,9 @@
   id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 从 TensorFlow 导入 KaRS，让我解释一下什么是 CARS。自 TensorFlow 2.0 以来，KaRS 已与 TensorFlow 集成，是官方的高级
+    API，本质上是构建神经网络和模型时的首选。因此，构建神经网络时，你将使用 CAS，具体而言，根据你在创建模型时所需的灵活性，你将使用 CAS 的不同 API，更具体地说，在这个视频中我们将查看
+    CAS 的顺序 API 和功能 API。
 - en: Then we're going to do from Tensorflow cares import layers to import the dataset
     we're going work with today we're going to do from Tensorflow ks data sets import
     Mist the data set we're working with today is the Mist data set and I'm going
@@ -66,14 +78,17 @@
   id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将从Tensorflow cares导入layers以导入我们今天将使用的数据集，我们将从Tensorflow ks data sets导入Mist。我们今天使用的数据集是Mist数据集，我会保持简短，因为我知道你们中很多人厌倦了听关于Mminist的事情，所以基本上它是数字的图像，范围从0到9，我们有60,000张训练图像和10,000张测试图像，图像是灰度的，所以它们只有一个通道，像素为28乘28，因此相对较小。如果你在GPU上运行时遇到任何问题，那么你应该尝试复制粘贴这两行代码，但如果没有问题，那么你就不需要复制它们了。另外，我注意到这里应该只有1f，所以Tf。
 - en: '![](img/bccade0d8176d09f2f705cdf71207aea_7.png)'
   id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bccade0d8176d09f2f705cdf71207aea_7.png)'
 - en: '![](img/bccade0d8176d09f2f705cdf71207aea_8.png)'
   id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bccade0d8176d09f2f705cdf71207aea_8.png)'
 - en: Alright， so anyways， let's move on now and let's actually start with loading
     our data set so we're going to load the training data set。 so we're going to load
     X train and then Y train for the labels and also X test and Y test。And we do that
@@ -82,6 +97,8 @@
   id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，那么无论如何，让我们继续，现在让我们实际上开始加载我们的数据集，我们将加载训练数据集。所以我们将加载X train，然后是Y train作为标签，还有X
+    test和Y test。我们只需执行emminist load data，然后打印X.dot.shape。还有。打印Y train的shape。我们有60,000张图像，它们都是28乘28的。现在。
 - en: one thing here is that we're going to send them to a neural network。 So we need
     to flatten them so that we only have one long column with those feature values。
     So how we can do that is by doing x train equals to。Xtrain dot reshape-1 and then
@@ -90,6 +107,7 @@
   id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有一件事，我们将把它们发送到神经网络。所以我们需要将它们展平，以便我们只有一列长的特征值。我们可以通过执行x train等于Xtrain.dot.reshape-1然后784来做到这一点。所以这里的-1意味着保持该维度上的任何值。在这种情况下是60。
 - en: 000 and then put so this is going to be 28 times 28。 so we're going to flatten
     these two dimensions here。And also。Now when we're loading the data they're going
     to be nuy arrays and then they're also going to be float 64 so what we can do
@@ -99,6 +117,8 @@
   id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 000，然后放置，这将是28乘28。所以我们要将这两个维度展平。还有。现在当我们加载数据时，它们将是nuy数组，并且它们也将是float 64，所以我们可以做s
+    type，然后是float 32，只是为了减少一些计算，然后我们还希望规范化这些值，使它们不再在0到255之间。
 - en: we want to make them between 0 and 1 for faster training so we're going to divide
     by 255 and then we're going to do the same for the xt x test。 so x test。 reshape
     minus128 times 28。Then， S type。Flolow 32 and then divide by 255。So these are going
@@ -108,6 +128,8 @@
   id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们希望将它们归一化到0到1之间，以便更快的训练，所以我们将除以255，然后对xt x test执行相同的操作。所以x test。reshape-128乘28。然后，S
+    type。Flolow 32，然后除以255。所以这些将是nuy数组，你可以做类似于xtrain等于Tf convert to tensor，然后你可以对Xtrain和ytrain等做类似操作。但实际上这将由Tensorflow内部完成。
 - en: so if it's in nuy arrays we don't have to bother too much。 the conversion is
     just going to happen automatically so to speak。So the first thing we're going
     to do now is actually create a model。 so we're going to create a basic neural
@@ -116,6 +138,7 @@
   id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以如果它在nuy数组中，我们不需要太过担心。转换将自动发生，可以这么说。所以我们现在要做的第一件事实际上是创建一个模型。我们将创建一个基本的神经网络，并使用KRS的顺序API，你可以将顺序API视为非常方便，但灵活性不是很高，对吧。
 - en: Very convenient， not very flexible。 So what I mean by that is， for example。
     it only allows you to have one input map to one output， right， That's a major
     limitation。 But if if if you have one input to one output， then sequential is
@@ -124,6 +147,8 @@
   id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 非常方便，但灵活性不高。所以我所指的是，例如，它只允许一个输入映射到一个输出，这是一大限制。但是如果你有一个输入到一个输出，那么顺序模型正是你想要使用的。因此，我们创建这个的方式是使用model
+    = ks.sequential。
 - en: And then we're gonna send in a list and that list is going be the layers so
     what we want to do first is we want to do layers。 denses so this is for a fully
     connected layer and let's say that we want to have 512 nodes in our first layer
@@ -134,6 +159,7 @@
   id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将发送一个列表，这个列表将是层，因此我们要做的第一件事是做密集层。这是一个完全连接的层，假设我们想在网络的第一层中有512个节点，然后我们将设置激活，所以我们只需将激活设置为，然后我们将使用reL激活函数，然后你就可以将它们写成层，这样它将自动通过这些层发送，因此例如我们想要另一个层。
 - en: another fully connected layer with the layer do denses and let's say we want
     256 nodes in that one and then activation equals re and then for the sort of the
     output layer the last layer we want to have layer dens and we want to map it to
@@ -141,6 +167,7 @@
   id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一个完全连接的层，使用密集层，假设我们想要256个节点，然后激活设置为re，对于输出层，最后一层我们想要密集层，并且我们想要映射到10个节点，每个数字一个节点，并且在这一层我们不想要激活。
 - en: Function because this is our output layer。We're going to use softmax on the
     output layer。 but that is going to be done inside the loss function。 so then we're
     going to do model do compile and here we're essentially going to tell Karas how
@@ -152,6 +179,8 @@
   id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 函数，因为这是我们的输出层。我们将在输出层使用softmax，但这将在损失函数内部完成。然后我们将执行model.compile，在这里我们基本上告诉Keras如何配置我们网络的训练部分，例如，我们将指定要使用的损失函数，我们将使用Keras损失的稀疏分类交叉熵。然后我们将有一个参数，设置from_logits
+    = true，这是因为我们没有softmax激活，所以当我们设置from_logits = true时。
 - en: it's going to send it in to a softmax first and then it's going map it to sparse
     categorical cross entropy so you're probably familiar with cross entropy loss
     when it's a sparse categorical it means that the labels so the ytrain labels are
@@ -160,6 +189,7 @@
   id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 它将首先发送到softmax，然后将其映射到稀疏分类交叉熵，所以你可能对交叉熵损失比较熟悉，当它是稀疏分类时，意味着标签，所以ytrain标签只是对应正确标签的整数，例如，如果它是数字3。
 - en: then the y train of that specific example will just be three if you remove the
     sparse so you would use categorical cross entropy。 then you would need to have
     one hot encodings。But that's not what we have in our case。And then we can specify
@@ -168,6 +198,7 @@
   id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后该特定示例的y train将只是3，如果你去掉稀疏，所以你会使用分类交叉熵。那样你需要有独热编码。但在我们的情况下并不是这样。然后我们可以指定优化器，因此我们将使用Ks.optimizeims.adam，作为参数我们可以设置学习率，所以我们设置为0.001。
 - en: And then we can sort of specify the metrics as well。 and in our case we want
     to have the metric to be accuracy so that CA keep tracks during training。 what
     is the running accuracy so far？Then after using model。compile， we can do model。fit。
@@ -175,6 +206,7 @@
   id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们也可以指定指标。在我们的案例中，我们希望指标为准确率，以便CA在训练期间跟踪当前的运行准确率。然后在使用model.compile后，我们可以进行model.fit。所以你可以理解model.compile指定了网络配置。
 - en: so what loss functions， what optimizes and so on， and then in model dofit we
     actually specify more of the concrete training of that network。We want to send
     in x train and y train， and then we want to specify the batch size that it's going
@@ -182,6 +214,7 @@
   id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 关于损失函数、优化器等，然后在`model.fit`中我们实际上指定了网络的具体训练。我们想要传入`x_train`和`y_train`，然后指定要训练的批大小。
 - en: So let's say 32。 and then let's say we want to train for5 epos。And then we can
     use verbos equals true so that it just prints after each epoch。 otherwise you
     would sort of get a progress bar， but anyways， then after we're training it。 we
@@ -191,6 +224,7 @@
   id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设我们设定为32，然后设定我们想要训练5个周期。然后我们可以使用`verbose=True`，这样每个周期后就会打印结果。否则你会看到一个进度条，不过无论如何，在训练之后我们想要评估模型，所以我们将调用`model.evaluate`，并发送`x_test`、`y_test`和`batch_size=32`，然后`verbose`，因此这里不需要指定周期数。
 - en: we're just going to train it for one epoch。So if we run this now。So just running
     it for 5b buck we get about 99% accuracy on the training set and 98% on the test
     set which is reasonably okay right so what I want to talk about now as we can
@@ -199,6 +233,7 @@
   id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们只训练一个周期。所以如果我们现在运行它。仅运行`5b`批次，我们在训练集上得到约99%的准确率，在测试集上为98%，这还算不错。现在我想谈谈的就是如果我们首先指定输入，我们会使用`Keras.Input`并指定输入的形状。
 - en: so in our case 28 by 28。Then we can actually do model dot。 so we can do print
     model。Sprint model dot summary。And yeah let's exit the code here so I'm just gonna
     do C exit and then we can see sort of the network。 some information about the
@@ -208,6 +243,7 @@
   id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们的情况下为28x28。然后我们可以调用`model.`，所以我们可以打印`model.summary`。好的，让我们在这里退出代码，我将执行`exit`，然后我们可以看到网络的一些信息。例如，我们的第一层有512个节点，参数有400,000个，接着我们可以看到256、130和130k，最后输出层有10个节点。
 - en: 5k parameters， if we would， for example， if we would remove this input this
     carad input。 we wouldn't be able to print model that summary so we would or rather
     we could print model that summary but we would have to do it after the model that
@@ -216,6 +252,7 @@
   id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 5k参数，如果我们移除这个输入，即`input_shape`，我们就无法打印`model.summary`，或者说我们可以打印`model.summary`，但必须在`model.fit`之后进行，也就是说在我们实际传入数据之后。使用这个`input_shape`可以让你获取关于模型本身的更多信息。
 - en: You could also so now we created the model where we did sequential and then
     we specified all of the layers。 where you could also do is you could do model
     equals Ks dot sequential。And then you could sort of add one layer at a time， so
@@ -224,6 +261,7 @@
   id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们现在创建了模型，使用`Sequential`并指定了所有层，你也可以这样做：`model = Ks.Sequential`。然后可以逐层添加，例如，`model.add(Ks.Input)`，然后形状为784。接着我们可以`model.add`添加层。
 - en: So let's do the same network and then activation equals relu。And then mod let
     add layer stands to 56。Actation re。And then the last layer， layers。Dance，10。Now
     what's amazing about this is that you can sort of do model add one layer and then
@@ -234,6 +272,7 @@
   id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们做同样的网络，然后激活函数为`relu`。然后`model.add`添加层，节点数为256。激活为`relu`。最后一层，节点数为10。令人惊讶的是，你可以逐层添加，然后可以打印`model.summary`。进行这些模型摘要是一个更常见的调试工具。也许对这些非常简单的神经网络不适用，但当你构建更复杂的模型并想查看每一层时。
 - en: how much how much the input is changed for those specific layers。 you could
     do model that summary and then adding one more layer you could do model that summary
     again and so on。 So here are two different ways of using the sequential API and
@@ -244,6 +283,7 @@
   id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 输入对于这些特定层的变化有多大。你可以做model.summary，然后添加一层，你可以再次做model.summary，依此类推。所以这里有两种使用顺序API的方法，正如我所说的，它非常方便，但不够灵活，因为我们只能将一个输入映射到一个输出。这并不意味着顺序API在任何方面都是糟糕的，如果你能使用顺序API，你应该这样做。所以这就是。
 - en: If you can't use it， what should you do then， and that's when we go to the functional
     API。The functional API。Is a bit more flexible。I can， for example handle multiple
     input and multiple outputs。 So let me show you how that works。 we're going to
@@ -252,6 +292,7 @@
   id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你无法使用它，你该怎么办，那时我们转向功能API。功能API更灵活。例如，我可以处理多个输入和多个输出。所以让我向你展示它是如何工作的。我们将首先指定输入，因此我们将执行该输入并设置形状为784。然后我们将做x等于。
 - en: Layers do dens， 512 so we're going to build the exact same network and then
     we can do activation equals relu and then after you initialize this layer right
     here。 you're going to call it with the inputs Allright in this case sort of the
@@ -263,6 +304,8 @@
   id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 层的密度为512，所以我们将构建完全相同的网络，然后可以进行激活等于relu，然后在你初始化这个层之后，你将用输入调用它。好的，在这种情况下是我们之前定义的那个，然后对于下一个层，我们将做x等于layers
+    do1s到256激活等于relu，然后在这里我们将传入前一个层，所以在我们这里是x，然后对于输出，我们将做outputs等于layers do dens，然后我们将做10个节点，顺便说一句，为了换换口味，让我们进行激活等于softmax。
 - en: And then do X on that。Now， just because we used activation equals softmax here。
     this from Loist will not be true， so we're going to have to change that to false。
     which is also the the default default argument so we we could also just as well
@@ -271,6 +314,7 @@
   id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后在那上面做X。现在，仅仅因为我们在这里使用了激活等于softmax。这从Loist来看是不正确的，因此我们必须将其更改为false。这也是默认的默认参数，所以我们也可以完全移除它。现在让我们重新运行这个，看看它是否有效。抱歉，我忘记了一行，这一点非常重要。
 - en: so one thing we saw here is that the accuracy didn't improve。 which if you think
     about it here we didn't use we didn't use Softmax on this model and this is the
     one that we latest defined so you could see sort of here how important using Softmax
@@ -278,6 +322,7 @@
   id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们在这里看到的一个问题是准确性没有提高。如果你仔细想想，我们没有在这个模型上使用softmax，而这是我们最新定义的模型，因此你可以看到使用softmax是多么重要，但无论如何。
 - en: What we need to do here is we need to do model equals ks dot model。 then we
     need to specify input equals input。And then output equals output。 Allright。 so
     that's all we have to do。 and it' it's going to take these inputs that we defined
@@ -286,6 +331,7 @@
   id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们需要做的是model等于ks.model。然后我们需要指定input等于input。然后output等于output。好的，这就是我们需要做的所有事情。它将接受我们在这里定义的这些输入和输出并构建模型。现在如果我们运行这个，希望它能正常工作。
 - en: So as we see now we get something very similar to the first time we ran the
     model about 98% and about 98% on the test set。 so as usual you could also do printmod。
     summary right here and sort of get information about the model。 one thing you
@@ -296,6 +342,9 @@
   id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以正如我们现在看到的，我们得到了与第一次运行模型非常相似的结果，大约98%，在测试集上也是大约98%。所以像往常一样，你也可以在这里打印模型的摘要，获取关于模型的信息。你还可以命名特定的层，比如我们可以做成类似“name
+    equals first layer, name equals second layer”，然后如果你运行model.dot summary，我们将在这里看到第一个层，第一层密集层，因为这是我们命名的，它将被命名为“first
+    layer”，然后是“second layer”。
 - en: Now I also want to show some details of how to extract specific layer outputs
     that might be useful when debugging and so on。 So this is gonna to work no matter
     if using the sequential the functional。 let's just do it for the sequential。 So
@@ -306,6 +355,8 @@
   id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我还想展示一些如何提取特定层输出的细节，这在调试时可能会很有用。所以这将适用于无论是使用顺序模型还是功能模型。我们就以顺序模型为例。所以我将设置退出条件，以便我们专注于这个模型。我们将重写这个模型，执行model
+    equals kos.dot model，然后我们将输入设置为model.do input，然后输出。
 - en: we're going to specify model dot layers and then if we do minus1。 that's going
     to be the output right that's going be the last one。 So if we do minus-2 for example。
     we're going to get the layer for that and then we need to specify dot output so
@@ -315,6 +366,8 @@
   id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将指定model.dot layers，然后如果我们执行-1，那将是输出，也就是最后一个层。所以如果我们举个例子执行-2，我们将得到那个层，然后需要指定dot
+    output，因此我们可以执行类似于“feature equal model.dot predict”的操作，这里“model.dot predict”是用于我们发送的特定例子，因此在这种情况下，我们发送多个例子，实际上是所有60个。
 - en: 000 but anyways we can do print feature dot shape and then we would obtain all
     60。000 and then 256 for that specific layer so that's one way you could do it
     what you could also do is you could specify。 you could give it a name like my
@@ -325,6 +378,8 @@
   id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 不过无论如何，我们可以打印feature.dot shape，然后我们将获得60,000和256的形状，这就是你可以做到的一种方式。你还可以指定一个名字，比如“my
+    layer”，然后可以执行model.dot get layer，指定“my layer”，然后点输出。如果我们运行这个，我们将得到完全相同的结果，只是根据那个特定层的名字来获取层。
 - en: You could get all of them so you could do layer do output for layer in model
     dot layers and in this way we would get all the features so for example we could
     do four feature in features and then print feature dot shape so if we run that
@@ -335,6 +390,8 @@
   id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以获取所有层的输出，可以通过“layer do output for layer in model.dot layers”来实现，这样我们就会得到所有的特征。例如，我们可以对特征进行循环，并打印feature.dot
+    shape，所以如果我们运行这个，我们将获得所有层的输出，第一层、第二层和第三层的输出。因此，在调试时这可能会很有用。所以让我们实际去掉那些，以确保代码按我们最初编写的方式正常工作。
 - en: Here are a couple of suggestions to play with the code and to get some more
     experience so the first is that you can try and see what accuracy you can get
     by increasing the model size training for model training for longer etc。 and you
@@ -342,6 +399,7 @@
   id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有几个建议，可以尝试代码并获得更多经验。首先，你可以尝试通过增加模型大小、延长训练时间等，看看能获得什么准确率。你应该能够在测试集上至少超过98.1%。
 - en: And my second suggestion is try using different optimizers than at for example。
     try griding descent with momentum， addgrad and RMS Pro。 which do which one gives
     you the best results and then thirdly is there any difference if you remove the

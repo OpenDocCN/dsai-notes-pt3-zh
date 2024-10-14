@@ -1,13 +1,16 @@
 - en: 【双语字幕+资料下载】“当前最好的 TensorFlow 教程！”，看完就能自己动手做项目啦！＜实战教程系列＞ - P9：L9- 自定义图层 - ShowMeAI
     - BV1em4y1U7ib
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
 - en: What is going on， guys， hope you're doing freaking awesome。 So in this video。
     I want to show you how to create custom layers。😊。![](img/2b96deb5c7669b397136afafb6aca66a_1.png)
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/2b96deb5c7669b397136afafb6aca66a_2.png)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
 - en: So far we've seen how to build very flexible models using subclassing and now
@@ -21,12 +24,14 @@
     to inherit from Kast model we're going to start with finding the init method we're
     going do self and then we could specify the number of classes for Ms 10 and then
     we're going just going call the super super mymod self do in it。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
 - en: And then we're going to do self dense1， So all we're going to do here is just
     create two dense layers Allright。 we're going to do layers do dense， let's do
     64 nodes and then self dense2 is layers dense of nu classes we're just going to
     do the call So we're going to call self and then x。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
 - en: So the input or let's call input tensor。And then we're going to do self do den
@@ -34,6 +39,7 @@
     just what we've seen in the last video。 this is why I'm going through it pretty
     quickly， and then we want to return self do then2 of x。 al right。So now let's
     quickly build a。And just a model compile a model fit on that。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
 - en: So we'll do model equals my model。 We'll do model do compile。Loss equals ks，
@@ -45,6 +51,7 @@
     training and this should go relatively quickly because we just have yeah so we
     have a very very small network like 64 nodes and then 10 output nodes let's actually
     talk about what I want to show you in this video so。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
 - en: We now want to actually create these layers by ourselves right now we're using
@@ -55,12 +62,14 @@
     understand what's going on a more under the hood so I'm going to show you how
     to do that and let's do class and let's do dense and we're going to inherit from
     layers layer。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
 - en: We're going to create our in function， so we're going to do init and then self
     unit。 and then we're going to specify the input dimension。So all we got to do
     then is we got to run this super method， so super dense self thatt in it。Then
     we're going to do self that W is self add weight。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
 - en: So there are actually multiple ways of doing this。 this is the more easy way
@@ -74,6 +83,7 @@
     we have in the beginning it's going to be 784 which is 28 times 28 and then unit
     is just what we're gonna map it to so when we're using layers164 the unit is 64
     then we can also。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
 - en: the initializer so we're going to do random normal and you could check out what
@@ -82,6 +92,7 @@
     so on where some of the parameters are not actually trainable。 but so all of our
     parameters in this dense layer are going to be trainable then we're going to do
     self。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
 - en: B is self。 add weight。We're going to call it B and then shape is just going
@@ -89,6 +100,7 @@
     why it has to have the input dimension。 but then it's just going to be unit nodes
     so we're going to add one for each of them。 that's why we just have units right
     here。Then we can do initializer and we're just going to initialize it as zeros。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
 - en: and then this is also a trainable parameter。And lastly， we just have to do the
@@ -96,6 +108,7 @@
     with the input。And then self to W， and lastly， we just got to add B。So now。We
     can actually replace this right here so we can do let's do selfta dense 1 is dense
     and then let's do 64 and then 784。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
 - en: and then let's do selfta dense 2 is dense of 10 and then 64 as input。So let's
@@ -109,26 +122,34 @@
     input dimension So how we can do that is that we're going to create a build method
     all right so we have our in it right now and we're going to remove the input dimension
     right here。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们来做一个自密集层，输入维度是10，然后是64。现在把这个输出放在那里，看看是否有效。好的，我们似乎得到了与上一个几乎相等的结果，最重要的是它确实可以运行。首先，你可以注意到，在这些例子中，我们不需要指定输入维度，我们称之为懒惰层，这样你根本不需要说明输入维度，它会自动计算出来。所以我们现在想做的是移除这一部分，使其无论输入维度如何都能工作。我们要做到这一点的方法是创建一个构建方法。现在我们有了初始化，我们将在这里移除输入维度。
 - en: And then we're going to do a build method。So we're going to do define build。
     we're going to have self， and then we're going to have an input shape。And then
     we're actually going to create the Ws right here。 so we're going to paste that
     in the build method instead。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将创建一个构建方法。我们将定义构建，传入self和输入形状。接着，我们将在这里创建Ws，因此我们将把这段代码粘贴到构建方法中。
 - en: and now what's so great is that instead of using input input dim we can do input
     shape and then we're going to do sort of the last of those so in this case we
     have the training examples on the first dimension and then we have 784 because
     of the way we've reshaped it right here。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在非常棒的是，使用输入形状而不是输入维度，我们可以处理最后一个维度。在这种情况下，我们在第一维有训练样本，然后由于我们在这里的重塑，我们有784。
 - en: so that's why we do minus1 here and then we're going to do units although what
     we're going to do in the in methods is do selft units equals units。And then we
     got to do replace these units right here with self dot units for both of the for
     the W and then self dot B。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们在这里做-1，然后我们将使用单位，虽然在初始化方法中我们将self.units设置为units。接着，我们需要将这里的单位替换为self.units，W和B都需要如此。
 - en: So what's amazing now is that if we would run this。 we wouldn't have to specify
     the input dimension this hopefully we work so we can actually we can do that classes
     So let's run this now and let's see what we get。And it seems to work and now we
@@ -139,15 +160,21 @@
     or you can create a class like we're doing so far I think the most common way
     is actually defining a function but let's just create a class and you can try
     making a function。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以现在令人惊讶的是，如果我们运行这个，我们就不需要指定输入维度，这样希望可以工作。我们可以运行这些类。现在让我们试试，看看会得到什么。它似乎有效，我们看到这两个功能几乎是相同的。你可能会说，我们仍在使用TfN和dot
+    Reello，实际上自己创建这个也不错，这就是我们的下一步。你可以通过两种方式做到这一点，可以创建一个函数或像我们现在这样创建一个类。我认为最常见的方法是定义一个函数，但让我们创建一个类，你可以尝试制作一个函数。
 - en: It's going to be pretty much the same。But we're going to do class Mireello。
     and then we're going to do layers taught layer。And we're going to do define in
     it。Of just self。 we've gotta call super of my reello。Self， and then that in it。And
     then for our actual call。We're just going to return Tf。 mathath。 maximum。Of x
     and0。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 它几乎是一样的。但我们将做一个类Mireello，然后定义初始化，只需传入self。我们需要调用super的Mireello，self和初始化。然后在我们的实际调用中，我们只需返回Tf.math.maximum(x,
+    0)。
 - en: this is just going to return the maximum of x or 0， which is exactly the the
     relative， right。 So at this point， you might be saying， well， how would we actually
     create this Tf math maximum function。You might be feeling that this is a way of
@@ -157,8 +184,11 @@
     will always be times where you can go even deeper and explore the details and
     so this is where I would draw the line and that we can use these mathematical
     operations on these tensors so when we have this myrelu we can do self。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 这只是返回 x 和 0 中的最大值，这正是相对的，对吧？所以在这一点上，你可能会说，嗯，我们到底如何创建这个 Tf math maximum 函数。你可能觉得这是一种作弊的方式，我想说这甚至更底层，这是你可以尝试的，你可以阅读文档和源代码，了解他们是如何实现这个函数的等等，但总会有机会让你深入探索细节。因此，我会在这里划定界限，我们可以在这些张量上使用这些数学运算，当我们有这个
+    myrelu 时，我们可以做 self。
 - en: tre is my Relu so we got to instantiate the class although if you use a function
     this wouldn't be the case what we got to do then is we got to replace this Tf
     and then do relu and then we're going to do selftrelu on top of that。So we can
@@ -168,8 +198,13 @@
     more complex ones as well and I also suggest you to try that out Alright so that's
     it for this video thank you so much for watching and I hope to see you in the
     next one。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: tre 是我的 Relu，所以我们必须实例化这个类，虽然如果你使用一个函数，这就不是这种情况。那么我们要做的是替换这个 Tf，然后做 relu，然后在此基础上做
+    selftrelu。所以我们可以先运行这个。因此，你现在已经看到如何通过 Kaa 子类化自己构建这些模型，以及如何实际构建这些层，比如稠密层和 re 函数。这些都是相当简单的，但你可以想象构建更复杂的层。我也建议你尝试一下。好的，这就是本视频的全部内容，非常感谢你的观看，希望在下一个视频见到你。
 - en: '![](img/2b96deb5c7669b397136afafb6aca66a_4.png)'
+  id: totrans-21
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/2b96deb5c7669b397136afafb6aca66a_4.png)'

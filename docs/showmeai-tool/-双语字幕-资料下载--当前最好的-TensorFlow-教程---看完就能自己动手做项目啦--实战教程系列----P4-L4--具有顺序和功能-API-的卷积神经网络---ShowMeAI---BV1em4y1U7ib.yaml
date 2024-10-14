@@ -1,32 +1,47 @@
 - en: 【双语字幕+资料下载】“当前最好的 TensorFlow 教程！”，看完就能自己动手做项目啦！＜实战教程系列＞ - P4：L4- 具有顺序和功能 API
     的卷积神经网络 - ShowMeAI - BV1em4y1U7ib
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】“当前最好的 TensorFlow 教程！”，看完就能自己动手做项目啦！＜实战教程系列＞ - P4：L4- 具有顺序和功能 API
+    的卷积神经网络 - ShowMeAI - BV1em4y1U7ib
 - en: '![](img/1090d091c86a18e1ad139b92203046b6_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1090d091c86a18e1ad139b92203046b6_0.png)'
 - en: Welcome back guys， hope you're doing awesome and in this video we will continue
     and now build a convolutional neural network and as usual there are resources
     of video lectures in the description to find more about the concepts for this
     video So with that said。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 欢迎回来，大家希望你们一切都好。在这个视频中，我们将继续并构建一个卷积神经网络，和往常一样，视频描述中有资源链接，可以进一步了解本视频的概念。所以话不多说。
 - en: let's get started we're going first import OS and we're going to do OS dot environment
     and do Tf CPP Min log level and again this is just for ignoring information messages
     from Tensorflowlow that can be a little bit annoying。And then we're going to do
     import Tensorflow as Tf。From Tensorflow， import ks。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们开始吧。我们首先导入 OS，然后我们将使用 OS dot environment 设置 Tf CPP Min log level，这只是为了忽略
+    Tensorflow 的一些信息消息，这些消息可能会让人有点烦。接着，我们将导入 Tensorflow，使用 Tf。从 Tensorflow 导入 ks。
 - en: From Tensorflow dot ks import layers and then from Tensorflow dot Cars do data
     sets。 we're going to import Cypher 10。 So in this video we're going to take a
     look at the Cypher 10 data set and it's basically more natural images of of 10
     different classes from airplane。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 从 Tensorflow dot ks 导入 layers，然后从 Tensorflow dot Cars 导入数据集。我们将导入 Cypher 10。所以在这个视频中，我们将看看
+    Cypher 10 数据集，它基本上是来自 10 个不同类别（如飞机）的更多自然图像。
 - en: automobile mobile bird truck， etc cetera。 and the images are。![](img/1090d091c86a18e1ad139b92203046b6_2.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 汽车、手机、鸟、卡车等等。图像如下。![](img/1090d091c86a18e1ad139b92203046b6_2.png)
 - en: we have 50，000 training images and then we have 10，000 test images， total of
     60。000 where each image is 32 by 32 pixels so they are relatively small and then
     we have RGB colored so they have three channels I found this pretty interesting
@@ -35,38 +50,54 @@
     approximately 94% and if you actually check the most recent models trained on
     Cypher10 they go beyond this so the more recent models are much much better than
     human level performance on this dataset set。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们有 50,000 张训练图像，10,000 张测试图像，总共 60,000 张，每张图像是 32 x 32 像素，所以它们相对较小，而且是 RGB
+    彩色的，因此它们有三个通道。我发现了 Andrea Kpathy 的一篇很有趣的博客文章，他实际上自己在 Cypher 10 上进行了训练，并得出结论，看看
+    Cypher 10 的人类水平准确率约为 94%，如果你查看最近在 Cypher 10 上训练的模型，它们的性能超越了这一点，因此更近期的模型在这个数据集上远远超过人类的表现。
 - en: '![](img/1090d091c86a18e1ad139b92203046b6_4.png)'
+  id: totrans-7
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1090d091c86a18e1ad139b92203046b6_4.png)'
 - en: Now I'm going to copy in two lines and most likely you don't need them。 but
     if you're running on GPU and you're run into any trouble。 then most likely these
     two lines here are going to help you out。Al right。 so let's go back to sort of
     what we actually want to do in this video。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我将复制两行代码，你可能并不需要它们，但如果你在 GPU 上运行并遇到任何问题，那么这两行可能会帮助你。好的，回到我们在这个视频中实际想做的事情。
 - en: which is first we want to load the Cypher 10 data set。 and this is very similar
     to how we loaded MNIS。In the last video。 and then so we're going to do x train，
     Y train， X test， Y test。And then Cypher 10 dot load data。And。Again， we want to
     convert it into F 32 because efficiency essentially computing it in F 64 is a
     bit of unnecessary necessary computation。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们首先想要加载 Cypher 10 数据集，这与我们在上一个视频中加载 MNIS 的方法非常相似。所以我们将执行 x train、Y train、X
+    test、Y test，然后调用 Cypher 10 dot load data。我们再次希望将其转换为 F 32，因为在 F 64 中计算效率不高，属于不必要的计算。
 - en: so what we can do is we can do xtrain equals xtrain s type and then float 32
     and then for normalization we can also divide by 255 so that the pixel values
     are between 0 and1。And then similarly for X test， we can do x test equals x test
     as type float 32。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以做的是将 xtrain 赋值为 xtrain 的类型，然后为 float 32，然后为了归一化，我们还可以将其除以 255，使像素值在 0 和
+    1 之间。同样对于 X test，我们可以将 x test 赋值为 x test 的类型 float 32。
 - en: and then we're just going divide by 255。 Allright。 so for our actual model let's
     start out with a sequential model and then we're going to build and make that
     a little bit more advanced。 so we're going to do model equals Kas that sequential
     and we're going to start with Kas that input specifying the input shape in this
     case。Since we're using convolutional neural networks， we are not going to reshape
     it so that we don't flatten it in the beginning。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们只需除以255。好的。所以对于我们的实际模型，让我们从一个顺序模型开始，然后我们将构建并使其更高级一点。我们将执行model = K.as.Sequential，并指定输入形状。由于我们正在使用卷积神经网络，我们不会在开始时进行重塑。
 - en: so that means we're going to maintain the height， so 32 in height。 32 and width
     and then three channels for RGB so that they are colored so that's the input shape
     of each image then we're going to do layers。 co2 d and we're going to do I don't
@@ -77,34 +108,44 @@
     single integer here that's going to be expanded to be the same kernel size for
     the height and the width so that's essentially writing this just more I guess
     less of verbo just writing the integer。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 这意味着我们将保持高度为32，宽度为32，并且有三个RGB通道，所以这就是每个图像的输入形状。接下来我们将执行layers.co2d，我不太确定，32个输出通道是第一个。这里的第一个参数是我们希望这个卷积层输出多少个通道，所以一开始我们有三个通道，我们希望输出为32。接着我们将指定卷积核大小，我们将其设置为3，如果在这里设置一个整数，它将扩展为高度和宽度相同的卷积核大小，所以本质上是更简洁地写出这个。
 - en: And then we can specify padding so here you can specify valid or same so valid
     here is the default and then so what's going to happen is that these pixel values
     here。 if we use same convolution then theyre going to be maintained so after this
     layer they're still going to be 32 pixels height and then 32 pixels width。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们可以指定填充方式，在这里你可以选择有效或相同，因此有效是默认的。那么发生的情况是，这些像素值。如果我们使用相同的卷积，那么它们将被保持，因此在这一层之后，它们仍将是32像素的高度和32像素的宽度。
 - en: but if we use valid then that's going to change depending on our kernel size。
     so in this case they're actually going to become 30 by 30 pixels。So this is essentially
     just a hyperparameter that you can play around with。 I'm just going to set it
     to valid， although there's really no point since this is the default argument。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是如果我们使用有效的填充，那么这将根据我们的卷积核大小而变化。在这种情况下，它们实际上将变成30乘30像素。所以这本质上只是一个超参数，你可以随意调整。我会将其设置为有效，虽然这样做没有意义，因为这是默认参数。
 - en: And then we can set the activation similarly to how we did for our neural network
     to RE。And then let's do a max pooling to D。And so here we can specify the pool
     size。 let's say two by two so that it's halfd in the input， so for example。 if
     we use a valid convolution here， this is going to be 30 by 30 and of course you
     can do print model summary to actually see these changes。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们可以设置激活函数，类似于我们为神经网络所做的设置为RE。接着进行最大池化到D。在这里我们可以指定池大小，假设为2乘2，这样输入就会减半。例如，如果我们在这里使用有效卷积，那么结果将是30乘30，当然你可以打印模型摘要来实际查看这些变化。
 - en: Maybe we can do that actually， so let's do print model that summary。And let's
     see。 So as we can see here now， after the first come， it's going to be 30 by 30
     and then we have 32 channels and then after the max pullinging。 it's going to
     have the input size pixel， so they're going to be 15 by 15。And then we could do
     just another couple of layers。 So layers come to D。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 也许我们真的可以这样做，所以让我们打印模型摘要。让我们看看。正如我们现在所看到的，第一次过后，将是30乘30，然后我们有32个通道，最大池化后，输入大小像素将是15乘15。接着我们可以再添加几层，所以层数是D。
 - en: let's say 64 out channels and then same。 I mean， kernel size 3。 and then let's
     just use valid again and activation re。嗯。Let's do another max pooling。And then。Again。
     we're going to have 128 channels we just double it and then three and activation
@@ -112,44 +153,56 @@
     do flatten we're going to have let's say one intermediate so we're going to have
     64 nodes in this fully connected and activation equals relative and then for our
     output we're just going to do layer dense and then 10 output nodes。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设有64个输出通道，内核大小为3。然后我们再次使用有效的填充和激活函数。嗯。再进行一次最大池化。然后，我们将有128个通道，我们只需将其翻倍，再加上3，激活函数为相对。然后对于我们的实际输出，我们将进行层展平，假设有一个中间层，因此我们将在这个全连接层中有64个节点，激活函数为相对，最后我们只需进行密集层，有10个输出节点。
 - en: So that's for our actual model。 then we're going to compile our model。 So model
     that compile specify the loss function to be CAs that losses that spars。Categorical
     cross entropy， so the same that we use in the last video from logics equals true
     because we're not having a softmax activation on our output。And then let's say
     optimizer， let's use at。So if we're going to set also the learning rate。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是我们的实际模型。然后我们将编译我们的模型。因此，编译模型时指定损失函数为CAs，该损失函数是稀疏的分类交叉熵，与我们在上个视频中使用的相同，因为我们的输出没有softmax激活。然后假设优化器使用Adam，因此我们还需要设置学习率。
 - en: let's set it to 3 e minus4。And then metrics， let's keep track of accuracy。Alright。
     so that's where a model compile now to actually train the model。 let's just do
     model that fit x train， y train， batch size， let's say， 264。And then let's run
     for 10 epochs and let's say verbose equals 2 so that it prints after each epoch
     in this way you won't get a progress bar。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 设置为3e-4，然后指标保持跟踪准确率。好的。这就是我们模型的编译，现在实际上训练模型。让我们进行模型拟合x_train，y_train，批大小假设为264。然后运行10个周期，设置verbose等于2，这样每个周期后会打印输出，以便你不会看到进度条。
 - en: but it's going to print information about the training every epoch。And then
     after training。 let's do model dot evaluate on the test set。And then also again。
     let's set the batch size to the same and no epochs because we're just going to
     run at once and then verboos equals2。 Allright， so let's run this and hopefully
     we should still have okay。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是它将在每个训练周期打印有关训练的信息。训练后，让我们在测试集上评估模型。然后同样，设置批大小相同，没有周期，因为我们只会运行一次，verbose等于2。好的，让我们运行这个，希望一切正常。
 - en: so let' let's do also print model that summary here。And then we can inspect
     that。😔，So。Alright。 so we're letting a train。 So we can see here that。We can sort
     of see the number parameters。 let's see。 it's here are the most of the parameters
     of the model and。So as we can see here we can see sort of the total number of
     parameters， 1225，000。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么，让我们在这里打印模型摘要。然后我们可以检查一下。😔 好吧，所以我们开始训练了。在这里我们可以看到模型的大部分参数。总参数数量为1225,000。
 - en: and that's actually a very， very small network， so we're not expecting to get
     very。 very high accuracy on this but sort of just to illustrate how to build convolutions
     and then using Mac pullinging and so on。I believe that Alexnett。I believe that
     AlexNe， which was sort of the first convolutional neural network that really revolutionized
     computer vision。 had about 60 million parameters， so just to get a perspective
     on how small 225，000 actually is。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 这实际上是一个非常非常小的网络，因此我们并不期待得到非常非常高的准确率，而只是为了说明如何构建卷积层，然后使用最大池化等等。我相信 AlexNet，这是第一个真正革命性地改变计算机视觉的卷积神经网络，大约有6000万个参数，所以让我们来看看225,000究竟有多小。
 - en: Alright， so let's see it's done training and then it's printing the model of
     summary again okay so let's remove that。😔，And then let's see sort of what we get
     so we get 72% training accuracy at end and then 68% test accuracy。 Now as you
@@ -158,14 +211,18 @@
     what we're going to do now is take a look at how we can build a functional using
     the functional API and sort of build a very similar convolution in neural network
     but we're going to add some more advanced things so。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，让我们看看训练是否完成，然后再打印模型摘要。好的，所以我们去掉那个。😔 然后看看我们得到了什么，最后训练准确率为72%，测试准确率为68%。现在你可以看到我们有很大的提升空间。如果你训练更久，可能会得到更好的准确率，但我们并不太关注这个。接下来我们将看看如何使用函数式API构建功能，并构建一个非常相似的卷积神经网络，但我们会添加一些更高级的内容。
 - en: Let's do， let's actually do a function。 So let's do define my model。 and then
     inside this。 let's do input equals。Kas input and then shape let's see， 32，32，3。And
     then let's do x equals layers。com2 d， let's do the same channels with 32 and then
     kernel size 3。 and then we're going to send the input through that layer。And then。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们做一个函数。首先定义我的模型。然后在里面，让我们设定输入为`Kas input`，形状为32，32，3。接下来，让我们设定`x`等于`layers.com2d`，使用32个通道，卷积核大小为3。然后我们将输入传入该层。
 - en: We're going to use batch normalization and so that's going to be in the video
     description if you if you're unfamiliar with batch norm so batch normalization
     and we're going to initialize that and then we're just going to send in x through
@@ -174,43 +231,59 @@
     it through the convolutional area first and then through the batch norm and then
     we want to send it through the activation function so how we can do that is by
     doing cares。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将使用批归一化，视频描述中会有相关信息。如果你不熟悉批归一化，我们将初始化它，然后将`x`传入。你可能注意到这里没有使用激活函数，这是因为如果我们使用批归一化，我们希望先通过卷积层，然后再通过批归一化，最后通过激活函数。我们可以这样实现。
 - en: That activation start re than of x。And yeah， so let's add some max pullinging，
     max pullinging to D。And we actually don't have to specify the pool size， so let's
     see， yeah I did it here。 but we don't have to such probably mentioned that when
     we did this one。 but you don't have to specify the pool size to be 2 by 2， that's
     the default argument。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 激活函数是`x`的`re`。对了，让我们添加一些最大池化。实际上我们不需要指定池化大小，所以让我们看看，是的，我在这里做到了。但我们实际上不需要在这时指定池化大小为2乘2，这是默认参数。
 - en: but of course you can change it to whatever you want。 it's just that 2 by  two
     is what you most frequently use。So let's just do max pulling and then send it
     through that one and then let's create another one。 so let's do layers column
     to d 64 and I don't know。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然，你可以更改为你想要的任何东西，只是2乘2是你最常用的。所以我们先做最大池化，然后通过这个进行处理，再创建另一个层。让我们做`layers.column2d`
+    64，我不知道。
 - en: let's do a kernel size of 5 and let's do padding equals same and just for one
     and then let's do。AndAnother batch norm， so batch normalization。Of x。And then
     cares that activations dot relu。Of X。And then after this， let's do one more， so
     let's do layers come to D 128，3。And then of x。Of X。 and then。Another batch worm。Of
     X activation。Rello。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们设定卷积核大小为5，填充为相同，然后做一个`Another batch norm`，也就是批归一化，作用于`x`。然后是激活函数`activations.relu`，作用于`x`。在这之后，让我们再来一次，设置`layers.com2d`
+    128，3，然后是`x`。然后是另一个批归一化，作用于`x`的激活。
 - en: And then we're going to now send it through a a dense layer。 So we're going
     to do layers that dense。64 nodes。And activation is re。And then the outputs is
     going to be just layers dense of 10 nodes of x。And then to create our model， we're
     going to do model equals。Cas that model。 and then we need to specify the inputs
     and the outputs。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将通过一个全连接层。所以我们将使用`layers.dense`，64个节点，激活函数为`re`。输出将是`layers.dense`的10个节点，作用于`x`。然后为了创建我们的模型，我们将设定`model
+    = Cas model`，接着需要指定输入和输出。
 - en: and it's going to create the model from those。 So we're going to do outputs
     and rather inputs equals inputs。 outputs equals outputs。And then we're just going
     to return our model right so this is this is now our model very similar looking
     to the previous one just that we added batch norm and what we can do now is we
     can do model equals my model we can call that and then we can use the same compile
     and fit and evaluate as we did for the sequential one so let's run this now。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将根据这些内容创建模型。因此，我们将输出和输入分别等于输入和输出。然后我们将返回我们的模型，对吧？所以现在这是我们的模型，看起来与之前的模型非常相似，只是我们添加了批量归一化。我们可以做的是用
+    `my_model` 来表示模型，然后可以使用与顺序模型相同的编译、拟合和评估方法，所以现在让我们来运行它。
 - en: Alright， we get an error。 Let's see what is the problem。All right。 so I think
     I know what the problem is we need to do a flatten layer in between because the
     shapes aren't going to match when we send it through the fully connected layer。
@@ -218,16 +291,21 @@
     work now。Alright， so one thing we can see here is that after 10 epos using these
     batch normalization it's much faster to train so I think before it had 72% training
     accuracy now it's almost 93%。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，我们出现了一个错误。让我们看看问题出在哪里。好的，我想我知道问题所在，我们需要在中间添加一个扁平化层，因为当我们通过全连接层时，形状将不匹配。因此，我们将使用
+    `layers.Flatten()`，然后对X进行处理，希望这次可以正常工作。好的，我们可以看到的一件事是，在使用这些批量归一化后，经过10个训练周期，训练速度明显加快。我记得之前的训练准确率为72%，现在几乎达到了93%。
 - en: although the test set accuracy hasn't actually improved that much， I think it's
     actually gone worse。 which is a obvious sign of the model overfitting to the training
     data and so what we need to when the model is overfitting we need to use regularization
     in different ways so that's actually what we're going to take a look at in the
     next video to try to see how we can improve this to make this gap a little bit
     closer to each other so that there's not this wide of a gap。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管测试集的准确率并没有显著提高，我认为实际上有所下降。这显然是模型对训练数据过拟合的迹象。因此，当模型过拟合时，我们需要以不同的方式使用正则化。实际上，我们将在下一个视频中查看如何改善这个问题，以使这两个结果的差距缩小一些，而不是如此之大。
 - en: Here are a couple of suggestions to play around with the code and try to get
     some more experience The first thing is check what kind of accuracy you can get
     on the test set by you training for longer increasing the model size。 maybe changing
@@ -238,8 +316,12 @@
     the sequential and the functional API if you have any questions leaving them in
     the comments below Thank you so much for watching the video and I hope to see
     you in the next one。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有几个建议，可以尝试对代码进行修改，以获取更多的经验。首先是检查你在测试集上可以获得怎样的准确率，通过延长训练时间或增加模型大小，可能还可以通过改变内核大小、调整填充等方式来尝试。第二点是在上一段视频中，我们在Eminist上训练了一个全连接神经网络，使用COvnet处理该数据集会得到怎样的结果。不过不管怎样，在这个视频中你看到的是如何使用顺序和功能API来训练一个基本的神经网络。如果你有任何问题，请在下面的评论中留言。非常感谢你观看这个视频，希望在下一个视频中见到你。
 - en: '![](img/1090d091c86a18e1ad139b92203046b6_6.png)'
+  id: totrans-34
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1090d091c86a18e1ad139b92203046b6_6.png)'
