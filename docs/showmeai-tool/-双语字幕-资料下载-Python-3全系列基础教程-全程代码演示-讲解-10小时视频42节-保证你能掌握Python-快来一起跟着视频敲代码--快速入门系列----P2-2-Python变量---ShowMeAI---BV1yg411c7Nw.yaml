@@ -1,112 +1,151 @@
 - en: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
     - P2：2）Python变量 - ShowMeAI - BV1yg411c7Nw
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
+    - P2：2）Python变量 - ShowMeAI - BV1yg411c7Nw
 - en: '![](img/458ed7f7cafeae1f01514608a1e4b736_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/458ed7f7cafeae1f01514608a1e4b736_0.png)'
 - en: Welcome back， My name is Brian， We're going to continue our conversation about
     Python 3。 whatever IDE you're using， go ahead and make a new file and give it
     some type of name。 I'm just going to name it playground， not really important
     which name it you just need some sort of file you can play around in。Remember，
     these videos assume you have no experience， so we're literally starting with a
     blank slate。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 欢迎回来，我叫布莱恩，我们将继续讨论Python 3。无论你使用哪个IDE，请创建一个新文件并给它起个名字。我会把它命名为playground，名字并不重要，你只需要一个可以玩的文件。记住，这些视频假设你没有经验，所以我们实际上是从一个空白的状态开始。
 - en: The first thing you're going to learn is what is a variable， I'm going to write
     this out here。Well。 a variable is simply something that will change， for example，
     if I declare a variable named X。I have to assign this some sort of value。 go ahead
     and try and print X out， see what happens here。Notice it's going to have some
     sort of error， it's going to say name error， name X is not defined。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 你将学习的第一件事是变量是什么，我将在这里写下来。好吧，变量只是一些会变化的东西，例如，如果我声明一个名为X的变量。我必须给它分配某种值。试着打印X，看看会发生什么。注意，它会出现某种错误，它会说名称错误，名称X未定义。
 - en: What does that mean？Well， clearly， we defined it。 It's right here。 Really。 what
     Python's trying to tell you is that it doesn't really have any sort of value。
     So I'm going to say。42。Now let's go ahead and rerun this。In a how suddenly it
     says 42。So if you get a is not defined， really what you're saying is you have
     not set that value。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是什么意思？好吧，显然，我们定义了它。就在这里。实际上，Python想告诉你的是它并没有任何值。所以我会说，42。现在我们重新运行一下。突然之间它显示42。所以如果你得到的是未定义的，那么你实际上是在说你没有设置那个值。
 - en: You notice how this is a number。And this is what I mean by a variable is something
     that will change。 I could have very easily said。Hats。Notice how cats is a string。A
     string is just a series of characters， but it's not a number is the point I'm
     driving home here。 Canin't if we run this。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 你注意到这是一个数字。这就是我所说的变量是会变化的东西。我很容易就可以说，Hats。注意cats是一个字符串。字符串只是一系列字符，但我想强调的是它不是一个数字。如果我们运行这个。
 - en: '![](img/458ed7f7cafeae1f01514608a1e4b736_2.png)'
+  id: totrans-6
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/458ed7f7cafeae1f01514608a1e4b736_2.png)'
 - en: It works just fine。![](img/458ed7f7cafeae1f01514608a1e4b736_4.png)
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 它工作得很好。![](img/458ed7f7cafeae1f01514608a1e4b736_4.png)
 - en: So under the hood， what you have going on here is Python knows it's smart enough
     to know。What type of information we're storing in this variable， and we can change
     it at a moment's notice。So。For example， we have x equals cats， and let's just
     grab this It'll copy and paste action。And we'll say， x equals。H，I need some sort
     of number。 Why not？And the I D E is not happy with me。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以在后台，你在这里看到的是Python知道它足够聪明，知道我们在这个变量中存储什么类型的信息，并且我们可以随时更改它。例如，我们有x等于cats，然后让我们抓取这个，进行复制粘贴操作。我们会说，x等于。我需要某种数字。为什么不呢？而IDE对我不太满意。
 - en: saying invalid token。 I'm just going to get rid of that 0。 Maybe that'll clear
     it out。 Nope。 will not。Let's go ahead， up， there it goes， let's run this。You know
     how it says cats。 And then it's got a number。 so we can take this same variable
     and change it。 And Python is smart enough under the hood to know that X is a string。And
     X is an integer。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 说无效的令牌。我只想去掉那个0。也许这样能解决。并没有。让我们继续，哦，它好了，让我们运行这个。你知道它是怎么说cats的。然后它有一个数字。所以我们可以用这个变量进行更改。Python在后台足够聪明，知道X是一个字符串，而X是一个整数。
 - en: So what we're really diving into and we're going to spend a lot of time talking
     about this is data types and when I say a lot of time I'm going to have to break
     this into multiple videos because each data type。 whether it's a string，Or a number
     like an integer here。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们真正要深入探讨的内容是数据类型，当我说很多时间时，我将不得不把它分成多个视频，因为每种数据类型，无论是字符串，还是像这里的整数这样的数字。
 - en: has different properties that you can access。So the short answer to what is
     a variable is just simply that。It's something that will change。That's it， it's
     that simple。A lot of instructors are going to take like months and months and
     months to explain what a variable is and how it lives in memory and bh。lah， blah，
     as a programmer， we don't care about any of that， we just want it to work。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 变量具有不同的属性，你可以访问它们。因此，关于变量的简单答案就是，它是某种会变化的东西。就这么简单。许多讲师可能需要几个月的时间来解释变量是什么以及它在内存中的存活方式，等等，作为程序员，我们对此并不关心，我们只想要它能够工作。
 - en: And this is computer programming 101。 You declare some type of variable。You
     set the value and that value has some sort of type， and with that type， you can
     now work with it。Interesting note here， if you're coming from another language
     or if you know a little bit about programming。 Python， you do not have to declare
     the data type， for example。In other languages。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是计算机编程的基础。你声明某种类型的变量，设置值，而该值有某种类型，利用这个类型，你现在可以进行操作。有趣的是，如果你来自其他语言，或者对编程有所了解，Python中你不需要声明数据类型，例如，在其他语言中。
 - en: you may have to say something like int X equals3。 So what we're really doing
     here is we're stating or telling the interpreter。This is the data type we're going
     to work with。 We don't have to do that。 Python。 It's smart enough to figure it
     out on its own。Okay， let's take a little detour down to The land。 Now， what we're
     going to talk about is。Dynamic and strong typed Python is both。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可能需要说类似于 `int X equals 3` 的话。所以我们真正要做的是告诉解释器，这是我们要使用的数据类型。我们不需要这样做，Python聪明到能够自己搞定。好吧，让我们稍微偏离一下话题。现在，我们要讨论的是动态和强类型，Python同时具备这两个特性。
 - en: and this is often confusing for people， especially coming from other languages，
     As you saw。 we don't have to declare the data type Python smart enough to know。In
     other languages。 you do have to declare。 And that gets super confusing to people。
     So we're often asked this question。 Why is Python a dynamic language and also
     a strongly type language。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 这对人们来说常常是令人困惑的，尤其是来自其他语言的程序员。正如你看到的，我们不需要声明数据类型，Python足够聪明可以知道。在其他语言中，你确实需要声明，这常常让人感到困惑。因此，我们经常被问到这个问题：为什么Python是动态语言，同时也是强类型语言。
 - en: And what do those two things really， really mean。 dynamicy means just that，
     It's dynamic。 You don't have to declare a variable type。 And you can change that
     at a moment's notice。 As you saw right here。 We went from a string to a variable。
     And it's smart enough to keep track of everything for us。 And no errors were thrown。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 这两者究竟是什么意思。动态性就是这样的，它是动态的。你不需要声明变量类型，并且可以随时更改。正如你在这里看到的，我们从字符串变成了变量。Python足够聪明，可以跟踪一切，并且没有抛出任何错误。
 - en: Other languages you're going to get a huge error because we're saying。 once
     you declare this as a data type， it can never be anything different。![](img/458ed7f7cafeae1f01514608a1e4b736_6.png)
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 在其他语言中，你会遇到巨大的错误，因为我们声明了一个数据类型后，它就永远不能是其他任何类型。![](img/458ed7f7cafeae1f01514608a1e4b736_6.png)
 - en: That gets kind of convoluted。Best answer here is Python is a strongly typed
     language as the interpreter keeps track of all variable types meaning。The interpreter，
     Python itself， is smart enough to know what you want it to do。 but it is also
     guaranteeing un the hood that once you assign it。 it's going to stay that variable
     type until you overwrite it or change it。 Remember。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 这有点复杂。最好的答案是Python是强类型语言，因为解释器跟踪所有变量类型，意味着Python本身足够聪明，知道你想让它做什么，但它也在后台保证一旦你赋值，它会保持那个变量类型，直到你覆盖或更改它。记住这一点。
 - en: a variable is something that will change。 And with Python， that's very。 very
     true because you can change it to a completely different data type。A lot of other
     languages。 you simply can't do that。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 变量是会变化的东西。在Python中，这非常非常真实，因为你可以将它更改为完全不同的数据类型。在许多其他语言中，你根本无法做到这一点。

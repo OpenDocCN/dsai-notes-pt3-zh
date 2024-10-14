@@ -1,351 +1,486 @@
 - en: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
     - P22：22）文件夹操作 - ShowMeAI - BV1yg411c7Nw
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
+    - P22：22）文件夹操作 - ShowMeAI - BV1yg411c7Nw
 - en: '![](img/a9494c7e738566abd1850c0e5d177951_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a9494c7e738566abd1850c0e5d177951_0.png)'
 - en: Welcome back everyone， this is Brian， we're going to talk about navigating folders
     in Python 3 now。Before we begin spoiler alert， there are multiple ways to do something。
     and this is true in every programming language on every computer operating system。Basically。
     as computers of all， so do the programming languages and platforms that people
     use to create programs。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 欢迎回来，大家好，我是Brian，我们现在要讨论Python 3中的文件夹导航。在我们开始之前，剧透警告，有多种方法可以完成某事。这在每种编程语言和每个计算机操作系统中都是如此。基本上，随着计算机的发展，编程语言和人们用来创建程序的平台也在不断演变。
 - en: they get infinitely more complex behind the scenes and infinitely easier to
     use up front。 but they also hide a lot of that complexity， which leads to a lot
     of confusion。 especially newbie's because they say what's the best way to do something。
     The short answer is there isn't one。Use what works for you。We're going to cover
     a few situations。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 它们在幕后变得复杂无比，但在前端使用时却变得极其简单。但它们也隐藏了很多复杂性，这导致了很多困惑，特别是新手，因为他们会问做某事的最佳方法是什么。简短的答案是没有一个。使用对你有效的方式。我们将讨论几种情况。
 - en: but you're going to see people even in the comments down below say， are you
     using that way。 use this other way instead， again， refer back to the golden rule，
     use what works for you。![](img/a9494c7e738566abd1850c0e5d177951_2.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 但你会看到评论区里的人说，是否使用那种方式。相反，使用另一种方式，再次回到黄金法则，使用对你有效的方式。![](img/a9494c7e738566abd1850c0e5d177951_2.png)
 - en: Let's dive in and take a look。![](img/a9494c7e738566abd1850c0e5d177951_4.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们深入了解一下！![](img/a9494c7e738566abd1850c0e5d177951_4.png)
 - en: First things first， what we're going to do is import a module。 You may be going
     now wait a minute。 I thought we're going to work with navigating folders。We'll
     understand that folders are part of the file system， and it can get very， very
     complex。 and a lot of this is baked right into the core of Python。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，我们要做的是导入一个模块。你可能会说等一下。我以为我们要处理的是导航文件夹。我们将了解文件夹是文件系统的一部分，它可能变得非常复杂，而很多内容都集成在Python的核心中。
 - en: but we need to work with someone else's code。And some of these。 the ones we're
     going to work with are already baked in a Python。 we just need to tell Python
     we want to use them。So we're going to import the OS module。In case you're wondering
     what a module is， it is a group of code that we can use。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我们需要与他人的代码一起工作。其中一些代码已经集成在Python中。我们只需告诉Python我们想使用它们。因此，我们将导入OS模块。如果你在想模块是什么，那是一组我们可以使用的代码。
 - en: someone else has already written this code， we can just simply use it however
     we want。So first things first， import OS， so we're importing a module。Once that
     module is imported。 we can start working with it。So I'm going to just make a variable
     called D。 shorthand for directoring an say O。Dot。Yet。Current working directory。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 其他人已经编写了这段代码，我们可以随意使用它。所以首先，导入OS，这样我们就导入了一个模块。一旦模块被导入，我们就可以开始使用它。因此，我将创建一个变量，叫做D。代表当前工作目录的缩写。
 - en: C you're wondering what that is。Every single application runs inside of a directory。
     every single one of them。They are a file on your system somewhere。That file lives
     inside sight of a directory。If you're on like a Linux or Uniix or Mac。 it's in
     what's called root， which looks like that， just a slash。 If you're in Windows
     land。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你在想那是什么。每个应用程序都在某个目录中运行。每一个。它们都是你系统上的某个文件。那个文件位于某个目录内。如果你使用的是Linux、Unix或Mac，它在根目录中，看起来像这样，仅仅是一个斜杠。如果你在Windows环境中。
 - en: it's going to look something like that。Now。That is the root of the O S。 But
     chances are you're not actually in the root。 You're buried down deep in the O
     S somewhere。 So let's figure out where we're actually at。 So I'm going to say
     print。And let's go ahead and format that。 And I'm going to say current。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 它看起来会像这样。现在。这是OS的根目录。但很可能你并不在根目录中。你在OS的某个深处。所以让我们弄清楚我们实际在哪里。因此，我将说打印。让我们格式化一下。我将说当前。
 - en: We just want to know where the heck we are in the OS。Sometimes this could be
     like， you know。 navigating the deep blue sea or something。 We just don't know
     where we are。So we're going to get that current working directory。Or we could
     just use our variable。 which we've already pulled out。Now， I have to put， this
     is the current directory。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们只是想知道我们在操作系统中的位置。有时这就像是在深蓝色的海洋中导航一样，我们不知道自己在哪里。所以我们将获取当前工作目录。或者我们可以使用已经提取出的变量。现在，我必须指出，这是当前目录。
 - en: does not mean that every single program runs in this directory。 It just means
     what our program is running in。 All the other programs are running in different
     directories or even in the same directory。 It can be either or Its super confusing。
     All right。 on my little virtual machine。 We are currently in slash home slash
     root shell。 just the account that I'm on here。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 这并不意味着每个程序都在这个目录中运行。它只是表示我们的程序正在运行的目录。所有其他程序都在不同的目录中运行，甚至在同一个目录中，这会让人感到困惑。好吧，在我的虚拟机上，我们当前在`/home/root/shell`中，这是我当前的帐户。
 - en: slash code slash Python 3。 So you can see we are not in the route。 We are in
     a subfold several levels down。![](img/a9494c7e738566abd1850c0e5d177951_6.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: '`slash code slash Python 3`。所以你可以看到我们不在根目录中，而是在几个级别下的子文件夹中。![](img/a9494c7e738566abd1850c0e5d177951_6.png)'
 - en: '![](img/a9494c7e738566abd1850c0e5d177951_7.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a9494c7e738566abd1850c0e5d177951_7.png)'
 - en: So let's say just for example， we don't really like this folder。 we just want
     to work with a different folder just to see if we can do it。 so let's go ahead
     and change folders。So I must say O S dot C。 H D which stands for changeder change
     directory。 So get C W D is get the current working directory。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设我们不太喜欢这个文件夹，只是想用不同的文件夹看看能否实现，那么我们就来更改文件夹。我必须输入`O S . C H D`，代表更改目录。`C W D`是获取当前工作目录。
 - en: We're going to C H D or change directory。 seems a little confusing to get the
     terminology down。 Now。 you can actually hard code this。 like let's say we could
     home。Obs files， something， something。 Or if you're on Windows， it would be like
     C， Wack Wack， you know， whatever。You wanted。 or you can use what's called a current
     path， which means you don't have any sort of pathing in there。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将进行`C H D`或更改目录。掌握术语似乎有点混乱。现在，你实际上可以硬编码这个，比如说我们可以使用`home . Obs files`，某些东西，或者如果你在Windows上，它就像`C
+    \`，随你所需。或者你可以使用所谓的当前路径，这意味着你没有任何路径在其中。
 - en: Again， a little bit advanced。 and I'm just going to do dot dot。Is your wondering
     what that means that dot， dot。It actually stands for your current directory and
     its parent。 so we're actually going up to levels。Sounds a little confusing， but
     let's take a look here。I'm going to just。Rrab some code here。We're going to print
     the current。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 这有点高级，我将使用`dot dot`。你可能在想这个`dot dot`是什么意思。它实际上代表当前目录及其父目录，因此我们实际上是向上移动两个级别。这听起来有点混乱，但我们来看一下。我将抓取一些代码，打印当前的目录。
 - en: and we're going to say O S get current working directory。 Notice how we're not
     reusing D。 and I'm going to。Just。Grab that for future reference here， let's run
     this。And we've gone up a notch。 so we were in Python 3 now we're in code。 So we
     just simply jumped up to the parent。 So when you see dot dot， that's really all
     we're doing is jumping up a level。Now。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将说`O S get current working directory`。注意我们没有重用`D`，我将抓取这个以备将来参考，让我们运行这个。我们又上升了一层，因此我们在Python
+    3，现在在code中。我们只是简单地上升到父目录。所以当你看到`dot dot`时，实际上我们就是在上升一层。
 - en: We're going to reuse this variable here， and I'm going to say。OS。That CD。And
     we're going to jump back to that string representation of that directory。Grab
     that， paste it。Clear this out just for good measure and run。 So we went from Python
     3 up to the parent and then back to Python 3。 So Python 3 up to the parent and
     back to Python 3。Navigating the folder structures is very。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将在这里重用这个变量，我将说`OS . C D`，并跳回到该目录的字符串表示。抓住它，粘贴，然后清除一下以防万一，运行。我们从Python 3上升到父目录，然后再回到Python
+    3。所以Python 3上升到父目录再回到Python 3。导航文件夹结构非常简单。
 - en: very simple。 If you know the path， it's just ridiculous simple。 but you just
     handed a string and boom。 it just goes。 Now， that's assuming it actually exists。
     We're going to cover what to do if it doesn't exist in a future video。 But just
     know that if you try to give it something that doesn't exist。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你知道路径，那真是太简单了，但你只需输入一个字符串，咔嚓一下就可以了。现在，这是假设它确实存在。我们将在未来的视频中讨论如果它不存在该怎么办。但请知道，如果你尝试给它一个不存在的东西。
 - en: you're going to have a very bad time。![](img/a9494c7e738566abd1850c0e5d177951_9.png)
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 你会过得很糟糕。![](img/a9494c7e738566abd1850c0e5d177951_9.png)
 - en: '![](img/a9494c7e738566abd1850c0e5d177951_10.png)'
+  id: totrans-22
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a9494c7e738566abd1850c0e5d177951_10.png)'
 - en: Remember when I started this video， I basically said there are multiple ways
     to do the same thing。 And we're going to start looking at some of those。 The first
     one is lister。 And this is probably the easiest way to do it。 So we're going to
     say 4 F in O S。 Remember that import that we added。And we're going to。Anybody
     Drmerel， list。 There you go。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 记得我开始这个视频时，我基本上说过有多种方法可以做同样的事情。我们将开始查看其中一些。第一个是列出。这可能是最简单的方法。所以我们将说 4 F 在 O
+    S。记得我们添加的那个导入吗？我们将去。任何 Drmerel，列表。好了。
 - en: This is a functions。 we have to have our parentheses。And we can specify directory
     we can use the current。Now， if we just print this out， it's just good。 print，
     and see what this does here。Not a whole lot here。 it's just got one file plus
     this little dot VS code。VS code is this folder right here。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个函数。我们必须有括号。我们可以指定目录，我们可以使用当前目录。现在，如果我们只是打印出来，它就很好。打印，看看这里发生了什么。没什么特别的。它只是有一个文件加上这个小点
+    VS code。VS code 就是这个文件夹。
 - en: which has another file in it。 So we're getting folders and files。 And if you've
     got a lot of files in your director， you're going to see them all。Interesting。
     so how do we actually determine what each one is？And let's pretty this up a little
     bit。 notice how this is just Ithon 3-22， just the name of the script， but we don't
     get the full path。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 其中有另一个文件。所以我们正在获取文件夹和文件。如果你的目录中有很多文件，你会看到它们全部。很有趣。那么我们如何实际确定每一个是什么呢？让我们把这个美化一下。注意这只是
+    Ithon 3-22，脚本的名称，但我们没有获取完整路径。
 - en: Let's go ahead and say， Prince。Let's format that。Fath and。This is where people
     in the comments below are going to start arguing with each other。 I'm going to
     say oh S。Path， and I want to get the A B， S or the absolute path。This is going
     to tell us the absolute path that file someone down below is probably going to
     say。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们继续说，王子。让我们格式化一下。路径。这就是下面评论区的人们开始互相争论的地方。我会说哦，路径，我想获取 A B，S 或绝对路径。这将告诉我们绝对路径，下面某人可能会说。
 - en: why aren't you using real file or something of that nature。 Again， personal
     preference。 This is what I want。 Let's go ahead and run that oh。Ass no a oh。These
     sensitivity has come back to bite me。 there we go。 so now it is working as we
     expect path and as giving the full path， not just the name of the file。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 你为什么不使用真实文件或类似的东西？再说一次，这是个人偏好。这是我想要的。让我们继续运行，哦。哎呀，这些敏感性又让我受到了影响。好了，现在它按我们预期的工作，路径给出了完整路径，而不仅仅是文件的名称。
 - en: So that's the difference here is we've got the file name and then we've got
     the absolute path here。Let's go ahead and make this a little bit more complex
     and'll see if， and I want OS do F。And let's make sure it is a directory。Now we're
     just going to go and print this out。And we can take the same pattern and just
     repeat it。So we're going to say if it's a directory。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这里的区别是我们有文件名，然后我们有绝对路径。让我们把这个变得稍微复杂一点，我想让 OS 做 F。让我们确保它是一个目录。现在我们只需打印出来。我们可以采用相同的模式并重复它。所以我们将说如果它是一个目录。
 - en: just print dirt and then whatever it is。And then if it is a file。It's going
     to go ahead and print file and whatever it is。And let's add one more just for
     giggles is link。 you're wondering what a link is。 It's a special kind of symbol
     out there in file land， which basically says I'm not the right one。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 只需打印目录，然后无论是什么。如果它是一个文件，它会继续打印文件及其内容。让我们再加一个，仅仅是为了好玩，那就是链接。你可能在想链接是什么。这是文件领域中的一种特殊符号，基本上说的是我不是正确的那个。
 - en: go to this other location。 It literally just points to another location。You
     could call them shortcuts or symbolic lengths， it really depends on your operating
     system。Notice how this will always return faults for Windows prior to 6。0 because
     Windows before 6。0。Did not have symbolic links。 And you may be wondering， what's
     Windows 6。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 转到这个其他位置。它实际上只是指向另一个位置。你可以称它们为快捷方式或符号链接，这真的取决于你的操作系统。注意，这在 Windows 6.0 之前总是会返回错误，因为
+    Windows 6.0 之前没有符号链接。你可能在想，Windows 6 是什么。
 - en: Did we ever get an advertisement for Windows 6， It's just the way Windows does
     versioning Microsoft' just kind of dumb sometimes。 but。Basically， if you've got
     an older version of Windows， that's just not going to ever return true。 Let's
     go ahead save run。And you can see that our path， it is a file， do。 and then our
     path and half and it is a directory， so it's working as expected and we can now
     determine whether it's a file or directory and we can get the absolute path。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们是否收到了 Windows 6 的广告，这是 Windows 版本管理的方式，微软有时候就是有点傻。但基本上，如果你有一个旧版本的 Windows，它永远不会返回
+    true。让我们继续保存并运行。你可以看到我们的路径，它是一个文件，然后我们的路径和一半，它是一个目录，所以它按预期工作，我们现在可以确定它是一个文件还是目录，并且我们可以获取绝对路径。
 - en: So。Listister。Along with OS dotpath is actually pretty complex and does most
     of what you may actually need it to do。Rewind the video a little bit and you'll
     remember I said， hey， as computers get more complex。 the code gets easier， but
     details get kind of murky， and this is a perfect example of this。Scanander， this
     appears in Python 3。5 or higher we've been using Ler。You may be asking yourself。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，Listister。连同 OS dotpath 实际上相当复杂，并且可以完成你可能需要的绝大多数功能。稍微倒回一下视频，你会记得我说过，嘿，随着计算机变得越来越复杂，代码变得更简单，但细节却变得有些模糊，而这是一个完美的例子。Scanander，这在
+    Python 3.5 或更高版本中出现，我们一直在使用 Ler。你可能会问自己。
 - en: why do we need scanander。 Lister seems to do just about everything we'd wanted
     to do。Well。 scanander， the big selling point for this is it encapsulateulated
     in a class and it is faster。 although I will just say it。Unless you're doing some
     high encoding。 you're really not going to see a massive performance boost。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们为什么需要 scanander。Lister 似乎完成了我们想要做的几乎所有事情。好吧，scanander，这里最大的卖点是它被封装在一个类中，并且速度更快。虽然我只想说，除非你在进行一些高编码，否则你真的看不到巨大的性能提升。
 - en: And you may be scratching your head wondering why you're been working with it。
     But win a doubt。 let's just dive in here。And I'm going to say scanander， and let's
     go ahead and print this out。K how I have E in there。When I run this， you're about
     to see something magical happen Ta， it says。D entry。 and then the name。 So what
     does this mean， This is a weird little syntax。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可能会感到困惑，想知道你为什么要使用它。但如果有疑问，我们就深入研究一下。我将说 scanander，然后我们来打印出来。K，我在里面有 E。当我运行这个时，你将看到一些神奇的事情发生。Ta，它说
+    D entry，然后是名字。这意味着什么呢，这是一种奇怪的语法。
 - en: Whenever you see something encapsulated in brackets like that。 it means that
     Python is handing us a class。 and we're going to talk about classes in a future
     video。 But right now， Major leap of faith， a class is just simply a custom data
     type。 It's really a blueprint for an object that someone else has defined。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 每当你看到被括号包围的内容时，这意味着 Python 正在给我们一个类。我们将在未来的视频中讨论类。但现在，重要的信念是，类仅仅是一个自定义数据类型。它实际上是别人定义的对象的蓝图。
 - en: We're going to learn how to build our own classes and blueprints in the near
     future。 But right now。All you really need to understand is we have a custom data
     type called a DR entry。And we to say data types， we're talking about things like
     strings， numbers。 lists and things like that。 their entry is just another data
     type。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将在不久的将来学习如何构建我们自己的类和蓝图。但现在，你真正需要理解的是，我们有一个名为 DR entry 的自定义数据类型。说到数据类型，我们指的是像字符串、数字、列表以及类似的东西。它的条目只是另一种数据类型。
 - en: Let's go ahead and work with this a little bit here。We're going to say print。And
     this is what I mean by you get lost in the complexity a little bit here。 We're
     kind of scratching our head， figuring out。What we would need to print out。 so
     you have to actually go out and read the docs or watch the rest of this video。人成呢。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们来处理一下这个。我们要说 print。这就是我所说的，你会在复杂性中迷失一点的意思。我们有点困惑，想弄清楚。我们需要打印什么，所以你必须实际去查阅文档或观看这个视频的其余部分。
 - en: And we're going to say E dot。And we want the name。Go ahead and get the path
     here。 so I'm going to grab this。So the whole purpose of this is to make life a
     little bit easier。 but at the same time， Scner does work faster than Ler。And ta，
     it works now in path。Let's go ahead。 and。Run a little bit of an issue。 and when
     I say run a little bit of an issue。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们要说 E dot。我们想要名字。接下来获取路径，所以我将抓取这个。因此，整个目的就是让生活变得更简单。但与此同时，Scner 的速度确实比 Ler
+    快。Ta，现在它在路径中工作。让我们继续。并且。运行一个小问题。当我说运行一个小问题时。
 - en: we want to get the directory， the file and the symbolic link， the bulls kind
     of how we did before。 so I'm going to grab this。And this is where it's going to
     get a little mind bending here。 So if I say。E dot is D is file is symbolic link。
     You think it's pretty straightforward and you go。 okay。Let's try this。But what
     we're doing under the hood is subtly creating an issue。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们想要获取目录、文件和符号链接，和之前的方式差不多。所以我会抓取这个。这就是这里会变得有些令人费解的地方。如果我说 E 点是 D 是文件是符号链接。你会觉得这很简单，然后说，好的，试试这个。但实际上我们在背后微妙地创造了一个问题。
 - en: And I'm wondering if anybody out there can really spot this。Let's go ahead and
     grab this name here。Now that we've done a little bit of surgery。O quiz， can anybody
     spot the issue， raise your hand？
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 我在想有没有人能真的发现这个问题。让我们先抓取这个名字。现在我们进行了一些修改。O quiz，有人能发现问题吗，举手？
 - en: So what's going on here？Their entry dot vS code， we said dotvS code is actually
     a directory。 see there it is right there。But it is printing out D file and link，
     wait。 it can't be all three at once。What's going on here is we're actually calling
     a function。 or at least we should be。I wanted to demonstrate that because somebody
     out there is going to run into that issue where they forget to put the parentheses。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么这里发生了什么？他们的 entry.dotvscode，我们说 dotvscode 实际上是一个目录。看，它就在那儿。但它却打印出 D 文件和链接，等等。它不可能同时是三者。那么这里发生的事情是我们实际上在调用一个函数。或者至少我们应该是。我想演示这一点，因为有人可能会遇到忘记加括号的问题。
 - en: and then they have some weird results。Run that again and you see now it works
     as expected。 but it never actually threw any kind of error。 That's the confusing
     part。 So if you ever get some weird kind of results out of scan。 just make sure
     you got those parentheses there。Okay。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后他们得到了奇怪的结果。再运行一次，你会发现现在它按预期工作了。但它实际上并没有抛出任何错误。这就是令人困惑的地方。所以如果你在扫描中遇到奇怪的结果，确保你放上了那些括号。好的。
 - en: well let's go ahead and cover Gob and I put Gob multiple ways because so far
     we've covered two other ways to do it。TheBob represents a third way， and。Gob，
     although it sounds gross， is actually really cool。 in short use what's right for
     you we're covering Glob because of this and I put the link here。Typical stack
     overflow question， which is， how do I scan all folders and subfolds or A K A A
     recursive。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，让我们来谈谈 Gob。我提到 Gob 有多种方式，因为到目前为止我们已经介绍了另外两种方法。TheBob 代表第三种方法，而 Gob，虽然听起来很糟糕，但实际上真的很酷。简而言之，使用适合你的方法。我们之所以讨论
+    Glob，是因为这个原因，我在这里放了链接。一个典型的 Stack Overflow 问题，就是，如何扫描所有文件夹和子文件夹，或者说是递归的。
 - en: Scan。And if you kind of wrap in your head around what a recursive scan is。 We're
     in this Python 3 folder， we're going to jump up to the parent here。 And I want
     to know the contents of all of these folders。 And if one of these folders has
     a folder in it， I want to go into that folder and so on and so on。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 扫描。如果你稍微理解一下递归扫描是什么。我们在这个 Python 3 文件夹中，要跳到上一级目录。我想知道这些文件夹的所有内容。如果其中一个文件夹里面还有一个文件夹，我想进入那个文件夹，依此类推。
 - en: And we're just going do a recursive scan。 Now， in some languages and frameworks。
     This is not for the faint of heart。 But Gloob makes it ridiculously simple。 So
     first thing we need to do is we need to import Gob。![](img/a9494c7e738566abd1850c0e5d177951_12.png)
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将进行递归扫描。现在，在某些语言和框架中。这并不是一个简单的事情。但 Gloob 让它变得极其简单。所以我们需要做的第一件事是导入 Gob。![](img/a9494c7e738566abd1850c0e5d177951_12.png)
 - en: '![](img/a9494c7e738566abd1850c0e5d177951_13.png)'
+  id: totrans-46
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a9494c7e738566abd1850c0e5d177951_13.png)'
 - en: I don't know why you'd want a glob， but anyways。I wish they picked a better
     name for that。So we're going to change our directory。And we're going to go up
     to that parent。 So we're going to go a directory higher。Now， I'm going to say
     there。 I'm going to make a variable here。 this is going to be O S。 and we're going
     to get the。Current。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 我不知道你为什么会想要一个 glob，但无论如何。我希望他们能给这个起个更好的名字。所以我们要更改目录。我们要上到上一级目录。所以我们要进入一个更高的目录。现在，我要在这里定义一个变量。这个变量将是
+    O S。然后我们将获取当前的。
 - en: I would say git current working directory。Now we're going to actually work with
     G。 and I'm going to say four。Byile name。And G。And gllo is going to get really
     confusing and we're not going to like deep dive into all of the parts of Gob。
     but know that you can do a bunch of different things with Gob or really just scratching
     the surface。So we're going to say Gob， Gob。Sounds like you're talking to a drunk
     person in a bar。 Gb， glob。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 我会说获取当前工作目录。现在我们实际上要处理 G。我会说 4。文件名。和 G。gllo 会变得非常混乱，我们不会深入探讨 Gob 的所有部分，但要知道你可以用
+    Gob 做很多不同的事情，实际上只是触及了表面。所以我们会说 Gob，Gob。听起来就像是在酒吧里和一个醉汉交谈。Gb，glob。
 - en: Anyways， so blob， we want to give it a path name。We're going to have in tell
     usense help here。 So half name， I'm going to say， is equal to our directory。And
     we're going to give some wild cars here。 We need to tell Gloob what to do。And
     I say。Anything followed by anything。Whenever we see star， that's our wild card，
     and then we want recursive。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 不管怎样，blob，我们想要给它一个路径名。我们将在这里得到一些帮助。所以半个名称，我会说，等于我们的目录。我们将提供一些通配符。我们需要告诉 Gloob
+    要做什么。我会说。任何东西后面跟着任何东西。每当我们看到星号，那就是我们的通配符，然后我们想要递归。
 - en: Equals true。 So we're telling Gb。Not just this directory， but all the directories
     inside of it。 go ahead and do your magic。Go ahead and print that out formatted。I
     want to glob this out。Like stuck in my head now， gal glob， anyways。You know。 there
     was probably like a bunch of programmers sitting around a room going we made this
     really awesome thing。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 等于 true。所以我们告诉 Gb。不仅仅是这个目录，还有里面的所有目录。继续施展你的魔法。继续以格式化的方式打印出来。我想要将其 glob 化。像是现在卡在我脑海里的，gal
+    glob，不管怎样。你知道，可能有一群程序员围坐在房间里说我们做了这个非常棒的东西。
 - en: what do we call it， let's call it Gob， and then they kind of took that seriously。There
     you go。 So GloB has gotten a lot of stuff， and you can see I've got other code
     from other projects in there。 including C++ files， make files， text files， other
     Python scripts that I've worked on。 things like that。 so Glob has gone through
     and read the contents of all of those now。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们称之为什么呢？我们就称它为 Gob，然后他们似乎认真对待了这个名字。好了。GloB 有很多内容，你可以看到我在里面还有其他项目的代码，包括 C++
+    文件、make 文件、文本文件，以及我做过的其他 Python 脚本。诸如此类。所以 Glob 现在已经读取了所有这些内容。
 - en: To kind of show that there are multiple ways to do this。 let's go ahead and
     do it yet a different way。 So I'm gonna say 4。Let's go。 current path。Ooldders。And
     files。In O， ourgobu O do walk。And basically， we're going to tell OS to go take
     a walk in our current directory。Now， remember。Dot dot is the parent dot is the
     current。 So we're just going to say O S。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了展示有多种方法来做到这一点。我们再换一种方式来做。所以我会说 4。让我们走。当前路径。Ooldders。和文件。在 O，我们的 gobu O 进行遍历。基本上，我们会告诉操作系统在我们当前目录中走一圈。现在，记住。点点是父目录，点是当前目录。所以我们只会说
+    O S。
 - en: lock the current directory。 And I'm going to go ahead and say4。File in files。This
     is not so much a recursive scam， but it gives you a little bit of detail here。Let's
     say go ahead and print。And let's go ahead and work with these， I' going say， oh
     path。That join。 So what we're going to do is we're going to join all of this up。We
     want to know the current path。
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 锁定当前目录。我要继续说 4。文件在文件中。这并不是一个递归的操作，但这里给你一些细节。假设我们继续打印。让我们继续处理这些，我会说，哦，路径。那连接。所以我们要做的是将所有这些连接起来。我们想知道当前路径。
 - en: And the file。 And if you're kind of confused about where I got current path
     and file。 it's right up here。 So really what OS S Walk is doing is returning，
     believe it's a tuple。And then were're just pulling those elements out of there
     and then using OS path join to join all that up and make it look something like
     this。Pretty interesting， pretty easy to understand。 So to summarize， there are，
     well。
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 和文件。如果你对我在哪里获得当前路径和文件感到困惑，它就在这里。所以实际上，OS S Walk 返回的是一个元组。我相信我们只是从中提取那些元素，然后使用
+    OS 路径连接将它们连接起来，使其看起来像这样。相当有趣，也很容易理解。所以总结一下，有，嗯。
 - en: multiple ways to do virtually the same thing。 Each one has its own little pros
     and cons and little gotchas and different ways of doing it。 Use what's right for
     you。 This video covered how to change folders， Ler， Scer， Gloob。 along with O
     S walk。 And you're going to see all those out in other people's code。 And we were
     talking about recursive， and that has its own set of complexities。
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 实际上有多种方法来做几乎相同的事情。每种方法都有自己的优缺点和小问题，以及不同的实现方式。使用适合你的方法。这个视频涵盖了如何更改文件夹，Ler，Scer，Gloob，以及
+    O S 遍历。你会在其他人的代码中看到所有这些。我们之前在谈论递归，它有自己的一系列复杂性。
 - en: which we're also going to cover in future videos。😊。This is the beginner's guide
     and we're just scratching the surface of what we can do。![](img/a9494c7e738566abd1850c0e5d177951_15.png)
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将在未来的视频中也会涉及这个主题。😊这是初学者的指南，我们只是触及了我们能做的表面。！[](img/a9494c7e738566abd1850c0e5d177951_15.png)
