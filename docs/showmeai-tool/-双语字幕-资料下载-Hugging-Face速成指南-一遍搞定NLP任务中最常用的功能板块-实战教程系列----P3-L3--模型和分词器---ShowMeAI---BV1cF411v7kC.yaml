@@ -4,6 +4,8 @@
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Hugging Face速成指南！一遍搞定NLP任务中最常用的功能板块＜实战教程系列＞ - P3：L3- 模型和分词器 - ShowMeAI
+    - BV1cF411v7kC
 - en: Let's see how we can use this model and tokenizer directly and do some of the
     steps manually。 this will give you a little bit more flexibility。 So down here。
     let's first use the tokenizer and see what this does。 So first。 let's call the
@@ -11,6 +13,8 @@
   id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看看如何直接使用这个模型和分词器，并手动执行一些步骤。这会给你更多的灵活性。那么在这里，首先我们使用分词器，看看它的作用。首先，让我们调用 `tokenizer.tokenize`
+    函数。我们这样说。
 - en: let's call the tokens and then equals tokenizer dot tokenize and then the string
     or the sentence we want to tokenize。 So let's copy and paste this in here。 And
     then once we get the tokens。 we can use them and get the token Is out of it。 So
@@ -19,38 +23,48 @@
   id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们先调用令牌，然后等于分词器的 `tokenize` 方法，接着是我们想要分词的字符串或句子。所以我们把这个复制并粘贴到这里。一旦我们得到了令牌，我们就可以使用它们并从中提取令牌。所以我们可以说令牌等于。然后我们再次使用分词器和函数
+    `convert_tokens_to`。😊
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_1.png)'
   id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_1.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_2.png)'
   id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_2.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_3.png)'
   id: totrans-5
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_3.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_4.png)'
   id: totrans-6
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_4.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_5.png)'
   id: totrans-7
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_5.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_6.png)'
   id: totrans-8
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_6.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_7.png)'
   id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_7.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_8.png)'
   id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_8.png)'
 - en: Called Is。 And then it meet the tokens。 So this is one way how to do this。 Or
     we can do this directly by saying token I equals。 And then we call this tokenizer
     like a function。 And then again， we give it the same string here。 So now let's
@@ -58,6 +72,7 @@
   id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 调用令牌并且遇到了令牌。这是实现这个的一种方法。或者我们可以直接这样做，令牌 I 等于。然后我们像调用函数一样调用这个分词器。然后我们再次给它同样的字符串。所以现在让我们打印这三个变量，看看有什么不同。
 - en: So first we print the tokens， then we print the token Is。 And then here let's
     actually give this a different name。 So let's call this input I。 So now let's
     run this and see how this looks like。 Alright， so here is the result。 So as you
@@ -65,38 +80,48 @@
   id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以首先我们打印令牌，然后打印令牌。接着这里我们实际上给这个变量一个不同的名称。我们称之为 `input_I`。现在让我们运行这个，看看结果如何。好的，这就是结果。正如你所看到的，当我们调用
+    `tokenizer.tokenize` 时，我们得到一个字符串列表。
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_10.png)'
   id: totrans-13
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_10.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_11.png)'
   id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_11.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_12.png)'
   id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_12.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_13.png)'
   id: totrans-16
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_13.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_14.png)'
   id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_14.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_15.png)'
   id: totrans-18
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_15.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_16.png)'
   id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_16.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_17.png)'
   id: totrans-20
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_17.png)'
 - en: The list of the words backs so now each word is a sorry each word is a separate
     token and for example。 this one is our smiley face or our emoji So yeah this is
     what the tokenized function does and then once we call this convert tokens to
@@ -108,10 +133,13 @@
   id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在每个单词都是单独的令牌，举个例子，这个是我们的笑脸或者表情符号。所以这就是 `tokenized` 函数的作用，一旦我们调用 `convert_tokens_to_IDs`，我们会得到这个结果，所以现在每个令牌都被转换成一个ID，每个单词都有一个非常独特的ID，这基本上是我们的模型可以理解的数学表示或数值表示。这就是我们在这个函数之后得到的结果，如果我们直接调用
+    `tokenizer`，那么我们会得到一个字典，这里我们有键 `input`，还有注意力掩码。
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_19.png)'
   id: totrans-22
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_19.png)'
 - en: For now you don't really have to worry about this but let's have a look at the
     input IDs so if we compare the token IDs with the input IDs then we see we have
     the exact same sequence of token IDs but we also have this 101 and 102 token and

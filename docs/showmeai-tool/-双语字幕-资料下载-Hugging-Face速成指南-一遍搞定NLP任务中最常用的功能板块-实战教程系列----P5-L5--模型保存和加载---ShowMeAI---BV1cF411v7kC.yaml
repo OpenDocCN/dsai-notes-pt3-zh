@@ -1,65 +1,103 @@
 - en: 【双语字幕+资料下载】Hugging Face速成指南！一遍搞定NLP任务中最常用的功能板块＜实战教程系列＞ - P5：L5- 模型保存和加载 - ShowMeAI
     - BV1cF411v7kC
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Hugging Face速成指南！一遍搞定NLP任务中最常用的功能板块＜实战教程系列＞ - P5：L5- 模型保存和加载 - ShowMeAI
+    - BV1cF411v7kC
 - en: '![](img/817174280d909f0224e01af2e91bb7b6_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/817174280d909f0224e01af2e91bb7b6_0.png)'
 - en: Then what we can do and we can say save directory and specify a directory。 So
     let's call the folder saved and then we can call tokenizer and then we can call
     dot safe pretrained and then the li just the save directory and the same with
     our model so we can say model dot save pretrained save underscore pretrained and
     then again the save directory and then we can load them in another application。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们可以做的是，指定一个保存目录。我们称这个文件夹为saved，然后我们可以调用tokenizer，然后调用dot safe pretrained，然后是保存目录，模型也是如此，所以我们可以说model
+    dot save pretrained save underscore pretrained，然后再次是保存目录，然后我们可以在另一个应用程序中加载它们。
 - en: for example， tokenizer equals and then again here we use this auto tokenizer
     class and then the from pretrained and then here we can give it a directory So
     this from pretrained we can either give it a model name or we can give it this
     directory and again。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，tokenizer等于，然后我们再次使用这个自动tokenizer类，然后是from pretrained，在这里我们可以给它一个目录。因此这个from
+    pretrained我们可以给它一个模型名称，或者我们可以给它这个目录，再次。
 - en: '![](img/817174280d909f0224e01af2e91bb7b6_2.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/817174280d909f0224e01af2e91bb7b6_2.png)'
 - en: '![](img/817174280d909f0224e01af2e91bb7b6_3.png)'
+  id: totrans-5
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/817174280d909f0224e01af2e91bb7b6_3.png)'
 - en: '![](img/817174280d909f0224e01af2e91bb7b6_4.png)'
+  id: totrans-6
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/817174280d909f0224e01af2e91bb7b6_4.png)'
 - en: '![](img/817174280d909f0224e01af2e91bb7b6_5.png)'
+  id: totrans-7
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/817174280d909f0224e01af2e91bb7b6_5.png)'
 - en: '![](img/817174280d909f0224e01af2e91bb7b6_6.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/817174280d909f0224e01af2e91bb7b6_6.png)'
 - en: '![](img/817174280d909f0224e01af2e91bb7b6_7.png)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/817174280d909f0224e01af2e91bb7b6_7.png)'
 - en: '![](img/817174280d909f0224e01af2e91bb7b6_8.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/817174280d909f0224e01af2e91bb7b6_8.png)'
 - en: Same for the model， So model equals。 And then we use this auto model for sequence
     classification dot from pretrained and then the save directory。 So this should
     work。 And then you should get the exact same model and tokenizer bag。 And yeah。
     as you might see these model at these dot from pretrained functions are very important。
     and you will use them a lot of time。 Alright， so I think these are the basic functions
     you need to build a pipeline or to apply the model and tokenizer manually。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型同样如此，所以模型等于。然后我们使用这个自动模型进行序列分类的from pretrained，然后是保存目录。所以这应该可以工作。然后你应该得到完全相同的模型和tokenizer包。是的。正如你所见，这些模型在这些from
+    pretrained函数中非常重要，你会经常使用它们。好的，我想这些是你构建管道或手动应用模型和tokenizer所需的基本功能。
 - en: '![](img/817174280d909f0224e01af2e91bb7b6_10.png)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/817174280d909f0224e01af2e91bb7b6_10.png)'
 - en: '![](img/817174280d909f0224e01af2e91bb7b6_11.png)'
+  id: totrans-13
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/817174280d909f0224e01af2e91bb7b6_11.png)'
 - en: '![](img/817174280d909f0224e01af2e91bb7b6_12.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/817174280d909f0224e01af2e91bb7b6_12.png)'
 - en: '![](img/817174280d909f0224e01af2e91bb7b6_13.png)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/817174280d909f0224e01af2e91bb7b6_13.png)'
 - en: '![](img/817174280d909f0224e01af2e91bb7b6_14.png)'
+  id: totrans-16
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/817174280d909f0224e01af2e91bb7b6_14.png)'

@@ -1,64 +1,96 @@
 - en: 【双语字幕+资料下载】Hugging Face速成指南！一遍搞定NLP任务中最常用的功能板块＜实战教程系列＞ - P4：L4- 基于PyTorch的分类实现
     - ShowMeAI - BV1cF411v7kC
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Hugging Face速成指南！一遍搞定NLP任务中最常用的功能板块＜实战教程系列＞ - P4：L4- 基于PyTorch的分类实现
+    - ShowMeAI - BV1cF411v7kC
 - en: Let's do this manually and see how we can call our models。 So in Pytorrch。 when
     we do inference。 we also want to say with torch dot no gra。 So this will disable
     the gradient tracking。 I explain this in a lot of my tutorials。 So you can just
     have a look at them if you want to learn more about this。 And then we can call
     our model by saying outputs equals。 And then we call the model。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们手动进行此操作，看看如何调用我们的模型。在Pytorch中，当我们进行推理时，我们还想说使用torch点no grad。这将禁用梯度跟踪。我在很多教程中解释过这一点。如果你想了解更多，可以看看它们。然后我们可以通过说outputs等于来调用我们的模型。接着我们调用模型。
 - en: And then here we use two asterisk。 and then we unpack this batch。 So if you
     remember here。 this is a dictionary。 And here basically with this， we just unpack
     these values in our dictionary。 So for tens offlow， you don't do this。 So you
     just pass in the batch like this。 But for pytorrch。 you have to unpack this。 And
     now we get the outputs of our model。 So let's。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后在这里我们使用两个星号，然后解包这个批次。如果你记得，这里是一个字典。基本上，通过这个，我们只是解包了字典中的值。对于TensorFlow，你不需要这样做。你只需像这样传入批次。但对于Pytorch，你必须解包。现在我们得到了模型的输出。那么，让我们继续。
 - en: '![](img/6f843910cc38c033063518b8167635a3_1.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_1.png)'
 - en: '![](img/6f843910cc38c033063518b8167635a3_2.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_2.png)'
 - en: '![](img/6f843910cc38c033063518b8167635a3_3.png)'
+  id: totrans-5
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_3.png)'
 - en: '![](img/6f843910cc38c033063518b8167635a3_4.png)'
+  id: totrans-6
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_4.png)'
 - en: '![](img/6f843910cc38c033063518b8167635a3_5.png)'
+  id: totrans-7
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_5.png)'
 - en: Print the outputs。 And as you might know this， these are just the raw values。
     So to get the actual probabilities and the predictions， we can apply the soft
     max。 So let's say predictions equals torch or we also have this in F dot soft
     max and then here we say outputs dot logics and we want to do this along dimension
     equals1。 and let's also print the predictions and then let's do one more thing。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 打印输出。正如你所知道的，这些只是原始值。因此，为了获得实际的概率和预测，我们可以应用soft max。假设预测等于torch，或者我们也可以在F点soft
+    max中使用，然后在这里我们说outputs点logics，我们希望在维度等于1上进行此操作。接着我们也打印预测，然后再做一件事。
 - en: So let's also get the labels labels equals and we just get this by taking the
     prediction with the the index with the highest probabilities。 So we get this by
     saying torch dot arc max and we can either put in the predictions or。![](img/6f843910cc38c033063518b8167635a3_7.png)
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们也获取标签，labels等于，我们只需通过获取具有最高概率的索引的预测来获取这一点。所以我们通过说torch点argmax来获得这个，我们可以选择输入预测或。![](img/6f843910cc38c033063518b8167635a3_7.png)
 - en: '![](img/6f843910cc38c033063518b8167635a3_8.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_8.png)'
 - en: '![](img/6f843910cc38c033063518b8167635a3_9.png)'
+  id: totrans-11
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_9.png)'
 - en: '![](img/6f843910cc38c033063518b8167635a3_10.png)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_10.png)'
 - en: '![](img/6f843910cc38c033063518b8167635a3_11.png)'
+  id: totrans-13
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_11.png)'
 - en: '![](img/6f843910cc38c033063518b8167635a3_12.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_12.png)'
 - en: We can put in the outputs and actually don't need this。 but just for demonstration
     let's use the predictions and then again dimension equals one and then let's print
     the labels as well and now let's actually do one more thing So let's convert the
@@ -66,102 +98,151 @@
     dot config dot I to label and then it needs the actual label ID and then we iterate
     so we say four label ID in labels to list and now what this does you will see
     this when we print this So we print the labels and now let's actually。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以放入输出，实际上不需要这个，但为了演示我们使用预测，然后再次设置维度等于1，然后也打印标签。现在我们实际上再做一件事，所以让我们通过说labels等于来转换标签，然后我们使用列表推导并调用model点config点I到label，然后它需要实际的标签ID，我们迭代，所以我们说for
+    label ID in labels to list。现在你会看到这在打印时发生了什么。我们打印标签，现在让我们实际上。
 - en: '![](img/6f843910cc38c033063518b8167635a3_14.png)'
+  id: totrans-16
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_14.png)'
 - en: '![](img/6f843910cc38c033063518b8167635a3_15.png)'
+  id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_15.png)'
 - en: '![](img/6f843910cc38c033063518b8167635a3_16.png)'
+  id: totrans-18
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_16.png)'
 - en: '![](img/6f843910cc38c033063518b8167635a3_17.png)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_17.png)'
 - en: '![](img/6f843910cc38c033063518b8167635a3_18.png)'
+  id: totrans-20
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_18.png)'
 - en: R this and see if this works。 Alright， so this works。 So as you can see here，
     we print the output。 So these are our output。 This is a sequence classifier output。
     And as you see。 it has the launchets argument。 So that's why we used outputs dot
     launchet。😊。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: R这个看看是否有效。好的，这个有效。正如你所看到的，我们打印了输出。这是我们的输出。这是一个序列分类器的输出。正如你所见，它有launchets参数。这就是我们为什么使用outputs.dot.launchet。😊。
 - en: '![](img/6f843910cc38c033063518b8167635a3_20.png)'
+  id: totrans-22
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_20.png)'
 - en: '![](img/6f843910cc38c033063518b8167635a3_21.png)'
+  id: totrans-23
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_21.png)'
 - en: And then we get the actual probabilities。 and then to get the labels。 we used
     Arcm。 So this is a tensza with the label1 and the label 0。 And then we converted
     each label to the actual class name and then we get positive and negative。 So
     by the way， this function， I think is only dedicated to a auto model for sequence
     classification。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们得到了实际的概率。为了获取标签，我们使用了Arcm。因此，这是一个包含标签1和标签0的tensor。然后我们将每个标签转换为实际的类名，然后得到了正和负。顺便提一下，这个函数，我认为只适用于序列分类的自动模型。
 - en: For example， if we just use a auto model， Then I think it won't be available。
     So that's what these more concrete classes will do for you。 it gives you a little
     bit more functionality for the dedicated task。 So we see that the loss is none
     in this case。 So if you also want to have a loss that we want to inspect。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，如果我们只使用一个自动模型，那么我认为它将不可用。这就是这些更具体的类会为你做的事情。它为特定任务提供了更多的功能。因此我们看到在这种情况下损失为零。如果你还想有一个损失可以检查。
 - en: Then we can give the loss or the。😊。![](img/6f843910cc38c033063518b8167635a3_23.png)
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们可以给出损失或者。😊。![](img/6f843910cc38c033063518b8167635a3_23.png)
 - en: '![](img/6f843910cc38c033063518b8167635a3_24.png)'
+  id: totrans-27
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_24.png)'
 - en: '![](img/6f843910cc38c033063518b8167635a3_25.png)'
+  id: totrans-28
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_25.png)'
 - en: '![](img/6f843910cc38c033063518b8167635a3_26.png)'
+  id: totrans-29
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_26.png)'
 - en: Not the loss， but the labels argument to our model that it knows how to compute
     the loss。 So we say labels。 and then we create a torch dot tenor by saying torch
     dot tenor。 And then as a list， we give it the labels1 and 0。 And now let's run
     this again。 And then you should see that we should see a loss here。 And yet， now
     here we see the loss。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 不是损失，而是我们模型的标签参数，它知道如何计算损失。因此，我们说标签。然后我们通过torch.dot.tenor创建一个torch.tensor。然后作为一个列表，我们给它标签1和0。现在让我们再次运行这个。然后你应该看到我们在这里应该看到一个损失。现在，这里我们看到了损失。
 - en: And again， this labels argument is， I think special to this automod for sequence
     classification。![](img/6f843910cc38c033063518b8167635a3_28.png)
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 再次强调，这个标签参数，我认为是专门针对这个序列分类的automod。![](img/6f843910cc38c033063518b8167635a3_28.png)
 - en: '![](img/6f843910cc38c033063518b8167635a3_29.png)'
+  id: totrans-32
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_29.png)'
 - en: So， yeah， this worked。 And now if we have a careful look at the probabilities。
     So first of all。 we see we get label positive and negative。 and here for the first
     one。 This is the highest probabil。 So 9。997。 And here for the second one， this
     is the largest number。 So it took this one。 And this is 5。30。 So if we compare
     them with the results that we got from our pipeline。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，是的，这样做有效。现在如果仔细看看概率。首先，我们看到标签为正和负。这里第一个的概率是最高的。是9.997。第二个的概率是最大的。所以选择了这个。它是5.30。如果我们将它们与我们从管道中获得的结果进行比较。
 - en: Then we see these are exactly the same numbers。 So now you might see what's
     the difference between a pipeline and using tokenizer and model directly。 So with
     the pipeline， we only need two lines of code。 And then we actually get what we
     want。 So we get the label and we get the score we are interested in。 So this might
     be just fine， but。😊。Yeah if you want to do it manually you can do it like I showed
     you and you will get the same results that you can then use。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们发现这些数字完全相同。现在你可能会看到管道和直接使用分词器与模型之间的区别。使用管道时，我们只需要两行代码。然后我们实际上得到了我们想要的。因此，我们得到了标签和我们感兴趣的分数。这可能是可以的，但是。😊。如果你想手动操作，你可以像我展示的那样做，你将得到相同的结果，然后可以使用。
 - en: So yeah， that's how you can use a model and a tokenizer and yeah so using the
     model and the tokenizer will be important when you for example want to find tune
     in your model so I will show you roughly how to do this later but yeah so this
     is how you use model and tokenizer and let's just assume we did find tune in our
     model。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，是的，这就是你如何使用模型和分词器。所以在你想要对模型进行微调时，使用模型和分词器是非常重要的。因此，我稍后会告诉你大致如何做，但是，是的，这就是你如何使用模型和分词器。我们假设我们在模型上进行了微调。
 - en: '![](img/6f843910cc38c033063518b8167635a3_31.png)'
+  id: totrans-36
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_31.png)'
 - en: '![](img/6f843910cc38c033063518b8167635a3_32.png)'
+  id: totrans-37
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_32.png)'
 - en: '![](img/6f843910cc38c033063518b8167635a3_33.png)'
+  id: totrans-38
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6f843910cc38c033063518b8167635a3_33.png)'

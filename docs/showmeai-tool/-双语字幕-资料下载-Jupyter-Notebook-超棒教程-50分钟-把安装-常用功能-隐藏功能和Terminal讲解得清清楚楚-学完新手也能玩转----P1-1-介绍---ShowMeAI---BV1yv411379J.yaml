@@ -1,40 +1,60 @@
 - en: 【双语字幕+资料下载】Jupyter Notebook 超棒教程！50分钟，把安装、常用功能、隐藏功能和Terminal讲解得清清楚楚。学完新手也能玩转！
     - P1：1）介绍 - ShowMeAI - BV1yv411379J
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Jupyter Notebook 超棒教程！50分钟，把安装、常用功能、隐藏功能和终端讲解得清清楚楚。学完新手也能玩转！ - P1：1）介绍
+    - ShowMeAI - BV1yv411379J
 - en: Hello and welcome to another magnificent project data science tutorial Today
     we're going to be diving into Jupiter notebooks。 so this tutorial is perfect for
     anyone who has never used Jupiter notebooks and is going to be a no frills tell
     it like it is introduction。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 你好，欢迎来到另一个精彩的数据科学项目教程。今天我们将深入探讨 Jupyter Notebook。因此这个教程非常适合从未使用过 Jupyter Notebook
+    的人，是一个直截了当的介绍。
 - en: we're going to go through a decent amount of material and we're going to be
     doing it inside of Jupiter notebooks itself。 So project data science is all about
     learning through doing so I expect you if you can to have your computer and be
     following along。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将学习相当多的内容，并且我们将在 Jupyter Notebook 中进行。所以数据科学项目就是通过实践来学习，因此我希望你能有一台电脑并跟着我一起学习。
 - en: 😊，So。😊，Let's talk about what we're going to be doing in this tutorial。 So step
     number one。 we' are going to look at a couple of Jupiter notebooks just to set
     the stage。 Step number 2。 we're going to install Jupiter notebooks。 I'll help
     you get Python and Jupiter notebooks installed in a nice virtual environment。
     Step number 3， we'll open up Juter notebooks and ask the question。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，所以。😊，让我们来谈谈我们在本教程中要做的事情。第一步，我们将查看几个 Jupyter Notebook，以便奠定基础。第二步，我们将安装 Jupyter
+    Notebook。我会帮助你在一个良好的虚拟环境中安装 Python 和 Jupyter Notebook。第三步，我们将打开 Jupyter Notebook，并提出问题。
 - en: what is a notebook and we'll start poking around。![](img/d6665ba90221a0adf69317972a2b6c48_1.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 什么是 Notebook，我们将开始探索。![](img/d6665ba90221a0adf69317972a2b6c48_1.png)
 - en: Step number4， we'll look at some of the other common things that you can do
     with Jupiter notebooks besides the basic functionality。 step number5， we'll look
     at some other parts of Jupyter notebooks besides the notebook itself and then
     we'll look at a couple other things like keyboard shortcuts and some extensions
     to Jupyter notebooks and some other functionality that I really like to use。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 第四步，我们将看看除了基本功能之外，你还可以在 Jupyter Notebook 中做的一些其他常见操作。第五步，我们将查看 Jupyter Notebook
+    的其他部分，除了 Notebook 本身，然后我们将看看一些其他内容，比如键盘快捷键、Jupyter Notebook 的一些扩展和我非常喜欢使用的其他功能。
 - en: '![](img/d6665ba90221a0adf69317972a2b6c48_3.png)'
+  id: totrans-6
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d6665ba90221a0adf69317972a2b6c48_3.png)'
 - en: So let's go ahead and jump in， let's go ahead and get started。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们直接进入吧，开始吧。
