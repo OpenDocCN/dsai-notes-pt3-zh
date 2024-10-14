@@ -1,8 +1,11 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P24：L4.3- Keras深度神经网络回归建模与RMSE评估
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P24：L4.3- Keras深度神经网络回归建模与RMSE评估
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeff Heaton， Wee to applications of Deep neural networks with Washington
     University In this video。 I am going to show you how to construct a regression
     neural network in Kias。 a regression neural network is a neural network that is
@@ -10,88 +13,118 @@
     case of a classification neural network that we just saw for the latest or my
     AI course and projects。 click subscribe in the bell next to it to be notified
     of every new video。😊。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是杰夫·希顿，欢迎来到华盛顿大学的深度神经网络应用。在这个视频中，我将向你展示如何在Keras中构建一个回归神经网络。回归神经网络是能够预测数值的神经网络，而不是分类神经网络中类或非数值值。点击旁边的铃铛订阅，以便接收每个新视频的通知。😊
 - en: '![](img/64c02b34a795bf983212a6aea5e39c00_1.png)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/64c02b34a795bf983212a6aea5e39c00_1.png)'
 - en: '![](img/64c02b34a795bf983212a6aea5e39c00_2.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/64c02b34a795bf983212a6aea5e39c00_2.png)'
 - en: So if you're dealing with regression， we're going to take a look at that sample
     data set that we've used a number of times that predicts individual people which
     product they're going to buy in this case though we want to make it a regression
     problem。 so what we're going to do is try to predict their age based on what product
     they bought and the other aspects about them。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以如果你正在处理回归问题，我们将看看那个我们多次使用的样本数据集，它预测个体将购买哪个产品。不过在这种情况下，我们想把它变成一个回归问题。所以我们要做的是根据他们购买的产品和他们的其他特征来预测他们的年龄。
 - en: So this code is very similar to the feature engineering that we've done before。
     we're filling and missing values， we're standardizing various ranges。 disease
     scores to make it more predictive for neural network， but Y is coming from age。We're
     also going to split into a training and test data set。Next。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这段代码和我们之前做的特征工程非常相似。我们在填充缺失值，标准化各种范围。疾病评分使其对神经网络更具预测性，但Y来自年龄。我们还将数据分为训练集和测试集。接下来。
 - en: we're going to build and train the neural network。Again。 fe attention to how
     we are setting up the loss， this is regression， so out one output neuron。Mean
     square error is our loss function。We run it， it trains us really pretty good。
     the validation loss quickly falls off。And we're left with a pretty good。Result。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将构建和训练神经网络。再次注意我们是如何设置损失的，这是回归，所以我们有一个输出神经元。均方误差是我们的损失函数。我们运行它，训练效果相当不错，验证损失迅速下降。我们得到一个相当不错的结果。
 - en: we're going to calculate the mean square error， the mean square error。Is essentially
     the difference between every predicted value and every expected value squared。And
     sunned。So if we look at the mean square error of this， it's 0。45。 The problem
     with the mean squared error is that the units， it's a lot like variance in statistics。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将计算均方误差。均方误差本质上是每个预测值和每个预期值之间的差值平方后求和。所以如果我们查看这个均方误差，它是0.45。均方误差的问题在于单位，它很像统计中的方差。
 - en: the units are not meaningful。The only thing I can really say about a mean square
     error is lower is better。If you take the square root of it， it becomes the root
     means square RMSE。 which you've probably heard of before， it's a common ametric
     RE。We take the square root of the whole thing， and now the units are in the same
     as。The the data。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些单位并没有实际意义。关于均方误差，我能说的就是数值越低越好。如果你取它的平方根，它就变成了均方根误差（RMSE）。你可能之前听说过，它是一个常用的度量。我们对整个数值取平方根，现在单位和数据是一样的。
 - en: so we can see it's 0。67， so we're about a year， a little bit less than a year。Off
     when we try to calculate how close we are to the actual values for age that we're
     predicting。A visualization that is very useful for RMSC is something called a
     Ly chart。So the way that I generate a Ly chart， there's very different ways。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们可以看到它是0.67，所以我们在计算我们对预测年龄的实际值的接近程度时，约差一年，稍微少于一年。一个对RMSE非常有用的可视化是所谓的Ly图。生成Ly图的方式有很多不同的方法。
 - en: there's a couple of different ways floating about。 I definitely did not invent
     this。 but this is the most common way that I've done this。 So we're going to sort
     the data by the expected output。 These are your y values。 So the actual ages。
     So the data will be in in that order。 So this will be monotonically increasing，
     the line will go up。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 有几种不同的方法在流传。我肯定没有发明这个。但这是我使用的最常见方法。所以我们将按照预期输出对数据进行排序。这些是你的Y值。因此实际年龄。数据将按此顺序排列。所以这将是单调递增的，线将向上移动。
 - en: up， up， but not ever back down as as the ages are sorted that way。And then for
     every。X。 for every output value along the， along the X， we are going to。Essentially
     plot where the actual predicted value was so these two lines。 if it's perfect
     will overlap exactly， but you you'll see some of the noise there the x axis is
     just 0 to 100% of the data and the Y axis is ranged according to the values predicted
     so zero to the age Now to read this chart。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 向上，向上，但不会再回落，因为年龄是那样排序的。然后对于每一个。X。对于沿着X的每个输出值，我们将。基本上绘制实际预测值的位置，所以这两条线。如果完美的话会完全重叠，但你会看到一些噪声，X轴只是数据的0到100%，Y轴的范围则根据预测值进行调整，所以是从零到年龄。现在来看这个图表。
 - en: the expected and predicted line should be close notice where one is above or
     below the other because maybe for higher ages you're less accurate and for lower
     ages you're better。The below chart is。Generally more accurate on lower ages， butll
     we'll see that's not always the case。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 预期和预测的线应当接近，注意其中一条在线上方或下方，因为在较高的年龄段，你的准确性可能较低，而在较低的年龄段则更好。下面的图表是。通常在较低年龄段更准确，但我们将看到这并不总是如此。
 - en: It depends on how the。How the training actually went from the random values。Here
     this is actually a really， really good one， we've got some outliers on higher
     ages up there but。In general， that's why I say that it is typically more accurate
     on the lower ages。So this shows you it's somewhat noisy as it's going through
     the expected values。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 这取决于训练的实际情况。这里的结果实际上是非常好的，我们在较高年龄段有一些异常值。但总的来说，这就是我为什么说它通常在较低年龄段更准确。所以这显示了在经过预期值时，它有点嘈杂。
 - en: you can barely see the expected because the predicted line is right on top of
     them。 so this is actually quite good。And the numbers on the bottom zero to 500。
     there's 500 elements in our test set， so that's where that is coming from。![](img/64c02b34a795bf983212a6aea5e39c00_4.png)
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 你几乎看不到预期值，因为预测线正好在其上方。所以这实际上是相当不错的。底部的数字从零到500。我们的测试集中有500个元素，所以这是来源于这里。![](img/64c02b34a795bf983212a6aea5e39c00_4.png)
 - en: Thank you for watching this video and the next part we're going to look inside
     of the back propagation algorithms and see how they work This content changes
     often so subscribe to the channel to stay up to date on this course and other
     topics in artificial intelligence。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 感谢观看这个视频，在下一部分我们将深入研究反向传播算法，看看它们是如何工作的。这个内容经常变化，所以请订阅频道以便及时了解本课程和其他人工智能主题。

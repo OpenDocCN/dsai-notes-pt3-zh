@@ -1,279 +1,371 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P26：L4.5- 从头开始计算神经网络RMSE和对数损失
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P26：L4.5- 从头开始计算神经网络RMSE和对数损失
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi this is Jeff Heaton， welcome to App of Deep neural Networks with Washington
     University。In this video， we're going to see how to calculate some of the error
     metrics by hand so that you can literally see how these numeric values actually
     come about。 We'll look in particular， at log loss and root mean square error for
     the latest on my AI course and projects。 Click subscribe in the bell next to it
     to be notified of every new video。 Now。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是杰夫·希顿，欢迎来到华盛顿大学的深度神经网络应用课程。在这个视频中，我们将看到如何手动计算一些错误指标，这样你就可以真正看到这些数值是如何产生的。我们将特别关注对数损失和均方根误差，关于我最新的人工智能课程和项目，请点击订阅旁边的铃铛，以便收到每个新视频的通知。现在。
 - en: we'll see how to calculate R S E and log loss。 completely from scratch。 We'll
     start with regression。😊。![](img/17f6495026b126d073de254c1e55eb13_1.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将看到如何从头开始计算均方根误差和对数损失。我们将从回归开始。😊。![](img/17f6495026b126d073de254c1e55eb13_1.png)
 - en: You can see the code here， the code near the top is demonstrating how you would
     calculate mean square error and then root mean square error using the built in
     functions normally this is how you want to do and this is what we saw earlier
     however。 if you want to see how to actually calculate this，You can see that we
     get the exact same results。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以在这里看到代码，顶部的代码演示了如何使用内置函数计算均方误差和均方根误差。通常这就是你想要的，这是我们之前看到的。然而，如果你想看看如何实际计算这个，你会发现我们得到了完全相同的结果。
 - en: we're basically taking a sum of squares。Here you can see the predicted minus
     the expected。 and we sum those the squares， and then finally we divide that by
     the length of the predicted。 so it's kind of like an average where the squares
     are being used to negate the signs for one thing。 and it's also it can be easier
     to take the derivative of those square terms than the absolute values for training
     purposes。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们基本上是在计算平方和。这里你可以看到预测值减去期望值。我们将这些平方相加，最后将其除以预测值的长度。所以这有点像平均值，平方用于消除符号。此外，对于训练目的，平方项的导数比绝对值更容易处理。
 - en: For classification， we're doing a similar sort of thing。Except we're using the
     log loss。 You can see at the top how you have the expected and the predicted and
     how you can literally calculate each。 each piece of the of the log loss and sum
     of them together。 getting the exact same value as you would have gotten from the
     built in function。 Now。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于分类，我们正在做类似的事情。只是我们使用对数损失。你可以在顶部看到预期值和预测值，以及你如何逐个计算每个对数损失的部分，并将它们相加，得到与你从内置函数获得的完全相同的值。现在。
 - en: we'll see how to work through all of these。 Now， let's go through and calculate
     both of those by hand。We're going to start with log loss。Here's the equation for
     it。 Okay。 this equation might look somewhat complicated， but there's actually
     several parts to it。 and let me kind of take this piece by piece and show you
     really what is going on there。First of all。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将看到如何处理这些内容。现在，让我们手动计算这两个值。我们将从对数损失开始。这里是它的公式。好的，这个公式看起来可能有些复杂，但实际上有几个部分，让我分开讲解一下，给你展示一下到底发生了什么。首先。
 - en: let's look at the graph of what a logarith actually looks like because that
     helps to explain some of this。So for the log rhythm， there's a couple of very
     important points log of zero is。Essentially undefined or asymptote to negative
     infinity。 log of1 is 0 of is as you plot the logarithm。It crosses here at 0。 Now。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看看对数的图形，因为这有助于解释一些内容。因此，对于对数，有几个非常重要的点，对数零是本质上未定义或渐近于负无穷。对数1是0，当你绘制对数时，它在这里与0相交。现在。
 - en: I am really bad at drawing equations， but you'll get the general idea。 bit of
     infinity kind of asymptotically there。And then， it grows really relatively。Small
     as it。 as it continues in that direction。Logar， I in my studies。 it's come up
     really twice where we care about what it actually looks like。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 我真的很糟糕于绘制方程，但你会明白大致的想法。有一点无穷大，在那里渐近。然后，它相对较小地增长。Logar，在我的研究中，这实际上出现了两次，我们关心它实际的样子。
 - en: It comes up a lot more than that。 but just in the areas that I particularly
     dealt with。 if you're dealing with computer science。It is this region that is
     particularly interesting。 because when you're doing algorithm analysis， order，
     order N type stuff， a logarithmic。Scale is actually pretty good。 It's not really
     increasing all that fast compared to something like exponential。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 它比那多得多，但就我特别处理的领域而言。如果你处理计算机科学，这个区域特别有趣。因为当你进行算法分析时，N阶的东西，对数规模实际上是相当不错的。与指数级增长相比，它并没有真的那么快增长。
 - en: which is just going to go up very， very， very fast。But that's that part of the
     of the logar graph is not what we're interested here in the realm of data science
     or machine learning。 Data science and machine learning is more interested in this
     segment of it。That is where we use to analyze error。So this is the data science
     region。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 这只是会非常非常非常快地上升。但对于数据科学或机器学习领域而言，日志图的这一部分并不是我们感兴趣的。数据科学和机器学习更关注的是它的这一段。这是我们用来分析错误的地方。所以这是数据科学区域。
 - en: It's probably not strictly mathematically corrective， computer science and data
     science。 I'm sure the two cross over into these other two realms。 but this is
     just a good way to think of this in a very simplified view。So in data science。Or
     in this machine learning log loss function that we're calculating this region。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 这在数学上可能不是严格的，计算机科学和数据科学。我确信这两个领域会交叉到另外两个领域，但这只是一个很好的简化思维方式。所以在数据科学中，或者在我们计算的这个机器学习对数损失函数的区域。
 - en: if you think of one is being。Is being completely correct， or you've guessed
     it correct。 So you're trying to classify something。 It was true。 You've chosen
     true。 That means that the error that is contributed to， to your to your error
     equation is going to be 0。 which is good。You guessed it completely correct。What
     you don't want to be is confidently incorrect。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你认为1是完全正确的，或者你猜对了。所以你在尝试分类某些东西。如果它是真的，你选择了真的。这意味着贡献给你的错误方程的错误将是0，这是好的。你完全猜对了。你不希望自信地错误。
 - en: So in these machine learning algorithms， if you want to say true。 you don't
     just usually say true or false。 you will say， I think with 0。9% probability， it
     is true。Don't you wish you could have done that back on true false questions in
     in school if youre。 if you're just really not sure you could put 0。5 probability。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以在这些机器学习算法中，如果你想说“真”，你通常不会只是说“真”或“假”。你会说，我认为它有0.9%的概率是真的。你不希望在学校的真假题上也能这样，如果你不太确定，可以说0.5的概率。
 - en: meaning I don't know it could be true it could be false。 You'd mostly lose half
     a point。Well。 or you could do 0。75 probability。 You would get you'd get three
     quarters of your point if you're correct。 but only lose 。25 if you were not。 So
     that's， that's how these are evaluated。 What you don't want to be， is confidently
     incorrect。 So if you say it's true with 100% probability。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 意思是我不知道，它可能是真的，也可能是假的。你通常会损失半分。那么，或者你可以说0.75的概率。如果你答对了，你会得到三分之四的分数，但如果不对，只损失0.25分。所以，这就是它们的评估方式。你不希望的是自信地错误。因此如果你说它的概率是100%是真的。
 - en: And then it's false。 then you're down here at a infinitely bad score。 I'm glad
     school isn't like that。 You can't get an infinitely bad score。 You can just get
     a 0。 But。Here you can be so bad that it's infinitely bad， that's why usually when
     you look at these sort of predictions。 you'll very rarely see predictions at zero
     or1， they're going to be very close to it because they want the optimizer algorithms
     will usually clamp it at that。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后如果它是假的，那你就在一个无限糟糕的分数上。我很高兴学校不是这样的。你不能得到无限糟糕的分数。你只能得到0分。但是，在这里你可以糟糕到无限糟糕，这就是为什么通常当你查看这些预测时，你很少会看到0或1的预测，它们会非常接近，因为优化算法通常会将其限制在那个范围。
 - en: So notice two， for that region， for the data science part of it， everything
     is negative。You could talk about negative errors。 You could say I have a negative
     025 log loss or something like that。 But just to get it， we're used to errors
     being reported as positive。 So that's why you have this negative up front。 That
     essentially just shifts it entirely to the。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以注意，对于数据科学的那个区域，一切都是负数。你可以谈论负错误。你可以说我有负0.025的对数损失或类似的东西。但为了理解，我们习惯于将错误报告为正数。所以这就是为什么前面有这个负号。这本质上将其完全转移到。
 - en: To the positive range， that's all that negative is accomplishing there。The one
     over n。That part of it is essentially， that's the average。So n is the number of
     elements in your training set。 You don't want to have extremely large error for
     extremely large training sets。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于正范围，那就是所有负值所达到的效果。这个一除以 n。那部分基本上就是平均值。所以 n 是你训练集中的元素数量。你不希望在非常大的训练集中出现极大的错误。
 - en: you need you want to normalize that just like the percent on your exam paper。That's
     why you divide it by the number， the number of questions。 If you just deal in
     points。 if you say， hey， I scored 30 points on my exam。 Well， if it's out of 30，
     that's pretty good。 If it's out of 3000， that's really bad。 So that is that is
     what the negative and the one over n is。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 你需要像考试纸上的百分比一样对其进行归一化。这就是为什么你要除以问题的数量。如果你只处理分数。如果你说，我在考试中得了 30 分。好吧，如果满分是 30，那挺好的。如果满分是
+    3000，那就真的很糟糕。所以这就是负值和一除以 n 的含义。
 - en: is accomplishing。 Then we need to sumit sum all of those， all of those log loss
     errors。 And that is going to， that is basically going to。Give you the summation
     of all your log losses。And then you divide them by n。All of your log losses， zero。
     ones near zero are not particularly bad you are close and either true or false。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 正在完成。然后我们需要将所有这些日志损失错误进行汇总。这将给你所有日志损失的总和。然后你将它们除以 n。所有的日志损失，零。接近零的值并不是特别糟糕，你是接近真实或虚假的。
 - en: Or the higher ones you are。You were largely incorrect。 You try to prevent。You
     usually clamp this so that you don't have Y hat values， Y hat， by the way， are
     your predictions。So the two y hats that you see here and here， those are your
     predictions。Why is the truth。 That is the value you're comparing it against。 And
     we have the subscript eye on each of these just so that we can calculate。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者你所处的更高值。你在很大程度上是错误的。你尝试防止这种情况。你通常会限制这个，以便你不会有 Y hat 值，顺便说一下，Y hat 是你的预测。你在这里看到的两个
+    y hats，就是你的预测。为什么是真实的。那是你比较的值。我们在每一个值上都有下标 i，以便进行计算。
 - en: Or just because that's the individual number or the individual training set
     element and your prediction。The first part of it， which is right here。That's dealing
     with true cases。And then the other part of it is dealing with false cases。So you're
     classifying， is it true or false？
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者只是因为那是单个编号或单个训练集元素以及你的预测。它的第一部分，就在这里。这部分处理真实情况。然后另一部分处理虚假情况。所以你在分类，是对还是错？
 - en: The way that these are controlled is sort of a mathematical if statement。 Mathematicians
     like to use coefficients， often for if statements。And the two F statements that
     you are dealing with are basically here。And。And there。If y sub I。 that is the
     absolute truth， that is the value from the training set that you're comparing
     against。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些被控制的方式有点像数学中的 if 语句。数学家喜欢使用系数，通常用于 if 语句。而你所处理的两个 F 语句基本上在这里。还有那里。如果 y sub
+    I。这是绝对真实的，是你比较的训练集中的值。
 - en: If it's true， then this is going to be one。 The green y sub I is going to be
     one。 If it's false。 then it's going to be 0。 So this， the first coefficient， the
     green arrow is going to be one。 In all cases where we are dealing with true values。
     and the red arrow is going to be false in all cases where we're dealing with false
     values。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果是真的，那么这将是 1。绿色的 y sub I 将是 1。如果是假的，那么它将是 0。所以在处理真实值的所有情况下，第一个系数，绿色箭头将是 1。而在处理虚假值的所有情况下，红色箭头将是
+    0。
 - en: Because of the1 minus。 So that essentially turns off these two sides。 So one
     of those two sides is going to cancel out each time。 depending on if it's true
     or if it's false。So if this really is true。 then sub1 y sub i is going to be one。So
     it won't cancel out。 and then the log ideally。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 因为 1 减去。所以这本质上关闭了这两侧。所以其中一侧每次都会抵消，具体取决于它是真还是假。所以如果这确实是真的。则 sub1 y sub i 将是 1。这样就不会抵消，然后理想的日志。
 - en: if the real answer is true， you would like why hat to also be true or one。 if
     that is the case and you nail this right on the nose， then log of one0。 so that
     term will then cancel out。But that's good because you had。 you had a perfectly
     correct answer。 And it now， you don't want any error to be contributed。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果真实答案是真的，你希望 y hat 也是真的或者是 1。如果情况是这样，你正好抓住这一点，那么 log 的一将会抵消。但这很好，因为你得到了一个完全正确的答案。而且现在，你不希望有任何错误被贡献。
 - en: If you had guess 。9， then the log 。9 will be added to your， to your error。 But
     that's not so bad because you're still。Basically， the closer you get to zero。
     the worse your score is going to be。Look at the at the。At the curve on the Cartesian
     plane that I have drawn。 Now， on the other side of the coin。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你猜的是0.9，那么log 0.9将被加到你的错误中。但这并不算太糟，因为你仍然基本上越接近零，得分就会越糟。看看我在直角坐标平面上绘制的曲线。现在，从另一个角度来看。
 - en: if it's false， So if the correct answer y sub I is is is false or 0， then that
     first。 the true term is going to cancel out。And then the false is going to be
     one。 So it's going to have a coefficient of 1，1-0 is 1 multiplied by the log of
     1。1 minus y sub I。 We're basically now doing that in reverse。So doing that in
     reverse。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果是错误的，所以如果正确答案y下标i是错误的或0，那么第一个真值项将被抵消。然后假值将变为1。所以它将具有系数1，1-0是1，乘以1的对数。1减去y下标i。我们现在基本上在反向执行这个操作。
 - en: we are now basically going to deal with。If you had a one now in this case。 So
     it was false。 but you guessed true， you're now infinitely wrong because 1-1 is
     0。 and that takes you to。 to infinity on the on the log。 Now， if you had guessed
     close like 0。1， Well，1-0。1 is 。9。 and that's not quite as bad。 you're kind of
     in the same in the same location that I just described。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们现在基本上要处理的情况是。如果在这种情况下你猜的是1。它是错误的，但你猜的是对的，你现在是无限错误，因为1-1是0。这将使你进入对数的无穷大。现在，如果你猜得比较接近，比如0.1，那么1-0.1是0.9。这并不算太糟，你大致在我刚才描述的相同位置。
 - en: So you're closer up that closer to 0 on that log calculation。Now when you actually
     implement this。This approach has a couple of errors when I mean issues when you're
     dealing with this in computer science or implementing this as a program for one。Your
     depending on how smart your， your programming language is to cancel out things
     that are 0。 You're potentially calculating the log rather twice。 You really don't
     need to。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以你在对数计算上更接近于0。现在，当你实际实现这个方法时，这种方法在处理计算机科学或将其作为程序实现时会有几个问题。一方面，你依赖于你的编程语言如何聪明，以便消除零的东西。你可能会计算对数两次。你其实不需要这样做。
 - en: because it's going to cancel out。 The other issue that I have been burned by
     at least a couple of times is that if either of these sides go to negative infinity。You're
     now effectively multiplying， even though。You even though you would like that to
     cancel out in most programming languages。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 因为它会抵消。我至少被这个问题烧过几次，如果这两侧中的任何一侧变为负无穷。你实际上是在乘以，即使你希望在大多数编程语言中抵消它。
 - en: zero times infinity is in fact， zero or is in fact， infinity。Mathematically。
     you can make the case that it is0 if you use， I believe it's Haital's rule。 looking
     at basically the rates at which get of infinity on one side or the other。 you
     multiply it by the good half。 And even though you may have answered this completely
     correctly。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 零乘以无穷实际上是零，或者实际上是无穷。从数学上讲，如果你使用我相信是海塔尔法则，你可以认为它是0，基本上是在一侧或另一侧观察无穷的速率。你乘以好的部分。即使你可能完全正确地回答了这个问题。
 - en: and it shouldn't cause the equation to blow up， it does cause the equation to
     blow up because you've got infinity on one side or the other of a multiplication。
     and the whole thing then goes to infinity。Or NA， depending on the implementation。So
     now let's look at how we will actually calculate this。 So the way that I'll show
     you to calculate it， we're not going to actually。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 它不应该导致方程崩溃，但确实会导致方程崩溃，因为你在乘法的一侧或另一侧有无穷大。然后整个结果会变成无穷大，或者取决于实现可能是NA。现在让我们看看我们将如何实际计算它。所以我将向你展示的计算方式，我们实际上不会。
 - en: we're going to do it more like the computer would do it。 We're not going to
     literally take the log two logs for every single line on this。 So let's go ahead
     and look at a couple of cases。 We're going to look at the cases just like we had。In
     the code that I showed you earlier， so that's how I know my math is correct。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将更像计算机那样做。我们不会逐行取两个对数。我们来看看几个案例。我们将查看的情况就像我之前展示的代码，所以我知道我的数学是正确的。
 - en: I'm largely regurgitating what I already did in Python。So we're going to have
     the data set where we're going to have why。And then why hat？
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 我大致是在重复我在Python中做的事情。所以我们将有一个数据集，我们将有y。然后是y的帽子。
 - en: So this is the why is the correct answer， why hat is what we predicted？
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这就是为什么答案正确，为什么预测是这样的？
 - en: We're not really calculating the differences。Up in the top part， there。 the
     only difference really is the the one minuses。 but largely， that's what we're
     getting to。 Essentially， we are， we are calculating the。We're calculating how
     far off。You are from and and adding the log of that。 So the difference is that
     I am calculating here。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们并不是在真正计算差异。在顶部部分，唯一的差别其实就是一个负号，但大体上，这就是我们要得到的。实质上，我们是在计算你与目标之间的偏差，并加上其对数。因此，我在这里计算的差异就是这个。
 - en: By the way， this is the absolute value of the difference， not a square like
     we would do in R R C。 but just the absolute differences。 Now we need to take the
     logs of those mentioned。 let's go ahead and sun these， and then we will divide
     those by n。 the absolute value of that。 That is。 That is the value that we had
     for in the Python。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 顺便提一下，这是差异的绝对值，而不是我们在RRC中会做的平方，而仅仅是绝对差异。现在我们需要计算这些值的对数。我们先进行求和，然后再除以n。这个绝对值就是我们在Python中得到的值。
 - en: So this is how you calculate the log loss just completely from hand。L R on a
     sea。Pencil battery is low。 I need to hurry。Everything needs to be recharged these
     days， even pencils on。 you have the one over n。 just like before。 You don't need
     a negative because these these are inherently going to stay positive。 And it's
     a sum of squares。 You're essentially taking y hat minus Y for each of these doesn't
     really matter the order that those are even taken in。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这是你如何完全手动计算对数损失。L R在一个海上。铅笔电量低了。我需要赶快。这些天一切都需要充电，连铅笔也是。你有一个1/n，和之前一样。你不需要负号，因为这些数本质上会保持正值。这是平方和。你基本上是对每一个y
+    hat减去Y，顺序并不重要。
 - en: because you're going to square those differences。 But numbers。 But these are
     the ones that I used in Python。 And that lets me check my math to know that I'm
     actually doing these correctly。Now we take the difference。Go'ming to go ahead
     and square each of those。And sum that going to divide them by n。This value is
     actually called the sum of squared errors。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 因为你会对这些差异进行平方。但这些是我在Python中使用的数值。这让我可以检查我的数学计算，以确保我实际上是正确的。现在我们计算差异。接下来对每个值进行平方，并对其求和，最后除以n。这个值实际上被称为平方误差和。
 - en: This number， if you're， if you're just writing an algorithm and you're trying
     to optimize。 meaning you're trying to push a number to zero， stop here， use this
     on squared errors because。Doing the square root on top of it is just to get it
     into the same units as the training data。 If you're just optimizing， just use
     some of square， that's， that's plenty good。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个数字，如果你只是编写一个算法并试图优化，也就是说你试图将一个数字推向零，停在这里，使用平方误差，因为在此基础上进行平方根只是为了使其与训练数据处于相同单位。如果你只是进行优化，使用平方就足够了。
 - en: But if you're trying to report this to。To somebody to actually see how off you
     are。 then you need to take the square root to get RNSC。![](img/17f6495026b126d073de254c1e55eb13_3.png)
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是如果你想将其报告给某人，以便他们实际查看你的偏差，那么你需要进行平方根运算来得到RNSC。![](img/17f6495026b126d073de254c1e55eb13_3.png)
 - en: So that is the Romen square error。 Thank you for watching this video。 In the
     next video。 we're going to begin to look at regularization， which is yet another
     way that you can combat overfitting for a neural network。 This content changes
     often。 So subscribe to the channel to stay up to date on this course and other
     topics in artificial intelligence。😊。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是罗门平方误差。感谢你观看这个视频。在下一个视频中，我们将开始研究正则化，这又是一种可以抵抗神经网络过拟合的方法。这个内容经常会变化，所以请订阅频道以保持对这个课程和其他人工智能主题的最新了解。😊

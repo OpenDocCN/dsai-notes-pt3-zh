@@ -1,44 +1,59 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P27：L5.1- 正则化简介：Ridge 和
     Lasso - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P27：L5.1- 正则化简介：Ridge 和
+    Lasso - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeff Heaton， welcome to App of Deep neural Networks with Washington
     University。In this module we're going to start looking at regularization。 which
     is another tool to combat overfitting in neural networks and other model types
     as well。In fact， many of the regularization techniques， particularly L1 and L2。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是杰夫·希顿，欢迎来到华盛顿大学的深度神经网络应用课程。在这个模块中，我们将开始研究正则化，这是对抗神经网络及其他模型类型过拟合的另一种工具。实际上，许多正则化技术，特别是L1和L2。
 - en: came from much older models than neural networks， specifically linear regression
     we're going to start here and we're going to see the origins of L1 and L2 which
     will help us to understand it for neural networks for the latest on my AI course
     and projects。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些模型比神经网络更古老，特别是线性回归。我们将从这里开始，看看L1和L2的起源，这将帮助我们理解神经网络的相关性，关于我最新的AI课程和项目的信息。
 - en: click subscribe and the bell next to it to be notified of every new video so
     let's look at how L1 and L2 regularization were actually introduced。![](img/66334a38d34a532260ca2145f0ccb84a_1.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 点击订阅以及旁边的小铃铛，以便在每个新视频发布时收到通知。那么让我们看看L1和L2正则化是如何被引入的。![](img/66334a38d34a532260ca2145f0ccb84a_1.png)
 - en: They come from Rige and Lasso regression， which are just forms a linear regression。
     We're going to use the auto miles per gallon data set to demonstrate these with
     just straight up linear regression then we'll see how in a later video how we
     can introduce L1 and L2 into Kara's neural networks so I've loaded the data and
     I'm also creating a function here that reports the coefficients。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 它们来自Ridge和Lasso回归，这只是线性回归的几种形式。我们将使用汽车每加仑英里数的数据集来展示这些，只使用直接的线性回归，然后在后续视频中我们将看到如何将L1和L2引入Kara的神经网络中。因此，我已经加载了数据，并在这里创建一个报告系数的函数。
 - en: Coefics in linear regression those tell you the relative importance of each
     of the various inputs and then the intercept which shows sort of what happens
     at zero so let's look at just straight up linear regression before we do that
     we're going to use a psyic learn linear regression model and we're going to fit
     the auto miles per gallon to this。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 线性回归中的系数告诉你各种输入的相对重要性，然后是截距，显示零时发生的情况。因此在此之前，我们将直接看线性回归，我们将使用一个心理学习的线性回归模型，并将汽车每加仑英里数拟合到这个模型中。
 - en: So you can see certain things like the cylinders is very negatively correlated
     to the efficiency of the car for miles per gallon。The origin is very positively。This
     is 1970s data， so basically the origin there is meaning that the was the card
     not made in the United States。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以你可以看到某些事物，比如气缸数，与汽车的每加仑英里数效率是非常负相关的。原产地是非常正相关的。这是1970年代的数据，基本上原产地意味着该车并不是在美国制造的。
 - en: if it was made in the United States， it was pretty inefficient。Year also is
     important because as the year increases the car got more efficient and you can
     actually see the values so you could truly calculate a cars miles per gallon。
@@ -46,87 +61,113 @@
     add in the intercept and it'll give you a rough estimate of what the miles per
     gallon is by the way。 I will point out to that origin， I probably should have
     been turning that into dummy variables。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果是在美国制造的，那它的效率相当低。年份也很重要，因为随着年份的增加，汽车变得更高效，你实际上可以看到这些数值，这样你就可以真实地计算一辆车的每加仑英里数。你只需将所有这些数值相乘每个系数，然后加上截距，它就会给你一个粗略的每加仑英里数估计。顺便提一下，我应该将原产地转化为虚拟变量。
 - en: but here we're just treating it as a basic numeric。I've never found that to
     to give me much。 much lift on this particular one。 Let's look at L1 Lasso。 L1
     Lasso makes use of。We're basically adding the weights together， so we're summing
     the weights。And we are using the weights as a penalty， so if the weights get too
     high。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 但在这里我们只是将其视为基本数值。我发现这并没有给我带来太多提升。让我们看看L1 Lasso。L1 Lasso利用的是。我们基本上在将权重相加，所以我们在对权重求和。我们将权重作为惩罚，因此如果权重变得太高。
 - en: the absolute value of the weights gets too high that counts along with the error。
     so the difference between the expected outputs and the real outputs and those
     two together。 you're giving the neural network multiple objectives。As it's trained，
     you're saying， okay。 on one hand， be as accurate as possible， but on the other
     hand， don't let those weights get too big。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 权重的绝对值变得过高，这会影响到误差。因此，期望输出与实际输出之间的差异，以及这两者结合在一起。你正在给神经网络设定多个目标。在训练过程中，你会说，好吧。一方面，尽可能准确，但另一方面，不要让这些权重变得太大。
 - en: And this deals somewhat with Oham's razor in that the more simple solution is
     usually the better one。Now， the absolute value is a fairly sharp cut off。 so that
     will tend to completely eliminate some inputs。 This is good for feature selection。
     L1， if you have a lot of input features and you are thinking that some of those
     are not necessary。 L1 can be a good regularization technique business simply cutle
     out。 And let's the neural network。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 这在某种程度上涉及到奥卡姆剃刀，即更简单的解决方案通常是更好的。现在，绝对值是一个相当尖锐的截断。这会完全消除一些输入。这对特征选择是有好处的。如果你有很多输入特征，并且认为其中一些是不必要的，L1
+    可以是一个好的正则化技术，因为它可以简单地切除，并让神经网络。
 - en: Later， neural network for now， linear regression focus on the more important
     ones。 We'll go ahead and run this one。 You can see that it cut off a lot of these
     down here。 It pushed them to near 0， and we're focusing just on year。And origin。
     you can also see the final score is is not that bad， considering that we are not
     using the full。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，神经网络，线性回归将更关注更重要的目标。我们将继续运行这个。你可以看到，它削减了很多在这里的权重。它将它们压到接近 0，而我们仅关注年份和来源。你还可以看到最终得分并不是那么糟糕，考虑到我们没有使用全部数据。
 - en: The full data set， the full columns of the data set， these are getting pretty
     much eliminated。 by the way， you'll also notice that we specified a alpha that
     is the degree to which the weights。Are counted as， as a bad indicator for。For
     the multi objective。 So you're giving it two objectives。 whenever my boss comes
     to me and says， okay， this is a high priority and this is a high priority。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 完整的数据集，数据集的完整列，这些几乎都被消除。顺便提一下，你还会注意到我们指定了一个 alpha，这是权重作为多目标的一个坏指标的程度。因此，你给了它两个目标。每当我的老板来找我说，好吧，这是一个高优先级，这是一个高优先级。
 - en: Okay， you've got a weighted which， which of those two high priorities is the
     highest high priority。 And this is what's going on there。 the this is very much
     telling the neural network that okay。Yes。 the regression， the regularization is
     important， but it's only1/10th as important as getting an accurate result。But
     nonetheless， this gets it to chopping off some of those， so it's pretty effective。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，你有一个加权，哪个高优先级的两个选项中优先级最高。这就是发生的事情。这实际上在告诉神经网络，好吧。是的，回归，正则化很重要，但它仅仅是获得准确结果的重要性的十分之一。然而，尽管如此，这仍然使它削减了一些，所以效果相当不错。
 - en: it is doing what alassso you're expecting it to do， it is removing unneeded
     columns。Now what's the effect of changing that？That alpha。You can see as you make
     alpha bigger and bigger。 the error gets considerably， considerably worse。 So that's
     basically what that is， is demonstrated。 So you don't want to make the alpha usually
     too big。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 它正在执行你期望它执行的任务，即去除不需要的列。改变这点有什么影响呢？那就是 alpha。你会发现，当你增大 alpha 时，误差会变得相当、相当糟糕。因此，这基本上就是所展示的。所以通常情况下，你不希望将
+    alpha 调得太大。
 - en: but it is it's yet another hyperparameter to tune。 So later。 when we get to
     the kle competition module， we're going to see how several ways that we can optimize
     all these hyperparameters。 because this is getting to be a lot of things to manage
     on a neural network。 you have regularization， How do you pick how many neurons，
     how many layers。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 但这又是一个超参数需要调整。所以稍后，当我们进入 kle 竞赛模块时，我们将看到几种优化所有这些超参数的方法。因为在神经网络中，这已经变得有很多需要管理的内容。你有正则化，如何选择多少个神经元，多少层。
 - en: all that kind of L2 Rige regression。 instead of taking an absolute value， you're
     squaring it。 And that makes it more， more round it。 So that causes。It to be less
     harsh on trying to eliminate individual columns altogether and rather just seeks
     to keep the weights down or the coefficients down。 This is L2 regression。 We'll
     go ahead and run it。 We're using ridge from second learn here I'm setting the
     alpha fairly aggressively。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 所有这些都是L2岭回归。与取绝对值不同，你在进行平方运算。这使得它更加平滑。因此，这导致它对试图完全消除单个列的影响减小，而是仅仅寻求保持权重或系数的降低。这就是L2回归。我们将继续运行它。我们在这里使用来自第二学习的岭回归，我将alpha设置得相当激进。
 - en: and you can see the results here。 It is definitely pushing some of the middle
     ones。 but not as intensely as the as the other ones。 And by the way， choosing
     the alpha of one。 largely。 I just play around with these to see which。Which results
     gave me the better one？In module。 in a later module， we're going to see how we
     can use Bayesian optimization to help help pick some of these。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以在这里看到结果。它确实推动了一些中间值，但没有其他值那么强烈。顺便说一下，选择alpha为1。基本上，我只是玩一下这些，看看哪个结果给了我更好的结果？在稍后的模块中，我们将看到如何使用贝叶斯优化来帮助选择这些。
 - en: There's also elastic net。 El net combines both of them。 So now you have an alpha。And
     the L1 ratio。 So this is allowing you to。You， you specify the。Alpha are the L2
     and then the L1 ratio。Balances that together， so you have two hyperparameters
     now to deal with for this one。If I run this。 you'd see it's it's somewhat similar
     to the to the L2。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 还有弹性网。弹性网结合了这两者。所以现在你有一个alpha和L1比率。这允许你，你可以指定。Alpha是L2，然后是L1比率。将它们平衡在一起，所以你现在有两个超参数需要处理。如果我运行这个，你会发现它在某种程度上类似于L2。
 - en: and that has to do with some of how I set the。The two ratios。 but this is yet
     another way that you can do this we'll talk more about when you'd use L1 and L2
     together later in this module once we get them up to neural networks。For now we've
@@ -136,8 +177,12 @@
     we're going to look at kfold cross validation which we will use to better understand
     if our regular is neural a sample predictions content changes often up to date
     and intelligence。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 这与我设置的两个比率有关。但这又是你可以做到的另一种方式，稍后我们会讨论在何时将L1和L2结合使用。当我们将它们引入神经网络时。现在我们只是看到了如何在线性回归中做到这些，以展示一些基础知识，因为我们无法查看神经网络的权重。权重太多了，并且观察这些相同的情况发生。在下一个视频中，我们将看看k折交叉验证，以帮助我们更好地理解我们的常规神经网络样本预测内容是否经常更新并保持智能。
 - en: '![](img/66334a38d34a532260ca2145f0ccb84a_3.png)'
+  id: totrans-20
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/66334a38d34a532260ca2145f0ccb84a_3.png)'

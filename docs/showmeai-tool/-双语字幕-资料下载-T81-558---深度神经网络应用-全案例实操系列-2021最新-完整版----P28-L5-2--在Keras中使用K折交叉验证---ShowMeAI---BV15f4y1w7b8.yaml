@@ -1,5 +1,6 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P28：L5.2- 在Keras中使用K折交叉验证
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
@@ -10,6 +11,7 @@
     of sample predictions that is predictions that are not in the training set for
     the entire training set by simply flipping through the training set and letting
     each piece of the data have a chance to be the validation and the training set。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
 - en: This will let us see how well our regularization and other techniques are combating
@@ -17,9 +19,11 @@
     bell next to it to be notified of every new video。 Cross validation often has
     different objectives that you're trying to actually accomplish。 The overall idea
     of kfold cross validation is that you're getting multiple。😊。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/73e33bd6247dfcb56b27a81fcdc55ac1_1.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
 - en: Training sets and validation sets so you can train the neural network on one
@@ -29,6 +33,7 @@
     for or every single element in the entire training set。 you can also use it to
     estimate a good number of epos to train a neural network for when used in conjunction
     with early stopping。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
 - en: which we've already seen。 Finally， you can use it to evaluate the effectiveness
@@ -38,6 +43,7 @@
     just a single set of cross validation folds to really evaluate if what you've
     done has has had any effect。We'll look at a process called bootstrapping to really
     evaluate the effectiveness of changes。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
 - en: This is how cross validation works。 You essentially take your data set and you
@@ -45,6 +51,7 @@
     of elements in each of these folds should be pretty much even。 just due to the
     fact that your data set won't break up evenly always into five folds。 or however
     many， you'll have a few extra elements in each fold。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
 - en: but largely they're pretty equal to each other。 However many folds you have。
@@ -52,6 +59,7 @@
     a neural network for each of the folds。 And this is some of the the complexity
     in what you do within those five neural networks。 And we'll talk about that as
     well。But essentially， what you do is each fold you pick。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
 - en: So each time through these same five folds and they're the same five folds in
@@ -59,6 +67,7 @@
     remaining。 you cancatenate folds 2，3，4 and 5 together。 and this is the training
     set。 and the highlighted one here。 That is the validation set。 So you train that
     and you get one model。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
 - en: You train this one， and you get another model。 This lets each of the folds have
@@ -67,6 +76,7 @@
     them together or you have out of sample predictions If that's what your objective
     one。 You can see that here， you basically do a prediction on each of these concatenate
     those predictions together。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
 - en: And now you have a out of fold prediction。😊，On the entire training set。 and
@@ -74,12 +84,14 @@
     part of your data set for validation， you're able to predict on the entire thing。
     Now。 if you want to bring these together， So say you you have trained this and
     now you have five neural networks。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
 - en: There's several ways that you get your final resulting neural network that you're
     going to use for new data that's outside of this all because you're probably creating
     your neural network because you want to train something on an ongoing basis if
     say you're a life insurance company。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
 - en: you've got historic data and you've created this you've trained it to try to
@@ -88,6 +100,7 @@
     work on。 So you need to figure out what are you doing Are you picking the best
     of these models。Are you averaging them all together or somehow， and these are
     some of the common ways that you do this。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
 - en: You could choose the model that has the highest validation score。 Now， one warning
@@ -95,6 +108,7 @@
     between these。 If one of these models consistently gets。worse score than the others。
     That means that there's some outliers that landed in this， in this validation
     set for say Model 4。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
 - en: So the more you see variances between these， that means that you have just a
@@ -102,6 +116,7 @@
     might be something that you need to consider in your data set。Maybe you want to
     eliminate those outliers， maybe you。 but at the very least you should be aware
     of them， new data coming in。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
 - en: so say your new life insurance applications， you could present that to all five
@@ -109,6 +124,7 @@
     don't insure this individual and 4 and 5 say yes， that majority win。 And you'd
     say no。 Or if it's giving you some sort of score or age that you think this individual
     will live to。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
 - en: then you average them altogether。 This is the one that I like probably the best。
@@ -116,6 +132,7 @@
     each of these。 And you keep track of how many epochs were needed for each full。
     So maybe it took 300 epochs to get this one trained to an optimal level an early
     stop to 50 here。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
 - en: 320 here， however， many。Epoet tu。You then average that together or you take
@@ -123,12 +140,14 @@
     that are tookck across all of these。And then you train on the entire training
     set。 You don't use a validation。 and you train for that number of epochs。 And
     then that becomes a single neural network that is hopefully。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
 - en: The the best of those， all you still have the you still have the random nature
     of the neural network。 so you probably want to train that one multiple times。And
     perhaps average those together。 Now。 let's see some examples。Of how to do cross
     validation。 So the objective here is going to be out of sample prediction。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
 - en: So we're going to do out of sample regression because the code looks a little
@@ -136,6 +155,7 @@
     in how you do the cross validation between classification and regression regression
     is definitely the more simple case because you just simply break it up into an
     even number of folds。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
 - en: And and you're done， but with classification， you need to make sure that breaking
@@ -143,12 +163,14 @@
     say between three things。 you want to make sure that the ratio of those three
     things is the same in each of those folds。 or you're introducing bias into your
     neural network。 And that's not a good thing。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
 - en: So out of sample kfold cross validation for regression。 Here we set up the data
     sloting that in。 We're using that same simple data set that we had before， we're
     going to be predicting the age。 like we've done before， because this is a regression
     problem。 All these other values are coming in to help us predict the age。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
 - en: Now we're going to assume 500 epochs for this。 We're not going to use early
@@ -156,6 +178,7 @@
     of out of sample prediction。 we can use early stopping。 So maybe we would do a
     whole separate run just to figure out how many epochs and we could adjust this
     to something more optimal。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
 - en: But for now， we're just we're just assuming 500 epochs so that we can get a
@@ -163,12 +186,14 @@
     be here we set up the cross validation。 We're usingsyit Learnar randomand state
     42。 that just means that the folds will be the same time the same each time。 Suffle
     is always a good idea。 If you're shuffling。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
 - en: you need a random state so that you can know that your folds are the same but
     your folds are different each time that you run this as you're trying experiments。
     it'll just make things inconsistent you won't notice that say fold one is consistently
     getting an outlier。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
 - en: It's okay to change this value。But this gives you at least some consistency
@@ -177,12 +202,14 @@
     each time you're creating a regressionion neural network because that is one。
     and that's mean squared error。Training with Adam。And you're fitting now with your
     validation set so that you can report a validation error as you。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
 - en: As you go through， our out of sample predictions， we're creating the out of
     sample Ys。 that's just so that we're getting the Y's in the same order that our
     folds came in so that we can do a final evaluation and the out of sample predictions
     we're simply appending them together。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
 - en: So as you do each one of these， you'll make out a sample predictions and you
@@ -191,18 +218,21 @@
     the overall score finally comes at the end。 You're going to take all of these
     out of sample Ys that you've grouped。 concatenate them together， the out of sample
     predictions。 and you're going to compare the Ys。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
 - en: which were the values that we wanted it to be with what the predictions were。
     And we're going to report a final out of sample score of whatever the difference
     between these two happens to be。 And that's your estimate of how good your your
     neural network actually what。 we can also write out the out of sample predictions。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
 - en: If we want them for some further analysis to write them as a Cv file。 Now。 when
     we classify we have to do something called kfold cross validation。 This is just
     because we don't want to say the balance of those of the items in each。 So we're
     going to use the same。 go ahead and run that loads the data set。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
 - en: And now we're trying to predict the products。 So whatever that balance of products
@@ -210,24 +240,28 @@
     because that's your ground truth。 If the neural network is very， very unsure based
     on your data。 it's always going to say product A had 20%。 It's going to say， yeah，
     20% probability。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
 - en: it's a if it has no clue whatsoever based on the input data。 maybe the input
     data was particularly hard in that case。 So if you're training one neural network
     and the ground truth percent difference。 Class A is much bigger and fold a fold1。
     then class A is in full2。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
 - en: that's going to mess with that ground truth and that will mess with the accuracy
     of your neural network。So what we do is stratified kfold。 So we stratified kfold
     sampling here。 We're going to have our five folds。 We're going to shuffle and
     hair a random state。 That'll looks the same。 That just drops in。Same as as kfold。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
 - en: we're going to keep the out of sample wise in predictions just like before。
     but this part's a little different。We're doing the split。 So when we do the split
     in the previous one， we just pass in X。 But since we want to balance on the Y's，
     we have to pass in the y。 We have to pass in the class。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
 - en: So it needs to know what class we're trying to balance on。 And we pass in the
@@ -235,6 +269,7 @@
     variables for this。 It's not designed to work on dummy variables。 It needs a class
     like three like ABC or whatever those products are。 And it uses that to make sure
     that the balance is the same in each of those folds。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
 - en: So that's very important。 You could just put in Kfold here， just like you did
@@ -243,6 +278,7 @@
     of your neural network at least a little bit。 We use categorical cross entropy
     and softmax and a output neurons equal to the number of classes that we have because
     we are doing a classification neural network。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
 - en: Everything else is the same as regression。We report the individual accuracy
@@ -250,12 +286,14 @@
     Then we print the final accuracy and we're we're basically done with that。 Now
     you can run this and it begins to it'll go through each of the folds and it'll
     report a fold score and then ultimately the final accuracy for this。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
 - en: So the first accuracy was about 66% rounded。 And now you can see that we have
     essentially gone through all the five folds and we produce a final accuracy score
     of。66%， which is pretty， pretty similar range to these。 The most difficult fold
     was the fifth one。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
 - en: So there might be some sort of an outlier or something in that one that is making
@@ -263,6 +301,7 @@
     network。 Ily， you'd want to run that again。See if that one is consistently hard。
     And again， that's why you want to use that random seed so that the folds are consistent。
     Finally， you can trade with a cross validation and a holdout set。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
 - en: This is where you set out a holdout before you even do the five folds。 and that
@@ -270,6 +309,7 @@
     than the five folds that you're dealing with。If we run this。This is also regression。
     We're trying to predict the age。 We can then run it and we I'll get it running
     so that we can see that while I'm doing that。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
 - en: you have the you set it for the five folds just like before and you loop through
@@ -277,22 +317,30 @@
     atom update rule。 It's really pretty similar。 The folds are all the same。 It's
     just you're keeping this final holdout set that you're going to do the predictions
     on and you're going to report a root mean square on that。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 你设置五个折叠，就像之前一样，并且循环整个过程。1回归。你正在训练均方误差，使用原子更新规则。这其实非常相似。所有折叠都是一样的。只不过你保留了这个最终的保留集，以便进行预测，并将报告一个均方根。
 - en: So you'll see a different one between the two。 We run through all of this。 And
     we will get our final holdout value。 this is training just like before。 except
     that holdout set is simply not in there。 And here's our final holdout notice that
     it is worse than the other ones。 Now so it seems like we're doing all this extra
     effort just to get a worse score。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以你会看到两者之间的不同。我们会走过这一切。我们将得到最终的保留值，这就像以前的训练，只是保留集不在其中。这里是我们的最终保留，注意它比其他的更差。现在看来，我们似乎付出了额外的努力，只是为了得到一个更糟的分数。
 - en: But this is a more accurate score。s no there's less overfitting in that。 Thank
     you for watching this video。 in the next video。 we're going to see how to actually
     use L1 and L2。 and also a combination of the two。 in Cars。 This content changes
     often。 So subscribe to the channel to stay up to date on this course and other
     topics and artificial intelligence。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 但这是一个更准确的评分。这里的过拟合更少。感谢您观看这个视频。在下一个视频中，我们将看看如何实际使用L1和L2，以及它们的组合。这些内容经常变化，因此请订阅频道以随时了解本课程和其他主题及人工智能。
 - en: '![](img/73e33bd6247dfcb56b27a81fcdc55ac1_3.png)'
+  id: totrans-43
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/73e33bd6247dfcb56b27a81fcdc55ac1_3.png)'

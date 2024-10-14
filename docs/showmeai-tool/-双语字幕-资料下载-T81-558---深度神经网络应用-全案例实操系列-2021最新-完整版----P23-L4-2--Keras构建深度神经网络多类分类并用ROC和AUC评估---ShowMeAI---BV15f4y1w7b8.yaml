@@ -1,60 +1,85 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P23：L4.2- Keras构建深度神经网络多类分类并用ROC和AUC评估
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P23：L4.2- Keras构建深度神经网络多类分类并用ROC和AUC评估
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeff Heaton， welcomelcome to applications of deep neural networks
     with Washington University In this video I'm going to show you how to do both
     binary class and multi class classification。Neurural networks with Kias for the
     latest on my AI course and projects。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是杰夫·希顿，欢迎来到华盛顿大学的深度神经网络应用。在这个视频中，我将向你展示如何进行二分类和多分类。使用Keras的神经网络了解我的AI课程和项目的最新动态。
 - en: click subscribe and the bell next to it to be notified of every new video In
     the next two videos。 we're going to look at classification and regression。 This
     video focuses on classification。 We subdivide this into two parts。 There's binary
     classification。 and then there's multiclass classification。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 点击订阅和旁边的铃铛以接收接下来两个视频中的每个新视频通知。在接下来的两个视频中，我们将查看分类和回归。本视频专注于分类。我们将其细分为两个部分。有二分类，还有多类分类。
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_1.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_1.png)'
 - en: We'll start by looking at binary classification， binary classification。![](img/0c3de78b0d0924709e45c8de93aa7c5d_3.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将首先查看二分类，二分类。![](img/0c3de78b0d0924709e45c8de93aa7c5d_3.png)
 - en: We're going to look at rock charts and see how to measure false positives， false
     negatives。 and look at the special ways that we evaluate binary classification。![](img/0c3de78b0d0924709e45c8de93aa7c5d_5.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将查看摇滚图表，看看如何测量假阳性和假阴性，并探讨我们评估二分类的特殊方法。![](img/0c3de78b0d0924709e45c8de93aa7c5d_5.png)
 - en: Very often you can think of this as a medical test。 so we're going to look at
     the Wisconsin breastreast cancer database， it has measurements of tumors。![](img/0c3de78b0d0924709e45c8de93aa7c5d_7.png)
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以将这视为一个医疗测试。因此，我们将查看威斯康星乳腺癌数据库，它包含肿瘤的测量数据。![](img/0c3de78b0d0924709e45c8de93aa7c5d_7.png)
 - en: And then a target column that says if they're malignant or benign， these are
     all malignant。 but there's also bees， which are benign。 We're going to start by
     looking at how we would measure the success of a model based on this with ature
     Now you could just do accuracy you could say I am going to calculate have the
     neural network predict malignant or benign for each of these。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 还有一个目标列，说明它们是恶性还是良性，这些都是恶性的，但也有良性的。我们将首先查看如何根据此来衡量模型的成功。你可以只计算准确率，计算神经网络如何为每个样本预测恶性或良性。
 - en: and it will simply come back with a percent。 It got 90% correct or it got 70%
     correct。 However。 that's only one side of the of the coin。 You might care how
     many times it was wrong when it said somebody had a cancerous tumor or you might
     care how many times it was wrong when it said somebody did not because those are
     two completely different things and you may want to calibrate differently。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 它会简单地返回一个百分比。它得到了90%的正确率，或者得到了70%的正确率。然而，这只是硬币的一面。你可能关心的是它错误地说某人有癌症肿瘤的次数，或者你可能关心的是它错误地说某人没有癌症的次数，因为这两者是完全不同的事情，你可能希望进行不同的校准。
 - en: It may be much worse for somebody who falsely was。![](img/0c3de78b0d0924709e45c8de93aa7c5d_9.png)
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于一个被错误地认为有疾病的人来说，这可能会更糟。![](img/0c3de78b0d0924709e45c8de93aa7c5d_9.png)
 - en: Told they did not have cancer to forego medical treatment。 then simply doing
     extra medical treatment on somebody who did not have a disease。Or the flip could
     be true if the treatment is particularly horrendous for the individual。 so for
     rock curves， we look at false positives and false negatives。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 被告知没有癌症以放弃医疗治疗，然后在一个没有疾病的人身上进行额外医疗治疗。或者反之，如果治疗对个人来说特别可怕。对于摇滚曲线，我们查看假阳性和假阴性。
 - en: a false positive is when something came back positive。![](img/0c3de78b0d0924709e45c8de93aa7c5d_11.png)
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 假阳性是指结果为阳性时。![](img/0c3de78b0d0924709e45c8de93aa7c5d_11.png)
 - en: But it was not false negative is when something came back negative。 but it was
     not then there's also the true positives where the test truly identified positive
     or true negative where it truly identified negative true positive where it truly
@@ -66,17 +91,25 @@
     the overall accuracy typically for some of these we need to define a cutoff and
     this is where rock charts come and come into play a cutoff might be because most
     of these most of these tests will come back with some sort of number。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 但假阴性并不是指某个结果返回为阴性。也就是说，真正的阳性是测试真正识别出的阳性，真正的阴性是测试真正识别出的阴性，还有其他名称，比如第一类错误和第二类错误，以及敏感性和特异性。敏感性是模型正确预测你确实有病或阳性的能力，特异性是模型准确检测你没有病的能力，这两者合在一起就是整体准确性。通常对于这些，我们需要定义一个临界值，这就是ROC曲线发挥作用的地方，临界值可能是因为大多数测试都会返回某种数值。
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_13.png)'
+  id: totrans-13
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_13.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_14.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_14.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_15.png)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_15.png)'
 - en: This is the output from your from your output neuron maybe zero means it's somewhat
     on the fence。 maybe a high number means that you are positive， maybe a negative
     number means your negative and you have to decide where you're going cut that
@@ -89,38 +122,50 @@
     the output of your neural network might look like maybe this neural network outputs
     zero if it's really not that sure if your negative or positive for the condition
     and。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是你输出神经元的输出，零意味着你可能处于一个不确定的状态；高数值可能意味着你是阳性，负数可能意味着你是阴性。你必须决定在哪里切断这一点，你的切断可能不只是零，也可能不均匀。如果你想偏向假阳性或假阴性，显然你都不希望有，但如果必须选择，你会选择假阳性还是假阴性？然后你可以将阈值优化为敏感性或特异性。接下来，我将运行这一段代码，这段代码并不重要，只是用于显示这个图表。这个图表展示了你的神经网络的输出可能是什么样子，也许当神经网络输出零时，它并不确定你是阴性还是阳性。
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_17.png)'
+  id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_17.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_18.png)'
+  id: totrans-18
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_18.png)'
 - en: Puts a negative value if if you're more negative so you don't have the condition
     and it outputs positive if you more likely do have the condition now these lines
     specify where you might set your cut point or your threshold when you move that
     line you're tuning the sensitive of your model that is how you are balancing between
     false alarms and it actually catching cases where where it truly was positive
     if you put your line here。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你更偏向于阴性，系统会输出一个负值，表示你没有这种情况；如果你更可能是阳性，系统会输出正值。现在这些线指明了你可能设置的切点或阈值，当你移动这条线时，你是在调整模型的敏感度，即在假警报和真正阳性案例之间进行平衡。
 - en: you're making this very sensitive if you set your line here you're making it
     very specific the reason that is if you make it sensitive。 then you're tuning
     towards false you're tuning towards getting correct positive result So the entire
     positive curve is over here if you're tuning towards specific then the entire
     negative curve is over here obviously you probably don't want to put it either
     here here you want it somewhere in the middle。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你将线设置在这里，敏感度就会很高；如果你将线设置在这里，特异性就会很高。原因在于，如果你提高敏感性，那么你会倾向于产生假阳性；而如果你倾向于提高特异性，整个负曲线就会偏向这边。显然，你可能不想将其设置在这两者之间，而是想在中间的某个地方。
 - en: Completely balanced is is right here。 So that's an important thing to realize
     on this。 You can get a perfect sensitivity or a perfect specificity， but you do
     very。😊。Bad results to the to the other side of the coin， if you want to be sure
     that your that your model is completely sensitive and picks up every case where
     the person would have the disease simply classify everybody as positive you'll
     never miss anybody and the same thing for negative。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 完全平衡就在这里。所以这是一个重要的认识。你可以得到完美的敏感性或完美的特异性，但你会有很糟糕的结果。如果你想确保你的模型完全敏感，能识别每一个有疾病的人，只需将每个人都分类为阳性，这样你就不会遗漏任何人，阴性情况也是如此。
 - en: but obviously that's not particularly useful， but that shows the extremes of
     these two。Of these two ranges by the way the aes of these the X is the output
     from the neural network or the test and that's how you read the test as far as
@@ -128,65 +173,98 @@
     of these categories they're not always normally distributed like that but it makes
     a diagram look good and this is a classic diagram that you see in statistics by
     the way。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 但显然这并不是特别有用，但它展示了这两者的极端。顺便说一下，这两个范围的 X 是来自神经网络或测试的输出，这就是你如何读取测试的结果是阴性还是阳性，Y
+    只是我们在这些类别中有多少个值，它们并不总是正态分布的，但这样可以让图表看起来不错，顺便说一下，这是你在统计学中看到的经典图表。
 - en: if you want to read more or see more about this is is a great Khan Academy video
     that that my diagram here is very much based on this is also a common interview
     question in machine learning data science we give you that diagram and we ask
     you to say okay which of these two lines sometimes will not have the middle line。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你想阅读更多或了解更多，这里有一个很棒的 Khan Academy 视频，我的图表很大程度上是基于这个。这也是机器学习和数据科学中常见的面试问题，我们会给你这个图表，问你这两条线的区别，有时中间的线会缺失。
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_20.png)'
+  id: totrans-24
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_20.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_21.png)'
+  id: totrans-25
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_21.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_22.png)'
+  id: totrans-26
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_22.png)'
 - en: Is a more sensitive versus a more specific test。 So now let's go ahead and we're
     going to load in the binary data for this test。 I'm going to run this section
     that simply loads in the data This is important to see down here where we're preparing
     X and Y's。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个更敏感与更特异的测试。现在我们继续，加载这个测试的二元数据。我将运行这个部分，简单地加载数据。重要的是要看到这里我们正在准备 X 和 Y。
 - en: notice how I do the Y's。 This is how you do it for a binary classification。
     I'm mapping the malignance to one and the benigns to0。 Now we're going to define
     two functions that we're going to use later。 I'm not going to go too much into
     these functions or more along the lines of plotting。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意我如何处理 Y。这是进行二元分类的方法。我将恶性肿瘤标记为 1，良性肿瘤标记为 0。现在我们将定义两个函数，稍后会用到。我不会过多解释这些函数或绘图的内容。
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_24.png)'
+  id: totrans-29
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_24.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_25.png)'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_25.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_26.png)'
+  id: totrans-31
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_26.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_27.png)'
+  id: totrans-32
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_27.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_28.png)'
+  id: totrans-33
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_28.png)'
 - en: I can do an entire course on plotting， but this is going to basically draw a
     rock chart and draw a confusion matrix Both of these are very useful for classification
     neural networks Now let's look at a rock chart example we're going to have to
     train a neural network for binary classification。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 我可以做一个完整的绘图课程，但这将基本上绘制一个 ROC 图和混淆矩阵。这两者对分类神经网络都非常有用。现在我们来看一个 ROC 图的例子，我们将训练一个用于二元分类的神经网络。
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_30.png)'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_30.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_31.png)'
+  id: totrans-36
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_31.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_32.png)'
+  id: totrans-37
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_32.png)'
 - en: Now for binary classification， we use binary cross entropy。 very important and
     we want to have just the one output Norra like like we've had before for for regression
     but this is not a regression。 It looks like a regression and it' it's definitely
@@ -194,49 +272,72 @@
     binary outcome and don't do dummy variables。 you don't want to do two so that's
     why up here for the x we did not do dummy or for the y I'm sorry we did not do
     dummies。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于二分类，我们使用二元交叉熵。这非常重要，我们只想要一个输出，像之前那样的回归并不是这种情况。它看起来像回归，并且确实有一些相似之处，但这仅在处理二元结果的分类时使用，不要使用虚拟变量。你不想做两个，所以这里在X上我们没有使用虚拟变量，对不起，Y上我们没有使用虚拟变量。
 - en: we simply have a column matrix of zeros and ones。 we're going to go ahead and
     run this we'll use early stopping All right we have early stopped and we'll see
     more about cross validation in the next module it's a way to be able to get out
     of sample or results that are not in the training set across the entire data set
     So let's get our predictions and plot the rock chart All right this is the rock
     chart so this。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们简单地有一个由零和一组成的列矩阵。我们将继续运行这个模型，使用早停法。好的，我们已经早停了，我们将在下一个模块中看到更多关于交叉验证的内容，这是获取训练集之外的样本结果的一种方法，适用于整个数据集。让我们获取我们的预测并绘制
+    ROC 图表。好的，这就是 ROC 图表。
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_34.png)'
+  id: totrans-40
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_34.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_35.png)'
+  id: totrans-41
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_35.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_36.png)'
+  id: totrans-42
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_36.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_37.png)'
+  id: totrans-43
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_37.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_38.png)'
+  id: totrans-44
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_38.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_39.png)'
+  id: totrans-45
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_39.png)'
 - en: Showing basically how your model is performing irregardless of where you set
     that threshold and looking at the rock chart can。Some let show you the the overall
     landscape of how you're predicting on false positives because you've got the false
     positive rate and the true positive rate。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 这基本上展示了你的模型如何表现，无论你设置的阈值在哪里，查看 ROC 图表可以让你看到关于假阳性率和真实阳性率的整体情况。
 - en: Where you set the threshold at different value now what you usually want to
     look for in a rock chart is how close this is down to this dashed line。 the dashed
     line just shows random predictions。![](img/0c3de78b0d0924709e45c8de93aa7c5d_41.png)
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，你可以设置不同值的阈值。你通常想在 ROC 图表中查看的是，这个值与虚线有多接近。虚线仅表示随机预测。![](img/0c3de78b0d0924709e45c8de93aa7c5d_41.png)
 - en: So that would be a very inefficient model if you're below this and that can
     happen。 your model is even worse than random predictions and that's really bad。![](img/0c3de78b0d0924709e45c8de93aa7c5d_43.png)
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你的模型低于这个标准，那将是一个非常低效的模型，这种情况是可能发生的。你的模型甚至比随机预测还要差，这真的很糟糕。![](img/0c3de78b0d0924709e45c8de93aa7c5d_43.png)
 - en: The higher it is to this upper point here， the more accurate the better your
     model is you measure the area under the curve if the area under the curve is the
     whole thing then it's 1。0。 So this area under the curve A you see it's typically
@@ -244,151 +345,213 @@
     99% I think on accuracy and sensitivity and specificity both but this is a relatively
     relatively easy and quick to train data set for breast cancer So that is binary
     class classification。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 越接近这个上部点，模型的准确性越高。你可以通过测量曲线下面积来评估，如果曲线下面积是整个图形，那么就是1.0。所以，曲线下面积通常被称为A，它是1.0，这意味着一个几乎完美的模型。这不是，它的准确率和敏感性以及特异性都在99%左右，但这是一个相对容易且快速训练的乳腺癌数据集，因此这是二分类。
 - en: let's look at multiclass classification here we're going to use that simple
     data set that that I've given before。 this is a more difficult data set， so it
     looks a little more interesting because it gets things wrong Here we're going
     to build a categorical cross entropy So this is very important。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们来看一下多类分类，这里我们将使用之前给过的简单数据集。这是一个更难的数据集，因此看起来更有趣，因为它会出错。我们将在这里构建一个分类交叉熵，这非常重要。
 - en: This is one of the most common questions that students ask me about all the
     time in previous semesters。![](img/0c3de78b0d0924709e45c8de93aa7c5d_45.png)
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我在之前的学期中，学生们最常问我的问题之一。![](img/0c3de78b0d0924709e45c8de93aa7c5d_45.png)
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_46.png)'
+  id: totrans-52
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_46.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_47.png)'
+  id: totrans-53
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_47.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_48.png)'
+  id: totrans-54
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_48.png)'
 - en: They'll set up a classification neural network when the data is regression or
     they'll have a multiclass classification like this and they'll use binary cross
     entropy。 you want to use categorical cross entropy because you have a multiclass
     classification problem here。
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 当数据是回归时，他们会设置分类神经网络，或者像这样进行多类分类，并使用二元交叉熵。你想使用分类交叉熵，因为这里是一个多类分类问题。
 - en: And you don't want to have one output neuron you want to have as many output
     neurons as you have classes。 so now let's let's go ahead and run this， it'll train
     as I recall this gets about a 70% accuracy a little it actually did a little bit
     above so that's that's that's cool it has to do with the random weights accuracy
     Yeah。
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 你不想只有一个输出神经元，而是想要与类别数量相同的输出神经元。那么现在让我们开始运行这个，按我的记忆，它的准确率大约是70%，其实稍微高一点，所以这很酷，这与随机权重的准确率有关。
 - en: it's around 70% is usually what this gets Okay so it trains and the accuracy
     for this is usually around 70% and you can see it's it's more or less there。![](img/0c3de78b0d0924709e45c8de93aa7c5d_50.png)
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个准确率通常在70%左右，所以它的训练结果通常也是在70%左右，你可以看到，它差不多在这个水平。![](img/0c3de78b0d0924709e45c8de93aa7c5d_50.png)
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_51.png)'
+  id: totrans-58
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_51.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_52.png)'
+  id: totrans-59
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_52.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_53.png)'
+  id: totrans-60
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_53.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_54.png)'
+  id: totrans-61
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_54.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_55.png)'
+  id: totrans-62
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_55.png)'
 - en: At early stops， we'll calculate the accuracy on that。 which will be the same
     value that we had up there。![](img/0c3de78b0d0924709e45c8de93aa7c5d_57.png)
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 在早期停止时，我们将计算其准确率，这将与我们上面得到的值相同。![](img/0c3de78b0d0924709e45c8de93aa7c5d_57.png)
 - en: Accuracy is 70%。 We'll go ahead and we'll calculate a log loss。 Lo loss is different
     than accuracy。 Sometimes the output from accuracy is similar to log loss。 However。
     the range is quite different accuracy is  zero to1。 log loss is0 to usually around
     three or four is about the highest I've seen these。
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 准确率是70%。我们将继续计算对数损失。对数损失与准确率不同。有时准确率的输出与对数损失相似。然而，范围是相当不同的，准确率的范围是从0到1，而对数损失的范围通常在0到三或四之间，这是我见过的最高值。
 - en: I've never really looked at where the actual upper limit was was for that if
     you're above about one or two and log loss' you're in trouble。 So let's calculate，
     let's see how we would actually calculate the log loss。 we'll do our prediction
     here， and we'll use nuumpy to to calculate it。 The log loss is 0。74。 which is
     not horrible， but it's not perfect， perfectfect as  zero， of course。
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 我从未真正看过实际的上限在哪里，如果对数损失超过一或二，你就有麻烦了。那么我们来计算一下，看看我们如何实际计算对数损失。我们将在这里做预测，并使用numpy来计算。对数损失是0.74，这并不好，但也不是完美的，完美的当然是零。
 - en: that's how you calculate it。 that's pretty much the same call almost as accuracy
     except you're doing log loss。 You're passing in the Ys that you know are correct
     in your predictions and it calculates it for you。![](img/0c3de78b0d0924709e45c8de93aa7c5d_59.png)
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是你如何计算它。几乎与准确率的调用方式相同，只不过你在做对数损失。你将知道是正确的Y值和你的预测传递给它，它会为你计算。![](img/0c3de78b0d0924709e45c8de93aa7c5d_59.png)
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_60.png)'
+  id: totrans-67
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_60.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_61.png)'
+  id: totrans-68
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_61.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_62.png)'
+  id: totrans-69
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_62.png)'
 - en: What is different about log loss， though， than accuracy is it takes into account
     confident the neural network is in wrong answer。 So here are the outputs from
     the predictions。 So each row is one prediction。 Each column is one class that
     it was trying to predict on。 We can look at the bottom one because I multiplied
     it by 100。
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 不同于准确率，**对数损失**考虑了神经网络对错误答案的自信程度。以下是预测的输出。每一行代表一个预测，每一列代表一个它尝试预测的类别。我们可以查看底部的结果，因为我将其乘以了100。
 - en: And this is essentially the predictions。 So it's saying that with 70% likelihood。
     it is the third class， not 100% sure it's it's also thinking it might be the second
     or the fourth one as well。 So the way that log loss works is we tally up a bunch
     of log values for each of these。 And we look at so here in this case， if this
     was the correct value， it is going to get the log of 0。
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 而这基本上就是预测。因此它表示以70%的可能性，它是第三类，并不是100%确定，它也在考虑可能是第二类或第四类。所以对数损失的工作方式是我们为每个值统计一堆对数值。这里在这种情况下，如果这是正确值，它将获得0的对数。
 - en: 7 added to。The accumulator that it's going to eventually take the average of
     the negative of that log is the logs are negative。 So if you think about it， if
     this was in the training， this would have been a one。 we would have put a one
     here and all these other zeros， that would have been perfect。 So a log of one
     is0 the problem with that though if you're wrong。
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 7添加到累加器，最终会取那个对数负值的平均值，因为对数是负的。所以如果你考虑一下，如果这是在训练中，这将会是1。我们会在这里放一个1，所有其他都是0，那将是完美的。所以1的对数是0，问题在于，如果你错误了。
 - en: And if you're wrong with absolute certainty So if if the first class would have
     been correct。 we would have added the log of0 log of0 is negative infinity so
     you'd be infinitely bad score so it punishes you greatly for overconfidence and
     a wrong value。
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你绝对确定错误。所以如果第一类是正确的，我们将会添加0的对数，0的对数是负无穷大，因此你的得分会是无穷坏的，所以它会因为过于自信和错误值而大幅惩罚你。
 - en: That is why internally when this is calculated the zeros。 it's going to move
     them up a little bit past zero so that your log your score is going to get decimated。
     but it's not going to become an invalid number that's essentially all there is
     to calculating it。 you take the correct one and add the negative of that particular
     log so。Closer you get to one。
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是为什么在内部计算时，零会被稍微提升到零以上，以便你的对数得分会被大幅削减。但它不会变成无效数字，这就是计算的全部内容。你取正确的值并添加那个特定对数的负值，因此，越接近1。
 - en: the closer your log addition is going to be to zero and zero is good。 so that's
     how it punishes you for being overly confident。 but accuracy is very harsh because
     there's no partial credit with accuracy if this one can if this next one over
     here the fourth one was the correct answer and you pick this one inaccur you'd
     get no points for this and log loss。 at least you get some points for this because
     you would add the log of 0。
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 对数加法越接近零越好，因此这就是它如何惩罚你过于自信。但准确性是非常苛刻的，因为在准确性上没有部分得分。如果这一项可以，如果这一项，即第四项是正确答案而你选择了这一项不准确，你将得不到任何分数，而对于对数损失，至少你可以得到一些分数，因为你会添加0的对数。
 - en: 22 the negative log of that Here's the more formal mathematical equation for
     how to calculate thatEssential what's happening is all the values going across
     the entire data set so that's the dividing it by n。 the negative accounts for
     the negativeness of log functions。
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 22的负对数这是计算它的更正式的数学方程，基本上发生的事情是所有值都遍历整个数据集，所以是除以n。负值抵消了对数函数的负性。
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_64.png)'
+  id: totrans-77
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_64.png)'
 - en: And then we're essentially looking at using the Y coefficients。 so the y's are
     always going to be zero or1， so the correct one is going to have a one coefficient
     and all the others is going to have a zero coefficient and cancel out so you basically
     end up with just one of these and the rest of these canceling out and that does
     the same thing is effectively taking the log of the correct value。
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们基本上是看Y系数。因此，y总是会是0或1，所以正确的系数会是1，而其他的系数会是0并且抵消掉，所以你基本上只会剩下其中一个，其他的都会抵消，这实际上就等于取了正确值的对数。
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_66.png)'
+  id: totrans-79
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_66.png)'
 - en: Again， this function is not really needed。 I mean， you don't need to pay attention
     to the code。 We're interested in the graph of the log， so you can see that if
     you're close to if if you're predicting zero on the correct answer it falls off
@@ -400,54 +563,80 @@
     error evaluation So now let's look at a confusion matrix we previously defined
     this confusion matrix function here so we're going to plot it now what you want
     to see in a confusion matrix is。
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 再次强调，这个函数其实并不需要。我的意思是，你不需要关注代码。我们对对数的图感兴趣，所以你可以看到如果你接近于正确答案的零，它会非常、非常快地下降，所以你可以看到一个负值或四，我们会取绝对值。一个四的对数损失其实非常糟糕，你几乎要到负二的下降点，对不起，二和小于一的值是更理想的对数结果，当然你不能超过一的正确性。所以这是我们用于误差评估的对数函数的整个范围。现在让我们看看混淆矩阵，我们之前定义了这个混淆矩阵函数，所以我们现在要绘制它。你希望在混淆矩阵中看到的是。
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_68.png)'
+  id: totrans-81
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_68.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_69.png)'
+  id: totrans-82
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_69.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_70.png)'
+  id: totrans-83
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_70.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_71.png)'
+  id: totrans-84
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_71.png)'
 - en: Strong diagonal so this the diagonal is the cases where it's getting them correct
     You can see this on the on the confusion matrix down here this is the true label
     and this is the predicted label where your' and it's a little you usually want
     to look at the normalized one this other one's just counts but this is the normalized
     one so this shows you some potential some potential problems with this if the
     true label is a and it predicted a then that's that's a good thing。
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 强对角线，这条对角线是正确分类的情况。你可以在下方的混淆矩阵中看到这一点，这是真实标签，这个是预测标签。通常你希望查看归一化的那个，另一个只是计数，而这是归一化的，这显示了一些潜在问题。如果真实标签是A，预测为A，那就是好事。
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_73.png)'
+  id: totrans-86
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_73.png)'
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_74.png)'
+  id: totrans-87
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_74.png)'
 - en: However， G， for some reason， was being classified。Incorrectly is a a fair amount
     and you can also see that the predicted values EF and G have considerable problem
     here。 so these are some of the things that you would want to look at as you try
     to optimize this model and your your feature engineering to try to move some of
     this over to here and that's a confusion matrix confusion matrixes。
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，G由于某种原因，被错误分类的情况相当多，你还可以看到预测值EF和G在这里存在相当大的问题。这些是你在优化模型和特征工程时想要关注的一些问题，试图将一些内容移动到这里，这就是混淆矩阵。
 - en: they can be used for binary classification if that's the case then it's just
     going to be a two by two。![](img/0c3de78b0d0924709e45c8de93aa7c5d_76.png)
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果是二元分类，它们可以使用，那就是一个二乘二的情况。![](img/0c3de78b0d0924709e45c8de93aa7c5d_76.png)
 - en: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_77.png)'
+  id: totrans-90
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0c3de78b0d0924709e45c8de93aa7c5d_77.png)'
 - en: But if you've got multiple classes， then this a good model or a good visualization
     to look at for your model。 Thank you for watching this video。 In the next part。
     we're going to see how to do the same thing with a regression neural network。![](img/0c3de78b0d0924709e45c8de93aa7c5d_79.png)
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是，如果你有多个类别，那么这是一个好的模型或可视化，可以查看你的模型。感谢观看这个视频。在下一部分，我们将看到如何用回归神经网络做同样的事情。![](img/0c3de78b0d0924709e45c8de93aa7c5d_79.png)
 - en: This content changes often， so subscribe to the channel to stay up to date on
     this course and other topics in artificial intelligence。
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个内容经常变化，所以请订阅频道，以便及时了解这个课程和人工智能的其他主题。
