@@ -1,0 +1,13 @@
+# 【双语字幕+资料下载】更简单的绘图工具包 Seaborn，一行代码做到 Python 可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ - P7：L7- KDE 图 - ShowMeAI - BV1wZ4y1S7Jc
+
+![](img/75d8e88ac6587077beed206991430e8d_0.png)
+
+Joint plot so I've been talking about KDE plots so if you want to generate one just completely on it your own。
+
+ you can do that just by saying KDE plot and crash and a frame and this is going to let's say we wanted to find out about crashes in regards to just alcohol usage you can see there we go and I'll get more into KDE plots because they are involved very often in other plots that you're going。
+
+
+
+![](img/75d8e88ac6587077beed206991430e8d_2.png)
+
+![](img/75d8e88ac6587077beed206991430e8d_3.png)

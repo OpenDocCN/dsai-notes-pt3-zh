@@ -1,0 +1,39 @@
+# 【双语字幕+资料下载】更简单的绘图工具包 Seaborn，一行代码做到 Python 可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ - P8：L8- Pair对图 - ShowMeAI - BV1wZ4y1S7Jc
+
+MakeAnd now I want to talk about pair plots again， still in the distribution area of plots and basically a pair plot is going to plot the relationships across the entire data frames numerical values so let's create one we can say pair plot and。
+
+Cash data frame and look at all that information so tons of information and you can see here on the left side we have our totals。
+
+ we have speeding data we're also going to have data on alcohol and we're going to be comparing these columns and rows and how all of these different pieces of data are all going to play into each other in regards to generating these both on the diagonal histograms and then scatter plots everywhere else。
+
+ but there are tons of things we can change here let's go and load another piece of data。
+
+ let's say we want to get our tips data frame and again you're going to load this new data with load。
+
+
+
+![](img/4a9e49a89e73c905344cc66b813032a6_1.png)
+
+![](img/4a9e49a89e73c905344cc66b813032a6_2.png)
+
+![](img/4a9e49a89e73c905344cc66b813032a6_3.png)
+
+![](img/4a9e49a89e73c905344cc66b813032a6_4.png)
+
+![](img/4a9e49a89e73c905344cc66b813032a6_5.png)
+
+Data set and tips and。Just to show you what is in the tips data frame that we have here。
+
+ Basically we're gonna to have our total bill， the tip amounts who tips $1。
+
+1 I don't know there is whether it's male or female。
+
+ whether they smoke or not the day in which this purchase was made and whether it was dinner or lunch and the size of the party I believe that is what that is referring to So just to work with some different data and mix things up here let's create another plot here So let's get rid of this and I'm going say SNS dot pair plot and we're going to be using the tips data frame and with you you can pass in categorical data and the charts will be colorized based off of that categorical data So let's say we want to get data this time in regards to the sex。
+
+You can also come in and I'm gonna get more into styling with pallets and so forth very soon。
+
+ but this is a matplot lib palette called blues that I've used in previous tutorials and you can see here now everything's using the blue styling and you can also see that the light color dots are for male and the dark colors are for female and you can see the plots that we're able to make there and basically it's total be tip and size and total bill tip and size is the information that we're pulling up here and I'll just talk about styling here in a second so we can change these font sizes and so forth and whenever we get into grids I'm going show you how to make these plots and then put different graphs on the top and down the diagonal and on the bottom of our grid of plots but now I want to talk about rug。
+
+
+
+![](img/4a9e49a89e73c905344cc66b813032a6_7.png)
