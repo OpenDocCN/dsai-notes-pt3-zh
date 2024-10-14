@@ -1,8 +1,11 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P63：L12.2- 用于游戏学习的Q-Learning算法简介
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P63：L12.2- 用于游戏学习的Q-Learning算法简介
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeff Hayton。 welcome to applications of deep neural networks with
     Washington University。 In this video， we're going to build on using G。 We saw
     open AI gym in the previous video。 Now we're going to apply Q learning to that。
@@ -11,34 +14,49 @@
     work on。 Then we're going to continue this and show how deep neural network can
     become a very complex representation of a table so that we don't have to store
     literally every combination in there。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是杰夫·海顿。欢迎来到华盛顿大学的深度神经网络应用。在这个视频中，我们将基于使用 G。我们在上一个视频中看到了 Open AI gym。现在我们将对其应用
+    Q 学习。我们将看到如何利用机器学习构建一个基本的查找表，以展示环境可能作用于的任何状态应采取的行动。然后我们将继续展示深度神经网络如何成为一个非常复杂的表的表示，从而无需逐个存储每种组合。
 - en: And that begins the deep Q neural network to see all my videos about Cale neural
     networks and other AI topics。 Click the subscribe button and the bell next to
     it and select all to be notified of every new video。 So let's have a look at Q
     learning。 I'm going to run this in Google coabab。 This really does not require
     GPU。 The code here actually is not even designed to take advantage of a GP。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 这标志着深度 Q 神经网络的开始。想要查看我关于 Cale 神经网络和其他 AI 主题的所有视频，请点击订阅按钮和旁边的铃铛，并选择全部以接收每个新视频的通知。那么让我们看看
+    Q 学习。我将在 Google coabab 中运行这个。这实际上并不需要 GPU。这里的代码甚至没有设计用来利用 GPU。
 - en: 😊。![](img/30d4f6c3c88418548a35fcff3628ad27_1.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/30d4f6c3c88418548a35fcff3628ad27_1.png)
 - en: I'm going to give you just a Python implementation of doing a tablebased Q learning
     lookup。 which is really kind of how Q learning works In the next part。 we will
     extend this and we'll actually use Kra's TF agents to actually implement this
     in deep learning and then go of completely beyond this and use something that
     has a much more complex environment like an Atari game So here I have the setup
     for Google Coab we definitely want to use Tensorflow 2。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将给你一个基于 Python 的表格 Q 学习查找实现。这实际上就是 Q 学习的工作原理。在下一部分中，我们将扩展这个并且实际使用 Kra 的 TF
+    agents 在深度学习中实现这一点，然后完全超越这一点，使用更复杂的环境，比如一个 Atari 游戏。这里是 Google Coab 的设置，我们肯定要使用
+    Tensorflow 2。
 - en: 0 and I have some additional code here that if you're running coabab will execute
     because coab at least as it was as of the recording of this video does not include
     TF agents and some other things that I want so that I'm able to display videos
     literally write in the browser here TF agents provides a very good way to take
     a snapshot of just a single image from an environment running as it's rendering
     and show it to you there's other ways。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有一些额外的代码，如果你在运行 coabab，它将会执行，因为截至录制这段视频时，coab 并不包含 TF agents 和一些我想要的其他功能，这样我才能在浏览器中直接展示视频。TF
+    agents 提供了一种非常好的方法，可以在环境渲染时仅从单一图像中捕捉快照并展示给你，还有其他方式。
 - en: Get around it， but TF agents makes that real easy other than that we're not
     using TF agents for this video。 We'll use TF agents in the next one。 I will go
     ahead and run this part。 it will say note using Google coab once this actually
@@ -52,12 +70,15 @@
     universe that the agent exists in the environment has state and the state of the
     environment changes as the agent interacts with it and the agent interacts with
     the environment by。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/30d4f6c3c88418548a35fcff3628ad27_3.png)'
+  id: totrans-7
   prefs: []
   type: TYPE_IMG
 - en: '![](img/30d4f6c3c88418548a35fcff3628ad27_4.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
 - en: First of all， just seeing the state of the environment in this part this video。
@@ -66,6 +87,7 @@
     to Atari the environment is actually a grid that's the video screen as the game
     is being played a step is one cycle through the environment so you take an action
     that's like move up。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
 - en: move down， move left， move right and then see what that does to the environment
@@ -75,6 +97,7 @@
     is a training construct it can be some number of episodes depending on how you
     configure figure things and then the terminal state is the step that you get to
     that causes the game to end。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
 - en: you win， you run out of lives， something like that。 So Q learning basically
@@ -82,6 +105,7 @@
     of which action is going to be the most rewarding because as you're going through
     this you get a reward at the end of each step and that tells you how how effective
     that step was some gains are mean they don't give you any reward until the very。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
 - en: very end and only if you want it。 those can be a little harder to optimize for。
@@ -89,29 +113,36 @@
     degree and at the very end。 either you get a diploma or you don't And if you don't
     who knows why you did something wrong。 But that's the torture that we put computers
     through。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
 - en: So we're going to work with something called the mountain car。 This is a classic
     reinforcement learning hello world kind of thing it is essentially a mountain
     car Now if you run this code here。 I'm not going to。On it because it's already
     rendered。 But this will show you one frame of whatever environment you're specifying。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将使用一个叫做山地车的东西。这是一个经典的强化学习“你好，世界”类型的东西，本质上就是山地车。现在如果你在这里运行这段代码，我不会运行它，因为它已经渲染了。但这会向你展示你所指定的环境的一个帧。
 - en: I'm specifying the mountain car。 If I put in space invaders， it would draw the
     space invaders。 all the little aliens coming down to be blasted。 So this is how
     mountain car works。 The idea of this game is your mountain car essentially， you
     can provide forward thrust。 So you really only have three actions you can take
     One action is no action。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 我正在指定山地车。如果我输入太空侵略者，它将绘制太空侵略者。所有小外星人都在下来被击毁。所以这就是山地车的工作原理。这个游戏的想法是你的山地车本质上可以提供向前的推力。因此你实际上只有三个可以采取的行动，其中一个行动是无动作。
 - en: And then the other two actions are either thrust this way up the hill or thrust
     this way up this side of the hill。 The trick is your little car is just not strong
     enough to make it up the hill。 try to just blast up the hill。 I'll show you that
     in a moment。 You're not that successful。 So what you've got to do is blast up
     the hill。 get as far as you can go and then you'll roll back but you'll roll back
     and build up some potential energy up the hill on this side。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后另外两个动作要么是向这边加速上坡，要么是向这边加速上坡。诀窍是你的车子力量不够，无法上坡。试着直接冲上去。我稍后会给你展示。你并不太成功。所以你需要做的是冲上坡，尽可能往上走，然后你会回滚，但你会在这个坡的一侧积累一些势能。
 - en: and then you charge， charge straight through and go。😊，Up again。 maybe usually
     you'll make it in two shots。 but the idea is to get all the way up here using
     potential energy from that other hill and conserving your momentum there。 so you
@@ -122,20 +153,26 @@
     when you press that down flooring the car gives you a completely different result
     than tapping it this is possible with Q learning but you need to use some special
     tricks and other things。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后你加速，直接冲上去。😊 再往上。通常你可能会在两次尝试中完成。但想法是利用来自另一个山丘的势能，保持你的动量，从而一路到达这里。因此，你可以施加左侧的力量，或者不施加力量，或者施加右侧的力量。这些数字指定了这些离散动作的方式，Q表的工作原理是你只能施加离散动作。因此这三件事情是没有像施加最大左侧力量或施加一半力量的情况，像你的汽车一样，当你按下油门时，全力加速给你完全不同的结果，而轻轻踩下则是另一回事。这在Q学习中是可能的，但你需要使用一些特殊的技巧和其他东西。
 - en: we'll get into that when we get into deep Q learning using the deep neural network
     but typically it's assumed that these are discrete actions but continuous actions
     are fine you just have to use different algorithms for those and in our very last
     part of this module will。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我们进入使用深度神经网络的深度Q学习时，我们会详细讲解这个，但通常假设这些是离散动作，但连续动作也可以，只需为这些使用不同的算法。在本模块的最后部分我们将讨论。
 - en: Look at an application of deep neural networks， deep queue networks that is
     not a game。 and it does take continuous actions。 Now， the mountain car environment。
     essentially all you have is the position of this car。 I believe zero is right
     here and then negative and positive and then the velocity。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 看看深度神经网络的一个应用，深度Q网络，而不是一个游戏。它确实采取了连续动作。现在，山地车环境。基本上你所拥有的就是这辆车的位置。我相信零就在这里，然后是负值和正值，还有速度。
 - en: How fast is it going and that's positive or negative too and those are continuous
     values。 So the velocity that you're going this way or the velocity that you're
     going that way。 negative versus positive。 Now this is using some code that allows
@@ -146,6 +183,7 @@
     a GPU and you may want to actually run those in Google coab to get advantage of
     the free GPU but you can also display it in a browser if you're running it locally
     or a little screen。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
 - en: 😊，'ll typically pop up and show it to you。 So now let me go ahead and run it。
@@ -153,6 +191,7 @@
     maximum acceleration to the right。 So it just it just floors it well there is
     no maximum it just pushes with full power to the right。 tries to scale the mountain
     and ultimately is not strong enough。 Now this output you see here。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
 - en: you can see the state。 So the state is showing essentially where the car so
@@ -161,6 +200,7 @@
     can see it's basically going further and further and further up the hill and at
     some point yeah right around there。 it starts to slide back down。 pictureture
     is worth a thousand words。 So if you look at this。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
 - en: this is what it does it tries it tries who's the Greek guy that pushes the boulder
@@ -168,12 +208,14 @@
     an impossible task。 Now， what I do is I use old school programming。 I program
     a car to solve this。 And for a simple case like this。 yeah。 I can I can write
     a completely deterministic program， just give it some rules。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
 - en: and the rule essentially that I'm going to look at。 I'm going to look at the
     state。 and I'm going to only pay attention to the state。 I am not going to pay
     attention to the velocity。 I don't care。 I want to know just the position of the
     state。 and this position if the position is greater than0 zero。 So this way。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
 - en: then I'm going to push this way。 if the car is going this way。 I am going to
@@ -181,12 +223,14 @@
     build up as much potential energy as it possibly can。 and the program to do this
     is really pretty simple。 If the position So the first element of the state is
     greater than zero， I apply to。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
 - en: which is push it to the right。 Otherwise， I apply zero， which is push it to
     the left。 One is no power at all。 I don't believe any bra is apply but。We really
     don't need to break in order to achieve our goal or ever let up on the engine。
     So here we run it。 We see the same steps。 Notice there is no reward。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
 - en: This is like trying to get through your four years of college and the only feedback
@@ -194,64 +238,86 @@
     oh， and I don't display the last steps。 So you don't even see your reward that
     you that you ultimately get when this thing wins。 But let's take a look at how
     my programmed car works。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就像试图完成你四年的大学，而你唯一得到的反馈是你毕业了还是没有。但我们会一直到最后，最终，哦，我没有展示最后的步骤。所以你甚至看不到你最终得到的奖励，当这个东西获胜时。但让我们看看我编程的汽车是如何工作的。
 - en: You can see it's a bit more successful and it wins。 All right， that is a hardcod
     rule。 Imagine if the Tesla engineer is set there and try to think of every possible
     case that would ever come up when you're driving an actual car。 it would be quite
     miserable。 and it just wouldn't work。 You would never think of everything。 I mean。
     this is almost a1 B world like flatwor because I can't go really up or down。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到它变得更成功并且赢得了比赛。好吧，那是一个硬编码的规则。想象一下，如果特斯拉的工程师坐在那里，试图考虑到你在实际驾驶汽车时可能出现的每一种情况，那将是相当痛苦的。而且这根本行不通。你永远也想不到所有的事情。我的意思是，这几乎是一个
+    A1 B 世界，像是平坦的世界，因为我不能真正向上或向下移动。
 - en: I'm only going left and right。 So reinforcement learning。 how this works。 is
     we have our agent and we have the environment。Agent takes some action on the environment。
     And there's two outputs from that。 There is the state for the next frame。 and
     then there's the reward that you receive from that action for the mountain car。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 我只在左右移动。因此，强化学习的工作方式是我们有代理和环境。代理在环境中采取一些动作。然后从中有两个输出。一个是下一个帧的状态，另一个是你从这个动作中获得的奖励，针对山地汽车。
 - en: you only receive a reward when you actually succeed and make it all the way
     up the hill。 Now。 I'll mention this briefly because this is sometimes done in
     reinforcement learning is if the environment doesn't necessarily give you a reward。
     you can sometimes get greater effects by engineering your own reward。 And that
     might be doing something like saying， okay。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 你只有在成功并且完全上山时才能获得奖励。现在，我会简要提一下，因为在强化学习中，有时如果环境不一定给你奖励，你可以通过设计自己的奖励来获得更大的效果。这可能是做一些事情，比如说，好的。
 - en: I'm going to give it a reward for maybe getting up the hill further than it's
     ever gotten before or something。 So use your your mind， your heuristics as a human
     to actually come up with some intermediate reward just maybe to give it better。
     better results。 Now this line here means that training occurs and it adjusts it。
     And then the next state goes into the agent。 and it continues。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 我会给它一个奖励，可能是因为它比以前上山更进一步之类的。所以用你作为人类的思维和启发式，实际想出一些中间奖励，以便给它更好的结果。现在这条线表示训练发生并且进行调整。然后下一个状态进入代理，继续进行。
 - en: It continues and continues and continues。Now， this equation is how Q learning
     is typically represented。 It looks kind of big and crazy if you've not seen a
     lot of these kind of equations before。 but it's not that bad。 And I want to take
     you through the parts of it because this is actually quite important。 So the way
     Q learning works is it's keeping that table。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 它继续，一直继续，现在，这个方程是 Q 学习通常的表示方式。如果你之前没见过很多这种方程，它看起来有点复杂和疯狂，但其实没那么糟。我想带你逐步了解它的各个部分，因为这实际上相当重要。因此，Q
+    学习的工作方式是保持那个表格。
 - en: So a table for every possible state that the environment can be in。 Now in this
     case。 this is a grid of all the possible positions and all the possible velocities
     because those are your two states that you have and state T。 that just means all
     of those states。 So S is essentially a array holding those two values in the case
     of this problem。 and for each action that you might take。 So each of those different
     states in that grid。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，为环境可能处于的每一个状态准备一个表格。在这种情况下，这是所有可能位置和所有可能速度的网格，因为这就是你拥有的两个状态，以及状态 T。这意味着所有这些状态。因此，在这个问题中，S
+    实质上是一个数组，保存这两个值，针对你可能采取的每个动作。因此，在那个网格中的每个不同状态。
 - en: there's three actions you can take。 So this is really a cube every value on
     the grid is essentially the three actions and anticipated reward that you would
     get for for being there。 So what this is doing what this is saying is the。Value
     is going to be changed。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以采取三种动作。所以这实际上是一个立方体，网格上的每个值本质上是三种动作以及你在那里的预期奖励。所以这实际上是说，值将会被改变。
 - en: It is essentially going to be added to。 So this this old value， this is almost
     like in programming。 a equals a plus plus something else plus sub delta a equals
     a plus1。 if this whole thing was one。 So this whole part over here is the delta
     We're calculating how much we want to change that Q value of I。 This is very typical
     of machine learning。 This is how I don't even know how many algorithms I studied
     have exactly this format。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 本质上将会被添加。所以这个旧值，几乎就像编程中的那样。a 等于 a 加上某些其他值加上子 delta a 等于 a 加 1。如果整个事情是一个。所以这里的整个部分就是我们计算的
+    delta，我们要改变的 Q 值。这在机器学习中非常典型。我甚至不知道我学习过多少算法具有完全相同的格式。
 - en: Like the weight in a neural network， the weight equals the weight plus essentially
     the gradient times a learning rate。 The learning rate is there to scale it back。
     Learn to walk before you learn to run。 If you didn't have this learning rate here，
@@ -259,54 +325,68 @@
     It would be too aggressive of a change。 And it would be like the learning algorithm
     got super excited about every little new thing that it learned that it completely
     overrode most of what it had learned previously。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 就像神经网络中的权重，权重等于权重加上梯度乘以学习率。学习率用于缩放它。如果没有这个学习率，那么这个整个大的值就会在各个地方翻转这些 Q 值。这样会是一个过于激进的变化。就像学习算法对它所学到的每一个小新事物都超级兴奋，以至于完全覆盖了之前学到的大部分内容。
 - en: So your alpha is your learning rate。 I use a learning rate in this example of01。
     So one10th of whatever we're going to calculate for this delta is what we're going
     to apply。 And they call it a temporal difference。 I took this right from Wikipedia。
     The equation。 Now you get back a reward。 So let's look at how that reward is everything
     hinges on the reward actually happens。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以你的 alpha 是你的学习率。我在这个示例中使用的学习率是 0.1。因此，我们要计算的这个 delta 的十分之一就是我们要应用的。他们称之为时间差。我直接从维基百科上拿的这个方程。现在你得到了一个奖励。所以让我们看看这个奖励，因为一切都依赖于奖励实际上是如何发生的。
 - en: I like to look at these equations。😊，in blocks and then rip the block apart。
     So inside of this delta that is being multiplied by the learning rate， there's
     really two parts。 Notice this old value。 That's the same old value that you add
     here。 You could do some algebraic simplification and do some canceling and not
     have that。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 我喜欢把这些方程看作是块，然后把块撕开。所以在这个乘以学习率的 delta 内部，实际上有两个部分。注意这个旧值。那是你在这里添加的相同旧值。你可以做一些代数简化和消去，而不需要那个。
 - en: but that's just the way this is written。 basically we want this whole thing
     to be a delta to be added to this。 so we have to subtract off the old value so
     that basically this is our new value。 This is the old value so the difference
     between these two。 We desire to get to hear this new value。 So we have to subtract
     the old value from it so that we need to see the magnitude change。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 但这只是写成这样的方式。基本上我们希望整个东西是一个 delta 被添加到这个。因此我们必须减去旧值，这样基本上这是我们的新值。这是旧值，所以这两者之间的差异。我们希望得到这个新值。因此我们需要从中减去旧值，以便看到幅度的变化。
 - en: and then we scale it by the learning rate and at it。 So let's look at the new
     value because that's the interesting part。 that is just setting up the delta。
     We need to know how much we want to change it by。 So this is the theoretical new
     value that we would like to eventually take it to。 So the reward。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们用学习率进行缩放并添加它。因此让我们看看新值，因为那是有趣的部分。这只是设置 delta。我们需要知道我们希望改变多少。所以这是我们最终想要达到的理论新值。因此，奖励。
 - en: Re is important。The reward is what we were given for applying this state and
     action that we currently did。 So we're updating the Q value for whatever action
     we took on the current state。 So the reward is I mean fundamentally the reward
     would be the estimate of the future value that we're going to get So those values
     in the table。 they tell you the reward for each of those actions at a particular
     state。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: Re 是重要的。奖励是我们因应用当前状态和行动而获得的。因此我们在更新当前状态下我们所采取的任何行动的 Q 值。奖励，基本上，奖励就是我们将要获得的未来价值的估计。所以表中的那些值。它们告诉你在特定状态下每个行动的奖励。
 - en: usually you just take the highest of those actions。 but we want to evaluate
     the other two actions that we're not taking now we want to get to the eventual
     reward that we're going to get So what we do is after we've applied so we've done
     our action we've gotten a reward or not then we take this discount factor this
     is set to 0。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
 - en: 95 so we're taking 95% of whatever the maximum Q value was for this next state
     that we're moving into based on that action So whatever that action。ultted in
     this new state。 We look at the Q values for this new state and we take the maximum
     of those action Q values。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
 - en: So that is the maximum that is an estimate， as it says of the optimal future
@@ -315,12 +395,14 @@
     is the here and now is quite important The reward that we just got it's a balance
     between these two。 but a very common setting for this one。 and the one I'm using
     is 95%。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
 - en: So we're taking both of these into consideration considerably。 So that's it。
     That is how this equation works。 and I wanted to take you through each step of
     it because this is a very common format equation for machine learning and I give
     you a description of what these values are。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
 - en: we just went through all of those。 So let's look at the Q learning car。 the
@@ -329,6 +411,7 @@
     of gravity or hills or anything like that。 It just plays with the car until it
     finally gets its reward and distributes that across the actions and eventually
     gets a pretty good program。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
 - en: So this is the Q learning car。 This is calculating to the discrete state。 this
@@ -337,6 +420,7 @@
     part to understand here。 This is how epsilon is used。 Epsilon is a value。 One
     means make the car move completely erratically random0 means make the car move
     completely according to the Q table。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
 - en: 5 means do it kind of half in half。 This epsilon value starts out very random
@@ -344,6 +428,7 @@
     and then eventually for the last part， it is performing completely from the Q
     table。And learning completely on the Q table。 The randomness forces it to explore
     and try out radical new ideas。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
 - en: And then once you've locked in on a pretty good overall technique。 then the
@@ -351,67 +436,86 @@
     process to this and other Monte Carlo techniques as well。 We get our reward by
     calling the environment。 Con the state into a discrete value。 We check to see
     if we've reached the goal position if we have we're done。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
 - en: and then we update the Q value。 This is that big hair equation from before written
     in Python。 and then we switch the state to to the new state that we have moved
     to。 So this is basically running the game。 This runs one step of the game。 and
     these are all these hyperparameters。 Learn rate is the learning rate for the algorithm。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们更新Q值。这是之前提到的大的Q值方程，用Python写的。接着我们将状态切换到我们移动到的新状态。这基本上是在运行游戏。这是游戏的一个步骤，所有这些都是超参数。学习率是算法的学习率。
 - en: how quickly we update those Q values Disc I told you before that's the 95% How
     many episodes we want to run how often do we want an update I set that to every
     thousand discrete grid size。Using just 10 so that whole left or right between
     the two mountains is effectively broken into into 10 values just to keep it a
     discrete input into Q learning。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们更新Q值的速度。我之前告诉过你，这就是95%。我们想运行多少回合，多久更新一次。我把这个设置为每一千次离散网格大小。只使用10，因此两个山之间的整个左右区域有效地被划分为10个值，以保持Q学习的离散输入。
 - en: which is how key learning typically works We can get Q learning to work on continuous
     values but that that gets into other algorithms that we'll see later in this chapter
     This is the decay for the epsilon like I told you about。So we load up the mountain
     car environment。 We set up the epsilon change so that it can decay eventually
     to0 over the episodes that we wanted to。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是关键学习通常是如何运作的。我们可以让Q学习在连续值上工作，但这涉及到后面章节中我们会看到的其他算法。这是我之前提到的epsilon衰减。因此，我们加载山车环境。我们设置epsilon变化，以便它最终能够在我们想要的回合中衰减到0。
 - en: We're gonna loop until we're done with the episodes。 When we hit the show every
     so show every 1000 in the case that I gave you。 it will show you what's going
     on and run a game。 you'll only see the game if you're running this locally。 we
     count the successes and we run it。 So you can see from the first thousand episodes。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将循环，直到回合结束。当我们每隔1000次显示一次时，它会告诉你发生了什么并运行一个游戏。只有在本地运行时，你才能看到游戏。我们统计成功次数并运行它。因此，你可以从前一千个回合中看到。
 - en: there were no successes at all。 We don't get any successes until 4000。 And through
     a lot of this since there's no feedback。 The only really capability it has here
     is trying random approaches。 And finally。 it gets some success。 And that is why
     the epsilon is decaying because we want that randomness to start to go away。
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 完全没有成功。我们在4000次之前没有任何成功。在很多情况下，由于没有反馈，它唯一真正的能力是尝试随机方法。最后，它取得了一些成功。这就是epsilon衰减的原因，因为我们希望随机性开始消失。
 - en: And once it starts to get some learning to refine what it's learned。 You can
     see here of the thousand episodes， it finally is completely successful。 However。
     there's a lot of random。to the environment。 So it's， it's not learned completely
     yet。 I like to let it go until it gets to fairly consistent success like here。
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦它开始学习以精炼所学内容，你可以看到在这千个回合中，它最终是完全成功的。然而，环境中有很多随机性。因此，它还没有完全学习。我喜欢让它继续，直到它达到相对一致的成功，如此处所示。
 - en: you could modify this so that the code actually looks at this and stops based
     on the the thousands getting consistent。 However， the problem you have then is。You
     increase the total number of episodes and then your decay of the epsilon doesn't
     work as well。
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以修改这个，使得代码实际上查看这个并根据回合的一致性停止。然而，你面临的问题是，你增加了总回合数，然后epsilon的衰减效果就不好了。
 - en: because you don't know how deep you're going at the very beginning。 Now to run
     it。 we can see it run here。 and it rocks， and it's not quite as good as the preprogram
     card。 but it does it。 Now let's look inside a deep let's look inside a Q learning's
     brain and see what's going on here I can dump the table。 So the velocity is discreetized
     as is the position。 We have to discreteet these two。 Otherwise。
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 因为在开始时你不知道自己要走多深。现在运行它。我们可以在这里看到它运行，并且它表现得不错，虽然没有预编程的卡车好，但它确实运行了。现在让我们深入探讨一下Q学习的内部，看看这里发生了什么。我可以导出表格。速度和位置都被离散化。我们必须离散这两者。否则。
 - en: how would we have a table， we would have infinite values here。 Now。 when we
     get into deep Q learning， we can deal quite easily out of the box with continuous
     values for both of these two。 However， deep Q learning does require some further
     algorithms added to it if we want to continuous actions so that basically we can
     apply the accelerator maybe halfway or three quarterss away or something like
     that。 Now just looking at the grid， this doesn't tell me a lot。 first of all。
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们如何构建一个表呢？这里将有无限的值。现在，当我们进入深度 Q 学习时，我们可以轻松处理这两个连续值。然而，如果我们想要连续的动作，深度 Q 学习确实需要一些额外的算法，基本上我们可以将加速器应用到一半或三分之三的地方，或者类似的情况。现在，看看这个网格，这并没有告诉我很多，首先。
 - en: I don't feel that velocity is even all that useful of an input for this problem
     When I did my preprogrammed car I used only position。 So what I did was I took
     the mean of these so that I can see kind of row and column at a time because like
@@ -419,8 +523,10 @@
     can see when I take the means look these line up you can see that it's learned
     almost a gradient and it learns particular this is the one that I'm more interested
     in。
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 我觉得速度在这个问题中甚至不是一个很有用的输入。当我编写我的预编程汽车时，我只使用了位置。因此，我所做的是取这些值的平均值，这样我可以一次查看一行和一列，因为正如我所说，对于这个问题，我并没有看到速度的真正价值。你可以看到，当我取平均值时，这些值对齐了，你可以看到它几乎学习到了一个梯度，它学习了特别的这个是我更感兴趣的。
 - en: it's learning to apply more of it and less well one direction versus the other
     direction up here versus down here。 Now up here these last two those are a bit
     anomalies but that could also because it's already hit the goal stated it's already
@@ -428,14 +534,21 @@
     that point and that's Q learning Q learning is tablebased will'll look more at
     this with deep learning where we can get deal better with continuous values first
     in。
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 它正在学习如何在一个方向上应用更多，而在另一个方向上则较少，上面与下面的比较。现在，上面这最后两个有点异常，但这也可能是因为它已经达到了既定目标，已经撞上了山顶，此时它的行为可能并不重要。这就是
+    Q 学习，Q 学习是基于表格的，我们将在深度学习中更深入地探讨这个问题，在那里我们可以更好地处理连续值。
 - en: '![](img/30d4f6c3c88418548a35fcff3628ad27_6.png)'
+  id: totrans-60
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/30d4f6c3c88418548a35fcff3628ad27_6.png)'
 - en: St and then also in the actions。 Thank you for watching this video。 In the next
     video。 we're going to look at how to extend this table into deep Q learning that
     way we don't have to represent literally every combination we can let the neural
     network learn to generalize。
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: St，以及在动作方面。感谢您观看这个视频。在下一个视频中，我们将探讨如何将这个表扩展到深度 Q 学习，这样我们就不必逐一表示每种组合，而是让神经网络学习如何进行泛化。

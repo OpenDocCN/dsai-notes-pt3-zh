@@ -162,6 +162,8 @@
   id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 这基本上是它试图做的事情。所以让我们回到这里，到这一部分的注释中，在Google Collab中实际上现在我们正在打开它在Collab中打开它。让我们看看如何实际利用AI
+    gym。我这里有一些基本信息，但我们要做的第一件事是导入AI gym和我向你展示的每个游戏基本上都称为一个环境，而我刚刚定义的这个函数本质上是查询环境，你需要打开环境，然后你需要打开该环境的规范。
 - en: What I'm doing here is you can run this for each of the environments that we're
     going to be dealing with and I'll show you it for a couple of Atari games as well
     If you run it for mountain car It tells you the action space The action space
@@ -170,6 +172,7 @@
   id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 我在这里所做的是你可以为我们将要处理的每个环境运行它，并且我还将向您展示它适用于几个Atari游戏。如果你为mountain car运行它，它告诉你动作空间，这种类型的动作空间是离散的。这意味着你可以做三种离散的事情来运行那辆山车。
 - en: You can be going backwards， you can be applying the brakes。 I think you're applying
     the brakes。 It might be running idle I forget exactly and you can be going forward。
     I'll tell you on dealing with just about any of these environments I usually look
@@ -185,6 +188,7 @@
   id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以倒着走，你可以踩刹车。我觉得你在踩刹车。它可能在空转，我不确定，你可以向前走。我告诉你，我处理几乎所有这些环境时，我通常会查看该环境的源代码和Github，以真正理解它们是如何工作的。现在是观察空间。所以你有动作空间。这些都是你可以做的事情，然后观察空间基本上是世界如何改变的。现在有两个框值框基本上意味着连续的，所以有两个连续的变量返回，并且这两个基本上告诉你汽车的位置左右，所以它在山上上升到哪里，以及在哪一边，所以本质上是屏幕上的X，然后另一个值是它的速度是多快，这取决于它移动的方向，这就是整个。
 - en: Unniverse those are the only two values that it needs Max episode steps。 So
     each episode is a play of this game and that's how long the episode is gonna last
     if the car is not figured it out by 200 steps。 we give up Think of a step like
@@ -200,6 +204,7 @@
   id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: Unniverse只需要这两个值最大的情节步骤。所以每一集都是这场比赛的一场比赛，如果汽车没有在200步之内解决问题，那么这一集就会结束。我们放弃了。想象一下一步像一帧，想象你在玩一个视频游戏，你知道一个视频游戏，你的渲染引擎可能每秒钟发射30帧，这就是电影的情况，每一步都是一帧，所以它最多会有200个那些不确定的步骤。我特别不喜欢这个命名。这些大多数情节或环境都是随机的。所以你的车不像那辆车的物理计算完全可预测。现在你可以种子，你可以把一个种子放进去，这就是不确定性的意思，如果你种子，那意味着它将是确定性的，但如果你不种子，它就有些随机。所以这就是。
 - en: Essentially what this means most of the environments that I've worked with are
     nondeterministic so if you seed them。 then they're going to be the same。 So this
     is important to understand if you've trained a neural network to play mountain
