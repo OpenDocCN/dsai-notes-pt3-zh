@@ -1,50 +1,71 @@
 - en: 【双语字幕+资料下载】PySpark 大数据处理入门，带你玩转Python+Spark大数据操作与分析！＜实战教程系列＞ - P8：L8- Databricks
     中的 Pyspark 多元线性回归实现 - ShowMeAI - BV1sL4y147dP
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】PySpark 大数据处理入门，带你玩转Python+Spark大数据操作与分析！＜实战教程系列＞ - P8：L8- Databricks
+    中的 Pyspark 多元线性回归实现 - ShowMeAI - BV1sL4y147dP
 - en: 。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 。
 - en: '![](img/759b85b7297b73430b32828500bf5bd4_1.png)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/759b85b7297b73430b32828500bf5bd4_1.png)'
 - en: Hello all my name is Krisnak and welcome to my YouTube channel so guys we will
     continue the Pi Park tutorials and today in this particular video we are going
     to go towards tutorial 8 where we are going to implement linear regression with
     the help of Pipar。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，我叫Krisnak，欢迎来到我的YouTube频道，今天我们将继续Pi Park教程，在这期视频中，我们将进入第8个教程，利用Pipar实现线性回归。
 - en: 😊，Now this is the entire playlist which I've actually created over here I have
     also put up a video on linear regression theoretical understanding Now in the
     tutorial aid we'll take a problem statement and then we'll try to solve it probably
     a regression problem statement。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，这是我在这里创建的整个播放列表，我还放了一段关于线性回归理论理解的视频。在教程8中，我们将选择一个问题陈述，并尝试解决它，可能是一个回归问题。
 - en: The first algorithm that we are going to discuss is the linear regression algorithm
     and we'll try to solve a problems and this linear regression is a multilinear
     regression problem statement and we'll do this in databs Now Ive already given
     you the introduction of databs in the large class I hope you have made your account
     and I hope you have started using it if you don't know how to make an account
     please watch a tutorial 7 the entire playlist link will be given in the description。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们要讨论的第一个算法是线性回归算法，我们将尝试解决问题。这是一个多元线性回归问题，我们将在databs中进行。之前我已经给你们介绍了databs，我希望你们已经创建了账户并开始使用。如果你不知道如何创建账户，请观看教程7，整个播放列表链接将在描述中提供。
 - en: 😊。![](img/759b85b7297b73430b32828500bf5bd4_3.png)
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/759b85b7297b73430b32828500bf5bd4_3.png)
 - en: '![](img/759b85b7297b73430b32828500bf5bd4_4.png)'
+  id: totrans-7
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/759b85b7297b73430b32828500bf5bd4_4.png)'
 - en: '![](img/759b85b7297b73430b32828500bf5bd4_5.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/759b85b7297b73430b32828500bf5bd4_5.png)'
 - en: Now this is my Datas community account。 remember in the community version we
     can only create one cluster。 I'll also be showing you in the upgraded versions
     probably in the future I'll be buying it and I'll try to show you how you can
     also create multiple clusters unlimited clusters but for that you also need to
     use some clouds like AWs or Azure Now first of all。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我的Datas社区账户。请记住，在社区版本中我们只能创建一个集群。我未来可能会购买升级版本，并尝试展示如何创建多个集群，但那需要使用一些云服务，比如AWS或Azure。现在首先。
 - en: what data I'm going to use。 So this is the entire data that I'm going to use
     guys this data is called as tips data。 So that basically means people who are
     actually going to the restaurant。 what tip they have actually given based on the
@@ -52,61 +73,87 @@
     particular parameters。 what should what probably is the total bill that the person
     is going to pay so this is the problem statement that I'm going to solve Now here
     you can see this is a multiline regression problem statement here you have many。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将使用什么数据？这就是我将使用的全部数据，这组数据称为小费数据。这意味着顾客在餐厅用餐时，基于总账单给予的小费，或者我也可以根据所有这些参数来解决这个问题，推算出顾客可能支付的总账单。这就是我要解决的问题陈述。这里你可以看到这是一个多元线性回归问题，具有多个特征。
 - en: many features right So let's proceed Now first of all。 what I'm going to do
     I'm just going to click to the browse and I'm going to upload this particular
     data now。😊。![](img/759b85b7297b73430b32828500bf5bd4_7.png)
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们继续。首先，我将点击浏览并上传这组数据。😊。![](img/759b85b7297b73430b32828500bf5bd4_7.png)
 - en: '![](img/759b85b7297b73430b32828500bf5bd4_8.png)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/759b85b7297b73430b32828500bf5bd4_8.png)'
 - en: To upload this particular data set， I have this particular data set in my path。
     So probably I'll also be giving you this particular data set， so don't worry about
     it。 Let me just quickly just a second。 Let me just upload the data set over here
     okay。Ppar okay so here you can see that。 This is my dataset， which I'm actually
     uploading tips。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了上传这组数据集，我在我的路径中有这组数据。因此我可能也会将这组数据集分享给你们，所以不用担心。让我快速上传数据集，好吧。Ppar，好的，你可以看到这是我正在上传的小费数据集。
 - en: So let me open it right now here you'll be able to see that your tips data will
     get uploaded you know。 in this Dfs directly。 So here you'll be having something
     like file stores slash tables。 Okay。 now what you can actually do now let's go
     and click on this Dvfs and here you can see on file stores Probably you can also
     click on tables。 Here you have this tips dot csv。 I've also uploaded is all datas
     in my previous videos。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我现在打开它，你将能够看到你的 tips 数据将直接上传到这个 Dfs 中。所以在这里你会有一些像文件存储/表的东西。好的。现在你可以做的事情是，点击这个
+    Dvfs，在文件存储上你可以看到，可能你也可以点击表。在这里你有这个 tips.dot.csv。我在之前的视频中也上传了所有这些数据。
 - en: Probably I was just using this。 Okay but here I'm just focusing on tips do csv
     Now what I'm going to do over here。 Let's go and do the first step。 remember the
     first step in data breaks is that we need to create the clusters okay。😊。![](img/759b85b7297b73430b32828500bf5bd4_10.png)
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 可能我之前只是在使用这个。好的，但在这里我只是关注 tips.do csv。现在我将在这里做什么？让我们进行第一步。记住在数据湖中第一步是我们需要创建集群，好的。😊
+    ![](img/759b85b7297b73430b32828500bf5bd4_10.png)
 - en: '![](img/759b85b7297b73430b32828500bf5bd4_11.png)'
+  id: totrans-16
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/759b85b7297b73430b32828500bf5bd4_11.png)'
 - en: Create a cluster right now， by default in the community version。 Datas actually
     helps you to create a cluster。 just one single cluster。 Okay。 but if you are using
     the paid version， the upgraded version。 it will actually help you to create multiple
     clusters If you have the excess of AWS cloud。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在就创建一个集群，默认是在社区版中。Datas 实际上帮助你创建一个集群，仅一个集群。好的。但是如果你使用的是付费版，升级版，它实际上会帮助你创建多个集群，如果你拥有
+    AWS 云的额外资源。
 - en: So I'm just going to click on the cluster。 let me create a new cluster。 So I'll
     say this is my linear regression cluster， okay。😊，And then I'm going to use this
     runtime 8。2 scalar。 this this is there。 I'm just going to click the cluster and
     remaining all things will be almost same in this cluster in this instance。 you'll
     be getting 15 Gb memory and all the other information here， you can check it out。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我就要点击集群，创建一个新的集群。我会说这是我的线性回归集群，好的。😊 然后我将使用这个运行时 8.2 的标量。这个就在这里。我只需点击集群，其他所有内容在这个实例中的几乎都是相同的。你将获得
+    15 Gb 的内存和其他所有信息，你可以查看。
 - en: you can also be getting two course and one I debutbu。 Okay。 so which I have
     actually already discussed my previous。 So I'll go and click on cluster。 this
     will take some time。 And remember guys， if you really want to use any kind of
     libraries just click over here。😊。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 你也可以获得两个课程和一个我 debutbu。好的，这个我之前实际上已经讨论过了。所以我将去点击集群，这将需要一些时间。记住，大家，如果你真的想使用任何类型的库，只需点击这里。😊
 - en: '![](img/759b85b7297b73430b32828500bf5bd4_13.png)'
+  id: totrans-20
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/759b85b7297b73430b32828500bf5bd4_13.png)'
 - en: Install those libraries which you want like suppose if you want to use seaborn
     you want to use scarers you want to use Tentensorflow So here you can basically
     type their along with the versions and youll be able to install it okay but right
@@ -114,11 +161,16 @@
     so guys click on the clusters over here and here you can see that probably after
     a minute this particular cluster is actually created Okay now again go to the
     home。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 安装你想要的库，比如如果你想使用 seaborn，你想使用 scarers，你想使用 TensorFlow。所以在这里你可以基本上输入它们及其版本，你将能够安装它，好的，但现在我不需要任何库，我只会使用
+    spice plug，这就是我的菜单。所以，大家在这里点击集群，你可以看到，可能过了一分钟，这个特定的集群实际上已经创建了。好的，现在再次返回主页。
 - en: '![](img/759b85b7297b73430b32828500bf5bd4_15.png)'
+  id: totrans-22
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/759b85b7297b73430b32828500bf5bd4_15.png)'
 - en: What you can do is you can create a blank notebook I've already created one
     notebook so that I have the basic code written so I'm just going to open this
     and let's start this particular process now first of all。 I have something called
@@ -132,8 +184,11 @@
     okay so here now I'm going to execute this now here you will be able to see my
     my clusters will start running okay and then you can see waiting to run running
     the command probably we will be able to see it。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以创建一个空白笔记本，我已经创建了一个笔记本，以便我可以编写基本代码，所以我现在就打开它，开始这个过程。首先，我有一个称为文件位置的东西，我知道我的文件位置基本上是tips.csv，文件类型是csv，然后我正在使用spark
+    do3.dot csv文件位置，header设为true，schemeche等于2，然后让我写Df.dot show，这实际上可以帮助我检查整个数据。好吧，我现在就要在你面前执行它，让我们逐行来，我会尽量把所有代码写下来，这一定对你理解有所帮助，所以请确保你也跟我一起输入代码，这样会更好地理解。好吧，现在我要执行这个，你会看到我的集群开始运行，然后你可以看到正在等待运行命令，我们可能会看到它。
 - en: I'll just zoom out a little bit so that you'll be able to see properly。And again，
     guys。 for the first time， if you are starting this particular cluster， it will
     take time。 Okay。 so spark job it is running and now you'll be able to see my data
@@ -141,16 +196,21 @@
     So this is my entire data set total bill tip sex smoker day time size perfect
     now lets go to the next step what I'm going to do I'm just going to write Df dot
     print schema。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 我稍微缩小一下，这样你就能更好地看到。再说一遍，大家，第一次启动这个集群时会花一些时间。好吧，spark作业正在运行，现在你将看到我的数据集。😊这是我上传到这个特定文件位置的小费数据集。所以这就是我整个数据集：总账单、小费、性别、吸烟者、时间、大小，完美。现在让我们进入下一步，我将写Df.dot
+    print schema。
 - en: So I can also use tab， you know， itll be able to load this entire thing。 So
     now here you can see that this is my entire features total bill tip sex smoker
     day time So here is all your features like double double sex is string smoker
     is string day string time is string antigen now remember you may be thinking Kris
     why I am actually doing this in databs to just make you understand how this will
     basically run in the cluster right now I just have one single cluster guys。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我也可以使用tab，你知道的，它将加载整个内容。现在你可以看到这是我所有的特征：总账单、小费、性别、吸烟者、时间。所以这里是你所有的特征，比如double，性别是字符串，吸烟者是字符串，日期是字符串，时间是字符串。请记住，你可能会想：克里斯，我为什么要在databs中做这些，目的是让你理解它如何在集群中运行。现在我只有一个集群。
 - en: that basically means and the maximum Ram in this particular cluster somewhere
     around around 15 gb but just understand if you're working with 100 g of data and
     what happens this kind of processing will get a split in multiple clusters right
@@ -158,8 +218,10 @@
     right now this is all I think guys right now let's go and try to understand over
     here which is my independent feature my independent feature is my tips feature
     sex smoker day time and size and my dependent feature is basically total bill。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 这基本上意味着这个特定集群中的最大内存大约是15 GB，但请理解，如果你处理的是100 GB的数据，这种处理会在多个集群中进行分割。因此，你将能够在即将到来的工作中处理大数据。现在我觉得这就是全部，大家，让我们来理解一下我的独立特征，独立特征是我的小费特征、性别、吸烟者、时间和大小，而我的依赖特征基本上是总账单。
 - en: So based on all these particular features， I need to create a linear regression
     algorithm which will be able to predict a total bill。 So let's go ahead now over
     here I'm just going to write Df dot columns。 So if I want to check my columns
@@ -170,8 +232,10 @@
     numerical values then only my machine learning algorithm will get will be able
     to understand it So let's see how to handle categor features So here I'm just
     going to write a comment。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 根据所有这些特征，我需要创建一个线性回归算法，能够预测总账单。所以现在我在这里要写Df.dot columns。如果我想检查我的列，这里就是我的列，我可以看到这就是我的确切列，我实际上有这么多列。关于这个特征的一件事，你们有性别、吸烟者、日期、时间等列，这些都是类别特征，对吧？而且你知道，这些类别特征需要转换成一些数值，只有这样我的机器学习算法才能理解。所以让我们看看如何处理类别特征。这里我就写一个评论。
 - en: 😊，Okay。Hanling。Categryical features， right。Now I'll try to show you how to handle
     this kind of category features Now。 one way in Pispar and obviously we know in
     normal e scale and you know。 we we try to use one hot encoding， we try to use
@@ -179,15 +243,20 @@
     we can use that same encoding over here also with the help of Pipar So for this
     particular process we have something called a string indexer So I'm just going
     to say from Pispar you know from Pispar dot ml dot feature。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，好的。处理类别特征，对吧。现在我会尝试展示如何处理这种类别特征。现在。在Pispar中，我们知道在正常的电子表格中，我们尝试使用单热编码，使用普通编码，尝试使用不同的编码。同样，我们也可以在这里使用相同的编码，借助Pipar。因此，对于这个特定的过程，我们有一个叫做字符串索引器的东西。所以我就说从Pispar中，你知道，从Pispar.dot
+    ml.dot feature。
 - en: 😊，Okay。I' am going to import something calledash string indexer。So I will be
     using this string indexer。 This string indexer will actually help us to， you know。
     basically convert string category features into some numerical features。 numerical
     features basically is ordial encoding。 Like suppose if I have gender like male
     or female itll be shown as zeros and ones。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，好的。我将导入一个叫做字符串索引器的东西。所以我会使用这个字符串索引器。这个字符串索引器实际上会帮助我们，基本上将字符串类别特征转换为一些数值特征。数值特征基本上是有序编码。比如如果我有性别，像男性或女性，它会显示为零和一。
 - en: And over here you will be seeing guys， most of the categories over here oral
     encoding。 Now you may be thinking one hot encoding what is the process that I'll
     try to show you in the upcoming videos with different different machine learning
@@ -195,77 +264,99 @@
     at a time， right。 so I'll try to show all those kind of examples。 Also now let's
     proceed and try to see that how we can convert this category features like sex
     smoker day and time。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里你会看到大多数类别的口头编码。现在你可能在想，单热编码是什么过程，我将在接下来的几个视频中尝试用不同的机器学习算法展示给你。之所以这样做，是因为一次学习一件事情更好，对吧？所以我会尝试展示所有这些例子。现在让我们继续，看看如何将这些类别特征如性别、吸烟者、日期和时间转换。
 - en: Probably time is also category features See over here。 So if I see this all
     features over here。 let me do one thing。 Okay， let me just write D dot show。😊，So
     this is my entire features。Quickly。 if I go and see， this is time is also a categor
     feature。 So quickly。 let's go ahead and try to see how we can basically use this。
     Let me delete this thing also。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 可能时间也是类别特征，看看这里。如果我看到这里的所有特征，让我做一件事。好吧，我就写D.dot show。😊，所以这是我所有的特征。快速查看，如果我去看，这个时间也是一个类别特征。所以快速的，让我们继续看看我们基本上如何使用这个。让我也删除这个东西。
 - en: or let me just write it one second。 So I have actually， you know。 imported this
     library called a string indexer。 Now what I'm going to do over here is that let
     me write an indexer object saying as this。 and I'll write string indexer。😊，And
     here， first of all。 I really need to provide which all are category features。
     Now， remember in this string indexer。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者让我稍等一下写一下。所以我实际上导入了一个叫做字符串索引器的库。现在我在这里要做的是创建一个索引器对象，命名为这个。我会写字符串索引器。😊，首先，我需要提供哪些是类别特征。现在，记住在这个字符串索引器中。
 - en: if I go and press shift tab， probably over here here you'll be able to see I
     have to give input columns。😊，So let me rush here I have to give input columns
     and I have to give output columns。 I also have options of providing input columns
     as multiple columns and the output columns as multiple columns。 So let me try
     both the thing。 Okay， so over here first of all， let me try with input columns。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我按**shift+tab**，可能在这里你能看到我需要提供输入列。😊，所以让我加快一点，我需要提供输入列，并且我需要提供输出列。我还可以选择提供多个输入列和多个输出列。所以让我尝试这两种情况。好的，首先，让我尝试输入列。
 - en: So here in the input columns I will provide my first value Now suppose I want
     to really convert the sex column into。😊，Into my category feature。 So here Ill
     write output column Okay。 and here Ill say sex underscore indexed。Now， here what
     we are actually doing guys。 here I'm actually giving my sex column， and this sex
     column will be converted into an oral encoding with the help of the string indexer。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以在输入列中，我将提供我的第一个值。现在假设我真的想把性别列转换成。😊，我的类别特征。所以我在这里写输出列。好的，然后我会说**sex_indexed**。现在，这里我们实际上在做什么，伙计们。我实际上是在给我的性别列，而这个性别列将通过字符串索引器转换成一种独热编码。
 - en: Okay， now in the next step， what I'll do， I'll just write Df。 Okay。 probably
     I'll just use Df or what I can do。 I can I can just create another probably I
     can create another data frame So I'll write Df underscore the score R probably
     see because I don't want to change that Df and again run that particular code
     now I'll say indexer。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，现在在下一步，我要做的就是写**df**。好的，我可能只会使用**df**，或者我可以创建另一个数据框。所以我会写**df_score**，可能会看到，因为我不想改变那个**df**，然后再运行那段代码，现在我会说**indexer**。
 - en: 😊，Dot fit。 Okay， so I can definitely use fit， and then I can use transform。So
     here also。 it is almost same like that。 only guys fit underscore transform。 And
     here also I' am going to use Df Okay， and then if I go and see Df dot Df underscore
     R dot show here now you'll be able to see that this sex column one more sex underscore
     index column will be created and it will have the oral encoded values in this
     particular column。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，点**fit**。好的，我肯定可以使用**fit**，然后可以使用**transform**。所以这里也是几乎一样的，只有伙计们**fit_transform**。这里我也要使用**df**。好的，然后如果我去看看**df.df_score**，现在你就能看到这个性别列将会创建一个额外的**sex_index**列，并且在这个特定列中会有独热编码的值。
 - en: So let's go and see this So once I execute。😊，Perfect， I think it is running。
     Probably it will take time。 Now here you can see that Im having one more column。
     which is called a sex underscore the index。 wherever the female value is there，
     the value is one。 wherever the male value is there， the value is 0， right。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们去看看这个。一旦我执行。😊，完美，我觉得它正在运行。可能会需要一些时间。现在你可以看到我有一个额外的列，叫做**sex_indexed**。无论是女性值，值为1；无论是男性值，值为0，对吧。
 - en: so we have handled this particular column and we have basically converted this
     category feature into the or encoding。 Now still， we have many feature。 So what
     I'm going to do， I'm just going to use this indexer again。 Okay， I probably I'm
     just going to write over here。 now multiple columns I will specify。 So first column，
     I've already changed it。 So I'm going to change this into something else。 sex。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们处理了这个特定的列，并且基本上把这个类别特征转换成了独热编码。现在，我们还有许多特征。所以我要做的就是再次使用这个索引器。好的，我可能会在这里写。现在我将指定多个列。所以第一个列我已经更改了。我将把它更改为其他东西，**sex**。
 - en: instead of sex， it will become smoker。😊，Okay， smoke good。But I showed you guys。
     instead of writing input columns， now， I have to write input columns， right。 So
     in this multiple columns when I'm giving。 So this is smoker。 Then I have one more
     feature if I see they。Day and time。 day and time is more two features。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 代替性别，它将变成**smoker**。😊，好的，**smoker**。但是我给你们展示过。代替写输入列，现在我必须写输入列，对吧。所以在我给出的多个列中，这就是**smoker**。然后如果我看到还有一个特征是**day**和**time**，**day**和**time**是更多的两个特征。
 - en: So I'm going to write over here day underscore。 So guys， now how I've written
     smoker day and time。 Similarlyly， I will be writing three more columns over here。
     So the first column should be because I'm going to create the oral encoding and
     I probably create a new column over here。 So this will be my smoker underscore
     indexed I'll close the braces over here。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我会在这里写**day_**。所以伙计们，现在我写了**smoker**、**day**和**time**。类似地，我会在这里再写三个列。第一个列应该是因为我要创建独热编码，所以我可能会在这里创建一个新列。这将是我的**smoker_indexed**，我在这里关闭括号。
 - en: my second feature will basically be day underscore index right and my third
     feature will probably be time underscore index。 So here I'm go going to create
     three more features and then I'm giving index dot fit Df underscore R okay。 because
@@ -273,14 +364,20 @@
     Now once I execute it guys。 I hope it should not give us an error Okay， it is
     saying that invalid Para value given for Para output columns could not convert
     class So I have to make this as output。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 我的第二个特征基本上是day underscore index，对吧？我的第三个特征可能是time underscore index。所以在这里我将创建三个特征，然后我给index
+    dot fit Df underscore R，好吧。因为现在我有了我的新数据框，然后我将说Df underscore dot show。现在一旦我执行它，大家。我希望它不会给我们错误，好吧，它在说给出的Para输出列的无效参数值，无法转换类，所以我必须将其作为输出。
 - en: lums so that was the issue right so now you'll be able to see that it's executing
     perfectly fine。 Now here you have all the features available。 sex underscore index
     smoker underscore index day underscore index and time underscore index and all
     you can see over here is or encodings like 0。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以那就是问题所在，所以现在你将能够看到它执行得非常顺利。现在这里你可以看到所有可用的特征，sex underscore index，smoker underscore
+    index，day underscore index和time underscore index，所有你在这里看到的都是编码，比如0。
 - en: 12 right and we have now converted this all string values into this kind of
     all category values that are available in this feature into numerical values。
     now my model will definitely be able to understand。 Okay， now we have done this
@@ -290,8 +387,10 @@
     called as vector asler Now always remember guys in Pipar you know whenever we
     have all this particular feature we need to group all the independent features
     together and the dependent feature separately。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 12，对吧？我们现在已经将所有字符串值转换为该特征中所有可用的类别值的数值。现在我的模型肯定能够理解。好的，现在我们完成了，大家。接下来是什么步骤我们基本上要讨论的，现在步骤非常简单，因为我们已经创建了这个特定数据集。现在我们要做的是有一个叫做向量组装器的东西。现在总是记住，大家，在Pipar中，无论何时我们有所有这些特征，我们需要将所有独立特征分组在一起，而将依赖特征分开。
 - en: Okay， so guys， well write from from Pipar。😊，Dot。Ml dot feature。 I'm going to
     import something called as vector asmbler right so I'm just going to use this
     vector asmbler。 This will actually help us to group independent features together
@@ -300,21 +399,27 @@
     basically my input columns here my input columns what all input columns I have
     let me just see before this let me quickly do one thing is that let me make a
     cell。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，大家，我们将从Pipar写作。😊，Dot。Ml dot feature。我将导入一个叫做向量组装器的东西，所以我将使用这个向量组装器。这实际上将帮助我们将独立特征分组在一起，而将一个依赖特征分开。那么让我继续写向量组装器，然后我将初始化它，第一参数我必须提供的基本上是我的输入列，在这里我的输入列有哪些，我先看看，在此之前让我快速做一件事，就是创建一个单元格。
 - en: 😊，Okay， move a cell up， create a cell or let me just remove this and probably
     just let me write you know。 Df underscore R dot columns。Okay， so how many number
     of columns we have。 So I have all my information with respect to the column。 So
     my input column over here。 the first thing that I am definitely going to provide
     is my tip column because tip is required。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，好的，向上移动一个单元格，创建一个单元格，或者让我删除这个，然后可能让我写一下。Df underscore R dot columns。好的，那么我们有多少列呢？所以我有关于列的所有信息。所以我这里的输入列，第一件我肯定要提供的是我的小费列，因为小费是必需的。
 - en: tip is the first independent feature。 and it is a numerical feature。 then I
     have something like sex underscoreco indexed。 Okay so I'm just going to copy this
     paste it over here。 and this is my another input feature。 And remember， guys，
     we really need to follow the order。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 小费是第一个独立特征，它是一个数值特征。然后我有像sex underscore co indexed这样的东西。好的，我将复制这个并粘贴到这里。这是我的另一个输入特征。记住，大家，我们真的需要遵循顺序。
 - en: So now my third feature is basically smoke index。 And before this also I can
     also specify size okay。So I will be specifying size， size， sex index， smoker index，
     Okay。 and then probably I'll also create day index。Okay， the index comma。I'm just
@@ -331,23 +436,30 @@
     output is equal to I'm just going to say dot transform because I really need to
     transform and this needs to be transform from my D underscore art okay so let
     me just executed now now here。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我的第三个特征基本上是烟雾指数。在这之前，我还可以指定大小，好吗？所以我会指定大小、性别指数、吸烟者指数，好吗？然后我可能还会创建天数指数。好的，指数逗号。我只是会使用时间指数。好的，所以这些都是我的独立特征，关于这一点，请记住这些将被分组在一起，我还必须说如果这些被分组在一起，让我们创建一个新特征，并给这个整个组命名，好吗？所以在这里我只是会说输出列等于，并且在这里我只会指定这些是我的独立特征，所以我会将整个东西命名为我的独立特征，简单得多。现在让我做一件事，创建一个叫做特征组合器的变量，这样就能转换这些值。特征组合器等于向量组合器，在这里我必须提供我的输入列和输出列，非常简单。接下来我要做的步骤是，输出等于，我只是会说点转换，因为我确实需要转换，并且这需要从我的
+    D_艺术中转换。好的，让我执行一下。
 - en: 😊，It has got executed here you can see the entire output all these things I
     created these are my independent features now in the independent and why we need
     to create this independent features that is a that is the specification that is
     given in Pipar always remember we need to create a group of features and probably
     a list all these independent features will be done together Now if I go and see
     my output dot show。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊 它已经执行完毕，你可以看到整个输出，所有这些我创建的都是我的独立特征。现在在独立特征中，我们需要创建这些独立特征，这是 Pipar 中给出的规范。请始终记住，我们需要创建一组特征，并且这些独立特征可能会一起完成。现在如果我去看我的输出，点显示。
 - en: 😊，Here now youll be able to see I will be able to see one more feature which
     has this or let me just write output dot select because probably all the features
     have been grouped together and it is very difficult to see all the features in
     just one screen I'm just going to take this independent features and just click
     on dot show Now once I do this。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊 在这里现在你将能够看到我能看到另一个特征，或者让我写上输出点选择，因为所有特征可能已经分组在一起，很难在一个屏幕上看到所有特征。我只会拿这些独立特征，点击点显示。现在一旦我这样做。
 - en: 😊，Here， you will be able to see。All these particular features are there。 remember
     this needs to be shown in the same order。 The first feature is tip。 then size
     sex underscore index smoker underscore index day underscore index time underscore
@@ -356,133 +468,176 @@
     this and this is the first major step to create okay now let's go to the next
     one Now I know what is my output now what I'm going to do is that out of this
     entire output if I go and see my output。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊 在这里，你将能够看到所有这些特征。请记住，这需要按相同的顺序显示。第一个特征是小费，然后是大小、性别_指数、吸烟者_指数、天数_指数、时间_指数。所以这些是我的独立特征。现在我只有一个特征，在这里你可以看到它仅仅列出了所有特征，就像这样，这是创建的第一个主要步骤。好的，现在让我们进入下一个步骤。现在我知道我的输出是什么，接下来我要做的是，在这个整个输出中，如果我去查看我的输出。
 - en: 😊，Output dot show here you will be able to see all the features are available
     right in output dot show。 So here you'll be able to see all the features are available。
     Now， you know。 which is your output feature， right， So this is my dependent feature
     and this independent features are my independent feature。 So what I'm going to
     do。 now I'm just going to select output。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊 输出点显示，在这里你将能够看到所有特征都在输出点显示中可用。所以在这里你将能够看到所有特征都可用。现在，你知道哪个是你的输出特征，对吧？所以这是我的依赖特征，而这些独立特征是我的独立特征。那么我接下来要做的就是选择输出。
 - en: or I'll say this is basically my finalized data and I'm just going to pick up
     two columns that is output dot select。😊，And inside this， I'm just going to give
     my two features。 which I am going to say one is independent features。Okay， independent。Features。
     I hope that name is right。 Otherwise， I'll just confirm it once again， so。Let
     me click it over here。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者我会说这基本上是我的最终数据，我将提取两列，即 output dot select。😊在这里，我将给出我的两个特征。我将说一个是独立特征。好的，独立特征。我希望这个名称是正确的。否则，我会再确认一次。让我在这里点击。
 - en: Independent features and one is total underscoreosscoable， perfect comma。Total。Undercope
     Bill， okay。 now if I just go and execute this now I'm just picking up two features
     right from this。 Now。 if I go and find out finalize data dot show， now I'll be
     able to see two important features。 That is independent features and total bill。
     Remember， this is all my independent features。
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 独立特征和总账单，完美的逗号。总账单。好的，现在如果我去执行这个，我只是在提取这两个特征。现在，如果我去查找 finalize data dot show，现在我将能够看到两个重要特征。也就是独立特征和总账单。记住，这都是我的独立特征。
 - en: and this is my dependent feature。😊，This is very much simple till here if it
     is done， guys。 the next step is basically I'm just going to copy and paste some
     code。 I'm just going to apply the linear regression。 So first of all， from Pipar
     do ml dot regression。 I'm going to import the linear regression。 and then I'm
     going to take this entire finalized data and then do a random split of 75 and
     25% and then in my linear regression。
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我的依赖特征。😊到目前为止，这非常简单。如果完成了，大家。下一步是我将复制和粘贴一些代码。我将应用线性回归。所以首先，从 Pipar do ml dot
+    regression。我将导入线性回归。然后我将采取这整个最终数据，并进行 75% 和 25%的随机拆分，然后在我的线性回归中。
 - en: I'm just going to provide my independent features as my feature column This
     is two parameters is to be given in linear regression。 one is feature column here
     I'll be providing independent features。 the second one is basically total bill，
     which is my dependent feature。 And now I will just do a fit on train data。 So
     once I do it， my regressionor model will get created。
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将把我的独立特征提供为特征列。这是线性回归中需要给出的两个参数。一个是特征列，这里我将提供独立特征。第二个基本上是总账单，它是我的依赖特征。现在我只需在训练数据上进行拟合。一旦我这样做，我的回归模型就会被创建。
 - en: And probably this will take time Now here you can see all the information。 amazing
     information you are getting with respect to train and test and remember guys。
     whatever group we have made this independent feature， this is in the format of
     UDt okay。😊。You can see the full form of Uity。 that is not a big problem at all。
     Okay， now I have my regressor。
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 这可能需要一些时间。现在你可以看到所有的信息。你获得了关于训练和测试的惊人信息，记住，大家。我们制作的这个独立特征，是以 UDt 的格式呈现的。😊你可以看到
+    Uity 的全称，这根本不是大问题。好的，现在我有我的回归器。
 - en: So what I'm going to do， I'm just going to say regressor dot coefficient since
     this is a multiple linear regression。 So I'm just going to use regressionor dot
     coefficient。 And these are all my parameters or different different coefficients。
     because I have around  six parameters。 So this are all the six different different
     coefficients。
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我将要做的是说 regressor dot coefficient，因为这是多重线性回归。所以我将使用回归器的系数。这些都是我的参数或不同的系数。因为我大约有六个参数。所以这些都是六个不同的系数。
 - en: Always remember in a linear regression， you will be having coefficient based
     on the number of features。 and you will also be having。😊，Intercept。 So here I'm
     just going to say intercept。Okay。 so this is basically my intercept that is 0。923
     Okay， so here you have both the information。 Now it is the time that will try
     to evaluate。Evaluate the test data。
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 永远记住，在线性回归中，你将根据特征的数量拥有系数。你也会有。😊，截距。所以我将说截距。好的。这基本上是我的截距，0.923。现在你有了这两条信息。现在是时候评估测试数据了。
 - en: So here I'm just going to say attached。 and this is basically my predictions，
     right。 So here let me write it as something like this。So， predictions。Okay。Prediction。
     and what I'm going to do， I'm just going to write bread， underscore results。Reult
     is equal to this one， and this will basically by be my results， okay。testest is
     not defined。
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我将说 attached。这基本上是我的预测，对吧。让我写成这样。预测。好的。预测。我将写成 bread，underscore results。结果等于这个，这将是我的结果，好的。testest
+    没有定义。
 - en: Why test is not defined because this should be test data。 I'm actually sorry，
     okay。But it's okay。 you will be able to get so small small errors。 Okay， now if
     I really want to see my pre results。 just go and see bread dot predictions。 There
     will be something like predictions dot show， okay。😊。If you write like this， here
     you will be able to get the entire prediction， okay。
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 为什么test未定义，因为这应该是测试数据。其实我很抱歉，没关系。你会遇到一些小错误。好了，现在如果我真的想查看我的预测结果，去看看bread的预测。会有类似于预测显示的东西，好的。😊如果你这样写，你将能够获得整个预测，好的。
 - en: So remember in this prediction， this is your independent feature。 This is your
     total bill。 This is your actual value， and this is a prediction value。 actual
     value， prediction value。 actual value and prediction value here， you can actually
     compare how good it is。 you know。 by just seeing your total bill and the prediction
     value。 Pre much good。 pretty much amazing。
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以记住在这个预测中，这是你的独立特征。这是你的总账单。这是你的实际值，这也是预测值。实际值，预测值。实际值和预测值在这里，你可以比较一下效果如何。你知道，通过查看你的总账单和预测值，效果非常好。相当惊艳。
 - en: You are able to see the data。 I'm just going to write my final comparison。 Okay。
     final comparison perfect。 I'm very much good at it， you can see it。 let's see
     some of the other information like what are information。 we can basically check
     it out from this。 we can we have lot of things probably you want to check out
     the R square。
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 你能看到数据。我将写下我的最终比较。好的，最终比较完美。我对此很有信心，你可以看到它。让我们看看其他一些信息，比如我们可以从中检查到什么。我们可能想查看R平方。
 - en: So what you can write， you can basically write a regression dot。 if I press
     tab this coefficient intercept。 then you have lost。 then there is also something
     called R square。 if I go and execute this。 This is basically my R square or let
     me just write it。😊，I think prediction。Pre predictions。
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以你可以写，你基本上可以写回归。如果我按下tab键，这个系数截距。然后你就会丢失。还有一些称为R平方的东西。如果我去执行这个。这基本上是我的R平方，或者让我写下来。😊我想预测。预测结果。
 - en: I don't think so r square is where lets see whether we will be able to see the
     r square value or not。Just to thick in。 I'm just checking out the documentation
     page。哦。O。Oh， sorry。 I don't have to use regressor over here。 So here I will be
     using prediction dot results and let me compute the R square。 So this is my R
     square。 Similarlyly， you can also check out prediction results dot mean absolute
     error。
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 我不认为R平方是在哪里。让我们看看是否能够看到R平方值。稍等，我正在查看文档页面。哦，抱歉。我不需要在这里使用回归器。所以这里我将使用预测结果，让我计算R平方。所以这是我的R平方。类似地，你也可以查看预测结果的平均绝对误差。
 - en: So you have mean absolute error。 You also have prediction underscore result
     dot mean。Square error。 So all these three values。 you can definitely check it
     out。 So here is your mean absolute error。 Here is your mean square error。 So these
     are my performance metrics that I can definitely have in。And whenever you guys，
     whenever you face any kind of problem。
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以你有平均绝对误差。你还有预测结果的均值平方误差。这三个值你可以确认一下。所以这里是你的平均绝对误差。这里是你的均方误差。这些是我的性能指标，我一定会有的。每当你们面临任何问题时。
 - en: just make sure that you check the documentation in Apache spark and documentation。Now，
     in this way。 you can definitely do this entire problem statement。 Now I'll give
     you one assignment。 Just try to Google it and try to see how you can save this
     particular file。 probably in a pickle format or probably in a temporary model
     pickle file。 you know it's very。
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 只需确保查看Apache Spark的文档。这样，你绝对可以解决整个问题陈述。现在我给你一个作业。尝试在Google上查找，看看如何保存这个特定文件，可能是以pickle格式，或者可能是临时模型的pickle文件。你知道这非常。
 - en: very simple。 You just have to use the regression dot save but try to have a
     look and try to see that how you can save this particular pickle file。 Now this
     was all about this particular video。 I hope you like this Now just try to solve
     with any other problem statement。
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 非常简单。你只需使用回归保存，但试着看看如何保存这个特定的pickle文件。现在这就是关于这个视频的全部内容。希望你喜欢，现在就尝试解决其他任何问题陈述。
 - en: try to do this in the upcoming videos。 I'll also try to show how you can do
     one hot encoding and probably you'll be able to learn that too So I hope you like
     this particular video。 please subscribe the channel if you're not subscribe as
     the next week。 I have a great day。
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 尝试在接下来的录像中做到这一点。我还会尝试展示如何进行独热编码，可能你也能学会。所以我希望你喜欢这个视频。如果你还没有订阅频道，请订阅，因为下周我会有精彩内容。祝你有美好的一天。
 - en: Thank you and all bye bye。😊。![](img/759b85b7297b73430b32828500bf5bd4_17.png)
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 谢谢你们，大家再见。😊。![](img/759b85b7297b73430b32828500bf5bd4_17.png)

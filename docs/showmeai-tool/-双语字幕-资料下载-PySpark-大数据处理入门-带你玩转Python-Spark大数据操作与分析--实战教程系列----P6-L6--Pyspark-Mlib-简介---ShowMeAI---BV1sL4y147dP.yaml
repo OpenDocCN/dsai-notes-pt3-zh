@@ -1,68 +1,98 @@
 - en: 【双语字幕+资料下载】PySpark 大数据处理入门，带你玩转Python+Spark大数据操作与分析！＜实战教程系列＞ - P6：L6- Pyspark
     Mlib 简介 - ShowMeAI - BV1sL4y147dP
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】PySpark 大数据处理入门，带你玩转Python+Spark大数据操作与分析！＜实战教程系列＞ - P6：L6- Pyspark
+    Mlib 简介 - ShowMeAI - BV1sL4y147dP
 - en: 。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 。
 - en: '![](img/f720d66f49fae41d670aae65c8eaadee_1.png)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f720d66f49fae41d670aae65c8eaadee_1.png)'
 - en: So guys， Spark Mlib also has an amazing documentation with respect to various
     examples。 so here you can go and click on examples and basically check out this
     particular documentation。 You can actually see different different kind of examples。
     how it is basically done。 But with respect to Spar Ml。 there are two different
     techniques。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，Spark Mlib也有出色的文档，涵盖了各种示例。在这里你可以点击示例，基本上查看这份特定的文档。你可以看到不同类型的示例，看看它是如何完成的。但就Spar
+    Ml而言，有两种不同的技术。
 - en: One is the RdiD techniques and one is the data frame APIs。 Now what we are going
     to do guys。 data frame API is the most recent one。 you know and it is pretty much
     famously used everywhere。 So we'll be focusing on data frame API。 That is the
     reason why we learn data frame in Pipar very much nicely。 So we'll try to learn
     through data frame APIs and we'll try to see the technique how we can basically
     solve a machine learning use case。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 一种是RdiD技术，另一种是数据框API。现在我们要做的是，数据框API是最近的，你知道，它在各处都很有名。因此，我们将专注于数据框API。这就是我们在Pipar中非常好地学习数据框的原因。因此，我们将通过数据框API学习，并尝试看看我们如何基本上解决机器学习的用例。
 - en: Now， let's go and see one very simple example guys。 and always remember the
     documentation is pretty much amazingly given you can actually check out over here
     and try to read all these things。 So let's proceed and let's try to see what are
     things we can actually do。😊。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，让我们来看一个非常简单的例子，伙计们。永远记住，文档提供得非常好，你可以在这里检查并阅读所有这些内容。让我们继续，看看我们实际上可以做些什么。😊
 - en: '![](img/f720d66f49fae41d670aae65c8eaadee_3.png)'
+  id: totrans-6
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f720d66f49fae41d670aae65c8eaadee_3.png)'
 - en: '![](img/f720d66f49fae41d670aae65c8eaadee_4.png)'
+  id: totrans-7
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f720d66f49fae41d670aae65c8eaadee_4.png)'
 - en: '![](img/f720d66f49fae41d670aae65c8eaadee_5.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f720d66f49fae41d670aae65c8eaadee_5.png)'
 - en: In this particular example， I'm just going to take a simple machine learning
     problem statement。 So let me just open a specific data set for you all and then
     probably willll try to do it。 Okay。 so this is my data set， guys， I know there
     are not many records over here。 Okay。 so I have a data set which has like name，
     age， experience and salary。😊。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个特定的例子中，我将处理一个简单的机器学习问题陈述。所以让我为你们打开一个特定的数据集，然后可能会尝试一下。好的，这就是我的数据集，伙计们，我知道这里没有很多记录。好的，我有一个数据集，其中包含姓名、年龄、经验和工资。😊
 - en: '![](img/f720d66f49fae41d670aae65c8eaadee_7.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f720d66f49fae41d670aae65c8eaadee_7.png)'
 - en: And this is just a simple problem statement to just show you that how powerful
     Sp actually is with respect to an MLla library。 just to show you a demo from the
     next video， I'll be showing you detailed explanation of the regression algorithms
     how we can basically do the implementation doll theoretical and all guys I have
     already uploaded。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 这只是一个简单的问题陈述，旨在向你展示Sp在MLla库中是多么强大。接下来的视频中，我会详细解释回归算法以及我们如何理论上进行实现，所有内容我已经上传了。
 - en: you can see over here I'll be doing see after this tutorial5。 This is basically
     the tutorial 6。 I'll try to add it after this and then。😊。![](img/f720d66f49fae41d670aae65c8eaadee_9.png)
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到这里，我将在这个教程之后进行讲解。这基本上是教程6。我会尽量在之后添加它。😊！[](img/f720d66f49fae41d670aae65c8eaadee_9.png)
 - en: '![](img/f720d66f49fae41d670aae65c8eaadee_10.png)'
+  id: totrans-13
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f720d66f49fae41d670aae65c8eaadee_10.png)'
 - en: Whenever I will be uploading the linear regression algorithm before that。 please
     make sure that you watch this maths intuition。 Okay。 I've uploaded this specific
     video Also in the playlist。 So after this tutorial 26 white is seeing tutorial
@@ -71,48 +101,67 @@
     how we can implement in depth that video will also get uploaded。 So let's proceed。
     and here is my entire data guys， this is my data。 Now what I have to do is that
     based on age and experience。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 每当我上传线性回归算法之前，请确保观看这段数学直觉。好的，我也在播放列表中上传了这个特定的视频。所以在这个教程26之后，因为我也把它添加到了我的机器学习播放列表中。在之后，你也会找到我们讨论线性回归时，如何深入实现，这段视频也会上传。所以让我们继续。这里是我的全部数据，伙计们，这是我的数据。现在我需要根据年龄和经验来进行操作。
 - en: I need to predict the salary， very simple use case， not not much data3 processinging。
     not much transformation， not much standardization and all。 I'm just going to take
     up this to independent feature。 and I will be predicting the salary of this particular
     person based on age and experience。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 我需要预测薪水，这是一个非常简单的用例，数据处理不多，转换不多，标准化也不多。我只会采用这两个独立特征，并根据年龄和经验来预测这个特定人的薪水。
 - en: Okay so this is what I'm actually going to do。😊。![](img/f720d66f49fae41d670aae65c8eaadee_12.png)
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，这就是我将要做的。😊！[](img/f720d66f49fae41d670aae65c8eaadee_12.png)
 - en: '![](img/f720d66f49fae41d670aae65c8eaadee_13.png)'
+  id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f720d66f49fae41d670aae65c8eaadee_13.png)'
 - en: So here is a perfect example。 Again， detail， I'll try to show you how to basically
     implement line by line。 probably from the upcoming videos where I'll be discussing
     about linear regression and all。 And if I go see this particular problem， this
     is also a linear regression example。 So let's go away first of all， as usual，
     I will be creating a spark session。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这是一个完美的例子。再一次，细节上，我将尝试逐行向你展示如何基本实现。可能在接下来的几期视频中，我将讨论线性回归等内容。如果我查看这个特定问题，这也是一个线性回归示例。那么让我们先来，和往常一样，我将创建一个
+    spark 会话。
 - en: So I'll use frompar do sql import spa session and then I'm going to use spark
     session do builder dot app name here I'm actually creating a spark session or
     missing let me execute it I think this is pretty much familiar。 you are familiar
     with this then what I'm going to do over here is that we are just going to read
     this particular data set with test1 dot csv header is equal to true and in first
     schema is equal to true。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我将使用 frompar do sql import spa session，然后我将使用 spark session do builder.dot
+    app name，这里我实际上是在创建一个 spark 会话。让我执行一下，我觉得这你应该很熟悉。如果你熟悉这个，那么我在这里要做的是，我们只会读取这个特定数据集，使用
+    test1.dot csv，header 设置为 true，first schema 设置为 true。
 - en: So when I go and see my training do show this are all my features over here。
     perfect。 I'll be giving you this data Also don't worry Now。 from this particular
     data if I go and check out my print schema So here you'll be able to see that
     I'm getting this particular information this is my entire print schema over here。😊，Teachatures
     like name， age， experience and salary。 Now， if I go and see training dot columns。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以当我去查看我的训练时，所有的特征都在这里。完美。我也会给你这些数据。别担心。现在，从这些特定数据中，如果我去检查我的打印模式，你将能够看到我获得的特定信息，这是我整个打印模式。😊特征包括姓名、年龄、经验和薪水。现在，如果我去查看训练的列。
 - en: this is my training dot columns。 Now， always remember， guys in Pipar。 we use
     a different funda or mechanism or a kind of data pre processingsing before C。
     Usually what we do is that。And by using machine learning algorithms that are available
     in Ecala。 we basically do a train test split， right， And then we first of all。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我的训练列。现在，大家一定要记住，在 Pipar 中，我们使用不同的原理或机制，或一种数据预处理方法，通常我们所做的是。通过使用在 Ecala 中可用的机器学习算法，我们基本上进行训练测试划分，没错，然后我们首先。
 - en: divide that into independent features， dependent features， right， which we use
     an x and y variable。 and then we do train test split by doing this in in Pipar，
     we just do some different techniques。 What we do is that yes， we have to basically
@@ -120,78 +169,100 @@
     to create vector asmbler。 we basically say it as a vector assemb C the class Ive
     actually used the vector assembler will make sure that I have all my features
     together grouped like this grouped like this in the form of age and experience。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 将其划分为独立特征和依赖特征，没错，我们使用 x 和 y 变量。然后我们通过在 Pipar 中进行训练测试划分，采用不同的技术。我们所做的是，是的，我们基本上需要创建一种方法，将所有独立特征分组在一起。因此，我可能会尝试创建向量组装器。我们通常称之为向量组装器，我实际使用的类将确保我所有特征都像这样分组在一起，形成年龄和经验的形式。
 - en: over here my two main features are age and experience。 which are my independent
     feature right So itll be grouped like this for every record。 it will be grouped
     like this。 Okay， for every， it will be grouped like this。 And then what I will
     be doing is that I will be treating this grouped as。😊，Different feature。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，我的两个主要特征是年龄和经验，它们是我的独立特征。所以它会像这样为每条记录分组。它会像这样分组。好的，对于每条记录，它会像这样分组。然后我将把这个分组视为。😊不同的特征。
 - en: So this will basically be my new feature。Right， and remember。 this new feature
     is my independent feature。So my independent feature will look like this in a group
     of age comma experience。 which will be treated as a new feature。 and this is exactly
     my independent feature。 So I have to group this particular way。 So in order to
     group this what we do is that in Pipar。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这基本上将是我的新特征。对，记住，这个新特征是我独立的特征。所以我的独立特征在年龄和经验的分组中看起来是这样的，这将被视为一个新特征，这正是我的独立特征。因此，我必须以这种特定方式进行分组。为了分组，我们在Pipar中这样做。
 - en: we use something called as vector asler。 So in this vector asmbr is basically
     present in pipar do ml dot feature。 we use this vector asmbler。 we use two things。
     one is input column。 which all column we are basically taking to group it。 So
     two columns one is age and experience。 right we don't have to take name because
     name is fixed it is a string。 Yes。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们使用一种叫做向量组装器的东西。因此，这个向量组装器基本上在pipar do ml dot feature中存在。我们使用这个向量组装器，使用两个东西。一个是输入列，所有我们要进行分组的列。因此，两个列，一个是年龄，另一个是经验。对，我们不需要考虑姓名，因为姓名是固定的，它是一个字符串。是的。
 - en: if category features are there。 what we do， what we need to do。 we will convert
     that into some numerical representation that I'll be showing you when I'm doing
     some inepth implementation in the upcoming videos of linear regression logistic
     regression and dot But here you'll be able to see that I'm going to take input
     columns H comma experience in the form of a list and then I will try to group
     this and create a new column。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果有分类特征，我们需要做什么，我们将把它转换为一些数值表示，这在我即将发布的线性回归、逻辑回归和其他视频中的深入实现中会向你展示。但在这里你将能够看到，我将以列表的形式获取输入列年龄、经验，然后我将尝试对其进行分组并创建一个新列。
 - en: which is called。😊，Dedependent feature over here。 right That is what I'm actually
     doing。 So if I go and execute this vector in similar。 So here I'm got my feature
     in similar。 and then I do dot transform。 I do dot transform on my training data。
     So this is basically my training data。 When I do this And when I do output dot
     show here。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里叫做😊，依赖特征。这就是我实际上在做的。因此，如果我去执行这个向量在相似的地方。所以在这里我得到了我的特征在相似的地方，然后我进行点变换。我对我的训练数据进行点变换。这基本上是我的训练数据。当我这样做时，当我在这里输出点显示。
 - en: you'll be able to see I have this all features。 and a new feature has been created。
     which is called as independent feature。 Okay， so we have actually created an independent
     feature。 And you can see over here age and experience age and experience， age
     and experience。 So this is my grouped rows that I've actually got in short， what
     I've done。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 你将能够看到我有所有这些特征，并且创建了一个新特征，称为独立特征。好的，所以我们实际上创建了一个独立特征。你可以看到这里的年龄和经验，年龄和经验，年龄和经验。因此，这是我实际得到的分组行。简而言之，我所做的。
 - en: I've combined this two column and made it as a single independent feature。 Okay。
     now this will be my input feature。 Okay， and this will be my output feature and
     will try to train the model。 Okay， so over here now if I go and see output dot
     columns。 I have name age experience independent feature。 now what I do out of
     this。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 我已经将这两列结合在一起，并将其作为一个独立特征。好的，现在这将是我的输入特征。好的，这将是我的输出特征，我们将尝试训练模型。好的，因此在这里现在如果我去查看输出点列，我有姓名、年龄、经验、独立特征。现在我从中做什么。
 - en: let's take which all data set I'm actually interested in。😊，So out of this。 I
     will just be interested in this two data set， right， In features and salary。 salary
     will be my output feature。 The y variable， right， and this will be my input feature。
     So what I'm going to do， I am going to select output dot select independent features
     and salary。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看看我实际感兴趣的数据集。😊因此，在这些中，我只会对这两个数据集感兴趣，对，特征和薪水。薪水将是我的输出特征。y变量，对，这将是我的输入特征。因此，我要做的是，我将选择输出点选择独立特征和薪水。
 - en: And I'm going to put that in my finalizer underscore data。 That is what I'm
     actually doing。 If I now go and see my dot show here， you will be able to see
     the entire thing。😊，Now， this are my。Independent feature。 These are my dependent
     feature。 Now， the first step， what we do。 we do a train test split， like how we
     do it in Scal。 So in order to do a train test split。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将把它放入我的最终器下划线数据中。这就是我实际上在做的。如果我现在去查看我的点显示，你将能够看到整个内容。😊现在，这些是我的独立特征。这些是我的依赖特征。现在，第一步，我们要做什么？我们进行训练测试拆分，就像我们在Scal中所做的那样。为了进行训练测试拆分。
 - en: I use a function inside my finalized data， which is called a random split。 Remember，
     guys。 I'll try to explain you line by line by implementing it when I'm doing a
     bigger project right now。 since this is just an introduction session。 I really
     want to explain you how things are actually done。 So this is basically my train
     test split。 So here let me write it down the comment。😊。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 我在我的最终数据中使用一个叫做随机拆分的函数。记住，大家。我会尽量逐行解释，当我在做一个更大的项目时。目前这只是一个介绍课程。我真的想告诉你们事情是如何实际进行的。这基本上就是我的训练测试拆分。所以让我在这里写下注释。😊
 - en: Rrain test split。And I will be using the linear regression like how we import
     a class from S scalelon similarly by using Pipar dot ml dot regression。 import
     linear regression。 And then I'm doing a random slip of 75 to 25%。 That basically
@@ -199,39 +270,54 @@
     will be having 25 percentage of the data right Then after that I'll be using this
     linear regression in this。 you have to important variables that we need to give。
     One is feature columns。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 训练测试拆分。我将使用线性回归，就像我们从 S 类库导入一个类一样，类似地通过使用 Pipar.ml.regression 导入线性回归。然后我进行随机拆分，比例为
+    75% 对 25%。这基本上意味着我的训练数据将占数据的 75%，而我的测试数据将占 25%。然后我将在此使用线性回归。你需要提供两个重要变量。一个是特征列。
 - en: How many number of feature columns are there that is completely present in this
     independent feature。 So I'm giving it over here， Similarlyly in label column。
     This is my second feature that I have to give。 this is my output feature。 So after
     I provide both these things and do a fit on train data。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 有多少个特征列在这个独立特征中是完全存在的。所以我在这里给出，标签列也是如此。这是我需要提供的第二个特征。这是我的输出特征。所以在我提供这两个内容并对训练数据进行拟合后。
 - en: I will be able to find out my coefficient。 These are my coefficients。 This are
     my intercepts。 And here I can now evaluate and see my output。 right So by using
     this evaluate function。 we will be able to see the output。 and inside this there
     will be。😊，Addction variable。 which will have the output。 Okay， so this is my prediction。
     This is my salary。 the real value。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将能够找出我的系数。这些是我的系数。这些是我的截距。现在我可以评估并查看我的输出。通过使用这个评估函数，我们将能够看到输出。在里面会有。😊，附加变量。它将包含输出。好的，这就是我的预测。这是我的薪水，真实值。
 - en: This is my other thing。 Now， if I really want to find out the other important
     parameters of metrics。 let's press tab here you'll be able to see mean absolute
     error underscore result dot mean square error。 Supp if I do see this particular
     word value， you'll be able to understand that how the model is actually performed。
     So that's just a various very simple example， guys， don't worry， I'll be explaining
     in depth。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我的另一个内容。如果我真的想找出其他重要的指标参数。让我们按一下 tab 键，你将能看到平均绝对误差_结果.均方误差。所以如果我看到这个特定的词值，你将能够理解模型是如何实际表现的。这只是一个非常简单的例子，大家，别担心，我会深入解释。
 - en: probably in the upcoming videos when we'll be starting from linear regression。
     now， remember。 the next video is about linear regression implementation in depth
     implementation right the theoretical part you can see over here。 I've already
     added the video。 Okay， so I hope you like this particular video。 please do subscribe
     the channel if you as youll in the next video have a great Thank you mobile。😊。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 可能在接下来的几期视频中，我们将从线性回归开始。现在，请记住，下一个视频是关于线性回归的深入实现，理论部分你可以在这里看到。我已经添加了视频。好的，我希望你喜欢这个视频。如果你喜欢，请订阅频道，我们在下个视频见。祝你有个美好的一天。😊
 - en: '![](img/f720d66f49fae41d670aae65c8eaadee_15.png)'
+  id: totrans-38
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f720d66f49fae41d670aae65c8eaadee_15.png)'
 - en: '![](img/f720d66f49fae41d670aae65c8eaadee_16.png)'
+  id: totrans-39
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f720d66f49fae41d670aae65c8eaadee_16.png)'

@@ -1,47 +1,66 @@
 - en: 【双语字幕+资料下载】PySpark 大数据处理入门，带你玩转Python+Spark大数据操作与分析！＜实战教程系列＞ - P4：L4- Pyspark
     DataFrames 过滤操作 - ShowMeAI - BV1sL4y147dP
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】PySpark 大数据处理入门，带你玩转 Python+Spark 大数据操作与分析！＜实战教程系列＞ - P4：L4- Pyspark
+    DataFrames 过滤操作 - ShowMeAI - BV1sL4y147dP
 - en: 。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 。
 - en: '![](img/0ca5dfbb4a99ff7c74026b7b4989e47f_1.png)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0ca5dfbb4a99ff7c74026b7b4989e47f_1.png)'
 - en: Hello all。 my name is Kushak and welcome to my YouTube channel。 So guys we will
     be continuing the Pispar playlist series and when I started this particular series
     guys。 they were request for many people to please also complete the MysQL with
     Python playlist also don't worry about it guys now since you have that specific
     request also what I'll do is that every day one Pipar video1 SQL videos at least
     I'll try to do it I also wanted to complete that particular playlist。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，我的名字是 Kushak，欢迎来到我的 YouTube 频道。所以我们将继续这个 Pipar 播放列表系列。当我开始这个系列时，有很多人请求我完成
+    MysQL 与 Python 的播放列表，别担心。现在既然你们有这个特定的请求，我每天至少会尝试上传一个 Pipar 视频和一个 SQL 视频。我也想完成这个播放列表。
 - en: but because of time I was not able to create much more materials So because
     of that it laggged but don't worry again。 the main aim is to upload more and more
     videos for you all so that you'll be able to follow them properly you'll be able
     to utilize them for your successful transition in any career that you're going
     ahead so please make sure that just be patient I'll try to upload parallelly both
     of this and I will try to complete the playlist。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 但由于时间原因，我没能创建更多的材料，因此有些滞后，但别担心。主要目的是为你们上传更多的视频，这样你们就能更好地跟随，能够在未来的职业转型中利用这些内容。所以请确保耐心等待，我会并行上传这两个系列，并尽力完成这个播放列表。
 - en: So yes enjoy this particular videos guysello my name is Krna and welcome to
     my YouTubetu channel。![](img/0ca5dfbb4a99ff7c74026b7b4989e47f_3.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的，大家好，我的名字是 Krna，欢迎来到我的 YouTube 频道。![](img/0ca5dfbb4a99ff7c74026b7b4989e47f_3.png)
 - en: Guys， today we are in the tutorial for of Pi Park data frames and here in this
     particular video we are going to discuss about filter operation。😊，AF up operation
     is pretty much important for data preprosing technique。 If you want to retrieve
     some of the records based on some kind of conditions。 some kind of boolean conditions，
     we can definitely do that with the help of filter operation。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，今天我们在 Pi Park 数据框的教程中，这个视频我们将讨论过滤操作。😊，过滤操作对于数据预处理技术非常重要。如果你想根据某些条件，某些布尔条件来检索一些记录，我们绝对可以通过过滤操作来实现。
 - en: Now guys， please make sure that you follow this particular playlist with respect
     to Pipar I will be uploading more and more videos as we go ahead and remember
     one more thing there was a lot of complaint from people telling to upload sql
     with Python。 don't worry parallel I'll start uploading sql with Python。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在大家，请确保你们跟随这个 Pipar 的播放列表，我会随着进展上传更多视频。另外，还有很多人抱怨希望上传 SQL 与 Python 的内容，别担心，我会并行开始上传
+    SQL 与 Python 的视频。
 - en: I make sure me sorry because of some delay because I was doing some kind of
     work busy with something but I'll make sure that I'll try to upload all the videos。
     So parallel Sql with Python will also get uploaded。 So let's proceed。 Now first
@@ -50,47 +69,64 @@
     name age experience and salary and I'm just going to use this and try to show
     you some of the example with respect to filter operation initially whenever you
     want to work with Pipar you have to make sure that you install all。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 我很抱歉因为一些延误，我一直忙于某些工作，但我会确保尽量上传所有视频。所以并行的 SQL 与 Python 也会被上传。那么我们开始吧。首先，让我创建一些单元格。今天我使用了一个数据集，一个小数据集，叫做
+    test1.csv。在这里，我有一些数据，比如姓名、年龄、经验和薪水，我将用这些数据展示一些关于过滤操作的示例。首先，每当你想使用 Pipar 时，必须确保安装所有必要的库。
 - en: 😊，Libraries， so I'm going to use pass spicepar dot sql import spark session
     and this will actually help us to create a spark session right and that is the
     first step whenever we want to basically work with Pipar right so we will be using
     spark session dot builder dot app name。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，库，我将使用 `from pyspark.sql import SparkSession`，这将帮助我们创建一个 Spark 会话，这是我们基本上在使用
+    Pipar 时的第一步。因此我们将使用 `SparkSession.builder.appName`。
 - en: Then I'm just going to create my app name as data frame and basically write
     get or create function。 which will actually help me to quickly create a spark
     session。 I think this is pretty much familiar with every one of you。 Now let's
     proceed and let's try to read a specific data set。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我将我的应用程序命名为data frame，并基本上编写get或create函数。这实际上将帮助我快速创建一个spark会话。我想这对你们每个人来说都是非常熟悉的。现在让我们继续，尝试读取特定的数据集。
 - en: So over here what I'm going to do I'm just going to create a variable Df underscoreosco
     I spark and I'm going to use this spark variable dot read or dot csv And here
     I'm just going to consider my data set test one。😊，Dot csv。And here I'm just going
     to make sure that we have this particular option selected Hesical to true and
     in for schema。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以在这里我要做的就是创建一个变量Df underscoreosco I spark，我将使用这个spark变量.dot read或.dot csv。在这里，我将考虑我的数据集test
+    one。😊，Dot csv。在这里，我将确保选中了这个特定的选项Hesical为true，并在模式中。
 - en: physical to true。 I think this all I've actually explained you。 then if I write
     D F dot pricepar dot show。 here you'll be able to see your data set。 Okay。 so
     it is reading， let's see how will get the output。 So this is my entire output。
     Now， guys。 as I showed you that we will be working on。😊，Filter operation。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: physical为true。我想这就是我实际上向你解释的全部内容。然后如果我写D F dot pricepar dot show。在这里你将能够看到你的数据集。好的。它正在读取，我们来看看输出。这个是我的全部输出。现在，伙计们。正如我所展示的，我们将进行。😊，过滤操作。
 - en: I will try to retrieve some of the records based on some conditions。 Remember。
     filters also are available in pandas， but there you try to write in a different
     way。 Let me just show you how we can perform filter operation by using pie spark。
     Okay。 so filter operations。 Let me make this as a markdown。 So it looks big。 It
     looks amazing。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将尝试根据一些条件检索一些记录。记住，过滤器在pandas中也是可用的，但在那里你尝试用不同的方式来写。让我向你展示如何使用pie spark进行过滤操作。好的。所以过滤操作。让我把这个做成markdown。这样看起来更大。看起来很棒。
 - en: let me make some more cells perfect。 Now， first step， how do I do a filter operation。
     Supp I want to find out salary of the people who less than probably 20000。 Okay。
     less than or equal to 20000。 I can write like that。 less than or equal to 20000。😊，Now
     for this。 there are two ways how we can write it first way。 I'll just try to use
     the filter operation。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我再做一些完美的单元。现在，第一步，我该如何进行过滤操作。假设我想找出工资低于20000的人。好的。小于或等于20000。我可以这样写。小于或等于20000。😊，现在为此。我们有两种写法，第一种方式。我将尝试使用过滤操作。
 - en: So you have like dot filter and here you just have to specify the condition
     that you want。 supposeupp I'll write salary is less than or equal to 20000。 remember
     this salary should be the same name of the column over here right and when I write
@@ -101,75 +137,104 @@
     condition I want to pick up two columns So what I can do I can use this and then
     I can basically write dot select and here I'm going to specify my name probably
     I want the name and H。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以你有像.dot filter，这里你只需指定你想要的条件。假设我写工资小于或等于20000。记住，这个工资应该是这里列的同名。当我写.dot show时，你将能够看到这些特定的记录，你会看到小于或等于20000的有四个人Sunny
+    Paul Herun Subumm，在这里你能够看到所有这些信息以及经验，现在这是其中一种方式，可能我只想在设置了这个特定条件后挑选两列。那么我可以这样做，我可以使用这个，然后基本上写.dot
+    select，在这里我将指定我的名字，可能我想要名字和H。
 - en: Name comma H。 So dot shop。I do this。Now， this is how you can actually do it
     again。here you can see that name underscore age is actually there and you are
     able to get that specific information After this。 probably I want to do some of
     the operation。 you can actually do less than greater than whatever things you
     want。 Probably I want to put two different conditions。 Then how should I put it。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: Name comma H。所以.dot shop。我这样做。现在，这就是你可以实际做到的，再次。在这里你可以看到name underscore age实际上是存在的，你能够获取那个特定的信息。在此之后。可能我想做一些操作。你可以实际做小于大于等你想要的任何事情。可能我想放两个不同的条件。那么我应该怎么做。
 - en: Let's see let's see for that also， So I'll write D D F Ppar dot。😊，Fter。 And
     here I am going to specify my first condition。 Suppose this is one way。 this is
     one way by using filter operation。 Also， guys， and this conditions that I'm writing。
     I can also write something like this。 see this。 Supp if I write D F pie spark
     of salary。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看看，好的，我会写D D F Ppar点。😊，Fter。这里我将指定我的第一个条件。假设这是一个方法。这是使用过滤操作的一种方式。还有，伙计们，我正在写的这些条件，我也可以写成这样。看这个。如果我写D
+    F pie spark的工资。
 - en: suppose salary is。😊，Less than or equal to 20000。 I can also write like this。
     I will also be able to get the same output。 So here you'll be able to see the
     same output over here。 Now， suppose I want to write multiple conditions。 How do
     I write， it's very simple。 I will take this。 This is first this is one of my condition。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设工资是。😊，小于或等于20000。我也可以这样写。我也会得到相同的输出。所以在这里你会看到相同的输出。现在，假设我想写多个条件。我该怎么写，实际上很简单。我会这样做。这是第一个，这是我的一个条件。
 - en: So I'm just going to use this condition。 and I can also use an and operation，
     you know。 So I'll say and or or any kind of operation that you want probably I
     want to say that Df underscorecope pi for salary is great less than or equal to
     2000 20000 and probably I want a Df ppar of salary。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我只是要使用这个条件。我也可以使用与操作，你知道的。所以我会说和或任何你想要的操作。可能我想说Df underscorecope pi的工资大于等于2000
+    20000，而且我可能想要Df ppar的工资。
 - en: 😊，Salary。Greater than or equal to 15000。 So I'll be able to get all those specific
     records。 Okay。 and again， I'll try to put this in another brackets。 Make sure
     that you do this。 otherwise。 you will be getting an error okay。😊，Very， very simple
     guys。 So let's see how Ive actually return。 It is something like this Df underscore
     Pi dot filter。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，工资。大于等于15000。所以我将能够获取所有这些特定记录。好的，然后，我会尝试将其放在另一个括号中。确保你这样做。否则你会收到错误信息。好的。😊，非常非常简单，伙计们。让我们看看我实际是如何写的。它是这样的
+    Df underscore Pi 点过滤器。
 - en: Df Pipar of sal less than or equal to 20000 greater equal to 150 If I execute。
     you'll be able to see between 15000 to 20000 you'll be able to find out。 you can
     also write or Then you'll be able to get all the different different values。 Now
     this is a kind of filter operation that you can basically specify remember。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: Df Pipar的工资小于或等于20000且大于等于150。如果我执行，你将能看到在15000到20000之间的记录。你也可以写或，然后你将能够得到所有不同的值。这是一种你可以基本上指定的过滤操作，请记住。
 - en: this will be pretty much handy when you are probably retrieving some of the
     records with respect to any kind of data sets。 and you can try different different
     things。 this is one way where you are actually directly providing your column
     name and putting a condition internally this Pi spark actually Pipar data frame。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 当你检索与任何数据集相关的一些记录时，这将非常方便。你可以尝试不同的方式。这是你实际提供列名并在内部放置条件的一种方式，这个Pi spark实际上是Pipar数据框。
 - en: understand that， and you'll be able to get the output right， So yes。 this was
     it all about this particular video。 I hope you like it。 I hope you like this particular
     filter operation。 Just try to do it from your side。 Okay one more operation is
     basically pending。 I can also write like this C。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 理解这一点，你就能正确获取输出。所以，是的。这就是这段视频的全部内容。希望你喜欢它。希望你喜欢这个过滤操作。试着从你这边做一下。好的，还有一个操作基本上是未完成的。我也可以写成这样C。
 - en: everybody I can basically。😊，Say that， okay。Probably I can use this operation。
     which is called as not operation， let's see。How this not operation will be coming。
     Okay， basically。 the inverse condition operation， we basically say， So I'll be
     using this。Okay。And this。 and inside this， I can put a not condition， which like
     this。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 每个人我基本上可以。😊，说，好吧。也许我可以使用这个操作，称为非操作，让我们看看。这个非操作将如何出现。好的，基本上。逆条件操作，我们基本上这样说。所以我会使用这个。好的。在里面，我可以放一个非条件，就像这样。
 - en: So I'll say this is a not of Df of5par salaries less than equal equal to 200。
     So anything that is greater than 20000 will be given over here。 Okay， so inverse
     operation。 you can say inverse filter operation。 So yes， this was one of the thing
     I'll say inverse filter operation。 And I've actually shown you what things we
     have actually discussed over here。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我会说这是一个不等于Df of5par的工资小于等于200的情况。所以任何大于20000的将会在这里给出。好的，所以这是逆操作。你可以说是逆过滤操作。所以，是的，这就是我会说的逆过滤操作。我实际上向你展示了我们在这里讨论的内容。
 - en: So I hope you like this particular video， please to subscribe the channel if
     you are not subscribe。 I'll see in the next video。 Have have a great day。 Thank
     you bye bye。😊。![](img/0ca5dfbb4a99ff7c74026b7b4989e47f_5.png)
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 希望你喜欢这个视频，如果你还没有订阅，请订阅频道。我会在下一个视频中见到你。祝你有个美好的一天。谢谢，再见。😊！![](img/0ca5dfbb4a99ff7c74026b7b4989e47f_5.png)
