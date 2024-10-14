@@ -1,55 +1,77 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P16：L16- ORDER BY 运算符
     - ShowMeAI - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P16：L16- ORDER BY 运算符
+    - ShowMeAI - BV1Pu41117ku
 - en: '![](img/23e7e024eacd8fc2fbd5216b1f322792_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/23e7e024eacd8fc2fbd5216b1f322792_0.png)'
 - en: 哦。In this tutorial I'm going to show you how to sort data in your SQL queries
     So here we have a query to select all the customers from the customers table。
     If you look at the query result， you can see that our customers are sorted by
     their ID so we have customers1。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。在本教程中，我将向你展示如何在 SQL 查询中对数据进行排序。这里我们有一个查询，用于选择客户表中的所有客户。如果你查看查询结果，你会看到我们的客户按
+    ID 排序，所以我们有客户 1。
 - en: 2，3，4 and so on This is the default sort column but we can always change this
     using the order by clause but first let me explain why the customer ID column
     is the default sort column。😊，So first I'm going to open up the navigator panel
     on the left side here is the customers table。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 2，3，4 等等，这是默认的排序列，但我们可以使用 `order by` 子句随时更改这一点。不过首先让我解释一下为什么客户 ID 列是默认的排序列。😊所以我先打开左侧的导航面板，这里是客户表。
 - en: Now let's click on this middle icon here that looks like a tool。😊。This opens
     up our customers table in the design mode， so here we can change our columns。
     we can add new columns or remove existing ones or change their name or order and
     so on。Now if you pay close attention， you can see a yellow key just before customer
     ID This means that this column is the primary key column for this table。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们点击这个看起来像工具的中间图标。😊这将我们的客户表打开为设计模式，在这里我们可以更改列。我们可以添加新列或删除现有列，或者更改它们的名称或顺序等等。现在如果你仔细观察，你会看到客户
+    ID 前面有一个黄色的钥匙，这意味着此列是此表的主键列。
 - en: so in relational databases every table should have a primary key column and
     the values in that column should uniquely identify the records in that table so
     back to our query window。You can see that the values in this column uniquely identify
     each customer。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 在关系数据库中，每个表都应该有一个主键列，该列中的值应唯一标识该表中的记录。因此，回到我们的查询窗口。你可以看到该列中的值唯一标识每个客户。
 - en: So the customer ID column is the primary key column in this table。 and that
     is why when we write a query against this table。 our customers are sorted by their
     ID by default。 Now let me show you how to sort customers by a different column。
     So here in the order by clause。 We type out the name of another column like first
     name。😊。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 客户 ID 列是此表中的主键列，这就是为什么当我们针对此表编写查询时，我们的客户默认按 ID 排序。现在让我向你展示如何按其他列对客户进行排序。所以在
+    `order by` 子句中，我们输入另一个列的名称，比如名字。😊
 - en: Let's execute the query。 Now you can see our customers are no longer sorted
     by their I。 Instead。 they're sorted by their first name in ascending order。 Now，
     if you want to reverse the sort order。 simply type out。D E SC， which is short
     for descending。 Now you are sorting these customers in descending order。Okay。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们执行查询。现在你可以看到我们的客户不再按 ID 排序，而是按名字以升序排序。现在，如果你想反转排序顺序，只需输入 D E SC，这是降序的缩写。现在你正在按降序排序这些客户。好的。
 - en: we can also sort data by multiple columns， for example。 let's say first we want
     to sort our customers based on their state。 and then within each state we want
     to sort them by their first name。So。We type out multiple columns here， state，
     and first name， let's execute the query。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们也可以通过多个列对数据进行排序，例如。假设我们首先想根据客户的州进行排序。然后在每个州内，我们想按名字进行排序。因此，我们在这里输入多个列，州和名字，然后执行查询。
 - en: Now you can see that the first state we have here is California。 followed by
     Colorado and now here in Florida we have two customers and these customers are
     sorted by their first name let's have a close look here so first we have Amber
@@ -57,87 +79,118 @@
     anywhere here for example we can sort this customers by their state in descending
     order and then sort them by their first name in ascending order or once again
     in descending order so there are various ways we can sort data。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在你可以看到，我们这里的第一个州是加利福尼亚州，接着是科罗拉多州，而在佛罗里达州，我们有两个客户，这些客户按名字排序。让我们仔细看看，首先是 Amber，然后是另一个客户。我们也可以在这里随时使用降序参数，例如，我们可以按州以降序排序，然后按名字以升序排序，或者再次以降序排序，因此我们可以用多种方式对数据进行排序。
 - en: Now， one of the differences between MyQl and other database management systems
     is that in Mysql。 we can sort data by any columns whether that column is in the
     select clause or not， for example。 let's say we only want to select the first
     and last name for each customer Now we can sort the result by any columns in this
     table。 they don't have to be first name and last name， for example， we can sort
     them by their birth date。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，MySQL与其他数据库管理系统之间的一个区别是，在MySQL中，我们可以按任何列排序数据，无论该列是否在选择子句中。例如，假设我们只想选择每个客户的名字和姓氏，现在我们可以按这个表中的任何列对结果进行排序，它们不必是名字和姓氏，例如，我们可以按他们的出生日期排序。
 - en: Take a look。 So this is a valid query in myQ， but other database management
     system sometimes yell at you when you write a query like this。 Now we can also
     sort data by an alias for example。 here in our select clause let's add the number
     10 and give it an alias as let's say points So points is not a valid column in
     this table it's simply an alias for an expression in this case a simple number。
     Now here we could have a complex mathematical expression。 it doesn't really matter。😊。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 看看。这是一个在MySQL中的有效查询，但其他数据库管理系统有时会对你写这样的查询大喊大叫。现在我们也可以通过别名排序数据，例如，在我们的选择子句中添加数字10，并给它一个别名，比如说得分。所以得分在这个表中不是一个有效的列，它只是一个表达式的别名，在这种情况下是一个简单的数字。现在这里我们可以有一个复杂的数学表达式，实际上并不重要。😊。
 - en: We can still sort data by an alias so we can order it by points and then first
     name。Once again。 this is a valid query from Maya Ski's point of view。Now one last
     thing before we finish this tutorial， I've seen some tutorials that teach you
     how to sort data by column positions。 for example， here we can order by one and2，
     and that basically means sorted data by their first name and then the last name
     so these are the order of these columns if we execute this query。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们仍然可以通过别名对数据进行排序，这样我们可以先按得分排序，然后按名字排序。再一次，这是从玛雅·斯基的角度来看一个有效的查询。现在在我们结束这个教程之前，还有最后一件事，我看到一些教程教你如何按列位置排序数据。例如，在这里我们可以按1和2排序，这基本上意味着按名字和姓氏排序数据，这些列的顺序是如果我们执行这个查询的话。
 - en: you can see that our customers are sorted by their first name and then the last
     name。😊。While this approach works， it's something that you should avoid because
     if in the future you come back here and add a new column in front of the first
     name column。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到我们的客户是按名字和姓氏排序的。😊。虽然这种方法有效，但你应该避免，因为如果将来你在名字列前面添加一个新列。
 - en: let's say burst date。Now， our customers are no longer sorted in the previous
     order。 so sorting data by column positions produces unexpected results and is
     something that you should avoid。 Instead， always sort by column names like first
     name。嗯。All right。 here's your exercise for this tutorial。In this database， we
     have this table called order items。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设说出生日期。现在，我们的客户不再按照之前的顺序排序。因此，通过列位置排序数据会产生意想不到的结果，这是你应该避免的。相反，始终按列名排序，比如名字。嗯。好吧，这是你在这个教程中的练习。在这个数据库中，我们有一个名为订单项的表。
 - en: where we can find the items for each order。 Now I've written a query that you
     cannot see here because that's the solution to the exercise I'm going to give
     you That query produces this result。 So we only have the items for the order with
     I2 and we have sorted this items based on the total price for each item。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以找到每个订单的商品。现在我写了一个你看不到的查询，因为这是我将给你的练习的解决方案。这个查询产生了这个结果。所以我们只得到了订单ID为I2的商品，并且我们根据每个商品的总价格对这些商品进行了排序。
 - en: So the total price for each item equals quantity times unit price。 In this case。
     the total price for product 1 is just over $18。 So go ahead and write a query
     to select all the items for order with I2 and sort them by their total price in
     descending order。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，每个商品的总价格等于数量乘以单价。在这种情况下，产品1的总价格刚好超过$18。所以继续写一个查询，选择订单ID为I2的所有商品，并按总价格降序排序。
 - en: 😊。![](img/23e7e024eacd8fc2fbd5216b1f322792_2.png)
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/23e7e024eacd8fc2fbd5216b1f322792_2.png)
 - en: 嗯。![](img/23e7e024eacd8fc2fbd5216b1f322792_4.png)
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗯。![](img/23e7e024eacd8fc2fbd5216b1f322792_4.png)
 - en: All right， let's select everything from order items where order IDd equals 2。That
     returns all the items for this order。Now we want to make sure to sort them by
     their total price。 So here in order by clause， we write an expression quantity
     times unit price。This returns the total price for each item， and then we add the
     descending argument here。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，我们从订单项中选择所有内容，条件是订单ID等于2。这将返回该订单的所有商品。现在我们要确保按总价格对它们进行排序。所以在ORDER BY子句中，我们写出一个表达式，即数量乘以单价。这将返回每个商品的总价格，然后我们在这里添加降序参数。
 - en: So once again， the expression that we use in the order by clause doesn't have
     to be a column name。 it can be an alias or an arithmetic expression like this。
     Let's go ahead and execute this query。😊。This is what we get。 Now， for clarity，
     I would like to add another column in the result。 So let's say quantity。😊，Times
     unit under price， but give it an alias like total price。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以再一次，我们在`order by`子句中使用的表达式不一定要是列名。它可以是一个别名或像这样的算术表达式。让我们继续执行这个查询。😊这就是我们得到的结果。为了清晰起见，我想在结果中添加另一列。假设是数量。😊在价格下的单位，再给它一个别名，比如总价格。
 - en: let's execute the query。We can clearly see that this data is sorted by the total
     price in descending order。 however， there is a bit of duplication in our query。
     we have repeated this expression in two places。 so now we can simplify our order
     by clause by using an alias that is total price and we get the exact same result。😊，Next，
     I'm going to show you how to limit the number of records returned from your queries。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们执行查询。我们可以清楚地看到，这些数据是按总价格降序排列的。然而，我们的查询中有一些重复。我们在两个地方重复了这个表达式。所以现在我们可以通过使用一个别名（总价格）来简化我们的`order
+    by`子句，我们得到完全相同的结果。😊接下来，我将向你展示如何限制查询返回的记录数量。
 - en: '![](img/23e7e024eacd8fc2fbd5216b1f322792_6.png)'
+  id: totrans-22
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/23e7e024eacd8fc2fbd5216b1f322792_6.png)'
 - en: Oh。![](img/23e7e024eacd8fc2fbd5216b1f322792_8.png)
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。![](img/23e7e024eacd8fc2fbd5216b1f322792_8.png)

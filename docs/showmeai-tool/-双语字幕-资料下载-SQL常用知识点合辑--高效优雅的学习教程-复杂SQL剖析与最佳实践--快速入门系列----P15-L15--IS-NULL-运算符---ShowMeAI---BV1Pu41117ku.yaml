@@ -1,56 +1,79 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P15：L15- IS NULL 运算符
     - ShowMeAI - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P15：L15- IS NULL 运算符
+    - ShowMeAI - BV1Pu41117ku
 - en: '![](img/8660f6ca174255d5ec5fa668f2b77ac7_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8660f6ca174255d5ec5fa668f2b77ac7_0.png)'
 - en: 哦。In this tutorial， I'm going to show you how to look for records that miss
     an attribute。 for example， if we select all the customers in our database。😊。You
     can see that the customer with I5 doesn't have a phone number。 So if you look
     closely here。 you can see the value null。 null means the absence of a value。 Now。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦，在本教程中，我将向你展示如何查找缺少属性的记录。例如，如果我们选择我们数据库中的所有客户。😊你会看到客户ID为I5的客户没有电话号码。所以如果你仔细看，这里会看到值为null。null表示缺少值。现在。
 - en: let's say we want to search for all the customers who don't have a phone Perhaps
     we want to send them an email and say hey。 your phone is missing in our system。
     So how can we get this customers。 that is very easy。 we use the is null operator。
     So in the word clause we type out where phone is null。 Now let's execute this
     query。😊，We only get one customer who doesn't have a phone。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设我们想查找所有没有电话的客户，也许我们想给他们发一封邮件，告诉他们“嘿，你的电话在我们的系统中缺失”。那么我们该如何获取这些客户呢？这非常简单，我们使用空运算符。所以在条件中我们写出“电话为空”。现在让我们执行这个查询。😊我们只得到一位没有电话的客户。
 - en: Now here we can also use the not operator to get the customers who do have a
     phone。So we change the condition to is not null lets execute the query。Now in
     the query results。 every customer does have a phone number。![](img/8660f6ca174255d5ec5fa668f2b77ac7_2.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们也可以使用非运算符来获取确实有电话的客户。所以我们将条件改为不是空，让我们执行查询。现在在查询结果中，每位客户都有电话号码。![](img/8660f6ca174255d5ec5fa668f2b77ac7_2.png)
 - en: '![](img/8660f6ca174255d5ec5fa668f2b77ac7_3.png)'
+  id: totrans-5
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8660f6ca174255d5ec5fa668f2b77ac7_3.png)'
 - en: For this exercise， I wanted to write a query to get the orders that are not
     shipped yet。 This is a very useful query that is used in a lot of real applications。
     For example。 let's say you're an admin for an online shop。 You want to see the
     orders that are not shipped yet so you can follow them up。😊，So write a query to
     get these orders。😊，So here we have the orders table。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于这个练习，我想写一个查询来获取尚未发货的订单。这是一个在许多实际应用中使用的非常有用的查询。例如，假设你是一个在线商店的管理员。你想查看尚未发货的订单，以便跟进。😊所以写一个查询来获取这些订单。😊所以这里我们有订单表。
 - en: let's have a quick look at the data in this table。😊，Alright， so if you pay close
     attention。 you see some of these orders don't have a shipped date and these orders
     also don't have a shipper ID。 which is a unique number for identifying the shippers。
     so any order that misses a value for the ship date or shipper ID is considered
     an order that is not shipped so let's go ahead and write a query to get these
     orders。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们快速查看一下这个表中的数据。😊好吧，如果你仔细观察，你会发现一些订单没有发货日期，这些订单也没有承运人ID，承运人ID是用于识别承运人的唯一编号。因此，任何缺少发货日期或承运人ID值的订单都被视为未发货订单。接下来我们来写一个查询来获取这些订单。
 - en: So back to our query editor， select star。From orders earth。Where。Shipped underlyingline
     date is no。 You could also write shipper I D is no。 They're both equally correct。
     So let's execute this query。 and we should get。Five orders， orders 1，3，4，6， and
     eight。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以回到我们的查询编辑器，选择所有订单。从订单表中，条件为“发货日期为空”。你也可以写“承运人ID为空”。这两种写法都是正确的。现在让我们执行这个查询，我们应该得到五个订单，订单1、3、4、6和8。
 - en: '![](img/8660f6ca174255d5ec5fa668f2b77ac7_5.png)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8660f6ca174255d5ec5fa668f2b77ac7_5.png)'
 - en: '![](img/8660f6ca174255d5ec5fa668f2b77ac7_6.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8660f6ca174255d5ec5fa668f2b77ac7_6.png)'

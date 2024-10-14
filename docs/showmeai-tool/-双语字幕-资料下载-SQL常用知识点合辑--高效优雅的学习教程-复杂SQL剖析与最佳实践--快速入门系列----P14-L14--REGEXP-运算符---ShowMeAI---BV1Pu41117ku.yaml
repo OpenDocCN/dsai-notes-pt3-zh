@@ -1,54 +1,76 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P14：L14- REGEXP 运算符
     - ShowMeAI - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P14：L14- REGEXP 运算符
+    - ShowMeAI - BV1Pu41117ku
 - en: In the last tutorial you learn about the like operator in SQL， so as another
     example。 let's say we want to search for the customers who have the word filled
     in their last name。 so we type out a where clause like this where last name like
     percent， field percent。So the word field can be anywhere in the last name。 Let's
     execute this query。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 在上一个教程中，你学习了 SQL 中的 like 运算符，因此作为另一个例子。假设我们想搜索姓氏中包含单词 filled 的客户。因此，我们输入一个类似于这样的
+    where 子句：where last name like percent，field percent。这样单词 field 可以出现在姓氏的任何位置。让我们执行这个查询。
 - en: We get only one customer beautiful。 Now， we also have another operator in myql
     that is red X。😊。Which is short for regular expression， and regular expressions
     are extremely powerful when it comes to searching for strings。 So they allow us
     to search for more complex patterns。 Here is an example。 If I want to rewrite
     this last word clause using a regular expression， it looks like this。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们只得到一个客户，很好。现在，我们在 MySQL 中还有另一个运算符，即 red X。😊它是正则表达式的缩写，正则表达式在搜索字符串时非常强大。因此，它们允许我们搜索更复杂的模式。这里有一个例子。如果我想使用正则表达式重写这个最后的
+    where 子句，它看起来是这样的。
 - en: where last name， R A G， E X P。😊，Now here in our string pattern。 we don't have
     to type out the person signs， we only type out field。So what we have on line 4
     is exactly identical to what we have on line 3。 Let's execute this query。😊。We
     get the same result beautifuli。 Now here in regular expressions。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: where last name，R A G，E X P。😊现在在我们的字符串模式中，我们不需要输入人名符号，我们只需输入 field。所以第4行的内容与第3行完全相同。让我们执行这个查询。😊我们得到了相同的结果，很好。现在在正则表达式中。
 - en: we have additional characters that we don't have when we use the like operator。
     For example。 we can use the carrot sign to indicate the beginning of a string。
     So if I put a carrot just before the word filled。😊。That means our last name must
     start with field Obviously， if we execute this query。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们有额外的字符，而在使用 like 运算符时并没有这些字符。例如，我们可以使用插入符号来表示字符串的开头。因此，如果我把插入符号放在单词 filled
+    前面。😊这意味着我们的姓必须以 field 开头。显然，如果我们执行这个查询。
 - en: we don't get anyone that matches this criteria， so we use the carrot sign to
     represent the beginning of a string。😊，We also have a dollar sign to represent
     the end of a string。 so this pattern means the last name must end with field。
     Let's execute this query。 We get the same result as before。Now we can also search
     for multiple words here。 For example。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们没有任何匹配该条件的记录，因此我们使用插入符号表示字符串的开头。😊我们还可以使用美元符号表示字符串的结尾。因此，这个模式意味着姓氏必须以 field
+    结尾。让我们执行这个查询。我们得到了与之前相同的结果。现在我们也可以在这里搜索多个单词。例如。
 - en: let's say we want to find the customers who have the words filled or Mac in
     their last name。 So we use a pipe， a vertical bar and type out another pattern。😊，Let's
     execute this query。So here we have two customers， one of them has the word Mac。
     the other has the word field in their last name。😊，Now we can take this to the
     next level。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设我们想找到姓氏中包含单词 filled 或 Mac 的客户。因此我们使用管道符号，竖线并输入另一个模式。😊让我们执行这个查询。在这里我们有两个客户，其中一个的姓中有单词
+    Mac，另一个的姓中有单词 field。😊现在我们可以将其提升到下一个层次。
 - en: let's say we want to find the customers who have the words field or Mac or row
     and their last name。😊，Let's execute the query。 We get three customers， beautiful。
     So we use a pipe or a vertical bar to represent multiple search patterns。 Now，
     as another example。 we can change our first search pattern to something like this。😊。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设我们想找到姓氏中包含单词 field、Mac 或 row 的客户。😊让我们执行这个查询。我们得到了三个客户，很好。因此，我们使用管道符号或竖线来表示多个搜索模式。现在，作为另一个例子，我们可以将第一个搜索模式更改为类似这样的内容。😊
 - en: Now this pattern means the last name should either start with the word field
     or it should have the wordm it or it should have the word row。 let's execute the
     query。😊，Now we get only two customers because our customer with the last name。
@@ -56,8 +78,11 @@
     to field dollar sign and execute the query。 we get three people here， three customers。So
     this is how we can combine multiple special characters when building a complex
     pattern。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在这个模式意味着姓氏要么以 field 开头，要么包含单词 field，要么包含单词 row。让我们执行这个查询。😊现在我们只得到了两个客户，因为我们的客户姓
+    Bru field，不符合这个模式。然而，如果我们将第一个模式改为 field 加上美元符号并执行查询，我们会得到三个客户。所以这就是我们在构建复杂模式时如何组合多个特殊字符。
 - en: Now let's look at another example， let's say we want to search for customers
     who have an E in their last name。So these are all the people alright now let's
     say we want to make sure that before the letter E we should either have a G or
@@ -66,99 +91,133 @@
     their last name so any of these characters can come before E。😊，Now let's execute
     this query。There you go， we only get two customers in the first example before
     E we have I。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们来看另一个例子，假设我们想要搜索姓氏中包含E的客户。这些都是符合条件的人，现在假设我们想确保在字母E之前要么有G，要么有I。所以这就是我们使用方括号的地方，括号内添加多个字符，如G和I，这样就能匹配任何姓氏中在E之前有G或I或M的客户，因此这些字符中的任何一个都可以在E之前出现。😊现在让我们执行这个查询。看吧，我们在第一个例子中只得到两个客户，在E之前我们有I。
 - en: which is one of the characters inside the brackets in the second example before
     E we have a G which is also another valid character before E。Now， once again，
     the square brackets don't have to be before E， we could add them after E。 so any
     customers who have E followed by an F or an M or a Q in their last name。Can be
     returned with this pattern。 Obviously， we don't have anyone in the database So
     this is how we use square brackets。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 在第二个例子中，E之前的方括号内包含的字符之一是G，它也是E之前的另一个有效字符。现在，再一次，方括号不必在E之前，我们可以将其放在E之后，因此任何在姓氏中以E后跟F、M或Q的客户都可以用这个模式返回。显然，我们的数据库中没有人。所以这就是我们如何使用方括号。
 - en: So we can also supply a range of characters。 For example， we can have E and
     just before E。 we want to have any characters from A to H We don't have to type
     them out explicitly like AB，C， D。 E， FG， that's very verbos so we can type out
     a to H and now if you execute this query。 we get these three people。😊，So let's
     quickly recap everything you learn about regular expressions in this tutorial。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们也可以提供字符范围。例如，我们可以有E，E之前要有任何从A到H的字符。我们不必像AB、C、D、E、FG那样逐一输入，这样显得很冗长，所以我们可以输入A到H，现在如果你执行这个查询，我们得到这三个人。😊让我们快速回顾一下在本教程中你学到的关于正则表达式的所有内容。
 - en: We use a carrot to represent the beginning of a string， so beginning。😊。We use
     a dollar sign to represent the end of our string。We use a vertical bar or a pipe
     to represent a logical or， so we can supply multiple search patterns。We use square
     brackets to match any single characters listed in the brackets。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们使用插入符号来表示字符串的开始，所以是开始。😊我们使用美元符号表示字符串的结束。我们使用竖线或管道表示逻辑或，因此我们可以提供多个搜索模式。我们使用方括号来匹配括号中列出的任何单个字符。
 - en: and finally we use square brackets with a hyphen to represent a range， so any
     characters from A to。 let's say F。😊，Now technically， my school supports more special
     characters， but quite honestly。 the ones that I have listed in this tutorial are
     the ones that you will be using 90% of the time。 so just memorize these and you're
     good to go。Qu honestly。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后我们使用方括号和一个连字符来表示一个范围，所以任何从A到F的字符。😊从技术上讲，我的学校支持更多特殊字符，但老实说，我在本教程中列出的那些是你在90%的情况下会用到的，所以记住这些就可以了。说实话。
 - en: a lot of beginners find the syntax for regular expressions confusing。 So in
     this video。 I'm going to give you four exercises that I have carefully designed
     to help you quickly learn about this syntax。 Here's the first exercise。 Get the
     customers whose first names are Elca or Amber。 and note that this is Amber with
     you。😊，Now for the second exercise。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 很多初学者发现正则表达式的语法令人困惑。因此，在这个视频中，我将给你四个练习，我精心设计了这些练习，以帮助你快速了解这套语法。这是第一个练习。获取名字是Elca或Amber的客户。注意这个是Amber的拼写。😊现在是第二个练习。
 - en: return the customers whose last names and with EY or ON。Here's the third exercise。
     get the customers whose last names， start with my， or it contains SE。 and finally
     as the last exercise return the customers whose last names contain B followed
     by R or U so go ahead and spend two to three minutes on this exercise when you
     are done come back continue watching。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 返回姓氏以EY或ON结尾的客户。这是第三个练习。获取姓氏以my开头或包含SE的客户。最后作为最后一个练习，返回姓氏中包含B后跟R或U的客户。请花两到三分钟完成这个练习，完成后请回来继续观看。
 - en: '![](img/8d0f5cdee26cc78209f65c1aaae9a244_1.png)'
+  id: totrans-16
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8d0f5cdee26cc78209f65c1aaae9a244_1.png)'
 - en: '![](img/8d0f5cdee26cc78209f65c1aaae9a244_2.png)'
+  id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8d0f5cdee26cc78209f65c1aaae9a244_2.png)'
 - en: Alright， let's knock out the first exercise。 So we want to get all。😊，Oops， there's
     a C here。 select store from customers where first name， regular expression。😊，And
     here's our pattern。 we want to search for two wordss， either Elca or Amber， as
     simple as that， let's execute this query。We should get two customers。 There you
     go Amber and Elca。 Allright。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，让我们完成第一个练习。所以我们想要获取所有。😊，哎呀，这里有个C。选择商店从客户中，正则表达式。😊，这是我们的模式。我们想搜索两个词，Elca或Amber，简单就是这样，让我们执行这个查询。我们应该得到两个客户。看，Amber和Elca。好的。
 - en: now let's knock out the second an exercise， so I'm going to delete this。 We
     don't need it anymore。😊。So we want to get the customers， select start fromCustom。Where
     last name？
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们完成第二个练习，我要删除这个。我们不再需要它。😊。所以我们想要获取客户，选择从Custom开始。哪里姓氏？
 - en: Should end with either EY or ON。So in the search pattern。 we type out EY followed
     by a dollar sign to indicate the end of a string。 then we add a vertical bar to
     supply the second search pattern， So O and once again， a dollar sign。Let's execute
     this query， oops， actually I forgot to type out regular expression， there you
     go。😊。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 应该以EY或ON结尾。所以在搜索模式中。我们输入EY后面跟一个美元符号来表示字符串的结束。然后我们添加一个竖线来提供第二个搜索模式，O，再一次，美元符号。让我们执行这个查询，哎呀，实际上我忘记输入正则表达式了，你看。😊。
 - en: So let's execute this query。And we should get。These four customers with IDs
     1，3，5 and 7。 the first three， their last names end with E Y and the last customer。
     his or her last name ends with ON All right。Now， let's work on the third exercise。
     So I'm just going to change the regular expression here。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们执行这个查询。我们应该得到这四位客户，ID为1、3、5和7。前面的三位，他们的姓氏以E、Y结尾，最后一位客户，他或她的姓氏以ON结尾。好的，现在，让我们进行第三个练习。我将更改这里的正则表达式。
 - en: We want to get the customers whose last name starts with my or contains S。 So
     we use a character to indicate the beginning of a string。😊，So it should start
     with my。 or it should contain S again very easy， lets execute the query。😊，And
     we get the customers with ID 4。8 and 10， and finally we want to get the customers
     whose last names contained B。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们想要获取姓氏以my开头或包含S的客户。所以我们用一个字符来表示字符串的开始。😊，所以它应该以my开头。或者它应该再次包含S，很简单，让我们执行查询。😊，我们得到了ID为4、8和10的客户，最后我们想获取姓氏中包含B的客户。
 - en: so let's change the search pattern， we should have a B followed by R or U。Now。
     there are two ways to write this regular expression。 We can use square bracket。
     So we have B followed by R or U。 That's one way。 The other way is to use a vertical
     bar， so。BR or BU， these are both valid solutions。So I hope you knocked out these
     exercises in the next tutorial I'm going to show you how to get the records with
     missing values。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们更改搜索模式，我们应该有B后面跟R或U。现在，有两种方式来写这个正则表达式。我们可以使用方括号。所以我们有B后面跟R或U。这是一种方法。另一种方法是使用竖线，所以。BR或BU，这两者都是有效的解决方案。希望你在下一个教程中完成这些练习，我将向你展示如何获取缺失值的记录。
 - en: 😊。![](img/8d0f5cdee26cc78209f65c1aaae9a244_4.png)
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/8d0f5cdee26cc78209f65c1aaae9a244_4.png)
 - en: Oh。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。

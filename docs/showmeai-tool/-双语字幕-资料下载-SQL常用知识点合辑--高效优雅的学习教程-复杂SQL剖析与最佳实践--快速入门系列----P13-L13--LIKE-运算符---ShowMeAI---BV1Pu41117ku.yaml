@@ -4,10 +4,13 @@
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P13：L13- LIKE 运算符 -
+    ShowMeAI - BV1Pu41117ku
 - en: '![](img/987f1c63e9084fb804d511337ab2db5a_0.png)'
   id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/987f1c63e9084fb804d511337ab2db5a_0.png)'
 - en: In this tutorial I'm going to show you how to retrieve rows that match a specific
     string pattern。 For example， let's say we only want to get the customers whose
     last name start with B。 So here in the word clause。😊，We type out where last name。This
@@ -17,6 +20,8 @@
   id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本教程中，我将向你展示如何检索与特定字符串模式匹配的行。例如，假设我们只想获取姓氏以“B”开头的客户。因此在WHERE子句中。😊，我们输入“where
+    last name”。这就是我们使用like运算符的地方，紧接着我们添加一个字符串模式。因此，我们想获取姓氏以“B”开头的客户，并且“B”后可以有任意数量的字符。
 - en: So we use the percent sign to indicate any number of characters。 you might have
     one character after B or no characters or 10 characters with this pattern we get
     all the customers whose last name start with B。 And also it doesn't matter if
@@ -25,6 +30,7 @@
   id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，我们使用百分号来表示任意数量的字符。在“B”后可能有一个字符、没有字符或十个字符。使用这个模式，我们可以得到所有姓氏以“B”开头的客户。而且无论是大写“B”还是小写“b”都没关系。让我们执行这个查询，结果出来了。我们只有三位姓氏以“B”开头的客户。😊，作为另一个例子。
 - en: let's say we only want to get the customers whose last name start with brush。
     so we change our pattern to brush percent。 Now let's execute the query。 we only
     get this one customer here。Now， this percent sign doesn't have to be at the end
@@ -33,6 +39,7 @@
   id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设我们只想获取姓氏以“brush”开头的客户。因此，我们将模式改为“brush percent”。现在执行查询，我们只得到这位客户。现在，这个百分号不必位于模式的末尾，可以在任何位置。例如，假设我们想搜索姓氏中含有字母“B”的客户。
 - en: whether it's at the beginning in the middle or at the end。 So we change our
     pattern to percent B percent。 This pattern means we can have any number of characters
     before or after B。 Let's execute the query。These are the customers who have a
@@ -41,6 +48,7 @@
   id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 无论是在开头、中间还是结尾。因此，我们将模式改为“percent B percent”。这个模式意味着在“B”之前或之后可以有任意数量的字符。让我们执行查询。这些客户的姓氏中有“B”，而且不管“B”是在开头、中间还是结尾。
 - en: Let's look at another example。I want to get all the customers whose last name
     and with why。😊。So here's the pattern we use， let's execute this query and we have
     five customers whose last name ands with a why。So this is how we use the percent
@@ -49,6 +57,7 @@
   id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看另一个例子。我想获取所有姓氏以“y”结尾的客户。😊。所以这是我们使用的模式，执行这个查询，我们有五位姓氏以“y”结尾的客户。这就是我们使用百分号的方法。现在，我们还有一个下划线，它匹配一个单一字符。因此，使用这个模式，我们得到的客户姓氏恰好有两个字符。
 - en: we don't care what the first character is， but the second character should be
     y let's execute the query。 obviously we don't have any customers whose last name
     matches this pattern。 but if you change this pattern to five underscores， So one，2，3，4，5。😊，Followed
@@ -56,6 +65,7 @@
   id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们不关心第一个字符是什么，但第二个字符应该是“y”。让我们执行这个查询。显然，我们没有任何姓氏与这个模式匹配的客户，但如果将模式更改为五个下划线，即“1，2，3，4，5”。😊，再加上一个“y”。我们应该能获取这些客户，因此他们的姓氏恰好有六个字符。
 - en: We don't care about the first five characters， but all of them end with a why。Now。
     as another example， we can replace the first underscore with B。 and that means
     we want to get the customers whose last name start with B and after B we have
@@ -64,6 +74,7 @@
   id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们不关心前五个字符，但它们都以“y”结尾。现在，作为另一个例子，我们可以用“B”替换第一个下划线。这意味着我们想获取姓氏以“B”开头的客户，且在“B”后面恰好有四个字符，最后以“Y”结尾。让我们执行这个查询，因此我们只有一位客户符合这个模式。😊，这就是我们使用like运算符的方法。
 - en: We use the percent sign to represent any number of characters。And。😊。An underscore
     to represent a single character。Now this like operator in MyQl is an older operator。
     but we also have a newer one that is more powerful and it allows us to search
