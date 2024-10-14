@@ -1,266 +1,363 @@
 - en: 【双语字幕+资料下载】140分钟入门 PyTorch，官方教程手把手教你训练第一个深度学习模型！＜官方教程系列＞ - P6：L6- 使用 PyTorch
     进行训练 - ShowMeAI - BV19L4y1t7tu
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】140分钟入门 PyTorch，官方教程手把手教你训练第一个深度学习模型！＜官方教程系列＞ - P6：L6- 使用 PyTorch
+    进行训练 - ShowMeAI - BV19L4y1t7tu
 - en: Welcome back to the Pyetorrch traininging video series。 This video is about
     the fundamentals of model training in Pytorrch。In past videos。 we've discussed
     building models with the neural network layers and functions of the Torchdot and
     N module。The mechanics of automated gradient computation， which is central to
     gradient based model training。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 欢迎回到 Pyetorrch 培训视频系列。本视频讲解的是 Pytorrch 中模型训练的基本原理。在之前的视频中，我们讨论了使用 Torchdot 和
+    N 模块的神经网络层和功能构建模型。自动梯度计算的机制是基于梯度的模型训练的核心。
 - en: And using Tensor board to visualize training progress and other activities。In
     this video。 we'll be adding some new tools to your inventory。We'll get familiar
     with the data set and data loader abstractions and how they ease the process of
     feeding data to your model during a training loop。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 并使用 Tensor board 可视化训练进度和其他活动。在本视频中，我们将为你的工具库添加一些新工具。我们将熟悉数据集和数据加载器的抽象，以及它们如何简化在训练循环中向模型提供数据的过程。
 - en: We'll discuss specific loss functions and when to use them。We'll look at Ptorrch
     optimizers which implement algorithms to adjust model weights based on the outcome
     of a loss function。And finally， we'll pull all of these together and see a full
     pi torch training loop in action。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将讨论特定的损失函数及其使用时机。我们将查看实现算法以根据损失函数的结果调整模型权重的 Ptorch 优化器。最后，我们将把所有这些结合在一起，看到一个完整的
+    Pi Torch 训练循环的实际运行。
 - en: '![](img/d2a30d88c79ae4d29aec4acb430b984f_1.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d2a30d88c79ae4d29aec4acb430b984f_1.png)'
 - en: Efficient data handling in Pytorrch is achieved via two main classes， the data
     set and data loader。The data set is responsible for accessing and processing single
     instances of your data from your data。There are a number of data sets available
     in the Pytorch domain APIs。 and you can make your own data sets using provided
     subclasses or by subclassing the data set parent class yourself。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 在 Pytorrch 中高效的数据处理是通过两个主要类实现的，即数据集和数据加载器。数据集负责从你的数据中访问和处理单个实例。在 Pytorch 领域的
+    API 中有许多可用的数据集，你可以使用提供的子类或自己子类化数据集父类来创建自己的数据集。
 - en: The data loader pulls instances of data from the data set。 either automatically
     or with a sampler that you define。Collects them in batches and returns them for
     consumption by your training loop。The data loader works with all kinds of data
     sets， regardless of the type of data they contain。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据加载器从数据集中提取数据实例，既可以自动提取，也可以使用你定义的采样器。它将数据收集成批并返回以供训练循环使用。数据加载器可以与各种数据集一起使用，无论它们包含何种类型的数据。
 - en: The Py Torch domain APIs， Torch Viion， Torch text and Torch audio give access
     to a collection of open。 labeled data sets that you may find useful for your own
     training purposes。Torch fission contains a broad array of data sets labeled for
     classification， object detection。 and object segmentation。It also contains the
     convenience classes， image folder and data set folder。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: Py Torch 领域的 API，Torch Viion、Torch text 和 Torch audio 提供了一系列开放的标记数据集，你可能会发现这些数据集对你自己的训练目的很有用。Torch
+    fission 包含广泛的用于分类、目标检测和目标分割的标记数据集。它还包含便利类，如图像文件夹和数据集文件夹。
 - en: which allow you to easily create a data set from images or other data accessible
     on your file system。 see the documentation for more details on these classes。Torch
     textext offers data sets labeled for a variety of classification。 translation
     and analysis tasks。Torch audioud gives access to data sets labeled for transcription
     and music genre detection。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 这使你能够轻松地从图像或文件系统中其他可访问的数据创建数据集。有关这些类的更多详细信息，请参阅文档。Torch textext 提供了用于各种分类、翻译和分析任务的标记数据集。Torch
+    audioud 提供了用于转录和音乐类型检测的标记数据集。
 - en: Most of the time， you'll know the size of your data set and be able to access
     arbitrary single instances of it。In this case， it's easy to create a data set，
     just subclass torch U's data data set。 and override two methods。Len to return
     the number of items near data set and get item to access data instances by key。If
     the key is a sequential integer index， your data set subclass will work with the
     default data loader configuration。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 大多数情况下，你会知道数据集的大小，并能够访问任意单个实例。在这种情况下，创建数据集非常简单，只需子类化 torch U 的数据集，并重写两个方法。Len
+    方法返回数据集中的项目数量，get item 方法通过键访问数据实例。如果键是顺序整数索引，你的数据集子类将与默认的数据加载器配置一起工作。
 - en: If you have some other sort of key， such as a string or file path。 you'll need
     to set up your data loader with a custom sampler class to access instances of
     your data set。 See the documentation for more details in this advanced technique。If
     you don't know the size of your dataset set at runtime， for example。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你有其他类型的键，如字符串或文件路径，你需要使用自定义采样器类设置数据加载器以访问数据集的实例。有关此高级技术的更多详细信息，请查看文档。如果你在运行时不知道数据集的大小，例如。
 - en: if you are using real time streaming data as an input。You'll want to subclass
     Torch UTil's data Iterable data set。To do this。 you need to override the inner
     method of the iterable data set parent class。Be aware that you'll have to do a
     little extra work to cover the case where multiple workers are asking for data
     instances from your iterable data set。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你使用实时流数据作为输入，你需要子类化 Torch UTil 的数据可迭代数据集。为此，你需要重写可迭代数据集父类的内部方法。请注意，处理多个工作线程请求可迭代数据集的数据实例时，你需要做一些额外工作。
 - en: The documentation has example code that demonstrates this。When you make your
     own data set。 you'll often want to split it into subsets for training， validation。
     and final testing of your model。The torch U data random split function allows
     you to do that。When creating a data loader， the only required constructor argument
     is a data set。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 文档中有示例代码演示这一点。当你创建自己的数据集时，通常希望将其拆分为训练、验证和最终测试模型的子集。torch U 的数据随机拆分函数允许你这样做。创建数据加载器时，唯一必需的构造函数参数是数据集。
 - en: The most common optional arguments you'll set on a data loader are batch size。
     shuffle and numb workers。Btch size sets the number of instances in a training
     batch。Determining your optimal batch size is a topic beyond the scope of this
     video。You'll commonly see this be a multiple of4 or 16， but the optimal size for
     your training task will depend on your processor architecture。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 你在数据加载器上设置的最常见可选参数是批次大小、随机打乱和 Numb workers。批次大小设置训练批次中的实例数量。确定最佳批次大小是本视频讨论之外的主题。你会常见到这个值是
+    4 或 16 的倍数，但针对你的训练任务的最佳大小将依赖于你的处理器架构。
 - en: available memory， and its effect on training convergence。Shuffling will randomize
     the order of instances via index permutation。 Set this to true for training so
     that your model's training will not be dependent on the order of your data or
     the configuration of specific batches。 This flag can be left to as default of
     false for validation， model， testing and inverence。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 可用内存及其对训练收敛的影响。打乱将通过索引排列随机化实例的顺序。将其设置为 true 以便训练，以便模型的训练不依赖于数据的顺序或特定批次的配置。对于验证、模型测试和推理，可以将此标志留为默认的
+    false。
 - en: Numb workers sets the number of parallel threads， pulling data instances。 The
     ideal number of workers is something you may determine empirically。 and will depend
     on details of your local machine and access time for individual data instances。Other
     data loader configuration arguments that you'll see for more advanced cases include
     a custom sampler class for those cases。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: Numb workers 设置并行线程的数量，拉取数据实例。理想的工作线程数量可以通过经验确定，这将取决于你本地机器的细节以及单个数据实例的访问时间。其他数据加载器配置参数，包括自定义采样器类，将适用于索引方式不是顺序整数的更高级的情况。
 - en: when your data set is indexed by something other than sequential integers。And
     timeap。 which will be especially important for iterable data sets backed by real
     time data streams。And as always， see the documentation for more details。If you
     will need to transfer your data batches to GPU during training。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 并且时间戳对于由实时数据流支持的可迭代数据集尤其重要。与往常一样，请查看文档以获取更多详细信息。如果你在训练过程中需要将数据批次转移到 GPU。
 - en: it is recommended to use pinned memory buffers to do so。This means that the
     memory buffers underlying your tensors are in page locked memory。 which makes
     for faster host to GPU data transfer。Notes on this important best practice are
     linked from the interactive notebook accompanying this video。The data loader class
     makes it easy to do this automatically by setting its pin memory to true when
     you create the data loader。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 推荐使用固定内存缓冲区来实现。这意味着你张量底层的内存缓冲区位于页面锁定内存中，这使得主机到 GPU 的数据传输更快。关于这一重要最佳实践的说明链接自本视频附带的交互式笔记本。数据加载器类通过在创建数据加载器时将其固定内存设置为
+    true，使得这一过程变得简单。
 - en: For this video， we'll be using the fashion Enist data set。 which contains image
     tiles of garments each labeled with one of 10 classes， shirts， jackets， shoes。
     et cetera。The code in this cell will create data set objects for separate training
     and validation data splits and download the images and labels。 if necessary。Next，
     it will create appropriately configured data loaders。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本视频中，我们将使用Fashion MNIST数据集，其中包含每个标记为10个类别之一的服装图像。此单元中的代码将创建单独的训练和验证数据分割的数据集对象，并下载图像和标签（如果需要）。接下来，它将创建适当配置的数据加载器。
 - en: now that we don't bother shuffling our validation split。We'll also define the
     class labels we'll be training against and report the data set sizes。Note that
     it may take a few minutes to download the data set depending on your network connection。
     but you only have to do that once。We'll follow the practice of visualizing the
     output of our data loader to make sure it's what we expect。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们不再打乱验证集。我们还将定义要训练的类别标签，并报告数据集的大小。请注意，下载数据集可能需要几分钟，具体取决于您的网络连接，但您只需执行一次。我们将遵循可视化数据加载器输出的做法，以确保它符合我们的预期。
 - en: And sure enough， here are our pictures and labels。 So let's move on。Our model
     for this example。 is a variant of the Linenette 5 image classifier， which should
     look familiar if you've watched previous videos in this series。 It contains convolutional
     layers to extract and compose features from the images and a set of fully connected
     layers to perform the classification。Pytorch includes a broad array of commonly
     used loss functions suitable for a variety of tasks。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 确实，这里是我们的图片和标签。那么让我们继续。这个例子的模型是Linenette 5图像分类器的一个变体，如果你看过本系列之前的视频，它应该很熟悉。它包含卷积层，用于从图像中提取和组合特征，以及一组全连接层用于执行分类。PyTorch包括一系列适合多种任务的常用损失函数。
 - en: These include functions like mean squared error loss， for regression tasks。Callback
     Livebller divergence for comparisons of continuous probability distributions。
     binary cross entropy for binary classification and cross entropy loss for multi
     class classification tasks。 All loss functions compare the output of your model
     to some label or expected set of values。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些包括均方误差损失等函数，适用于回归任务。回调似然散度用于比较连续概率分布。二元交叉熵用于二分类，多类分类任务使用交叉熵损失。所有损失函数比较模型的输出与某些标签或期望值集。
 - en: For our classification task in this video， we'll use cross entropy loss。Will
     call its constructor with no arguments， but this particular loss function can
     be configured to rescale individual class weights。 ignore certain classes when
     computing loss and more。 see the docs for details。In the cell shown here， we'll
     create our loss function。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个视频中的分类任务中，我们将使用交叉熵损失。我们将以无参数的方式调用它的构造函数，但这个特定的损失函数可以配置为重新缩放单个类别的权重。在计算损失时忽略某些类别等。请查看文档以获取详细信息。在这里显示的单元中，我们将创建我们的损失函数。
 - en: create some Uat's values for outputs and expected values， and run the loss function
     against them。![](img/d2a30d88c79ae4d29aec4acb430b984f_3.png)
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建一些输出和期望值的Uat值，并对它们运行损失函数。
 - en: Note that the loss function will return a single value for the whole batch。Pytorch
     optimizeimrs perform the task of updating learning weights based on the backward
     gradients of the loss function。![](img/d2a30d88c79ae4d29aec4acb430b984f_5.png)
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，损失函数将返回整个批次的单个值。PyTorch优化器执行基于损失函数的反向梯度更新学习权重的任务。
 - en: For more information on backward gradient computation， see the relevant video
     earlier in this series。PyTtort provides a variety of optimization algorithms，
     including stochastic gradient descent， Arad。 Adam， LBFGS， and others， as well
     as tools for further refinements such as learning weight scheduling。The full breadth
     of optimization algorithms is beyond the scope of this video。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 关于反向梯度计算的更多信息，请参见本系列之前的相关视频。PyTorch提供多种优化算法，包括随机梯度下降、Adam、LBFGS等，以及用于进一步优化的工具，如学习率调度。优化算法的全部范围超出了本视频的范围。
 - en: but we'll discuss a few features that are common to most Ptorrch optimizers。The
     first commonality is that all optimizers must be initialized with the model parameters。
     This is best done by calling the parameters method on the model object， as shown
     here。These are required for every optimizer because these are the weights that
     get updated during the training process。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我们将讨论一些大多数 PyTorch 优化器共有的特性。第一个共性是所有优化器必须使用模型参数进行初始化。最好的方法是调用模型对象上的参数方法，如此处所示。这些是每个优化器所需的，因为这些是训练过程中会被更新的权重。
 - en: '![](img/d2a30d88c79ae4d29aec4acb430b984f_7.png)'
+  id: totrans-27
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d2a30d88c79ae4d29aec4acb430b984f_7.png)'
 - en: This brings up an important point when using Pytorrch optimizers。 make sure
     that your model parameters are stored on the right device。 If you're doing your
     training on the GPU， you must move your model parameters to GPU memory before
     initializing your optimizer。If you don't do this， you won't see your loss decreasing
     over time because your optimizer will be updating the wrong copy of the model's
     parameters。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 这提出了一个使用 PyTorch 优化器时的重要点：确保你的模型参数存储在正确的设备上。如果你在 GPU 上进行训练，你必须在初始化优化器之前将模型参数移动到
+    GPU 内存中。如果不这样做，你将不会看到损失随时间减少，因为优化器将更新错误副本的模型参数。
 - en: '![](img/d2a30d88c79ae4d29aec4acb430b984f_9.png)'
+  id: totrans-29
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d2a30d88c79ae4d29aec4acb430b984f_9.png)'
 - en: Most gradient based optimizers will have some combination of the following parameters。
     a learning rate that determines the size of the steps your optimizer takes。A momentum
     value。 which causes the optimizer to take slightly larger steps in the direction
     of strongest improvement over the last few time steps。A weight decay value can
     be provided to encourage weight regularization and avoid overfitting。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 大多数基于梯度的优化器将具有以下参数的某种组合。一个学习率决定了优化器所采取的步骤大小。一个动量值使得优化器在最近几个时间步骤中朝着改进最显著的方向采取稍微更大的步骤。可以提供一个权重衰减值，以鼓励权重正则化并避免过拟合。
 - en: Other parameters are usually coefficients or weights specific to an algorithm。For
     our example。 we're going to use simple stochastic gradient descent with learning
     weight and momentum values specified。Note that the optimal values for these arguments
     called hyperparameters are difficult to know a priori and are often found through
     grid search or similar methods。Hyperparameter optimization is a topic we'll cover
     in a later video。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 其他参数通常是特定于算法的系数或权重。对于我们的例子，我们将使用简单的随机梯度下降，并指定学习率和动量值。请注意，这些被称为超参数的参数的最佳值很难提前确定，通常通过网格搜索或类似的方法来找到。超参数优化是我们将在后面的课程中讨论的主题。
 - en: If you're working through the interactive note accompanying this video。 take
     the time to try different values of the specified parameters to see their effect
     on the training process。 You can also try different optimizers to see which gives
     you the best accuracy or fastest convergence。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你正在使用与此视频配套的互动笔记，请花时间尝试不同的参数值，以查看它们对训练过程的影响。你也可以尝试不同的优化器，以查看哪个能给你最佳的准确率或最快的收敛速度。
 - en: '![](img/d2a30d88c79ae4d29aec4acb430b984f_11.png)'
+  id: totrans-33
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d2a30d88c79ae4d29aec4acb430b984f_11.png)'
 - en: '![](img/d2a30d88c79ae4d29aec4acb430b984f_12.png)'
+  id: totrans-34
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d2a30d88c79ae4d29aec4acb430b984f_12.png)'
 - en: Now we have all the pieces we need， a model， a data set wrapped in a data loader，
     a loss function。 and an optimizer。 We're ready to train。Along the way。 we're going
     to visualize our training progress with Tensor board。Here is a function to perform
     training one epo。 that is one complete pass over the training data。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们拥有所需的所有部分：一个模型，一个装在数据加载器中的数据集，一个损失函数，以及一个优化器。我们准备好进行训练。与此同时，我们将使用 TensorBoard
+    可视化我们的训练进展。以下是执行一个完整训练周期的函数，即对训练数据的一次完整遍历。
 - en: In this function。Enumerate ver batches of data provided by the training data
     loader。Btches are of the size we specified when initializing the data loader，
     in our case，4。For each batch。 we break out the input tensors in the labels。Next，
     we zero the learning gradients。We tell the model to provide a set of predictions
     for the input batch。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个函数中，枚举由训练数据加载器提供的数据批次。批次的大小是我们在初始化数据加载器时指定的，在我们的例子中是 4。对于每个批次，我们提取输入张量和标签。接下来，我们将学习梯度归零。我们告诉模型为输入批次提供一组预测。
 - en: We compute the loss that is the difference between the predictions and expected
     values。 and compute the backward gradients of the loss function over the learning
     weights with the backward call。We tell the optimizer to take a step， adjusting
     the learning weights based on the gradients we just computed。Finally， we tally
     the running loss。Every thousand batches， we log the average loss per batch。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们计算损失，即预测值与期望值之间的差异，并通过反向调用计算损失函数对学习权重的反向梯度。我们告诉优化器进行一步调整，基于刚计算的梯度来调整学习权重。最后，我们汇总运行损失。每千个批次，我们记录每个批次的平均损失。
 - en: We also report this value to tensor board for graphing。The average loss for
     the last thousand batches is returned from this function for validation purposes。Next，
     we'll loop over a number of eds。For each epo， we will。Set the model to training
     mode。 That is with computation tracking turned on so we can compute backward radiance。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还将这个值报告到Tensor Board以进行图形化。这个函数返回最后一千个批次的平均损失以供验证。接下来，我们将循环多个周期。对于每个周期，我们将模型设置为训练模式。也就是开启计算跟踪，以便我们可以计算反向梯度。
 - en: We'll train one epoch and record the average loss per batch that it reports。We
     set the model to inference mode。That is， with computation tracking turned off
     since we don't need it for the validation steps below。We do inferences and compute
     losses for the validation data set and compute the average loss per batch。We report
     the average losses for both training and validation。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将训练一个周期，并记录每个批次报告的平均损失。我们将模型设置为推断模式。也就是关闭计算跟踪，因为下面的验证步骤不需要。我们进行推断并计算验证数据集的损失，并计算每个批次的平均损失。我们报告训练和验证的平均损失。
 - en: both printing it directly and logging it to Tensor Board。Finally。 if this validation
     loss is the best we've seen for the model， we save the models state to a file。So
     let's run this and watch a single epoch。We'll start Tensor board。And see what
     it reports。And as we would want it to， the loss is decreasing monotonically。Let's
     watch a few more epics。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 直接打印和记录到Tensor Board。如果这个验证损失是我们为该模型看到的最佳结果，我们将模型状态保存到文件中。让我们运行这个并观察单个周期。我们将启动Tensor
+    Board，查看它的报告。正如我们所希望的那样，损失单调减少。让我们再观察几个周期。
 - en: It looks like the training and validation losses are diverging。And we see that
     reflected in the graph。Let's continue making it a nice， round 10 es。It looks from
     the printed stats that the training losses settled just above 0。2。 but the training
     and validation losses are still divergent。And that's borne out visually as well。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 看起来训练和验证损失正在发散。我们在图中看到这一点。让我们继续，使其达到一个圆整的10个周期。从打印的统计信息看，训练损失略高于0.2，但训练和验证损失仍然发散。这在视觉上也得到了验证。
 - en: So it looks like our model has converged on its best possible accuracy。 at least
     with these hyperparameter， but we appear to be overfitting to the training data。
     This may be a sign that our model is over specifiedified with respect to the complexity
@@ -268,45 +365,64 @@
     function our model is trying to simulate。In any case， tracking stats， performing
     consistent validation and tracking the output visually allowed us to identify
     an issue to investigate。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以看来我们的模型在最佳准确性上收敛了。至少在这些超参数下，但我们似乎对训练数据过拟合。这可能表明我们的模型在数据集复杂性上过度指定，或者数据集不够大，无法推断出模型试图模拟的通用函数。无论如何，跟踪统计、进行一致的验证和视觉跟踪输出使我们能够识别出一个需要调查的问题。
 - en: We've also saved our best performing models parameters to a file for further
     examination。It's worth taking some time to experiment with changes in the model
     and the optimizer parameters to see how the training results change for a relatively
     simple case like this。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还将表现最佳的模型参数保存到文件中以便进一步检查。值得花时间尝试模型和优化器参数的变化，以观察像这样相对简单的案例中的训练结果变化。
 - en: Watch for changes in convergence time， model accuracy and performance versus
     the validation set。![](img/d2a30d88c79ae4d29aec4acb430b984f_14.png)
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意收敛时间、模型准确性与验证集性能的变化。![](img/d2a30d88c79ae4d29aec4acb430b984f_14.png)
 - en: '![](img/d2a30d88c79ae4d29aec4acb430b984f_15.png)'
+  id: totrans-45
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d2a30d88c79ae4d29aec4acb430b984f_15.png)'
 - en: Model training and the optimization of the training process are deep topics。
     and the documentation at Pytorch。 org contains a wealth of helpful information
     from model training with Pitorrch。The tutorial section of Pytorch。org has information
     on a breadth of training topics。 including training techniques such as transfer
     learning and fine tuning for leveraging existing trained networks。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型训练和训练过程的优化是深奥的话题，Pytorch.org的文档包含了从Pitorrch模型训练中获得的大量有用信息。Pytorch.org的教程部分提供了关于广泛训练主题的信息，包括迁移学习和微调等训练技术，以利用现有训练的网络。
 - en: training generative adversarial networks， reinforcement learning and Torchdot
     distributed Pytorrchches framework for distributed training for when the scale
     of your data set or your model necessitates training on a cluster computers。The
     Pytorch documentation includes full details of the tools we covered in this video
     and more。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 训练生成对抗网络、强化学习和Torchdot分布式Pytorch框架，以便在数据集或模型规模需要在集群计算机上进行训练时使用。Pytorch文档包含了我们在本视频中覆盖的工具的完整细节及更多内容。
 - en: Full details of the training optimizers and associated tools such as the learning
     scheduler。Full details of the available loss functions， information on the data
     set and data loader classes。 including guidance on making custom data set classes。
     documentation of Torrsdot distributed and the distributed R PCC framework。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 训练优化器和相关工具的完整细节，例如学习调度器。可用损失函数的完整细节，数据集和数据加载类的信息，包括制作自定义数据集类的指导。Torrsdot分布式及分布式R
+    PCC框架的文档。
 - en: And complete information on the data sets available in Torch Vi， Torch text，
     and torch audio。![](img/d2a30d88c79ae4d29aec4acb430b984f_17.png)
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 以及Torch Vi、Torch text和torch audio中可用数据集的完整信息。![](img/d2a30d88c79ae4d29aec4acb430b984f_17.png)
 - en: '![](img/d2a30d88c79ae4d29aec4acb430b984f_18.png)'
+  id: totrans-50
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d2a30d88c79ae4d29aec4acb430b984f_18.png)'

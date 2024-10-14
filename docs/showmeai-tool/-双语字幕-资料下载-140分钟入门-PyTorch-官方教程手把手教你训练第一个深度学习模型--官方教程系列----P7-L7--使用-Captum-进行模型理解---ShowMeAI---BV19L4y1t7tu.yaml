@@ -1,9 +1,11 @@
 - en: 【双语字幕+资料下载】140分钟入门 PyTorch，官方教程手把手教你训练第一个深度学习模型！＜官方教程系列＞ - P7：L7- 使用 Captum
     进行模型理解 - ShowMeAI - BV19L4y1t7tu
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
 - en: '![](img/2fb9bd9df95d3221c8b5a298fc267de0_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
 - en: Welcome to the next video in the Pytorrch Tra series。 This video gives an overview
@@ -11,23 +13,28 @@
     basic concepts of captain that we'll be covering attributions。 attribution algorithms
     and visualizations。We'll demonstrate how to perform and visualize feature attributions
     for a computer vision classifier。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
 - en: Will apply layer attribution to the same classifier to examine the activity
     of a model's hidden layers。And finally， we'll look at captive insights and API
     for creating visualization widgets for images。 text and other features。![](img/2fb9bd9df95d3221c8b5a298fc267de0_2.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
 - en: Captain provides a deep set of tools for explaining the behavior of your pietorrch
     models。 This video and the accompanying interactive notebook provide only an overview
     of core features。 The website at Captain AI contains more in depth tutorials，
     documentation and an API reference。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/2fb9bd9df95d3221c8b5a298fc267de0_4.png)'
+  id: totrans-5
   prefs: []
   type: TYPE_IMG
 - en: '![](img/2fb9bd9df95d3221c8b5a298fc267de0_5.png)'
+  id: totrans-6
   prefs: []
   type: TYPE_IMG
 - en: To run the interactive notebook associated with this video， you'll want to install
@@ -35,12 +42,14 @@
     piey torch， torch visionion and captain。Captain can be easily installed with Pip
     or with Ananaconda by specifying the Pytorr channel。To start with， we're going
     to take a pre trained image classifier。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
 - en: Resnet trained against the imagenet data set， and we're going to use the tools
     within cap to gain insight into how the model responds to a particular input image
     to give its prediction。This first sells a bunch of imports， including attribution
     methods and visualization tools from captain。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
 - en: which we'll examine shortly。Next， we'll get our pretrain model。Then we'll pull
@@ -49,10 +58,12 @@
     it's going to be a cat。Next we'll define some image transforms to prepare the
     image for consumption by the model。And bring in the human readable labels of the
     thousand imagenet classes。Now。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
 - en: let's see what the model thinks this is。And thinks our cat is a cat。But why
     does the model think this is a picture of a cat。![](img/2fb9bd9df95d3221c8b5a298fc267de0_7.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
 - en: For the answer to that， we can look under the hood of the model of cap。The core
@@ -60,6 +71,7 @@
     a particular output or activity of a model with its input。The first kind of attribution
     is feature attribution。This lets us ask which parts of the input were most important
     in determining a model's prediction。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
 - en: It lets us find answers to questions like。Which words in this input question
@@ -67,6 +79,7 @@
     drove the model's classification of the image。Which features of the input data
     were most significant to my regression model's prediction。Feature attribution
     just covers inputs and outputs， though。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
 - en: What if we want to see what's happening inside the model。For that， we have layer
@@ -74,18 +87,22 @@
     input。It lets us answer questions， like。Which neurons in this layer were most
     active， given this input。Which neurons in this layer were most important to how
     the input influenced a particular output neuro。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
 - en: How is the activation map output by this convolutional layer correlated to my
     input image。Finally。 there's neuron attribution。 This is similar to layer attribution。
     but goes down to the level of individual neurons in the model。In this tutorial。
     we're going to look at feature attribution and layer attribution。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/2fb9bd9df95d3221c8b5a298fc267de0_9.png)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
 - en: First， feature attribution。Attributions are realized by an attribution algorithm。![](img/2fb9bd9df95d3221c8b5a298fc267de0_11.png)
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
 - en: A particular method of mapping model activity to inputs。The first feature attribution
@@ -93,12 +110,14 @@
     approximates the integral of the gradients of the model's output with respect
     to its inputs。 essentially finding the most important paths through the model
     for a given input output pair。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
 - en: We'll go ahead and create an integrated gradient object， initializing it with
     our model。Then we'll call the attribute method on it。We'll feed it our input。
     our output label and an optional number of steps to run。Note that running the
     cell can take a couple of minutes。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
 - en: The process of integrating the gradients is computationally intensive。Once that
@@ -106,6 +125,7 @@
     with respect to the cat label generated by the model。For a simple regression model
     with few output categories， we might just print that out as a table。 but for a
     more complicated C model with a larger input like an image。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
 - en: it would help to be able to relate the importance map to the image visually。Captain's
@@ -113,6 +133,7 @@
     going to make two calls to visualize image at。The first displays the original
     image。First。 we need to make some adjustments to the image。 We call a squeeze
     to remove the batch dimension on the image。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
 - en: We make sure we're running on CPU。 We detach the image tensor from computation
@@ -120,6 +141,7 @@
     unnecessarily。And finally。 we make it a numpy array and switch the dimensions
     around and put the color channels last。The first argument of this method would
     normally be the attributions。 But for this call。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
 - en: we're going to make that none。 We're just displaying the original image。The
@@ -127,18 +149,21 @@
     a string that indicates how you want the visualization to work。Here， we told Captain。
     we just want to display the aboginal image。Finally， we give our visualization
     an instructive title。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
 - en: The second call will make a visual mapping of the important regions of our image。The
     first argument is the attributions we got from integrated gradients。 And the second
     is our transformative image。For a method will specify heat nap。Where color intensity
     maps to the importance of an image region。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
 - en: Capize you to use custom color maps from map plotlib。 And we've made one here
     that will slightly enhance the contrast of our heat map。We specify s as positive。
     We're only looking at positive attributions。Running a cell。 we can see that the
     model is paying attention to the outline of the cat。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
 - en: as well as the region around the centre of the cat's face。Let's try another
@@ -146,12 +171,14 @@
     was a gradient based attribution algorithm。 Occlusion is different。 It's a perturbation
     based method that involves screening out portions of the image and seeing how
     that affects the output。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
 - en: As before， we're going to specify our input image and our output labeled to
     the attribution algorithm。For occlusion， we're going to specify a few more items。
     The first are the sliding window and the stride length。 And these are analogous
     to similar configuration options in a convolutional neural network。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
 - en: We're also going to set our baseline。That is， our representation of an occluded
@@ -159,6 +186,7 @@
     a different baseline。 but for zero centered data， it makes sense to use 0。We'll
     run the attribute call and give it a minute。And in the next cell， we're doing
     something new。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
 - en: We're calling visualized image Adder multiple。To show multiple visualizations
@@ -166,12 +194,14 @@
     The first two are heat maps of both positive and negative attributions。 You can
     see that we're providing a list of methods with heat map being the second and
     third。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
 - en: We're also specifying a sign for each visualization。 And here you can see that
     we've askedtra positive attributions on one heat map and negative on the other。
     These indicate which。For our final visualization， we'll use the mask method。 This
     uses positive attributions to selectively screen the original image。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
 - en: giving a striking visual representation of the areas of the image the model
@@ -180,12 +210,14 @@
     are on the cat's outlined in the center of its face。What about what the model
     is doing under the hood。Let's use a layer attribution algorithm to check the activity
     of one of the hidden layers。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
 - en: Gradcam is another gradient based attribution algorithm designed for conves。It
     computes the gradients of the output with respect to the specified model layer。
     averagevers the gradients for each channel and multiplies this average by the
     layer activations。And uses this as a measure of the importance of a layer's output。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
 - en: To get started with layer attribution， we'll create a layer gradcam object and
@@ -193,6 +225,7 @@
     it the input output pair and ask it to do attribution。We can visualize this with
     a heat map， as we did before。 in this way。 you can visually examine which areas
     of a confidencein activation map were like to your output。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
 - en: We can do better than this， though。Since the output of a convolutional layer
@@ -201,6 +234,7 @@
     attribution parent class has a convenience method for up samplingling the lower
     resolution convenant activation map up to the input size。We'll do that with the
     interpolate method here。And asked the visualizer for a blended heat map。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
 - en: showing the original image with a heat map superimposed and a masked image。Visualizations
@@ -208,6 +242,7 @@
     output from your model。Captain comes with an advanced visualization tool called
     Cap Insights。 which lets you put together multiple visualizations in an in browserrowsed
     widget that lets you configure the attribution algorithm and its parameters。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
 - en: Captain Inights lets you visualize text， image and arbitrary data。We're going
@@ -215,6 +250,7 @@
     images should be available wherever you got the interactive notebook that goes
     with its video。First， we'll query the model to see what it thinks each of these
     are。And it seems to be really okay。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
 - en: Now， let's set up cap Ins。We're going to use the attribution visualizer object。
@@ -222,12 +258,14 @@
     here， softm。A list of the classes the model recognizes here I am stripping out
     an ordered list of the image net class names。We'll tell it that we're looking
     at image features。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
 - en: Captive Insights also handles text and arbitrary data， as well。And it'll give
     it a data set。 which is just an iterable that returns a batch of images and labels。Note
     that we haven't specified an algorithm or a visualization method。These are things
     that you set up in the in browserrower widget。Now， we ask the visualizer to render。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
 - en: It starts off empty， but we can set up configuration parameters and ask it to
@@ -236,15 +274,22 @@
     generate the attributions。But now we can see that it ranks the first few predictions
     for each image with their probabilities and provides heat map attribution for
     the important regions of the image。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 它最初是空的，但我们可以设置配置参数，并通过提取按钮请求它获取我们可视化的归因。我将保持集成梯度的默认设置。Captain需要几分钟生成归因。但现在我们可以看到它为每个图像排名前几的预测及其概率，并提供重要区域的热图归因。
 - en: In this way， Captain insightights lets you experiment with attribution methods
     and understand the activity that LED to your model's predictions。 both correct
     and incorrect and lets you do it visually with minimal code。Finally。 don't forget
     to look at Captain AI for documentation。 tutorials and API reference and access
     to the source on Gitthub。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过这种方式，Captain insightights让你实验归因方法，理解导致模型预测的活动，无论是正确的还是错误的，并且以最少的代码进行可视化。最后，别忘了查看Captain
+    AI以获取文档、教程和API参考，以及在GitHub上的源代码访问。
 - en: '![](img/2fb9bd9df95d3221c8b5a298fc267de0_13.png)'
+  id: totrans-40
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/2fb9bd9df95d3221c8b5a298fc267de0_13.png)'

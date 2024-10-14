@@ -4,15 +4,19 @@
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】“当前最好的 TensorFlow 教程！”，看完就能自己动手做项目啦！＜实战教程系列＞ - P9：L9- 自定义图层 - ShowMeAI
+    - BV1em4y1U7ib
 - en: What is going on， guys， hope you're doing freaking awesome。 So in this video。
     I want to show you how to create custom layers。😊。![](img/2b96deb5c7669b397136afafb6aca66a_1.png)
   id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，希望你们过得非常精彩。在这个视频中，我想向你展示如何创建自定义层。😊！[](img/2b96deb5c7669b397136afafb6aca66a_1.png)
 - en: '![](img/2b96deb5c7669b397136afafb6aca66a_2.png)'
   id: totrans-2
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/2b96deb5c7669b397136afafb6aca66a_2.png)'
 - en: So far we've seen how to build very flexible models using subclassing and now
     we want to go one level deeper and even create the layers by ourselves。 So I'll
     show you what I mean by that but first just to explain the code we have in front
@@ -27,6 +31,8 @@
   id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 到目前为止，我们已经看到了如何使用子类化构建非常灵活的模型，现在我们想更进一步，自己创建层。因此，我会向你解释我所指的内容，但首先为了说明我们面前的代码，我们只是引入了在几乎每个视频中看到的内容，然后我们有这两行代码以避免任何GPU错误，最后我们只是在加载Ms数据，这样可以节省一些时间，所以我们将从创建自己的自定义模型开始，像我们在上一个视频中做的一样，这会非常简单，我们将创建类my
+    model，继承自Kast模型，首先找到init方法，我们会使用self，然后可以指定Ms的类数为10，接着我们将调用super mymod self的init。
 - en: And then we're going to do self dense1， So all we're going to do here is just
     create two dense layers Allright。 we're going to do layers do dense， let's do
     64 nodes and then self dense2 is layers dense of nu classes we're just going to
@@ -34,6 +40,8 @@
   id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将进行self dense1，这里我们只需创建两个密集层。好的。我们将使用layers do dense，设定为64个节点，然后self dense2是layers
+    dense的nu classes，我们将调用self，然后是x。
 - en: So the input or let's call input tensor。And then we're going to do self do den
     one of input tensor。And then let's run a Tf。nn。relu on top of that。So this is
     just what we've seen in the last video。 this is why I'm going through it pretty
@@ -42,6 +50,8 @@
   id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 输入或称为输入张量。然后我们将执行self do den one的输入张量。接着在其上运行Tf.nn.relu。这就是我们在上一个视频中看到的内容，因此我快速讲解，然后我们想返回self
+    do then2的x。好的。现在让我们快速构建一个模型，编译模型并进行拟合。
 - en: So we'll do model equals my model。 We'll do model do compile。Loss equals ks，
     losses， bars。 categorical cross entropy。From logic equals true。😔，And then let's
     do our model that fit。 so you've seen all of this before， so I'm just going to
@@ -54,6 +64,7 @@
   id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将执行model equals my model。我们将执行model do compile。损失等于ks，损失，bars。分类交叉熵。从逻辑上讲等于true。😔，然后让我们进行模型拟合。你之前见过这些，所以我会快速写出。好的，现在我们有一个使用子类化的自定义模型，然后我们定义了编译、拟合和评估，所以让我们确保这确实有效，如果我们运行这个，我们会看到它实际上在训练，这应该相对较快，因为我们只有是的，我们有一个非常非常小的网络，像64个节点，然后10个输出节点，让我们实际讨论一下我想在这个视频中展示的内容。
 - en: We now want to actually create these layers by ourselves right now we're using
     the layers from Ks and that has the dense layers in it and then we're using Tf。n。relu
     and that's all right and you can build very flexible models using that that's
@@ -65,6 +76,8 @@
   id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们想自己创建这些层。目前我们使用的是Ks中的层，里面包含密集层，然后使用Tf.n.relu。这是可以的，你可以用它构建非常灵活的模型，在大多数情况下这都很好。但有时为了理解，你想自己构建这些层，这样可以更深入地理解内部机制。所以我将向你展示如何做到这一点。让我们做一个类，命名为dense，并继承自layers
+    layer。
 - en: We're going to create our in function， so we're going to do init and then self
     unit。 and then we're going to specify the input dimension。So all we got to do
     then is we got to run this super method， so super dense self thatt in it。Then
@@ -72,6 +85,8 @@
   id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将创建我们的初始化函数，所以我们将做init，然后是self和unit。接着我们将指定输入维度。然后我们要做的就是运行super方法，所以super
+    dense self that init。然后我们将self.W设置为self.add weight。
 - en: So there are actually multiple ways of doing this。 this is the more easy way
     you could also do initialize it by yourself with a T dot variable but this is
     the easy way I'm going to show you in this way Now the first thing we got to do
@@ -86,6 +101,7 @@
   id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 实际上有多种方法来做到这一点。这是更简单的方法，你也可以用T点变量自己初始化，但我将以这种简单的方法展示给你。首先，我们需要设置一个名称，我们就叫它W。实际上，这一点非常重要，你会在下一个视频中看到如何保存和加载模型。我发现如果不指定名称，就无法保存模型，所以这非常重要。接下来，我们要指定一个输入维度的形状，然后设置单位。输入维度就是我们一开始的值，784，即28乘以28，然后单位就是我们要映射到的值，所以在使用layers164时，单位是64。
 - en: the initializer so we're going to do random normal and you could check out what
     other initialization methods you can do。 and then we're going to specify trainable
     equals true。And so trainable equals true。 this is for layers like batch norm and
@@ -95,6 +111,8 @@
   id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 初始化器我们将使用随机正态分布，你可以查看其他初始化方法。然后我们将指定trainable等于true。所以trainable等于true。这适用于像batch
+    norm这样的层，其中某些参数实际上不是可训练的。但在这个密集层中，我们的所有参数都将是可训练的，然后我们将进行self。
 - en: B is self。 add weight。We're going to call it B and then shape is just going
     to be unit。RightSo't have so we're doing the matrix multiply with W and that's
     why it has to have the input dimension。 but then it's just going to be unit nodes
@@ -103,6 +121,7 @@
   id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: B是self.add weight。我们将其命名为B，形状就是单位。因此，我们进行矩阵乘法时需要W，这就是它必须具有输入维度的原因。然后它将是单位节点，所以我们为每个节点添加一个。这就是我们在这里所用的单位。然后我们可以进行初始化，我们将其初始化为零。
 - en: and then this is also a trainable parameter。And lastly， we just have to do the
     call method。 So call of some input。 we're going to return T of dot matrix multiply
     with the input。And then self to W， and lastly， we just got to add B。So now。We
@@ -111,6 +130,8 @@
   id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 这也是一个可训练参数。最后，我们只需实现call方法。对于一些输入，我们将返回T点矩阵乘以输入。然后self到W，最后我们需要添加B。现在，我们可以在这里替换，所以我们可以做self
+    ta dense 1是dense，然后设置64和784。
 - en: and then let's do selfta dense 2 is dense of 10 and then 64 as input。So let's
     out that one right there and let's see if this works。 Allright。 so we seem to
     get pretty much equal results as we did on the last one and most importantly it
