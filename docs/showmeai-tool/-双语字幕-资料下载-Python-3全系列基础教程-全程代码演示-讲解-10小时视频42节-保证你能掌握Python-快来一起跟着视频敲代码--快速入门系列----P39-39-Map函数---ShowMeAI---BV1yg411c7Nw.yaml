@@ -1,9 +1,11 @@
 - en: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
     - P39：39）Map函数 - ShowMeAI - BV1yg411c7Nw
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
 - en: '![](img/074ac730edfb4c160088e7429835985d_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
 - en: Welcome back everyone， this is Brian， and we're going to talk about the map
@@ -11,18 +13,22 @@
     the hood maps a function call to a collection of items and it looks like this
     map function to whatever collection we have。So for example， we could have a list
     and each item in that list we could pass it to the function。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
 - en: let's dive in and take a look。![](img/074ac730edfb4c160088e7429835985d_2.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/074ac730edfb4c160088e7429835985d_3.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
 - en: Let's start off with some basic usage， so we're going to get a list of people。And
     in that list of people。Matt Brian Tammy Marcus， we want to pass this to a function。And
     count the length of each item。And we want to get another list that has those links。
     So we're going to cover an old way。And a modern way。So let's do the old way first。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
 - en: So the old way would be something like。Counts。Equals and we're just going to
@@ -30,6 +36,7 @@
     like。Counce do append。 prettyty simple what we're doing here。 which we say Ly。And
     we want to get the length of each element。Then when we're done， we just want to
     print it out。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
 - en: so we're going to say print。Allold way。And let's just go ahead and print that
@@ -37,6 +44,7 @@
     think it would。 And it's a little wordy。 Now， the modern way is going to use the
     map function。And we're going to shorten this。 Remember when I said at the very
     beginning of this， as code becomes more complex。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
 - en: what we have to write actually becomes shorter and harder to understand。 This
@@ -44,6 +52,7 @@
     going to format that。Same mapped。I want to actually capitalize that just so it
     stands out。Now we're going to say list。 which is literally going to convert this
     into a list， going to list through every element。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
 - en: We're going called the map function。And inside the map function， we're going
@@ -51,6 +60,7 @@
     as expected。 So what's going on under the hood here is we're saying， okay。Call
     print。 and then we're going to list map。 Now what map's going to do is it's going
     to take all of these people right here。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
 - en: And shove it into a function。 In this case， we're using the built in length
@@ -58,12 +68,15 @@
     all of this code in one line。It's very， very cool。The main takeaway from this
     little segment， though。 is we're taking a collection of items and going through
     each and every single item and sending it to that function one at a time。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
 - en: We're getting back a map object， so we have to convert that to a list。![](img/074ac730edfb4c160088e7429835985d_5.png)
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/074ac730edfb4c160088e7429835985d_6.png)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
 - en: Let's go deeper still into complexity land， and we're going to make this a little
@@ -71,146 +84,193 @@
     different links。 and we are also passing multiple arguments。 So what we're going
     to do here。 and I've got some stuff already queued up， ready to paste。First names
     and last names。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们更深入地进入复杂的领域，我们将使这变得更加复杂。我们将结合元素。我放了一些笔记，注意不同的链接。我们还传递了多个参数。那么我们在这里要做的事情，我已经准备了一些内容，准备粘贴。名字和姓氏。
 - en: we have two tuples。And we're going to combine apple and pie， chocolate and cake，
     fudge and brownies。 and u oh， notice how pizza does not have something we can
     partner it up with。We're going to examine how this works and how it behaves。 We're
     also going to define our own functions。 Some must say de merge and in merge we're
     going to have an A and a B。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们有两个元组。我们将结合苹果和派，巧克力和蛋糕，软糖和布朗尼。哦，注意比萨饼没有我们可以配对的东西。我们将检查这如何工作以及它的行为。我们还将定义自己的函数。有些必须说解合并和合并，我们将有A和B。
 - en: Which is just simply going to return。诶？😊，Plus。Some sort of space。Plus B very
     simple function。That's all this needs to do。 So our function call just simply
     needs to return something。 and whatever we return is going to get added to the
     map object。So let's go ahead and say x equal map。And we're going to use our merge
     function that we just wrote the guy right here。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 它只是简单地返回。诶？😊，加上一些空格。加上B，非常简单的函数。就这样，它所需要做的就是返回一些东西。无论我们返回什么，都将被添加到映射对象中。因此，让我们说x等于映射。我们将使用我们刚刚写的合并函数。
 - en: Now we're going to merge。The first names and of the last names。So really， when
     we look at this。 it should actually be something like this args。 So we can have
     zero or more arguments。 so I should say one or more arguments。 So that's why they
     do as initially。So we're going to map our merge function to these two arguments，
     first names and last names。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们将合并名字和姓氏。所以实际上，当我们看这个时，它应该是这样的参数。因此，我们可以有零个或多个参数。所以我应该说一个或多个参数。所以他们最初是这样做的。因此，我们将把我们的合并函数映射到这两个参数，名字和姓氏。
 - en: which are these tuples right here。Let's go ahead and print out X and see what
     we get back。This is where newbies often get tripped up。 They go what is this，
     We have a map object。Well。 how do we work with this map object， The thing is you
     don't want to work with it directly。 what you're going to want to do is actually
     convert it into something that we can work with。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些就是这里的元组。让我们打印X并看看我们得到什么。这是新手们经常被绊倒的地方。他们会问这是什么，我们有一个映射对象。那么，我们如何处理这个映射对象呢？问题是你不想直接使用它。你实际上要做的是将其转换为我们可以使用的东西。
 - en: So we're going to say print。List。And we're going to just simply list out X。
     And what this is going to do is it's going to go into the map object and say。
     give me every single item。 and then it's going to convert it or cast it into a
     list that we can then use。For example， apple space pie， chocolate space cake，
     fudge space brownies。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将说打印。列表。我们将简单列出X。这将进入映射对象，并说给我每一个项目。然后，它将转换或转换为我们可以使用的列表。例如，苹果空格派，巧克力空格蛋糕，软糖空格布朗尼。
 - en: noticeice these are individual items that have been merged together， and there
     is no pizza。 so because it didn't have anything we could partner it up。 it just
     failed out silently and we don't have to worry about it crashing our program。Okay。
     I'm just going to say if you're a newbie and you've skipped any of the videos。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，这些是合并在一起的独立项目，并且没有比萨饼。因此，因为没有任何我们可以配对的内容，所以它悄无声息地失败了，我们不必担心它会崩溃我们的程序。好的，我只想说，如果你是新手而且跳过了任何视频。
 - en: you're about to have a bad time， so we're going to do multiple functions。 meaning
     we're going to combine functions and call multiple functions in one map call。And
     if you have not been。Following along， you are about to have a really confusing
     time。So I'm going to paye some functions， add， subtract， multiply and divide，
     they're very simple。Add ads。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 你即将经历一次糟糕的时光，所以我们将做多个函数。这意味着我们将结合函数，并在一个映射调用中调用多个函数。如果你没有跟着走，你即将面临非常混乱的时光。因此，我将支付一些函数，加、减、乘和除，它们非常简单。加广告。
 - en: subtract， subtracts， multily multiplies and divide well， shockingly divides。I
     don't want these to be complex because I don't want to focus on the mathematics
     here。 We are going to make another function， though， death。屌我。It's going to have
     funk。And。Noumb。Bunk is going to be a function and numb is going to be a list of
     numbers。And we are going to return。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 减去，减法，乘法和除法，震惊的是除法。我不想让这些变得复杂，因为我不想关注数学。我们将创建另一个函数，死亡。屌我。它将有funk。还有Noumb。Bunk将是一个函数，而numb将是一个数字列表。我们将返回。
 - en: The function call。With。U0。And nu1。So all we're doing is we're saying get the
     first element of the list and get the second element of the list。So matching this
     up， basically， add。Numb 0， nu 1。 So it would be something like bad nu 0。And then
     nu1， something like that。 And then subtract， multiply and divide and so on。In
     production level apps you're going to want to make sure that this actually has
     two elements and that they're the right data types。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 函数调用。与U0和nu1。所以我们所做的只是说获取列表的第一个元素并获取列表的第二个元素。所以匹配这两个，基本上，加。Numb 0，nu 1。所以这将是像bad
+    nu 0。然后是nu1，类似那样。然后减法、乘法和除法等等。在生产级应用中，你会想确保这实际上有两个元素，并且它们是正确的数据类型。
 - en: ettera and so forth， but I don't want to focus on the complexity of any of this。
     I just want to show you this is the basic structure we're going to use。Now we're
     going to make a list， or actually， in this case， a tuple。Of unctions。We're going
     to have addtract。Multiply。And divide。And these are the functions we have pasted
     earlier。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 等等，我不想关注任何这些复杂性。我只是想向你展示这是我们将使用的基本结构。现在我们将创建一个列表，或者实际上，在这种情况下是一个元组。包含加、减、乘和除。这些是我们之前粘贴的函数。
 - en: Remember， functions in Python are upper objects so we can treat them as variables
     as objects。So I'm just making a tuple filled with those functions。Now I'm going
     to make some values。 and I'm going to just， this going to be a little confusing。We
     haven't done this before。 We're going to put a list inside of a list and almost
     a 5 comma 3。If that looks confusing。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 请记住，Python中的函数是上层对象，因此我们可以将它们视为变量作为对象。所以我只是制作了一个填充这些函数的元组。现在我要创建一些值。这将有点困惑。我们以前没有做过。我们将把一个列表放在另一个列表里，几乎是5和3的组合。如果看起来很困惑。
 - en: It's because we have a list inside of a list。And this is the one and only element
     in that list。 It could be something like。So you would have 1，2，3，4 items in this
     one list。 So， yes。 you can put lists and stuff like that inside of lists。 Very
     cool。 how you can do that。 We haven't really touched on that complexity yet。 But
     today is that day。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是因为我们在一个列表里面有一个列表。这是该列表中的唯一元素。它可以是这样的。所以你在这个列表中会有1，2，3，4项。所以，是的。你可以将列表和其他东西放在列表中。非常酷。你可以这样做。我们还没有真正触及这个复杂性。但是今天就是那一天。
 - en: Now I'm going to make our numbers。😊，And I'm going to take values。Invert it into
     a list。That is going to be multiplied by the link。Of our functions。So basically。
     I'm going to take this guy right here。And say， how many functions do we have 1，2，3，4？
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我要创建我们的数字。😊，我将提取值。将其反转为一个列表。这将乘以我们函数的链接。所以基本上，我会拿这个。然后问， 我们有多少个函数 1，2，3，4？
 - en: Add subtract multiply and divide， and I'm going to multiply it by that number。From
     there。Just hit the pause button。 Let's print out what we have just to make sure
     what we're doing actually makes some type of logical sense。So we're going to print
     out F， those are our functions。And then let's go ahead and print out N。Just so
     we can see what this is。Save run。 Okay， so F is function a， function subtract。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 加，减，乘和除，我将按那个数字乘以。从这里开始。只需按暂停按钮。让我们打印出我们所拥有的，以确保我们所做的确实有某种逻辑意义。所以我们将打印出F，那是我们的函数。然后让我们打印出N。只是为了看看这是什么。保存运行。好的，所以F是函数a，函数减法。
 - en: function multiply and function divide。 And you can see the memory locations
     of each one of those。 Now we have our list of data here。 This is list values time
     the length， and it is 1，2。3。Or。This is important because if you scroll up and
     you remember when we were combining first and last names。 if it doesn't have a
     matching partner， it will just skip over it silently。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 函数乘法和函数除法。你可以看到每个函数的内存位置。现在我们有了数据列表。这是列表值乘以长度，分别是1，2，3。或者。这很重要，因为如果你向上滚动，记住我们在组合姓和名时。如果没有匹配的伙伴，它会静默跳过它。
 - en: so we want to make sure that we have a list for each and every function call，
     so this would be add。Subtract， multiply， and divide。And that's where we're getting
     this non zero number one。 so zero in this case would be five and one would be
     three。Hopefully， that makes sense。 If not。 you may need to rewatch that。 I try
     to explain it the best I can。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们想确保每一个函数调用都有一个列表，这将是加、减、乘和除。这就是我们得到这个非零数字 1 的原因。所以在这种情况下，零是 5，1 是 3。希望这能让你明白。如果不行，你可能需要重看一次。我尽量解释得清楚一些。
 - en: But if you've been skipping videos or haven't been watching them all the way。
     that may make absolutely no sense。 So now we're going to say M equals map。We're
     going to call the map function， and we're going to map do all to F and N。What
     is this witchcraft？ What did we just do here so。Basically。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是如果你一直跳过视频，或者没有完整观看，它可能完全没有意义。所以现在我们将说 M 等于 map。我们将调用映射函数，并将“do all”映射到 F 和
+    N。这是什么巫术？我们刚才做了什么？基本上。
 - en: what we're just saying is map the do all function to our list of functions and
     the data we want to put on each function is。 well， this big list of lists， so
     each function gets its own little list of data。Wow。 and it's going to return back
     a map object。 So we're just going to go ahead and print out。And we want to convert
     that。Map object to a list。Go ahead save run。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们只是想把“do all”功能映射到我们的函数列表上，每个函数要放入的数据是……这个大列表的列表，所以每个函数都有自己的一小段数据。哇。它会返回一个映射对象。所以我们就打印出来。然后我们想把这个映射对象转换成一个列表。继续保存并运行。
 - en: and the result is going to be 8 to 15 and 1。6。So what is going on here？Well。5。And
     3 is 8，5-3 is 2。5 times 3 is 15， and 5 divided by 3 is 1。6 Big long number here。But
     this is really， really cool。 We've just basically said。Do a ton of functions in
     one little call and gave it the information each function is going to use。So super
     quick recap before we close this video down， the mat function is very。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 结果将是 8、15 和 1.6。那么这里发生了什么？嗯，5 和 3 是 8，5 - 3 是 2，5 乘以 3 是 15，5 除以 3 是 1.6 这个很长的数字。但这真的非常酷。我们基本上只是说在一个小调用中执行很多功能，并给出了每个函数将使用的信息。在我们结束这个视频之前，快速回顾一下，map
+    函数是非常。
 - en: very powerful Once you wrap your head around it， you're going to have a function
     and then you have some sort of iterable and you can have multiple iterables。 but
     they have to line up in order for them to call。😊，For example， first names and
     last names。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 非常强大的。一旦你理解了它，你将有一个函数，然后你会有某种可迭代对象，并且可以有多个可迭代对象。但它们必须排好顺序才能调用。😊，例如，名字和姓氏。
 - en: we just simply didn't have anything that lined up with pizza so there was no
     like deep dish pizza or anything like that。 but we had apple pie， chocolate cake，
     fudge brownies。![](img/074ac730edfb4c160088e7429835985d_8.png)
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们其实没有任何和比萨饼相关的东西，所以没有深盘比萨饼之类的。但我们有苹果派、巧克力蛋糕、软糖布朗尼。![](img/074ac730edfb4c160088e7429835985d_8.png)

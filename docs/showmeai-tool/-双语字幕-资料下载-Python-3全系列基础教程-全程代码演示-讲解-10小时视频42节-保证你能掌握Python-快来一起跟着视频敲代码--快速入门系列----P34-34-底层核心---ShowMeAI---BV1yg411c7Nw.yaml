@@ -1,172 +1,232 @@
 - en: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
     - P34：34）底层核心 - ShowMeAI - BV1yg411c7Nw
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
+    - P34：34）底层核心 - ShowMeAI - BV1yg411c7Nw
 - en: '![](img/c08009c8c3b1be1c21f664553d1987a7_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c08009c8c3b1be1c21f664553d1987a7_0.png)'
 - en: Welcome back， everyone。 This is Bryan In this video， we're going to talk about
     the underscore。 The underscore is often ignored has multiple uses and just gets
     downright confusing。 One of the hurdles of learning not just Python， but any language
     is the syntax。 and Pythons syntax is a bit different than other languages。 So
     it often leaves people。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 欢迎回来，大家好。我是Bryan。在这个视频中，我们将讨论下划线。下划线通常被忽视，具有多种用法，确实让人感到困惑。学习不仅仅是Python，而是任何语言的一个障碍就是语法，而Python的语法与其他语言略有不同。因此，它常常让人感到困惑。
 - en: even season programmers a bit mystified as to what these things are。 For example。
     you could have a single underscore。 You could have a double underscore。 It could
     be before。 It could be after， or it could be a combination of before and after。
     but each one of these different methods has。 Well， a slightly different reason
     for being。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 甚至季节性程序员对这些东西感到有些困惑。例如，你可以有一个单下划线，可以有一个双下划线。它可以在前，也可以在后，或者是前后结合。但这些不同的方法各有其存在的原因。
 - en: and we're going to dive in and take a look。😊，The first use case we're going
     to do is a single。 and it's going to be skipping。 Now， when I was a young lad，
     I used to skip school。 and it had just did not do many favors。 But in this case，
     skipping is actually a positive thing。 We're going to say4 X in range。And I just
     want to print out hello， and I want to print out hello。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将深入研究并看看。😊 我们要做的第一个用例是一个单一的，它将是跳过。现在，当我还是个小男孩的时候，我常常逃学，这并没有给我带来多少好处。但在这种情况下，跳过实际上是件好事。我们将说4
+    X在范围内。我只想打印出hello，并且我想打印出hello。
 - en: say like five times， do something like that。 So I'm just going to put a number
     in here。Now。 do you notice a fundamental problem， X？It's not used。The code runs
     just fine。 But if you run this through any sort of streamlining program or any
     sort of interpreter that's going to try and tell you how to make your program
     faster better。 It's going to start complaining that X is not used。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 比如说五次，做一些类似的事情。所以我就要在这里放一个数字。现在，你注意到了一个根本问题，X吗？它没有被使用。代码运行得很好。但如果你通过任何流线程序或任何试图告诉你如何让程序更快更好的解释器运行它，它将开始抱怨X没有被使用。
 - en: So what we can do is just simply replace X with a single underscore。Go ahead
     and clear our program out and you'll see that it runs exactly as expected。Basically
     by using an underscore as a variable you're saying I don't care。 I just need a
     variable and I'm not ever going to use it Python。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们可以简单地用一个单下划线替换X。继续清空我们的程序，你会看到它运行得完全如预期。基本上，通过使用下划线作为变量，你是在说我不在乎。我只需要一个变量，我永远不会使用它，Python。
 - en: make a variable and then get rid of it， that's really what we're saying so in
     a sense we are now skipping the whole variable process。![](img/c08009c8c3b1be1c21f664553d1987a7_2.png)
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建一个变量然后把它去掉，这实际上就是我们所说的，因此在某种意义上我们现在跳过了整个变量过程。![](img/c08009c8c3b1be1c21f664553d1987a7_2.png)
 - en: '![](img/c08009c8c3b1be1c21f664553d1987a7_3.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c08009c8c3b1be1c21f664553d1987a7_3.png)'
 - en: Now， to really dive into the complexity of the underscore。 we need to make a
     test class that we can play around with here。 so I'm going to go in here。Say person
     dot P， Y。 And let's go ahead and say class person。And for right now。 I'm just
     going to say pass。 So all we're doing is just simply creating that class。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，为了深入探讨下划线的复杂性，我们需要创建一个可以在这里玩弄的测试类。所以我将进入这里。说person点P，Y。我们继续说class person。暂时我只想说pass。因此我们所做的只是简单地创建那个类。
 - en: and then we're going to go ahead and import it。Or say from person， import start。Just
     know that we're going to be flipping back and forth between our script in our
     class because I want to really demonstrate a lot of the usage of underscore and
     it's not really apparent why it's needed unless you're working inside of a class。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将继续导入它。或者说从person导入start。请知道我们将会在脚本和类之间来回切换，因为我想真正演示许多下划线的用法，除非你在类内部工作，否则并不明显为什么需要它。
 - en: First thing we're going to really look at here is called the weak private and
     it is the single before。 if you scroll up， this is what it looks like right here。And
     it's for internal use only it's called a week private because we're playing around
     with scope。 and this is why I made a class， as we're about to see here。 So I'm
     going to get rid of this pass。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们要看的第一件事情是所谓的**弱私有**，它是单个下划线。如果你向上滚动，这就是它的样子。它仅供内部使用，称为弱私有是因为我们在玩弄作用域。这就是我为什么要创建一个类，正如我们即将看到的那样。所以我要去掉这个**pass**。
 - en: I must say， we pride， so。When you get the image in your mind of a weak private。
     what are we talking about here， what we're talking about scope is as far as internal
     or external。 if something's private， it's internal to this class， if it's public。
     it's external to the class a weak private means that it's internal to this class。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 我必须说，我们的自豪感。因此，当你在脑海中想象一个**弱私有**时，我们在谈论什么？我们谈论的是内部或外部的作用域。如果某样东西是私有的，它对于这个类来说是内部的，如果是公共的，则是这个类的外部。弱私有意味着它对于这个类来说是内部的。
 - en: but that safeguard is weak， meaning you can access outside of the class。Even
     though you really shouldn't， let's go ahead and demonstrate here。 So I must say
     underscored name。Equals。有 name。What have we done here。 We've made a variable called
     underscore name， equal no name。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是这个保护措施很弱，这意味着你可以在类外访问。即使你真的不应该这样做，我们还是来演示一下。所以我必须说**下划线名字**。等于。有名字。我们在这里做了什么？我们创建了一个变量叫做**下划线名字**，等于**无名字**。
 - en: That single underscore denotes that it is a weak private。 We're telling the
     world that， hey。 we want to use this internally。 We don't really want the outside
     world playing around with it。However。We can demonstrate why this is a weak private，
     because we can actually play around with this。 if we want it to。Now， I would highly
     encourage you not to play around through privates。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 单个下划线表示它是一个弱私有。我们在告诉世界，嘿。我们想要在内部使用这个。我们并不希望外界干预。然而，我们可以演示为什么这是一个弱私有，因为我们实际上可以随意操作它。如果我们愿意的话。现在，我强烈建议你不要随意操作私有属性。
 - en: but if you really feel inclined， just， you know， make sure you keep that business
     to yourself。And we're going to say self dot underscoreing name。Equals name。 fairly
     obvious what we're doing there。 We're just saying the self。Name this guy is going
     to equal that argument。Now we can go ahead and print this out and just verify
     that it did actually change。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是如果你真的想这么做，只需，嗯，确保你把这件事藏好。我们要说**self.underscoreing_name**。等于**name**。我们在这里做的事情非常明显。我们只是说**self**。这个家伙的名字将等于那个参数。现在我们可以打印出来，验证一下它确实改变了。
 - en: Let's slip back here and let's see it in action。Some going say P equal。Person。y。And
     we want set name。Ran。Go ahead and run us。 see what happens。 Sure enough， name
     said to Bryan。 So it's working as expected。 Now， oftentimes， you'll get asked。
     if you go variable dot and your intelligenceence pops up。 you see all these things
     with underscores。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们回到这里，看看它的实际效果。我们要说**P等于Person.y**。然后我们想设置名字**Ran**。继续运行，看看会发生什么。果然，名字被改成了**Bryan**。所以它的工作如预期般正常。现在，通常情况下，你会被问到。如果你输入变量点，智能提示会弹出。你会看到所有这些带下划线的东西。
 - en: and there is underscore name。Interesting， so really。 now what we can do is we
     can grab this guy and do things with it， even though we really。 really shouldn't。s
     demonstrate， So I'm going to say。Wait private。And let's go ahead and change this
     to P name。So now we can actually read the week private。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 还有**underscore_name**。有趣的是，实际上我们可以抓住这个家伙并对其进行操作，即使我们真的不应该这样做。我们来演示一下。所以我打算说**弱私有**。让我们继续把这个改为**P_name**。现在我们实际上可以读取这个弱私有。
 - en: And even though we really shouldn't。I' just going to say， no。Even though we
     really shouldn't。 we can access and modify that we private。I put no， because you
     should never， ever， ever do that。 If you see an underscores in it， do not try
     to modify it， even though Python will let you do it。 bad things could happen。
     that underscore， that single underscore， denotes its internal use only。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 即使我们真的不应该。我只是想说，不。即使我们真的不应该。我们可以访问和修改**私有**的。我放了**无**，因为你绝对不应该这样做。如果你看到有下划线的东西，请不要尝试修改它，尽管Python会让你这样做。坏事可能会发生。那个下划线，单个下划线，表示仅供内部使用。
 - en: when we say internal， internal to its scope。 In this case， the class。So yes。Whomever
     made this class is nice enough to let you access it。 You really shouldn't。 You
     shouldn't rely on that。 Instead， you should rely on functions to get and set values。![](img/c08009c8c3b1be1c21f664553d1987a7_5.png)
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我们说内部时，它在其作用域内。在这种情况下，就是类。所以是的。无论是谁创建了这个类，都很不错，让你访问它。你真的不应该。你不应该依赖于此。相反，你应该依赖于函数来获取和设置值。![](img/c08009c8c3b1be1c21f664553d1987a7_5.png)
 - en: '![](img/c08009c8c3b1be1c21f664553d1987a7_6.png)'
+  id: totrans-20
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c08009c8c3b1be1c21f664553d1987a7_6.png)'
 - en: Okay， let's just take a step back and let's think about scope for a minute。
     We've talked about internal use only weak privates。 But now we're going to talk
     about。The double。 and it's before this is internally used only， and it avoids
     conflict in a subclass and tells Python to rewrite the name。 It's also called
     mangling。 So what are we really talking about here。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，让我们退一步，想想作用域。我们谈过仅供内部使用的弱私有。但现在我们要谈谈。双重。它在这之前仅供内部使用，并避免在子类中的冲突，并告诉 Python
+    重写名称。这也叫做名字改编。那么我们到底在谈论什么呢？
 - en: Well we're talking about a variable that starts with two slashes in front of
     it。What we're doing is we're telling Python。We want it for internal use only and
     take another extra step and change the variable name automatically。Oo， that sounds
     kind of scary。 So let's go ahead and figure out what we need to do here。 So let's
     jump into our class。😰，And I'm going to make a note here so I don'll get lost。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，我们在谈论一个前面带有两个斜杠的变量。我们正在告诉 Python，我们希望它仅用于内部使用，并采取额外一步自动更改变量名称。哦，这听起来有点可怕。那么让我们搞清楚需要做什么。让我们进入我们的类。😰，我将在这里做个笔记，以免迷路。
 - en: Strong private。 This is what we're talking about here。 You want to have a strong
     private。All joking aside。 Let's take a look here。 some say deaf。And I want to
     underscore， underscore， think。So。Seems pretty simple， actually， when you think
     about it， so I'm going to print。Thinking to myself。 I mean， no one can really
     read your thoughts。 And if you could。Well。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 强私有。这就是我们在讨论的内容。你想要一个强私有。开个玩笑，让我们看看这里。有人说是哑巴。我想要下划线，下划线，思考。所以。其实想一想，这看起来相当简单，所以我会打印。心想。我的意思是，没有人能真正读懂你的想法。如果可以的话。那么。
 - en: we'd all probably be in a lot of trouble。We're going to say deaf。 and we're
     going to make another function called work。And I'm going to say self。Undersre。Thank。And
     because we're in the same scope， everything works as expected。But now let's introduce
     another class。Child。And we've talked about inheritance before。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可能都会陷入很多麻烦。我们要说哑巴，并且我们将创建另一个名为 work 的函数。我将说 self。下划线。谢谢。因为我们在同一作用域，一切按预期工作。但现在让我们引入另一个类。Child。我们之前谈过继承。
 - en: so this should be nothing new。 just going to inherit the person class。And we're
     going to say deaf。T double， it's need a name。 I don't really care what it is。And
     we're going to say self。Underscoore and u O。 notice how。Even though we're inheriting
     from person。It's not seeing underscore。 underscore， think。It's just got that。
     Well， let's， let's try to force it。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这应该没什么新鲜事。只需继承人类。我们要说哑巴。T 双重，它需要一个名字。我真的不在乎是什么。我们要说 self。下划线和 u O。注意。尽管我们从人类继承，但它看不到下划线。下划线，思考。它只是有那个。好吧，让我们试着强迫它。
 - en: so we're going to grab this whole thing。And let's see what's going to happen
     there。 Let's go ahead and save our class and jump back to our script file here。And
     I'm going to make a new instance here。 So I'm going say play good person。Could
     have reused the other other instance， but we're just going do a whole new one。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们要抓住整个东西。让我们看看会发生什么。接下来保存我们的类，跳回脚本文件。我将这里创建一个新的实例。所以我会说玩得好的人。可以重用另一个实例，但我们只是做一个全新的。
 - en: I' going say P dot org。And let's watch this actually work。 so thinking to myself。
     I can call it as expected。Now， what we're going to do is try to do the same thing
     we did with a week where we're going to go in here and we' going to say P。Not
     underscore， underscore。Think and notice how inc is anyone going to help us out
     here。We're going to just try and run that and oh oh。Has no attribute。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 我会说 P dot org。让我们看看这实际上是如何工作的。所以我在想，我可以按预期调用它。现在，我们要做的就是尝试做与一周相同的事情，我们要在这里说
+    P。不是下划线，下划线。想想看，inc是否会在这里帮助我们。我们将尝试运行它，但哦哦。没有属性。
 - en: What's going on here is we've now made that a strong。 private and mangling is
     happening in the background for subclasses。 so we cannot even access that function。
     It's just gone。 There's just no way to even see it from the outside world。 but
@@ -175,96 +235,128 @@
     to say C equals。Child。Remember， a child actually inherits from the person。And
     in the child class。We have a test double， which is going to call self underscore
     underscore think。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里发生的事情是，我们现在使它强制性。私有，并且在后台进行混淆以处理子类。所以我们甚至无法访问那个函数。它就消失了。根本无法从外部世界看到它。但我们可以在我们的内部类中完美地看到它。哦，天哪，好的，让我们来看看。我将C设为。孩子。记住，孩子实际上是从人那里继承的。在子类中。我们有一个测试双胞胎，它将调用self__think。
 - en: which is actually a part of the person。Where are you there you are。This is where
     mangling is really going to be demonstrated here someone say C。And I want to say。
     test double。Any guesses what's about to happen here， let's go ahead and clear
     this。 save run and oh oh。Child object has no attribute。 childild think， so。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 这实际上是一个人的一部分。你在哪里，你就在哪里。这是混淆将在这里真正演示的地方，有人说C。我想说，测试双胞胎。有人猜测这里会发生什么，让我们先清除一下。保存运行，哦哦。子对象没有属性。孩子们想，所以。
 - en: That's really what's going on here is we're saying that it's only allowed in
     that class in which it's declared。Pretty much there's millions of uses for it，
     but really what you'd want to know is that if you want to make something private
     and to that class and only that class。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里真正发生的是，我们说它仅在声明它的类中被允许。几乎有数以百万计的用途，但你需要知道的是，如果你想让某个东西对那个类及仅对那个类私有。
 - en: you would do the double underscore。I'm going to go ahead and comment these out
     so we can move on。![](img/c08009c8c3b1be1c21f664553d1987a7_8.png)
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 你将使用双下划线。我将注释掉这些，以便我们可以继续。![](img/c08009c8c3b1be1c21f664553d1987a7_8.png)
 - en: '![](img/c08009c8c3b1be1c21f664553d1987a7_9.png)'
+  id: totrans-32
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c08009c8c3b1be1c21f664553d1987a7_9.png)'
 - en: Let's go ahead and demonstrate a really cool feature。 We're going to talk about
     after any。Now。 what are we talking about after any right here， any number of slashes
     after really。 there is a good use for this。 Let's say I want to make a class object，
     and I'm going to call it。Person。Does anybody see the problem with this before
     I run it， Raise your hand， You in the back。 O。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们来演示一个非常酷的功能。我们将讨论任何之后的内容。现在。我们在这里谈论任何之后的内容，任何数量的斜杠之后。这里有一个很好的用法。假设我想创建一个类对象，我将称之为。人。有人在我运行之前看到这个问题吗，举手，你在后面。哦。
 - en: class。You guessed it in valid syntax because class is a key word。Oh that is
     frustrating。 I really wanted to name this class。Well， this is where。We can do
     something like this and really what we've done is we've create an entirely new
     name。 but we can still call it class。Pritifies it， is that even a word preifies
     it， beautifies it。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 类。你猜对了，语法无效，因为类是一个关键字。哦，这真令人沮丧。我真的想给这个类命名。好吧，这就是我们可以做的事情，实际上我们创建了一个全新的名称。但我们仍然可以称之为类。美化它，这甚至算是一个词吗，美化它。
 - en: So we can use the word class， but we can still not have a naming collision。With
     any of the keywords and that's really what this is designed to do。Is it helps
     avoid naming conflicts with key words and then from here。We can just say something
     like no print。Class， and then we can print it out。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们可以使用单词类，但仍然不会与任何关键字发生命名冲突，这正是设计它的目的。它有助于避免与关键字的命名冲突，然后从这里。我们可以简单地说类似于无打印。类，然后我们可以打印出来。
 - en: work with it as we want to。See，h made an object and everything's going to work
     as we would expect。Wrap this whole thing up， we're going to talk about both and
     after and we've used this before。 and this is considered special to Python for
     functions like init and main and things like that we've seen it before。 but I
     want to kind of go into our class here and look at how we could actually use it。So。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 根据我们的想法来使用它。看，他创建了一个对象，一切都将如我们所预期的那样工作。把这一切都包起来，我们将讨论后续的内容，我们之前也用过这个。这被认为是Python中对像init和main等功能的特殊处理，我们之前见过。但我想深入了解我们的类，看看我们如何实际使用它。所以。
 - en: let's go here。We're going to say before and after， and of course， we've done
     the。In it。If you skip that video， basically this is the constructor。But you notice
     the syntax here。 we've got double before and double after。 So basically。 what
     we're telling Python is this is going to be internal to the class。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们来这里。我们要说前和后，当然，我们已经做过了。在其中。如果你跳过那个视频，基本上这是构造函数。但你注意到这里的语法了。我们有双前和双后。所以基本上，我们告诉Python这是类内部的内容。
 - en: and we want to avoid naming conflicts。 And at the same time， it will not mangle
     it for subclass。 But each subclass will have its own instance。 That's how we can
     have a constructor for person and a constructor for child。 We covered that in
     our video about the initializer。So let's go ahead and make our own function using
     before and after， I'm going to say death。哦。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们想避免命名冲突。同时，它不会为子类混淆。但每个子类将有自己的实例。这就是我们可以为人类和儿童提供构造函数的方式。我们在关于初始化器的视频中讨论过这一点。所以让我们使用前后自己创建一个函数，我要说死亡。哦。
 - en: It would been really cool if I would have like spelled it right the first time。
     There we go。And I'm going to just say print。Awesome one。So it looks pretty simple。
     And it's actually in the spirit of Python。 It is dead， simple， and it actually
     works as expected。 So let's go ahead and say P equals。Person。E dot underscore
     underscore。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我第一次拼写正确那就太酷了。好了。我将说打印。太棒了。所以看起来很简单。实际上，这符合Python的精神。它简单到死，而且如预期那样工作。让我们继续说P等于。人。E点双下划线。
 - en: and you notice there's a lot of stuff in here that starts with underscore underscore。I'm
     going to say call。And we're just calling a function here。Say run and call someone
     to it works。Now。Side note， I would not recommend starting any function that you
     want to be accessed outside of this class with an underscore。 simply because the
     underscore。Starts with a weak private。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 你会注意到这里有很多以双下划线开头的内容。我会说调用。我们只是在这里调用一个函数。说运行并调用某人，它就能正常工作。现在，旁注，我不建议以下划线开头来命名任何想要在这个类外部访问的函数。因为下划线意味着弱私有。
 - en: which you're basically saying to the outside world， hey， this is going to be
     internal to the class。 and it gets stronger from there where you can actually
     start mangling it。 or you can tell， you know。 everyone， hey。Internal， don't want
     you to use it， but also don't mangle it。 That's the before and after。When in doubts。Double
     underscore is your friend。Before and after。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 这基本上是在对外界说，嘿，这将是类内部的内容。而且从那里开始更强烈，你实际上可以开始混淆它。或者你可以告诉大家，嘿。内部，不希望你使用它，但也不要混淆。这就是前和后。当你有疑问时，双下划线是你的朋友。前和后。
 - en: if you do it with the mangling effect for strong private， you may start having
     some weird issues。So always keep that in mind。But the general rule of thumb is
     anything private's going to start with an underscore and do not access anything
     private in a different scope。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你用强私有的混淆效果，可能会开始出现一些奇怪的问题。所以总是记住这一点。但一般经验法则是，任何私有的东西都会以一个下划线开头，并且不要在不同的作用域中访问任何私有内容。
 - en: even though we've demonstrated how to do it， it is not the best way of doing
     things。 You should use a getter and a setter， which we've demonstrated like right
     here， set name。![](img/c08009c8c3b1be1c21f664553d1987a7_11.png)
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管我们已经演示了如何做到这一点，但这并不是做事的最佳方法。你应该使用getter和setter，我们在这里展示过，比如设置名字。![](img/c08009c8c3b1be1c21f664553d1987a7_11.png)

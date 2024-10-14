@@ -1,133 +1,179 @@
 - en: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
     - P36：36）迭代器 - ShowMeAI - BV1yg411c7Nw
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
+    - P36：36）迭代器 - ShowMeAI - BV1yg411c7Nw
 - en: '![](img/f2e780b69e031634fbfadb8557d184c4_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f2e780b69e031634fbfadb8557d184c4_0.png)'
 - en: Welcome back， everyone。 This is Brian。 In this episode， we're going to talk
     about iterators。 They make counting easy， and we've actually worked with these
     before。 but we're going to really dive under the hood and see what makes them
     work。 So， for example。 if you're really confused about what an iterator is， let's
     just say。😊，1，2，3，4。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家欢迎回来。这是布莱恩。在这一集里，我们将谈论迭代器。它们使计数变得简单，我们之前实际上已经使用过这些，但我们将深入探讨它们是如何工作的。因此，例如，如果你对迭代器感到困惑，就说。😊，1，2，3，4。
 - en: We've got a simple topple here。 and we're going to say 4 x in。Qi。When print。Ex。Run
     this。voila， 1，2。3，4， but how does that actually work， how does Python know how
     to go through each and every single item and how to treat each item that's what
     we're really going to dive into in this video。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们有一个简单的元组。我们将说4个x在。Qi。当打印。运行这个。看，1，2，3，4，但这到底是如何工作的，Python是如何知道如何遍历每一个项目以及如何处理每个项目的，这正是我们要深入探讨的内容。
 - en: Let's pop open the hood and see what's going on here， so we're talking about
     Ier basics。Well。 Lis tuple's dictionary sets， even strings and vastly huge amounts
     of other objects are iterable。We use a function called ider to get the iterable
     object。 Let's take a look here。I'm going to say people equals。 and we're just
     going to make a simple list here。Brian comm。田明。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们打开引擎盖看看这里发生了什么，所以我们在谈论迭代器的基础。好吧，列表、元组、字典、集合，甚至字符串以及大量其他对象都是可迭代的。我们使用一个称为iter的函数来获取可迭代对象。让我们看看这里。我将说people等于。我们将创建一个简单的列表。布莱恩，田明。
 - en: And our family dog， the old lazy， stinky dog， Rango。And we want to eitherer
     through that。So I'm going to say I equals IT ER。And we're going to。Use that list
     right there。 So if we go and print this out。Let's take a quick peek at what I
     actually is。It is a list iterator object at， so this is a separate object from
     our list。It's not the list。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们的家庭狗，老懒狗，臭狗，Rango。我们想要通过它。因此我将说，我等于迭代器。我们将使用那个列表。如果我们打印出来，快速看一下我到底是什么。这是一个列表迭代器对象，所以这是一个与我们的列表分开的对象。它不是列表。
 - en: it's an iterator which tells Python how to maneuver through that list。Okay，
     great。 now let's actually go through this。I'm going to say print。 I'm going to
     call the next function。 which is going to tell the iterator， hey， move to the
     next position。Assuming。That。This started at the very beginning， the next position
     is well， Brian， so let's go ahead and run this。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个迭代器，它告诉Python如何遍历那个列表。好的，很棒。现在让我们实际来看看。我将说打印。我将调用下一个函数。它会告诉迭代器，嘿，移动到下一个位置。假设从一开始，这个下一个位置是布莱恩，所以让我们继续运行这个。
 - en: And sure enough， there's Brian。And now， instead of knowing some sort of index，
     we can just say next。 next， next。See， Brian Tammy Ro， and it's just going to keep
     moving or iterating through that list。Now an interesting little bit here is if
     we try to go beyond the scope of that list。Notice how it throws an error， It's
     a stop iteration。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然，布莱恩就在这里。现在，我们不需要知道某种索引，只需说下一个。下一个，下一个。看，布莱恩，塔米，罗，它将继续移动或遍历那个列表。现在有一个有趣的地方是，如果我们试图超出那个列表的范围。注意它抛出了一个错误，这是停止迭代。
 - en: This is what Python's using under the hood to tell itself it needs to stop moving
     through this because it simply hit the end。So we can continue on， I'm going to
     comment that out。 but it's very important you understand what a stop iteration
     is and why it's there。 it simply tells Python， hey， we've hit the end， stop processing
     this。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是Python在内部使用的方式，告诉自己需要停止遍历，因为它简单地达到了末尾。所以我们可以继续，我将把这段注释掉。但你必须明白什么是停止迭代，以及它存在的原因。它只是告诉Python，嘿，我们到了末尾，停止处理这个。
 - en: '![](img/f2e780b69e031634fbfadb8557d184c4_2.png)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f2e780b69e031634fbfadb8557d184c4_2.png)'
 - en: '![](img/f2e780b69e031634fbfadb8557d184c4_3.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f2e780b69e031634fbfadb8557d184c4_3.png)'
 - en: Now that we understand the basics， we're going to make our own class。 so we're
     going to say 4 x in our custom class iterate through it and under the hood it's
     going to call next and all that fun stuff。And we're not going to play around the
     stop iteration， but I wanted you to understand that exists。 so if you're trying
     to push through next and you get some sort of error， you know what it's doing。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们理解了基本概念，我们将创建自己的类。我们将说对我们自定义类的4个x进行迭代，在内部它将调用`next`等有趣的东西。我们不会玩停迭代，但我想让你理解这个概念的存在。如果你试图推进`next`并得到某种错误，你会知道它在做什么。
 - en: Older tutorials， you would actually have to raise that yourself， so it gets
     a little confusing。We're going to do it the easy way， or I should say the Python3
     way。We're going to say import random。 and we're going to make a random number
     generator or a lottery class。ALot of people want to win the lottery。 I know I
     do。Man， the things I would do if I want the lottto。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 较旧的教程中，你实际上需要自己提高这一点，所以会有点混乱。我们将采用简单的方法，或者说是Python3的方法。我们将说`import random`，并创建一个随机数生成器或彩票类。很多人都想赢得彩票，我也是。天啊，如果我赢得彩票，我会做些什么。
 - en: So we're going to say deaf。Inette self。This is just simply our constructor。
     and we're going to say self dot。Underscore max equals5 if you have no idea why
     there's an underscore again。 watch the previous videos right。Deaf， and then we
     want to call iter。Unders underscore so and this is where we were really deviating
     from other tutorials out there because other would have the Ier plus you'd have
     a next function and you have to track where you are in some internal list。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将说`def __init__(self)`。这仅仅是我们的构造函数。我们将说`self._max = 5`，如果你不知道为什么有个下划线，请查看之前的视频。然后我们想调用`iter()`，这就是我们真正偏离其他教程的地方，因为其他教程会有`__iter__`，你会有一个`next`函数，并且你需要追踪你在某个内部列表中的位置。
 - en: We're not going to do any of that because we simply don't need to。So in the
     ider function。 we're going to use what's called yield。 And yield is incredibly
     cool。 I'm going to pay some notes here。 The yield statement suspends the function's
     execution and sends a value back a lot like how return would return a value。 however。😊，Instead
     of returning out， we stay right here where we are。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们不会做任何这些，因为我们根本不需要。因此在`__iter__`函数中，我们将使用所谓的`yield`。`yield`是非常酷的。我会在这里记一些笔记。`yield`语句暂停函数的执行并返回一个值，就像`return`返回一个值一样。然而，😊，我们不会返回，而是停留在这里。
 - en: and we retain enough state to continue on where we left off。This is extremely
     powerful。 So instead of returning， which is going to break out。 and then we call
     this function over and over again， we're going to say4。Undercors。 I don't need
     a variable。In。Range。And we're simply going to say self do underscore square max。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们保留足够的状态以继续我们离开的地方。这是极其强大的。因此，不返回，这将中断。然后我们不断调用这个函数，我们将说`for _ in range`。我们只需说`self.do_square(max)`。
 - en: We're going to go ahead and call our yield。And we're going to create a random。And
     we want a ran range。Between 0 and whatever number the Lotery commission would
     want as a maximum。All right， now we want to allow them to tweak this if they wanted
     to。 So I'm to say just because I'm a nice guy， De。Set next。Self value that way。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将继续调用我们的生成器。我们要创建一个随机数。我们希望一个范围在0到彩票委员会希望的最大值之间。好吧，现在我们想允许他们进行调整。如果他们想的话。所以我会说，仅仅因为我是个好人，设置下一个自我值。
 - en: Whoever' is using our little lottery class can set the maximum if they want
     to。From here。 it becomes ridiculously simple to use， you're going to see other
     tutorials out there there where they got all these functions and you're tracking
     some internal counter yet we're not going to play out any of that。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用我们的小彩票类的人可以设置最大值。如果他们想的话。从这里开始，使用起来变得非常简单，你会看到其他教程中有许多功能，你还在追踪某个内部计数器，但我们不打算玩这些。
 - en: Then print。Just want to separate this out on the screen。Let's going and create
     an instance of our lotto class。And let's go ahead and say， lotto dot。That max。And
     I want maximum of 10 values。Now comes the fun bit。 we're going to say or x in。Moto。Right？X。So
     let's go ahead and run this see what happens today， we have got our random numbers。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后打印。只是想在屏幕上分开一下。我们去创建一个彩票类的实例。我们将说`lotto._max`。我希望最大值为10。现在来了有趣的部分，我们将说`for
+    x in lotto`。所以让我们运行一下，看看今天发生了什么，我们得到了随机数。
 - en: And we can even if we wanted to say we want， say 50 of these。 so it's going
     to kick out a lot of numbers here， let's go ahead and clear that and bang。 there's
     our 50 random numbers。Extremely cool the way this works， so quick quick recap。What
     we're doing here is we're just simply making a class。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们甚至可以说我们想要说50个这样的数字。所以这将会输出很多数字，我们先清除一下，看看。这就是我们生成的50个随机数字。这种方式非常酷，所以快速回顾一下。我们在这里做的只是简单地创建一个类。
 - en: Caing the constructor setting some internal values， and then we have this ider
     function。Other tutorials， you're going to see something similar to this。 but it's
     also going to be followed up with。暂定位。Next。And then you would have some code。
     we don't need that。Because we're using yield。And unlike return， yield will return
     the value。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 调用构造函数设置一些内部值，然后我们有这个迭代器函数。在其他教程中，你会看到类似的内容，但后面会有一些暂定位。接下来，你会有一些代码。我们不需要那样。因为我们使用的是yield。与return不同，yield将返回值。
 - en: but then stave right here in this current context。And when the execution pops
     back。 it will just continue on its merry way。Very cool， very powerful feature
     makes life very。 very simple compared to how it used to be。Gotta love Python3。![](img/f2e780b69e031634fbfadb8557d184c4_5.png)
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 但在当前上下文中要暂时停止。当执行恢复时，它会继续正常进行。这非常酷，功能强大，让生活变得非常简单，相较于以前的方式。真是太喜欢Python3了。![](img/f2e780b69e031634fbfadb8557d184c4_5.png)
