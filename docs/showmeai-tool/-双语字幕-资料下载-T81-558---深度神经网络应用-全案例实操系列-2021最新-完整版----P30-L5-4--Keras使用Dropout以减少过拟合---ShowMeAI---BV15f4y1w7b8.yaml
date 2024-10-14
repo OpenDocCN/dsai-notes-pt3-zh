@@ -1,8 +1,11 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P30：L5.4- Keras使用Dropout以减少过拟合
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P30：L5.4- Keras使用Dropout以减少过拟合
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeff Heton， welcome to applications of deep neural networks with
     Washington University In this video。 I'm going to show you how to make use of
     dropout， which is another type of regularization technique that you can use in
@@ -10,94 +13,124 @@
     projects click subscribe in the bell next to it to be notified of every new video
     let's look at what dropout is actually doing for neural network Now dropout is
     added layer by layer as you can see here。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是杰夫·赫顿，欢迎来到华盛顿大学的深度神经网络应用。在这个视频中，我将向您展示如何使用dropout，这是一种您可以在Keras的神经网络中使用的另一种正则化技术，与L1和L2一起使用。要了解我的AI课程和项目的最新信息，请点击旁边的铃铛订阅，以便在每个新视频发布时收到通知。现在，让我们看看dropout实际上在神经网络中做了什么。dropout是逐层添加的，正如您在这里看到的。
 - en: dropout， you specify a percentage of the neurons for that layer and in this
     case， this neuron。 this neuron and this neuron would be dropped out Now this changes
     each time through the steps in the epochs that way you're constantly changing
     which which of these neurons is actually available and not available when they're
     dropped out。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: dropout，您可以为该层指定一个神经元的百分比，在这种情况下，这个神经元、这个神经元和这个神经元会被丢弃。这样在每个周期的步骤中都会改变，您不断地改变这些神经元的可用性，即哪些神经元被丢弃，哪些神经元是可用的。
 - en: they keep their weights but they no longer contribute any values by these dashed
     lines to the next layer So this is a comparison that I've heard of this often。![](img/1a9b299d3e905cb95a8e5cd8656ae1bc_1.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 它们保持权重，但不再通过这些虚线对下一层贡献任何值。所以这是我经常听到的比较之一。![](img/1a9b299d3e905cb95a8e5cd8656ae1bc_1.png)
 - en: Would be like if you went to work and every day the CEO of the company told
     half the people to just go home at random that'd be pretty cool actually。 but
     what that would do for you is it would make sure that none of the workers become
     particularly specialized at their own tasks。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 就像如果您去上班，每天公司CEO随机告诉一半的人回家，这实际上会很酷。但这样做会确保没有工人特别专注于自己的任务。
 - en: They're very agile that way and。Not overfi to the particular tasks。 So this
     kind of keeps the neural network on its toes。 This also attempts to。Simulate having
     a bunch of neural networks， each with different configurations of neurons put
     into there to help mitigate the randomness that we saw in the last part where
     the neural network。 you can train them multiple times。 and you get completely
     different results。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 它们在这方面非常灵活，且不容易过拟合特定任务。因此，这种方式保持了神经网络的活力。这也试图模拟一堆神经网络，每个都有不同的神经元配置，以帮助减轻我们在上一个部分看到的随机性，您可以多次训练它们，并获得完全不同的结果。
 - en: So this can lower the variability of the output of the neural network to some
     degree。 it's almost like built in andsembling。 you have a lot of virtual neural
     networks that are created for each each layer as the dropout is randomly applied。
     Now， dropout this is important when it's done all of those neurons that were missing。
     which change back and forth， all the neurons go back。 So each of those neurons。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，这在一定程度上可以降低神经网络输出的变异性。这几乎就像是内置的集成，您为每一层创建了许多虚拟神经网络，因为dropout是随机应用的。现在，dropout是重要的，当这些缺失的神经元都变化时，所有的神经元都会回归。因此，每一个神经元。
 - en: those subnet in their return and you have the full neural network then for for
     your use after you're done with fitting。 So dropout is only really affecting the
     neural network during training and。out is yet another hyperparameter that we need
     to optimize。 which can influence the effectiveness of our neural network。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些子网络在返回后，您就得到了完整的神经网络，以供您在拟合完成后使用。因此，dropout只在训练期间影响神经网络。它是另一个我们需要优化的超参数，可能会影响我们神经网络的有效性。
 - en: This is a pretty good animation that I rather like that shows you essentially
     how how dropout works to some degree。 Basically as the training iterations are
     going through。 It's randomly selecting dropout neurons to to go away。 The white
     neurons are the ones that are still there in the black ones are dropped out。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个相当不错的动画，我很喜欢，它展示了dropout是如何在某种程度上工作的。基本上，在训练迭代过程中，它会随机选择一些dropout神经元来丢弃。白色神经元是仍然存在的，而黑色神经元是被丢弃的。
 - en: You can see the input and the output neurons remain in the in the neural network。
     Also biases。 You don't you don't drop out biases。 So let's see how we would do
     this。 We're going to do classification。 I'm going to go ahead and run this so
     that we get the classification data loaded。 We're going to predict product from
     the sample。😊，The simple data set that I that I gave you earlier。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到输入和输出神经元仍然保留在神经网络中。还有偏置。你不会丢弃偏置。那么我们来看一下该怎么做。我们将进行分类。我会继续运行这个，以便加载分类数据。我们将从样本中预测产品。😊，就是我之前给你的简单数据集。
 - en: this is essentially how you do dropout。 It's very simple。 You add almost a layer。
     a dropout sort of layer， it's affecting the layer before it。 So this is causing
     this previous layer 50 to drop out 50% of the neurons。 you can also add one to
     additional layer usually most literature that I've seen suggest not dropping out
     from your final hidden layer。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是如何进行丢弃法。非常简单。你几乎添加了一个层，一个丢弃层，它影响着之前的层。所以这导致前面的层50丢弃50%的神经元。你也可以再添加一个额外的层，通常我见过的大多数文献建议不要从最终的隐藏层中丢弃。
 - en: the layer that is just before the output。 so we'll follow that。 but if you wanted
     to add it to that layer too that's that's exactly how you would do it。 go ahead
     and run this。It is basically setting up to do the Kfold cross validation。And we
     can see now that it's completed， our final accuracy was 70%， which is actually
     pretty good。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是在输出之前的层。因此我们会遵循这个。但如果你想把它也加到那个层上，这就是你该怎么做。继续运行这个。它基本上是在为Kfold交叉验证做准备。现在我们可以看到它已经完成了，我们的最终准确率是70%，这实际上是相当不错的。
 - en: If we were to rerun this， we might get a different a different accuracy。 but
     this does help stabilize some of the effects of the of the random weights。 So
     we'll try that。 Let's go ahead and run it a second time。And we can see the result。
     It's， it's 71%。 So it actually。 we can see that overall。On our sample size of
     two anyway。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们重新运行这个，我们可能会得到不同的准确率。但这确实有助于稳定随机权重的一些影响。我们来试一下。让我们再运行一次。可以看到结果是71%。所以实际上，我们可以看到总体上，在我们两个样本的情况下。
 - en: this dropout does seem to be helping compared to the previous one that we were
     looking at where we were using L1 and L2 in the previous the previous part in
     a different video。Now it didn't remove the variance completely， we were at 70%
     and removed moved it up to 71 just from rerunning it。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个丢弃法似乎相较于我们之前在其他视频中使用L1和L2时帮助更大。现在它并没有完全消除方差，我们的准确率从70%提高到了71%，仅仅是通过重新运行。
 - en: In the next video， we're going to look at how to use。Boottrapping so that we
     can get better benchmarks by running this through a number of times and averaging
     things together。 Thank you for watching this video and the next video we're going
     to look at L1 L2 and drop out all together and get an idea of which you should
     be using and why this content changes often so subscribe to the channel to stay
     up to date on this course and other topics and artificial intelligence。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下一个视频中，我们将看看如何使用自助法，这样我们可以通过多次运行并将结果平均来获得更好的基准。感谢你观看这个视频，在下一个视频中我们将一起看看L1、L2和丢弃法，了解你应该使用哪一种以及原因。这些内容经常变化，所以请订阅频道，以便及时了解这个课程和其他人工智能主题。
 - en: '![](img/1a9b299d3e905cb95a8e5cd8656ae1bc_3.png)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1a9b299d3e905cb95a8e5cd8656ae1bc_3.png)'

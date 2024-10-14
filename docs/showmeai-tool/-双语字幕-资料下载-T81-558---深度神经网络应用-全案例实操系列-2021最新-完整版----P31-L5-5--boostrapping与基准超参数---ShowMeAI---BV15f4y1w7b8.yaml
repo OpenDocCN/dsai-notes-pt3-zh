@@ -1,75 +1,98 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P31：L5.5- boostrapping与基准超参数
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P31：L5.5- bootstrapping与基准超参数
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeff Heaton。 welcomel to applications of deep neural networks with
     Washington University。 In this video， we're going to talk about L1 L2 and dropout
     together。 You might be thinking great。 I had to figure out how many layers to
     have in a neural network。 how many neurons to put in each of those layers。 Now。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是杰夫·希顿。欢迎来到华盛顿大学的深度神经网络应用课程。在这个视频中，我们将一起讨论L1、L2和dropout。你可能在想太好了。我得弄清楚神经网络应该有多少层，每一层应该放多少个神经元。现在。
 - en: I've got all these regularization techniques to figure out as well。 It's getting
     complicated to architect and neural network。 Later in this course we'll see that
     we can use Bayesian optimization to help us figure this out。 But for now， I'm
     going to give you some practical tips in this video for the latest on my AI course
     and projects。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 我还得搞清楚这些正则化技巧。设计神经网络变得复杂了。在本课程后面的部分，我们将看到如何使用贝叶斯优化来帮助我们解决这个问题。但现在，我会在这个视频中给你一些关于我的AI课程和项目的实用提示。
 - en: click subscribe in the bell next to it to be notified of every new video。 So
     we've vet on quite a few hyperpara as we've made our way through this course up
     to this point。😊。![](img/7030d8ee32d0baa28197ef0d0c7cdbba_1.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 点击旁边的铃铛订阅，以便在每个新视频发布时收到通知。到目前为止，我们在这门课程中已经审查了不少超参数。😊。![](img/7030d8ee32d0baa28197ef0d0c7cdbba_1.png)
 - en: There's the number of layers in a neural network， adjusting these hyperparameters
     can definitely have an impact on the performance of your neural network。There's
     also how many neurons you have in each layer。 there's what activation functions
     you're using on each layer。Now we've added dropout percent per layer and the L1
     and L2 regularization values per layer。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 神经网络中的层数，调整这些超参数确实会影响你的神经网络的性能。每层的神经元数量，以及你在每层使用的激活函数。现在我们已经在每层添加了dropout比例和L1、L2正则化值。
 - en: And you know what we're not done yet。 We're going to add even more on as we
     make our way through the rest of the course。 These are a lot of hyperparameters，
     and it can be difficult to determine exactly how you should set these。In this
     video， I'm not going to show you any techniques for particularly optimizing any
     of these hyperparameter。 but I am going to show you a way that you can evaluate
     what effect your changes are actually having。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 而且你知道吗，我们还没有结束。随着我们继续进行课程，我们会添加更多内容。这些是很多超参数，确定应该如何设置它们可能会很困难。在这个视频中，我不会向你展示优化这些超参数的具体技巧，但我会告诉你如何评估你的变化实际上产生了什么影响。
 - en: As you saw in previous parts of this module leading up to this point。 if you
     rerun the neural network a couple of times， even with a fivefold cross validation。
     you're going to get various results from your final accuracy RMSE。 depending on
     if your classification or regression。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如你在这个模块之前的部分看到的，如果你重新运行神经网络几次，即使使用五折交叉验证，你最终的准确率RMSE也会有所不同，这取决于你是分类还是回归。
 - en: this can make it very difficult since your accuracy or your predictive power
     of the neural network somewhat bounces around naturally before you even change
     anything。 it can be very difficult to know if the change that you just made to
     one of these hyperparameters has actually had an effect or if you're just seeing
     normal variation in the neural network as a result of the random weights that
     that neural network starts with in this section。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 这可能会让事情变得非常困难，因为在你进行任何更改之前，神经网络的准确率或预测能力在自然波动。在这种情况下，可能很难知道你刚刚对其中一个超参数所做的更改是否真的产生了效果，还是只是看到了神经网络由于随机权重而导致的正常变异。
 - en: we're going to look at something called bootstping Now。 bootstping is similar
     to cross validationation in that it is a technique that you can use to get training。はい。And
     validation sets to work with your neural network on。 But it's different because
     it's not a set number of folds。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们要看看一个叫做bootstrapping的东西。bootstrapping类似于交叉验证，因为它是一种可以用来获取训练集和验证集以便与你的神经网络一起工作的技术。但它的不同之处在于它不是固定的折叠数。
 - en: You simply keep re grabbing a training and validation set from your initial
     data set over and over and over again。 and you do this with replacement。 Now，
     when you say with replacement。 that means that the first time you pull these elements
     out of the data set。 you put them all right back in and the next time you pull
     from the same group。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 你只需不断从初始数据集中重新获取训练集和验证集。并且这是在有放回的情况下进行的。现在，当你说“有放回”时，这意味着你第一次从数据集中提取这些元素后，将它们全部放回，然后下一次你从同一组中提取。
 - en: So you could end up with exactly the same training and validation set on multiple
     polls from。From your dataset， But that's fine。 we are going to average all of
     the accuracy or rooting square errors together to get an average performance for
     the neural network and will simply keep pulling more and more and more runs from
     the data set as we keep going and we'll look at how many runs。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以你可能会在多次抽样中得到完全相同的训练集和验证集。但这没关系。我们将把所有的准确率或均方根误差平均在一起，以获得神经网络的平均性能，随着我们不断进行，我们将继续从数据集中抽取更多的运行，并查看我们进行了多少次运行。
 - en: how many splits of your data it takes before your average error starts to really
     converge to a consistent value。 We're also going to use early stopping so we will
     stop training the neural network when the validation set no longer improves。 This
@@ -79,169 +102,223 @@
     benchmarking。We are going to want to report the time that certain things took
     because we might want to run this on Google CoLab or some other cloud based resource
     that will let us have more compute power。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 你需要对数据进行多少次拆分，平均误差才会真正收敛到一个一致的值。我们还将使用提前停止，因此当验证集不再改善时，我们将停止训练神经网络。这还将允许我们报告所需的平均轮次，以便你可以开始了解应该训练多少轮。现在，由于我们在进行基准测试。我们需要报告某些操作所花费的时间，因为我们可能想在Google
+    CoLab或其他允许我们获得更多计算能力的云资源上运行这个。
 - en: I'm just going to define that function。 It's easy enough。 Let's look at how
     we'll bootstrap for regression。 So I'm going to show you a regression and a classification
     example of bootstrapping first。 and then we'll look at the actual benchmarking
     program for this， since its regression。 we are attempting to predict the age。This
     is the simple dataset set that we've used a number of times throughout this course。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 我只是定义那个函数。很简单。让我们看看如何进行回归的自举。所以我会先向你展示一个回归和一个分类的自举示例，然后我们再看看这个的实际基准测试程序，因为这是回归。我们试图预测年龄。这是我们在本课程中使用过多次的简单数据集。
 - en: I'll go ahead and run that。 It'll simply load it， and it's done loading。 Now
     I'm going to bootstrap it。 So let me just go ahead and tick this off because it
     takes it a little while to run。 and start to explain it Here， we're defining the
     number of splits。 This is how many runs through this。 We're going to go。 So I
     chose 50。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将继续运行它。它会简单地加载，加载完成了。现在我要进行自举。所以让我把这个勾选掉，因为它需要一点时间来运行，并开始解释。这里，我们定义拆分的数量。这是我们要进行的多少次运行。我选择了50。
 - en: 50 would be a bit big for a cross validation because you would end up with a
     validation set。 There's one 50th of the data set and on smaller data that that
     would potentially be problem。 But here we're doing， So we're doing a shuffle split。Just
     like with cross validation。 we will use a stratified split when we get to classification
     because we don't want to accidentally change the class balances because that would
     introduce bias that would give us potentially an incorrectly trained model。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 50对交叉验证来说有点大，因为你会得到一个验证集。数据集中有1/50的样本，而在更小的数据集上，这可能会导致问题。但是在这里我们要做的，是进行洗牌拆分。就像交叉验证一样，当我们进行分类时，我们将使用分层拆分，因为我们不想意外改变类别平衡，因为那样会引入偏差，导致可能训练出一个不正确的模型。
 - en: at least it would be slightly off because it would have been trained on the
     wrong balances。 portions of the classes that is to be classified。The 0。1 tells
     me that I am taking 10% of the data set for a validation set。 and we're using
     42 so that we have consistently random results from sampling them。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 至少会有一点偏差，因为它会在错误的平衡上进行训练。要分类的类别部分。0.1告诉我，我正在从数据集中抽取10%的样本作为验证集。我们使用42，这样可以确保从中采样得到的结果是一致随机的。
 - en: It's not as important to do a random state for bootstrapping because each time
     you run through it。 I don't know that you necessarily care that split one is going
     to be the same as split one again when you run it。 but in cross validation， it
     can be nice to have those consistent folds。 We're going to split it。 Run through
     with each of these train and tests。And we're going to construct the neural network。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 在引导时做随机状态并不是那么重要，因为每次运行时。我不知道你是否真的关心分割一在再次运行时会与分割一相同。但在交叉验证中，保持一致的折叠会比较好。我们将进行分割。使用这些训练和测试进行运行。我们将构建神经网络。
 - en: So these are your hyperparameters that you'd want to be experimenting with。
     You will want to change these to different values and run it and try to get an
     idea of how effective this particular set of hyperparameters are。 We'll look at
     this later in this video。 we'll see how we actually construct a benchmark。 we
     are going to use early stopping。 So since we're using early stopping and our validation
     data are also from the early stop。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这些是你想要尝试的超参数。你需要将这些更改为不同的值并运行它，尝试了解这一特定超参数集的有效性。我们稍后在视频中会查看这个，我们将看到如何构建基准。我们将使用早期停止。所以，由于我们使用早期停止，而我们的验证数据也是来自早期停止。
 - en: we can't use that validation set as a true indicator of the actual effectiveness
     of the neural network because we're using that same validation set both to stop
     the neural network and evaluate。 but it doesn't matter。 we're more looking just
     for relative values of those from run to run。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们不能将那个验证集作为神经网络实际有效性的真实指标，因为我们同时使用同一个验证集来停止神经网络和进行评估。但这无关紧要。我们更关注的是不同运行之间的相对值。
 - en: not the true predictive power of this neural network。 We're simply trying to
     optimize hyperparameters， really at this。So we will fit it on how remaining many
     steps is needed， then we will do our prediction。And we'll track the average error
     and also the average number of epochs needed。Apoox epoch， however。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 并不是这个神经网络的真实预测能力。我们只是想优化超参数，实际上在这里。所以我们会拟合需要的剩余步骤，然后进行预测。我们将跟踪平均误差和所需的平均纪元数。大约纪元，然而。
 - en: You want to pronounce that word。 and we also track the standard deviation of
     the error because the standard deviation gives us an idea of how much variance
     the particular set of hyperparameters is giving us。 how， how much the neural network
     accuracy or R messy varies from one particular run to another。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 你想要发音那个词。我们还跟踪误差的标准差，因为标准差让我们了解特定超参数集给我们的方差有多大。神经网络的准确性或R messy在不同运行之间的变化。
 - en: Now you can see here， we've done quite a few splits。 So at the beginning。We
     got a score of 0。688。 And obviously， that's still the mean score because there's
     only one of them。 No standard deviation on the first one because it didn't deviate
     from anything。 And we continue to get our scores。 You'll notice there is quite
     a bit of jumping around Sc equals 0。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在你可以看到，我们做了相当多的分割。在开始时，我们得到了0.688的分数。显然，这仍然是均值分数，因为只有一个。第一个没有标准差，因为它没有偏离任何值。我们继续获取分数。你会注意到，分数相当波动，Sc等于0。
 - en: 88 score equals 0。56 and so on and so forth。 We continue this process。 And by
     the time we get to 36。 which is how far it made it。 We can see the standard deviation
     is is decent for for this one。 So it's jumping around by about plus or minus 0。18。
     And we can see that the mean score。 it has somewhat converge。 It's right around
     74。 I mean， it it's still jumping around in in the 10s。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 88，分数等于0.56等等。我们继续这个过程。当我们到达36时，也就是它达到的程度。我们可以看到标准差相当不错。因此，波动大约在±0.18之间。我们可以看到均分数，它有些收敛。大约在74左右，仍然在10的范围内波动。
 - en: but you can see really how how many of these you want to average together before
     these start to get pretty。 pretty convergent。 The epoch。 It looks like somewhere
     around now 113 to 130。2。 these are jumping around quite a bit。 but the mean epochs
     really has converged1，1，8，11，7。 So mean epoch， it looks like 117 to 118。 That's
     the number of epochs to really be training this thing on。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是你可以真正看到，在这些开始趋于相当之前，你想要平均多少个。这些纪元。看起来大约在113到130之间。这些值变化很大，但均值纪元已经收敛到1，1，8，11，7。因此均值纪元看起来是117到118。这就是你真正需要训练的纪元数。
 - en: And then the mean， the mean score。 It said there， it's， it's not converged a
     whole lot。 it's。 it's in around 0。75 to 0。74。 So we're in the pretty high7。4s，
     low 7。5。 So it's。 it's somewhere around 0。75。 But you can see if you look just
     at the the mean scores here。 There's a lot of variance in the mean as it's， as
     it's going through。 That was regression。 Now。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后，平均分数。它说那里，没有太多收敛。它大约在0.75到0.74之间。因此，我们处于相当高的7.4和低7.5之间。所以它大约在0.75左右。但是如果你仅查看这里的平均分数，可以看到随着它的进行，平均值有很多方差。这是回归。现在。
 - en: if you want to do classification。 it's pretty similar， really except。Well you'll
     load in the data set we'll be predicting on product because it's the classification
     form。Here， though， we'll use a stratified shuffle split。 That is going to make
     sure that those classes stay balanced for classification。 We're using 10%。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你想进行分类，这真的很相似，除了……好吧，你会加载我们将预测的产品数据集，因为它是分类形式。在这里，我们将使用分层洗牌拆分。这将确保这些类在分类中保持平衡。我们使用10%。
 - en: just like before and also a random state of 42。 Then we're going to split it。
     But notice we have to pass in in addition to X the products so that we know what
     the classes are so we can。Evenly split that， then we we do the same splitting
     just like before。 the rest of this is really pretty， pretty much the same thing。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 就像之前一样，随机状态为42。然后我们要进行拆分。但注意，我们需要除了X以外，还要传入产品，以便我们知道类是什么，以便能够均匀拆分，然后我们再进行相同的拆分，就像之前一样。其余部分实际上是相当相似的。
 - en: We have categorical cross entropy and we set the final output neuron count to
     the number of classes。 so it's the typical classification sort of thing。And we
     print out the same results that we had before。 So we're tracking the mean epochs
     and the mean score so that we can get an idea of how long we should train this
     and also。Let us know relative to another setting of hyperparameters。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们有分类交叉熵，并将最终输出神经元计数设置为类的数量。因此，这就是典型的分类方式。我们打印出之前的相同结果。因此，我们跟踪平均周期和平均分数，以便能够了解我们应该训练多长时间，以及……相对于其他超参数设置。
 - en: how effective the current set of hyperparameters are。 Now， to use this the benchmark。
     we'll do a regression problem。 So here I'm setting up the data set to。 So for
     benchmarking。 we're going to do a classification problem So I am setting this
     up basically so that it creates the dummies on the product column。 We'll evaluate
     it with log loss。 I'll go ahead run that so that we have it。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 当前超参数集的有效性。现在，为了使用这个基准，我们将做一个回归问题。所以在这里，我正在设置数据集。为了基准测试，我们将做一个分类问题。因此，我基本上是在设置，以便在产品列上创建虚拟变量。我们将用对数损失评估它。我将运行这个，以便我们能够得到它。
 - en: I am going to start the benchmarking and explain it as go。 So you'll notice
     this is pretty similar。 we're doing the stratified shuffle split just like before。
     number of splits。 This time is 100 because that gives me。😊，Gives me a more converged
     score to actually evaluate this with using a test set size of 10%。 So we loop
     through just like before。 The big difference here， though。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将开始基准测试，并在进行时解释。所以你会注意到这非常相似。我们正在进行分层洗牌拆分，就像之前一样。拆分次数。这次是100，因为这给了我更收敛的分数，以便实际使用10%的测试集大小进行评估。因此，我们像之前一样循环。这里最大的不同是。
 - en: is I did spend some time trying to tune these。You'll notice I'm using a different
     activation function。 We'll see more about this Prelu。 It's like a leaky relu。
     except the amount of leakiness is a parameter that is optimized by the neural
     network as well。 We'll see some more modern activation functions when we get into
     the kagle module and talk about how to really automatically tune these hyperparameter。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 我确实花了一些时间尝试调整这些。你会注意到我使用了不同的激活函数。我们将看到更多关于这个Prelu的内容。它像一个泄漏的relu，只是泄漏的程度是一个由神经网络优化的参数。当我们进入kagle模块并谈论如何真正自动调整这些超参数时，我们将看到一些更现代的激活函数。
 - en: So I'm using that type of activation function。 I do have 50% dropout on the
     first two hidden layers。 but not the third。 And that is mostly what I had tried。
     I had tried a couple of different ones。 And this was truly giving me the lowest
     or the best best results for log loss。 because usually want a low log loss。 These
     are some of the other attempts that I got and the various mean scores that I got。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我使用了那种激活函数。我在前两个隐藏层上有50%的丢弃，但第三个没有。这就是我尝试的主要内容。我尝试了几种不同的方式。这实际上给了我对数损失最低或最佳的结果，因为通常希望对数损失较低。这是我得到的一些其他尝试和各种平均分数。
 - en: So I was getting this right around it about 0。65， which is somewhat what the
     the mean score is converging to。Standard deviation is a little bit lower。 I attribute
     that to using dropout and you can let this run。 It takes it a little while。So
     this can be a very lengthy procedure I will often have my regular computer going
     and my Google Coab account both working on different sides of a particular problem
     so this will go on。 you'll see this score converge to somewhere about 0。65。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 我大约得到了这个结果，接近0.65，这大致是均值分数收敛的值。标准差稍微低一些。我将其归因于使用了dropout，并且你可以让这个过程持续进行。这需要一点时间。因此，这可能是一个非常漫长的过程，我通常会让我的常规计算机和我的Google
+    Coab账户同时在特定问题的不同方面工作，因此这个过程会继续进行。你会看到这个分数收敛到大约0.65左右。
 - en: Thank you for watching this video up to this point in this course we've dealt
     primarily with tabular data and neural networks work fine with this。 However，
     now we're going to start to get into the things that make neural networks really
     a model type that has gained a lot of attention。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 感谢你观看到目前为止的视频，在本课程中，我们主要处理的是表格数据，神经网络在这方面表现良好。然而，现在我们将开始进入一些使神经网络真正成为一种备受关注的模型类型的内容。
 - en: '![](img/7030d8ee32d0baa28197ef0d0c7cdbba_3.png)'
+  id: totrans-34
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/7030d8ee32d0baa28197ef0d0c7cdbba_3.png)'
 - en: Specifically， we're going to start with images， but we'll also get into time
     series。How to actually have images be the output of neural network and other things
     as well？
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 具体来说，我们将从图像开始，但我们也会进入时间序列。如何让图像实际成为神经网络的输出，以及其他相关内容？
 - en: This content changes often， so subscribe to the channel to stay up to date on
     this course and other topics in artificial intelligence。 This content changes
     often。 so subscribe to the channel to stay up to date on this course and other
     topics in artificial intelligence。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个内容经常更新，所以请订阅频道以保持对本课程和人工智能其他主题的最新了解。这个内容经常更新，所以请订阅频道以保持对本课程和人工智能其他主题的最新了解。

@@ -1,126 +1,171 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P32：L6.1- 基于Keras神经网络建模需要的图像处理
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P32：L6.1- 基于Keras神经网络建模需要的图像处理
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeff Heaan， welcome to App of Deep neural Network with Washington
     University。In this video， we're going to start looking at images for computer
     vision。 we're going to start by looking at some basic Python image handling capabilities。If
     we're going to look at images， we need to know how to load JPEGs and PNGs into
     Python so that we can adjust the resolution。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是Jeff Heaan，欢迎来到华盛顿大学的深度神经网络应用课程。在这个视频中，我们将开始研究计算机视觉中的图像。我们将从一些基本的Python图像处理能力开始。如果我们要查看图像，就需要知道如何将JPEG和PNG加载到Python中，以便调整分辨率。
 - en: Control if they're in color or clip them to specific boundaries for the latest
     on my AI course and projects。 click subscribe and the bell next to it to be notified
     of every new video there's a number of packages available in Python to deal with
     images We're going to use the pillow package。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 控制它们是否是彩色的，或者将它们裁剪到特定边界。有关我AI课程和项目的最新信息，请点击订阅，并按旁边的铃铛以接收每个新视频的通知。在Python中有许多处理图像的包，我们将使用pillow包。
 - en: '![](img/3e3d7831ea348ad14d326743a360c01f_1.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/3e3d7831ea348ad14d326743a360c01f_1.png)'
 - en: It's relatively easy to install。 You just do Pip install pillow。 This was included
     in the list of packages to install when we first started the class。 So you probably
     already have this installed。 It's also included with Google Co Lab。There are other
     image processing packages available in Python。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 安装相对简单。你只需执行Pip install pillow。这个包在我们第一次上课时的安装列表中。因此，你可能已经安装了它。它也包含在Google Co
+    Lab中。Python中还有其他图像处理包可用。
 - en: one that you'll often see is something called open CV。It's a little more difficult
     to install and we don't really need some of its advanced video features for this
     class。 so we're sticking with pillow Now what pillow lets you do is load images
     directly into your Python environment。It comes from the package PIL， that's how
     you actually access it。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 你常常会看到的一个是叫做open CV的东西。它的安装稍微复杂一点，而且我们并不需要它的一些高级视频功能，所以我们坚持使用pillow。现在，pillow允许你将图像直接加载到你的Python环境中。它来自PIL包，这就是你实际访问它的方式。
 - en: And we can use Maplotlib in line to actually see the results of some of the
     transformations that we'll do on these images。We're going to load an image from
     a URL， that's where we'll get most of the images。In the next module when we get
     into GNs， we'll need a large number of images and we'll get those directly from
     Cale。 so I'll show you how to do that that's a little bit different of a process。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以使用Maplotlib来实际查看我们对这些图像进行的一些变换的结果。我们将从网址加载一张图像，这就是我们获取大部分图像的地方。在下一个模块中，当我们进入GNs时，我们将需要大量图像，我们将直接从Cale获取。因此，我将向你展示如何做到这一点，这个过程会稍有不同。
 - en: but we'll still use some of the same commands to work with these Here we're
     using the requests package and Python this lets us read data directly from a URL
     we're basically getting this image loading it and we can display it。So when we
     load this image， it takes a moment since it is coming live from the internet。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我们仍将使用一些相同的命令来处理这些内容。在这里，我们使用requests包和Python，这让我们可以直接从网址读取数据。我们基本上是获取这张图像，加载它，然后可以显示出来。所以，当我们加载这张图像时，由于它是实时从互联网获取的，因此需要一点时间。
 - en: '![](img/3e3d7831ea348ad14d326743a360c01f_3.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/3e3d7831ea348ad14d326743a360c01f_3.png)'
 - en: You can see the numeric form of the image and you can see the visual form of
     the image。![](img/3e3d7831ea348ad14d326743a360c01f_5.png)
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到图像的数值形式，也可以看到图像的视觉形式。![](img/3e3d7831ea348ad14d326743a360c01f_5.png)
 - en: In the new Eric form。You'll notice that these numbers come in。 The pixels come
     in in three。3 Bte groups like this。 That's because of red， green and blue。 So
     RGB。 you can see a lot of these colors are really in pretty similar ranges of
     each other。 You can also create images in Python。 rather than just simply loading
     them。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 在新的Eric表单中，你会注意到这些数字是以三组3 Bte的形式出现的。这是由于红、绿和蓝。因此是RGB。你可以看到许多颜色在彼此的范围内非常相似。你也可以在Python中创建图像，而不仅仅是简单地加载它们。
 - en: You can literally create an image completely from scratch。 You can generate
     the pixels and Python will actually turn that into an image for you。![](img/3e3d7831ea348ad14d326743a360c01f_7.png)
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以从零开始创建一幅图像。你可以生成像素，Python实际上会为你将其转换为图像。![](img/3e3d7831ea348ad14d326743a360c01f_7.png)
 - en: '![](img/3e3d7831ea348ad14d326743a360c01f_8.png)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/3e3d7831ea348ad14d326743a360c01f_8.png)'
 - en: First， let's just go ahead and run this so you can see what it's really trying
     to do。It's creating basically a red green blue， almost a Microsoft Windows looking
     logo。 And the way this is working is we are creating the height and the width。
     So this is 64 pixels by 64 pixels。 not not very large。 We're creating a data。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，让我们直接运行这个，以便你能看到它到底在做什么。它基本上是在创建一个红绿蓝的图标，几乎像一个微软Windows的标志。这个过程的工作原理是我们在创建高度和宽度。所以这是64像素乘以64像素，*并不大*。我们正在创建一个数据。
 - en: Set or matrix in nuumpy to hold this， the height width。 And then 3。 So it's
     3D。s。 it's more of a tenser than the matrix。 This cube will hold the height in
     the width。 And then the three depth is the three colors， red， green and blue。And
     the data type。 this is important we need to make these unsigned intes of eight
     bits， so bytes basically。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 在NumPy中设置或矩阵来保存这个，高度和宽度。然后是3。所以这是3D的。*它更像是一个张量而不是矩阵*。这个立方体将保存高度和宽度，然后三个深度是红、绿、蓝这三种颜色。数据类型很重要，我们需要将其设置为无符号8位整数，基本上是字节。
 - en: Because the three components of a pixel are bys now sometimes you'll have a
     fourth。Color are not really color， but alpha channel that goes along with the
     red， green and blue values。 but we're not using alpha channels at this point now
     since this is 64 by 64。 we're going to want to draw each of these squares。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 因为一个像素的三个组件是现在有时会有第四个。颜色其实不是颜色，而是与红、绿和蓝值相关的*透明通道*。但在这一点上我们不使用透明通道，因为这是64乘64。我们将希望绘制每一个这些方块。
 - en: That makes up the kind of checkered red green blue yellow。 So for yellow。 we're
     going to do row in 32 column in 32。 Now we're doing all of these because each
     of these sub boxeses is 32 by 32。 So 432 by 32s create a 64 by 64 and we're looping
     through all of these and setting data at that location to 2552550。 which is the
     RGB code for yellow。So since we're just specifying rowow column and not adding
     anything to it。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 这形成了一种棋盘式的红绿蓝黄色。因此，对于黄色，我们将做行32列32。现在我们正在做所有这些，因为每个子方框都是32乘32。所以432乘32创建了64乘64，我们循环遍历所有这些，并在那个位置设置数据为255,
+    255, 0，这是黄色的RGB代码。所以由于我们只是指定行和列而没有添加任何东西。
 - en: this is the upper left hand square that we're dealing with。Because 32。32 across
     32 down and we simply fill in that entire square for the red square。 we start
     off the loop the same。 We start off the loop the same in all of these。 So the
     row is now being offset by 32。 So we're effectively moving down。 The column is
     still here。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我们正在处理的左上方的方块。因为是32乘32，所以我们简单地填充整个红色方块。我们在所有这些中以相同的方式开始循环。因此行现在被偏移了32。所以我们实际上在向下移动。列仍然在这里。
 - en: So we're not moving over and that draws red。 If we move over both on the row
     and the column That's where green goes。 And if we move over just in the columns。
     That's where blue goes。 So you can see we basically loop through and assigned
     literally every pixel for this entire image。 And then we create the image from
     the array saying that it's red green blue。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们没有移动，这里绘制的是红色。如果我们在行和列上都移动，这里就是绿色。如果我们只在列上移动，这里就是蓝色。所以你可以看到我们基本上循环遍历并实际为整个图像中的每个像素分配颜色。然后我们从数组创建图像，表明它是红、绿、蓝。
 - en: There's other encodings other than RGB。 But we're going to primarily work with
     RGB。 So this shows you we literally created an image from scratch。 we will do
     this when we look at thegans in the next module because we're going to literally
     build faces from the pixel up。 you can also。ransform images。 This is a common
     procedure。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 还有其他编码方式，而不是RGB。但我们将主要使用RGB。所以这向你展示了我们从零开始真正创建了一幅图像。在下一个模块中查看生成对抗网络时，我们将真正从像素开始构建面孔。你也可以*转换图像*。这是一个常见的程序。
 - en: You'll sometimes want to crop images or change them to grayscale or other things
     just to get them ready to go into the neural network。 This does a transformation
     at a pixel by pixel level。So I will go ahead and run this just so you can see
     the final output before we look at how we do it。It tells you how many rows and
     columns。 and there's the image。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时你可能需要裁剪图像或将其更改为灰度，或做其他事情，以便让它们准备好进入神经网络。这是在逐像素水平进行转换。所以我将继续运行这个，以便你可以看到最终输出，在我们查看如何实现之前。它告诉你有多少行和列。图像在这里。
 - en: Now did take a moment to generate that。 That's because we're literally looping
     over every pixel of a relatively high resolution image。 That's the same picture
     that we had before。 but we converted it to grayscale and to convert it to grayscale。
@@ -128,77 +173,99 @@
     previous example。 we get the rows and columns print those out。Now we're going
     to create a second image that is very similar to when we created that small checkerboard
     in the previous example。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在确实花了一点时间来生成这个。这是因为我们实际上在遍历每个相对高分辨率图像的像素。这是我们之前的同一张图片，但我们将其转换为灰度图像。我们基本上像之前一样加载图像。这一切与前面的例子相同。我们获取行和列并打印出来。现在我们将创建第二张图像，这张图像与我们在前一个例子中创建的小棋盘非常相似。
 - en: We're going to basically render into that image， so we're going to loop over
     every row， every column。 we are going to calculate the mean of each pixel， so
     each of those three three by pixels。We're going to add those three the red green
     and blue values together and then average them。 This is a very primitive gray
     scaling。 There are more advanced ways of doing gray scale that uses a weighted
     sum。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将基本上渲染成那个图像，所以我们将遍历每一行，每一列。我们要计算每个像素的平均值，所以每三个三像素的红绿蓝值都要相加，然后取平均。这是一种非常原始的灰度化方法。还有更高级的灰度化方式使用加权和。
 - en: but this is a good enough example for just showing how to transform each pixel
     one by one。These two loops， that's what's taking some of the time。 the couple
     of seconds delay that you'll notice when you run this。Then we get the image back
     by basically using image up from array。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 但这是一个很好的例子，展示如何逐个转换每个像素。这两个循环是占用一些时间的原因。当你运行这个时，你会注意到几秒的延迟。然后我们基本上通过使用数组从图像中获取图像。
 - en: and we are now ready to display our modified image。 You'll often want to standardize
     images as well。 This is where you take images that are in a bunch of different
     sizes and you'll shrink them all to the same size。😊，This is a very common procedure。
     Often， this will be done for you on the image data set。 But if you're truly collecting
     raw images， you will need to do some of your own standardization Here。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们准备展示我们的修改图像。你通常也会想要标准化图像。这是将不同尺寸的图像缩小到相同大小的过程。😊这是一个非常常见的程序。通常，这将在图像数据集中为你完成。但如果你真的在收集原始图像，你需要自己进行一些标准化。
 - en: I'm giving it a list of images all from Wikipedia。 These are just different
     buildings at Washington University and Wikipedia has images of all of them。I'm
     creating a function here called make square， so we get the images， we get the
     rows and columns。And we check to see if we have more rows than columns。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 我给它提供了一个来自维基百科的图像列表。这些只是华盛顿大学不同建筑的图片，维基百科有它们的所有图片。我在这里创建一个名为make square的函数，所以我们获取图像，获取行和列。我们检查一下行是否比列多。
 - en: This deals with the fact that images are not all going to have the same aspect
     ratio。 Let me actually show you what that looks like。 that'll make it a little
     bit more clear so it's essentially cropping these so that they all become this
     perfect Instagram sort of square and one by one as we so as we make the image
     square by essentially just cropping it。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 这处理了图像不会具有相同宽高比的事实。让我实际展示一下这是什么样子。这样会更清楚，所以这基本上是在裁剪这些图像，使它们都变成完美的Instagram方形，然后逐个进行裁剪。
 - en: We then can load these images one by one using similar code to before we make
     each one square。We resize them。 So once they've been made square， then we can
     resize them to 128 by 128。 That may be an increase。 That may be a decrease。 Most
     of these， it's a decrease。 We're also taking these image arrays and we're flattening
     them so that we can have a list of。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们可以使用类似之前的代码逐个加载这些图像，使每个图像变为正方形。我们调整它们的大小。所以一旦它们被调整为正方形，我们就可以将它们调整为128乘128。这可能是增大，也可能是缩小。大多数情况下，这是缩小。我们还在将这些图像数组展平，以便得到一个列表。
 - en: Just values that make up that array is that is the form that you'll usually
     put the data into a neural network in。 you'll often see this command here where
     we're doing。We're essentially turning it into a range between between negative
     1 and 1 centered about0 because the image is has 256 possible values。 halflf of
     that is 128。 we're subtracting 128 from that， which effectively centers it about
     0。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 组成该数组的值是你通常将数据输入神经网络的形式。你常常会看到这个命令，我们正在做的事情。我们实际上是将其转换为一个范围，范围在负1到1之间，以0为中心，因为图像有256个可能的值。这个值的一半是128。我们从中减去128，这实际上使其以0为中心。
 - en: Then we divide it by 128 so that it's between negative 1 and 1 approximately。
     and there you see all the images completely loaded and standardized。To 128 by
     128。 we also will sometimes want to add noise to an image。 We'll see this when
     we get into the auto encoders because we'll create denoising auto encoders。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将其除以128，以使其大致在负1和1之间。你会看到所有图像都完全加载并标准化为128乘128。我们有时也会想给图像添加噪声。当我们进入自编码器时，我们将看到这一点，因为我们将创建去噪自编码器。
 - en: or basically teaching。The neural network to remove noise from images。 let's
     go ahead and run this so you can see what it looks like。 Okay。 and there is the
     same image with a bunch of random squares added in there which are basically noise。Adding
     the noise we're essentially creating a copy of the image， we're taking the rows
     and columns。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 或基本上是在教学。神经网络从图像中去除噪声。我们先运行这个，这样你就能看到它的样子。好的，这里是同一幅图像，里面加了一些随机的方块，这些基本上就是噪声。添加噪声实际上是创建了一幅图像的副本，我们正在提取行和列。
 - en: And we're going to loop through and put 100 of those boxes in。 We're generating
     random locations within that range。 This is kind of neat。 we're using a nuy。 This
     looks like we're assigning just one value to0， but we're actually assigning over
     a range。 a matrix range between y and y plus S。 So S is the size of。Each of those
     boxes and x plus that size。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将遍历并放置100个方框。我们在这个范围内生成随机位置。这有点有趣。我们使用了nuy。看起来我们只给0分配了一个值，但实际上我们在一个范围内进行分配，一个在y和y加S之间的矩阵范围。所以S是每个方框的大小，加上x的那个大小。
 - en: So that size what S is really doing is these these boxes are relative to the
     size of the picture。 So they're essentially120th X and 120th Y of whatever the
     men of the rows and columns。 So if row is the smaller one or the columns whichever
@@ -207,8 +274,12 @@
     going to look at convolution neural networks for two very famous data sets that
     we introduced for deep learning This content changes often so subscribe to the
     channel to stay up to date on this course and other topics and artificial intelligence。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以S真正做的大小是这些方框相对于图片的大小。它们基本上是行和列的1/120。因此，如果行是较小的一个或者列中的任一个是较小的，我们就取它的1/120，这就成为这些方框的高度和宽度。感谢观看这个视频，在下一个视频中，我们将研究卷积神经网络，用于我们为深度学习引入的两个非常著名的数据集。这个内容经常变化，所以请订阅频道，以便随时了解本课程和其他人工智能主题。
 - en: '![](img/3e3d7831ea348ad14d326743a360c01f_10.png)'
+  id: totrans-33
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/3e3d7831ea348ad14d326743a360c01f_10.png)'
