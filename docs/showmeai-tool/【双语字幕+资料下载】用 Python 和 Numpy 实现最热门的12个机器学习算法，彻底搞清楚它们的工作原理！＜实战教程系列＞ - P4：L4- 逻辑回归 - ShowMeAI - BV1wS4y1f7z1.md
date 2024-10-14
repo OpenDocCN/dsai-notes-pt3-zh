@@ -1,0 +1,201 @@
+# 【双语字幕+资料下载】用 Python 和 Numpy 实现最热门的12个机器学习算法，彻底搞清楚它们的工作原理！＜实战教程系列＞ - P4：L4- 逻辑回归 - ShowMeAI - BV1wS4y1f7z1
+
+istic regression。 So， of course， we use nump again。 So let's import Nmpy S N P。
+
+And then we create a class called Lo regression。And this will have an in it method。
+
+ So we have an in it。And in it looks exactly the same as for linear regression。
+
+ So I will put some learning rate in here that will get a default value。 So 0。
+
+001 usually the learning rate is very small， and it will also get a number of iterations。
+
+ So an its and with a default of 1000。So this will determine how many iterations we use for our gradient descent。
+
+ and then I will store them。 So I will say self L R equals L R and self。And its equals， and its。
+
+And then， I will simply create some。Weights， but set them to none at first。 So our weights are none。
+
+ and our bias is none， simply that we， we know now we need to come up with them。
+
+And then we define a fit method。 So here we follow the conventions of the psychic Learn Library again。
+
+ So this will take some training samples and the values， the training labels。
+
+So this will involve the training step and the gradient descent。And then we have a predict method。
+
+And here we get new test samples that we want to predict。
+
+ So these are the methods we want to implement。And our input inputs here。
+
+ So x is a nuy N D vector of size M times n， where M is the number of samples and n is the number of features for each sample。
+
+And why。Why is a10 vector or also of size M。 So for each training sample， we have one vector。So。
+
+Now we can go on。 So first of all， we have to in it initialize our weights。
+
+ So let's say we want to in it the parameters。And for this， we get the number of samples。
+
+And the number of features。So， this is x。Shape， so this will unpeick the shape the first dimension into the number of samples and the second dimension into the number of features。
+
+And then， we in it our。嗯。Waits。Just with0。 So we create a vector only with zeros of size。
+
+ number of features。 And we set our bias to 0 at first。You can also， for example。
+
+ use random numbers for the initialization， but 0 is just fine。And after that。
+
+ we used the gradient descent that I talked about。 So we iteratively update our weights。
+
+ we use a four loop。 So let's say4 I。 And actually， we don't need this。 So for underscore in range。
+
+ and then self dot and its。 So this is the number of iterations we want to have。
+
+And now let's have a look at the formula again。
+
+![](img/3f1d65b66ad21ed37aeb062cde34291d_1.png)
+
+So first of all， we approximate our y with this function。 So first。
+
+ let's apply this linear model and then apply the sigmoid function。
+
+
+
+![](img/3f1d65b66ad21ed37aeb062cde34291d_3.png)
+
+So， let's say。来啊。Model equals This is w times x plus B。
+
+ so we can use the nuy dot function to multiply our vector。 So multiply x and self dot weights。Plus。
+
+ self dot bias。And then。We apply the sigmoid function， So let's create some help or method。
+
+ some private method， sigmoid。That gets some X。嗯。So， and here。This is chest。
+
+
+
+![](img/3f1d65b66ad21ed37aeb062cde34291d_5.png)
+
+If you have a look at the formula 1 over1 plus the exponential function of minus x。
+
+
+
+![](img/3f1d65b66ad21ed37aeb062cde34291d_7.png)
+
+So we can write this in one line， one， return one over1 plus N P dot。
+
+ or let's make parenthesesis around this，1 plus N P dot X。And then， off minus x。And then。
+
+This is all we need。So now we apply the sigmoid function here。
+
+ So we say why predict it equals self dot。Sek might off。And then our linear model。
+
+ So this is our approximation of y。 And then we need to update our weights。
+
+
+
+![](img/3f1d65b66ad21ed37aeb062cde34291d_9.png)
+
+So。We have a look at the update rules。 We first calculate the derivatives。Of with these two formulas。
+
+ So let's say。
+
+![](img/3f1d65b66ad21ed37aeb062cde34291d_11.png)
+
+DW equals， And this is one over n。 And then the sum。
+
+
+
+![](img/3f1d65b66ad21ed37aeb062cde34291d_13.png)
+
+Of two times x times the difference of the predicted y minus the actual y。
+
+
+
+![](img/3f1d65b66ad21ed37aeb062cde34291d_15.png)
+
+So we you have。1。Over the number of samples。That we already got up here。And then times。
+
+ And then we have the。Product， and then thes sum over this product。 And this is nothing else。
+
+ but also the dot product of vectors。 So we have to can use numpy dot dot。
+
+But now we have to be careful。 now we。Want to do this along the other dimensions。
+
+ So we have to use X dot transposed。And then the duck product of this and y predicted minus the actual y。
+
+So please check the dot product for yourself。So this is the derivative with respect to W and the derivative with respect to the bias is the same。
+
+
+
+![](img/3f1d65b66ad21ed37aeb062cde34291d_17.png)
+
+But only without the X。 So this is just a sum。 And by the way。
+
+ I left the two out because this is just a scaling factor that we can omit。 So this is one over n。
+
+ And then the sum of this difference。
+
+![](img/3f1d65b66ad21ed37aeb062cde34291d_19.png)
+
+So， we say。D B equals one over number of samples。And then times N P dot sum。
+
+ And then here we simply have y predicted minus the actual y， so。These are our derivatives。
+
+ and then we update our well way our parameters。 So we say self dot weights minus equals self dot learning rate。
+
+Times the derivative and the same for our bias。So minus equals self dot learning rate times the derivative。
+
+And this is all for our fit method。 This is the gradient descent。
+
+And now let's implement the predict method。 So here we do the same thing that we did here， so。
+
+We first approximate our data with a linear model and then apply the sigmoid function to get a probability。
+
+
+
+![](img/3f1d65b66ad21ed37aeb062cde34291d_21.png)
+
+And now。What we want is we want to say， if it's either class。1 or class 0。
+
+ So we look at this function。And we say if it's larger than 05， then it's class 1。
+
+ And if it's lower than it's class 0。
+
+![](img/3f1d65b66ad21ed37aeb062cde34291d_23.png)
+
+So， let's say， our。Why predicted。Class or classes。 This is for multiple samples equals。
+
+ And then we use list comprehension， and we say it's one， if。Our I is larger than 05。And otherwise。
+
+ it's or else， it's 0。And then we do this for each y， for each probability in in our y predicted。
+
+So now we have0 or ones， and then we。Just return this。 So return the predicted classes。
+
+And this is the whole implementation that we need。 And now we can test it。
+
+ So I already wrote a little test script where I used the psychic learn modules to to load some。
+
+Some test data。 So this is the breast cancer set。 You can Google that。
+
+ So this is a popular two class problem。And then I will split the data into training samples and test samples。
+
+Then I will create some logistic regression model with our from our file that we and our class that we just implemented here。
+
+ and then I will fit the data， our training data and the training labels。
+
+ and then I will predict this。And predict the labels for the test data。
+
+And then I calculate the accuracy。 So how many of the labels are correctly。Assigned。
+
+So if you've watched the video about the K and N algorithm， then you already have seen this。And now。
+
+ let's run this。So， here。Got an unexpected keyword argument learning rate。嗯。Oh， sorry。
+
+I just call this L R。And this is the number of iterations。So， let's run this again。
+
+And then we see our accuracy is 092。 So or almost 93% of our test data is correctly assigned。
+
+So we see that it works。 and I hope you enjoyed this tutorial and see you in the next tutorial bye。
+
+
+
+![](img/3f1d65b66ad21ed37aeb062cde34291d_25.png)
