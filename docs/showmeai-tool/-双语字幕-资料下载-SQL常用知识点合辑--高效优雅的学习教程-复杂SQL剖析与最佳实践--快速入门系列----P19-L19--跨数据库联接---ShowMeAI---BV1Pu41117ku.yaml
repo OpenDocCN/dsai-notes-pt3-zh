@@ -1,25 +1,35 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P19：L19- 跨数据库联接 - ShowMeAI
     - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P19：L19- 跨数据库联接 - ShowMeAI
+    - BV1Pu41117ku
 - en: '![](img/52c2bde06d7c760267046c43c0a9e2d9_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/52c2bde06d7c760267046c43c0a9e2d9_0.png)'
 - en: 哦。In the real world， when you work as a developer or a database administrator。
     Qui often you' will have to work with multiple databases in this tutorial。 I'm
     going to show you how to combine columns from tables across multiple databases。
     that's pretty easy。 So in the SQL store database we have these tables that you're
     fairly familiar with。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。在现实世界中，当你作为开发者或数据库管理员工作时。你常常需要与多个数据库合作。在本教程中，我将向你展示如何合并来自多个数据库表的列。这是相当简单的。所以在SQL
+    store数据库中，我们有这些你比较熟悉的表。
 - en: Now imagine this product table was not here。😊，Now， if you look at the SQL inventory
     database。 you can see here we have。😊，Another products table。 this product table
     is exactly the same as the product table that we have in a SQL store database。
     so it has the same columns and the same data。😊，Now technicalically， this is not
     a good design。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在假设这个产品表不在这里。😊，现在，如果你查看SQL库存数据库。你可以看到这里有。😊，另一个产品表。这个产品表与我们在SQL store数据库中的产品表完全相同。因此它具有相同的列和相同的数据。😊，从技术上讲，这并不是一个好的设计。
 - en: We don't want to have the same table repeated in multiple places。 but for this
     demo。 let's just imagine that we don't have the products table here。 So we want
     to join the order items table with the product table in the SQL inventory database
@@ -27,32 +37,48 @@
     an alias straight away。 we want to join this with the product table This product
     table is part of the SQL inventory database So we'll have to prefix this with
     the name of its database So we type out SQL inventory。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们不希望在多个地方重复相同的表。但是为了这个演示，假设我们在这里没有产品表。所以我们想将订单项表与SQL库存数据库中的产品表连接。让我们开始吧。因此，从订单项表中选择所有内容，我们立即给它一个别名。我们想将其与产品表连接。这个产品表是SQL库存数据库的一部分。所以我们必须在前面加上它的数据库名称。因此我们输入SQL
+    inventory。
 - en: 😊，Dot。😡，Now， once again， we can give this an alias like P。😊，Then type out our
     join condition。 so OI dot product ID should be the same as P dot product ID let's
     run a query。There you go。 so we successfully join tables across multiple databases。Now
     note that we're prefixing the product table with the name of its database because
     the current database that we are writing this query against is the SQL store database。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，点。😡，现在，再一次，我们可以给这个一个别名，例如P。😊，然后输入我们的连接条件。因此，OI.dot产品ID应该与P.dot产品ID相同，让我们运行一个查询。你看，这样我们就成功地连接了跨多个数据库的表。请注意，我们在前面加上产品表的数据库名称，因为我们正在对SQL
+    store数据库编写这个查询。
 - en: Take a look in the navigator panel， the SQL store database is displayed in bold
     because earlier we wrote。😊，The use statement to select a database that was SQL
     store。Now。 what if we select the SQL inventory database， Let's see what happened。
     So SQL inventory。😊，Now。 because we have multiple statements， we have to terminate
     this with a semicolon。😊。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 请查看导航面板，SQL store数据库以粗体显示，因为我们之前写了。😊，使用语句选择了一个数据库，即SQL store。现在，如果我们选择SQL库存数据库，会发生什么呢？让我们看看。因此SQL
+    inventory。😊，现在。由于我们有多个语句，我们必须用分号结束这一切。😊。
 - en: Now we want to select everything from the order items table。 but we don't have
     this table inside of this database。😊。So now we'll have to prefix this table with
     an name of its database that is SQL Underline Store。😊。Let's execute the query。😊，Okay，
     everything works beautifully。 So here's the lesson。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们想从订单项表中选择所有内容。 但是我们在这个数据库中没有这个表。😊。所以现在我们必须在这个表名前加上它所在数据库的名称，即SQL Underline
+    Store。😊。让我们执行这个查询。😊，好的，一切运作得非常顺利。所以这是教训。
 - en: you only have to prefix the tables that are not part of the current database。
     In other words。 your query will be different depending on the current database。😊。![](img/52c2bde06d7c760267046c43c0a9e2d9_2.png)
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 你只需要为那些不属于当前数据库的表加上前缀。换句话说，你的查询将根据当前数据库而有所不同。😊。![](img/52c2bde06d7c760267046c43c0a9e2d9_2.png)
 - en: Oh。![](img/52c2bde06d7c760267046c43c0a9e2d9_4.png)
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。![](img/52c2bde06d7c760267046c43c0a9e2d9_4.png)

@@ -1,168 +1,232 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P18：L18- 内部连接 - ShowMeAI
     - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P18：L18- 内部连接 - ShowMeAI
+    - BV1Pu41117ku
 - en: '![](img/9eb98645e94aefd9dacd81a30d25c3e2_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/9eb98645e94aefd9dacd81a30d25c3e2_0.png)'
 - en: 哦。So far we have only selected columns from a single table， but in the real
     world。 we quite often select columns from multiple tables。 and that's what I'm
     going to show you over the next few tutorials。😊，So on the left side。 if you look
     at our orders table， let's select all the data here。😊，In table。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦，到目前为止，我们只从一个表中选择列，但在现实世界中，我们经常从多个表中选择列。这就是我将在接下来的几个教程中向你展示的内容。😊 所以在左侧，如果你查看我们的订单表，让我们选择这里的所有数据。😊
+    在表中。
 - en: we're using the customer ID column to identify the customer that has placed
     each order。 Now as I told you before， we don't store customers information here
     like their phone number。 their email， their address， because this information
     can change in the future。 and if a given customer has placed multiple orders。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们使用客户ID列来识别每个订单的客户。正如我之前告诉你的，我们这里不存储客户信息，比如他们的电话号码、电子邮件和地址，因为这些信息可能在未来发生变化。如果某个客户下了多个订单。
 - en: then we'll have to come back and change multiple records。 We don't want to do
     that。 That's why we have separate tables for customers and orders。😊，Now in this
     tutorial。 I'm going to show you how to select the orders in the orders table。
     but instead of showing the customer ID， show the full name for each customer。😊。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么我们必须回来更改多个记录。我们不想这样。这就是我们为客户和订单设置单独表格的原因。😊 现在在本教程中，我将向你展示如何选择订单表中的订单，但不是显示客户ID，而是显示每个客户的全名。😊
 - en: So let's go back to our query window。😊，All right， so we want to select everything
     from the orders table。Now we should combine the columns in this table with the
     columns in the customers table。 that is where we use the join keyword。Now here
     we can optionally type inner join because in SQL。 we have two types of join， inner
     join and aler join。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们回到查询窗口。😊 好的，我们想从订单表中选择所有内容。现在我们应该将这个表中的列与客户表中的列结合，这就是我们使用join关键字的地方。现在我们可以选择性地输入inner
+    join，因为在SQL中，我们有两种类型的连接，inner join和outer join。
 - en: We'll look at outer joins later in this section。 So for now we are only using
     an inner join and this inner key is actually optional。 so we don't have to type
     it。😊，So you want to join the orders table with the customers table。Now。 on what
     basis do we want to join these tables？Well， here in the customer table。 we have
     this customer ID column。 So if we put these two tables next to each other。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们稍后将在本节中查看外连接。所以现在我们只使用inner join，而这个inner关键字实际上是可选的，因此我们不必输入它。😊 所以你想将订单表与客户表连接。现在，我们希望基于什么来连接这些表？好吧，在客户表中，我们有这个客户ID列。所以如果我们将这两个表放在一起。
 - en: we want to line up the records such that the customer Is are equal。 That is
     where we use the on phrase。😊，So after on we type out a condition。 here is the
     condition we need to type out orders do customer underline ID should be equal
     toCustom。 customer ID。😊，Now， this is getting outside of the screen。 so let me
     break out this line。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们希望对齐记录，使得客户ID相等。这就是我们使用on短语的地方。😊 所以在on后面，我们输入一个条件。这里是我们需要输入的条件，订单表中的客户ID应该等于客户表中的客户ID。😊
+    现在，这超出了屏幕范围。让我分开这一行。
 - en: That's better。So with this query， we are telling MyQL that， hey。 whenever youre
     joining the orders table with theCustoms table。 make sure that the customer ID
     column in the orders table equals the customer ID column in the customers table。😊，Now
     let's execute this query。😊，Look at the result。Since we are selecting everything
     here。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 这样更好。通过这个查询，我们告诉MyQL，嘿， whenever you’re joining the orders table with the customers
+    table，确保订单表中的客户ID列等于客户表中的客户ID列。😊 现在让我们执行这个查询。😊 看看结果。因为我们在这里选择了所有内容。
 - en: the first few columns are from the orders table because we have listed that
     first。😊，Now。 after all the columns in the orders table， we have the columns in
     the customer table。 so customer ID， first name， last name and so on。😊。Now let's
     simplify the results set and select only order ID， first name and last name。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 前几列来自订单表，因为我们先列出了这个。😊 现在，在订单表中的所有列之后，我们有客户表中的列，包括客户ID、名字、姓氏等等。😊 现在让我们简化结果集，只选择订单ID、名字和姓氏。
 - en: So back to our query， we select。Order， ID， first name and last name。Now I'm
     going to execute the query。😊，That is better， so next to each order ID。 we can
     see the name of the customer that placed that order。😊，Now。 what if you want to
     display the customer ID here as well？😊，Well。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以回到我们的查询，我们选择订单ID，名字和姓氏。现在我要执行查询。😊那更好，所以在每个订单ID旁边，我们可以看到下单客户的名字。😊现在，如果你想在这里显示客户ID呢？😊，那么。
 - en: let's put that here and see what happens，Custom I。Execute the query。 We get
     an error。 So if you look at the output window down the bottom。 you should see
     an error saying column customer ID D the field list is ambiguous。 Now， unfortunately。
     I cannot show you this error because the size of my recording window is smaller
     than myQL workbench。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们把这个放在这里，看看会发生什么，自定义I。执行查询。我们得到一个错误。如果你查看底部的输出窗口，你应该会看到一个错误，提示列customer ID
+    D字段列表是模糊的。现在，不幸的是，我无法展示这个错误，因为我的录制窗口比MySQL工作台小。
 - en: But that aside let me explain why we're getting this error because we have this
     customer ID column in both the orders and customers tables。 So my skill is not
     sure which table do we want to select this column from。 That is why it's saying
     this column is ambiguous。😊。So we need to qualify this column by prefixing it with
     a table name。😊。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 不过先放一边，让我解释一下为什么会出现这个错误，因为在订单和客户表中都有这个customer ID列。所以我的技能不确定我们想从哪个表中选择这个列。这就是为什么它说这个列是模糊的。😊所以我们需要通过在前面加上表名来限定这个列。😊。
 - en: We can either pick it from the order table or the customer's table。 it doesn't
     really matter because the values are equal， right？😊。So in situations where you
     have the same column in multiple tables。 you need to qualify them by prefixing
     them with the name of their table okay now lets execute the query one more time。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以从订单表或客户表中选择，实际上没有关系，因为值是相等的，对吧？😊所以在你有多个表中有相同列的情况下，需要通过在前面加上表名来限定它，好的，现在再执行一次查询。
 - en: so there you go we have order ID， customer ID and the full name beautiful。😊。Now
     one more thing before we finish this tutorial， if you pay close attention。 we
     have repeated the word orders in multiple places， we have it here。 as well as
     in the joint condition， the same is true about the customers table。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，你看，我们有订单ID，客户ID和全名，很美丽。😊现在在结束这个教程之前，还有一件事，如果你仔细注意。我们在多个地方重复了“订单”这个词，我们在这里也有，在连接条件中也是如此，客户表同样如此。
 - en: we have repeated that here。😊，We can get rid of this repetition and make our
     codes simpler by using an alias。 So right after each table， we can give it an
     alias。😊，O， as in short for orders。 So by convention。 we abbreviate the table's
     name。 Now， wherever we have orders， we should replace that with O。 So here in
     the joint condition， we replace orders with O and also one more time。😊。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们在这里重复了。😊我们可以通过使用别名来消除这种重复，使我们的代码更简单。所以在每个表后面，我们可以给它一个别名。😊O，是订单的简称。所以按照惯例，我们缩写表名。现在，无论何时我们有订单，应该用O替换它。所以在连接条件中，我们用O替换订单，再一次。😊。
 - en: And a select clause。There you go， we can also apply an alias for the customer's
     table。😊。We got it C and then we simplify our joint condition like this。😊。So this
     is how we can join columns from multiple tables。Now， for your exercise。 I want
     you to look at the order items table。So。In this table we have this columns order
     ID。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 在选择子句中。你看，我们也可以为客户表应用一个别名。😊我们得到了C，然后我们简化我们的连接条件，如此。😊所以这就是我们如何从多个表中连接列。现在，作为你的练习，我希望你查看订单项表。所以，在这个表中我们有订单ID。
 - en: product ID， quantity and unit price Now I want you to write a query and join
     this table with the product table。 so for each order return bolt the product ID
     as well as its name followed by the quantity and the unit price from the order
     items table and by the way。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 产品ID，数量和单价。现在我想让你写一个查询，将这个表与产品表连接。对于每个订单，返回产品ID及其名称，后面跟着数量和订单项表中的单价，顺便说一句。
 - en: make sure to use an alias to simplify your code。😊。![](img/9eb98645e94aefd9dacd81a30d25c3e2_2.png)
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 确保使用别名来简化你的代码。😊！[](img/9eb98645e94aefd9dacd81a30d25c3e2_2.png)
 - en: 。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 。
 - en: '![](img/9eb98645e94aefd9dacd81a30d25c3e2_4.png)'
+  id: totrans-20
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/9eb98645e94aefd9dacd81a30d25c3e2_4.png)'
 - en: All right， first， let's select everything from the Order items table。And then
     join it with the products table， how are we going to join these tables？😊。On order
     underlyingline items dot Well actually let's just give this an alias right away。
     So we use Oi as an abbreviation for order items and P as in short for products。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，首先，让我们从订单项目表中选择所有内容。然后将其与产品表连接，我们该如何连接这些表呢？😊。在订单项目表上，实际上我们现在就给它一个别名。所以我们用Oi作为订单项目的缩写，P作为产品的缩写。
 - en: So Oi dot product ID。😊，Should be equal to P or product do product I。 And by
     the way。 remember that when you give an alias to a table， you have to use that
     alias everywhere else。 So here I cannot type out products。 My skill is going to
     yell at me。 So let's use the abbreviation。 Allright， this is how we join these
     tables。 Let's execute this query after this point。😊，Alright。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以Oi.dot产品ID。😊，应该等于P或产品do产品ID。顺便提一下，记住当你给表赋别名时，你必须在其他地方使用该别名。所以在这里我不能写出products。我的技能会对我大喊大叫。所以让我们使用缩写。好的，这就是我们如何连接这些表。让我们在此之后执行查询。😊，好的。
 - en: so we see all the items from the order items table followed by the columns from
     the product table。😊。Now we want to explicitly select a few columns here， so from
     the order items table。 we want to select。😊，Or their underline ID。Well， technically。
     we don't have to prefix this with the table name because this column is not repeated
     in multiple places。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们看到所有来自订单项目表的项目，后面是来自产品表的列。😊。现在我们想在这里明确选择几个列，所以从订单项目表中。我们想要选择。😊，或者它们的下划线ID。嗯，技术上讲。我们不必用表名来前缀，因为这个列没有在多个地方重复。
 - en: so it's not ambiguous。So let's make the code shorter， that's better。😊。Now we
     want to select the product ID column， but because this column exists in both tables。
     we have to prefix it with a table name， either OI or P， it doesn't really matter。😊，Next。
     we want to select Qua and finally unit price。Now actually here we have this unit
     price column in both tables。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这并不模糊。让我们缩短代码，这样更好。😊。现在我们想选择产品ID列，但因为这个列在两个表中都有。我们必须用表名来前缀，OI或P都可以，实际上没关系。😊，接下来。我们想选择数量，最后选择单价。实际上这里在两个表中都有单价这一列。
 - en: so this is the unit price in order items table and this is the unit price in
     the product table。 Now you might be curious why we have this column in two places。
     The reason for this is that the price of products can change。So for each order
     item。 we want to have the price at the time the user or the customer place the
     order。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这是订单项目表中的单价，这是产品表中的单价。现在你可能会好奇为什么在两个地方都有这个列。原因是产品的价格可能会变化。所以对于每个订单项目，我们想要在用户或客户下单时的价格。
 - en: So this is a snapshot of the price at a given point in time。 the unit price
     that we have in the products table。Is the current price right now。 This is very
     important for reporting。 otherwise， we cannot calculate the sales properly。So
     because we have the unit price column in two places， in this case。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这是在特定时间点的价格快照。我们在产品表中的单价。是现在的当前价格。这对于报告非常重要。否则，我们无法正确计算销售。因此，因为在这种情况下我们在两个地方都有单价列。
 - en: we should pick it from the order items table because this is the price at the
     time of place and order。Now let's execute the query， so here's the final result。😊。![](img/9eb98645e94aefd9dacd81a30d25c3e2_6.png)
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们应该从订单项目表中选择，因为这是下单时的价格。现在让我们执行查询，这就是最终结果。😊。![](img/9eb98645e94aefd9dacd81a30d25c3e2_6.png)
 - en: '![](img/9eb98645e94aefd9dacd81a30d25c3e2_7.png)'
+  id: totrans-28
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/9eb98645e94aefd9dacd81a30d25c3e2_7.png)'
