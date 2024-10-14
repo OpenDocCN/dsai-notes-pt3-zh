@@ -1,0 +1,61 @@
+# 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P50：50）使用分析数据按钮轻松将图表和数据透视表插入 Excel - ShowMeAI - BV1Jg411F7cS
+
+![](img/771dbb1739f68ed35c5a662ac0fd400d_0.png)
+
+In this video， I'm going to show you the easiest way to produce charts and graphs in Microsoft Excel。
+
+ All I have to do is go to the home tab home ribbon And over here on the right side there's an analysis group Now this is in Microsoft 365 versions of Excel。
+
+ if you have an older version of Excel or it's not 365 you may or may not see this analyze data button or it might show up as ideas but with current versions of Excel it should say analyze data all I have to do is click that and it gives me some automatically produced charts and graphs that I can pull into my spreadsheet very easily So Excel thinks maybe I want total purchases by first name here's another total purchases by first name here's total purchases showing an outlier。
+
+ here's product or service as a pie chart and there are even more options if I click down below I get even more graphs and charts that Excel thinks might be relevant to my spreadsheet and my data。
+
+So I'm gonna pick this pie chart and I'll just click insert pivot chart and I could go up to the top and choose total purchases by first name。
+
+ That one's not particularly useful because some people might have the same first name in many cases but what I've done now is added a chart that was automatically produced by Excel and it's now in my data。
+
+ Now what if when I click analyze data。 What if Excel doesn't give me what I'm looking for。
+
+ noticeice what we can do here。 it says ask a question about your data。
+
+ so I could say something like which last name purchased the most So I do a search and look what it did Excel thinks that this is what I want last name by total purchases insert pivot table and there's the answer Another one I could try how about last name by begin date and I could even add the word chart at the beginning。
+
+ If I insert that pivot table you can see it puts the data together the last name and the start date for each of those people So if you。
+
+Have access to this button， the analyze data button。
+
+ I would encourage you to try it out and see what charts and graphs it recommends for you and also pivot tables and pivot charts that you can use to help you think about and analyze your data。
+
+ Now you'll notice when you click insert。 it sometimes does put that information。
+
+ instead of directly on the spreadsheet like it did with this chart。
+
+ Sometimes it puts it on its own separate tab。 So here's a suggestion number one suggestion2 suggestion3。
+
+ If you decide you want that on a different sheet。 you can just right click on it。 you can cut it。
+
+ go to the sheet where you want it to be。 click and paste it and I could do the same thing with these other items as well。
+
+ but it would be a little different I'd have to click and drag to select all the data Control X to copy。
+
+ find where I want to put the data， control V to paste in many cases， though。
+
+ you'll want to just leave them on the suggestion tabs。 and then you could， of course。
+
+ right click to rename a tab In this case， I'll call this best customer。Thanks for watching。
+
+ I hope you found this tutorial to be helpful。 If you did， please like， follow and subscribe。
+
+ And when you do click the bell so you'll be notified when I posted another video。
+
+ if you'd like to support my channel， you can do that through my Patreon account or by buying channel merch。
+
+ and you'll find more information about those options in the description below the video。
+
+ Speaking of Patreon。 I'd like to give a quick shout out to my $5 Patreon supporters。
+
+ Thank you so much for all you do to support the channel。
+
+
+
+![](img/771dbb1739f68ed35c5a662ac0fd400d_2.png)
