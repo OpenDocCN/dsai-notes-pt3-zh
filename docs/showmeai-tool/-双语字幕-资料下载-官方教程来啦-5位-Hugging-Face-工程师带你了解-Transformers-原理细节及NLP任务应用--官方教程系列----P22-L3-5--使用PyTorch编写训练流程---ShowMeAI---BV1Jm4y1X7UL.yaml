@@ -1,28 +1,38 @@
 - en: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
     - P22：L3.5- 使用PyTorch编写训练流程 - ShowMeAI - BV1Jm4y1X7UL
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及 NLP 任务应用！＜官方教程系列＞
+    - P22：L3.5- 使用 PyTorch 编写训练流程 - ShowMeAI - BV1Jm4y1X7UL
 - en: Write your own training loop bit by doch。In this video。 along Kaar we can do
     the same functioning as in the train video but without relying on web class。 this
     way， you'll be able to easily customize each type to of the training loop to your
     needs。This is also very useful to manually debug something things that went along
     with the train API。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 按部就班地编写你自己的训练循环。在这个视频中，沿着 Kaar 的思路，我们可以实现与训练视频中相同的功能，但不依赖于网络课堂。这样，你将能够轻松定制每种类型的训练循环，以满足你的需求。这对于手动调试训练
+    API 中出现的问题也非常有用。
 - en: Before we dive into the code， here is a sketch of a training loop。We take a
     batch of training data and feed it to the model。With the labels， we can get computer
     less。That number is not useful in turn， but is used to compute the gradient of
     our model weights；
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们深入代码之前，这里是一个训练循环的草图。我们取一批训练数据并将其馈送给模型。通过标签，我们可以计算出较少的值。这个数字本身并没有用处，但用于计算我们模型权重的梯度；
 - en: that is the derivative of thes with respect to each model weight。Those gradients
     are then used by the optimizer to update the model ways and make them a little
     bit better。We then repeated the process with a new batch of training data。If any
     of this isn't。 don't hesitate to take a refresher on your fabric deep learning
     course。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是关于每个模型权重的导数。这些梯度随后被优化器用来更新模型权重，使其变得更好。然后我们用一批新的训练数据重复这个过程。如果其中任何一项出现问题，请不要犹豫，重新复习你的深度学习课程。
 - en: We'll use the G MRRPC dataset set here again， and we're seen to propose head
     the data using the data sets library with dynamicy Pdding。Check out the videos
     link below if you haven't seen them already。With this done。 we only have to define
@@ -30,76 +40,104 @@
     dataset set into patches。We use our data coulator for padding as a correct function
     and sh for the training set to make sure we don't go through the samples in the
     same order as a cheaper。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将在这里再次使用 G MRRPC 数据集，并建议使用动态填充的数据集库来处理数据。如果你还没有看过，请查看下面的视频链接。完成这些后，我们只需要定义
+    PyTorch 数据加载器，它将负责将数据集的元素转换为补丁。我们使用我们的数据填充器作为正确函数，并对训练集进行处理，以确保我们不会按照便宜的顺序遍历样本。
 - en: To check that everything works as intended， we try to grab a batch of data and
     inspect it。Like how that asset set elements， it's a dictionary。 but this time
     the values are not a single list of integers。 but the tonso of shapepa sizes by
     sequence length。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了检查一切是否按预期工作，我们尝试抓取一批数据并进行检查。就像该资产集元素一样，它是一个字典。但这次值不是单一的整数列表，而是按序列长度划分的形状大小。
 - en: The next step is to send the training data in our model。Now that will need to
     actually create a model。As seen in the model API video。 we use the front pretrained
     method and adjust the number of labels to the number of classes we have on this
     dataset set here too。Again， to be sure everything is going well， we pass the batch
     we to our model and check there is no error。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 下一步是将训练数据发送到我们的模型中。现在需要实际创建一个模型。正如在模型 API 视频中所见，我们使用前训练的方法，并将标签的数量调整为该数据集中的类别数量。同样，为了确保一切顺利，我们将批次传递给我们的模型，并检查是否没有错误。
 - en: I the labels are provided， the models of the Transence library always returns
     the list directly。We'll be able to do less step backward to compute all the gradient。
     and we'll then need the Optr to do the training step。We use the Adam W optimizer
     here。 which is the variant of Adam with proper weight decay。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果提供了标签，Transence 库的模型总是会直接返回列表。我们将能够进行更少的步骤来计算所有的梯度。然后我们需要优化器来进行训练步骤。我们在这里使用
+    Adam W 优化器，它是具有适当权重衰减的 Adam 变体。
 - en: but you can pick any by doch optimizer you like。Using the previous loss and
     computing the gradients we've listeded backward。 we check that we can do the optimizer
     step without an error。Don't forget to zero your gradient afterward， or the next
     step from get added to the gradient you computed。We got already white or training
     loop， but we add two more things to make it as good as it can be。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是你可以选择任何你喜欢的优化器。利用之前的损失并计算我们所列出的梯度反向传播，我们检查能否在没有错误的情况下执行优化器步骤。不要忘记在之后将梯度归零，否则下一步将会加到你计算的梯度上。我们已经有了基本的训练循环，但我们添加了两项内容，使其尽可能完善。
 - en: The first one is a learning rate scheduler to progressively decay a learning
     rate to0。The GtSched function from the Transformer library is just a convenience
     function to easily build searcher Sch。You can again use any Pythto learning weight
     scheduler instead。Finally。 if we want our training to take a couple of minutes
     instead of a few hours we'll need to use a GPU the first step is to get one for
     instance by using a collaborative book。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 第一个是学习率调度器，用于逐步降低学习率到0。Transformer库中的GtSched函数只是一个便利函数，用于轻松构建搜索器Sch。你也可以使用任何Pythto学习权重调度器。最后，如果我们希望训练持续几分钟而不是几个小时，我们需要使用GPU，第一步是通过使用协作书籍来获取一个实例。
 - en: Then you need to actually send your model and training that on it by using a
     dashch device。Do will check the following lines point your good databases for
     you or be prepared for your training to last more than an hour。We cannot put everything
     together。First， we put our model in training mode。 which will activate the training
     behavior for some layers like dropout。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后你需要实际发送你的模型，并使用一个dashch设备进行训练。请检查以下几行，以确保你有好的数据库，或者准备好你的训练时间超过一个小时。我们无法将所有内容组合在一起。首先，我们将模型置于训练模式。这将激活一些层的训练行为，比如dropout。
 - en: Then we go through the number of reports books we picked and all the data in
     our training data。Then we go through all the steps we've seen already， send the
     data to the GPU。 compute the model outputs， and in particular the less。Use the
     list to compute gradients。 then make a training step with the optimizer。Updates
     are earn rate and our schedule error for the next detereration and the gradient
     of the optimizer。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后，我们通过所选择的报告书数量和训练数据中的所有数据。接着，我们回顾我们已经看到的所有步骤，将数据发送到GPU，计算模型输出，特别是损失。使用列表来计算梯度，然后使用优化器进行训练步骤。更新包括学习率和我们下一个迭代的调度误差，以及优化器的梯度。
 - en: Once this is finished， we can evaluate our model very easily with a metric from
     the dataset sets library。😊，First， we put our model in the evaluation mode to deactivate
     layers like dropout。Then goes through all the des the evaluation the。As we' seen
     in the trainer video。 the model outputs logggets and we need to apply the Agm
     function to convert them into predictions。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦完成，我们可以很容易地使用数据集库中的metric来评估我们的模型。😊首先，我们将模型置于评估模式，以停用像dropout这样的层。然后进行所有评估步骤。如我们在训练视频中看到的，模型输出的是logggets，我们需要应用Agm函数将其转换为预测。
 - en: The metric object then has a net batch method we can use to send it for intermediate
     predictions。Once the evaluation loop is finished， you just have to call the compute
     method to get the final results。Congratulations， you have no find model all by
     yourself。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后，metric对象有一个net batch方法，我们可以用来发送中间预测。一旦评估循环结束，你只需调用compute方法以获取最终结果。恭喜你，你已经独立找到模型。
 - en: '![](img/e8f7bf95fa7a3fb25fc811f317b88cfb_1.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/e8f7bf95fa7a3fb25fc811f317b88cfb_1.png)'
 - en: 。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 。
 - en: '![](img/e8f7bf95fa7a3fb25fc811f317b88cfb_3.png)'
+  id: totrans-16
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/e8f7bf95fa7a3fb25fc811f317b88cfb_3.png)'

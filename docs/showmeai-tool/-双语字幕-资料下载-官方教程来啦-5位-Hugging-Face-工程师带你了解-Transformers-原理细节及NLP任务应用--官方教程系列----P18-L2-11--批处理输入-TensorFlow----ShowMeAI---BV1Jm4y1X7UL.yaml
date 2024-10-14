@@ -1,62 +1,88 @@
 - en: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
     - P18：L2.11- 批处理输入(TensorFlow) - ShowMeAI - BV1Jm4y1X7UL
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
+    - P18：L2.11- 批处理输入(TensorFlow) - ShowMeAI - BV1Jm4y1X7UL
 - en: How to batch inputs together in this video， we all see how two batch input sequences
     together。In general， the sentences we want to pass through our model want all
     have the same length。Here we are using the model we saw in the sentiment analysis
     pipeline and want to classify two sentences。When tokenizing them and mapping each
     token into its corresponding input IDs。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个视频中，我们将看到如何将两个批量输入序列结合在一起。一般来说，我们希望传递给模型的句子都具有相同的长度。这里我们使用的是在情感分析管道中看到的模型，想要对两个句子进行分类。当对它们进行标记并将每个标记映射到其对应的输入
+    ID 时。
 - en: we get two lists of different length。Trying to create a tensor on em bio array
     from those two lists will result in an error because all arrays and tensilrs should
     be rectangular。One way to overcome this limit is to make the second sentence the
     same length as the first by adding a special token as many times as necessary。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们得到两个不同长度的列表。尝试从这两个列表创建一个张量将导致错误，因为所有数组和张量应该是矩形的。克服这个限制的一种方法是通过添加一个特殊标记，使第二个句子的长度与第一个相同，必要时可以添加多次。
 - en: Another way would be to trucate the first sequence to the length of the second。
     but we would then lose a lot of information that may be necessary to properly
     classify the sentence。In general， we only truncate sentences when we are longer
     than the maximum lengths the model can handle。The value used to pad the sequence
     sentence should not be picked randomly。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一种方法是将第一个序列截断到第二个的长度，但这样我们将失去很多可能对正确分类句子必要的信息。一般来说，只有当句子超过模型可以处理的最大长度时，我们才会截断句子。用于填充序列的值不应随意选择。
 - en: The model has been portraytrained with a certain padding ID， which you can find
     in tokenizer。pa tokenid。KNownow that we have padied our sentences， we can make
     a batch with them。If we pass the two sentences to the model separately or batch
     together however。 we notice that we don't get the same results for the sentence
     that is valid， here the second one。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型已经用某个填充 ID 进行训练，你可以在 tokenizer 的 tokenid 中找到。现在我们填充了句子，可以用它们创建一个批次。如果我们单独或批量传递两个句子到模型中，我们会注意到有效句子（这里是第二个）并没有得到相同的结果。
 - en: So that the bes the transforma library， no， if you remember that transformer
     models make easy use of attention layers。This should not come as a total surprise。When
     computing the contextual representation of each token。 the attention layers look
     at all the other words in the sentence。If we have just a sentence or the sentence
     with several padding tokens I did， iss surgical。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，这就是变压器库的最佳表现，如果你记得变压器模型轻松使用注意力层。这不应该让人感到惊讶。当计算每个标记的上下文表示时，注意力层会查看句子中的所有其他单词。如果我们只有一个句子或带有多个填充标记的句子，我做的事情是外科手术。
 - en: we don't get the same values。To get the same results with or without bedding。
     we need to indicate to the attention layers that we should ignore the betting
     tickets。This is done by creating an attention mask， a tensor with the same shape
     as the input ID with zeros and what。Once indicate the tokens the attention layers
     should consider in the context and zeros the tokens we should ignore。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们得到的值并不相同。为了在有或没有填充的情况下得到相同的结果，我们需要告诉注意力层忽略填充标记。这是通过创建一个注意力掩码来完成的，该张量与输入 ID
+    具有相同的形状，包含零和其他值。一旦指示注意力层在上下文中应考虑的标记和应忽略的零标记。
 - en: Now， passing this attention mask and with the input id will give us the same
     result as when we send the two sentences individually to the model。This is all
     done behind the scenes by the tokenizer when you apply it to several sentences
     with the flag padding equal through。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，传递这个注意力掩码和输入 ID，将给我们与将两个句子单独发送到模型时相同的结果。 tokenizer 在你将它应用于多个句子时，会在幕后完成这一切，使用标志
+    padding equal through。
 - en: It will apply the bedding with a proper value to the smaller sentences and creates
     the appropriate attention mask。![](img/c40f36051c2a9fefe3706b138b5c4937_1.png)
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 它将以适当的值对较小的句子应用填充，并创建适当的注意力掩码。![](img/c40f36051c2a9fefe3706b138b5c4937_1.png)
 - en: 。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 。
 - en: '![](img/c40f36051c2a9fefe3706b138b5c4937_3.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c40f36051c2a9fefe3706b138b5c4937_3.png)'

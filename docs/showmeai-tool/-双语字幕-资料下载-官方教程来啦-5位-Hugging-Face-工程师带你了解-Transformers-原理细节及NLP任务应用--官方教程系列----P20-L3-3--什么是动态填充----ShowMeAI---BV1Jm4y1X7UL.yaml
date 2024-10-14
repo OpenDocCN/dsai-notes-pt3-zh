@@ -1,60 +1,82 @@
 - en: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
     - P20：L3.3- 什么是动态填充？ - ShowMeAI - BV1Jm4y1X7UL
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
+    - P20：L3.3- 什么是动态填充？ - ShowMeAI - BV1Jm4y1X7UL
 - en: What is dynamic bedding？In the batchching inputs Together video。 we have seen
     that to be able to group inputs of different lengths in the same batch。We need
     to add patting tokens to all the shot inputs until by all of the sameim。Here，
     for instance。 the longest sentence is the third one and we need to add five。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 什么是动态填充？在将输入批量组合的视频中，我们看到能够将不同长度的输入分组到同一批次中。我们需要为所有较短的输入添加填充标记，直到它们都相同。例如，这里最长的句子是第三个，我们需要添加五个填充标记。
 - en: two or seven pettucans to the other sentences to have four sentences of the
     same length。When dealing with a word data set， there are value being strategies
     we can apply。So most of use one is to add all the elements of the data set to
     the same lengths。 the length of the longest sample。This will then give us patches
     that all have the same shape determined by the maximum sequence length。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 两个或七个填充标记到其他句子中，以使四个句子具有相同的长度。在处理单词数据集时，我们可以应用一些有价值的策略。因此，我们大多数情况下使用的一个策略是将数据集的所有元素填充到相同的长度，即最长样本的长度。这将使我们得到的补丁都具有由最大序列长度决定的相同形状。
 - en: So downside is that patches composed from short sentences， we have a lot of
     patting tokens。 which will introduce more computations in the model we ultimately
     don't need。To avoid this。 another strategy is to patch the elements when we batch
     them together to the longerest sentence inside the batch。This way， batches compose
     of short input voltage smaller than the batch containing the longest sentence
     in the dataset set。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以缺点是补丁由短句组成，我们有很多填充标记。这会引入模型中我们最终不需要的更多计算。为避免这种情况，另一种策略是将元素拼接到批次中最长的句子上。这样，批次就由短输入电压组成，且小于包含数据集中最长句子的批次。
 - en: This will lead some nice speed on CPU and GPU。So the downside is that all batches
     will then have different shapes。 which slow down things on accelerators like TUs。Let's
     do to apply both strategies in practice。We have actually seen to applied fixed
     padding in the dataset sets of a view video when we propose the Ar PCC dataset。
     after alling the dataset undertkenizer， we applied the tokenization to all the
     dataset set with padding and locationcation to make all samples of lengths 128。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将在CPU和GPU上带来不错的速度。因此缺点是所有批次将具有不同的形状，这会在像TPU这样的加速器上减慢速度。让我们在实践中应用这两种策略。我们实际上已经看到在我们提出的Ar
+    PCC数据集中应用了固定填充，在对数据集进行分词后，我们对整个数据集应用了带填充的分词，使所有样本的长度为128。
 - en: As a result， if we pass this data set to a byythch data， we get patches of shape
     patch size here， 16。 528。To apply a dynamic bedding， we must defer the bedding
     to the batch preparation。So we remove that part from a tokenized function。We still
     leave the conation part so that inputs that are bigger than the maximum lengths
     accepted by the model。 usually 512 get trunccateated to that length。Then we paddle
     some poll dynamically by using a data curator。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，如果我们将此数据集传递给一个批次数据，我们得到的补丁形状为补丁大小，这里是16和528。要应用动态填充，我们必须推迟填充到批次准备中。所以我们从分词函数中移除那部分。我们仍然保留合并部分，以便处理大于模型通常接受的最大长度（通常为512）的输入，这些输入会被截断到该长度。然后我们通过使用数据策展人动态填充一些填充标记。
 - en: Those classes in the transforms library are responsible for applyinging all
     the final preprocessing needed before forming a batch。Here， the decoulator with
     padding allpa the samples to maximum length inside a patch of sentences。We pass
     it to the Pyth stalor as a collate function and observe that the batch is generated
     at various lengths all way below the 128 form before。Dynamic pitching will almost
     always be faster on CPUs and GPs， so you should apply it if you can。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 转换库中的这些类负责在形成批次之前应用所有最终的预处理。在这里，带填充的解码器将所有样本填充到补丁中的最大长度。我们将其传递给Pyth的拼接函数，并观察到批次生成的长度各不相同，远低于之前的128。动态填充在CPU和GPU上几乎总是更快，因此如果可以的话，您应该应用它。
 - en: Remember to switch back to fixed bidding however， if you run your training script
     on TU or need batches of fixed chips。![](img/36eaaa3469c7215a06d948547906cbae_1.png)
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是，请记住，如果您在TU上运行训练脚本或需要固定批次，请切换回固定填充！[](img/36eaaa3469c7215a06d948547906cbae_1.png)
 - en: 。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 。
 - en: '![](img/36eaaa3469c7215a06d948547906cbae_3.png)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/36eaaa3469c7215a06d948547906cbae_3.png)'
