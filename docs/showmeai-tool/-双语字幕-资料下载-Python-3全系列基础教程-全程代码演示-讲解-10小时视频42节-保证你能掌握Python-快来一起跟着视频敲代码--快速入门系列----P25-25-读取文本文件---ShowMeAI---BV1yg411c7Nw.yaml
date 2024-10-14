@@ -1,369 +1,501 @@
 - en: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
     - P25：25）读取文本文件 - ShowMeAI - BV1yg411c7Nw
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
+    - P25：25）读取文本文件 - ShowMeAI - BV1yg411c7Nw
 - en: '![](img/62f6858bbc4542f6a4b94f741632ab48_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/62f6858bbc4542f6a4b94f741632ab48_0.png)'
 - en: Welcome back everyone， this is Brian， this is episode 25 working with binary
     files。First things first， what is binary， We've worked with plain text， but what's
     binary。 it sounds kind of crazy， almost like something from the matrix。The harsh
     reality is binary is something you're really not going to want to work with directly。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，欢迎回来，我是布莱恩，这是第25集，关于处理二进制文件。首先，什么是二进制？我们之前处理过纯文本，但什么是二进制呢？听起来有点疯狂，几乎像是《黑客帝国》中的东西。残酷的现实是，二进制确实是你不太想直接处理的东西。
 - en: And I'll explain why go over to the extensions tab。 and let's install a hex
     editor。Now spoiler alert， you do not need this specific hex editor。 you don't
     even need this IDE I'm running VS code， you can just use any old hex editor out
     there。 Hex is hex does not matter as long as you can view the actual hex representation
     here。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 我会解释为什么要去扩展选项卡。让我们安装一个十六进制编辑器。现在剧透一下，你并不需要这个特定的十六进制编辑器。你甚至不需要我正在使用的这个 IDE（VS
+    Code），任何旧的十六进制编辑器都可以。十六进制就是十六进制，只要你能查看实际的十六进制表示就行。
 - en: Once that's installed， we're going to flip back over to the files。And we're
     going to take this file that we're in。We're going to right click。And then from
     here。 we're going to go open with the hex editor we literally just installed。You
     can see we have the。Heex encoded bytes， along with the decod text。 This is what
     I'm talking about here， decod。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦安装完成，我们就会返回文件。我们将处理当前的这个文件。我们右键点击。从这里，我们将选择用我们刚安装的十六进制编辑器打开。你可以看到我们有十六进制编码的字节，还有解码的文本。这就是我所说的，解码。
 - en: This is what the computer works with。 This is what the machine reads。 This over
     here is what we usually work with the plane text。 So， for example， pound is Hex
     23。 Then you have 57， which is a capital W6 F。 I mean imagine trying to type out
     just like your name in Hex。That would be long and frustrating。So when we're talking
     about binary。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是计算机处理的内容。这是机器读取的内容。这里是我们通常处理的纯文本。例如，# 的十六进制是 23。然后是 57，对应大写字母 W，6 F。想象一下，试着把你的名字以十六进制方式输入，那会很长也很烦人。所以当我们谈论二进制时。
 - en: We're talking about the raw data the computer works with。 It's not something
     we want to work with directly。 We want to work with a representation of that data。
     So that's really what we're talking about when we say binaryaries。 we want to
     give that computer a representation of binary data and let the computer do all
     the hard work for us。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们讨论的是计算机处理的原始数据。这并不是我们想直接处理的内容。我们希望处理的是该数据的表示。因此，当我们提到二进制时，这就是我们所说的。我们想给计算机提供二进制数据的表示，让计算机为我们完成所有艰苦的工作。
 - en: We're not working with plain text。We can work with individual bytes that represent
     plain text。 but we're not working with the plain text itself。![](img/62f6858bbc4542f6a4b94f741632ab48_2.png)
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们不是在处理纯文本。我们可以处理代表纯文本的单个字节，但我们并不在处理纯文本本身。![](img/62f6858bbc4542f6a4b94f741632ab48_2.png)
 - en: '![](img/62f6858bbc4542f6a4b94f741632ab48_3.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/62f6858bbc4542f6a4b94f741632ab48_3.png)'
 - en: All right， we need to leave binaryary land here and we're going to go back to
     Plat land and this is just the file we've been working with。You're going to plo
     in some notes and it's going to just say install the Microsoft text editor extension
     don't really need it to be the Microsoft one。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，我们需要离开二进制的世界，回到文件的世界，这就是我们一直在处理的文件。你会记录一些笔记，它只会说安装微软文本编辑器扩展，实际上不一定需要是微软的那个。
 - en: but then some general instructions on how to work with it in case you're following
     along with these videos。Now we're going to add some imports， and we need to do
     this step before we even continue with anything else。 So I'm going to import random。And
     what I mean by random is we're not just randomly importing something。 we're importing
     a module name random， which will help us create random numbers。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 但接下来是一些关于如何处理它的一般说明，以防你在跟随这些视频。现在我们要添加一些导入，在继续其他任何内容之前，我们需要先完成这一步。所以我要导入随机模块。这里的随机是指我们并不是随便导入什么，而是导入一个名为
+    random 的模块，它将帮助我们生成随机数。
 - en: And we're going to import the operator module。This has a little function here
     called equals or EQ that we're going to use to compare two lists together just
     to make sure that the information we're generating and the information we're saving
     and loading all matches up and everything works as expected。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将导入操作符模块。这有一个名为 equals 或 EQ 的小函数，我们将用它来比较两个列表，以确保我们生成的信息以及我们保存和加载的信息都一致，且一切按预期工作。
 - en: '![](img/62f6858bbc4542f6a4b94f741632ab48_5.png)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/62f6858bbc4542f6a4b94f741632ab48_5.png)'
 - en: '![](img/62f6858bbc4542f6a4b94f741632ab48_6.png)'
+  id: totrans-13
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/62f6858bbc4542f6a4b94f741632ab48_6.png)'
 - en: Let's go ahead and work with that random module and we are going to create some
     random bytes here。 so let's make a function。 let's call this random bytes。And
     from here。We're going to just have a parameter called size。 Let's go ahead and
     make a list。Absolutely nothing in that list。 Now， we're going to say4 x in range。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们来处理那个随机模块，我们将创建一些随机字节。让我们创建一个函数。我们称之为随机字节。从这里开始。我们将有一个参数叫做 size。让我们创建一个列表。这个列表里什么也没有。现在，我们将说
+    4 x 在范围内。
 - en: And we want a range to equal the size。We're getting that from our argument。Let's
     go ahead and append Ar less， so。Lights。And。And now we want to actually say random。And
     we want a range。 So I must say R range。And if you know anything about a bite。It
     typically goes from 0 to55。 You can do some crazy things。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们想要一个范围等于大小。我们从我们的参数中获取这个值。让我们继续附加 Ar less，所以。灯光。现在我们想要实际说随机。我们需要一个范围。所以我必须说
+    R range。如果你对字节了解一些，它通常从 0 到 55。你可以做一些疯狂的事情。
 - en: and we're just going to stick with the norm 0 to 255 here。Very simple。 easy
     for anybody to understand we're not talking about some graing encoding schemes
     or anything like that。 just 0 to 255。 That's all we want。From there。We' go ahead，
     and return。The bytes。 so we're just going to return that list。So random here is
     going to make a random number。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将坚持使用 0 到 255 的标准。非常简单。任何人都能理解，我们不是在讨论某些灰度编码方案或其他任何东西。就是 0 到 255。我们只要这个。从这里开始。我们将返回。字节。所以我们将返回那个列表。所以随机在这里将生成一个随机数。
 - en: Within a range between 0 and 255。 so we're going to have up to 256 possible
     numbers。Now， random。 you can do seeds and all this other fancy stuff。 And then
     we're not doing any of that。 So what it's going to do is it's going to take the
     current system time and use that as a random number seed。 if you wanted something
     super secure， you would have to do something different。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 在 0 到 255 之间的范围内。所以我们将有最多 256 个可能的数字。现在，随机。你可以做种子和所有这些其他花哨的东西。但我们不打算这样做。所以它将使用当前系统时间作为随机数种子。如果你想要一些超级安全的东西，你需要做些不同的事情。
 - en: but we're just going to leave everything as default for now。Now let's go ahead
     and print that out just to make sure we are getting， well。 you guessed it some
     sort of random list of numbers， so say de and display bitetes。Going ahead。 and
     we're going to introduce a few concepts in this video here。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我们暂时会将一切保留为默认设置。现在让我们打印出来，确保我们得到了，你猜对了某种随机数字列表，所以说 de 并显示字节。继续。我们将在这个视频中介绍几个概念。
 - en: Some things we really haven't talked about。 So I'm going to just make a string。
     Now。 I want to multiply this。 So we're going to say。Times 20。That looks a little
     funny。 but what we're going to do is we're going to say take this string and do
     it 20 times。 so we're saying this string times 20。Now we're going to go ahead
     and rent out。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 有些东西我们还没有讨论过。所以我会创建一个字符串。现在。我想乘以这个。所以我们会说。乘以 20。看起来有点奇怪，但我们要做的是说把这个字符串做 20 次。所以我们说这个字符串乘以
+    20。现在我们将继续进行。
 - en: Our little list of bytes here to do this， we're going to use the enumerate functions。
     I going say Thor index。那么 item。In。Enumerate and what enumerate it's going to do
     is it's going to pull that whole object apart into multiple pieces。 things that
     we can use， and you see where it says right there enumerate object yields pairs
     containing a count from start which defaults to0。So we're going to tell it to
     take that bys list and enumerate it。 And we don't want to start at 0。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将使用枚举函数来处理这个字节列表。我会说 Thor 索引。那么 item。在。枚举，枚举将把整个对象拆分成多个部分。我们可以使用的东西，你看到那里说的枚举对象会生成包含从开始计数的对，默认为
+    0。所以我们会告诉它处理那个字节列表并进行枚举。我们不想从 0 开始。
 - en: We want to start at one because people are not computers。 We like to start at  one，
     not 0。We're just going to make this， you know， human readable。Now we're going
     to go ahead and format out a print， and let's say。Inanddex。Equals。And we want
     the item。Now， we've been working with a hex editor。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们想从1开始，因为人不是计算机。我们喜欢从1开始，而不是0。我们只是想让这个可读。现在我们将继续格式化输出，并假设。索引。等于。我们想要这个项目。现在，我们一直在使用十六进制编辑器。
 - en: so I want to show you a simple little trick here。 We can just simply say hex。And
     we want to make a X representation of this item so that we could later compare
     it to a he editor and make sure that everything lines up exactly the way we would
     expect it to。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 我想给你展示一个简单的小技巧。我们可以简单地说`hex`。我们想要为这个项目制作一个X表示，以便我们可以稍后将其与十六进制编辑器进行比较，确保一切完全按照我们期望的方式对齐。
 - en: Gom going to grab that little print function， drop back down。Make sure that
     lines up so we're not doing it every single for loop。 but after the for loop is
     completed。And let's test this。 So I'm going to just。Rrab our function random bytes。And
     whoops。Grabbed too much of that， apparently。There we go。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将抓取那个小打印函数，回到下方。确保它对齐，这样我们就不必在每个循环中都做，但在for循环完成后。让我们测试一下。所以我将只。抓住我们的随机字节函数。哦，抓得太多了，显然。来了。
 - en: And let's just say 10， just for now， nothing too crazy。 Now， I want to go ahead
     and display。That list， let's just see what this looks like。So sure enough， we
     are getting a list。 It is one through 10 human readable starting at one under
     the hood it's actually zero。 but we're using this little start here to increment
     it。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们就假设10，仅此而已，没有太疯狂。现在，我想继续显示。那个列表，让我们看看这是什么样子。所以当然，我们得到了一个列表。它是从1到10的人类可读，起始于1，在底层其实是0。但我们使用这个小开始来递增它。
 - en: And then we have the decimal and the hex representations of that data。![](img/62f6858bbc4542f6a4b94f741632ab48_8.png)
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们有该数据的十进制和十六进制表示。![](img/62f6858bbc4542f6a4b94f741632ab48_8.png)
 - en: '![](img/62f6858bbc4542f6a4b94f741632ab48_9.png)'
+  id: totrans-26
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/62f6858bbc4542f6a4b94f741632ab48_9.png)'
 - en: Okay， deleted our little test there and we are going to now move ahead and we're
     going to write some bytes here。Now we have to do this a little bit differently，
     we've been working with plain text and we're working with binary files。 this is
     not human readable， so we have to tell Python we don't want humans to work with
     us。 we want computers to do it。So we're going to say deaf。Right， bites。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，删除了我们的测试，然后我们现在将继续，写一些字节。现在我们必须以稍微不同的方式进行，因为我们一直在处理纯文本，而我们正在处理二进制文件。这不是人类可读的，所以我们必须告诉Python我们不想让人类参与，我们希望计算机来处理。因此，我们将说def。写，字节。
 - en: You want a file name and the list of bytes。Now that list is just going to be
     a list of integers。 so it's a little misleading where it says bytes。This function
     is going to convert those integers2 bytes and store them in the file。We're going
     to introduce something a little bit different here。 It's going to be the with
     keywords。 we're going to say with。With is going to take some code function that
     returns a variable。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 你需要一个文件名和字节列表。现在那个列表只是一个整数列表。所以在字节上说得有点误导。这个函数将把这些整数转换为字节并存储在文件中。我们将引入一些稍微不同的东西。它将是`with`关键字。我们将说`with`。`with`将采用返回变量的一些代码函数。
 - en: And use the variable。 So let's go and demonstrate that。So we're going to say
     with open。 we're going to open the file name。We need to give it a mode and we
     want to write binaryary。 if we just did W， it's going to be plain text， so we
     want that B in there。As。Wile。 so what we're really doing here is we're saying。With。😊，This
     function， run this function。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用变量。所以让我们去演示一下。所以我们将使用`open`。我们要打开文件名。我们需要给它一个模式，我们希望以二进制写入。如果我们只用了W，它将是纯文本，所以我们需要在其中加上B。正如。Wile。所以我们在这里真正要做的是说。使用。😊，这个函数，运行这个函数。
 - en: return a variable and call it file。 So with some function as file kind of reads
     like a book with this as this variable。Now that we've got that variable。We can
     just work with it directly。I'm going to say4 B。And up bites。And we can use that
     variable we got from our W statement。While， right。And we're going to take that
     individual little number。 And I'm going to say2。Underscore lights。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 返回一个变量并称之为文件。所以将一些函数作为文件，读起来就像是这作为这个变量。现在我们得到了那个变量。我们可以直接使用它。我将说4 B。并且上字节。我们可以使用从W语句中获得的变量。对吧。而我们要获取那个单独的小数字。我将说2。下划线灯。
 - en: It's a little misleading that it's a B representing bytes。 This is actually
     a list of integers。 so I very easily cut a set I。ItDoesn't really matter what
     we call it。So we're going to convert that to bytes。 Now we want to convert it
     to one byte。And if you're a computer expert and you understand this， we're going
     to give it a big order。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 将B表示为字节有点误导。这实际上是一个整数列表。因此，我很容易剪切一组。我叫它什么并不重要。所以我们要将其转换为字节。现在我们想将其转换为一个字节。如果你是计算机专家并理解这一点，我们将给它一个大端序。
 - en: so I'm going to say byte。Order。Equals big。You don't know what that is。 don't
     worry about it。 We're just going to use this just for demonstration purposes。
     it really doesn't matter unless you're specifically want。A big or something else。All
     right。 that's it， we're done then you may be going no wait a minute， we have a
     file object。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我会说字节。顺序。等于大端。你不知道那是什么？别担心。我们只是为了演示目的使用它。除非你特别想要一个大端或其他东西，否则这真的无所谓。好了，这就是了，我们完成了。你可能会说，等等，我们有一个文件对象。
 - en: don't we have to close it， shouldnn't we do something like file close。Well，
     no。That would cause an error。 And that。Would not cause an error。 but it's really
     not needed because width is going to destroy this when it's done with it。And when
     that variable is destroyed， it's going to call close automatically。So we're actually
     done。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们不需要关闭它吗？难道我们不应该做类似文件关闭的操作？好吧，不。这会导致错误。而那。不会导致错误。但实际上并不需要，因为宽度在完成时会销毁它。当那个变量被销毁时，它会自动调用关闭。所以我们实际上已经完成了。
 - en: ''' you notice as we get more advanced in Python， even though we''re writing
     more advanced code。 the code actually gets shorter and shorter and shorter。 This
     is one of the really cool things about Python。 and we could shorten this even
     more if we wanted to， but we''re still in beginner land。'
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: “你会注意到，随着我们在Python中变得更加高级，尽管我们编写了更高级的代码，但代码实际上变得越来越短。这是Python非常酷的事情之一。如果我们想的话，我们甚至可以进一步缩短它，但我们仍然在初学者阶段。
 - en: So this is about as short as I'm going to make it for this video。😊。![](img/62f6858bbc4542f6a4b94f741632ab48_11.png)
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这是我为这个视频所做的最简短的内容。😊。![](img/62f6858bbc4542f6a4b94f741632ab48_11.png)
 - en: '![](img/62f6858bbc4542f6a4b94f741632ab48_12.png)'
+  id: totrans-36
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/62f6858bbc4542f6a4b94f741632ab48_12.png)'
 - en: Now that we've written the bytes， we want to do the exact opposite。 We want
     to read those bytes back。 and I'm going to intentionally make this function。A
     little bit bigger than it needs to be。 just because we're still in beginner land
     and I don't want to confuse anybody。 So I'm going to say de。Read bytes and I'm
     I'm saying that because you'll see people down in the comments going well。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们已经写入了字节，我们想做完全相反的操作。我们想把那些字节读回来。我会故意让这个函数变得比需要的大。只是因为我们仍处于初学者阶段，我不想让任何人感到困惑。所以我会说de。读取字节，我这样说是因为你会看到评论区有人说。
 - en: this is very verbose Why are you doing this when you could do and they'll put
     a little one liner in there and everyone looking at it's going to just be like
     I don't understand what they're talking about。So I're going to say bytes we're
     going to make a blank list。We're going to say with。Open。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 这很冗长，为什么你这样做，而不可以直接用一行代码？每个看的人都会觉得我不明白他们在说什么。所以我要说字节，我们要创建一个空列表。我们要说与。打开。
 - en: And we're going to get our file name。 Now this is the trick here。 We need to
     do the opposite。 We're going to read bytes， not read plain text。And I caught bites，
     but it's read binary。As file。Now。 I'm going to do a loop， and Im must say while
     true。Loops are big and scary for nubes。 so don't worry we're going to tell this
     when to stop looping so it's not going to enter some infinite loop。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们要获取文件名。这是个技巧。我们需要做相反的操作。我们要读取字节，而不是读取纯文本。我捕捉到了字节，但这是以二进制方式读取的。作为文件。现在。我将进行一个循环，我必须说永远为真。循环对新手来说很大且可怕，所以别担心，我们会告诉它何时停止循环，以免进入无限循环。
 - en: I'm going to say B equal file。 read and we want to read just one。Now we're not
     reading the number one， we're just reading one bitete from that file。If not。B。
     and I think we've talked about not or it's the same thing as。Like something like
     that。 not equals to， but we're just saying not。比。And we're going to go ahead and
     break。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 我会说B等于文件。读取，我们想读取一个。现在我们不是在读取数字一，而是从那个文件中读取一个字节。如果没有。B。我想我们讨论过不是，或者它与之相同。像这样。不等于，但我们只是说不是。比。我们要继续并中断。
 - en: Break will break right out of that loop。However， if we're still here in Loopland。
     we want to say bitetes。Aend。Let's go ahead and take int。Rrum bysSo we're doing
     the exact opposite here instead of two bytes， we're saying from bytes。 so we're
     taking a byte and converting it to an integer。And it's pretty simple。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: Break将直接跳出那个循环。然而，如果我们仍然在Loopland中，我们想说字节。结束。我们继续取整数。我们在这里做的正好相反，取两个字节，而是从字节中取。所以我们把一个字节转换为整数。这很简单。
 - en: We're just going to take our B that we read from the file。 and we're going to
     set the byte order if we really， really want to。So let's just do that。All right。
     now once we're in there， we're going to drop back down to this level right here。
     and we are going to return。Our finish list。Looks big and scary。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们只是会取出我们从文件中读取的字节。如果我们真的想这样做，我们会设置字节顺序。好的，进入后，我们会回到这里，然后返回。我们的完成列表，看起来又大又吓人。
 - en: but really we're just doing the opposite of right bites， we're just saying，
     hey， make a blanklist。And then with open， get a file。And then as long as we can
     read one by。Apppend that to our list of integer and return it。![](img/62f6858bbc4542f6a4b94f741632ab48_14.png)
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 但实际上，我们只是做了正确操作的反面，我们只是在说，嘿，创建一个空白列表。然后使用打开，获取一个文件。只要我们能逐个读取，就将其附加到我们的整数列表中并返回。![](img/62f6858bbc4542f6a4b94f741632ab48_14.png)
 - en: Looks big and scary， but it's actually pretty simple once you wrap your head
     around it。![](img/62f6858bbc4542f6a4b94f741632ab48_16.png)
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 看起来又大又吓人，但实际上，一旦你理解了，这很简单。![](img/62f6858bbc4542f6a4b94f741632ab48_16.png)
 - en: Now that we've got all the pieces together， let's see it in action。 This is
     what I love about programming。 It is a lot like working with Legos。 Once you get
     the pieces together， you can make something bigger and better。 So let's see it
     in action。 The first thing we're going to do here is create。😊，The random bites。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们已经把所有部分结合在一起，让我们看看实际效果。这就是我喜欢编程的原因。它很像玩乐高。一旦你把零件组合在一起，就能做出更大更好的东西。所以让我们看看实际效果。我们要做的第一件事是创建。😊，随机字节。
 - en: So I'm going to say out bites， you can call this whatever you want。 doesn't
     really have to be out bites。And this is going to be our random a bytes function。
     And we're going to ahead and just， let's just keep it at 10。 I don't want anything
     too crazy because we're going to have to see it on the screen。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我会说输出字节，你可以随便命名，这并不一定要是输出字节。这将是我们的随机字节函数。我们继续，只保持10。我不想要太疯狂的东西，因为我们必须在屏幕上看到它。
 - en: Let's go ahead and display that just so we can see。The out bites。And I'm going
     to walk through this step by step here， so let's go ahead and run this。And we've
     seen this before， I've got this kind of split up here。 So every time it displays。
     it will have this nice， neat little bracket there。Now we're going to write all
     that to a file。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们继续显示一下，这样我们就能看到输出字节。我会逐步走过这个过程，所以我们继续运行它。我们以前见过这个，我把它分开了。所以每次显示时，它都会有这个整齐的小括号。现在我们要把所有内容写入文件。
 - en: so Im going say file path。And let's call this test dot DX T。Now this will make
     some people mad because what we're doing is we're violating some fundamental concepts
     of the operating system。 People expect that a dot TxT file is a plain text。 and
     I'm doing this for illustrative purposes to show you that the file name and extension
     have absolutely nothing to do with the data that goes inside them。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我会说文件路径。让我们称之为test.dot TXT。这会让一些人生气，因为我们正在违反操作系统的一些基本概念。人们期望一个.dot TXT文件是一个纯文本。而我这样做是为了说明文件名和扩展名与里面的数据完全没有关系。
 - en: So now that we've got a file name， I'm going to go ahead and say， all right，
     its。And we can just simply take that file name。Along with are out bites。And dump
     that to a file。Let's go ahead and run this again。UOh， file name is not to find，
     oh， I've got file path。 that's why hm。Shockingly， the variables have to line up。
     All right， let's try that again。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以现在我们有了文件名，我会说，好吧，文件名。我们可以简单地将该文件名与输出字节一起取出，并将其转储到文件中。让我们再次运行这个。哦，文件名未找到，哦，我有文件路径。这就是为什么，嗯。令人震惊的是，变量必须对齐。好吧，让我们再试一次。
 - en: Clear that run it， okay， doesn't look like anything happened on the screen。
     but over here now we have this little dot Txt file and if I open it。I get kind
     of these crazy characters。What is this， This looks like gibberish。 Did we have
     a corrupt hard drive， No， let's go here。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 清除它，运行它，好吧，屏幕上看起来没有发生任何事情。但在这里我们有了这个小的.dot Txt文件，如果我打开它，我得到一些疯狂的字符。这是什么，这看起来像胡言乱语。我们的硬盘损坏了吗？不，让我们继续。
 - en: Open with our Hex editor and see what's going on here。So if we kind of scroll
     up here。You can see how we have。1 equals 84。 But then we go into a panic and go。
     it's 54。 What's wrong， Well。 the hex version of 84 is 54。 Then we have F1， F1。Or
     or you see what's going on here。 somebodybody out there is going to ask， well，
     why does it say0 x that's kind of like the universal representation that we're
     working with hex data。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 打开我们的十六进制编辑器，看看这里发生了什么。如果我们向上滚动，你可以看到我们有1等于84。但是接着我们进入了一种恐慌，觉得它是54。怎么回事呢？好吧，84的十六进制版本是54。然后我们有F1，F1。或者你可以看到这里发生了什么，有人会问，为什么它说0
+    x，这有点像我们处理十六进制数据的通用表示。
 - en: So in your mind just kind of blank out that 0 x and just pay attention to everything
     after x So we have 54 F1。4 E1 D3 and you can see it's just working as expected
     now。This is what I mean by a lot of people kind of get into a panic when you tell
     them you have to work with binary data because they don't really understand this
     and they think that they have some horribly bad screwed up computer or that their
     program did not work well because they look at it and go。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以在你心中，稍微忽略掉那个0 x，关注x之后的一切。所以我们有54 F1，4 E1 D3，你可以看到它现在正如预期那样工作。这就是我所说的，很多人当你告诉他们需要处理二进制数据时，会有点慌乱，因为他们并不真正理解这点，他们觉得自己的电脑出了一些可怕的故障，或者他们的程序工作得不太好，因为他们看着数据感到困惑。
 - en: oh， oh， it says 54， but I should have put 84， and they try to figure out what's
     actually going on。 This is what I mean by We're not working with binary directly。
     We're working with a representation of the binary data。 We let the computer figure
     it out for us。 Conti on here。Almost done Now we're just going to take that file
     and read it back in。
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦，哦，它说54，但我应该写84，他们试图弄清楚到底发生了什么。这就是我所说的，我们并不是直接处理二进制数据。我们在处理二进制数据的表示。我们让计算机为我们搞定这一切。继续，快完成了。现在我们只需读取那个文件。
 - en: so I'm going to say in bytes。Equals and we're going to go ahead and read the
     bytes。And we're going to read that file。Aim， there we go。Once we have that。 we're
     going to go ahead and display it。And now we need to go all the way back to the
     beginning of this video when we said we're going to use the operator import and
     we're going to compare them。So I want to say print。And let's say match， I just
     want to know if they're a match kind of like。
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我会说在字节中。等于，我们将继续读取字节。我们将读取那个文件。好了，一旦我们有了这个，我们将继续显示它。现在我们需要回到这个视频的开头，当时我们说过要使用运算符导入并进行比较。所以我想说打印。假设我们说匹配，我只是想知道它们是否匹配，就像。
 - en: what is that dating site match。com， it's a match。All right， so I'm going to
     say operator。That一q。And now we need to feed it some lists。 So I want to see。Bs
     and in bys， again。 doesn't really matter what you name these。 Now， because we
     are using a random number generator that the seed is based on time。 these numbers
     will change every time I run this because time is constantly changing。
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 那个约会网站match.com，真的是匹配。那么，我会说运算符。那一q。现在我们需要输入一些列表。所以我想看看。Bs和bys，再次。这些名字其实不重要。现在，因为我们使用的是基于时间的随机数生成器，所以每次运行时，这些数字都会变化，因为时间在不断变化。
 - en: Just wanted to be aware， so if you're expecting 84， 241，4， blah。 blah blah you're
     in for a very big surprise here。Or maybe not now that I've told you what's going
     to happen。 let's run this， see what happens here。It says match true。 So what happened
     here and let me。Scroll this up。We have our output。In our input， and of course。
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 只想提醒一下，所以如果你期待的是84，241，4，等等，你将会有一个很大的惊喜。或者现在我告诉你会发生什么，可能不会。让我们运行这个，看看这里发生了什么。它说匹配为真。那么这里发生了什么，让我。向上滚动。我们有我们的输出。在我们的输入中，当然。
 - en: they line up every single thing works correctly and the two lists now match。So
     what we've done。 long winded version of this。Scroll all the way up here。We've
     created a list of random integers。 it says random bytes， but it's really integers。Then
     we can display those and then we can pump those out to a file and then write them
     as bytes。Then we can read them back and read those bytes into integers and put
     them back into a list and return that。
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 每一项都排列整齐，两个列表现在匹配。所以我们所做的事情是这个冗长的版本。向上滚动到这里。我们创建了一个随机整数的列表。它说是随机字节，但其实是整数。然后我们可以显示这些数据，再把它们写入文件，然后作为字节写入。然后我们可以把它们读回来，把这些字节读入整数，并放回列表中返回。
 - en: and we can actually check to make sure everything matches so what we wrote and
     what we read now match。The big question is， how would you modify this information？
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们实际上可以检查确保所有内容匹配，因此我们写入的内容和现在读取的内容匹配。大问题是，你将如何修改这些信息？
 - en: Let's say you wanted to do some sort of work， you would do that to your out
     bites before you wrote it to the file。And all of your changes would be written
     to it。See。 our file is right there and if we go into open with our he editor and
     we get the nice beautiful representation of it。
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设你想进行某种工作，你会在将输出写入文件之前对其进行处理。所有的更改都会被写入其中。看，我们的文件就在这里，如果我们用我们的编辑器打开它，就能看到它的漂亮呈现。
 - en: '![](img/62f6858bbc4542f6a4b94f741632ab48_18.png)'
+  id: totrans-60
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/62f6858bbc4542f6a4b94f741632ab48_18.png)'
 - en: '![](img/62f6858bbc4542f6a4b94f741632ab48_19.png)'
+  id: totrans-61
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/62f6858bbc4542f6a4b94f741632ab48_19.png)'

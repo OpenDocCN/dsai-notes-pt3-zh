@@ -1,196 +1,272 @@
 - en: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
     - P27：27）导入工具库 - ShowMeAI - BV1yg411c7Nw
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
+    - P27：27）导入工具库 - ShowMeAI - BV1yg411c7Nw
 - en: '![](img/3e6f761117a86a8e81490aa8130d99a9_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/3e6f761117a86a8e81490aa8130d99a9_0.png)'
 - en: Welcome back everyone， this is Brian， and we're talking about imports in this
     video。Imports allows our code to be used by other scripts and it allows us to
     use other people's scripts。 but most importantly， really what importing allows
     us to do is simplify things we can actually now structure our code and then import
     things as we need them。Now the import system is actually pretty complex， so in
     this video we are just scratching the surface。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，欢迎回来，我是布莱恩，今天我们要讨论导入。在这个视频中，导入使我们的代码可以被其他脚本使用，也让我们可以使用其他人的脚本。但最重要的是，导入实际上使我们能够简化事情，我们现在可以结构化我们的代码，并根据需要导入内容。现在导入系统实际上相当复杂，所以在这个视频中我们只是触及表面。
 - en: we're going to talk about some real high level issues。 and I want to show you
     how to split your code into different files。We're going to have to split this
     into multiple videos throughout this series。 So we're going to continually go
     back to the import system and add to the complexity over time。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将讨论一些高级问题。我想展示如何将代码拆分成不同的文件。我们将不得不将这个拆分成多个视频。因此，在这个系列中我们将不断回到导入系统，逐步增加复杂性。
 - en: Let's dive in。![](img/3e6f761117a86a8e81490aa8130d99a9_2.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们深入了解。![](img/3e6f761117a86a8e81490aa8130d99a9_2.png)
 - en: '![](img/3e6f761117a86a8e81490aa8130d99a9_3.png)'
+  id: totrans-5
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/3e6f761117a86a8e81490aa8130d99a9_3.png)'
 - en: First things first， we want to make a separate file， so I'm going to just plop
     in some notes。 We're going to create a file and I'm going to leave this comment
     in there for anybody who just doesn't watch this video and just finds the code
     out on Gitthub。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，我们想要创建一个单独的文件，所以我将放入一些笔记。我们将创建一个文件，并且我会在里面留下这个注释，以便任何没有观看这个视频而只是在GitHub上找到代码的人可以看到。
 - en: It's just going to say go ahead and look at my code Py and we're going to go
     over here and we're going actually make a new file We're going to give it the
     name mycode py。And inside of this file， well， we're just going to add some code
     here。 So I'm going to say name equals。嗯。Whatever your name is， why I horribly
     screwd that up。 You ain't even spell my own name， right。Actually， I spelled it
     right。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 它只会说，继续查看我的代码 Py，我们要去这里，实际上我们将创建一个新文件，我们将其命名为 mycode py。在这个文件中，我们将添加一些代码。所以我会说
+    name equals。嗯。不管你的名字是什么，我真是搞砸了。我连自己的名字都拼错了。其实，我拼对了。
 - en: I just had a case sensitivity wrong。 We're going to make a function called greet。And
     I'm just really freestyling this。 I don't really have anything in mind。 We're
     just going to add a bunch of code and functions here。So I'm just going to make
     a function calledG， what's going to print out hello and then whatever the name
     is。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 我刚刚有一个大小写问题。我们将创建一个名为 greet 的函数。我其实是即兴发挥的。我并没有什么具体的想法。我们将添加一些代码和函数。所以我会创建一个函数叫
+    G，它将打印出 hello 和名字。
 - en: notice the scope here， name is actually up in the global scope of this file。I'm
     going to say de。 and let's go ahead and say two file。 We've already learned how
     to work with the file system in a previous video。 If you missed it， go ahead and
     go back in the playlist and watch that video。M say file name。我不。Nam really don't
     need to say global because we're not trying to modify it。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意这里的作用域，name 实际上位于这个文件的全局作用域中。我会说 de。然后我们继续说 two file。我们已经在之前的视频中学会了如何处理文件系统。如果你错过了，赶快回到播放列表观看那个视频。M
+    say file name。我不。其实不需要说 global，因为我们并不是想要修改它。
 - en: We're just trying to read it。 Python's pretty leaning about that， but just to
     be safe。 we're going to say global。And then open。File name。We want to write to
     that file again。 if you completely skippped that video， I would highly encourage
     you to。Go watch it。Then we're just going to say F right。 and we're just going
     to write everything out to the file。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们只是想读取它。Python 对此比较宽松，但为了安全起见，我们还是会说 global。然后打开文件名。我们希望再次写入那个文件。如果你完全跳过了那个视频，我强烈建议你去看一下。然后我们就会说
+    F right，写入所有内容到文件中。
 - en: In this case， we're just simply writing the name， we take this。Very simple pattern。And
     just change it around。So now we have from file and we are going to open that in
     read mode。And then we're simply going to do the exact opposite here。Quick refresher
     when we say with。It's going to remove this when we're done with it。 So it's going
     to automatically close that file for us。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种情况下，我们只是简单地写下名称，我们就这样做。非常简单的模式。然后改变一下。所以现在我们从文件中读取，准备以读取模式打开它。然后我们将这里做完全相反的事情。快速回顾一下，当我们说“with”时。完成后，它会自动关闭那个文件。
 - en: so we don't have to worry about any of that complexity。Okay。 so our file is
     all done and it's not super hard， it's just got a variable and some functions。![](img/3e6f761117a86a8e81490aa8130d99a9_5.png)
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们不必担心任何复杂性。好的。我们的文件都完成了，它并不难，只是有一个变量和一些函数。![](img/3e6f761117a86a8e81490aa8130d99a9_5.png)
 - en: '![](img/3e6f761117a86a8e81490aa8130d99a9_6.png)'
+  id: totrans-13
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/3e6f761117a86a8e81490aa8130d99a9_6.png)'
 - en: Let's go back to our original Python file here does absolutely nothing。Actually。
     let's jump back here and make sure you save that。Now， what we're going to do is
     use import as。 And I think weve touched base on this， but we haven't really doven
     into what's going on here。 So I'm going to say import。And you want my code。As。And
     let's just give it a name person。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们回到最初的Python文件，这实际上什么也不做。实际上。让我们跳回去确保你保存了它。现在，我们要做的是使用“import as”。我想我们已经涉及到这个，但我们还没有真正深入探讨发生了什么。所以我会说import。你想要我的代码。作为。让我们给它一个名称，叫做person。
 - en: could be anything we want。 we could call ice cream cone kitten。Code， whatever
     we want。 But what's really going on here is import is saying， import this module。Now。
     module is a concept we haven't really covered， and we are going to cover in a
     future video。 But right now， when I say the term module， just think about external
     code code that's outside of our file。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 这可以是我们想要的任何东西。我们可以称之为“冰淇淋圆锥小猫”。代码，随心所欲。但这里真正发生的事情是导入在说，导入这个模块。现在。模块是我们还没有真正覆盖的概念，我们将在未来的视频中讨论。但现在，当我说模块这个词时，只需想象外部代码，这些代码在我们的文件之外。
 - en: So import is going to look in and invisibly， there is a little。Right there。It's
     going to look in the current directory for something named My code and directory
     structures with imports gets a little confusing。 we' going to cover that in a
     future video。 So everything right now is in the same folder at the root of your
     project。So import this file， there's an invisible dot Py at the end of this。Which
     is of course。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以导入将查看，并且隐形地，这里有一个小点。它将在当前目录中查找名为“我的代码”的东西，导入的目录结构有点混乱。我们将在未来的视频中讨论这一点。所以现在所有东西都在你项目的根文件夹中。因此导入这个文件，最后有一个隐形的.py。
 - en: my code now if you misspelled this， it's simply not going to find it。Now we're
     saying as。Person。So what it's doing here is it's importing this entire file。 This
     thing that we've already written has one variable。 So it's now creating a variable
     called person。 And you can see how person is now my code。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你拼错了这个，它将找不到它。现在我们说as。Person。所以它在做的事情是导入这个整个文件。我们已经写的这个东西有一个变量。所以现在它创建了一个名为person的变量。你可以看到person现在是我的代码。
 - en: So that entire file is now sitting in this variable for us to use。It gets way
     more complex than that， but that's about as simple as I can explain it。 Basically。
     we're taking this entire file and converting it into a variable。![](img/3e6f761117a86a8e81490aa8130d99a9_8.png)
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以整个文件现在保存在这个变量中供我们使用。比这要复杂得多，但这是我能解释得最简单的。基本上，我们将整个文件转换成一个变量。![](img/3e6f761117a86a8e81490aa8130d99a9_8.png)
 - en: '![](img/3e6f761117a86a8e81490aa8130d99a9_9.png)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/3e6f761117a86a8e81490aa8130d99a9_9.png)'
 - en: Now， at this point， I would highly encourage you to test this， Just simply run
     it。 It should do absolutely nothing， but if you had some sort of misspelling or
     something。 you're going to get something like this module， not found error。 And
     then no module named Na is your key here。 The name is misspelled。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，在这一点上，我强烈鼓励你测试一下，只需简单地运行它。它应该什么也不做，但如果你有某种拼写错误或其他问题。你会得到类似这个的“模块未找到”错误。然后“没有名为Na的模块”是你的关键。名称拼写错误。
 - en: So let's go ahead and fix that。 Just wanted to demonstrate that。Let's talk about
     some scope issues。We can run this and see that it's working as expected， let's
     go ahead and clear that out。Let's go ahead and use our global， some to say Global。Name。Not
     an error。 Thank you In teleence。 Global name。Go ahead and print this out。What's
     happening here。Name， error。 name。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们继续修复它。只是想演示一下。让我们讨论一些作用域问题。我们可以运行这个，看看它是否按预期工作，接下来我们清除它。我们来用我们的全局变量，来说明全局名称。不是错误。谢谢，`In
+    teleence`。全局名称。继续打印出来。这儿发生了什么？名称，错误。名称。
 - en: name is not defined。 Wait a minute， what。In our file。 we have name and we're
     using it via the global scope。 So what's really going on here。And what we're trying
     to illustrate is that a module。Has its own scope。 so the global scope of the module
     is not the global scope of your script or your application there。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 名称未定义。等一下，什么？在我们的文件中，我们有名称，并且我们通过全局作用域在使用它。那么这里究竟发生了什么？我们试图说明的是，一个模块有自己的作用域。因此，模块的全局作用域并不是你脚本或应用程序的全局作用域。
 - en: two completely different scopes。So。Even though， we can explicitly。Try to shove
     this。 even though it's already a global。 we can try to shove it in the global。
     It really doesn't help us。 It's still not to find。Now， if I do something like
     this， comment that out， run this what happens。Same thing。 Name， name is not defined。
     So it doesn't really matter which way you try。OhThat is super。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 两个完全不同的作用域。所以，即使我们可以明确地尝试强行将其推入全局，尽管它已经是全局的，我们也可以尝试将其放入全局。这真的没有帮助。它仍然未定义。现在，如果我这样做，注释掉这个，运行它会发生什么？同样的事情。名称，名称未定义。所以无论你试哪种方式都没有关系。哦，这太棒了。
 - en: super frustrating if you're newbie。 So how do we get the name out of here， Well，
     remember。 we have taken this entire file and converted it into a variable。 We
     have made pretty much our own data type。 So we're going to go ahead and print。Person
     or whenever you name that。And now we want the name attribute。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你是新手，这会非常令人沮丧。那么我们该如何从这里获取名称呢？好吧，记住，我们已经将整个文件转换成了一个变量。我们几乎创建了自己的数据类型。所以我们将继续打印`Person`，或者无论你给它取什么名字。现在我们想要的是名称属性。
 - en: And it automatically knows it's a string， so life is now going to be good。Let's
     plop and know it in here just so anybody out in Githubland can see easily what's
     going on。 Cl this out and run。Oho， it's because I still got this in there。 Sorry
     about that。Let's try that again。 All right， So there we go， Brian Karen。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 它自动知道这是一个字符串，所以生活现在会很好。让我们把它放在这里，以便在Github上任何人都可以轻松看到发生了什么。清除这个并运行。哦，是因为我还把它留在这里。对此感到抱歉。让我们再试一次。好了，来吧，`Brian
+    Karen`。
 - en: So if you were like me and you forgot to comment that out， you're going to get
     that nasty air。Very good illustration of scope in terms of imports and modules。
     Any time you have a new file。 think you have a different scope。 There are ways
     to jump between them。But for realistic purposes。 they are two different scopes
     and you should treat them as such。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以如果你像我一样忘记将其注释掉，你会遇到那个令人厌恶的错误。这是一个很好的作用域说明，涉及导入和模块。每当你有一个新文件时，想想它有不同的作用域。有一些方法可以在它们之间跳转。但是从实际的角度来看，它们是两个不同的作用域，你应该将它们视为这样。
 - en: '![](img/3e6f761117a86a8e81490aa8130d99a9_11.png)'
+  id: totrans-27
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/3e6f761117a86a8e81490aa8130d99a9_11.png)'
 - en: '![](img/3e6f761117a86a8e81490aa8130d99a9_12.png)'
+  id: totrans-28
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/3e6f761117a86a8e81490aa8130d99a9_12.png)'
 - en: Last thing we need to do is really just do some testing。 So we're going to go
     ahead and test code。 And I'm going to add some space is there。 Just get some screen
     real estate。Let's go ahead and say person。That name equals， and I'm going to switch
     this to Brian instead of Brian Karen's。And else go ahead and do person dot greet。All
     that function。And let's just do person。That。File。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们需要做的最后一件事就是进行一些测试。所以我们将继续测试代码。我将添加一些空间，以便获得一些屏幕真实空间。让我们继续说`person.name`等于，我将把这个改成`Brian`而不是`Brian
+    Karen`。然后继续执行`person.greet`。所有的功能。让我们就这样做`person.file`。
 - en: Let's give this a very simple name。 Test dot EX T。 It's just going to dump that
     name out to a file。Let's go ahead and say person。 name。What's Tammy。Go ahead and
     do the grid again just so we can see that we did change that variable。Let's go
     ahead and load that file。Now， as long as our file name matches up。 it's going
     to load it just fine。Go ahead and greet again just so we can see that we did actually
     load that name from the file。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们给这个起一个非常简单的名字。`Test.dotEXT`。它只是会将该名称转储到一个文件中。让我们继续说`person.name`。什么是`Tammy`。再执行一次问候，以便我们可以看到我们确实改变了那个变量。让我们加载那个文件。现在，只要我们的文件名匹配，就可以正常加载。再问候一次，以便我们可以看到我们确实从文件中加载了那个名称。
 - en: let's go ahead and run see what happens。So the original name is Brian Cas， I
     switched it to Brian。 switched it to Tammy， and then we loaded it from the file。
     and we can see we now have this test Txt out here。So in a nutshell， just to recap。
     imports is a really， really great way of structuring your code and it really simplifies
     things。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们继续运行，看看会发生什么。最初的名字是布莱恩·卡斯，我把它改成了布莱恩。然后改成了塔米，接着我们从文件中加载它。现在我们可以看到这个测试文本在这里。所以总的来说，简单回顾一下，导入是一个非常棒的代码结构方式，确实简化了许多事情。
 - en: It does have its complexities， which we're going to cover in future videos and
     we've touched upon a little bit here with scoping issues。 it gets way more complex
     than that because what we're really touching on with imports。Is the cornerstone
     or the foundation of modules， and unfortunately。 before we can dive deep into
     modules， we got to learn other things first like， well， classes。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 它确实有一些复杂性，我们将在未来的视频中讨论这些问题，我们在这里也稍微提到了一些作用域的问题。实际上，它比这复杂得多，因为我们真正涉及到的导入，是模块的基石或基础。不幸的是，在我们深入了解模块之前，我们需要先学习其他一些东西，比如，类。
 - en: which is coming up very， very soon。![](img/3e6f761117a86a8e81490aa8130d99a9_14.png)
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 这很快就会到来。![](img/3e6f761117a86a8e81490aa8130d99a9_14.png)
