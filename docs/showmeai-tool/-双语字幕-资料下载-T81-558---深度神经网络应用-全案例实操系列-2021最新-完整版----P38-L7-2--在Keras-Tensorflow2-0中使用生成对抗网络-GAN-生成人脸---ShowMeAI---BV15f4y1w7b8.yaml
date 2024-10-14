@@ -1,92 +1,122 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P38：L7.2- 在Keras／Tensorflow2.0中使用生成对抗网络(GAN)生成人脸
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P38：L7.2- 在Keras／Tensorflow2.0中使用生成对抗网络(GAN)生成人脸
+    - ShowMeAI - BV15f4y1w7b8
 - en: Generative adversarial neural networks， these faces you see here are not real。
     They were created by a G。This type of neural network can be used to create data
     that is not real。 Now， I am real， or at least I think。But these neural networks
     can be used to create this kind of face。 Now， I'm going to start by not showing
     you how to create these very high resolution faces that you see that were created
     with software that Nvidia makes for you。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 生成对抗神经网络，这些你看到的面孔都不真实。它们是由一个G创建的。这种类型的神经网络可以用于创建不真实的数据。现在，我是真实的，至少我这么认为。但这些神经网络可以用来创建这种面孔。现在，我将开始，不向你展示如何创建这些由Nvidia软件为你生成的高分辨率面孔。
 - en: This is stylegan， which we'll see in the next video。 But in this video we're
     gonna to see how to actually build this sort of thing from scratch。 You'll create
     faces that look more like this， but this is something。 this is the beginning。
     This is the stepping stone for you to get code up and running that can create
     this kind of data。Hi。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是stylegan，我们将在下一个视频中看到。但在这个视频中，我们将实际从头开始构建这种东西。你将创建更像这样的面孔，但这只是个开始。这是你获得代码并运行以生成这种数据的垫脚石。嗨。
 - en: my name is Jeff Heaton。 Welcome to applications of deep neural networks with
     Washington University to see all my videos about Cagel neural networks and other
     AI topics。 click the subscribe button and the bell next to it and select al to
     be notified of every new video。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 我叫Jeff Heaton。欢迎来到与华盛顿大学合作的深度神经网络应用，查看我关于Cagel神经网络和其他AI主题的所有视频。点击订阅按钮和旁边的铃铛，选择全部，以便接收到每个新视频的通知。
 - en: I do provide complete source code for this。 I recommend that you open it in
     Google coab like I have up here in my Github link。 I have a link to this Github
     repository with all my code here。 I just upgraded all of my G code to Tensorflow
     2。0。 So this should work fully well with that latest version of Tensorflow through
     Ks。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我确实提供了完整的源代码。我建议你像我在我的Github链接中那样在Google Coab中打开它。我这里有一个指向这个Github代码库的链接，里面包含我所有的代码。我刚刚将我的G代码升级到Tensorflow
+    2.0。因此，这应该能够很好地与最新版本的Tensorflow通过Ks配合使用。
 - en: before we get into the code， let's just conceptually look at what we're trying
     to do。 So for a G。 you have two neural networks。 and you're training each of these
     two neural networks completely differently。 And it's important to understand this
     distinction。 if you really want to understand how this code works。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们进入代码之前，先从概念上看一下我们想要做的事情。对于一个G，你有两个神经网络，而你以完全不同的方式训练这两个神经网络。理解这种区别很重要，如果你真的想理解这段代码是如何工作的。
 - en: That is really the goal of this video to show you literally how you can create
     your own GN from。😊。![](img/618ec4df027e5ab5cc37e5905fefc1e4_1.png)
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 这实际上是这个视频的目标，向你展示如何从头开始创建自己的GN。😊。![](img/618ec4df027e5ab5cc37e5905fefc1e4_1.png)
 - en: '![](img/618ec4df027e5ab5cc37e5905fefc1e4_2.png)'
+  id: totrans-7
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/618ec4df027e5ab5cc37e5905fefc1e4_2.png)'
 - en: 2 neural networks。 It's really not that complicated。 If you take it piece by
     piece。 So you have two neural networks。 you have a discriminator and you have
     a generator。 The inputs and outputs to these two neural networks are completely
     different。 This is how I always think about learning a new technology when I see
     a neural network。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 两个神经网络。其实并没有那么复杂。如果你逐步来看。你有两个神经网络，一个是鉴别器，另一个是生成器。这两个神经网络的输入和输出是完全不同的。这就是我在看到神经网络时，如何思考学习新技术的方式。
 - en: I want to know what the input is。 I want to know what the output is so that
     I can really see what this thing is actually doing for the discriminator。 this
     neural network has only one job in the world。 It is used to tell if the input
     to it is real or not real Here we have a image coming into it。 I'm using this
     as though it's a real image， but this is actually something I created with style
     ga just so that I'm not using anybody's random face in my video。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 我想知道输入是什么。我想知道输出是什么，以便我能真正了解这个东西在鉴别器中实际上在做什么。这个神经网络在这个世界上只有一个工作。它用来判断输入是真实的还是不真实的。这里有一张图像进入它。我把这个当作真实的图像来使用，但实际上这是我用stylega创建的，以便我不在视频中使用任何随机的面孔。
 - en: So image comes into the neural network。 Now this is what is awesome about neural
     networks compared to other types of models。 the input can be almost anything。
     the output can be almost anything。 So here the input is。Image this is a 3D tensor。
     So it's the height and the width and then the color gap。 The output is a single
     number。 This is a prediction。 So 0。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以图像进入神经网络。现在这就是神经网络与其他类型模型相比的精彩之处。输入几乎可以是任何东西，输出几乎可以是任何东西。所以这里输入是图像，这是一个3D张量。所以它是高度、宽度和颜色通道。输出是一个单一的数字。这是一个预测。所以0。
 - en: 97 means that the discriminator is saying that there is a 97% probability that
     this is， in fact。 a real face。 Just think of him as a real face and not something
     that came from my own personal matrix。 All right， now the generator， this is the
     part that is going to be really useful when you build a face generating neural
     network or some other sort of generating neural network。 Often you throw the discriminator
     away once you once you've trained it。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 97意味着判别器在说，这实际上有97%的概率是一个真实的面孔。只要把它当作一个真实的面孔，而不是从我个人的矩阵中来的东西。好吧，现在生成器，这部分在你构建面孔生成神经网络或其他类型的生成神经网络时会非常有用。通常你在训练完成后会扔掉判别器。
 - en: but the discriminator does have use and we'll see this later in later videos
     when you deal a semi superervised learning where maybe you don't have labels for
     everything。 So both of these two can be useful， But if you just want a face generator
     or car generator or a cat or an avocado generator。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 但判别器确实是有用的，我们将在后面的后续视频中看到，当你处理半监督学习时，可能你并没有所有内容的标签。所以这两个都可以有用，但如果你只想要一个面孔生成器、汽车生成器、猫或牛油果生成器。
 - en: this is all you really needing and generate anything Here we basically。😊，in
     random seeds。 So the random seeds。 you might have seen these in video games like
     Minecraft， I know does this。 You put in a random seed。 and essentially a whole
     world is created for you。 That is what this is。 So in Minecraft， it's not like
     some seeds are bad and some seeds are good。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是你真正需要的，生成任何东西在这里基本上。😊，在随机种子中。所以随机种子。你可能在像Minecraft这样的电子游戏中见过这些，我知道这样做。你输入一个随机种子，基本上会为你创建一个完整的世界。这就是这个概念。因此，在Minecraft中，并不是说某些种子是坏的，而某些种子是好的。
 - en: They all give you random worlds。 Each of these random seeds gives you a random
     face Since the neural network was trained to。 Now what you have to keep in mind
     is this is not just a single number。 This is a vector。 So it is a array of number。
@@ -94,219 +124,283 @@
     do really interesting experiments and very just one number of the vector and try
     to see what different parts of the vector are actually for in stylegan you can
     do some of that you can make hair longer。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 它们都会给你随机的世界。每一个随机种子都会给你一个随机的面孔。由于神经网络被训练出来的。所以你要记住的就是，这不仅仅是一个数字。这是一个向量。所以它是一个数字的数组。通常是100或者更高维度的这些数字的数组。你也可以做一些非常有趣的实验，改变向量中的某个数字，看看向量的不同部分实际上是用于什么，在stylegan中你可以做一些这样的实验，你可以让头发变长。
 - en: you can change the color of the eyes and leave everything else alone。 but that's
     more for the next video when we talk about stylegan。 This is creating your own
     from scratch。 So you give it this random seed that you generate。😊。Then you give
     it。 It gives you an output image。 Now。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以改变眼睛的颜色，而不改变其他所有东西，但这更多是针对下一个视频，我们讨论stylegan。这是从零开始创建自己的东西。所以你给它这个你生成的随机种子。😊然后你给它，它会给你一个输出图像。现在。
 - en: a question I got in some of the other videos was what ranges should these numbers
     be in。 Well。 it doesn't matter。 but they have to be the same range that you trained
     it on。 So when you are training it， you were giving it some random range and distribution。
     Make sure that stays the same。 Don't train it on numbers that are in the range
     is 0 to say，100。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 我在其他视频中收到的一个问题是这些数字应该在什么范围内。好吧。没关系，但它们必须在你训练时相同的范围内。所以当你训练它时，你给它一些随机的范围和分布。确保保持一致。不要在范围是0到100的数字上训练。
 - en: And then all of a sudden throw a million in there。 That's not going to work
     well。 So this is what these two neural networks look like just in their general
     usage。 The trick is how do we train these。 It's an adversarial neural networks。
     So they're working against each other。 It's a generative neural network。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后突然间放入一百万，这样做是不会好的。所以这就是这两个神经网络在其一般使用中的样子。诀窍是我们如何训练这些。这是对抗神经网络。所以它们是互相对抗的。这是一个生成式神经网络。
 - en: That just means it's generating things。 It's generating faces。 First。 let's
     look at how we train the generator。 because it's a little bit more simple than
     the discriminator。 What is important about training both of these is notice。I
     show weights trained weights static。 Both of the neural networks need to be in
     place to train either one。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 这只是意味着它在生成东西。它在生成面孔。首先，让我们看看我们如何训练生成器，因为这比训练判别器要简单一些。训练这两个的重要性在于，注意到我展示的权重是静态的。两个神经网络都需要到位，才能训练任意一个。
 - en: but you cannot update the weights on both that that would not work well at all
     here we are training the generator。 So if we were to allow the weights on the
     discriminator to be modified while we're training the generator that would be
     cheating。 That's the generator is basically trying to get its weights better and
     better and better so that we can fool the discriminator。 the whole overall objective
     is to fool the generator while we're training this。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是你不能同时更新这两个的权重，这样根本行不通，这里我们是在训练生成器。所以如果在训练生成器的同时允许修改判别器的权重，那就是作弊。生成器基本上是在不断优化它的权重，以便能够欺骗判别器。整体目标是在训练过程中欺骗生成器。
 - en: So if we allow the weights to be trained on both of these it happen is back
     propagation would say。 okay let' let's move the weights so the generator is better。
     Oh let's affect the discriminator so that the weights are also better at producing
     this result of fooling the discriminator you don't want to modify the discriminator
     to fool。SoThats that's like training one runner on the track and letting him get
     better and better。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以如果我们允许对这两个进行权重训练，那么反向传播会说，好的，让我们移动权重，使生成器变得更好。哦，让我们影响判别器，使得权重在欺骗判别器的结果上也更好，你不想修改判别器来进行欺骗。这就像是在跑道上训练一名运动员，让他变得越来越好。
 - en: but then seeing the other runner that he's gonna train against someday and tripping
     that guy。 So only one of these guys needs to be trained at a time Otherwise you're
     going to end up with weaker result。 You need that competition going。 So when you're
     dealing with training。 Like every other neural network that we've seen in this
     course， you have your X and you have your Y。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 但又看到其他运动员，有一天他会对抗那个人，并且会绊倒那家伙。所以这些运动员中只能有一个在训练，否则你最终会得到较弱的结果。你需要有竞争在进行。因此，当你进行训练时，像我们在本课程中看到的每个神经网络一样，你有X和Y。
 - en: The X is what goes into the neural network to produce the Y that you expected。
     What your neural network actually gives you is called Y hat。 It's the Y with a
     little triangle type thing above it。 So the X in this case is random seeds。 We're
     going to create a bunch of random seeds。 In this case， I'm just showing three。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: X是输入到神经网络中以生成预期的Y。你的神经网络实际给你的被称为Y帽。它是带有小三角的Y。因此在这种情况下，X是随机种子。我们将创建一堆随机种子。在这个例子中，我只是展示三个。
 - en: but we're going to send those into the generator。 The generator is going to
     create three random faces。 Now the generator may not be very good at first and
     it's going to get better and better。the discriminator is going to get better and
     better at saying， aha these faces。 they're not real。 The discriminator is going
     to take these in， and it's going to give predictions。 It's going to say。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我们会将这些输入到生成器中。生成器会创建三个随机的面孔。现在生成器可能起初不太好，但它会越来越好。判别器也会越来越好，它会说，啊，这些面孔，它们不是真的。判别器会接受这些输入，并给出预测。它会说。
 - en: okay， that face 45%。 This face 55%。 The last one， that looks a little better，65%。
     These are the y hats。 These were the actual predictions at this point in training
     for the discriminator。 Now， the why is what we really wanted it to be。 This is
     the expected output。 This is what normally comes from your training data。 But
     look at the interesting thing here。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，这张脸45%。这张脸55%。最后那张，看起来好一点，65%。这些是y帽。这些是在训练过程中，判别器此时的实际预测。现在，y是我们真正想要的。这是预期的输出。这是通常来自你的训练数据的。但看看这里有趣的地方。
 - en: This is training the generator。 We're not using any of our training data。 Our
     training data is a bunch of real faces that you download。 I give you some sample
     places that you can go to get these actual faces。 But when we're training the
     generator。 We're not using any real faces at all。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是训练生成器。我们没有使用任何训练数据。我们的训练数据是一堆你下载的真实面孔。我给你一些示例网址，你可以去获取这些真实的面孔。但在训练生成器时，我们根本不使用任何真实面孔。
 - en: The generator never gets to see the real faces。 It is just learning slowly。
     slowly slowly to generate faces that are better and。Or at fooling the discriminator。
     So that that might seem a little bit strange。 And the Ys。 these y's normally come
     from the training data。 The Ys are always one。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 生成器从未见过真实面孔。它只是慢慢地学习，慢慢地生成更好的面孔，或者在欺骗鉴别器方面变得更好。所以这可能看起来有点奇怪。Ys。这些y通常来自训练数据。Ys始终为1。
 - en: This is completely unbalanced data。 This is the worst of unbalanced data。 You
     don't have any zeros。 So you're not training the generator on any false cases。
     But it has this discriminator in the way that it has to fool。 If you didn't have
     this。 The generator just learn， oh， you always want a1。 Okay， that's fine， I'll
     always give you a one。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是完全不平衡的数据。这是最糟糕的不平衡数据。你没有任何零。因此你并没有在任何虚假案例上训练生成器。但它有这个鉴别器需要去欺骗。如果没有这个，生成器就会学习到“哦，你总是想要1”。好的，那我就总是给你1。
 - en: But the generator's output is being fed right into the discriminator for the
     training loop。 This is a little more complicated of a neural network。 than we
     than we've had before。 You can almost think of this whole region that I'm drawing
     my mouse circle around over here as the objective function。 The objective is to
     fool the discriminator。 So it doesn't matter that this is unbalanced。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是生成器的输出被直接输入到鉴别器进行训练循环。这是一个比我们之前遇到的更复杂的神经网络。你几乎可以将我用鼠标圈住的整个区域视为目标函数。目标是欺骗鉴别器。所以这并不重要，它是不平衡的。
 - en: It's not really unbalanced。 It's just because we want this to always。Give as
     close to a one as as we can。 And the only way the generator can do that is by
     getting better and better images to actually fool that discriminator。 So you'll
     see in the code when we look at that in a moment。 We are literally creating for
     the loss function for the objective function。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 这并不是真正的不平衡。这只是因为我们希望它总是尽可能接近1。生成器能做到这一点的唯一方法是生成更好更好的图像来欺骗鉴别器。因此你会在代码中看到，当我们稍后查看时，我们实际上是在为目标函数创建损失函数。
 - en: data sets where we choose whatever the batch sizes， whatever we're training
     for the current step。 However， many of these we want， and that's set is a configuration
     parameter。 We generate that many random seeds， we generate the random faces。 and
     then we send those to the discri discriminator。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据集我们选择无论批量大小，无论我们当前步骤训练什么。这些数量由配置参数设置。我们生成那么多随机种子，生成随机面孔。然后将这些发送给鉴别器。
 - en: get the Y hats calculate the back propagation gradients apply that， and then
     you apply the chain。 So you do that for one step。 They'll be multiple step。 So
     whatever your batch sizes， That's a step。 And then we do enough of these so that
     we cross the entire training set for the entire epoch。 So the things to notice
     here that might seem a little strange。😊。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 获取Y帽，计算反向传播梯度，应用它，然后你应用链式法则。所以你对一步进行这样的操作。会有多个步骤。所以无论你的批量大小是什么，那就是一步。然后我们做足够多的这些，以覆盖整个训练集，直到整个周期。所以这里需要注意的事情可能看起来有点奇怪。😊
 - en: The generator never sees the training set and the Ys are always one for this
     because we。 we aspire to be perfect。1。0。 There's really nothing we could train
     the generator。 we don't want to train the generator to produce zeros。 So that's
     why the training set looks in balance， but the fact that this whole piece over
     here is working together。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 生成器从未见过训练集，Ys始终为1，因为我们渴望完美。1.0。实际上我们无法训练生成器，我们不希望生成器生成零。这就是为什么训练集看起来不平衡，但实际上这一整块在一起工作。
 - en: The generator is the real loss function here。 That works。 All right， let's see
     how the。Discriminator is trained a little bit more going on here， but not much。
     Notice here it is balanced。 We have zeros and we have ones。 So that is。That's
     a little difference。 We'll get into that。 Notice also， the training data is actually
     being used here。 These three images。 Again。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 生成器是真正的损失函数。好的，让我们看看鉴别器是如何被训练的，这里有更多的内容，但不多。注意这里是平衡的。我们有零和一。这就是一点不同。我们会深入讨论这一点。还要注意，训练数据实际上在这里被使用。这三张图像。再次。
 - en: these are not real people， but pretend that they are。 I don't want to pay licensing
     rights to use real real people just for my diagram Nvidia stylegan is good enough。
     These are ones that were generated by my generator。 So this is what the X and
     y looks like for this。 First of all， we need to generate a enough of the fake
     images to fill the batch size。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些不是现实中的人，但假装它们是。我不想为了我的图表支付使用真实人物的许可权，Nvidia的StyleGAN已经足够了。这些是由我的生成器生成的。这就是X和Y在这里的样子。首先，我们需要生成足够的假图像以填充批处理大小。
 - en: And then we need to put in enough of the real images from the training set to
     also fill out that step size。 So really half and half for the batch would be would
     be perfect。 We have now these fake images。 real images。 All six of these。 Now
     it'll be bigger for the mini batch。 Not a lot bigger。 Go into the discriminator
     and the discriminator picks these probabilities for these Probabilities for these。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们需要从训练集中放入足够的真实图像，以填充该步骤大小。因此，对于批处理来说，真正的图像和假图像各占一半是完美的。现在我们有这些假图像和真实图像。这六个现在会更大，以适应小批处理，不会大很多。进入鉴别器，鉴别器为这些概率进行选择。
 - en: you'll see lower and lower probabilities for the generated higher for the other
     as the discriminator gets better。 But this is where you can't really look at the
     two losses。 The program that I wrote。 it shows you the loss for the generator
     and the loss for the discriminator。 It is really essentially an arms race。 as
     one gets better， the other gets better。 So ideally。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着鉴别器变得更好，你会看到生成的概率越来越低，而另一个的概率越来越高。但这时你无法真正查看这两个损失。我编写的程序显示生成器和鉴别器的损失，这本质上是一场军备竞赛；一个变得更好，另一个也会变得更好。
 - en: you'll see those both stay right at around 0。5 or so if both of those are really
     growing with each other。 And the ideal would be eventually if the generator is
     so good at generating these that the discriminator just really can't tell the
     differenceer in is getting about a 5050。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 你会看到这两个值都保持在大约0.5左右，如果它们确实是相互增长的。理想的情况是，如果生成器能够如此有效地生成这些，以至于鉴别器根本无法分辨，它的结果将是大约5050。
 - en: So that would be the ideal。 So in this case， the X is all of these images concateated
     together real and fake。 The Y hat is going to be the probabilities that were assigned
     to each of these。 And then the actual y is going to be the false for the ones
     that we know are not real。 and true for the ones that。No， in fact， are real and
     that's how a again is trained that is that technique can be used for just about
     anything。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这将是理想的情况。在这种情况下，X是所有这些图像拼接在一起的真实和假图像。Y hat将是分配给每个图像的概率，而实际的y将是我们知道不是现实的图像的假值，以及对于那些实际上是现实的图像的真值，这就是该技术的训练方法，可以用于几乎任何事情。
 - en: You create a neural network that takes in seeds and generates random data based
     on those seeds now it helps to use convolution neural networks if you're dealing
     with images possibly helps to use LSTms or even CNNs as well for time series depending
     on what you're trying to generate。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 你创建一个神经网络，输入种子并基于这些种子生成随机数据。如果处理图像，使用卷积神经网络是有帮助的；而对于时间序列，可能需要使用LSTM或CNN，具体取决于你想生成什么。
 - en: and then you use your training data， examples of real data to co-train the discriminator
     with and gradually。 gradually gradually the neural network learns to generate
     these kind of images and better yet。 the distributions of certain things within
     the data are going to match the original data For example。 it's going to learn
     that if part of somebody's face is one particular skin tone。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后你使用你的训练数据，即真实数据的示例，与鉴别器进行共同训练，逐渐地，神经网络学会生成这些图像，更好的是，数据中某些东西的分布将与原始数据匹配。例如，它会学习到，如果某人的脸部有特定的肤色。
 - en: the other half is probably not going to be a different skin tone。Just like。If
     we gave it。 say population data， it would learn that as people were。Older。 they
     might have different names than younger people because different naming styles
     change differently。 or health characteristics might be different。Allright。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一半可能不会有不同的肤色。就像，如果我们提供人口数据，它会学习到，随着人们变老，他们可能会有不同于年轻人的名字，因为不同的命名风格变化不同，或健康特征可能不同。
 - en: let's look at the code and see how this actually runs。 So these are the loss
     functions Here we can see we're using cross entropy to train these because its
     logistic primarily The discriminator loss here we create the real and fake。 just
     like I showed you in the diagram。 Not we're using ones and zeros。 Then the total
     loss is going to be both of these added together because you have to do good on
     the reel。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看看代码，看看它是如何运行的。这些是损失函数，在这里我们可以看到我们使用交叉熵进行训练，因为主要是 logistic。这里的判别器损失我们创建了真实和虚假的样本，就像我在图表中展示的那样。现在，我们使用的是一和零。然后总损失将是这两个加在一起，因为你必须在真实样本上表现良好。
 - en: So you have to do good on the fakes。 And that's essentially all there is to
     it。 we're adding the ones and the zeros for the reels and the fakes。 and that
     is going to be your loss。 That is what the training is going to attempt to minimize。
     Now， the generator loss is even easier。 It's just cross entropy。 And notice we
     do it just on ones， because like I said， it's unbalanced。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以你必须在虚假样本上表现良好。这就是一切的要点。我们将真实和虚假的一与零相加，这将是你的损失。训练将尝试最小化这个损失。现在，生成器的损失更简单。它只是交叉熵。注意我们只在一上进行，因为正如我所说，这是不平衡的。
 - en: but that's okay。 works just fine。 And we are training a just that we would like
     for ones on the fake output。 this is backwards。 these are fake， but these are
     ones， but that is what we。😊。![](img/618ec4df027e5ab5cc37e5905fefc1e4_4.png)
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 但没关系，效果很好。我们训练的是希望在虚假输出上得到一。这个过程是反向的。这些是虚假的，但这些是一，但这就是我们所要的。😊![](img/618ec4df027e5ab5cc37e5905fefc1e4_4.png)
 - en: Aspire to we want to fool the discriminator。 We use atom on both of these。 Now。
     one question that I got a lot on the previous version of this people try to increase
     the resolution。 do other things as you increase resolution on these or do other
     changes。 you're you're going have to retune I have these primarily tuned for the
     different resolutions that I have indicated up higher in the code on the symbolic
     constant for for the magnification factor。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们的目标是欺骗判别器。我们在这两个网络上都使用 Adam 优化器。现在，我在之前的版本中得到了很多问题，人们试图提高分辨率。当你提高这些的分辨率或进行其他更改时，你将不得不重新调整。我主要针对我在代码中上方的符号常量所指示的不同分辨率进行了调整。
 - en: but you'll probably have to change these if you make the resolution higher in
     particular。 you're going to probably have to make these smaller learning rates。
     This is what an individual training step looks like and I want to show you how
@@ -314,78 +408,103 @@
     neural networks that we've trained The reason we're going through these extra
     steps and dealing directly with the gradients is because we don't want to modify
     the weights of the wrong neural networks。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 但如果你提高分辨率，特别是，你可能需要将这些学习率调整得更小。这是单个训练步骤的样子，我想向你展示我们在这里如何训练，因为这与我们之前训练的神经网络有很大不同。我们经过这些额外步骤并直接处理梯度，是因为我们不想修改错误神经网络的权重。
 - en: We've got two neural networks at play in both of these training operations。
     We do we train both of these completely separately， but we do not want crossover。
     we do not want we want to be only modifying one of these neural network weights
     at a time。 And we use for this the gradient tape。 And I talk about this a little
     bit during one of the in-class meetings。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这两个训练操作中，我们有两个神经网络在发挥作用。我们完全分开训练这两个网络，但我们不希望交叉。我们只希望一次修改一个神经网络的权重。为此我们使用梯度带。在课堂会议中我谈到过这个问题。
 - en: but this is essentially how Tensorflow does automatic differentiation。 So it
     is calculating the derivatives for you for your neural network forever complicated
     you end up making it And I have other videos talking about this。 Like how do you
     create how do you take a derivative。 and I'll put a link to that video as well
     in the description to this one。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 但这本质上就是 Tensorflow 如何进行自动微分。所以它为你的神经网络计算导数，这个过程复杂无比，最终你会使其变得如此。我还有其他视频讨论这个话题。比如，如何创建导数，以及我会在这个视频的描述中提供该视频的链接。
 - en: But this shows you basically how how to do this。 So we'rere creating two tapes
     The reason they're called tapes is it's almost like it's recording all of the
     mathematical functions going through and。Neural networks and then it unwinds it
     backwards to figure out what the derivative is。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 但这基本上展示了你如何做到这一点。所以我们正在创建两个梯度带。之所以称其为带，是因为它几乎像是在记录所有通过的数学函数，然后向后展开以找出导数是什么。
 - en: Then we basically create， we're dealing with the discriminator。 The discriminator
     has the two sides。 so it has the real output in the fake output that you are giving
     it。 So we need to know what the output was for the real images。 We need to know
     what the output was for the fake images and then that lets us essentially take
     the loss for the generator。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们基本上创建，处理鉴别器。鉴别器有两个方面。所以它有真实输出和你提供的虚假输出。所以我们需要知道真实图像的输出是什么。我们需要知道虚假图像的输出是什么，然后这让我们能够为生成器计算损失。
 - en: the generator because it's only dealing with fake。 The generator can't generate
     real images。 it can only generate fake ones。 We're calculating the loss on that。
     we're calculating the loss on both types of outputs for the discriminator because
     it sees both types。 We cal the gradients of the generator。 We calculate the gradients
     of the discriminator so that we're not crossing those over and then we apply the
     gradients。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 生成器因为只处理虚假。生成器无法生成真实图像。它只能生成虚假图像。我们在此计算损失。我们为鉴别器的两种输出类型计算损失，因为它看到了这两种类型。我们计算生成器的梯度。我们计算鉴别器的梯度，以便不交叉这些，然后我们应用梯度。
 - en: and this is essentially one step of train。 We're getting a little more manual
     here。 We're not letting Tensorflow and Kera。Actually apply the gradients for us。
     We're actually doing this。 So this is a little bit behind the scenes of how you
     actually modify the weights based on these。 These apply gradients。 that is what
     is is happening。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 这本质上是训练的一个步骤。我们变得更加手动。我们不让TensorFlow和Keras为我们应用梯度。实际上我们是在自己做这件事。这有点幕后揭秘，展示了如何根据这些应用梯度来修改权重。这就是正在发生的事情。
 - en: Then training it is relatively simple compared to that。 We do create a number
     of fixed seeds。 So this lets us track the same faces。 You you see this video that
     I have playing over top of this one。 This is showing you how these faces are evolving
     as it actually trains。 So I created these fixed seeds so that these images that
     you see here evolving。 are consistent。
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后训练相对简单。我们创建了一些固定种子。这让我们能够跟踪相同的面孔。你可以看到这个视频在播放。这个视频展示了这些面孔在实际训练中是如何演变的。所以我创建了这些固定种子，以便你看到的这些演变图像是一致的。
 - en: Otherwise， we just see a random mess of different faces。 but this shows you
     how individual seeds are actually evolving over time。 We go through the requested
     number of epochs。 We are keeping track of how much time is spent on one。 Def use
     a GPU use Googlego coabab for this。 If you don't have a GPU on your local computer。
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 否则，我们只会看到不同面孔的随机混乱。但这展示了个别种子是如何随时间演变的。我们经历了请求的epoch数量。我们记录了在一个epoch上花费的时间。确实使用GPU，使用Google
+    Colab来做这件事。如果你在本地计算机上没有GPU。
 - en: It will run so much faster。 and then we。😊。![](img/618ec4df027e5ab5cc37e5905fefc1e4_6.png)
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 它运行得更快。然后我们。😊。![](img/618ec4df027e5ab5cc37e5905fefc1e4_6.png)
 - en: Loop through for each epoch。 we loop through each batch that we divided up earlier。
     We divided the images into batches because each epoch is a complete set of batches
     that takes us over the entire training set We calculate the loss for the generator
     and the discriminator and we keep displaying this as we go。
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 对每个epoch进行循环。我们遍历之前划分的每个批次。我们将图像划分为批次，因为每个epoch是覆盖整个训练集的完整批次集合。我们计算生成器和鉴别器的损失，并在此过程中持续显示。
 - en: So you can see here you have the losses on each of these Now these are not accuracy
     losses。 So I said earlier you aspire to maybe a 5050 on each of these this is
     more of a log loss that you're seeing here but you could calculate accuracy loss
     if you wanted to as well。
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以你可以看到这里的每个损失。这些不是准确率损失。我之前提到过，你可能希望在这些上达到50对50，这更多的是你看到的对数损失，但如果你想的话，也可以计算准确率损失。
 - en: but you're going to optimize on on the log loss log loss and cross entropy are
     essentially the same range。 and it goes through here。 you never really get to
     these to sort of these two being even and that's because really like like I said
@@ -402,8 +521,10 @@
     faces I might do a video in the future about how to really eke out and get the
     really high resolutiongan built completely from scratch that would be that would
     be beyond the bound。
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是你将优化日志损失，日志损失和交叉熵本质上是相同的范围。这个过程在这里进行。你实际上并不能让这两个完全一致，这就是我之前所说的。你最终会得到像这样的面孔，这实在是太令人惊讶了。训练一个从未见过训练集的神经网络，实际上能够创造出这种程度的逼真面孔。要真正调整并获得正确的面孔，这里面有很多步骤。我有一些相关论文链接，如果你真的非常想要微调并深入研究创建逼真GAN，肯定需要购买一些云计算时间，以便获得足够的处理能力，或者你可以简单地引入谷歌的StyleGAN权重，抱歉，是NVIDIA的StyleGAN权重，这样你就可以转移，并突然拥有一个经过高端训练的神经网络，能够生成非常逼真的面孔。未来我可能会做一个关于如何从零开始构建高分辨率GAN的视频，这将超出界限。
 - en: Of what my class gets into it。 if this is something you're interested in maybe
     seen as a side video。 definitely click the like， I pay attention to those so that
     I get an idea of what you're interested in。 Thanks for watching this video in
@@ -411,9 +532,13 @@
     cool software created by NviDdia stylegan and just immediately transfer those
     weights into your neural network so that you're able to create very realistic
     looking faces like these。
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们的课程将探讨什么。如果你对此感兴趣，可以将其视为一个附加视频。请一定点赞，我会关注这些，以了解你们的兴趣。感谢观看这个视频，在下一个视频中，我们将看看如何使用迁移学习，利用NVIDIA的StyleGAN软件，将这些权重立即转移到你的神经网络中，以便你能够创建如这些一样非常逼真的面孔。
 - en: 😊，Thank you for watching the video。 And if you want to see more of this。 please
     subscribe to my channel。 Thank you much。
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊感谢观看视频。如果你想看到更多内容，请订阅我的频道。非常感谢。
