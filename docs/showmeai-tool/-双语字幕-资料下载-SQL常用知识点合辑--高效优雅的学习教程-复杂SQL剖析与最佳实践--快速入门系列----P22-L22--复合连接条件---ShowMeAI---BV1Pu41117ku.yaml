@@ -4,10 +4,13 @@
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P22：L22- 复合连接条件 - ShowMeAI
+    - BV1Pu41117ku
 - en: '![](img/53c7c09d8eb1f22d1330df77256a9f36_0.png)'
   id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/53c7c09d8eb1f22d1330df77256a9f36_0.png)'
 - en: 哦。In all the examples you have seen so far， we use a single column to uniquely
     identify the rows in a given table。 For example， in the customer's table。We have
     this customer ID column which uniquely identifies the rows in this table。 but
@@ -17,6 +20,7 @@
   id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。在你所看到的所有示例中，我们使用单个列来唯一识别给定表中的行。例如，在客户表中。我们有这个客户ID列，它唯一标识此表中的行。但有时我们不能仅使用单个列来唯一标识给定表中的记录。例如，看一下订单项表。在一个表中，我们有诸如订单ID、产品ID等列。
 - en: and so on。Now if you look at the data you can see that the values in the order
     ID column are repeated。 they're duplicated， we have 2，2，2，66 and so on， so we
     cannot use this column on its own to uniquely identify each record the same is
@@ -26,6 +30,7 @@
   id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 等等。现在如果你查看数据，你会发现订单ID列中的值是重复的。它们是重复的，我们有2、2、2、66等等，因此我们不能仅凭此列唯一识别每条记录，产品ID也是如此，这一列中的值也被重复，因此在这个表中我们使用这两个列中值的组合来唯一识别每个订单项，作为例子，在这个订单中我们有三项产品。
 - en: 4 and6 and for each product we have the quantity and unit price。😊。So if we use
     the combination of the values in both these columns we can uniquely identify each
     order item。 in other words we don't have two records for order ID2 and product
@@ -35,6 +40,7 @@
   id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 4和6，每个产品都有数量和单价。😊。因此，如果我们使用这两个列中值的组合，我们可以唯一识别每个订单项。换句话说，我们没有两个记录对应订单ID2和产品ID1，现在我们只为该项有一条记录，好的，现在让我们在设计模式下打开这个表，所以在这里点击这个看起来像工具的中间图标。😊，注意，这两个列上都有表示主键的黄色钥匙。
 - en: this is what we call a composite primary key， a composite primary key contains
     more than one column。😊，Now why does this matter Well when you have a table with
     a composite primary key you need to learn how to join that table with other tables
@@ -42,6 +48,7 @@
   id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是我们所说的复合主键，复合主键包含多个列。😊，那么这有什么重要性呢？当你有一个复合主键的表时，你需要学习如何将该表与其他表连接，例如。
 - en: here we have this table order item notes that we use to keep notes for each
     order item let's take a look at the data here so we have this column note ID which
     uniquely identifies the records in this table next to that we have order ID and
@@ -50,6 +57,7 @@
   id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里我们有这个订单项备注表，用于保存每个订单项的备注，让我们看看这里的数据，因此我们有这个备注ID列，它唯一标识此表中的记录，旁边是订单ID和产品ID，你会发现这两列的组合唯一表示一个订单项。
 - en: 😊，So here for order number two， for product number one， we have two notes。😊。Now
     let me show you how to join this table with the Order items table。😊，So back to
     our query。😊。You can see that I have already selected the SQL store database。 so
@@ -58,12 +66,14 @@
   id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，所以对于订单号二，产品号一，我们有两条备注。😊。现在让我告诉你如何将这个表与订单项表连接。😊，所以回到我们的查询。😊。你可以看到我已经选择了SQL存储数据库，所以我不需要输入使用语句。😊，好吧，让我们从中选择所有内容。
 - en: The Order items table。Give it an alias。😊，Now we need to join this with order
     item node。 also we give it an alias。😊，How are we going to join these tables based
     on two columns back to the order items table？
   id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 订单项表。给它一个别名。😊，现在我们需要将其与订单项备注连接。也给它一个别名。😊，我们将如何根据两个列连接这些表，回到订单项表？
 - en: These are the columns that we need to use in our joint condition。So in the order
     items table。We have this order ID column。This would be equal to the same column
     in order item Note table。 so OIN dot order ID。But this is not enough， we should

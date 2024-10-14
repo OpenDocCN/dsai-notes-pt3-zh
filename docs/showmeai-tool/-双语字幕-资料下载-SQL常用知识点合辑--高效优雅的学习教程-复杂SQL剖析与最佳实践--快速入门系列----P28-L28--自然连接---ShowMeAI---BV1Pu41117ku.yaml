@@ -1,36 +1,51 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P28：L28- 自然连接 - ShowMeAI
     - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P28：L28- 自然连接 - ShowMeAI
+    - BV1Pu41117ku
 - en: '![](img/4ebe50c33eacf9052841b7f678d3c0a8_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4ebe50c33eacf9052841b7f678d3c0a8_0.png)'
 - en: 哦。In my skill we also have another simpler way to join two tables。 it's called
     a natural join and it's easier to code。 but it's not something that I recommend
     because sometimes it produces unexpected results。 but let me quickly show you
     how it works in case you see it somewhere so at least you're familiar with it
     so back to the previous example let's select everything from the orders table。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。在我的技能中，我们还有另一种更简单的方法来连接两个表。它叫做自然连接，更容易编码，但我不推荐，因为有时会产生意想不到的结果。但让我快速向你展示一下它是如何工作的，以防你在某处看到过，至少你对此有些了解，所以回到之前的例子，让我们选择订单表中的所有内容。
 - en: Now we should do a natural join with the customers table。 Now with these natural
     joins。 we don't explicitly specify the column names So the database engine will
     look at these two tables and it will join them based on the common columns the
     columns that have the same name and that is the reason this query is short at
     right。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们应该与客户表进行自然连接。现在通过这些自然连接，我们不明确指定列名，因此数据库引擎将查看这两个表，并根据具有相同名称的公共列进行连接，这就是为什么这个查询写得很简短的原因。
 - en: So for clarity and let's pick a couple of columns here。 O that order ID D and
     see dot let's say first name。😊，Let's execute the query， there you go。😊。So we see
     all the orders and the customers will place them。So natural joins are really easy
     to code。 but they can be a little bit dangerous because we're letting the database
     engine figure out or guess the join。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了清晰起见，我们选择这里的几列。O的订单 ID D，并看一下名字。😊，让我们执行查询，看看吧。😊。所以我们看到所有订单和客户会下的单。因此，自然连接确实很容易编码，但它们可能有点危险，因为我们让数据库引擎来推测连接。
 - en: We don't have control over it。 for this very reason。 natural joins can produce
     unexpected results and that's why I discourage you to use them。![](img/4ebe50c33eacf9052841b7f678d3c0a8_2.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们无法控制这一点。正因如此，自然连接可能会产生意想不到的结果，这就是我不鼓励你使用它们的原因。![](img/4ebe50c33eacf9052841b7f678d3c0a8_2.png)
 - en: Oh。![](img/4ebe50c33eacf9052841b7f678d3c0a8_4.png)
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。![](img/4ebe50c33eacf9052841b7f678d3c0a8_4.png)

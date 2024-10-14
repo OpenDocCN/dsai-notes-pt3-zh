@@ -1,49 +1,68 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P23：L23- 隐式连接语法 - ShowMeAI
     - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P23：L23- 隐式连接语法 - ShowMeAI
+    - BV1Pu41117ku
 - en: '![](img/4d9f191509a55befdef300f52a59de0e_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4d9f191509a55befdef300f52a59de0e_0.png)'
 - en: 哦。In this tutorial I'm going to talk about the implicit join syntax in My SQL
     so here we have a basic inner join。 we're selecting everything from the orders
     table， joining it with customer table on orders that customer ID equal to customers
     customer ID Pre basic There is another way to write this query using implicit
     join syntax Let me show you how that works。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。在这个教程中，我将讨论MySQL中的隐式连接语法，所以这里我们有一个基本的内连接。我们从订单表中选择所有内容，与客户表连接，条件是订单的客户ID等于客户的客户ID。这是基本的，使用隐式连接语法还有另一种方式来编写这个查询。让我告诉你这是如何工作的。
 - en: 😊，So。We select everything。From now here we can type out multiple table namess，
     so orders， comma。 customers， and we can also give them an alias， so C and O。And
     then we move this join condition to the where clause， so I'm going to copy this
     from here。 type out a where clause and paste the condition。😊，These two queries
     are equivalent。😊。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，所以。我们选择所有内容。从现在开始，我们可以输入多个表名，比如订单、客户，并且我们也可以给它们起别名，比如C和O。然后我们将这个连接条件移动到where子句中，所以我会从这里复制，输入一个where子句并粘贴条件。😊这两个查询是等价的。😊。
 - en: What we have here is called implicit join syntax Now even though MyQ supports
     this syntax。 it's something that I suggest you not to use because if you accidentally
     forget to type out the work clauses。 you will get a cross join。😊，Let me show you
     what I mean。 So first I'm going to delete the first query。😊，And execute this。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们这里有的是隐式连接语法。虽然MySQL支持这种语法，但我建议你不要使用，因为如果你不小心忘记输入where子句，你会得到一个笛卡尔积。😊让我给你演示一下。我首先会删除第一个查询。😊并执行这个。
 - en: So we get 10 records because we have 10 orders in this database， so far so good。😊，But
     what happens。If we accidentally forget to type out the word clause。Instead of
     10 records。 we're going to get probably 100 records。Because every record in the
     order table is now joined with every record in the customers table。😊，This is what
     we call a cross join now later in this section I'm going to talk about cross joins
     in more detail。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们得到了10条记录，因为在这个数据库中我们有10个订单，目前一切顺利。😊但是如果我们不小心忘记输入where子句会发生什么呢？结果可能不是10条记录，而是100条记录，因为订单表中的每一条记录现在都与客户表中的每一条记录连接。😊这就是我们所称的笛卡尔积，稍后在本节中我将更详细地讨论笛卡尔积。
 - en: but what I want to point out in this tutorial is that it's better to use the
     explicit join syntax。 so we use join because this syntax forces you to type out
     the join condition。😊。If you simply join orders with customers without typing the
     join condition。 you're going to get a syntax error， so to recap， be aware of the
     implicit join syntax。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我想在这个教程中指出，使用显式连接语法更好。所以我们使用连接，因为这个语法强制你输入连接条件。😊 如果你只是将订单与客户连接而不输入连接条件，你会遇到语法错误，所以重申一下，要注意隐式连接语法。
 - en: but write all your joints using the explicit syntax。![](img/4d9f191509a55befdef300f52a59de0e_2.png)
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是使用显式语法编写所有的连接。![](img/4d9f191509a55befdef300f52a59de0e_2.png)
 - en: Oh。![](img/4d9f191509a55befdef300f52a59de0e_4.png)
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。![](img/4d9f191509a55befdef300f52a59de0e_4.png)

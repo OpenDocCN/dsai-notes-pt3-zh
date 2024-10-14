@@ -1,9 +1,11 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P29：L29- 交叉连接 - ShowMeAI
     - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
 - en: '![](img/0171f3687694160a13cbb67ab89ea954_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
 - en: 哦。In this tutorial， we're going to look at cross joins in SQA。 we use cross
@@ -11,12 +13,14 @@
     the second table。 Here's an example。 Let's select everything。😊，From the customer's
     table。Now here we do a cross join。With the products table。 So every record in
     the customer's table will be combined with every record in the products table。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
 - en: And that is why we don't have a condition here。 Okay， so this is what we call
     a cross join。 Now for clarity， let's pick a couple of columns。 like see that first
     name。We rename it as customer and then。Product the name， which wename to product。Also。
     let's sort the result by customer。t first name。Now let's execute the query。😊。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
 - en: Here is the result of a cross joinin。 So first we have Amber as the customer。
@@ -24,6 +28,7 @@
     barbara or whatever it is。 And again， we have the combination of this customer
     with all the products。 Now in this particular example， it doesn't really make
     sense to use a cross joinin。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
 - en: A real example for using cross joins is where you have a table of sizes like
@@ -31,30 +36,37 @@
     then you want to combine all the sizes with all the colors。 that is when you use
     a crosstroin。😊。Now， what we have here is called the explicit syntax for a cross
     join。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
 - en: We also have the implicit syntax， which looks like this instead of typing out
     the cross join。We type out multiple tables in the F clause， so customers and orders。Both
     these queries produce the same result， but I personally prefer to use the explicit
     syntax because it's more clear。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/0171f3687694160a13cbb67ab89ea954_2.png)'
+  id: totrans-7
   prefs: []
   type: TYPE_IMG
 - en: '![](img/0171f3687694160a13cbb67ab89ea954_3.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
 - en: And here is a simple exercise for you。 Do a cross join between shippers and
     products。 first do it using the implicit syntax and then using the explicit syntax。
     It's pretty straightforward。 I just want you to get your hands dirty in the code
     and get used to this syntax。😊。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/0171f3687694160a13cbb67ab89ea954_5.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
 - en: '![](img/0171f3687694160a13cbb67ab89ea954_6.png)'
+  id: totrans-11
   prefs: []
   type: TYPE_IMG
 - en: Al right， first， I'm going to use the implicit syntax， and then I will show
@@ -62,17 +74,22 @@
     shippers。😊，And products。Now for clarity。 let's pick two columns， Shiper do name，
     which we were named to Shiper。And product of name。 which were renamed to product。And
     finally， let's order everything by shipper that name。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
 - en: Let's execute the query。This is what we get。 So the combination of all shippers
     and all products。 beautiful。 Now let's use the explicit syntax。 So we select everything
     from the base table in this case。 shippers and then do a cross join with products。😊，That
     produces exactly the same result。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/0171f3687694160a13cbb67ab89ea954_8.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
 - en: Oh。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。

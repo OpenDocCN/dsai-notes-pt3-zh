@@ -1,132 +1,182 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P24：L24- 外连接 - ShowMeAI
     - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P24：L24- 外连接 - ShowMeAI
+    - BV1Pu41117ku
 - en: '![](img/f8df46f601a08cab13c11a5e4f1fe4d4_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f8df46f601a08cab13c11a5e4f1fe4d4_0.png)'
 - en: 哦。Earlier in this section I told you that in SQL we have two types of joins。
     inner joins and outer joins now so far you have only seen examples of inner joins
     and I also told you that this inner keyword is optional so whenever you type out
     a join you're using an inner join in this tutorial we're going to look at outer
     joins and the problems they solve。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。在这一部分我之前告诉过你，在SQL中我们有两种连接：内连接和外连接。目前你只看到了内连接的例子，我还告诉你这个内关键字是可选的，所以每当你输入一个连接时，你都是在使用内连接。在本教程中，我们将讨论外连接及其解决的问题。
 - en: 😊，So let's start by writing a query that uses an inner join。 and then we'll
     convert that inner join to an aler join。 So select。😊。Everything from the customer's
     table。Join it with the orders table。On C that customer ID should be equal to O
     that customer ID。Pretty basic， right？😊，Now， for clarity。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，所以让我们开始写一个使用内连接的查询，然后将其转换为外连接。所以选择。😊。从客户表中选择所有内容。将其与订单表连接。客户ID应该等于订单ID。很基础，对吧？😊，现在，为了清晰起见。
 - en: let's pick a few columns from these two tables。 So from the customer's table。
     I want to pick customer I D。And first name。And from the order table， I want to
     pick order ID。😊。Now finally， let's sort the result so we can clearly see what
     we get so order by C customer ID。😊。Let's execute this query and see what we get。So
     here's the result。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们从这两张表中挑选几个列。所以从客户表中，我想挑选客户ID和名字。而从订单表中，我想挑选订单ID。😊。现在最后，让我们对结果进行排序，这样我们就能清楚地看到我们得到的内容，按客户ID排序。😊。让我们执行这个查询，看看我们得到什么。这里是结果。
 - en: For customer number two called InNs or Inus， whatever， we have two orders， order
     4 and order 7。Similarly for customer number five， we have two orders and so on。Now
     there is something missing in this result。 We only see customers who have an order
     in our system。 These are customers 2，5，6，7，8 and 10。 but if you look at the customers
     table。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于客户编号二，名为InNs或Inus，无论怎样，我们有两个订单，订单4和订单7。同样对于客户编号五，我们也有两个订单，依此类推。现在这个结果中缺少了一些东西。我们只看到在系统中有订单的客户。这些是客户2，5，6，7，8和10。但如果你查看客户表。
 - en: you can see that we have other customers like customer number one， customer
     number3 and so on。Now currently we don't have any orders for these customers。
     and that's the reason we don't see them in this result set。 But what if you want
     to see all the customers， whether they have an order or not。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到我们有其他客户，比如客户编号一，客户编号三等等。现在目前这些客户没有任何订单，这就是我们在这个结果集中看不到他们的原因。但是如果你想看到所有客户，无论他们是否有订单，该怎么办呢？
 - en: that's when we use an al join， let me show you how that works。 So back to our
     query。😊。The reason we only saw customers who have an order was because of this
     join condition when joining these two tables。 we are only returning records that
     match this condition。So for a given customer。 if we do have an order。😊，That record
     is returned。 But as you saw a second ago。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是我们使用外连接的原因，让我给你展示一下是怎么回事。所以回到我们的查询。😊。我们只看到有订单的客户是因为在连接这两张表时的这个连接条件。我们只返回匹配此条件的记录。因此对于某个客户，如果我们确实有订单。😊，那记录就会被返回。但是正如你刚才看到的。
 - en: some of our customers don't have an order。 So for those customers， this condition
     is not valid。 and that is the reason they' are not returned in the result set
     to solve this problem。 We use an outer join。 Now in SQL， we have two types of
     outer joints。 We have left joints and right joints。When we use a left join。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们的一些客户没有订单。因此对于那些客户，这个条件不成立。这就是他们在结果集中没有被返回的原因。为了解决这个问题，我们使用外连接。在SQL中，我们有两种外连接：左连接和右连接。当我们使用左连接时。
 - en: all the records from the left table in this case， customers are returned whether
     this condition is true or not。 so we get all the customers and if they do have
     an order， we'll see the order I as well。 Let's execute this query and see what
     we get。😊，So。There you go。 customer number one doesn't have an order， and that's
     why we get null in this cell。😊。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种情况下，左表中的所有记录，无论该条件是否为真，都会返回客户。因此，我们得到了所有客户，如果他们确实有订单，我们也会看到订单ID。让我们执行这个查询，看看我们得到什么。😊，所以。你看，客户编号一没有订单，这就是为什么我们在这个单元格中得到null。😊。
 - en: Customer number two has two orders，4 and 7。 customer number 3 also doesn't have
     an order。 so we have null for order I。This is the result of a left joint。So back
     to our query。 when we use a left join， all the records from the left table are
     returned。 whether this condition is true or not。Now， what if we use a right join？😡，In
     this case。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 客户编号 2 有两个订单，4 和 7。客户编号 3 也没有订单。因此我们对订单 I 为空。这是左连接的结果。所以回到我们的查询。当我们使用左连接时，左表中的所有记录都会被返回，无论这个条件是否成立。现在，如果我们使用右连接会怎样？😡
+    在这种情况下。
 - en: all the records from the orders table are returned， whether this condition is
     true or not。 let's execute this query and see what we get。So。We get the same result
     as before when we use an inner join because we are selecting all the records from
     the right table。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 从订单表中返回所有记录，无论这个条件是否成立。让我们执行这个查询，看看我们得到了什么。我们得到的结果与之前使用内连接时相同，因为我们正在选择右表中的所有记录。
 - en: which is the orders table so we don't see all the customers。 we see all the
     orders right now if you want to use a right join and still see all the customers。
     you need to swap the order of these tables so。😊，We put the orders table first。
     That's going to be our left table， and then we put the customers on the right
     side。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是订单表，所以我们不看到所有的客户。我们现在看到的是所有的订单。如果你想使用右连接并且仍然看到所有的客户，你需要交换这些表的顺序。所以。😊 我们将订单表放在第一位。这将是我们的左表，然后我们将客户放在右侧。
 - en: So now with this query， we'll return all the records from the right table。 which
     is the customers table。Let we execute this， we got。All the customers。 whether
     they have an order or not， beautiful。Now， one last thing before we finish this
     tutorial。 I've seen developers use the outer keyword here， so either right outer
     join or left outer join。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以现在使用这个查询，我们将返回来自右表的所有记录，也就是客户表。让我们执行这个查询，得到了。所有的客户，无论他们是否有订单，真美好。在结束这个教程之前，最后一件事。我看到开发者在这里使用外部关键字，所以无论是右外连接还是左外连接。
 - en: but technically the outer keyword is optional just like the inner keyword。 so
     you don't have to type it out。😊，So I'm going to remove this to make my code shorter
     and easier to understand。 so to recap， if you use the join keyword， you're doing
     an inner join and if you do a left or right join。 you're doing an outer join。😊，Here's
     our exercise for this tutorial。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 但从技术上讲，外部关键字是可选的，就像内部关键字一样。所以你不必键入它。😊 所以我将去掉这个，以使我的代码更简洁、更易于理解。回顾一下，如果你使用了 join
+    关键字，你就是在进行内连接；而如果你使用了左连接或右连接，你就是在进行外连接。😊 这是我们本教程的练习。
 - en: I want you to write a query that produces this result。 So we have three columns
     here。 product I name and quantity that I picked from the order items table。 So
     here we need to join the product table with order items table。 so we can see how
     many times each product is ordered。 However。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 我希望你写一个查询，产生这个结果。所以我们在这里有三列。产品 I 名称和我从订单项表中选出的数量。所以在这里我们需要将产品表与订单项表连接，以便我们可以看到每个产品被下了多少次订单。然而。
 - en: if we do an inner join we'll only see the products that have been ordered。 But
     here I'm doing an outer join so。😊，Product number7 has never been ordered。 but
     it still exists in the result we sit now for the quantity。So go ahead and write
     an outer join to produce this result。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们做内连接，我们只会看到已经被下过订单的产品。但在这里我在做外连接。所以。😊 产品编号 7 从未被下过订单，但它仍然存在于结果中，我们现在看到数量。所以请继续写一个外连接以产生这个结果。
 - en: '![](img/f8df46f601a08cab13c11a5e4f1fe4d4_2.png)'
+  id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f8df46f601a08cab13c11a5e4f1fe4d4_2.png)'
 - en: '![](img/f8df46f601a08cab13c11a5e4f1fe4d4_3.png)'
+  id: totrans-18
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f8df46f601a08cab13c11a5e4f1fe4d4_3.png)'
 - en: All right， first we select everything from the product table。😊。And then to a
     left join with the order items table。Our joint condition is P that product ID
     equals Oi that product ID。So because we're using a left join， we'll get all the
     products in the product table。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，首先我们从产品表中选择所有内容。😊 然后进行左连接与订单项表。我们的连接条件是 P.产品 ID 等于 Oi.产品 ID。所以因为我们使用的是左连接，我们将获得产品表中的所有产品。
 - en: whether this condition is true or not。😊，If they have never been ordered。 we'll
     still see them in the result。Now let's pick a few columns for clarity， so P。 product
     ID。P dot name and Oi dot quantity。That's it。 Let's execute the query。 We get the
     same result as before。 so all the products are here and product number7 has never
     been ordered。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 无论这个条件是否成立。😊 如果他们从未下过订单，我们仍然会在结果中看到他们。现在让我们选择几个列以便于理解，比如 P。产品 ID。P.dot 名称和 Oi.dot
+    数量。就是这样。让我们执行查询。我们得到的结果与之前相同，所以所有的产品都在这里，产品编号 7 从未被下过订单。
 - en: so we see null for the quantity。😊。![](img/f8df46f601a08cab13c11a5e4f1fe4d4_5.png)
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们看到数量为 null。😊 ![](img/f8df46f601a08cab13c11a5e4f1fe4d4_5.png)
 - en: Yeah。![](img/f8df46f601a08cab13c11a5e4f1fe4d4_7.png)
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的。![](img/f8df46f601a08cab13c11a5e4f1fe4d4_7.png)

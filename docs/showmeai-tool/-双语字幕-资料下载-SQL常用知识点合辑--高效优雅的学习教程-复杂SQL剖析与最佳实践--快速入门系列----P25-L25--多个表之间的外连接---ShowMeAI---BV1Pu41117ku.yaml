@@ -1,121 +1,167 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P25：L25- 多个表之间的外连接
     - ShowMeAI - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P25：L25- 多个表之间的外连接
+    - ShowMeAI - BV1Pu41117ku
 - en: '![](img/f6bd3bb20257fc5641e595994cdeaef6_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f6bd3bb20257fc5641e595994cdeaef6_0.png)'
 - en: 哦。Similar to inner joins， we can use outer joins between multiple tables。 Let
     me show you。 So heres the query that we wrote in the last tutorial。 we are doing
     a left join between customers and orders tables。 So when we execute this query。😊。We
     get all the customers whether they have an order or not， if they have an order。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。类似于内连接，我们可以在多个表之间使用外连接。让我给你展示一下。所以这是我们在上一个教程中写的查询。我们在客户表和订单表之间进行了左连接。当我们执行这个查询时。😊。我们会得到所有客户，无论他们是否有订单，如果他们有订单。
 - en: we see the order ID。😊，Beautiful。Now， if you look at the orders table。😊。You can
     see that some of our orders have a shipper ID。 These are the orders that have
     been shipped。 So now let's join the orders table with the shipperss table to display
     the name of the shipper in the result。 So back to a query。😊，After this left join。Let's
     write another join here I'm doing an inner join。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们看到订单ID。😊，太美了。现在，如果你查看订单表。😊。你会看到我们的一些订单有发货人ID。这些是已经发货的订单。现在让我们将订单表与发货人表连接，以在结果中显示发货人的名称。所以回到查询。😊，在这个左连接之后，让我们在这里写另一个连接，我正在进行内连接。
 - en: so let's inter joinin the orders table with the shippers table， join shippers。😊。We
     call it SH on what is the joint condition well， o that shipper ID should be equal
     to S。 shipper ID。All right， so in this query we have a left outer join and an
     inner join。😊。Let's see what we get。😊，Alright， we only see five records， but we
     have more orders。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们把订单表与发货人表进行内连接，连接发货人。😊。我们称之为SH，连接条件是什么呢？发货人ID应该等于S。发货人ID。好的，所以在这个查询中我们有一个左外连接和一个内连接。😊。让我们看看我们得到什么。😊，好吧，我们只看到五条记录，但我们还有更多的订单。
 - en: so here we have the same problem we had before， some of our orders don't have
     a shipper and that is why they are not returned here in other words。😊，This joint
     condition is not true for some of our orders， so back to the orders table。As an
     example。 this first order doesn't have a shipper， shipper ID is null。 and that
     is why it's not returned in the query result。😊，So to solve this problem。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以在这里我们遇到了之前同样的问题，我们的一些订单没有发货人，这就是为什么它们没有在这里返回。换句话说。😊，这个连接条件对我们的一些订单来说不成立，所以回到订单表。作为一个例子，这个第一个订单没有发货人，发货人ID是null，这就是为什么它没有在查询结果中返回。😊，所以要解决这个问题。
 - en: we should use a left joint。 we want to make sure that all orders are returned。
     whether they have a shipper or not。 So back to the query。😊。We need to replace
     this inner join with the left join。😊。So let's execute the query and see what happens。Now
     we should have quite a few more orders。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们应该使用左连接。我们想确保所有订单都返回，无论他们是否有发货人。所以回到查询。😊。我们需要将这个内连接替换为左连接。😊。让我们执行查询，看看会发生什么。现在我们应该有更多的订单。
 - en: there you go。😊，Now to make this example more interesting， I'm going to add the
     shipper name here。😊。Back to our select clause。Let's add a new column， so shipper
     dot name。And we can give it an alias。 like shipper。Let's execute the query and。Here's
     the result。So we get all the customers。 whether they have an order or not， and
     for those who do have an order， we get all the orders。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 来吧。😊，现在为了让这个例子更有趣，我将把发货人名称添加到这里。😊。回到我们的选择子句。我们添加一个新列，像是shipper.dot.name。我们可以给它一个别名，比如shipper。让我们执行这个查询，看看结果。所以我们得到了所有的客户，无论他们是否有订单，而对于那些有订单的客户，我们得到了所有的订单。
 - en: whether they have a shipper or not， this is the power of outer joints。Now in
     the last tutorial。 you learned that you can get the same result with both a left
     join or a right join。 you just have to swap the order of the tables。 However，
     as a best practice， avoid using right joins。 because when you are joining multiple
     tables and you have left and right and inner join。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 无论他们是否有发货人，这就是外连接的力量。在上一个教程中，你学到了使用左连接或右连接都可以得到相同的结果，你只需交换表的顺序。然而，作为最佳实践，避免使用右连接。因为当你连接多个表并且有左连接、右连接和内连接时。
 - en: things get really complex。 someone else reading your code will have difficulty
     visualizing how you are joining these tables。 As an example， if you had a right
     join here。And then a left join after。 it will be harder to visualize how these
     tables are getting joined， so as a best practice。 avoid right joins and use left
     joins instead。😊。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 事情会变得非常复杂。其他人阅读你的代码时，会很难想象你是如何连接这些表的。例如，如果你在这里有一个右连接，然后再进行一个左连接，想象这些表是如何连接的就会变得更加困难，因此作为最佳实践，避免使用右连接，改用左连接。😊。
 - en: '![](img/f6bd3bb20257fc5641e595994cdeaef6_2.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f6bd3bb20257fc5641e595994cdeaef6_2.png)'
 - en: 。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 。
 - en: '![](img/f6bd3bb20257fc5641e595994cdeaef6_4.png)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f6bd3bb20257fc5641e595994cdeaef6_4.png)'
 - en: And here is your exercise for this tutorial。 I want you to write a query that
     produces this result。 So here we have this columns order date， order ID， the first
     name of the customer， the shipper。 and we can see that some of our orders are
     not shipped yet so here we have null and finally this status。 So go ahead spend
     two to three minutes on this exercise when you are done come back continue watching。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是本教程的练习。我希望你写一个查询，产生这个结果。所以这里我们有这些列：订单日期、订单 ID、客户的名字、发货人。我们可以看到我们的一些订单尚未发货，所以这里有
+    null，最后是这个状态。花两到三分钟做这个练习，完成后继续观看。
 - en: 😊，嗯。All right， let's select everything from the orders table。😊。Now we should
     join this with customers。On all that customer ID should be equal to see that customer
     ID。Here I'm using an inner join because every order does have a customer。 so this
     condition is always valid， it doesn't matter if we use a left join or an inner
     join here okay now before going any further。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊 嗯。好的，让我们从订单表中选择所有内容。😊 现在我们应该将其与客户连接。条件是客户 ID 应该等于客户 ID。在这里我使用内连接，因为每个订单都有客户，所以这个条件总是有效，无论我们在这里使用左连接还是内连接。好的，现在在继续之前。
 - en: let's pick our columns so from the order table I want to pick order ID。😊，Followed
     by order。 date and then customer dot first name。Which we can optional rename to
     customer。Allright。 next we'll need to select the shipper。😊，We join the result
     with the shippers's table。On order that shipper ID equal to shipper that shipper
     ID。 However， if you use an inner join here。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们选择我们的列，从订单表中我想选择订单 ID。😊 接下来是订单日期，然后是客户的名字。我们可以选择性地将其重命名为客户。好的。接下来，我们需要选择发货人。😊
+    我们将结果与发货人表连接。条件是发货人 ID 等于发货人的发货人 ID。不过，如果你在这里使用内连接。
 - en: because some of our orders don't have a shipper， we're only going to see the
     orders that have been shipped。 let me show you so for clarity， I'm going to add
     the shipper's name here。 so shipper that name as shipper。Let's execute the query。There
     you go。 We only see the orders that have been shipped， but we want to see all
     the orders right。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 由于我们的一些订单没有发货人，我们只会看到已发货的订单。让我展示给你。为了清晰起见，我将添加发货人的名字，所以发货人名称为发货人。让我们执行查询。你看，我们只看到已发货的订单，但我们想看到所有订单，对吧？
 - en: so we need to change the second join。😊，To a left joint。So all orders are returned。
     whether they have a shipper or not。Let's execute the query one more time。There
     you go。Now we see all the orders from number one to number 10， beautiful。Finally。
     we need to add the status column here。So we need to do another joint here。Join
     with order statuses。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们需要将第二个连接更改为左连接。😊 这样所有订单都会返回，无论它们是否有发货人。让我们再执行一次查询。你看，现在我们看到从第一个到第十个的所有订单，美丽。最后，我们需要在这里添加状态列。所以我们需要再进行一次连接，连接订单状态。
 - en: which we abbreviate as OSs on O thatt status。Equal to O do order status ID you
     can see that I have designed this database such that sometimes our column names
     are exactly identical。 but in other cases they don't match So in the order table
     we call this column status as opposed to order status ID and this is deliberate
     because a lot of real databases are like that。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将其缩写为 OSs，在 O 的状态上。等于 O 的订单状态 ID。你可以看到我设计这个数据库时，有时我们的列名是完全相同的，但在其他情况下则不匹配。因此在订单表中我们称这个列为状态，而不是订单状态
+    ID，这是故意的，因为许多真实数据库都是这样的。
 - en: All right， now let's add。The status name here， so order status to name。As status。Execcutute
     the query。And。We can see all the orders here for each order we have the date。
     the customer， the shipper， and the status。![](img/f6bd3bb20257fc5641e595994cdeaef6_6.png)
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，现在让我们添加状态名称，所以订单状态为名称。作为状态。执行查询。我们可以看到这里所有的订单，对于每个订单我们都有日期、客户、发货人和状态。![](img/f6bd3bb20257fc5641e595994cdeaef6_6.png)
 - en: Oh。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。
