@@ -1,0 +1,195 @@
+# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P66：67）使用XLOOKUP 函数 - ShowMeAI - BV1uL411s7bt
+
+![](img/797f4cc0ad75088c1560e826b4d80aeb_0.png)
+
+In this video， you're going to learn how to use the Xlookup function in Microsoft Excel for years and years。
+
+ one of the most commonly used functions in Excel was the V lookup function。
+
+ and there's also an H lookup and these are two very powerful functions。
+
+ but the fairly new Xlookup function blows both of them away and for many of you you'll never again need to use V lookup or H lookup So what is the purpose of X lookup It basically enables you to take information that you have and use that information to look up related information So you can see here I have an employee list for a fictional business。
+
+ We have employee names at the left we have their employee number， department salary etc。
+
+ And let's say that I need to look up an employee based on their employee number maybe every time they log into a website or fill out a form。
+
+ they put their employee number I could then use X lookup to search this document for their employee number and then I could。
+
+their name and in this case I also want it to produce the department that they're part of and their salary so I'm going to click here on H2 and I'm going to write my formula that uses the Xlookup function I'll type equals Xlookup and as I type you can see Excel recommends that I use the Xlookup function I could just click on that to select it or I could keep typing Next I'll put the left parenthesis and as always at this point。
+
+ Microsoft Excel is giving me some tips to help me successfully write the rest of this formula Excel is now looking for the lookup value In other words。
+
+ what is the information that I know Well in this case I know the employee number right in my example I said the employee numbers are recorded maybe when they use the Internet or when they fill out a form so that's what we know we know their number but we don't know their name department and salary so I could type in a specific employee number perhaps this one here so I could type that out。
+
+In the formula if I want to， but it's more powerful in many cases to instead of typing it。
+
+ just click on a cell where you will eventually type the number or the item that you want X lookup to look for。
+
+ In my case， I've already written the number It's here at the left in cell G2 So I'll click on G2 and of course。
+
+ I can change this number later。 but the formula is always gonna be looking at whatever is in G2。
+
+ and that's the lookup value that it will search for。 Next， I put in a comma。
+
+ You can see Excel is now looking for the lookup array。
+
+ Where do I want Excel to search for whatever is in G2。 Do I want it to search in column A No。
+
+ it's not gonna find this number in column A。 Well， what about column B。 No， not there either。
+
+ I need to select C。 because that's where employee numbers are stored in this spreadsheet。
+
+ You can see what Excel did。 It put in C colon C。 In other words， all of column C。
+
+ I'll put in a comma Next Excel is looking for。What's called the return array。 In other words。
+
+ I know the lookup value。 I've specified where to look for that lookup value column C。 Now。
+
+ what is it that I want to be returned。 What is it that I want to see。 Well， in this case。
+
+ I want it to return the name of the employee。 So that's easy。
+
+ I'll just click on column a just right here on the a， it selects the entire column。 or again。
+
+ I could type a colon a， I'll put in a comma Now， what if it's not found。
+
+ What if Excel searches all of these employee numbers does not find this number。
+
+ So it can't return a name， So what do I want it to return。 Well， I could just skip this。
+
+ I could delete that comma， put in my right parenthesis。
+
+ You don't even have to put the parenthesis in at the right if you don't want to tap enter。
+
+ and you can see it worked。 So it works without putting in anything for if not found。
+
+ But in this case， I think I do want to put something in there。
+
+ I'll put in a quotation mark and I'll just type the word none， and then another quotation mark。
+
+ and then I could put。Com in and at this point， all I need to do is tell Excel what kind of a match am I looking for？
+
+ Am I going to require Excel to find an exact match to this employee number In my case， yes。
+
+ because with employee numbers close doesn't mean that much It's pretty much got to be exact and notice that that is the default So if you just skip this step。
+
+ it will default to exact match which is great and that's a little bit of a change from Vlookup If you don't want exact match。
+
+ you can see the other options here， these are some really great options to have。
+
+ I'll just put a zero， So it'll be exact match and again。
+
+ I could have just left that blank I put in a comma And the very last step is what kind of a search do I want it to do Do I want to search from the top to the bottom first to last or do I want to search from last to first starting at the bottom There's binary search sorted ascending binary search sorted descending These ultimately don't matter that much So I'm just going stop there at exact match。
+
+Put in my right parenthesis。 And again， I could have left off the0。
+
+ I could have left off the none in quotes。 I could have just stopped here。 Instead。
+
+ I'll stop here after the0 tap enter on the keyboard。
+
+ And you can see Excel has used that X lookup formula to search column C for this number。
+
+ It found it。 let's find out where it found it。 Okay， there it is。
+
+ And it corresponds to Nick Robinson who's in the communications department。 Okay。
+
+ so let's go back up to the top。 Nick Robinson。 So it did work， it did find the right employee。 Now。
+
+ for those of you that have watched my other Excel tutorials。
+
+ you know that I don't have to repeat those same steps for the next employee number。
+
+ I don't have to start the formula all over again。 All I would have to do is click on Nick Robinson。
+
+ And if you think about it， it looks like I'm clicking on Nick Robinson， but I'm actually not。
+
+ this cell doesn't really contain Nick Robinson。 It contains this formula。
+
+ which produces in this case。 Nick Robinson。 So if I click here in the lower right corner。
+
+The cell on the autofill handle， that little green square I can click and hold and pull down and it will copy and extend the contents of H2 down the spreadsheet。
+
+ So let's go down and I'm not going to stop here with row 6 I'm gonna go one more to row 7 and you'll see why by using the autofill handle。
+
+ notice what happened with my formula it did copy the formula and paste it。
+
+ but it also extended the numbers， it adjusted the row number basically in H2 you can see the row number is G2 and in H3 you can see that the number is G3 So it extended that number it adjusted it up same with the rest of these So pretty quickly I'm able to look up employee numbers and return employee names Now this one here returned a0 Why well it's because G7 in this case is blank Now what if I just put in some random employee number that's not going be in my list here if I try that notice that it says。
+
+None， And it does that because I included that in my formula。 But if it's just completely blank。
+
+ instead of none， it just says0。 Now， what I just demonstrated of using X lookup to take an employee number and look to the left to find out the employee name。
+
+ That was not possible to do using the old V lookup V lookup is not capable of looking left to get its information。
+
+ It has to look to the right。 And so that's one of the nice things about X lookup。
+
+ It doesn't matter if it's left， right up down， it can look that direction and find the information。
+
+ So let's try the same thing again。 but this time with department。 I'll type equals X lookup。
+
+ I could base this one off of the employee name or off the employee number。 It doesn't really matter。
+
+ I'll go with the employee number again And once again， I need to put in the lookup array。
+
+ In other words， what column or what range should Excel look in to try to find the employee number。
+
+ Well， it's column C。 So I click on C to select the entire column what's the。Return array。
+
+ What's the information I care about that I want to learn about and see in this case it's department。
+
+ So I'll click on column D。 I'll put in a comma in quotes。
+
+ I'll put the word none in case the number typed in。
+
+ but it doesn't match any of the employee numbers。 and then in this case I'm going skip the match mode and the search mode they don't really matter much in this example And if you recall xlookup default to an exact match。
+
+ So it's going to try to find an exact match of this number and that's exactly what I want。
+
+ So I'll just put in my right parenthesis tap enter on the keyboard and Nick Robinson works in the communications department。
+
+ I can use the autofill handle and I can just double click on it to extend it down the page so I don't have to click and drag you can see it found the department of each of these employees and we can do the same thing with salary X lookup the lookup value again could be the employee number but I want to show you that it doesn't have to be So I'm going select the employee name this time comm lookup array where they going find the。
+
+Employee names here in column A this time comm What's the return array。
+
+ What's the information I'm looking for that I want to see It's salary。 So that's column E。
+
+ At this point， I should put in the right parentheesis。
+
+ but I'm just going tap enter to demonstrate that you don't really have to and it produces the salary I can just double click on the autofill handle to fill that down the page and we're good to go。
+
+ I'm just going copy paste another employee number there just so you can see it is working in all of the cells here。
+
+ At this point if I want to I can select J and on the home tab home ribbon in the number group。
+
+ I can change that number to be currency so you can tell it's a salary。
+
+ and I might also want to select this range and kind of set it apart from the rest of the spreadsheet by putting in a background color。
+
+ So now I could use this part of the spreadsheet as a form that I could use to look up an employee number or a series of numbers all at once。
+
+ So I'll just clear out the contents of those cells and I'll just take a few of these numbers。
+
+paste them in and you can see the names are looked up。
+
+ the department and the salary and they're all produced so that I can see them。
+
+ So I hope you can see some of the potential value in using Xlookup。 It's so much easier。
+
+ more straightforward and powerful to use than the old Vlookup and it also replaces H lookup as well I love the fact that it can look either left or right。
+
+ and then I also like that it defaults to an exact match。
+
+ Now as Microsoft often does with its newer functions。
+
+ they're rolling it out gradually it's available right now in Microsoft 365 versions of Excel and also these other versions。
+
+ Eventually I would expect it to show up in all modern versions of Microsoft Excel。
+
+ If you don't have Xlookup in your version of Excel。
+
+ you should definitely check out my tutorial on vlookup and then of course please do check back and watch this video once you do have access to Xlookup。
+
+
+
+![](img/797f4cc0ad75088c1560e826b4d80aeb_2.png)
