@@ -1,36 +1,50 @@
 - en: 【双语字幕+资料下载】Pytorch 进阶学习讲座！14位Facebook工程师带你解锁 PyTorch 的生产应用与技术细节 ＜官方教程系列＞ - P12：L12-
     Windows 上的 PyTorch - ShowMeAI - BV1ZZ4y1U7dg
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Pytorch进阶学习讲座！14位Facebook工程师带你解锁PyTorch的生产应用与技术细节＜官方教程系列＞ - P12：L12-
+    Windows上的PyTorch - ShowMeAI - BV1ZZ4y1U7dg
 - en: 🎼。![](img/3eee7b9d5034fa1a327cea58b77217c6_1.png)
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 🎼。![](img/3eee7b9d5034fa1a327cea58b77217c6_1.png)
 - en: Hello， let's talk about recent improvements we made in Windows Pla support。I'm
     Max Lucano Product manager working at Microsoft， in Azure AI platform Team。Some
     of you might wonder why Microsoft is talking about Pytorch and Windows， let me
     clear this up。Recently， Microsoft has become a main of Pythtune Windows。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，我们来谈谈我们在Windows平台支持方面最近的改进。我是Max Lucano，微软Azure AI平台团队的产品经理。你们可能会想，微软为什么要谈论Pytorch和Windows，下面我来澄清一下。最近，微软成为了Pytorotch
+    Windows的主要支持者。
 - en: Our goal is to improve quality of the Windows platform support so Windows users
     have great experience building AI applications on the platform of their choice。In
     this segment， we' will talk about recent progress we have made in enabling various
     features of Pytorch on Windows platform。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们的目标是改善Windows平台支持的质量，以便Windows用户在自己选择的平台上构建AI应用时获得良好的体验。在这一部分，我们将谈论我们在Windows平台上启用Pytorch各项功能方面取得的最新进展。
 - en: The recent one of the major features that we have enabled in the current release
     is distributed training。 so we'll talk a little bit about that。And we'll also
     demo how distribute the training workss on Windows。![](img/3eee7b9d5034fa1a327cea58b77217c6_3.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 最近，我们在当前版本中启用的主要功能之一是分布式训练，因此我们将稍微谈一下这个内容，并演示如何在Windows上进行分布式训练。![](img/3eee7b9d5034fa1a327cea58b77217c6_3.png)
 - en: But first， let's talk about YV as a Python community should care about Windows
     platform。According to latest SeflowDevelop survey， Windows remains to be most
     popular operating system among the broadest audience of developers。And this might
     not be the case for today's Pythers community。Because today's Pyths community
     is biased more towards professional researchers who are comfortable working with
     Linux and Maccos。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 但首先，让我们谈谈作为Python社区的YV，应该关心Windows平台。根据最新的SeflowDevelop调查，Windows仍然是最受广泛开发者欢迎的操作系统。而这对于今天的Pythors社区来说可能并非如此，因为如今的Pythors社区更倾向于那些习惯使用Linux和Mac的专业研究人员。
 - en: But if you look into the future， if you look into the next set of users that
     we would like to bring into Pytororch。 then Windows users would be the greatest
     of the largest set。And this is further confirmed by our own user research if you
@@ -39,41 +53,54 @@
     PhD degrees is seven times larger than the number of PhDs and even also in the
     last year this number of non PhD ML professionals have grown almost doubled in
     the last year。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 但如果你展望未来，看看我们希望引入Pytorch的下一批用户，那么Windows用户将是最大的用户群体。这一点通过我们自己的用户研究得到了进一步确认，如果查看LinkedIn的个人资料，那么声称具备机器学习能力但没有博士学位的机器学习专业人士人数是博士生人数的七倍，而在过去的一年中，这些非博士的机器学习专业人士数量几乎翻了一番。
 - en: well the number of PhDs obviously haven't grown that much。So this means that
     potential future users of Pythtorch are software engineers and analysts and those
     users who have great care for Windows platform。Let's talk about the state of Pytorch。First
     of all。 Pytorch and Windows is a community effort and through this community effort。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，博士人数显然没有增长太多。这意味着未来使用Pytorch的潜在用户是软件工程师和分析师，以及那些非常关注Windows平台的用户。我们来谈谈Pytorch的现状。首先，Pytorch和Windows是一个社区努力的结果，通过这个社区的努力。
 - en: we have achieved fairly good state actually in terms of breadth of coverage
     of various features of Pytororch。 we have as you can see from a table we have
     a good coverage as well。There are some gaps when it comes to depth of coverage
     of the features。 and so we'll need to do a bit more work there。The original acknowledgement
     should go to Je and Poo was the original author of who brought the Windows platform
     support to Pythtorch。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 实际上，我们在Pytorch的各项功能覆盖范围方面取得了相当不错的状态。正如你所看到的表格，我们也有很好的覆盖。不过在功能深度的覆盖上还有一些空白，因此我们需要在这方面做更多的工作。最初的感谢应该归功于Je和Poo，他们是将Windows平台支持引入Pytorch的原作者。
 - en: he basically single handedly implemented original Windows support and he recently
     also added Torch audio support as well。On our side at Microsoft， we have started
     actually working on Windows and now we have four contributors working in the space
     and two of them have become long term maintainers。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 他基本上独自实现了原始的Windows支持，最近还添加了Torch音频支持。在微软方面，我们实际上已经开始在Windows上工作，现在我们有四位贡献者在这个领域工作，其中两位已经成为长期维护者。
 - en: We started with improving quality of the Pythtors built。 so we added test automation
     to bring it on par with Linux， the improved tutorials。 so new users of Pyths have
     great experience learning Pythtorch and Windows。And this release。 our major release，
     the features that we have enabled is distributed training。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们开始改进Pythtors的质量。因此，我们增加了测试自动化，使其与Linux平起平坐，并改进了教程。新的Pyth用户在学习Pythtorch和Windows时有很好的体验。在此次发布中，我们的主要特性是分布式训练。
 - en: and we'll talk a little bit more about that on the next slide。We also partnered
     with Vi Amazon on bringingian Windows support to Torservve and Elijah Repert's
     worked on bringing Windows support to job Bi as well。 great thank you here as
     well。So this will be the training。First of all。 it's available now in the latest
     1。7 version of Pyth， so if you install it on Windows。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将在下一张幻灯片上详细讨论这个问题。我们还与Vi Amazon合作，为Torservve带来了Windows支持，Elijah Repert也在为job
+    Bi提供Windows支持。非常感谢大家的努力。这将是培训的内容。首先，最新的1.7版本的Pyth现在可以使用，如果你在Windows上安装它。
 - en: you' will have the binaries that support distributed training already。Both multi
     GPU and multinode configurations are supported one cave here though is we haven't
     spent much time testing multin yet。 so please expect it to be unstable at this
@@ -83,112 +110,151 @@
     parallel mode and we look forward to enabling RPC in the upcoming release as well
     RPC is exciting new features that is going to be used in a variety of the new
     features of Pythtorch so it's important to bring that to Windows as well。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 你将拥有支持分布式训练的二进制文件。支持多GPU和多节点配置，但需要注意的是，我们还没有花很多时间测试multin。因此，请期待目前可能不稳定，但我们计划在即将发布的版本中进行额外测试。Pythtorarch有两种类型的分布式训练：分布式数据并行和新的RPC框架。在此次发布中，我们启用了分布式训练的分布式数据并行模式，并期待在即将发布的版本中启用RPC。RPC是一个令人兴奋的新特性，将用于Pythtorch的各种新特性，因此将其引入Windows也很重要。
 - en: The situation is a little bit more complicated on the distributed drain backend
     front in the current release we have ambulance glue backend but the niel and MPPI
     backends are not currently supported the situation with NikIel is even more complicated
     because NikIel is supported by Nvidia and Nvidia doesn't provide support for Windows
     platform so we will have to work with Nvidia and figuring out what the plan here
     for NikIel backend。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 当前版本在分布式训练后端的情况稍微复杂一些，我们有救护车胶水后端，但niel和MPPI后端当前不受支持。与NikIel的情况更为复杂，因为NikIel由Nvidia支持，而Nvidia不为Windows平台提供支持，所以我们需要与Nvidia合作，确定NikIel后端的计划。
 - en: '![](img/3eee7b9d5034fa1a327cea58b77217c6_5.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/3eee7b9d5034fa1a327cea58b77217c6_5.png)'
 - en: With that， we are ready to dive in and to actually see in action how byytor
     Windows works。So what I have here is an Azure virtual machine equipped with a
     powerful DP。![](img/3eee7b9d5034fa1a327cea58b77217c6_7.png)
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 有了这些，我们准备深入了解byytor Windows的实际操作。我这里有一台配备强大DP的Azure虚拟机。![](img/3eee7b9d5034fa1a327cea58b77217c6_7.png)
 - en: So let's see in VDdia SMMI， you can see that we have two NviDAV100 GPUs on this
     machine。 so that should be plenty of horsepower to do some speed up improvement
     for our model training。 so let's see what we can do here。I also have Pytorchs
     latest version of Pytorrch installed here。 of course， 1。7 with Kudo support。And
     now we can go to Pythtorch tutorials and see what kind of。嗯。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们在VDdia SMMI中查看一下，你可以看到这台机器上有两块NviDAV100 GPU，因此这应该有足够的性能来加速我们的模型训练。让我们看看我们能在这里做些什么。我这里也安装了Pytorch的最新版本，当然是1.7，并且支持Kudo。现在我们可以去Pythtorch教程，看看有什么样的内容。嗯。
 - en: Sample we can use here so Python tutorials， as I mentioned。 we have improved
     some of them and actually all of them and enabled their smooth separation on Windows
     platform so let's choose this getting started with distributed data parallel so
     this tutorial guides users through three examples of various types of distributed
     data parallel training and it provides sample code to perform that on their own
     machine。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以使用的示例是Python教程，正如我提到的。我们改进了其中一些，实际上是所有的，并且在Windows平台上实现了它们的平滑分离，因此我们选择这个关于分布式数据并行的入门教程，该教程通过三个不同类型的分布式数据并行训练示例引导用户，并提供示例代码供他们在自己的机器上执行。
 - en: you can see that we added some Windows specific instructions here to make sure
     that users succeed on the Windows platform。I have copied this source code into
     my virtual machine。 so now we have this tutorial represented in my visual studio
     code environment。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到我们在这里添加了一些特定于Windows的说明，以确保用户在Windows平台上成功。我已经将这个源代码复制到我的虚拟机中。因此，现在我们在我的Visual
+    Studio Code环境中展示了这个教程。
 - en: '![](img/3eee7b9d5034fa1a327cea58b77217c6_9.png)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/3eee7b9d5034fa1a327cea58b77217c6_9.png)'
 - en: And we can spend a little bit of time exploring， but models we are actually
     going to try and then run this example。So first comment that you might have you
     might see here or first point that you see here is initialization method PyTtorch
     supports three initialization methods。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以花一点时间进行探索，但我们实际上要尝试并运行这个示例。因此，你可能在这里看到的第一个评论或第一个要点是初始化方法，PyTorch支持三种初始化方法。
 - en: TCP IP communication environmental variables and remote file store so currently
     that's one of the limitations of the releases we only support remote file store。
     so this is where we specify the path to the file which is used by workers to communicate
     their configuration settings to each other。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: TCP/IP通信环境变量和远程文件存储，目前这是我们发布版本的一个限制，我们仅支持远程文件存储。因此，在这里我们指定文件的路径，该路径被工作节点用来相互传达其配置设置。
 - en: In this case， we use single machine with multiple GPUs。 so we are just using
     local file for communication between two。 two workr processes running on the same
     machine， for the case of real distributed training across multiple machines。 you'd
     want to use the remote file system， place the file on the remote file system。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种情况下，我们使用单台机器和多个GPU。因此，我们只是使用本地文件在两个进程之间进行通信。对于跨多台机器的真实分布式训练，你需要使用远程文件系统，将文件放在远程文件系统上。
 - en: Let's explore what models we are going to try here so in this tutorial there
     are three models that have been tried。 the first one is a simple two layer network
     and what tutorial does it basically does a distributed training using standard
     distributed data parallel model to train this model across two GPUs and aggregate
     the gradients from both of them so standard mode of training the model on multiple
     GPUs。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们探索一下我们要尝试的模型。在这个教程中，有三种模型被尝试。第一个是一个简单的两层网络，这个教程基本上是使用标准的分布式数据并行模型在两个GPU上进行分布式训练，并汇总来自这两个GPU的梯度，因此这是在多个GPU上训练模型的标准模式。
 - en: The second example is illustrating how checkpoints and synchronization can be
     done。 so again it trains the model but then one of the workers saves the checkpoint。
     so around zero saves the checkpoint and then another workers loads the checkpoint
     and between those two we use distributed training barrier synchronization to make
     sure that the actions happen in the correct sequence。That's another example of
     distributed data parallel concept now available on Windows。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 第二个示例说明了如何进行检查点和同步。因此，它再次训练模型，但其中一个工作节点保存检查点。大约在零时保存检查点，然后另一个工作节点加载检查点。在这两者之间，我们使用分布式训练屏障同步，以确保操作按正确顺序进行。这是分布式数据并行概念的另一个示例，现在可在Windows上使用。
 - en: And final example here actually illustrates how distributed model par training
     can be done。 it trains one layer on one GPU and then passes data to the second
     GPU to train the second layer。So this model parallel training is becoming more
     and more important with the introduction of the large NLP models。And one last
     point on this script before we run it is how it actually runs。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后一个示例实际上说明了如何进行分布式模型并行训练。它在一个GPU上训练一层，然后将数据传递给第二个GPU以训练第二层。因此，随着大型NLP模型的引入，这种模型并行训练变得越来越重要。在我们运行这个脚本之前，还有一个最后要提到的点是它是如何实际运行的。
 - en: So you can see that this script automatically spans number of workers that is
     necessary depending on the number of GPUus。 The voltage size will in our case
     will be a number of GPUus So now we can all we need to do is basically run this
     script。![](img/3eee7b9d5034fa1a327cea58b77217c6_11.png)
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到，这个脚本会自动根据 GPU 数量扩展所需的工作线程。我们这儿的电压大小将是 GPU 数量。因此，现在我们所需要做的就是运行这个脚本。![](img/3eee7b9d5034fa1a327cea58b77217c6_11.png)
 - en: Let's see。And we can monitor its progress using an N SMI。You can see that now
     both GPUs are utilized by our script。 so now it's currently started running the
     second example， the two point in example。 and you can see that the load is a little
     bit greater and it goes asynchronously between GPUs but then it levelss up and
     finally the second model parallel training is also kind of a morechronous operates
     in a more asynchronous manner。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们来看一下。我们可以使用 N SMI 监控它的进展。你可以看到，现在两个 GPU 都被我们的脚本利用了。所以现在它开始运行第二个示例，两个点的示例。你可以看到负载稍微大一些，它在
+    GPU 之间异步进行，但随后它会平衡，并且最终第二个模型并行训练也是以更异步的方式运行。
 - en: You can also see here in the NDSM that it actually spans multiple Python processes
     to utilize various two GPU cards at the same time。So with that， you have seen
     how simple it actually is of running distributed data parallel on Windows。 it's
     very similar to Linux and just as easy to run Windows these days as it is on Linux。With
     that。 we conclude our demo。Thank you very much for watching this segment。I'm Maxim
     Lucianov。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以在 NDSM 中看到，它实际上跨越多个 Python 进程，以同时利用两个 GPU 卡。因此，你已经看到在 Windows 上运行分布式数据并行是多么简单。这与
+    Linux 非常相似，如今在 Windows 上运行与在 Linux 上一样容易。至此，我们的演示结束。非常感谢你观看这一部分。我是 Maxim Lucianov。
 - en: please send me message if you have any questions or ideas about Pytorch and
     Windows and have a great rest of your Pythtorch developer day。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你对 Pytorch 和 Windows 有任何问题或想法，请给我发消息，祝你度过愉快的 Pythtorch 开发者日。

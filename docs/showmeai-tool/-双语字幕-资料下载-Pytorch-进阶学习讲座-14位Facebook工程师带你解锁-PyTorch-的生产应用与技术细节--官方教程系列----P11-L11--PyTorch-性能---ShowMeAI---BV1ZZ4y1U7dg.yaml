@@ -93,6 +93,7 @@
   id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你有涉及多个模型和多个损失的复杂脚本，Python和C++路径都被支持。同时，示例和文档可在Pytor的网站上找到。![](img/323adbff4029fa414d7811534950c65f_7.png)
 - en: This is a simple example of using amp。 There are two important parts。 The first
     one is scalar object that controls all scaling and the second one is M Autotocast
     context manager all scaling is required to ensure conversions and numerical stability
@@ -102,6 +103,7 @@
   id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个使用amp的简单示例。有两个重要部分。第一个是控制所有缩放的标量对象，第二个是M Autotocast上下文管理器，所有缩放都是为了确保转换和数值稳定性，Autocast上下文管理器确保mods和卷积以FP16运行，从而在进行需要全精度的操作时以FP32运行，达到最佳性能。
 - en: Finally， there is a slightly different syntax for calling an optimizer step
     and you also have to update a low scale for the next iteration as shown in this
     snippet。 but overall the code changes required are pretty minimal and you should
@@ -110,10 +112,12 @@
   id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，调用优化器步骤的语法稍有不同，你还必须更新下一次迭代的低缩放，如这个代码片段所示。但总体来说，所需的代码更改非常少，你应该能够实现比TF32更好的性能。如果P16在所有的GPU（如Volta）上都得到支持。
 - en: '![](img/323adbff4029fa414d7811534950c65f_9.png)'
   id: totrans-13
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/323adbff4029fa414d7811534950c65f_9.png)'
 - en: Now let's move on to the next topic and that's channels lost in many backends
     and for many data types such as for example。 T32 and FP16 that we've just discussed，
     convolutions perform best when data is in channels lost format Pyr supports channels
@@ -123,12 +127,14 @@
   id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们转到下一个主题，即在许多后端和数据类型中，通道丢失。例如，T32和我们刚刚讨论的FP16，当数据以通道丢失格式时，卷积性能最佳。Pyr支持通道丢失的物理内存格式，同时保留维度的传统语义意义，例如对于四个维度，我们的第一个维度仍然是批次元素的数量，第二个维度是通道，其余是空间维度。
 - en: To fully take advantage of channel SA support， all or most operations in the
     model have to support channel SA and most operations in Pytorrch do。 for example，
     a popular model in TorchViion are covered。![](img/323adbff4029fa414d7811534950c65f_11.png)
   id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了充分利用通道SA支持，模型中的所有或大多数操作必须支持通道SA，而Pytor中大多数操作都支持。例如，在TorchVision中，一个流行的模型就是涵盖的。![](img/323adbff4029fa414d7811534950c65f_11.png)
 - en: Here we have a small example that shows how to convert model to channels Los
     format by calling a helper function。 the input has to be in channels Los format
     also， so you have to either modify your data load to directly provide input in
@@ -137,6 +143,7 @@
   id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有一个小示例，展示了如何通过调用辅助函数将模型转换为通道Los格式。输入也必须是通道Los格式，因此你必须修改数据加载，以直接提供通道丢失的输入，或在脚本中手动对输入调用转换函数。
 - en: Input layout is propagated across most operations， so intermediate variables
     in the network will remain channel fast。Copy and Tensor factory operations also
     preserve layout as shown here on the example ones like operation。 similar like
@@ -147,10 +154,12 @@
   id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 输入布局在大多数操作中被传播，因此网络中的中间变量将保持通道快速。复制和张量工厂操作也保持布局，如这里的示例操作所示。类似于张量工厂的操作也会逐点保留其输入的布局，而复制操作也会以与输入相同的格式生成输出。对于卷积网络，你可以预期通过切换到通道成本获得约20%的收益。
 - en: '![](img/323adbff4029fa414d7811534950c65f_13.png)'
   id: totrans-18
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/323adbff4029fa414d7811534950c65f_13.png)'
 - en: Another interesting feature that we implemented in Pythr forage APIs that provide
     efficient pointwise operations on batches of tensors。Instead of launching a small
     kernel for each tensor in the batch。 for each launches a few larger kernels， each

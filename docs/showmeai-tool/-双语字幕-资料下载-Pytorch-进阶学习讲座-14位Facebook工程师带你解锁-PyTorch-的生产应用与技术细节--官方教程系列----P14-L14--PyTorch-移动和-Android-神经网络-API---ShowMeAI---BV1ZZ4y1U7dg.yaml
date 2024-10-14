@@ -1,39 +1,55 @@
 - en: 【双语字幕+资料下载】Pytorch 进阶学习讲座！14位Facebook工程师带你解锁 PyTorch 的生产应用与技术细节 ＜官方教程系列＞ - P14：L14-
     PyTorch 移动和 Android 神经网络 API - ShowMeAI - BV1ZZ4y1U7dg
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Pytorch 进阶学习讲座！14位 Facebook 工程师带你解锁 PyTorch 的生产应用与技术细节 ＜官方教程系列＞ -
+    P14：L14- PyTorch 移动和 Android 神经网络 API - ShowMeAI - BV1ZZ4y1U7dg
 - en: 🎼。![](img/2143cfd2c52c8c795e5af20d99916e1d_1.png)
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 🎼。![](img/2143cfd2c52c8c795e5af20d99916e1d_1.png)
 - en: Hi， I'm Ollly， Product Manager on Android Machine learning。And I'm going to
     talk to you about Pytorch mobile support for Android neuralural Networks API。On
     device machine learning can bring a range of benefits。By moving computation to
     be local with the data， we can improve privacy。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是 Ollly，Android 机器学习的产品经理。今天我将与您谈谈 Pytorch 对 Android 神经网络 API 的支持。在设备上进行机器学习可以带来一系列好处。通过将计算移到数据本地，我们可以提高隐私保护。
 - en: Ensure that our features work， even with intermittent connectivity and reduce
     latency。 It's a great set of benefits。😊。![](img/2143cfd2c52c8c795e5af20d99916e1d_3.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 确保我们的功能在间歇性连接情况下也能正常工作，并减少延迟。这带来了诸多好处。😊。![](img/2143cfd2c52c8c795e5af20d99916e1d_3.png)
 - en: But on mobile devices， we're always power constrained。 So it's critical we perform
     this computation as efficiently as possible。![](img/2143cfd2c52c8c795e5af20d99916e1d_5.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 但在移动设备上，我们始终面临功率限制。因此，尽可能高效地进行计算至关重要。![](img/2143cfd2c52c8c795e5af20d99916e1d_5.png)
 - en: Thankfully， modern devices have a range of specialist chips that can really
     help。😊，GPUs。 DSPs and new dedicated ML hardware Acccelerators often termed NPUs
     can improve the power efficiency beyond utilizing the CPU alone。Each of these
     chips is suited to different tasks， and different mobile devices can have different
     configurations of these chips。This complexity can make it hard to scale a feature
     out to all your user base。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 幸运的是，现代设备拥有一系列专业芯片，能够真正提供帮助。😊 GPU、DSP 和新型专用的机器学习硬件加速器，通常称为 NPU，可以在不单独使用 CPU
+    的情况下提高功率效率。这些芯片各自适合不同的任务，不同的移动设备可以配置不同的芯片组合。这种复杂性可能使得在所有用户中推广一个功能变得困难。
 - en: So the Android neuralural Network API provides a single consistent CAP for computational
     offload。The diagram to the right shows an example architecture。The app can call
     into an ML framework or directly into the neural Networks API。And the graph is
     then partitioned according to the capabilities of the device at runtime。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，Android 神经网络 API 提供了一个一致的计算卸载接口。右侧的图示展示了一个示例架构。应用可以调用机器学习框架或直接调用神经网络 API。然后图形根据设备在运行时的能力进行分区。
 - en: These partitions are then handed off to specific vendor driver code that optimizes
     the calls based on the piece of hardware that's being utilized。We've been building
     the capabilities and in Android 11 we support over 100 ops， including LSTM。We
@@ -41,76 +57,110 @@
     directly within your graph using if and wild constructs。 features like quality
     of service， asynchronous command cus and memory domains enable for extensive optimization
     of your workload。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些分区随后被传递给特定的供应商驱动程序代码，以根据所使用的硬件优化调用。我们一直在构建这些功能，在 Android 11 中支持超过 100 个操作，包括
+    LSTM。我们有浮点和量化数据类型，现在可以在图中直接使用 if 和 while 构造实现控制流。诸如服务质量、异步命令缓冲和内存域等功能使工作负载的优化变得更加广泛。
 - en: And we've also made Android neural networks API an upable module。This means
     we can produce updates outside of Android Deer releases to better keep pace with
     the ML community。Advancedments in machine learning， a harder acceleration can
     produce big benefits with developing features。MLKt saw a 9X latency reduction
     when they moved from CPU to utilizing an API。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还将 Android 神经网络 API 制作成了可升级模块。这意味着我们可以在 Android 版本发布之外进行更新，以更好地跟上机器学习社区的步伐。机器学习的进步以及更强的加速可以在开发功能时带来显著的好处。MLKt
+    在从 CPU 切换到使用 API 后，看到延迟减少了 9 倍。
 - en: And the Google Lens team saw an almost 4X reduction when they switched their
     OCR model over to an API。We want to bring these benefits to as many developers
     as possible and so it' pleased that Pytorj Mo has added support for a neural networks
     API。![](img/2143cfd2c52c8c795e5af20d99916e1d_7.png)
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: Google Lens 团队在将其 OCR 模型切换到 API 后，看到近 4 倍的性能提升。我们希望将这些好处带给尽可能多的开发者，因此很高兴 Pytorch
+    Mobile 已经增加了对神经网络 API 的支持。![](img/2143cfd2c52c8c795e5af20d99916e1d_7.png)
 - en: Utilizing Pytorch Mo， you get the same familiar Pytorch APIs with no need to
     write native C code。You can offload directly from the CPU to dedicated hardware
     to get maximum performance across the Android ecosystem。So how do you get started，
     Well， it's pretty easy。![](img/2143cfd2c52c8c795e5af20d99916e1d_9.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 利用Pytorch Mo，你可以获得相同熟悉的Pytorch API，而无需编写本地C代码。你可以直接从CPU卸载到专用硬件，以在Android生态系统中获得最佳性能。那么，如何开始呢？其实非常简单。![](img/2143cfd2c52c8c795e5af20d99916e1d_9.png)
 - en: First， download the Pythtorch mobile nightly builds and then convert your model。![](img/2143cfd2c52c8c795e5af20d99916e1d_11.png)
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，下载Pythtorch mobile夜间版本，然后转换你的模型。![](img/2143cfd2c52c8c795e5af20d99916e1d_11.png)
 - en: It's just a few lines of code as shown here。You take your torchscript model。Create
     an input variable to match the input shape and then set the layout to N HWC。Then
     you convert your model。Optionally， if you want。 you can even bundle the input
     to make it easier for benchmarking。Finally。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 这只是一小段代码，如此展示。你需要使用你的torchscript模型。创建一个输入变量以匹配输入形状，然后将布局设置为N HWC。接着你可以转换你的模型。可选地，如果你愿意，可以将输入打包，以便于基准测试。最后。
 - en: save your model and you're good to go。![](img/2143cfd2c52c8c795e5af20d99916e1d_13.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 保存你的模型，你就可以开始使用了。![](img/2143cfd2c52c8c795e5af20d99916e1d_13.png)
 - en: When it comes time for runtime inference， if you're using the benchmark or directly
     within your app。 there are no code changes needed。 Just switch out your existing
     model for the new N& API model。Real time segmentation is a feature that can really
     benefit from hardware acceleration。Imagine the case of trying to determine the
     foreground user from their background for a virtual green screen effect。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 当进行运行时推理时，如果你使用基准测试或直接在你的应用中，则不需要任何代码更改。只需将现有模型切换为新的N& API模型。实时分割是一个可以真正受益于硬件加速的功能。想象一下，在虚拟绿幕效果中，试图从背景中识别前景用户的场景。
 - en: You want to run this continuously and at low latency to provide a responsive
     experience to the user。But you're typically also running a lot of computation
     in parallel at the same time， for example。 video compositing effects。The Facebook
     Mesenger team are now testing N API to use for their immersive 360 backgrounds
     feature。 utilizing the new Pytorrch mobile capabilities。They're seeing a two x
     reduction in latency and a two x reduction in power consumption。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 你希望持续运行此功能并保持低延迟，以提供响应迅速的用户体验。但通常你还会同时进行大量并行计算，例如视频合成效果。Facebook Messenger团队现在正在测试N
+    API，以用于他们的沉浸式360背景功能，利用新的Pytorrch mobile能力。他们看到延迟减少了两倍，功耗也减少了两倍。
 - en: The initial release supports a powerful but small set of features。It has support
     for Android 10+ devices， linear convolution models such as Facebook Ne and multiplayer
     perceptron models。In addition， the team are hard at work on the next set of features。
     including additional operator types， support for the popular mask RCNN model and
     fallback for optimized CPU paths。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 初始版本支持一套强大但小型的功能。它支持Android 10+设备，线性卷积模型，如Facebook Ne和多层感知器模型。此外，团队正在全力以赴开发下一组功能，包括更多的操作符类型，支持流行的mask
+    RCNN模型以及优化CPU路径的回退。
 - en: The team are also investigating additional support for earlier devices and control
     flow semantics。So that was a brief overview of the new Pytorj mobile support for
     Android neuralural Networks API。Download the Pytorch mobile nightly bill today
     and get started testing the code。Please。 do provide your feedback。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 团队还在调查对早期设备和控制流语义的额外支持。这是对Android神经网络API的新Pytorj mobile支持的简要概述。今天下载Pytorch mobile夜间版本，开始测试代码。请务必提供你的反馈。
 - en: '![](img/2143cfd2c52c8c795e5af20d99916e1d_15.png)'
+  id: totrans-18
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/2143cfd2c52c8c795e5af20d99916e1d_15.png)'
 - en: For more on Android Ne networkss API， check out the Android NDKDevelop docs
     and for more on the Pytorch mobile integration use the Pytorch mobileDevelop page。![](img/2143cfd2c52c8c795e5af20d99916e1d_17.png)
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 想要了解更多关于Android Ne网络API的信息，请查看Android NDKDevelop文档；想了解更多关于Pytorch mobile集成的信息，请访问Pytorch
+    mobileDevelop页面。![](img/2143cfd2c52c8c795e5af20d99916e1d_17.png)
 - en: 🎼We can't wait to see how you take advantage of the full hardware capabilities
     with Pytorch mobile in order to produce amazing machine learning powered experiences
     on Android。 Thank you。😊。![](img/2143cfd2c52c8c795e5af20d99916e1d_19.png)
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 🎼我们迫不及待想看到你如何利用Pytorch mobile的全部硬件能力，在Android上创造出令人惊叹的机器学习驱动体验。谢谢你。😊。![](img/2143cfd2c52c8c795e5af20d99916e1d_19.png)
