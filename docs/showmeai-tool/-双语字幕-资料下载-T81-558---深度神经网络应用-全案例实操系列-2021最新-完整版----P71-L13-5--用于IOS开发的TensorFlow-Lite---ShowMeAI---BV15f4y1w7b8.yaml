@@ -1,55 +1,77 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P71：L13.5- 用于IOS开发的TensorFlow
     Lite - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P71：L13.5- 用于IOS开发的TensorFlow
+    Lite - ShowMeAI - BV15f4y1w7b8
 - en: Hi this is Jeff Haton， welcome to applications of Deep neuralural Networks with
     Washington University in this video I am going to talk about how to create a neural
     network on the edge so on an iOS device in this case。This means that the scoring
     or the usage of that neural network will actually be on a mobile device to see
     all my videos about Cale。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是杰夫·哈顿，欢迎来到华盛顿大学的深度神经网络应用课程。在这个视频中，我将谈论如何在边缘设备上创建神经网络，也就是在 iOS 设备上。在这种情况下，这意味着神经网络的评分或使用实际上将在移动设备上进行。请查看我所有关于
+    Cale 的视频。
 - en: neural networks and other AI topics， click the subscribe button and the bell
     next to it and select alt to be notified of every new video This is often called
     artificial intelligence at the edge because you think of the cloud and then you
     think of the devices that are around the edges of the cloud that is cell phones
     and other devices such as that。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 有关神经网络和其他 AI 主题，请点击订阅按钮及其旁边的铃铛，选择全部，以便接收每个新视频的通知。这通常被称为边缘人工智能，因为你会想到云，然后想到围绕云边缘的设备，比如手机和其他类似设备。
 - en: '![](img/ef211a78c07de32ed9aca9413edc49db_1.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ef211a78c07de32ed9aca9413edc49db_1.png)'
 - en: '![](img/ef211a78c07de32ed9aca9413edc49db_2.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ef211a78c07de32ed9aca9413edc49db_2.png)'
 - en: The idea is we may not want to actually perform the neural network scoring up
     in the cloud because you might have your phone looking at your photos or other
     things that you want to stay on your phone and either due to privacy restrictions
     or just transfer restrictions。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个想法是，我们可能不希望在云端进行神经网络的评分，因为你可能会用手机查看你的照片或其他想保留在手机上的东西，出于隐私限制或传输限制的原因。
 - en: you don't necessarily want the cloud to do everything。Now in this video。 I'm
     going to talk about using Tensorflow light and an iOS device。 I'm sure I'll get
     requests for Android and other things like that。I don't really specialize in mobile
     app development。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 你不一定希望云端做所有事情。在这个视频中，我将谈论如何在 iOS 设备上使用 Tensorflow Lite。我相信我会收到关于 Android 和其他内容的请求，但我并不专门从事移动应用开发。
 - en: so I'm probably going to stick just to iOS unless I get a lot of requests for
     something else。 but for the purposes of this course。We're going to keep it just
     a one mobile device。 I'm going to use a cross platform。Version of Tensorflow，
     Tensorflow light。 which is available on a number of these。 So that increases the
     odds of you being able to transfer this knowledge to other platforms if i is not
     your thing。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我可能会只坚持使用 iOS，除非我收到很多其他平台的请求。但为了这门课程的目的，我们将只使用一个移动设备。我将使用跨平台版本的 Tensorflow，即
+    Tensorflow Lite，它在许多这些设备上可用。因此，如果 iOS 不是你的首选，这会增加你将这些知识转移到其他平台的机会。
 - en: And the reality is， if you're creating any sort of a very popular app。 you're
     probably going to port it to both i and to Android。And I don't remember if Microsoft
     currently has a third platform for that or if they've finally given up on that
     or where they're at。 But those are the two main ones， Android and iOS， and I happen
     to own iOS hardware。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 现实情况是，如果你正在创建一种非常受欢迎的应用程序，你可能会将其移植到 iOS 和 Android。我不记得微软目前是否有第三个平台，或者他们是否终于放弃了这个，或者他们现在的状态如何。但这两个是主要的平台，Android
+    和 iOS，而我恰好拥有 iOS 硬件。
 - en: So that's the one I'm going to do。And this is the app that we're going to create。
     You can see it recognizing a few things here。 We'll get more into this later。
     Okay。 so let's build a iOS app now like I said you can do this in other ways you
@@ -60,68 +82,92 @@
     the same the neural network code will be but the actual app developer stuff like
     accessing the camera and other things would be completely different So they have
     a example application you're seeing it here。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我将做这个。我们将创建的应用程序可以识别一些东西。我们稍后会深入了解。好的，现在让我们构建一个 iOS 应用程序。正如我所说，你可以用其他方式做这件事，你也可以为
+    Android 做这个。此外，我使用的是 Tensorflow Lite，因为这门课程主要集中在 Tensorflow 上。同时，Tensorflow Lite
+    是跨平台的，你可以在 Android 上使用。因此，如果你想在 Android 上做这件事也并非完全无望，你只需要学习其具体细节，但代码大体上是相同的，神经网络代码是一样的，但实际的应用开发内容，比如访问相机等，将会完全不同。所以他们有一个示例应用程序，你现在看到的就是它。
 - en: '![](img/ef211a78c07de32ed9aca9413edc49db_4.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ef211a78c07de32ed9aca9413edc49db_4.png)'
 - en: They show you some of the iOS specific code like here is how you actually access
     the camera and get the images one by one。 We're going to send those images to。Tensor
     flow light so that we can get them classified and we're also transferring in a
     neural network that's already been trained on images。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 他们展示了一些iOS特定的代码，比如如何实际访问相机并逐个获取图像。我们将把这些图像发送给TensorFlow Lite，以便对它们进行分类，同时我们还在传递一个已经在图像上训练好的神经网络。
 - en: You very rarely do actual training on a cell phone there's really not much out
     there that would help you to actually do this you'd have to kind of custom code
     it yourself but really you don't train on a cell phone you use the cell phone
     just for classifications youd consume all the power if you are actually training
     on it because you wouldn't have terribly optimized code Now I'm showing you here
     basically this is some of the other code that they have that is。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 你很少在手机上进行实际训练，那里真的没有什么可以帮助你实际做到这一点的东西，你需要自己进行一些自定义编码，但实际上你不会在手机上训练，你只是使用手机进行分类。如果你真的在上面训练，你会消耗掉所有的电力，因为你的代码并没有经过优化。现在我在这里展示的基本上是他们的一些其他代码。
 - en: Actually querying the neural network like model， the model data。And this is
     actually querying it。 So I will be the first to tell you， this is Swift， and I
     am not real familiar with Swift code。 So this is why I'm completely using the
     Google Tensorflow light application that they provided in the examples。 This is
     in a repository that contains a lot of other examples。 So here we're going to。😊。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 实际上是在查询神经网络模型，模型数据。这实际上是在查询它。所以我首先告诉你，这是Swift，我对Swift代码并不熟悉。因此，我完全使用Google提供的TensorFlow
+    Lite应用程序，正如他们在示例中所提供的。这在一个包含许多其他示例的代码库中。我们要在这里进行。
 - en: The actual Tensorflow examples， you can see it's part of the much bigger TensorFlow
     set of examples。 this link took us right into the image classification for iOS。Like
     you see here。 you could go higher in this。So when we check this out。 we're going
     to have to check out literally the entire Tensorflow collection of examples。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 实际的TensorFlow示例，你可以看到它是更大TensorFlow示例集的一部分。这个链接直接带我们进入iOS的图像分类。像你在这里看到的，你可以在此基础上深入。检查时，我们将不得不真正查看整个TensorFlow示例集。
 - en: which contains a fair amount。 Now here are the prerequisites you need a device
     that has that version of ios or higher which should not should not be difficult
     unless you're dealing with something really old you need Xcode 10。0 above Auto
     Mac， you have to use a Mac to develop i and I already have that install so I'm
     not going show how to install Xcode it's pretty straightforward you do need a
     valid Apple developer I。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 这包含了相当多的内容。现在这里是你需要的前提条件，你需要一个拥有该版本或更高版本iOS的设备，这不应该太难，除非你正在处理一些非常旧的设备。你需要Xcode
+    10.0及以上，开发iOS应用你必须使用Mac，我已经安装了，所以我不打算展示如何安装Xcode，这很简单。你需要一个有效的苹果开发者账号。
 - en: This is tied to your actual Apple ID that you would use to access iTune store
     and other things like that it does not cost any money if you do pay money that
     is to give you and it's a small relatively small I think it's 100 or so yearly
     fee that lets you actually publish your apps to the store but to do this example。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 这与你用来访问iTunes商店和其他类似服务的实际苹果ID相关。如果你付费，这实际上是一个相对较小的费用，我认为是每年100左右的费用，让你能将应用发布到商店，但在这个例子中不需要。
 - en: Run that application that I showed you before I'm not a paying Apple developer
     reason I don't really need that ability I have I don't sell things on the Apple
     store at least at this point in the future who knows you do need the Xcode command
     line utilities I think I already have those installed but I'll run that command
     just to be sure that I don't have those already in there you will that basically
     just gives you command line tools that are necessary to be able to actually。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 运行我之前给你展示过的那个应用程序，我不是一个付费的苹果开发者，原因是我并不真的需要那个能力，我不在苹果商店出售商品，至少在此时将来，谁知道呢。你确实需要Xcode命令行工具，我想我已经安装了这些，但我会运行那个命令以确保我里面没有这些。
 - en: Run the code that is used with those and cocopods so cocopods is used that's
     kind of like Pip for coa applications so that's going to install Tensorflow light
     for us so you have to install so let's go ahead and run the Xcode select so that
     we make sure that we have those I already have those installed as you can see
     there so go ahead and run that see if you need it now we're going to install the
     cocopods cocopods。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 运行与这些和CocoaPods相关的代码，CocoaPods有点像用于Cocoa应用的Pip，它将为我们安装TensorFlow Lite。所以你必须安装，让我们运行Xcode选择，以确保我们有这些。我已经安装了这些，正如你所看到的，所以继续运行，看你是否需要。现在我们要安装CocoaPods。
 - en: like I said is sort of like Pip that's going to let you actually install for
     Sw the Tensorflow light package so let's copy that and we'll run it don't want
     to do the bash command along that they have there so just run it without bash
@@ -129,100 +175,134 @@
     fast forward through this that's installed Now this note here is very important
     this just means you can't run it on the simulator you're going to have to run
     it on an actual iOS device because it requires a camera。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 如我所说，CocoaPods有点像Pip，它将让你实际为Swift安装TensorFlow Lite包。让我们复制它，然后运行。我不想执行他们提供的bash命令，所以直接运行，不用bash。你确实需要输入密码，这需要一些安装时间，我会快进。现在已安装。这里的备注非常重要，这意味着你无法在模拟器上运行，你必须在实际的iOS设备上运行，因为它需要一个摄像头。
 - en: Okay now we're going to clone that repository。 We're going go through this whole
     build and run part。 make sure not to copy the bash part of this。 I check these
     out usually to this project directory that I just moved into and it pulls in all
     of the Tensorflow examples。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，现在我们要克隆那个仓库。我们将经历整个构建和运行部分。确保不要复制bash部分。我通常会将这些检出到我刚移动到的项目目录中，它将拉取所有的TensorFlow示例。
 - en: Okay， now that those are done。 I'm going do this in two separate parts。 They
     have two commands kind of merge together here。 First。 I'm going to do the C command
     and move into the appropriate part of those examples。 Okay。 now we're in the actual
     ios example。 and now I'm going to do the pod install。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，既然这些都完成了。我将分两个部分进行操作。他们有两个命令在这里合并在一起。首先。我将执行C命令，并移动到这些示例的适当部分。好的，现在我们在实际的iOS示例中。现在我将执行pod
+    install。
 - en: This will install Tensorflow light。 This is kind of like a Pip install。 in Python。
     Okay that's installed。 Okay， now we're going to switch into Xcode to carry out
     these next few steps。😊，Okay， so let's do this first step here。Go into Xcode。And
     now。 before you set up your development team like they're talking about there。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将安装TensorFlow Lite。这有点像Python中的Pip安装。好的，安装完成。现在我们将切换到Xcode来进行接下来的几个步骤。😊 好的，让我们进行第一步。进入Xcode。在你设置开发团队之前，如他们所说的。
 - en: you have to do this sort of at two levels。 First， you just have to tell Xcode
     that you have a Apple developer I。 and to do this。 you go into preferences and
     you click on accounts。 Now I have no accounts here currently。 That's because I
     deleted mine so that I could demonstrate this。 But you click plus， and we're going
     to use an Apple I So my Apple developer I is tied to my normal Apple I that I
     buy stuff in iTunes with。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 你需要在两个层面上完成这个。首先，你必须告诉Xcode你有一个Apple开发者账号。为此，你进入偏好设置并点击账户。现在我这里没有任何账户。这是因为我删除了我的账户，以便演示这个。但你点击加号，我们将使用一个Apple
+    ID。所以我的Apple开发者账号与我在iTunes上购买物品的普通Apple ID绑定。
 - en: So I'm going to click continue。And then it wants me to enter this， which is
     just my email address。This is a email address that that I use mainly for this。
     So I do have this blocked out。And then you click next。And it wants to know your
     password。Obviously。 I'm blocking this out but it blocks it out too。Wonder if it'll
     make me do2 FA。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我将点击继续。然后它要我输入这个，也就是我的电子邮件地址。这是我主要用于此的电子邮件地址。所以我已经把它屏蔽掉了。接着点击下一步。它想知道你的密码。显然。我把它屏蔽了，但它也会屏蔽。想知道它是否会让我进行两步验证。
 - en: No two factor authentication for me。So it's， it's done with that。 So I will
     go ahead and close this window。So now the next thing you want to do is the steps
     that we had said open up the project configuration for the project now。You just
     double click it and opens it opens here。So go to signing and capabilities。And
     we are going to essentially here。It requires a development team。And that's me。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 对我来说没有双因素认证。所以，完成了。所以我将关闭这个窗口。接下来你要做的是打开项目的配置。现在你只需双击它，它就会打开。去签名和功能。这里实质上需要一个开发团队，而那就是我。
 - en: That's the Jeff Heaton personal team。Now， this is actually the next step that
     they tell you about in the。In the Google thing here， this identifier has to be
     something completely unique。So， I am going to。Switch over and do that。So let me
     go up to here though this is the one here。 They suggest adding your initials。
     So we'll put JH there and try again。Oho， now we're happy。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是杰夫·希顿的个人团队。现在，这实际上是他们在谷歌的指引中告诉你的下一步，这个标识符必须是完全独特的。所以，我将切换过去做这个。所以让我去这里，这里是他们建议添加你的名字缩写。所以我们放上JH再试一次。哦，现在我们很高兴。
 - en: So let's。Let's do that。 Now， the next thing that they are saying to do in the
     instructions。Here is to。With an ios device connected， go ahead and run it。 So
     let me get my iPhone。 Okay。 you can tell that my iPhone is connected because it's
     wanting to run iTunes。 which I don't want to run。 We'll go back to X code。And
     now we attempt to run it。 I usually。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们。让我们这么做。现在，他们在说明中说的下一件事。这里是连接一个iOS设备，继续运行它。所以让我拿我的iPhone。好的。你可以告诉我的iPhone已连接，因为它想要运行iTunes。我不想运行它。我们回到Xcode。现在我们尝试运行它。我通常。
 - en: Now I don't use Xcode a lot， and I have to admit I find it very cumbersome，
     but I'm guessing the big。![](img/ef211a78c07de32ed9aca9413edc49db_6.png)
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我不常用Xcode，我必须承认我觉得它非常繁琐，但我猜大的。![](img/ef211a78c07de32ed9aca9413edc49db_6.png)
 - en: Arrow is the thing to run something。By the way， it ran in in a simulator。 This
     is what you want not to do。 So let me show you。How to do that correctly。![](img/ef211a78c07de32ed9aca9413edc49db_8.png)
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 箭头是运行某个东西的。顺便说一下，它在模拟器中运行。这是你不想要的。所以让我来告诉你。如何正确做到这一点。![](img/ef211a78c07de32ed9aca9413edc49db_8.png)
 - en: If you do run that， just go ahead and stop it。And it should kill off。The simulator。Now，2。Run
     this properly。 You want to click on where it has this and。That's the， that's my。
     that's my test iPhone that I use for this。Now I should be able to click the big
     arrow and hopefully this will work。Okay， it needs this password。 Let me go ahead
     and provide that。Okay。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你运行那个，只需继续并停止它。应该能关闭模拟器。现在，2。正确运行这个。你想点击这里。那是，我的。这是我用来测试的iPhone。现在我应该能够点击大箭头，希望这能成功。好的，它需要这个密码。让我来提供一下。好的。
 - en: I swear every time that I use X code， I feel like this is an intelligence test
     that I am sadly failing。 but。I think all the good user interface people that work
     at Apple just。Take the day off when they do Xcode。 But what you've got to do here
     is enter your user Id。You can't do a allow。 You have to do always a why they even
     put that button on there。 Who knows。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 我发誓每次使用Xcode时，我都觉得这是一个我可悲地失败的智力测试。但是。我觉得所有在苹果工作的优秀用户界面设计师在做Xcode时都只是。休假。但是你在这里需要做的是输入你的用户ID。你不能选择允许。你必须总是选择为什么他们甚至会把那个按钮放在那里。谁知道呢。
 - en: If you two try to do allow， it's just going to ask you that again and again，
     like I was doing there。Now， it launches your app。 Now， this is yet another little
     thing that you have to do。 Now。 I understand this application security is a big
     deal。 So you have to basically。Tell your iPhone to trust it。 So I'll show you
     the steps。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你们两个尝试允许，它会一次又一次地问你，就像我之前做的那样。现在，它启动你的应用程序。现在，这又是一个你必须做的小事。现在。我明白这个应用程序安全性是个大问题。所以你基本上必须。告诉你的iPhone信任它。让我给你展示步骤。
 - en: So they even give you the instructions here for to do this， you actually go
     to settings。Dvicice management， and allow that。Okay， I've now told it to trust
     that application。 So it's。 it's trusting。 And then I should be able to run that
     again。 But the app is already installed on my。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以他们甚至在这里给你提供了做这个的说明，你实际上要去设置。设备管理，允许它。好的，我现在告诉它信任那个应用程序。所以，它在信任。然后我应该能够再次运行它。但应用程序已经安装在我的。
 - en: '![](img/ef211a78c07de32ed9aca9413edc49db_10.png)'
+  id: totrans-34
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ef211a78c07de32ed9aca9413edc49db_10.png)'
 - en: IPhone。😊，Okay， so now I'm switching into my iPhone。Now the first thing we need
     to do here is actually go to settings。And then it's under the general tab， it's
     a lot of stuff under general。And then you want to go to device management。AppleDevelop。And
@@ -230,33 +310,46 @@
     you will probably see a trust this app， I've already trusted it。I'm recording
     this part actually separately。Once you get through all of that。You are here and
     you can see the TF classify。Now let's just experiment with it for a little bit。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: iPhone。😊，好的，现在我切换到我的iPhone。我们需要做的第一件事是实际去设置。然后在常规标签下，有很多东西。在这里你想去设备管理。AppleDevelop。基本上之前这里有信任这个应用程序的选项，而不是删除这个应用程序。所以你可能会看到信任这个应用程序，我已经信任过它。我其实是单独录制这一部分。一旦你完成所有这些，你就在这里，可以看到TF分类。现在让我们先试验一下。
 - en: so we're now seeing the world through my iPhone and really it thinks I'm a mask
     or bathing cap thats that's it。 but we'll try down a couple of items that I have
     so it is figuring out the coffee mug pretty easily。It's figuring out the soccer
     ball。The famous red stapler。That's a Bobled。 Yeah， that's sad。Ash can parking
     meter， gas pump， okay， it can't figure out the soap bottle and this a really weird
     frog that I have here。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们现在通过我的iPhone看世界，实际上它认为我是一种面具或浴帽，就这样。但我们会试试我这里的一些物品，它很容易就识别了咖啡杯。它识别出了足球。那是著名的红色订书机。那是波比滑雪。是的，真可悲。灰烬，停车计，油泵，好吧，它无法识别肥皂瓶，还有我这里这个非常奇怪的青蛙。
 - en: It thinks as a screwdriver。The frog is actually holding a cell phone and。Nope。
     it just does not figure that out either。So let's see， what other things can we
     potentially classify？
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 它的思维方式就像一个螺丝刀。青蛙实际上在拿着一个手机， Nope，它也没有搞明白这一点。那么，让我们看看还有哪些东西可以进行分类？
 - en: Its a chair。Rocking Sha， its， I guess you could rock with that if you really，
     really wanted to。Bobsledd， let's see if it recognizes Hickory。Rocking chair， rocking
     chair， American Stafffordt。 French Bulldog， Hickckory。 I think you're French。Nothing
     against French。 but he's an English bulldog。Oh， hickory， I am sorry。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个椅子。摇椅，我想如果你真的想的话，可以摇晃一下。波比滑雪，让我们看看它是否能识别Hickory。摇椅，摇椅，美国斯塔福德犬，法国斗牛犬，Hickory。我觉得你是法国的。没有对法国的偏见，但他是一个英语斗牛犬。哦，Hickory，我很抱歉。
 - en: I promise I will reprogram this to recognize English Bulldogs。![](img/ef211a78c07de32ed9aca9413edc49db_12.png)
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 我保证我会重新编程以识别英语斗牛犬。![](img/ef211a78c07de32ed9aca9413edc49db_12.png)
 - en: Thank you for watching this video， this is how you developed a simple application
     using a neural network on iOS using Tensorflowlow light。If you would like to apply
     this knowledge to other platforms。 definitely take a look at the TensorFlow light
     webpage。 which will point you in the direction for those other platforms。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 感谢观看这个视频，这就是如何在iOS上使用TensorFlow开发一个简单应用程序的过程。如果你想将这些知识应用于其他平台， definitely 查看TensorFlow
+    light网页，它会引导你到那些其他平台。

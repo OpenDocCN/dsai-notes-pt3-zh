@@ -1,57 +1,76 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P73：L14.2- 在Keras中使用去噪自动编码器
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P73：L14.2- 在Keras中使用去噪自动编码器
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeff Heaton， welcome to Application of Deep neural Network with
     Washington University。In this video， we're going to look at auto encoders or specifically
     auto dennoine encoders。 These are auto encoders that can be used to rebuild。Data
     that's been obscured by noise for the latest on my AI course and projects。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是杰夫·希顿，欢迎来到华盛顿大学的深度神经网络应用课程。在这个视频中，我们将看看自编码器，或具体来说是去噪自编码器。这些是可以用于重建被噪声模糊的数据的自编码器，获取我最新的AI课程和项目。
 - en: click subscribe and the bell next to it to be notified of every new video。 So
     for auto encoders。 we're going to first look at function approximation。 We've
     been doing function approximation before its' pretty much regression。 but I am
     going to define a function to do the approximation to chart it。😊。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 点击订阅并点击旁边的铃铛以获取每个新视频的通知。对于自编码器，我们首先将关注函数逼近。我们之前做过函数逼近，基本上是回归，但我将定义一个函数来进行逼近并绘制图表。😊。
 - en: '![](img/be628560dda59c2203db5dbe7b4cf58a_1.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/be628560dda59c2203db5dbe7b4cf58a_1.png)'
 - en: And now I am going to create a simple neural network that has essentially the
     sine function。 We're going to try to predict the sine wave。 If I run that， it
     is going to train。 and we're essentially just training it on on the sine function
     being passed in how fast forward this while it trains。 Allright， it's complete。
     You can see it it's tracking it really pretty well。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我要创建一个简单的神经网络，基本上是正弦函数。我们将尝试预测正弦波。如果我运行它，它将进行训练。我们本质上只是训练它处理传入的正弦函数，快进一下。好的，它完成了。你可以看到它跟踪得相当不错。
 - en: Now I put some noise into the expected just so that it's not exactly perfect。
     You can also see the actual in the predicted that pretty， pretty close， really，
     Next。 we'll do multi output regression。 Multi outputput regression is critical
     for a autoencoder。 Essentially， what's happening is you have your inputs just
     like before input 1 input 2 input 3 input 4。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我在期望值中加入了一些噪声，以使其不完全完美。你也可以看到实际值和预测值非常接近。接下来，我们将进行多输出回归。多输出回归对于自编码器至关重要。本质上，发生的事情是你有输入，就像之前的输入1、输入2、输入3、输入4。
 - en: but you can have multiple output neurons。 Now for an autoencoder。 usually the
     number of inputs matches the number of outputs。 Let's just go ahead and run this
     one。😊。Which is attempting to train it on both the sine and the cosine simultaneously。
     I'll go in fast forward this until it gets done。 Okay， it completes the RMS E
     looks pretty good。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 但你可以拥有多个输出神经元。现在谈谈自编码器。通常，输入的数量与输出的数量相匹配。我们就直接运行这个。😊。它试图同时对正弦和余弦进行训练。我将快进直到它完成。好的，它完成了，均方根误差看起来不错。
 - en: You can see some of the predictions and expected。 So it is learning sine and
     cosine。 at the same time。 which is， which is amazing。 Well， not really。 I mean，
     neural networks。 multiple output regressioning is really a pretty common thing。
     You don't see it a lot， though。 in other types of machine learning model。 Now，
     let's do a simple autoencoder。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到一些预测值和期望值。所以它在同时学习正弦和余弦。这是非常令人惊讶的。不过，其实并不太惊人。我是说，神经网络的多输出回归是相当常见的事情。尽管在其他类型的机器学习模型中不常见。现在，我们来做一个简单的自编码器。
 - en: And notice the autoencoder， we have five inputs we have five outputs。 Whatever
     number of inputs you have should be the same number of outputs。 And what we're
     essentially doing。 This is kind of fascinating。 This is what autoencors do。 We're
     putting in。😊，Essentially， random numbers here。And we are training it。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意这个自编码器，我们有五个输入和五个输出。你拥有的输入数量应该与输出数量相同。而我们本质上在做的事情，这有点迷人。这就是自编码器的作用。我们在这里输入。😊，基本上是随机数字。我们正在训练它。
 - en: expecting that we get the same numbers out as we put in originally。This teaches
     the neural network to use just these two hidden layers。 these two hidden neurons
     here to essentially compress。All the inputs down into just two number of values。
@@ -59,60 +78,80 @@
     And you can see I'm basically passing in 0，1，2，3，4，5，8，9。 And it's essentially
     returning close to the same thing，0，1，2，3，4，5，6，7，8。 and in a quite get that one，
     correct。 Often， these autoenrs are used on images。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 期待我们得到的输出与最初输入的数字相同。这教会神经网络只使用这两个隐藏层。这两个隐藏神经元实际上将所有输入压缩成仅两个数值。因此，我们将训练之前相同的形状1。它训练得非常快。你可以看到我基本上输入了0，1，2，3，4，5，8，9。它基本上返回了接近相同的结果，0，1，2，3，4，5，6，7，8。并且很快就得到了那个，正确的。通常，这些自编码器用于图像。
 - en: So let's go ahead and load some images in that we can make use of。 I'm showing
     you basically here how we created an autoencor to encode this image of Washington
     University。 Now， if you look at the definition for this。😊，It's essentially reducing
     through a hidden layer of one。 So it's teaching it to very highly compress this
     so that just one numeric value can represent it。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，让我们加载一些可以利用的图像。我在这里基本上向你展示了我们是如何创建一个自编码器来编码华盛顿大学的这张图像。现在，如果你看这个定义。😊，它实际上是通过一个隐藏层进行高度压缩。因此，它教会自编码器如此高度压缩，以至于仅一个数值就能表示它。
 - en: Now， of course， the hidden layers above and below it will' have some knowledge
     of the image。 So that's where you can basically put it into something so small
     and still get meaningful output out of it。 Let's load a number of images and standardize
     them。 We're going to make sure that all the same size。 There's other standardizations
     we could do。 We could also make sure that the amount of light matches。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然，上下的隐藏层会对图像有一些了解。因此，你基本上可以将其压缩得如此小，仍然能够获得有意义的输出。让我们加载一些图像并进行标准化。我们将确保所有图像大小相同。我们还可以进行其他标准化。我们还可以确保光照量一致。
 - en: which currently it does not。 And now we are going to try to predict those。 So
     we essentially loop through these are 1 28 by 128。😊。We are compressing them down
     to that size and passing that value as the input and the output。 trying to get
     the output from the neural network to look just like the training data。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 但目前它并没有做到。现在我们将尝试进行预测。因此，我们基本上循环这些128乘128的图像。😊。我们正在将它们压缩到这个大小，并将该值作为输入和输出。尝试让神经网络的输出看起来与训练数据一样。
 - en: I'll fast forward here at this point。 And here you can see it's able to reconstruct
     the images just based on these vectors coming in。 Now， let's look at a denoisising。Auto
     encoder。 These are very interesting， so。Let's run one and we'll see that we can
     add noise to an image。 I've just put random boxes in there。We can essentially
     train it Now。 normally， an autoencor。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里我将快速前进。在这里，你可以看到它能够根据这些输入的向量重建图像。现在，让我们看一下去噪自编码器。这些非常有趣，所以。我们来运行一个，看看我们可以给图像添加噪声。我只是放了一些随机的框在那里。我们基本上现在可以进行训练。通常，自编码器。
 - en: you put in the input and you expect the same output out of it。 But here we're
     going to be putting input with these squares obstructed and expecting to get as
     close we can as the original image。 This teaches the autoencors to remove noise。We
     can run it and watch the output。 These images that are slowly flashing by。 They
     had all those pixels removed with boxes。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 你输入数据，期待得到相同的输出。但在这里，我们将输入被这些方框遮挡的图像，并期待尽可能接近原始图像。这教会自编码器去除噪声。我们可以运行它并观察输出。这些图像慢慢闪过。它们的所有像素都被框去除了。
 - en: but yet they're still coming out pretty well。 And then we'll train the neural
     network based on those noisy images that we created and we'll run it through 10
     sort of random trials。 Here you can see with noise and without noise。 It's doing
     pretty good taking that away。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 但它们依然表现得很好。然后我们将基于这些我们创建的噪声图像训练神经网络，并进行10次随机试验。你可以看到，有噪声和没有噪声的情况下。它在去除噪声方面做得相当不错。
 - en: You'll notice some distortions。 If you zoom in on where the the boxes are。 But
     this is kind of how that works。 You can see it。 it's really able to do well at
     removing the noise。 This is an auto noising。 This is an auto denoising autoencoder。
     Now， autoencors can do all kinds of things。 We will see。😊。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 你会注意到一些失真。如果你放大框的位置。但这就是它的工作方式。你可以看到，它确实能够很好地去除噪声。这是一个自去噪。这是一个自去噪自编码器。现在，自编码器可以做各种各样的事情。我们将看到。😊。
 - en: In the next part， how we can make use of them。To detect anomalies。 So input
     is that is different than what we've seen before。 this content changes often。
     so subscribe to the channel to stay up to date on this course and other topics
     in artificial intelligence。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下一部分，我们将探讨如何利用它们来检测异常。因此，输入与我们之前见过的内容不同。这些内容经常变化，因此请订阅频道以获取本课程及其他人工智能主题的最新信息。
 - en: '![](img/be628560dda59c2203db5dbe7b4cf58a_3.png)'
+  id: totrans-18
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/be628560dda59c2203db5dbe7b4cf58a_3.png)'

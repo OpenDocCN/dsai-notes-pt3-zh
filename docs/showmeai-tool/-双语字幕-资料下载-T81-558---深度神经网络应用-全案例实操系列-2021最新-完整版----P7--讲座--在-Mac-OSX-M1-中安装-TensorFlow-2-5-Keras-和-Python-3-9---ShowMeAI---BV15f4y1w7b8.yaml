@@ -1,17 +1,25 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P7：[讲座] 在 Mac OSX M1 中安装
     TensorFlow 2.5、Keras 和 Python 3.9 - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P7：[讲座] 在 Mac OSX M1 中安装
+    TensorFlow 2.5、Keras 和 Python 3.9 - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeff Heaton welcome to applications of Deep neural networks with
     Washington University and this video I'm going to show you how to set up a Mac
     in particular a newer Mac。 one of the M1s that have the Apple silicone rather
     than Intel。With。Kara's TensorFlow。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是 Jeff Heaton，欢迎来到华盛顿大学的深度神经网络应用。在这个视频中，我将向你展示如何设置一台 Mac，特别是一台较新的 Mac，M1
+    系列，搭载苹果的硅芯片，而不是 Intel。使用 Keras 的 TensorFlow。
 - en: everything you need for the course in deep learning。![](img/4a3455f71b0c1dc63732e659663e9a9d_1.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 深度学习课程所需的一切。![](img/4a3455f71b0c1dc63732e659663e9a9d_1.png)
 - en: 🎼The。If you have a Windows computer or if you have a older Intel Mac。 I have
     other videos on those which are linked in the descriptions and I suggest you take
     a look at one of those there's a few steps to this。 it's really not that bad and
@@ -21,8 +29,12 @@
     Google Coab If you watched some of my other videos you'll know that I use Minneconda
     and Andcona quite a bit these are two Python platforms in particular both made
     by the same group。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 🎼如果你有一台 Windows 计算机或一台较老的 Intel Mac，我有其他视频链接在描述中，建议你查看其中一个，过程有几个步骤，其实并没有那么复杂。我想解释一下你在此过程中会遇到的
+    miniforge 和 Minneconda 版本之间的一些区别。此外，如果你不想在计算机上安装实际软件，你可以通过 Google Coab 完成整个课程。如果你看过我其他一些视频，你会知道我使用
+    Minneconda 和 Anaconda 的频率相当高，这两者都是由同一组开发的 Python 平台。
 - en: That you can use on just about any platform be it Windows， Mac or Linux In this
     video。 I'm going to show you how to use miniforge and miniforge is something new
     at least to me miniforge is supported on a variety of platforms as well but I've
@@ -30,21 +42,31 @@
     with miniforge and not necessarily even installing Anaconda because you will need
     both of them installed if you do want to make use of Anaconda if you're using
     Anaconda you're not going to necessarily or really at all。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以在几乎任何平台上使用它，无论是 Windows、Mac 还是 Linux。在这个视频中，我将向你展示如何使用 miniforge，miniforge
+    对我来说是一个新事物，它也支持多种平台，但我主要是在 Apple M1 上使用它。我建议尽量完全依赖 miniforge，而不必安装 Anaconda，因为如果你想使用
+    Anaconda，你需要同时安装这两者，如果你使用 Anaconda，你不会 necessarily 或者实际上根本不会。
 - en: be able to access the GPU acceleration that Apple has built into this computer
     So on this machine I am going to show you how to install miniforge and it'll just
     be miniforge without Anaconda I do actually run both of them on my Mac I might
     do another video on that if you're interested in seeing how to run them side by
     side definitely。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 能够访问苹果在这台计算机中内置的 GPU 加速。因此在这台机器上，我将向你展示如何安装 miniforge，它将仅仅是 miniforge，而不是 Anaconda。我实际上在我的
+    Mac 上同时运行这两者，如果你对如何并排运行它们感兴趣，我可能会做另一个视频。
 - en: Let me know。But the point is miniforge， if you look at the reasons that they
     have these。An emphasis on supporting various CPU architectures including Apple
     M1 Personal it annoys me a little bit that I can't run everything through Minneconda
     and I have to have two entire Python instances on my Mac。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我知道。但是关键是 miniforge，如果你查看他们的理由，会强调支持各种 CPU 架构，包括 Apple M1。让我有点恼火的是，我不能通过 Minneconda
+    运行所有东西，必须在我的 Mac 上有两个完整的 Python 实例。
 - en: but that's the way they want to do it so let's go to my classes website there's
     various instructions on how to do this。I am going to take you through the process
     that I've somewhat developed based on others this is a little different than some
@@ -55,11 +77,17 @@
     to install for my course that's changed a number of times since early 2020 when
     I put the first one of these out here and I don't like to put broken links on
     older YouTube videos so they link to to the respective version。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 但他们就是想这样做，所以我们去我的课程网站，上面有各种关于如何操作的说明。我将带你通过一个我基于他人开发的过程，这与这里你看到的一些方法稍有不同，但我认为这是一个相对简化的过程，可以让你为我的课程安装所需的一切。如果你去
+    T81 深度学习，然后进入安装，那里有各种文件，因为他们不断更新这些平台，而我课程的安装说明自 2020 年初我发布第一个版本以来已经发生了很多变化，我不喜欢在旧的
+    YouTube 视频中留下失效链接，所以他们链接到各自的版本。
 - en: '![](img/4a3455f71b0c1dc63732e659663e9a9d_3.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4a3455f71b0c1dc63732e659663e9a9d_3.png)'
 - en: This video is going to make use of the Tensorflowlow install Mac metal。July
     2021 and if I make some changes to this file that don't break the video bad enough
     that I feel the need to recordcord it。 then I will put a link to the the newer
@@ -67,49 +95,72 @@
     just modify the file in place so these are the instructions。I talk about basically
     what I just told you about in terms of dealing with the multiple versions and
     dealing with miniForge。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个视频将使用 Tensorflowlow 安装 Mac Metal。2021 年 7 月，如果我对这个文件进行了一些修改，没有严重破坏视频的情况下，我会在这里放一个新版本的链接。如果没有破坏性更改，我可能会直接修改这个文件。所以这些是说明。我基本上谈到了如何处理多个版本和
+    miniForge。
 - en: I suggest starting by installing miniForge， I like to use homebrew to do this
     I'm going to show you how to install Homebrew。 it's similar to yum or Appgi if
     you're used to Linux。 it's kind of like the command line version of the Apple
     store if you want to think of it。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我建议先安装 miniForge，我喜欢用 homebrew 来完成这个。我要告诉你如何安装 Homebrew。这与如果你习惯使用 Linux 的 yum
+    或 Appgi 类似。如果你想的话，它就像 Apple Store 的命令行版本。
 - en: '![](img/4a3455f71b0c1dc63732e659663e9a9d_5.png)'
+  id: totrans-11
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4a3455f71b0c1dc63732e659663e9a9d_5.png)'
 - en: '![](img/4a3455f71b0c1dc63732e659663e9a9d_6.png)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4a3455f71b0c1dc63732e659663e9a9d_6.png)'
 - en: For that， if you go to the Homeb page。This command right here is the installation。
     that's all it takes， so we copy that and I'm going to open up a terminal。I actually
     do not have Homebrew installed on this Mac yet。![](img/4a3455f71b0c1dc63732e659663e9a9d_8.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 为此，如果你去 Homebrew 的首页。这个命令就是安装命令。这就是所需的全部，所以我们复制它，然后打开一个终端。我实际上在这台 Mac 上还没有安装
+    Homebrew。![](img/4a3455f71b0c1dc63732e659663e9a9d_8.png)
 - en: I just got this Mac and I put my stickers on it， so I guess it's mine now。Not
     going to send it back。So let's go ahead and paste。That into there。And we'll go
     ahead and press enter and it's going to run that So it wants to run as Suu obviously
     it needs to run as root。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 我刚买了这台 Mac，已经贴上了我的贴纸，所以我想这台电脑现在是我的了。不会再退回去了。我们继续把这个粘贴到这里。然后我们按下回车，它将运行。所以它显然需要以
+    root 身份运行。
 - en: so I will go ahead and enter my password and there's that it's also going to
     install the Xcode command line tools。That you need that for so many things on
     a Mac。 very useful to have。 I don't。 if you do some of the other more manual processes
     for installing this。 you will have to install that as a separate step。 So I'm
     going to go ahead and press enter。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我将输入我的密码，安装将开始，它还会安装 Xcode 命令行工具。你在 Mac 上需要很多东西，非常有用。如果你进行一些其他更手动的安装过程，你需要单独安装这个。所以我将继续按下回车键。
 - en: and now it's installing Homerw。 We'll go ahead and fast forward through this。
     by the way。 I'll probably need to put some more stickers on this computer。 Any
     suggestions。 Let me know in the comments。 Well， I'm continuing to wait for this。
     Let me also discuss a few other considerations for this。 The Apple metal。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在正在安装 Homebrew。我们就快进吧。顺便说一下，我可能需要在这台电脑上贴更多的贴纸。有建议吗？请在评论中告诉我。好吧，我还在继续等这个。让我再讨论一下其他一些注意事项。Apple
+    Metal。
 - en: which is the Apple equivalent almost of Nvidia couda will not run everything
     in my course。 I would say it will run a solid 90% of it。 But some of the advanced
     code that I have， for example。 Gs makes use of。😊。![](img/4a3455f71b0c1dc63732e659663e9a9d_10.png)
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 这几乎是苹果等同于Nvidia Kuda的内容不会在我课程中运行。我会说它能运行大约90%。但是我有一些高级代码，例如，Gs使用了。😊。![](img/4a3455f71b0c1dc63732e659663e9a9d_10.png)
 - en: Two things in particular one is Pytororch and Pytorch currently is a lot more
     difficult to get working on M1。 there's currently issues open that have not been
     resolved yet hopefully that will improve soon but the stylegan to ADA that we
@@ -120,53 +171,77 @@
     kernels the Mac M1 is great the metal is great but it's just not as big of an
     ecosystem as kuta so it's not going to see as much compatibility Now everything
     they would need for the course。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 有两件事特别需要注意，一个是Pytororch，Pytorch目前在M1上运行起来要困难得多。目前有一些尚未解决的问题，希望这些能尽快改善，但我们在本课程中使用的stylegan
+    to ADA实际使用了Kuda代码，这是一种C99类型的代码，实际上定义了自定义内核，所以显然这与Apple Metal并不兼容。你当然可以用Apple Metal编写这段代码，但Stgan2
+    AD就是没有那样写，因此在更高级的机器学习中，如果是自定义编写的内核，Mac M1非常出色，Metal也很棒，但其生态系统远没有Kuda大，所以兼容性也不会像那样好。现在本课程所需的一切。
 - en: '![](img/4a3455f71b0c1dc63732e659663e9a9d_12.png)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4a3455f71b0c1dc63732e659663e9a9d_12.png)'
 - en: Is available in coab so I suggest if you are going to run it on America like
     I said。 a solid 9095% of this will work just fine， but some of。This will not work。
     Would you be interested in a video showing what works， what doesn't on the Apple
     M1。 at least in my experience。 Let me know in the comments。 And also。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 在coab中可用，所以我建议如果你要在美国运行，就像我说的。这大约90%到95%的内容都能正常工作，但其中一些将无法工作。你对制作一个展示在Apple
+    M1上什么能工作、什么不能工作的视频感兴趣吗？至少在我的经验中。请在评论中告诉我。另外。
 - en: does this video helping you to install， Defitely give it a like。 Thank you very
     much。 Let's continue with the fast forward。 I really dislike processes that make
     you enter the same password several times it prevent you from letting them run
     without you watching every step。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个视频是否帮助你安装？如果有的话，请给它点赞。非常感谢。让我们继续快速前进。我真的不喜欢那些让你输入相同密码几次的过程，这会让你无法在不监视每一步的情况下让它们运行。
 - en: 😊，Okay， it's done with all of that， this is an important step you're supposed
     to add home brew。To your path。 And by the way， this assumes that you're using
     the Z shell。 Otherwise。 some of this can be different。 Mac used to use the ba
     shell。 but currently they're using the Z shellll unless you specifically change
     that that will be the case go and run that it's modified that and we'll run that
     just reloads the shell。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，好的，所有这些都完成了，这是一个重要的步骤，你应该将homebrew添加到你的路径中。顺便说一下，这假设你正在使用Z shell。否则，某些内容可能会有所不同。Mac过去使用ba
+    shell，但目前他们使用Z shell，除非你特别更改，否则情况就是这样，去运行它，它已被修改，运行这个只需重新加载shell。
 - en: I'll go ahead though and exit the terminal and start up a new terminal just
     because I don't completely trust always that everything gets reconfigured like
     it should Now I should have the breww command from the command line and I do So
     this is a lot like yum or appgi or those kind of things Let's go back to my instructions
     So we installed homebrew we followed that instructions they also recommend installing
     this I think that was basically done by brew。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 我会退出终端并启动一个新的终端，因为我并不完全信任所有东西都会像应该的那样重新配置。现在我应该可以从命令行使用breww命令，我可以使用。所以这很像yum或appgi之类的东西。让我们回到我的说明中。所以我们安装了homebrew，按照了说明，他们还推荐安装这个，我认为基本上是通过brew完成的。
 - en: but I'll go ahead and execute that execute that already installed So we're good
     there and then we're going to do brew install mini forge There's a variety of
     ways。![](img/4a3455f71b0c1dc63732e659663e9a9d_14.png)
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我会继续执行那个，已经安装了，所以我们没问题，然后我们要执行brew install mini forge，有多种方法。![](img/4a3455f71b0c1dc63732e659663e9a9d_14.png)
 - en: '![](img/4a3455f71b0c1dc63732e659663e9a9d_15.png)'
+  id: totrans-25
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4a3455f71b0c1dc63732e659663e9a9d_15.png)'
 - en: '![](img/4a3455f71b0c1dc63732e659663e9a9d_16.png)'
+  id: totrans-26
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4a3455f71b0c1dc63732e659663e9a9d_16.png)'
 - en: '![](img/4a3455f71b0c1dc63732e659663e9a9d_17.png)'
+  id: totrans-27
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4a3455f71b0c1dc63732e659663e9a9d_17.png)'
 - en: do this， you can also download a shell command from。 you can see it in this
     installation process up here， so if this isn't working for you。 you may want to
     try that as well， but I'm going to go and copy this， run it from here。So that's
@@ -177,29 +252,41 @@
     to install a very specific version of miniForge we'll go ahead and fast forward
     through all of this distinctive base that shows you what environment you're in
     currently we're in the base Python environment。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 要做到这一点，你还可以下载一个 shell 命令。你可以在上面的安装过程中看到它，所以如果这对你不工作，你可能也想尝试这个，但我将复制这个，从这里运行它。所以这将利用
+    brew，并且它将安装 miniForge。我能想到这个可能失败的唯一原因是，如果 Apple metal 的新版本和 miniForge 的新版本不完全兼容。如果我遇到这个问题，我会确实发布一些信息，届时你需要请求安装一个非常特定版本的
+    miniForge。我们将快速前进，经过所有这些独特的基础，展示你当前所处的环境，我们现在在基础 Python 环境中。
 - en: If I do which Python will verify that。So see we're running the Python out of
     mini Forge3 Ben Python so next step we're going to install Jupiter Jupiter is
     sort of the IDE that you'll use to execute most of the code in this course you
     can also use Jupiter labb or Pchar we'll go ahead and do this This will take it's
     already installed so that's。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我执行 which Python，将会验证这一点。所以看，我们正在运行来自 mini Forge3 Ben 的 Python。接下来的步骤是安装 Jupiter，Jupiter
+    是你在本课程中执行大部分代码时使用的 IDE，你也可以使用 Jupiter labb 或 Pchar。我们将继续执行这个，这已经安装好了，所以很方便。
 - en: That's handy now what I'm going to have you do。Normally there's several things
     you have to install。 you have to install TensorFlow and then the metal plug。 I
     also have a number of handy machine learning libraries that I like to install
     for my course they're all general purpose。 I don't think it would really hurt
     you installing them。Even if you're not taking my course。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我将让你做的事情。通常你需要安装几个东西。你需要安装 TensorFlow，然后是金属插件。我还准备了一些我喜欢在课程中安装的便捷机器学习库，它们都是通用的。我认为即使你不参加我的课程，安装它们也不会有什么坏处。
 - en: you can see them all here its。Psychit Learn， pandas， all very standard stuff。You
     will need this TensorFlow Apple Yaml file and you'll execute this command。I already
     have this loaded onto my system。So I'll go into where I have it because I did
     a clone on my course and you can see the YaAml file there。If you don't want all
     of the material for my course， just download the YaAMl file。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以在这里看到所有内容。Psychit Learn、pandas，都是非常标准的东西。你需要这个 TensorFlow Apple Yaml 文件，然后你会执行这个命令。我已经将其加载到我的系统上。所以我会进入我存放它的地方，因为我在我的课程上进行了克隆，你可以在那里看到
+    YaAml 文件。如果你不需要我课程的所有材料，只需下载 YaAMl 文件。
 - en: I have a link there and make sure you're in the same directory as it when you
     execute this command you'll need that YamL file that I just mentioned。If you don't
     want all of my course material， just download the AL file。 I have my course material
@@ -209,60 +296,84 @@
     going to let you use the GPU capabilities of your M1 Mac We'll fast forward through
     this This tends to take a bit of time So now we will do the next step which is
     Conda activate Tensorflow that's also in my instructions and there we go。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 我那里有一个链接，确保在执行这个命令时你在同一目录下，你将需要我刚提到的 YamL 文件。如果你不需要我所有的课程材料，只需下载 AL 文件。我已经将我的课程材料加载好了，就在那儿。我将执行这个
+    Conda 环境创建命令。它将创建一个安装了所有这些包的 Tensorflow 环境，以及 Tensorflow 和金属插件，这将让你使用 M1 Mac 的
+    GPU 能力。我们将快进这部分，这通常需要一点时间。现在我们将进行下一步，即 Conda 激活 Tensorflow，这也在我的说明中，然后就这样。
 - en: we are now in Tensorflow and I'm going to install and beconda。 which lets me
     link this kernel that I've created Tensorflowlow kernel into Jupiter and it does
     all of this proceed。 Yes， we'll fast forward through this。 All right I'll show
     you what that is in a moment and we have to do this command here。 which is actually
     going to link it You can have multiple of these installed in your Jupiter and
     that's what I very commonly do。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们在TensorFlow中，我将安装和连接`conda`。这让我可以将我创建的TensorFlow内核链接到Jupyter，它会完成所有这些步骤。是的，我们会快进。好的，我稍后会告诉你那是什么，我们需要在这里执行这个命令，这实际上是要链接它。你可以在Jupyter中安装多个这样的环境，这也是我常常这样做的。
 - en: For different projects that I'm working on， I don't try to create one Python
     install that has everything I needed because that gets unwieldy and I lose track
     I tend to create a environment for each or often a Docker image for each depending
     on what I'm doing Alright。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于我正在进行的不同项目，我不尝试创建一个包含所有所需的Python安装，因为这样会变得繁琐，我会失去追踪。我倾向于为每个项目创建一个环境，或者根据我在做什么，通常为每个项目创建一个Docker镜像。好的。
 - en: we'll enter that It's now linked into Jupiter。 So now we'll go ahead and run
     Jupiter notebook。 which is the next step。In my instructions。And here we are in
     Jupiter notebook。 going to create a new notebook， or I could just load the。File
     that we were running from if you downloaded it， but I'll just go ahead and create
     a new。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将进入它，现在它已经链接到Jupyter了。所以现在我们将继续运行Jupyter Notebook，这是下一步。在我的说明中。现在我们在Jupyter
+    Notebook中，将创建一个新的笔记本，或者我可以直接加载之前运行的文件，如果你下载了它，但我将直接创建一个新的。
 - en: Environment of Tensorflowlow 39。 that's the environment we just created。 very
     important that you select that or you may not have Tensorflow installed。 So we'
     go back to here and we're going to copy and paste this code， which will let you
     know if。Everything worked。 This is where you cross your fingers。 I'll go ahead
     and run this takes a moment。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: TensorFlow 39环境，这是我们刚刚创建的环境。选择这个环境非常重要，否则你可能没有安装TensorFlow。所以我们回到这里，将复制并粘贴这段代码，这会告诉你是否一切正常。这是你交叉手指的时刻。我将运行它，这需要一点时间。
 - en: we'll fast forward。 You can see these three coming up here that's part of Apple
     metal。 which is a good sign。Saying GPU available is an even better sign。 so we
     are completely installed and ready to go and if you want to check it。 just load
     up any code that uses TensorFlow just like you normally would any of the like
     training the resnet would be a great example in my material go ahead and run it。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将快进。你可以看到这里出现的三个，这是Apple Metal的一部分，这是一个好兆头。显示GPU可用是更好的兆头。所以我们完全安装好了，准备就绪。如果你想检查一下，加载任何使用TensorFlow的代码，就像你通常那样，训练ResNet会是我的材料中的一个很好的例子，继续运行它。
 - en: you'll see it startup。Metal device set to Apple M1， all very good sign。And if
     you go to the activity monitor and see the percent GPU， well there it is。 it takes
     it a moment to get started。 so if you don't see something on the percent GPU at
     first。 don't panic， it may also be downloading。So the fact that we're in EpoC2
     GPU is pegged at 88% that's actually a pretty good sign。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 你会看到它启动。Metal设备设置为Apple M1，这都是很好的兆头。如果你查看活动监视器并看到GPU的使用百分比，那就可以了。启动需要一点时间，所以如果你一开始在GPU使用百分比上没有看到任何东西，不要惊慌，它可能也在下载中。所以我们在EpoC2
+    GPU上显示88%的使用率，这实际上是一个不错的迹象。
 - en: so if you're seeing this correctly congratulations you have the GPU working
     Thank you for watching this video and please subscribe to my channel follow along
     with the course or if you're one of my students。 welcome to the course， we'll
     have a lot of fun this semester learning deep learning。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你正确看到这一点，恭喜你，GPU已经正常工作。感谢观看这个视频，请订阅我的频道，跟随课程，或者如果你是我的学生，欢迎参加课程，我们这个学期将一起享受深度学习的乐趣。
 - en: '![](img/4a3455f71b0c1dc63732e659663e9a9d_19.png)'
+  id: totrans-40
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4a3455f71b0c1dc63732e659663e9a9d_19.png)'
 - en: Thank you for watching this video and if this was helpful， please give the video
     a like。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 感谢观看这个视频，如果这个视频对你有帮助，请给视频点个赞。

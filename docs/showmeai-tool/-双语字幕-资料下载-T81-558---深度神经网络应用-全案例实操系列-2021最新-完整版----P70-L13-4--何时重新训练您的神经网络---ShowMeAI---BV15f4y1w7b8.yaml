@@ -1,41 +1,55 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P70：L13.4- 何时重新训练您的神经网络
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P70：L13.4- 何时重新训练您的神经网络
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeff Heaton。 Welcome to applications of deep neural Network with
     Washington University。 In this video， we're going to take a look at how， you know
     when this neural network that you've moved into production is perhaps not being
     as efficient as it had been in the past。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是杰夫·希顿。欢迎来到华盛顿大学的深度神经网络应用课程。在这个视频中，我们将看看你已投入生产的神经网络是否仍然高效。
 - en: We're going to look at model drift and what to do about it For the latest on
     my AI course and projects。 Click subscribe in the bell next to it to be notified
     of every new video continuing along with our topic of deployment in this module。
     We're going to look at when we should retrain a neural network。 Now。 if you just
     have a data set like the auto Miles per gallon or the Iis or any of these sample
     data sets that you download and work with。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将讨论模型漂移以及如何应对它。有关我最新的人工智能课程和项目，请点击铃铛旁的订阅，以便在每个新视频发布时收到通知，继续我们在本模块中关于部署的主题。我们将探讨何时应该重新训练神经网络。现在，如果你仅有像汽车每加仑英里数（Miles
+    per gallon）或Iis等这些样本数据集，下载后进行处理。
 - en: 😊。![](img/de3c5a0770101a2c095d10c9f95e8614_1.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/de3c5a0770101a2c095d10c9f95e8614_1.png)
 - en: You're not going to know really when you need to retrain your model。 For example。
     the miles per gallon data set that we've worked with a number of times it has
     stats on cars that help you determine what the miles per gallon is。 most of the
     data from this data set is from the late 1970s and early 1980s。 Yes。 you almost
     certainly need to retrain that model from modern data。 but for that closed data
     set。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 你不会真的知道何时需要重新训练模型。例如，我们曾多次使用的每加仑英里数数据集，其中有关于汽车的统计数据，帮助你确定每加仑的行驶里程。该数据集的大部分数据来自1970年代末和1980年代初。是的，你几乎可以肯定需要使用现代数据来重新训练该模型，但对于该封闭数据集来说。
 - en: the model is as good as it's ever going to get。 The problem is that as time
     marches on changes occur in the distributions of your data。 and your incoming
     new data that you're trying to get real scores for is different。 And this is a
     very common problem that you need to deal with as you develop models that are
     going to be used in real business ongoing applications。 I work in the life insurance
     industry， and I'll give you an example of it for this。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型的性能已经达到了极限。问题在于，随着时间的推移，你的数据分布发生了变化，而你试图获得真实分数的新数据是不同的。这是一个非常普遍的问题，你需要在开发将在实际业务中持续应用的模型时处理。我在寿险行业工作，给你举个例子。
 - en: So as your data for an individual So we're trying to determine what the risk
     of ensuring。Individual for life insurance is， so that's the risk essentially of
     them dying mortality risk we often call it if the person is really fairly average
@@ -43,8 +57,10 @@
     average height their average weight or average build your neural network is going
     to tend towards giving predictions that are really pretty average for this person
     Well average tends to change as you look at health trends over the years。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，我们正在试图确定个人的寿险风险。基本上，这是他们的死亡风险，我们通常称之为死亡率风险。如果这个人就像你提供的输入数据那样，算是比较普通的，不吸烟，身高、体重或体型都在平均范围内，那么你的神经网络会倾向于给出对这个人相对普通的预测。然而，随着健康趋势的变化，平均水平也在不断变化。
 - en: mortality is improving more and more people tend to be living towards advanced
     years。 the advanced year is still relatively in the same range that it has been
     for a while。 but more people are living to that high end of that range and also
@@ -52,107 +68,142 @@
     with the ground truth so to speak is that your neural network predicting towards
     so as this ground truth moves you need to potentially retrain your neural network
     with newer data every。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 死亡率正在改善，越来越多的人倾向于活到老年。老年人的标准仍然与一段时间以来的范围相对一致，但越来越多的人活到这个范围的高端，吸烟率也在下降。所有这些因素随着时间的推移而变化，这影响了所谓的“真实情况”，你的神经网络的预测也随之调整。因此，随着真实情况的变化，你可能需要用更新的数据重新训练你的神经网络。
 - en: F years look at how you determine when this is happening。 Now。 when you will
     see this in a closed dataset。 So a dataset where you are given the data and you're
     never going to see any new data for this ever again。 That's not a realistic situation
     in business when you're doing this in the real world。 Usually you're building
     a model because you expect new data if you didn't expect new data。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: F年看看你如何确定何时发生这种情况。现在，当你在一个封闭的数据集中看到这一点时。也就是说，在一个你获取数据后再也不会看到新数据的数据集。这在商业中并不是一个现实的情况，尤其是在现实世界中。通常你建立模型是因为你预期会有新数据，如果你不预期有新数据。
 - en: why would you build the model in the first place， predicting closed data sets
     is interesting。 but it lacks a lot of practical application Now， the only time
     when you will use these techniques on a closed data is where you have a defined
     test and training set。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么你为什么要建立这个模型呢？预测封闭数据集是有趣的，但缺乏很多实际应用。现在，只有在你拥有一个明确的测试和训练集时，你才会在封闭数据上使用这些技术。
 - en: Some of the data sets that we've seen， particularly some of the academic ones。
     they define what your training set looks like and what your test looks like。 So
     you want to look at has any shift occurred between your training in your test。
     This is often done in kle。 So let's look at this diagram here。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们看到的一些数据集，尤其是一些学术数据集。它们定义了你的训练集和测试集的样子。所以你要观察你的训练和测试之间是否发生了任何变化。这通常在KLE中完成。让我们看看这个图表。
 - en: This is a diagram that appears I gave。source to it。 it's from a paper written
     specifically on looking at data and covariance shifts。 These are to names for
     this sort of phenomenon， somewhat different。 but the green。 the learned function。
     So this is using a very linear model。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我给出的一个图表。我给出了来源，它来自于一篇专门研究数据和协方差变化的论文。这些是这种现象的两个名称，虽然有些不同，但绿色的部分是学习到的函数。因此这使用的是一个非常线性的模型。
 - en: So you'll have a lot of bias in this becauses very linear model， but that's
     okay the true function。 So what really it should be learning is this red。 but
     look what happens essentially over time。 And unfortunately， the test samples occur
     a little bit later in time than the blue training samples。 So you learn the function
     on the blue dots。 But the reality is and even the true function you don't have
     much representation of it over here。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，在这个非常线性的模型中你会有很多偏差，但没关系，真实的函数。所以它真正应该学习的是这个红色的部分。但看看随时间的推移发生了什么。不幸的是，测试样本出现在时间上比蓝色训练样本稍晚。所以你是在蓝点上学习这个函数。但现实是，甚至真实函数在这里的代表性也很少。
 - en: you have no representation at all hardly here。 So you're going learn this very
     linear function。 Now there's definitely some noise。 nothing's right on the linear
     function hardly。 But nonetheless this is trying to minimize your residual so that
     the distances between every dot and the line is about averaged。the dots above
     and the dots below。 But then when you get out here。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 你在这里几乎没有任何代表性。因此你将学习这个非常线性的函数。现在这里确实有一些噪声。几乎没有一个点完全符合线性函数。但尽管如此，这仍在尽量最小化你的残差，使得每个点与线之间的距离大致平均，在线上方的点和下方的点之间。但是当你到达这里时。
 - en: you get to a different part of this function。 for some reason in time。 usually
     it's some variable that you're simply not capturing or you can't capture。 now
     the trend is more this direction so you probably need to collect more data and
     reffi it and use a nonlinear model so that you can get this curvature built into
     your model and get more predictive data。 because if if you look at where this
     red line is now going， who knows is it going continue down。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 你会发现这个函数的不同部分。出于某种原因，时间上通常是某个变量你没有捕获或者无法捕获。现在的趋势更多地朝这个方向发展，所以你可能需要收集更多数据，重新调整并使用非线性模型，以便将这种曲率融入模型中，从而获得更多的预测数据。因为如果你看看这条红线现在的走势，谁知道它是否会继续下降。
 - en: maybe it's going to retake this shape here。 And if it does。 then our first model
     would not be so bad。 but you need probably something to look at that new segment
     in time that the ground truth has now shifted for。 So how do we measure this drift。
     I give you a whole bunch of different techniques for this。 I'm not going to go
     through every one of these in the course。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 也许它会重新呈现这个形状。如果是这样，那么我们的第一个模型也许并不算太差。但你可能需要关注这个时间段内新的片段，因为真实情况已经发生了变化。那么我们如何衡量这种漂移呢？我给你提供了一系列不同的技术，但我不会在课程中逐一介绍这些。
 - en: but just to give you an initial sort of literature review of those those are
     some of the ones to potentially look at this is a particularly good paper。ifying
     view and data shift This tries to look at really all of these and come up with
     the commonalities of those。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 但只是给你一个初步的文献综述，这些是一些可能值得关注的文献。这是一篇特别好的论文，尝试查看所有这些内容并总结出它们的共同点。
 - en: Now to look at this since it's difficult really for me to do a inclass example
     where we're getting a training set and then collecting new data and continue thought
     about doing this with the autompG data and we might get into this So we're going
     to use a Cagel data and we're going to analyze and see how different the distributions
     of some of these predictors change between the training set and the test set this
     becomes an important consideration when you're competing and a Cagel。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在来看这个，因为我在课堂上做一个示例时真的很困难，我们获取训练集，然后收集新数据，考虑用 autompG 数据来做这个，我们可能会进入这个。所以我们将使用
+    Cagel 数据，分析并看看一些预测变量的分布在训练集和测试集之间如何变化，这在你参加 Cagel 竞赛时成为一个重要考虑因素。
 - en: So we're going to use the sharebank Russian housing market data set just to
     show you that kgle it is essentially looking at can you predict Real price fluctuation
     in Russia's volatile market if you look at the data They give you a whole bunch
     really of input values here。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将使用 sharebank 俄罗斯住房市场数据集，只是为了向你展示 kgle 实际上是在看你能否预测俄罗斯波动市场中的实际价格波动。如果你查看数据，他们给你提供了很多输入值。
 - en: they scroll across。 So those are all the columns in the distributions。 We're
     going to be looking at those there are。Hred total columns。 So it's got a lot of
     columns that you're dealing with。 I always like to go to the overview and see
     what the evaluation is。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 它们在滚动。因此，这些就是分布中的所有列。我们将关注这些列。Hred 总列。所以你要处理的列很多。我总是喜欢查看概述，看看评估是什么。
 - en: They're using RMSLE RMS logithmic error。 This is it's a regression error。 It's
     not a real common one。 And I had to go to the Cagel forms actually to find this
     The link on the competition actually results in a 404 page not found According
     to Cagel on definition from this RMSL penalizes under predicted estimate greater
     than an over predicteddicted。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 他们使用 RMSLE RMS 对数误差。这是回归误差。它并不是一个常见的误差。我实际上必须去 Cagel 论坛查找这个。比赛中的链接实际上导致了一个 404
+    页面未找到。根据 Cagel 的定义，这个 RMSL 对低估的估计的惩罚大于对高估的惩罚。
 - en: So its it's like RMS more log scale and then really not going to deal with it
     a great deal because we are just looking at the shift between the train in the
     test。 So we won't even really look at the target。 So the evaluation for this cale
     is really not important for the example that I'm going to give you Now you will
     have to download this data because it comes from Cale。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以它就像 RMS 更多是对数尺度，然后实际上不会太多处理它，因为我们只是看训练和测试之间的差异。因此，我们甚至不会真正关注目标。对于我将给你的示例来说，这个评估实际上并不重要。现在你必须下载这个数据，因为它来自
+    Cale。
 - en: I can't just build it into the course getthub。 So I'm going to run this。 I already
     had my。![](img/de3c5a0770101a2c095d10c9f95e8614_3.png)
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 我不能直接将其构建到课程的 GitHub 中。所以我将运行这个。我已经有我的。![](img/de3c5a0770101a2c095d10c9f95e8614_3.png)
 - en: Train and test loaded。 I'm literally pulling it right out of the downloads directory
     on my math。 That's a temporary location for me， but it does what I what I wanted
     to do。 There's a lot of examples on this particular kggle of how to preproces
@@ -160,45 +211,57 @@
     that it's some sort of a category So I am going to fill Ns with the mode or the
     most common value。 if it's an integer afloat then we're going to fill in the media
     media is good to use over mean because medium is less sensitive to outliers。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 训练和测试已加载。我实际上是直接从我的数学下载目录中提取的。这对我来说是一个临时位置，但它完成了我想做的事情。在这个特定的 kggle 上有很多预处理数据的示例，我做了一个相对基本的预处理。如果它是对象类型，那就意味着它是某种类别。因此，我将用众数或最常见的值填充缺失值。如果是整数或浮点数，我们将用中位数填充。中位数在均值上更好，因为中位数对异常值的敏感性较低。
 - en: Then we're going to go through and label and code essentially all of the categorical
     So we're not creating dummies we're actually label encoding them so that we end
     up with a integer value specifying what location they are。 I won't get into why
     that was actually chosen， but these were the common encodings that were used in
     this particular competition。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将对所有类别进行标记和编码。因此我们并不创建虚拟变量，而是进行标签编码，以便最终得到一个整数值，指明它们的位置。我不会深入讨论为什么实际上选择了这个，但这些是这个特定竞赛中使用的常见编码。
 - en: I believe they shied away from dummies because they were simply too many dimensions。
     So we'll run this so those two functions are defined or that one function is defined
     and then we'll preprocess the data。We're going to drop the target because we're
     not trying to predict at this point next。 we're going to calculate something called
     the chaoss statistic。 Now， when I first heard this。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 我相信他们回避了虚拟变量，因为维度实在太多了。所以我们将运行这些函数以定义，然后进行数据预处理。我们将丢弃目标，因为此时我们并不想进行预测。接下来，我们将计算称为混沌统计量的东西。现在，当我第一次听到这个时。
 - en: I thought of chaos statistic like COS。 but this is the chaos Ks statistic It
     is essentially looking at how similar are the distributions between two things。
     So let's just do a sanity check。 If I just run this one。 I am saying what is the
     chaos statistic between the kitchen square feet and the kitchen square feet。 So
     what is the chaos statistic between itself。 So P value， it has to be below a certain
     threshold。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 我把混沌统计量想象成COS，但这是混沌Ks统计量，它基本上是在查看两个事物之间的分布有多相似。所以让我们做一个合理性检查。如果我仅运行这个，我在问厨房平方英尺与厨房平方英尺之间的混沌统计量是多少。那么它自身之间的混沌统计量是多少。P值必须低于某个阈值。
 - en: So this is not below 0。05 This is very high。 So this means that it's very unlikely
     that there are any differences between these two distributions。 Yeah， because
     they're the same And then the statistic here。 negative0 math majors always love
     negative zeros， but computer scientists have them。 So this is 0 there is no difference
     between the two values and sense the P value is is very high that。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这并不低于0.05，这非常高。这意味着这两个分布之间几乎没有差异。是的，因为它们是相同的。然后这里的统计量。负零数学专业的学生总是喜欢负零，但计算机科学家却有它。所以这是0，两者之间没有差异，P值非常高。
 - en: Means the null hypothesis really cannot be rejected in this case Now let's look
     at the same column。 but we're looking at the column in the training set versus
     the test set。 Now the chaos statistic is a little different。 our P value is very
     low0 and the statistic shows us that there's a 0。25 difference between them So
     this is interesting that the distribution of the kitchen square feet is quite
     different between the training set and the test set。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 这意味着在这种情况下无法拒绝零假设。现在让我们看看同一列，但我们查看训练集与测试集中的列。现在混沌统计量略有不同，我们的P值非常低，统计量显示它们之间有0.25的差异。因此，厨房平方英尺的分布在训练集和测试集之间有很大不同，这很有趣。
 - en: the next thing we're going to do is essentially run this on all the columns
     so we'll run a chaos statistic on everything willll only report the times where
     the p value is less than 0。05 and the case statistic is greater than 0。1 Now the
@@ -206,67 +269,90 @@
     look at these really relative to everything else in the values that you're actually
     measuring and as it runs through you can see this works better if I shrink the
     font size but then it's harder to read but the show。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来我们要做的基本上是在所有列上运行这个，所以我们将对所有内容运行混沌统计量，只报告P值低于0.05且混沌统计量大于0.1的情况。现在这个统计量在某种程度上与测量单位有关，所以你必须相对于你实际测量的所有其他值来看这些，随着它的运行，如果我缩小字体大小可以看到这效果更好，但阅读起来就困难了，但这表明。
 - en: All of the columns and the ones that had substantial enough differences。 Next。
     we're going to look at how to detect the drift。 Now。 this is a very interesting
     technique that I've seen in a number of kggles。 What we're going to do is simply
     sample the training test set into smaller sets。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 所有列以及那些差异显著的列。接下来，我们要看看如何检测漂移。现在，这是一种我在许多kaggle竞赛中看到的非常有趣的技术。我们要做的就是简单地将训练测试集采样成更小的集合。
 - en: we're going to take these data sets and essentially add in another column that
     you have down here that tells us where they came from。 We're going to see if we
     can fit a model， a random forest in this case that can predict when all the data
     are jumbble back together。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将这些数据集进行处理，实际上添加一个在这里的另一列，告诉我们它们来自哪里。我们将看看能否拟合一个模型，这里是随机森林，可以在所有数据重新混合后进行预测。
 - en: can it predict or an individual item， if it came from the test set or the training
     set。 If these are truly uniform random sampled value So there is no difference
     between the training set and the test set。 we simply divided it that way， you
     should not be able to predict where an individual row came from if you can predict
     it。 then theres there's differences in the distributions there that really help
     it to lock on。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 它能否预测某个单独项是来自测试集还是训练集。如果这些值确实是均匀随机采样的，那么训练集和测试集之间就没有区别。我们只是那样划分的，如果你能预测出某一行来自哪里，那么在分布上就存在差异，这确实有助于锁定。
 - en: What set it actually came from。 Let's go ahead and just run this so we can see
     sort of what it looks like。 We're gonna label the two data sets。 We're going combine
     them together and re randomdomize them。 Now we need to break out the X and Y so
     that we're ready to train。 This is a classification。 So we're using area under
     the curve。re considering anything above 0。75。 that's not a real good AU。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 实际上这个设置来自哪里。让我们继续执行这个操作，这样我们就可以看到它的样子。我们将给这两个数据集贴上标签。我们将把它们组合在一起并重新随机化。现在我们需要分出
+    X 和 Y，以便准备训练。这是一个分类问题。所以我们使用曲线下面积。我们考虑任何超过 0.75 的值。那并不是一个真正好的 AU。
 - en: but it's a good enough A you that it's breaking that it's getting onto something
     that it can really determine what that is。 We're going to use each of the columns
     so that we can evaluate the errors differently。 we can see how good each of those
     columns is it actually predicting it。 So we're using the columns one by one to
     form that prediction。 And as we start to run this。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 但这已经足够好，能够突破并确定它到底是什么。我们将使用每一列，以便我们可以以不同的方式评估错误。我们可以看到每一列在实际预测中有多好。所以我们逐列使用这些列来形成预测。当我们开始运行这个时。
 - en: we'll see different ones that really vary。 Now some of this really make sense。
     The I you're not going to be using the I anyway to predict the I is ever increasing。
     So yeah。 it's going to be very different between the train and test set。 same
     thing for timets。 especially if they were taken。At different regions in time。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将看到一些真的有很大差异的东西。现在有些东西确实很有道理。你不会用 I 来预测，因为 I 是不断增加的。所以是的，训练集和测试集之间会有很大差异。时间也是一样的，尤其是如果它们是在不同的时间段内采集的。
 - en: So the fact that the timestamp is that different， is that predictive means that
     it's probably not uniformly sampled across the full time frame and we see the
     other values here that are also quite able to be predicted if they're in the training
     versus the test set this can be very useful information in a kle that you know
     how to balance this to some degree。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，时间戳的不同意味着它具有可预测性，这意味着它可能不是在整个时间范围内均匀采样的，我们看到这里的其他值也很容易预测，尤其是在训练集和测试集之间，这在某种程度上可以提供非常有用的信息。
 - en: but it's also very useful if you were collecting new data coming in。 you don't
     need the outcome。 you do not need the target for your new data， you can compare
     it to your original data set and see if a random forest is able to predict if
     it's old data of its new data。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 但如果你在收集新数据时，这也非常有用。你不需要结果。你不需要新数据的目标，可以将其与原始数据集进行比较，看看随机森林是否能够预测它是旧数据还是新数据。
 - en: if the random forest can predict with decent accuracy like 87 Auc here。 then
     the underlying data has probably shifted and you need to retrain your model。 This
     content changes often。 So subscribe to the channel to stay up to date on this
     course and other topics in artificial intelligence。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果随机森林可以以不错的准确率预测，比如这里的 87 AUC。那么基础数据可能已经发生了变化，你需要重新训练你的模型。这种内容变化频繁。所以订阅这个频道以保持更新，了解这个课程和人工智能的其他主题。
 - en: '![](img/de3c5a0770101a2c095d10c9f95e8614_5.png)'
+  id: totrans-39
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/de3c5a0770101a2c095d10c9f95e8614_5.png)'

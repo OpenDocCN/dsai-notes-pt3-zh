@@ -1,42 +1,57 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P69：L13.3- 在Web应用程序中使用Keras深度神经网络
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P69：L13.3- 在Web应用程序中使用Keras深度神经网络
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeff Eaton。 welcomel to applications of deep neural networks with
     Washington University。 In this video， we're going to see how to deploy your neural
     network orsyit learn model into a web application For the latest on my AI course
     and projects。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是Jeff Eaton。欢迎来到华盛顿大学的深度神经网络应用课程。在这段视频中，我们将看到如何将你的神经网络或学习模型部署到网页应用程序中。有关我AI课程和项目的最新信息。
 - en: Click subscribe in the bell next to it to be notified of every new video。 So
     now we're going to see how to actually make a web application in the previous
     part。 we saw how to create a flask web service that allowed us to expose our neural
     network as an API。 This is the first step to really creating a web application
     that allows you to interact with your model。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 点击旁边的铃铛订阅，以便收到每个新视频的通知。所以现在我们将看到如何实际制作一个网页应用程序。在之前的部分，我们看到如何创建一个flask网络服务，使我们能够将神经网络暴露为API。这是创建一个真正允许你与模型互动的网页应用程序的第一步。
 - en: you're going to basically create the web application and you're going to take
     data from the user form that request is an API。 sendend it to yourself to that
     same flask container that we just created and then present that back to the user。
     The end application is shown here as a screenshot essentially in the notebook
     for this class。 see。😊。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 你基本上要创建一个网页应用程序，并从用户表单获取数据，这个请求是一个API。将其发送到我们刚刚创建的同一个flask容器中，然后再呈现给用户。最终的应用程序在这里作为该课程笔记本的截图展示。见。😊。
 - en: '![](img/ef8332e81297ad8845f76f619b5acd27_1.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ef8332e81297ad8845f76f619b5acd27_1.png)'
 - en: '![](img/ef8332e81297ad8845f76f619b5acd27_2.png)'
+  id: totrans-5
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ef8332e81297ad8845f76f619b5acd27_2.png)'
 - en: Exactly how to run that and we'll try it with an image Now the way that we're
     going to do this is we're going to use something called react JS and react is
     essentially a frontend framework that allows you to represent graphical user interface
     elements There's been a ton of these over the years like JQury and Ar many iterations
     of Ar there's all kinds of them there's even some newer ones called view and others
     This is just the one that I am using that seems to be a pretty good one。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 确切地说，我们将如何运行它，并尝试使用一张图片。我们要做的就是使用一种叫做react JS的东西，react本质上是一个前端框架，允许你表示图形用户界面元素。多年来出现了很多这样的框架，比如JQury和Ar的多个迭代，还有一些更新的框架叫做view等。这是我使用的一个，看起来相当不错。
 - en: it's an attempt to get you somewhat away from the document object model that
     a lot of these were previously built on like JQury I won't get too deep into that
     that's more web development of which I am definitely not an expert but I do enough
@@ -44,28 +59,39 @@
     websites I do give you a link to a blog post I also borrowed some of the structure
     of this from a nonAI example and react but it was really just to upload an image
     and then took that and went。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是试图让你稍微脱离很多之前基于文档对象模型构建的内容，比如JQury。我不会深入讨论这个，因为那是更多的网页开发，而我绝对不是专家，但我做了足够的网页开发，让我的人工智能作品能够通过网站展示。我会给你一个博客文章的链接，我还借用了一个非AI示例和react的部分结构，但实际上只是为了上传一张图片，然后进行处理。
 - en: '![](img/ef8332e81297ad8845f76f619b5acd27_4.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ef8332e81297ad8845f76f619b5acd27_4.png)'
 - en: '![](img/ef8332e81297ad8845f76f619b5acd27_5.png)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ef8332e81297ad8845f76f619b5acd27_5.png)'
 - en: Further to do image recognition。 Now， you'll notice there is not much here on
     the notebook for this web application。 That's because you're not going to run
     it from the notebook。 So you won't be able to run this from coabab or from your
     notebook。 we're gonna go to the terminal in a moment and actually run it。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 进一步进行图像识别。现在，你会注意到这个网页应用程序在笔记本中的内容并不多。这是因为你不会从笔记本运行它。所以你不能从coabab或你的笔记本运行，我们马上会去终端实际运行它。
 - en: but let me show you the main files that are contained here。 First of all。 we'll
     look at the web server itself。 This is a python file。 This is running actually
     in flask。 So this is what's going to actually drive it。 This is an exact copy
     with additions from the flask API that we created to first wrap that image classifying
     neural network mobilenet。 So essentially what we're going to do here。 This is
     all just like before。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 但让我向你展示这里包含的主要文件。首先，我们将查看网络服务器本身。这是一个Python文件，实际上是在flask中运行的。这就是实际驱动它的部分。这是我们为了最初包装图像分类神经网络mobilenet而创建的flask
+    API的确切副本，增加了一些功能。因此，我们在这里做的基本上与之前一样。
 - en: but I'll review it in case you're jumping in at this point。 We are going to
     now this is new。 We're going to expose the Www directory。 So this becomes very
     web server e so。We're going to put our CSS files and any graphic files or just
@@ -73,39 +99,52 @@
     static because the only dynamic part is truly the API so react is basically building
     up that JSON request that we saw and sending it over so that we can get this image
     classified。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我会进行回顾，以防你在这个时候跳入。我们现在将要做的是新的。我们将暴露 Www 目录。因此，这变得非常像 Web 服务器。我们将放置我们的 CSS 文件和任何图形文件，或者只是其他我们需要的静态文件，如
+    HTML。这个 Web 应用程序中的一切都是静态的，因为唯一动态的部分确实是 API，所以 React 基本上构建了我们看到的 JSON 请求并发送过来，以便我们可以对这个图像进行分类。
 - en: everything else is the same you could use the same exact API that you had from
     the earlier one and have it serve both external applications trying to access
     it and actually the web application that we're creating here So this is a real
     power of this type of development it's called API first So basically you design
     your APIs and then you do a static sort of level on top of it where we are essentially
     presenting the data and getting the results back in the past and。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 其他一切都是一样的，你可以使用早期版本中的确切相同的 API，并让它同时为试图访问的外部应用程序提供服务，以及我们在这里创建的 Web 应用程序。因此，这种开发的真正优势在于它被称为
+    API 优先。因此，基本上你设计你的 API，然后在其上做一个静态层，我们本质上是在呈现数据并获取结果。
 - en: development you would typically post something that directly from a form that
     request would go to a CG or something that would actually handle it and rerender
     the entire page for you the newer style for this very much is you have the frontend
     code the frontend ja collect that and send it to the same sort of an API that
     an external application would make use of and we're mapping in things like other
     things so that we can get the the default。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 在开发中，通常你会从表单直接发布某个请求，这个请求会发送到一个 CG 或其他能够处理它并为你重新渲染整个页面的东西。新的风格很大程度上是，你有前端代码，前端
+    JavaScript 收集这些数据并发送到外部应用程序所使用的同样类型的 API，我们在映射其他内容，以便我们能够获取默认值。
 - en: the index HTML and other things we set up the post。 This is we're going to actually
     query the neural network we display errors like if you don't send an image that's
     going to be an error and we get the image out of the packet that is being sent
     to us and we essentially try to classify it so we're going to we get the file
     name we make sure that it's a secure file name that you're uploading the type
     of file that we expect and then we're going to essentially。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 在 index HTML 和我们设置的其他内容中。我们将实际查询神经网络，我们会显示错误信息，比如如果你没有发送图像，那将会是一个错误，我们从发送给我们的数据包中提取图像，并尝试对其进行分类。我们获取文件名，确保你上传的是一个安全的文件名，以及我们预期的文件类型，然后我们将基本上。
 - en: Open the image Now it's important we're not actually saving the image anywhere。
     we're actually streaming it right from the HttP to the neural network。 so we're
     not like creating a temp file or anything。 We are going to expand the dimensions
     so that we so it's in the shape that the convolution neural network is expecting
     and then this code here is very useful。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在打开图像。重要的是我们实际上并没有在任何地方保存图像。我们实际上是直接从 HTTP 流式传输到神经网络。因此，我们并不是创建临时文件或任何东西。我们将扩展维度，使其处于卷积神经网络所期望的形状，然后这里的代码非常有用。
 - en: I did not put this in the previous version I'll probably copy it at some point
     so you might see it in the previous version this is essentially just truncating
     the alpha channel so you should have a red green and blue if you're dealing with
@@ -114,55 +153,75 @@
     sure that there is no actual transparency or alpha channel being uploaded to you
     as well we ask for the actual prediction and we decode the predictions the decoded
     predictions let us know what it actually is like a car or a boat and。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 我没有把这个放在之前的版本中，我可能会在某个时刻复制它，所以你可能会在之前的版本中看到。这基本上只是截断 alpha 通道，所以如果你处理的是一个有透明度的图像，并且它有一个
+    alpha 通道，这可能会让卷积神经网络感到困惑，因为这是第四个通道，因此这只是确保没有实际的透明度或 alpha 通道被上传给你。同时我们请求实际的预测并解码这些预测，解码后的预测让我们知道它实际上是什么，比如一辆车或一艘船。
 - en: What percentage we're going to get the top5。 And we send those across。 Now。
     the front end might only display the top one or the top two or something like
     that。 but we're sending all five there for the front end to decide what it's doing。
     And we form this basically into a Json packet and send it across same Json packet
     that we dealt with in the previous parts。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将获得前五名的百分比。然后我们将这些信息发送出去。前端可能只会显示第一名或第二名之类的内容，但我们将所有五个发送过去，让前端决定该做什么。我们将这些基本上形成一个
+    JSON 包，并发送过去，与之前部分处理的 JSON 包相同。
 - en: So this all is exactly the same that we saw。 This is how you build an API around
     your neural network。 Now， let's see how we actually make this interface into。The
     web application。 So you've got the style and the script Js。 I'm not going to explain
     the style and the index dot HTML all that much。 These are really pretty minimalistic。Since
     Re is building everything completely up。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这一切与我们看到的完全一样。这就是如何围绕神经网络构建 API。现在，让我们看看如何实际将其接口化为 Web 应用程序。所以你有样式和脚本 Js。我不会详细解释样式和
+    index.html，这些实际上非常简约。因为 Re 完全构建了一切。
 - en: All that this really has is the title for it in the HTML。 Everything else will
     be built up dynamically。 So let's just look at the script file because this is
     what is going to actually handle building up the request sending it to the API
     and dealing with the GI elements This is all client side jascript So it's running
     in the user's browser just to show you some of what's going on here。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 这实际上只有 HTML 中的标题。其他一切将动态构建。所以让我们看看脚本文件，因为这将实际处理构建请求、将其发送到 API 并处理 GUI 元素。这都是客户端
+    JavaScript，因此在用户的浏览器中运行，以向你展示这里的一些情况。
 - en: there's really three parts to this。 The constructor is this part it is basically
     keeping what state needs to be stored in the react Js program Now react Js deals
     with state so that it no so that it can redraw the entire page anytime needed
     and the state determines essentially what state it's in Now we need to know what
     file was uploaded and the image and then whatever message we're generating on
     that image because we want to put a message below the image handle。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 这实际上分为三个部分。构造函数是这一部分，它基本上保持了在 React Js 程序中需要存储的状态。现在 React Js 处理状态，以便在需要时能够重新绘制整个页面，而状态本质上决定了它处于什么状态。现在我们需要知道上传了哪个文件和图像，以及我们在该图像上生成的任何消息，因为我们希望在图像下方放置一条消息。
 - en: This happens when you click the button to actually upload the image。 We essentially
     let whatever default was going to happen on that event and now we actually get
     the data from the image we're going to send the image right from the user upload
     directly to the API which will then send it directly to the neural network。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 当你点击按钮实际上传图像时，会发生这种情况。我们基本上让该事件上的默认行为发生，现在我们实际上获取要发送的图像数据，我们将直接将用户上传的图像发送到 API，然后再直接发送到神经网络。
 - en: Everything is stream so that we have no intermediate temp files needing to be
     created or anything messy like that。 We're going to build up the HttP request
     that we're going to actually send it over and we are going to essentially just
     post the image right across。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 一切都是流式的，因此我们不需要创建中间临时文件或任何麻烦的东西。我们将构建要发送的 HTTP 请求，并且基本上只将图像直接发送过去。
 - en: This is very simple。 I mean， we are just literally taking the image and dumping
     it onto the API endpoint。 It's important that we have this image here because
     that's the Hml form element that the image is actually being embedded into if
     you call this image。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 这非常简单。我的意思是，我们只是字面上将图像放到 API 端点上。我们在这里有这个图像是很重要的，因为这是图像实际嵌入的 HTML 表单元素，如果你调用这个图像。
 - en: Then we wouldn't find it so you could upload multiple images at the same time
     if you needed to send several those across once we send this。 we essentially assign
     a callback function。 JavaScriptscript is very reactive so that means you don't
@@ -175,8 +234,11 @@
     log it so that we know that we see what we got we're going to get the probabilities
     I do round the pro so that we don't have all these annoying trailing decimal places
     and then we essentially build the message that we have now the。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们不会找到它，因此你可以同时上传多个图像，如果需要发送几个过来。一旦我们发送这个，我们基本上就分配了一个回调函数。JavaScript 是非常响应式的，这意味着你不会阻塞，实际上不能阻塞并等待某个操作完成。因此，我们会将这个函数附加上去，它会等待该请求完成，然后我们立即退出。当我们从加载中获取结果时，我们检查状态是否正确，如果状态不好，那么我们可以拒绝这个
+    Promise，换句话说，拒绝回调，并表示我们没有获得良好的结果，我们将返回 HTTP 状态文本并记录它，这样我们就知道我们得到了什么，我们将获得概率，我会对概率进行四舍五入，以避免有恼人的尾随小数位，然后我们基本上构建出现在拥有的消息。
 - en: One thing in react is we are not just modifying some onscreen DOm element。 We're
     literally changing the state so that the next time that we render which is down
     here that is going to render all of these elements Now normally you would probably
@@ -189,8 +251,12 @@
     when the user does actually upload done by this handle image change that's where
     we actually give the pre preview of the image that the user is selecting and once
     you。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 在 React 中，有一点是我们并不是仅仅在修改某个屏幕上的 DOM 元素。我们实际上是在改变状态，以便下次渲染时，这些元素会被重新渲染。通常你可能会使用
+    JSX，这样就会有非标准的 JavaScript，因为这里没有关于 React 的教程，所以我省略了这部分，基本上只用了标准的 JavaScript 代码，但如果使用
+    JSX，所有内容看起来会非常像 HTML。基本上，我在做的就是重新渲染这些元素，而无论消息如何返回，这里是关键点：我们将重新渲染用户上传的图像下方的消息，顺便提一下，当用户实际上传图像时，是通过这个处理图像变化的函数完成的，那是我们实际给出用户选择图像的预览。
 - en: You have this all you can send the request and get it back from your API that
     contains your neural network The key to all of this is right here where it is
     actually invoking the HB request and getting your results back you're dealing
@@ -204,16 +270,23 @@
     your firewall to route it through now you can see that we are running on HtDP
     and port 5000 so let's go ahead and run this execute it from the web and there
     is our。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 你已经拥有这一切，你可以发送请求并从包含你的神经网络的 API 中获取结果。所有这一切的关键就在于实际调用 HTTP 请求并获取结果。你基本上在处理两种编程语言：前端使用
+    JavaScript，后端使用 Python。现在我们来运行一下，以便看看它的样子。你看到的就是我之前的笔记本，我们实际上不需要这个笔记本，所以这个会在我身后失败。我会进入我提供的
+    Python 目录，你可以看到图像 web 服务器 1。现在我们去运行它，运行需要一点时间来启动，确保你的防火墙允许它通过。现在你可以看到我们正在 HTTP
+    上运行，端口是 5000，所以我们继续执行这个，从网页上访问，这是我们的。
 - en: Web applications， so all these GUI elements that was from those react elements
     that I went through。 I'm not going to give you a react Js tutorial on how you
     literally build something like this but it's a very minimal amount of code that
     I had in there so you can definitely read up on some of the links that I gave
     you if you want to learn more about web development There's already a ton of channels
     and other things out there。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 网页应用程序，所有这些 GUI 元素都是来自我之前讲解的那些 React 元素。我不会给你一个 React Js 教程，教你如何实际构建这样的东西，但里面的代码非常简单，所以如果你想了解更多关于网页开发的内容，可以阅读我提供的一些链接。外面已经有很多频道和其他资源了。
 - en: I definitely will not be delving too deep into web development and we'll go
     to the photos from my class website different。 we'll do me working with a laptop
     now we're not doing multiple images like Yolo so if there's multiple images in
@@ -221,12 +294,19 @@
     me a dog on a laptop this would be great for Yolo but we'll recognize the image
     and yeah it likes the laptop better than me and the dog can't blame it but laptop
     45%。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 我绝对不会深入探讨网页开发，我们将会去看我班级网站上的照片。现在我将使用一台笔记本电脑，我们不会像 Yolo 那样处理多个图像，因此这里的多个图像中，至少会有一个占主导地位。这里是我和一只狗在笔记本电脑前，这对
+    Yolo 来说是很棒的，但它更喜欢这台笔记本电脑，而不是我，狗也没法责怪它，但笔记本电脑占45%。
 - en: '![](img/ef8332e81297ad8845f76f619b5acd27_7.png)'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ef8332e81297ad8845f76f619b5acd27_7.png)'
 - en: This content changes often， so subscribe to the channel to stay up to date on
     this course and other topics in artificial intelligence。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个内容经常更改，所以请订阅频道，以便及时了解该课程和其他人工智能主题的更新。
