@@ -1,0 +1,206 @@
+# 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P3：3）VLOOKUP 基础 - ShowMeAI - BV1sQ4y1B71N
+
+In this advanced Excel tutorial， I'm going to show you the basics of using the Vlookup function and Vlookup can really be quite a powerful tool for you in Excel。
+
+ It can do several different things that can be useful。 but in this tutorial， like I said。
+
+ we're going to look just at the basics of how to use it。 And in this tutorial。
+
+ I'm using one of the spreadsheets that I made in past tutorials。
+
+ if you haven't seen my Excel basics tutorial， my intermediate Excel tutorial。
+
+ And also the series of advanced Excel tutorials， you really should go back and watch those。
+
+ But in those tutorials， I created this spreadsheet that's a movie inventory of movies that I have。
+
+ and it's quite a short list。 But for the sake of this tutorial。
+
+ let's imagine that there are 1000 or 2000 or 5000 records here in this spreadsheet。
+
+ instead of just 20 or 30 movies， let's pretend that there's 2000 movies。
+
+ and I'm also going to have you pretend that instead of just six or 7 columns of data。
+
+ imagine that there's 20 different columns。 You know one of the columns lists the duration。
+
+
+
+![](img/4b01434b9f1b483c8ebf701d667e6295_1.png)
+
+Of the movies。 another one lists the star of the movie。
+
+ Imagine just a pretty big spreadsheet with lots of columns and lots of records， lots of rows。
+
+ One of the challenges that we have when you get a huge spreadsheet like that is how do I pull out the data that I want to see and that I want to think about from a spreadsheet。
+
+ and I'm going to show you how to use Vlookup to do that。
+
+ So one of the best ways to think about Vlookup is to think of it as being similar to looking in the index of a book to find out what is in the book or looking through a catalog to look up something that you might want to buy and you can find the part number and you can find the cost and things like that。
+
+ Another comparison would be that it's similar to looking up someone in a phone book you look up their name and you find their address or their phone number So in this spreadsheet again。
+
+ imagining that it's much bigger than it actually is let's say that because it's so big。
+
+ I find it hard to know。What the rating is of a particular movie and I would like to be able to type in the name of a movie and find out exactly what the rating is for that movie to do that I'm going to need two cells and so I'm going to use these two cells here and I'm going to go to this cell and I'll type in equals V lookup and notice as soon as I do that I get a pop up that is going hopefully help me to do this formula correctly now I'll put in the left parenthesis and it gives me some more details it says that I need to now put in a lookup value。
+
+ a table array， a column index number and a range lookup and each of those notice is separated from the rest with a comma so lookup value comma table array comma column index number comma range lookup Now the official name for each of these four different sections of this formula is argument each of these is an argument so this is argument number1。
+
+23 and4 so let's look at argument1 first。For the lookup value So basically。
+
+ what is it that I know What is it that I'm gonna look up information about。
+
+ but it's something that I already know。 So again， think of going to a library。
+
+ you know the name of the book that you want Let's say it's the book a wrinkle in time which is an awesome book written for young adults。
+
+ but I think it's great for anyone。 and I hear Disney is soon to make it into a movie。 But anyway。
+
+ let's say at the library you would like to look up where to find that book。
+
+ what you know is the name of the book in that case。 it's a wrinkle in time。
+
+ So that's the lookup value。 Now in this case， I would like the lookup value to be changeable。
+
+ I would like to be able to type in let's say the Princess Bride and have it tell me Pg or the Martian and have it tell me Pg13 And so because I want it to be changeable。
+
+ I'm just going click on sell H8 I'll click there。 So basically whatever I type in sell H8 that will become the lookup value。
+
+ All I'll put。In there next， it wants the table array And if you've watched my Excel basics tutorial。
+
+ you know the term range and that's basically what this table array is。
+
+ It's a range of your spreadsheet that you want Excel to look at and to be careful。
+
+ I really want to include all of the columns that I have here Now you may not want to when you do this yourself。
+
+ but I want to go in and choose a3 through F22 so that'll be all of the actual data from my spreadsheet it's not going to include some of this other stuff that I put in later So to put that range in to the formula。
+
+ All I have to do is click on it and drag to select that range that I want it to look through Now that's really easy when it's such a small spreadsheet but imagine a giant spreadsheet like I asked you to pretend that this is in that case。
+
+ it wouldn't be practical to click and drag so that's okay you could just go in and type a3 through and that's indicated by a colon F。
+
+22， Okay， great。 So I've done the first argument and the second argument。 Now on the third argument。
+
+ The third argument is it wants to know a column index number。 So what this is asking for。
+
+ It's asking for you to pick one of the columns。 Now it's not looking for column A， column B。
+
+ column C。 No， in this case， it's not。 What it's looking for。
+
+ is whatever the table array is that you selected， whatever that first column in the array is。
+
+ that's number one， then number2， number 3， number 4， number 5， number 6。 Now。
+
+ what if I hadn't included column A in the table array that I selected。
+
+ What if I had started here in B3， instead of a 3。 Well， then this would be column 1。
+
+ This would be column 2。 So it doesn't have to correlate to the A B，C， D E F。
+
+ it can just be whatever it is that you selected for the table array or you clicked and drag to highlight the far left column is column 1。
+
+ then column 2， then column 3， then column 4， then column 5。 So now I'm going to do that。
+
+argument I'll put in a comma to separate the second argument and the third argument And how do I know which column to select Well。
+
+ the column I select is the column that has the information that I want to draw out。
+
+ So if you remember my example I want to be able to type in the name of a movie and find out what its rating is So that means I want column C but remember I've got to put it as a number。
+
+ So I go to the array， the table array that I highlighted。 and I say okay this is the first column。
+
+ this is the second。 So I want the third column。 So I type in three comm next it wants a range lookup。
+
+ and this is kind of tricky and a little confusing for me as well as for many people。
+
+ Basically what this is asking is is there a requirement that H8 be an exact match to what's in the spreadsheet and this is mostly useful I think with numbers So for example。
+
+ let's say instead of typing in names of movies what if we type in the date that the movie was purchased if I were to type in。
+
+it would produce a PG。 But what if I typed in 2006。 And what if there is no 2006 entry here Well。
+
+ if I in this fourth argument in the range lookup， if I have it set to be true。
+
+ then it will look for an approximate match。 It'll find basically whatever is the closest。
+
+ If I type in the word fault。 then it's going require an exact match。
+
+ if you don't type in the exact match， it's not going to produce the result that you're looking for in this case。
+
+ I'm going to leave it as false。 So I'm going require the exact match。
+
+ and then you're supposed to put in the right parenthesis， but you don't really have to。
+
+ So I'll just type enter。 and look， it's giving me a message saying the value is not available。
+
+ So this is an error。 Now the reason it's showing me an error code is because there is nothing typed in this cell here。
+
+ So let's test it out。 I'm going type in I am legend。 Let's see what happens。 Look it says Pg13。
+
+ So that seemed to work pretty well。 let's try it again。 I'll type in Grohog day。 So I type in。
+
+Hog day hit enter and it's PG Now， once you have done this。 If you've set up a V lookup like this。
+
+ if you regret how you've laid it out on the screen like I do a little bit。
+
+ let's see what we can do to make it so that you type the word here and it tells you on the right whether it's Pg I think that would look a little better。
+
+ So to do that I'm just going double click here and I can see up here in the formula bar that's the formula I'll just copy that and then I'll paste it here and notice that it gives me an error again so I need to double click on it and look at my formula and see where it messed up because I copied it from one column to the next it shifted everything to the right a little and also down because I move down one so I can repair this formula just by clicking on the first argument clicking and dragging to highlight it you can also do this up here in the formula bar and then I'll click on H8 next we go on to the second argument which is the table array the table array was changed quite a bit I'm just going click and drag but remember with a larger spreadsheet you would need to just type in the。
+
+Dell namess that would be much faster。 And the column index number is still valid 3。
+
+ and the range look up faults。 So now I can hit return or enter on the keyboard。
+
+ and I can actually delete the one that's above。 So now I have a space to type in the movie name and it tells me the rating off to the right。
+
+ let's do another example just to test it out。 I'll type in the giver。 and it changes to Pg 13。
+
+ So I hope that you found this tutorial to be helpful。
+
+ This is just the beginning of what the lookup can do for you。 But to be honest。
+
+ this is how I use it most often just as a way to create kind of like a form that I just fill out。
+
+ I type in the name of something or the part number of something。 And then it tells me other data。
+
+ So like I said at the beginning， it's kind of like looking up a book at the library and finding information about the book or looking up somebody's name in the phone book and getting their address or getting their phone number or the city that they live in。
+
+ Now if I wanted to， of course，I highlight these， and I could change them to be bold and centered and things like that and kind of create a nice little space here that it's a tool basically that I can click and type in to get the information that I'm looking for。
+
+ Now， there are a couple of rules you need to know if you're going to use Vlookup。
+
+Probably the first rule is that you need to have your data in vertical columns。
+
+ So I have column titles here and the lists of items go vertically right information about those items in the list go horizontally。
+
+ but the actual different records go vertically in columns It has to be that way。
+
+ And the reason why is because V lookup the V and Vlookup means vertical。
+
+ So if you have your spreadsheet set up the other way， it wouldn't work。
+
+ There is such a thing as H lookup for horizontal， but anyway that's rule number one that you need to have your data arranged vertically in the spreadsheet in columns。
+
+ The second rule is that the information that you know that you're going to be typing in the box basically has to be to the left of the data that you want to find。
+
+ So the data that I know in this case is the names of the movies right that's what I'm going to be able to remember and produce and type in this box。
+
+ So that in my spreadsheet that needs to be to the left。
+
+
+
+![](img/4b01434b9f1b483c8ebf701d667e6295_3.png)
+
+Of the information I want to look up and find in this case， the ratings。
+
+ If your spreadsheet is not set up that way， you need to move the column that has the information that you're going to be able to type in the box。
+
+ You want to move that to the left。 because that is a requirement。
+
+ So if you keep those two rules in mind， you should be able to start using V lookup successfully。
+
+ So I hope that you found this video to be helpful。 if you did， I'd appreciate it。
+
+ if you'd please click the like button below this video。
+
