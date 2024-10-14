@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P18：18）SUMIFS 函数 - ShowMeAI - BV1sQ4y1B71N
+# Excel高级教程（持续更新中） - P18：18）SUMIFS 函数 - ShowMeAI - BV1sQ4y1B71N
 
 ![](img/9bb51af1ad9d2198ed4aa56c15791de5_0.png)
 

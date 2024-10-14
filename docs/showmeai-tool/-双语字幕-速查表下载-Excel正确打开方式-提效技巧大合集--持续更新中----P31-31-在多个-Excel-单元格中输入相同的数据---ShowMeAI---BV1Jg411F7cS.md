@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P31：31）在多个 Excel 单元格中输入相同的数据 - ShowMeAI - BV1Jg411F7cS
+# Excel正确打开方式！提效技巧大合集！(持续更新中) - P31：31）在多个 Excel 单元格中输入相同的数据 - ShowMeAI - BV1Jg411F7cS
 
 ![](img/da7145c0466b7c018cf23109edd4d6c3_0.png)
 

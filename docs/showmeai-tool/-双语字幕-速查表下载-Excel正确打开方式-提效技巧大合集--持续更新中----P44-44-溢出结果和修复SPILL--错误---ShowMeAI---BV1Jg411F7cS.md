@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel 正确打开方式！提效技巧大合集！(持续更新中) - P44：44）溢出结果和修复 SPILL! 错误 - ShowMeAI - BV1Jg411F7cS
+# Excel 正确打开方式！提效技巧大合集！(持续更新中) - P44：44）溢出结果和修复 SPILL! 错误 - ShowMeAI - BV1Jg411F7cS
 
 ![](img/3d53142b9c93da9b51542a11434fa926_0.png)
 

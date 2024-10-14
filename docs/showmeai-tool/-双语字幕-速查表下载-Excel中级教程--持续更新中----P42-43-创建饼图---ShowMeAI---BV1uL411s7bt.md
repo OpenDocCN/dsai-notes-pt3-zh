@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P42：43）创建饼图 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P42：43）创建饼图 - ShowMeAI - BV1uL411s7bt
 
 ![](img/5bdc3cc25339559bcf311ee5393c13b6_0.png)
 

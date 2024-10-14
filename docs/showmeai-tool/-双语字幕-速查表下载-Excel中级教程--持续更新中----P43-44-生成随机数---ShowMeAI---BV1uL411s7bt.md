@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P43：44）生成随机数 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P43：44）生成随机数 - ShowMeAI - BV1uL411s7bt
 
 ![](img/7373d6018b43ea784652d9a0d3f0a1c4_0.png)
 

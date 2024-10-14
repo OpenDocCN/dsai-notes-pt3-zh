@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P15：15）使用修剪功能 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P15：15）使用修剪功能 - ShowMeAI - BV1uL411s7bt
 
 ![](img/f1c0d687520ce7e4db352b23c24fc96e_0.png)
 

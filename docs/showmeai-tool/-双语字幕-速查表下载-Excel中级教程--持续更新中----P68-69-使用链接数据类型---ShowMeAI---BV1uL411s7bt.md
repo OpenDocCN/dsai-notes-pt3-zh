@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P68：69）使用链接数据类型 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P68：69）使用链接数据类型 - ShowMeAI - BV1uL411s7bt
 
 ![](img/4d97d79ffce11a7a38a994122ad517dd_0.png)
 

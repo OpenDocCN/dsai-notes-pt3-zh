@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P16：16）新的 IFS 函数 - ShowMeAI - BV1sQ4y1B71N
+# Excel高级教程（持续更新中） - P16：16）新的 IFS 函数 - ShowMeAI - BV1sQ4y1B71N
 
 ![](img/f7994a9b842409afa7c092c9437a0179_0.png)
 

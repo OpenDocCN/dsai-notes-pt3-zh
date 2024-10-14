@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P17：17）Excel 宏 - 创建 Excel 快捷方式 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P17：17）Excel 宏 - 创建 Excel 快捷方式 - ShowMeAI - BV1uL411s7bt
 
 ![](img/2bdad9b27f9903642b3c2b937f9c8ab5_0.png)
 

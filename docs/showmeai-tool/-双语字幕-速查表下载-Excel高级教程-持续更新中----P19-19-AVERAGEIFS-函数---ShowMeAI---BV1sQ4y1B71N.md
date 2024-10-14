@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P19：19）AVERAGEIFS 函数 - ShowMeAI - BV1sQ4y1B71N
+# Excel高级教程（持续更新中） - P19：19）AVERAGEIFS 函数 - ShowMeAI - BV1sQ4y1B71N
 
 ![](img/5574c9b04060e35eda31b961963153e1_0.png)
 

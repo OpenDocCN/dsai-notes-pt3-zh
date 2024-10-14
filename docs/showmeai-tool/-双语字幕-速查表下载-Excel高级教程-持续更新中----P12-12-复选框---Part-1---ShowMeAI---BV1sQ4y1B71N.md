@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P12：12）复选框 - Part 1 - ShowMeAI - BV1sQ4y1B71N
+# Excel高级教程（持续更新中） - P12：12）复选框 - Part 1 - ShowMeAI - BV1sQ4y1B71N
 
 ![](img/490c3ee68650a01d4e089ac56f8d78b1_0.png)
 

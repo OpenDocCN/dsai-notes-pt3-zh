@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P45：46）从 Excel 到 Microsoft Word 的邮件合并 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P45：46）从 Excel 到 Microsoft Word 的邮件合并 - ShowMeAI - BV1uL411s7bt
 
 ![](img/9a4671cff4a74eb9e893e1edbd30bc84_0.png)
 

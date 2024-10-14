@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P4：4）Excel for Mac 初学者指南 - ShowMeAI - BV1Jg411F7cS
+# Excel正确打开方式！提效技巧大合集！(持续更新中) - P4：4）Excel for Mac 初学者指南 - ShowMeAI - BV1Jg411F7cS
 
 这是针对Mac的Microsoft Excel初学者指南。在这个教程中，我的目标是涵盖你需要了解的一切，以便有效地在Macintosh电脑上使用Microsoft Excel。所以让我们直接开始吧。我将到我的文档中找到Excel，然后点击它打开。如果你在Dock上没有它，没关系。
 

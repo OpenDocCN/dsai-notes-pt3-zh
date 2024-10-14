@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P1：1）Excel基础教程 - ShowMeAI - BV1Jg411F7cS
+# Excel正确打开方式！提效技巧大合集！(持续更新中) - P1：1）Excel基础教程 - ShowMeAI - BV1Jg411F7cS
 
 欢迎观看这个Excel基础视频教程。在本教程中，我将向您展示开始使用Microsoft Excel所需了解的大部分基础知识。我要使用的Excel版本是Windows上的Excel 2016。也就是说，如果您使用的是不同版本的Excel。
 

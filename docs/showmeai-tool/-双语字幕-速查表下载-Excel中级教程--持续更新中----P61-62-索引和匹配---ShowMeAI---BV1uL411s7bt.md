@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P61：62）索引和匹配 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P61：62）索引和匹配 - ShowMeAI - BV1uL411s7bt
 
 ![](img/639edd188732e38b50bb2a08cd5efa02_0.png)
 

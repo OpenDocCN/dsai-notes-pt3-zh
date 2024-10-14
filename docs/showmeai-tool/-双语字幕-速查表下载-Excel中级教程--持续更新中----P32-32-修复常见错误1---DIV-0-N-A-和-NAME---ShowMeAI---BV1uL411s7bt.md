@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P32：32）修复常见错误1 - DIV／0、N／A 和 NAME - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P32：32）修复常见错误1 - DIV／0、N／A 和 NAME - ShowMeAI - BV1uL411s7bt
 
 ![](img/a4c5d4348b8f0db6a99a8f0818bc7cea_0.png)
 

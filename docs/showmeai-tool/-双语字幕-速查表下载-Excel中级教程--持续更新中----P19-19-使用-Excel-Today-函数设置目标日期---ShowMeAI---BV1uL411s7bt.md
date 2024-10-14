@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P19：19）使用 Excel Today 函数设置目标日期 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P19：19）使用 Excel Today 函数设置目标日期 - ShowMeAI - BV1uL411s7bt
 
 ![](img/e92d5aca9a44d6cfbabd7746a6ec019f_0.png)
 

@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P30：30）快速输入当前日期和时间 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P30：30）快速输入当前日期和时间 - ShowMeAI - BV1uL411s7bt
 
 ![](img/08c72fb238e212bdb2f175efd776864e_0.png)
 

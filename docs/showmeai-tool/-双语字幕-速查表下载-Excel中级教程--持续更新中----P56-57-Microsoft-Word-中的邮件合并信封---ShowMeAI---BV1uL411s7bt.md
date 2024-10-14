@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P56：57）Microsoft Word 中的邮件合并信封 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P56：57）Microsoft Word 中的邮件合并信封 - ShowMeAI - BV1uL411s7bt
 
 ![](img/f5128f46ce3b560e53a2262f91f989ee_0.png)
 

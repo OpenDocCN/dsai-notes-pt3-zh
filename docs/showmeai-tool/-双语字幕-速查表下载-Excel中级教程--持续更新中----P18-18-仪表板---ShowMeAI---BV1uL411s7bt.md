@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P18：18）仪表板 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P18：18）仪表板 - ShowMeAI - BV1uL411s7bt
 
 ![](img/249c0853eea85c571e91a4bb46f7eea8_0.png)
 

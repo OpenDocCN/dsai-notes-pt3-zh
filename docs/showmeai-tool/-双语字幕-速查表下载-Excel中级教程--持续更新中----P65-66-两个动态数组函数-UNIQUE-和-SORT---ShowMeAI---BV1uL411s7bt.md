@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P65：66）两个动态数组函数：UNIQUE 和 SORT - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P65：66）两个动态数组函数：UNIQUE 和 SORT - ShowMeAI - BV1uL411s7bt
 
 ![](img/d555e8fc2ef3f75c24ce7f925c432a31_0.png)
 

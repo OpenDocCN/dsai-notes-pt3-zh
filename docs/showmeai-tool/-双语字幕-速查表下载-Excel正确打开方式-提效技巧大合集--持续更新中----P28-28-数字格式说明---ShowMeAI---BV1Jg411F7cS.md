@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P28：28）数字格式说明 - ShowMeAI - BV1Jg411F7cS
+# Excel正确打开方式！提效技巧大合集！(持续更新中) - P28：28）数字格式说明 - ShowMeAI - BV1Jg411F7cS
 
 ![](img/016aab5dfb86cf7c4f484606195ab90f_0.png)
 

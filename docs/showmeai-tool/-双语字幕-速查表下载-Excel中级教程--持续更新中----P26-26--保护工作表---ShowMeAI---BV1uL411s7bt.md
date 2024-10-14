@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P26：26）※保护工作表 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P26：26）※保护工作表 - ShowMeAI - BV1uL411s7bt
 
 ![](img/f84d0fc87b671f3254746f27901d9679_0.png)
 

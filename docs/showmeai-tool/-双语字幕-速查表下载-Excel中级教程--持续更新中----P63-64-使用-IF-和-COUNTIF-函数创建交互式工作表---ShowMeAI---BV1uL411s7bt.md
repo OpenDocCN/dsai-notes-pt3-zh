@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P63：64）使用 IF 和 COUNTIF 函数创建交互式工作表 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P63：64）使用 IF 和 COUNTIF 函数创建交互式工作表 - ShowMeAI - BV1uL411s7bt
 
 ![](img/785ee547bb6a5b647b0eb1a30e529c9a_0.png)
 

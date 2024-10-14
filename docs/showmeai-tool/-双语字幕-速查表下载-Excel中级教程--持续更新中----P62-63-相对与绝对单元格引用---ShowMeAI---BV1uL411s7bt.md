@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P62：63）相对与绝对单元格引用 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P62：63）相对与绝对单元格引用 - ShowMeAI - BV1uL411s7bt
 
 ![](img/9eb64b34fee47627f9376406025aec96_0.png)
 

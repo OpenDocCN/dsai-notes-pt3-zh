@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P9：9）Excel for Mac 中级技能 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P9：9）Excel for Mac 中级技能 - ShowMeAI - BV1uL411s7bt
 
 在这个视频中，你将学习一些中级 Excel for Mac 技能、技巧和窍门。如果你还没有观看我之前的视频，你可能想先看那个。几个月前，我做了一个名为《Excel for Mac 初学者指南》的视频。你可能想先观看那个，然后再观看这个第二个。但在前一个视频中。
 

@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P33：33）命名单元格的好处 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P33：33）命名单元格的好处 - ShowMeAI - BV1uL411s7bt
 
 ![](img/9dd1003dd91567638f0fd301bbe58d5e_0.png)
 

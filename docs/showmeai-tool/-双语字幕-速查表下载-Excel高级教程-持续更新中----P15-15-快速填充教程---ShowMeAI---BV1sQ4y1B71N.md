@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P15：15）快速填充教程 - ShowMeAI - BV1sQ4y1B71N
+# Excel高级教程（持续更新中） - P15：15）快速填充教程 - ShowMeAI - BV1sQ4y1B71N
 
 ![](img/52065da7554d0cf7a1eff923218061cf_0.png)
 

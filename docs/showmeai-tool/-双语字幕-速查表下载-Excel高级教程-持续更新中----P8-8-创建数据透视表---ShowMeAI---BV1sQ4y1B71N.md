@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P8：8）创建数据透视表 - ShowMeAI - BV1sQ4y1B71N
+# Excel高级教程（持续更新中） - P8：8）创建数据透视表 - ShowMeAI - BV1sQ4y1B71N
 
 ![](img/0f792ae8690d5c7e0534af8ca3c54600_0.png)
 

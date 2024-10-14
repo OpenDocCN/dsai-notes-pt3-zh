@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P5：5）打印选项巧教程 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P5：5）打印选项巧教程 - ShowMeAI - BV1uL411s7bt
 
 在这个高级Excel教程中，我将向你展示Excel中的一些打印选项。老实说，我希望你不需要经常在Excel中打印。在当今世界，你应该能够以数字方式共享Excel文件，尤其是使用Dropbox和Microsoft Office在线等工具。希望你不需要频繁打印。
 

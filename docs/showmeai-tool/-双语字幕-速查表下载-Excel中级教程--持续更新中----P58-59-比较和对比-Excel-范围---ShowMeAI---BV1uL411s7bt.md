@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P58：59）比较和对比 Excel 范围 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P58：59）比较和对比 Excel 范围 - ShowMeAI - BV1uL411s7bt
 
 ![](img/32b7e432c5e95387eb37a48f69c64570_0.png)
 

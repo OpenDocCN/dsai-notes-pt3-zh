@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P25：25）创建自己的 Excel 模板 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P25：25）创建自己的 Excel 模板 - ShowMeAI - BV1uL411s7bt
 
 在这个简短的Excel教程中，我想向你展示如何创建自己的Excel模板。为了让你立即看到我在说什么，让我给你展示一下。我现在在Excel的资讯部分。![](img/d3f5b5c9fc5ee2f04a826197a1bf2331_1.png)
 

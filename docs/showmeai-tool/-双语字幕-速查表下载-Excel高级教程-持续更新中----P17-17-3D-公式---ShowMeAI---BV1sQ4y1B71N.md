@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P17：17）3D 公式 - ShowMeAI - BV1sQ4y1B71N
+# Excel高级教程（持续更新中） - P17：17）3D 公式 - ShowMeAI - BV1sQ4y1B71N
 
 ![](img/86c318e0b155ef4664689bfe7f5ec6ee_0.png)
 

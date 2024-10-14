@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel 中级教程！(持续更新中) - P52：53）LARGE 函数和 SMALL 函数 - ShowMeAI - BV1uL411s7bt
+# Excel 中级教程！(持续更新中) - P52：53）LARGE 函数和 SMALL 函数 - ShowMeAI - BV1uL411s7bt
 
 ![](img/8910203555fedeaeb439f2b2dff4b9cb_0.png)
 

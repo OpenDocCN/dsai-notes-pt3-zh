@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P24：24）在 Excel 电子表格中导航 - ShowMeAI - BV1Jg411F7cS
+# Excel正确打开方式！提效技巧大合集！(持续更新中) - P24：24）在 Excel 电子表格中导航 - ShowMeAI - BV1Jg411F7cS
 
 ![](img/ca38c24447c894cc13bca5bbea8ab047_0.png)
 

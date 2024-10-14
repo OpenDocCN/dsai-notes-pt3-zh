@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P33：33）创意按钮 - ShowMeAI - BV1Jg411F7cS
+# Excel正确打开方式！提效技巧大合集！(持续更新中) - P33：33）创意按钮 - ShowMeAI - BV1Jg411F7cS
 
 ![](img/f62ec9b8410ed5ac0d09dc6769c7b3d2_0.png)
 

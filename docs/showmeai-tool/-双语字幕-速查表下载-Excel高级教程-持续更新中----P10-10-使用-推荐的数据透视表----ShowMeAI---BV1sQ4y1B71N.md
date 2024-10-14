@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P10：10）使用“推荐的数据透视表” - ShowMeAI - BV1sQ4y1B71N
+# Excel高级教程（持续更新中） - P10：10）使用“推荐的数据透视表” - ShowMeAI - BV1sQ4y1B71N
 
 ![](img/6cd565dbf75b80e7df2ac35e081833ec_0.png)
 

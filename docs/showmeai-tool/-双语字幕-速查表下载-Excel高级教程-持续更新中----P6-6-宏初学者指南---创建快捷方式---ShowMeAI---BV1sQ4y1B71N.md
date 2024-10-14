@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P6：6）宏初学者指南 - 创建快捷方式 - ShowMeAI - BV1sQ4y1B71N
+# Excel高级教程（持续更新中） - P6：6）宏初学者指南 - 创建快捷方式 - ShowMeAI - BV1sQ4y1B71N
 
 ![](img/7ba82c55ded348860e2d89a225c4d048_0.png)
 

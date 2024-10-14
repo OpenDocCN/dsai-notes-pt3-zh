@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P35：36）修复常见错误3 - REF 和 VALUE - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P35：36）修复常见错误3 - REF 和 VALUE - ShowMeAI - BV1uL411s7bt
 
 ![](img/5a3f5b45d27eca39d5d142123547fd8a_0.png)
 

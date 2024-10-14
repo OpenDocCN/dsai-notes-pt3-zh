@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P39：40）使用监视窗口 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P39：40）使用监视窗口 - ShowMeAI - BV1uL411s7bt
 
 ![](img/0af7264208b4978c505ea4dd2835d8d5_0.png)
 

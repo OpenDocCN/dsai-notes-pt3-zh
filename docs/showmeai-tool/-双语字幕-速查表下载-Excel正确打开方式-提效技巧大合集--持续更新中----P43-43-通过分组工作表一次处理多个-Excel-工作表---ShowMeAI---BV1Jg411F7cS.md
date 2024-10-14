@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P43：43）通过分组工作表一次处理多个Excel工作表 - ShowMeAI - BV1Jg411F7cS
+# Excel正确打开方式！提效技巧大合集！(持续更新中) - P43：43）通过分组工作表一次处理多个Excel工作表 - ShowMeAI - BV1Jg411F7cS
 
 ![](img/dbe3adaf002f1c6ab91c4ac3462410dc_0.png)
 

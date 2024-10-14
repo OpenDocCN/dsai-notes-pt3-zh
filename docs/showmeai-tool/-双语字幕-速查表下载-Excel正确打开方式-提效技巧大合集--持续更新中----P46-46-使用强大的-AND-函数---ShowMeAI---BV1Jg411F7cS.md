@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P46：46）使用强大的AND函数 - ShowMeAI - BV1Jg411F7cS
+# Excel正确打开方式！提效技巧大合集！(持续更新中) - P46：46）使用强大的AND函数 - ShowMeAI - BV1Jg411F7cS
 
 ![](img/5d134be359adaaaf159264a337a5f4ba_0.png)
 

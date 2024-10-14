@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P36：36）如何创建 Excel 像素艺术 - ShowMeAI - BV1Jg411F7cS
+# Excel正确打开方式！提效技巧大合集！(持续更新中) - P36：36）如何创建 Excel 像素艺术 - ShowMeAI - BV1Jg411F7cS
 
 ![](img/d5a76445fc821ec9590999c1962c6e58_0.png)
 

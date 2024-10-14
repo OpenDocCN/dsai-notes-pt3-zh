@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P23：23）最有用的键盘快捷键 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P23：23）最有用的键盘快捷键 - ShowMeAI - BV1uL411s7bt
 
 ![](img/35bb0b2eec84fa730aa2bffd18c52a22_0.png)
 

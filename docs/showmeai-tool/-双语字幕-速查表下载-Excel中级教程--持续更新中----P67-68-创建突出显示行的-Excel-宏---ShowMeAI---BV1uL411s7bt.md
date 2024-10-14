@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P67：68）创建突出显示行的 Excel 宏 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P67：68）创建突出显示行的 Excel 宏 - ShowMeAI - BV1uL411s7bt
 
 ![](img/84620250378a015b8b0f713d3a13c924_0.png)
 

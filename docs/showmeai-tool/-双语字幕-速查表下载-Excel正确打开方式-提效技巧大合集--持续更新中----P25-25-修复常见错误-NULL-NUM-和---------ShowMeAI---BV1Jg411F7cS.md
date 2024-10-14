@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P25：25）修复常见错误：NULL、NUM 和 ##### - ShowMeAI - BV1Jg411F7cS
+# Excel正确打开方式！提效技巧大合集！(持续更新中) - P25：25）修复常见错误：NULL、NUM 和 ##### - ShowMeAI - BV1Jg411F7cS
 
 ![](img/f281ca6b5e382dc30865e6776ee9bd66_0.png)
 

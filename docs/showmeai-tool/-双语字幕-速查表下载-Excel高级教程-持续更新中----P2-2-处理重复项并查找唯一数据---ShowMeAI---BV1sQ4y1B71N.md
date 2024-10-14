@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P2：2）处理重复项并查找唯一数据 - ShowMeAI - BV1sQ4y1B71N
+# Excel高级教程（持续更新中） - P2：2）处理重复项并查找唯一数据 - ShowMeAI - BV1sQ4y1B71N
 
 ![](img/325ac29a793bd007433de73a5492e707_0.png)
 

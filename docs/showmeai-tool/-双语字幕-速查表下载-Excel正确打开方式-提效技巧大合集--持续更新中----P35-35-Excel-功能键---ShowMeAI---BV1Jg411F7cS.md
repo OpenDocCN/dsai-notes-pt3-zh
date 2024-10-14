@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P35：35）Excel 功能键 - ShowMeAI - BV1Jg411F7cS
+# Excel正确打开方式！提效技巧大合集！(持续更新中) - P35：35）Excel 功能键 - ShowMeAI - BV1Jg411F7cS
 
 ![](img/b28a13901d7f82a95d4d2e5c105dc9d7_0.png)
 

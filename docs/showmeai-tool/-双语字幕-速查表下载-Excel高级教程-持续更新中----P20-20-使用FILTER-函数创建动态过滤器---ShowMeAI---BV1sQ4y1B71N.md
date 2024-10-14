@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P20：20）使用FILTER函数创建动态过滤器 - ShowMeAI - BV1sQ4y1B71N
+# Excel高级教程（持续更新中） - P20：20）使用FILTER函数创建动态过滤器 - ShowMeAI - BV1sQ4y1B71N
 
 ![](img/1038e6b4de2b2640d751ead9caf1bace_0.png)
 

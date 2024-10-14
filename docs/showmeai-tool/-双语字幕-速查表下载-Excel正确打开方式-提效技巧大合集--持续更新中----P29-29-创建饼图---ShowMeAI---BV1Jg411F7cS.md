@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P29：29）创建饼图 - ShowMeAI - BV1Jg411F7cS
+# Excel正确打开方式！提效技巧大合集！(持续更新中) - P29：29）创建饼图 - ShowMeAI - BV1Jg411F7cS
 
 ![](img/c335e2a737e3c47dadb54e9f941d04fa_0.png)
 

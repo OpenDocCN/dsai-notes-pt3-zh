@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P11：11）深入了解条件格式 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P11：11）深入了解条件格式 - ShowMeAI - BV1uL411s7bt
 
 ![](img/aa57daba8643600b024f75ea545f3bfa_0.png)
 

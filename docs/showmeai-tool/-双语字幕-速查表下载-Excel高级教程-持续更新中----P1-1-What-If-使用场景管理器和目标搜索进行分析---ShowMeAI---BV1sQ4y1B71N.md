@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P1：1）What If 使用场景管理器和目标搜索进行分析 - ShowMeAI - BV1sQ4y1B71N
+# Excel高级教程（持续更新中） - P1：1）What If 使用场景管理器和目标搜索进行分析 - ShowMeAI - BV1sQ4y1B71N
 
 ![](img/241bc608b4f8dc5791ee9b1b08667ad4_0.png)
 

@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P46：47）获取和转换／Power Query 1 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P46：47）获取和转换／Power Query 1 - ShowMeAI - BV1uL411s7bt
 
 ![](img/acec3a93d9b497450000e00a04171fff_0.png)
 

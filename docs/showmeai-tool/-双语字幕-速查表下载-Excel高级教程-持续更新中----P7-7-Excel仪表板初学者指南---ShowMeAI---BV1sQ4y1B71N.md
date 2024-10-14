@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P7：7）Excel仪表板初学者指南 - ShowMeAI - BV1sQ4y1B71N
+# Excel高级教程（持续更新中） - P7：7）Excel仪表板初学者指南 - ShowMeAI - BV1sQ4y1B71N
 
 ![](img/c48406ee7026112b42364e2d9cbadc00_0.png)
 

@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P54：55）预测函数 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P54：55）预测函数 - ShowMeAI - BV1uL411s7bt
 
 ![](img/a2ad3745a2dc705187880115549de781_0.png)
 

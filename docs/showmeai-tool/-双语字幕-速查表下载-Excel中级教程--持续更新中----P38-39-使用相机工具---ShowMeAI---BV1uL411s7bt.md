@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P38：39）使用相机工具 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P38：39）使用相机工具 - ShowMeAI - BV1uL411s7bt
 
 ![](img/5ec5103a1cf499f8dd83c32f399cce33_0.png)
 

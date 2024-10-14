@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P38：38）使用 Excel 创建家庭预算 - ShowMeAI - BV1Jg411F7cS
+# Excel正确打开方式！提效技巧大合集！(持续更新中) - P38：38）使用 Excel 创建家庭预算 - ShowMeAI - BV1Jg411F7cS
 
 ![](img/79736d25498ca0e3f6d260d91d01025d_0.png)
 

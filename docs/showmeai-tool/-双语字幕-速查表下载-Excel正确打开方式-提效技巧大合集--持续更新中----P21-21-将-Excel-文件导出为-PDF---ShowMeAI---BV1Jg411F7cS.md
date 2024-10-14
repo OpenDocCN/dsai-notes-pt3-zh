@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P21：21）将 Excel 文件导出为 PDF - ShowMeAI - BV1Jg411F7cS
+# Excel正确打开方式！提效技巧大合集！(持续更新中) - P21：21）将 Excel 文件导出为 PDF - ShowMeAI - BV1Jg411F7cS
 
 ![](img/96f47a8334bc78a7caaf36c2b4ea9d54_0.png)
 

@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P9：9）移动和复制列 - ShowMeAI - BV1Jg411F7cS
+# Excel正确打开方式！提效技巧大合集！(持续更新中) - P9：9）移动和复制列 - ShowMeAI - BV1Jg411F7cS
 
 ![](img/a212efcd60d4afb633023f4eff0cad12_0.png)
 

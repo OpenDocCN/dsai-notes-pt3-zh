@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P64：65）创建 Go 全屏宏以及如何创建自定义按钮 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P64：65）创建 Go 全屏宏以及如何创建自定义按钮 - ShowMeAI - BV1uL411s7bt
 
 ![](img/06b57f596685e2ce645285faa53038bd_0.png)
 

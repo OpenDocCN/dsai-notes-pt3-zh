@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P5：5）使用图表和函数查看趋势 - ShowMeAI - BV1sQ4y1B71N
+# Excel高级教程（持续更新中） - P5：5）使用图表和函数查看趋势 - ShowMeAI - BV1sQ4y1B71N
 
 ![](img/6f94988ac1ec7f7bea83a29d6815993a_0.png)
 

@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P44：45）自动打开多个文件 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P44：45）自动打开多个文件 - ShowMeAI - BV1uL411s7bt
 
 ![](img/f828b4a3b29c1d790331e83b1926036b_0.png)
 

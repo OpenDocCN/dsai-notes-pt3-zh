@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P39：39）Excel SUMPRODUCT 函数 - ShowMeAI - BV1Jg411F7cS
+# Excel正确打开方式！提效技巧大合集！(持续更新中) - P39：39）Excel SUMPRODUCT 函数 - ShowMeAI - BV1Jg411F7cS
 
 ![](img/311ae2ecd4b735f7f747e38589aa1a03_0.png)
 

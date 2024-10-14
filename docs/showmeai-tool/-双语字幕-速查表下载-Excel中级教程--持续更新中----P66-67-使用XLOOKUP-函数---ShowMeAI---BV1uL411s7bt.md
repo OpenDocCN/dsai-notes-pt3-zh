@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P66：67）使用XLOOKUP 函数 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P66：67）使用XLOOKUP 函数 - ShowMeAI - BV1uL411s7bt
 
 ![](img/797f4cc0ad75088c1560e826b4d80aeb_0.png)
 

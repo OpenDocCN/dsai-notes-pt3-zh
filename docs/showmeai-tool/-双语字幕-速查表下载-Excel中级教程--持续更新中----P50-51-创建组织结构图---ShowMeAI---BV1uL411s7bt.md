@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P50：51）创建组织结构图 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P50：51）创建组织结构图 - ShowMeAI - BV1uL411s7bt
 
 ![](img/8f8d476dd62ea299d1014314cd96b760_0.png)
 

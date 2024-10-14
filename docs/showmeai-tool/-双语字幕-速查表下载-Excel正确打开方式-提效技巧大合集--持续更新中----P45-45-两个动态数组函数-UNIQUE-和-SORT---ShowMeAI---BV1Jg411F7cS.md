@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P45：45）两个动态数组函数：UNIQUE 和 SORT - ShowMeAI - BV1Jg411F7cS
+# Excel正确打开方式！提效技巧大合集！(持续更新中) - P45：45）两个动态数组函数：UNIQUE 和 SORT - ShowMeAI - BV1Jg411F7cS
 
 ![](img/d297961bf4ff678426926aaad9188dbb_0.png)
 

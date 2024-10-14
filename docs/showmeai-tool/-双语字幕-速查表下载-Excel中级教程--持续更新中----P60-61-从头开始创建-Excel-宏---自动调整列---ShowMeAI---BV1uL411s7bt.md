@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P60：61）从头开始创建 Excel 宏 - 自动调整列 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P60：61）从头开始创建 Excel 宏 - 自动调整列 - ShowMeAI - BV1uL411s7bt
 
 ![](img/b0396bafa7c7fe03dd9fc56da1ac0d7b_0.png)
 

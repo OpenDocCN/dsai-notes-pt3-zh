@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P36：37）使用新的IFS函数 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P36：37）使用新的IFS函数 - ShowMeAI - BV1uL411s7bt
 
 ![](img/ee8b3e4d42ee82516ef1fc26ea7d4a36_0.png)
 

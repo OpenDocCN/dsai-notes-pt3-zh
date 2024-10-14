@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P13：13）使用 Today 函数设置目标日期 - ShowMeAI - BV1Jg411F7cS
+# Excel正确打开方式！提效技巧大合集！(持续更新中) - P13：13）使用 Today 函数设置目标日期 - ShowMeAI - BV1Jg411F7cS
 
 ![](img/d8974f7ce33cfe5ad17d3a61064b8aa3_0.png)
 

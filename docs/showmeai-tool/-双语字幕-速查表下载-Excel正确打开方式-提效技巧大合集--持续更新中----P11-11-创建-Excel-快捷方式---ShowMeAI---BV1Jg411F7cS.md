@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P11：11）创建 Excel 快捷方式 - ShowMeAI - BV1Jg411F7cS
+# Excel正确打开方式！提效技巧大合集！(持续更新中) - P11：11）创建 Excel 快捷方式 - ShowMeAI - BV1Jg411F7cS
 
 ![](img/75be585f2a0ce56c5af847454dad935c_0.png)
 

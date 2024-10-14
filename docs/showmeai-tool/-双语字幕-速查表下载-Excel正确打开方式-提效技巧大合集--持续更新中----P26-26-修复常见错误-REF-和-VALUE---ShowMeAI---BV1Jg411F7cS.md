@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P26：26）修复常见错误：REF 和 VALUE - ShowMeAI - BV1Jg411F7cS
+# Excel正确打开方式！提效技巧大合集！(持续更新中) - P26：26）修复常见错误：REF 和 VALUE - ShowMeAI - BV1Jg411F7cS
 
 ![](img/9774656d6cb77a781bf14c68a3ef7483_0.png)
 

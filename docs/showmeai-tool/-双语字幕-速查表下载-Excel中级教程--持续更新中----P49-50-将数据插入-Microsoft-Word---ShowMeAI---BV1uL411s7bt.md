@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P49：50）将数据插入 Microsoft Word - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P49：50）将数据插入 Microsoft Word - ShowMeAI - BV1uL411s7bt
 
 ![](img/8772423eae323c491c259246fc223492_0.png)
 

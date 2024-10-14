@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P48：49）自定义自动填充句柄 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P48：49）自定义自动填充句柄 - ShowMeAI - BV1uL411s7bt
 
 ![](img/64bfa272469ffbb18049dcbe5e7a8e74_0.png)
 

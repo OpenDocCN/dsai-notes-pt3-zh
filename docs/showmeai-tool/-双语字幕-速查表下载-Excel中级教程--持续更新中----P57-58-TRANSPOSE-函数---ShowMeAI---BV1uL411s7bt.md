@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P57：58）TRANSPOSE 函数 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P57：58）TRANSPOSE 函数 - ShowMeAI - BV1uL411s7bt
 
 ![](img/4e0c4151899b0846d3c3ed521e07f901_0.png)
 

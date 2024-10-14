@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P53：54）使用超链接 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P53：54）使用超链接 - ShowMeAI - BV1uL411s7bt
 
 ![](img/6beca9dc9bb79578ee23b43096006fe0_0.png)
 

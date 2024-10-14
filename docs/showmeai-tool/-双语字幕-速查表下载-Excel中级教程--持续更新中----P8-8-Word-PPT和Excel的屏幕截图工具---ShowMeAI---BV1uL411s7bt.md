@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P8：8）Word、PPT和Excel的屏幕截图工具 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P8：8）Word、PPT和Excel的屏幕截图工具 - ShowMeAI - BV1uL411s7bt
 
 ![](img/c9f198c70a23d98da6f60d5ef6e59dd1_0.png)
 

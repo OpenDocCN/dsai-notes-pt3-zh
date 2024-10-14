@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P6：6）使用 Count 和 CountA - ShowMeAI - BV1Jg411F7cS
+# Excel正确打开方式！提效技巧大合集！(持续更新中) - P6：6）使用 Count 和 CountA - ShowMeAI - BV1Jg411F7cS
 
 ![](img/dc8967adf1c88cad7334f3d36fbc8ce2_0.png)
 

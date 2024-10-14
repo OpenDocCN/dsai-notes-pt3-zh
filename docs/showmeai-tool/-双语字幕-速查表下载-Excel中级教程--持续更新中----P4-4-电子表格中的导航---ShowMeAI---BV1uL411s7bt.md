@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P4：4）电子表格中的导航 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P4：4）电子表格中的导航 - ShowMeAI - BV1uL411s7bt
 
 ![](img/b948fa72f8e1fa49081eef7900131d86_0.png)
 

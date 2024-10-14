@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P29：29）使用复选框2 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P29：29）使用复选框2 - ShowMeAI - BV1uL411s7bt
 
 ![](img/49542df26869d3fdf5ed234f9bec424a_0.png)
 

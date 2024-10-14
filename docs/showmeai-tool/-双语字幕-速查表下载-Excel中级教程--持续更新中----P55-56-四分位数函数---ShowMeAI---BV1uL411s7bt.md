@@ -1,4 +1,4 @@
-# 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P55：56）四分位数函数 - ShowMeAI - BV1uL411s7bt
+# Excel中级教程！(持续更新中) - P55：56）四分位数函数 - ShowMeAI - BV1uL411s7bt
 
 ![](img/b14464df2d049c8c13066eebdd554f57_0.png)
 
