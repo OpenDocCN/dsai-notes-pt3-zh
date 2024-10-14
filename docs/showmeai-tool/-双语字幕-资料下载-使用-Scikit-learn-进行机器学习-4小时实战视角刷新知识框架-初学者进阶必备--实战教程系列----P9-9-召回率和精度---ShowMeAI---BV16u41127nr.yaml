@@ -1,29 +1,39 @@
 - en: 【双语字幕+资料下载】使用 Scikit-learn 进行机器学习，4小时实战视角刷新知识框架，初学者进阶必备！＜实战教程系列＞ - P9：9）召回率和精度
     - ShowMeAI - BV16u41127nr
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】使用 Scikit-learn 进行机器学习，4小时实战视角刷新知识框架，初学者进阶必备！＜实战教程系列＞ - P9：9）召回率和精度
+    - ShowMeAI - BV16u41127nr
 - en: In the last video we learned a little bit about confusion matrices and confusion
     matrices give you the whole picture。 but often we want to summarize things in
     just one or two numbers and one of those most important numbers which we've already
     seen is accuracy。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 在上一个视频中，我们学习了一些关于混淆矩阵的知识，混淆矩阵为我们提供了全貌。但我们常常希望用一两个数字来总结，而我们已经看到的最重要的数字之一是准确率。
 - en: Accuracy tells us what percentage of the time our model is crap。But when it
     gets wrong。 it doesn't really tell us what kind of mistakes are being made。 and
     so we're going to be learning two metrics， recall and precision。 which really
     you can think of as accuracy on a subset of the data right so there's still going
     to be fractions between zero and1 but they'll kind of help us pinpoint where the
     mistakes are actually being made。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 准确率告诉我们模型出错的百分比。但当它出错时，它并没有真正告诉我们错误的类型。因此，我们将学习两个指标：召回率和精度，可以认为是数据子集上的准确率。它们的值仍会在0到1之间，但能帮助我们
+    pinpoint 实际出错的地方。
 - en: Okay， so to review， here's a confusion matrix。Along the rows， I have what the
     data actually is。 and along the columns I have what the model thinks it is。And
     so right now I have zeros in all these places。But if I were to see an actual mouse。And
     the model predicted that it's a mouse， then I would go to the mouse row in the
     mouse column and increment that number by one。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，回顾一下，这里是一个混淆矩阵。行表示数据的真实情况，列表示模型的预测情况。目前这些地方的值都是零。如果我看到一只真正的老鼠，而模型预测它是老鼠，我会在老鼠的行和老鼠的列将那个数字加一。
 - en: And that's any time we're incring numbers on the diagonal or confusion matrix。Oh。
     that means we made the right decision。Here's an example of a wrong decision if
     our model took a look at that picture。 which is clearly a dog。It needs in need
@@ -31,8 +41,10 @@
     it's actually a dog and the cat column because that's what was predicted and increment
     that and so we might do this over our whole data set and we have a bunch of numbers
     there。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 每当我们在混淆矩阵的对角线上增加数字时，这意味着我们做出了正确的决策。这里有一个错误决策的例子：如果我们的模型看到一张明显是狗的图片，但预测为猫，那我们会在狗的列和猫的列分别增加一次计数，这样我们可以在整个数据集上进行相同的操作。
 - en: Now from that we might want to figure out what the accuracy is and the accuracy
     is well what percentage of the times where we correct and so the way I think of
     that is adding up all the numbers on that diagonal。 that's how many we got correct
@@ -43,19 +55,25 @@
     best possible number and so precision and recall have those same properties but
     they're going to be a line different subsets of the matrix right we aren't going
     to be taking the whole diagonal divided by the whole whole matrix。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 从中，我们可能想要计算准确率，准确率就是我们正确的次数占总次数的百分比。我认为的计算方式是把对角线上的所有数字相加，那就是我们正确的数量，然后除以矩阵中的所有数字。结果是8除以10，即80%。值得注意的是，这个数字是部分占整体的比例，总是会在0到1之间，而准确率总是在分子中，所以1是最好的数字。精度和召回率具有相同的特性，但它们针对的是矩阵的不同子集，我们不会将整个对角线除以整个矩阵。
 - en: So precision and recall， it turns out we can actually have these metrics。For
     each class， right。 So I actually I have。Six different metrics here， I have dog
     recall cat recall mouse recall and then similar dog precision cat precision and
     mouse precision and's interesting I' look at a few of these so when I'm asking
     well what does a cat recall。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，精度和召回率实际上可以为每个类别计算这些指标。我有六个不同的指标，分别是狗的召回率、猫的召回率、老鼠的召回率，以及相应的狗的精度、猫的精度和老鼠的精度。有趣的是，我会查看这些指标中的几个，所以当我问猫的召回率是什么时。
 - en: what I want to know is when we actually have a cat what percentage of the time
     is the model right？
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 我想知道的是，当我们实际有一只猫时，模型正确的概率是多少？
 - en: And so since I'm asking about what is actually the case。 what I'm really doing
     is I'm dividing by the sum of numbers in a row。 right because each row represents
     what。What the data actually is。In this case right so the denominator will be the
@@ -63,21 +81,27 @@
     how many times do we actually call a cat a cat in this case we'll get2 over4 and
     so this is actually one easier way to remember recall versus precision is because
     recall has an R and row also has an R。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以因为我在问实际情况是什么。我真正做的是在按行数字的总和进行分割。对吧，因为每一行代表了什么。数据实际上是什么。在这种情况下，分母将是这一行的总和，而分子将只是一个单一的数字，即在这个例子中我们到底多少次把猫称作猫，我们将得到2除以4，因此这实际上是记住召回率和精确度的一种更简单的方法，因为召回率有一个R，而行也有一个R。
 - en: If I'm looking at dog recall， okay so when we actually have a dog。 what percentage
     of the time is a model right， I'm just looking at that top dog row and I'm dividing
     dog dog by the sum of everything else and in this case we always get it right
     when we see a dog right so4 over4 100% dog recall。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我在看狗的召回率，好的，那么当我们实际上有一只狗时，模型正确的比例是多少，我只是在看那条顶部的狗行，并将狗的数量除以其他所有的总和，在这种情况下，当我们看到狗时，我们总是做得对，所以4除以4是100%的狗召回率。
 - en: The precision questions are asking something a little bit different what we're
     asking here is say for dog precision when the model predicts that it's a dog。
     what percentage of the time is it right and so when we're kind of looking at all
     the predictions now we're talking about columns right because each prediction
     is along a column in this case we're dividing dog dog top left。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 精确度的问题问的是一些稍微不同的内容，我们这里问的是，假设对于狗的精确度，当模型预测它是一只狗时，正确的比例是多少？所以当我们查看所有预测时，我们实际上在谈论列，因为每个预测都沿着一列，在这种情况下我们在分割狗的左上方。
 - en: By the dog column， I have all the different things we predict when we get four
     over sex。And then similarly for cat precision， we're dividing cat cat by that
     cat column we see that there's perfect precision here and hopefully what you can
@@ -86,85 +110,113 @@
     we have perfect recall but poorer precision and so these kind of two metrics that
     are kind of showing an error right cat recall and dog precision are two ways of
     looking at that same problem sometimes we see a cat and we think it's a dog。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 在狗的列中，我有我们预测的所有不同内容，当我们得到4除以6时。对于猫的精确度，我们通过猫的列进行分割，我们看到这里有完美的精确度，希望你能看到它们犯了不同种类的错误。对于猫，我们在精确度上表现很好，但我们有召回率问题；对于狗，则相反，我们有完美的召回率但较差的精确度，因此这两种指标实际上都展示了同一个问题，有时我们看到一只猫却认为它是一只狗。
 - en: The opposite is not true。I'm not trying to talk about it more here but I just
     want to give you some exposure to it。 often people try to reduce these numbers
     down to a single score。 for example there's something popular machine learning
     called F1 score and a lot of these kind of simple scores are just combinations
     of these other metrics like precision and recall so these are kind of building
     blocks for other metrics。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 相反的情况并不成立。我在这里不想多谈，但我只是想让你接触到这个。人们常常试图将这些数字简化为一个单一的分数。例如，有一种流行的机器学习方法叫做F1分数，许多这样的简单分数实际上只是其他指标（如精确度和召回率）的组合，因此这些可以看作是其他指标的基础构件。
 - en: '![](img/4322a1ad92201482e285377a84085572_1.png)'
+  id: totrans-13
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4322a1ad92201482e285377a84085572_1.png)'
 - en: Let me head over and write some code for this。To Jupyter notebook block。🤧。And
     and in this case。![](img/4322a1ad92201482e285377a84085572_3.png)
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我去写一些代码。到Jupyter笔记本块。🤧。在这种情况下。![](img/4322a1ad92201482e285377a84085572_3.png)
 - en: I have my confusion matrix converted to a data frame and I'm showing it down
     here。![](img/4322a1ad92201482e285377a84085572_5.png)
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将混淆矩阵转换为数据框，并在这里展示。![](img/4322a1ad92201482e285377a84085572_5.png)
 - en: Like so I'm kind of similar to one in the slides， but the numbers are larger
     now and I also have a horse。And and so the diagonal is good right， So I can see
     this is actually not doing too bad， right。 I have a lot of large numbers on the
     diagonal。I see that there's a horse problem。When I see a horse。It actually 90%
     of the time thinks that's a dog。 The other problem I have。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我和幻灯片中的一个有点相似，但现在数字更大了，我还有一匹马。所以对角线是好的，对吧？我可以看到这实际上做得还不错，对吧？我在对角线上有很多大数字。我看到有一个马的问题。当我看到一匹马时，它实际上90%的时间认为那是一只狗。这是我面临的另一个问题。
 - en: right I big number that's not of that diagonal is right here。About half of the
     cats it seas get misclassified as dogs。![](img/4322a1ad92201482e285377a84085572_7.png)
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 对，我看到的那个不在对角线上的大数字就在这里。大约一半的猫被错误分类为狗。![](img/4322a1ad92201482e285377a84085572_7.png)
 - en: Okay that's a problem so what I'm going to do is I'm going look at I've already
     produced this confusion matrix。 I want to look at things like accuracy score，
     recall score precision score。 then finally this new metric balanced score that
     I'll introduce。😊，So first。 let's take a look at the accuracy score。So I'm going
     to run accuracy score。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，这有问题，所以我打算看看我已经生成的混淆矩阵。我想查看准确率、召回率和精确率，然后最后介绍这个新的指标——平衡得分。😊，所以首先，让我们看看准确率。我将运行准确率。
 - en: And and I need to feed it in the actual values and then the predicted value。
     So I'll do that actual。And predicted， these are the two lists that I used。To construct
     my confusion matrix。And I see that。 oh， let me just run this again。And I see that
     the accuracy is 78。 well， it's about 80%。So that seems pretty good and the key
     thing to note here right is that when we have all these different classes it might
     seem like we're doing good overall。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 我需要输入实际值和预测值。所以我会使用实际值和预测值，这两份列表是我用来构建混淆矩阵的。我看到，哦，让我再运行一次。我看到准确率是78，嗯，大约是80%。这看起来相当不错，关键要注意的是，当我们有这么多不同的类别时，整体上似乎表现良好。
 - en: but there might be cases where we are making a lot of mistakes right so for
     example。 when we see a cat， we end up being wrong half of the time worse when
     we see a horse。 we're wrong 90% of the time and so these other metrics are going
     to help us dig again and actually identify that。Okay， so let's say I wanted to
     look at recall for the horse。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 但可能会有一些情况我们犯了很多错误，比如当我们看到猫时，我们一半的时间是错的，尤其是当我们看到马时，我们90%的时间是错的，因此这些其他指标将帮助我们再次深入分析并识别这些问题。好吧，所以假设我想查看马的召回率。
 - en: which I'm expecting to be 10% when I see a horse。We only know a 10% of the time。
     So one way I could do that is I could。And my confusion matrix。I could get the
     horse。Worse value。 right from that bottom right。And and I could divide it by。The
     sum of all the values in the horse row。 right， So I could do that。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 我期待看到马时的准确率是10%。所以我们只知道10%的时间。可以这样做：我可以从混淆矩阵中获取马的值。对，从右下角的值。然后我可以将其除以马行中的所有值之和。对，我可以这样做。
 - en: And I get 10% just as I expected， right， The shorter way to do that would be
     to use the。This precision score function that's actually built then to ask K learnn，
     right。 Im going call this thing。And so I have the true values and the predicted
     values。 so I'll say actual predicted。And I actually get an error here。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 我得到了10%，正如我预期的那样，正确的方法是使用这个精确率函数，它实际上是内置于K学习中的。对。我将调用这个函数。所以我有真实值和预测值。我会说实际值和预测值。然后我在这里实际上得到了一个错误。
 - en: And it's complaining about something called multiclass versus binary。These metrics
     are kind of set up for the simple cases where our two classes are just false and
     true。 as opposed to four cases like dog cat Mo horse。And so I have to clean that
     up a little bit。 And and the way I may do that is。Oh， well， first off。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 它在抱怨所谓的多类与二类的问题。这些指标是为简单情况设置的，其中我们的两个类只是假和真，而不是像狗、猫、马这样的四个类别。所以我需要稍微清理一下。我可能会这样做。哦，首先。
 - en: Let me expand this a little bit I have to change this average value。 so there's
     different ways to kind of summarize information。I understand set average to none。And
     I eher know it some。Unlike that。 And then what it's doing is it's actually giving
     me four recalls。 one for each of these classifications。 Now the order might not
     be the same as up here。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我稍微扩展一下，我需要更改这个平均值。有几种方式来总结信息。我将平均设置为无。我理解这样做的一些效果。与上面可能不一样。然后它实际上给了我四个召回值。每个分类一个。顺序可能与这里的不一样。
 - en: And so I'm actually going to pass in these labels as well to make sure that
     that I can kind of actually compare these numbers to the different values right。
     So what I see here is that in terms of actually I want to do recall first， I'm
@@ -172,90 +224,124 @@
     I see is that recall for the dog it is perfect I see a dog。 the model is being
     recognized as a dog， it's also perfect for mice right if it sees a mouse it's
     to recognize it as a mouse。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我实际上也要传入这些标签，以确保我可以将这些数字与不同的值进行比较。好的，我在这里看到的是，实际上我想先计算召回率，抱歉。我先计算召回率。因此，对于这个召回率，逐行检查，我发现狗的召回率是完美的，我看到一只狗。模型把它识别为狗，老鼠也是完美的，看到老鼠时，它会将其识别为老鼠。
 - en: For cats， right if it sees a cat 50， 50 on whether it will correctly identify
     it， and then for horse。 only a 10% chance said it correctly identifies it。Okay，
     those are my four recall numbers。 sometimes what I'll want to do。Is all want to
     kind of see how I'm doing overall by taking an average of those。 And I get 65%
     in that taste。 And it turns out there is a special name for this average of recall
     scores。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于猫来说，如果它看到一只猫，50% 的概率能正确识别，然后对于马，只有10%的概率能正确识别。好的，这就是我的四个召回率数字。有时我想做的是计算一个总的平均值，以了解我的整体表现。我得到65%的结果。结果发现，这个召回得分的平均值有一个特殊的名称。
 - en: and that special name is the balanced accuracy score。 right。 So before this
     accuracy score was saying， hey， we're doing 80%。 But now I actually do this balanced。Accuracy
     score， it's only 65% much worse and in some ways this is more meaningful。 the
     only reason we were very accurate before is we were seeing very few horses even
     though our model is terrible with horses。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个特殊的名称是平衡准确率。对了。在这之前，准确率显示我们做得很好，达到了80%。但现在我实际上计算这个平衡准确率，它只有65%，差得多，从某种意义上说，这更有意义。我们之前的高准确率唯一的原因是我们看到的马非常少，即使我们的模型对马的识别效果很差。
 - en: we could just go and score is there are not many horses in the model right so
     when we're using these balance metrics it' trying to take into account for that
     is I say even though we have more dogs。Then anything else really， we're going
     consider these four classes equally important in terms of coming up with our score。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以简单地说，在模型中马并不多，所以当我们使用这些平衡指标时，它试图考虑到这一点。虽然我们有更多的狗，但我们实际上会把这四个类别视为同等重要，以得出我们的评分。
 - en: this will be a great one to use if you have a lot of imbalance。In your data
     set right。 and accuracy can be a little bit misleading in that case。Okay， so that
     was the recall score。 let me similarly。So this， I'm going to actually do the precision。
     which I guess I was already doing oh。Earlier and avertently。What happened there。There
     we go。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你的数据集中存在较大的不平衡，这将是一个很好的指标。在这种情况下，准确率可能会有些误导。好的，那是召回得分。让我类似地处理一下。所以我实际上要计算精确度。我想我之前已经在做了，哦。早些时候不小心这样做了。发生了什么呢？好了。
 - en: So I'm going to paste that。 and so that I'm going to get this precision score。![](img/4322a1ad92201482e285377a84085572_9.png)
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我将粘贴这个，然后我会得到这个精确度得分。![](img/4322a1ad92201482e285377a84085572_9.png)
 - en: And now I see something different， right， I see that actually we do perfect。On
     everything。 except the dog。And why is that？When I'm talking about precision。 I'm
     really going column by column and what I actually see here is great， right。 I
     except on the diagonal， I only have zeros in each of these columns。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我看到一些不同的情况，没错，我发现实际上在所有方面我们都做得很好。除了狗。为什么会这样呢？当我谈论精确度时，我实际上是逐列检查的，我看到的确是很不错，除了对角线，我在每一列中只看到零。
 - en: And so that means if this model is predicting a cat， a mouse or a horse。 it's
     probably right only when it's predicting a dog is there a good chance that it's
     making a mistake right in that case。 you know， only two thirds chance that it's
     actually a dog right So this model likes to predict dogs a lot。😊，If it predicts
     something else， it's sure it predicts a dog it only trying of two/ third， sure。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 这意味着如果这个模型预测的是猫、老鼠或马，它可能只在预测狗时才正确。在这种情况下，它只有三分之二的概率确实是狗。因此，这个模型非常喜欢预测狗。😊如果它预测其他东西，确保它预测的是狗，它的把握只有三分之二。
 - en: All right， so that's the we talk about accuracy。Recall balance accuracy。 which
     is an average of the recalls and then precision。![](img/4322a1ad92201482e285377a84085572_11.png)
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，所以我们谈到了准确率、召回率和平衡准确率。平衡准确率是召回率的平均值，然后是精确度。![](img/4322a1ad92201482e285377a84085572_11.png)
 - en: One last thing I want to talk about is binary classification and so for binary
     classifications instead of cat。 dog， mouse， we have just false and true。![](img/4322a1ad92201482e285377a84085572_13.png)
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 我想谈的最后一件事是二元分类，对于二元分类，我们只需使用**假**和**真**，而不是猫、狗和老鼠。![](img/4322a1ad92201482e285377a84085572_13.png)
 - en: And and so I'm computing the confusion matrix here for that。 and and if I want
     to， I can。![](img/4322a1ad92201482e285377a84085572_15.png)
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我在这里计算混淆矩阵，如果我想，我可以。![](img/4322a1ad92201482e285377a84085572_15.png)
 - en: I can compute these same metrics like I did before， so for example if I do a
     recall score。![](img/4322a1ad92201482e285377a84085572_17.png)
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 我可以像以前一样计算这些相同的指标，所以例如，如果我计算召回率。![](img/4322a1ad92201482e285377a84085572_17.png)
 - en: Down here， I can pass in， you know， false and true for my labels。![](img/4322a1ad92201482e285377a84085572_19.png)
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，我可以将**假**和**真**作为我的标签传入。![](img/4322a1ad92201482e285377a84085572_19.png)
 - en: And。Why is that unhappy， maybe because I didn't run this yet， there we go。 I
     can run that and and it's telling me， okay， row by row in that first row。![](img/4322a1ad92201482e285377a84085572_21.png)
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 为什么那样不高兴，可能是因为我还没有运行这个，好了，我可以运行它，它告诉我，好的，逐行来看，第一行。![](img/4322a1ad92201482e285377a84085572_21.png)
 - en: one third is track。 right， So I then the second one。70% is correct right those
     are my two recall scores so I can do that just like before。 but it turns out when
     we're dealing with binary classification metrics。People will often just talk about
     predicted， I'm sorry。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 三分之一是轨道，对吧，所以第二个是70%正确，对吧，这就是我的两个召回率，所以我可以像以前一样做，但事实证明在处理二元分类指标时，人们常常只谈论预测，我很抱歉。
 - en: they'll just talk about recall and precision without specifying what class they
     mean and when they're doing that。What they're talking about is the positive class，
     right so if I just talk about。Recall in general。 oh I don't want that I'm just
     trying to talk about recall in general looks I'm talking about that positive class
     and the same thing for precision and actually this is probably the majority of
     the cases you'll see precision and recall use as kind of this special case。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 他们通常只谈论召回率和精确率，而没有具体说明他们指的是什么类，而当他们这样做时，他们所谈论的是正类。所以如果我仅仅谈论召回率，总的来说，哦，我不想那样，我只是想谈论召回率，总的来说看，我在谈论正类，精确率也是如此，实际上这可能是你看到的召回率和精确率的大多数特殊情况。
 - en: Where I'm having a binary classifier， so just know that when we're doing that。
     we're talking about the positive class。![](img/4322a1ad92201482e285377a84085572_23.png)
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 在进行二元分类时，请知道我们是在谈论正类。![](img/4322a1ad92201482e285377a84085572_23.png)

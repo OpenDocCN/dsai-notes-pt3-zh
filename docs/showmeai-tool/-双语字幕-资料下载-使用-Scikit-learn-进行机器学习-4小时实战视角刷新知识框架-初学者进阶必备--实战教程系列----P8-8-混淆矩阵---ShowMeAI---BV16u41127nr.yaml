@@ -1,17 +1,24 @@
 - en: 【双语字幕+资料下载】使用 Scikit-learn 进行机器学习，4小时实战视角刷新知识框架，初学者进阶必备！＜实战教程系列＞ - P8：8）混淆矩阵
     - ShowMeAI - BV16u41127nr
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】使用 Scikit-learn 进行机器学习，4小时实战视角刷新知识框架，初学者进阶必备！＜实战教程系列＞ - P8：8）混淆矩阵
+    - ShowMeAI - BV16u41127nr
 - en: '![](img/7fa687d432e52faf3c8af2fb5cde9289_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/7fa687d432e52faf3c8af2fb5cde9289_0.png)'
 - en: Hello in this video I may be talking a little bit about how we can score our
     models on our training data and scoring them is going to involve learning some
     new metrics and terminology。 it turns out there's different kinds of errors and
     if sometimes well if we'll care more about one kind of error than another。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，在这个视频中，我可能会谈谈如何在训练数据上给我们的模型打分，打分将涉及学习一些新的指标和术语。事实证明有不同种类的错误，有时我们可能会更关心某种错误而不是另一种。
 - en: we might want to use different metrics to deal with that taste。So for this I
     have some really simple dummy data Basically I have this data frame that has an
     x column and the x column is number and then the y column is a Boolean and it's
@@ -20,56 +27,84 @@
     half I wouldn't normally do this right because maybe the data is not shuffled
     and maybe I'm trying to getting very different data in the two half so this is
     just trying for an example there I have it I have my training data。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可能想用不同的指标来处理这个问题。为此，我有一些非常简单的虚拟数据。基本上我有这个数据框，其中有一列 x，x 列是数字，然后 y 列是布尔值，当 x
+    为正时为真，当 x 为负时为假，所以数据不多。为了简化，我试图将其分成前半部分和后半部分，我通常不会这样做，因为数据可能没有洗牌，可能我在尝试获取两半非常不同的数据，所以这只是一个示例，我得到了我的训练数据。
 - en: '![](img/7fa687d432e52faf3c8af2fb5cde9289_2.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/7fa687d432e52faf3c8af2fb5cde9289_2.png)'
 - en: '![](img/7fa687d432e52faf3c8af2fb5cde9289_3.png)'
+  id: totrans-5
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/7fa687d432e52faf3c8af2fb5cde9289_3.png)'
 - en: '![](img/7fa687d432e52faf3c8af2fb5cde9289_4.png)'
+  id: totrans-6
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/7fa687d432e52faf3c8af2fb5cde9289_4.png)'
 - en: And my test data down here and if I want to try to figure out what is the relationship
     between Y and x。And then measure the model's understanding of that relationship
     I'm going to use some sort of scoring function right I'm going to do this whole
     logistic regression remember this is not really a regression。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 我在这里有我的测试数据，如果我想弄清楚 Y 和 x 之间的关系，然后衡量模型对该关系的理解，我将使用某种打分函数。对，我会做整个逻辑回归，记住这实际上并不是回归。
 - en: it's actually a class ofifier right because I have this categorical data that
     I'm trying to predict。And so I'm going to train one of those and then I want to
     score it。First step。 right is I'm going to say LR equals logistic regression。![](img/7fa687d432e52faf3c8af2fb5cde9289_6.png)
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 这实际上是一个分类器，因为我有这类分类数据要预测。所以我会训练其中一个，然后我想给它打分。第一步，没错，我会说 LR 等于逻辑回归。![](img/7fa687d432e52faf3c8af2fb5cde9289_6.png)
 - en: Right， and then we say Lr。t fit。And when I'm fitting。Let me I should just try
     to run this。![](img/7fa687d432e52faf3c8af2fb5cde9289_8.png)
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 对，然后我们说 Lr.t fit。当我拟合时，让我尝试运行这个。![](img/7fa687d432e52faf3c8af2fb5cde9289_8.png)
 - en: Once I run， I can actually set shift tab and into a hint。![](img/7fa687d432e52faf3c8af2fb5cde9289_10.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦我运行，我实际上可以按 Shift + Tab 来获取提示。![](img/7fa687d432e52faf3c8af2fb5cde9289_10.png)
 - en: I'm have to give it the X data and the y data， and so I'm going to give it both
     those things from the training data first。![](img/7fa687d432e52faf3c8af2fb5cde9289_12.png)
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我需要给它 X 数据和 y 数据，所以我会先从训练数据中提供这两样东西。![](img/7fa687d432e52faf3c8af2fb5cde9289_12.png)
 - en: And so I'm going to say training data and then the columns I want are just acts。And
     then other thing I'm trying to predict is just the why man you just like that。![](img/7fa687d432e52faf3c8af2fb5cde9289_14.png)
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我会说训练数据，然后我想要的列就是 acts。然后我想要预测的其他东西就是为什么，哇，简直就是这样。![](img/7fa687d432e52faf3c8af2fb5cde9289_14.png)
 - en: And then after I do that， I can basically。I run a command that's very similar
     and that command is score。 I can evaluate how well it does。The test data。And I
     get 0。75。 So what is this score function doing。 It turns out it's a shortcut and
     I'm just going to show you a little bit in the documentation what it's doing。
     I head over here I see that the score function。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后在我做完这些之后，我基本上可以运行一个很相似的命令，这个命令就是 score。我可以评估它在测试数据上的表现，得分是 0.75。那么这个 score
+    函数到底在做什么呢？事实证明它是一个快捷方式，我将给你展示一下文档里它的作用。我在这里看到 score 函数。
 - en: '![](img/7fa687d432e52faf3c8af2fb5cde9289_16.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/7fa687d432e52faf3c8af2fb5cde9289_16.png)'
 - en: '![](img/7fa687d432e52faf3c8af2fb5cde9289_17.png)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/7fa687d432e52faf3c8af2fb5cde9289_17.png)'
 - en: Or the logistic regression is giving me the mean accuracy。 And if you look at
     other estimators。 they might be doing other kinds of using other metrics for the
     scoring。Okay so mean accuracy so that's the default here but it turns out there's
@@ -79,240 +114,338 @@
     related to regression as well and so the one I'm using right now the default is
     that accuracy score right you saw that how it's saying here that we're just getting
     the accuracy accuracy is very simple it's well what percentage of the times？
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 逻辑回归给了我平均准确率。如果你查看其他估计器，它们可能会使用其他类型的指标来评分。好的，所以平均准确率是这里的默认值，但实际上我们可以使用很多不同的指标，所以如果我去PsyKt学习的指标页面，我可以看到有一堆与分类聚类相关的指标，我们还没有讨论过，还有一堆与回归相关的指标，所以我现在使用的默认是准确率分数，你看到它是如何说的，我们只是得到了准确率，准确率很简单，就是在多少情况下？
 - en: '![](img/7fa687d432e52faf3c8af2fb5cde9289_19.png)'
+  id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/7fa687d432e52faf3c8af2fb5cde9289_19.png)'
 - en: Did we get it right and so I certainly could have instead of using that score
     function I could have used this one myself and I think that's a good thing to
     do right now because once you understand how to use this manually without the
     shortcut then we'll understand how to use these other functions as well Okay so
     I can see this is my metrics submodule and so when I head back here I'm going
     to do this I'm going to say。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们做对了吗？所以我当然可以不用那个评分函数，我可以自己使用这个函数，我认为现在这样做是个好主意，因为一旦你理解如何手动使用这个而不依赖快捷方式，那么我们也将理解如何使用其他函数。好的，所以我可以看到这是我的指标子模块，因此当我回到这里时，我将这样做。
 - en: And this was that page I was just on。I am going to say， from。From SK learn metrics。Import。![](img/7fa687d432e52faf3c8af2fb5cde9289_21.png)
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我刚才所在的页面。我将从SK学习指标开始导入。![](img/7fa687d432e52faf3c8af2fb5cde9289_21.png)
 - en: Accuracy score。Okay， and let me just run that and what I call accuracy score。I
     hit shift tab here。 Basically what I'm doing is I'm saying， well， what are the
     true values？
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 准确率分数。好的，让我来运行一下我称之为准确率分数的内容。我在这里按下shift和tab。基本上，我在问，真正的值是什么？
 - en: And what did my model predict。Okay and so there different ways I could do that。
     I mean I could say well， the true values are A and B， but I actually predicted
     A and C。 and it turns out if I do that well I're just 50% right right so this
     was my actual values and my predicted values。So let me actually try to get these
     from up above， right so before I was trying this score thing。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 我的模型预测了什么。好的，所以我可以用不同的方式来做这件事。我可以说，真正的值是A和B，但我实际预测了A和C。如果我这样做，结果我只对了50%。这是我的实际值和预测值。所以让我从上面获取这些值，之前我在尝试这个评分的东西。
 - en: And then I was kind of giving my x values and my y values， and so I'm going
     to pull pieces from this。The first piece I'm going to do is I'm going to actually
     figure out what the predicted values are。So those are going to be the predicted
     values I actually have to call predict here instead of score right when I'm predicting。
     I'm not giving it any y values right predict tells me what the y values are。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我给出了我的x值和y值，所以我要从中提取一些内容。我将做的第一件事是确定预测值是什么。所以这些将是我实际必须调用的预测值，而不是评分。当我在预测时，我没有给它任何y值，预测告诉我y值是什么。
 - en: And and then I also have to have my actual right， my actual。Was just the second
     piece from before。On that column。So maybe actually let me just do this， I'm going
     to say。Let me look at the actual values and the predicted values。As a last。Okay。
     and I can see actual we're true， true， false， false。But I'm actually getting true，
     false， false。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我还必须有我的实际值，对吧，我的实际值。刚好是之前的第二部分。在那一列。所以也许让我就这样做，我要看一下实际值和预测值。作为最后一步。好的。我可以看到实际是正确的，正确的，错误的，错误的。但我实际上得到的是正确的，错误的，错误的。
 - en: false。 And so the second one is the error， right， So I'm going be wrong 25%
     of the time。 And so accuracy is actually going to be 70。5%， which is what we saw
     before and we're going to see it here too。 when we actually pass in。These two
     things I pass in the actual values and those predicted values。I not get that at
     75%。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 错误。所以第二个是错误，对吧，我将错误25%的时间。因此，准确率实际上将是70.5%，这就是我们之前看到的，当我们实际传入这些东西时。我传入了实际值和那些预测值。我得到的是75%。
 - en: '![](img/7fa687d432e52faf3c8af2fb5cde9289_23.png)'
+  id: totrans-25
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/7fa687d432e52faf3c8af2fb5cde9289_23.png)'
 - en: Okay， now so that works fine but there's going to be cases where we don't want
     to just know how often we're right。 but we want to know about you know about what
     kind of mistakes we're making right so for example。 let's imagine different things
     that this Y column might be let's say that this Y column means it's a good investment。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，现在这样运作得很好，但有些情况下，我们不仅想知道自己对的频率，还想知道我们犯了什么样的错误。因此，举个例子，让我们想象这个Y列可能代表的不同事物，假设这个Y列意味着这是一个好的投资。
 - en: '![](img/7fa687d432e52faf3c8af2fb5cde9289_25.png)'
+  id: totrans-27
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/7fa687d432e52faf3c8af2fb5cde9289_25.png)'
 - en: '![](img/7fa687d432e52faf3c8af2fb5cde9289_26.png)'
+  id: totrans-28
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/7fa687d432e52faf3c8af2fb5cde9289_26.png)'
 - en: Maybe it's for a stock or something。 I don't need to know about every good investment。
     but if I have some system that kind of tells me like hey these are some good investments
     and it's always right and it doesn't tell me about every good investment that's
     a pretty good system in contrast。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 也许这是关于某个股票或其他东西。我不需要了解每一个好的投资。但如果我有某种系统，能告诉我“嘿，这些是一些不错的投资”，而且它总是正确的，尽管不告诉我每一个好的投资，那就是一个相当不错的系统。
 - en: maybe this is telling me I don't know is somebody contagious for CoVd-19 or
     whatever。 right And in that case， it's much safer to make the mistake of saying
     they are contagious even though they're not。 so there's different kinds of errors，
     false positives， the false negatives。 And so there's a lot of metrics based on
     that And the simplest place to start is with something called a confusion matrix
     and a confusion matrix。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 也许这在告诉我，我不知道某人是否感染了新冠病毒之类的。在这种情况下，错误地说他们是感染者会更安全，即使他们实际上不是。因此，有不同类型的错误，假阳性和假阴性。因此，有许多基于此的指标，最简单的地方是从叫做混淆矩阵的东西开始，混淆矩阵。
 - en: '![](img/7fa687d432e52faf3c8af2fb5cde9289_28.png)'
+  id: totrans-31
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/7fa687d432e52faf3c8af2fb5cde9289_28.png)'
 - en: Shows the categories that things actually are and then how they mistakenly get
     classified as other things。😊。![](img/7fa687d432e52faf3c8af2fb5cde9289_30.png)
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 显示了事物实际上属于的类别，以及它们是如何被错误分类为其他事物的。😊。![](img/7fa687d432e52faf3c8af2fb5cde9289_30.png)
 - en: And so just like before， just like we have an actual a predicted list。 and we
     have a confusion matrix we're going to do the same thing。So imagine I had pictures
     of animals and you， I had four dogs， three cats and two mice。And but then I have
     some machine learning system that's looking at those pictures。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 就像之前一样，我们有实际列表和预测列表，并且有混淆矩阵，我们将做同样的事情。想象一下，我有动物的图片，我有四只狗，三只猫和两只老鼠。但我有一些机器学习系统正在查看这些图片。
 - en: And as maybe predicting these other things。What I could do is I could read a
     confusion matrix。Using Psyit learn， right， this is also under metrics just like
     accuracy score。And so I can create one of these。 And and just like with the accuracy
     score。 I can put the true values and then the predicted values or sometimes I
     I say actual。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 也许在预测这些其他事物时，我可以使用Psyit learn读取混淆矩阵，对吧，这也在指标下，和准确度分数一样。因此，我可以创建一个这样的矩阵。和准确度分数一样，我可以放入真实值和预测值，有时我说实际。
 - en: '![](img/7fa687d432e52faf3c8af2fb5cde9289_32.png)'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/7fa687d432e52faf3c8af2fb5cde9289_32.png)'
 - en: '![](img/7fa687d432e52faf3c8af2fb5cde9289_33.png)'
+  id: totrans-36
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/7fa687d432e52faf3c8af2fb5cde9289_33.png)'
 - en: And predicted。And， and this is a little bit confusing， because。Each one of these
     values is kind of showing us。How many categories fall into like a specific actual
     category in a predicted category。And it's not really clear to line it up， right，
     well is this first wrong dog or is it cat。 And so what people will often do right
     is that they'll say labels。Like this。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 并且预测。这有点令人困惑，因为这些值每一个都在告诉我们，有多少类别落入特定的实际类别和预测类别中。并且不太清楚如何对齐，对吧，第一只狗是错的，还是猫？因此，人们通常会这样做，即他们会说标签。
 - en: And just to control the order。 So for example， I want to say like at a dog。The
     mouse， just like that。And then if I pass in these labels。It's going to be a little
     bit different， right。 whereas if I say dog。You can see these numbers switched
     a little and another reason for this beside just controlling the order。 so it
     makes sense is that I could， you know maybe there's things that I know exist but
     didn't even show up in the data right there's no horses。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 并且为了控制顺序。例如，我想说像“狗”。“鼠标”，就这样。如果我传入这些标签，结果会有一点不同，对吧？而如果我说“狗”，你会看到这些数字稍微切换了一下，除了控制顺序以外，另一个原因是，我可能知道一些存在但在数据中没有出现的东西，对吧，比如没有马。
 - en: right？
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 对吧？
 - en: '![](img/7fa687d432e52faf3c8af2fb5cde9289_35.png)'
+  id: totrans-40
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/7fa687d432e52faf3c8af2fb5cde9289_35.png)'
 - en: So， so let me actually。I'm really trying to talk about what these numbers mean
     and I think it'll be a little easier to put in a data frame and I'm going to put
     this in a confusion matrix here。And now I me to put this in a data frame。A PD
     data frame。Infusion matrix。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，让我实际上。我真的想谈谈这些数字的含义，我觉得把它放入数据框会简单一些，我将把这放入混淆矩阵中。现在我需要将其放入数据框。一个PD数据框。混淆矩阵。
 - en: And then when I'm printing a data frame from this， both the index and columnm
     labels。Are going to be the same right I'm going to have。E it just be like this。![](img/7fa687d432e52faf3c8af2fb5cde9289_37.png)
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后，当我从中打印数据框时，索引和列标签将是相同的，对吧，我将会有。E就像这样。![](img/7fa687d432e52faf3c8af2fb5cde9289_37.png)
 - en: And and so when I'm looking at this confusion matrix， what does it mean。 So
     the row means what it actually is。![](img/7fa687d432e52faf3c8af2fb5cde9289_39.png)
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我查看这个混淆矩阵时，这是什么意思呢？行表示实际情况。![](img/7fa687d432e52faf3c8af2fb5cde9289_39.png)
 - en: And the column is going to be what it got。Classified as so I can see in this。
     right that there's four dogs。And of those four dogs， it correctly classified three
     of them as dogs。But one of the dogs was mistakenly identified as a cat。Okay。 it
     looks like there are three cats in the system。 Two of them were correctly identified
     as cats。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 而列将是它被分类的结果，所以我可以看到这里。对，有四只狗。在这四只狗中，它正确分类了三只，但其中一只狗被错误地识别为猫。好的。看起来系统中有三只猫，其中两只被正确识别为猫。
 - en: And one was considered a dog。And then I can see other things here like well
     the system's really good at mice right it always correctly calls the mice and
     doesn't mix them up with anything and so this is useful right when I have a this
     time matrix I can see what ways the classifier is confused since it's called you
     a confusion matrix right showing me how the model is confused。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 一只被认为是狗。我可以看到其他情况，比如系统对老鼠非常准确，它总是正确识别老鼠，而不会与其他任何东西混淆，所以这很有用。对，当我有这个时间矩阵时，我可以看到分类器在哪些方面存在混淆，因为它被称为混淆矩阵，显示了模型如何混淆。
 - en: All right， so hopefully that's helpful now it's very common that we'll be having
     these confusion matrices。😊。![](img/7fa687d432e52faf3c8af2fb5cde9289_41.png)
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，希望这对你有帮助，现在我们经常会遇到这些混淆矩阵。😊。![](img/7fa687d432e52faf3c8af2fb5cde9289_41.png)
 - en: where the class is instead of being you know different animals。 it might just
     be true and false that would be for a binary class of fire where I just have these
     true and false values and so let me actually go back to what I had before right
     when I was computing this accuracy score。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 当类别不是不同的动物时，而是可能只是对和错，这将是二进制类别的火焰，我只有这些真实和虚假的值，所以让我回到之前计算准确性得分的内容。
 - en: '![](img/7fa687d432e52faf3c8af2fb5cde9289_43.png)'
+  id: totrans-48
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/7fa687d432e52faf3c8af2fb5cde9289_43.png)'
 - en: '![](img/7fa687d432e52faf3c8af2fb5cde9289_44.png)'
+  id: totrans-49
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/7fa687d432e52faf3c8af2fb5cde9289_44.png)'
 - en: And let me create a confusion matrix here， and maybe I just may copy some of
     this。![](img/7fa687d432e52faf3c8af2fb5cde9289_46.png)
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我在这里创建一个混淆矩阵，也许我只需复制一些内容。![](img/7fa687d432e52faf3c8af2fb5cde9289_46.png)
 - en: '![](img/7fa687d432e52faf3c8af2fb5cde9289_47.png)'
+  id: totrans-51
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/7fa687d432e52faf3c8af2fb5cde9289_47.png)'
 - en: Out here， as you might grab this。![](img/7fa687d432e52faf3c8af2fb5cde9289_49.png)
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，你可能会抓住这个。![](img/7fa687d432e52faf3c8af2fb5cde9289_49.png)
 - en: And in this case， the labels。Are false and true。![](img/7fa687d432e52faf3c8af2fb5cde9289_51.png)
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种情况下，标签是虚假和真实的。![](img/7fa687d432e52faf3c8af2fb5cde9289_51.png)
 - en: And it doesn't do anything okay， so I have these different categories and just
     like before。 I think it's going to be helpful to put this in a data frame。![](img/7fa687d432e52faf3c8af2fb5cde9289_53.png)
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 这没有什么用，我有不同的类别，就像之前一样。我觉得将其放入数据框会很有帮助。![](img/7fa687d432e52faf3c8af2fb5cde9289_53.png)
 - en: Right。![](img/7fa687d432e52faf3c8af2fb5cde9289_55.png)
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 对。![](img/7fa687d432e52faf3c8af2fb5cde9289_55.png)
 - en: I'm going to put a data frame here just like that。And so here again。 the row
     is telling me what it actually is and then the column is telling me how those
     got classified and ideally in a perfect world everything will be on the diagonal
     right that means there were no mistakes made there was no confusion。
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将这里放入一个数据框，就像这样。所以这里再次，行告诉我实际是什么，列告诉我这些是如何被分类的，理想情况下在完美的世界中，一切都将在对角线上，对吧，这意味着没有错误，也没有混淆。
 - en: Okay， so I have that and it turns out there are special names for each of these
     four values。 and so I'm just going to go through this quickly。![](img/7fa687d432e52faf3c8af2fb5cde9289_57.png)
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，我有这些信息，结果这四个值各有特定名称，所以我会快速浏览一下。![](img/7fa687d432e52faf3c8af2fb5cde9289_57.png)
 - en: 呃。The top left one， actually， let's start with the bottom right， so if I go
     to I go to。 let me put this in a date actual data frame。The last to my confusion
     matrix is a data frame now。![](img/7fa687d432e52faf3c8af2fb5cde9289_59.png)
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 呃。左上角的那个，实际上，让我们从右下角开始，所以如果我去，我去。让我把这个放在一个真实的数据框中。我的混淆矩阵现在是一个数据框。![](img/7fa687d432e52faf3c8af2fb5cde9289_59.png)
 - en: Okay， and and I go， I love。1，1， that's going to be that bottom right。![](img/7fa687d432e52faf3c8af2fb5cde9289_61.png)
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，我去，我喜欢。1，1，这将是右下角。![](img/7fa687d432e52faf3c8af2fb5cde9289_61.png)
 - en: That's going to be called through。Positives in your practice kind of remembering
     these words are important terminology。 so I'm going to do this and then if I had
     been smart with this example。 I would have made sure all these numbers were different
     so we could more easily identify。RightAnd another number is on the top left。And
     those are true negatives。 right。
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将被称为通过。你在实践中记住这些词的积极方面是重要术语。所以我将这样做，如果我在这个例子中聪明一点，我会确保所有这些数字都是不同的，这样我们可以更容易地识别。对，还有一个数字在左上角，那些是真阴性。对。
 - en: So true means that that the model is doing the correct thing， Right in this
     case， I have。one。 you know what I should really do is I should do it like this。Through
     positives。Throughru negatives。 right， people often abbreviate it this way。And
     then there's the mistakes， right。 the mistakes are false， right， so I'm going
     to say false。And false。
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以“真”意味着模型在正确地执行这个任务，好的，在这种情况下，我有。一个。你知道我真正应该做的是这样做。通过积极的。通过阴性。对，人们通常这样简写。然后是错误，好的。错误是假的，对，所以我会说是假。和假。
 - en: And so what are these called the false positives？All， where are those。 So false
     positive means that。This column right and so it should be false right that's what
     it actually is in the data。 but it gets classified as true right so what does
     that mean that means I'm in row0 column1。And then up I sit down here， right？Sometimes。It
     actually is true， but the model says it's false。
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么这些被称为什么？假阳性？好吧，那些在哪里？所以假阳性意味着。这一列是正确的，所以它应该是假的，这实际上在数据中是这样的。但是它被分类为真的，所以这意味着我在第0行第1列。然后我坐在这里，好的？有时。它实际上是真的，但模型说它是假的。
 - en: That's a false negative。![](img/7fa687d432e52faf3c8af2fb5cde9289_63.png)
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个假阴性。![](img/7fa687d432e52faf3c8af2fb5cde9289_63.png)
 - en: And fall negative and just like that so these are the four different cases I'd
     have and a lot of the statistics we're going be looking at into the next video
     are combinations of these and I'll be kind of talking more about why those are
     meaningful。![](img/7fa687d432e52faf3c8af2fb5cde9289_65.png)
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 而且假阴性就是这样，所以这些是我会有的四种不同情况，接下来我们要看的很多统计数据是这些的组合，我会更多地讨论它们为什么有意义。![](img/7fa687d432e52faf3c8af2fb5cde9289_65.png)

@@ -1,11 +1,16 @@
 - en: 【双语字幕+资料下载】使用 Scikit-learn 进行机器学习，4小时实战视角刷新知识框架，初学者进阶必备！＜实战教程系列＞ - P7：7）决策边界
     - ShowMeAI - BV16u41127nr
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】使用Scikit-learn进行机器学习，4小时实战视角刷新知识框架，初学者进阶必备！＜实战教程系列＞ - P7：7）决策边界 -
+    ShowMeAI - BV16u41127nr
 - en: '![](img/d17dc8f7720589c00136fbad4aed332e_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d17dc8f7720589c00136fbad4aed332e_0.png)'
 - en: Yeah。Hello in this video I want to talk about how we can visualize of the decisions
     or predictions that are made by a classifier when we were doing regressions。 we'd
     often visualize this by drawing a fit line and the equivalent here is that we'll
@@ -15,149 +20,212 @@
     we'll be using in Mapllib is called contour F and it and can do that kind of plot
     so we want to evaluate CLS and the idea is that we want to put in a bunch of different
     values for。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的。大家好，在这个视频中，我想谈谈如何可视化分类器在进行回归时所做的决策或预测。我们通常通过绘制拟合线来可视化，而这里的等效方法是，当我们有两个特征时，我们通常会在X轴和Y轴上绘制这两个特征，然后将区域分成两个不同的区域，一个是我们预测为真的区域，另一个是我们预测为假的区域。因此，我们在Mapllib中使用的函数叫做contour
+    F，它可以做到这种绘图，因此我们想要评估CLS，想法是我们想要输入一些不同的值。
 - en: For both Sepple a， which I' be put on the y axis and SPL width， which I'll put
     on the X axis。And so the way to get every combination of these maybe most easily
     is with anumpy mesh grid。![](img/d17dc8f7720589c00136fbad4aed332e_2.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于Sepple a，我会把它放在y轴上，而SPL宽度则放在X轴上。因此，获取每种组合的最简单方法可能是使用numpy的网格。![](img/d17dc8f7720589c00136fbad4aed332e_2.png)
 - en: And the reason I'm using a meshcr is that it creates some arrays with different
     combinations and exactly the form that I'm going to need later。 So creates arrays
     and form needed for。Contour ath later， and。So let me go leave this comment here
     on that。And what is it going to return。 Well it's trying to return two arrays。
     It's going return  one。Which is。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我使用meshcr的原因是它创建了一些不同组合的数组，正好是我稍后需要的形式。因此，创建了数组并为Contour ath所需的形式做好准备。所以让我在这里留个评论。它将返回什么呢？它试图返回两个数组。它将返回一个。即。
 - en: One of my variables in another one will be the other variable。 so maybe I'll
     say I'll put my sel width first and then my sepel length just like that。And then
     what I have to do here is I have to have a range right so I'll have like range1
     and range two。 and really what the mesh code is going to do is it's going to give
     me every combination of these two ranges。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 我其中一个变量将在另一个变量中。所以也许我会先把sel宽度放在前面，然后是sepel长度。然后我在这里要做的是需要一个范围，所以我会有range1和range2。实际上，网格代码将给我这两个范围的每种组合。
 - en: So here I'll say NP range。Maybe they'll go from 0 to 0 to 10 and maybe do a
     0。1 step。And then the same thing over here as well。Okay， so I have those two and
     let me just take a look at what these things look like。![](img/d17dc8f7720589c00136fbad4aed332e_4.png)
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以在这里我会说NP范围。也许它们会从0到10，可能是0.1的步长。然后这里也是同样的情况。好的，我有这两个，让我看看这些东西的样子。![](img/d17dc8f7720589c00136fbad4aed332e_4.png)
 - en: I see that both of these are a two by two matrix that are showing me every combination。
     So let me look at another one as well。So these are exactly the same shape and
     the values in it are just giving you the coordinates right so the first one is
     giving me the x coordinate basically the Sepple width and the other one is going
     to give me the y ord or the sepple length。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 我看到这两个都是一个2x2的矩阵，显示每种组合。所以让我再看看另一个。这些形状完全相同，其中的值只是给出坐标，因此第一个给我的是x坐标，基本上是Sepple宽度，另一个则是y坐标或sepple长度。
 - en: '![](img/d17dc8f7720589c00136fbad4aed332e_6.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d17dc8f7720589c00136fbad4aed332e_6.png)'
 - en: And so if I wanted to， I could then call Plt。cont F。![](img/d17dc8f7720589c00136fbad4aed332e_8.png)
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我想的话，我可以调用Plt。cont F。![](img/d17dc8f7720589c00136fbad4aed332e_8.png)
 - en: And this is taking three things， it has to have my matrix of my x coordinates。
     and it has to have my matrix of my Y coordinates。And then a has has on me that
     says that lives the color。RightAnd that can be some sort of alternate expression。
     so I could say if I wanted to sple W and this will show me some stripes from left
     to right。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 这涉及到三个方面，它必须有我的x坐标矩阵，并且必须有我的y坐标矩阵。然后有一个指示颜色的变量。这样可以作为某种替代表达。因此我可以说，如果我想要sple
+    W，这将显示从左到右的一些条纹。
 - en: '![](img/d17dc8f7720589c00136fbad4aed332e_10.png)'
+  id: totrans-11
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d17dc8f7720589c00136fbad4aed332e_10.png)'
 - en: Or I could do S L， and that'll show me vertical， or I could have some sort of
     mathematical expression right like this。![](img/d17dc8f7720589c00136fbad4aed332e_12.png)
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者我可以做SL，这将向我显示垂直，或者我可以有某种数学表达式，就像这样。![](img/d17dc8f7720589c00136fbad4aed332e_12.png)
 - en: '![](img/d17dc8f7720589c00136fbad4aed332e_13.png)'
+  id: totrans-13
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d17dc8f7720589c00136fbad4aed332e_13.png)'
 - en: And at each point， it's showing me what would happen if I multiply the value
     in one of these by the value and the other。 so I can get these nice contour maps。
     Now what I'd really like to do is to just have two levels。 two numbers。 I guess
     let me just show you what this is now。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 在每一个点上，它向我展示如果我将其中一个值与另一个值相乘会发生什么。所以我可以得到这些漂亮的轮廓图。现在我真正想做的是只拥有两个级别，两个数字。我想让我给你展示一下现在的情况。
 - en: '![](img/d17dc8f7720589c00136fbad4aed332e_15.png)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d17dc8f7720589c00136fbad4aed332e_15.png)'
 - en: 哦。Lots of different numbers， I'd like to just have two numbers here。 basically
     one and a zero that correspond to predictions right so it because my x axis is
     going to be the sple width and my y axis will be the sple length。![](img/d17dc8f7720589c00136fbad4aed332e_17.png)
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。很多不同的数字，我只想在这里有两个数字。基本上是一个和零，分别对应于预测。所以我的x轴将是宽度，y轴将是长度。![](img/d17dc8f7720589c00136fbad4aed332e_17.png)
 - en: '![](img/d17dc8f7720589c00136fbad4aed332e_18.png)'
+  id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d17dc8f7720589c00136fbad4aed332e_18.png)'
 - en: '![](img/d17dc8f7720589c00136fbad4aed332e_19.png)'
+  id: totrans-18
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d17dc8f7720589c00136fbad4aed332e_19.png)'
 - en: So I have to get all this data into a format where I can do some predictions
     right so let me leave this here for now and may come back to this。 this is my
     goal where I'm working towards。![](img/d17dc8f7720589c00136fbad4aed332e_21.png)
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我必须将所有这些数据放入一个格式中，以便我可以进行一些预测。让我暂时把这留在这里，可能会回来看看。这是我努力的目标。![](img/d17dc8f7720589c00136fbad4aed332e_21.png)
 - en: 哦。![](img/d17dc8f7720589c00136fbad4aed332e_23.png)
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。![](img/d17dc8f7720589c00136fbad4aed332e_23.png)
 - en: What I would like to do is put these things in a data frame。 so I'm going to
     say this will be my contour data frame， Im going to say PD data frame。And my data
     frame has to have。All of these things up here。Right because I want to do predictions
     on it， and these are my X columns。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 我想做的是将这些东西放入一个数据框中。所以我将说这将是我的轮廓数据框，我将说PD数据框。我的数据框必须包含所有这些内容。因为我想对它进行预测，这些是我的X列。
 - en: And somebody' going have something make for that。哦。Let we have something for
     that。And then I'll do my content first， that's easy， that's just one。These values。
     I can pull from these and so I can put this here。And。Then I could put up here。
     I could put Sap W if I wanted to。 now this is not going to quite work because
     these are those。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 而且有人会为此准备一些东西。哦。让我为此准备一些东西。然后我先处理我的内容，这很简单，只有一个。这些值。我可以从这些中提取，所以我可以把它放在这里。然后我可以把它放在这里。如果我想的话，我可以放上Sap
+    W。现在这并不太有效，因为这些是那些。
 - en: basicallysically square matrices。And down here， I'm to put all this in a data
     frame so I can do my predictions。 it has to just be a simple column， so I have
     to flatten these。So it' it's just kind of one dimensional， and I can do that and
     then I could look at my CDF if I like。And I can see what is going on here is I
     really have every combination of length and width。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 基本上是平方矩阵。在这里，我要把所有这些放入数据框中，以便可以进行预测。它必须只是一个简单的列，所以我需要将其展平。所以这只是某种一维的，我可以这样做，然后我可以查看我的CDF。如果我愿意的话。我可以看到这里发生的事情是我确实拥有每个长度和宽度的组合。
 - en: and then I have my constant column。So this isn't a great format for me to then
     do some predictions because I can just say it has everything that I need for my
     predictor。 I can say CLS。 predict。Just like that。And then I get all of these values
     right here。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我有我的常量列。所以这并不是一个适合我进行预测的格式，因为我可以说它包含了我预测所需的所有内容。我可以说CLS。predict。就这样。然后我会得到所有这些值。
 - en: and if I wanted to I could add those to that data frame as well， I could say
     CDF。 I could say predicted， maybe I'll just say a prediction。And I remember that
     was the pedal wet is what I'm trying to predict。I can say， or I'm sorry。 that
     was the category， is it Sentosa or not， right， so that's what I'm trying to do。Okay。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我愿意，我也可以将它们添加到那个数据框中，我可以说CDF。我可以说预测，也许我只会说一个预测。我记得那是我试图预测的踏板湿度。我可以说，或者对不起，那是类别，它是Sentosa还是不是，对吧，所以这就是我试图做的。好的。
 - en: so I have that。And。And now I'd like to be going down and doing my。![](img/d17dc8f7720589c00136fbad4aed332e_25.png)
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我有了这个。现在我想继续进行我的工作。![](img/d17dc8f7720589c00136fbad4aed332e_25.png)
 - en: 哦。During my contour plot down here， right so I can have this。And。Let me think
     a little bit carefully here right so if I have my set W。 let me look at the shape
     of these。![](img/d17dc8f7720589c00136fbad4aed332e_27.png)
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。在我下面的轮廓图中，对吧，所以我可以这样。让我仔细想一下，所以如果我有我的集W。让我看看这些的形状。![](img/d17dc8f7720589c00136fbad4aed332e_27.png)
 - en: That's a 100 by 100。Because that's what my range was I was drawing over 100
     numbers。 this is 100 100 matrix this 100 100 matrix this is also going to have
     to be 100 by 100 matrix right now it's just a long column so just like I have
     to had to convert these matrices to columns with a reshape here now I have to
     go in the opposite direction I have to take values and then reshape this。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个100乘100的矩阵。因为这是我绘制超过100个数字的范围。这个100乘100的矩阵，这个100乘100的矩阵现在只是一个长列，所以就像我必须把这些矩阵转换成列一样，现在我必须朝相反的方向进行，我必须提取值并重塑它。
 - en: To be matching the format of these， right， so I can actually just use these。And
     say， well。My prediction should be whatever shape my x values are， and I'll line
     up nicely。 and so I can do that and now I can see all the two sides of this are
     going correspond to a prediction of it being either all a sattosa or not a sattosa。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了与这些格式匹配，正确，所以我实际上可以直接使用这些。并且说，我的预测应该与我的x值的形状一致，我会很好地对齐。所以我可以这样做，现在我可以看到这两侧都对应于它是全为sattosa或非sattosa的预测。
 - en: '![](img/d17dc8f7720589c00136fbad4aed332e_29.png)'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d17dc8f7720589c00136fbad4aed332e_29.png)'
 - en: Let me plot those with a scatter plot on top of here。![](img/d17dc8f7720589c00136fbad4aed332e_31.png)
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我在这里的顶部用散点图绘制这些。![](img/d17dc8f7720589c00136fbad4aed332e_31.png)
 - en: I have my data frame here of all my original flowers I may plot all of them。
     ideally I would just plot only the training data on top of this so I can actually
     have a better sense of what errors are made。But I only have like 10 rows of my
@@ -165,21 +233,27 @@
     dot plot do scatter and actually what I'd like to do is I'd like to separate this
     out so I'm going to have something like sattosa。Dot plot。tcatter， and then I going
     have something like other dot plot dot scatter。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 我这里有我的所有原始花朵的数据框，我可以绘制所有这些。理想情况下，我只会在此基础上绘制训练数据，这样我可以更好地了解出现的错误。但是我只有大约10行的测试数据，所以我将绘制整个内容。因此，我将说点绘制散点图，实际上我想做的是将其分开，所以我将会有像sattosa。点绘图。tcatter，然后我将会有像其他点绘图。散点图。
 - en: And then those things I can get just with some filterilth right now。 I'm going
     to say Sotosa equals data frame。We're data frame of variety。R equals Ctosa。And
     then my other ones will be basically where it's not that。So I'll say where it
     is not sattosa。 Okay， so what am I going to do down here， Well I may say my x
     value is going to be。哦。Well。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我可以通过一些过滤器获得这些。现在，我会说Sotosa等于数据框。我们的数据框的种类。R等于Ctosa。然后我的其他项基本上是那些不是的。所以我会说它不是sattosa。好的，我将在这里做什么呢？好吧，我可以说我的x值将会是。哦。好吧。
 - en: I was putting sple width there， so I better put that。Sepple width on my X axis。And
     then my Y axis should be sepple length。Okay， so I'm going to do that and I'm going
     to do the same thing down here for a moment and I see okay well I have my decision
     boundaries and then I have my two separate plots down here。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 我在这里放了sple宽度，所以我最好在我的X轴上放这个。然后我的Y轴应该是sepple长度。好的，我将这样做，并且我将对这里的同样事情做一会儿，我看到好吧，我有我的决策边界，然后我在下面有两个单独的图。
 - en: I'd like these to all be on the same plot。 and normally the way that we've done
     things like that is we would say AI X equals this and we pass that down below
     let me just show you quickly what the type of Ax would be if I were to do that。
@@ -187,174 +261,261 @@
     if I wanted to reuse the same aupplot area What I can actually do is I can say
     matplotlib do it current axis and that will give me an a subplot that I can pass
     in elsewhere。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 我希望这些都在同一个图上。通常我们处理这种情况的方法是，我们会说AI X等于这个，然后把它传递下去。让我快速展示一下，如果我这样做，Ax的类型会是什么。这就是这里的东西。这种四重轮廓集，我们可以在其上绘图。所以如果我想重复使用相同的aupplot区域，我实际上可以说matplotlib执行当前坐标轴，这将给我一个我可以在其他地方传递的子图。
 - en: '![](img/d17dc8f7720589c00136fbad4aed332e_33.png)'
+  id: totrans-36
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d17dc8f7720589c00136fbad4aed332e_33.png)'
 - en: '![](img/d17dc8f7720589c00136fbad4aed332e_34.png)'
+  id: totrans-37
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d17dc8f7720589c00136fbad4aed332e_34.png)'
 - en: '![](img/d17dc8f7720589c00136fbad4aed332e_35.png)'
+  id: totrans-38
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d17dc8f7720589c00136fbad4aed332e_35.png)'
 - en: '![](img/d17dc8f7720589c00136fbad4aed332e_36.png)'
+  id: totrans-39
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d17dc8f7720589c00136fbad4aed332e_36.png)'
 - en: Right， I could say up here， I could say。啊。Maybe I'll go on to the next line
     and say AX equals that and。![](img/d17dc8f7720589c00136fbad4aed332e_38.png)
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，我可以在这里说，我可以说。啊。也许我会继续下一行，说 AX 等于那个和。![](img/d17dc8f7720589c00136fbad4aed332e_38.png)
 - en: Same thing here， so then they'll all go into the same area。 so let me do that
     and so I have all of these points。![](img/d17dc8f7720589c00136fbad4aed332e_40.png)
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里也是一样，所以它们都会进入同一区域。让我这样做，所以我有了所有这些点。![](img/d17dc8f7720589c00136fbad4aed332e_40.png)
 - en: And。![](img/d17dc8f7720589c00136fbad4aed332e_42.png)
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 和。![](img/d17dc8f7720589c00136fbad4aed332e_42.png)
 - en: And so then what I like to do now is， well， it's kind of strange that it's not
     overlapping。![](img/d17dc8f7720589c00136fbad4aed332e_44.png)
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我喜欢做的事情是，嗯，奇怪的是它没有重叠。![](img/d17dc8f7720589c00136fbad4aed332e_44.png)
 - en: That boundary。![](img/d17dc8f7720589c00136fbad4aed332e_46.png)
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 那个边界。![](img/d17dc8f7720589c00136fbad4aed332e_46.png)
 - en: Did I get my axes mixed up？I did。 So here a sepel with sepel light。Okay， great。
     so let me just switch this back。![](img/d17dc8f7720589c00136fbad4aed332e_48.png)
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 我搞混了我的坐标轴吗？我确实搞混了。所以这里是一个带有分隔光的示例。好的，很好。那么让我把这个切换回来。![](img/d17dc8f7720589c00136fbad4aed332e_48.png)
 - en: So this should have been Sple A， and this should have been sple width。![](img/d17dc8f7720589c00136fbad4aed332e_50.png)
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这应该是 Sple A，而这应该是 Sple width。![](img/d17dc8f7720589c00136fbad4aed332e_50.png)
 - en: And now I can actually see that makes a lot more sense how you can try to separate
     the ones that are from the ones that are not and so to actually make this work
     now I should have the color be different in some way so I'm going have the stosis
     be。R。![](img/d17dc8f7720589c00136fbad4aed332e_52.png)
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我实际上可以看到如何尝试分开那些与那些不同的东西，所以为了让这个工作，我应该让颜色在某种程度上有所不同，所以我会让 Sattosa 为 R。![](img/d17dc8f7720589c00136fbad4aed332e_52.png)
 - en: And then maybe I'll have the other ones be。I don't know， maybe it can be great。![](img/d17dc8f7720589c00136fbad4aed332e_54.png)
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后也许我会让其他的变成。我不知道，也许它可以很好。![](img/d17dc8f7720589c00136fbad4aed332e_54.png)
 - en: So just like that and so now I can start to see what mistakes will be made。
     I can see that there's one sattosa that is not going to be recognized as a sattosa
     because is's on the wrong side of this boundary。 I should probably also have some
     labels here so we may say like label equals sattosa and then down here maybe I'll
     say label equals。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 就这样，现在我可以开始看到会犯哪些错误。我可以看到有一个 Sattosa 不会被识别为 Sattosa，因为它在这个边界的错误一侧。我可能还应该在这里加上一些标签，所以我们可以说像
+    label 等于 Sattosa，然后在这里我可能会说 label 等于。
 - en: '![](img/d17dc8f7720589c00136fbad4aed332e_56.png)'
+  id: totrans-50
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d17dc8f7720589c00136fbad4aed332e_56.png)'
 - en: Equs other。![](img/d17dc8f7720589c00136fbad4aed332e_58.png)
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: Equs 其他。![](img/d17dc8f7720589c00136fbad4aed332e_58.png)
 - en: Just like that and so I can see what's happening here now and and so there's
     a couple steps to all this right maybe I can delete these extra things up here
     so I can have a minimal example。 I had to create a mesh grid。![](img/d17dc8f7720589c00136fbad4aed332e_60.png)
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 就这样，我现在可以看到这里发生了什么，所以这有几个步骤，也许我可以删除这些额外的东西，这样我可以有一个最小的示例。我必须创建一个网格。![](img/d17dc8f7720589c00136fbad4aed332e_60.png)
 - en: And that basically， for every point， at one grid had the x values and other
     one have the y values。I had to reshape those to church and convertt them to data
     frame columns。 and at that point I really had every combination of these in some
     row。Once I did that。 I could add predictions for basically our recommendationcomation。
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 基本上，对于每个点，一个网格有 x 值，另一个有 y 值。我必须把它们重新形状并转换成数据框列。到那时，我实际上在某一行中有这些的每一种组合。一旦我这样做了，我可以为我们的推荐系统添加预测。
 - en: '![](img/d17dc8f7720589c00136fbad4aed332e_62.png)'
+  id: totrans-54
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d17dc8f7720589c00136fbad4aed332e_62.png)'
 - en: And then if I converted on my predictions back to the mesh gridd formula like
     these two have。 then I could do my contour。![](img/d17dc8f7720589c00136fbad4aed332e_64.png)
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后，如果我把我的预测转换回网格公式，就像这两个有的那样。我就可以进行我的等高线绘制。![](img/d17dc8f7720589c00136fbad4aed332e_64.png)
 - en: '![](img/d17dc8f7720589c00136fbad4aed332e_65.png)'
+  id: totrans-56
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d17dc8f7720589c00136fbad4aed332e_65.png)'
 - en: And that's how I could create this map。 And then on top of that。 I could plot
     my scatter point and see what's happening。One last thing I want to do here and
     that is I want to try to do some polynomial fes。 so just like we can use polynomial
     features。![](img/d17dc8f7720589c00136fbad4aed332e_67.png)
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是我如何创建这个地图的方式。然后在这之上，我可以绘制我的散点图，看看发生了什么。我想做的最后一件事是，我想尝试做一些多项式特征。所以就像我们可以使用多项式特征一样。![](img/d17dc8f7720589c00136fbad4aed332e_67.png)
 - en: Or a regular regression， I can use those for classification as well。 And so
     let me import some。 I might say， from S K learned。![](img/d17dc8f7720589c00136fbad4aed332e_69.png)
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者常规回归，我也可以将它们用于分类。所以让我导入一些。我可能会说，从SK学习。![](img/d17dc8f7720589c00136fbad4aed332e_69.png)
 - en: Dot pipeline import pipeline， and I may say from SKL do preprocessing。I'm going
     to say import polynomial features。![](img/d17dc8f7720589c00136fbad4aed332e_71.png)
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: Dot pipeline导入pipeline，我可能会说从SKL做预处理。我将说导入多项式特征。![](img/d17dc8f7720589c00136fbad4aed332e_71.png)
 - en: Okay， and so before what did I have， I had， I just had a logistic regression
     like this with。嗯。Well。 what what was it There was on。![](img/d17dc8f7720589c00136fbad4aed332e_73.png)
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，那么之前我有什么呢，我有，我只是有一个这样的逻辑回归。嗯。好吧，那是什么呢，之前是什么。![](img/d17dc8f7720589c00136fbad4aed332e_73.png)
 - en: I'm just trying to search up in my page earlier， I think it was a fit intercept
     thing。![](img/d17dc8f7720589c00136fbad4aed332e_75.png)
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 我只是想在之前的页面中搜索一下，我想那是一个拟合截距的东西。![](img/d17dc8f7720589c00136fbad4aed332e_75.png)
 - en: That I had off for all of them， excuse me。So I had that this is my model before。
     and that's going be part of a pipeline right so now I'm going to say pipe。Equals
     pipeline。And the pipeline is going to be this list of stages。Just like this。And
     so that'll be the first stage。 well I'm sorry that'll be the last stage， and then
     before that I want to have my polynomial features。
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 我把它都关闭了，抱歉。所以我之前的模型是这样的。这将是管道的一部分，对吧？所以现在我要说pipe。等于pipeline。而管道将是这组阶段的列表。就像这样。因此，这将是第一阶段。抱歉，这将是最后阶段，然后在那之前我想要我的多项式特征。
 - en: Just like that。 And then the other trick is is that。Each state of my pipeline
     has to be a tuple。And the reason it has to be a tuple is because I have to give
     it a name， right。 So I guess I'll just call this polyly。And I'll call this one
     LR。So I have that in its straight。And so just like before I could have my， I before
     I had something like this F。 And then I had。
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 就这样。然后另一个技巧是，我的管道每个状态都必须是一个元组。之所以必须是元组，是因为我必须给它一个名字，对吧。所以我想我就叫它polyly。然后我会叫这个LR。所以我就把它直观化了。因此，就像之前一样，我可以有我的，之前我有类似于F的东西。然后我有。
 - en: Train of X columns and then train of what was my Y column， I guess it was。![](img/d17dc8f7720589c00136fbad4aed332e_77.png)
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: X列的训练，然后训练我的Y列，我想那是。![](img/d17dc8f7720589c00136fbad4aed332e_77.png)
 - en: '![](img/d17dc8f7720589c00136fbad4aed332e_78.png)'
+  id: totrans-65
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d17dc8f7720589c00136fbad4aed332e_78.png)'
 - en: It was going to be my pedal width， I think， so let me let me just copy you that。![](img/d17dc8f7720589c00136fbad4aed332e_80.png)
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 我想这将是我的花瓣宽度，所以让我就复制给你。![](img/d17dc8f7720589c00136fbad4aed332e_80.png)
 - en: It was like this， but it was petedal we。That's what I was doing before。 and
     I can just replace my logistic regression with this pipe。 let me try that and
     I get some sort of error here。![](img/d17dc8f7720589c00136fbad4aed332e_82.png)
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 就是这样，但它是petedal we。这是我之前做的。我可以把我的逻辑回归替换为这个管道。让我试试这个，我得到了某种错误。![](img/d17dc8f7720589c00136fbad4aed332e_82.png)
 - en: Unknown label type continuous。 Oh， I'm sorry。 I'm trying to predict the whether
     or not it's a Sctosa。 right， it's complaining because it's continuous。 So it's
     saying， hey。 you're trying to do a classification。![](img/d17dc8f7720589c00136fbad4aed332e_84.png)
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 未知标签类型为连续。哦，抱歉。我正在尝试预测它是否是Sctosa。对，它抱怨是因为它是连续的。所以它在说，嘿，你在试图做分类。![](img/d17dc8f7720589c00136fbad4aed332e_84.png)
 - en: On a quantity， which we don't do classifications on， we do regressions on quantities。So
     what I may say here is Ctosa， is it a sattosa， that's what I care about。![](img/d17dc8f7720589c00136fbad4aed332e_86.png)
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 在一个我们不进行分类的量上，我们对数量进行回归。所以我想说的是Ctosa，它是sattosa吗，这正是我关心的。![](img/d17dc8f7720589c00136fbad4aed332e_86.png)
 - en: And then I train it and that's all great。Now if I want to。 I can come back here
     and I can repeat these steps so I could if I wanted to maybe I' just try to move
     all of this up here。![](img/d17dc8f7720589c00136fbad4aed332e_88.png)
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我训练它，这一切都很好。现在如果我想的话，我可以回到这里，重复这些步骤，所以如果我愿意，可能我只是想把这一切都移动到这里。![](img/d17dc8f7720589c00136fbad4aed332e_88.png)
 - en: '![](img/d17dc8f7720589c00136fbad4aed332e_89.png)'
+  id: totrans-71
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d17dc8f7720589c00136fbad4aed332e_89.png)'
 - en: 。And then when I'm plotting this， when I want to look at those with decision
     boundaries instead of using my simple classifier before I could use my pipeline
     classifier。 and then what's going to happen while that boundary line between them
     is just slightly more curved。
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后当我绘制这个图时，当我想查看那些带有决策边界的图时，不再使用我之前简单的分类器，而是可以使用我的管道分类器。而且这条边界线在它们之间只是稍微弯曲了一些。
 - en: it doesn't quite help that red point is still on the wrong side。![](img/d17dc8f7720589c00136fbad4aed332e_91.png)
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 这并没有太大帮助，因为红点仍在错误的一侧。![](img/d17dc8f7720589c00136fbad4aed332e_91.png)
 - en: '![](img/d17dc8f7720589c00136fbad4aed332e_92.png)'
+  id: totrans-74
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d17dc8f7720589c00136fbad4aed332e_92.png)'
 - en: But you can see I can get different shapes depending on the complexity of my
     model and what I have in the pipeline beforehand。![](img/d17dc8f7720589c00136fbad4aed332e_94.png)
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是你可以看到，依据模型的复杂性和我之前的流程，我可以得到不同的形状。![](img/d17dc8f7720589c00136fbad4aed332e_94.png)
 - en: '![](img/d17dc8f7720589c00136fbad4aed332e_95.png)'
+  id: totrans-76
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d17dc8f7720589c00136fbad4aed332e_95.png)'
 - en: '![](img/d17dc8f7720589c00136fbad4aed332e_96.png)'
+  id: totrans-77
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d17dc8f7720589c00136fbad4aed332e_96.png)'

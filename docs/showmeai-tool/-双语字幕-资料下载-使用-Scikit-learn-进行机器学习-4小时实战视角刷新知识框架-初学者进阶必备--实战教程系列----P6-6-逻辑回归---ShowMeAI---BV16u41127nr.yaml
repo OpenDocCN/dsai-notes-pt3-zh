@@ -300,6 +300,7 @@
   id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我可以像这样做，我可以说。哦。这有额外的功能，非常类似于产品。但它会像这样，它会是predict。概率A，然后我们得到一个所有概率的非均匀数组。因此，我的解释是，这里有94%的概率是假的，5%的概率是真的。这就是为什么它最终将其减少到假的原因。97。
 - en: 9% chance of false and only a 2% chance of true。 That's why you know they' false。
     Let me look at this one。 This one had a 90 93% chance of being true， which is
     why I have true。truerue there。 And so I could even， if I wanted to， I could try
@@ -308,6 +309,7 @@
   id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 9%的假概率和仅有2%的真概率。这就是你知道它们是假的原因。让我看看这个。这一项有93%的概率是真的，这就是为什么我有真的，真的在那里。如果我愿意，我甚至可以试着提取最后一列。我可以说类似于，我想要某种切片，就像真正的切片。
 - en: And then a column slice when I'm doing this， I want all the rows。And I want
     that second column。 these are just the probabilities of it being true。 and so
     if I wanted to。 I could say something like test。T。Of probability equals that，
@@ -316,6 +318,7 @@
   id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后，在做这个列切片时，我想要所有行。我想要第二列。这些只是它为真的概率。如果我想，我可以说像test.T。的概率等于这个，然后我可以再看看。在每种情况下，我可以根据这些维度看到。
 - en: what probability does a model think it has of being a Setoa and so sometimes
     I's not quite sure right I based on this。 I could identify the cases where the
     model was not very confident and then I could identify other cases where it was
@@ -324,6 +327,7 @@
   id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型认为它有多大概率是Setoa，有时我对此不太确定。我可以识别出模型不太自信的案例，然后识别出那些明显的案例。因此，我不需要为此创建一个新模型。我只需要调用预测概率A，而不是predict。好的。
 - en: let me head up here and we're going to do this last piece now。 how can I do
     a multi class classification on variety？And variety is a little bit trickier，
     because。I have three different categories there， I guess it's going to be trickier
@@ -332,6 +336,7 @@
   id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我继续，现在我们要做最后这一部分。如何对多类别进行分类？而多样性稍微复杂一点，因为我有三个不同的类别，我想这在实际的数学运算中会更复杂，但在运行代码方面并没有更复杂。
 - en: So if I actually copy this here。And then I head down here。I'm just going call
     the salt multi so I can remember my three different models。Then may I say multi。And。And
     then when else do I need to change， I'm doing a different column this time。And
@@ -339,6 +344,7 @@
   id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以如果我实际上在这里复制这个。然后我往下走。我只叫它salt multi，这样我就可以记住我的三个不同模型。然后我说multi。然后，我还需要更改什么，我这次在做一个不同的列。所以我可以这样做，现在它会告诉我我的预测是什么。
 - en: I see'd say my predictions are still。False and true。 And that came from here。
     And so this is returning true and false because all my new model is called multi
     and I'm using my old model。I'm going to do that and now I can see well we' writing
@@ -349,6 +355,7 @@
   id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 我会说我的预测仍然是假的和真的。这是从这里得出的。所以这是返回真和假，因为我所有的新模型被称为multi，而我使用的是旧模型。我将这样做，现在我可以看到，我们正在写这个。我可以看到它为这一项预测了什么，那一项预测得不错，而这里确实出错了，模型会犯错，这并不令人惊讶，因为我猜这只是数据集中唯一的错误。
 - en: And then， of course， this probability column。Was from earlier right so Im trying
     ignore that。is I keep on running of this probability or this prediction column
     for each of my four examples。Okay。 so there we've seen a few different things，
@@ -357,6 +364,7 @@
   id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然，这个概率列是之前的，所以我想忽略它。我继续运行这个概率或这个预测列，针对我的四个示例。好的，我们看到了一些不同的东西，对吧，我们看到了一次回归。然后我们看到了这两种不同的分类。
 - en: Let's try to get into the linear algebra behind each of these examples。And so
     on my head down here。And remember that I had R EG， that was my model earlier and。Inside
     of here， I have coefficient。And I also have。Hetercepted。And the intercept is 0
@@ -516,6 +524,7 @@
   id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 也许我会在这里做这个。在这里上方，Rece 预测了概率。让我看看这里发生了什么，这些数字。就是它为真的概率。这一列就是我写的代码中为真的概率。我并没有计算为假的概率，因为那样太无聊了，对吧，我需要加起来等于一。所以为什么我要做两个，但你可以看到这些数字是完全相同的。
 - en: This town here right so again the probability is very simple， right， I'm still
     just doing that core。Dot product and then I'm just uping the sigmoid to every
     number inside of the result right so we've seen for all these cases so far。 this
@@ -525,6 +534,7 @@
   id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是概率，非常简单，我仍然只是在做那个核心的点积，然后我对结果中的每个数字都进行了 sigmoid 处理。到目前为止，我们已经看到了所有这些情况。这个点积是非常重要的，我正在对一个矩阵进行点积。与一个垂直向量。让我上去谈谈我们在多类模型中做的第四个模型。
 - en: the multi class model that was right here， and I was trying to predict variety
     and variety。Could be any one of these three things， and what is going to turn
     out is that my coefficients for variety。Orre going to be a lot more complicated
@@ -533,6 +543,7 @@
   id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里的多类模型，我试图预测品种，品种可以是这三种中的任何一种，结果是我的品种系数将会复杂得多。如果我查看。这是我的二元模型。如果我查看我的二元模型的系数，我只有这三个数字。
 - en: But if I look at my coefficients for my multi class progression， I actually
     have not a vector。 but a whole matrix with all these numbers in it。And。And so
     let me。Let me use these now。What we're going to do is actually， I think just like
@@ -541,6 +552,7 @@
   id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是如果我查看我的多类回归的系数，我实际上并没有一个向量，而是一个包含所有这些数字的完整矩阵。所以，让我现在使用这些。我们将要做的是，我想就像它们被设置的那样。我们必须对它们进行转置。我们将这样做。让我抓一下这个。
 - en: it's going to be very similar again。But。Instead of multiplying xs by just a
     vertical vector。I am going to multiply it by this whole thing right here。 I multiply
     it by that whole thing。 And then I get this result。 And some'm going just call
@@ -549,11 +561,14 @@
   id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将再次非常相似。但是。与仅仅将 xs 乘以一个垂直向量不同。我将把它乘以这里的整个东西。我将它乘以那个整体。然后我得到这个结果。有些人可能会迅速称之为。抱歉。目前这是乘法。好吧，我预测。我可能会称之为。Mie。预测
+    Xs。
 - en: And I'm actually not doing a soid anymore at this point。I apologies。And so how
     do I interpret this？
   id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 而且在这个时候我实际上不再进行 soid。我很抱歉。那么我该如何解释这个呢？
 - en: Basically， every one of these columns。Or responses to one of the three varieties。If
     I had had more varieties， I would have had more columns up here when I would have
     still had three rows in this coefficient matrix。So you might imagine， I don't
@@ -561,6 +576,8 @@
   id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 基本上，这些列中的每一个都是对这三种品种之一的响应。如果我有更多的品种，我在这里会有更多的列，但我在这个系数矩阵中仍然会有三行。所以你可能想象，我不知道哪个是哪个，但你可以想象这是
+    atosa 品种。
 - en: And it turns out when I take my big matrix of data。And I multiply it by all
     of these columns right here。What it really does is itro column by column。 It takes
     this column。Is my data matrix， and it uses that to produce this output column。So
@@ -568,6 +585,8 @@
   id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 结果是，当我拿到我的大数据矩阵，并将其乘以这里的所有列时。实际上，它是逐列操作。它取这列。是我的数据矩阵，并用它来产生这个输出列。所以这些可能是它看起来像
+    sattosa 的分数。
 - en: Then maybe let's say these are the coefficients for reversea color， Then these
     would be。The scores for versa color， if these were the coefficients for a Viinica。
     then these might be the scores for the Viica。And so what I can do is that each

@@ -1,5 +1,6 @@
 - en: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
     - P11：L2.4- 实例化transformer 模型(TensorFlow) - ShowMeAI - BV1Jm4y1X7UL
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
@@ -9,6 +10,7 @@
     checkpoint on the aching F hub。It will pick the right model class from the library
     to instant shade the proper architecture and load the weights of the portrayed
     model inside。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
 - en: As we can see when given a bird checkpoint， we end up with a TF B model and
@@ -16,6 +18,7 @@
     on the E。 in which case it will download and cache the configuration file as well
     as the model weight file。You can also specify the path to a local folder that
     contains a valid configuration file and with always slide。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
 - en: To instant shade the preed model， the TF Automod API will first open the configuration
@@ -23,18 +26,21 @@
     class depends on the type of the model， be， GPT2 or butt， for instance。Once it
     test the proper configuration class， it can instant shape that configuration。
     which is a blueprint to know how to create the model。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
 - en: It also uses this configuration class to find the proper model class。 which
     is combined with the loaded configuration to load the model。This model is not
     yet or between model as it has just been initialized with random weights。 the
     last step is to load the weight from the model file inside this model。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
 - en: To easily load the configuration of a model from any checkpoint or a folder
     containing the configuration file。 we can use the autoconft class。Like the T for
     tomod class。 it all picks the right configuration class from the library。We can
     also use the specific class corresponding to a checkpoint。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
 - en: But we all need to change a code each time we want to try a different model
@@ -42,6 +48,7 @@
     contains all the information necessary to create the model architecture。For instance，
     the bird model associated with the bird based case checkpoint has 12 layers。 a
     hidden size of 768， and a vocabulary size of 28，996。Once we have a configuration。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
 - en: we can create a model that has the same architecture as a checkpoint， that is
@@ -49,6 +56,7 @@
     model。We can also change any part of the configuration by using keyword arguments。The
     second snippet of good instants a randomly initialized pair model with 10 layers
     instead of 12。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
 - en: Sing mode once it's train of fine tune is very easy， you just have to use a
@@ -56,14 +64,21 @@
     model inside the current working directory。Such a model can then be reloaded using
     the form between method。To learn how to approach this model to the head， check
     out the push to video。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/2918b334c029ecd181f96c38b1ffc1ef_1.png)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/2918b334c029ecd181f96c38b1ffc1ef_1.png)'
 - en: '![](img/2918b334c029ecd181f96c38b1ffc1ef_2.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/2918b334c029ecd181f96c38b1ffc1ef_2.png)'
 - en: Yeah。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的。
