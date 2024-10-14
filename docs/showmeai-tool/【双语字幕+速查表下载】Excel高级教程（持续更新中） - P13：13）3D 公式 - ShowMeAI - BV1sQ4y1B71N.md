@@ -1,0 +1,139 @@
+# 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P13：13）3D 公式 - ShowMeAI - BV1sQ4y1B71N
+
+![](img/c18c440e729b03f2cd0cd192ae3454a3_0.png)
+
+In this short video tutorial， we're going to look at an advanced Excel technique。
+
+ And that is how to produce 3D formulas。 If you haven't already watched my beginner's guide to using Excel or the intermediate tips and tricks videos。
+
+ Please go back and watch those before you watch this one， it'll make a lot more sense。
+
+ But let's get started now with 3D formulas in Excel。 In my previous two videos in this series。
+
+ I created an inventory of the movies that I own。 And to be honest， this is hypothetical。
+
+ and I put in the titles I put in the date purchased and the value。
+
+ Some of you took issue with the values I placed here。 These were randomly put in。 But basically。
+
+ I put in the genres and the location in the house， the rating and things like that。 Now。
+
+ in those previous tutorials， I also put in the grand total value of all the DVDs。
+
+ And it was calculated and placed here。 in this tutorial， I've changed。😊。
+
+
+
+![](img/c18c440e729b03f2cd0cd192ae3454a3_2.png)
+
+The arrangement of this spreadsheet。 and I've moved the total here to the upper right。
+
+ And you can probably guess why。 at this point， I have maybe this many DVDvs。 but in the future。
+
+ I may buy more， and I need to be able to have space to put those records in here to put the DVDs listed here with the data that goes with those DVDs。
+
+ And then I want the total to be generated here。 So I need to put in that formula again。
+
+ So I'll just type in equals some left parentheesis。
+
+ and then I just go up here and select what I want to be added。 Now， of course。
+
+ eventually I'll have more DVDvs than this。 So I'm just going to go ahead and change that to D。
+
+ let's say 2000 hit enter。 So now it's gonna add up the value of all the DVDvs up to 2000。
+
+ and I could make that 10000 if I wanted to。 But there's the total value of the DVDs that I have listed in the spreadsheet here。
+
+ Another change that I've made in this workbook is I've created a second sheet。
+
+ You can see here in the lower left corner。You can simply just click add to add a new sheet。
+
+ Well I've done that。 and on the second sheet I created a very similar spreadsheet。
+
+ You can see it's arranged very similarly。 but this one is my music inventory。
+
+ and I've listed here some actual Cds that I do own in this case。
+
+ I collect amazing music from a genre that I love called synth pop。
+
+ and this includes classic synth pop like Dupeche mode Alphaville Od groups like that as well as modern synth pop。
+
+ including some underground synth pop like Bom code 64 B machine。
+
+ This is amazing stuff that very few people have heard about but incredibly good music if you like classic synth pop or new wave and I also collect new wave Cds。
+
+ So this is a partial list of real music that I do own the date I purchased it。
+
+ the rating I give for it， the current value of these items based on what collectors are willing to pay for them and where they're stored Now because I followed the same pattern as my。
+
+First sheet， I have the ability to create a 3D formula and to emphasize how similar these two sheets are。
+
+ I'm going to go to view and I'm gonna zoom to 125%。
+
+ just so that you can really see the similarities here。 Yes， I've changed some of the columns。
+
+ This one says star rating instead of content rating and so forth。 But for the most part。
+
+ this is the same sheet。 The total value of the Cds in this case is in the same cell cell I2 as the total value of the DVDds is in in sheet 1。
+
+ So we have I2 and we have I2。 So because of that， I can go back to sheet 1 and do a 3D formula。
+
+ And this is the reason you might want to do a 3D formula。
+
+ Let's say in addition to my inventory of movies， I want an inventory of music。
+
+ and then maybe an inventory of books。 and you know， other kinds of media as well。
+
+ So I could create several different sheets。And then I would want maybe to have a grand total value of media or of all of my collections。
+
+ The way to do that is I can click here in this empty cell type equals sum left parenthesis And then I simply click on the cell that I would like to add。
+
+ So I want to add the total value of DVDs。 but not just that I want to add the total value of Cds。
+
+ And let's say books and so on。 So the way I do that with the correct cell selected。
+
+ I just go down here to the list of sheets， I hold shift on the keyboard and then click to encompass all of the sheets on which I want cell I 2 to be summed to be added up。
+
+ So let's say I just want sheet 1 and sheet 2。 while holding shift。
+
+ I would click on sheet 2 Now they're both selected。 If I want all three of these。
+
+ I would click in this case on sheet 5。 It's calling it sheet 5。 but it's really the third sheet。
+
+ Now all three of those are selected。 and look at my formula here Its。
+
+corporating all three of those sheets。 if I change my mind。
+
+ I click back and you can see the formula is changing。 So this is what they call a 3D formula。
+
+ It's because it's not just dealing with columns and rows。 but rather columns and rows and sheets。
+
+ It's a third dimension。 It's not just the x dimension， the Y dimension， but it's a z dimension。
+
+ It goes into other sheets。 So I'm going to select all three of these sheets。 And again。
+
+ I'm holding the shift key。 Now I release the shift key。 and I simply hit enter on the keyboard。
+
+ And look， it generates a grand total value of all of my media。 And of course。
+
+ I can go up here to home。 And I can select that this is money。
+
+ And I could put this in bold if I want to。 But that is basically how you do a 3D formula in Excel。
+
+ You click on a cell that you would like the 3D formula to appear in。 you tap equals。
+
+ and then put in the function that you want to use。 whether it's sum or average or max or min。
+
+ whatever you want to use。 In my case， sum。
+
+![](img/c18c440e729b03f2cd0cd192ae3454a3_4.png)
+
+Put in that left parentheesis。 click on the cell in question。
+
+ Now it has to be the same cell on sheet 2， sheet 3， and so on。 right。
+
+ the data that you want has to be in the same location。 But anyway。
+
+ you click on that particular cell， hold shift and then use the mouse to click and select the different sheets that you would like to be incorporated in that 3D formula。
+
+ Then just hit enter。
