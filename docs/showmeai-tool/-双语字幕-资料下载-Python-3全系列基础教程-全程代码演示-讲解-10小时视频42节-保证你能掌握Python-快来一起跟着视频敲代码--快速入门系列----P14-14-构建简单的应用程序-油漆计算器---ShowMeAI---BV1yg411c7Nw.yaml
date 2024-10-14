@@ -1,159 +1,217 @@
 - en: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
     - P14：14）构建简单的应用程序：油漆计算器 - ShowMeAI - BV1yg411c7Nw
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
+    - P14：14）构建简单的应用程序：油漆计算器 - ShowMeAI - BV1yg411c7Nw
 - en: '![](img/16039155a4c29256355bee4626f1789d_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/16039155a4c29256355bee4626f1789d_0.png)'
 - en: Welcome back， everyone。 This is Brian。 We're going to create a simple application
     using everything that we've learned to this point。 If you're just now tuning in，
     there are 13 other videos in this playlist you need to go back and watch if you
     don't know Python。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 欢迎回来，大家好。我是布莱恩。我们将使用到目前为止学到的一切来创建一个简单的应用程序。如果你刚刚调入，有13个其他视频在这个播放列表中，你需要回去看看，如果你不懂Python。
 - en: but we're going to make a paint calculator。So we're going to determine how much
     paint is actually needed to paint a room。 When we run this， the user is going
     to be presented with something like this。 Paint calculator enter a wall size as
     width comma height in feet or press enter to stop for the example would be 12a
     8。 No spaces or anything like that。 And they can enter as many walls as they want。
     And at the end。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我们将制作一个油漆计算器。因此，我们将确定实际需要多少油漆来粉刷一个房间。当我们运行这个时，用户将看到类似这样的内容。油漆计算器：输入墙的尺寸，格式为宽度，逗号，高度（以英尺为单位），或按回车停止，例如12a
+    8。没有空格之类的。他们可以输入任意数量的墙，最后。
 - en: this is going to magically tell them how many cans or how many gallons of paint
     they need to go by。 Let's take a look。😊。![](img/16039155a4c29256355bee4626f1789d_2.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将神奇地告诉他们需要多少罐或多少加仑的油漆。我们来看看。😊。![](img/16039155a4c29256355bee4626f1789d_2.png)
 - en: '![](img/16039155a4c29256355bee4626f1789d_3.png)'
+  id: totrans-5
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/16039155a4c29256355bee4626f1789d_3.png)'
 - en: First thing we need to do is well set up some variables。 So we're going to make
     a list called walls。And this list is going to exist just to hold the measurements。Second
     thing we're going to add is gallons。This is going to be。 Well。 how many gallons
     of paint per square feet。 And I'm not an expert。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们需要做的第一件事是设置一些变量。因此我们将创建一个名为“walls”的列表。这个列表将仅用于保存测量数据。我们要添加的第二件事是加仑。这将是每平方英尺所需的油漆加仑数。我不是专家。
 - en: but I did go out and look this up on Google。And according to Google，1 gallon
     of paint。Covers。350 square feet。I question that because every time I have bought
     paint。 I have never bought enough and I've had to go back to the store and get
     it。 maybe this application will helpless。And then total is going to be the total
     number of gallons of paint we need to go by。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我确实出去查了一下谷歌。根据谷歌，1加仑油漆覆盖350平方英尺。我对此表示怀疑，因为每次我买油漆时，我从来没有买够，必须回到商店再买。也许这个应用程序会有所帮助。而且总数将是我们需要购买的油漆总加仑数。
 - en: We're going to use this later。Little gallons to buy。So far， our application
     does absolutely nothing。 but that's about to change。 We are going to get the users's
     input。 and we haven't talked about this yet。But we're going to make a wild loop。
     And we're going to say wild true。 And you may be going oh， whoa， whoa， whoa。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们稍后会用到这个。购买的小加仑。到目前为止，我们的应用程序完全没有功能。但这即将改变。我们将获取用户的输入，而我们还没有谈论过这一点。我们将创建一个无限循环。我们将说“while
+    true”。你可能会想，哦，哇，哇，哇。
 - en: You're making an infinite loop。 That's true。 We're going to break out of this。
     And I'm going to show you how。So we're going to get a variable。And we're going
     to use the built in input functions。 there's different ways of doing this。 but
     we're going to use input。And I'm going to say enter。It wall size。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 你正在制造一个无限循环。没错。我们将跳出这个。我将向你展示如何。所以我们将获取一个变量。我们将使用内置的输入函数。有不同的方法来做到这一点，但我们将使用输入。我将说“输入”。墙的尺寸。
 - en: Then we're going to break out of this， if they don't really enter。Any data，
     So I must say Ly。Of S。The zero。Then we want to just call break if you're kind
     of questioning what any of this is。 go back and watch the previous 13 videos that
     I've done on this。So let's go ahead and test this out。We're going to run this。
     and it says inner wall size。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们要跳出这个，如果他们没有真正进入。任何数据，所以我必须说“Ly”。的“S”。零。那么如果你有点怀疑这一切是什么，我们想要的就是调用“break”。请回去看看我之前做的13个视频。所以让我们测试一下。我们要运行这个，结果显示“内墙尺寸”。
 - en: She knows how our programs just stopped and waiting for us。 Well， I'll just
     enter some garbage。 I must say cats。And it wants another。吃。And another fish。And
     then I'm just going to hit enter。And sure enough， it exits out。 So that is the
     correct way of using an infinite loop to gather user input and to test when we
     need to break out of this loop。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 她知道我们的程序停止了并在等待我们。好吧，我就输入一些无效的数据。我必须说猫。然后它想要另一个。吃。还有另一个鱼。然后我就按回车。果然，它退出了。所以这是使用无限循环来收集用户输入并测试何时需要退出这个循环的正确方式。
 - en: '![](img/16039155a4c29256355bee4626f1789d_5.png)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/16039155a4c29256355bee4626f1789d_5.png)'
 - en: '![](img/16039155a4c29256355bee4626f1789d_6.png)'
+  id: totrans-13
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/16039155a4c29256355bee4626f1789d_6.png)'
 - en: Now that we can get the user input， we need to actually do something with it。
     And before we try to do anything with it， the first thing we should do is， well。
     verify that what the user gave us is actually what we are hoping for。 We could
     have a very bad time。 Remember， this whole thing started with the example of 12a
     8。 Well I entered catstocks fish。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们可以获取用户输入，我们需要对其进行实际处理。在尝试处理之前，我们首先应该验证用户给我们的内容确实是我们所期望的。我们可能会遇到麻烦。记住，这一切都是从12a
+    8的例子开始的。好吧，我输入了catstocks鱼。
 - en: I'm not sure how you would calculate the square footage of a cat。 but I'm sure
     it would be interesting and probably involve a trip to the vets。 but anyway。 so
     we're going to say S QFT equals and we're going to say S that split。Because。The
     S is our variable we got from the input function right up here。And it's going
     to be a string。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 我不确定你怎么计算猫的平方英尺，但我相信这会很有趣，可能还需要去兽医那里。不过，无论如何。我们要说SQFT等于，我们要说S分割。因为S是我们从输入函数得到的变量。在这里，它将是一个字符串。
 - en: So we can treat this as a string and say， a split。And we want to split this。On
     the comma again。 if you have not a clue what I'm doing here， watch the previous
     13 videos， but anyways。 String has a built in function called split which you
     can return multiple values based off a character or sequence of character。So our
     square footage is going to be。To return value from that split function。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们可以把它当作字符串来处理并说，a分割。我们想要再次以逗号进行分割。如果你对我在做什么一无所知，请观看之前的13个视频，不过。字符串有一个内置函数叫做split，它可以基于一个字符或字符序列返回多个值。所以我们的平方英尺将是从那个split函数返回的值。
 - en: So first thing we're going to do is make sure we actually have two values in
     there。And if it's less than two。Well， we want to tell the user something bad happened。Brench。It's
     go ahead to say， invalid。Format。And then we're going to break out of here。Now
     remember break doesn't really care where it is， it's going to break out of this
     loop。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们要做的第一件事是确保里面确实有两个值。如果少于两个。好吧，我们要告诉用户发生了错误。Brench。我们继续说，格式无效。然后我们将退出这里。现在记住，break不在乎它在哪里，它将跳出这个循环。
 - en: Let's go ahead and test this out here。So we're going to run this。 and it's going
     to say inner wall size。 and I'm going to say。Okay，2，ma 6， it's working good。5
     comma 7。 and let's enter some garbage cats。Oh， in valid format and it stops a
     loop and exits the program。 so it is actually testing to make sure there are two
     items that is split on a comma。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们在这里测试一下。所以我们要运行这个，它会显示内壁尺寸。我会说，好的，2，ma 6，运行得很好。5 逗号 7。让我们输入一些无效的数据。哦，格式无效，它停止循环并退出程序。所以它实际上是在测试确保有两个项目是以逗号分隔的。
 - en: '![](img/16039155a4c29256355bee4626f1789d_8.png)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/16039155a4c29256355bee4626f1789d_8.png)'
 - en: '![](img/16039155a4c29256355bee4626f1789d_9.png)'
+  id: totrans-20
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/16039155a4c29256355bee4626f1789d_9.png)'
 - en: All right， we're not done yet。We need to now that we've gotten the user input。
     convert it because remember we're working with strings and we want to work with
     numbers。Specifically， we want to convert from a string to an integer。And this
     could lead to a bad time。 And we're going to demonstrate that。 So I'm going to
     say W equals。 We're going to call n。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，我们还没完成。现在我们获得了用户输入。需要转换它，因为记住我们在处理字符串，而我们想要处理数字。具体来说，我们想要将字符串转换为整数。这可能会导致麻烦。我们将演示这一点。所以我要说W等于。我们将调用n。
 - en: and we're going to do something called casting。 And I'm going to do a whole
     video on this later。 But when I say casting， just think of a wizard with a magic
     wand who is going to cast a spell and turn something into something else。 So what
     we're saying is we want to。Cast a spell Ald int。 which is going to convert whatever
     we give it into an integer。And in this case。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将做一些叫做类型转换的事情。我稍后会做一个完整的视频来讲这个。但是当我说类型转换时，想象一个拿着魔法棒的巫师，他将施展一个法术，把某物变成其他东西。所以我们在说我们想要施展一个整型的法术，将我们给的任何东西转换为整数。在这种情况下。
 - en: we are going to get that first value。Out of square footage。Go grab this。Give
     it the old copy paste。 well a little too much copy paste。And。Let's get the other
     dimension。 so we now we have the width and the height from square foot0 and square
     foot1。Interesting bit。 if we try to do this and it's not actually a number， we're
     going to have a bad time。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将获取平方英尺的第一个值。去抓这个。给它复制粘贴。嗯，复制粘贴有点多。然后。让我们获取另一个维度。现在我们有了平方英尺0和平方英尺1的宽度和高度。有趣的是，如果我们尝试这样做而它实际上不是一个数字，我们将会遇到麻烦。
 - en: It's going to actually air out and our programs going to stop and die a horrible
     death。 And I'm going to cover how to handle all that in another video。 The whole
     point of this program is to do a program with what we've learned so far in the
     13 videos。Now， I'm going to say item， and I want to make a list with the width
     and the height。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 它实际上会出错，我们的程序会停止并遭受可怕的失败。我会在另一个视频中讲解如何处理这些情况。这个程序的整个要点是用我们在13个视频中学到的知识来做一个程序。现在，我要说项目，我想要制作一个包含宽度和高度的列表。
 - en: And we're going to add that to our walls。 If you're wondering where I got walls
     from， remember。 it's way， way， way up here in our variables， just an empty list。So
     we're going to say walls。And。let's go ahead and add that item in here。So now we
     have a list holding。The wall dimensions for every single wall that they add。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将把它添加到我们的墙上。如果你在想我从哪里得到墙的，记住，它在我们变量的最上方，只是一个空列表。所以我们要说墙。让我们把这个项目添加进来。现在我们有一个列表，保存他们添加的每一面墙的尺寸。
 - en: let's go ahead and just print that out just to verify， hey， we did something。So，
     adding。哦。😮。Go ahead， save run and let's test this out， so inner wall size。Al right，3
     by 6。 It's a very small wall。 and it says adding wall。 All right， great。 So 8
     by 8。Let's go ahead and say 9 by 12。 Now， let's test out this conversion right
     here and watch it die a horrible death。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们先打印出来验证一下，嘿，我们做了些什么。所以，添加。哦。😮。继续，保存并运行，来测试一下内墙的尺寸。好的，3乘6。这是一面很小的墙，它显示添加墙。好的，太好了。那么8乘8。我们继续说9乘12。现在，让我们测试一下这个转换，看看它是如何惨败的。
 - en: So I'm going to say two by cats。Oh， and valid literal for int with base 10 cats。And
     this looks very ugly， and it is。 It's a value error。 We're going to talk about
     errors in a future video。 I just want you to understand if you get a value error。
@@ -162,73 +220,98 @@
     are casting a spell called int， which is going to convert whatever we cast on
     to an int。Once we've got to this point， the only thing that's left is to really
     just crunch the numbers and tell them how much paint they need。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我要说两个猫。哦，还有有效的整数字面量，基数为10的猫。这看起来很丑，而且确实如此。这是一个值错误。我们将在未来的视频中讨论错误。我只是想让你明白，如果你遇到值错误，发生的事情是我们基本上在说我们无法将其转换为数字，或具体来说，转换为整型。记住，想象一个拿着魔法棒的巫师，我们施展的法术叫做整型，这将把我们施展的任何东西转换为整型。一旦我们到了这一步，剩下的就是计算数字并告诉他们需要多少油漆。
 - en: So what I like to do is just tell them what they entered。 So we going say F。You
     entered。That way。 if there's any discrepancy， I can say send me a screenshot of
     the app and I can say show， oh， no。 no， you screwed up， you entered the wrong
     value here。And then we're going to say 4 M。 M's going to be for measurements in
     walls。We're going to say the width is going to be M 0。 Remember。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 我喜欢告诉他们他们输入了什么。所以我们会说F。你输入了。这样，如果有任何差异，我可以说给我发个应用的截图，我可以说，哦，不。你搞错了，你在这里输入了错误的值。然后我们要说4
+    M。M将用于墙的测量。我们会说宽度将是M 0。记住。
 - en: it's a0 based index。 And inside of our walls， we have created another。List here。
     so we're getting this guy the width。And we can say H。One。 remember zero based
     index that always trips newbies up。Now we're going to get the square footage。
     so I'm to make another variable called S。 I'm going to say that simply the width
     finds the height。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 它是一个基于0的索引。在我们的墙内，我们创建了另一个列表。所以我们获取这个宽度。我们可以说H。1。记住零基索引总是让新手困惑。现在我们要计算平方英尺。因此我要再创建一个变量叫S。我会说这就是宽度乘以高度。
 - en: Now I want to get some sort of value。 So I'm going to say this is the S or the
     square footage。Times。 the gallons。As you're wondering where gallons magically
     appeared from。 Remember。 it's all the way up here in our global variables that
     we created。 I did Google it。 One gallon should cover 350 square feet， so。😊，This
     value right here is one divided by 350。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我想得到某种值。所以我会说这是S或平方英尺。乘以。加仑。你可能在想加仑从哪里来的。记住，它就在我们创建的全局变量的最上面。我查过了。一加仑的油漆应该覆盖350平方英尺，所以。😊，这个值就是1除以350。
 - en: Not a clue if that's accurate， I highly doubt it， even though I do trust Google。And
     then we're going to grab our other global variable total。I want to say plus equals
     B。 so we're just incrementing that。As you're wandering plus equal。 we did cover
     this in a previous video。 It's basically， we're saying total equals total。Plus。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 不知道这是否准确，我高度怀疑，尽管我确实信任谷歌。然后我们将抓取我们的其他全局变量总数。我想说加上B。因此我们只是增加它。你可能在想加上等于。我们在之前的视频中讲过。这基本上意味着我们说总数等于总数加上。
 - en: the value， but we're just shorthanding it。Now we're going to drop down and go
     inward。 We're going to dent。In so we're dropping out of this code block right
     here。And we're going back to the main。 And we're going to say Prince。We're just
     going to tell them you need to go buy some paint。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 值，但是我们只是简化它。现在我们要向下移动并深入。我们要进行一些调整。所以我们在这个代码块中退出。然后我们回到主程序。我们要说王子。我们只是告诉他们你需要去买一些油漆。
 - en: And this is how much paint you need to go buy。You need to buy。 Let's go ahead。
     And if we just say total。It's going to give us some crazy number。 So what I like
     to do is make it a little pretty。 And I'm going to say round。And we're going to
     round the total by two decimal places。冇嘅。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是你需要购买的油漆数量。你需要购买。让我们继续。如果我们只说总数。它会给我们一个疯狂的数字。所以我喜欢让它更美观。我会说四舍五入。我们将总数四舍五入到两位小数。冇嘅。
 - en: Tell them you need to go buy or many gallons of paint rounded to two decimal
     places。Let's go ahead and test this thing out and see if it works。 So I'm going
     to say。12 by 8。And let's make another one，15 by 9。 Actually， let's make it by
     8。 That'd be weird if the ceiling was different height。And let's go ahead and
     say we have an 8 by 8。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 告诉他们你需要去买多少加仑的油漆，四舍五入到两位小数。让我们测试一下这个东西，看看它是否有效。所以我会说。12乘8。再做一个，15乘9。其实，让我们用8来做。如果天花板的高度不同，那就奇怪了。让我们继续说我们有一个8乘8的。
 - en: And a4 by 8， just kind of a weird shape room。And then I don't want to enter
     anymore。 So I'm just going to hit enter and you need to buy。One gallon of paint。
     basically it's going to use less than a gallon I should have some left over。I
     don't know how accurate that is。 And honestly， I'm kind of looking at my little
     office here going。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个4乘8的房间，形状有点奇怪。然后我不想再输入了。所以我就直接按回车，你需要买。一加仑的油漆。基本上它会使用不到一加仑，我应该会有一些剩余。我不知道这有多准确。老实说，我有点在看我的小办公室。
 - en: I think it's going to take more than a gallan to do this。 So when in doubt，
     blame Google， but。The major takeaway from this video is。Even though we're only
     13 videos in and we've really just scratched the surface of what Python can do。
     you can make some pretty interesting programming logic。We just did a simple application。
     which is a paint calculator telling us how much paint we need to buy。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 我觉得做这个需要超过一加仑。因此，遇到疑问就怪谷歌。但是，这个视频的主要要点是。尽管我们才刚刚做了13个视频，我们实际上只是触及了Python所能做的表面。你可以编写一些相当有趣的编程逻辑。我们刚做了一个简单的应用程序。那就是油漆计算器，告诉我们需要购买多少油漆。
 - en: We're letting the user enter any number of walls they want。 We are verifying
     that user input。 and then we're converting that input into the correct data type。
     and then we're calculating how much they need and giving it back to the end user。![](img/16039155a4c29256355bee4626f1789d_11.png)
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们允许用户输入他们想要的任何数量的墙。我们正在验证用户输入。然后我们将该输入转换为正确的数据类型。接着我们计算他们需要多少，并将其返回给最终用户。![](img/16039155a4c29256355bee4626f1789d_11.png)
 - en: '![](img/16039155a4c29256355bee4626f1789d_12.png)'
+  id: totrans-38
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/16039155a4c29256355bee4626f1789d_12.png)'

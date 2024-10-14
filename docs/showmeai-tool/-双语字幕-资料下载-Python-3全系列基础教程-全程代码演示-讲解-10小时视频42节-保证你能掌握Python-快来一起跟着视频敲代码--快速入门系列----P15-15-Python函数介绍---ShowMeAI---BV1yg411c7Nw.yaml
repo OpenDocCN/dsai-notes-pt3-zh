@@ -1,189 +1,255 @@
 - en: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
     - P15：15）Python函数介绍 - ShowMeAI - BV1yg411c7Nw
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
+    - P15：15）Python函数介绍 - ShowMeAI - BV1yg411c7Nw
 - en: '![](img/4237d06d285184ff66cb3fc27a044d7c_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4237d06d285184ff66cb3fc27a044d7c_0.png)'
 - en: Welcome back everyone， this is Brian， we're going to continue our journey into
     Python 3 with an introduction to functions。So first off， what is a function， it's
     a block of code which only runs when it is called so far all the code we've written
     runs immediatelying as soon as Python reads it。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 欢迎回来，大家好，我是布莱恩，我们将继续深入Python 3，介绍函数。那么，函数是什么呢？它是一个代码块，仅在被调用时运行，而我们之前写的所有代码都是在Python读取时立即运行的。
 - en: it runs it。This is going to change that。 We're going to write some code and
     we are going to decide when it runs。 This is another fundamental building block
     of programming。 and there's a lot of theory attached to it， and there's a lot
     of names and terminology。 so we are going to split this into multiple videos。Some
     key takeaways from this video though。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 它会运行。这将改变这一点。我们将编写一些代码，并决定它何时运行。这是编程的另一个基本构建块，涉及许多理论和术语，因此我们会将其分成多个视频。不过，这个视频的一些关键要点是。
 - en: is that you can pass data known as a parameter or an argument into a function
     you're going to hear these two used interchangeably。It gets really confusing。So
     down here， I put some notes the difference between a parameter and an argument。
     a function parameter is the names listed in the functionss definition。Where an
     argument is the real value。That's just confusing。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以将称为参数或实参的数据传入函数，你会听到这两个词是可互换使用的。这真的很困惑。因此，在下面，我写了一些注释，说明参数和实参之间的区别。函数参数是在函数定义中列出的名称，而实参是真实的值。这真的令人困惑。
 - en: Why don't they just call it like a name or a value， But instead。 they've got
     to call it parameter argument。 And everyone， even myself gets these mixed up。
     You'll hear some videos where I'll call it a parameter and some videos where I'll
     call it an argument。 And I've heard people with。Vastly more programming experience
     than me switch these around as well。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 为什么他们不直接称其为名称或值，而要称其为参数和实参呢？而且每个人，包括我自己，都会混淆这些。你会在一些视频中听到我称其为参数，而在其他视频中称其为实参。我也听过一些编程经验远超我的人也会把这两者混淆。
 - en: it's just that confusing。Another major takeaway is that a function can return
     data as a result。 Turn is actually a keyword， and we're going to cover that。![](img/4237d06d285184ff66cb3fc27a044d7c_2.png)
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 这确实有点令人困惑。另一个主要要点是，函数可以作为结果返回数据。返回实际上是一个关键字，我们将对此进行讲解。![](img/4237d06d285184ff66cb3fc27a044d7c_2.png)
 - en: Diving into the land just for a moment here so far。 we've worked with statements。
     And what do I mean by statements。 We've done something like this so far。 Well
     have a statement。 a statement， a statement。 And Python just reads it from the
     top down。 For example。 we would like print something。 maybe do a wild loop inside
     that wild loop。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 暂时深入这一领域，到目前为止，我们处理过语句。我所说的语句是什么意思呢？到目前为止，我们做了类似这样的事情。有一个语句，一个语句，一个语句。Python从上到下读取。例如，我们想打印一些内容，也许在那个循环内做一个while循环。
 - en: we could have like an if statement。And it's just kind of read like a book straight
     from the top down。But now what we're going to do is introduce a function。Which
     is a separate block code。It's not going to run unless we specifically tell Python
     go run this code。In a function。Can call other functions。And so on and so on。The
     end result now is that we can。Fundamentally。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以像有一个if语句一样。它就像一本书一样从上到下阅读。但现在我们要做的是引入一个函数。这是一个独立的代码块，除非我们明确告诉Python去运行这段代码，否则它不会运行。在一个函数中，可以调用其他函数，依此类推。现在的最终结果是，我们可以从根本上。
 - en: decide how we want our program to run and how we want it to behave。We can do
     some pretty complex programming logic using this。Another key takeaway here。Is
     we are subt introducing the concept of scope。 Everything that we've done so far
     has been on what's called the global scope in each function。 each block of code。Has
     its own scope Spe is something we're going to dive into detail in a future video。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 决定我们的程序如何运行以及它的行为。我们可以使用这个进行一些相当复杂的编程逻辑。另一个关键要点是，我们正在引入范围的概念。到目前为止，我们所做的一切都在每个函数中的所谓全局范围内。每个代码块都有自己的范围，这是我们将在未来的视频中深入探讨的内容。
 - en: but just understand we are subtly introducing this。![](img/4237d06d285184ff66cb3fc27a044d7c_4.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 但请理解我们正在微妙地引入这一概念。![](img/4237d06d285184ff66cb3fc27a044d7c_4.png)
 - en: So let's test this， let's go ahead and define a function。We're going to say
     D EF。Which is shorthand for define or definition。 And we're going to give it a
     name。 and then we have those little parentheses。 If we forget those， we're going
     to have a bad time。We need the parentheses。 And then in there， we would define
     any parameters。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们测试一下，继续定义一个函数。我们将说 D EF，这是定义或定义的缩写。然后我们给它一个名称，接着就是那些小括号。如果我们忘记了它们，我们将会很糟糕。我们需要括号。在那里，我们可以定义任何参数。
 - en: We're going to keep this first one very basic， and there'll be no parameters。
     but we still need the parentheses in there。And then colon。And hit En and notice
     how most IDs will do this automatically where they will drop you down the line
     and indentate you automatically。Then we can just fill in our code and we can have
     pretty much anything we want in here。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将这个第一部分保持非常基础，并且不需要参数。但我们仍然需要在其中加上括号，然后是冒号。按下回车，注意大多数 IDE 会自动为你换行并自动缩进。然后我们可以填入我们的代码，这里几乎可以放入任何内容。
 - en: I'm just going to put a print statement just for testing。And we're just going
     to say this is a function。Now we can work with this thing as needed。![](img/4237d06d285184ff66cb3fc27a044d7c_6.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 我只是放一个打印语句以便测试。我们只是说这是一个函数。现在我们可以根据需要使用这个东西。![](img/4237d06d285184ff66cb3fc27a044d7c_6.png)
 - en: '![](img/4237d06d285184ff66cb3fc27a044d7c_7.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4237d06d285184ff66cb3fc27a044d7c_7.png)'
 - en: Okay， this last one was a little bit simplistic， let's ramp up the difficulty
     here。 so we're going to define a function with parameters and return a value。In
     the last video。 we made a paint calculator which calculated based off the square
     footage， how much paint we needed。 We could have very easily used functions in
     that。 and most programs would have。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，这最后一个有点简单，让我们提高一下难度。因此我们将定义一个带参数的函数并返回一个值。在最后一个视频中，我们制作了一个油漆计算器，它根据平方英尺计算所需的油漆量。我们本可以很轻松地在其中使用函数，而大多数程序也会这样做。
 - en: So we're going to make a function called。S QFT， which shorthand for square footage。Prenheses
     and let's define some parameters， I must say， W for width and H for height。Now
     we can add our programming logic in here， so the value。We're going to return is
     going to be simply the width times the height。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将创建一个名为 S QFT 的函数，它是平方英尺的简写。括号，让我们定义一些参数，我要说的是，W 代表宽度，H 代表高度。现在我们可以在这里添加我们的编程逻辑，所以我们要返回的值将简单地是宽度乘以高度。
 - en: Now we're going to use the return keyword。To return that value。Notice how these
     are both very simple。 but they're fundamentally very different。This first one
     basically has no parameters and run some code。 and once it's done， it just jumps
     right back out of here。This one， however。 we have to give it two parameters， and
     there's going to be some logic。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们将使用 return 关键字来返回那个值。注意这两个都非常简单，但它们在根本上是非常不同的。第一个基本上没有参数并运行一些代码，一旦完成，它就直接跳回这里。而这个，我们必须给它两个参数，并且会有一些逻辑。
 - en: and it's coin to return a value。 It's up to us to decide if we want to actually
     work with the value that's return。 It's not actually mandatory。 We can just ignore
     it if we wanted to。But this is what I mean by functions can get very complex very，
     very quickly。 We have two very small functions that act completely differently。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 它将返回一个值。我们决定是否要实际使用返回的值，这并不是强制性的。如果我们想，可以忽略它。但这就是我所说的函数可以变得非常复杂，非常迅速。我们有两个非常小的函数，它们的作用截然不同。
 - en: '![](img/4237d06d285184ff66cb3fc27a044d7c_9.png)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4237d06d285184ff66cb3fc27a044d7c_9.png)'
 - en: '![](img/4237d06d285184ff66cb3fc27a044d7c_10.png)'
+  id: totrans-20
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4237d06d285184ff66cb3fc27a044d7c_10.png)'
 - en: Let's take a look at how this actually works， how would we call a function。Now
     what do we mean by call a function， remember， this code is not going to execute
     until we specifically tell Python to run it。Let's go ahead and run our program
     as is and see what happens， absolutely nothing。So what it's doing is it's reading
     from the top down。 It's saying define test， define S QF T。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看看这实际上是如何工作的，我们将如何调用一个函数。我们所说的调用一个函数是什么意思，记住，这段代码不会执行，直到我们明确告诉 Python 运行它。让我们按原样运行我们的程序，看看会发生什么，绝对什么都不会发生。所以它所做的是从上到下读取。它在说定义
+    test，定义 S QFT。
 - en: And it has this queued up in memory ready to go。 but it's not actually going
     to use it until we tell it to。So let's tell it to run it。Most editors are going
     to be smart enough to tell you， hey。 this is an actual function。 and in VS code，
     this little block means it's a function。 Notice a block because it's a block of
     code。Now， if I just hit OK or enter or click on it。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 它已经在内存中排队准备好了，但在我们告诉它之前，它不会实际使用它。所以让我们告诉它运行它。大多数编辑器足够聪明，会告诉你，嘿。这是一个实际的函数。在VS代码中，这个小块意味着它是一个函数。注意是一个块，因为它是一段代码。如果我只是点击确认或按回车或点击它。
 - en: it does nothing。This actually will not run。 We have to add those parentheses。Now。
     suddenly see how it says de test and it knows we're trying to call that function。Let's
     go ahead and run and Ta， this is a function。So Python is reading this from the
     top down。 defining tests， defining SQFT， getting here and saying， oh， it wants
     to actually call this。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 它什么也不做。实际上它不会运行。我们必须添加这些括号。现在，突然间你会看到它显示“de test”，并且知道我们试图调用那个函数。我们继续运行，看看，这就是一个函数。所以Python是从上到下读取这个的。定义测试，定义SQFT，来到这里并说，哦，它想实际调用这个。
 - en: There are no parameters， so we don't have to supply any arguments。You may be
     wondering what the big deal here is， why would we even mess around with functions，
     I mean。 we could have just printed this out。Well， let's take a look at a specific
     situation。 Let's say we wanted to call that function multiple times or' say 4
     x in range。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 没有参数，所以我们不需要提供任何参数。你可能会想，这有什么大不了的，为什么我们还要玩函数，我是说。我们可以直接打印出来。好吧，让我们看看一个具体的情况。假设我们想多次调用那个函数，或者说4次在范围内。
 - en: And we're going to say range four， so we want to call that multiple times。Now
     we could just write this out like this。But were times， we could do something like
     this。And you'll see people do that。 However， that's not the best way。 What if
     your boss comes and says。 well， I want you to do that 20000 times。 O， you're going
     to have a very big file calling that out。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将说范围为四，因此我们想多次调用它。现在我们可以这样写。但有时，我们可以这样做。你会看到有人这样做。然而，这不是最佳方式。如果你的老板过来，告诉你，我希望你这样做20000次。哦，你会有一个非常大的文件来调用它。
 - en: It is a much simpler way。You would say 4 x in range， and then you would call
     this。 So what we've done now is we've created a loop and we have a lower boundary。And
     an upper boundary。 And it's going to call it。So we have not created an infinite
     loop， it will call our function。 let's see this in action and。There it goes right
     there。So that's the power of a function。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一种更简单的方法。你会说4次在范围内，然后你会调用它。所以我们现在所做的是创建一个循环，并有一个下限和一个上限。它将调用它。所以我们没有创建一个无限循环，它会调用我们的函数。让我们看看这个在实践中是如何运作的。它就在那里。所以这就是函数的力量。
 - en: You can define a block of code and then decide when and how it runs。NowIn typical
     fashion with these videos， I do like to ramp the difficulty up here。 so we're
     going to call a function with parameters。This is what I mean by this is going
     to get confusing fast。Remember our little buddy。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以定义一段代码，然后决定何时以及如何运行。现在，按照这些视频的典型方式，我确实喜欢提高难度。所以我们将调用一个带参数的函数。这就是我说的，它会迅速变得复杂。记住我们的小伙伴。
 - en: the SQFT function， which we define， which we haven't really worked with yet。Let's
     go ahead and say x equals S， QF T。Now we have some parameters and it's smart enough
     to know that it's a p。So we have to feed it some information now， let must say
     12 by8。Bonus question here。These numbers are these parameters or these arguments。Well，
     there arguments。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: SQFT函数，我们定义的，实际上我们还没有真正使用过。现在我们说x等于SQFT。现在我们有了一些参数，它足够聪明，知道这是一个p。所以我们现在必须给它一些信息，假设12乘以8。这里的额外问题。这些数字是参数还是参数。好吧，它们是参数。
 - en: So these up here are the parameters they're in the function definition。The values
     we're feeding it are arguments。 and you're going to get people that will， No pun
     intended。 argue this all day long because people get it so confused。All right，
     let's go ahead and print out。The square footage。So the square footage is 96。Now
     you see just how powerful this is。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以上面的这些是参数，它们在函数定义中。我们输入的值是参数。你会遇到人们会争论这个，因为大家容易搞混。好的，让我们继续打印出平方英尺。所以平方英尺是96。现在你看到它有多强大。
 - en: you can define some sort of logic and then call it on demand when you need it
     and get the value back from it and use it accordingly。Just a quick recap of what
     we've talked about in this video is well， functionss are amazing。 They're also
     very complex。 It reads from the top down you have to use the DEF or the def keyword
     to define a function。Functions can have zero or more parameters， those parameters
     have to be fed arguments。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以定义某种逻辑，然后在需要时按需调用它，并从中获取值并相应地使用它。快速回顾一下我们在这个视频中讨论的内容，函数是很神奇的。它们也非常复杂。代码是从上到下读取的，你必须使用`DEF`或`def`关键字来定义一个函数。函数可以有零个或多个参数，这些参数必须被传入参数值。
 - en: '![](img/4237d06d285184ff66cb3fc27a044d7c_12.png)'
+  id: totrans-31
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4237d06d285184ff66cb3fc27a044d7c_12.png)'
