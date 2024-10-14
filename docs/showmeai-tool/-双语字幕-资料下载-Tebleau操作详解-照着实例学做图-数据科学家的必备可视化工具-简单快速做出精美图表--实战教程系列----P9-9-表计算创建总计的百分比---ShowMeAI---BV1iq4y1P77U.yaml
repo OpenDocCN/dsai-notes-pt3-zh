@@ -1,106 +1,144 @@
 - en: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P9：9）表计算创建总计的百分比
     - ShowMeAI - BV1iq4y1P77U
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P9：9）表计算创建总计的百分比
+    - ShowMeAI - BV1iq4y1P77U
 - en: Hello folks and welcome to another episode of Tableau in two minutes today we
     are going to dip our toes into the world of table calculations and we're going
     to use a table calculation to determine the percent of some total and the way
     we're going to do that is using a data about Hollywood movies so we are going
     to open up our text files here and open up Hollywood's most profitable stories
     where we'll have a link to that data set in the comments and it's one of the tableableau。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，欢迎来到又一集《两分钟了解Tableau》，今天我们将初步探索表计算的世界，我们将使用表计算来确定某个总数的百分比，我们将使用有关好莱坞电影的数据，所以我们将打开文本文件，查看好莱坞最盈利的故事，评论中会有数据集的链接，这是一种tableableau。
 - en: 😊。![](img/1be113185084ecd023337f6376c1ffd7_1.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/1be113185084ecd023337f6376c1ffd7_1.png)
 - en: '![](img/1be113185084ecd023337f6376c1ffd7_2.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1be113185084ecd023337f6376c1ffd7_2.png)'
 - en: Standard ones。 And you can see that we have some films， a number of genres who
     the elite。Studio was and the year in which the film was made。 as well as how much
     money it made this worldwide gross number。 And what we're going do is we're gonna
     to see which genres are most profitable for which studios。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 标准类型。你可以看到我们有一些电影，显示了精英工作室和电影制作年份，以及这部电影在全球的收入。我们要做的是看看哪些类型对哪些工作室最有利可图。
 - en: So which studio made the greatest proportion of their profit from each genre。
     And to do that。😊。![](img/1be113185084ecd023337f6376c1ffd7_4.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么哪个工作室从每个类型中获得的利润比例最大呢？为此。😊。![](img/1be113185084ecd023337f6376c1ffd7_4.png)
 - en: We're going to drag lead studio out here onto the row shelf。 and then we're
     going to drag genre out here onto the row shelf so you can see that we've now
     got the genres that each studio made。 Then we're going drag the worldwide gross
     and we're going to drop it on these ABcs right here。 One of the other things we're
     going to do is we're going to turn on subtotals。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将把主工作室拖到行架上，然后将类型拖到行架上，这样你就可以看到每个工作室的类型。然后我们将拖动全球总票房，并将其放在这些ABcs上。我们要做的另一件事是打开小计。
 - en: There's a good reason for that which you'll see in a second。 So we're going
     to go here to analysis then totals add all subtotals。 And then we're going to
     go back to analysis and then totals and show column grant totals。😊。So now you
     see we have a total for each studio， we also have a grand total down at the bottom。😊。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 这样做是有很好的理由的，稍后你会明白。所以我们要去分析，然后总计，添加所有小计。然后我们会回到分析，再到总计，显示列的总计。😊。现在你看到每个工作室都有一个总计，底部还有一个总总计。😊。
 - en: So what we're going to do now is we're going to look at what percentage of each
     of revenue was made for each genre for each studio and to do that we're going
     to use a table calculation。 So's one of the quick table calculation so we'll just
     click on the dropdown arrow on the worldwide gross pill go down to Quick table
     calculation and select percent of total there it is。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以现在我们要查看每个工作室从每个类型中获得的收入百分比，为此我们将使用表计算。这是一个快速的表计算，所以我们只需点击全球总票房上方的下拉箭头，选择快速表计算，然后选择总数的百分比。
 - en: 😊，AndNow you can see that everything in this column has been converted to percentages。
     but it's interesting。 Our totals are no longer 100% because our grand total is
     100%。 This is essentially saying that Lionsgate action films were not 。93% of
     that grand total。 We don't want it by grand total。 We want to compare across studios。
     And to do that。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，现在你可以看到这一列的所有内容都转换成了百分比。但是很有趣，我们的总数不再是100%，因为我们的总总计是100%。这实际上意味着狮门影业的动作电影并不是总总计的93%。我们不想按照总总计来计算，我们想在工作室之间进行比较。为此。
 - en: we're going change the level of detail that we're using to compute this table
     calculation。 So we're going go again onto the worldwide gross pill down here to
     compute using。 We're going to select。😊，Lead studio。 Oh， I'm sorry。 we're gonna
     select genre。And then you'll see that for each genre。We're now computing the total
     within each studio for each genre。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将更改用于计算此表计算的细节级别。所以我们将再次点击下面的全球总票房，选择使用。😊，主工作室。哦，抱歉。我们将选择类型。然后你会看到，对于每个类型，我们现在在每个工作室内计算总数。
 - en: so each studio has a total of 100% the reason I like to have the totals on there
     is because it makes it much easier to see the level at which you are calculating
     all of these table calculations Now if we wanted to see which studio made the
     greatest proportion of their。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以每个工作室的总计为100%。我喜欢在那儿有总计的原因是因为这使得查看你计算所有这些表计算的水平更容易。如果我们想看看哪个工作室占据了更大的比例。
 - en: 😊，Gross revenue。From a particular genre the easiest way to do that is actually
     to flip these two pills around and now you can see that we have for comedy。 we
     have null it's a useful studio isn't it so null 100% CBS made 100% of their gross
     revenue from comedy Fox made 100% of their gross revenue from comedy。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，总收入。从特定类型来看，最简单的方法是实际上将这两个药丸翻转过来，现在你可以看到我们在喜剧方面的情况。我们有null，这是一个有用的工作室，不是吗，所以null
+    100% CBS的总收入都是来自喜剧，Fox的总收入也是100%来自喜剧。
 - en: 20th century Fox however， made 74。7% of their revenue from drama。 so not a particularly
     clean data set this but you can see that by using a table calculation to calculate
     the percent of total we've been able to do a number of things that make these
     numbers comparable across different studios。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 20世纪福克斯的收入中74.7%来自戏剧。所以这不是一个特别干净的数据集，但你可以看到，通过使用表计算来计算总百分比，我们能够做出一些使这些数字在不同工作室之间可比较的事情。
 - en: 😊，If we wanted to have the percentage of comedy revenue generated by each studio。
     we could do that and we do that by going to this compute using again and then
     clicking on Le Studio。 you'll now see that the comedy numbers。And now a little
     bit smaller because we got a lot of。A lot of studios making comedies and we can
     go back to analysis and add back in our subtotals because obviously they came
     off。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，如果我们想要知道每个工作室产生的喜剧收入百分比。我们可以这样做，我们通过再次点击计算使用，然后点击Le Studio。你现在会看到喜剧数字。现在稍微小一些，因为我们有很多工作室在制作喜剧，我们可以回到分析中，重新加入我们的小计，因为显然它们被去掉了。
 - en: When we change there and you can see that now it's adding up to 100% for each
     genre。 so essentially by playing with that level of detail。😊。And to asking whether
     we were calculating at the genre or at the lead studio level。 we're either calculating
     the percent of revenue in each genre that was made by each studio or the percent
     of revenue each genre made for each studio。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我们进行更改时，你可以看到现在每个类型的总和加起来为100%。所以本质上通过玩弄这一细节。😊。并询问我们是按类型还是按主工作室水平计算。我们要么计算每个工作室在每个类型中所占的收入百分比，要么计算每个工作室为每个类型所产生的收入百分比。
 - en: So two sides of the same coin thank you very much for joining us for this episode
     of Tableau in two minutes if you have any questions please leave them in the comments
     and obviously this will be on the website you can download the data from our website
     just look for the link in the comments thank you very much and we will see you
     next time。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这是同一枚硬币的两面，非常感谢你加入我们的这期《Tableau in two minutes》，如果你有任何问题，请在评论中留言，显然这会在网站上，你可以从我们的网站下载数据，只需在评论中寻找链接，非常感谢，我们下次再见。
 - en: 😊。![](img/1be113185084ecd023337f6376c1ffd7_6.png)
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/1be113185084ecd023337f6376c1ffd7_6.png)

@@ -4,6 +4,8 @@
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P6：6）包含详细级别计算
+    - ShowMeAI - BV1iq4y1P77U
 - en: Hi folks welcome to another episode of Tableau in two minutes today we're covering
     a level of detail calculations we have two prior videos in the series that cover
     fixed level of detail calculations and exclude level of detail calculations today
@@ -14,6 +16,7 @@
   id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，大家好，欢迎来到“Tableau两分钟”系列的另一集。今天我们将讨论详细级别计算。我们在这个系列中有两个之前的视频，涵盖了固定详细级别计算和排除详细级别计算。今天我们将讨论第三个也是最后一个，即包含详细级别计算。如果你还记得，这是对前两个视频的回顾。固定详细级别计算是我们始终在同一维度上聚合一个度量，一个固定的维度。
 - en: 😊，Exclude level of detail calculations will allow you to exclude a dimension
     while you aggregate a measure。😊，And include level of detail calculations allow
     you to include a dimension when you calculate a measure。 when you aggregate a
@@ -26,32 +29,39 @@
   id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，排除详细级别计算将允许你在聚合一个度量时排除一个维度。😊，而包含详细级别计算则允许你在计算一个度量时包括一个维度。当你聚合一个度量时，所以我们接下来要做的是创建与我们在其他两个仪表板中创建的相同的表格。所以我们将产品容器拖到，我很抱歉，我们将产品类别拖到行架上，产品子类别拖到行架上，然后我们将销售拖到我们的ABCs上，创建一个漂亮的小表格。现在让我们继续创建一个。
 - en: 😊。![](img/799f3b381203694440d90166075202ac_1.png)
   id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/799f3b381203694440d90166075202ac_1.png)
 - en: '![](img/799f3b381203694440d90166075202ac_2.png)'
   id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/799f3b381203694440d90166075202ac_2.png)'
 - en: '![](img/799f3b381203694440d90166075202ac_3.png)'
   id: totrans-5
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/799f3b381203694440d90166075202ac_3.png)'
 - en: '![](img/799f3b381203694440d90166075202ac_4.png)'
   id: totrans-6
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/799f3b381203694440d90166075202ac_4.png)'
 - en: Level of detail calculation， so we're going to say include subcat and that is
     going to be a level of detail calculation where we include we're going to always
     include product subcategory and then we're going to say sum of sales。![](img/799f3b381203694440d90166075202ac_6.png)
   id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 详细级别计算，因此我们将说包含子类别，这将是一个详细级别计算，我们始终包括产品子类别，然后我们将说销售总和。![](img/799f3b381203694440d90166075202ac_6.png)
 - en: And finish that off。嗯。Pick some spelling error there。![](img/799f3b381203694440d90166075202ac_8.png)
   id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后结束这个。嗯。找一些拼写错误。![](img/799f3b381203694440d90166075202ac_8.png)
 - en: There we go。 Alright， and then we're going to drag include subcat out into our
     table here。 So you'll see that at the moment， these are the same because they're
     actually aggregating the same way and we have product subcategory in our view
@@ -60,15 +70,18 @@
   id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，我们来吧。接下来，我们将把包含子类别拖到我们的表格中。所以你会看到，目前它们是相同的，因为它们实际上是以相同的方式聚合的，而在我们的视图中有产品子类别，事情变得有趣的是当我们从视图中移除产品子类别时。
 - en: 😊。![](img/799f3b381203694440d90166075202ac_10.png)
   id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/799f3b381203694440d90166075202ac_10.png)
 - en: We changed the level of aggregation。 So what we're going to go ahead and do
     is we're going to change the level of aggregation to maximum。![](img/799f3b381203694440d90166075202ac_12.png)
   id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们改变了聚合的级别。所以我们接下来要做的是将聚合级别更改为最大。![](img/799f3b381203694440d90166075202ac_12.png)
 - en: And then we're going to take away product subcategory。 Now you'll see here that
     now our include subcategory is different than our sales and what this include
     is doing is it's calculating the sum of sales for each of the subcategories。 and
@@ -78,10 +91,12 @@
   id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将去掉产品子类别。现在你会看到，现在我们的包含子类别与我们的销售不同，而这个包含正在计算每个子类别的销售总和。然后它会取最大值，选择其中最大的子类别，这就是它在这里显示的内容。所以如果我们把产品子类别放回去，我只需按控制Z撤销。😊
 - en: '![](img/799f3b381203694440d90166075202ac_14.png)'
   id: totrans-13
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/799f3b381203694440d90166075202ac_14.png)'
 - en: You can see that the maximum sum of sales within the furniture product categories
     is for tables and that's 1896008 so if we take away product subcategory and look
     at furniture you'll see that it's 1896008 so it's showing us the sum of sales

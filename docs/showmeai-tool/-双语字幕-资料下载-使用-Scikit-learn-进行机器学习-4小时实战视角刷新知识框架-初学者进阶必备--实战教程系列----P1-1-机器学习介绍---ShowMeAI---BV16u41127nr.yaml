@@ -1,18 +1,22 @@
 - en: 【双语字幕+资料下载】使用 Scikit-learn 进行机器学习，4小时实战视角刷新知识框架，初学者进阶必备！＜实战教程系列＞ - P1：1）机器学习介绍
     - ShowMeAI - BV16u41127nr
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
 - en: '![](img/cca75afc4da139e8d5dce602f436c338_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
 - en: '![](img/cca75afc4da139e8d5dce602f436c338_1.png)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
 - en: Well in this part of the course we're going to be moving into a new section
     which is machine learning。 there's a lot of material we're going to cover， but
     at the same time it's really the tip of the iceberg for all the material you can
     do in this field。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
 - en: Let me try to start by relating to something that we're familiar with。And then
@@ -21,6 +25,7 @@
     write this code and then our function take inputs maybe in the form of parameters
     and then they have some outputs maybe maybe either they're printing something
     or or I might return a value。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
 - en: And so for example， I can imagine that a function could be doing something like
@@ -29,18 +34,21 @@
     so when I have a function like this。 that's an example of a model。And and I could
     imagine having it feed in a bunch of values at the same time and making a bunch
     of predictions。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
 - en: So the idea of machine learning is that instead of having a computer write these
     or instead of having a human write these functions where I have a computer automatically
     generate these functions。 and the way they're going to do that is they're going
     to learn by example。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
 - en: so we'll feed in a bunch of training data where we have a bunch of her of houses
     that have sold for different amounts and have different bedrooms and baths。 we't
     trying to infer things like well how much is the bedroom worth， how much is the
     bath worth。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
 - en: how useful is it have a newer house？And then based on that function。 we're be
@@ -48,6 +56,7 @@
     on other。Data and you can imagine why that might be useful for a lot of things。
     maybe you're doing property assessments or maybe a realtor and you're trying to
     figure out how to price a house properly。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
 - en: So the example I've given here is an example of a regression model and a regression
@@ -55,6 +64,7 @@
     one of the main three categories of machine learning。 so I'm going to start broad
     now and talk about these three areas and then we're going to be talking about
     regression in more detail and I'll actually explain on what it is。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
 - en: So the three main areas of machine learning are reinforcement learning。 which
@@ -67,6 +77,7 @@
     to gain information about that some people will say there's a fourth category
     of machine learning called super super semisupvised but we won't be talking about
     that here。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
 - en: Within supervised machine learning there are two different things that we're
@@ -80,6 +91,7 @@
     learning there's no special label column that we're trying to predict we're just
     trying to look for general patterns in the data and so we might do a couple things
     we might try to cluster our data we're replacing rows into different groups。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
 - en: Or we might try to decompose our rows， we might notice that you know I might
@@ -90,6 +102,7 @@
     concrete so here I have a table right this is just a regular data frame and so
     this is my index here here are my column names right now I have a Y column which
     is my label so that's going to be generally what I'm trying to predict。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
 - en: And then I have these different problems here that I guess I'm just drawing
@@ -98,6 +111,7 @@
     we're trying to predict is what we're going to try to do is look for a relationship
     between that and these other columns。 which we're going to call features。😊，So
     in general what will happen is that we have some examples。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
 - en: some rows where we have examples of both， and then there might be some other
@@ -105,12 +119,14 @@
     to try to predict what should're draw here and you can imagine why they might
     be maybe these are all different houses and some of them have already sold so
     we know what they sold for and then these have not drawn on the market yet。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
 - en: so we're trying to predict would they sell if they do go on the market so the
     problem here with regression I just want to state again is that we want to predict
     a quantity the y column in this case based on the features and by a quantity I
     mean this is like a number。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
 - en: So how we're going to do that well we might actually break it down into the
@@ -118,22 +134,26 @@
     the answer and then we might leave some other data aside for which we also know
     the answer and what we'll do is we'll run an algorithm that is able to infer what
     the relationship is between these features and these labels。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
 - en: Once I've done that I might run my model on these other ones for which I also
     know the answer now of course I already know the real answer and unless my model
     is perfect it's probably going to give me somewhat different answers and so why
     would I do this。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
 - en: why would I want to make a prediction if I already know the answer and the reason
     is that I can do this to evaluate my model or I might say test my model so for
     example if my model says that this rush of in 70 and it's actually 72 well that's
     an error same thing here。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
 - en: 60 versus 59 that's an error and I can try to quantify all of these errors and
     then Jim my model some sort of score that's the testing phase？
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
 - en: So after that， after I've learned my model up here。 and then I've kind of evaluated
@@ -141,6 +161,7 @@
     means I'm using it for real things。And I'm trying to predict actual unknowns in
     the world。 like， for example， if I add a new house to the market， what might itself
     more。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
 - en: And I could all put these different values there。other thing we might do even
@@ -152,6 +173,7 @@
     right like maybe I want to do a housing remodel am I going to get more benefit
     by adding another bathroom or another bedroom right so we can just kind of learn
     things about the world and also make decisions in that way。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
 - en: Okay， so all of this was regression which was the first kind of supervised learning
@@ -159,6 +181,7 @@
     the key thing that makes the regression is that we're trying to predict some quantity
     and our Y label now it's totally possible that our features might be a mix of
     both quantities and categories right so something like green red blue is a category。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
 - en: something like shape as a category， a lot of things are strings or categories。That's
@@ -167,12 +190,14 @@
     then this is no longer regression。 it's a classification problem， but otherwise
     all these other things I've been talking about where I kind of do training and
     testing and then I put in production。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
 - en: all of that is the same we're just dealing with categories instead of instead
     of quantities。Okay。 so moving on we saw the two kinds of supervised learning which
     is both regression and classification what about unsupervised learning The main
     thing here。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
 - en: the main point is that there is no label column right I just have a bunch of
@@ -181,12 +206,14 @@
     is well are there any sort of natural groupings of these rows and so there are
     algorithms out there that will let's say put all these rows into three groups
     and might and assign them numbers like zero。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
 - en: one and two right and then just to kind of draw what that looks like while all
     of these rows be lying together。Now I really want to stress here that there's
     no data out there that tells me what the proper grouping is or even how many groups
     there are so when I'm doing this。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
 - en: it's not exactly like there's one right answer， but that doesn't mean that all
@@ -197,6 +224,7 @@
     I'm kind of having a high similarity within groups well then I still learn something
     meaningful and you can imagine lots of different reasons I might do this like
     maybe each of these。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
 - en: Things represent a different user for my web application and then if I can say，
@@ -204,6 +232,7 @@
     could maybe run a different marketing campaign for each of these different groups。Okay。
     so clustering again is unsupervised and it's unsupervised because while there
     was no label column I'm trying to predict。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
 - en: The last kind of machine learning problem when I talk about this semester and
@@ -212,12 +241,14 @@
     here。And the idea with a decomposition is that I'm going to look through all these
     rows and see if there's any pattern。 are there kind of a couple archtype rows
     that really can be mixed together to create other things。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
 - en: so maybe what I see is that with some small error most of these rows are just
     combinations of these three rows over here and I would call these my component
     rows。 So you notice the columns are the same right between my original data and
     my component rows。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
 - en: And then to get this row here， like negative 11， negative 7， 3， 2020。 what I
@@ -226,6 +257,7 @@
     a weighted average of these three rows。To produce this row and if you actually
     crunch these numbers you'd see that I would just something kind of similar to
     this。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
 - en: but there would be some error right it's not a perfect match which is fine I
@@ -233,6 +265,7 @@
     while there might be more error。So so I have that here and I have these numbers
     here and what we'll generally do when I'm trying to mix these components to create
     a row is I'll put these numbers in another table down here。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
 - en: so this will be a table of all my weights or maybe my principal component scores
@@ -241,6 +274,7 @@
     43 here。 12 here and then the negative6 here and so since I'm doing this I'm putting
     kind of these mixtures for every row down here down here。 what that means is that
     if there's n rows over here。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
 - en: Then there are also going to be N rows over here if there are M columns over
@@ -251,6 +285,7 @@
     but then it's also nice if I'm trying to do other phases of machine learning like
     a classification or regression it's kind of nice if I only have like three feature
     columns instead of the original five that's trying to help me in a number of cases。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
 - en: Okay， so that's a whirlwind tour of these four poems where I solve regression。
@@ -261,18 +296,21 @@
     we only really have time to learn like one algorithm for each of them and so if
     I go to this website down here this is the website for PsyH Learn which is the
     module we're going to be learning。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
 - en: 😊，And there's probably close to hundreds of different algorithms or different
     classes they have there。 I put a small subset under here and so I can see well
     here's all these different things they have for clustering and we're going to
     just learn one of those which is k means clustering。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
 - en: decomposition， all these different things I can do， we're going to learn just
     one of them。 which is PCA。It turns out that for a lot of algorithms。 the classification
     and regression common pairs， so for example。Here I have like a decision tree classifier
     here I have a decision tree regressor。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
 - en: Here I have a K neighbors classifier here I have a K neighbors regressor and
@@ -280,6 +318,7 @@
     these two categories and so we're going to learn two things here we're going to
     learn logistic regression and we're going to learn linear regression and this
     is a little bit confusing because。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
 - en: Well this part's obvious， right the linear regression is going to be a regression
@@ -289,6 +328,7 @@
     logistic regression is when people always get infused on because well it's not
     actually a regression。And I think once we learn all these things， the very nice
     thing is that the interface to using the other ones is relatively simple。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
 - en: So for example， once you know how to use a linear regression。You could very
@@ -296,6 +336,7 @@
     to be able to do all your machine learning stuff correctly now before you do that
     you should probably learn about how Ridge works and then think about which model
     is best for you。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
 - en: but at least in terms of the code it's very simple to switch between different
@@ -304,6 +345,7 @@
     where I need to be learning this machine learning both in terms of the code and
     then also the math。Where I learn a few different modules， the main one is atsyKt
     Learn。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
 - en: I would showing you some documentation from PsyKt Learn。We're also gonna learn
@@ -311,6 +353,7 @@
     the foundation for pandas right。 all panda data is actually stored in Numpy and
     now will be a good time for us to actually see that。And then when I learned this
     thing called Pytorch and Pytorrch can do a couple things for us。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
 - en: one is it can do calculus for us， which is pretty cool。Another thing it can
@@ -319,6 +362,7 @@
     CPUs。 right your central processing unit。And and it turns out that GPUs that originally
     built for graphics also happen to be really good at machine learning and so a
     lot of things if you're dealing with a lot of data or kind of complex models。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
 - en: a GPU will be better at it。Where I have to learn a little bit of math。 I'm not
@@ -328,6 +372,7 @@
     these characteristics and then we have a function that predicts the price。How
     would we do that with matrices， well I might take all these numbers in the data
     frame and put them in this matrix here？
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
 - en: And then for my function， I may have kind of just an algebraic expression which
@@ -335,6 +380,7 @@
     And when I run this well I'm going to get this other vector out here which actually
     has all all the prices so to understand what's going on here and we have to learn
     a little bit of linear algebra。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
 - en: this is not a regular multiplication， it's actually something called the dot
@@ -349,6 +395,7 @@
     I want to I can just say well I want the dot product of these two things and I
     want to add B and it just work so we're going be talking about that in quite a
     bit more detail at some point before the end of the semester。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
 - en: One thing I want to note is that if you're reading other documentation。 a lot
@@ -357,6 +404,7 @@
     those will generally use x for data and then even stranger we'll often have a
     C when we're in PsyKt learn but then they call that little acts instead so just
     be you know as we're learning linear algebra stuff。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
 - en: I just want to say upfront and I'll say it again be aware that the variable
@@ -366,6 +414,7 @@
     quadratic or cubic or anything like that not linear really all we can do is multiply
     multiply variables by numbers and then add things off right so this is an example
     of a linear equation right I just have I have some different variables。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
 - en: And then I'm multiplying them by different numbers one of the things where I
@@ -373,12 +422,14 @@
     we actually have very big matrices and at a lot of variables and a lot of equations
     right so you can see here I actually have 50 variables so I think the key takeaway
     is that more variables more data but simpler equations。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
 - en: what about calculus so here I have that situation again with the house where
     I have some training data。 so I have both my features and my label， it draws into
     an algorithm and that algorithm will basically spit out this formula for me that
     I can use to predict housing prices。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
 - en: Right。Now， it turns out that when I was doing this training， right。 I had the
@@ -386,6 +437,7 @@
     is 140。 this is 190，240，254 right， They're all a little bit different。 And so
     what I can do is for this given equation I end up with。I can have some sort of
     function。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
 - en: total loss function that compares the correct answer with my model's answers，
@@ -393,12 +445,14 @@
     what my error is or how bad it is。And of course， how bad it is really depends
     on kind of the numbers that are part of this equation down here。 so the whole
     idea of this training thing with this algorithm is that I want to find out， well。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
 - en: what see can I do that is going to make my error or my loss as small as possible
     so we're trying to minimize something and I don't expect you if they can calculus。
     but I know a lot of you have and in calculus we're often trying to minimize or
     maximize things？
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
 - en: And that's why it's trying to come into play a little bit here。 The good news
@@ -406,22 +460,28 @@
     can do it for such as this pitorrch thing I're going be learning pi torch。Its
     also going to help us be able to run our code on GPU。 we're going to be able to
     do things like take two matrices。
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
 - en: shove them over to a GPU and then multiply them together and it'll just kind
     of。It almost feels like it's just magically going faster than it would if we're
     running on a CPU and it doesn't take a lot of code to move it around so Pytorrch
     is going be very powerful both in terms of calculus and using GPUs。
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 将它们移到 GPU 上，然后相乘，这几乎感觉就像是它比在 CPU 上运行时神奇地快得多，而且移动这些代码并不需要很多。因此，Pytorch 在微积分和使用
+    GPU 方面将非常强大。
 - en: To conclude this video， I just want to talk about this difference between developers
     and users and then who we are。嗯。When I'm looking at this picture here， I'm feeding
     all this training data into a machine learning algorithm。 and then that's giving
     us a function we can use make predictions。There are classes and I guess people
     in general， who either develop a new algorithms or write code and optimize code
     for existing algorithms。
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 在结束这个视频时，我想谈谈开发者和用户之间的区别，以及我们是谁。嗯。当我看到这里的这张图片时，我正在将所有这些训练数据输入到一个机器学习算法中。然后这给了我们一个可以用来进行预测的函数。这里有一些类别，我想人们通常会开发新的算法，或者编写代码并优化现有算法的代码。
 - en: And we'll just do a tiny bit of that， but that's not our focus we aren't trying
     to do machine learning research or trouble to put novel ideas。We aren't developers
     instead of're going to be users of machine learning algorithms that trauma and
@@ -431,15 +491,22 @@
     of these have different parameters in terms of the data how can we clean it off
     so it's trying to work well with the machine learning algorithm we chose and then
     finally when we actually use this thing。
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们会做一点点这方面的工作，但这不是我们的重点，我们不是在进行机器学习研究或尝试提出新想法。我们不是开发者，而是机器学习算法的用户，这让我能学习到一些内容。因此，接下来我们在这门课中会感兴趣的一些问题是，我们应该使用哪个算法？在
+    SK learn 中我们应该如何选择？我想我们应该如何配置它？很多这些算法在数据方面有不同的参数，我们如何清理数据，以使其与我们选择的机器学习算法良好配合，最后当我们实际使用这个东西时。
 - en: we're going to get all these predictions that we can compare it back to the
     original and how do we want to score that there's not necessarily one right way
     to evaluate how good or bad it is and so we want to get some experience with that
     as well so that's a bit of a preview about what's toing up in the course and hopefully
     this is kind of a fun change of pace compared to what we've been doing。
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将获得所有这些预测，可以与原始数据进行比较，我们希望如何评分呢？并没有一种绝对正确的方法来评估它的好坏，因此我们也希望获得一些经验，这也是课程内容的一个小预告，希望这与我们之前所做的相比是一次有趣的变化。
 - en: '![](img/cca75afc4da139e8d5dce602f436c338_3.png)'
+  id: totrans-59
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/cca75afc4da139e8d5dce602f436c338_3.png)'

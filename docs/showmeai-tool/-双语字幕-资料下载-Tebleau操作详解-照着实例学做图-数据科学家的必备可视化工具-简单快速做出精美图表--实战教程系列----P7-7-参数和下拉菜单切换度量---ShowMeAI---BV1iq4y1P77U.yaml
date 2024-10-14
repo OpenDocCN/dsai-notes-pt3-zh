@@ -1,103 +1,142 @@
 - en: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P7：7）参数和下拉菜单切换度量
     - ShowMeAI - BV1iq4y1P77U
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P7：7）参数和下拉菜单切换度量
+    - ShowMeAI - BV1iq4y1P77U
 - en: Hi， folks， welcomelcom to another episode of Tableau in two minutes。 Today。
     what we are going to be using is demonstrating how to use a parameter to change
     the measure on your graph。 Maybe you have two different measures that you would
     want to look at。 maybe say average price。 total revenue， something like that。
     You can switch between those using a parameter。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，大家好，欢迎来到另一集《两分钟学Tableau》。今天，我们要演示如何使用参数来更改图表上的度量。也许你有两个不同的度量想要查看，比如说平均价格、总收入之类的。你可以使用参数在这些之间切换。
 - en: and we're going demonstrate how to do that。 First of all， we need to connect
     to some data。 I'm going to use a commodity prices data set that I've actually
     used in a previous video。 You can download this。 There's a link in the comments
     section。 It's one of the global economic indicators data sets。 We're going to
     use the annual data。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将演示如何做到这一点。首先，我们需要连接一些数据。我将使用一个商品价格数据集，这是我在之前的视频中用过的。你可以下载这个数据集，链接在评论区。这是全球经济指标数据集之一。我们将使用年度数据。
 - en: Does it really matter what we use。 We're going do a lot of cleanup here。 So
     we're going change this period。 Then we're going go to our worksheet。😊。![](img/204bb4f48ec2645c15fcbad243188fab_1.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们使用的内容真的重要吗？我们将在这里进行大量清理。所以我们要改变这个期间。然后我们将进入我们的工作表。😊。![](img/204bb4f48ec2645c15fcbad243188fab_1.png)
 - en: You can see we actually have a number of different pricing options across the
     top。 All sorts of things from aluminum， bananas， bananas， barley， beef， chickenck，
     coal。 all sorts of things。 And what we're gonna do is we're gonna to use a parameter
     that's gonna allow us to choose between a number of those options。 So the first
     thing we have to do is a little bit of data cleanup。 So again。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到，我们在顶部有多个不同的定价选项。各种各样的商品，包括铝、香蕉、大麦、牛肉、鸡肉、煤等。我们将使用一个参数，允许我们在这些选项之间进行选择。所以我们需要做的第一件事就是进行一些数据清理。
 - en: we have to just convert these quickly to whoops。![](img/204bb4f48ec2645c15fcbad243188fab_3.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们必须快速将这些转换为其他的。![](img/204bb4f48ec2645c15fcbad243188fab_3.png)
 - en: I've accidentally created a copy。 I didn't want to do that。 We're just gonna
     convert these quickly to。Con variables to numbers。 and then we're going drag them
     down onto the measure self。 So the first thing we need to do is change the data
     type to decimal numbers。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我不小心创建了一个副本，我并不想那样。我们将快速将这些转换为变量的数字，然后将它们拖到度量栏上。所以我们首先需要将数据类型更改为小数。
 - en: you'll see that changes everything to a number， then we're going drag these
     down onto the shelf here。 then we're going to take period， which is actually the
     year that we created it at the top。 we're going convert that to a measure we're
     going drag it out onto the column shelf Now you'll see here we have our little
     visualization with all of our years。 let's say we wanted to look at the price
     of aluminum。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 你会看到这将所有内容更改为数字，然后我们将这些拖到这里的货架上。接着我们要获取“期间”，也就是我们在顶部创建的年份。我们将其转换为度量，然后拖到列货架上。现在你会看到我们的小可视化图表，展示了所有的年份。假设我们想查看铝的价格。
 - en: normally you drag that onto the thing and we get this very nice bo graph which
     shows us the price of aluminum。 but if you then wanted to see the price of beef。
     The only way to do that is either to add it next to it。 to drag it and drop it
     over the top so that you replace it now we're looking at the price of beef。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 通常情况下，你将其拖到图表上，我们会得到一个非常漂亮的柱状图，显示铝的价格。但是如果你想查看牛肉的价格，唯一的方法就是把它添加到旁边，或者拖动并放在上面，这样就会替换掉之前的内容，现在我们在查看牛肉的价格。
 - en: '![](img/204bb4f48ec2645c15fcbad243188fab_5.png)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/204bb4f48ec2645c15fcbad243188fab_5.png)'
 - en: '![](img/204bb4f48ec2645c15fcbad243188fab_6.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/204bb4f48ec2645c15fcbad243188fab_6.png)'
 - en: '![](img/204bb4f48ec2645c15fcbad243188fab_7.png)'
+  id: totrans-11
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/204bb4f48ec2645c15fcbad243188fab_7.png)'
 - en: But we can change that with a parameter。 So what we're going to do is we're
     going to create。 first of all。😊，A parameter。So we' going to create a parameter
     that allows us to select a couple of different things。 So we're gonna say this
     is our selection。Parameter。We're going to change the data type to be a string。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是我们可以通过一个参数来改变这一点。所以我们要做的是，首先创建一个参数。😊，这个参数让我们可以选择几个不同的选项。所以我们要说这是我们的选择参数。我们将把数据类型更改为字符串。
 - en: And then we're gonna give it a list of allowable values。 The first value that
     we'll have is beef。the second value will have is，Aluminium or ainium， depending
     on where you're from。And we're just gonna click。 Ok， We'll leave it with just
     those two values for the moment。Then we're going to create a calculated field
     that is price。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将给它一个允许值的列表。我们将有的第一个值是牛肉。第二个值是铝，或铝，取决于你来自哪里。我们只需点击。好的，我们暂时只保留这两个值。然后我们将创建一个计算字段，即价格。
 - en: We'm just going to call it price for the moment。 And then we're going to say
     if。Our parameter。 which we call the selection parameter。Is exactly equal。wo。Beef。Then，
     this。Price is gonna be equal to the price of beef。We're just gonna track that
     over there， El。The selection parameter is exactly equal to alllu。W， that's not
     the one we want ain E。lumuminum。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们暂时就叫它价格。然后我们将说如果我们的参数，我们称之为选择参数，正好等于wo。牛肉。那么，这个价格将等于牛肉的价格。我们会在那里跟踪它，El。选择参数正好等于alllu。W，这不是我们想要的E。铝。
 - en: there we go。We're gonna forget that we want to put quotes around these two。It's
     exactly equal to aluminum。Then， we're gonna。Show the price。Have aluminum。elselse？
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的。我们将忘记想要给这两个加上引号。它完全等于铝。然后，我们将显示价格。有铝吗？elselse？
 - en: If there's an arrow， we're gonna return 0， then we're gonna end it。 Remember。
     you always have to put the end after your if calculations and hit O。Then we're
     going to take price。![](img/204bb4f48ec2645c15fcbad243188fab_9.png)
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果有箭头，我们将返回0，然后结束它。记住，您总是需要在if计算后放置end并点击O。然后我们将取价格。![](img/204bb4f48ec2645c15fcbad243188fab_9.png)
 - en: Which is up at the top here。 And we're going drag that onto the period。 Alright，
     so。Not 100% sure which one this is。 I think it's beef。 If we click on the parameter
     down here and click show parameter control。 You'll see that at the moment， it's
     selected to beef。 But if we change that to aluminum。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 它在这里的顶部。我们要把它拖到周期上。好的，所以不太确定这是什么。我想是牛肉。如果我们点击下面的参数并点击显示参数控制，你会看到目前选定的是牛肉。但如果我们把它改成铝。
 - en: our graph changes。 and now we have the price of aluminum。![](img/204bb4f48ec2645c15fcbad243188fab_11.png)
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们的图表发生变化，现在我们有铝的价格。![](img/204bb4f48ec2645c15fcbad243188fab_11.png)
 - en: Just as easy as that Now obviously you can have multiple options in there。 if
     you would have multiple options in there， we could have one option for everything
     on this list。 and then we wouldn't have to change the measure on the row shelf。
@@ -106,15 +145,21 @@
     the rigmarole of changing the field or having a bunch of different visualizations
     on the screen at once you can just give them the option to change what they're
     looking at on one particular visualization。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 就这么简单。显然，你可以有多个选项。如果你在里面有多个选项，我们可以为这个列表上的所有内容设定一个选项。这样我们就不需要在行架上更改度量。这意味着当你构建仪表板时，你可以给用户选择改变他们在可视化中查看内容的选项，而不必经历更改字段或在屏幕上同时有一堆不同可视化的麻烦，你只需给他们在特定可视化中改变所查看内容的选项。
 - en: Thank you very much for joining us for this episode of tableau in two minutes
     if you have any questions please leave them in the comments。 There is a link to
     the data in the。😊，Video description and if you like what you see。 if you like
     learning about Tableau， then please subscribe for more Tableau tips and tricks
     and we will see you next time。😊。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 非常感谢您参加本期“Tableau两分钟”的节目。如果您有任何问题，请在评论中留言。视频描述中有数据的链接，如果你喜欢你所看到的。如果你喜欢学习Tableau，那么请订阅以获取更多Tableau提示和技巧，我们下次再见。😊
 - en: '![](img/204bb4f48ec2645c15fcbad243188fab_13.png)'
+  id: totrans-21
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/204bb4f48ec2645c15fcbad243188fab_13.png)'
