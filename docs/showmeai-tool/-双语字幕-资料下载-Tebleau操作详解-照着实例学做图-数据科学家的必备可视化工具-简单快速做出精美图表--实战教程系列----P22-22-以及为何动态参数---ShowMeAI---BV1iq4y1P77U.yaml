@@ -1,51 +1,66 @@
 - en: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P22：22）以及为何动态参数
     - ShowMeAI - BV1iq4y1P77U
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P22：22）以及为何动态参数
+    - ShowMeAI - BV1iq4y1P77U
 - en: Hi， folks and welcome to another episode of Tableau in two minutes。 super excited
     to be talking you through this episode。 because I think what we're going to talk
     through today can make a huge difference to the interactivity and how interesting
     you can make your visualizations when it's all used in the same way。 This week，
     we are going be talking about dynamic parameters now。😊。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，欢迎来到另一集《两分钟内学会Tableau》。我非常兴奋能和你们讨论这一集，因为我认为我们今天要谈的内容可以大大提高互动性，让你的可视化变得更有趣。这一周，我们将讨论动态参数。😊。
 - en: Pararameterters have been around in Tableau for a long time。 What was new in
     2020。1 was that you can now have these parameters like update when your data updates。
     So if you have a list of values instead of just being a static list of values
     now you can populate that list of values based on whatever's in the data。 So if
     you open a store in a new market or you have a new area director come on board
     or somebody else。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 参数在Tableau中已经存在很长时间了。2020.1的新特性是，现在这些参数可以在数据更新时自动更新。所以如果你有一个值列表，而不是静态的值列表，现在你可以根据数据中的内容填充该值列表。因此，如果你在一个新市场开设商店，或者有新的区域经理加入。
 - en: 😡，That value will automatically be populated in that list。 And as long as it's
     in the data， right。 we can use that to highlight， you can use it to filter， do
     all sorts of things with it。 The other thing you can do is that if you have a
     workbook that you always want to show the most recent two months of sales。 for
     example or the most recent eight weeks of sales。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 😡，该值将自动填充在列表中。只要它在数据中，我们就可以用它进行高亮、过滤等各种操作。你还可以做的是，如果你有一个工作簿总是想显示最近两个月的销售数据，或者最近八周的销售数据。
 - en: you can do that using one of these dynamic parameters。 Now you were able to
     do it before with a couple of workarounds， but this makes it so much easier。 and
     it makes it more dynamic right So if I wanted to see the last eight weeks of sales
     based on the most recent date when I opened the workbook。 but then maybe I wanted
     to see something different later on。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以使用这些动态参数来实现这一点。之前你可以通过一些变通方法做到这一点，但现在这样做要容易得多，而且更具动态性。如果我想查看最近打开工作簿时的最后八周销售数据，但后来可能想查看不同的内容。
 - en: like the last eight weeks through two weeks ago。😊，I could change that using
     the parameter and。 but I couldn't change that if we'd like hard coded it into
     the workbook before， so super exciting。😡。Both of them are really easy to do because
     they build on functionality that was already there。 So why don't we take a look
     at how we can build one。For this first one。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 比如说查看最近八周到两周前的销售数据。😊我可以通过参数进行更改。但如果之前将其硬编码到工作簿中，我就无法更改，所以这真是令人兴奋。😡。这两者都很简单，因为它们建立在已经存在的功能之上。那么我们来看看如何构建一个。对于第一个。
 - en: It's something you may not have done because it was annoying to update right
     whenever the parameter was changed。 so I've always used like filters and values
     to try and make sure that my lists were correct。😡。So let's go ahead and do it。
     I'm gonna connect to a data set that I made that's dead simpleim in Excel。 It's
     just called my， my small GP data set。 And this has some data on。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可能不想做这个，因为每次参数更改时更新会很烦人。因此，我总是使用过滤器和值来确保我的列表是正确的。😡。所以让我们开始吧。我将连接到我在Excel中制作的一个简单数据集，叫做我的小GPA数据集。这包含一些数据。
 - en: People's grades for different tests and different classes it's all made up if
     you're not from the USA you want to understand what this point score means。 but
     basically for an A you get four points for a B， you get three points， C。 you get
@@ -53,43 +68,55 @@
     GPA using those So we have two different tables of this and we're going to use
     one to update the data later on so what I've done is I've drug out this grades
     October sheet and you can see we have a test date。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 不同测试和不同课程的学生成绩都是虚构的。如果你不来自美国，想理解这个评分系统的含义，基本上，A得四分，B得三分，C得两分，依此类推。这就是如何使用这些分数计算某人的GPA。因此，我们有两个不同的表格，我们将使用一个来稍后更新数据。我拖出了这个十月成绩单，你可以看到我们有一个测试日期。
 - en: a student a class a grade and the number of points。And we are going to go ahead
     and just build us a quick bar graph that has the student。And then the number of
     points that they got right so this is the total number of points we're can go
     ahead and sort that to make it neat and tidy and then what I'm going to do is
     I'm going to use a parameter to highlight the number of points that a certain
     student got in a certain class。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个学生，一个班级，一个成绩和得分。我们将快速构建一个条形图，显示学生的分数。所以这是总分数，我们可以对其进行排序，使其整齐，然后我将使用一个参数来高亮某个学生在某个班级中获得的分数。
 - en: So what we're going to have to do。We' are going to go to create a parameter
     here。And we're going to make it a list and it's going to be a string and we're
     going to use it。We're going to use class。 Now， you'll notice that I have two options
     here on the right hand side。 I used to only have one。 It used to be fixed。 but
     now I can select that when the workbook opens。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们要做的是。我们将创建一个参数。它将是一个列表，并且它将是字符串，我们将使用它。我们将使用班级。现在，你会注意到我在右侧有两个选项。我以前只有一个。它曾经是固定的，但现在我可以选择在工作簿打开时。
 - en: I want my class value to update。 That's what I want it to load whatever's in
     this list。 And we're going to call this class。Highlight Para。We're going to hit
     okay， all right， awesome。Then we're going to use that to create a highlight。 so
     I'm going to go ahead and create a calculative field。And then we're going to say。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我希望我的班级值能更新。这就是我希望它加载这个列表中的内容。而我们将称这个类为**高亮段落**。我们会点击确定，好的，太棒了。然后我们将用它来创建一个高亮，因此我会先创建一个计算字段。然后我们会说。
 - en: if the class equals。Clss highlight parameter， then。Highlight。Else， don't。Okay。
     then we're going to take this class highlight field。 we're going to go ahead and
     drag it out onto my color shelf there。And I'm going to add this。To the sheet。And
     you can see that in orange， we're highlighting all the points that people got
     in each class。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果班级等于**类高亮参数**，那么**高亮**。否则，不。好的。然后我们将把这个类高亮字段拖到我的颜色架上。我会把它添加到表格中。你可以看到，在橙色中，我们高亮了每个班级中所有人的得分。
 - en: and we have English， math and Spanish。Now， let's go back to our data source。
     and we're going to go ahead and we're going to drag out this grades for November，
     right。 We're going union it on。 I have another video about un。 if you're interested
     in looking at that。 So we're just going to do that for now。 And then we're going
     to go back out to our sheet。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们有英语、数学和西班牙语。现在，让我们回到数据源。我们将拖出这个十一月的成绩，对吧。我们将进行联合操作。我还有另一个关于联合的视频。如果你有兴趣，可以看看。现在我们暂时就这样做。然后我们会返回到我们的表格。
 - en: And you'll see that even though we didn't actually close and reopen the workbook。
     we now have geography as an option in our。List here too。 so this list is repulated
     with new classes based on the new data that we added to it。 So excellent functionality
@@ -97,16 +124,20 @@
     time you update the data in the workbook or reing the fields to your parameter
     and because you can do that and you don't have to change it every time the data
     updates that gives you a whole bunch more flexibility with with these parameter。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 你会看到，即使我们没有实际关闭并重新打开工作簿，我们在这里的列表中也有地理作为一个选项。所以这个列表根据我们添加的新数据进行了更新。所以优秀的功能意味着你不必每次更新工作簿中的数据或重新映射字段到你的参数时都回去不断更新参数，这样就给了你更多的灵活性。
 - en: All right， so。😡，We've done that。 Let's let's take a look at the other one， right。
     So let's say that when I log in， I'm making a data， a dashboard for my teachers。
     and I want my teachers to be able to see all of the the points that everybody
     got for each of the tests。So it's going to open up a new sheet here and what I
     want it to do is I want it to show one test at a time and I want it to always
     show what the latest test was to start with。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，所以😡，我们做到了。让我们看看另一个，对吧。假设当我登录时，我正在为我的老师制作一个仪表板。我希望我的老师能看到每个测试每个人得到的所有分数。所以它将在这里打开一个新表格，我想它一次显示一个测试，并且总是显示最新的测试。
 - en: but I also want to give them the option to go back and select different dates
     with different tests if they wanted to do that。😡，At a different， you know， sort
     of different time。So let's we'll open up a blank sheet here。 the first thing I'm
@@ -114,37 +145,47 @@
     student out to columns。 we're going to drag points out to the rows again and then
     we're going to sort it because all sorted data is so much better than unsorted
     data。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我也想给他们选择不同日期和不同测试的选项，如果他们想这样做的话。😡，在不同的，知道的，某种不同的时间。所以让我们在这里打开一个空白工作表。我做的第一件事就是构建我的基本条形图，所以我们将学生拖到列上。我们将分数拖到行上，然后我们会对其进行排序，因为所有排序的数据总比未排序的数据好得多。
 - en: 😡，And I'm also just going to set us up for this by going back and removing November
     data。From our union here， so we're going to delete November。There we go。And go
     back to our sheet。All right， so。😡，Now let's try building our parameter。Oh， sorry，
     we want a new parameter。And I want this to be test， date parameter。Bli me can't
     type today， can I all right， there we go。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 😡，我还将通过返回并删除我们这里的11月数据来为此做好准备，所以我们将删除11月。好了。然后返回到我们的工作表。好的，所以。😡，现在让我们尝试构建我们的参数。哦，抱歉，我们想要一个新参数。我希望这个是测试日期参数。今天我打字真糟糕，好的，到了。
 - en: we're also going to make this a list， it's going to be a date。😊。And we want
     to add the values when the workbook opens， right。 because we always want to have
     the latest date and we want to add them from test date。 Now。 there you see， there's
     my three test dates。 What we want to change in order to have it always highlight
     the last date is this field that says value when the workbook opens。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还要把这个变成一个列表，这将是一个日期。😊。我们想在工作簿打开时添加值，对吧。因为我们总是想拥有最新的日期，并希望从测试日期中添加它们。现在。你看，这里是我的三个测试日期。我们想要更改的内容，以便始终突出显示最后一个日期的是这个字段，它在工作簿打开时显示值。
 - en: Now， right now， it's hard coded to say current value。 So we can't change it
     at the moment。 it's always going to be the same value that it currently is， which
     is which is 101。In order to change that， what we need to do is we need to create
     ourselves a calculated field and this calculated field needs to fulfill a handful
     of criteria Firstly it can only have one value。 whatever the visualization is
     whatever we do with the data it can only have one value。😊。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，目前它被硬编码为当前值。所以我们此刻无法更改它。它将始终是当前的相同值，即101。为了更改它，我们需要创建一个计算字段，这个计算字段需要满足一些标准。首先，它只能有一个值。无论可视化是什么，无论我们如何处理数据，它只能有一个值。😊。
 - en: And it has to be based， right， derived from this field that we're using to get
     it up。 So in this case， we have to derive a field from test date。That only has
     one value。 and we're going to do that with something called a level of detail
     calculation。This level of detailed calculation is dead easy。 So if you're not
     sure how to do them。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 而且它必须基于我们用来获取它的这个字段。所以在这种情况下，我们必须从测试日期中派生一个只有一个值的字段。我们将用一种称为细节级别计算的方法来做到这一点。这种细节级别计算非常简单。所以如果你不确定如何做。
 - en: this this isn't going to matter that much。 Again， tons of resources online would
     recommend you learn how to do them because they are quite。Helpful， so we're going
     to call this one last test date。 and we're going to use a fixed level of detail
@@ -152,60 +193,82 @@
     what a level of detail calculation does is it says that for our whole data set
     because this is fixed and we didn't put any any grouping fields in here or any
     ways to divide the data in here for our whole data set。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 这并没有太大关系。再说，网上有很多资源会建议你学习如何做，因为它们相当有帮助，所以我们将这个称为最后测试日期。我们将使用固定细节级别计算。我们要说最大测试日期，哎呀。好了，这样做的效果是，对于我们的整个数据集，因为这是固定的，我们没有在这里放任何分组字段或分割数据的方式。
 - en: we are going to look for the maximum test date。😊，So let's just go ahead and
     apply that。 So we've created that calculatedalc field that popped up right here。
     Now。 let's move this out to our。Field。And then what I'm going to do while we're
     here is I'm also going to create our filter。 So this is going to be our test date
     filter。 And we're going to say if test date。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们要寻找最大测试日期。😊，所以我们就继续应用这个吧。所以我们创建了这个计算字段，就在这里弹出来了。现在。让我们把这个移到我们的字段中。在我们这里，我还要创建我们的过滤器。这将是我们的测试日期过滤器。我们要说，如果测试日期。
 - en: Equs the test state parameter。Then show。Else。Hide。And all right。 And then we're
     gonna apply that。 We're gonna drag this out to our filters shelf。 We're gonna
     say I only want to see the ones that we labeled show。 right， So based on this
     logic， if the test A equals the parameter， we're gonna show it。 And then let's
     just test it before we go through everything， right？ That's changing properly。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 等式测试状态参数。然后显示。否则。隐藏。好吧。然后我们将应用这个。我们将其拖到过滤器架上。我们会说我只想看到我们标记为显示的部分。没错，所以根据这个逻辑，如果测试
+    A 等于参数，我们将显示它。然后在我们完成之前，让我们先测试一下，没错？这是正确更改的。
 - en: Excellent， Good， like the way that's working a lot。 Now， how do we get it to。To
     add the new data。 let's go up to edit parameter。Now， you see value in workbook
     opens was set to current value。 We've set so that it's going to update the test
     dates whenever the workbook opens。 And we want the current value to be whoops，
     sorry。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 很棒，好的，喜欢这种方式的工作。现在，我们怎么去做呢？要添加新的数据，先去编辑参数。现在，你看到工作簿打开时的值设置为当前值。我们已经设置为每次工作簿打开时都会更新测试日期。我们希望当前值是，哎呀，抱歉。
 - en: we want the value in the workbook opens to be this latest test date。 That's
     going to push it to be the same as this field that we just created。Every time
     the workbook opens， right， so let's click that。 you can see it already updated
     to be the 20th。But let's see what happens when we add the new data to it。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们希望工作簿打开时的值是最新的测试日期。这将使其与我们刚创建的字段相同。每次工作簿打开时，没错，所以让我们点击一下。你可以看到它已经更新为20号。但让我们看看当我们添加新数据时会发生什么。
 - en: Alright， we can move that around。 Sos go back to our data source again。 I'm
     going to take the grades from November。 I'm going to add them to my， my union
     here。Beautiful。 there they are。 And now， when we go back to sheet 2， you see this
     is updated。 and now we're showing。😊，11，222020。 So what that allows you to do，
     right is you can have that default to the most recent test。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，我们可以移动那个。所以再回到数据源。我将取出11月的成绩。我将它们添加到我的联合中。太棒了，那里有它们。现在，当我们回到第2页时，你会看到这个已经更新。现在我们显示的是。😊，11，222020。这让你能够默认到最近的测试。
 - en: But if a student wanted to see something else， they could also go back and they
     could look at a different test。 or sorry if a teacher wanted to see what the 1116
     results were。 they could still go back and do that。 We're not forcing them only
     to look at the most recent test in this view。 we given them the option， but we're
     setting a sensible default。Very cool。 A ton of functionality。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是如果学生想看其他内容，他们也可以返回查看不同的测试。或者，如果老师想知道1116的结果，他们仍然可以回去查看。我们并没有强制他们在这个视图中只查看最新的测试，我们给了他们选择的机会，但我们设置了一个合理的默认值。非常酷，功能强大。
 - en: I'd love to see what you guys come up with when you work with these。😊，So。 but
     that does it for this episode。 I hope you found that helpful。 If you did go ahead
     and hit the subscribe button。 It'd be great to see you on here。 We have tons of
     great tableau content。 I will put a link to the data that I did with this in the
     video description so you can download Tableau public。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 我很想看看你们在使用这些时会想到什么。😊，所以这就是本集的内容。我希望你觉得有帮助。如果你觉得有帮助，请点击订阅按钮。很高兴在这里看到你。我们有很多很棒的
+    Tableau 内容。我会在视频描述中放一个链接，包含我用这些做的数据，方便你下载 Tableau Public。
 - en: Really encourage you to follow along。 Great way to learn and。😊，I will see you
     next time。![](img/9701594717a65b5fe3eb4525a0af752c_1.png)
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 我真的鼓励你跟着做。这是一个很好的学习方式。😊，下次见！![](img/9701594717a65b5fe3eb4525a0af752c_1.png)
 - en: '![](img/9701594717a65b5fe3eb4525a0af752c_2.png)'
+  id: totrans-29
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/9701594717a65b5fe3eb4525a0af752c_2.png)'

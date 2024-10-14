@@ -1,8 +1,11 @@
 - en: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P3：3）连接与合并数据源
     - ShowMeAI - BV1iq4y1P77U
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P3：3）连接与合并数据源
+    - ShowMeAI - BV1iq4y1P77U
 - en: Hi folks welcome to another episode of Tableau in two minutes today we're going
     to be demonstrating how to union and how to join data sources within the data
     source window so we're going to create one data source out of multiple tables
@@ -10,20 +13,28 @@
     that we have sales for three months September October and November we have a list
     of regional leaders we have a list of product leaders and we have the cost per
     unit and to。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，欢迎来到《两分钟学 Tableau》的另一期，今天我们将演示如何在数据源窗口中合并和连接数据源，因此我们将从多个表中创建一个数据源。为此，我创建了一个家具数据集，假装是家具销售，你可以看到我们有三个月的销售数据，九月、十月和十一月，我们有区域领导的列表，我们有产品领导的列表，还有每单位的成本。
 - en: 😊。![](img/367e9a861f5d59f02c38cd30a5009b26_1.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/367e9a861f5d59f02c38cd30a5009b26_1.png)
 - en: Create those to combine these into one big data source。 we're going go ahead
     and jump into Tau here。 You can see I've already created a connection to the furniture
     sales Excel sheet。 So the first thing we're going to do is we're going drag out
     September onto our sales or sorry onto our big furniture sales table here。😊。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建这些将它们合并为一个大的数据源。我们将直接进入Tau。你可以看到我已经创建了与家具销售Excel表的连接。所以我们要做的第一件事是把九月份的销售数据拖到我们的销售表，或者说拖到我们的家具销售大表中。😊。
 - en: '![](img/367e9a861f5d59f02c38cd30a5009b26_3.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/367e9a861f5d59f02c38cd30a5009b26_3.png)'
 - en: You can see that that gives us the sales for September Now we want to also combine
     this with the sales for October and November it would be a pain to have those
     as different data sources so we're going to go ahead and drag them out and you
@@ -35,29 +46,37 @@
     we have now September October and November in our data source the first big table
     you'll notice it's done two things and it's added two fields to our column the
     first one is the sheet name。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到，这给我们带来了九月份的销售数据。现在我们还想把十月份和十一月份的销售数据合并在一起，如果将它们作为不同的数据源会很麻烦，因此我们将继续拖动它们，你可以看到如果你将它们拖到彼此正下方，然后可以拖动并放置在“拖动到合并”的地方，这样做的结果是将两个表堆叠在一起，所以你可以看到现在我们在这里有九月份的销售数据，而十月份的销售数据在上面，我们对十一月份也做同样的操作，直接拖到底部，再次你可以看到我们现在的数据源中有九月份、十月份和十一月份，第一张大表你会注意到它完成了两个任务，并且在我们的列中添加了两个字段，第一个是表名。
 - en: 😊，And the second one is the table name， both of these happen to be their month
     in this case。😊。So if we didn't have this month label in our data source。 we would
     actually be creating another label for each sheet so that we could identify which
     one was which。😊，The next thing we're going to do is we're going to join our regional
     leaders to our sales table here so we're going to take regionals out。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，第二个是表名，这两个恰好都是它们的月份。😊。所以如果我们在数据源中没有这个月份标签，我们实际上会为每个表创建另一个标签，以便识别哪个是哪个。😊，接下来我们要做的事情是将我们的区域领导连接到我们的销售表，因此我们要把区域领导拖出来。
 - en: drag it out onto the left hand side you'll see it gives us this little Venn
     diagram here this gives us a number of options for our join you can see that when
     the center of the Venn diagrams colored then we have an inner join when the left
     circle is covered we have a left join when the right circle is colored we have
     a right join and when both circles are colored we have a full join this has automatically
     picked up our join criteria so we have regional leaders in both。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 拖到左侧，你会看到这里有一个小的维恩图，这给我们提供了一些联接选项，你可以看到当维恩图的中心被上色时，我们就有了内连接，当左侧圆圈被覆盖时，我们有左连接，当右侧圆圈被上色时，我们有右连接，而当两个圆圈都被上色时，我们有完全连接，这自动选择了我们的连接标准，因此我们在两者中都有区域领导。
 - en: 😊，Columns， because region， the field region exists in both data sources。We also
     have this setup up as an inner join。 If you were to write this in SQL。 you would
     write inner join the two tables on region equals region。Now。 if we wanted to join
     a second table， we could join our product leaders here。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，列，因为区域字段在两个数据源中都存在。我们也将其设置为内连接。如果你用SQL来写这个，你会写两个表的内连接，区域等于区域。现在，如果我们想连接第二个表，我们可以在这里连接我们的产品领导者。
 - en: We'll just drag that and drop that but you'll see that we have a red exclamation
     point because we don't have matching field names in these two so we need to select
     the field names from this little list it gives us。 so we'll go ahead and select
@@ -65,15 +84,19 @@
     have product name So because that field is slightly different we have to specify
     the join criteria once we've done that it gives us the little inner join sign
     here。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将其拖放，但你会看到有一个红色的感叹号，因为这两个字段名不匹配，所以我们需要从这个小列表中选择字段名。我们将从左侧数据源中选择产品，然后如果我们查看这个，你会看到我们有产品名称。由于该字段略有不同，我们必须指定连接标准，一旦我们这样做，就会在这里显示小的内连接符号。
 - en: So again this will be the SQL equivalent of inner join product on。😊。A dot product
     equals B dot product name or something like that。So with those two tables。Joined
     up。We now have a pretty comprehensive data source rate， so we have all of our
     sales。 we have our regional leaders joined， and we have our product leaders joined
     so we can sum these up by different people。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这将是SQL中内连接的等价物，产品连接在。😊。点乘等于B点乘名称或类似的东西。因此，这两张表连接后，我们现在有了一个相当全面的数据源率，我们拥有所有的销售数据，我们的区域领导者已经连接，我们的产品领导者也已连接，所以我们可以按不同的人汇总这些数据。
 - en: no matter what the region is and everything like that。😊，If we wanted to add
     the cost。 we can also drag the unit cost over here again。This is going to give
     us joining by product name that's exactly what we want we can also set this just
@@ -82,8 +105,10 @@
     all set up like this when you do these joins the one thing that you have to bear
     in mind is that both of these fields have to be the same type so you can't join
     a numeric。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 无论区域是什么等等。😊，如果我们想添加成本，我们也可以将单位成本拖到这里。这样会根据产品名称进行连接，这正是我们想要的，我们也可以设置为仅从主要销售表连接，我们可以按产品设置，然后它会根据产品名称连接。我喜欢将我的连接设置成这样，当你进行这些连接时，你必须记住的是，这两个字段必须是相同类型的，因此你不能连接数字。
 - en: 😊，A numeric column to a string column， even if they have the same information
     in them。 you have to make sure you convert them to convert them actually。 you
     can go down here and you can actually change the type of each column and there's
@@ -91,17 +116,23 @@
     to a list Sometimes I don't want to see the data Sometimes you want to see a list
     that makes it a little easier to go ahead and change this icon so we could change
     this from a string to be a number to be true or false。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，数字列到字符串列，即使它们包含相同的信息。你必须确保实际进行转换。你可以在这里更改每列的类型，还有很多信息可以使用。你也可以将其设置为列表。有时我不想看到数据，有时你想看到一个列表，这样更容易去更改这个图标，因此我们可以将其从字符串更改为数字，变为真或假。
 - en: '![](img/367e9a861f5d59f02c38cd30a5009b26_5.png)'
+  id: totrans-13
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/367e9a861f5d59f02c38cd30a5009b26_5.png)'
 - en: And sometimes that's a good way to join things， sometimes you need to manipulate
     those in order to get the joins correct。 so once we go to the worksheet here，
     you'll see that Tableau organizes our fields nicely so we have all of our dimensions
     up here。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时这是一种很好的连接方式，有时你需要对其进行操作以确保连接正确。因此，一旦我们进入工作表，你会看到Tableau很好地组织了我们的字段，所有维度都在这里。
 - en: we have them organized by data table so we have product leaders regionals。 September
     plus which is our sales table and then the items from the unit cost table。😊。Or
     combined into one data source you'll see when you look at the blended data sources
@@ -111,8 +142,13 @@
     there is a link to the workbook and to the data source in the video description
     and if you like what you're hear and you'd like more tableableau tips and tricks
     then please subscribe to our channel for new videos we'll see you next time。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们按数据表组织这些内容，因此我们有产品领导的区域。九月加上我们的销售表，以及来自单位成本表的项目。😊。或者合并为一个数据源，当你查看我们的视频时，你会看到类似的设置。但我们在顶部的不同表下有所有的数据源，这就差不多是本期《两分钟内了解
+    Tableau》的总结。如果你有任何问题，请在评论中留言，视频描述中有工作簿和数据源的链接。如果你喜欢我们所说的内容，并希望获得更多 Tableau 的技巧和窍门，请订阅我们的频道，获取新视频，我们下次再见。
 - en: 😊。![](img/367e9a861f5d59f02c38cd30a5009b26_7.png)
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/367e9a861f5d59f02c38cd30a5009b26_7.png)

@@ -1,5 +1,6 @@
 - en: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P6：6）包含详细级别计算
     - ShowMeAI - BV1iq4y1P77U
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
@@ -10,6 +11,7 @@
     of detail calculations If you remember and this is just a recap if you watch the
     other two videos fixed level of detail calculations we' aggregate a measure at
     always the same dimension a fixed dimension if you will。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
 - en: 😊，Exclude level of detail calculations will allow you to exclude a dimension
@@ -21,26 +23,33 @@
     out onto the row shelf and then we'll take our sales and drag it out onto our
     ABcs here and create ourselves a nice little table Now let's go ahead and create
     a。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
 - en: 😊。![](img/799f3b381203694440d90166075202ac_1.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/799f3b381203694440d90166075202ac_2.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
 - en: '![](img/799f3b381203694440d90166075202ac_3.png)'
+  id: totrans-5
   prefs: []
   type: TYPE_IMG
 - en: '![](img/799f3b381203694440d90166075202ac_4.png)'
+  id: totrans-6
   prefs: []
   type: TYPE_IMG
 - en: Level of detail calculation， so we're going to say include subcat and that is
     going to be a level of detail calculation where we include we're going to always
     include product subcategory and then we're going to say sum of sales。![](img/799f3b381203694440d90166075202ac_6.png)
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
 - en: And finish that off。嗯。Pick some spelling error there。![](img/799f3b381203694440d90166075202ac_8.png)
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
 - en: There we go。 Alright， and then we're going to drag include subcat out into our
@@ -48,13 +57,16 @@
     actually aggregating the same way and we have product subcategory in our view
     where this gets interesting is when we remove product subcategory from our view
     and we take away。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
 - en: 😊。![](img/799f3b381203694440d90166075202ac_10.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
 - en: We changed the level of aggregation。 So what we're going to go ahead and do
     is we're going to change the level of aggregation to maximum。![](img/799f3b381203694440d90166075202ac_12.png)
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
 - en: And then we're going to take away product subcategory。 Now you'll see here that
@@ -63,9 +75,11 @@
     then it's taking the max for whichever one of those subcategories it think it'
     is the biggest and that's what it's displaying on here。 So if we put product subcategory
     back， I just control Z to undo。😊。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/799f3b381203694440d90166075202ac_14.png)'
+  id: totrans-13
   prefs: []
   type: TYPE_IMG
 - en: You can see that the maximum sum of sales within the furniture product categories
@@ -76,19 +90,27 @@
     that's going to show us the one with the smallest category so if we put product
     subcategory back you'll see that our smallest was office furnishing 698094 and
     we'll take it away again。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到家具产品类别中销售额的最大总和是来自桌子的，总额为1896008。因此，如果我们去掉产品子类别，单看家具，你会发现也是1896008，这显示了我们能够获得的销售额最大子类别的总和。如果我们想要将其更改为最小值或其他聚合级别，如果我们将其改为最小值，那么它将显示出最小类别的产品子类别。如果我们再将产品子类别放回去，你会看到最小的是办公家具，销售额为698094，然后我们再将其去掉。
 - en: 698094 and then finally we could if we wanted to we could say we wanted to average
     and that's going to give us the average sum of sales for each product subcategory
     within that。😊。![](img/799f3b381203694440d90166075202ac_16.png)
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 698094，最后，如果我们愿意，我们可以选择平均值，这将给我们该产品子类别的平均销售总额。😊。![](img/799f3b381203694440d90166075202ac_16.png)
 - en: '![](img/799f3b381203694440d90166075202ac_17.png)'
+  id: totrans-16
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/799f3b381203694440d90166075202ac_17.png)'
 - en: '![](img/799f3b381203694440d90166075202ac_18.png)'
+  id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/799f3b381203694440d90166075202ac_18.png)'
 - en: Products category。And that's how you might use a level of detail calculation
     using include。 it's a good way to get two different levels of measure so we can
     get the sales for the biggest subcategory within a product category as well as
@@ -98,8 +120,13 @@
     in the video description and we hope that if you like the tableableau tips and
     tricks that you got today that you will subscribe to our channel Tableau in two
     minutes and we will see you next time。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 产品类别。这就是如何使用包含进行详细级别计算的方式。这是获取两个不同度量级别的好方法，因此我们可以在可视化中获取产品类别中最大子类别的销售额，以及该产品类别的总销售额。如果你有任何问题，请在评论中留言，视频描述中有我们用于此工作簿的数据链接，以及该工作簿在Tableau公共上的链接。如果你喜欢今天分享的Tableau小贴士和技巧，请订阅我们的频道“Tableau
+    in two minutes”，我们下次再见。
 - en: 😊。![](img/799f3b381203694440d90166075202ac_20.png)
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/799f3b381203694440d90166075202ac_20.png)

@@ -1,98 +1,141 @@
 - en: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P5：5）固定详细级别计算
     - ShowMeAI - BV1iq4y1P77U
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P5：5）固定详细级别计算
+    - ShowMeAI - BV1iq4y1P77U
 - en: Hi folks welcome to another episode of Tableau in two minutes today we are going
     to be walking through level of detail calculations there are three types of level
     of detail calculations today we're going to be walking through what's called a
     fixed level of detail calculation which is the simplest so I have gone ahead and
     connected to my superstore sales data set it's available in the video description
     if you'd like to follow along。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，欢迎来到《两分钟学 Tableau》的另一期，今天我们将走过详细级别计算。详细级别计算有三种类型，今天我们将讨论一种叫做固定详细级别计算，这也是最简单的。所以我已经连接到我的超级商店销售数据集，如果你想跟着做，视频描述中有链接。
 - en: 😊，And what we're gonna do is we're gonna to take a handful of product items。
     and we're gonna drag them out onto the row shelf and create ourselves a little
     bit of a table。 So。 we don't want product container or product category。 Then
     we want product subcategory。😊。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，我们要做的是拖出一 handful 的产品项。并将它们拖到行货架上，创建一个小表格。所以。我们不想要产品容器或产品类别。然后我们要产品子类别。😊。
 - en: '![](img/f8bdab4545ad8d0f05bd4ea539284270_1.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f8bdab4545ad8d0f05bd4ea539284270_1.png)'
 - en: And then what we're going to drag out is sales onto our ABcs here and that's
     going to give us the sum of sales for each product subcategory and for each product
     category Now a fixed level of detail calculation is going to do the sum of sales
     that's like we have here but it's going to do the sum of sales at a level of detail
     that we tell it so we're going say this is fixed。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们要拖出来的是销售到我们的 ABCs 这里，这将给我们每个产品子类别和每个产品类别的销售总和。现在固定详细级别计算将进行销售总和，就像我们这里一样，但它会在我们告诉它的详细级别进行销售总和，所以我们会说这是固定的。
 - en: 😊。![](img/f8bdab4545ad8d0f05bd4ea539284270_3.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/f8bdab4545ad8d0f05bd4ea539284270_3.png)
 - en: '![](img/f8bdab4545ad8d0f05bd4ea539284270_4.png)'
+  id: totrans-6
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f8bdab4545ad8d0f05bd4ea539284270_4.png)'
 - en: Some。Of sales。We're going to put some curly brackets。 We're going to say fixed。And
     then we're going to tell it the level of detail that we want to put it at。 in
     this case。 the what we're going to put it at is the product category level。So
     product category。 and then you put a colon and then we give it the expression
     that we want to do。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 一些。销售的总和。我们将放入一些花括号。我们会说固定。然后我们将告诉它我们想要放在什么样的详细级别。在这种情况下，我们将放在产品类别层级。所以产品类别。然后放一个冒号，接着给出我们想要的表达式。
 - en: which is in this case， some of sales。And then we're going to close that parentheses
     up。There we go。😊。![](img/f8bdab4545ad8d0f05bd4ea539284270_6.png)
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种情况下，销售的总和。然后我们将关闭那个括号。好了。😊。![](img/f8bdab4545ad8d0f05bd4ea539284270_6.png)
 - en: Okay， and then we're gonna drag fixed sum of sales out also onto our table here。
     And now you can see what we've done is we've calculated the sum of sales for furniture。
     Every number in furniture is the same。 Every number in office supplies is the
     same。 every number in technology is the same。 And it's always going to calculate
     at that product category level。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，然后我们还要将固定销售总和拖到我们的表格上。现在你可以看到我们所做的事情是计算了家具的销售总和。家具中的每个数字都是相同的。办公用品中的每个数字也是相同的。科技中的每个数字也是相同的。并且它总是会在那个产品类别层级进行计算。
 - en: So if we drag something out here like province， let's drag that out。😊。![](img/f8bdab4545ad8d0f05bd4ea539284270_8.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以如果我们把省份拖出来，就让我们把它拖出来。😊。![](img/f8bdab4545ad8d0f05bd4ea539284270_8.png)
 - en: '![](img/f8bdab4545ad8d0f05bd4ea539284270_9.png)'
+  id: totrans-11
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f8bdab4545ad8d0f05bd4ea539284270_9.png)'
 - en: You can see we're still calculating at the product category level。 So we've
     still got this。You know。50178，591 for everything in furniture。![](img/f8bdab4545ad8d0f05bd4ea539284270_11.png)
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到我们仍然在按产品类别层级进行计算。所以我们仍然有这个。你知道的。所有家具的50178，591。![](img/f8bdab4545ad8d0f05bd4ea539284270_11.png)
 - en: No matter what the province， no matter what the product subcategory now。 let's
     drag Pro back a second， why is that helpful well let's say that we wanted to find
     out what percent of furniture sales were bookcases in that case we can take our
     sales number create a calcative field percent of category sales so we're going
     to take the sum of sales。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 无论省份是什么，无论现在是什么产品子类别。让我们先拖回Pro，为什么这有帮助呢？假设我们想要了解书柜在家具销售中占多少百分比，那么我们可以取我们的销售数字，创建一个计算字段，计算类别销售的百分比，所以我们将取销售总和。
 - en: 😊。![](img/f8bdab4545ad8d0f05bd4ea539284270_13.png)
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/f8bdab4545ad8d0f05bd4ea539284270_13.png)
 - en: '![](img/f8bdab4545ad8d0f05bd4ea539284270_14.png)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f8bdab4545ad8d0f05bd4ea539284270_14.png)'
 - en: And then we're going to divide it by the sum of sales， the fixed sum of sales。![](img/f8bdab4545ad8d0f05bd4ea539284270_16.png)
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们要将其除以销售总额，即固定销售总额。![](img/f8bdab4545ad8d0f05bd4ea539284270_16.png)
 - en: There we go by product category， okay。😊，Percentta category sales。 drag that
     out into the measure value shelf， obviously it's going to be zero because it's
     rounding down to zero。 so we're going to go ahead and format that to be a percentage。😊。![](img/f8bdab4545ad8d0f05bd4ea539284270_18.png)
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，按产品类别来分。😊，百分比类别销售。将其拖到度量值架上，显然它将变为零，因为它四舍五入到零。所以我们将格式化为百分比。😊。![](img/f8bdab4545ad8d0f05bd4ea539284270_18.png)
 - en: '![](img/f8bdab4545ad8d0f05bd4ea539284270_19.png)'
+  id: totrans-18
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f8bdab4545ad8d0f05bd4ea539284270_19.png)'
 - en: There you go， and you can see that。😊，Furniture bookcases were 15。9% of total
     furniture sales。 so that's how you'd use a fixed level of detail calculation again
     a fixed level of detail calculation is one that will' always calculate at the
     product category level no matter what other items you have in your view as stick
     around and we will continue working with this workbook to demonstrate both the
     include and the exclude level of detail calculations in just a few minutes。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 看，这样你就可以看到。😊，家具书柜占总家具销售的15.9%。所以这就是你如何再次使用固定细节级别计算的方法，固定细节级别计算是指无论在视图中有其他项目，它总是以产品类别级别进行计算。请继续留在这里，我们将继续使用这个工作簿来展示包含和排除细节级别计算，仅需几分钟。
 - en: 😊。![](img/f8bdab4545ad8d0f05bd4ea539284270_21.png)
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/f8bdab4545ad8d0f05bd4ea539284270_21.png)

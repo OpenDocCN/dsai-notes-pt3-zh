@@ -1,29 +1,39 @@
 - en: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P21：21）关系、联接和合并
     - ShowMeAI - BV1iq4y1P77U
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P21：21）关系、联接和合并
+    - ShowMeAI - BV1iq4y1P77U
 - en: Hi folks， welcomelcom to another episode of Tableau in two minutes。 I know it's
     been a long time since we last posted one， but I've found a better time。 and hopefully
     we can do a few videos over the next over the next few weeks and few months。 The
     first thing that I want to cover， though is something that is a new feature introduced
     in tableableau 2020 do2。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，大家好，欢迎来到《Tableau两分钟》节目。我知道自上次发布以来已经很久了，但我找到了更好的时间。希望在接下来的几周和几个月里，我们能做几个视频。不过我想首先介绍的是Tableau
+    2020中引入的新功能。
 - en: And that is changes to the data model where you can now create relationships
     instead of just having to join and union your data like you were writing a SQL
     script。 The relationships make things super flexible。 So sort of sort of excited
     to。😊，To get into them。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是对数据模型的改变，现在你可以创建关系，而不只是像写SQL脚本那样连接和联合你的数据。关系让事情变得超级灵活。所以我有点兴奋，😊想要深入了解它们。
 - en: So why don't we talk from about why you might want to use them and why they
     are a little bit easier than the old way。So these joins are don't require any
     knowledge of SQL to work well。 you know。 you can set up a relationship without
     having to know whether it's a left join or a right join or whatever。 So instead
     of spending all the time preparing your data， you're going to spend more time
     exploring。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么我们为什么不谈谈你为什么想使用它们，以及它们为什么比旧方法稍微简单一点呢。这些连接不需要任何SQL知识就能很好地工作。你知道的，你可以在不知道是左连接还是右连接的情况下建立关系。因此，你将花更多时间去探索，而不是花费所有时间来准备数据。
 - en: visualizing， sharing and all that sort of thing。OurRe are also going to help
     sidestep some of the issues with granularity where Tableau is going to be less
     sensitive to where you put which table and the order in which the relationship
@@ -34,85 +44,111 @@
     dupplications of data and you had to be very careful and spend a lot of time cleaning
     up the data before you ever brought it into tableableau in order to try and avoid
     those sort of issues。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 可视化、共享等等。我们的工具还将帮助规避一些粒度问题，Tableau对你放置哪个表以及关系定义的顺序不那么敏感。因此，如果你没有把最细粒度的表作为所有其他表的连接对象，有时会导致行重复或其他错误；或者如果你有两个不同聚合级别的表在一起连接时，可能会造成奇怪的数据重复，你必须非常小心，花很多时间清理数据，才能避免这些问题。
 - en: I don't know about you but I have spent a lot of time cleaning up my data and
     aligning it so that the aggregations are all correct when it gets pulled into
     tableableau。Tableaus also introduced this concept called smart aggregation that
     means you have less risk of accidentally duplicating the data or accidentally
     getting the answers wrong or something like that if you're using data from multiple
     sources。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 我不知道你怎么样，但我花了很多时间清理我的数据并对齐，以确保在导入到Tableau时所有的聚合都是正确的。Tableau还引入了一个叫做智能聚合的概念，这意味着如果你使用来自多个源的数据，就减少了意外重复数据或错误答案的风险。
 - en: So what tableau is going to do in the background is instead of having everything
     like prepackaged into tables。 it's going to aggregate the data at a different
     level for each visualization depending on what pieces you bring into the view。
     So we're going to take a look at that in a second。But first of all。 we're going
     to take a look at relationships right。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以Tableau在后台所做的是，不再将所有内容预先打包成表，而是根据你在视图中带入的部分，针对每个可视化在不同级别上聚合数据。我们稍后会看一下这个。但首先，我们要看看关系。
 - en: So because you don't have to make such a strict choice early about how you're
     going join your data that allows。 that's what allows this level of flexibility。
     So we're going to see what that looks like as you're building the data。 So the
     first thing that I'm going to do is I'm going to join to this bookshop data set。
     that tableableau's example of how and why you might want to use the relationships
     instead of traditional joins and things like that。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 因为你不需要在早期做出严格的选择来加入你的数据，这允许了这种灵活性。因此，在构建数据时我们将看到它的样子。我首先要做的是连接到这个书店数据集。这是 Tableau
+    的一个示例，说明你为什么可能想要使用关系而不是传统的连接等。
 - en: And this is a great data set to try with because there's a whole bunch of stuff
     that we can pull together。 So the first thing we're going to pull in is this book
     table。😊。This is like the base table of the data。And with this base table。 we're
     going to sort of build the relationships from this table right so the concept
     is that we have some data about books。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个很好的数据集，因为我们可以整合很多东西。首先我们将拉入这个书籍表。😊这就像数据的基础表。通过这个基础表，我们将从这个表中构建关系，因此概念是我们有一些关于书籍的数据。
 - en: books can have a book is obviously a book， but a book can have multiple editions
     so it might have a hardcover version。 a softcover version， in addition to that
     we have information about the author who the publisher is。 whether there's any
     ratings or awards， and we have some sales data about these these books as well。So
     we've added our first table， we've added the book table here and the first。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 书籍可以有一本书显然是一种书，但一本书可以有多个版本，因此它可能有硬壳版和软壳版。此外，我们还有关于作者的信息，出版商是谁，是否有任何评分或奖项，我们也有一些关于这些书籍的销售数据。因此，我们添加了第一个表格，这里是书籍表。
 - en: the other table I'm going to just add is the awards table。😡，Right， so when we
     add the award table。 you see we get this edit relationship dialo box。 We can choose
     the field from the book table and the field from the award table that should match
     in order to。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将要添加的另一个表是奖项表。😡当我们添加奖项表时，你会看到我们得到这个编辑关系对话框。我们可以选择书籍表中的字段和奖项表中应该匹配的字段。
 - en: Define the relationship between these two。 we can also， if we want to。 we can
     add more fields so we could， if we needed to join on more than one criteria。 we
     could add that as well。And we also have these performance options。 Now。 performance
     options are similar。To what you might find or what you might think about when
     you do a join。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 定义这两个之间的关系。如果我们想的话，我们还可以添加更多字段，如果我们需要基于多个标准进行连接，我们也可以添加这些字段。我们也有这些性能选项。现在，性能选项类似于你在进行连接时可能会想到的。
 - en: But they are a little different。So first， we can adjust this cardinality of
     the join。 I think the thing to remember about both of these options is if you're
     not sure whether you should change it。 you should probably leave it with a default。
     The default's going to do a good job in most situations。 you might get some small
     performance benefit。 if you change some of these options with the right data set。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 但它们稍微不同。因此，首先，我们可以调整连接的基数。我认为关于这两个选项需要记住的是，如果你不确定是否应该更改，可能应该保持默认设置。默认设置在大多数情况下表现良好。如果你在合适的数据集上更改其中一些选项，你可能会获得一些小的性能提升。
 - en: But the risk is that if you do it with the wrong data set。 It's going to。Going
     to give you the wrong， the wrong information， so。The default is many to many。
     but if one of your data sources had one line for every value， right， you could
     set this as one。And when you do that， tableau pre aggregategregates the data rate。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 但风险在于如果你在错误的数据集上这样做，它会给你错误的信息。因此，默认是多对多的。如果你的数据源中每个值只有一行，你可以将其设置为一。当你这样做时，Tableau
+    会预先汇总数据。
 - en: so it pulls the data together before it pulls it into the visualization。 and
     that has some performance enhancements， right， It makes things perform a little
     bit better。 particularly if you have a big data set。 But if you have if you think
     you have one row。 but you actually have more than one row that will duplicate
     items in this data set and that will cause you issues。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 它在将数据拉入可视化之前将数据整合在一起。这有一些性能增强，对吧？这使得事情表现得稍微好一点，尤其是当你有一个大数据集时。但是如果你认为你有一行，但实际上有多于一行，这会在这个数据集中重复项目，从而导致问题。
 - en: right， you'll get the wrong answers to some of your calculations and things
     like that。 So bottom line is if you're not absolutely certain that you only have
     a unique row for for each value in this key。 you should leave this as many to
     many。Now， for referential integrity， again。 default values are probably the best，
     but you have two options。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 对，你可能会得到一些计算和其他内容的错误答案。所以总结来说，如果你不绝对确定每个值在这个键中只有唯一行，应该保持为多对多。现在，关于引用完整性，默认值可能是最好的，但你有两个选项。
 - en: you can select either some records match or all records match。😊，If you select
     some records match。 then Tableau is going to look to see which ones it does， right，
     and's as it builds its query。 it's going to look to see which relation which records
@@ -120,195 +156,261 @@
     tell Tableau that we know already that all records match and that helps behind
     the scenes right that's going to help make the join a bit simpler and it's going
     to potentially speed up or make your visualization more responsive。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以选择一些记录匹配或所有记录匹配。😊 如果你选择一些记录匹配，Tableau 将会查看哪些匹配，对吧？在构建查询时，它会查看哪些关系匹配，哪些不匹配。如果选择所有记录匹配，你可以告诉
+    Tableau 我们已经知道所有记录都匹配，这在后台会有所帮助，对吧？这将使连接更简单，并可能加快你的可视化响应。
 - en: 😡，For a small data set， it's going to make not that much difference， but for
     a big data set。 it can be quite helpful， but again， if you're not sure it's best
     to leave it as a default because if you don't leave it as the default or you put
     it as all records match。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 😡 对于小数据集，这不会有太大差别，但对于大数据集，这可能非常有帮助，但再次强调，如果你不确定，最好保持默认设置，因为如果你不保持默认或将其设为所有记录匹配。
 - en: But all records don't match。 You're gonna end up missing， missing data。So here's
     what we're going to do。 We're going add we've sort of walked through this dialog
     box。 Let's go ahead and add the author's table as well。 You'll see that the award
     that was joined on the title。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是所有记录并不匹配。你将会丢失数据。所以我们要做的是，我们已经走过这个对话框。我们继续添加作者表。你会看到奖项是基于标题连接的。
 - en: Now we have something that's joining on the author I and we have all the same
     options right So we're going leave it as default many to many summer records match
     and summer records match。😊，Now， why don't we go for one that's a little bit more
     challenging For this one。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们有一个与作者 I 相关的内容，所有选项都是相同的，对吧？所以我们将保持默认的多对多连接记录匹配和记录匹配。😊 现在，为什么我们不试试一个更具挑战性的呢？
 - en: I'm gonna to add the info table。 Now， up until now， when we added the author
     in the award table。 the fields that we were joining on had the same name in both
     tables。 But when we add the author table， there aren't fields with the same name
     in both tables in both both tables。 So it's not sure what to join on。 So we get
     this red exclamation point in the triangle and it says we have to select the matching
     fields in order to create this relationship。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将添加信息表。到目前为止，当我们添加作者和奖项表时，连接的字段在两个表中有相同的名称。但是当我们添加作者表时，两个表中没有相同名称的字段。因此，它不确定该连接什么。我们会看到这个红色感叹号和三角形，它说我们必须选择匹配的字段以创建这个关系。
 - en: Now， one of the great things about this new version of tableau is that we can
     create what's called a relationship calculation。 Now that means that we can sort
     of combine these two fields like in the edit relationship dial box instead of
     having to do it either in the data source or to come up with some other way of
     doing it Tableau wasn't super flexible if you didn't have two matching fields。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，Tableau 新版本的一个伟大之处在于我们可以创建所谓的关系计算。这意味着我们可以在编辑关系对话框中合并这两个字段，而不必在数据源中或找其他方法。如果你没有两个匹配的字段，Tableau
+    的灵活性就不大。
 - en: even though you may have the same information in both of them。 Now。 I know from
     looking at the data and I'll post a link to the data in。😊，The video description。But
     I know that this book I field is the combination of book I 1 and book I 2。 So
     we're going to concatenate book I 1 and book I 2。 And to do that。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 即使你在这两个字段中可能有相同的信息。现在，我从查看数据中知道，我会在视频描述中发布数据链接。😊 我知道这个书 I 字段是书 I 1 和书 I 2 的组合。所以我们将连接书
+    I 1 和书 I 2。为此。
 - en: we're going to create our relationship calculation。 There's just a regular calculation
     dialog box。 See we can pop out all of our functions on the side here， and we're
     going to say book I 1 plus。Book ID 2。Apply that。And we've created our join。 and
     you can see when you look at it right。 if we look at the data here， the book I
     1 is two letters and then book I2 is three numbers。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将创建我们的关系计算。这只是一个常规的计算对话框。看，我们可以在这里侧边弹出所有的函数，我们将说book I 1加上Book ID 2。应用它。我们已经创建了连接。当你查看它时，你可以看到右边的数据，book
+    I 1是两个字母，然后book I2是三个数字。
 - en: and if we click on book，And we look at the book table。 You can see that that's，
     again。 it's those two letters plus the three numbers。So that is now。Successfully
     joined now。Much more flexible。T SQL， a lot easier to use than SQel 2， to be honest。
     Alright。 So we're gonna add a couple more tables here， And I'm gonna show you
     something else。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们点击图书，并查看图书表。你可以看到，那又是那两个字母加上三个数字。所以现在这已成功连接了。现在更灵活了。说实话，T SQL比SQel 2容易得多。好吧。我们将在这里添加几个表，我将向你展示其他内容。
 - en: First thing we're gonna do is just add the edition table。 note that where you
     drag it， right。 different， It's trying to join to different tables。 We want to
     join to the book table。 So we want to make sure this little orange squiggly line
     when we drop it。😊。With the orange squiggly line points to the book table， not
     one of the other tables。 Again。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们要做的第一件事就是添加版本表。注意你拖动的位置，对吧？不同的，它试图连接到不同的表。我们想连接到图书表。所以我们希望确保这个小橙色波浪线在我们放下时指向图书表，而不是其他表。😊再一次。
 - en: we want that to join on book I D。 So that is fine。 Now， we have our addition
     table。 We're join the sales table to it。 We're gonna take the sales table。😊，Out
     over here。 the sales table joins to the addition table。Oh， hang on a second。 I've
     joined it to the wrong table。 It's not gone well。 There we go。There we go。 Allright。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们希望在book ID上连接。所以没问题。现在，我们有了版本表。我们将销售表连接到它。我们将把销售表拖到这里。😊销售表连接到版本表。哦，等一下。我把它连接到了错误的表。这可不太好。好了，搞定了。好的。
 - en: So now we're connected to the edition table on the ISBN number。 know anything
     about books。 the IBN number is what identifies a particular， a particular edition。So
     now that we've dragged the Q1 table out we have some sales information and this
     is all nicely going to aggregate together。 but we have different sales tables
     for each quarter， so we have one for Q1， one for Q2， one for Q3。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们通过ISBN号码连接到版本表。如果你了解书籍，ISBN号码是用来识别特定版本的。因此，现在我们已经拖出Q1表，我们有一些销售信息，这些信息将很好地汇总在一起。但我们为每个季度有不同的销售表，所以我们有一个Q1，一个Q2，一个Q3。
 - en: and one for Q4。😊，So what I'm going do is I'm going to we have to union these
     together， right。 So a union is a sQL concept。 and it's still present in tableableau。
     We didn't get completely away from it。 And what a union does is it takes two tables
     with identical structures。 and it basically stacks them on top of one another
     so that instead of one table， we get。Sorry。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 还有一个用于Q4。😊 所以我将要做的是我们需要将这些合并在一起，对吗？所以联合是一个SQL概念。它在tableau中仍然存在。我们并没有完全抛弃它。联合的作用是将两个结构相同的表合并在一起。基本上就是将它们堆叠在一起，这样我们得到的不是一个表，而是。抱歉。
 - en: instead of two tables， you have one table with all the information of both tables
     in it。 Now。 all the columns need to be the same。 and they all need to be the same
     data type。 And sos there's some restrictions to it。 But fundamentally， that's
     what we're going to do。 And that's what we want to do with these tables， right，
     because we have sales data for Q1。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在你有一张包含两个表所有信息的表，而不是两张表。现在，所有列都需要相同，并且它们都需要是相同的数据类型。所以有一些限制。但从根本上说，这就是我们要做的。这就是我们想用这些表做的，对吗，因为我们有Q1的销售数据。
 - en: We have sales data for Q2， Q3 and Q4， And we want to put them all together so
     that we have a full year。 So what we're going to do is we'll take this Q2 data。
     And to create a union between two tables。 So that is to stack one on top of the
     other。 We're going to drag it until it sits just under the Q1 data。 And we get
     this little orange union dial box pop up。We're going to drop it there。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们有Q2、Q3和Q4的销售数据，我们想把它们放在一起，以便我们拥有完整的一年。因此我们将使用这个Q2数据。并创建两个表之间的联合。即一个表叠加在另一个表上。我们将拖动它，直到它正好位于Q1数据下方。我们看到这个小橙色的联合拨号框弹出。我们将在那里放下它。
 - en: And then you'll see that our sales Q1 data now has changed a bit。The Excel Q2
     data has disappeared。 but we've got this icon。On the left hand side。 And if we
     hover over it。 it tells us what's going on inside that data。 So sales Q1 is made
     up of two tables。 And we can see that from this little piece in here。 Now， if
     we wanted to dig further into that。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后你会看到我们的销售 Q1 数据现在有所变化。Excel Q2 数据消失了，但我们有这个图标。在左侧。如果我们悬停在上面，它会告诉我们这些数据内部发生了什么。因此，销售
+    Q1 是由两个表组成的。我们可以从这里的小片段看到。如果我们想要进一步挖掘。
 - en: as it says， we can double click on the sales data。 And this digs in right deeper
     and then shows us what's happening behind the scenes。 So in order to edit the
     union， we have to go back in here and click， edit union。And you can see these
     are our two tables。 And if we wanted to add more tables to this， right。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如所说，我们可以双击销售数据。这会深入挖掘，并向我们展示幕后发生的事情。因此，为了编辑联合，我们必须回到这里，点击，编辑联合。你可以看到这些是我们的两个表。如果我们想要添加更多表，没错。
 - en: we can add the Q3。And the Q4 sales data。Click， O。So we can do it that way。 Let's
     remove them from this。Okay， so we're going to jump out of there。 I'm gonna x out
     of that。 But if we could also add them out here， right， so we can drag them and
     I can drop it right here。And then， I'm going to go。Back in here， right。 So now
     I've added Q1， Q2， Q 3 and Q4。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以添加 Q3 和 Q4 销售数据。点击，O。我们可以这样做。让我们从这里移除它们。好的，我们要跳出那里。我将关闭它。但如果我们也可以在这里添加它们，对吧？所以我们可以拖动它们，我可以把它放在这里。然后，我会回到这里，对吧？所以现在我添加了
+    Q1、Q2、Q3 和 Q4。
 - en: And when I doubled click。I go inside， and I go in here to edit the union。You
     can see that I have all my four tables stacked on top of one another。 Now I'm
     going to temporarily remove these tables because one of them。Is doing something
     funky somewhere else down the line。 I was just testing that earlier on。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我双击时，我进入内部，去这里编辑联合。你可以看到我所有四个表叠在一起。现在我将暂时移除这些表，因为其中一个在其他地方做了一些奇怪的事情。我之前只是测试过。
 - en: So we'll get back to that。 But that is how you could uni in the four tables
     together。 That dial box is also how you could join two fields together。 Now。 we
     defined the the author relationship。And by。Using this line right here， right。
     at by just dragging it out and dropping it in。 But let's say that we wanted to。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们会回到那里。但这就是你如何将四个表连接在一起。这种对话框也是你如何将两个字段连接在一起。现在，我们定义了作者关系。通过使用这一行，右边，只需拖动并放入。但假设我们想要。
 - en: Join it directly to the book table。 So what I did is I double clicked on the
     book table just the same way we did with the sales table。 And this is where your
     traditional sQel joins are hidden。 So if I drag out my author table now。 you can
     see that I get this little symbol and this little symbol is telling me that instead
     of it being a relationship now we're defining a join。 And if you've used tableableau
     before in all the previous versions， right。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 将其直接连接到书籍表。所以我所做的就是像我们之前对销售表所做的那样，双击书籍表。这就是传统 SQL 连接隐藏的地方。所以现在如果我拖出我的作者表，你会看到这个小符号，这个小符号告诉我，现在我们定义的是连接，而不是关系。如果你之前使用过
+    Tableau 的所有版本，没错。
 - en: you'll be pretty familiar with this interface。😊，We click on the little Venn
     diagram and that allows us to define the type of join that we want to do。It allows
     us to define what the fields are， if there's more than one field。 we can add that
     down here， and so on and so on and so on。If you're not familiar with SQL。 you
     might not be familiar with exactly what some of these words mean。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 你会对这个界面非常熟悉。😊 我们点击小的维恩图，这使我们能够定义想要进行的连接类型。它允许我们定义字段，如果有多个字段，我们可以在这里添加，等等等等。如果你对
+    SQL 不熟悉，你可能不太了解这些词的确切含义。
 - en: but it's pretty simple and the Venn diagram really helps you figure it out。The
     four join types that we have here， you have an inner join in an inner join。 we're
     going to take all of the records from the book table。And all of the records from
     the author table that match。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 但这很简单，维恩图确实帮助你理清思路。这里有四种连接类型，你有一个内连接，在内连接中，我们将从书籍表中获取所有记录，以及与之匹配的作者表中的所有记录。
 - en: So a record from the book table must have a match in the author table in order
     to be included in the what what's output from the joint。 right， in order to join
     together and vice versa。 So a record from the author table must have a match in
     the book table。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，书籍表中的一条记录必须在作者表中有匹配，才能包含在连接的输出中，没错，才能连接在一起，反之亦然。因此，作者表中的一条记录必须在书籍表中有匹配。
 - en: In order to， to be included in this join。If we were to use a left join。😡。That's
     going to include anything from the left table， in this case。 the left table is
     quite literally the table on the left。And it's going to include all the records
     from this table and any records from the author table that match。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了被包括在这个连接中。如果我们使用左连接。这将包括来自左表的任何内容，在这种情况下，左表字面上就是左侧的表。它将包括此表中的所有记录，以及任何与之匹配的作者表中的记录。
 - en: So anything from the author table that has a match in the book table is going
     to be included。 anything from the author table that has no match is going to be
     excluded。If we were to go with the right join， it's the same thing， but we're
     heading in the other direction。 So anything from the right， we're going to get
     everything。 Sorry， from the right table。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，作者表中与书籍表有匹配的任何内容都将被包含在内。作者表中没有匹配的内容将被排除。如果我们选择右连接，那也是同样的道理，但我们是朝另一个方向进行的。所以来自右边的所有内容，我们都会得到所有内容。抱歉，来自右表。
 - en: from this author table， but only those books that match。They have a match in
     the author table。And then our final option。The full outer join， sometimes called
     a full join。 sometimes called outer join， they're basically all the same thing，
     not basically all the same thing。 they are all the same thing。 that's going to
     include all of the records from both tables and where possible it's going to match
     them up and where there's no match。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 来自这个作者表，但仅包括那些匹配的书籍。它们在作者表中有匹配。然后我们的最终选项。全外连接，有时称为全连接，有时称为外连接，基本上它们都是相同的，确切地说，它们都是相同的。这将包括两个表中的所有记录，并尽可能将它们匹配，而在没有匹配的情况下则不会匹配。
 - en: it's just going to fill in nulls So you're going to get every record from the
     book table and every record from the author table regardless of whether they match
     or not。So， so let's think about that， right， Let's， let's think about doing an
     inner join between these two tables。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 它只会填充空值，所以你会从书籍表中得到每一条记录，从作者表中得到每一条记录，无论它们是否匹配。所以，让我们考虑一下这一点，嗯，让我们考虑在这两个表之间进行内连接。
 - en: So we have one book， one author。 Those joined great。 We're only including books
     with authors。Because it has to have a record in both tables， right for our inner
     join， but。If we have a book with two authors。What happens is both those authors
     will get joined to the book。 right， so we'll have one book。And then。We'll have
     another record for that book with the second author。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们有一本书，一位作者。它们连接得很好。我们只包括有作者的书籍。因为它必须在两个表中都有记录，对吧，对于我们的内连接。但如果我们有一本书有两个作者，会发生什么？那么这两个作者都会与这本书连接。对吧，所以我们会有一本书。然后，我们会有另一个记录，显示第二位作者的书。
 - en: So I have one record for that book for the first order。 one record for that
     book for the second order author。So that's going to potentially duplicate rows
     in the book data set。If we did this join and anywhere that we use this join table。
@@ -317,8 +419,10 @@
     trying to do。But the bottom line is that duplication is something we don't really
     want。 And we can avoid that instead by removing this table from the join inside
     the book data source and leaving it as defined by this relationship up here。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我为第一订单有一本书的记录。为第二订单的作者也有一本书的记录。这可能会在书籍数据集中重复行。如果我们进行这个连接，并且在任何地方使用这个连接表，我们将不得不处理重复的问题。现在，有时这会成为障碍，有时则不会，具体取决于你想做的事情。但归根结底，重复是我们不太想要的。我们可以通过将此表从书籍数据源的连接中移除，避免这种情况，并保留它如上面所定义的关系。
 - en: So since relationships are so flexible right， well why might we want to go back
     to joins why might we want to have something that we do inside one of these like
     data blocks inside one of these tables instead of just defining the relationship
@@ -326,141 +430,184 @@
     something in the data or there's some particularly unique aspect to this relationship
     that requires us to have that very specific level of control and level of granularity
     that we get through the joints。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 既然关系如此灵活，为什么我们可能想要回到连接呢？为什么我们希望在这些表中的数据块内进行某些操作，而不是仅仅定义关系呢？关系很好，但。有时数据中可能有某些东西，或者这个关系的某些独特方面要求我们拥有通过连接获得的非常具体的控制和粒度。
 - en: We might have something where。If those two tables are not joined together in
     a specific way。 one of them does not aggregate correctly， or one of them doesn't
     count correctly。 So。 so we want to be aware of that as we walk through it with
     our data， these are typically。 I think if you're working with a lot of data， you'd
     probably be aware of these types of issues before。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可能会遇到某种情况。如果这两个表没有以特定方式连接在一起，其中一个不能正确聚合，或者其中一个计算不正确。所以，当我们与数据一起走过时，我们想意识到这一点，通常，如果你处理大量数据，你可能会事先意识到这些问题。
 - en: right， because this is not the only place where you would have to deal with
     them。So。 so it's worth bearing in mind。 It's worth knowing how to do it。 but relationships
     super flexible and very much a a big step forward in terms of the data model。Now。
     for those of you coming from the old Tableau。😡，say the old tableau right it's
     only been not around for a few months。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 对，因为这并不是你需要处理它们的唯一地方。所以，值得铭记这一点。值得知道怎么做，但关系非常灵活，在数据模型方面是一个很大的进步。现在，对于那些来自旧版
+    Tableau 的人来说，😡，旧版 Tableau 只是几个月前才被推出。
 - en: but from the old data model， I guess a few things have changed in 2020 dot2
     that we want to take a look at。 So the first thing is you'll see over here on
     the left hand side instead of being organized by dimensions and measures and having
     dimensions pan up top and a measures pane down the bottom now we have individual
     tables and the fields that come from each individual tables。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 不过在旧的数据模型中，我想在 2020.2 年有一些变化，我们想看看。首先，你会看到左侧不再按维度和度量组织，上方有维度面板，下方有度量面板，现在我们有单独的表以及来自每个单独表的字段。
 - en: so we have all of the fields from our author table here。 we have the dimensions
     and we have a line and then we have the measures from each table。😊，So。That changes
     a little bit the way calculations behave。So if we were to create a calculation
     that just used this author table， right。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们在这里有来自作者表的所有字段。我们有维度，我们有一行，然后我们有每个表的度量。😊，所以，这在某种程度上改变了计算的行为。因此，如果我们要创建一个仅使用这个作者表的计算，对吧。
 - en: so let's go ahead and create a calculation that is the percentage of time each
     day an author spends writing。Okay， so we're going to take the hours writing per
     day。 We're not going aggregate it。 We're just going divide it by 24。Now you see
     that when you do that， that's a row level calculation。 there's no aggregation
     within the calculation itself， right， so it's a row level calculation。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们创建一个计算，表示每位作者每天花费的写作时间百分比。好的，我们将使用每天写作的小时数。我们不会聚合它。我们只需将其除以 24。现在你看到，当你这样做时，这是一个行级计算。计算本身没有聚合，对吧，所以这是一个行级计算。
 - en: And because it's a row level calculation and it is only using fields from the
     author data source。It sits right here in the author data source。 It doesn't go
     anywhere。But。If we were to create a calculation that combined two different fields。
     So say we wanted to get the sales price for a book， right， now。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 因为这是行级计算，并且只使用来自作者数据源的字段。它就坐落在这里的作者数据源中，并没有其他地方。不过，如果我们要创建一个结合两个不同字段的计算。例如，我们想获取一本书的销售价格，现在。
 - en: the sales price consists of two things。 It consists of the price。 which comes
     from the addition table， and then it。We subtract the discount。 and the discount
     comes from the sales table。So if we were going to do that。Let's go ahead and create
     that calculation。Fky capitalization in there wops。 There we go。 Alright。
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 销售价格由两部分组成。它由价格组成，来自于加法表，然后我们减去折扣，折扣来自于销售表。所以如果我们要这样做。让我们来创建这个计算。大写字母在里面走错了。好吧，继续。
 - en: so it's price minus discount。So when we create that calculation and apply it。
     you'll see that it doesn't pop up in either of the two data sources。 It goes all
     the way down here to the bottom。 and down at the bottom is where we're going to
     have all of our calculations that。Cover multiple。Tables or multiple things， right，
     They're using those relationships in order to create the calculation。
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以是价格减去折扣。因此，当我们创建那个计算并应用它时，你会看到它不会出现在两个数据源中的任何一个。它一直到底部，底部就是我们将要拥有的所有计算，这些计算涵盖多个表或多个项目，对吧？它们使用这些关系来创建计算。
 - en: And one of the things we want to remember is that when those calculations are
     being calculated。 when they're being run， when tableau is figuring out what the
     answer is。 it's using an inner join between these two tables in order to make
     it work。Now， if。The reason that's worth remembering right is because if we're
     doing things that aggregate in certain ways。
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们想记住的事情之一是，当这些计算被计算时。当它们被运行时，当 Tableau 计算出答案时，它使用这两个表之间的内连接来使其工作。现在，如果。记住这一点是值得的，因为如果我们以某种方式聚合。
 - en: we're not going to get any records that don't match between those two tables。
     any records that don't have a key between those two tables。Right。 so if we wanted
     to figure out what the sales price was for every single book。In。That had an addition，
     right？ And we summed this， this sales price。U。
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们不会获得在这两个表之间没有匹配的记录。任何在这两个表之间没有关键的记录。对。因此，如果我们想要弄清楚每本书的销售价格。嗯，那些有附加记录的书，对吧？然后我们对这个销售价格求和。U。
 - en: We would only get because it's doing it in a joint， right， Remember。 So we need
     a record in both sales。 We would only get additions for which at least one item
     has been sold。 If no items have been sold， it still has a sales price because
     it was still on a shelf somewhere for sale。 hasnn't been sold， but it was for
     sale。But because we don't have a record in the sales table。
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们只会因为它是联合进行的而获得记录，对吧，记住。因此我们需要在两个销售中都有记录。我们只会获得至少有一项商品已售出的附加记录。如果没有商品售出，它仍然有一个销售价格，因为它仍然在某个货架上待售。虽然没有售出，但它是待售的。但是因为我们在销售表中没有记录。
 - en: it doesn't pull in the price for that record in the addition table， which means
     potentially。We don't get the total sales prices， right， for everything。so。Definitely
     worth thinking about。 particularly if you get unexpected results or anything looks
     odd in the data。 something to watch out for。 Now， nine times out of ten0 rate。
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 它没有提取附加表中该记录的价格，这意味着潜在地。我们不会获得所有的总销售价格，对吧，所以。确实值得思考，特别是如果你得到意外结果或数据中任何东西看起来奇怪，值得注意。现在，十次中有九次的比率。
 - en: these things are not going to come back and bite you， but if you do see something
     odd。 it's definitely worth looking at。So a couple of other things that。We want
     to look at。 sorry。 one other thing that we want to look at。In the old world， when
     you created a constant。So when I just typed in one， right up here。It would put
     that one。
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些事情不会回来咬你，但如果你看到一些奇怪的情况，肯定值得关注。所以还有其他几件事。对不起，还有一件事我们想看看。在旧世界中，当你创建一个常量时。当我在这里输入一时，它会放置那个一。
 - en: that one by itself as a row level calculation， so it puts it on every single
     row in the data source。Which used to mean that if you summed it up just like this。
     you would get a sum of the number of records in the data source because， you know。
     a row level calculation， as we know， is calculated once for every single row。
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个单独作为行级计算，因此它会在数据源的每一行中都放置它。以前这意味着如果你像这样求和，你会得到数据源中记录数量的总和，因为你知道，行级计算，正如我们所知，是对每一行都计算一次。
 - en: This one is calculated is still being calculated for every single row。 But when
     we use the relationship based data model instead of the join based data model。
     we're only pulling in to the visualization the data that is relevant for that
     visualization rate。 So when I created this one up here， there's only one row in
     our data source。
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个仍然是对每一行进行计算的。但是当我们使用基于关系的数据模型而不是基于连接的数据模型时，我们仅在可视化中提取与该可视化相关的数据。因此，当我在这里创建这个时，我们的数据源中只有一行。
 - en: So the sum of all of the rows in our data source is one because the only data
     point that we've brought in is this constant。😊，So。So what happens then， right，
     if we bring in， let's say we bring in author。I will bring in the last name of
     the author。 There we go。Now you see that。I've still got one for each。Each row
     in my data source， right。
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，我们数据源中所有行的总和是1，因为我们引入的唯一数据点是这个常量。😊那么，如果我们引入，比如说我们引入作者。我要引入作者的姓氏。好了。现在你看到，我在数据源中的每一行仍然有一个，对吧。
 - en: each one of these authors is now a single row in my data source。That's the data
     source that's being used to generate this visualization。 So。 so each author has
     a value of one or or this constant is showing for each author。 And if we summed
     it up， we'd get however many authors there are in this data set。 Now。
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些作者现在在我的数据源中是单独的一行。这就是用于生成这个可视化的数据源。因此，每个作者的值都是一，或者这个常量在每个作者中显示。如果我们求和，我们将得到这个数据集中有多少个作者。现在。
 - en: remember that， right， Every author has a value of one。With this constant， until。We
     bring out the title。Yeah， the title to it。 well now。Dantic cat。I'm。Because they've
     published a number of titles or because this person's published a number of titles。
     right， you've got 1，2，3，4，5，6，7，8 titles that they've published。
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 记住这一点，每个作者的值都是一。使用这个常量，直到。我们提出标题。是的，标题。现在，Dantic cat。我。因为他们发布了多个标题，或者因为这个人发布了多个标题。对吧，你有1、2、3、4、5、6、7、8个他们发布的标题。
 - en: There's eight values for this constant。In the data set。 So instead of having
     one。 So we've gone。 we started off with just a single row in our data source。And
     it was the total was just one。 there was only one。Whereas then we added in the
     authors and we had a one for each author。 And now we've added in the title。 and
     now we're getting a one for each title and each author。 right。
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个常量有八个值。在数据集中。所以不是只有一个。所以我们开始时只有数据源中的一行。总数就是一，只有一个。而后我们添加了作者，每个作者都有一个。而现在我们添加了标题，每个标题和每个作者都有一个，对吧。
 - en: So we've got two。For this author， we've got8， as I said， for this author and
     so on and so forth。 So the bottom line is。Constants don't necessarily behave the
     way that you might expect them to behave if you use them in the old world。Again，
     why might you care。 The real reason is that as you look at workarounds and as
     you look at tricks and things like that。 a lot of them use these constants in
     order to represent certain things。 So we want to。
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们有两个。对于这个作者，我们有8，正如我所说的，对于这个作者等等。所以关键是。常量不一定会按照你在旧世界中使用它们时的预期方式表现。再次问一下，为什么你可能在乎。真正的原因是，当你查看变通方法和技巧等时，很多都使用这些常量来表示某些东西。所以我们想要。
 - en: Just be careful when we do use those workarounds that what we're actually getting
     is the result that we expect from you know。 from using that that constant。I so。😊，Will
     be helpful if we knew how to troubleshoot these sort of data sources and we'll
@@ -474,11 +621,18 @@
     description so if you want to download Tableau public and follow along that's
     great that's exactly what I use totally free very cool and I look forward to seeing
     what you have to say in the comments and speaking to you next time。
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我们使用这些变通方法时，请小心我们实际上得到的是我们期望的结果，知道吗。😊，如果我们知道如何排查这些数据源会很有帮助，我们会在未来的视频中更详细地深入这些计算，所以期待看到一些关于我们如何从关系和连接的角度排查数据源的信息，还有一些关于计算的视频将在不久的将来发布，但现在我非常感谢你观看，如果你喜欢这个内容，请点击订阅按钮，你将会获得更多关于
+    Tableau 和数据分析的内容。正如我所说，视频描述中有一个链接到这个数据集，所以如果你想下载 Tableau Public 并跟随，那太好了，那正是我使用的，完全免费，非常酷，我期待看到你在评论中的反馈，并期待下次和你交流。
 - en: 😊。![](img/771599ba487d4847a03dea1e21567f41_1.png)
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/771599ba487d4847a03dea1e21567f41_1.png)
 - en: '![](img/771599ba487d4847a03dea1e21567f41_2.png)'
+  id: totrans-69
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/771599ba487d4847a03dea1e21567f41_2.png)'
