@@ -1,217 +1,294 @@
 - en: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P5：L5- 带有
     Autograd 和反向传播的梯度下降 - ShowMeAI - BV12m4y1S7ix
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P5：L5- 带有
+    Autograd 和反向传播的梯度下降 - ShowMeAI - BV12m4y1S7ix
 - en: Hi， everybody。 Welcome to a new Pytorch tutorial。 In this tutorial。 I show you
     a concrete example of how we optimize our model with automatic gradient computation
     using the pytorch autogra package。 So we start by implementing the linear regression
     algorithm from scratch。 where we do every step manually。 So we implement the equations
     to calculate the model prediction and the loss function。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，大家好。欢迎来到新的Pytorch教程。在这个教程中，我向你展示如何使用pytorch autograd包自动梯度计算来优化我们的模型的具体例子。因此，我们从零开始实现线性回归算法，在每一步中都手动进行。因此，我们实现计算模型预测和损失函数的方程。
 - en: Then we do a numerical computation of the gradients and implement the formula。
     And then we implement the gradient decent algorithm to optimize our parameters。
     When this is working， we see how we can replace the manually computed gradients
     with the automatic back propagation algorithm from Pytorch。😊，So this is step number
     2。 and in the third steps， we in the third step。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们进行梯度的数值计算并实现公式。接着我们实现梯度下降算法来优化我们的参数。当这一切正常时，我们看到如何将手动计算的梯度替换为Pytorch的自动反向传播算法。😊所以这是第二步。在第三步中，我们在第三步。
 - en: we replace the manually computed loss and parameter updates by using the loss
     and optimize the classes in Pytorch。 and in the final step， we replaced the manually
     computed model prediction by implementing a pytorch model。So when we understood
     each of these steps， Pytorch can do most of the work for us。 Of course。 we still
     have to to design our model and have to know which loss and optimizer we should
     use。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们通过使用Pytorch中的损失和优化类来替换手动计算的损失和参数更新。在最后一步中，我们通过实现一个pytorch模型替换了手动计算的模型预测。因此，当我们理解这些步骤时，Pytorch可以为我们做大部分工作。当然，我们仍然需要设计我们的模型，并且要知道应该使用哪个损失和优化器。
 - en: But we don't have to worry about the underlying algorithms any more。So now this
     video will cover steps 1 and 2。And in the next video， we will see the steps 3
     and 4。 So let's start。 And I assume that you already know how linear regression
     and gradient decent works。 And if not， then please watch my machine learning from
     scratch tutorial about this algorithm。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我们不必再担心底层算法。因此，这个视频将涵盖步骤1和2。在下一个视频中，我们将看到步骤3和4。那么让我们开始。我假设你已经知道线性回归和梯度下降是如何工作的。如果不知道，请观看我关于这个算法的从零开始的机器学习教程。
 - en: because now I will not explain all the steps in detail。![](img/49d809dfcdcd868a09e2ad42202f36fc_1.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 因为现在我不会详细解释所有步骤。![](img/49d809dfcdcd868a09e2ad42202f36fc_1.png)
 - en: But I put the link in the description。So now we do everything from scratch。
     So we use only nuy。 So we import nuy S and P， and then we use linear regression。
     So we use a function which just just does a linear combination of some weights
     and our inputs。 and we don't care about the bias here。So in our example， let's
     say F equals。Two times x。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我把链接放在描述中了。因此我们现在从头开始做所有事情。我们只使用nuy。然后我们导入nuy的S和P，然后我们使用线性回归。我们使用一个仅仅进行一些权重与输入的线性组合的函数。这里我们不关心偏差。在我们的例子中，假设F等于2倍的x。
 - en: So our weight must be 2。 And then let's do some training samples。 So let's say
     x。Equals numpy dot array。 And then we put some tests or training samples。 So let's
     say 1，2，3， and 4。 And this will be of numpy。Or， let's get。Give this a data type
     on， say this is Nmpy dot floatat 32。And then， we also want a y。And。Since our formula
     is， this is 2 x。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们的权重必须是2。然后我们做一些训练样本。假设x等于numpy.dot.array。然后我们放一些测试或训练样本。假设是1、2、3和4。这将是numpy的。或者，让我们给它一个数据类型，比如说这是Nmpy.dot.float32。然后，我们也想要一个y。因为我们的公式是，这就是2x。
 - en: we have to multiply each of the values by 2。 So 2，4，6 and 8。And now we initialize
     our weights。 So we simply say w equals 0 in the beginning。And now we have to calculate
     our model prediction。 And we also have to calculate the loss。And then we have
     to calculate the gradients。 So now we do each of these steps manually。 So let's
     define a function， and we call this forward。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们必须将每个值乘以2。因此是2、4、6和8。现在我们初始化我们的权重。我们简单地说w在开始时等于0。现在我们必须计算我们的模型预测。同时我们也要计算损失。然后我们要计算梯度。现在我们手动执行每一个步骤。那么我们定义一个函数，我们称之为forward。
 - en: So this is a forward pass to follow the conventions of pytorrch， which will
     get x。 and then our model output is simply w times x。So this is the forward pass。Now，
     the loss。So here we define the function loss， which depends on why and why predicted。So。The
     this is the model output。And now here in this case。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个遵循pytorch约定的前向传播，将获取x。然后我们的模型输出仅仅是w乘以x。这是前向传播。现在，损失。这里我们定义损失函数，它依赖于y和预测的y。所以，这是模型输出。现在在这种情况下。
 - en: this is the or the loss equals the mean squared error in the case of linear
     regression。 And we can calculate this by saying， this is。嗯。Let's say y predict
     it minus y。 And then to the power of 2。 And then we do the mean operation。So this
     is the loss。 and now we manually have have to calculate the gradient of the loss
     with respect to our parameters。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是或损失等于线性回归情况下的均方误差。我们可以通过说，这是。嗯。假设y预测减去y。然后平方。然后我们进行平均操作。所以这是损失。现在我们手动计算损失相对于我们参数的梯度。
 - en: So let's have a look at the mean squared error。 So the formula is1 over n because
     it's the mean。 And then we have our w times x our prediction minus the actual
     value to the power of2。 And now if you want to have the derivative。 So the derivative
     of this。 let's call this j or objective function with respect to w equals1 over
     n And then we have two times x。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们来看看均方误差。公式是1除以n，因为这是平均值。然后我们有我们的w乘以x，我们的预测减去实际值的平方。现在如果你想要导数。那么这个导数，让我们称之为j或目标函数关于w等于1除以n，然后我们有两个乘以x。
 - en: and then times W times x minus y。 So this is the numerical computationd。Computed
     derivative。 Also please double check the math for yourself。And now we implement
     this。 So we say define gradient。 which is dependent。On x and y and also Y predicted。
     And now we can do this in one line。 So we return numpy dot。 We need a dot product
     of two times x。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后乘以W乘以x减去y。所以这是数值计算的。计算出的导数。请自行仔细检查数学。现在我们实现这个。我们说定义梯度，它依赖于x和y以及预测的y。现在我们可以一行完成。我们返回numpy.dot。我们需要两个乘以x的点积。
 - en: '![](img/49d809dfcdcd868a09e2ad42202f36fc_3.png)'
+  id: totrans-13
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/49d809dfcdcd868a09e2ad42202f36fc_3.png)'
 - en: And then here we have y predicted minus y。![](img/49d809dfcdcd868a09e2ad42202f36fc_5.png)
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后这里我们有预测的y减去y。![](img/49d809dfcdcd868a09e2ad42202f36fc_5.png)
 - en: Said this is this formula here。And then， of course， we also need the mean。 So
     let's say this is dot mean。 We can simply do it like this in Ny。And now。Yeah，
     these are the。Things we need Now， let's print our。Prediction before the training。
     So let's print。 and we use an F string。 So prediction before training。And let's
     say we want to predict the value5。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 说这是这里的公式。当然，我们还需要平均值。假设这是点平均。我们可以简单地在Ny中这样做。现在，这些是我们需要的东西。现在，让我们在训练之前打印我们的预测。所以我们打印。我们使用F字符串。所以训练之前的预测。假设我们想预测值5。
 - en: which should be 10。And here， we can do。In the F string。 we can actually use
     an expression so we can call this forward method and with five。And let's say we
     only want three decimal values。And now， let's start our training。So let's define
     some parameters。 So we need a learning rate， which is， let's say，001。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 应该是10。在这里，我们可以在F字符串中做到。在这个表达式中我们可以调用这个forward方法，传入5。假设我们只想要三位小数。现在，让我们开始训练。我们定义一些参数。我们需要学习率，假设是0.01。
 - en: And then we need a number of iterations。 So we say an its equals 10。And now
     let's do our training loop。 So we say for epoch in range and iters。And then first，
     we do the。Prediction， which is the forward pass。 So this is the forward pass。And
     we can simply do this with our functions。 So we say y prediction or y pre equals
     forward。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们需要一个迭代次数。我们说its等于10。现在让我们进行训练循环。所以我们说对于epoch在范围内和iter。然后首先，我们进行预测，即前向传播。这是前向传播。我们可以简单地用我们的函数来完成这个。所以我们说y预测或y
+    pre等于forward。
 - en: And then we put in our capital x。And now we want to have the loss。 So our loss
     L equals the loss of。The actual y。And our Y predict it。Now， we need to get the。Gras，
     so our gradients， with respect to W。 So D W equals the gradient function that
     we just implemented。 which is dependent on x and y and the y predicted。srry。Why
     pret。And。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们输入我们的大写x。现在我们想要损失。所以我们的损失L等于实际y的损失。和我们的预测y。现在，我们需要获取。梯度，即关于W的梯度。所以D W等于我们刚刚实现的梯度函数，依赖于x和y以及预测的y。
 - en: Now we have to update our weights。 and yes， so the update formula in the gradient
     decentcent algorithm is just we go into the negative direction of the training
     of the gradient。 So minus x。 And then here， the step width or the so called learning
     rate times our our gradient。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们必须更新我们的权重。是的，所以梯度下降算法中的更新公式就是我们朝着梯度的负方向前进。所以是负x。在这里，步长或所谓的学习率乘以我们的梯度。
 - en: So this is the update formula。And then let's say we also want to print some
     information here。 So we say if epoch modular， just say one here， because now we
     want to print every step。If this is 0。 we want to print， let's say。We want to
     print the epoch。 And here we print epoch plus 1。And then we want to get the weight，
     which is。The weight。W， also， just 3。Deimal numbers。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这是更新公式。然后我们假设我们还想在这里打印一些信息。所以我们说如果epoch取模，假设这里为1，因为我们想在每一步打印。如果这是0。我们想打印，比如说。我们想打印epoch。在这里我们打印epoch加1。然后我们想得到权重，即。权重。W，保留三位小数。
 - en: And then we also want to have the loss。 So the loss equals。The loss。 And here
     we say， point。8。 let's say。And yeah， and then at the end。We want to print the
     prediction after the training。So， now。 let's predict。Prediict a print prediction。After
     training。And yeah， so。 Now。 let's run this and see what happens。So everything
     should be working。 And now， so yeah。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们还想要有损失。损失等于。损失。在这里我们说，点。8。就这样。然后在最后。我们想在训练后打印预测。所以，现在。让我们预测。预测并打印预测。在训练后。是的，那么。现在。让我们运行这个，看看会发生什么。一切应该都能正常工作。现在，是的。
 - en: before our training， the prediction is0。And then for each step。 remember that
     our formula should be  two times x。 So our w should be 2 in the beginning。 And
     we see that with each training step， it it increases our weight， and it decreases
     our loss。 So it gets better with every step。 And after the training， our model
     prediction is 9。999。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们的训练之前，预测为0。然后对于每一步。记住我们的公式应该是2倍的x。所以我们的w一开始应该是2。我们看到每个训练步骤都在增加我们的权重，并且减少我们的损失。因此，每一步都会变得更好。训练后，我们的模型预测为9.999。
 - en: So it's almost there。 So let's say， for example， now we want to have more iterations
     here。 say we only did we only did 10 iterations， which is not much。 Now。 if we
     run this and let's print every second step only。Then we see， in the end， our loss
     is 0。 and the prediction is correct。Now， this is the implementation where we did
     everything manually。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以快到了。我们举个例子，现在我们想要更多的迭代。假设我们只进行了10次迭代，这并不多。现在，如果我们运行这个，并且每隔一步打印一次。然后我们看到，最后我们的损失是0，预测是正确的。现在，这是我们手动实现的部分。
 - en: And now let's replace the gradient calculation。 So let's select all of this
     and copy this into a separate file。And now we don't use numpy anymore。 So now
     let's only import torch and do everything with pie torch。And， of course， what
     we now want to get rid of is this gradient， the the manually computed gradient。
     So we simply delete this。 We don't need this anymore。And now we don't have nuy
     arrays。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们替换梯度计算。所以我们选择所有这些并将其复制到一个单独的文件中。现在我们不再使用numpy了。所以现在我们只需导入torch，并使用torch来完成所有工作。当然，我们现在想要去掉的是这个梯度，即手动计算的梯度。因此我们简单地删除它。我们不再需要这个。现在我们也没有nuy数组了。
 - en: So this is now a。Torch dot Tzar。And our data type is now a torch dot float 32
     and the same with our y。 which is now a。Torch dot。Tensor and also the data types
     from the torch module。But everything else is the same here。 So the same syntax。And
     now our W also has to be a tenor。 So let's say this is a torch dot tenor with0。0
     in the beginning。 and it also gets a data type of。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以现在这是一个Torch dot Tzar。我们的数据类型现在是torch dot float 32，y也是如此。它现在是一个Torch dot Tensor，并且数据类型来自torch模块。但其他一切在这里都是一样的。因此，语法相同。现在我们的W也必须是一个张量。所以我们说这是一开始为0.0的torch
+    dot tensor。它也会有一个数据类型。
 - en: say torch dot float 32。 And since we are interested in the gradient of our loss
     with respect to this parameter。 we need to specify that this requires the gradient
     computation。 So requires gra equals true。![](img/49d809dfcdcd868a09e2ad42202f36fc_7.png)
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 说是torch dot float 32。由于我们对损失关于这个参数的梯度感兴趣，我们需要指定这需要梯度计算。所以requires grad = true。![](img/49d809dfcdcd868a09e2ad42202f36fc_7.png)
 - en: Now， the forward function and the loss function is still the same because we
     can use the same syntax in pytorrch。And now。In our training loop， the forward
     pass is still the same。 The loss is the same。 And now the gradient， this is the
     equal to the backward pass。 So remember， in backward propagation。 we first do
     a forward pass。 That's why we used the syntax。 And then later for the gradients。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，前向函数和损失函数仍然相同，因为我们可以在 pytorrch 中使用相同的语法。 现在，在我们的训练循环中，前向传播仍然相同。 损失是相同的。 现在梯度等于反向传播。
+    所以记住，在反向传播中，我们首先进行前向传播。 这就是我们使用这种语法的原因。 然后再进行梯度计算。
 - en: we use the backward pass。 So here we simply call L dot。Backward。And this will
     calculate the gradient of our loss with respect to W。 So Pyto does all the computations
     for us。 And now we update our weights。 But here we want to be careful。 and I explained
     this in the tutorial about the auto gridd package。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们使用反向传播。 所以这里我们简单地调用 L dot。Backward。这样就会计算我们损失对 W 的梯度。 所以 Pyto 为我们完成所有计算。 现在我们更新我们的权重。
+    但在这里我们要小心。 我在关于 auto gridd 包的教程中解释过这一点。
 - en: Because we don't want to be。 this operation should not be part of our。Graadient
     trackingrek graph。 So this should not be part of the computational graph。 So we
     need to wrap this in a width torch dot。 no gr statement。And then one more thing
     that we should also know。 And I also talked about this already， we must empty
     or  zero the gradients again。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 因为我们不希望这个操作成为我们梯度追踪图的一部分。 所以这不应成为计算图的一部分。 我们需要用 torch dot。no gr 语句将其包装。 还有一件我们也应该知道的事情。
+    我也已经谈到过，我们必须再次清空或置零梯度。
 - en: because whenever we call backward， it will write our。Grads and accumulate them
     in the W dot Gr attribute。 So before the next iteration。 we want to make sure
     that our gradients are 0 again。 So we can say w times gra times0 underscore。 So
     this will modify it in place。And now， we are done。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 因为每当我们调用 backward 时，它会写入我们的 Grads，并将其累积在 W dot Gr 属性中。 所以在下一次迭代之前，我们要确保我们的梯度再次为
+    0。 所以我们可以说 w times gra times 0 underscore。 这样将就地修改它。 现在，我们完成了。
 - en: And now let's run this and see if this is working。And W is not defined。 Oh，
     yeah， Co， Of course。 this is now W dot gra。And let's try this again。 and now it's
     working。And now we also see that it will increase our W， and it will decrease
     our loss。 And here we said we had 20 iterations。But it's not correct， Not completely
     correct。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们运行这个，看看它是否有效。 W 还未定义。 哦，是的，当然。 现在是 W dot gra。 让我们再试一次。 现在它工作正常。 现在我们也看到它会增加我们的
+    W，并且会减少我们的损失。 这里我们说我们有 20 次迭代。 但这并不完全正确。
 - en: And this is because the。Backward or the back propagation is not as exact as
     the numerical gradient computation。 So let's try some more iterations here。 Let's
     say we want 100 iterations and print our update every 10th step。 So let's try
     this again。And now we see after the training is done。 we have the correct correct
     prediction。So， yeah， that's it for this video。 And in the next video。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是因为反向传播并不像数值梯度计算那样精确。 所以让我们在这里尝试更多的迭代。 假设我们想要 100 次迭代，并在每 10 步时打印我们的更新。 所以让我们再试一次。
+    现在我们看到训练完成后，我们有了正确的预测。 所以，没错，这就是本视频的内容。 在下一个视频中。
 - en: we will continue here and replace the manually computed loss and weight updates
     with Pytorch loss and optimizer classes。So if you like this video， please subscribe
     to the channel and see you next time， bye。![](img/49d809dfcdcd868a09e2ad42202f36fc_9.png)
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将在这里继续，将手动计算的损失和权重更新替换为 Pytorch 的损失和优化器类。 如果你喜欢这个视频，请订阅频道，下次见，再见！

@@ -1,24 +1,35 @@
 - en: 【双语字幕+资料下载】Pytorch 进阶学习讲座！14位Facebook工程师带你解锁 PyTorch 的生产应用与技术细节 ＜官方教程系列＞ - P11：L11-
     PyTorch 性能 - ShowMeAI - BV1ZZ4y1U7dg
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Pytorch 进阶学习讲座！14位 Facebook 工程师带你解锁 PyTorch 的生产应用与技术细节 ＜官方教程系列＞ -
+    P11：L11- PyTorch 性能 - ShowMeAI - BV1ZZ4y1U7dg
 - en: 🎼。![](img/323adbff4029fa414d7811534950c65f_1.png)
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 🎼。![](img/323adbff4029fa414d7811534950c65f_1.png)
 - en: Hello， I'm Naal Gahan and I'm an applied research scientist at Facebook and
     I work on Pytor performance。Today I will talk about low precision support and
     new obstructions for performance that we've implemented in Pyrch and operator
     benchmarking。So low precision support。😊。![](img/323adbff4029fa414d7811534950c65f_3.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 你好，我是 Naal Gahan，是 Facebook 的应用研究科学家，我在 Pytorch 性能方面工作。今天我将讨论低精度支持和我们在 Pytorch
+    中实施的新性能改进及操作基准测试。因此，低精度支持。😊。![](img/323adbff4029fa414d7811534950c65f_3.png)
 - en: On modern hardware you can sacrifice a little bit of precision to achieve a
     substantially better performance Pytorch makes working with low precision data
     types easy and convenient with support quantization but that's covered elsewhere
     I will mostly be talking about T32 and physics6 data types and before 16 is undirected
     development for CPU and GPU and it is already supported on PytoroticsL。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 在现代硬件上，你可以牺牲一些精度，以获得显著更好的性能。Pytorch 使得处理低精度数据类型变得简单方便，并支持量化，但这在其他地方有详细介绍。我将主要讨论
+    T32 和 FP16 数据类型，而 FP16 在 CPU 和 GPU 的无方向开发上已经得到了支持。
 - en: The diagrams on the right show the memory representation of the correspondingent
     data types green boxes are exponent bits。 red boxes are monicip bits。😊，You can
     see that before 16 can represent a wide dynamic rangee with eight exponent bits。
@@ -26,42 +37,60 @@
     a limited precision with 7 minusisab bits FP16 is making an opposite tradeoff
     and it has a limited dynamic rangee with a better precision T32 is the best of
     both worlds。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 右侧的图表显示了相应数据类型的内存表示，绿色框是指数位，红色框是有效位。😊你可以看到 FP16 可以用八个指数位表示广泛的动态范围，其动态范围与标准 FP32
+    数据类型相同，但只有 7 个有效位的有限精度。FP16 则作出了相反的权衡，具有有限的动态范围和更好的精度，而 T32 则兼具两者的优点。
 - en: its dynamic rangee is the same as the standard FP32 data type。 but it has as
     many monisab bits as a P16 does。T32 is enabled in a byytor on new MPR GPUs It
     is backed by 32 bit storage so standard networks can transparently benefit from
     it when computationally intensive operations read input data they read only 10
     bits of mons so there is some acurcis。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 它的动态范围与标准 FP32 数据类型相同，但与 FP16 一样有许多有效位。T32 在新的 MPR GPU 上启用，支持 32 位存储，因此标准网络在计算密集型操作读取输入数据时可以透明地受益，只读取
+    10 位有效位，因此存在一些精度问题。
 - en: however internal accumulation happens in a P32 so we don't expect any effect
     on conversions。You can turn T32 on and off to see its effects on performance and
     conversionvergence using the commentss below with benchmark in approximately 3x
     speed up on Hi face Roberta model and approximately2 x speed up on ster conves
     such as Resn that's compared to FP32 performance on the same hardware。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，内部累积发生在 FP32 中，因此我们不期望转换会受到影响。你可以开启和关闭 T32，以观察其对性能和转换的影响，使用下面的评论与基准测试，Hi
+    face Roberta 模型大约提高了 3 倍的速度，而在 ResNet 等较低复杂度的模型中则提高了大约 2 倍，相比于同一硬件上的 FP32 性能。
 - en: '![](img/323adbff4029fa414d7811534950c65f_5.png)'
+  id: totrans-7
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/323adbff4029fa414d7811534950c65f_5.png)'
 - en: TF32 works out of the box and doesn't require changes to existing scripts and
     that's great however if you are willing to change your existing script a little
     bit to achieve even a better performance。 FP16 can be useful。Automatic mixed precision
     is now supported in Pythr and this feature has evolved from popular ABIX package
     maintained by NviD。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: TF32 开箱即用，无需对现有脚本进行修改，这非常好。然而，如果你愿意稍微调整现有脚本，以实现更好的性能，FP16 将会很有用。自动混合精度现在在 Pytorch
+    中得到支持，该功能源自由 NVIDIA 维护的流行 ABIX 包。
 - en: 🤢，It automates training of networks in FP16 and takes care of numerical issues
     that arise in a P16 training due to its limited dynamic range。InPyrche was designed
     to cover a wide range of use cases。It supports operations on unskilled gradients，
     it supports operations on Sprse gradients。 higher auto gradients can be computed
     via torsche autograd， custom autograd functions。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 🤢它自动化训练 FP16 网络，并处理由于 FP16 训练中的有限动态范围而产生的数值问题。Pytorch 旨在覆盖广泛的用例，支持对无偏梯度的操作，支持对稀疏梯度的操作。更高阶的自动梯度可以通过
+    Torch 的 autograd 计算，支持自定义 autograd 函数。
 - en: both Python and C+ path are supported if you have complicated scripts involving
     multiple models and multiple losses that is supported to。Andter example and documentation
     are available on Pytor's website。![](img/323adbff4029fa414d7811534950c65f_7.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
 - en: This is a simple example of using amp。 There are two important parts。 The first
@@ -70,6 +99,7 @@
     and Autocast context manager make sure that mods and convols are run in FP16 thus
     achieving the best performance while operations that require full precision are
     run in FP32。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
 - en: Finally， there is a slightly different syntax for calling an optimizer step
@@ -77,9 +107,11 @@
     snippet。 but overall the code changes required are pretty minimal and you should
     be able to achieve an even better performance than you can with TF32 Also if P16
     is supported on all the regens of GPUs such as Volta entering。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/323adbff4029fa414d7811534950c65f_9.png)'
+  id: totrans-13
   prefs: []
   type: TYPE_IMG
 - en: Now let's move on to the next topic and that's channels lost in many backends
@@ -88,11 +120,13 @@
     lost physical memory format while preserving traditional semantic meaning of the
     dimensions so for example for four details our first dimension is still number
     of batch elements second dimension is channels and the rest are spatial dimensions。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
 - en: To fully take advantage of channel SA support， all or most operations in the
     model have to support channel SA and most operations in Pytorrch do。 for example，
     a popular model in TorchViion are covered。![](img/323adbff4029fa414d7811534950c65f_11.png)
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
 - en: Here we have a small example that shows how to convert model to channels Los
@@ -100,6 +134,7 @@
     also， so you have to either modify your data load to directly provide input in
     channels lost or call a conversion function on input manually December in the
     script。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
 - en: Input layout is propagated across most operations， so intermediate variables
@@ -109,63 +144,83 @@
     always preserve the layout of their inputs and copy operations also produce the
     outputs in the same format as the input was for Convnets you can expect about
     20% gain from switching to channel cost。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/323adbff4029fa414d7811534950c65f_13.png)'
+  id: totrans-18
   prefs: []
   type: TYPE_IMG
 - en: Another interesting feature that we implemented in Pythr forage APIs that provide
     efficient pointwise operations on batches of tensors。Instead of launching a small
     kernel for each tensor in the batch。 for each launches a few larger kernels， each
     processing many tensors。This pattern is especially common and useful for optimizers。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们在Pythr forage APIs中实现的另一个有趣特性是提供了对批量张量的高效逐点操作。与其为批量中的每个张量启动一个小内核，不如为每个张量启动几个较大的内核，每个内核处理多个张量。这种模式在优化器中尤其常见且有用。
 - en: Even now you can avoid launching multiple kernels if you copy the tensors to
     a contiguous memory region and then operate directly on this contiguous memory
     region。 but this requires extra memory and can be brittle if different subsets
     of tensors participate in operations for each operates on tensous in disjoint
     memory regions directly and lists can be cheaply assembled before each application。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 即使现在，如果您将张量复制到连续的内存区域，然后直接在该连续内存区域上进行操作，您也可以避免启动多个内核。但这需要额外的内存，并且如果每次操作的张量子集不同，可能会变得脆弱，因为每个操作直接在不相交的内存区域上进行，并且可以在每次应用前廉价地组装列表。
 - en: '![](img/323adbff4029fa414d7811534950c65f_15.png)'
+  id: totrans-21
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/323adbff4029fa414d7811534950c65f_15.png)'
 - en: Here are the timelines that compare operating on batches of tensors in a loop
     and forage。The GPU timeline for a loop is shown in the bottom row。The you can
     see that GPU here is idle most of the time， they are very short kernel。 but mostly
     it's space between kernels CPUU is busy constantly launching those small kernels。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里是比较在循环中对张量批次和forage操作的时间线。循环的GPU时间线显示在底部行。您可以看到这里的GPU大部分时间处于闲置状态，内核非常短，但大多数情况下是在内核之间的空闲时间。CPU则不断忙于启动这些小内核。
 - en: In contrast when we are doing the same operation using4H APIs。 GPU is always
     busy and it's running a relatively larger kernels CPUU is busy in the beginning
     submitting those kernels but then it idle for the rest of the time while the upper
     timeline shows just a handful of tensors processed in the lower timeline a few
     hundred tenors were processed in the same amount of time。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 相比之下，当我们使用4H APIs进行相同的操作时，GPU总是处于忙碌状态，并运行相对较大的内核。CPU一开始在提交这些内核时忙碌，但随后在其余时间内处于闲置状态，而上方的时间线仅显示处理的少量张量，在下方的时间线中，在相同的时间内处理了几百个张量。
 - en: '![](img/323adbff4029fa414d7811534950c65f_17.png)'
+  id: totrans-24
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/323adbff4029fa414d7811534950c65f_17.png)'
 - en: Poche 107 has common optimizers implemented using forage APIs for and they achieve
     approximately from3 to 6x or even larger speedup depending on the number of parameters
     in your network。 forage is also easy to use to implement your own optimizers or
     if you have the patterns in your network that require operating on the irregular
     batches of tensors。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: Poche 107使用forage APIs实现了通用优化器，能够实现约从3到6倍甚至更大的加速，具体取决于网络中的参数数量。forage也易于使用，可以实现您自己的优化器，或者如果您网络中的模式需要对不规则批次的张量进行操作。
 - en: So give it a try， replace your optimizer with forage based， and see if it improves
     the performance。Finally， let's talk about benchmarking utilities。Pytorch benchmarking
     utilities are aimed at Pytorarch users and developers。 Of course， you can roll
     your own benchmarking utilities。 but it requires taking care of a few problems。
     You want benchmarks to run long enough to get reliable time and measurements。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，试试看，将您的优化器替换为基于forage的，并查看它是否能改善性能。最后，让我们谈谈基准测试工具。Pytorch基准测试工具是针对Pytorarch用户和开发者的。当然，您也可以自己开发基准测试工具，但这需要处理一些问题。您希望基准测试运行足够长的时间，以获得可靠的时间和测量结果。
 - en: but you don't want them to run forever you need to collect statistics to estimate
     noise in the measurements。 you need to make sure that you are comparing apples
     to apples that all synchronizations are called and multith on the CPU is properly
     controlled。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 但您不希望它们永远运行，您需要收集统计数据以估计测量中的噪声。您需要确保您比较的是同类项，所有同步调用都已执行，且CPU上的多线程得到了适当控制。
 - en: If you are a developer working on a new operation for Pytorarch or if you are
     working on an existing operation。 you want to make sure that the performance is
     good for a variety of input sizes and not just for a particular input size resulting
@@ -173,25 +228,38 @@
     with a wall of numbers that is hard to analyze and represent so you need some
     way of post processing the data Our benchmarking utilities make all of these things
     easy Thisnippet shows how to use timer and compare Apis to compare performance。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你是一名开发者，正在为 Pytorach 开发新操作，或者在处理现有操作，你需要确保在各种输入大小下性能良好，而不仅仅是针对某一特定输入大小进行超优化。完成所有基准测试后，你可能会面对一大堆难以分析和表示的数字，因此你需要一些后处理数据的方法。我们的基准测试工具使所有这些事情变得简单。这个代码片段展示了如何使用计时器和比较
+    API 来比较性能。
 - en: '![](img/323adbff4029fa414d7811534950c65f_19.png)'
+  id: totrans-29
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/323adbff4029fa414d7811534950c65f_19.png)'
 - en: Of two similar pytharch operations take and gather on the different data types
     timer APIs are modeled on Python times。 so they should feel familiar。 They also
     have some additional options to include metadata to make subsequent analysis a
     little bit easier and the left part of this slide shows the output of this script
     where the times are shown in tabular form。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于两种相似的 pytharch 操作，如 take 和 gather，针对不同数据类型的计时器 API 是基于 Python 的时间模型，因此它们应该显得很熟悉。它们还提供了一些附加选项，可以包含元数据，以便后续分析更为简便，幻灯片左侧显示了该脚本的输出，时间以表格形式展示。
 - en: We hope that you'll find our benchmarking utilities convenient。![](img/323adbff4029fa414d7811534950c65f_21.png)
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们希望你会觉得我们的基准测试工具很方便。![](img/323adbff4029fa414d7811534950c65f_21.png)
 - en: Here are resources that you can use to get more information about the topics
     I've talked about。![](img/323adbff4029fa414d7811534950c65f_23.png)
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里是一些资源，你可以用来获取更多关于我提到的话题的信息。![](img/323adbff4029fa414d7811534950c65f_23.png)
 - en: Thank you for listening and hope to see you at Pyr's performance discussion。![](img/323adbff4029fa414d7811534950c65f_25.png)
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 感谢你的聆听，希望能在 Pyr 的性能讨论中见到你。![](img/323adbff4029fa414d7811534950c65f_25.png)

@@ -1,8 +1,11 @@
 - en: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P6：L6- 训练管道：模型、损失和优化器
     - ShowMeAI - BV12m4y1S7ix
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P6：L6- 训练管道：模型、损失和优化器
+    - ShowMeAI - BV12m4y1S7ix
 - en: Hi， everybody。 Welcome back to your new Pytorch tutorial。 In the last tutorial。
     we implemented logistic regression from scratch and then learned how we can use
     Pyt to calculate the gradients for us with Beck propagation。 Now， we will continue
@@ -10,186 +13,261 @@
     and parameter updates by using the loss and optimizer classes in Pytorch。😊，And
     then we also replaced the manually computed model prediction by implementing a
     pytorch model。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好。欢迎回到新的 PyTorch 教程。在上一个教程中，我们从头实现了逻辑回归，然后学习了如何使用 Pyt 来计算梯度，现在，我们将继续之前的内容。现在我们要用
+    PyTorch 中的损失和优化器类替代手动计算的损失和参数更新。😊然后我们还通过实现一个 PyTorch 模型替换了手动计算的模型预测。
 - en: Then Pytorch can do the complete pipeline for us。 So this video covers steps
     3 and 4。And please watch the previous tutorial first to see the steps 1 and 2。
     So now let's start。![](img/2b520fac31b9d1c4d2989f76ec98bd5f_1.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后 PyTorch 可以为我们完成整个管道。所以这个视频涵盖了步骤 3 和 4。请先观看之前的教程以了解步骤 1 和 2。那么现在让我们开始吧！![](img/2b520fac31b9d1c4d2989f76ec98bd5f_1.png)
 - en: And first， I want to talk about the general training pipeline in Pytorch。 So
     typically。 we have three steps。 So the first step is to design our model。So we
     design the number of inputs and outputs。 So input size and output size。And then
     also。 we designed the forward pass with all the different operations or all the
     different layers。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，我想谈谈 PyTorch 中的一般训练管道。通常，我们有三个步骤。第一步是设计我们的模型。我们设计输入和输出的数量，即输入大小和输出大小。然后，我们还设计了前向传播及所有不同的操作或不同的层。
 - en: Then as a second step， we design or we come up with the so we construct the
     loss and the optimizer。 and then as a last step， we do our training loop。So this
     is the training loop。 So we start by doing our forward pass。 So here we compute。Or
     let's write this down。 Compute the prediction。Then we do the backward pass， backward
     pass。 So we get the gradients。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后作为第二步，我们设计或构建损失和优化器，最后一步是进行训练循环。这是训练循环。我们从前向传播开始。这里我们计算，或者让我们写下来。计算预测。然后我们进行反向传播，获取梯度。
 - en: and Pytorch can do everything for us。 We only have to define or to design our
     model。 So。 and after we have the gradients。 We can then update our weights。So
     now we update our weights。 and then we iterate this a couple of time until we
     are done。 And that's the whole pipeline。So now let's continue。 and now let's replace
     the loss and the optimization。So for this。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: PyTorch 可以为我们做一切。我们只需定义或设计我们的模型。然后在获得梯度后，我们可以更新权重。现在我们更新权重，然后迭代几次直到完成。这就是整个管道。现在让我们继续，替换损失和优化。
 - en: we import the neural network module， so we import torch dot N N S and N。 so
     we can use some functions from this。And now we don't want to define the loss manually
     anymore so we can simply delete this。And now。Down here before our training， we
     still need to define our loss。 so we can say loss equals。 And here we can use
     a loss which is provided from pytorch。 So we can say N N dot M E loss。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们导入神经网络模块，因此我们导入 torch dot N N S 和 N，以便可以使用其中的一些函数。现在我们不再想手动定义损失，所以可以简单地删除这一部分。在我们训练之前，我们仍需要定义我们的损失。因此我们可以说损失等于。这里可以使用
+    PyTorch 提供的损失。所以我们可以说 N N dot M E loss。
 - en: which is exactly what we implement before。 So this is the mean squared error。
     And this is a callable function。 And then we also want a optr from p chargech。
     So we say optr equals torch dot optim from the optimization module， And then here
     we use S GD。 which stands for stochastic radiant descent， which will need some
     parameterss。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 这正是我们之前实现的。所以这是均方误差。这是一个可调用的函数。然后我们还想从 p chargech 获取一个优化器。所以我们说 optr 等于 torch
+    dot optim 来自优化模块，然后在这里我们使用 S GD，代表随机梯度下降，需要一些参数。
 - en: some parameters that it should optimize。 and it will need this as a list。 So
     we put our W here。 And then it also needs the Lr。 So the learning rate， which
     is。![](img/2b520fac31b9d1c4d2989f76ec98bd5f_3.png)
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 一些需要优化的参数，并且它将需要作为列表。因此我们把 W 放在这里。然后它还需要 Lr，即学习率，具体是。![](img/2b520fac31b9d1c4d2989f76ec98bd5f_3.png)
 - en: Our previously defined learning rate。![](img/2b520fac31b9d1c4d2989f76ec98bd5f_5.png)
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们之前定义的学习率。![](img/2b520fac31b9d1c4d2989f76ec98bd5f_5.png)
 - en: And then in our training loop。 So the loss computation is now still the same
     because this is a callable function。 which gets the actual y and the predicted
     y。And then we don't need to manually update our weights any more so we can simply
     say optr dot step。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后在我们的训练循环中。损失计算现在仍然是一样的，因为这是一个可调用的函数，它获取实际的 y 和预测的 y。然后我们不再需要手动更新我们的权重，因此我们可以简单地说
+    optr.dot.step。
 - en: which will do an optimization step。 And then we also still have to empty our
     gradients after the optimization step。 So we can say optimizationr dot0 gra。And
     now we are done with step 3。 So let's run this to see if this is working。And。So，
     yeah， still working。 Our prediction is good after the training。And let's continue
     with step 4 and replace our manually implemented forward method with the with
     a pytorch model。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将进行一次优化步骤。然后我们在优化步骤之后仍然需要清空我们的梯度。因此我们可以说 optimizer.dot0.gra。现在我们完成了步骤 3。让我们运行这个看看是否有效。嗯，所以，是的，仍然有效。我们的预测在训练后是不错的。让我们继续进行步骤
+    4，并用 pytorch 模型替换我们手动实现的前向方法。
 - en: so。For this， let's we also don't need our weights anymore because then our pie
     touch model knows the parameters。So here we say model equals N N dot linear。 So
     usually we had have to design this for ourselves。But since this is very trivial
     for linear regression。 So this is only one layer。 this is already provided in
     pytorch。 So this is N N dot linear。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，对于这个，我们也不再需要我们的权重，因为我们的模型已经知道了参数。所以在这里我们说 model 等于 N N.dot.linear。通常我们需要自己设计这个。但由于这对于线性回归来说非常简单。这只有一层，这在
+    pytorch 中已经提供了。所以这是 N N.dot.linear。
 - en: and this needs an input size and an output size of our features。And for this。
     we need to do some modification。 So now our。X and y need to have a different shape。
     So this must be a 2 D array Now， where the number of rows is the number of samples。
     And for each row， we have the number of or the the features。 So this has a new
     shape。Sorry。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 这需要我们特征的输入大小和输出大小。为此，我们需要做一些修改。因此，现在我们的 X 和 y 需要有不同的形状。因此这必须是一个二维数组，现在行数是样本的数量。每行对应特征数量。因此这个有一个新形状。抱歉。
 - en: In new shape。That looks like this。And the same for our y。 So our y is the same
     shape now， So2。4，6。And 8。 So now let's get the shape。 So this is y。 I have to
     be careful now。 So we can say number of samples and number of features。Equals
     x dot shape。 And now let's print this。 So print the number of samples and the
     number of features。 And now let's run this。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 新形状看起来像这样。y 的形状也是一样的，所以是 2、4、6 和 8。所以现在让我们获取形状。所以是 y。我现在得小心。所以我们可以说样本数量和特征数量等于
+    x.dot.shape。现在让我们打印这个。所以打印样本数量和特征数量。现在让我们运行这个。
 - en: So this will run into an error。 But I think we get until here。 So the shape
     is now 4 by one。 So we have four samples and one feature for each sample。 And
     now we define our model。 So this needs an input and an output size。 So the input。Input
     size equals the number of features。 and the output size， output size is still
     the same。 So this is also the number of features。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 这会导致一个错误。但我想我们可以做到这一点。所以形状现在是 4×1。我们有四个样本，每个样本一个特征。现在我们定义我们的模型。这需要一个输入和一个输出大小。输入大小等于特征的数量，输出大小仍然是一样的。所以这也是特征的数量。
 - en: So this is one as an input size and one as an output size。 Now we need to give
     this to our model。 So we say here input size。![](img/2b520fac31b9d1c4d2989f76ec98bd5f_7.png)
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这是一个输入大小和一个输出大小。现在我们需要把这个给我们的模型。所以我们在这里说输入大小。![](img/2b520fac31b9d1c4d2989f76ec98bd5f_7.png)
 - en: And output size。![](img/2b520fac31b9d1c4d2989f76ec98bd5f_9.png)
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 输出大小。![](img/2b520fac31b9d1c4d2989f76ec98bd5f_9.png)
 - en: And then one more， then when we。Want to get the prediction。 We can simply say
     we can call the model。 but now this cannot have a float value。 So this must be
     a tenzor。 So let's create a test tenzor。 Let's say X。Test。Equals torch dot Tenor，
     which gets only one sample with5。 And then it gets a data type of， say， torch
     dot float 32。And then here we pass the test sample。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后再一次，当我们想要获取预测时。我们可以简单地说我们可以调用模型。但现在这不能是一个浮点值。因此这必须是一个张量。让我们创建一个测试张量。假设 X.Test
+    等于 torch.dot.Tensor，它只获取一个样本，值为 5。然后它的数据类型为 torch.dot.float32。然后在这里我们传递测试样本。
 - en: And since this is only one has only one value， we can call the dot item to get
     the actual float value then。 So now let's copy and paste this down here。嗯。And
     now we also have to modify our。Optimizer here。 So we don't have our weights now。
     So this lists with the parameters here。 we can simply say model dot。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 由于这个只有一个值，我们可以调用点项目来获取实际的浮点值。所以现在让我们把这段复制粘贴到这里。嗯。现在我们还需要修改我们的优化器。因此现在我们没有权重。所以这个列表中包含参数，我们可以简单地说
+    model.dot。
 - en: '![](img/2b520fac31b9d1c4d2989f76ec98bd5f_11.png)'
+  id: totrans-20
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/2b520fac31b9d1c4d2989f76ec98bd5f_11.png)'
 - en: Terrameter， and call this function。And now here， for， for the prediction， we
     also。 we simply call the model。![](img/2b520fac31b9d1c4d2989f76ec98bd5f_13.png)
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: Terrameter，并调用这个函数。现在在这里，对于预测，我们也简单地调用模型。![](img/2b520fac31b9d1c4d2989f76ec98bd5f_13.png)
 - en: And now we are done。 So now we are using。The pieytor model to get this。 And
     also down here。 Now。 if we want to print them again， we have to unpack them。 So
     let's say。W and an optional bias equals model parameters。This will unpack them。
     And then if we want to print the actual， this will be a list of lists。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们完成了。所以现在我们正在使用pieytor模型来获得这个。此外在这里，如果我们想再次打印它们，我们必须解包它们。所以我们说W和一个可选的偏置等于模型参数。这将解包它们。如果我们想打印实际的，这将是一个列表的列表。
 - en: So let's get the first or the actual first weight with this and we can also
     call the item because we don't want to see the tenor。And now I think we are done。
     So let's run this to see if this is working。 And yeah， so。The final output is
     not perfect。 So this might be because the initialization now is randomly。 And
     also， this optimizer technique might be a little different。 So you might want
     to play around。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们用这个获取第一个或实际的第一个权重，我们也可以调用这个项目，因为我们不想看到张量。现在我觉得我们完成了。所以让我们运行这个，看看它是否有效。是的，最终输出并不完美。这可能是因为初始化现在是随机的。此外，这个优化技术可能有点不同。所以你可能想要尝试一下。
 - en: play around with the learning rate and the number of iterations。 but basically，
     it works。 and it gets better and better。With every step。And yeah。 so this is how
     we can construct the whole training pipeline。 And one more thing。 So in this case。
     we didn't have to up， have to come up with the model for ourselves。 So here we
     only had one layer。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 尝试一下学习率和迭代次数。但基本上，它有效。随着每一步，它变得越来越好。是的，所以这就是我们如何构建整个训练管道。还有一件事。在这种情况下，我们不必自己提出模型。所以在这里我们只有一层。
 - en: And this was already provided in Pytorch。 But let's say we need a custom model。
     So let's write a custom linear regression model。Then we have to derive this from
     N， N dot module。 and this will get a in it。Metht。Which has self， and which gets
     the。Input。Dimmensions。And the output dimensions。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 这已经在Pytorch中提供了。但假设我们需要一个自定义模型。让我们写一个自定义的线性回归模型。然后我们必须从N，N.dot.module派生。这将得到一个初始化的方法。它有self，并获取输入维度和输出维度。
 - en: '![](img/2b520fac31b9d1c4d2989f76ec98bd5f_15.png)'
+  id: totrans-26
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/2b520fac31b9d1c4d2989f76ec98bd5f_15.png)'
 - en: And then here we call super， the super class， So super of linear regression
     with self。 and then dot。![](img/2b520fac31b9d1c4d2989f76ec98bd5f_17.png)
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后在这里我们调用super，超类。所以线性回归的super和self。然后点。![](img/2b520fac31b9d1c4d2989f76ec98bd5f_17.png)
 - en: In it， this is how we call the superconor。 And here we would define our layers。So
     in this case。 we say our self dot line or linear layer equals Nn dot linear。 and
     this will get the input dimension and the output dimension and then we store them
     here。 and then we also have to implement the forward pass in our model class so
     self and x。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，这就是我们如何调用超类。我们会定义我们的层。所以在这种情况下，我们说我们的self.dot线性层等于Nn.dot.linear。这将获取输入维度和输出维度，然后我们将它们存储在这里。然后我们还必须在我们的模型类中实现前向传递，所以self和x。
 - en: and here we can simply return self dot linear of x。![](img/2b520fac31b9d1c4d2989f76ec98bd5f_19.png)
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里我们可以简单地返回self.dot.linear的x。![](img/2b520fac31b9d1c4d2989f76ec98bd5f_19.png)
 - en: '![](img/2b520fac31b9d1c4d2989f76ec98bd5f_20.png)'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/2b520fac31b9d1c4d2989f76ec98bd5f_20.png)'
 - en: And this is the whole thing。 And now we can say our model equals linear regression
     with the input size and the output size。 And now this will do the same thing。
     So now this is just a dummy example。 because this is a simple wrapper that will
     do exactly the same。 But basically。 this is how we design our pieyto model。 So
     now let's comment this out and use this class to see if this is working。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是整个内容。现在我们可以说我们的模型等同于线性回归，输入大小和输出大小。现在这将做同样的事情。所以现在这只是一个虚拟示例，因为这是一个简单的包装器，它将完全相同。但基本上，这就是我们设计pieyto模型的方式。所以现在让我们注释掉这个，使用这个类来看看它是否有效。
 - en: And。Yeah， so it's still working。 So that's all for now。 And now， Pyto can do
     most of the work for us。 Of course， we still have to design our model and have
     to know which loss and optimr we want to use。 but we don't have to worry about
     the underlying algorithms anymore， so。Yeah。 you can find all the code on Giub。
     And if you like this。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的，所以它仍然有效。现在就这些。现在，Pyto可以为我们完成大部分工作。当然，我们仍然需要设计我们的模型，并且需要知道我们想要使用哪个损失和优化器，但我们不必再担心底层算法了。所以，你可以在Giub上找到所有代码。如果你喜欢这个。
 - en: please subscribe to the channel and see you next time， bye。![](img/2b520fac31b9d1c4d2989f76ec98bd5f_22.png)
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 请订阅频道，下一次见，拜拜。![](img/2b520fac31b9d1c4d2989f76ec98bd5f_22.png)

@@ -1,456 +1,705 @@
 - en: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P2：L2- 张量基础
     - ShowMeAI - BV12m4y1S7ix
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P2：L2- 张量基础
+    - ShowMeAI - BV12m4y1S7ix
 - en: Hi， everybody。 Welcome to your new Pytoch tutorial。 In this video。 we are going
     to learn how to work with Tenzoas So how we can create Tenzoos and some basic
     operations that we need。 We will also learn how to convert from Ny arrays to Pytoch
     Tzoos and vice versa。 So let's start。😊。So in Pytoch， everything is based on Tenzo
     operations from Nai， you probably know arrays and vectors。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，大家好。欢迎来到你的新 PyTorch 教程。在这个视频中，我们将学习如何使用 Tenzoas。所以我们将学习如何创建 Tenzoos 和一些基本操作。我们还将学习如何从
+    Numpy 数组转换到 PyTorch Tzoos 及其反向。因此，让我们开始。😊在 PyTorch 中，一切都是基于 Tenzo 操作的，从 Nai，你可能知道数组和向量。
 - en: And now in Pytoch， everything is a tenzoor。 So atenor can have different dimensions。
     so it can be 1 D，2 D or even 3 D or have more dimensions。So let's create an empty
     Tenzoa。 So first of all， we import torch， of course。![](img/90c2a152a218100453276638b7fdbc56_1.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在在 PyTorch 中，一切都是一个 tenzoor。因此，tenzor 可以有不同的维度。它可以是 1D，2D，甚至 3D 或更多维度。所以让我们创建一个空的
+    Tenzoa。首先，我们当然要导入 torch。![](img/90c2a152a218100453276638b7fdbc56_1.png)
 - en: And then we say x equals torch dot empty。And then。We have to give it a size。
     So， for example。 if we just say one， then this is like a scala value。 So let's
     print our tenzzo。![](img/90c2a152a218100453276638b7fdbc56_3.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们说 x 等于 torch dot empty。然后。我们需要给它一个大小。因此，例如。如果我们只说一，这就像一个标量值。那么我们来打印我们的 tenzo。![](img/90c2a152a218100453276638b7fdbc56_3.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_4.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_4.png)'
 - en: So this will print an empty tensor。 So the value is not initialized yet。And
     now we can change the size。 So， for example， if we say3 here。 then this is like
     a 1 D vector with three elements。 So now if you run this。 we see three items in
     our tenzon。 And now we can also make a 2D。 So， for example。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这将打印一个空的张量。值尚未初始化。现在我们可以改变大小。例如，如果我们在这里说 3，那么这就像一个包含三个元素的 1D 向量。因此现在如果你运行这个。我们看到我们的
+    tenzon 中有三个项目。现在我们也可以制作一个 2D。例如。
 - en: let's say the size is 2 by 3。 So this is like a 2D matrix。 So now we'll run
     this。![](img/90c2a152a218100453276638b7fdbc56_6.png)
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设大小是 2 乘 3。这就像一个 2D 矩阵。那么我们现在运行这个。![](img/90c2a152a218100453276638b7fdbc56_6.png)
 - en: And， of course， we can put even more dimensions in it。 So now it would be 3D。
     And now， for example。 now it would be 40， but now I don't print it anymore more
     because it's hard to。 to see the four dimensions。 But yeah， this is how we can
     create an empty Tenzo。 And we can also。 for example， create a tenzo with random
     values by saying torch dot ran and then give it the size。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然，我们甚至可以放入更多维度。所以现在它会是 3D。例如，现在它会是 40，但我现在不再打印它，因为看到四个维度很难。但这就是我们如何创建一个空的 Tenzo。我们还可以。例如，通过说
+    torch dot ran 然后给它大小来创建一个随机值的 tenzo。
 - en: So let's say two by two。![](img/90c2a152a218100453276638b7fdbc56_8.png)
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们说两乘两。![](img/90c2a152a218100453276638b7fdbc56_8.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_9.png)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_9.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_10.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_10.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_11.png)'
+  id: totrans-11
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_11.png)'
 - en: And let's print our tenzor， again。![](img/90c2a152a218100453276638b7fdbc56_13.png)
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们再次打印我们的 tenzor。![](img/90c2a152a218100453276638b7fdbc56_13.png)
 - en: We can also the same like in Numpy， we can say torch dot0s。 So this will put
     all。![](img/90c2a152a218100453276638b7fdbc56_15.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们也可以像在 Numpy 中一样，我们可以说 torch dot 0s。所以这会填充所有。![](img/90c2a152a218100453276638b7fdbc56_15.png)
 - en: 0eros in it。 Or we can say torch dot once。 So this will put once in all the
     items。Then we can also give it a specific data type。 So first of all。 we can have
     a look at the data type by saying x dot D type。![](img/90c2a152a218100453276638b7fdbc56_17.png)
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以说 torch dot once。所以这将把一次放入所有项目中。然后我们还可以给它一个特定的数据类型。首先，我们可以通过说 x dot D type
+    来查看数据类型。![](img/90c2a152a218100453276638b7fdbc56_17.png)
 - en: So if we run this， then we see by default， it's a float 32。 but we can also
     give it the D type parameter。 And here we can say， for example。 torch dot into
     now it's all integers， or we can say torch dot。![](img/90c2a152a218100453276638b7fdbc56_19.png)
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以如果我们运行这个，我们会看到默认情况下，它是 float 32。但我们也可以给它 D type 参数。在这里我们可以说，例如，torch dot，现在它都是整数，或者我们可以说
+    torch dot。![](img/90c2a152a218100453276638b7fdbc56_19.png)
 - en: Doub。Now， it is doubles。Or we can also say， for example， float 16 chest。嗯。一。And
     now。 if you want to have a look at the size， we can do this by saying x dot size。
     And this is a function。 So we have to use parentheses。![](img/90c2a152a218100453276638b7fdbc56_21.png)
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: Doub。现在是双倍。或者我们也可以说，例如，float 16 chest。嗯。一。现在。如果你想看看大小，我们可以通过说x点size来实现。这是一个函数。所以我们必须使用括号。![](img/90c2a152a218100453276638b7fdbc56_21.png)
 - en: So this will print the size of it。And we can also construct a tenor from data。
     So， for example。 from a Python list。 So for example， here we can say x equals
     torch dot tenor。 and then here we put a list with some elements。 So let's say
     2。50。1 and then print our tenor。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这将打印它的大小。我们还可以从数据构建一个tenor。例如，从Python列表中。所以，例如，这里我们可以说x等于torch点tenor。然后这里我们放一个包含一些元素的列表。比如说2。50。1，然后打印我们的tenor。
 - en: '![](img/90c2a152a218100453276638b7fdbc56_23.png)'
+  id: totrans-18
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_23.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_24.png)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_24.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_25.png)'
+  id: totrans-20
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_25.png)'
 - en: So this is also how we can create a tenor。 And now let's talk about some basic
     operations that we can do。 So let's create two Tzoos with random values of size
     2 by 2。 So x and y equals torch dot brand2 by 2。 So let's print X。 and let's print
     Y。![](img/90c2a152a218100453276638b7fdbc56_27.png)
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 这也是我们可以创建tenor的方式。现在让我们谈谈可以进行的一些基本操作。所以让我们创建两个大小为2x2的随机值的Tzoos。x和y等于torch点rand2x2。所以让我们打印X。让我们打印Y。![](img/90c2a152a218100453276638b7fdbc56_27.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_28.png)'
+  id: totrans-22
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_28.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_29.png)'
+  id: totrans-23
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_29.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_30.png)'
+  id: totrans-24
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_30.png)'
 - en: And。![](img/90c2a152a218100453276638b7fdbc56_32.png)
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 而且。![](img/90c2a152a218100453276638b7fdbc56_32.png)
 - en: Yeah， so now we can do simple addition， for example， by saying set equals x
     plus y。 So。 and now let's print our C。 So this will do element wise additions。
     So it will add up each of the entries。![](img/90c2a152a218100453276638b7fdbc56_34.png)
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的，现在我们可以通过说set等于x加y来进行简单的加法。例如。现在让我们打印我们的C。这将进行逐元素加法。它将把每个条目相加。![](img/90c2a152a218100453276638b7fdbc56_34.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_35.png)'
+  id: totrans-27
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_35.png)'
 - en: And we could also use。![](img/90c2a152a218100453276638b7fdbc56_37.png)
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们也可以使用。![](img/90c2a152a218100453276638b7fdbc56_37.png)
 - en: Set equals torch dot at， and then x and Y。 So this would do the same thing。嗯。Now。
     we could also do an in place addition。 So， for example， if we say。![](img/90c2a152a218100453276638b7fdbc56_39.png)
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: set等于torch点at，然后x和Y。这将做同样的事情。嗯。现在。我们还可以进行就地加法。所以，例如，如果我们说。![](img/90c2a152a218100453276638b7fdbc56_39.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_40.png)'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_40.png)'
 - en: W dot， and then add underscore。![](img/90c2a152a218100453276638b7fdbc56_42.png)
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: W点，然后add下划线。![](img/90c2a152a218100453276638b7fdbc56_42.png)
 - en: X and then print Y。 So this will modify our y and add all of the elements of
     x to our y。 And by the way， in pi to， every function that has a trailing underscore
     will do an in place operation。 So this will modify the variable that it is applied
     on。![](img/90c2a152a218100453276638b7fdbc56_44.png)
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: X，然后打印Y。这将修改我们的y，并将x的所有元素加到y上。顺便说一下，在pi中，每个有尾随下划线的函数都会进行就地操作。所以这将修改应用于的变量。![](img/90c2a152a218100453276638b7fdbc56_44.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_45.png)'
+  id: totrans-33
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_45.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_46.png)'
+  id: totrans-34
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_46.png)'
 - en: So， yeah， so。Next to addition， of course， we could also use subtraction so we
     can say C equals x minus y。 or this would be the same as C equals torch dot s。![](img/90c2a152a218100453276638b7fdbc56_48.png)
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，是的。那么，除了加法，我们当然也可以使用减法，所以我们可以说C等于x减y。或者这与C等于torch点s相同。![](img/90c2a152a218100453276638b7fdbc56_48.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_49.png)'
+  id: totrans-36
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_49.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_50.png)'
+  id: totrans-37
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_50.png)'
 - en: X and y。Now， if you print C， then we can see the element by subion。 Then we
     can also do a multiplication of each element。 So this would be torch dot mule。![](img/90c2a152a218100453276638b7fdbc56_52.png)
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: X和y。现在，如果你打印C，那么我们可以看到逐元素减法。然后我们还可以对每个元素进行乘法。所以这将是torch点mule。![](img/90c2a152a218100453276638b7fdbc56_52.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_53.png)'
+  id: totrans-39
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_53.png)'
 - en: And again， we can do everything in place by saying y dot mu underscore x。 So
     this would modify our y。![](img/90c2a152a218100453276638b7fdbc56_55.png)
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 再一次，我们可以通过说y点mu下划线x来实现就地修改我们的y。![](img/90c2a152a218100453276638b7fdbc56_55.png)
 - en: And then we can also do element wise tuition。 So this would be torch dot di。![](img/90c2a152a218100453276638b7fdbc56_57.png)
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们还可以进行逐元素的运算。所以这将是torch dot di。![](img/90c2a152a218100453276638b7fdbc56_57.png)
 - en: And yeah， so this is some basic operations that we can do with tenzoors。 And
     then we can also do slicing operations like you are used to from Numpy arrays。
     So let's say we have a tenzor of size。![](img/90c2a152a218100453276638b7fdbc56_59.png)
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的，这些是我们可以用张量执行的一些基本操作。然后我们也可以像你习惯于Numpy数组那样进行切片操作。所以假设我们有一个指定大小的张量。![](img/90c2a152a218100453276638b7fdbc56_59.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_60.png)'
+  id: totrans-43
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_60.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_61.png)'
+  id: totrans-44
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_61.png)'
 - en: Let's say5 by 3。 and let's print this first。![](img/90c2a152a218100453276638b7fdbc56_63.png)
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设是5乘3。让我们先打印这个。![](img/90c2a152a218100453276638b7fdbc56_63.png)
 - en: And now， print x。And now， for example， we can simply， or we can get all rows，
     but only one column。 So let's use slicing。 So we here use a。Con for all the rows，
     but only。The column 0， so。![](img/90c2a152a218100453276638b7fdbc56_65.png)
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，打印x。现在，比如说，我们可以简单地，或者我们可以获取所有行，但只要一列。所以我们使用切片。因此，我们在这里使用a。对于所有行，但仅仅是列0，所以下面是。![](img/90c2a152a218100453276638b7fdbc56_65.png)
 - en: Let's print the whole tenzor and only this。 So here we see we have only the
     first column。 but all the rows。![](img/90c2a152a218100453276638b7fdbc56_67.png)
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们打印整个张量，仅此而已。所以在这里我们看到只有第一列，但所有的行。![](img/90c2a152a218100453276638b7fdbc56_67.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_68.png)'
+  id: totrans-48
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_68.png)'
 - en: Or we can just say， for example， let's use the row number one， but all columns。So，
     this would print。The second row， and all the columns。Then we can also just get
     one element。 So the element at position 1，1。 So this would be this value。 And
     by the way， right now。 it prints the tenor。 And if we have a tenor with only one
     element。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者我们可以简单地说，比如说，使用行号一，但所有列。所以，这将打印。第二行，和所有列。然后我们还可以只获取一个元素。所以位置在1，1的元素。这将是这个值。顺便说一下，现在它打印的是张量。如果我们有一个仅包含一个元素的张量。
 - en: we can also say we can call the dot item method。![](img/90c2a152a218100453276638b7fdbc56_70.png)
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还可以调用dot item方法。![](img/90c2a152a218100453276638b7fdbc56_70.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_71.png)'
+  id: totrans-51
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_71.png)'
 - en: So this will get the actual value， but be careful。 You can only use this if
     you have only one element in your tenor。So this will get the actual value。And。Yeah，
     now let's talk about reshaping a tenzoor。 So let's say we have a tenzoor of size。
     Let's say4 by 4， and print our tenzor。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将获得实际值，但要小心。只有在张量中仅有一个元素时，你才能使用此方法。所以这将获得实际值。是的，现在让我们讨论重塑张量。所以假设我们有一个大小为4乘4的张量，并打印我们的张量。
 - en: '![](img/90c2a152a218100453276638b7fdbc56_73.png)'
+  id: totrans-53
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_73.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_74.png)'
+  id: totrans-54
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_74.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_75.png)'
+  id: totrans-55
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_75.png)'
 - en: 嗯。And now， if we want to reshape it， then we can do this by saying or by calling
     the view method。 So we say y equals x dot view and then give it a size。 So let's
     say we only want one dimension now。 So let's print Y。![](img/90c2a152a218100453276638b7fdbc56_77.png)
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗯。如果我们想重塑它，我们可以通过调用view方法来做到这一点。所以我们说y等于x dot view，然后给它一个大小。假设我们现在只想要一个维度。那么让我们打印Y。![](img/90c2a152a218100453276638b7fdbc56_77.png)
 - en: So now it's only a one defect vector。![](img/90c2a152a218100453276638b7fdbc56_79.png)
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在它只是一个一维向量。![](img/90c2a152a218100453276638b7fdbc56_79.png)
 - en: And of course， the number of elements must still be the same。 So here we have
     4 by 4。 So in total。 it's also 16 values and for example， if we don't want to
     put the dimension or the value in one dimension and we can simply say-1 and then
     specify the other dimension and Py to will automatically determine the right size
     for it。
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然，元素的数量必须仍然相同。所以在这里我们有4乘4。所以总共也是16个值，比如说，如果我们不想将维度或值放在一个维度中，我们可以简单地说-1，然后指定另一个维度，Py会自动确定正确的大小。
 - en: So now it must be a 2 by 8。![](img/90c2a152a218100453276638b7fdbc56_81.png)
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以现在它必须是2乘8。![](img/90c2a152a218100453276638b7fdbc56_81.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_82.png)'
+  id: totrans-60
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_82.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_83.png)'
+  id: totrans-61
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_83.png)'
 - en: Tzoa。 so we can also print the size again to have a look at the size。![](img/90c2a152a218100453276638b7fdbc56_85.png)
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: Tzoa。所以我们也可以再次打印大小以查看其尺寸。![](img/90c2a152a218100453276638b7fdbc56_85.png)
 - en: So this is size 2 by 8。 So it's correctly determined the size。 If we put a-1
     here。![](img/90c2a152a218100453276638b7fdbc56_87.png)
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这是2乘8的大小。它已经正确确定了大小。如果我们在这里放一个-1。![](img/90c2a152a218100453276638b7fdbc56_87.png)
 - en: So yeah， this is how we can resize tenss。 And now let's talk about converting
     from Nmpy to a torch tensor and vice versa。 So this is very easy。 So first of
     all， let's import Ny again or import Ny as N P。 And I think I have to。![](img/90c2a152a218100453276638b7fdbc56_89.png)
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以是的，这就是我们如何调整张量的大小。现在让我们谈谈从Nmpy转换为torch张量及其反向转换。这非常简单。首先，让我们再次导入Ny或者导入Ny作为N
+    P。我想我得。![](img/90c2a152a218100453276638b7fdbc56_89.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_90.png)'
+  id: totrans-65
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_90.png)'
 - en: Oh， no， it's already installed here。 So let's create a Tzo first。 So a equals
     torch dot。 And let's create a Tnza with one of size 5。 So let's print our Tzo。![](img/90c2a152a218100453276638b7fdbc56_92.png)
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦，不，它已经安装在这里了。所以我们先创建一个Tzo。A等于torch点。我们用大小为5创建一个Tnza。所以我们打印我们的Tzo。![](img/90c2a152a218100453276638b7fdbc56_92.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_93.png)'
+  id: totrans-67
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_93.png)'
 - en: And now， if we want to have a numpy array， we can simply say B equals a dot
     nuumpy and then print。![](img/90c2a152a218100453276638b7fdbc56_95.png)
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，如果我们想要一个numpy数组，我们可以简单地说B等于A点nuumpy，然后打印。![](img/90c2a152a218100453276638b7fdbc56_95.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_96.png)'
+  id: totrans-69
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_96.png)'
 - en: B。So now we have a nuy array。 So if we print the type of be。嗯。And then this
     will see。 and this will print that we have a nuy and DNA。![](img/90c2a152a218100453276638b7fdbc56_98.png)
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: B。所以现在我们有一个nuy数组。如果我们打印be的类型。嗯。然后我们会看到。这将打印出我们有一个nuy和DNA。![](img/90c2a152a218100453276638b7fdbc56_98.png)
 - en: So yeah， this is how we can create from a tensor to a numpy array。 But now we
     have to be careful。 because if the tensor is on the CPU and not the GP。 Then both
     objects will share the same memory location。 So this means that if we change one。
     we will also change the other。 So for example， if we print or if we modify B or
     a in place by saying a dot at underscore。
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以是的，这就是我们如何从张量创建一个numpy数组。但是现在我们必须小心。因为如果张量在CPU上而不是GP。然后这两个对象将共享同一内存位置。这意味着如果我们改变一个。我们也会改变另一个。例如，如果我们打印或者通过说A点at
+    underscore就地修改B或A。
 - en: remember all the underscore functions will modify our variable in place and
     at one。 So if we add one to each element and allow first， let's have a look at
     our a tenor。 And now let's also have a look at our B numpy array。 then we see
     that it also。![](img/90c2a152a218100453276638b7fdbc56_100.png)
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 记住，所有的underscore函数都会就地修改我们的变量。所以如果我们给每个元素加1，首先，我们来看看我们的张量。现在我们也来看看我们的B numpy数组。然后我们看到它也。![](img/90c2a152a218100453276638b7fdbc56_100.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_101.png)'
+  id: totrans-73
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_101.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_102.png)'
+  id: totrans-74
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_102.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_103.png)'
+  id: totrans-75
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_103.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_104.png)'
+  id: totrans-76
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_104.png)'
 - en: Added plus one to each of the elements here， because they both point to the
     same memory location。 So be careful here。![](img/90c2a152a218100453276638b7fdbc56_106.png)
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里给每个元素加一，因为它们都指向同一个内存位置。所以要小心。![](img/90c2a152a218100453276638b7fdbc56_106.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_107.png)'
+  id: totrans-78
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_107.png)'
 - en: And yeah， if you do want to do it the other way around。 So if you have a。![](img/90c2a152a218100453276638b7fdbc56_109.png)
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗯，如果你确实想反过来做。所以如果你有一个。![](img/90c2a152a218100453276638b7fdbc56_109.png)
 - en: AnNumpy array in the beginning。 So let's say a equals nuy one of size 5， and
     then print a。![](img/90c2a152a218100453276638b7fdbc56_111.png)
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 在开始时的Numpy数组。所以我们假设A等于nuy大小为5，然后打印A。![](img/90c2a152a218100453276638b7fdbc56_111.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_112.png)'
+  id: totrans-81
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_112.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_113.png)'
+  id: totrans-82
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_113.png)'
 - en: And now you want to have a torch tenor from a numpy array。 And you can say B
     equals torch and then from underscore nuumpy and then put the numpy array。 So
     now we have a tenor。![](img/90c2a152a218100453276638b7fdbc56_115.png)
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在你想从一个numpy数组创建一个torch张量。你可以说B等于torch，然后from underscore nuumpy，然后放入numpy数组。所以现在我们有一个张量。![](img/90c2a152a218100453276638b7fdbc56_115.png)
 - en: And this will， yeah， by default， this will put in the data type float 64。 Of
     course。 you could also specify the data type here if you want a different data
     type。![](img/90c2a152a218100453276638b7fdbc56_117.png)
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将，嗯，默认情况下，将数据类型设置为float 64。当然，如果你想要不同的数据类型，你也可以在这里指定数据类型。![](img/90c2a152a218100453276638b7fdbc56_117.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_118.png)'
+  id: totrans-85
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_118.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_119.png)'
+  id: totrans-86
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_119.png)'
 - en: And now again， we have to be careful if we modify one。 So if we modify， for
     example。 the nuy array by incrementing each element， so。![](img/90c2a152a218100453276638b7fdbc56_121.png)
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在再次提醒，如果我们修改其中一个，要小心。所以如果我们通过递增每个元素来修改 nuy 数组，例如。![](img/90c2a152a218100453276638b7fdbc56_121.png)
 - en: Now， print our nuy array。 So we see that it incremented each value。 And if we
     print B。![](img/90c2a152a218100453276638b7fdbc56_123.png)
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，打印我们的 nuy 数组。所以我们看到它的每个值都递增了。如果我们打印 B。![](img/90c2a152a218100453276638b7fdbc56_123.png)
 - en: Then we see that our tens are got modified， too。 So again， be careful here。![](img/90c2a152a218100453276638b7fdbc56_125.png)
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们看到我们的张量也被修改了。所以在这里再次要小心。![](img/90c2a152a218100453276638b7fdbc56_125.png)
 - en: Yeah， but this happens only if your Tensor is on the GPU and this is one thing
     that we haven't talked about yet because you can also do the operations on the
     GPU。 but only if this is available。 So if you have also installed the Kuda toolkit。![](img/90c2a152a218100453276638b7fdbc56_127.png)
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的，但这只有在你的张量位于 GPU 上时才会发生，而这一点我们还没有讨论，因为你也可以在 GPU 上执行操作，但只有在可用的情况下。所以如果你也安装了
+    Kuda 工具包。![](img/90c2a152a218100453276638b7fdbc56_127.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_128.png)'
+  id: totrans-91
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_128.png)'
 - en: And you can check that by saying。![](img/90c2a152a218100453276638b7fdbc56_130.png)
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以通过说来检查这一点。![](img/90c2a152a218100453276638b7fdbc56_130.png)
 - en: If tor dot coa dot is。Available。And so in my case， on the Mac， it will。![](img/90c2a152a218100453276638b7fdbc56_132.png)
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果 tor dot coa dot 是可用的。所以在我这里，Mac 上，它将。![](img/90c2a152a218100453276638b7fdbc56_132.png)
 - en: And this will return false。 but for example， if you are on Windows and you have
     Kuda available。 then you can specify your kuda device by saying device equals
     torch。Dot。Devicise and then say。 Kuda here。 And then if you want to create a tensor
     on the GP U， you can do this by saying x equals。
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将返回假。但例如，如果你在 Windows 上，并且有 Kuda 可用，那么你可以通过说 device 等于 torch.Dot.Devicise，然后说
+    Kuda 来指定你的 Kuda 设备。如果你想在 GPU 上创建一个张量，你可以通过说 x 等于。
 - en: '![](img/90c2a152a218100453276638b7fdbc56_134.png)'
+  id: totrans-95
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_134.png)'
 - en: Torch dot once。And then， for example， give it the size and then say device equals
     device。So。 this will create a。Tenor and put it on the GP。Or you can first create
     it。 So simply by saying。![](img/90c2a152a218100453276638b7fdbc56_136.png)
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: Torch dot once。然后，例如，给它大小，然后说 device 等于 device。所以这将创建一个张量并将其放在 GPU 上。或者你可以先创建它。因此，只需说。![](img/90c2a152a218100453276638b7fdbc56_136.png)
 - en: Y equals torch dot1 of size 5。 And then you move it to your device to your GPu
     by saying y equals Y dot2。 and then device， so this will move it to the device。
     and now if you do an operation， for example。 C equals x plus Y。 then this will
     be performed on the GPU and might be much faster。
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: Y 等于 torch dot1 的大小为 5。然后你通过说 y 等于 Y dot2，将其移动到你的设备到你的 GPU，然后设备，所以这会将其移动到设备上。如果你执行一个操作，例如
+    C 等于 x 加 Y，那么这将在 GPU 上执行，可能会快得多。
 - en: '![](img/90c2a152a218100453276638b7fdbc56_138.png)'
+  id: totrans-98
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_138.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_139.png)'
+  id: totrans-99
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_139.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_140.png)'
+  id: totrans-100
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_140.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_141.png)'
+  id: totrans-101
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_141.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_142.png)'
+  id: totrans-102
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_142.png)'
 - en: 嗯。Yeah， but now you have to be careful because now if you would call C dot Nmpy。
     then this would return an error because Ny can only handle CPU tenor。 so you cannot
     convert a GP tenor back to Numpy。![](img/90c2a152a218100453276638b7fdbc56_144.png)
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗯。是的，但现在你必须小心，因为如果你调用 C dot Nmpy，那么这将返回一个错误，因为 Ny 只能处理 CPU 张量。因此，你无法将 GPU 张量转换回
+    Numpy。![](img/90c2a152a218100453276638b7fdbc56_144.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_145.png)'
+  id: totrans-104
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_145.png)'
 - en: So then again， we would have to move it back to the CPU so we can do this by
     saying C equals C dot。![](img/90c2a152a218100453276638b7fdbc56_147.png)
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以再次，我们必须将其移回 CPU，因此我们可以通过说 C 等于 C 点。![](img/90c2a152a218100453276638b7fdbc56_147.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_148.png)'
+  id: totrans-106
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_148.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_149.png)'
+  id: totrans-107
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_149.png)'
 - en: 2 and then as a string CPU。 So now it would be on the CPU again。So yeah。 this
     is all the basic operations that I wanted to show you。 and one more thing a lot
     of times when a tensor is created。![](img/90c2a152a218100453276638b7fdbc56_151.png)
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 2，然后作为一个字符串 CPU。所以现在它又会在 CPU 上。所以是的。这就是我想展示的所有基本操作，还有一件事，很多时候在创建张量时。![](img/90c2a152a218100453276638b7fdbc56_151.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_152.png)'
+  id: totrans-109
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_152.png)'
 - en: For example， torch dot。1 of size 5。 Then a lot of times you see the argument
     requires。Grabs equals true。 So by default， this is false。![](img/90c2a152a218100453276638b7fdbc56_154.png)
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，`torch dot`。大小为5。然后很多时候你会看到参数 `requires Grabs equals true`。所以默认情况下，这是 false。![](img/90c2a152a218100453276638b7fdbc56_154.png)
 - en: And now， if we print this。![](img/90c2a152a218100453276638b7fdbc56_156.png)
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，如果我们打印这个。![](img/90c2a152a218100453276638b7fdbc56_156.png)
 - en: Then we will also see here in our tensor that it will print requires Gr equals
     true。So a lot of times in code， you will see this， And this will tell pieytoch
     that it will need to calculate the gradients for thistensor later in your optimization
     steps。![](img/90c2a152a218100453276638b7fdbc56_158.png)
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么我们在这个张量中也会看到它会打印出需要 `Gr equals true`。所以在代码中，你经常会看到这个，它会告诉 PyTorch 在你的优化步骤中需要计算这个张量的梯度。![](img/90c2a152a218100453276638b7fdbc56_158.png)
 - en: '![](img/90c2a152a218100453276638b7fdbc56_159.png)'
+  id: totrans-113
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_159.png)'
 - en: So whenever this means that whenever you have a variable in your model that
     you want to optimize。 then you need the gradients。 So you need to specify requires
     Gr equals true。 But yeah。 we will talk about this more in the next tutorial。 So
     I hope you enjoyed this tutorial。 And if you liked it， please subscribe to the
     channel and see you next time， bye。
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: '所以每当这意味着你在模型中有一个想要优化的变量时，你就需要梯度。因此你需要指定 `requires Gr equals true`。不过我们将在下一个教程中更详细地讨论这个。所以希望你喜欢这个教程。如果你喜欢，请订阅频道，下次见，拜。 '
 - en: '![](img/90c2a152a218100453276638b7fdbc56_161.png)'
+  id: totrans-115
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_161.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_162.png)'
+  id: totrans-116
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_162.png)'
 - en: '![](img/90c2a152a218100453276638b7fdbc56_163.png)'
+  id: totrans-117
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/90c2a152a218100453276638b7fdbc56_163.png)'

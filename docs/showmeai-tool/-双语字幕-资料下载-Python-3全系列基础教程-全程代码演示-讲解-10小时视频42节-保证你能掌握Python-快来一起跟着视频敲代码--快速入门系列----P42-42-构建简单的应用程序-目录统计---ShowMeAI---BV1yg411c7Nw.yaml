@@ -1,266 +1,365 @@
 - en: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
     - P42：42）构建简单的应用程序：目录统计 - ShowMeAI - BV1yg411c7Nw
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
+    - P42：42）构建简单的应用程序：目录统计 - ShowMeAI - BV1yg411c7Nw
 - en: '![](img/fdc7b717fb1febada208161246298987_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/fdc7b717fb1febada208161246298987_0.png)'
 - en: Welcome back， everyone。 My name is Brian， and we're going to make a simple application
     called D Stats。 And what this thing's going to do is it's going to scan a directory
     recursively。 You're new to programming。 You're probably going what does that even
     mean recursively。 Well。 let's say you have a directory。 and that has subfolders。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 欢迎回来，大家好。我是布莱恩，我们将创建一个名为D Stats的简单应用程序。这个程序将递归扫描一个目录。你是编程新手，可能会问这是什么意思。假设你有一个目录，里面有子文件夹。
 - en: and those folders have subfolds and so on and so on and so on。 And you have
     this nice tree structure similar to how we see over here。😊。We want to be able
     to scan all the way through that tree。![](img/fdc7b717fb1febada208161246298987_2.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 而这些文件夹又有子文件夹，依此类推。你有一个漂亮的树状结构，类似于我们这里所看到的。😊我们希望能够扫描整个树结构。![](img/fdc7b717fb1febada208161246298987_2.png)
 - en: Let's take a look at a simple diagram here and don't worry I'm going to zoom
     in。 but we have a start in an end and our overall logic is going to be very linear。
     very easy to understand， let's go ahead and zoom in。So we're going to start。 we're
     going to go to our main function， we're going to get some user input。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看看一个简单的图示，不用担心，我会放大。但我们有一个开始和一个结束，我们的整体逻辑将是非常线性的，非常容易理解。让我们放大一下。我们将开始，进入主函数，获取一些用户输入。
 - en: and we're going to validate that that actually exists as a folder somewhere
     out on the operating system。If it does not， we're going to jump right to finished。
     However， if it is actually in existence。 we're going to go into a for loop。 and
     this is the recursive bit right here。We're going to say for each item。If it has
     sub items。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将验证这个文件夹在操作系统中确实存在。如果不存在，我们将直接跳到完成。不过，如果它确实存在，我们将进入一个for循环。这是递归部分。我们将对每个项目进行处理。如果它有子项目。
 - en: go back and scan those items and so on and so on all the way down the directory
     tree。 If we run out of items， then we're done。 And we're just going to display
     the results to the inducer。Pretty simple， pretty easy to understand logic。![](img/fdc7b717fb1febada208161246298987_4.png)
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后回去扫描这些项目，依此类推，直到目录树的底部。如果我们扫描完所有项目，那就完成了。我们将结果显示给用户。非常简单，逻辑也很容易理解。![](img/fdc7b717fb1febada208161246298987_4.png)
 - en: Let's dive in and take a look。![](img/fdc7b717fb1febada208161246298987_6.png)
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们深入探讨一下。![](img/fdc7b717fb1febada208161246298987_6.png)
 - en: Okay， first things first， we want to do some imports and make a global variable。
     So our import。 we're just going to simply use O。 Now， OS in itself。 this module
     really allows us to deep dive into the operating system and get some details。
     We're going to use this to get Well， the folder structure along with the file
     sizes and things of that nature。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，首先，我们想要进行一些导入并创建一个全局变量。我们的导入，只需简单使用OS。现在，OS本身，这个模块真的可以让我们深入操作系统，获取一些细节。我们将用它来获取文件夹结构以及文件大小等信息。
 - en: So let's go ahead and now let's make a dictionary。I'm going to call the stats。And
     we want a very simple dictionary here， I must say path equals personally。 I'm
     not a fan of global variables， although they do have their usage。 and I believe
     this is one of those times。So we're going to say path and then holds。Fileles。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们现在创建一个字典。我将称之为stats。我们想要一个非常简单的字典，我必须说，路径等于个人。虽然我并不喜欢全局变量，但它们确实有其用途。我认为这是其中一种情况。所以我们将说路径，然后存储文件。
 - en: And in case you're wondering， really， all this is going to do is just hold the
     metrics that we're going to scan。Say links。And then the total size in bys。Go ahead
     and run this。 just make sure we didn't misspell anything， we got no errors， so
     we're good to go。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你在想，这实际上只会存储我们要扫描的度量。比如链接，然后是总大小（以字节为单位）。请运行这个，确保没有拼写错误，没有错误，那么我们可以开始了。
 - en: '![](img/fdc7b717fb1febada208161246298987_8.png)'
+  id: totrans-11
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/fdc7b717fb1febada208161246298987_8.png)'
 - en: '![](img/fdc7b717fb1febada208161246298987_9.png)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/fdc7b717fb1febada208161246298987_9.png)'
 - en: Okay。Starting point， we need to get the user input。 We have to have something
     to scan。 So we're going say depth。It input。This function is going to be very simple。
     but there is a bit of complexity we got to explain a little bit here。 So first
     thing we want to do is use this global variable。So we need to use the global keyword。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，起点，我们需要获取用户输入。我们必须有一些东西来扫描。所以我们将说深度输入。这个函数将非常简单，但我们需要解释一些复杂性。因此，第一件事我们要做的是使用这个全局变量。所以我们需要使用
+    global 关键字。
 - en: So global stats。 If we forget to use the global keyword， we're now making a
     new variable。 and then Python will。Depending on the version of Python。 selectively
     choose to use the global variable or create a brand new variable inside of the
     function。So we want to tell Python use the global variable from here， we're going
     to get the user input。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以全局变量。如果我们忘记使用 global 关键字，我们现在正在创建一个新变量。然后 Python 将根据 Python 的版本选择使用全局变量或在函数内部创建一个全新的变量。所以我们想告诉
+    Python 从这里使用全局变量，我们将获取用户输入。
 - en: So we' going to say RE equals， and we're going to do this a little bit different
     instead of just saying input and then get the input。We want to convert that to
     a path all in one line。 So someone going say O S dot path。When we want the absolute
     path， now we want to get the user input。And we're just going to simply do this
     all in one line。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们要说 RE 等于，并且我们将稍微不同地处理，而不是仅仅说输入然后获取输入。我们希望将其转换为路径，全部在一行中。所以有人会说 O S dot path。当我们想要绝对路径时，现在我们想获取用户输入。我们将简单地在一行中完成这一切。
 - en: we're going to say take the user input and convert it to the absolute path。Very
     cool how that works now that we've got this little guy here。We can just check
     to see if it actually exists。And we're going to use OS。path。exist。Notice how we're
     saying if not， meaning if it does not exist if this is going to return faults。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将说获取用户输入并将其转换为绝对路径。很酷，现在我们有了这个小家伙。我们可以检查它是否真的存在。我们将使用 OS.path.exist。注意我们在说如果不是，这意味着如果它不存在，这将返回错误。
 - en: Then we want to take some sort of action。And in this case， I'm just going to
     let the user know， hey。 you screwed up。And we can't really move forward with this
     program， so。Sorry。Back path。Does not exist。And then I'm going to exit our little
     application here now if you don't know what an exit code is。Typically， when you
     run an application， it will run do its thing and then exit。And when it exits。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们想采取某种行动。在这种情况下，我只是想让用户知道，嘿，你搞砸了。我们不能继续这个程序，所以。抱歉，路径不存在。然后我将退出我们的应用程序。如果你不知道退出代码是什么。通常，当你运行一个应用程序时，它会运行，做它的事情，然后退出。当它退出时。
 - en: it tells the operating system what happened。0 means that there were no problems。
     This worked as intended。 But clearly， that's not the case。 So we're going to give
     it an exit code of one。And this is really up to you as the developer to determine
     what these exit codes are。 it could be one， could be 99，91， whatever we wanted，
     we're just going to do one。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 它告诉操作系统发生了什么。0 意味着没有问题。这按预期工作。但显然，情况并非如此。所以我们将给它一个退出代码 1。这实际上取决于你作为开发者来确定这些退出代码是什么。可以是
+    1，可以是 99，91，随我们想要的，我们只会用 1。
 - en: That tells the operating system this did not work as expected and if we have
     an end user they can say。 oh， the program gave me exit code one and you can say，"U，
     yep， you gave me the wrong path。O。Now。 we want to say if。Not O S path。 And we
     want to make sure this is a directory。 because sometimes our users are not that
     smart and they're going to hand us a file or something like that。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 这告诉操作系统这并没有按预期工作，如果我们有最终用户，他们可能会说，哦，程序给了我退出代码一，你可以说，“是的，你给了我错误的路径。”现在，我们想说如果不是
+    O S path，并且我们想确保这是一条目录，因为有时我们的用户并不是那么聪明，他们会给我们一个文件或类似的东西。
 - en: So we're going to say sorry， that path。Is not pat directory。And then let's say
     exit code2。 and we could define whatever we wanted。Now that we have reached this
     point。 we know that we have a valid path。And it exists and it is a directory。
     so we're going to update our global variable and in here we have half。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们要说抱歉，那条路径不是目录。然后我们假设退出代码是 2，我们可以定义我们想要的任何内容。现在我们已经达到了这一点，我们知道我们有一个有效的路径，并且它存在且是一个目录。所以我们将更新我们的全局变量，在这里我们有一半。
 - en: so that's what we're going to update here。And to say stats。Half equals。So we're
     just setting the dictionary value for path to whatever folder they entered。Very
     simple。 very easy to understand logic。Now that we've got the user input and we
     know what path they want to scan。 we want to scan that path recursively。 and we're
     going to do this in a function。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这就是我们要在这里更新的内容。并且说统计信息。half等于。所以我们只是在设置字典值路径为他们输入的任何文件夹。非常简单，逻辑非常容易理解。现在我们已经得到了用户输入，并且知道他们想要扫描的路径，我们想要递归地扫描那个路径。我们将在一个函数中做到这一点。
 - en: So we're going to say de scan。Give it a path。And again。 we want to use that
     global variable so we can say global。Thats。I like that word。 stats reminds me
     of like a doctor or something。 If we want to be super nice。 we can actually print
     out what we're doing here。 So we're going to say scanning。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将说de scan。给它一个路径。同样。我们想使用那个全局变量，所以我们可以说global。Thats。我喜欢这个词。统计信息让我想起医生之类的。如果我们想要非常好，我们实际上可以打印出我们正在做的事情。所以我们会说扫描。
 - en: And then whatever our path is。Now you may be wondering why we would use a variable
     when the path is actually in stats。And the reason being is we're going to do this
     recursively。 meaning this path variable right here is going to change over time
     where the path inside of our dictionary is the root。So this could actually be
     a folder of a folder of a folder， something like that。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后无论我们的路径是什么。现在你可能会想，为什么我们要使用一个变量，当路径实际上在统计信息中。原因是我们将递归地做到这一点。意味着这个路径变量在这里会随着时间的推移而变化，而字典中的路径是根目录。所以这实际上可以是一个文件夹的文件夹的文件夹，类似的东西。
 - en: So that's why just in case you're wondering。Now comes the fancy bit here。 We're
     going to use something called O S dot walk。 And I want to just preface this with
     there are a million different ways to do this。 We're just using one way。 So I'm
     going to actually put millions。Of ways to do this。And I'm sure people down in
     the comments will go， well， you shouldn't use OSW。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这就是为什么如果你在想这个问题。现在来了个花哨的部分。我们要使用一个叫做O S.dot walk的东西。我想先说明一下，有一百万种不同的方法来做到这一点。我们只是使用一种方法。所以我实际上会列出数百万种方法来做这件事。我相信评论区里会有人说，你不应该使用OSW。
 - en: you should use this other way or Gob or whatever， we're just going to use OS
     walk because it's simple to understand。So we're going to say four。Walk is going
     to return three values， it's going to say root。Ds。And files。So root is obviously
     the root D is a list of directory and files are a list of files。 I love how this
     is just super self explanatory。So。That is going to be in。O， S dot walk。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 你应该使用其他方法或Gob之类的，我们只是会使用OS walk，因为它简单易懂。所以我们会说四。Walk将返回三个值，它会说根目录、目录和文件。所以根目录显然是根目录，目录是目录的列表，文件是文件的列表。我喜欢这个非常自解释的方式。所以这将在O，S.dot
+    walk中。
 - en: And this is why I like using walk because it's super simple to use。 It's super
     simple to understand。 We're going to scan that path if I can spell path correctly。And
     then I want to say on error。We're going to set this to none。 We have to do this
     because there's going to be some folders you just simply won't have access to
     like you'll get an access denied or you'll have some sort of weird hard drive
     error or something you don't want to crash your program。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是我喜欢使用walk的原因，因为它非常简单易用。非常容易理解。我们将扫描那个路径，如果我能正确拼写路径的话。然后我想说在错误时。我们将其设置为none。我们必须这样做，因为会有一些文件夹你根本无法访问，比如你会得到访问被拒绝，或者你会遇到某种奇怪的硬盘错误，或者你不想让你的程序崩溃。
 - en: So we're going to say on error equals none。 We could set that to a function
     or whatever we wanted to do。 But we're just going to say none。 So take no action。And
     then follow links。We're going to set that to alts。What this means is if you had
     a link。Think of it like a short cut that points somewhere else。 If that was set
     to true。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将说在错误时等于none。我们可以将其设置为一个函数或我们想做的任何事情。但是我们只会说none。所以不采取任何行动。然后跟随链接。我们将其设置为alts。这意味着如果你有一个链接。想象一下，它像是指向其他地方的快捷方式。如果那被设置为true。
 - en: You could scan way outside。 So like if you had a folder one。To comment this
     out。 let's say you had folder  one and inside a folder one， there was a link。That
     pointed to Boer 3。You kind of see what's going on here。Azure scanning folder 1。If
     you're following that link。 you're going to jump to a completely different folder，
     even though say folder 3。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以扫描很远的地方。所以比如说，如果你有一个文件夹一。为了注释掉这一点。假设你有文件夹一，在文件夹一里面有一个链接。那个链接指向文件夹三。你大概能看到这里发生了什么。Azure正在扫描文件夹1。如果你跟随那个链接，你将跳到一个完全不同的文件夹，即使说是文件夹3。
 - en: Is at the root level like up here， so we don't want to do that。 want to make
     sure that we're not following those links。All right， From here。 We're going to
     say stats。And we want to update our metrics here。 So we want to know the folders。And
     the folders are going to be plus equals， and we want the link。Of， you guessed
     it， yours。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 在根级别，就像上面那样，所以我们不想这样做。我们想确保不跟随那些链接。好的，从这里开始。我们将说 stats。我们想在这里更新我们的指标。所以我们想知道文件夹。文件夹将是
+    plus equals，我们想要链接。你猜对了，是你的。
 - en: So this is going to be a list。And we want to get the length or the number of
     items in that list。 I don't remember if it's actually a list or tuple。 but Telec
     is telling me it's a list and files will be a list as well。List your tus I don't
     care。 we're just going to get the length of it now we're going to say files。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这将是一个列表。我们想获取那个列表的长度或项目数量。我不记得它实际上是列表还是元组。但 Telec 告诉我它是一个列表，files 也将是一个列表。列出你的元组，我不在乎。我们现在只会获取它的长度，现在我们将说
+    files。
 - en: we're going to update the files metric as well。You got to be a little bit careful
     that it is folders。 filess， we're spelling those correctly， otherwise we're actually
     adding a different key altogether。Now， from here。What we want to do is say。Or。Name
     in files。 And we're going to go through and scan each one of these files independently。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们也将更新文件的指标。你需要小心一点，它是 folders。filess，我们拼写这些时要正确，否则我们实际上是在添加一个完全不同的键。从这里开始。我们想说。或者。Name
+    in files。我们将逐一扫描每个文件。
 - en: We're going to say full name。Equals O dot。Half。At join。 And what this is going
     to do is allow us to join the root。Or the folder name with the actual file name。
     So these are going to be two different things。 This will be like the actual path，
     and this will just be the name without the directory name attached to it。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将说 full name。等于 O dot。Half。At join。这样做将允许我们将根目录或文件夹名称与实际文件名连接起来。这将是两件不同的事情。这就像实际的路径，而这只是没有附加目录名称的名称。
 - en: So this could be something like。S dot T X T， not the actual full path。 So we
     want to make sure that we are joining those together。 and O path join does exactly
     that joins two or more path name components。All right。Takes care of a lot of the
     headache for us， so we don't have to worry about it。From there。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这可能是类似于 S dot T X T，而不是实际的完整路径。我们想确保将它们连接在一起。O path join 正是这样，连接两个或多个路径名称组件。好的。这为我们解决了很多麻烦，所以我们不必担心它。从这里开始。
 - en: let's go ahead and get a size。 And we're going to say O， S dot path。You see
     how we're using O S quite a bit， especially path。 So O S that path， and we want
     to get size。This is going to get the size of that file， and we're going to use
     the full path name rather than just the name。Once we've got that size， we can
     go in here and we can say stats。And jump up。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们继续获取一个大小。我们将说 O，S dot path。你看我们在很大程度上使用 O S，尤其是 path。所以 O S 的 path，我们想获取大小。这将获取那个文件的大小，我们将使用完整的路径名称，而不仅仅是名称。一旦我们得到了那个大小，我们可以进入这里，我们可以说
+    stats。然后跳上去。
 - en: let's see what key we used here， size。So we can just go。Size。And let's increment
     that。So。Starting at the top， we're going to scan a path and we're going to go
     ahead and just keep scanning that path over and over and over and over and over。
     This is what I love about this。Now， one thing you should know is this is a bit
     misleading。 we could have actually have done our stats if we wanted to。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看看我们在这里使用的键，size。所以我们可以直接使用。Size。然后让我们增加它。所以，从顶部开始，我们将扫描一个路径，我们将不断扫描那个路径。这就是我喜欢这个的原因。现在，有一点你应该知道，这有点误导。其实我们如果想的话，可以完成我们的
+    stats。
 - en: but I wanted the ability to use this somewhere else if we needed to by allowing
     us to jump into that path。 You'll see what I mean here in a little bit。![](img/fdc7b717fb1febada208161246298987_11.png)
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我希望在需要时能在其他地方使用这个，通过允许我们跳入那个路径。你稍后会明白我的意思。![](img/fdc7b717fb1febada208161246298987_11.png)
 - en: '![](img/fdc7b717fb1febada208161246298987_12.png)'
+  id: totrans-37
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/fdc7b717fb1febada208161246298987_12.png)'
 - en: Now that we have scanned recursively， we just simply want to display to the
     user what we've done so far。 And this would actually be right before the program
     exits。 So we're going to say depth display。 And again， there's a bunch of different
     ways we could have done this。Let's go ahead and lowercase that。And really， all
     we want to do is just print out our dictionary。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们已经递归扫描，我们只想简单地向用户展示我们到目前为止所做的事情。这实际上是在程序退出之前的最后一步。所以我们将说 depth display。再一次，我们可以用很多不同的方法来做到这一点。我们继续将其转换为小写。实际上，我们只想打印出我们的字典。
 - en: That's why I put everything in a dictionary because it's nice neat and compact。
     So we're going to say global stats。 now you know what the global keyword does。
     We're going to print word results。And then we're going to print out the key value
     pairs in the dictionary。 so I'm going say four。Acom a v。也了。That's。还有个因思。That's
     going to get us the key value pairs。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是我把所有东西放在字典里的原因，因为它整齐且紧凑。所以我们将说全局统计数据。现在你知道全局关键字的作用了。我们将打印单词结果。然后我们将打印字典中的键值对。所以我将说四。Acom
+    a v。也了。那。还有个因思。那将给我们键值对。
 - en: And then it's just very， very simple from here， rent。And we're going to format
     that。And I want to print the key。With an equal sign， and then the value。Very，
     very simple function。 but it's going to look really elegant on the screen。Okay，
     it's time to wrap things up here。 let's do our main function so。Let's go ahead
     and say。De mean。And some Python nus are going to say。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后从这里开始就非常简单，租赁。我们将格式化它。我想打印键，带等号，然后是值。非常简单的函数。但在屏幕上看起来会非常优雅。好了，是时候在这里结束了。让我们做我们的主函数。好吧，让我们继续说。De
+    mean。一些Python nus将会说。
 - en: do we actually need to make a main function， I mean， we could， technically，
     if we wanted to。Do something like if name equals。And we want to say underscore，
     underscore main。And then we could do our code here。You absolutely could。 I don't
     like doing this。 I like putting everything right a nice neat function in case
     I want to swap out functions later Then I'm not copying and pasting and doing
     a bunch of other stuff。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们真的需要做一个主函数吗？我的意思是，如果我们想的话，技术上可以做一些像如果名称等于的事情。然后我们想说__main__。然后我们可以在这里做我们的代码。你绝对可以这样做。我不喜欢这样做。我喜欢把所有东西放在一个整洁的函数里，以防我想后期更换函数，这样我就不用复制粘贴做其他事情。
 - en: So instead I'll just。Actually call our main function right there。Now remember。
     what we're doing here is we're checking to see how this file this individual script
     was run if it's run directly by the Python interpreter。 its name is going to be
     underscore， underscore main underscore underscore and we've talked about the underscore
     in the past。 but these are special characters that Python uses to determine， hey，
     this is internal to Python。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我只会在这里实际调用我们的主函数。现在记住，我们在这里做的是检查这个文件，这个单独脚本是如何运行的，如果它是由Python解释器直接运行的，它的名称将是__main__，我们之前谈过下划线。但这些是Python用来确定的特殊字符，嘿，这是Python内部的。
 - en: So if Python runs it， the name is going to be main。 if it's anything else that
     means another script is calling this。 and I don't want to fire off this main function
     instead， the script。 the calling script may want to call display or scan。 which
@@ -269,52 +368,69 @@
     say， global。Thats。And actually， I don't need those。 So we're going to tell it，
     hey， we want to use the global variable。From here， we're going to go ahead and
     get the user input。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以如果Python运行它，名称将是main。如果是其他名称，意味着另一个脚本在调用它。我不想触发这个主函数，而是调用脚本。调用脚本可能想要调用显示或扫描。这就是我为什么留着那里的原因，而不是使用这个全局。哇，很多解释。但我想你现在能理解了。一旦我们走到这一步。我们可以说，全局。那。实际上，我不需要那些。所以我们将告诉它，嘿，我们想要使用全局变量。从这里，我们将继续获取用户输入。
 - en: We could have done this a little differently。 We could have had get input return
     of value。 but instead， I wanted everything encapsulated in there。 That way， if
     some other function called it。 it's all baked right into our global variable。Little
     bit of a design choice。 And you may have to tweak that depending on your needs。
     Now， let's go ahead and scan。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们本可以稍微不同地做这件事。我们本可以让获取输入返回一个值。但相反，我想把所有东西封装在里面。这样，如果其他函数调用它，所有内容都直接融入我们的全局变量。这是一个设计选择。你可能需要根据你的需求进行调整。现在，让我们继续扫描。
 - en: And notice how we have a path now we have to feed this， and we can just say
     stats。Half。We're getting the path。From the git input， And we could very easily
     hard code that into the app if we wanted to。And then finally， let's go ahead and
     display the end result to the user。 And we can kind of condense this down a little
     bit， make a little easier on the eyes。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意我们现在有一个路径，我们必须提供这个，我们可以简单地说统计。半。我们正在获取路径。从git输入。如果我们想的话，我们可以很容易地把它硬编码到应用程序中。最后，让我们继续向用户显示最终结果。我们可以稍微简化一下，让它在视觉上更容易些。
 - en: So the main logic is very simple。We're going to use our global variable，'re
     going to get the input。 we're going to scan that path and then display the results。
     let's go ahead and fire this thing off and see what happens。Al right， so enter
     a folder path。 if I want to just scan my current path， I can just press a dot
     because remember dot is the current directory where dot dot is the parent directory。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以主要逻辑非常简单。我们将使用我们的全局变量，获取输入。我们将扫描该路径，然后显示结果。让我们开始这个过程，看看会发生什么。好的，输入一个文件夹路径。如果我想扫描当前路径，只需按一个点，因为记住，点代表当前目录，而点点代表父目录。
 - en: And it says sure enough our current directory is this guy right here， Python
     3。 there are two folders， two files， zero length， and the total size in bytes
     is 2594。All right。 so this is a pretty beefy little program that we've got here
     so far， it's simple。 it's easy to understand and use but at the same time it's
     doing some pretty complex logic for beginner land here。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 结果显示，当前目录确实是这里的这个，Python 3。有两个文件夹，两个文件，长度为零，总大小为2594字节。好的。所以到目前为止，这个程序相当不错，简单。它易于理解和使用，但同时也在执行一些相当复杂的逻辑，适合初学者。
 - en: The main takeaways from this is， yes， you can use a global variable。 although
     it may not always be the best designed choice。Always， always。 always validate
     the user input， you never want to just trust the end user。I mean， for example。
     what if I ran this and they said cats。Sorry， that path does not exist。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 主要收获是，是的，你可以使用全局变量。尽管这可能并不总是最佳设计选择。始终，始终，始终验证用户输入，你绝对不想完全信任最终用户。我的意思是，例如，如果我运行这个，输入“猫”。抱歉，该路径不存在。
 - en: What if we just tried scanning for cats， You know， your program's going to crash。Now，
     scan。 the major takeaway from this is there are millions of different ways of
     doing this。 I used OS S walk， Use what works for you。 I personally prefer OS walk
     because it allows me to easily break out here if I need to because it's in a nice
     neat for loop。So if I wanted to go so many levels deep， I could bake that logic
     again。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们尝试扫描“猫”，你的程序将崩溃。现在，扫描。从这个过程中的主要收获是，有成千上万种不同的实现方式。我使用了OS S walk，选择适合你的方式。我个人更喜欢OS
+    walk，因为它让我可以轻松地在需要时中断，因为它在一个整齐的for循环中。所以如果我想深入几层，我可以再次构建那个逻辑。
 - en: Display we're pretty much just using the directory items to get the key value
     pairs and then print them out。 And then we covered our naming convention internal
     to Python。![](img/fdc7b717fb1febada208161246298987_14.png)
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 显示时，我们基本上只是使用目录项来获取键值对，然后打印出来。接着我们讨论了Python内部的命名约定。![](img/fdc7b717fb1febada208161246298987_14.png)

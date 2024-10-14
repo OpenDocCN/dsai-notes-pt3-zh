@@ -1,104 +1,150 @@
 - en: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P1：L1- 安装
     - ShowMeAI - BV12m4y1S7ix
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全 pipeline！＜实战教程系列＞ - P1：L1- 安装
+    - ShowMeAI - BV12m4y1S7ix
 - en: Hi， everybody。 Welcome to your new tutorial series。 In this series。 we are going
     to learn how to work with pieytorch。 Pytorch is one of the most popular machine
     learning and deep learning frameworks。 It's really fun to work with it and develop
     cool applications。 So I hope you watch the series and learn all about the necessary
     basics for this framework。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，欢迎来到你们的新教程系列。在这个系列中，我们将学习如何使用 Pytorch。Pytorch 是最流行的机器学习和深度学习框架之一。与之一起工作并开发酷炫的应用程序真的很有趣。所以我希望你们观看这个系列，并学习到关于这个框架所需的基础知识。
 - en: So in this first video， I show you how we install pieytorrch。 So let's start。😊，And
     for this。 we go to the official website， Pytorch dot org。Then click on get Start。Then
     select the newest pietoch built。 So right now， this is version 1。3。![](img/fc51496b5433aed2f6c7414292105f98_1.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个第一视频中，我会展示如何安装 Pytorch。让我们开始吧。😊，为此，我们访问官方网站 Pytorch dot org。然后点击“开始”。接着选择最新的
+    Pytorch 构建。目前这是版本 1.3。![](img/fc51496b5433aed2f6c7414292105f98_1.png)
 - en: Then select your operating systems。 In my case， it's a Mac。Then select the package
     manager with which you want to install Pytorch。 So I highly recommend to use Ananaconda。
     And if you haven't installed Ananaconda yet and don't know how to use it。 then
     please watch my other tutorial about Ananaconda。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后选择你的操作系统。在我的例子中，是 Mac。接着选择你想用来安装 Pytorch 的包管理器。所以我强烈推荐使用 Anaconda。如果你还没有安装
+    Anaconda，并且不知道如何使用它，请观看我关于 Anaconda 的其他教程。
 - en: So I will put the link in the description below。And then select the newest Python
     version。 So here I select Python 3。7。And unfortunately， on the Mac。 you can only
     install the CPU version right now。 But if you are on Linux or Windows and want
     to have GP support。 then you can also install or have to install the Kuda toolkit
     first。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我会把链接放在下面的描述中。然后选择最新的 Python 版本。所以这里我选择 Python 3.7。不幸的是，在 Mac 上，你目前只能安装 CPU
+    版本。但如果你在 Linux 或 Windows 上并希望获得 GP 支持，那么你还需要先安装 Kuda 工具包。
 - en: So the Kuda toolkit is a development environment for creating high performance
     GP accelerated applications。For this， you need an Nvidia GP in your machine。 And
     if you have that。 then you can go to the website， developer dot Nvidia dot com
     slash kuda minus downloads。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: Kuda 工具包是用于创建高性能 GP 加速应用程序的开发环境。为此，你的机器上需要有一个 Nvidia GP。如果你有的话，可以访问网站，developer
+    dot Nvidia dot com slash kuda minus downloads。
 - en: '![](img/fc51496b5433aed2f6c7414292105f98_3.png)'
+  id: totrans-6
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/fc51496b5433aed2f6c7414292105f98_3.png)'
 - en: '![](img/fc51496b5433aed2f6c7414292105f98_4.png)'
+  id: totrans-7
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/fc51496b5433aed2f6c7414292105f98_4.png)'
 - en: '![](img/fc51496b5433aed2f6c7414292105f98_5.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/fc51496b5433aed2f6c7414292105f98_5.png)'
 - en: And then we have to be careful because right now， the newest supported Kuda
     version by Pytorch is Kuda 10。1。 So we have to get this version。 So right now，
     the newest version is 10。2。 So we have to go to legacy releases。![](img/fc51496b5433aed2f6c7414292105f98_7.png)
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们需要小心，因为目前 Pytorch 支持的最新 Kuda 版本是 Kuda 10.1。所以我们需要获取这个版本。目前最新版本是 10.2。因此我们需要去旧版发布页面。![](img/fc51496b5433aed2f6c7414292105f98_7.png)
 - en: '![](img/fc51496b5433aed2f6c7414292105f98_8.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/fc51496b5433aed2f6c7414292105f98_8.png)'
 - en: Then select the newest Ka toolkit 10。1。![](img/fc51496b5433aed2f6c7414292105f98_10.png)
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后选择最新的 Kuda 工具包 10.1。![](img/fc51496b5433aed2f6c7414292105f98_10.png)
 - en: Then select your operating system。 So for example， Windows， Windows 10。 then
     download the installer and follow the instructions。 And this will also check if
     your system is suitable for the Ka toolki。![](img/fc51496b5433aed2f6c7414292105f98_12.png)
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后选择你的操作系统。例如，Windows，Windows 10。接着下载安装程序并按照说明操作。这也会检查你的系统是否适合 Ka 工具包。![](img/fc51496b5433aed2f6c7414292105f98_12.png)
 - en: So if this is successful， then we can go back。To the Py chart site and copy
     this command。 So in my case， on the Mac now， I need this command。 So let's copy
     this。![](img/fc51496b5433aed2f6c7414292105f98_14.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果成功，那么我们可以返回 Py chart 网站并复制这个命令。在我的例子中，现在在 Mac 上，我需要这个命令。让我们复制这个。![](img/fc51496b5433aed2f6c7414292105f98_14.png)
 - en: And now let's open up a terminal。 And first of all。 we want to create a virtual
     environment with Connda in which we want to install all of our packages and install
     pie torch。 So let's create an environment。 Let's say Conda create minus n and
     now give it a name。 So I call this pie torch。😊，Simply Pytorch and then also specify
     the Python version。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们打开一个终端。首先，我们想使用 Conda 创建一个虚拟环境，在其中安装我们所有的包和安装 Pytorch。所以让我们创建一个环境。假设使用命令
+    Conda create minus n，然后给它一个名称。我把这个叫做 Pytorch。😊，简单地称为 Pytorch，然后还指定 Python 版本。
 - en: So let's say Python equals 3。7。And then hit enter。 Now。 this will create your
     virtual environment with Python 3。7。 Let's hit enter again to proceed。And this
     will take a while。And now it's done。 So now we can activate this environment with
     Conda Act pytorch。 And now we are inside of this environment， and we can see this
     because here in the beginning。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设Python等于3。7，然后按回车。这将创建你的Python 3。7虚拟环境。再按一次回车以继续。这将花费一些时间。现在完成了。所以现在我们可以用Conda激活这个环境，输入pytorch。现在我们处于这个环境中，这一点在开头可以看到。
 - en: we have pytorch in parentheses。 So this is the name of the environment。😊，And
     now， let's paste our。In command from the website。 So this will install pietorrch
     in all the necessary packages。 So this will also take a couple of seconds。Now，
     again， let's hit enter to proceed。And now it done。 And now we have installed Pytorrch，
     and we can verify that by starting Python inside this environment。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们在括号中有pytorch。这是环境的名称。😊，现在，让我们从网站复制我们的命令。这将安装pytorch及所有必要的包。这也将花费几秒钟。现在，再次按回车以继续。现在完成了。我们已经安装了Pytorch，可以通过在这个环境中启动Python来验证。
 - en: So let's say type Python and enter。 And now we have Python running。 and now
     we can import the torch module。 So。If the installation was not correct。 and right
     now。 you would get a module not found error。 But in this case， it is correct。
     And now we can。 for example， create a torch tensor。 So let's say x equals torch
     dot R and of size 3。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以假设输入Python并按回车。现在我们有Python在运行。现在我们可以导入torch模块。如果安装不正确，你将会遇到“找不到模块”的错误。但在这种情况下，它是正确的。现在我们可以，例如，创建一个torch张量。假设x等于torch.dot.R，大小为3。
 - en: And now we want to print our tensor。 So this also works。And now we can also
     check if kuda is available。 so we can say to torch dot kuda dot is underscore
     available。 So in my case， it says false。 But if you've installed the kuda toolkit
     and also the GP supported Pytorch packages。 then this should say true。So， yeah。
     So no now we have installed in on pieytorch and can get started working with it。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们想打印我们的张量。这也可以正常工作。我们还可以检查kuda是否可用。因此我们可以说torch.dot.kuda.is_available。在我的情况下，它显示为false。但如果你安装了kuda工具包以及支持GP的Pytorch包，那么这里应该显示为true。所以，是的。现在我们已经在pytorch上安装了，可以开始使用它。
 - en: So I hope you enjoyed this and see you in the next tutorial bye。😊。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我希望你喜欢这个教程，下次见，拜拜。😊。

@@ -1,252 +1,339 @@
 - en: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
     - P5：5）Python字符串 - ShowMeAI - BV1yg411c7Nw
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
+    - P5：5）Python字符串 - ShowMeAI - BV1yg411c7Nw
 - en: '![](img/5ee15e25ed6d7a0305e5074fdaf380da_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/5ee15e25ed6d7a0305e5074fdaf380da_0.png)'
 - en: Welcome back everyone。 My name is Brian， and we're going to talk about strings。
     So what is a string That's a very good question we have before you a simple diagram。
     the word hello H E LLO， and there's some numbers here and some numbers here and
     we're going to explain all this。So really a string is a list。Of you guessed it
     characters in each character translates to a numerical value。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，欢迎回来。我是布莱恩，我们将讨论字符串。那么字符串是什么？这是个很好的问题，我们面前有一个简单的图示。单词hello H E LLO，旁边有一些数字，我们将解释这些。实际上，字符串是一个列表。没错，字符中的每个字符都转换为一个数值。
 - en: So if you look down at your keyboard and look it like the letter H。That letter。
     depending on whether the shift key is pressed， will be 104。 And when I say depending
     because there's a numerical difference between lower case and upper case。 we're
     talking about lower case here。Some people will say。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你低头看你的键盘，把它看作字母H。那个字母，依赖于是否按下了shift键，将是104。我提到“依赖”是因为小写和大写之间有数值差异。这里我们讨论的是小写。有些人会说。
 - en: oh that's ASCI I've heard about this before， this is actually not ASI it's Unicode。
     specifically UTF 8， I think is universal text format8 bit or version 8， I forget。
     but basically Python under the hood sees as UTF 8。So it doesn't matter if you're
     typing in English or Korean or Spanish or。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦，那是ASCI，我以前听说过，这其实不是ASI，而是Unicode。具体来说是UTF-8，我想是通用文本格式8位或版本8，我忘了。但是基本上Python在底层以UTF-8处理。因此无论你是在输入英语、韩语还是西班牙语，都是一样的。
 - en: Ancient Greek or some mathematical algorithm。 There is a number assigned to
     each letter。![](img/5ee15e25ed6d7a0305e5074fdaf380da_2.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 古希腊或某些数学算法。每个字母都有一个分配的数字。![](img/5ee15e25ed6d7a0305e5074fdaf380da_2.png)
 - en: Comp knows what that is and takes care of all of this for you。 so you don't
     have to worry about it。The two major things you should focus on is well， the letters
     themselves that form the string and this down here。 which is the position。Everything
     is in a list。 So when you look at it H， E， L L O。 there are five letters there，
     and there are five numbers starting with 0。 This is a 0 based index，0。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 计算机知道那是什么，并为你处理这一切，所以你不必担心。你应该关注的两件主要事是，构成字符串的字母，以及下面这个，位置。所有内容都是一个列表。所以当你看到H，E，L，L，O时，那里有五个字母，且从0开始有五个数字。这是一个基于0的索引，0。
 - en: 1，2，3，4。So if I say give me the letter at the third position。H， EL， this guy。That
     is actually number 2， because it's0 based。 It's a little confusing if you're newbie。
     you're going to go and wait a minute。 that's actually number 3。 Remember， it starts
     with 0。 So the first one's always 0。 We're thinking in terms of computers 0，1，2。Is
     this guy right here？
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 1，2，3，4。所以如果我说给我第三个位置的字母。H，EL，这个家伙。实际上是数字2，因为它是基于0的。如果你是新手，可能会有点困惑，你会想等一下。实际上是数字3。记住，它是从0开始的。所以第一个总是0。我们考虑计算机的角度，0，1，2。这个家伙就在这里？
 - en: Once you wrap your head around that， you know more than most people walking
     around， and honestly。 it's not super hard。 You just have to understand that everything
     you see on the screen。Has some sort of number attached to it， the computer handles
     that number。 You just need to worry about what letter and what position。 And we're
     going to go into that。Okay。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦你理解了这一点，你就比大多数人更了解这个问题，老实说，这并不太难。你只需理解屏幕上看到的每一件事都有某种数字与之关联，计算机处理那个数字。你只需要关注字母和位置。我们将深入探讨这一点。好的。
 - en: let's flip over individual Studio code here and we're just going to copy and
     paste some code here and this is going to look like absolutely nothing you've
     seen before。 don't worry about it， just taking a leap of faith。 we're going to
     cover this in a future video。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们翻转一下单独的Studio代码，我们将复制并粘贴一些代码，这看起来绝对是你之前见过的任何东西。别担心，只需迈出信心的一步。我们将在未来的视频中讲解这一点。
 - en: but really what we're doing is we're saying4 x。Each letter in the string hello。
     we're going to print out the letter and its numerical value。And you can see 104，
     101 108- 108111。Eurn those into memory 104，101，108，108111。 If we flip back。 it's
     exactly what I told you it was going to be。 So let's dive in here and figure out
     what's going on。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 但实际上我们在做的是，针对字符串hello中的每个字母，打印出字母及其数值。你可以看到104，101，108- 108111。把它们变成内存104，101，108，108111。如果我们回头看看，这正是我告诉你的结果。那么让我们深入了解一下，看看发生了什么。
 - en: Now， again， we are going to cover loops in a future video。 That's not this video。
     We are hyper focused on strings。 So the first thing when you do is baby steps
     how to make a string。Very， very simple。Simply make a variable。And assign it。Lets
     do that again。Notice how the first name or the first variable。Has double quotes。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，我们将在未来的视频中讨论循环。这不是这个视频。我们专注于字符串。所以你要做的第一件事是如何制作字符串，简单得很。只需创建一个变量并赋值。再来一次。注意第一个名字或第一个变量。使用了双引号。
 - en: where the last name or the second variable has single quotes。In Python， you
     can do it either way。And they do this not so much to confuse you， but simply because
     there are a bunch of little gotchas that you're going to find later on in your
     life as a programmer。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 当姓氏或第二个变量使用单引号时。在 Python 中，你可以两种方式都做。他们这样做并不是为了让你困惑，而是因为作为程序员，你会在生活中发现很多小问题。
 - en: and this is super convenient that you can switch it around however you want。So
     the first thing you're going to want to try is just simply to well。 merge them
     into one larger string or print them out。 So we're going to print。I want to say
     first。 was。And last now what do you think is going to happen here。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 这非常方便，你可以随心所欲地调整它。所以你首先要尝试的就是简单地将它们合并成一个更大的字符串或打印出来。所以我们要打印。我想说 first。是。和 last
+    现在你认为这里会发生什么。
 - en: you notice how we're using the plus sign if you're a math nerd， you're going
     to say， oh。 this is going to kick out some weird number， actually no。 it's going
     to say you guessed it it's going I think the term is called concatenate them。
     it's going to merge them together into one string in memory。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 你注意到我们在使用加号吗？如果你是数学迷，你会说，哦。这会输出一些奇怪的数字，实际上不是。它会说你猜对了，我想这个术语叫做连接。它会把它们合并成一个内存中的字符串。
 - en: so it's saying the first Brian with a space。And last， Karen's。Very， very simple。You
     can also do something called formatting， which we've done before。 and it really
     does help you avoid errors in the long term。 So you can say something like this。
     print F。And notice how I've got quotes， doesn't matter if you're doing single
     or double。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以它说的是第一个带空格的布莱恩。和最后的，卡伦斯。非常简单。你还可以做一些叫格式化的事情，我们之前做过。这确实可以帮助你在长期内避免错误。所以你可以这样说。print
+    F。注意我使用了引号，无论是单引号还是双引号都无所谓。
 - en: And I'm going to say， hello， my name is。 and then。Let's see here。 There we go。
     I had to look at my keyboard to figure out where that was。 And then we just type
     the variable name。First。And then， last。Now， we tend to use formatting to avoid
     issues。 You've seen me do it already。 but you probably haven't really realized
     why。 And we're going to cover that a little bit here。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 我要说的是，您好，我的名字是。然后，让我们看看。好吧。我得看看我的键盘来找出那是什么。然后我们只需输入变量名。First。然后是 last。现在，我们倾向于使用格式化来避免问题。你已经看到我这样做过，但你可能还没有真正意识到为什么。我们将在这里稍微讨论一下。
 - en: So hello， my name is Brian Karenns。To kind of compound that in your mind。 let's
     make a variable called hers。 And we're going to say。Others。Notice how I'm mixing
     and matching these。I'm using double quotes so Python knows， hey。 this is the string，
     but we could also use single quotes so that gets super confusing。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，大家好，我叫布莱恩·卡伦斯。为了加深你的理解，让我们创建一个叫做 hers 的变量。我们要说 Others。注意我如何混合这些内容。我使用双引号，以便
+    Python 知道，嘿，这就是字符串，但我们也可以使用单引号，这样就会变得非常混乱。
 - en: What it's going to do is take the first one it Cs and says up。 you're using
     double quotes to make the string， so if I were to change this to a single quote。Notice
     how this letter suddenly turned white。Even if I end it in a single quote。 it's
     going to get really， really annoyed with me。 See， bo syntax error in valid syntax。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 它会取第一个，它会说，哦，你正在使用双引号来构造字符串，所以如果我把它改成单引号。注意这个字母突然变成了白色。即使我用单引号结束，它也会对我非常不满。看，语法错误，无效语法。
 - en: If you ever see a syntax error， really， what Python's telling you is。 you screwed
     something up and it'll tell you exactly where。In this file on line 11， Dat。 dot
     do and hers。 And then there's a little arrow right here under S。 doesn't know
     what to do with this。Because it is not in the string。Change that。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你看到语法错误，实际上，Python 想告诉你的是，你搞错了什么，它会告诉你具体在什么地方。在这个文件的第 11 行，Dat.dot do 和 hers。然后在
+    S 下面有一个小箭头。它不知道该如何处理这个，因为它不在字符串中。改变它。
 - en: It put the double quote there and it magically fixes it。See， doesn't make a
     whole lot of sense。 so let's change that back。This is why you can mix and match
     these， it makes it super， super simple。And we can just print that out and it works
     as expected， there's our little single quote right there。 and we don't have to
     worry about any special encoding or formatting or anything like that。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 它放了双引号，然后神奇地修复了它。看，这并没有太多意义，所以让我们改回去。这就是你可以混合搭配的原因，它让事情变得超级简单。我们可以直接打印出来，效果如预期那样，这是我们的小单引号，我们不需要担心任何特殊编码或格式或其他事情。
 - en: '![](img/5ee15e25ed6d7a0305e5074fdaf380da_4.png)'
+  id: totrans-21
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/5ee15e25ed6d7a0305e5074fdaf380da_4.png)'
 - en: '![](img/5ee15e25ed6d7a0305e5074fdaf380da_5.png)'
+  id: totrans-22
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/5ee15e25ed6d7a0305e5074fdaf380da_5.png)'
 - en: Okay， so to solidify this under the hood， a string is a unIode series of characters
     specifically formatted in UTF 8。 If you want something other than UTF 8， you're
     going to have to go out and Google how to do that。I'm just saying we haven't covered
     it yet， we may cover in the future。 but if you need something immediately， definitely
     go out to Google。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，为了巩固这一点，从底层来说，字符串是一个Unicode字符序列，特别格式化为UTF-8。如果你想要其他格式而不是UTF-8，你得去谷歌一下怎么做。我只是说我们还没有覆盖这个，将来可能会，但如果你需要立即的东西，去谷歌一下绝对没错。
 - en: A string is a sequence of one or more characters and those characters are numerical
     values and that's what we're really going to drive home right now。Let's make a
     variable let's call this S1。And we want this to be a character。 noticeice how
     it's looking for an integer。 Return a unicode string of one character with Ornal。
     and then it gives you some examples there。 And I'm going to say because I have
     this baked into memory 72。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 字符串是一系列一个或多个字符，这些字符是数值，这正是我们现在要强调的。让我们创建一个变量，叫做S1。我们希望这是一个字符。注意它在寻找一个整数。返回一个包含字符的Unicode字符串，然后它给你一些示例。我将说，因为我把72记在脑海里。
 - en: And then we're going to make another one。那个试一试。Character， and we're going to
     say 105。Now。 you don't see it， but I'm sitting here cheating a little bit。 I'm
     looking at。The UTF specifications and the character tables， which you can see
     definitely by visiting these links and other links。And it will give you the numeric
     values。 Now， this is if you wanted to do something like this。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们要再创建一个。试一试这个字符，我们说105。现在，你看不到，但我这里有点作弊。我在看UTF规格和字符表，你可以通过访问这些链接和其他链接看到它们。它将给你数字值。如果你想做这样的事情。
 - en: you really don't need to。I'm just demonstrating。 it can be done。So we're going
     to say S1 plus S2。 and let's kick that out and it spells the word high。 notice
     it's a capital H lowercase I。72。Now。Lowercase H is 104。Upper case H is 72。 This
     is what I mean by there's a fundamental difference between upper and lower。Now，
     you may be inclined to say now， what about bold and italic nu， that's actually
     not part of it。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 你其实并不需要这样做。我只是演示一下，可以做到。所以我们说S1加S2。让我们运行一下，它拼出单词high。注意这是大写H和小写i。72。现在，小写h是104，大写H是72。这就是我所说的大写和小写之间的根本差异。现在，你可能会倾向于问，粗体和斜体呢，这实际上不在其中。
 - en: Those are not letters。 Those are just simply styling and formatting of what
     you see on the screen。 So really， all we're talking about is upper and lowercase。It
     actually goes way。 way beyond that you can do something like this。To say print。
     and I must say character。 And I really have to cheat and look at my notes for
     this one，8，7，1，0。 And this goes。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 那些不是字母。它们只是你在屏幕上看到的样式和格式。因此，我们讨论的实际上是大写和小写。它实际上远不止于此，你可以这样做。比如说打印。我要说字符。我真的得作弊一下，看我的笔记，8，7，1，0。这就来了。
 - en: Way beyond asking。Let's go ahead and save and run and see what this looks like。
     Boom。 it's this little mathematical symbol right there。 That's right。 It's got
     math symbols baked right into it。 You can do some really cool things with just
     simple characters。😊。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 远不止于提问。让我们继续保存并运行，看看这是什么样子。砰！就是这个小数学符号。没错，它里面包含了数学符号。你可以用简单的字符做一些非常酷的事情。😊
 - en: '![](img/5ee15e25ed6d7a0305e5074fdaf380da_7.png)'
+  id: totrans-29
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/5ee15e25ed6d7a0305e5074fdaf380da_7.png)'
 - en: '![](img/5ee15e25ed6d7a0305e5074fdaf380da_8.png)'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/5ee15e25ed6d7a0305e5074fdaf380da_8.png)'
 - en: You may have termred the term， escape characters。Now， what is an escape character。
     It's not something out of a novel， although it could be。But basically。 instead
     of memorizing all these weird numbers， they have it built right into the language
     in actually most languages in even operating systems。 and they're called escape
     characters。What it means is you can escape a string and print a special character
     and let's take a look at how this works here some as a print。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可能听说过转义字符。那么，什么是转义字符？这并不是小说中的东西，虽然它可能是。但基本上，不必记住这些奇怪的数字，它们实际上内置在大多数语言和操作系统中，称为转义字符。这意味着你可以转义字符串并打印出特殊字符，看看这如何在这里工作。
 - en: And we're going to even format this just to show you how this works。 I'm going
     to say， hello。And then world。 And notice I've got that kind of jumbled together。Now
     you can do something like this。 you can say。Okay， I looked it up。 and it's， you
     know， character 13 for a hard return。 Plus。 I want to do like a character 10 for
     a line feed。And that will put this on two different lines。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们甚至会格式化这个，只是为了展示这个是如何工作的。我将说，您好，然后是世界。注意我把它们搞得有些混在一起。现在你可以这样做，你可以说，好吧，我查了一下，13表示硬回车，加上，我想做一个字符10表示换行。这会把它放在两行上。
 - en: And I had to go out and look up these numbers because I didn't memorize them，
     but it does work。 Hello world， Or you can just simply do something like this。And
     we're going to grab it。Get rid of all that nonsense。Slash R for return。 slash
     n for line feed。 save run。And it does the exact same thing。 So under the hood。This
     little guy here slash R。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 我不得不去查这些数字，因为我没有记住，但它确实有效。你好，世界，或者你可以简单地做这样的事情。我们将把它抓取，去掉那些无用的内容。反斜杠R表示回车，反斜杠n表示换行，保存并运行。这会产生完全相同的效果。所以在幕后，这个小家伙反斜杠R。
 - en: notice an escape character starts with a back slash here。We're saying slash
     R for return or N for new line。Does the exact same thing。 You'll see that out
     in the real world both ways， where some programmers will demand you use the character。
     and some programmers will demand you use the escape character。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意，转义字符以反斜杠开始。我们说反斜杠R表示回车或N表示新行。效果是完全相同的。在实际使用中，你会看到这两种方式，有些程序员会要求你使用字符，有些程序员则会要求你使用转义字符。
 - en: It gets a little confusing until you get used to it。 but it's super simple。
     And you can do things like this。And really， all we're going to do is we're going
     to print out。Hello world with a tab between them。 slash T for tab。 When in doubt
     you go to Google and you can type out。What is an escape character。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 这有点让人困惑，直到你习惯它，但其实超级简单。你可以做这样的事情。实际上，我们要做的就是打印出来。你好，世界，中间加一个制表符。反斜杠T表示制表符。当有疑问时，可以去谷歌搜索一下“什么是转义字符”。
 - en: and it will give you a complete list of them。 There's tons and tons of them。
     but they're very simple and easy to work with。 Here's hellello world with a tab
     in between。You may be wondering why even use escape characters。 I mean， it seems
     a little rudimentary now。 let's。Go back way back to this problem。We want to put。That
     in there， and it works fine if we do it。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 它会给你一份完整的列表。有很多很多的，但它们非常简单易用。这是带有制表符的你好，世界。你可能会想，为什么要使用转义字符。这似乎有点基础。让我们回到这个问题。我们想把它放进去，结果如果这样做就可以。
 - en: In double quotes， but the minute we change it the single quotes。 remember we're
     going to have some sort of issue， it's not going to note it to do with X。 and
     it's going to say you guessed it in valid syntax。Well。 instead of going through
     and rechanging all our strings。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 在双引号中，但当我们将其改为单引号时，记住我们会遇到某种问题，它不会识别X，会提示你“猜猜看，这是无效的语法”。那么，不必逐一更改所有字符串。
 - en: we can just simply put slash in front of it。 And most of the time that will
     work。 It'll escape it right out。 Go ahead and save to clear that air out。 Let's
     actually clear this out just to show you， it will work。No more syntax error。 And
     we can print this bad boy out。So escaping actually becomes a very convenient way
     of， well。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们只需在前面加个反斜杠。大多数情况下，这样会有效。它会正确转义。继续保存以清除这些内容。让我们实际上清除这个，给你展示它会有效。没有更多的语法错误。我们可以打印出这个坏东西。所以转义实际上成为了一种非常方便的方法。
 - en: breaking out of the constraint of which quote you should use。 I know I'm going
     to get that question constantly of should I use single or double and really it
     does not matter。 just pick one and roll it with it and if you need to switch them
     around you can always escape out of them。 it's not super hard。You can also do
     things like this。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 打破你应该使用哪个引号的限制。我知道我会不断被问到我应该使用单引号还是双引号，其实这并不重要。只需选择一个并坚持使用，如果需要切换，可以随时跳出。其实并不难。你也可以这样做。
 - en: and this is something I get a lot of questions about， not just with Python。
     but pretty much every language。So I'm going to say quote equal。You see what we're
     doing here？
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我经常被问到的，不仅仅是Python，而是几乎每种语言。所以我要说引号等于。你看到我们在做什么吗？
 - en: You can have multiple escapes。 It doesn't really matter。 Basically。 what we're
     saying here is once you do this slash， the computer will try to figure out what
     you're doing and it will roll with it if it can't figure it out。 it will give
@@ -254,72 +341,96 @@
     like this or you're simply using the wrong escape character And win a doubt。 go
     go go it。It's usually pretty easy to work with here， so we're going to go good。Then
     he said。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以有多个转义。其实没关系。基本上，我们在这里说的是，一旦你做了这个斜杠，计算机会尝试搞清楚你在做什么，如果无法搞定，它会给你一个错误信息，此时你可能需要像这样处理，或者你只是使用了错误的转义字符。如果有疑问，就去试试。通常在这里操作起来很简单，所以我们就继续。然后他说。
 - en: quote unquote，Ho to me。![](img/5ee15e25ed6d7a0305e5074fdaf380da_10.png)
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 引号，霍，给我。![](img/5ee15e25ed6d7a0305e5074fdaf380da_10.png)
 - en: '![](img/5ee15e25ed6d7a0305e5074fdaf380da_11.png)'
+  id: totrans-43
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/5ee15e25ed6d7a0305e5074fdaf380da_11.png)'
 - en: Now， you may be wondering， what's the deal with formatting when you read books
     or watch videos on Python。 they would go really in depth into formatting and why
     it's important， really。You format to avoid errors， especially with strings。 And
     let me give you a very simple demonstration here， say。Name is Brian。Aged 46。 and
     boy。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，你可能想知道，阅读书籍或观看Python视频时，格式化到底是什么回事。它们会深入探讨格式化及其重要性。实际上，你格式化是为了避免错误，尤其是在处理字符串时。让我给你一个很简单的演示，比如。名字是布莱恩。46岁。哇。
 - en: I feel 46 today。 I was raking leaves all day yesterday。 So wow， yeah， that sucks。Alright。
     so we're gonna print these out。 I'm gonna say name plus。And we want the age。 Oh，
     this will work。 and'll work beautifully， right。 Well， guess what。 No， it does
     not。There's a reason for it。 and it's not very intelligent when you first look
     at it。 So we're going to say line 36。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 我今天感觉46岁。昨天我整天在扫落叶。哇，是的，真糟糕。好吧，我们要打印出来。我会说名字加上。然后我们要年龄。哦，这样可以。会很美妙，对吧？好吧，猜猜看。不，它并不能。这有个原因，乍一看并不聪明。我们将说第36行。
 - en: In this module， print， and it doesn't put the little。Little arrow。 but it does
     tell us must be STR not in。 So what it's really talking about is this thing。What
     you're trying to do is take all of this and treat it like a giant number and then
     add these together。 We're trying to do basic numerical operations， which we already
     covered。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个模块中，打印，并且不会显示小箭头。但它确实告诉我们必须是STR而不是。它真正谈论的是这个。你要做的是把所有这些当作一个巨大的数字，然后把它们相加。我们正在尝试做基本的数值运算，而这些我们已经覆盖过了。
 - en: And Python's not going to let us do that。 So let's get that out。 And let's just
     put a note here。And let's show the correct way of getting around this now there's
     a few different ways。We can do the way we've been doing， which is we just put
     an F in front of the string。 and then we're saying we're now formatting it。Not
     very hard。 We've done this before。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 而Python不允许我们这样做。那么我们就把它去掉。这里放个注释。现在让我们展示一下如何正确处理这个问题，方法有几种。我们可以用我们一直在做的方式，即在字符串前加个F。然后我们说我们现在在格式化它。其实并不难。我们之前做过这个。
 - en: but if you want a little bit more control， there are other ways of doing it。
     We're not going to dive into every single possible way。 I'm just showing you the
     two that I use the most。And this is the next one。 We're just going to print。And
     I want to say， let's do double quotes， Why not， my meaning is。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 但如果你想要更多的控制，有其他方法可以做到。我们不会深入探讨每一种可能的方法。我只是给你展示我最常用的两个。这是下一个。我们只要打印。我想说，我们用双引号，为什么不呢，我的意思是。
 - en: And here， what we're going to do is we're going to say what we want。Sent S。And
     what we're doing here is we're making our own special custom string with formatting
     baked right in。I am， And then I want a percent I。Or integer。From I'm here， though。
     now we need to do a percent sign and tell it， hey。We're going to feed you some
     values。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，我们要做的是说明我们想要什么。发送 S。我们在这里做的是创建自己的特殊自定义字符串，并且格式已嵌入其中。我是，然后我想要一个百分号 I。或者整数。从我在这里开始，不过，现在我们需要做一个百分号，并告诉它，嘿。我们将给你一些值。
 - en: Those values are going to be named and age。 Now， I typically don't like doing
     this。Because you have to read this whole thing。Skip over to this percent sign
     and then look at this little guy here and figure out what we're sending it。 Okay，
     so name is the first string， okay， and then age is the first integer。All right。
     so let's run that， see what that looks like。 And it says my name is Brian。 I'm
     46 years old。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些值将被命名为名字和年龄。现在，我通常不喜欢这样做。因为你必须阅读整个内容。跳到这个百分号，然后看看这个小家伙，弄清楚我们要发送什么。好的，所以名字是第一个字符串，好的，然后年龄是第一个整数。好的。那么让我们运行一下，看看结果。它说我的名字是布赖恩。我46岁。
 - en: Let's play around with this。 Let's put I and S。Just to see if we can easily
     break this。 And sure enough， we've broken it with very minimal effort。Type error。
     So really I tend to favor just the simple formatting because we don't have to
     mess around with any of this or worry about screwing this up。 but if you need
     special formatting， it is super super simple to put it right in there。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们来玩一玩。让我们放入 I 和 S。只是想看看我们能否轻易地破坏它。果然，我们几乎没有任何努力就破坏了它。类型错误。所以我真的倾向于简单的格式化，因为我们不需要在这些上面浪费时间或者担心搞砸。但如果你需要特殊格式，这真的非常简单，可以直接放进去。
 - en: When in doubt Google is your friend and there are honestly thousands and thousands
     of tutorials on how to really learn that in depth。 we're not going to spend a
     lot of time on it though。![](img/5ee15e25ed6d7a0305e5074fdaf380da_13.png)
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果有疑问，谷歌是你的朋友，老实说，有成千上万的教程可以帮助你深入学习。不过我们不会花太多时间在这上面。![](img/5ee15e25ed6d7a0305e5074fdaf380da_13.png)

@@ -1,232 +1,340 @@
 - en: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P13：L13-
     前馈神经网络 - ShowMeAI - BV12m4y1S7ix
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P13：L13-
+    前馈神经网络 - ShowMeAI - BV12m4y1S7ix
 - en: Hi， everybody。 Welcome to a new Pytorch tutorial。 Today。 we will implement our
     first multilayer neural network that can do diit classification based on the famous
     endlessnes data set。 In this tutorial， we put all the things from the last tutorials
     together。 So we use the data loader to load our data。 We apply a transform to
     the data。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，大家好。欢迎来到新的 Pytorch 教程。今天，我们将实现第一个多层神经网络，该网络可以基于著名的无尽数据集进行数字分类。在这个教程中，我们将上一期教程的所有内容结合在一起。因此，我们使用数据加载器来加载我们的数据。我们对数据应用变换。
 - en: Then we will implement our neural net with input layer， hidden layer and output
     layer。 and we will also apply activation functions。 Then we set up the loss and
     the optimizer and implement the training loop that can use batch training。 and
     finally， we evaluate our model and calculate the accuracy。 And additionally。 we
     will make sure that our whole code can also run on the GPu if we have GPU support。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将实现一个输入层、隐藏层和输出层的神经网络，并且我们还将应用激活函数。接着我们设置损失和优化器，并实现可以使用批量训练的训练循环。最后，我们评估我们的模型并计算准确率。此外，我们还将确保我们的整个代码也可以在支持
+    GPU 的情况下运行。
 - en: So let's start。 and first of all， we import the things we need。 So we import
     torch。 Then we import torch dot and N as an N。 Then we import torch。😊，Vision for
     the data sets。 and we import torch vision dot transforms as transforms。And we
     also import Matpllip dot pipl S P L T to show you some data later。 And then first
     of all。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么让我们开始。首先，我们导入我们需要的东西。所以我们导入 torch。然后我们导入 torch 和 N 作为 N。接着我们导入 torch。😊，Vision
+    用于数据集。我们导入 torch vision.transforms 作为 transforms。我们还导入 Matpllip.pipl SPLT 来稍后显示一些数据。然后首先。
 - en: we do the device configuration， So device config。 And for this。 we create a
     device by saying device equals torch dot device， and this has the name Kuda。 if
     we have GP support。 So if。Torch dot kuda dot is available。 And if it is not available。
     So else。 we call our device simply CPU。 And then later， we have to push our tenzos
     to the device。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们进行设备配置，因此设备配置。而对于这个，我们通过说设备等于 torch.dot.device 来创建一个设备，并且它的名称是 Kuda。如果我们有
+    GPU 支持。所以如果 torch.kuda 是可用的。如果不可用，那么我们只称我们的设备为 CPU。然后稍后，我们需要将我们的张量推送到设备上。
 - en: And this will guarantee that it will run on the GP if this is supported。So，
     yeah。 so let's define some hyper parameters。And here let's define the input size。
     And this is 784。 And this is because later we see that our images have the size
     28 by 28。 And then we will flatten this array to be a 1 d Tenzoa and 28 times
     28 is 784。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将保证如果支持的话，它将运行在 GPU 上。那么，是的，让我们定义一些超参数。在这里我们定义输入大小，这就是 784。这是因为稍后我们看到我们的图像大小为
+    28x28。然后我们将把这个数组展平为一维张量，28 乘 28 是 784。
 - en: So that's why our input size has to be 784。 Then let's define a hidden size。
     And here I will say this is 100。 You can also try our different sizes here。And
     the number of classes。 And this has to be 10 because we have 10 different classes。
     We have the digtits from 0 to 9。Then let's define the number of epochs。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这就是为什么我们的输入大小必须是 784。然后我们定义一个隐藏层大小。在这里我会说这是 100。你也可以尝试其他不同的大小。还有类别的数量，这必须是
+    10，因为我们有 10 个不同的类别。我们有数字 0 到 9。然后我们定义训练的轮数。
 - en: And here I will simply say two so that a training doesn't take too long。 but
     you can set this to a higher value。Then we define the batch size here， and this
     is， let's say。 100。 And let's also define the learning rate here by saying learning
     rate equals 0。001。And now let's import the famous Amnes data。 So you can have
     that from the Pytorrch library by saying training data set equals。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里我会简单设置为 2，这样训练不会花太长时间。但你可以将其设置为更高的值。然后我们在这里定义批量大小，假设为 100。我们也在这里定义学习率，设为学习率等于
+    0.001。现在让我们导入著名的 Amnes 数据。你可以通过说训练数据集等于从 Pytorch 库中获取它。
 - en: And here we use torchvision dot data sets dot Amist。![](img/ee06be2433f88c7e880533bc41c954a0_1.png)
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，我们使用 torchvision.data.datasets.Amist。![](img/ee06be2433f88c7e880533bc41c954a0_1.png)
 - en: And this will have to have the root where it has to be stored， So root。![](img/ee06be2433f88c7e880533bc41c954a0_3.png)
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将需要指定根目录，根目录。![](img/ee06be2433f88c7e880533bc41c954a0_3.png)
 - en: Equals， and here， this should be in the same folder。 So dot。 And then it should
     create a folder called data。![](img/ee06be2433f88c7e880533bc41c954a0_5.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 等于，这里应该在同一个文件夹中。所以 .，然后它应该创建一个名为 data 的文件夹。![](img/ee06be2433f88c7e880533bc41c954a0_5.png)
 - en: And then we say train equals true。 So this is our training data set。![](img/ee06be2433f88c7e880533bc41c954a0_7.png)
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们说 train 等于 true。这是我们的训练数据集。![](img/ee06be2433f88c7e880533bc41c954a0_7.png)
 - en: And then we say we apply a transform right away。 So we say transform equals
     transforms dot to tenzo。 So we convert this to a tenzzo here。![](img/ee06be2433f88c7e880533bc41c954a0_9.png)
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们说立即应用一个变换。所以我们说变换等于 transforms.dot to tenzo。我们在这里将其转换为一个tenzzo。![](img/ee06be2433f88c7e880533bc41c954a0_9.png)
 - en: And then we also say download equals true。 So it should be downloaded if it
     is not available already。![](img/ee06be2433f88c7e880533bc41c954a0_11.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们还说 download 等于 true。所以如果它尚不可用，则应该下载。![](img/ee06be2433f88c7e880533bc41c954a0_11.png)
 - en: Then let's copy this and do the same thing with our test data set。 And here
     we have to say train equals false。 And we also don't have to download this any
     more。So now let's continue and create the data loaders by saying train loader
     equals。 And here we get this from torch dot u dot data dot data loader。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们复制这个，对我们的测试数据集做同样的事情。在这里我们必须说 train 等于 false。而且我们也不需要再下载它。现在让我们继续，通过说 train
+    loader 等于来创建数据加载器。在这里我们从 torch.dot u.dot data.dot data loader 获取这个。
 - en: and then it will have to have the data set by saying data set equals。 And here
     it gets the training。![](img/ee06be2433f88c7e880533bc41c954a0_13.png)
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后必须设置数据集，方法是说数据集等于。这里进行训练。![](img/ee06be2433f88c7e880533bc41c954a0_13.png)
 - en: '![](img/ee06be2433f88c7e880533bc41c954a0_14.png)'
+  id: totrans-16
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ee06be2433f88c7e880533bc41c954a0_14.png)'
 - en: '![](img/ee06be2433f88c7e880533bc41c954a0_15.png)'
+  id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ee06be2433f88c7e880533bc41c954a0_15.png)'
 - en: Data set， a train data set。 Then we have to specify the batch size。 So this
     is equal to the batch size。![](img/ee06be2433f88c7e880533bc41c954a0_17.png)
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据集，一个训练数据集。然后我们必须指定批量大小。所以这等于批量大小。![](img/ee06be2433f88c7e880533bc41c954a0_17.png)
 - en: And then we also have to say， or we can say shuffle equals true。 So this is
     pretty good for training。And then we copy this again and do the same thing for
     our test loader。 So test loader equals gets the test data set。 And we can say
     shuffle equals false because it doesn't matter for the evaluation。And now let's
     have a look at one batch of this data by saying examples equals。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们还要说，或者可以说 shuffle 等于 true。这对训练非常好。然后我们再复制这个，并对我们的测试加载器做同样的事情。所以测试加载器等于获取测试数据集。我们可以说
+    shuffle 等于 false，因为对于评估来说这无关紧要。现在我们通过说 examples 等于来看一下这一批数据。
 - en: And then we convert it to a inner object， Iter of the train loader。 And then
     we can call the next method and unpack this into samples and into labels by saying
     this equals examples dot next。 And now let's print the size of these。 So let's
     print samples dot shape。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将其转换为内部对象，即训练加载器的迭代器。然后我们可以调用下一个方法，并通过说这等于 examples.dot next 将其解包为样本和标签。现在我们打印这些的大小。所以让我们打印
+    samples.dot shape。
 - en: '![](img/ee06be2433f88c7e880533bc41c954a0_19.png)'
+  id: totrans-21
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ee06be2433f88c7e880533bc41c954a0_19.png)'
 - en: And also， print， print the label dot shape。![](img/ee06be2433f88c7e880533bc41c954a0_21.png)
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 还有，打印，打印标签的形状。![](img/ee06be2433f88c7e880533bc41c954a0_21.png)
 - en: And now let's save this and run this。 So let's call Python feet forward dot
     p to see if this is working so far。 And yes， here we have the size of the samples。
     So this is 100 by 1 by 28 by 28。 And this is because our batch size is 100。 So
     we have 100 samples in our batch。 Then the one is because we only have one channel。
     So we don't have any colored channels here。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们保存并运行这个。所以我们调用 Python feet forward.dot p，看看到目前为止是否有效。是的，这里我们有样本的大小。所以这是
+    100 乘 1 乘 28 乘 28。这是因为我们的批量大小为 100。因此我们在批次中有 100 个样本。然后的 1 是因为我们只有一个通道。因此我们这里没有任何彩色通道。
 - en: So only one channel。 And this is our actual image array。 So 28 by 28， as I said
     in the beginning。And our labels is only a tenor of size 100。 So for each class
     label， we have one value here。So yeah。 this is our some example data。 And now
     let's also plot this here to see how this is looking。 So for I in range 6 and
     here we use matplotlip， So I call PLT dot subplot of the with two rows and three
     columns and the index I plus1 and then I can say PLt do I show。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以只有一个通道。这是我们的实际图像数组。所以是28乘28，正如我一开始所说的。我们的标签只有一个大小为100的张量。所以对于每个类别标签，我们在这里有一个值。是的，这就是我们的一些示例数据。现在我们也在这里绘制一下，看看效果如何。所以对于
+    I 在范围 6 中，这里我们使用 matplotlip，因此我调用 PLT.dot subplot，设置两行三列，索引为 I 加 1，然后我可以说 PLT.show。
 - en: and here I want to show the actual data， So samples of I and then of0 because
     we want to access the first channel and then I will also give this a column map
     So C map equals gray。![](img/ee06be2433f88c7e880533bc41c954a0_23.png)
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 我想展示实际数据，所以样本为 I，然后为 0，因为我们想访问第一个通道，然后我还会给它一个颜色映射。因此 cmap 等于 gray。![](img/ee06be2433f88c7e880533bc41c954a0_23.png)
 - en: '![](img/ee06be2433f88c7e880533bc41c954a0_24.png)'
+  id: totrans-26
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ee06be2433f88c7e880533bc41c954a0_24.png)'
 - en: '![](img/ee06be2433f88c7e880533bc41c954a0_25.png)'
+  id: totrans-27
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ee06be2433f88c7e880533bc41c954a0_25.png)'
 - en: '![](img/ee06be2433f88c7e880533bc41c954a0_26.png)'
+  id: totrans-28
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ee06be2433f88c7e880533bc41c954a0_26.png)'
 - en: And then I say P， LT dot show。And let's save this， and run this again。![](img/ee06be2433f88c7e880533bc41c954a0_28.png)
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我说P，LT.show。让我们保存这个，并再次运行它。![](img/ee06be2433f88c7e880533bc41c954a0_28.png)
 - en: And here we have a look at the data。 So these are some example handwritten digtits。
     and now we want to classify these digtits。 So for this。 we want to set up a fully
     connected neural network with one hidden layer。 So let's do this。![](img/ee06be2433f88c7e880533bc41c954a0_30.png)
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们来看看数据。这些是一些手写数字的示例。现在我们想对这些数字进行分类。因此，我们想建立一个具有一个隐藏层的全连接神经网络。让我们开始吧！![](img/ee06be2433f88c7e880533bc41c954a0_30.png)
 - en: '![](img/ee06be2433f88c7e880533bc41c954a0_31.png)'
+  id: totrans-31
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ee06be2433f88c7e880533bc41c954a0_31.png)'
 - en: So let's comment this out again。And now let's create a class neural net。 And
     this has to be derived from an and dot module。 And now we have to define the in
     it and the forward method。 So the in it method。 So this will self。 And then it
     will has to have the input size， then the hidden size， and then the output size。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们再次注释掉这一点。现在让我们创建一个神经网络类。这必须从一个模块中派生。现在我们必须定义初始化和前向方法。因此，初始化方法将包含self。然后它必须有输入大小、隐藏大小和输出大小。
 - en: So the output size is the number of classes。 And here first， we want to call
     the super in it。 So super of neural net and self and dot in it。Self。Dot。In it。And
     then we create our layers。 So first， we want to have a linear layer by saying
     self dot L 1 equals Nn dot linear。 And this will have has the input size as input
     and the output size is the hidden size。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以输出大小是类别的数量。首先，我们想调用super的初始化。因此super of neural net和self的初始化。self.dot.init。然后我们创建我们的层。因此，首先我们想通过说self.dot.L1等于Nn.dot.linear来拥有一个线性层。这将把输入大小作为输入，输出大小是隐藏大小。
 - en: Then after the first layer， we want to apply a activation function。 And here
     I simply use the famous relu activation。 So self dot relu equals N N dot reallu。![](img/ee06be2433f88c7e880533bc41c954a0_33.png)
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后在第一层之后，我们想应用激活函数。这里我简单地使用著名的relu激活函数。因此self.dot.relu等于N N.dot.relu。![](img/ee06be2433f88c7e880533bc41c954a0_33.png)
 - en: And then at the end， we have another linear layer。 So self dot L 2 equals。![](img/ee06be2433f88c7e880533bc41c954a0_35.png)
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后在最后，我们有另一个线性层。因此self.dot.L2等于。![](img/ee06be2433f88c7e880533bc41c954a0_35.png)
 - en: N， N dot linear。 Now we have to be careful。 So the input size here is the hidden
     size。 and the output size is the number of classes。![](img/ee06be2433f88c7e880533bc41c954a0_37.png)
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: N，N 点线性。现在我们必须小心。因此，输入大小是隐藏大小，输出大小是类别的数量。![](img/ee06be2433f88c7e880533bc41c954a0_37.png)
 - en: And now let's define the forward method。 So this will have self and one sample
     X。 and now we apply all these layers。 So we say out equals。 and now we use the
     first layer L1。 which gets the sample X and then the next out is self dot relu
     now use the activationation function。 which will get the previous output here，
     and the last out equals self dot L2 out。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们定义前向方法。这将包含self和一个样本X。现在我们应用所有这些层。因此，我们说输出等于。现在我们使用第一层L1，它获取样本X，然后下一个输出是self.dot.relu，使用激活函数。最后的输出等于self.dot.L2输出。
 - en: So this will apply the second linear function and now we have to be careful
     again because here at the end。 we don't want an activation function。 So we don't
     apply the softm here as usual in multiclass classification problems because in
     a second。 we will see that we will use the cross entropy loss， and this will apply。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将应用第二个线性函数，现在我们必须再次小心，因为在最后，我们不想要激活函数。因此我们不会像通常在多类分类问题中那样应用softmax，因为稍后我们将看到我们将使用交叉熵损失，而这将会应用。
 - en: '![](img/ee06be2433f88c7e880533bc41c954a0_39.png)'
+  id: totrans-39
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ee06be2433f88c7e880533bc41c954a0_39.png)'
 - en: '![](img/ee06be2433f88c7e880533bc41c954a0_40.png)'
+  id: totrans-40
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ee06be2433f88c7e880533bc41c954a0_40.png)'
 - en: Ply the soft max for us。 So no soft max here。 So we simply say return out。 So
     this is our whole model。 And then we can create it here by saying model equals
     neural net。And this will get the input size， then the hidden size and the number
     of classes。So， yeah。 now we have the models。 So now let's come create the loss
     and the optr。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 为我们应用软最大值。因此这里没有软最大值。我们简单地返回输出。这是我们的整个模型。然后我们可以通过说模型等于神经网络来创建它。这将获取输入大小，然后是隐藏大小和类别数量。所以，没错。现在我们有了模型。现在让我们创建损失和优化器。
 - en: So here we say criterion equals N N dot cross entropy loss。 And this will apply
     the soft marks for us。 So that's why we don't want this here。 So be very careful
     about this。And now let's create our optimizer as well by saying tor optimizer
     equals torch dot optim dot。嗯。Now， let's use the atom optimizer here。 And this
     has to get the parameters。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以在这里我们说criterion等于N N.dot.cross_entropy_loss。这将为我们应用softmax。因此我们不想在这里使用这个。所以对此要非常小心。现在让我们通过说tor.optimizer等于torch.optim来创建我们的优化器。嗯。现在，让我们在这里使用Adam优化器。并且这必须获取参数。
 - en: And here we can use model dot parameters。 And it also has to get the learning
     rate。 L R equals learning rate。![](img/ee06be2433f88c7e880533bc41c954a0_42.png)
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，我们可以使用模型的点参数。并且它还需要获取学习率。学习率等于学习率。![](img/ee06be2433f88c7e880533bc41c954a0_42.png)
 - en: '![](img/ee06be2433f88c7e880533bc41c954a0_43.png)'
+  id: totrans-44
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ee06be2433f88c7e880533bc41c954a0_43.png)'
 - en: Now we have the loss and the optimizer。 and now we can do our training loop。
     So training loop now。And for this， let's first define the number of total steps。
     So n total steps equals。 And this is the length of the training loader。So now
     we can do the typical loop。 So we say four epoch in range。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们有了损失和优化器。现在我们可以进行训练循环。因此，现在是训练循环。为此，让我们首先定义总步骤数。因此，总步骤数等于。这是训练加载器的长度。所以现在我们可以进行典型的循环。我们说四个周期在范围内。
 - en: '![](img/ee06be2433f88c7e880533bc41c954a0_45.png)'
+  id: totrans-46
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ee06be2433f88c7e880533bc41c954a0_45.png)'
 - en: Noum epochs。![](img/ee06be2433f88c7e880533bc41c954a0_47.png)
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: Noum epochs。![](img/ee06be2433f88c7e880533bc41c954a0_47.png)
 - en: And so this will loop over the epochs。 And now we loop over all the batches。
     So here we say for I。 And then again， we unpack this。 So we say images， images
     and labels。And then we iterate over。 enumerate over our train loader。 So the enumerate
@@ -234,103 +342,146 @@
     the tuple of the images and the labels and now we have to reshape our images first。
     because if we have a look at the shape， then we see that this is 100 by1 by 28
     by 28。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，这将循环遍历周期。现在我们循环遍历所有批次。因此，在这里我们说for I。然后再次，我们解包这个。因此，我们说images，images和labels。然后我们遍历enumerate我们的训练加载器。因此，enumerate函数将给我们实际的索引，然后是数据，而这里的数据是图像和标签的元组，现在我们必须首先重塑我们的图像。因为如果我们看看形状，我们看到这是100乘1乘28乘28。
 - en: as I showed you in the beginning。 And now we set our input size is 784。 So our
     image tensor needs the size100 by and 784 is second dimension。![](img/ee06be2433f88c7e880533bc41c954a0_49.png)
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我在开始时所示。现在我们设置我们的输入大小为784。因此，我们的图像张量需要的大小是100乘784，这是第二个维度。![](img/ee06be2433f88c7e880533bc41c954a0_49.png)
 - en: So the number of batches first。So， let's reshape our。Our tenor first。 So we
     can do this by saying images equals images dot reshape。 And here we put in -1
     as the first dimension。 So then Tsor can find out this automatically for us。And
     here as second dimension， we want to have 28 by 28。 And then we also call2 device。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以首先是批次数。因此，让我们重塑我们的张量。我们可以通过说images等于images.dot.reshape来做到这一点。在这里，我们将-1放在第一个维度。因此，Tsor可以为我们自动找到这个。在这里作为第二个维度，我们希望有28乘28。然后我们也调用设备。
 - en: We will push this to the GP U， if it is available。And we have also have to push
     it to the。 push the labels to the device。 So labels equals labels to。Deevvice。And
     now let's do the forward pass。 So first， we do the forward pass。 and afterwards。
     the backward pass。So the forward pass， we simply say outputs equals model。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果可用，我们将把这个推送到GPU。我们还必须将标签推送到设备。因此，labels等于labels.to.device。现在让我们进行前向传播。因此，首先，我们进行前向传播。然后是反向传播。所以前向传播，我们简单地说outputs等于model。
 - en: And this will get the images。 and then we calculate the loss by saying loss。Equals。
     and then here we call our criterion。 And this will get the predicted outputs and
     the actual labels。 So this is the forward pass。 And then in the backward pass。
     the first thing we want to do is call optr dot0 gra to empty the values in the
     gradient attribute。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将获取图像。然后我们通过说loss等于来计算损失。然后在这里我们调用我们的标准。这样将获取预测输出和实际标签。这是前向传播。然后在反向传播中，首先我们要做的是调用optr.dot0
+    gra以清空梯度属性中的值。
 - en: '![](img/ee06be2433f88c7e880533bc41c954a0_51.png)'
+  id: totrans-53
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ee06be2433f88c7e880533bc41c954a0_51.png)'
 - en: '![](img/ee06be2433f88c7e880533bc41c954a0_52.png)'
+  id: totrans-54
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ee06be2433f88c7e880533bc41c954a0_52.png)'
 - en: And then we can do the next step by saying lost dot backward。 So this will do
     the back propagation。 And now we can call optr dot step。 So this will do an update
     step and update the parameters for us。And now， let's also print some。Print the
     loss。 So let's say， if I plus1。Moulular 100 equals equals 0。 So every 100th step，
     we want to print some information。 So let's print the current epoch。
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们可以通过说“丢失的点向后”来进行下一步。这将进行反向传播。现在我们可以调用`optr dot step`。这样将执行更新步骤并为我们更新参数。现在，让我们打印一些信息。打印损失。假设，如果我加1。`Moulular
+    100`等于0。那么每100步，我们想打印一些信息。让我们打印当前的纪元。
 - en: So by saying this is epoch epoch plus  one。 And then we want to print all the。Epoch。
     So number of epochs。 Then let's also print the current step by saying step。 And
     this is I plus1。 And then the total number of steps by saying n total steps。And
     we also want to print the loss by saying loss equals loss dot item。
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过说这是`epoch epoch plus one`。然后我们想打印所有的纪元。即纪元数量。然后让我们也通过说`step`打印当前步骤。这是`I plus1`。然后通过说`n
+    total steps`打印总步骤数量。我们还想通过说`loss equals loss dot item`打印损失。
 - en: And let's also say we only want to print four decimal values。So， yeah。 now we
     are done with the training。 So this is the whole training loop。 And now let's
     do the testing and the evaluation。And for this。 we don't want to compute the gradients
     for all the steps we do。
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 另外，让我们说我们只想打印四位小数。因此，是的。现在我们完成了训练。这是整个训练循环。现在让我们进行测试和评估。为此，我们不想计算所有步骤的梯度。
 - en: So we want to wrap this in a with torch dot no gra statement。And then first。
     we say the number of correct predictions equals 0 and the number of samples equals
     0 in the beginning。 And then we loop over all the batches in the test samples。
     So we say four images and labels in。And here we can simply say in test loader。
     and then again， we have to reshape this。
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们希望将其包装在`with torch dot no gra`语句中。首先，我们说正确预测的数量等于0，样本数量等于0。在开始时。然后我们遍历所有测试样本中的批次。我们说“对于图像和标签”，在这里我们可以简单地说在`test
+    loader`中。然后我们需要重新调整形状。
 - en: So like we did here。 So images and labels， we want to reshape this and put it
     and push it to the device。And。Then let's call。 let's calculate the predictions
     by saying outputs equals models。 So this is our trained model now， and this will
     get the test images here。And then let's get the actual predictions by saying underscore
     and then predictions equals torch dot max。
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 就像我们在这里做的那样。图像和标签，我们想调整形状并将其推送到设备上。然后让我们调用。通过说`outputs equals models`来计算预测。这是我们现在训练的模型，这将获取测试图像。然后让我们通过说下划线和`predictions
+    equals torch dot max`来获取实际预测。
 - en: Of the outputs and along the dimension， along the number one。So the torch up
     max function will return the value and the index。 So we are interested in the
     actual index。 So this is the class label。 So that's why we don't need the first
     actual value。So these are our predictions。 And now。
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 输出和沿着维度，沿着维度1。因此，`torch up max`函数将返回值和索引。我们对实际索引感兴趣。所以这就是类别标签。因此我们不需要第一个实际值。这些就是我们的预测。现在。
 - en: let's say the number of samples plus equals。 And here we say labels dot shape
     0。 So this will give us the number of samples and the current。Batch。So should
     be 100。 And then we say the number of correct。 So the correct predictions equals。
     And here we can say predictions equals equals the actual labels and then dot sum
     and then dot item。
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设样本数量加1。在这里我们说`labels dot shape 0`。这将给我们样本的数量和当前批次。所以应该是100。然后我们说正确的数量。那么正确预测的数量等于。在这里我们可以说`predictions
+    equals equals the actual labels`，然后`dot sum`和`dot item`。
 - en: So for each correct prediction， we will add plus one。And then， of course。 we
     have to say plus equals the number of correct。Values。 And then when we are done
     with the loop。 we calculate the total accuracy by saying a equals 100 times the
     number of correct。And predictions divided by the number of samples。 So this is
     the accuracy in percent。
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于每个正确的预测，我们将加1。然后，当然，我们必须说`plus equals the number of correct`。然后当我们完成循环时。通过说`a
+    equals 100 times the number of correct`来计算总准确率。预测除以样本数量。这是以百分比表示的准确率。
 - en: And now let's print this。 So print。嗯。And we want to print accuracy equals。 And
     here we simply say a。 And then we are done。 So now let's save this and clear this
     and let's run this and hope that everything is working。So now our training starts，
     and we should see that the loss should be increased with every step。 Sometimes
     it will also increase again。 But finally， it should get lower and lower。And。Now。
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们打印这个。所以打印。嗯。我们想打印准确率等于。然后我们简单地说a。这样我们就完成了。现在让我们保存这个，清空它，然后运行，希望一切正常。所以现在我们的训练开始了，我们应该看到损失在每一步都应该增加。有时它也会再次增加。但最后，它应该越来越低。现在。
 - en: it should be done and testing is very fast。 So now we see that the accuracy
     is 94。9。 So it worked。 Our first feet forward model is done。 And yeah， I hope
     you understood everything。 And you enjoyed this。 If you like it， please subscribe
     to the channel and see you next time， bye。
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 这应该完成，并且测试非常快。所以现在我们看到准确率是94.9。所以它成功了。我们的第一个前馈模型完成了。希望你能理解这一切，并且享受这个过程。如果你喜欢，请订阅频道，我们下次见，拜。
 - en: '![](img/ee06be2433f88c7e880533bc41c954a0_54.png)'
+  id: totrans-65
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ee06be2433f88c7e880533bc41c954a0_54.png)'

@@ -1,253 +1,349 @@
 - en: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P11：L11-
     Softmax 和交叉熵 - ShowMeAI - BV12m4y1S7ix
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P11：L11-
+    Softmax 和交叉熵 - ShowMeAI - BV12m4y1S7ix
 - en: Hi， everybody。 Welcome back to a new Pytorch tutorial。 This time。 we talk about
     the soft maxs function and the cross entropy loss。 These are one of the most common
     functions used in neural networks。 So you should know how they work。 Now， I will
     teach you the math behind these functions and how we can use them in nuy and then
     pytorrch。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，欢迎回到新的PyTorch教程。这次我们将讨论softmax函数和交叉熵损失。这些是神经网络中最常用的函数之一，因此你应该知道它们是如何工作的。现在，我将教你这些函数背后的数学原理，以及如何在numpy和PyTorch中使用它们。
 - en: And at the end， I will show you how a typical classification neural network
     with those functions look like。 So let's start。😊，And this is the formula of the
     soft maxs。 So it applies the exponential function to each element and normalizes
     it by dividing by the sum of all these exponentials。 So what it does， it basically
     squashes the output to be between 0 and 1。 So we get probabilities。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，我会向你展示一个典型的分类神经网络是如何运作的。让我们开始吧。😊这是softmax的公式。它将指数函数应用于每个元素，并通过所有这些指数的和进行归一化。因此，它基本上将输出压缩到0和1之间，得到概率。
 - en: So let's have a look at an example。😊，Let's say we have a linear layer， which
     has three output values。 And these values are so called scores or locks。 So they
     are raw values。And then we apply the soft marks and get probabilities。So each
     value is squash to be between 0 and 1。And the highest value here gets the highest
     probability here。And yeah。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看一个例子。😊假设我们有一个线性层，它有三个输出值。这些值称为分数或锁定值。它们是原始值。然后我们应用softmax并得到概率。每个值被压缩到0和1之间，最高的值得到最高的概率。
 - en: if we sum these three probabilities up， then we get one。And then this is our
     prediction。 And then we can choose for the。Classs with the highest probability。So，
     yeah。 that's how the soft mark works。 And now let's have a look at the code。 So
     here I already implemented it in numpy。 So we can calculate this in one line。
     So first。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们将这三个概率相加，就得到1。这就是我们的预测。然后我们可以选择概率最高的类。所以，这就是softmax的工作原理。现在让我们看看代码。我已经在numpy中实现了它。我们可以在一行内计算。
 - en: we have the exponential， and then we divide by the sum。![](img/e7ecf0933f8ff6fd629229f5815a80cb_1.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们有指数，然后我们除以总和。![](img/e7ecf0933f8ff6fd629229f5815a80cb_1.png)
 - en: Over all these exponentials。And。Now， let's run this。 This has the same values
     as in my slide。 And then here we also see that the highest value， the highest
     loet has the highest probability。I rounded them them in my slides。 So it's slightly
     different。 but basically。 we see that it's correct。And， of course， we can also
     calculate it in piytorrch。 And for this。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 所有这些指数。现在，让我们运行这个。这与我幻灯片中的值相同。在这里，我们也看到最高的值具有最高的概率。我在幻灯片中对它们进行了四舍五入，所以稍微不同，但基本上是正确的。当然，我们也可以在PyTorch中计算它。
 - en: we create a tenzoar。 So let's say x equals torch dot tenzor。 and it gets the
     same values as this one。And then we can say outputs equals torch dot soft max
     of x。 And we also must specify the dimensions。 So we say dim equals 0。 So it computes
     it along the first axis。 And now let's print these outputs。So yeah。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们创建一个张量。假设x等于torch.tensor，它得到与这个相同的值。然后我们可以说outputs等于torch.softmax(x)。我们还必须指定维度，所以我们说dim等于0。这是在第一个轴上计算。现在让我们打印这些输出。
 - en: here we see that the result is almost the same。![](img/e7ecf0933f8ff6fd629229f5815a80cb_3.png)
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里我们看到结果几乎相同。![](img/e7ecf0933f8ff6fd629229f5815a80cb_3.png)
 - en: So， this works。And now let's continues。 So a lot of times。 the soft max function
     is combined with the so called cross entropy loss。So this measures the performance
     of our classification model。 whose output is a probability between 0 and 1。And
     it can be used in multi class problems。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，这有效。现在继续。很多时候，softmax函数与所谓的交叉熵损失结合使用。这测量我们的分类模型的性能，其输出是0到1之间的概率，可以用于多类问题。
 - en: and the loss increases as the predicted probability diverges from the actual
     label。So the better our prediction， the lower is our loss。 So here we have two
     examples。So here。 this is a good prediction。 And then we have a low cross entropy
     loss。 And here this is a bad prediction。 And then we have a high across entropy
     loss。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 当预测概率与实际标签偏离时，损失增加。因此，我们的预测越好，损失越低。这里有两个例子。这是一个好的预测，交叉熵损失较低。而这是一个差的预测，交叉熵损失较高。
 - en: And what we also must know is that in this case， our y must be hot， one hot
     and coated。So let's say we have three pro three possible classes， class 0，1 and
     2。 And in this case。 the correct label is the class0。 So here we must put a one
     and for all the other classes。 we must put a 0。 So this is how we do one hot encoding。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还必须知道的是，在这种情况下，我们的 y 必须是热的，独热编码。假设我们有三个可能的类别，类别 0、1 和 2。在这种情况下，正确的标签是类别 0。所以这里我们必须放一个
+    1，所有其他类别我们必须放 0。这就是我们如何进行独热编码。
 - en: And then for the predicted y we must have probabilities。 So， for example。 we
     applied the soft maxs here before。And yeah， so now again， let's have a look at
     the coat。 how we do this in nuy。 So we can calculate this here。 So we have the
     sum over the actual labels times。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于预测的 y，我们必须有概率。例如，我们之前在这里应用了软最大值。现在再次，让我们看看代码。我们如何在 nuy 中做到这一点。我们可以在这里计算。因此我们有实际标签的总和乘以。
 - en: '![](img/e7ecf0933f8ff6fd629229f5815a80cb_5.png)'
+  id: totrans-13
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/e7ecf0933f8ff6fd629229f5815a80cb_5.png)'
 - en: The lock of the predicted labels。 And then we must put a -1 at the beginning。And
     to。 we can also normalize it， but we don't do this here so we could divide it
     by the number of samples。And then we create our y。 So as I said， this must be
     one hot encoded。 So here we have other examples。 So if it is class 1， then it
     must look like this， for example。And then down here。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 预测标签的锁定。然后我们必须在开头放一个 -1。我们也可以对其进行归一化，但我们在这里不这样做，所以我们可以将其除以样本数量。然后我们创建我们的 y。正如我所说，这必须是独热编码。因此这里我们有其他示例。如果是类别
+    1，则必须像这样，例如。然后在下面。
 - en: we put our two predictions。 So these are now probabilities。 So the first one
     has a good prediction because also here， the class 0 has the highest probability。And
     the second prediction is a bad prediction。 So here， class 0 gets a very low probability。
     and class 2 gets a high probability。And now then I compute the entropy。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们提出了两个预测。这些现在是概率。第一个预测是好的，因为在这里，类别 0 拥有最高的概率。第二个预测是差的。在这里，类别 0 的概率非常低，而类别 2
+    的概率很高。然后我计算熵。
 - en: the cross entropy and predict both of them。 So let's run this。 And here we see
     that the first prediction has a。Low loss。 And the second prediction has a high
     loss。And now again， let's see how we can do this in Pytorch。So for this， first，
     we create。The loss。 So we say loss equals N， N from the neural torch and N。Module，
     N， N dot cross entropy loss。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 交叉熵和预测两个。所以让我们运行这个。在这里我们看到第一个预测有一个低损失，而第二个预测有一个高损失。现在再次，让我们看看如何在 Pytorch 中做到这一点。为此，我们首先创建损失。所以我们说损失等于
+    N，N 来自神经网络火炬和 N。模块，N，N dot 交叉熵损失。
 - en: '![](img/e7ecf0933f8ff6fd629229f5815a80cb_7.png)'
+  id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/e7ecf0933f8ff6fd629229f5815a80cb_7.png)'
 - en: And now what we must know， let's have a look at the slides again。So here we
     have to be careful。Because the cross entropys already applies the lock soft marks。
     and then the negative lock likelihood loss。 So we should not or must not implement
     the soft marks layer for ourselves。So this is the first thing we must know。 And
     the second thing is that here our y must not be one hot encoded。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们必须知道的事情是，让我们再次查看幻灯片。在这里我们必须小心。因为交叉熵已经应用了锁定的软标记，然后是负对数似然损失。所以我们不应该或不能自己实现软标记层。这是我们必须知道的第一件事。第二件事是这里我们的
+    y 不能是独热编码。
 - en: so we should only put the correct class label here。And also， the why predictions
     has raw scores。 So no soft mark here。![](img/e7ecf0933f8ff6fd629229f5815a80cb_9.png)
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们应该只在这里放正确的类别标签。此外，为什么预测有原始分数。所以这里没有软标记。![](img/e7ecf0933f8ff6fd629229f5815a80cb_9.png)
 - en: So be careful about this。 And now let's see this in practice。 So let's say。
     let's create our actual labels。 And this is a torch dot tenzor。 And now here we
     only put the correct class labels。 So let's say in this case， it's class 0。 And
     not one hot encoded any more。 And then we have a good prediction。 Y prediction
     good equals。😊。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以要小心这一点。现在让我们看看实际情况。假设我们创建实际标签。这是一个 torch dot tenzor。这里我们只放正确的类别标签。假设在这个案例中，它是类别
+    0。不再是独热编码。然后我们有一个好的预测。Y 预测好等于。😊。
 - en: Torch dot tenzor。 And then here we must be careful about the size。 So this has
     the size number of samples times the number of classes。 So let's say， in our case。
     we have one sample and 3 possible classes。 So this is an array of arrays。 And
     here we put in 2。01。0 and 0。1。And remember， this， these are the raw values。 So
     we didn't apply the soft max。 And here。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: Torch dot tenzor。在这里我们必须注意大小。所以这个大小是样本数量乘以类别数量。假设在我们的案例中，我们有一个样本和 3 个可能的类别。所以这是一个数组的数组。在这里我们放入
+    2。01。0 和 0。1。请记住，这些是原始值。所以我们没有应用软最大值。然后这里。
 - en: the highest。Or对。The class 0 has the highest value。 So this is a good prediction。
     And now let's make a bad prediction。 So prediction bad。 So here。 the very first
     value is a lower value， let's say， And the second value is high。 And let's change
     this also a little bit。And now we compute our loss like this。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 最高的。或者对。类0具有最高的值。这是一个好的预测。现在让我们做一个不好的预测。所以不佳的预测。在这里，第一个值是较低的值，假设是，第二个值很高。我们也稍微改变一下这个。现在我们这样计算损失。
 - en: So now we call the loss function that we created here。 and then we put in the
     y prediction and the actual y and the same with our second。 Let's compute a second
     loss with y prediction bad and y。And now let's print them。 So let's print L1。Dot
     item。So it only has one value。 so we can call the item function and also L 2 dot
     item。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们称这里创建的损失函数。然后我们输入预测的y和实际的y，第二个也是如此。让我们计算第二个损失，预测的y不佳和y。现在让我们打印它们。我们打印L1。Dot
+    item。它只有一个值，所以我们可以调用item函数和L2 dot item。
 - en: So let's run this。 And yeah， here we see that our good prediction has a lower
     cross entropy loss。 So this works。And now to get the actual predictions， we can
     do it like this。 So let's say underscore because we don't need this。 and then
     predictions。Dicctions equals torch。 dot max。 And then here we put in the prediction。
     So why prediction good。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们运行这个。是的，我们看到好的预测有较低的交叉熵损失。所以这是有效的。现在要获得实际预测，我们可以这样做。假设下划线，因为我们不需要这个。然后预测。Dicctions等于torch.dot
+    max。然后在这里我们输入预测。即好的预测y。
 - en: And then along the first dimension。And also， the same with the bad one。 So let's
     call this prediction 1 and prediction 2。嗯。And let's print our predictions。 So
     predictions 1 and print predictions 2。So this will here we see that we choose。The
     highest probability。 So in this case， we choose。This one， and in in the second
     case。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后沿着第一个维度。同样的不佳预测。所以我们称之为预测1和预测2。嗯。让我们打印我们的预测。所以预测1和打印预测2。在这里我们看到我们选择了最高的概率。因此在这种情况下，我们选择这个，在第二种情况下。
 - en: we choose this one。 So class number one here。So this is how we get the predictions。And
     what's also very good is that the loss in Pyto allows for multiple samples。 So
     let's increase our samples here。 So let's say we have three samples。 So three
     possible classes。Then our tenzo must have three class labels， our actual y。 So，
     for example，2，0 and 1。And then， our。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们选择这个。所以这里是类别编号1。这就是我们获取预测的方式。还有一点非常好的是，Pyto中的损失允许多个样本。所以让我们在这里增加我们的样本。假设我们有三个样本。所以三个可能的类别。然后我们的张量必须有三个类别标签，我们的实际y。因此，例如，2，0和1。然后，我们的。
 - en: Predictions must be here of size number of samples times the number of classes。
     So now this is of size 3 by 3。So let's do this。 So here we must put in。Another。List
     with three values。So。嗯。Like this and like this。 So let's say this one is a good
     prediction。 So the first。Class， the first correct label is class number 2。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 预测必须是样本数量乘以类别数量的大小。所以现在这是3乘3的大小。让我们这样做。所以在这里我们必须放入另一个带有三个值的列表。所以，嗯。像这样，像这样。假设这是一个好的预测。所以第一个类，第一个正确标签是类别编号2。
 - en: So this one must have the highest value， and this one must be low。 So let's
     say 001。 And here。 the very first one， the first class must have a high value。
     So like this。And then the value in the middle must have the highest raw values。
     So， for example， like this。And then。We do the same for our bad prediction。And。Let's
     say here we have this one higher。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这个必须是最高值，这个必须是低值。假设是001。在这里，第一个类必须有高值。像这样。然后中间的值必须有最高的原始值。例如，像这样。然后，我们对不佳的预测做同样的事情。假设这里我们有一个更高的值。
 - en: And also change this a little bit。And then we can again。 compute the cross the
     cross entropys with multiple samples。And now let's run this。 And then we also
     see here again， our first prediction is good and has a low loss。 And the second
     one is not so good。And yeah， here we get the correct predictions from the first。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 还要稍微改变一下这个。然后我们可以再次计算多个样本的交叉熵。现在让我们运行这个。然后我们再次看到，我们的第一个预测是好的，并且有低损失。第二个就不太好了。是的，我们从第一个得到了正确的预测。
 - en: Prediction tenor。 So here we also have 2，0，1， like in the actual y。So， yeah。
     this is how we can use the cross entropylos in Pytorch。![](img/e7ecf0933f8ff6fd629229f5815a80cb_11.png)
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 预测张量。所以这里我们也有2，0，1，和实际的y一样。所以，是的。这就是我们如何在Pytorch中使用交叉熵损失的方式！[](img/e7ecf0933f8ff6fd629229f5815a80cb_11.png)
 - en: And now， let's go back to our slides。So now I want to show you how a typical
     neural network looks like。 So here is a typical neural net in a multi class classification
     problem。 So here we want to find out what animal our image shows。 So we have an
     input layer and then some hidden layers and maybe some activation functions in
     between。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，让我们回到幻灯片。所以现在我想展示一个典型的神经网络是怎样的。在多分类问题中，这是一个典型的神经网络。我们想要找出我们的图像显示的是哪种动物。因此我们有一个输入层，然后一些隐藏层，也许在中间有一些激活函数。
 - en: And then at the end， we have a linear layer with one output for each class。So
     here we have two outputs。 And then at the very end。 we apply our soft marks and
     get the probabilities。So now， as I said in Pytorch。 we must be careful because
     we use the cross entropy loss here。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 在最后，我们有一个每个类别的输出为一的线性层。所以这里我们有两个输出。在最后，我们应用softmax并获得概率。所以现在，如我所说，在PyTorch中，我们必须小心，因为我们在这里使用交叉熵损失。
 - en: So we must not use the soft max layer in our neural net。 So we must not implement
     this for ourselves。 So let's have a look at how this code looks。 So in a multi
     class。![](img/e7ecf0933f8ff6fd629229f5815a80cb_13.png)
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们在神经网络中必须不使用softmax层。因此我们必须不自己实现这个。让我们看看这个代码的样子。在多分类中。
 - en: And classification， our net， for example。Looks like this。 So we define our layers。
     So we have one linear layer， which gets an input size and then a hidden size。
     Then we have activation function in between。 And then our last layer， it gets
     the hidden size。 and then the output size is the number of classes。 So for each。Possible
     class。 We have one output。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 分类，我们的网络，例如。看起来是这样的。所以我们定义我们的层。我们有一个线性层，它接收输入大小和一个隐藏大小。然后我们在中间有激活函数。最后一层接收隐藏大小，输出大小是类别的数量。对于每个可能的类别，我们都有一个输出。
 - en: And then in the forward method。 So here we only apply our layers and then no
     softm here at the very end。 And then we create our model， and then we used the
     cross entropis， which then applies to softm。So yeah， be careful here。![](img/e7ecf0933f8ff6fd629229f5815a80cb_15.png)
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 在前向方法中。我们只应用我们的层，而在最后没有softmax。然后我们创建我们的模型，然后我们使用交叉熵，它适用于softmax。所以要小心这里。
 - en: And。So this example also works for more classes。 So if our image could， for
     example。 also be a bird or a mouse or whatever， then this is also the correct
     layout。 But if we just have a binary classification problem with two possible
     outputs。 Then we can change our layer like this。 so。Now， we rephrase our question。
     So we just say。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个例子也适用于更多类别。如果我们的图像也可以是鸟或老鼠或其他，那么这是正确的布局。但如果我们只是有一个二元分类问题，具有两个可能的输出。那么我们可以这样更改我们的层。所以，现在我们重新表述我们的问法。我们只是说。
 - en: is it a doc， Yes or no。 And then here at the end， we have a linear layer with
     only one output。 And then we do not use the softm function， but we use the smoid
     function。 which then gets a probability。 And if this is higher than 05， then we
     say yes。And here in Pytorrch。 we use the。BC E loss or binary cross entropy loss。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一份文档吗？是或不是。然后在最后，我们有一个只有一个输出的线性层。我们不使用softmax函数，而是使用sigmoid函数。然后得到一个概率。如果这个概率高于0.5，我们就说是。这里在PyTorch中，我们使用BCELoss或二元交叉熵损失。
 - en: So here we must implement the sigmoid function at the end。 So let's have a look
     at our neural net in a binary classification case。 So again here first。 we set
     up our layers and our activation functions。 And the last layer has the output
     size 1。 So this is always fixed in this case。 And then in the forward pass Now
     here after we applied our layers。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以在这里我们必须在最后实现sigmoid函数。让我们看看在二元分类情况下的神经网络。所以在这里首先。我们设置我们的层和激活函数。最后一层的输出大小为1。在这种情况下总是固定的。然后在前向传播中，现在在应用我们的层后。
 - en: we also must implement the sigmoid function。 So yeah， and then here as a criterion。
     we use the binary cross entropy loss。 So be very careful here about these two
     different。![](img/e7ecf0933f8ff6fd629229f5815a80cb_17.png)
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还必须实现sigmoid函数。所以，是的，然后在这里作为标准，我们使用二元交叉熵损失。所以在这两个不同的方面要非常小心。
 - en: Different possible neural nets。![](img/e7ecf0933f8ff6fd629229f5815a80cb_19.png)
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 不同可能的神经网络。
 - en: And yeah， but that's basically what I wanted to show you。So the last structure
     is also what I used in the logistic regression tutorial so you can check that
     out if you haven't already。And for now， that's all I wanted to show you。 I hope
     you enjoyed it and understood everything。 If you have any questions， leave them
     in the comments below。 And if you like this tutorial。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的，这基本上就是我想要展示的内容。所以最后的结构也是我在逻辑回归教程中使用的，如果你还没看过，可以去看看。目前，我想展示的就是这些。希望你喜欢，并且理解了所有内容。如果你有任何问题，请在下面的评论中留言。如果你喜欢这个教程的话。
 - en: then please subscribe to the channel and see you next time， bye by。![](img/e7ecf0933f8ff6fd629229f5815a80cb_21.png)
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么请订阅频道，下次再见，拜拜。![](img/e7ecf0933f8ff6fd629229f5815a80cb_21.png)

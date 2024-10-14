@@ -1,114 +1,164 @@
 - en: 【双语字幕+资料下载】Pytorch 进阶学习讲座！14位Facebook工程师带你解锁 PyTorch 的生产应用与技术细节 ＜官方教程系列＞ - P10：L10-
     使用 TensorBoard 进行可视化 - ShowMeAI - BV1ZZ4y1U7dg
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Pytorch进阶学习讲座！14位Facebook工程师带你解锁PyTorch的生产应用与技术细节＜官方教程系列＞ - P10：L10-
+    使用TensorBoard进行可视化 - ShowMeAI - BV1ZZ4y1U7dg
 - en: 🎼。![](img/b5a4def1dbfd1f8e544809789db7d98b_1.png)
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 🎼。![](img/b5a4def1dbfd1f8e544809789db7d98b_1.png)
 - en: Hello， everyone。 My name is Si Chii Yan。 I'm a software engineer at Pytorch
     Model DevX team at Facebook。 Today I'm going to talk about visualizing Pytorch
     model using Tensorboard。Here's the agenda of my talk。 First， I'm going to give
     an overview of the Tensable API。 then dive deep into the API to monitor training
     process and then the API for modelstand tools。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，我的名字是Si Chii Yan。我是Facebook Pytorch Model DevX团队的软件工程师。今天我要讲的是如何使用TensorBoard可视化Pytorch模型。以下是我演讲的议程。首先，我将概述Tensable
+    API，然后深入探讨监控训练过程的API，以及模型监控工具的API。
 - en: And last I'm going to give a sneak peek on some of the features that's currently
     under development。![](img/b5a4def1dbfd1f8e544809789db7d98b_3.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，我将简要介绍一些当前正在开发中的功能。![](img/b5a4def1dbfd1f8e544809789db7d98b_3.png)
 - en: So for overview， we have shipped native support for Tensorboard since Pytorge
     1。2 since then we formed an ongoing close relationship with Google Tensorboard
     team。 So the Tensor API in Pythtor is very easy to use。 You just need to initialize
     the summerwriter and passing the locker representing the directory where you want
     to log your data into。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 总体来看，自Pytorge 1.2以来，我们已推出对TensorBoard的原生支持，自那时起，我们与Google TensorBoard团队建立了持续的密切关系。因此，Pythtor中的Tensor
+    API非常易于使用。你只需初始化summerwriter并传入表示你想要记录数据的目录的锁定器。
 - en: '![](img/b5a4def1dbfd1f8e544809789db7d98b_5.png)'
+  id: totrans-5
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/b5a4def1dbfd1f8e544809789db7d98b_5.png)'
 - en: '![](img/b5a4def1dbfd1f8e544809789db7d98b_6.png)'
+  id: totrans-6
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/b5a4def1dbfd1f8e544809789db7d98b_6.png)'
 - en: It can either be a local directory or remote directory， like S3。And then you
     can use APIs like At Scalla or add image to load your data。![](img/b5a4def1dbfd1f8e544809789db7d98b_8.png)
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 这可以是本地目录或远程目录，比如S3。然后你可以使用像At Scalla这样的API或添加图像来加载你的数据。![](img/b5a4def1dbfd1f8e544809789db7d98b_8.png)
 - en: The most common use case potentialtensA board is to monitor training process。
     This includes using the Sca API to monitor model learning curve。 QPS or CPU YouTubes
     throughout training。![](img/b5a4def1dbfd1f8e544809789db7d98b_10.png)
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 最常见的用例是监控训练过程。这包括使用Sca API监控模型学习曲线、QPS或CPU YouTubes在整个训练过程中。![](img/b5a4def1dbfd1f8e544809789db7d98b_10.png)
 - en: You just need to pass in the tag name and the sca value to the Add Sca API。You
     can also。Visualize multiple scala series in the same chart by using the multi
     line chart or the margin chart API。 The histogram API allow us to visualize the
     histogram and distribution of tensors throughout our training。 This includes the
     model weights， activation or gradients。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 你只需传入标签名和sca值到Add Sca API。你也可以通过使用多线图或边距图API在同一图表中可视化多个Scala系列。直方图API允许我们在训练过程中可视化张量的直方图和分布。这包括模型权重、激活或梯度。
 - en: You just need to pass in the tag name and the tensor value to add histogram
     API。 and then the tensor histogram and distribution will be computed automatically
     unlock to Tensor board。The image MPI allow us to visualize the image training
     samples or the object detection boxes or the images generated from Mapllib or
     Pli throughout training。 for example， people can generate the scatter plot or
     bar chart。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 你只需传入标签名和张量值以添加直方图API。然后张量直方图和分布将自动计算并解锁到TensorBoard。图像MPI允许我们可视化图像训练样本或目标检测框，或在训练过程中从Mapllib或Pli生成的图像。例如，人们可以生成散点图或条形图。
 - en: Of the model prediction values through my partlib and convert into image and
     log through the image API。Tensible also have various other APIs for logging the
     PR curve of a model， text， video， mesh， etc。![](img/b5a4def1dbfd1f8e544809789db7d98b_12.png)
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过我的partlib将模型预测值转换为图像并通过图像API记录。Tensible还提供各种其他API，用于记录模型的PR曲线、文本、视频、网格等。![](img/b5a4def1dbfd1f8e544809789db7d98b_12.png)
 - en: The next section is about model and standing tools in Tenor board。![](img/b5a4def1dbfd1f8e544809789db7d98b_14.png)
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 下一部分是关于TensorBoard中的模型和监控工具。![](img/b5a4def1dbfd1f8e544809789db7d98b_14.png)
 - en: The graph plug allow us to visualize the model architecture and identify performance
     bottleneck。 You just need to pass in a Pythr model and input tensor。 and then
     the model graph will be generated automatically unlock toten board。![](img/b5a4def1dbfd1f8e544809789db7d98b_16.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 图形插件允许我们可视化模型架构并识别性能瓶颈。你只需传入一个Pythr模型和输入张量。然后模型图将自动生成并解锁到TensorBoard。![](img/b5a4def1dbfd1f8e544809789db7d98b_16.png)
 - en: The embedding projector plug allow us to visualize the embedding value in the
     three dimensional space。![](img/b5a4def1dbfd1f8e544809789db7d98b_18.png)
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 嵌入投影插件允许我们在三维空间中可视化嵌入值。![](img/b5a4def1dbfd1f8e544809789db7d98b_18.png)
 - en: And H prime plugin allows us to visualize the correlation between model parameters
     and model performance metrics。 and then help us identify the most promising set
     of hyperparmeter。In this example。 we're using parallel colonary view to drill
     down onto some of the most promising runs and identify the common traits of them
     in terms of hyperparameter。The what if2 allow us to visualize large set of examples
     and bucketize them by either the。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: H prime插件允许我们可视化模型参数与模型性能指标之间的关联，从而帮助我们识别最有前景的超参数集合。在这个例子中，我们使用平行的柱状图深入分析一些最有前景的运行，并识别它们在超参数方面的共同特征。What
+    if2允许我们可视化大量示例并按某种方式对其进行分组。
 - en: Feature value or the model prediction value to help gain deep understanding
     into the model performance or fairness across different segments。It is fully integrated
     with Pytorrch via the custom predict function and Torch serve。 It can be viewed
     both as standalone app or as the Tensoror plugin。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 特征值或模型预测值可以帮助深入理解模型在不同细分领域的性能或公平性。它通过自定义预测函数和Torch Serve与Pytorrch完全集成。可以作为独立应用程序或Tensoror插件进行查看。
 - en: '![](img/b5a4def1dbfd1f8e544809789db7d98b_20.png)'
+  id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/b5a4def1dbfd1f8e544809789db7d98b_20.png)'
 - en: The last section will cover some of the features we are currently developing
     and plan to bring into open source community in the near future。![](img/b5a4def1dbfd1f8e544809789db7d98b_22.png)
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后一部分将涵盖我们目前正在开发的一些功能，并计划在不久的将来带入开源社区。![](img/b5a4def1dbfd1f8e544809789db7d98b_22.png)
 - en: The profiler plug will enable automatic model perf analysis and recommendations。
     It will also enable detailed view of model Perf per operator and GPU kernel。The
     ploty plugging will enable us to visualize the ploty figures natively inboard。It
     will offer much better and more interactive user experience。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: Profiler插件将启用自动模型性能分析和建议。它还将提供每个操作和GPU内核的模型性能详细视图。Ploty插件将使我们能够在板上原生可视化Ploty图形，提供更好和更互动的用户体验。
 - en: Comp with converting them to image and logs through the image API。The alert
     plug allows us to monitor certain model metrics across training。And then get alerts
     automatically when they go above or below certain thresholds。 This threshold can
     be either absolute threshold or derivativeive or comparative threshold。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 与通过图像API将其转换为图像和日志相比，警报插件允许我们监控训练过程中的某些模型指标。当这些指标超出或低于某些阈值时，可以自动获取警报。该阈值可以是绝对阈值、导数阈值或比较阈值。
 - en: '![](img/b5a4def1dbfd1f8e544809789db7d98b_24.png)'
+  id: totrans-21
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/b5a4def1dbfd1f8e544809789db7d98b_24.png)'
 - en: So that concludes my talk to get more information on Pythtor Tensor board。 please
     visit our website at Pythtor。org and look up the Tensor board documentation and
     tutorial。Thanks so much for watching this video。![](img/b5a4def1dbfd1f8e544809789db7d98b_26.png)
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就结束了我的讲座，想要了解更多关于Pythtor Tensor Board的信息，请访问我们的网站Pythtor.org，并查阅Tensor Board文档和教程。非常感谢您观看这段视频。![](img/b5a4def1dbfd1f8e544809789db7d98b_26.png)

@@ -1,370 +1,514 @@
 - en: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P16：L16-
     如何使用 TensorBoard - ShowMeAI - BV12m4y1S7ix
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P16：L16-
+    如何使用 TensorBoard - ShowMeAI - BV12m4y1S7ix
 - en: Hey， guys， welcome to a new Pytorch tutorial。 In this video。 we will learn how
     to use the Tenzo board to visualize and analyze our model and training pipeline。
     Tenszoboard is a visualization toolkit in order to experiment with our models。
     It is actually developed by the Tenorflow guys， but it can be used with Pytorch
     as well。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，大家好，欢迎来到新的 PyTorch 教程。在这个视频中，我们将学习如何使用 TensorBoard 来可视化和分析我们的模型和训练管道。TensorBoard
+    是一个可视化工具包，用于实验我们的模型。它实际上是由 TensorFlow 的团队开发的，但同样可以与 PyTorch 一起使用。
 - en: So here on the official website。 We can do a few things。 we see a few things
     that we can do with Tenszobar。 So， for example。 we can track and visualize metrics
     such as the loss and the accuracy。 We can visualize our model graph。 We can view
     histograms。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 在官方网站上，我们可以做几件事情。我们可以看到一些可以在 TensorBoard 中执行的操作。例如，我们可以跟踪和可视化指标，比如损失和准确率。我们可以可视化我们的模型图，查看直方图。
 - en: We can project embeddings to a lower dimensional space， and we can display images。
     text and audio data， and we can profile our programs and much more。😊。So now I
     want to show you how we can use this in our code。 So I'm going to use the code
     from tutorial number 13 here。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以将嵌入投影到较低维空间，并可以显示图像、文本和音频数据，还可以分析我们的程序等等。😊所以现在我想向你展示我们如何在代码中使用这个。我将使用第 13
+    个教程中的代码。
 - en: '![](img/ee3dacee23dcf8b95d479be89b099b38_1.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ee3dacee23dcf8b95d479be89b099b38_1.png)'
 - en: All right。 So here is the code。 So this is the exact code from tutorial number
     13。 And if you haven't watched this one， and I recommend that you watch this one
     first。 So I will briefly explain the code again now。So in this tutorial， we used
     the Mnes data set。 So we did diit classification here。 So here we are loading
     the Mnis data set。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，这里是代码。这是来自第 13 个教程的确切代码。如果你还没看过这个，我建议你先观看这个。因此，我现在将简要再次解释代码。在这个教程中，我们使用了
+    MNIST 数据集。因此，我们在这里进行了数字分类。现在我们正在加载 MNIST 数据集。
 - en: Then we are plotting some of the images。 and then we create a simple feet forward
     neural net。 So this is a fully connected neural network with one hidden layer。
     So we see we have one linear layer first， Then we have a relu activationctuaation
     function。 and then another linear layer。 and that's our whole forward pass。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们绘制了一些图像。接着我们创建了一个简单的前馈神经网络。这是一个具有一个隐藏层的全连接神经网络。我们看到，首先有一个线性层，然后是一个 ReLU
+    激活函数，再然后是另一个线性层。这就是我们的整个前向传播。
 - en: Then we set up our training pipeline。 So we have our loss and optimizer。 Then
     we do the training。So here， as always， we do a forward pass， a backward par， and
     then update our weights。 And then at the end， we evaluate our model and plot the
     accuracy。 So now let's use the tennor board for this code to analyze our model
     a little bit more。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们设置我们的训练管道。所以我们有我们的损失和优化器。接着我们进行训练。和往常一样，我们进行前向传播、反向传播，然后更新权重。最后，我们评估我们的模型并绘制准确率。因此，现在让我们使用
+    TensorBoard 对这段代码进行分析，以进一步分析我们的模型。
 - en: And the first， first thing we want to do is to install tensor board。 So for
     this， we can do Pip。Install。Tenensil board。And this will install all the things
     that we need。 So in my case。 I've already installed this。 So this was fast。 And
     we don't have to install the whole Tens of flow library。 So Tenzzo board is enough
     here。And now we can start the tensor board by saying tenor board。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，我们要做的第一件事是安装 TensorBoard。为此，我们可以使用 `pip install tensorboard`。这将安装我们所需的所有内容。在我的情况下，我已经安装好了，所以这个过程很快。而且我们不需要安装整个
+    TensorFlow 库，在这里仅安装 TensorBoard 就足够了。现在我们可以通过输入 `tensorboard` 来启动 TensorBoard。
 - en: And then we have to specify the path where we save the lock files。 and we do
     this by giving it the argument minus minus loer equals。 and by default。 this is
     called in the runs directory。 So let's hit enter。And then it will start up the
     Tensor board at local horse 60，06。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 接着我们需要指定保存日志文件的路径，我们通过给定参数 `--logdir=` 来实现。默认情况下，这个路径在 runs 目录中。让我们按回车键。然后它将在本地主机
+    6006 启动 TensorBoard。
 - en: And here we have a warning that it doesn't find Tensorflow and it will run it
     with a reduced feature set。 but that is fine。 So let's open up the tensor board。![](img/ee3dacee23dcf8b95d479be89b099b38_3.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们会收到一个警告，提示找不到 TensorFlow，并且将以减少功能集的方式运行。但这没关系。现在我们打开 TensorBoard。![](img/ee3dacee23dcf8b95d479be89b099b38_3.png)
 - en: And now here we have the tensor part。 And right now， we see that no dash ports
     are active。 And this is because we haven't written any data。 So let's do this。![](img/ee3dacee23dcf8b95d479be89b099b38_5.png)
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们来到了张量部分。此刻，我们看到没有活动的破折号端口。这是因为我们还没有写入任何数据。那我们来做一下吧。![](img/ee3dacee23dcf8b95d479be89b099b38_5.png)
 - en: So let's jump to the code again。And now the first thing we want to do is to
     import the Tenzo board。 So， and for this， we say from torch dot us dot Tenzobar。We
     import， and this is called summary rid。 So we import a summary rid， and。So here
     I have a typo。And now let's create a rider。 So let's say rider equals summary
     rider。 And then let's give it a。Diectctory。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们再跳回代码。现在我们想做的第一件事是导入Tensor板。所以，对于这个，我们说从torch的us中导入Tensor板。我们导入的叫做summary
+    rider。这里我有一个拼写错误。现在让我们创建一个写入器。假设写入器等于summary rider。然后给它一个目录。
 - en: where it should save the log files and the default directory is， as I said，
     the runs folder。 But let's be more specific here。 So let's call this runs and
     then M N。And now we have our writer set up。 And now the first thing we want to
     do is here。 So here in the code， we plotted some images。 And now， instead of plotting。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 它应该保存日志文件，默认目录是，我说过的，运行文件夹。但让我们在这里更具体一点。我们叫这个运行，然后M N。现在我们已经设置好写入器。接下来我们想做的第一件事是在这里。在代码中，我们绘制了一些图像。现在，取而代之的是绘图。
 - en: let's add the image to our tensor board。 And for this。 the only thing we have
     to do is we want to create a grit。 And then call the writer at image method。 So
     let's do this。 So let's say our image grit equals。 And we also get this from torch
     vision dot us。Dot make， make grit。 And then let's give it the data。 So here we
     have one batch of our example data。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们将图像添加到我们的张量板。为此，我们只需要创建一个网格。然后调用图像方法的写入器。那我们来做一下吧。假设我们的图像网格等于。我们也从torch vision中获取这个。Dot
+    make，创建网格。然后给它数据。这里我们有一批示例数据。
 - en: So let's put this in here。 And then let's call。Rrier， dot at。Image。And then
     here we give the image grid。And we also have to provide a label for this image
     in the beginning。 So let's call this， for example， M Nist。Images。And now。嗯。I want
     to exit here， so I use。 I import cis or system。 And then here I use an early exit
     because I don't want to run the whole training pipeline right now。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们把这个放在这里。然后调用写入器的图像方法。这里我们给图像网格，并且一开始我们还需要提供这个图像的标签。比如我们叫这个，M Nist图像。现在。嗯。我想在这里退出，所以我使用。我导入cis或系统。然后我在这里使用提前退出，因为我现在不想运行整个训练管道。
 - en: So here I call cis dot exit。 and I want to make sure that all the events are
     written here。 So that's why I also call Rder。Dot close。 So this makes sure that
     all the outputs are being flushed here。And now let's save this。 and let's go to
     the terminal， and let's run this。So let's say Python。 and then our file was feet
     forward dot P and hit enter。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里我调用cis.exit。我想确保所有事件都在这里写入。所以这就是我也调用写入器.close的原因。这确保所有输出都在这里被刷新。现在让我们保存这个。然后去终端，运行这个。假设我们说Python，然后我们的文件是feet
+    forward.P，按回车。
 - en: And now let's go to our Tensor board again and let's reload this。 And then we
     see we have our images here。![](img/ee3dacee23dcf8b95d479be89b099b38_7.png)
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们再次进入Tensor板并重新加载它。然后我们看到这里有我们的图像。![](img/ee3dacee23dcf8b95d479be89b099b38_7.png)
 - en: And here we have our grid that we just created。And this is 60。 this is 8 by
     8 because we specified our batch size to be 64。![](img/ee3dacee23dcf8b95d479be89b099b38_9.png)
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里是我们刚创建的网格。这是60。这是8乘8，因为我们指定我们的批量大小为64。![](img/ee3dacee23dcf8b95d479be89b099b38_9.png)
 - en: '![](img/ee3dacee23dcf8b95d479be89b099b38_10.png)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ee3dacee23dcf8b95d479be89b099b38_10.png)'
 - en: And yeah， so now we can analyze our data。![](img/ee3dacee23dcf8b95d479be89b099b38_12.png)
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗯，所以现在我们可以分析我们的数据。![](img/ee3dacee23dcf8b95d479be89b099b38_12.png)
 - en: And let's go ahead and do something more with our Tzor board。So the next thing
     we want to do is to add a graph。 So to analyze our model。 So if we scroll down
     further， then we see that here we create our。Neural nets。 So let's comment this
     thisis exit out again。And then here we create our model。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们继续在我们的Tzor板上做更多事情。接下来我们想做的是添加一个图。用于分析我们的模型。如果我们向下滚动，我们看到这里创建了我们的神经网络。让我们对此进行注释，然后在这里创建我们的模型。
 - en: and then here our loss and optimizer。 And now down here。 let's add our model
     graph So we can do this by saying rider at graph。 And then here we give it the
     model。And then we also can give it an input so we can say， again。 we have our
     example data。 So this is one batch。 And then we have to reshape the same way that
     we are doing it here。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后在这里是我们的损失和优化器。现在在这里，让我们添加我们的模型图。我们可以通过说`rider.at_graph()`来实现这一点。然后在这里我们传递模型。我们还可以给它一个输入，所以我们可以再次说，我们有我们的示例数据。这是一个批次。然后我们必须以与这里相同的方式重新调整。
 - en: So let's reshape our batch data。And。Then again， let's call Rer dot close and
     writerer exit。insist system exits。 And again， let's run our。File。![](img/ee3dacee23dcf8b95d479be89b099b38_14.png)
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，让我们重新调整我们的批量数据。然后，再次调用`Rer.close()`和`writer.exit()`。然后系统退出。再一次，让我们运行我们的文件。![](img/ee3dacee23dcf8b95d479be89b099b38_14.png)
 - en: And now let's head over to our tensor board again。 and let's reload this。 And
     then we see here up here。 we also have the graphs tab。 So let's go to the graph。
     And here we see our model。So we have the input and then the neural net。 And now
     if we do a double click， then we see more details。 So here we see our whole model。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们再次去TensorBoard。让我们重新加载它。然后我们在这里看到上方也有图表选项卡。所以让我们去图表。在这里我们看到我们的模型。我们有输入，然后是神经网络。现在如果我们双击，就可以看到更多细节。这里我们看到我们的整个模型。
 - en: And so now we see we have the first linear layer。 Then we have the relu activationctuaation
     function。 And then we have the second linear layer。And we also see the weights
     and the biases for each linear layer。 So， yeah， so now we can inspect this further，
     if we want。And yeah。 this is really helpful to analyze the structure of our model。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以现在我们看到我们有第一个线性层。然后是ReLU激活函数。接着是第二个线性层。我们还可以看到每个线性层的权重和偏差。因此，是的，如果我们想，我们可以进一步检查。这确实有助于分析我们模型的结构。
 - en: '![](img/ee3dacee23dcf8b95d479be89b099b38_16.png)'
+  id: totrans-26
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ee3dacee23dcf8b95d479be89b099b38_16.png)'
 - en: So， yeah， now we have our model。 and now let's analyze some metrics， so。What
     we did in the original script is we simply， during the training， we printed every
     100th step。 We print the current loss。So now， instead of just printing did this。
     let's add this to our teno board。 So let's add the training loss and also the
     accuracy for this。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，是的，现在我们有了我们的模型。现在让我们分析一些指标。我们在原始脚本中所做的是，在训练期间，我们每100步打印一次。我们打印当前的损失。现在，不只是打印这个。让我们把它添加到我们的TensorBoard中。因此，让我们添加训练损失和准确率。
 - en: And for this， we want to have the mean loss during this batch training。 So let's
     add a two values up here before we start our loop。 So the first one is our running
     loss。And this is 0 in the beginning。 And then let's also say， the running。Correct。Predictions
     equals 0 in the beginning。 And now， every hundredth step。We。No。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于这个，我们希望在这一批训练中得到平均损失。所以在开始循环之前，让我们在这里添加两个值。第一个是我们的运行损失。这一开始是0。然后我们还要说，运行的正确预测在一开始也是0。现在，每100步，我们……
 - en: sorry before for in each iteration。 Now， we add the。Loss to the running loss。
     So we say running loss plus equals loss dot item。 And we also add the number of
     correct predictions to the running correct。 So for this， we want to get the predictions。
     And we can do this the same way as we are doing it down here by calling torch
     dot max。So。Let's do this up here， as well。So we get the predicted values。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 抱歉，之前在每次迭代中。现在，我们将损失添加到运行损失中。所以我们说`running_loss += loss.item()`。我们还将正确预测的数量添加到运行的正确值中。因此，对于这个，我们想要得到预测。我们可以通过调用`torch.max`以与我们在下面所做的方式相同来做到这一点。所以，让我们在这里也这样做。我们得到预测值。
 - en: and then we say running correct plus equals。 And here we say predicted equals
     equals the actual labels。 and then the sum。 And this is a tensor with only one
     item。 So we can call dot item。And now， yeah。 here we add this to the running loss。
     And now every hundredth step。 we want to calculate the mean value and add this
     to the tenor board。 So we call rider dot at Scala。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们说`running_correct +=`。在这里我们说`predicted == actual_labels`，然后是求和。这是一个仅包含一个项目的张量。因此，我们可以调用`.item()`。现在，是的，我们在这里将其添加到运行损失中。现在每100步，我们想要计算平均值并将其添加到TensorBoard中。所以我们调用`rider.at_scala()`。
 - en: And now we have to add have to give it a label。 So here， let's give it the label
     draining loss。And now the actual loss is the running loss divided by 100， because
     we sum this up for 100 steps。 And then we also have to give it the current global
     step。And this is the by saying epoch and times the number of total steps that
     we extracted up here。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们必须添加标签。所以在这里，让我们给它标签为训练损失。现在实际损失是运行损失除以100，因为我们为100步进行了求和。然后我们还必须给它当前的全局步骤。通过说epoch和提取的总步骤数来表示这一点。
 - en: So this is the length of the training loader。 and then plus I， and I is the
     current batch iteration。So this is the current global step。 So here we add the
     training loss。 And now let's do the same thing again and add the accuracy。 So
     let's say accuracy。And then here we have to say， running。Correct。Divided by 100。And
     after that。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是训练加载器的长度。再加上I，而I是当前批次迭代。所以这是当前的全局步骤。这里我们添加训练损失。现在让我们再做一次，添加准确性。我们说准确性。然后这里我们要说，运行。正确。除以100。然后在那之后。
 - en: we have to set the running loss and the running predicted to the running correct
     to 0 again。 So let's say running loss equals0。0 and running loss。And no， sorry。
     Run correct equals 0 again。And then。Yeah， now we have to save this。 and now we
     have to run the whole training pipeline。 So let's comment this system exit out
     again。And now， let's run our script。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们必须将运行损失和运行预测正确的值重新设为0。所以我们说运行损失等于0.0和运行损失。不，抱歉。运行正确再次等于0。然后，是的，现在我们必须保存这个。现在我们必须运行整个训练管道。让我们再次注释掉系统退出。现在，让我们运行我们的脚本。
 - en: And we should still see the， the printing outputs here。 So for every 100th step。
     we see that how the loss is decreasing。And now we should be done。 And now we also
     see the whole accuracy of our network。 And now let's go to our Tensor board again
     and again， hit reload。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们仍然应该看到这里的打印输出。因此，对于每100步，我们看到损失是如何减少的。现在我们应该完成了。现在我们也看到我们网络的整体准确性。现在让我们再次回到我们的TensorBoard，点击重新加载。
 - en: And then we have one more entry up here。 And this is the scholars entry。 And
     here we have our two plots。 So yeah， we see that it worked。 So we see the accuracy。![](img/ee3dacee23dcf8b95d479be89b099b38_18.png)
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们在这里还有一个条目。这是学者条目。这里我们有我们的两个图表。所以，是的，我们看到它成功了。我们看到了准确性。![](img/ee3dacee23dcf8b95d479be89b099b38_18.png)
 - en: For each of the steps。 And we also see how the training loss is decreasing。And
     yeah。 so here by default， Tenzo flow， Tenzo board is smoothing this line so we
     can modify the smoothing parameter here。But yeah， and now we can analyze how the
     loss is decreasing。 And so， for example。 if we see that at some point， it is not
     decreasing further， and we can see that at this point。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于每个步骤。我们也看到训练损失在减少。是的，所以在这里默认情况下，TensorFlow和TensorBoard会平滑这条线，因此我们可以在这里修改平滑参数。但现在我们可以分析损失是如何减少的。例如，如果我们看到在某一点上，损失没有进一步减少，我们可以看到这一点。
 - en: we have to improve something。So， for example， what we can do then is we can
     try out a different learning rate。 of course， So this is usually one of the first
     things that we want to optimize。 So let's modify the learning rate。 And now let's
     call the folder mist。 Let's say simply2。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们必须改进一些东西。例如，我们可以尝试不同的学习率。当然，这通常是我们想要优化的第一件事。那么，让我们修改学习率。现在，让我们称这个文件夹为mist，简单地说是simply2。
 - en: '![](img/ee3dacee23dcf8b95d479be89b099b38_20.png)'
+  id: totrans-38
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ee3dacee23dcf8b95d479be89b099b38_20.png)'
 - en: And then again， let's clear this and run our script again。And。![](img/ee3dacee23dcf8b95d479be89b099b38_22.png)
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后再次，让我们清理这个并再次运行我们的脚本。并且！[](img/ee3dacee23dcf8b95d479be89b099b38_22.png)
 - en: Then this should already update our tenor board during the。During the file runnings。
     So now we see a second graph。And also here we see a second graph in the loss graph。
     Now。 let's reload this again。 And now yeah， it should be done。 And now， for example。
     here we see then another graph with a different learning rate。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后这应该已经在文件运行期间更新了我们的音调板。所以现在我们看到第二个图表。而且在损失图表中我们也看到第二个图表。现在，让我们再次重新加载这个。现在，是的，应该完成了。举例来说，这里我们又看到一个不同学习率的图表。
 - en: And this is how we can interactively optimize and analyze our model。And now，
     as a last thing。 what I want to show you is how we can add a precision recall
     curve。 So precision recall curve lets you understand your model performance under
     different threshold settings。 And this makes more sense in a binary classification
     problem。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是我们如何互动地优化和分析我们的模型。现在，最后一件事，我想向你展示的是我们如何添加精确度召回曲线。精确度召回曲线让你理解模型在不同阈值设置下的表现。在二分类问题中，这更有意义。
 - en: But if we analyze each class separately here。 Then we do have a binary classification
     problem。 So let's add a precision recall curve for each class here。AndFor those
     of you who do not know what a precision and recall mean。 then I have a link for
     you in the description。 So please check that out。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是如果我们分别分析每个类别。那我们确实有一个二元分类问题。因此让我们在这里为每个类别添加精确率-召回曲线。如果你不知道精确率和召回率的含义，我在描述中有一个链接。请查看一下。
 - en: And now what we want to do here is。 let's have a look at the official documentation
     here。 So I also I recommend that you check out this link。 So let's search for
     at PR。 And then we see here we have the method at precision at PRr curve。 So this
     adds a precision recall curve。 And this needs the attack first。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们想要做的是。让我们看看官方文档。我也建议你查看这个链接。让我们搜索一下PR。然后我们看到这里有方法at precision at PR曲线。这将添加精确率-召回曲线。这需要首先攻击。
 - en: and then it needs the labels。 and here we see the labels is the ground truth
     data。 So a binary label for each element。![](img/ee3dacee23dcf8b95d479be89b099b38_24.png)
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后需要标签。在这里我们看到标签是实际数据。每个元素的二元标签。![](img/ee3dacee23dcf8b95d479be89b099b38_24.png)
 - en: '![](img/ee3dacee23dcf8b95d479be89b099b38_25.png)'
+  id: totrans-45
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ee3dacee23dcf8b95d479be89b099b38_25.png)'
 - en: And then it needs the predictions and the predictions are the probability that
     an element be classified is true。 and the value should be between 0 and1。 So this
     is important here。 So we need to have the actual labels and also the predictions
     here。 All right。 So now let's go to the code and at a precision recall curve for
     each class。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后需要进行预测，预测是元素被分类为真的概率，值应在0到1之间。因此，这一点非常重要。我们需要实际标签以及这里的预测。好的，现在我们来看看代码，并为每个类别绘制精确率-召回曲线。
 - en: So here in our evaluation。 we want to create a list where we store our labels。
     So let's say labels equals an empty list。 And also a list for the predictions。
     So pres equals an empty list。 And then during the batch evaluation。 So what we
     do here。 So for the labels， we can say labels stopped app pen， the actual labels
     is the predicted labels。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们的评估中，我们希望创建一个存储标签的列表。所以我们设置labels等于一个空列表。同样也需要一个预测的列表。所以pres等于一个空列表。在批评估期间，我们所做的是。对于标签，我们可以说标签停止追加，实际标签是预测标签。
 - en: And now for the。😊。![](img/ee3dacee23dcf8b95d479be89b099b38_27.png)
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在对于。😊。![](img/ee3dacee23dcf8b95d479be89b099b38_27.png)
 - en: Predictions， we have to be careful。 So for here， we need probabilities between
     0 and 1。And now here we get the outputs from our model。 And if we have a look
     at the neural net again。 and we see that we have a linear layer at the end。 So
     these are raw values。 And here we even have a comment。 So no activationctuaation
     and no softms at the end。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于预测，我们必须小心。因此在这里，我们需要的概率在0到1之间。现在我们从模型中获得输出。如果我们再次查看神经网络，我们会发现最后有一层线性层。这些是原始值。这里甚至有一个评论。所以没有激活和没有softmax在最后。
 - en: because in this case， this is applied in our loss function in the cross entropy
     loss。 But now。 again， in the evaluation， we want to have actual probabilities。And。If
     you've watched my tutorial about activationation functions。 then you know which
     activationation function we must use here to get the probabilities。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 因为在这种情况下，这应用于我们的损失函数中的交叉熵损失。但现在，再次，在评估中，我们想要获取实际概率。如果你看过我关于激活函数的教程，你就知道在这里必须使用哪种激活函数来获得概率。
 - en: And this is the soft max function。 So this  squeezes our values to be probabilities
     between 0 and 1。 So let's call the softms here explicitly for our outputs。 And
     for this， let's import F。 So functional。 So let's say here。😊，Let's import torch
     dot N， N dot functional， S F。Capital F。And then， down here。We want to calculate
     the soft max for each output in our output。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是softmax函数。所以它将我们的值压缩为0到1之间的概率。所以我们在这里明确调用softmax用于我们的输出。为此，让我们导入F。也就是功能性。我们这里设置。😊，让我们导入torch.dot
+    N，N.dot.functional，SF。大写F。然后，在这里，我们希望计算每个输出的softmax。
 - en: So let's use list comprehension for this。And let's call this class。🤢，嗯。Predictions
     equals。 And now here we use list comprehension and call F dot soft max。 And then
     here we say of the output。 And then we do this。 We have also have to give it the
     dimension。 So let's say dimension equals along dimension 0。 And then we want to
     do this for output in outputs。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们使用列表推导来实现这个。我们将其命名为类别。🤢，嗯。预测等于。现在我们在这里使用列表推导并调用F点softmax。然后我们说输出。接着我们需要给出维度。所以我们设置维度等于沿维度0。然后我们希望对每个输出执行此操作。
 - en: And then let's add this to our， what did we call it prettz。 So prets dot， a
     pen。 And then here class predictions。 And then when we are done with the for loop。
     we want to convert this to a1zo。 So here we say labels equals。 and then torch
     dot cut the labels。 So right now， this is a list。 And when we want to concatenate
     all the elements in our list along one dimension。
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将这个添加到我们的，我们称之为 prettz 的对象中。prets dot，一支笔。然后在这里是类别预测。当我们完成循环时，我们想要将其转换为
+    a1zo。在这里我们说 labels 等于。然后 torch dot cut 这些标签。现在这是一个列表。当我们想要在一个维度上连接列表中的所有元素时。
 - en: Into a one dimensional tenor。 And for the predictions， we want to have a two
     dimensional tensor。 So for each。For each class， we want to stack the predictions。
     and then we want to concatenate this。 So we say。Prats equals。 And then here we
     say torch dot cat。 And then here we use list comprehension again and say torch
     dot stack。
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 转换为一维张量。对于预测，我们希望有一个二维张量。对于每个类别，我们想要堆叠预测。然后我们想要连接它。所以我们说。Prats 等于。然后在这里我们说 torch
+    dot cat。接着我们再次使用列表推导，说 torch dot stack。
 - en: And here we stack each batch and say four batch in our predictions。So you should
     check the the shape of these tensors for yourself。 So this has shape。 I think
     how many。 we have， I think 10000 samples。 So this is 10000 by one and this should
     be 10000 by 10。 So for each class， we stacked it here。 and now when we are done。
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，我们堆叠每个批次，并在预测中说四个批次。所以你应该自己检查这些张量的形状。我认为有多少。我们有，我想是10000个样本。所以这是10000乘以1，这应该是10000乘以10。对于每个类别，我们在这里堆叠它。现在当我们完成时。
 - en: So now the last thing we have to do is to have the actual PR curve。 So for this，
     we say classes。 So our class labels in this case， it's just the range 10 because
     we have the。Ditchitts from 0 to 9。 And now let's iterate over this。 So4 I in classes。
     And then we say we get the labels I equals。 So this is where labels equals equals
     I。 And then the same thing with the predictions I equals the predictions。
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以现在我们必须做的最后一件事是得到实际的 PR 曲线。对于这个，我们说 classes。所以在这种情况下，我们的类别标签只是范围10，因为我们有从0到9的数值。现在我们迭代这个。所以4
+    I 在 classes 中。然后我们说我们得到的 labels I 等于。这里的 labels 等于 I。然后预测的同样操作，预测 I 等于预测。
 - en: And here we want to have all the samples。 But only for the class I。 And then
     we call writer dot at。 And this is called at PR curve。And this needs a tag。 So
     for the tag。 we just use the class label as string。 And then here we have the。Labels
     first。 and then the predictions。 So predictions I， and then as global global step，
     we just use0。
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里我们想要获取所有样本。但仅针对类别 I。然后我们调用 writer dot at。这称为 PR 曲线。这个需要一个标签。对于标签，我们仅使用类别标签作为字符串。然后在这里我们有。首先是标签，然后是预测。所以预测
+    I，然后作为全局步骤，我们就用0。
 - en: And then let's call writer dot close。 And then we are done。 So now let's save
     this and run our script one more time。And now when this is done。 and we should
     see precision recall curve for each of the class labels。So。Almost done。 And a
     pen。 So I have a typo here。So I have two different labels variables。 So let's
     call this。嗯。
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们调用 writer dot close。这样我们就完成了。现在保存这个并再次运行我们的脚本。完成后，我们应该能看到每个类别标签的精确召回曲线。所以，差不多完成了。还有一支笔。我这里有个拼写错误。我有两个不同的标签变量。我们就叫这个。嗯。
 - en: Let's just call this labels 1 here。 So labels1 and labels 1 and labels1。And
     now。Let's run this one more time。Sorry about that。So let's clear this and run
     this one more time。And now again， we have to go through the training pipeline。Oh，
     I didn't save it。
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们在这里就叫这个 labels 1。这样 labels1 和 labels 1 以及 labels1。现在，我们再运行一次。抱歉。我们先清理一下，再运行一次。现在，我们又得经过训练管道。哦，我没保存。
 - en: '![](img/ee3dacee23dcf8b95d479be89b099b38_29.png)'
+  id: totrans-60
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ee3dacee23dcf8b95d479be89b099b38_29.png)'
 - en: Alright， so now we are done， So let's reload our tensor board one more time。And
     now we have one more entry up here。 and this is the PR curve。 And now we should
     see the precision recall curves for each of our class label。 So here we have label
     0， label 1 and so on。And then we can inspect the precision and the recall for
     the different thresholds。
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，现在我们完成了。让我们再重新加载一次 tensor board。现在我们这里有一个新的条目。这是 PR 曲线。现在我们应该看到每个类别标签的精确召回曲线。在这里我们有标签0、标签1等。然后我们可以检查不同阈值下的精确度和召回率。
 - en: So here on the y axiss， we have the precision and on the x axis， we have the
     recall。 And then。 for example， for each for different thresholds we can analyze
     it and see how many true positives。 how many false positives， how many true negatives
     and false negatives we have。So this is also really helpful to analyze the model。And
     yeah。
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以在y轴上，我们有精确度，在x轴上，我们有召回率。然后，例如，对于不同的阈值，我们可以分析一下，看看有多少个真正阳性，有多少个假阳性，有多少个真正阴性和假阴性。因此，这对分析模型也非常有帮助。没错。
 - en: so that's all I wanted to show you for the Tenser board。 I hope you enjoyed
     this tutorial。 and please consider subscribing to the channel and see you next
     time， bye。😊。![](img/ee3dacee23dcf8b95d479be89b099b38_31.png)
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是我想展示给你的关于Tensor板的所有内容。我希望你喜欢这个教程。请考虑订阅频道，下一次再见，拜拜。😊。![](img/ee3dacee23dcf8b95d479be89b099b38_31.png)

@@ -1,597 +1,885 @@
 - en: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P18：L18-
     创建和部署深度学习应用程序 - 使用 Flask 和 Heroku 部署 PyTorch 模型 - ShowMeAI - BV12m4y1S7ix
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P18：L18-
+    创建和部署深度学习应用程序 - 使用 Flask 和 Heroku 部署 PyTorch 模型 - ShowMeAI - BV12m4y1S7ix
 - en: Hey， guys， welcomele to a new Pytorch tutorial Today。 I show you how we can
     deploy our Pytorch model with flask and Heroku。 We create a simple flask app with
     a rest API that returns the result as chasing data。 And then we will deploy to
     Heroku。 And as an example， our Pytorch app should do diit classification。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，大家好，欢迎来到新的Pytorch教程。今天，我将向你展示如何使用flask和Heroku部署我们的Pytorch模型。我们将创建一个简单的flask应用，带有一个返回结果的REST
+    API。然后我们将部署到Heroku。作为示例，我们的Pytorch应用应该进行数字分类。
 - en: So at the end， I show you how I draw my own ditits and then predict it with
     our life running app。 So let's start。 So first of all， let's create a new directory。
     So let's call this Pytorch flask to。😊，Then let's go into this directory。 and then
     we want to create a new virtual environment。 So we say Python 3。😊，Minus M， V N
     V， N。 And this will create a new virtual environment。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，我将向你展示如何绘制自己的数字，然后用我们的实时应用进行预测。让我们开始吧。首先，让我们创建一个新的目录。我们称之为`Pytorch flask
+    2`。😊，然后让我们进入这个目录。接下来，我们要创建一个新的虚拟环境。所以我们输入`python 3`，`Minus M，V N V，N`。这将创建一个新的虚拟环境。
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_1.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_1.png)'
 - en: And by the way， this command might be slightly different on Windows。 So for
     this。 you can have a look at this installation guide from the official fl side。
     I will put the link in the description Here。 you find all these instructions。![](img/a4f608f66d892f12b3640cd5547c24da_3.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 顺便说一下，这个命令在Windows上可能稍有不同。所以你可以查看官方fl网站上的安装指南。我会把链接放在描述中。在这里，你可以找到所有这些指令。![](img/a4f608f66d892f12b3640cd5547c24da_3.png)
 - en: So now we have our virtual environment and now we want to activate it by saying
     dot V and thin slash activate。 And again， this is different on Windows。 And now
     we install the things we need。 So we say Pip install flask。![](img/a4f608f66d892f12b3640cd5547c24da_5.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们有了虚拟环境，接下来我们要通过输入`. v`和`thin slash activate`来激活它。同样，这在Windows上会有所不同。现在我们安装所需的东西。所以我们输入`pip
+    install flask`。![](img/a4f608f66d892f12b3640cd5547c24da_5.png)
 - en: And then we install the packages for pieytorrch。 So we say Pip， install torch
     and torch vision。 Now。 this will take a couple of seconds。Al right， So now we
     have this。 and now I create another directory and call this app。 And then I open
     up my editor。 So here I'm using visual studio code。And。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们为Pytorch安装包。所以我们输入`pip install torch`和`torch vision`。现在，这将花费几秒钟。好的，现在我们有了这个。接下来我创建另一个目录，命名为`app`。然后我打开我的编辑器。在这里，我使用的是Visual
+    Studio Code。并。
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_7.png)'
+  id: totrans-7
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_7.png)'
 - en: Let me make this larger for you。And now we see we have two directories。 So this
     is the one with our virtual environment， and this is the new empty app directory。
     Now。 inside the app directory， let's create a file main dot pi。 And here we will
     write our flask app。 So we say from flask import flask。 Then we create a new。
     or by the way， yes， I say， yes。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我为你放大一点。现在我们看到有两个目录。一个是我们的虚拟环境，另一个是新的空应用目录。现在，在应用目录中，让我们创建一个名为`main dot pi`的文件。在这里我们将编写我们的flask应用。所以我们输入`from
+    flask import flask`。然后我们创建一个新的，顺便说一句，是的，我说，是的。
 - en: I want to use the virtual end in here。😊，嗯。So， this one。And now I create an app
     by saying app equals flask and then double underscore name。 This is just the convention。
     how we do it。 And then we only want to create one function。 So one API and point。
     And we call this predict。 And here we do our prediction later。 And for now。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 我想在这里使用虚拟环境。😊，嗯。现在我创建一个应用，输入`app equals flask`和`double underscore name`。这只是我们惯用的做法。然后我们只想创建一个函数。即一个API端点。我们称之为`predict`，稍后在这里进行预测。现在。
 - en: we also have to decorate it by saying app dot route。 And then the path to the
     URL。 So here we say slash predict。 And we want to say the methods。 the allowed
     methods is only a post methods。 So here we create a list and say post。😊，Now。 this
     is the。A P I route that we need。 And here what we want to do is we want to do
     four things。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还需要通过输入`app dot route`和URL的路径来装饰它。所以在这里我们输入`slash predict`。我们要说允许的方法，允许的方法只有POST方法。因此我们创建一个列表并输入`post`。😊，现在。这是我们需要的API路由。我们要做四件事。
 - en: so we want to load an image。We want to or or get the image from our request。Then
     we want to transform the image to a tensor。Then we want to make our prediction。
     and then we want to return cha data。 So the result as a cha data。 So for this。
     we also need to import request from flask。 and we also import Chasonify。 So for
     now。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们想要加载一张图像。我们想从我们的请求中获取图像。然后我们想将图像转换为张量。接着我们想做出预测，然后返回数据。因此结果将作为数据返回。为此，我们还需要从
+    flask 导入 request。同时我们也导入 Chasonify。因此现在。
 - en: let's do a simple return statement and return a dummy chasing data。 So here
     we put in a dictionary。 So as a key， let's say results。 and then as a value， let's
     use one。So now we have this and now let's open the terminal inside here， and let's
     go into the app directory。 And now in order to start flask， we have to set two
     environment variables。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们做一个简单的返回语句并返回一个虚拟的数据。因此这里我们放入一个字典。作为键，我们说 results，然后作为值，我们使用 1。因此现在我们有这个，然后在这里打开终端，进入应用程序目录。为了启动
+    flask，我们必须设置两个环境变量。
 - en: So I say export flask app equals the file name， main dot pi and export flask
     and equals development。 This will give us hot reloading during the development
     process。 And by the way， again， on Windows。 this is not export。 So here you have
     to say set。 and then this part。And now we can say flask run。 And this will start
     our flask app on local host port 5000。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我说 export flask app 赋值为文件名 main.dot.pi，export flask 赋值为 development。这将在开发过程中给我们热重载。顺便说一下，在
+    Windows 上，这不是 export。因此在这里你必须说 set，然后这一部分。现在我们可以说 flask run。这将启动我们的 flask 应用程序，运行在
+    local host port 5000 上。
 - en: So now we have a live running app with this end point。 So now let's test this。
     Let's create a new directory。 and let's call this test and inside here。 Let's
     create a file test dot pie。😊，And for this。We use the requests module。 So we say
     import requests。 And I think I have to install this too。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们有一个运行中的应用程序以及这个端点。现在让我们来测试一下。我们创建一个新目录，并称之为 test，然后在这里创建一个文件 test.dot.pie。😊为了这个，我们使用
+    requests 模块。因此我们说 import requests。我想我也得安装这个。
 - en: So let's quit the server for a second by using control C and then say Pip install
     requests。So now we have this。 So now let's restart our flask app again。And now
     here we want to send one post request to our to this URL。 So we say requests dot
     post。 And then the URL path。 So we say H T T P colon slash slash。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们通过使用控制 C 暂时退出服务器，然后说 Pip install requests。所以现在我们有这个。现在让我们再次重启我们的 flask 应用程序。在这里我们想要向这个
+    URL 发送一个 POST 请求。因此我们说 requests.dot.post。然后是 URL 路径。因此我们说 H T T P colon slash
+    slash。
 - en: And then we can say local host port 5000。 So this is the same as we are seeing
     here。 And then we also have to say slash predict like we specified here slash
     predict。And then。 what we want to。Sent。 So for now， we don't want to send anything。So，
     let's say。Print the response dots text。 This will print the actual cha data that
     we are returning here。 So now。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们可以说 local host port 5000。这和我们在这里看到的是一样的。然后我们还需要说 /predict，就像我们在这里指定的 /predict。然后，我们想要发送什么。因此现在我们不想发送任何东西。所以，让我们说打印
+    response.dots.text。这将打印我们在这里返回的实际数据。因此现在。
 - en: if I go to the。Other terminal。 And let's go inside the test folder and run Python
     test pi。So I have a typo here， local host 5000。 Let's do it again。 Let me clear
     this。 And now let's run Python test。 And then we see this is working。 So we get
     the dictionary that we specified here。 So our app is already working。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我去到另一个终端。让我们进入测试文件夹并运行 Python test pi。我在这里有个拼写错误，local host 5000。我们再试一次。让我清空一下。现在让我们运行
+    Python test。然后我们看到这是有效的。因此我们得到了我们在这里指定的字典。因此我们的应用程序已经在运行。
 - en: and now let's do these four steps。 And for this， we create another file and
     the same app directory。 Let's create a file。 and let's call this torch u dot P。
     And here we do our。😊。Imports from the torch library。 So we say import torch。 We
     import torch dot N， N， S and， N。嗯。Then we also say， import torch。Vision。Dot transforms
     as transform forms。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们执行这四个步骤。为此，我们在相同的应用程序目录中创建另一个文件。我们创建一个文件，并称之为 torch.u.P。在这里我们做我们的。😊从 torch
+    库中导入。因此我们说 import torch。我们导入 torch.N，N，S 和 N。嗯。然后我们还说 import torch.vision.dot
+    transforms as transform forms。
 - en: And we say from pill import image。 So we will need this to convert our image
     to the Tenzor。 And now before we go on， let's have a look at the code that we
     are going to use。 So for this。 I have this in my Pytorch repository from my Pytoch
     beginner course and I will also put this link in the description。 So here we are
     going to use the tutorial number 13。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们说 from pill import image。因此我们需要这个来将我们的图像转换为张量。在我们继续之前，先看一下我们将要使用的代码。对此，我在我的
+    Pytorch 初学者课程的 Pytorch 仓库中有这个，我也会将这个链接放在描述中。因此我们将使用第 13 个教程。
 - en: our basic feet forward neural net to do diit classification。 And So let me open
     up this in a second editor。![](img/a4f608f66d892f12b3640cd5547c24da_9.png)
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们的基本前馈神经网络用于进行图像分类。让我在第二个编辑器中打开这个。![](img/a4f608f66d892f12b3640cd5547c24da_9.png)
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_10.png)'
+  id: totrans-21
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_10.png)'
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_11.png)'
+  id: totrans-22
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_11.png)'
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_12.png)'
+  id: totrans-23
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_12.png)'
 - en: So here， this is the exact same code that you can find and download on Gitth。
     And so now basically。 we want to run this file and then save the model。 So what
     we have to do down here at the very end。 we want to say torch dot save。 And then
     we want to save the model dot state dit。And then the file name。 So here we say，
     let's call this Mist underscore FFN dot P， T， H。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，这是你可以在GitHub上找到并下载的完全相同的代码。所以现在基本上。我们想运行这个文件，然后保存模型。所以我们在最后这里要做的是说torch.save。然后我们想保存模型.state_dict。然后是文件名。所以在这里我们说，让我们称这个为Mist_underscore_FFN.pth。
 - en: And then we want to do one more thing。 So here for our data set right now， I
     only have one transform。 So transform dot to1zoa。 And now let's use another transform
     here。 So let's say transform equals transform dot co because we use more than
     one。 And here as a list。 We first of all do our to1or transform。And then we also
     want to normalize it。 So I say transforms。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们还想做一件事。现在对于我们的数据集，我只使用了一个变换。所以transform.to_tensor。现在让我们在这里使用另一个变换。所以我说transform等于transform.compose，因为我们使用的不止一个。在这里作为一个列表。首先我们执行to_tensor变换。然后我们还想对其进行归一化。所以我说transform。
 - en: dot normalize。And then here， I put in the。Mean and the standard deviation。 And
     this is to go in as a tuple。 So the mean is point。1，3，07。 and then a comma。 because
     this should be a tuple。 And then as a standard deviation， let's copy and paste
     this。 And here we use point 30，8，1。 So these are just the global means and the
     standard deviation from the Mnes data set。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 点归一化。然后在这里，我放入均值和标准差。这要作为一个元组传入。所以均值是点1，3，07，然后是一个逗号，因为这应该是一个元组。然后作为标准差，让我们复制并粘贴这个。在这里我们使用点30，8，1。这些都是来自MNES数据集的全局均值和标准差。
 - en: So this is given here。 So just put in the same numbers here。And now we use this
     transform here。 And so you don't have to do this。 but I just want to demonstrate
     that later in our inference。 we want to apply the same two transforms。So now we
     use this and now we want to run the code and then save it at the end。 So here
     I'm using a conda environment。 So the same as I used in the in the。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这里给出了这个。所以只需在这里放入相同的数字。现在我们使用这个变换。因此你不必这样做，但我只是想演示稍后在推理中，我们想应用相同的两个变换。现在我们使用这个，然后我们想运行代码并在最后保存它。在这里我使用的是conda环境。和我在中使用的相同。
 - en: Tutial in the beginner course tutorial。 So I say Connda activate。3conda activate
     pie torch。And then let's take Python。 And this file is number 13 feet forward
     at pi and then run it。 And this will take a couple of seconds。Alright， so now
     it's done。 And you could see that our during our training， the loss decreased。
     And at the end。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 初学者课程教程中的教程。所以我说Conda激活。3conda激活PyTorch。然后让我们使用Python。这个文件是编号13的前馈神经网络，然后运行它。这会花几秒钟。好了，现在完成了。你可以看到在我们的训练过程中，损失减少了。最后。
 - en: we have this accuracy。 So it's pretty good。 And also in the same folder appeared，
     this file here。 So we want to copy this and then paste it into this directory
     here。 So now。We can close this。 and now we can start。Implementing the pipeline
     here。 So here we want to do three things。 So we want to load our model。 We want
     to have a function to transform an image to a tenzor with the same transformations
     that we've just seen。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们有了这个准确性。所以效果很好。同时在同一个文件夹中出现了这个文件。所以我们想复制这个文件，然后粘贴到这里的目录中。现在我们可以关闭这个，然后开始在这里实现管道。我们要做三件事。我们想加载我们的模型。我们想要一个函数将图像转换为一个张量，并且使用我们刚刚看到的相同变换。
 - en: And then we want to have a function to predict， to do the prediction。 So。![](img/a4f608f66d892f12b3640cd5547c24da_14.png)
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们想要一个函数来预测。所以。![](img/a4f608f66d892f12b3640cd5547c24da_14.png)
 - en: Now， let's go back to the。![](img/a4f608f66d892f12b3640cd5547c24da_16.png)
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，让我们回到。![](img/a4f608f66d892f12b3640cd5547c24da_16.png)
 - en: 嗯。Original code。 And from there， we copy a few things。 So we copy this part。
     We want to have the same model class。![](img/a4f608f66d892f12b3640cd5547c24da_18.png)
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗯，原始代码。从这里开始，我们复制一些东西。所以我们复制这一部分。我们想要相同的模型类。![](img/a4f608f66d892f12b3640cd5547c24da_18.png)
 - en: So let's paste it up here， and we need these parameters， and we remove the two
     device calls。 So for now， or in this tutorial， we are only using the CPU。 So now
     we need the input size。 the hidden size and the number of classes。 and we also
     get this from here。 So we have。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们把它粘贴到这里，我们需要这些参数，并去掉两个设备调用。所以目前，或者在这个教程中，我们只使用 CPU。现在我们需要输入大小、隐藏大小和类别数量。我们也从这里获取这些信息。所以我们有。
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_20.png)'
+  id: totrans-34
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_20.png)'
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_21.png)'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_21.png)'
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_22.png)'
+  id: totrans-36
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_22.png)'
 - en: These hyperparmeter。 So let's copy them over here。![](img/a4f608f66d892f12b3640cd5547c24da_24.png)
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些超参数。所以让我们把它们复制到这里。![](img/a4f608f66d892f12b3640cd5547c24da_24.png)
 - en: Then， we create our model。![](img/a4f608f66d892f12b3640cd5547c24da_26.png)
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后，我们创建我们的模型。![](img/a4f608f66d892f12b3640cd5547c24da_26.png)
 - en: And then we want to load the state stick。 So by the way。 you can also find this
     in my Github repo how we save and load a model。 So this is tutorial number 17
     and here we can grab this part。 So this is the recommended way。 by the way， when
     we only save the state dit。 So then we create our model from the class。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们想要加载状态数据。顺便提一下，你可以在我的 GitHub 仓库找到我们如何保存和加载模型的方法。这是第 17 个教程，我们可以抓取这一部分。这是推荐的方式，顺便说一下，当我们只保存状态数据时。然后我们从类中创建我们的模型。
 - en: and we load the state dit。 and we also have to set it to evaluation mode。 So
     this is very important。![](img/a4f608f66d892f12b3640cd5547c24da_28.png)
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们加载状态数据，并且必须将其设置为评估模式。这一点非常重要。![](img/a4f608f66d892f12b3640cd5547c24da_28.png)
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_29.png)'
+  id: totrans-41
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_29.png)'
 - en: And we also need the path。 So the path equals。 And then this is the file name
     here。 So it's in the same directory。 So we say amest underscore FFN dot PH。 And
     by the way。 if you trained on the GP， then you must be careful。 So。 but you also
     find how you load it from a GP to the CPU then。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还需要路径。所以路径等于。然后这是文件名。所以它在同一目录下。所以我们写 amest underscore FFN dot PH。顺便说一下，如果你在
+    GPU 上训练过，你必须小心。所以，你也会发现如何从 GPU 加载到 CPU。
 - en: So you have to specify the map location。 and this is our CPU device。![](img/a4f608f66d892f12b3640cd5547c24da_31.png)
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以你必须指定映射位置，这就是我们的 CPU 设备。![](img/a4f608f66d892f12b3640cd5547c24da_31.png)
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_32.png)'
+  id: totrans-44
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_32.png)'
 - en: So now we have this。 So now we have our model。And the next thing we want to
     do is define a function to transform。 transform the image， and this will get image
     as raw bytes as an input。 and then here we want to create a transform by saying
     transform equals。 and then we grab the same thing as we are having here。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们有这个。现在我们有了我们的模型。接下来我们要做的是定义一个函数来转换图像，这将接收原始字节作为输入。然后我们想要创建一个转换，写成 transform
+    等于。然后我们抓取和我们这里相同的东西。
 - en: So we want to have the same transformation steps as in our training。 but we
     also want to or need to have some more here。 So for now。 this could also be a
     RGp image as an input， but we only want to have it as a grayscale like here when
     we are loading this Mnes data set。 and this is in grayscale format。 and it's also
     in exactly this size。 So each image has。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们希望与训练时相同的转换步骤，但我们还希望或需要这里有一些更多的内容。目前，这也可以作为 RGb 图像输入，但我们只想要它作为灰度图像，就像在加载这个
+    MNIST 数据集时一样，且它是灰度格式，正好是这个大小。所以每个图像都有。
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_34.png)'
+  id: totrans-47
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_34.png)'
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_35.png)'
+  id: totrans-48
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_35.png)'
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_36.png)'
+  id: totrans-49
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_36.png)'
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_37.png)'
+  id: totrans-50
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_37.png)'
 - en: 28 by 28 pixels。 So we have to use these same values too。 So we applied two
     more transforms。 So we say transforms dot。 and then we can use gray scale gray
     scale。 And then here we can say the nu of output channels equals one because we
     only have want to have one output channel。 And we also want to resize it。 So we
     say transforms dot resize。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 28 x 28 像素。所以我们也必须使用这些相同的值。我们应用了两个更多的转换。我们写 transforms dot。然后我们可以使用灰度。接着我们可以说输出通道的数量等于
+    1，因为我们只想要一个输出通道。我们还想要调整大小。所以我们写 transforms dot resize。
 - en: And then as a tuple the size28 by 28。 So now we have this。 So let me format
     this a little bit nicer。![](img/a4f608f66d892f12b3640cd5547c24da_39.png)
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后作为一个元组，大小为 28 x 28。所以现在我们有这个。让我把它格式化得更漂亮一些。![](img/a4f608f66d892f12b3640cd5547c24da_39.png)
 - en: So now this is our transform。 and then we want to apply it。 So， first of all。
     we want to create an image， a pillow image from the image bytes。 And we can say
     image dot open。 and then I O dot bys， I O。 and then our image bys。 And for this，
     we need to import， sorry。Import I O。 So to handle input out output streams。And
     then we want to apply our transform and then can return it。
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以现在这是我们的转换。然后我们想应用它。所以，首先，我们想从图像字节创建一个图像，使用 pillow 图像。我们可以说 image.dot open。然后
+    I O.dot bys，I O。然后是我们的图像字节。为此，我们需要导入，抱歉。导入 I O。以处理输入输出流。然后我们想应用我们的转换，然后可以返回它。
 - en: So we say return， transform， and then our image。 And we also say unque。Unsqueze
     0。 So this will return a new tenzor and inserts a dimension of one at this position。
     because during draining。 we have the number of batches on one axis。 And now we
     only right now。 we only have one image。 So we have to add this axis and only have
     one sample in our batch。
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们说返回，转换，然后是我们的图像。我们还说 unque。Unsqueze 0。这将返回一个新的张量，并在此位置插入一个维度。因为在抽取时，我们在一个轴上有批次数量。现在我们只有一张图像。所以我们必须添加这个轴，并且在我们的批次中只保留一个样本。
 - en: So now we have this。 and now one more method is missing。 So now we have to write
     a function to do the prediction。 So we say define get。Prediction。 and this will
     get a image tensor as input。 And now for this， we also can have a look。![](img/a4f608f66d892f12b3640cd5547c24da_41.png)
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以现在我们有这个。现在缺少一个方法。我们需要写一个函数来进行预测。所以我们说定义 get.Prediction。它将获取一个图像张量作为输入。现在我们也可以看一下。![](img/a4f608f66d892f12b3640cd5547c24da_41.png)
 - en: At the。![](img/a4f608f66d892f12b3640cd5547c24da_43.png)
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里。![](img/a4f608f66d892f12b3640cd5547c24da_43.png)
 - en: Original code。 And down here we do the evaluation。 And here we use the same
     code。 So let's copy and paste this。![](img/a4f608f66d892f12b3640cd5547c24da_45.png)
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 原始代码。然后在这里我们进行评估。在这里我们使用相同的代码。所以让我们复制并粘贴这个。![](img/a4f608f66d892f12b3640cd5547c24da_45.png)
 - en: And here。 So we resize our。Image to be in this shape。Then we can remove this
     part because we don't use GP U support。Then we perform the forward pass。 and then
     we get the prediction by calling torch dot max。 and then we can return the predicted
     class or predicted index。
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里。所以我们调整我们的图像大小，使其符合这个形状。然后我们可以去掉这部分，因为我们不使用 GPU 支持。然后我们执行前向传递。通过调用 torch.dot
+    max 获取预测，然后我们可以返回预测的类别或预测的索引。
 - en: And now this is all we need in this file。 So now this is all the code for our
     inference。And now we can go back to our main file and then import this。 So we
     say from torch us， we import。Let's call it was called transform image and get
     prediction。 So now in our predict method。 we want to implement this pipeline。
     And here we want to be very careful because we don't want to have a error here。
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在这个文件中我们需要的全部内容。这是我们推断的所有代码。现在我们可以返回到我们的主文件，然后导入这个。所以我们说从 torch us 导入。我们称之为
+    transform image 和 get prediction。现在在我们的预测方法中。我们想实现这个管道。在这里我们要非常小心，因为我们不想在这里出错。
 - en: So then our server crashes。 So we do some error checking。 So first of all。 we
     check if our request dot method equals equals post。 And only then we do the code。Then
     we get the file。 So we later we pass a file to this post request。 and then we
     get this file by saying file equals request dot file， dot get。
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 否则我们的服务器会崩溃。所以我们做一些错误检查。首先，我们检查我们的请求.method 是否等于 post。只有这样我们才会执行代码。然后我们获取文件。稍后我们将文件传递给这个
+    post 请求。然后通过 saying file equals request.file.get 获取这个文件。
 - en: And then we use the key file later。 So now first， we check if file。Is not or
     we say if file is none or file dot file name equal equals an empty string。 Then
     we return chason file。 And here we return a dictionary where we put in a arrow
     as key。 And as a value， we say no file。 So this is the first thing we check。
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们稍后会使用 key 文件。所以首先，我们检查文件。如果 file.is not 或者我们说如果 file 为 none 或者 file.dot
+    file name 等于一个空字符串。然后我们返回 chason file。在这里我们返回一个字典，我们把一个错误作为键。作为值，我们说没有文件。这是我们检查的第一件事。
 - en: Then we also check if this is an allowed extension。 So， for example。 we only
     support P and G and Jpe files。 So we say if not allowed file。 And then here we
     pass the file dot file name。 Then we also return a error。 So let's say return
     Chasoniffi。 and then let's say format， not support。Ts。And for this。
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们也检查这是否是允许的扩展名。所以，例如。我们只支持 P 和 G 以及 Jpe 文件。所以我们说如果不是允许的文件。然后在这里我们传递 file.dot
+    file name。然后我们也返回一个错误。所以我们说返回 Chasoniffi。然后我们说格式不支持。
 - en: we create a little helper function。 So let's say define a allowed file。 and
     this will get a file name。 And then our file name could be， for example。 sum name
     and then dot P and G， our ending。 And now we want to define some allowed extensions。
     So let's say allowed extensions equals。 And this is a set with only unique values。
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们创建一个小助手函数。 假设我们定义一个允许的文件。 这将获取一个文件名。 然后我们的文件名可以是，例如。某个名字，然后点P和G，我们的结尾。现在我们想定义一些允许的扩展名。
+    所以我们说允许的扩展名等于。 这是一个仅包含唯一值的集合。
 - en: So we support P and G JpeEC and Jpeg with an E。 So。😊，And now， here， we return。Dot
     in file name。 So our file name should be this format。And also， now we want to
     check the ending。 So we want to split our file。 So we say file name dot R split。
     So from the right side。 and we want to split at the dot and only have maximum
     one split。 and then we take the second part。
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们支持P和G JpeEC以及带E的Jpeg。 所以。😊，现在，我们返回。文件名中的点。 所以我们的文件名应该是这个格式。现在我们想检查结尾。 所以我们想拆分我们的文件。
+    所以我们说文件名点R拆分。 从右侧开始。我们想在点处拆分，并且最多只进行一次拆分。然后我们取第二部分。
 - en: So this part。 So this is index one。 Then we convert it to lower。 And then we
     check if this is in our allowed extensions。 So now。This will return true if our
     file name looks， for example， like this。So now down here， we can go on。 And so
     now what we want to do is we want to load the image bys。
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这一部分。 这是索引1。 然后我们转换为小写。 然后检查这是否在我们的允许扩展名中。 现在，如果我们的文件名看起来例如这样，这将返回true。 所以现在在下面，我们可以继续。
+    现在我们想加载图像字节。
 - en: then do the transformation and our prediction and this part。 And for now。 I
     wrap this in a try except block。 So this is not very good error handling。 But
     for now。 this should be okay。 So if we have a exception in this part。 and we say
     error。 and let's say error during。嗯。Errra during prediction。
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后进行转换和我们的预测以及这一部分。 目前，我将其包装在try except块中。 这不是很好错误处理。 但目前应该没问题。 如果我们在这一部分有异常。
+    我们说错误。 假设在预测期间出错。
 - en: And then here we say our image bys equals file dot read。Then we say our tenor
     equals transform image and put in the image bytes。 Then we get the prediction。
     prediction equals get prediction with our tenor。 and then we want to return the
     result S a。Chasten files。 So we do。 let's say our data equals a dictionary with
     the prediction key。
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们说我们的图像字节等于文件点读取。 然后我们说我们的tenor等于变换图像并放入图像字节。 然后我们得到预测。 预测等于获取预测与我们的tenor。
+    然后我们想将结果作为一个。Chasten文件返回。 所以我们说，我们的数据等于一个带有预测键的字典。
 - en: And you'll use prediction prediction dot item because we cannot put a tenor
     in this。 But our tenor only has one element。 So we get this by saying prediction
     dot item。And in case of the Mnes data sets of this。For example， this has index
     0。 and then this is equivalent to the number 0 that we have drawn。 So basically。
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 你将使用预测预测点项，因为我们不能在这里放一个tenor。 但我们的tenor只有一个元素。 所以我们通过说预测点项来获取。 在Mnes数据集的情况下，例如，这个索引为0。
+    然后这相当于我们绘制的数字0。 基本上。
 - en: we also want to return the actual class name。 but in this case， this is the
     same。 So here we just do for demonstration。 we return the same thing as a string。
     So string prediction dot。Item。So here， for example， if we would use the Cypher
     10 data set。 then we would have to do a a mapping。 So， for example， index 0 is
     a car or a ship or whatever。
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还想返回实际的类名。 但在这种情况下，这个类名是相同的。 这里我们只是为了演示。 我们返回与字符串相同的内容。 所以字符串预测点。项。 举个例子，如果我们使用Cypher
+    10数据集。 那么我们必须做一个映射。 比如，索引0是汽车或船或者其他。
 - en: So this is what you want to put in here。 So now we have the data。 And now we
     only have to return this as a cha object again。 And then we should be done。So
     I think this is all we need。 So now let's see。 So our server should have reloaded
     automatically because we set the。Environment to development。So now let's go to
     our test file。
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是你想放入这里的内容。 现在我们有了数据。 现在我们只需再次将其作为cha对象返回。 然后我们应该完成。 我认为这就是我们需要的一切。 现在让我们看看。
+    我们的服务器应该自动重新加载，因为我们将环境设置为开发。 现在让我们去我们的测试文件。
 - en: And here we want to put in the files to our post request。 So we say files equals。
     And remember。 this is a dictionary with the key file。 And now we need a file。
     So for this， let's go to Google。 And let's search for Mnist。![](img/a4f608f66d892f12b3640cd5547c24da_47.png)
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里我们想将文件放入我们的POST请求。 所以我们说文件等于。 记住，这是一个带有关键字文件的字典。 现在我们需要一个文件。 为此，我们去谷歌。 然后搜索Mnist。![](img/a4f608f66d892f12b3640cd5547c24da_47.png)
 - en: Image。![](img/a4f608f66d892f12b3640cd5547c24da_49.png)
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 图像。![](img/a4f608f66d892f12b3640cd5547c24da_49.png)
 - en: And let's go to images。 and， for example。Where is it。Let's grab this image。
     So let's click on save image as。And then I will save it as 7 and on my desktop。
     and then I will。Let me quickly grab this and copy it into this folder。![](img/a4f608f66d892f12b3640cd5547c24da_51.png)
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们去看图像，举个例子。它在哪里？让我们抓取这张图片。点击另存为，然后我会将其保存为7到我的桌面。接着我会快速复制到这个文件夹中。![](img/a4f608f66d892f12b3640cd5547c24da_51.png)
 - en: So now we see we have this image in the folder。 So now we want to open this
     here。 So here we say open and then the file name 7 dot P and G。 And we want to
     open it in read binary mode。So， now we have this。So now， again。 let's go to our
     test file。 and now we should get a result with 7 if everything is working correctly。
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们看到这个图像在文件夹中。我们现在想在这里打开它。所以我们说打开，然后是文件名7 dot P和G。我们希望以读取二进制模式打开它。所以，现在我们有了这个。然后，我们再次去我们的测试文件，如果一切正常，我们应该得到结果为7。
 - en: So now let's do P test at pi and cross fingers。 And， of course。 it's not working
     And if we go and have a look at this terminal and we get a syntax error invalid
     syntax。 So let's go back。 And let's have a look。 So here I missed a comma， I guess，
     So let's save this。 And。
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们运行P test at pi，交叉手指。当然，它不工作。如果我们去看看这个终端，出现了语法错误无效的语法。让我们回去看看。我想我漏掉了一个逗号，所以我们保存它。
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_53.png)'
+  id: totrans-76
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_53.png)'
 - en: Now， our server crashed。 So we have to say last run。Again。 and that's exactly
     why we want to be very careful in this method and do some error handling here。So
     now let's test this again。 So let's clear this。 And now let's say， oh， sorry。
     this was the wrong one。 So here I want to say。Python test dot pi。
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，我们的服务器崩溃了。所以我们要再次运行上一次。这正是我们希望在这个方法中非常小心并进行一些错误处理的原因。所以现在我们再测试一次。清除一下。抱歉，这是错误的。因此，我想说Python
+    test dot pi。
 - en: And then we get error during prediction。 So it's still not working。 So for now。Let's
     comment the。Try block out and let's see whicharrow we are having。So now you could
     see why this is not the best error handling because we don't see what went wrong。
     So again， our server started。 So let's say Python test of pi again。
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们在预测时遇到了错误。所以它仍然无法工作。所以现在，让我们注释掉这个尝试块，看看我们遇到了什么错误。现在你可以看到这不是最佳的错误处理，因为我们不知道出了什么问题。所以我们的服务器又启动了。假设我们再运行一次Python
+    test of pi。
 - en: And then name transforms is not defined。 So again， I am having a。Typepo here，
     trans。Forms。 sorry about that。 So now， So now let's save this and。Let's run it
     again。Tensor has no attribute on squeeze。 So again， a typo。Unsque。And again， Python
     tester pi images image。
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后名字转换未定义。所以我在这里又犯了一个拼写错误，trans.Forms。对此我很抱歉。现在，让我们保存它，并再次运行。Tensor没有属性on squeeze。所以又是一个拼写错误。Unsque。再次运行，Python
+    tester pi images image。
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_55.png)'
+  id: totrans-80
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_55.png)'
 - en: Cancel。And now。Pythhen test a pie。 and now it's finally working。 So now we see
     that our flaskg is running and our pytorch model is doing the correct thing。 So
     now I can add our try except block again。 So let's in then this part and do our
     except block again。😊。
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 取消。现在，Pythhen test a pie。现在它终于可以工作了。所以现在我们看到我们的flaskg正在运行，我们的pytorch模型在做正确的事情。所以我可以再次添加我们的try
+    except块。让我们在这一部分再做一次except块。😊。
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_57.png)'
+  id: totrans-82
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_57.png)'
 - en: So now we can remove this。And now let's test this with our own images。 So I'm
     using paintbrush here。And then I specify a new image with width and height is
     100 pixels。 And now， for example。 we want to be careful。 We want to have the background
     in black。So I fill a background with black。 and now I'm using a white pencil。
     And then， for example， let's do a three here。 and let's save this。
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们可以删除这个。现在让我们用自己的图像进行测试。我在这里使用画笔，然后我指定一个宽度和高度为100像素的新图像。例如，我们想要小心，背景是黑色的。所以我填充背景为黑色。现在我使用白色铅笔，举个例子，画一个三，并保存它。
 - en: As3 dot P and G。 And then let me copy this inside the。Folder here。And now let's
     use this one。 So let's use3 dot P and G。 And let's go back and let's clear this。And
     run it again。 And we get the prediction is 3。 So， yeah， this is pretty nice。 So
     now we have this。 and now the only thing left to do is deploy it。So for this，
     we have to do a couple more things。
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: As3 dot P和G。然后让我把它复制到这里的文件夹里。现在我们用这个。所以我们使用3 dot P和G。让我们回去，清除一下，再次运行。预测结果是3。所以，是的，这很不错。现在我们有了这个，剩下的唯一事情就是部署它。为此，我们还需要做几件事情。
 - en: So the first one is to use an actual web server that is suitable for production。
     And for this。 we use Q unicorn。 So I say Pip install Q unicorn。Then， in our。Base
     folder， we create a new file。 and let's call this W S G I dot pi and move this
     to the base folder。 And here we say from app。Dot main import app。 And now we want
     to create a Heroku app from this。 So for this， of course。
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，我们需要使用一个适合生产的实际网络服务器。因此，我们使用**Q unicorn**。所以我说Pip安装Q unicorn。在我们的基础文件夹中，我们创建一个新文件，叫做W
+    S G I dot pi，并将其移动到基础文件夹。在这里，我们说从app.dot main导入app。现在我们想从这个创建一个Heroku应用程序。所以当然。
 - en: you need to have a Heroku account and the heroroku command line face installed。
     So if you。Haven't。Then go to the official website， Heroku dot com。 And there you
     find the instructions。 I already did this。 So now I have to log in。 So I say heroroku
     lock in minus I to do it in the terminal。
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 你需要一个Heroku帐户和安装heroku命令行界面。如果你还没有，那么请访问官方网站，Heroku dot com。在那里你会找到说明。我已经做过这个。所以现在我得登录。所以我说heroku
+    lock in minus I在终端中执行。
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_59.png)'
+  id: totrans-87
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_59.png)'
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_60.png)'
+  id: totrans-88
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_60.png)'
 - en: Then I have to put in my credentials and my password。And now it says I'm locked
     in so I can clear this again。 And now we want to create a new app by saying heroroku，
     create。 And then the name。 So let's call this flask pieytorrch tutorial。😊，This
     will create a new Heroku app。
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我必须输入我的凭据和密码。现在它说我已经登录，所以我可以再次清理。现在我们想通过输入heroku create来创建一个新应用程序。然后命名。所以我们叫它flask
+    pieytorrch tutorial。😊这将创建一个新的Heroku应用程序。
 - en: And in order to test this， we can go to the。Base directory again。 And we need
     to do。One more thing we need to update our path names the same way as we are doing
     it here。 So now app is our base package。 So this folder here。 So in the main file。
     we have to say from app dot torch us。 And inside this， we have to modify our path。
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了测试这个，我们可以再次进入基础目录。我们需要做一件事，我们需要以和这里相同的方式更新我们的路径名称。因此，现在app是我们的基础包。所以这个文件夹。在主文件中，我们必须说从app
+    dot torch us。在里面，我们必须修改我们的路径。
 - en: So this is now app dot Amnes F F N dot P， T， H。Sorry， here it' app。 slash this
     one。And now we can test this by saying heroroku local。 So this will start。 how
     we first need to have the profile。 So let's create a new。Proug file， sorry， sorry。
     I want this in there。Top directory again。 So let's say， let's call this proc file。
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在这是app dot Amnes F F N dot P， T， H。抱歉，这里是app。斜杠这个。现在我们可以通过输入heroku local来测试它。这将启动。我们首先需要有配置文件。让我们创建一个新的Proug文件，抱歉，抱歉。我想把这个放在顶层目录中。所以我们叫它proc
+    file。
 - en: This is what we need for heroroku。 And here we need to specify。 We want to have
     one Web app。 And we want to use Q unicorn with our new we at W S G I file as starting
     point and our app。 So this is the syntax。Now， again， we can test this by saying
     heroroku local。And now this is working。 So this is starting our G unicorn server
     on the same port。 So now not our flask app is running。
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是我们需要的Heroku。在这里我们需要指定。我们想要一个Web应用程序。我们希望使用Q unicorn和我们的新W S G I文件作为起点以及我们的应用程序。所以这是语法。现在，我们可以通过输入heroku
+    local来再次测试它。现在这个是工作的。因此，这会在同一个端口上启动我们的G unicorn服务器。现在我们的flask应用程序正在运行。
 - en: but our heroroku app is running locally。 And again。 though the server didn't
     change so we can again test this by saying Python test pi。 So this is still working
     with our new correct path names。 and now we can stop this。![](img/a4f608f66d892f12b3640cd5547c24da_62.png)
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我们的Heroku应用程序在本地运行。而且服务器没有变化，所以我们可以再次通过输入Python test pi来测试它。所以这仍然可以与我们新的正确路径名称一起工作。现在我们可以停止这个。![](img/a4f608f66d892f12b3640cd5547c24da_62.png)
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_63.png)'
+  id: totrans-94
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_63.png)'
 - en: And now。I also want to create a。Runtime dot T X， T。 And inside this， we specify
     our Python version。 So now this is Python 3。8。3。Then， we also。Let's clear this。
     We also need our requirements。 And since we use Pip， we can say Pip freeze and
     then greater and then require U require dot T X， T。This will write all of our
     requirements that we installed inside this package。Inside this T X T file。
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，我还想创建一个Runtime dot T X， T。在里面，我们指定我们的Python版本。所以现在是Python 3.8.3。然后，我们还要。让我们清理一下。我们还需要我们的需求。因为我们使用Pip，所以我们可以说Pip
+    freeze，然后大于号，然后require U require dot T X， T。这将把我们安装的所有需求写入这个T X T文件中。
 - en: But we have to modify this because right now we are using the normal torch and
     torch vision。 And this takes a lot of space。 And this is too large for Heroku。
     So we have to use the CPU only version here。 And for this。 we can go to the official
     Pytorrch website and then have a look at the installation guide。
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我们需要修改一下，因为现在我们正在使用普通的 torch 和 torch vision。这占用了很多空间。这对于 Heroku 来说太大了。所以我们必须在这里使用仅
+    CPU 版本。为此，我们可以去官方的 Pytorch 网站查看安装指南。
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_65.png)'
+  id: totrans-97
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_65.png)'
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_66.png)'
+  id: totrans-98
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_66.png)'
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_67.png)'
+  id: totrans-99
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_67.png)'
 - en: So here we use Pip as our package manager， and we don't want kuta support。 And
     so on Me。 I actually use this command。 but on Heroical。 we have Linux。 So we need
     this command。 So we need to have plus CPU appended to our torch and torch vision。
     So we say plus CPU here and plus CPU here， and we also need this command。
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，我们使用 Pip 作为我们的包管理器，我们不想要 kuta 支持。对于我，我实际上使用这个命令。但在 Heroku 上，我们有 Linux。所以我们需要这个命令。我们需要在我们的
+    torch 和 torch vision 后添加 + CPU。所以我们在这里说 + CPU，这里也说 + CPU，我们还需要这个命令。
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_69.png)'
+  id: totrans-101
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_69.png)'
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_70.png)'
+  id: totrans-102
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_70.png)'
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_71.png)'
+  id: totrans-103
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_71.png)'
 - en: And we can write it at the top of our requirements file。 So heres。 So now this
     will install only the CPU version on Heroku。 And now in order to push this directory
     to heroroku。 we need a git rappo。 So we say git in it。 Then I want to add a git
     ignore。 So I create a new file， Git ignore。 And for this， let's go。
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以在要求文件的顶部写下它。所以在这里。现在这将只在 Heroku 上安装 CPU 版本。为了将此目录推送到 Heroku，我们需要一个 git 仓库。所以我们说
+    git init。然后我想添加一个 git 忽略文件。所以我创建一个新文件，Git ignore。为此，我们开始吧。
 - en: or let's Google， let's say Python git ignore。 And I think this will lead us
     to git up。 And then here we can copy all of this。![](img/a4f608f66d892f12b3640cd5547c24da_73.png)
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者我们可以谷歌一下，搜索 Python git ignore。我认为这会引导我们到 git up。然后我们可以复制所有这些内容。![](img/a4f608f66d892f12b3640cd5547c24da_73.png)
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_74.png)'
+  id: totrans-106
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_74.png)'
 - en: And put it in our git ignore。 And at the top， I also put in the test folder。
     So I want to ignore this folder tool。 So let me quickly check if I have everything
     that I want in the rapple now。 So list looks good。 So now we have all of this。
     So now we want to add this as a remote rapple for heroku。 So we say heroku git
     colon remote minus a。 And then our app name。
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 并将其放入我们的 git 忽略文件。在顶部，我还添加了测试文件夹。所以我想忽略这个文件夹。所以让我快速检查一下我在仓库中是否拥有我想要的所有内容。列表看起来不错。所以现在我们有了这一切。现在我们想将其添加为
+    Heroku 的远程仓库。所以我们说 heroku git:remote -a。然后是我们的应用名称。
 - en: So I think we called it flask minus pi。![](img/a4f608f66d892f12b3640cd5547c24da_76.png)
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我认为我们叫它 flask - pi。![](img/a4f608f66d892f12b3640cd5547c24da_76.png)
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_77.png)'
+  id: totrans-109
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_77.png)'
 - en: Torch minus tutorial。This will add this as a remote dpo。 and now we add all
     of our files。 So we say git at dots and then git commit minus M。 And let's say
     initial commits and and now we can push it。 so we say git push Heroku master。
     This will push all to Heroku， and then start building and deploying the app。
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: Torch minus 教程。这将把它添加为远程 dpo。现在我们添加所有文件。所以我们说 git add . 然后 git commit -m。假设我们说初始提交，然后现在我们可以推送。所以我们说
+    git push Heroku master。这将所有内容推送到 Heroku，然后开始构建和部署应用程序。
 - en: So now this takes a couple of seconds。All right， so this was successful。 And
     now it' set deployed it to this URL。 So here at this path， we now have our live
     running F。 So now let's go back to the test dot pi。 And instead of the local host，
     we use this URL。 and then slash predict。😊。
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在这需要几秒钟。好的，这成功了。现在它已部署到这个 URL。所以在这个路径下，我们现在有我们的实时运行的 F。现在让我们回到 test.py。与其使用本地主机，不如使用这个
+    URL，然后加上 /predict。😊
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_79.png)'
+  id: totrans-112
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_79.png)'
 - en: And then let's go back to our test file。 and let's run Python test again。 And
     now we get the results。 So， yeah， so this is working。 So now let's do one more
     test。 So again， let's use my paint program。 And as a background， we have black。
     And now let's draw， for example， a8 like this。 And let's save it as。😊。
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们回到测试文件。再运行一次 Python 测试。现在我们得到了结果。所以，是的，这有效。所以现在我们再做一个测试。再次使用我的绘画程序。作为背景，我们使用黑色。现在我们画一个，比如
+    a8，像这样。然后将其保存。😊
 - en: '![](img/a4f608f66d892f12b3640cd5547c24da_81.png)'
+  id: totrans-114
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a4f608f66d892f12b3640cd5547c24da_81.png)'
 - en: 8 dot P， N G。 And then let's move it into this folder。 And here let's use this。8
     dot P and G。 And again， save it and clear this and run it again。And we see we
     get the prediction is 8。 So this is working。 And we have a life running app deployed
     to heroroku。And yeah。 I hope you enjoyed this tutorial。 If you like this。
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 8 dot P，N G。然后我们把它移到这个文件夹里。这里我们用这个。8 dot P和G。再一次，保存它，清理一下，然后再运行。我们看到预测是8。所以这在工作。我们已经将一个实时运行的应用部署到heroku上。嗯。我希望你喜欢这个教程。如果你喜欢的话。
 - en: please subscribe to the channel and leave me a like and see you next time， bye。😊。![](img/a4f608f66d892f12b3640cd5547c24da_83.png)
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: 请订阅这个频道，给我点赞，下次再见，拜。😊。![](img/a4f608f66d892f12b3640cd5547c24da_83.png)

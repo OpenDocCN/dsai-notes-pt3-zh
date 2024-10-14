@@ -1,321 +1,478 @@
 - en: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P8：L8- 逻辑回归
     - ShowMeAI - BV12m4y1S7ix
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P8：L8- 逻辑回归
+    - ShowMeAI - BV12m4y1S7ix
 - en: Hi， everybody。 Welcome back to a new Pytorch tutorial。 This time， we implement
     logistic regression。 If you have watched the previous tutorials， then this should
     be very easy Now。 Once again。 we implement our typical pytorch pipeline with those
     three steps。 So first， we set up our model。 We define the input and output size
     and the forward pass。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，欢迎回到新的Pytorch教程。这次，我们实现逻辑回归。如果你看过之前的教程，那现在应该非常简单。再次，我们实现我们的典型Pytorch管道，包含这三个步骤。所以首先，我们建立我们的模型。我们定义输入和输出大小以及前向传播。
 - en: Then we create the loss and the optimizer functions。 and then we do the actual
     training loop with the forward pass。 the backward pass and the weight updates。😊，The
     code here should be very similar to the code in the last tutorial where we implemented
     linear regression。 We only have to make slight adjustments for the model and the
     loss function。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们创建损失和优化器函数。然后我们进行实际的训练循环，包括前向传播、反向传播和权重更新。😊这里的代码应该与上一个教程中实现线性回归的代码非常相似。我们只需要对模型和损失函数进行稍微调整。
 - en: So we add one more layer to our model， and we select a different loss function
     from Pytor built in functions。So， let's start。First of all， let let's import some
     things that we need。 So we import torch。 of course， and we import torch dot nn
     as an n。 So the neural network module。 Then we import Ny S NP P to make some data
     transformations。 Then from Sk learn。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们在模型中增加一层，并选择一个不同的损失函数来自Pytorch内置函数。首先，让我们导入一些我们需要的东西。我们导入torch，当然，还有torch点nn作为n。所以神经网络模块。然后我们导入Numpy来进行一些数据转换。然后从Sklearn。
 - en: we import data sets to load a binary classification data set。Then from SK learn
     dot pre processing。 we want to import standard Scalar because we want to scale
     our features。 and then from SK learn dot model selection， we import train test
     split because we want to have a separation of training and testing data。And now
     let's do our three steps。 So first， we want to set up the model。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们导入数据集来加载一个二分类数据集。然后从Sklearn点预处理。我们想导入标准缩放器，因为我们想对特征进行缩放。然后从Sklearn点模型选择，我们导入训练测试拆分，因为我们希望对训练和测试数据进行分离。现在让我们进行我们的三个步骤。所以首先，我们想建立模型。
 - en: Then we want to set up the loss and the optimizer。 And then in the third step。
     we do the actual training loop。And as a step 0。We want to prepare the data。So
     let's do this。 So let's load the breast cancer data set from S K learn so we can
     say B equals data sets dot load breast cancer。 This is a binary classification
     problem where we can predict cancer based on the input features。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们想建立损失和优化器。然后在第三步中，我们进行实际的训练循环。作为第0步。我们想准备数据。让我们这样做。让我们从Sklearn加载乳腺癌数据集，所以我们可以说B等于数据集点加载乳腺癌。这是一个二分类问题，我们可以根据输入特征预测癌症。
 - en: So let's say X and Y equals B dot data and B dot target。And then we want to
     say， oh， first of all。 let's the get the number of samples and the number of features
     by saying this is。X dot shape。![](img/d4aae67709503eb865c057216c0046f3_1.png)
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以假设X和Y等于B点数据和B点目标。然后我们想说，哦，首先，让我们通过说这是来获取样本数量和特征数量。X点形状。![](img/d4aae67709503eb865c057216c0046f3_1.png)
 - en: So let's print this first So print the number of samples and the number of features
     to see how our data set looks like。![](img/d4aae67709503eb865c057216c0046f3_3.png)
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们先打印这个，打印样本数量和特征数量，看看我们的数据集长什么样。![](img/d4aae67709503eb865c057216c0046f3_3.png)
 - en: And。We see we have 569 samples and 30 different features。 So a lot of features
     here。And now let's continue。 And let's split our data when we say X train and
     X test and。X test and y train and y test equals here。 We can use the train test
     split function where we put in x and y。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们看到我们有569个样本和30个不同的特征。这里有很多特征。现在让我们继续。当我们说X训练和X测试，以及X测试和Y训练和Y测试等于这里时，我们可以使用训练测试拆分函数，将X和Y放入其中。
 - en: '![](img/d4aae67709503eb865c057216c0046f3_5.png)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_5.png)'
 - en: '![](img/d4aae67709503eb865c057216c0046f3_6.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_6.png)'
 - en: And we want to be the test。Size。![](img/d4aae67709503eb865c057216c0046f3_8.png)
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们想进行测试。大小。![](img/d4aae67709503eb865c057216c0046f3_8.png)
 - en: To be 20%。 So this is 02。![](img/d4aae67709503eb865c057216c0046f3_10.png)
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了达到20%。所以这是02。![](img/d4aae67709503eb865c057216c0046f3_10.png)
 - en: And let's also give this a random state equals， let's say，1，2，3，4。![](img/d4aae67709503eb865c057216c0046f3_12.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们还给这个一个随机状态，等于，假设是1，2，3，4。![](img/d4aae67709503eb865c057216c0046f3_12.png)
 - en: And there should be a small S。And now let's convert。 or， first of all。 now we
     want to scale our features。 Sc them Here。 we set up a standard scalar S C equals
     standard scalar。 which will。Make our features to have zero mean and unit variance。
     This is always recommended to do when we want to deal with a logistic regression。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 应该有一个小S。现在让我们转换。或者，首先。现在我们想要缩放我们的特征。Sc它们。在这里，我们设置一个标准的标量S C等于标准标量。这将使我们的特征具有零均值和单位方差。这在处理逻辑回归时总是推荐的。
 - en: So now we scale our data， So we say x train equals sc dot fit transform。 and
     then as an input we put in x train。 and then we want to do the same thing with
     our test data。 So we say x test equals SC dot here we only transform it。嗯。And
     here we put in X test。 Now。 we scaled our data。 Now we want to convert it to torch
     tenzoos。 So let's say x train。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们对数据进行缩放，所以我们说x train等于sc dot fit transform。然后作为输入我们放入x train。接着我们希望对测试数据做同样的事情。所以我们说x
+    test等于SC dot，这里我们只进行转换。嗯。我们在这里放入X test。现在。我们缩放了我们的数据。现在我们想把它转换为torch tenzoos。所以假设x
+    train。
 - en: '![](img/d4aae67709503eb865c057216c0046f3_14.png)'
+  id: totrans-16
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_14.png)'
 - en: Equals torch dot。 And here we can use the function from nuy。 And then we put
     an x train and cast this to a flow 32 data type。 So we say x train dot S。Type。Numpy
     dot float 32。 because right now， this is of type double。 and then we would run
     into some errorss later。 So let's cast this and convert this to a tenor。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 等于torch dot。这里我们可以使用nuy的函数。然后我们放入x train并将其转换为flow 32数据类型。所以我们说x train dot S。类型。Numpy
+    dot float 32。因为现在，这的类型是double。然后我们会在以后的某些错误中遇到问题。所以我们将其转换为tenor。
 - en: And now let's do this with all the other arrays。 So let's say x。![](img/d4aae67709503eb865c057216c0046f3_16.png)
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们对所有其他数组执行此操作。所以假设x。![](img/d4aae67709503eb865c057216c0046f3_16.png)
 - en: Test。Equals。This。And our Y train。And also， our y test tenzon。W test。And now。
     as the last thing to prepare our data is to reshape our why。Tenzo。 So Y train
     equals Y train dot V。 This is a built in function from Pytorarch that will reshape
     our Tzo with the given size。 So it gets the size。 Y train。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: Test。等于。这。还有我们的Y train。还有，我们的y test tenzon。W test。现在，准备数据的最后一步是重塑我们的y。Tenzo。所以Y
+    train等于Y train dot V。这是Pytorarch的内置函数，将根据给定的大小重塑我们的Tzo。所以它获取大小。Y train。
 - en: '![](img/d4aae67709503eb865c057216c0046f3_18.png)'
+  id: totrans-20
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_18.png)'
 - en: That shape，0。![](img/d4aae67709503eb865c057216c0046f3_20.png)
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 那个形状，0。![](img/d4aae67709503eb865c057216c0046f3_20.png)
 - en: And one。 So right now， our y has only one row， and we want to make it a column
     vector。 So we want to put each value in one row with only one column。 So this
     will do exactly this。 and also for our y test。 So Y test equals this y test。![](img/d4aae67709503eb865c057216c0046f3_22.png)
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 只有一个。所以现在，我们的y只有一行，我们希望把它变成列向量。所以我们希望将每个值放在一行中，只有一列。所以这将完全做到这一点。也适用于我们的y test。所以Y
+    test等于这个y test。![](img/d4aae67709503eb865c057216c0046f3_22.png)
 - en: '![](img/d4aae67709503eb865c057216c0046f3_23.png)'
+  id: totrans-23
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_23.png)'
 - en: And now， we are。![](img/d4aae67709503eb865c057216c0046f3_25.png)
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，我们正在。![](img/d4aae67709503eb865c057216c0046f3_25.png)
 - en: Think we are done with our data preparing。So now let's set up our model。 and
     here our model is a linear combination of weights and a bias。 And then in the
     logistic regression case， we apply a sigmoid function at the end。So let's do this。
     And for this， we want to write our own class。 So let's call this model。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 我认为我们已经完成了数据准备。所以现在让我们建立我们的模型。在这里，我们的模型是权重和偏差的线性组合。在逻辑回归的情况下，我们在最后应用一个sigmoid函数。所以让我们这样做。为此，我们想编写自己的类。所以我们称之为模型。
 - en: or we can also call this logistic regression。Chatic。Regression。And this must
     be derived from N and dot module。And then this will get a in it。Which has self。
     And then it gets the number of input。Features。And here， first， we call the super
     in it。 So let's say super。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者我们也可以称之为逻辑回归。Chatic。回归。这必须从N和dot模块派生。然后这将得到一个init。它有self。然后它获取输入的数量。特征。这里，首先，我们调用super
+    init。所以我们说super。
 - en: '![](img/d4aae67709503eb865c057216c0046f3_27.png)'
+  id: totrans-27
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_27.png)'
 - en: Logistic regression and self dot in it。![](img/d4aae67709503eb865c057216c0046f3_29.png)
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 逻辑回归和self dot init。![](img/d4aae67709503eb865c057216c0046f3_29.png)
 - en: And then here we define our layer。 So we only have one layer self dot linear
     equals。 And here we can use the build in layer N N dot linear。 And this gets the
     input size。 So an input features。 and the output size is just one。 So we only
     want to have one value。 one class label at the end。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们定义我们的层。所以我们只有一层self dot linear等于。这里我们可以使用内置的layer N N dot linear。这将获取输入大小。所以输入特征。而输出大小只有一个。所以我们只想在最后得到一个值，一个类别标签。
 - en: '![](img/d4aae67709503eb865c057216c0046f3_31.png)'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_31.png)'
 - en: '![](img/d4aae67709503eb865c057216c0046f3_32.png)'
+  id: totrans-31
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_32.png)'
 - en: '![](img/d4aae67709503eb865c057216c0046f3_33.png)'
+  id: totrans-32
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_33.png)'
 - en: And then we also have to implement the forward pass here， which has self and
     the data。 And our forward pass is first， we apply the linear layer and then the
     sigmoid function。 So here we say why predict it。Equals torch dot sitete。![](img/d4aae67709503eb865c057216c0046f3_35.png)
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们还必须在这里实现前向传播，其中包含self和数据。我们的前向传播首先是应用线性层，然后是sigmoid函数。所以这里我们说为什么预测它。等于torch.sitete。![](img/d4aae67709503eb865c057216c0046f3_35.png)
 - en: So this is also a build and function that we can use。 And here we apply ourselves
     to a linear layer。 So linear layer with our data X。 and then we return our y predicted。![](img/d4aae67709503eb865c057216c0046f3_37.png)
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这也是我们可以使用的构建和功能。这里我们应用线性层。将线性层与我们的数据X相结合，然后返回我们的y预测。![](img/d4aae67709503eb865c057216c0046f3_37.png)
 - en: '![](img/d4aae67709503eb865c057216c0046f3_38.png)'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_38.png)'
 - en: So this is our model。 And now let's create this。 So model equals logistic regression
     of size。 And here we put in the number of features that we have。 So now our layer
     is of size 30 by  one。![](img/d4aae67709503eb865c057216c0046f3_40.png)
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这是我们的模型。现在让我们创建这个。所以model等于大小的logistic regression。在这里我们输入我们拥有的特征数量。所以现在我们的层大小为30乘1。![](img/d4aae67709503eb865c057216c0046f3_40.png)
 - en: '![](img/d4aae67709503eb865c057216c0046f3_41.png)'
+  id: totrans-37
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_41.png)'
 - en: And。No， sorry，30 input features and one output feature。![](img/d4aae67709503eb865c057216c0046f3_43.png)
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 而且。不好意思，30个输入特征和一个输出特征。![](img/d4aae67709503eb865c057216c0046f3_43.png)
 - en: And now we have our model on。And now we can continue with the loss and the optimizer。
     So for a loss。 the loss function now is different than in the linear regression
     case。 So here we say criterion equals N， N dot B， E loss。 So the binary cross
     entropy loss here。And our optimizer is the same。 So this can be。嗯。This is torch
     dot optim dot S G D for stochastic gradient descent。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们有了我们的模型。现在我们可以继续进行损失和优化器。因此，对于损失，损失函数现在与线性回归情况下不同。这里我们说criterion等于N.N.B.E
+    loss。所以这里是二元交叉熵损失。我们的优化器是一样的。所以这可以是。嗯。这是torch.optim.SGD，用于随机梯度下降。
 - en: And this gets some parameters that we want to optimize。 So here we just say
     model dot parameters。 And it also needs a learning rate。 So let's say our。![](img/d4aae67709503eb865c057216c0046f3_45.png)
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 这获取一些我们想要优化的参数。所以这里我们只说model.dot parameters。同时也需要一个学习率。我们说。![](img/d4aae67709503eb865c057216c0046f3_45.png)
 - en: '![](img/d4aae67709503eb865c057216c0046f3_46.png)'
+  id: totrans-41
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_46.png)'
 - en: '![](img/d4aae67709503eb865c057216c0046f3_47.png)'
+  id: totrans-42
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_47.png)'
 - en: Learning rate equals 。01。 And then here we say L R equals learning rate。 So
     now this is step 2 and now step 3。 So let's define some number of epochs。Equals，
     let's say。 100 iterations。 And now we do our training loop。So now we do four。Epoch
     in range nu epochs。 And then first， we do the forward pass forward。Pass and the
     loss calculation。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 学习率等于0.01。然后这里我们说LR等于学习率。这是步骤2，现在是步骤3。我们定义一些训练周期，等于，比如说100次迭代。现在我们进行训练循环。所以现在我们进行四个周期。在范围内的训练周期中。然后首先，我们进行前向传播和损失计算。
 - en: Then we do the backward pass， and then we do the updates。So let's say y predicted
     equals here we call our model and as theta， it gets x train。 and then we say loss
     equals criterion， and this will get a the y predicted and the actual y training。
     So the training samples or the training labels。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们进行反向传播，然后进行更新。所以我们说y预测等于这里我们调用我们的模型，作为theta，它获取x训练。然后我们说loss等于criterion，这将获取y预测和实际y训练。所以训练样本或训练标签。
 - en: '![](img/d4aae67709503eb865c057216c0046f3_49.png)'
+  id: totrans-45
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_49.png)'
 - en: '![](img/d4aae67709503eb865c057216c0046f3_50.png)'
+  id: totrans-46
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_50.png)'
 - en: '![](img/d4aae67709503eb865c057216c0046f3_51.png)'
+  id: totrans-47
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_51.png)'
 - en: '![](img/d4aae67709503eb865c057216c0046f3_52.png)'
+  id: totrans-48
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_52.png)'
 - en: AndNow we do the backward pass and calculate the gradients， and again。 we simply
     have to call lost dot dot backward and piytch will do all the calculations for
     us。And now we update our weights。 So here we simply have to say optimizer dot
     step。 And again。 Pytorch will do all the update calculations for us。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们进行反向传播并计算梯度，再次。我们只需调用loss.dot.backward，Pytorch会为我们完成所有的计算。现在我们更新权重。所以这里我们只需说optimizer.dot.step。再一次，Pytorch会为我们完成所有的更新计算。
 - en: '![](img/d4aae67709503eb865c057216c0046f3_54.png)'
+  id: totrans-50
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_54.png)'
 - en: And then we don't。 or， we must not forget to empty our gradients again， so。Want
     to0 the gradients。 because the backward function here will always add up all the
     gradients into the dot gra attribute。 So let's empty them again before the next
     iteration。 And we simply must say optimizer dot0 gra。And then， let's also。Print
     some information If epoch plus  one modo 10 equals equals 0。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们不，或者说，我们绝不能忘记再次清空我们的梯度，所以。想要设置梯度为 0。因为这里的反向函数将始终将所有梯度相加到 `dot_grad` 属性中。所以在下一次迭代之前，我们需要再次清空它们。我们只需说
+    `optimizer.zero_grad()`。然后，让我们也打印一些信息，如果 `epoch + 1 % 10 == 0`。
 - en: So every 10th step， we want to print some information。 Let's use an F string
     here。 Let's say， epoch。And here we can use epoch plus one。 And then we also want
     to see the loss。 So the loss equals loss dot item。 And let's format this to say，
     to only print four decimal values。And yeah， so now we are done。 This is our logistic
     regression implementation。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此每十个步骤，我们想打印一些信息。让我们在这里使用一个格式化字符串。假设是 `epoch`。在这里我们可以使用 `epoch + 1`。然后我们还想查看损失。因此损失等于
+    `loss.item()`。让我们格式化为只打印四个小数位。好吧，现在我们完成了。这是我们的逻辑回归实现。
 - en: And now let's evaluate our model。 So the evaluation should not be part of our
     computational graph where we want to track the history。 So we want to say with
     torch dot no Gr。![](img/d4aae67709503eb865c057216c0046f3_56.png)
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们评估我们的模型。因此，评估不应该是我们想要跟踪历史的计算图的一部分。我们想要使用 `torch.no_grad()`。
 - en: '![](img/d4aae67709503eb865c057216c0046f3_57.png)'
+  id: totrans-54
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_57.png)'
 - en: '![](img/d4aae67709503eb865c057216c0046f3_58.png)'
+  id: totrans-55
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_58.png)'
 - en: And then do our evaluation here。 So here I want to get the accuracy。 So let's
     get all the predicted classes from our test samples。 So let's say this is model。
     And here we put an X test。![](img/d4aae67709503eb865c057216c0046f3_60.png)
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后在这里进行评估。所以我想得到准确率。让我们从测试样本中获取所有预测类别。假设这是模型，并且在这里我们放入 `X_test`。
 - en: '![](img/d4aae67709503eb865c057216c0046f3_61.png)'
+  id: totrans-57
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_61.png)'
 - en: And then let's convert this to class labels。 So 0 or 1。 So remember。 the seeoid
     function here will return a value between 0 and 1。![](img/d4aae67709503eb865c057216c0046f3_63.png)
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后让我们将其转换为类别标签。所以 0 或 1。所以记住，这里的 sigmoid 函数将返回一个介于 0 和 1 之间的值。
 - en: '![](img/d4aae67709503eb865c057216c0046f3_64.png)'
+  id: totrans-59
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_64.png)'
 - en: And。If this is larger than 05， we say this is class 1。 and otherwise it's class
     0。 So let's say why predicted classes equals y predicted dot round。 So here we
     can use a build and function again。And this will do exactly this。And yeah， so
     if we。Do don't use this statement。 Then this would be part of the computational
     graph。
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 而且，如果这个值大于 0.5，我们说这是类别 1。否则就是类别 0。所以假设 `y_predicted_classes = y_predicted.round()`。这里我们可以再次使用构建函数。这将正好做到这一点。如果我们不使用这个语句，那么这将是计算图的一部分。
 - en: And it would track the gradient calculations for us。 So here we don't want this。
     We don't need this because we are done。 So that's why we used this with statement
     here。 And now let's calculate the accuracy by saying act equals y predicted classes。
     And here we can call the equal function equals y test。And then thes sum。 So we
     want to sum。
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 它将为我们跟踪梯度计算。因此我们不想这样。我们不需要这样，因为我们已经完成了。这就是我们在这里使用 `with` 语句的原因。现在让我们通过 `act
+    = y_predicted_classes` 计算准确率。在这里我们可以调用 `equal` 函数，等于 `y_test`，然后对其求和。因此我们想对其求和。
 - en: Them up for every prediction that is correct。 It will add。Plus 1。 And then we
     divide this by the number of samples of test samples。 So why test dot shape。0。This
     will return the number of test samples， and then let's print our accuracy print。![](img/d4aae67709503eb865c057216c0046f3_66.png)
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于每个正确的预测，我们会加一。然后我们将其除以测试样本的数量。所以为什么使用 `test.shape[0]`。这将返回测试样本的数量，然后让我们打印我们的准确率。
 - en: '![](img/d4aae67709503eb865c057216c0046f3_67.png)'
+  id: totrans-63
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_67.png)'
 - en: Accuracy equals。嗯。Ac dot4 F， also only for decimal values。 And now let's run
     this and hope that everything is correct。![](img/d4aae67709503eb865c057216c0046f3_69.png)
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 准确率等于。嗯，`ac:.4f`，也只显示小数位。现在让我们运行这个，希望一切都是正确的。
 - en: '![](img/d4aae67709503eb865c057216c0046f3_70.png)'
+  id: totrans-65
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_70.png)'
 - en: And。Standard scalr has no attribute transform。 So here I have a typo。![](img/d4aae67709503eb865c057216c0046f3_72.png)
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 而且，标准缩放器没有属性 transform。因此我这里有一个拼写错误。
 - en: Transform。Now， let's run this again。Trans。Form。One more try。And now we are done。
     and we have a accuracy of 089。 So it's okay， it's good， but it's not perfect。
     So you might want to play around with， for example， the number of iterations。
     and where do we have it。
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 转换。现在，让我们再运行一次。转换。再试一次。现在完成了，我们的准确率是089。所以还可以，挺好的，但不是完美的。你可能想要调整一下，比如迭代次数。我们在哪里设置的呢？
 - en: '![](img/d4aae67709503eb865c057216c0046f3_74.png)'
+  id: totrans-68
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_74.png)'
 - en: '![](img/d4aae67709503eb865c057216c0046f3_75.png)'
+  id: totrans-69
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_75.png)'
 - en: '![](img/d4aae67709503eb865c057216c0046f3_76.png)'
+  id: totrans-70
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_76.png)'
 - en: The number of epochs or the learning rate， for example。 or also maybe try out
     a different optimizer here。 but basically yeah that's how we implement logistic
     regression。 I hope you liked it。 If you liked it， please subscribe to the channel
     and see you next time bye。
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，周期数或学习率。或者也许在这里尝试不同的优化器。基本上，这就是我们如何实现逻辑回归。我希望你喜欢。如果喜欢，请订阅频道，我们下次见，再见。
 - en: '![](img/d4aae67709503eb865c057216c0046f3_78.png)'
+  id: totrans-72
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d4aae67709503eb865c057216c0046f3_78.png)'

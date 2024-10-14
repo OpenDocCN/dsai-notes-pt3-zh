@@ -4,10 +4,13 @@
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
+    - P39：39）Map函数 - ShowMeAI - BV1yg411c7Nw
 - en: '![](img/074ac730edfb4c160088e7429835985d_0.png)'
   id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/074ac730edfb4c160088e7429835985d_0.png)'
 - en: Welcome back everyone， this is Brian， and we're going to talk about the map
     function。 specifically this is looping without actually having a loop。And under
     the hood maps a function call to a collection of items and it looks like this
@@ -16,14 +19,17 @@
   id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家欢迎回来，我是布莱恩，我们将讨论map函数。具体来说，这是在没有实际循环的情况下进行循环。其背后是将一个函数调用映射到一组项目上，类似于我们对任何集合使用的map函数。例如，我们可以有一个列表，并将列表中的每个项传递给函数。
 - en: let's dive in and take a look。![](img/074ac730edfb4c160088e7429835985d_2.png)
   id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们深入看看。![](img/074ac730edfb4c160088e7429835985d_2.png)
 - en: '![](img/074ac730edfb4c160088e7429835985d_3.png)'
   id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/074ac730edfb4c160088e7429835985d_3.png)'
 - en: Let's start off with some basic usage， so we're going to get a list of people。And
     in that list of people。Matt Brian Tammy Marcus， we want to pass this to a function。And
     count the length of each item。And we want to get another list that has those links。
@@ -31,6 +37,7 @@
   id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们从一些基本用法开始，我们将得到一个人名单。在这个人名单中，有Matt、Brian、Tammy、Marcus，我们希望将其传递给一个函数。并计算每个项的长度。我们希望获得一个包含这些长度的列表。因此，我们将覆盖旧的方式和现代方式。所以我们先做旧的方式。
 - en: So the old way would be something like。Counts。Equals and we're just going to
     make a blank list and then or x in。结播。Then we would just want to go something
     like。Counce do append。 prettyty simple what we're doing here。 which we say Ly。And
@@ -39,6 +46,7 @@
   id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 旧的方式是像这样。counts。等于，我们将创建一个空列表，然后对于x in。结播。然后我们只想做一些类似的事情。Counce do append。我们在这里做的事情非常简单。我们说Ly。并希望获取每个元素的长度。然后完成后，我们只想将其打印出来。
 - en: so we're going to say print。Allold way。And let's just go ahead and print that
     out。Pretty simple。 pretty easy to understand， works exactly the way you would
     think it would。 And it's a little wordy。 Now， the modern way is going to use the
@@ -47,6 +55,7 @@
   id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将说print。所有旧的方式。让我们直接打印出来。非常简单，易于理解，确实按你想的方式工作。并且它有点啰嗦。现在，现代方式将使用map函数。我们要简化这个。记得我在一开始就说过，随着代码变得越来越复杂。
 - en: what we have to write actually becomes shorter and harder to understand。 This
     is a great example。 So I'm actually going to start off with print。And then we're
     going to format that。Same mapped。I want to actually capitalize that just so it
@@ -55,6 +64,7 @@
   id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 实际上，我们需要写的内容变得更短，更难理解。这是一个很好的例子。所以我实际上要先从print开始。然后我们将格式化它。相同的map。我想把它大写，这样它就能突出。现在我们将说list，实际上将其转换为列表，逐个列出每个元素。
 - en: We're going called the map function。And inside the map function， we're going
     to call L。年的。Table。What this looks crazy， Let's run this。Sure enough， it works
     as expected。 So what's going on under the hood here is we're saying， okay。Call
@@ -63,6 +73,7 @@
   id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们正在调用map函数。在map函数内部，我们将调用L。年的。表格。这看起来很疯狂，让我们运行一下。确实，它按预期工作。那么这里发生了什么呢？我们在说，好吧。调用print，然后我们将列出map。现在map将做的是，它将获取这些人。
 - en: And shove it into a function。 In this case， we're using the built in length
     function or L。 which is going to get the size。 so essentially we're replacing
     all of this code in one line。It's very， very cool。The main takeaway from this
@@ -71,14 +82,17 @@
   id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后将其放入一个函数中。在这个例子中，我们使用内置的长度函数L，来获取大小。因此，实际上我们用一行代码替代了所有这些代码。这非常非常酷。然而，这个小段落的主要收获是，我们正在处理一组项目，并逐个将每个项目发送到该函数。
 - en: We're getting back a map object， so we have to convert that to a list。![](img/074ac730edfb4c160088e7429835985d_5.png)
   id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们得到了一个map对象，因此我们必须将其转换为列表。![](img/074ac730edfb4c160088e7429835985d_5.png)
 - en: '![](img/074ac730edfb4c160088e7429835985d_6.png)'
   id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/074ac730edfb4c160088e7429835985d_6.png)'
 - en: Let's go deeper still into complexity land， and we're going to make this a little
     bit more complex。 We're going to combine elements。And I put some notes， notice
     different links。 and we are also passing multiple arguments。 So what we're going

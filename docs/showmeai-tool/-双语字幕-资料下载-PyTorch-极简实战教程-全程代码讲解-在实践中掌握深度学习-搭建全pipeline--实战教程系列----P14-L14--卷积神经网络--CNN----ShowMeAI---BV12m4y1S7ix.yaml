@@ -1,270 +1,373 @@
 - en: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P14：L14-
     卷积神经网络 (CNN) - ShowMeAI - BV12m4y1S7ix
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P14：L14-
+    卷积神经网络 (CNN) - ShowMeAI - BV12m4y1S7ix
 - en: Hi， everybody。 Welcome to a new Pytorch tutorial。 Today。 we are implementing
     a convolutional neural network and do image classification based on the Cypher
     10 dataset set。 The Cypher 10 is a very popular image data set with 10 different
     classes。 Like we have airplanes。 cars， birds， cats and other classes。 and this
     data set is available directly in Pytors。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，欢迎来到新的 PyTorch 教程。今天，我们实现一个卷积神经网络，并基于 CIFAR-10 数据集进行图像分类。CIFAR-10 是一个非常流行的图像数据集，包含
+    10 种不同的类别，比如飞机、汽车、鸟类、猫以及其他类别。这个数据集在 PyTorch 中直接可用。
 - en: So we will create a convolutional neural net that can classify these images。
     So now let's talk about convolutional neural networks very briefly。 I will not
     go into too much detail now， because this tutorial should be focused on the Pytorch
     implementation。 but I will provide further links in the description if you want
     to learn more in detail。😊。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，我们将创建一个卷积神经网络，可以对这些图像进行分类。现在让我们简要谈谈卷积神经网络。我不会过多细节，因为本教程应该专注于 PyTorch 的实现，但如果你想更详细地了解，我会在描述中提供进一步的链接。😊
 - en: So convolutional neural nets or confnets are similar to ordinary neural networks。
     They are made up of neurons that have learnable weights and biases。 And the main
     difference now is that convolutional nets mainly work on image data and apply
     the so called convolutional filters。 So a typical conf architecture looks like
     this。So we have our image。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 卷积神经网络或称为 confnets 与普通神经网络类似。它们由具有可学习权重和偏差的神经元组成。主要的区别在于卷积网络主要处理图像数据，并应用所谓的卷积滤波器。因此，典型的
+    conf 架构看起来是这样的。我们有我们的图像。
 - en: and then we have different convolutional layers and optional activationation
     functions followed by socalled pooling layers。 And these layers are used to automatically
     learn some features from the images。 and then at the end。 we have a one or more
     fully connected layers for the actual classification task。 So yeah。 this is a
     typical architecture of a CNN。And these convolutional filters。Now。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们有不同的卷积层和可选的激活函数，接着是所谓的池化层。这些层用于自动学习一些图像特征。最后，我们有一个或多个全连接层用于实际分类任务。所以，这就是
+    CNN 的典型架构。而这些卷积滤波器，现在。
 - en: they work by applying a filter kernel to our image。 So we put the filter at
     the first position position in our image。 So this is the filter here。 And this
     is the input image。 So we put it at the first position， the position。 and then
     we compute the output value by multiplying and summing up all the values。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 它们通过将滤波器内核应用于我们的图像来工作。因此我们把滤波器放在图像的第一个位置。这就是滤波器。这是输入图像。因此我们将其放在第一个位置，然后通过相乘并求和所有值来计算输出值。
 - en: and then we write the value into the output image。 So here at the red position。
     And then we slide our filter to the next position。 So the green position。 then
     if you can see this here。And then we do the same thing and the same filter operation。
     And then we slide our filter over the whole image until we are done。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将值写入输出图像。因此这里是红色位置。接着我们将滤波器滑动到下一个位置，即绿色位置。如果你能看到这里。然后我们做同样的事情和相同的滤波操作。接着我们在整个图像上滑动我们的滤波器，直到完成。
 - en: So this is how convolutional filters work。And now with this transform。 our resulting
     image may have a smaller size because our filter does not fit in the corners here。
     except if we use a technique that is called padding。 but we will not cover this
     here in this lecture。So getting the correct size is an important step that we
     will see later in practice。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是卷积滤波器的工作原理。现在通过这个变换，我们的结果图像可能会有较小的尺寸，因为我们的滤波器在这里的角落不适用，除非我们使用一种叫做填充的技术。但在本讲座中我们不会涵盖这个内容。因此，获取正确的尺寸是一个重要的步骤，我们稍后会在实践中看到。
 - en: And now let's also talk about pooling layers briefly。 So pooling layers or more
     specific。 In this case， the max pooling max pooling is used to downs sampleampble
     an image by applying a maximum filter to subre。 So here we have a filter of size
     2 by2。 And then we look at the two by two subre in our original image。 And we
     write the maximum value of this region into the output image。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们也简要谈谈池化层。因此池化层，或更具体地说，在这种情况下，最大池化用于通过对子区域应用最大滤波器来下采样图像。这里我们有一个 2x2 的滤波器。然后我们查看原始图像中的
+    2x2 子区域，并将该区域的最大值写入输出图像。
 - en: So max pooling is used to reduce the computational cost by reducing the size
     of the image。 So this reduces the number of parameters that our model has to learn。And
     it also helps to avoid overfitting by providing an abstracted form of the input。So
     yeah。 these are all the concepts we must know and again。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 最大池化用于通过减小图像的大小来降低计算成本。这减少了模型需要学习的参数数量，并通过提供输入的抽象形式帮助避免过拟合。所以这些都是我们必须了解的概念。
 - en: please check out the provided links if you want to learn more and now enough
     of the theory and let's get to the code。 So here I already wrote the most things
     that we need so we import the things that we need then we make sure that we also
     have the GPU support then we define the hyperpar and if you don't know how I structure
     my Pythtorch files and please also watch the previous tutorials because there
     I already explained all of these steps。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你想了解更多，请查看提供的链接。现在理论部分就到此为止，我们来看看代码。在这里，我已经写好了大部分需要的内容，所以我们导入所需的东西，确保我们有 GPU
+    支持，然后定义超参数。如果你不知道我是如何构建我的 Pytorch 文件的，请查看之前的教程，因为那里我已经解释了所有这些步骤。
 - en: '![](img/bdf3154fd8a3cad04eb6fed3d8610645_1.png)'
+  id: totrans-11
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bdf3154fd8a3cad04eb6fed3d8610645_1.png)'
 - en: So then first of all， we load the dataset set and here as I said。 the Spher
     10 dataset is already available in Pytorarch so we can use it for from the Pytorch
     dot datas module。 Then we define our Pytorch data sets and the Pytorch data loaders
     so then we can do automatically batch optimization and batch training。Then I defined
     the classes and hard coded them here。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，我们加载数据集，正如我所说，Spher 10 数据集已经在 Pytorach 中可用，所以我们可以使用它来自 Pytorch 的数据模块。然后，我们定义我们的
+    Pytorch 数据集和数据加载器，这样我们可以自动进行批量优化和批量训练。接着我在这里定义了类，并进行了硬编码。
 - en: And then here now we have to implement the convolutional net。And then as always。
     we typically we create our model and we create our loss and the optimizer。 So
     in this case。 as this is a multiclass classification problem， we use the cross
     entropy loss。 and then as optimizer we use the stochastic gradient descent。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们需要实现卷积网络。和往常一样，我们通常创建我们的模型、损失和优化器。在这种情况下，由于这是一个多类别分类问题，我们使用交叉熵损失，然后作为优化器使用随机梯度下降。
 - en: which has to optimize the model parameters and it gets the defined learning
     rate and then we have the typical training loop。 which does the batch optimization
     so we loop over the number of epochs and then we loop over the training loader
     so we get all the different batches。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 需要优化模型参数，它获取定义的学习率，然后我们有典型的训练循环，进行批量优化，我们循环遍历 epoch 数，并循环遍历训练加载器，以获取所有不同的批次。
 - en: And then here again， we have to push the images and the labels to the device
     to get the GPU support。 Then we to do our typical forward pass and create the
     loss。 And then we do the backward pass where we must not forget to call to empty
     the gradients first you with the zero Gr。Then we call the backward function and
     optimize a step。And then print some information。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们再次需要将图像和标签推送到设备上以获得 GPU 支持。接着我们进行典型的前向传播并创建损失。然后进行反向传播，我们必须记得先调用 zero_grad
+    来清空梯度。然后我们调用 backward 函数并优化一步，最后打印一些信息。
 - en: Then when we are done， we evaluate the model。 And as always。 we wrap this in
     a width torch do no gr argument or statement。 So because we don't need the。 the
     backward propagation here。And the gradient calculations。 And then we calculate
     the accuracy。 So we calculate the accuracy of the total network， and we calculate
     the a for each single class。 So。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 完成后，我们评估模型。和往常一样，我们将其包裹在一个 with torch.no_grad 的语句中，因为这里不需要反向传播和梯度计算。然后我们计算准确率，所以我们计算整个网络的准确率，并为每个单独的类别计算准确率。
 - en: yeah， so this is the script。 You can also find this on my Github。 So please
     check that out there。And now the only thing that is missing now is to implement
     the convolutional net。So for this。 we define a class confnet， which must inherit
     an end dot module。 And as always。 we have to define or implement the init function
     and the forward function for the forward pass。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的，这就是脚本。你也可以在我的 GitHub 上找到这个内容，所以请去那里查看。现在唯一缺少的就是实现卷积网络。为此，我们定义一个类 confnet，它必须继承自
+    nn.Module。和往常一样，我们需要定义或实现 init 函数和前向传播的 forward 函数。
 - en: So now let's write some code here。![](img/bdf3154fd8a3cad04eb6fed3d8610645_3.png)
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们在这里写一些代码。![](img/bdf3154fd8a3cad04eb6fed3d8610645_3.png)
 - en: So for this， we have a look at the architecture again。 So here， first。 we have
     a convolutional layer and then followed by a reo activation function。 Then we
     apply a max pooling。 Then we have a second convolutional layer with a relu function
     and a max pooling。 And then we have three different fully connected layers。 And
     then at the very end。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，我们再次查看架构。在这里，首先，我们有一个卷积层，然后是一个ReLU激活函数。接着应用最大池化。然后我们有第二个卷积层，带有ReLU函数和最大池化。接下来我们有三个不同的全连接层。在最后。
 - en: we have the softms and the cross entropy。 So the softm is already included in
     the cross entropy loss here。 So we don't need to care about this。 So yeah， so
     let's set up or create all these layers。 So let's say self dot con1 equals And
     here we get the first convolutional layer by we get this by saying n and dot conf
     to the。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们有softms和交叉熵。因此softm已经包含在这里的交叉熵损失中。所以我们不需要关注这个。那么，让我们设置或创建所有这些层。假设self.dot
+    con1等于，通过说n和dot conf获取第一个卷积层。
 - en: '![](img/bdf3154fd8a3cad04eb6fed3d8610645_5.png)'
+  id: totrans-21
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bdf3154fd8a3cad04eb6fed3d8610645_5.png)'
 - en: '![](img/bdf3154fd8a3cad04eb6fed3d8610645_6.png)'
+  id: totrans-22
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bdf3154fd8a3cad04eb6fed3d8610645_6.png)'
 - en: And now we have to specify the sizes。 So the input channel size now is 3 because
     our images have three color channels。So that's why the input channel size is 3。
     And then let's say the output channel size is 6 and the kernel size is 5。 so  five
     times 5。And now let's define a pooling layer。 self pool equals N N dot max pool
     2 D with a kernel size of 2 and a stride of2。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们需要指定大小。输入通道大小现在是3，因为我们的图像有三个颜色通道。这就是为什么输入通道大小是3。然后假设输出通道大小是6，卷积核大小是5，即5乘5。现在让我们定义一个池化层，self
+    pool等于N N.dot max pool 2 D，卷积核大小为2，步幅为2。
 - en: So this is exactly in the as in the image that we have seen。 So our kernel size
     is size 2 by 2。 And after each operation， we shifted to pixels to the right。 So
     that's why the stride is 2。![](img/bdf3154fd8a3cad04eb6fed3d8610645_8.png)
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 这正是我们看到的图像中那样。我们的卷积核大小是2乘2。每次操作后，我们将像素向右移动两个单位。这就是为什么步幅是2。![](img/bdf3154fd8a3cad04eb6fed3d8610645_8.png)
 - en: '![](img/bdf3154fd8a3cad04eb6fed3d8610645_9.png)'
+  id: totrans-25
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bdf3154fd8a3cad04eb6fed3d8610645_9.png)'
 - en: And then let's define the second convolutional layer。 So self con2 equals。 And
     now the input channel size must be equal to the last output channel size。 So here
     we say 6。 And as output， let's say 16 and kernel size is still 5。 And so now we
     have our convolutional layers。 And now let's set up the fully connected layer
     by saying self dot F1 equals and and dot linear。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后让我们定义第二个卷积层。self con2等于。现在输入通道大小必须等于最后的输出通道大小。因此这里我们说6。作为输出，假设是16，卷积核大小仍然是5。现在我们有了卷积层。接下来让我们通过说self.dot
+    F1等于和N N.dot linear来设置全连接层。
 - en: And now here as an input size。 So first， I will write this for you。 So this
     is 16 times 5 times 5。 and as output size， I will simply say I will say 100。 So
     you can try out a different one here。 And I will explain in a second， why this
     is 16 times 5 times 5。Then let's set up the next fully collected layer。 So this
     has 120 input features。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在作为输入大小。我先为你写这个。这是16乘5乘5。作为输出大小，我会简单地说100。所以你可以尝试不同的值。我会解释为什么这是16乘5乘5。然后让我们设置下一个全连接层，这里有120个输入特征。
 - en: and let's say84 output features。 And then let's use a next of final fully connected
     layer。 So we have F 1， F2 and F3。 And this is an input size of 84。 and the output
     size must be 10 because we have 10 different classes。So you can change the 120
     here and also the 84， but this must be fixed and also the 10 must be fixed。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设有84个输出特征。然后我们使用最终的全连接层。我们有F1、F2和F3。这是输入大小为84，输出大小必须为10，因为我们有10个不同的类别。因此你可以改变这里的120和84，但这必须固定，10也必须固定。
 - en: So now let's have a look at why this is， this must be this number。 So here I
     have a little script that does exactly the same thing。 So oh。 let me change the
     number of epoch。 Oh yeah， this is4。 So here。I have the same thing in the beginning。
     I load the data set， and let's also。嗯。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们看看为什么这个数字必须是这个数字。这里我有一个小脚本，它做的正是相同的事情。哦，让我改变epoch的数量。哦，是的，这是4。所以在开始时，我有相同的内容。我加载数据集，嗯。
 - en: Print or plot some images。And then here I have the same layers。 So here I have
     the first convolutional layer and the pooling layer and the second convolutional
     layer。 And first of all， let's run this and plot the images， so。Let's say Python，
     CNN test dot pi。And。I've already downloaded it。 So it prints。 also yeah， it's
     very blurt。 but I think you can see this。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 打印或绘制一些图像。这里我有相同的层。我有第一个卷积层和池化层，还有第二个卷积层。首先，让我们运行这个并绘制图像。我们可以说Python，CNN test
+    dot pi。然后，我已经下载好了。所以它会打印。是的，虽然非常模糊，但我想你可以看到这个。
 - en: This is a horse and maybe a bird and another horse。 And yeah， I， I don't recognize
     this actually。 So let's run， run this again。See some better pictures， maybe。So，
     yeah， it's still very blurred。 Then I think this is a deer， a car， a f and a ship。So。Yeah，
     so。Let's see。How the sizes look。 So first， we just print images that shape。 So
     this is 4 by 3 by 32 by 32。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一匹马，也许是一只鸟，还有另一匹马。是的，我其实不认识这个。让我们再运行一下，看看是否能看到更好的图片。所以，是的，仍然非常模糊。我认为这是一只鹿、一辆车、一艘船。所以，好的。让我们看看尺寸的样子。首先，我们只打印形状的图像。所以这是4乘3乘32乘32。
 - en: And this is because our batch size is 4。 And then we have three different colour
     channels。 And then our。Images have subized 32 by 32。So now let's apply the first
     convolutional layer。 So we say x equals cont1。 and this will get the images。 And
     now let's print the next size after this operation。So let's don't。 sorry， I don't
     want to。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是因为我们的批处理大小是4。然后我们有三种不同的颜色通道。我们的图像尺寸为32乘32。现在让我们应用第一个卷积层。我们说x等于cont1，这将获取图像。现在让我们打印这个操作后的下一个大小。抱歉，我不想要。
 - en: Pot this anymore。So now we have the next size， so this is 4 by 6 by 28 by 28
     and so there's6。 now we have six output channels as we specified here and then
     the image size is 28 by 28 because as I said。 the resulting image may be smaller
     because our filter doesn't fit in the corners here and the formula to calculate
     the output size is this。 So this is the input width minus the filter size plus2
     times padding。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 再也不需要了。现在我们有下一个大小，所以这是4乘6乘28乘28，因此是6。现在我们有六个输出通道，如此处指定，图像大小是28乘28，因为正如我所说，生成的图像可能会更小，因为我们的滤波器无法适应角落，计算输出大小的公式是输入宽度减去滤波器大小加上2倍的填充。
 - en: So in this case we don't have padding and then divided by the strip and then
     plus1 So in this example we have an input size 5 by5 a filter size 3 by3 padding
     is 0 and stride is 1。 So then we have the output size is 5 minus-3 plus 1。 So
     this is2 then divided by。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种情况下我们没有填充，然后除以步幅再加1。所以在这个例子中，我们的输入大小是5乘5，滤波器大小是3乘3，填充是0，步幅是1。因此输出大小是5减去3加1。所以是2，然后除以。
 - en: '![](img/bdf3154fd8a3cad04eb6fed3d8610645_11.png)'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bdf3154fd8a3cad04eb6fed3d8610645_11.png)'
 - en: 1 is still 2， and then plus one。So that's why here our output image is 3 by
     3。 And now we have to apply the same formula in our case。 So we have 32 minus
     the filter size。 So-5。 So this is 27。Plus 0， still 27 divided by  one， still 27，
     and then plus 1。 So that's why it's 28。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 1仍然是2，然后加上1。这就是为什么我们的输出图像是3乘3。现在我们必须在我们的情况下应用相同的公式。所以我们有32减去滤波器大小，减去5。因此是27。加0，仍然是27，除以1，仍然是27，然后加1。所以这就是为什么是28。
 - en: '![](img/bdf3154fd8a3cad04eb6fed3d8610645_13.png)'
+  id: totrans-37
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bdf3154fd8a3cad04eb6fed3d8610645_13.png)'
 - en: So here we have 28 by 28。 Then let's apply the next layer。 So the next operation
     is the pooling layer。 So let's save this and run this。So now our size is 4 by
     6 by 14 by 14。 So this is because as in the example。 our pooling layer with a
     kernel size 2 by2 and a strip of2 will reduce the images by a factor of2。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这里我们有28乘28。接下来我们应用下一层。下一个操作是池化层。我们保存这个并运行它。现在我们的尺寸是4乘6乘14乘14。这是因为，如示例所示，我们的池化层的核大小为2乘2，步幅为2，将图像减少了2倍。
 - en: So yeah， and now let's apply the second convolutional layer。 So let's print
     the size after this operation。 So clear this first。And run this。 And then again。
     we would have to apply the formula， as I just showed you to reduce the size。 So
     here Pythtorarch can figure this out for us。 So the size is 4 by 16 and this is
     because the next channel output size。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以是的，现在让我们应用第二个卷积层。让我们打印这个操作后的大小。首先清除这个。然后运行这个。接着，我们需要应用我刚才展示的公式来减小尺寸。因此这里PyTorch可以为我们计算出来。尺寸是4乘16，这就是下一个通道的输出大小。
 - en: and that we specified is 16， and then the resulting image is 10 by 10。 and then
     we apply another pooling operation that will again reduce the size by a factor
     of 2。 So this is why now we see that the final size after both convolutional layers
     and the pooling layers is 4 by 16 by 5 by 5。 So。And now， if we have a look again。
     So now after。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们指定的大小是16，结果图像是10乘10。然后我们应用另一个池化操作，这将再次将大小减少一半。因此，这就是我们现在看到的，在两个卷积层和池化层之后的最终大小是4乘16乘5乘5。所以。如果我们再看看。那么在此之后。
 - en: '![](img/bdf3154fd8a3cad04eb6fed3d8610645_15.png)'
+  id: totrans-41
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bdf3154fd8a3cad04eb6fed3d8610645_15.png)'
 - en: These convolutional layers。 Now， when we put them into our classification layers。
     we want to flatten the size， So we want to flatten our 3D tenor to a 1 D tenor。![](img/bdf3154fd8a3cad04eb6fed3d8610645_17.png)
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些卷积层。现在，当我们将它们放入分类层时，我们想要展平大小，因此我们希望将我们的3D张量展平为1D张量。![](img/bdf3154fd8a3cad04eb6fed3d8610645_17.png)
 - en: And now this is why now， if we have a look at the size now。 the input size of
     the first linear layer is exactly this that we have here。 So 16 times 5 times
     5。 So this is very important to get the correct size here。 But now we know why
     this is this must be 16 times 5 times 5。 And now we have the correct sizes。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，如果我们看看现在的大小，第一层线性层的输入大小正是我们这里的16乘5乘5。这一点非常重要，以确保这里的大小正确。但现在我们知道为什么这必须是16乘5乘5。现在我们有了正确的大小。
 - en: So now we have all the layers defined。 and now we have to apply them in the
     forward pass。 So we say x equals。 And now let's apply the first convolutional
     layer， which gets x。 And then after that， we apply an activationation function。
     So we can do this by calling F。 So I imported。Torch and and functional S F。 And
     then I can call F dot relu and then put in this as the argument。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们已经定义了所有层，现在必须在前向传播中应用它们。所以我们说x等于。现在让我们应用第一个卷积层，获取x。然后在此之后，我们应用一个激活函数。我们可以通过调用F来做到这一点。所以我导入了Torch和功能SF。然后我可以调用F.dot.relu，并将其作为参数传入。
 - en: And then after the activationation function。 So by the way。 the activationation
     function does not change the size。So now we apply the first pooling layer So self
     dot pool and wrap this here。 And so this is the first convolutional and pooling
@@ -273,51 +376,68 @@
     to flatten it。 So we can do this by saying x equals x dot view。 And the first
     size， we can simply say1。 So Pytorch then can automatically define the correct
     size for us。 So this is the number of batches。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后在激活函数之后。顺便说一下，激活函数不会改变大小。所以现在我们应用第一个池化层，所以self.dot pool并包裹在这里。这是第一个卷积和池化层。然后我们对第二个卷积层做同样的事情。现在我们必须将其传递给第一个全连接层。为此，我们必须将其展平。因此我们可以通过说x等于x.dot.view来做到这一点。第一个大小，我们可以简单地说1。这样Pytorch就可以自动为我们定义正确的大小。这是批次的数量。
 - en: the number of samples we have in our batch here。 So four in this case。 And then
     here we must say 16 times 5 times 5。And now we have our tens of Latins。 And now
     let's call the first fully connected layer by saying x equals self dot F1。 And
     this will get X。 And then we apply an activationation function Again， we simply
     use the relo。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们这里批次中的样本数量。所以在这种情况下是四个。然后这里我们必须说16乘5乘5。现在我们有我们的张量。现在让我们通过说x等于self.dot F1来调用第一个全连接层。这将获取X。然后我们再次应用激活函数，我们简单地使用relu。
 - en: I also have a whole tutorial about activationation functions。 So please check
     that out if you haven't already。So now after this， we apply the second one。 So
     x equals this， the second fully connected layer with a re activationation function。
     And at the very end， we simply have x equals self dot the last fully connected
     layer F C 3 with X。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 我还有一个关于激活函数的完整教程。如果你还没看过，请查看。现在在此之后，我们应用第二个。所以x等于这个，第二个全连接层带有激活函数。最后，我们简单地有x等于self.dot最后一个全连接层F
+    C 3和X。
 - en: And no activation function at the end。 and also no softmax activation function
     here。 because this is already included in our loss that we set up here。 So then
     we can simply return X。 And this is the whole convolutional net model。 Now you
     should know how we can set up this。And yeah。 so then we create our model here，
     and then we continue with the。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后没有激活函数，也没有这里的softmax激活函数，因为这已经包含在我们设置的损失中。所以我们可以简单地返回X。这就是整个卷积网络模型。现在你应该知道我们如何设置这个。嗯，然后我们在这里创建模型，然后继续进行。
 - en: A training loop that I already showed you。 So now let's save this。 and let's
     run this。 So clear this and say Python， C andN dot P and hope that this will start
     the training。So。Oh yeah。 One thing I forgot， of course， is to call the super in
     it。 So never forget to call super。 And this has to get the con and self， and then。Dot
     underscore in it。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我已经向你展示过的训练循环。所以现在让我们保存这个，运行它。清除这个，输入Python，C和N点P，希望这能启动训练。所以。哦，对了，我忘了一件事，当然，要调用super的初始化。所以永远不要忘记调用super。这需要获取con和self，然后。点下划线初始化。
 - en: So let's clear this again and try this one more time。And。Now， this should start
     the training。 So I don't have GP U support on my MacBook。 so this can take a few
     minutes。 So I think I will skip this and continue when the training is done。 So
     we'll see you in a second。Alright， so now we are back。 Our training has finished。
     and if we have a look。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们再清除一次，再试一次。现在，这应该会启动训练。我在我的MacBook上没有GPU支持，所以这可能需要几分钟。所以我想我会跳过这个，等训练完成后继续。所以我们一会儿见。好，现在我们回来了。我们的训练已经完成，如果我们看看。
 - en: we can see that the loss slowly decreased， and then we have the final evaluation。
     So the accuracy of the total network is 46。6% and the accuracy of each class is
     listed here。 So it's not very good。 and this is because we only specified for
     epochs here。 So you might want to try out and more epochs but yeah。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以看到损失值缓慢下降，然后我们有了最终评估。因此，总网络的准确率为46.6%，每个类别的准确率在这里列出。所以效果不是很好。这是因为我们这里只指定了训练的轮数。因此，你可能想尝试更多的轮数，不过是这样的。
 - en: now you should know how a convolutional neural net can be implemented。 And I
     hope you enjoyed this tutorial。 If you enjoyed this。 please leave a like and subscribe
     to the channel and see a next time by。😊。![](img/bdf3154fd8a3cad04eb6fed3d8610645_19.png)
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在你应该知道如何实现卷积神经网络。我希望你喜欢这个教程。如果你喜欢这个，请点赞并订阅频道，我们下次再见。😊！[](img/bdf3154fd8a3cad04eb6fed3d8610645_19.png)

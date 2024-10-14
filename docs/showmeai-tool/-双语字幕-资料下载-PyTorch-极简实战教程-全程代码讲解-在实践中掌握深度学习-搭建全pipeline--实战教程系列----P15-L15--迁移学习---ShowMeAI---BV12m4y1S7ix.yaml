@@ -1,193 +1,264 @@
 - en: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P15：L15-
     迁移学习 - ShowMeAI - BV12m4y1S7ix
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P15：L15-
+    迁移学习 - ShowMeAI - BV12m4y1S7ix
 - en: Hi， everybody。 welcomele to your new Pytorch tutorial In this tutorial。 we will
     talk about transfer learning and how it can be applied in Pytorch。 Transfer learning
     is a machine learning method where a model developed for a first task is then
     reused as the starting point for a model on a second task。 For example， we can
     train a model to classify birds and cats and then use the same model。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，大家好。欢迎来到你的新 PyTorch 教程。在这个教程中，我们将讨论迁移学习以及如何在 PyTorch 中应用它。迁移学习是一种机器学习方法，其中为第一个任务开发的模型被重新用于第二个任务的起始点。例如，我们可以训练一个模型来分类鸟类和猫，然后使用同样的模型。
 - en: modified only a little bit in the last layer， and then use the new model to
     classify bees and dogs。 So it's a popular approach in deep learning that allows
     rapid generation of new models。 And this is super important because training of
     a completely new model can be very time consuming。 It can take multiple days or
     even weeks。 So if you use a pretrained model。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 仅在最后一层稍作修改，然后使用新模型来分类蜜蜂和狗。这是深度学习中一种流行的方法，能够快速生成新模型。这非常重要，因为训练一个全新的模型可能会非常耗时，可能需要几天甚至几周的时间。因此，如果你使用一个预训练的模型。
 - en: then we typically exchange only the last layer and then do not need to train
     the whole model again。 However， transfer learning can achieve pretty good performance
     results。 and that's why it's so popular nowadays。😊，So let's have a look at this
     picture here。 We have a typical CNN architecture that I already showed you in
     the last tutorial and this。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们通常只交换最后一层，而无需重新训练整个模型。然而，迁移学习能够取得相当不错的性能结果，这就是它如今如此受欢迎的原因。😊所以让我们看看这里的这张图片。我们有一个典型的
+    CNN 架构，我在上一个教程中已经向你展示过。
 - en: let's say this has been already trained on a lot of data and we have the optimized
     weights and now we only want to take the last fully connected layer。 So this one
     here and then modify it and train the last layer on our new data。So then we have
     a new model that has been trained and tweaked in the last layer。And yeah。 this
     is the concept of transfer learning。 And now let's have a look at a concrete example
     in Pytorch。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 比如说，这个模型已经在大量数据上进行了训练，并且我们有优化的权重，现在我们只想保留最后一层的全连接层。所以就是这一层，然后修改它，并在我们的新数据上训练最后一层。这样我们就有了一个在最后一层经过训练和调整的新模型。是的，这就是迁移学习的概念。现在让我们在
+    PyTorch 中看看一个具体的例子。
 - en: So in this example， we want， we are using the pretrained Resnet 18 C N。 This
     is a network that is trained on more than a million images from the Inet database。
     And this network is 18 layers deep and can classify images into 1000 object categories。
     And now in our example， we have only two classes， So we only want to detect Bs
     and ants。😊。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个例子中，我们想使用预训练的 Resnet 18 CNN。这是一个在超过一百万张来自 Inet 数据库的图像上训练的网络。这个网络有 18 层深，可以将图像分类为
+    1000 个对象类别。而在我们的例子中，我们只有两个类别，所以我们只想检测蜜蜂和蚂蚁。😊
 - en: '![](img/96844ee58fe06a9d803e6f751f732b19_1.png)'
+  id: totrans-6
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/96844ee58fe06a9d803e6f751f732b19_1.png)'
 - en: And yeah， so let's start。 So in this session， I already。 I also want to show
     you two other new things。 So first， the data sets image folder。 how we can use
     this and how use a scheduleula to change the learning rate。And then， of course。
     how transfer learning is used。So I already imported the things that we need。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的，让我们开始吧。在这一节中，我还想给你展示两个其他的新东西。首先是数据集的图像文件夹，我们如何使用它，以及如何使用调度程序来改变学习率。然后，当然，迁移学习是如何被使用的。我已经导入了我们需要的内容。
 - en: and now we set up the data。 and the last time we used the built in data sets
     from the Torch vision data sets。 And now here we use the data sets dot image folder
     because we saved our data in a folder and this has to have the structure like
     this。 So we have the folder here。And then we have a training and a validation
     folder。 So train and Val。 And in each one， we have folders for each class。 So
     here we have ans in ants and Bs。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们设置数据。上次我们使用了 Torch 视觉数据集中的内置数据集，而现在这里我们使用数据集的图像文件夹，因为我们把数据保存在一个文件夹中，并且这个文件夹需要具有这样的结构。我们在这里有一个文件夹，然后有一个训练文件夹和一个验证文件夹。所以是
+    train 和 Val。在每个文件夹中，我们都有每个类别的文件夹。这里我们有蚂蚁和蜜蜂。
 - en: and also in the validation folder， we have ants and Bs。And now in each folder。
     we have the images here。 So， for example， here， we have some ants。 And also。 let's
     have a look at some Bs。 So here we have a B。And yeah。 so you must structure your
     folder like this。 And then you can call the data sets dot image folder and give
     it the path。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 在验证文件夹中，我们有蚂蚁和蜜蜂。现在在每个文件夹中，我们有这里的图像。所以，例如，这里我们有一些蚂蚁。还有，让我们看看一些蜜蜂。所以这里我们有一只蜜蜂。是的，所以你必须这样组织你的文件夹。然后你可以调用数据集.dot
+    image folder并给出路径。
 - en: And we also give it some transforms here。And then， we get the。Classes。 the class
     names by calling image sets， image data sets dot classes。And yeah。 then here I
     defined the training model where I did the loop and did the training and the evaluation。
     I will not go into detail here。 you should already know this from the last tutorials
     how at typical training and evaluation loop looks like you can also check the
     whole code on Gitthub。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还在这里提供了一些变换。然后，我们通过调用image sets，image data sets.dot classes来获取类名。是的，然后在这里我定义了训练模型，在循环中进行了训练和评估。我在这里不会详细说明，你应该已经从上次的教程中知道典型的训练和评估循环是怎样的，你也可以在GitHub上查看完整代码。
 - en: so I will provide the link in the description。 So have a look at this yourself。And
     now let's use transfer learning。 So， first of all， we want to import the pre trained
     model。 So let's set up this model so we can do this by saying model。So model equals。
     And this is available in the Torch visionion dot models module。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我将在描述中提供链接。请自行查看。现在让我们使用迁移学习。首先，我们想导入预训练模型。让我们设置这个模型，这样我们就可以通过说model来做到这一点。所以model等于。这在Torch
+    visionion.dot models模块中可用。
 - en: So I imported torch vision models already。 and then I can call models dot Resnet
     16 or sorry。 Resnet 18 here。 And then I can say pretrained equals true。 So this
     is already the optimized weights that are trained on the imagenet data。And now
     what we want to do is we want to exchange the last fully connected layer。 So first
     of all。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我已经导入了torch vision模型。然后我可以调用models.dot Resnet 16或抱歉，Resnet 18。在这里，我可以说pretrained等于true。这已经是针对imagenet数据训练的优化权重。现在我们想做的是交换最后的全连接层。首先。
 - en: let's get the number of input features from the last layer。 So let's say nu
     features equals model。 and we can get this by calling dot F fully connected。 And
     then the input features。 So this is the number of input features for the last
     layer that we need。And then let's create a new layer and assign it to the last
     layer。 So let's say model。Dot F C equals。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们获取最后一层的输入特征数量。所以我们可以说nu features等于model。我们可以通过调用dot F fully connected来获取这个。然后是输入特征。这是我们需要的最后一层的输入特征数量。然后让我们创建一个新层并将其分配给最后一层。所以我们可以说model.Dot
+    F C等于。
 - en: And now we give it a new fully connected layer N N dot linear。 And this gets
     the number of input features that we have。And then as new output features。 number
     of outputs， we have two because we have two classes now。And now we send our model
     to the device。 If we have GP support。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们给它一个新的全连接层N N.dot linear。这获取我们拥有的输入特征的数量。然后作为新的输出特征，我们有两个输出，因为现在有两个类。现在我们将模型发送到设备。如果我们有GP支持。
 - en: So we created our device in the beginning， as always。 So this is Kuda or simply
     CPU。And now that we have our new model， we can， again， as always， define our loss
     and optimize us。 So we say criterion。Equals N， N dot cross entropis。And then let's
     say the optr equals。 This is from the optimization module， Opim dot S GD， stochastic
     gradient descent。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们在开始时创建了我们的设备，和往常一样。这是Kuda或简单的CPU。现在我们有了新模型，我们可以再次像往常一样定义我们的损失和优化器。所以我们说criterion等于N，N.dot
+    cross entropis。然后我们可以说optr等于。这来自优化模块，Opim.dot S GD，随机梯度下降。
 - en: which has to optimize the model parameters。 And we have to specify the learning
     rate equals。 let's say0001。And。Now， as a new thing， let's use a scheduleula。 This
     will update the learning rate。 so。For this， we can say we can create this by saying
     it's called a step L R scheduleular。Equals。 and the L R scheduletula is available
     also in the torch optimization module。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 需要优化模型参数。我们必须指定学习率等于。让我们说0001。现在，作为一件新事物，让我们使用scheduleula。这将更新学习率。所以。为此，我们可以通过说它叫做step
+    L R scheduleular来创建这个。并且L R scheduletula在torch优化模块中也可用。
 - en: So we already imported this。 And then we can say L R scheduletula dot step L
     R。 And then here we have to give it the optimizer。 So here we say optimizer。And
     then we say step size。 step size equals 7。 And then we say gamma equals let's
     say，01。 This means that every 7 epochs。 Our learning rate is multiplied by this
     value。 So every 7 epochs。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们已经导入了这一点。然后我们可以说学习率调度器执行学习率的步骤。然后在这里我们必须提供优化器。所以我们说优化器。然后我们说步长，步长等于7。然后我们说伽玛，假设为0.1。这意味着每7个轮次，我们的学习率乘以这个值。因此每7个轮次。
 - en: Our learning rate has only 10 is now only updated to 10 per cent。So， yeah。 this
     is how we use a scheduletula。 And then typically what we want to do is in our
     loop。 in our loop over the epoch。 So for epoch in range， let's say，100。 And then
     typically here we use the training， where we also do。The。The optimizer dot step。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们的学习率现在只有10，仅更新到10%。所以，这就是我们使用调度器的方式。通常我们想在我们的循环中，在每个轮次中进行。假设对于范围内的轮次为100。在这里我们通常使用训练，同时我们还要执行优化器的步骤。
 - en: optimizer dot step。 Then we want to evaluate it， evaluate it。 And then we also
     have to call scheduler step scheduler step。 So this is how we use a scheduler。
     Please have a look at the whole loop here yourself。So yeah。 now we set up the
     scheduleular and let's。Call the training functions。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 优化器执行步骤。然后我们想要评估它，评估它。接着我们还必须调用调度器的步骤。这样我们就使用了调度器。请自己查看整个循环。因此，现在我们设置调度器，让我们调用训练函数。
 - en: So here we say model equals and then train model。 So this is the function that
     I created。 And then I have to pass the model， the criterion。The optimizer。 the
     scheduler and also the number of epochs。 So nu epochs， let's say 20。And。Yeah。
     so this is how we use， how we can use transfer learning。 So in this case。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们说模型等于，然后训练模型。这是我创建的函数。然后我必须传递模型、标准、优化器、调度器以及训练轮数。假设训练轮数为20。那么，这就是我们如何使用迁移学习。在这种情况下。
 - en: we use a technique that is called fine tuning。Because here， we。Train the whole
     model again。 but only a little bit。 So we fine tune all the weights based on the
     new data。And with the new last layer。 So this is one option。 And the second one
     is for this。 I copy and paste the same thing。And。Let's see where does it start。
     So here。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们使用一种叫做微调的技术。因为在这里，我们再次训练整个模型，但只是稍微调整。因此我们根据新数据微调所有权重，并使用新的最后一层。这是一个选项。第二个选项是，我复制粘贴相同的内容。让我们看看从哪里开始。
 - en: and then as a second option， what we can do is we can freeze all the。All the
     layers in the beginning and only train the very last layer。 So for this。 we have
     to loop over all the parameters here after we got our model。 So we say 4。Pm in
     model。Dot parameters。And then we can set there requires gra attribute to fall
     so we can say para。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 作为第二个选项，我们可以在一开始冻结所有层，仅训练最后一层。为此，我们在获得模型后必须遍历所有参数。所以我们说对于模型的参数，设置其要求梯度属性为假，所以我们可以说参数。
 - en: Dot requires gr。And then say， we， sorry， Do requires gra。Requires gra equals
     false。 Now we have it。 and this will freeze all the layers in the beginning。 And
     now we set up the new last layer。 We create a new layer here。 and by default，
     this has requires gra equals true。And then again。 we set up the loss and optimizer
     and the schedule in this case。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 需要梯度。然后说，抱歉，需要梯度，要求梯度等于假。现在我们有了，这将在一开始冻结所有层。现在我们设置新的最后一层。我们在这里创建一个新层，默认情况下，这个层的要求梯度等于真。然后再次设置损失、优化器和调度器。
 - en: And then we do the training function again。 And so yeah， so this is even more
     faster。 And let's run this and then have a look at both the evaluations。 And I
     also print out the time that it took。So。Yeah， let's save this。 and let's run this
     by saying Python transfer dot pi。And。This might first。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们再次执行训练函数。所以，是的，这样甚至更快。让我们运行这个，然后查看两个评估结果。我还会打印出所花费的时间。所以，好的，让我们保存这个，并通过说Python
+    transfer.py来运行。这可能最初会。
 - en: it will download all the images， and this might take a couple of seconds because
     I don't have GP support here on my MacBook。 So I will skip this， and then I will
     see you in a second。All right， Soa， I am back。 So this took super long on my computer，
     so I reset。The number of epochs to just2 in this example。 So let's have a look
     at the results。 So after only two epochs。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 它将下载所有图像，这可能需要几秒钟，因为我在我的MacBook上没有GPU支持。所以我会跳过这一点，稍后再见。好的，我回来了。这在我的电脑上花了超级长的时间，所以我在这个例子中将训练轮数重置为2。让我们看看结果。在仅仅两个训练轮次之后。
 - en: so this is the first training where we did the fine tuning of the whole。Model。
     so this took three and a half minutes。 and the best accuracy now is 。92。 So 92%。And
     then this is the second training where we only trained the last layer。 So this
     took only one and a half minutes approximately。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是第一次训练，我们对整个模型进行了微调。这个过程花了三分半钟，目前最佳准确率是92%。这是第二次训练，我们仅训练了最后一层，大约只花了一分半钟。
 - en: and yeah accuracy is also is already over 80%。 So of course。 it's not as good
     as in when we train the whole training， but still pretty good for only two epochs。
     And now let's imagine if we set the number of epochs even higher。 So yeah。 this
     is why transfer learning is so powerful because we have a pretrained model。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的，准确率已经超过80%。当然，这还不如我们训练整个模型时的效果，但对于仅仅两个周期来说，已经相当不错了。现在我们假设将周期数设得更高。所以，这就是迁移学习如此强大的原因，因为我们有一个预训练的模型。
 - en: and then we only fine tune it a little bit and do a completely new task and
     then achieve pretty good results too。 So yeah， so now I hope you understood how
     transfer learning can be applied in Pythtorch。 if you enjoyed the tutorial。 Please
     subscribe to the channel and see you next time by。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们只需稍微调整一下，完成一个全新的任务，也能取得相当不错的结果。所以，现在我希望你理解了如何在Pythtorch中应用迁移学习。如果你喜欢这个教程，请订阅频道，我们下次再见。
 - en: '![](img/96844ee58fe06a9d803e6f751f732b19_3.png)'
+  id: totrans-29
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/96844ee58fe06a9d803e6f751f732b19_3.png)'

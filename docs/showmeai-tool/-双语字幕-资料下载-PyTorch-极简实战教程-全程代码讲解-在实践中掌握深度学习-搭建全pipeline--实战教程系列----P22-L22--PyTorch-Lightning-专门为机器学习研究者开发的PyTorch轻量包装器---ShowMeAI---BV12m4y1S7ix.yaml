@@ -1,8 +1,11 @@
 - en: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P22：L22-
     PyTorch Lightning：专门为机器学习研究者开发的PyTorch轻量包装器 - ShowMeAI - BV12m4y1S7ix
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P22：L22-
+    PyTorch Lightning：专门为机器学习研究者开发的PyTorch轻量包装器 - ShowMeAI - BV12m4y1S7ix
 - en: Hey， guys， welcomel to your new Pytor tutorial。 Today， we'll be talking about
     Pytor lightning。 Pytorch lightning is a lightweight pytor wrapper。 It aims to
     reduce boiler plate codes so that implementing the algorithm and also improving
@@ -10,27 +13,36 @@
     remember all the tiny details of the Pytor framework。 because lightning takes
     care of all that。😊，And another great feature is that it prints out warnings and
     gives you helpful machine learning tips or hints。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嘿，大家，欢迎来到你们的新Pytor教程。今天，我们将讨论Pytor Lightning。Pytorch Lightning是一个轻量级的Pytor包装器。它旨在减少样板代码，以便实现算法和改进模型。因此，调整和优化可以更快。你不需要记住Pytor框架的所有细节，因为Lightning会处理这些。😊，另一个很棒的特点是它会打印警告，并给你有用的机器学习提示或建议。
 - en: if you make mistakes。 So we will see all that later。 So usually I'm skeptical
     when it comes to wrapper frameworks that abstract away a lot of things。 But this
     time， I can really recommend it。 I still advise that you learn the underlying
     basics first。 and if you haven't yet， then you can check out my free Pytor course
     here on YouTube。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你犯错误。我们稍后会看到这一切。通常，当涉及到抽象很多内容的包装框架时，我持怀疑态度。但这次，我真的可以推荐它。我仍然建议你首先学习基础知识。如果你还没有学习过，可以在YouTube上查看我的免费Pytorch课程。
 - en: The link is in the description。 But if you are already familiar with Pytorch。
     then you can check out Pytoch lightning and see if you like it or not。 So today。
     I'll be converting one of the codes from my Pytor course to Pytorch lightning。
     So you can get a feel how this framework works and how you can use it。 Allright，
     let's jump into it。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 链接在描述中。但如果你已经熟悉Pytorch，那么你可以查看Pytorch Lightning，看看你是否喜欢它。因此今天，我将把我的Pytor课程中的一段代码转换为Pytorch
+    Lightning。这样你就能感受到这个框架的工作原理以及如何使用它。好的，让我们开始吧。
 - en: So first of all， Pytorch lightning is open source。 So you can find it here on
     Github。 And they also have a website with a nice documentation that you get you
     started。 I will put。😊。![](img/8f1dbba751e44013b8cee2c7d55082c5_1.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，Pytorch Lightning是开源的。你可以在Github上找到它。他们还有一个网站，提供良好的文档，帮助你入门。我会放上。😊！[](img/8f1dbba751e44013b8cee2c7d55082c5_1.png)
 - en: The links in the description as well。 And now here are some of the details that
     you no longer have to worry about with Pytorch lightning。 so you no longer have
     to worry about when to set your model to training or evaluation mode you don't
@@ -40,311 +52,449 @@
     about the zero grad or calling backward and optimize a step you no longer have
     to worry about using torch no grad or detach and as a bonus you have integrate
     a tenor or support。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 描述中的链接也是如此。而现在，这里有一些关于Pytorch Lightning的细节，你不再需要担心的。因此，你不再需要担心何时将模型设置为训练或评估模式，你也不必担心使用设备进行GPU支持，然后将模型和所有张量推送到设备上。你可以轻松关闭GPU或甚至不使用GPU支持，使用Lightning可以轻松扩展。此外，你也不再需要关心零梯度或调用反向传播和优化步骤，你也不需要担心使用torch.no_grad或detach，作为额外奖励，你还有张量或支持集成。
 - en: And it also prints out tips or hints， which we will see later。 So let's jump
     to the code。 And for this example， we'll be taking one of the codes from my Pytoch
     tutorial。 So you can find it on Github。 and then in this case， we take tutorial
     number 13。 So this is a simple feed forward neural net， which is applied to the
     Mist data set to do diit classification。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 它还会打印提示或提示，我们稍后会看到。让我们跳到代码。这次示例中，我们将从我的Pytorch教程中提取一段代码。你可以在Github上找到它，然后在这种情况下，我们取教程编号13。这是一个简单的前馈神经网络，应用于MNIST数据集进行数字分类。
 - en: So now let's grab some of the code and write a new code with Pytoch lightning。
     So first of all。 so let me delete this。 and now let's start with a fresh Python
     script。 And by the way。 when you want to install Pytoch lightning， you have two
     common options。 The first one is to use Pip。 So you just say Pip install Pytoch
     lightning。 Or if you use in Conda。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，让我们抓取一些代码，并用Pytorch Lightning编写新代码。首先，我来删除这个，现在我们从一个新的Python脚本开始。顺便说一下，当你想安装Pytorch
+    Lightning时，有两个常见的选择。第一个是使用Pip。所以你只需说Pip install Pytorch Lightning。或者如果你在Conda中使用。
 - en: then you can grab this command。![](img/8f1dbba751e44013b8cee2c7d55082c5_3.png)
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后你可以抓取这个命令。![](img/8f1dbba751e44013b8cee2c7d55082c5_3.png)
 - en: '![](img/8f1dbba751e44013b8cee2c7d55082c5_4.png)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8f1dbba751e44013b8cee2c7d55082c5_4.png)'
 - en: '![](img/8f1dbba751e44013b8cee2c7d55082c5_5.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8f1dbba751e44013b8cee2c7d55082c5_5.png)'
 - en: '![](img/8f1dbba751e44013b8cee2c7d55082c5_6.png)'
+  id: totrans-11
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8f1dbba751e44013b8cee2c7d55082c5_6.png)'
 - en: So I already did this in my terminal。 So Pytoch lightning is already insult
     here。 So let's go back to the code and copy and paste some of the things。 So we
     want to have all the same import statements。![](img/8f1dbba751e44013b8cee2c7d55082c5_8.png)
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 我已经在我的终端中完成了这个操作。所以Pytorch lightning已经在这里导入了。现在让我们回到代码中，复制粘贴一些内容。我们希望有所有相同的导入语句。![](img/8f1dbba751e44013b8cee2c7d55082c5_8.png)
 - en: '![](img/8f1dbba751e44013b8cee2c7d55082c5_9.png)'
+  id: totrans-13
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8f1dbba751e44013b8cee2c7d55082c5_9.png)'
 - en: '![](img/8f1dbba751e44013b8cee2c7d55082c5_10.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8f1dbba751e44013b8cee2c7d55082c5_10.png)'
 - en: And as an addition now， we also import Pytorch lightning。 So we say import Pytorrch
     lightning with an underscore S P， L。![](img/8f1dbba751e44013b8cee2c7d55082c5_12.png)
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 作为补充，我们现在还导入了Pytorch lightning。所以我们说导入带下划线的Pytorch lightning。![](img/8f1dbba751e44013b8cee2c7d55082c5_12.png)
 - en: And now we want to convert our model， our neural net to a lightning model。 So
     we grab this code。 and then we copy and paste it in here And now instead of deriving
     from N and dot module。 we now derive from P dot lightning module。 This will give
     us the same functions as the original model。 but it will also give us some more
     functions， which we will see in a second。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们想将我们的模型、神经网络转换为一个lightning模型。所以我们抓取这段代码，然后把它复制粘贴到这里。现在我们不再从N和dot模块派生，而是从P
+    dot lightning模块派生。这将给我们原始模型的相同功能，但还会提供一些更多的功能，我们稍后将看到。
 - en: So now the in it function is still the same， and the forward function also is
     still the same。 So we then need all the hyperparameters。 So let's grab them as
     well。 So let's grab these hyperparameters and paste them in here。😊。![](img/8f1dbba751e44013b8cee2c7d55082c5_14.png)
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在in it函数仍然是相同的，forward函数也仍然是相同的。所以我们需要所有的超参数。让我们抓取这些超参数并粘贴到这里。😊。![](img/8f1dbba751e44013b8cee2c7d55082c5_14.png)
 - en: '![](img/8f1dbba751e44013b8cee2c7d55082c5_15.png)'
+  id: totrans-18
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8f1dbba751e44013b8cee2c7d55082c5_15.png)'
 - en: '![](img/8f1dbba751e44013b8cee2c7d55082c5_16.png)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8f1dbba751e44013b8cee2c7d55082c5_16.png)'
 - en: '![](img/8f1dbba751e44013b8cee2c7d55082c5_17.png)'
+  id: totrans-20
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8f1dbba751e44013b8cee2c7d55082c5_17.png)'
 - en: HereAnd now we need to implement some more functions。 So let's quickly go to
     the official website Here。 you see a step by step guide， by the way。 And you also
     have a nice comparison how Pytch code looks versus Pytoch lightning and what it
     abstracts away。 So as you can see， we also need to define a training step。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们需要实现一些更多的函数。所以让我们快速访问一下官方网站。在这里，你会看到一步一步的指南，顺便提一下，你还有一个很好的比较，Pytorch代码与Pytorch
+    lightning的区别，以及它抽象了什么。因此，如你所见，我们还需要定义一个训练步骤。
 - en: a configure optimizes function and a train data loader。 So let's copy all of
     these in here。![](img/8f1dbba751e44013b8cee2c7d55082c5_19.png)
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个配置优化器函数和一个训练数据加载器。所以让我们把这些全部复制到这里。![](img/8f1dbba751e44013b8cee2c7d55082c5_19.png)
 - en: '![](img/8f1dbba751e44013b8cee2c7d55082c5_20.png)'
+  id: totrans-23
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8f1dbba751e44013b8cee2c7d55082c5_20.png)'
 - en: And now for the， let's start with the simplest one。 So the configure optimizers
     there you simply put in the optimizer that you created。 So in our original script，
     we set up the optimizer here。 So this is the atom optimizer。 And then you return
     it。 So we can return this one in one line。 So this will be our optimizer。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，对于最简单的配置优化器，你只需放入你创建的优化器。所以在我们原始脚本中，我们在这里设置了优化器。这是原子优化器。然后返回它。所以我们可以在一行中返回这个。这将是我们的优化器。
 - en: our atom optimizer with the learning rate from our hyperparmeters。![](img/8f1dbba751e44013b8cee2c7d55082c5_22.png)
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们的原子优化器与超参数中的学习率。![](img/8f1dbba751e44013b8cee2c7d55082c5_22.png)
 - en: '![](img/8f1dbba751e44013b8cee2c7d55082c5_23.png)'
+  id: totrans-26
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8f1dbba751e44013b8cee2c7d55082c5_23.png)'
 - en: '![](img/8f1dbba751e44013b8cee2c7d55082c5_24.png)'
+  id: totrans-27
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8f1dbba751e44013b8cee2c7d55082c5_24.png)'
 - en: And then we want to in implement the training step。![](img/8f1dbba751e44013b8cee2c7d55082c5_26.png)
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们想要实现训练步骤。![](img/8f1dbba751e44013b8cee2c7d55082c5_26.png)
 - en: So for the training step， we are doing exactly what we are doing in our training
     loop。 and now we don't have no longer have to worry about our fall loops about
     unpackking our images and labels and then hear the optimizer0 grabs the backward
     and the step。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于训练步骤，我们正在做的正是我们在训练循环中所做的。现在我们不再需要担心关于解包图像和标签的循环，以及优化器如何进行反向传播和步骤。
 - en: So we simply grab this part。![](img/8f1dbba751e44013b8cee2c7d55082c5_28.png)
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们简单地抓取这一部分。![](img/8f1dbba751e44013b8cee2c7d55082c5_28.png)
 - en: And paste it in here。 And as you see in the training step function， we get a
     batch and a batch index。 So we unpack our batch into x and y。 and then let me
     copy the code。 So。This is now our images and our labels。 And then we have to reshape
     our images。 and we no longer have to push it to the device。 So we remove all of
     those things。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 并粘贴到这里。如你所见，在训练步骤函数中，我们获得一个批次和一个批次索引。因此我们将批次解包为x和y。让我复制代码。因此。这就是我们的图像和标签。然后我们需要重新调整图像的形状。并且我们不再需要将其推送到设备。因此我们移除所有这些内容。
 - en: And then we do the forward pass。 And here we can actually use self because we
     are inside of our model class。![](img/8f1dbba751e44013b8cee2c7d55082c5_30.png)
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们进行前向传递。在这里我们实际上可以使用self，因为我们在模型类内部。![](img/8f1dbba751e44013b8cee2c7d55082c5_30.png)
 - en: And then we apply the criterion。 and in our original code。 we set up the criterion
     here as N and dot cross entropis。 But we can also use it instead if we use the
     functional module。 So for this， we say。![](img/8f1dbba751e44013b8cee2c7d55082c5_32.png)
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们应用标准。 在我们原来的代码中，我们将标准设置为N和dot交叉熵。但如果使用功能模块，我们也可以用它。因此，我们说。![](img/8f1dbba751e44013b8cee2c7d55082c5_32.png)
 - en: Import torch dot N， N， dot funk。Channel S F。And then down here， we say our loss
     equals。 and now we can call。F dot cross entropy with our outputs and the labels。
     And these are all the things。 And for now， we only want to return a dictionary
     with this loss。 So Pyto lightning needs this dictionary so that it can show you
     the loss during the training。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 导入torch的N，N，dot funk。Channel S F。然后在这里，我们说我们的损失等于。现在我们可以调用F dot交叉熵与我们的输出和标签。这些都是我们所需的。而现在，我们只想返回一个包含这个损失的字典。因此PyTorch
+    Lightning需要这个字典，以便在训练过程中显示损失。
 - en: And this is all we need in our training step。 And then we also have to implement
     the train data loader function。 So what we want to do here is we want to do what
     we did in the beginning here we set up the training data set and the training
     data loader。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是我们训练步骤中所需的一切。然后我们还必须实现训练数据加载器函数。我们想在这里做的就是回到开始时设置训练数据集和训练数据加载器。
 - en: So let's copy this and paste this in the function here。 So first our training
     data set。 So this is this one。 And then the train data loader。 So this one。![](img/8f1dbba751e44013b8cee2c7d55082c5_34.png)
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们复制这个并粘贴到这个函数里。因此首先是我们的训练数据集。这就是这个。然后是训练数据加载器。这一个。![](img/8f1dbba751e44013b8cee2c7d55082c5_34.png)
 - en: '![](img/8f1dbba751e44013b8cee2c7d55082c5_35.png)'
+  id: totrans-37
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8f1dbba751e44013b8cee2c7d55082c5_35.png)'
 - en: '![](img/8f1dbba751e44013b8cee2c7d55082c5_36.png)'
+  id: totrans-38
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8f1dbba751e44013b8cee2c7d55082c5_36.png)'
 - en: '![](img/8f1dbba751e44013b8cee2c7d55082c5_37.png)'
+  id: totrans-39
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8f1dbba751e44013b8cee2c7d55082c5_37.png)'
 - en: And then we want to return the train data loader or train loader。 And now this
     is all we need to start a training。 And now what we want to do is we say if。Name
     equals equals， underscore underscore main。Then we have to set up a lightning trainer。
     So for this， we import a trainer。 So we say from Pytorch lightning import trainer。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们想要返回训练数据加载器或训练加载器。现在这就是我们开始训练所需的一切。接下来我们要做的是，如果`__name__`等于`__main__`，那么我们需要设置一个Lightning训练器。因此，我们导入一个训练器。我们说从Pytorch
+    Lightning导入训练器。
 - en: Then we want to set up a trainer。 So here we say our trainer equals our lightning
     trainer。 And for now， I can show you a trick that is very helpful during development。
     So you say fast defron equals true。 This will run a single batch through train。
     And also through validation。 if we have a validation step。 And with this。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们想设置一个训练器。因此在这里我们说我们的训练器等于我们的Lightning训练器。现在，我可以给你展示一个在开发过程中非常有用的技巧。因此你说`fast_dev_run`等于`True`。这将通过训练和验证运行一个批次。如果我们有验证步骤。通过这个。
 - en: you can test if your model works。 So now we also have to set up our model。 So
     we say model equals。 And let's call this lit model to make it clear that this
     is a lightning model。 So lit。😊。uralNeAnd here we say let neural net with the hyperparameter。
     So it needs the input size。 It needs the hidden size， and it needs the number
     of classes。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以测试你的模型是否有效。因此现在我们还必须设置我们的模型。我们说模型等于。让我们称其为lit模型，以清楚地表明这是一个Lightning模型。因此lit。😊。uralNe。这里我们说让神经网络具有超参数。因此它需要输入大小。它需要隐藏大小，并且需要类别数。
 - en: which we all have here for our hyperparameters。 Then we have to fit it to our
     trainer。 So we say trainer dot fit our model。 And now we can already run it and
     see if this is working。 So now。Let's go to the console。 And now let's run this
     file。 So we say Python lightning dot pi。Here we get a error。 So， of course， I
     rename the lital net。 So I also have to say。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们在这里都有超参数。然后我们必须将其适配到我们的训练器。所以我们说trainer.dot fit我们的模型。现在我们可以直接运行它并看看这是否有效。所以现在，让我们去控制台。现在让我们运行这个文件。所以我们说Python
+    lightning.dot pi。这里我们得到一个错误。所以，当然，我重命名了lital net。所以我也必须说明。
 - en: Let neural net here。 And now again， let's run it。And now we see it starting。
     so we see that we have no GP support。 We also get an overview of our different
     layers and the parameters。 Then since I'm running it the first time， it's downloading
     the data set。And then here is the training。 So it worked。 So it only did one batch
     because we set fast defffron equals true。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 将神经网络命名为这里。现在再次运行它。现在我们看到它开始了。我们看到没有GPU支持。我们还得到了不同层和参数的概述。然后因为我是第一次运行，所以它正在下载数据集。然后这里是训练。所以它成功了。因为我们设置fast
+    defffron等于true，所以只处理了一批。
 - en: So let's clear it and test it one more time。 So now it shouldn't download it
     anymore。And this was way faster。 And now here， for example， we get one warning，
     so it says。The data loader train data loader does not have many workers， which
     may be a bottleneck。 Consider increasing the value of nu workers argument。 Try
     4。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们清除它并再测试一次。所以现在它不应该再下载了。这快得多了。现在这里，例如，我们得到一个警告，所以它说。数据加载器训练数据加载器没有很多工作进程，这可能是一个瓶颈。考虑增加nu
+    workers参数的值。试试4。
 - en: So this is actually the first tip that can help us to speed up our code。 So
     here。 what we want to do is in our train loader。 We can also give it the argument。
     nu workers equals 4。 And now let's clear this and run it again。And now our warning
     is gone， So now。Here we see the overview。 We now only used one epoch。 and here
     we have the loss。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这实际上是第一个可以帮助我们加速代码的提示。在我们的训练加载器中，我们可以给它的参数设置为nu workers等于4。现在我们清除这个并再次运行，现在我们的警告消失了。这里我们看到了概览。我们现在只使用了一个epoch，这里有损失值。
 - en: So now if you want to have a full training， we can also give our trainer。 the
     argument max epoch equals。 and then the number of epochs that we defined。 epochs。
     So this is one of the hyperparameters。And now let's set this to false again。 So
     now this should do a full training。 And now， let's see if this is working。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以现在如果你想进行完整的训练，我们也可以给我们的训练器参数max epoch等于定义的epoch数量。所以这是超参数之一。现在让我们再次将其设置为false。这应该进行完整的训练。现在，让我们看看这是否有效。
 - en: And now this should take。Max epos， sorry。Now this should take a little longer。And
     yeah， we see。 So we get a nice progress bar， and we see our training works， and
     our loss should slowly decrease。 So this is working。😊，So now， let me stop this
     for now。 And now the next thing we want to do is to do our evaluation or testing。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在这应该需要。Max epos，抱歉。现在这应该稍微长一点。是的，我们看到。所以我们得到了一个不错的进度条，我们看到训练正常运行，损失值应该慢慢减少。所以这有效。😊，所以现在让我暂时停止这个。接下来我们想要做的是进行评估或测试。
 - en: So similar to the training step and training data loader。 We now also want to
     add a validation step and a validation data loader。 So let me copy this。 And let
     me paste it in here。 And this has to be called validation step。And here we are
     doing the same thing actually。 So as in the test train training step。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以类似于训练步骤和训练数据加载器。我们现在也想添加一个验证步骤和验证数据加载器。所以让我复制这个。并在这里粘贴。它必须被称为验证步骤。实际上我们在这里做同样的事情。所以在测试训练步骤中也是如此。
 - en: So we reshape our images， then we do the forward pass and calculate the loss。
     And this time we use the key well loss or validation loss。 and now let's set our
     fast defron to true again。 and let me run it again。 So now if we run it。 we should
     get an error。 And yeah， here we get the exception。 you have defined validation
     step。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们重新调整了图像，然后进行前向传播并计算损失。这次我们使用关键损失或验证损失。现在我们再次将fast defron设置为true。让我再运行一次。所以现在如果我们运行它，我们应该得到一个错误。是的，这里我们得到了异常，你已定义验证步骤。
 - en: but have not passed in a validation data loader。 So now we know what we have
     to do。 We also have to use a validation data loader。 So let me copy and paste
     this。And this has to be called well data loaddown。 So if you're not sure you can
     go to the official。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 但尚未传入验证数据加载器。所以现在我们知道该怎么做。我们还必须使用验证数据加载器。所以让我复制并粘贴这个。并且这必须被称为well data loaddown。如果你不确定，可以去官方文档。
 - en: '![](img/8f1dbba751e44013b8cee2c7d55082c5_39.png)'
+  id: totrans-52
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8f1dbba751e44013b8cee2c7d55082c5_39.png)'
 - en: Documentation， and then scroll to the validation loop。 There。 you see the。![](img/8f1dbba751e44013b8cee2c7d55082c5_41.png)
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 文档，然后滚动到验证循环。在那里。你会看到。![](img/8f1dbba751e44013b8cee2c7d55082c5_41.png)
 - en: 3 functions that you need， so。Now， first of all， now we have our。Validation
     data set。 So here we want to say， or we want to grab。![](img/8f1dbba751e44013b8cee2c7d55082c5_43.png)
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 你需要的三个函数，所以。现在，首先，我们有我们的。验证数据集。因此在这里我们想说，或者我们想抓取。![](img/8f1dbba751e44013b8cee2c7d55082c5_43.png)
 - en: The next or the test data set。 So in this case， I call the test data set。 but
     actually。 you want to have。A split of your data to a training data set。 a validation
     data set and a test data set。 So the validation data set is used to get an unbiased
     evaluation of the model performance while tuning the hyperparameters。And then
     the test dataset set is used at the very end to provide an unbiased evaluation
     with data that the model has never seen before。
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 下一个或测试数据集。在这种情况下，我称之为测试数据集。但实际上。你需要将数据划分为训练数据集、验证数据集和测试数据集。验证数据集用于在调整超参数时对模型性能进行无偏评估。而测试数据集则是在最后提供对模型从未见过的数据的无偏评估。
 - en: So in this example， we， let's say we only have two splits of our data set。 Now。
     we only use the first two steps training and validation。 So let me copy this and
     paste it in here。 And let's rename this to a validation data set。 And then let's
     grab the validation data loader。
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个示例中，我们假设只有两个数据集的划分。现在。我们只使用前两个步骤进行训练和验证。所以让我复制这个并粘贴到这里。然后让我们将其重命名为验证数据集。接着我们获取验证数据加载器。
 - en: '![](img/8f1dbba751e44013b8cee2c7d55082c5_45.png)'
+  id: totrans-57
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8f1dbba751e44013b8cee2c7d55082c5_45.png)'
 - en: '![](img/8f1dbba751e44013b8cee2c7d55082c5_46.png)'
+  id: totrans-58
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8f1dbba751e44013b8cee2c7d55082c5_46.png)'
 - en: '![](img/8f1dbba751e44013b8cee2c7d55082c5_47.png)'
+  id: totrans-59
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8f1dbba751e44013b8cee2c7d55082c5_47.png)'
 - en: And rename it to Val loader and then return the v loader。And now let's run it
     again。 So let's say Python lightning dot pi。And we get anarrow。 So data set equals
     well data set。 of course。 And let's clear this and run it again and then it should
     do one pass through training and validation。 and we see it worked。 And now we
     again， get the same warning。
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 并将其重命名为验证加载器，然后返回v加载器。现在让我们再运行一次。假设Python lightning dot pi。我们得到了一个错误。因此数据集等于好的数据集。
+    当然。让我们清除这个并再次运行，然后它应该通过训练和验证进行一次传递。我们看到它成功了。现在我们再次得到了相同的警告。
 - en: So here we use the nu workers equals 4。 So let's clear it and try it again。
     So you see it already starts giving us hints when we make some mistakes。 And now
     we see it worked。 And now it's also to suggesting to define a validation epoch
     and method for accumulating stats。 So let's go to the documentation and grab this
     function to see how it looks like So。
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里我们使用nu workers等于4。因此让我们清除并再次尝试。因此，你会看到，当我们犯错误时，它已经开始给我们提示。现在我们看到它成功了。现在它也建议定义一个验证周期和方法来累积统计数据。所以让我们去文档中获取这个函数，看看它的样子。
 - en: '![](img/8f1dbba751e44013b8cee2c7d55082c5_49.png)'
+  id: totrans-62
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8f1dbba751e44013b8cee2c7d55082c5_49.png)'
 - en: '![](img/8f1dbba751e44013b8cee2c7d55082c5_50.png)'
+  id: totrans-63
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8f1dbba751e44013b8cee2c7d55082c5_50.png)'
 - en: We copy and paste this。 So this is the function that is executed after each
     validation epoch。 And here we want to calculate the average loss。 So actually，
     in our example。 we want to do exactly the same。 So we want to call。 calculate
     the average loss by saying this is torch stack。 And then since we。
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们复制并粘贴这个。因此这是在每个验证周期后执行的函数。在这里我们想计算平均损失。实际上，在我们的示例中。我们想做的正是这个。所以我们想调用。通过说这是torch
+    stack来计算平均损失。然后因为我们。
 - en: Called the key validation loss。 We can access it here and then calculate the
     mean over all the。Losses， and now， for now， let's not worry about this。 And then
     we return the average loss as a dictionary。And then we are done。 So now， if we
     clear it。Then， we should get a。1 pass now no more warning。And now we have everything
     that we need for our coat。
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 被称为关键验证损失。我们可以在这里访问它，然后计算所有损失的均值，现在，暂时先不担心这个。然后我们将平均损失作为字典返回。这样我们就完成了。所以现在，如果我们清除它。那么，我们应该得到一个。1次通过，现在没有更多的警告。现在我们有了我们所需的一切来处理我们的代码。
 - en: So this is all we need with pie touch lightning。And now， let me show you one
     more hint。 what we can get。 So， for example， in our validation loader。 if we accidentally
     set shuffle equals true and then try to run it。 we should get a warning or a hint。So
     yeah， here we see user warning。
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这就是我们在PyTorch Lightning中所需的全部。现在，让我给你展示一个提示。我们可以获得的内容。例如，在我们的验证加载器中。如果我们不小心将shuffle设置为true并尝试运行它。我们应该得到一个警告或提示。所以是的，这里我们看到了用户警告。
 - en: Yourve data loader has shuffle equals true。 It is best practice to turn this
     off for validation and test data loadus。 So you see， we can actually already improve
     our code with this framework。And now。 let's compare this with our。Original code。
     So if we have a look at this code in Github。
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 你的数据加载器有`shuffle equals true`。在验证和测试数据加载时，最佳做法是将其关闭。所以你看，我们实际上可以用这个框架改进我们的代码。现在，让我们把它和我们的原始代码进行比较。如果我们在Github上查看这段代码。
 - en: '![](img/8f1dbba751e44013b8cee2c7d55082c5_52.png)'
+  id: totrans-68
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8f1dbba751e44013b8cee2c7d55082c5_52.png)'
 - en: Then we no longer need this device functionality。And we no longer needs to have
     the manual for loop over all epochs and over all the batches。 we no longer have
     to care about these two device calls。 we no longer have to care about the optimizer
@@ -352,103 +502,141 @@
     we can calculate this with this validation step and now。 for example， if you also
     want a training step， we can easily edit the same way as we are doing with this
     function and with this function and now。
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们不再需要这个设备功能。我们也不再需要手动遍历所有的轮次和所有的批次。我们不再需要关心这两个设备调用。我们也不再需要关心优化器和反向传播，并且我们可以省略整个验证循环，因为我们可以通过这个验证步骤来计算，现在，例如，如果你还想要一个训练步骤，我们可以以同样的方式轻松编辑，就像我们用这个函数和这个函数一样，现在。
 - en: for example， if you want to use GPus， then we can easily do this by giving our
     trainer the argument。 GPus equals， for example， one and when you want to scale
     it up and have more GPus available。 you can also use。![](img/8f1dbba751e44013b8cee2c7d55082c5_54.png)
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，如果你想使用GPU，我们可以通过给我们的训练器传递参数`GPus equals`，例如`one`来轻松实现，当你想扩大规模并且有更多GPU可用时，你也可以使用。![](img/8f1dbba751e44013b8cee2c7d55082c5_54.png)
 - en: 2 or let's say4， or you can use even T support。 So it's really easy to switch
     from CPU to GP and then scale it up。 And you can also have a distributed backend。
     So DP， for example。You can also easily switch to 16 bit precision。You can lock
     the GP memory。 So a lot of features that you can now very easily test with this
     framework。
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 2，或者我们说4，或者你甚至可以使用T支持。所以从CPU切换到GPU，然后扩展规模真的很简单。你还可以拥有一个分布式后端。所以DP，例如。你也可以轻松切换到16位精度。你可以锁定GPU内存。因此，你现在可以非常轻松地测试很多功能，这个框架非常适合。
 - en: You just have to use all the different arguments for the trainer。 And， for example。
     one more helpful function that you can try is auto L R。Find equals true。 This
     will run a。Algorithm to find the best learning rate。 So you can try this one。You
     can also set， for example。 deterministic equals true。 So this allows it to reproduce
     your results。
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 你只需使用所有不同的训练器参数。比如说，还有一个很有用的功能你可以尝试，就是`auto L R`。`Find equals true`。这将运行一个算法来寻找最佳学习率。所以你可以尝试这个。你也可以设置，例如，`deterministic
+    equals true`。这样可以使你的结果可重现。
 - en: or you can apply gradient clipping very easily by just passing in the argument
     Claient gripve equals。 and then some value between 0 and one， I guess， So for
     this， you again。 have to check out the official documentation。![](img/8f1dbba751e44013b8cee2c7d55082c5_56.png)
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者你可以通过简单地传入参数`Claient gripve equals`和一个介于0到1之间的值来轻松应用梯度裁剪，我想，这样的话，你仍然需要查看官方文档。![](img/8f1dbba751e44013b8cee2c7d55082c5_56.png)
 - en: There you find all the different features and use cases。 And now let me show
     you the full training and validation。 So let's remove this。 And now let's set
     the argument fast defffron to false again。 So again。 I'm not having a high number
     of epochs。 So it's only two because it takes a long time here without the GP。
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 在那里你可以找到所有不同的功能和用例。现在让我给你展示完整的训练和验证。所以让我们去掉这个。现在让我们将参数`fast defffron`重新设置为`false`。所以再次强调，我没有设置很多的轮次，所以只有两个，因为在没有GPU的情况下，这里会花费很长时间。
 - en: But let's run it anyway。![](img/8f1dbba751e44013b8cee2c7d55082c5_58.png)
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我们还是运行一下。![](img/8f1dbba751e44013b8cee2c7d55082c5_58.png)
 - en: So again， we see the progress in our first epoch here and how our loss is decreasing。
     And when this is done， we should a faster progress bar for the validation loop。So
     now be careful。 Now here we see the validation loop。 and now our second training
     epoch starts。 So， yeah。 this is working。And now the second validation and now
     it's done。
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们再次看到这里第一轮的进展，以及我们的损失是如何降低的。当这一切完成时，我们应该在验证循环中看到一个更快的进度条。现在小心。现在我们看到验证循环。现在我们的第二个训练轮开始了。所以，没错，这在工作。现在第二次验证，也完成了。
 - en: and we can see and inspect the final loss。 So this worked。 And now as the last
     thing。 let me show you the integrated tenor board support。 So as you can see。
     there is all already a folder， which is called lightning lock。 So it's already
     automatically saving some checkpoint。😊，So and now。
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以查看并检查最终的损失。因此这有效。现在最后一件事，让我给你展示集成的天线板支持。正如你所看到的，已经有一个名为 lightning lock 的文件夹，所以它已经自动保存了一些检查点。😊，所以现在。
 - en: if we want to inspect the different losses during in the tensor board， then
     what we have to do is。 for example， if you want to inspect the training。 Then
     in our training step。 we create another dictionary。 and let's call this tenor
     board locks equals。 and this is an again。 a dictionary。 and here let's call this
     train loss as a key and as value， it's the same loss。
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们想检查天线板中的不同损失，那么我们需要做的是。例如，如果你想检查训练。那么在我们的训练步骤中，我们创建另一个字典。我们称之为天线板锁，等于。再一次，这是一个字典，这里我们把训练损失作为键，值是相同的损失。
 - en: And then we also append the tensor board loss to our dictionary。 And we have
     to give it the key lock and then lock。 And this is our tensor board locks。And
     now the same in our validation epoch end。 So here we create the tensboard locks。
     And here let's call it average validation loss。 And this is the average。Average
     loss。
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们还将天线板损失附加到我们的字典中。我们必须给它钥匙锁，然后是锁。这是我们的天线板锁。现在在我们的验证周期结束时也是如此。所以在这里我们创建天线板锁。我们称之为平均验证损失。这是平均的，平均损失。
 - en: And then here again， we used the key lock and then the tenzo board locks。 And
     now let's run it one more time to save all those things。So now we have to wait
     until this is done。So now our training and validation is done。 So now it should
     have。Save all of those to the lock directory。
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后在这里，我们使用了钥匙锁和天线板锁。现在我们再运行一次以保存所有内容。因此，我们需要等到这个完成。现在我们的训练和验证都完成了。所以现在应该保存所有这些到锁目录。
 - en: And now we can start the tensor board by saying tensor board minus minus lock。D
     equals。 and then light ning locks。 And by the way， I also have a full tutorial
     about how you can work with the Tensor board。 I will also put the link in the
     description。And with lightning。 you don't have to install it manually become because
     it comes with the requirements of lightning。
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们可以通过输入 tensor board minus minus lock 来启动天线板。D 等于，然后是 lightning locks。顺便说一下，我也有一个完整的教程，讲述如何使用
+    Tensor board。我会在描述中放上链接。使用 lightning，你不必手动安装，因为它包含在 lightning 的要求中。
 - en: So this should automatically work now。 So now if we hit run。 and sorry， this
     was no underscore。inus minus loar equals lightning locks。And now it works。 So
     now our tensor board is running here。 So now if we open up this。![](img/8f1dbba751e44013b8cee2c7d55082c5_60.png)
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这现在应该自动工作。现在如果我们点击运行，抱歉，这里没有下划线。inus minus loar 等于 lightning locks。现在它可以工作。现在我们的天线板在这里运行。如果我们打开这个。![](img/8f1dbba751e44013b8cee2c7d55082c5_60.png)
 - en: Then we should inspect the epochs。 Then we have the average validation loss。
     So since we only use two。Epochs， we don't see a lot of difference here。 So it's
     only a one line。 But for the training loss， this is what we looked after each。Training
     step。 So here we see a nice graph how our training loss decreased。 So yeah， you
     see。
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们应该检查周期。然后我们有平均验证损失。由于我们只使用了两个周期，我们在这里看不到太大的差异，所以只有一行。但对于训练损失，这是我们在每个训练步骤后查看的。因此这里我们看到一个很好的图表，显示我们的训练损失是如何减少的。所以，是的，你看到了。
 - en: we have automatic tensor board integration， and it's very easy to work with
     this tool。 So yeah。 these are most of the features I wanted to show you。 and let
     me know in the comments if you like this framework。 And if you also think that
     it can simplify your development process。 And if you like this video。
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们有自动的天线板集成，使用这个工具非常简单。因此，是的，这些是我想展示的大部分功能。如果你喜欢这个框架，请在评论中告诉我。如果你也认为它可以简化你的开发过程。如果你喜欢这个视频。
 - en: then please hit the like button and consider subscribing to the channel。 this
     helps me a lot and see next time by。![](img/8f1dbba751e44013b8cee2c7d55082c5_62.png)
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 请点击喜欢按钮，并考虑订阅频道。这对我帮助很大，下次再见！![](img/8f1dbba751e44013b8cee2c7d55082c5_62.png)
 - en: '![](img/8f1dbba751e44013b8cee2c7d55082c5_63.png)'
+  id: totrans-86
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8f1dbba751e44013b8cee2c7d55082c5_63.png)'

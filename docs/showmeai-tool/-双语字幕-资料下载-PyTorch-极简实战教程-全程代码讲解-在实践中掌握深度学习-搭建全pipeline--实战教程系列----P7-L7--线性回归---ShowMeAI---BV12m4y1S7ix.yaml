@@ -1,198 +1,291 @@
 - en: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P7：L7- 线性回归
     - ShowMeAI - BV12m4y1S7ix
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】PyTorch 极简实战教程！全程代码讲解，在实践中掌握深度学习&搭建全pipeline！＜实战教程系列＞ - P7：L7- 线性回归
+    - ShowMeAI - BV12m4y1S7ix
 - en: Hi， everybody。 Welcome back to a new Pytarch tutorial。 This time， we implement
     linear regression。 So we already implemented this step by step in the last couple
     of tutorials。 and this should be a repetition where we can apply all the learned
     concepts and quickly implement our algorithm again。😊，So as I've shown you before，
     our typical pieytorch pipeline consists of those three steps。First。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，大家好。欢迎回到新的Pytarch教程。这一次，我们实现线性回归。所以我们已经在前几个教程中逐步实现了这个。这应该是一个重复的过程，让我们可以应用所有学到的概念，并迅速再次实现我们的算法。😊如我之前所示，我们典型的pyytorch管道由这三个步骤组成。首先。
 - en: we design our model。 So we define the input and the output size， and then the
     forward pass。 Then we create our loss and optimizer functions。 And then we do
     the actual training loop with the forward pass。 the backward pass and the weight
     updates。 So let's do this。And first of all。 we import a couple of things that
     we need。 So let's import torch。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们设计我们的模型。所以我们定义输入和输出大小，然后进行前向传播。接着我们创建我们的损失和优化器函数。然后我们执行实际的训练循环，包括前向传播、后向传播和权重更新。让我们来做这个。首先，我们导入一些需要的内容。所以我们导入torch。
 - en: Then we import torch dot and N S and N。 So the neural network module。 Then we
     import nuy S and P just to make some data transformations。 and then from S K learn。
     we import data set。 So we want to generate a regression data set。And then we also
     want to plot this later。 So I say import matplot clip the pie plot as P LT。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们导入torch点和N S和N。也就是神经网络模块。然后我们导入nuy S和P以进行一些数据转换。然后从S K learn中导入数据集。我们想生成一个回归数据集。然后我们稍后也想绘制这个。所以我说导入matplot
+    clip的pie plot作为P LT。
 - en: And then we do our three steps。 So we design the model， step number one。Then
     step number two。 we define the loss and the optimizer。And then step number 3，
     our training loop。 So let's do this。 And first of all， let's do a step 0 where
     we prepare our data。 So prepare data。 So let's generate a regression data set。
     and we can do this by saying let's call this x nuy and y nuy equals。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们进行我们的三个步骤。所以我们设计模型，第一步。然后第二步，我们定义损失和优化器。最后第三步，我们的训练循环。让我们来做这个。首先，我们做一个步骤0，准备我们的数据。所以准备数据。让我们生成一个回归数据集。我们可以通过说让我们称这个为x
+    nuy和y nuy来实现。
 - en: and then we can use data sets dot make regression。 which gets， let's say 100
     samples。 So n samples equals 100。 and only one feature in this example。 So n features
     equals  one。 Then we add some noise。 and let's also at a random state。 Let's say
     this is one。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们可以使用数据集点make regression。获取，假设100个样本。所以n samples等于100。在这个例子中只需要一个特征。所以n features等于1。然后我们添加一些噪声。我们还要设置一个随机状态。假设这个是1。
 - en: '![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_1.png)'
+  id: totrans-6
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_1.png)'
 - en: '![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_2.png)'
+  id: totrans-7
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_2.png)'
 - en: '![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_3.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_3.png)'
 - en: And then we want to convert this to a torch tenzoa。 So we say x equals。 and
     then we can use the function torch dot from numy。 and then we say x dot。X underscore
     nuy。But we want to convert this to a。A float 32 data data type before。 So right
     now this is a double data type。 So if we use a double here。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们想把这个转换为一个torch张量。所以我们说x等于。然后我们可以使用函数torch从numy中提取。然后我们说x点。X下划线nuy。但我们想在此之前将其转换为一个float
+    32数据类型。所以现在这是一个双精度数据类型。如果我们在这里使用双精度。
 - en: then we will run into some arrows later。 So let's just convert this by saying
     S type and then say nuy dot float 32 and we do the same thing for our y。 So we
     say y equals the torch tenzo from our nuy array。And now let's also reshape our
     y。 because right now this is a has only one row， and we want to make it a column
     vector。 So we want to put each value in one row， and the whole shape has only
     one column， so。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们稍后会遇到一些错误。所以我们只需通过说S类型，然后说nuy点float 32来转换，并且对我们的y做同样的事情。所以我们说y等于从我们的nuy数组转换的torch张量。现在我们还要重塑我们的y。因为现在它只有一行，我们想把它变成列向量。我们希望将每个值放在一行中，整个形状只有一列。
 - en: Let's say y equals y dot view。 And here we put in the new size So y dot shape0。
     So the number of of values。 and then only one column。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_5.png)
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们说y等于y点view。在这里我们放入新的大小，所以y点shape0。所以值的数量。然后只需要一列。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_5.png)
 - en: '![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_6.png)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_6.png)'
 - en: So the few method is a built in pi torch method， which will reshape our tenone。And
     then let's get the number of samples and the number of features by saying this
     is x dot shape。 So we can use this in a second。 And now let's do our three steps。
     So now we have the data。 Now we define the model。And in the linear regression
     case， this is just one layer。 So our。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这个方法是一个内置的PyTorch方法，将重新调整我们的`tensor`。然后通过说`x.shape`来获取样本数量和特征数量。这样我们就可以在稍后使用。现在让我们进行三步操作。现在我们有了数据。现在我们定义模型。在线性回归的情况下，这只是一个层。我们的。
 - en: so we can use to build in linear model。 So we say model equals N N dot linear。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_8.png)
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，我们可以使用内置的线性模型。我们说`model = NN.Linear`。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_8.png)
 - en: This is the linear layer， which needs a input size of our features and a output
     size。 So let's say input size equals。 This is the number of features we have。
     So this is just one in our example。 and the output size equals one。 So we only
     want to have one value for each sample that we want to put in。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是线性层，它需要我们特征的输入大小和输出大小。所以假设输入大小等于。这是我们拥有的特征数量。在我们的示例中，这仅为1。输出大小等于1。所以我们只想为每个样本生成一个值。
 - en: So our model gets now the input and the output size So input size and output
     size。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_10.png)
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们的模型得到了输入和输出的大小，输入大小和输出大小。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_10.png)
 - en: And this is all we have to do to set up the model。And now let's continue with
     the loss and the optimizer。 So let's call this criterion。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_12.png)
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是我们设置模型所需做的全部。现在让我们继续处理损失和优化器。所以我们称之为`criterion`。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_12.png)
 - en: And here we can use a built in loss function from Pytorch。 And in the case of
     linear regression。 this is the mean squared error。 So we can say this is N N dot
     M S E loss。 So will calculate the mean squared error。 So this is a callable function。And
     then we also set up the optimizers。 So we say。Opttimizer equals。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，我们可以使用Pytorch内置的损失函数。在线性回归的情况下，这就是均方误差。所以我们可以说这是`NN.MSELoss`。这样就会计算均方误差。这是一个可调用的函数。然后我们还设置优化器。所以我们说，`optimizer
+    = ...`。
 - en: And let's say torch dot optim dot S G D。 So this is stochastic gradient descent。
     and our optr needs the parameters that it should optimize。 So here we can simply
     say this is model dot parameters。 And then it needs a learning rate。 So let's
     define this here as a variable。 So let's say learning rate equals。 let's say 001。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设我们使用`torch.optim.SGD`。这就是随机梯度下降。我们的优化器需要优化的参数。所以这里我们可以简单地说这是`model.parameters`。然后它需要一个学习率。我们在这里定义为一个变量。假设学习率等于`0.01`。
 - en: '![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_14.png)'
+  id: totrans-20
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_14.png)'
 - en: '![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_15.png)'
+  id: totrans-21
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_15.png)'
 - en: '![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_16.png)'
+  id: totrans-22
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_16.png)'
 - en: And then Lr equals learning rate。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_18.png)
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后`lr = learning rate`。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_18.png)
 - en: So this is step number 2。 And now let's do our training loop。 So， first of all。
     let's define the number of epochs。Let's say we want to do 100 training iterations。
     and now for。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_20.png)
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是第二步。现在让我们进行训练循环。首先，定义一下迭代的次数。假设我们想进行100次训练迭代。然后，![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_20.png)
 - en: Epoch in range epochs。 And now here we do our steps in the training loop， the
     forward pass。 the backward pass and the update and the weight updates。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_22.png)
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 在`range(epochs)`中进行循环。现在在训练循环中执行我们的步骤，前向传播，反向传播和权重更新。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_22.png)
 - en: '![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_23.png)'
+  id: totrans-26
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_23.png)'
 - en: So let's， first of all， do the forward pass and also the loss here。Then， the
     backward pass。And then the update。 So the forward pass and the loss here， we can
     say， why predict it。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_25.png)
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以首先我们做前向传播以及这里的损失。然后是反向传播。然后是更新。前向传播和这里的损失，我们可以说，为什么预测它。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_25.png)
 - en: Equals， and here we call our model。 And as a data， it gets x。 So this is the
     forward pass。 And then we compute the loss by saying loss equals。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_27.png)
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 等于，然后我们调用我们的模型。作为数据，它获取`x`。这就是前向传播。然后我们通过说`loss = ...`来计算损失。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_27.png)
 - en: This is our cr we call this criterion。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_29.png)
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我们的`criterion`。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_29.png)
 - en: And this needs the actual labels and the predicted values。 So why predict and
     why。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_31.png)
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 这需要实际标签和预测值。那么为什么要预测呢？![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_31.png)
 - en: And now， in the backward pass to calculate the gradients， we just say lost dot
     backward。 So this will do the back propagation and calculate the gradients for
     us。And then our update here。 we simply say optimizer dot step。 So this will update
     the weights。And then before the next iteration， we have to be careful。 So we have
     to empty our gradients now。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 在反向传播中计算梯度时，我们只需说 lost dot backward。这将进行反向传播并为我们计算梯度。然后我们在这里的更新，只需说 optimizer
+    dot step。这将更新权重。在下一次迭代之前，我们必须小心，因此我们必须现在清空梯度。
 - en: because whenever we call the backward function， this will sum up the gradients
     into the dot Gr attribute。 So now we want to empty this again。 And we simply say
     optimizer dot0 gra。 So you should never forget this。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_33.png)
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 因为每当我们调用 backward 函数时，这将把梯度累加到 dot Gr 属性中。所以现在我们想再次清空这个。我们简单地说 optimizer dot
+    0 gra。所以你永远不要忘记这个。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_33.png)
 - en: '![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_34.png)'
+  id: totrans-33
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_34.png)'
 - en: And then we are done with the draining loop。 Let's also print some information。
     So let's say if。Epoch plus 1 modular1s equals equals 0。 So every 10th step， we
     want to print some information。 So let's print the epoch。 And here we say epoch
     plus one。 and let's also print the loss。 the loss equals。 And here we can can
     say loss dot item。 and let's format this。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们完成了训练循环。让我们打印一些信息。假设如果 Epoch plus 1 modular1s 等于 0。每第 10 步，我们想打印一些信息。所以让我们打印
+    epoch。这里我们说 epoch plus one。让我们也打印损失，损失等于。我们可以说 loss dot item。然后让我们格式化这个。
 - en: So let's plot or print only for decimal values。🤢，So now we are done。 and now
     let's also plot this。 so。Let's say， let's get all the predicted values by saying
     predicted equals here。 we call our final model now， model X。And with all the data。And
     now we want to convert this to nu pipe back again， but before we do that。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们只绘制或打印小数值。🤢，现在我们完成了。现在我们也来绘制这个。我们来说，获取所有的预测值，称为 predicted。现在我们调用我们的最终模型，model
+    X。带着所有的数据。现在我们想把它转换回 nu pipe，但在此之前。
 - en: we want to detach our tenzoor， so we want to prevent this operation from being
     tracked in our graph and our computational graph。Because right now， this tenor。Here
     I have a typo predicted。 So this tenor has the required gradients argument set
     to true。 But now we want this to fall to be false。 So this will generate a new
     tenzor where our gradient calculation attribute is false。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们想要分离我们的 tenzo，以防止此操作被跟踪在我们的图形和计算图中。因为现在，这个 tenzo。这里我有个错别字预测了。所以这个 tenzo 需要梯度参数设置为
+    true。但现在我们希望它变为 false。这样将生成一个新的 tenzo，其中我们的梯度计算属性为 false。
 - en: So this is our new tenzo。 And then we just call the numpy function。 Now we convert
     it to numpy and now plot this。 So let's say first plot all our data。So。 x nuy
     and y nuy。And we want to plot this as， let's say red dots。 And then we want to
     plot our generated or approximated function。 So let's say P， L T dot plot。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我们的新 tenzo。然后我们调用 numpy 函数。现在我们将其转换为 numpy，并绘制这个。所以我们先绘制所有的数据。所以，x nuy 和 y
+    nuy。我们希望将其绘制为红点。然后我们希望绘制我们的生成或近似函数。所以说 P，L T dot plot。
 - en: X nuy on the X axis and our predicted labels on the Y axis。And let's plot this
     in blue。 And then we say P L T dot show。 And now let's run this and hope that
     everything is correct。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_36.png)
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 在 X 轴上是 X nuy，Y 轴上是我们的预测标签。让我们用蓝色绘制这个。然后我们说 P L T dot show。现在让我们运行这个，希望一切都是正确的。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_36.png)
 - en: And now this plot appears here。 So now we see that we have a pretty good approximation
     of our data with this line。 and we see that this is working。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_38.png)
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在这个图出现了。我们看到这条线很好地近似了我们的数据，我们看到这个是有效的。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_38.png)
 - en: And yeah， now were done。 I hope you enjoyed this。 If you like this。 please subscribe
     to the channel and see you next time， bye。😊。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_40.png)
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的，现在我们完成了。希望你喜欢这个。如果你喜欢，请订阅频道，下次见，再见。😊。![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_40.png)

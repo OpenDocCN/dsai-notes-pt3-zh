@@ -1,31 +1,44 @@
 - en: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
     - P7：7）Python列表 - ShowMeAI - BV1yg411c7Nw
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
+    - P7：7）Python列表 - ShowMeAI - BV1yg411c7Nw
 - en: '![](img/b0272746902c5defc47db2b7d950ab97_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/b0272746902c5defc47db2b7d950ab97_0.png)'
 - en: Welcome back， everyone。 My name is Brian。 And in this video， we're going to
     cover lists。 A list is a complex data type compared to what we've been talking
     about。 It's very complex。 So far。 we've covered bulls， numbers and strings， but
     the list as well vastly more complex as we're about to see。 So first off， what
     is a list。😊。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 欢迎回来，大家。我是布赖恩。在这个视频中，我们将讨论列表。列表是一种复杂的数据类型，相比于我们之前讨论的内容，它非常复杂。到目前为止，我们讨论了布尔值、数字和字符串，但列表要复杂得多，正如我们即将看到的那样。那么首先，什么是列表呢？😊
 - en: '![](img/b0272746902c5defc47db2b7d950ab97_2.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/b0272746902c5defc47db2b7d950ab97_2.png)'
 - en: Well， it's an ordered。![](img/b0272746902c5defc47db2b7d950ab97_4.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，它是有序的。![](img/b0272746902c5defc47db2b7d950ab97_4.png)
 - en: List or collection of data， and what do I mean by that？Imagine， we add an item。That
     item is going to be at position 0， meaning the first item you add is always 0。
     And as we add items。You guessed it。That index will increment。LetsGo ahead and
     add an item here。So01。2， and these items， they can be the same， they can be different，
     they can be something totally crazy。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 列表或数据集合，我的意思是什么？想象一下，我们添加一个项目。那个项目将位于位置0，这意味着你添加的第一项始终是0。当我们添加项目时，你猜对了。那个索引会递增。让我们在这里添加一个项目。所以01、2，这些项目可以相同，也可以不同，甚至可以是一些完全疯狂的东西。
 - en: Whatever we want to do。This is the beauty of Python。So the list doesn't have
     to be what's called typed。 meaning you don't have to have the same data type。
     That's how a lot of lists work in a lot of different programming languages。 You
@@ -33,160 +46,218 @@
     we dive in here is that this is an ordered0 based index， meaning。It will be added
     in the order you add them， and the first item is always0。From zero。 it goes to1
     and two and so on and so on。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 无论我们想做什么，这就是Python的美妙之处。因此，列表不需要被称为“类型”。这意味着你不必使用相同的数据类型。这就是许多不同编程语言中很多列表的工作方式。你可以将字符串与数字和自定义数据类型混合。我们在深入之前的主要要点是，这是一个基于顺序的索引，这意味着它会按照你添加的顺序添加，第一项始终是0。从0开始，依次是1、2，等等。
 - en: '![](img/b0272746902c5defc47db2b7d950ab97_6.png)'
+  id: totrans-7
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/b0272746902c5defc47db2b7d950ab97_6.png)'
 - en: Okay， let's go ahead and create a list first thing you'll notice in our notes
     here is I have these square brackets right here。What that denotes is that it is
     a list， it's important that you remember that because we're going to talk about
     other data types that are very similar to a list。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，让我们先创建一个列表。你会在我们的笔记中注意到这些方括号。这表明它是一个列表，记住这一点很重要，因为我们将讨论其他与列表非常相似的数据类型。
 - en: but they are different and they use a different style。First things first， let's
     create our list。 remember the square brackets， I'm going to say x equals square
     brackets。And anything we put inside these square brackets becomes part of the
     list。For example。 I'm going to say Brian。And we're going to add another item by
     our syn comma and then whatever we want to put in here。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 但它们是不同的，并且使用不同的风格。首先，让我们创建我们的列表。记住方括号，我将说x等于方括号。我们放在这些方括号内的任何东西都成为列表的一部分。例如，我将说布赖恩。然后我们通过分号添加另一个项目，然后随便放入我们想放的内容。
 - en: So we have two strings in there。Now， really hurt your brain。 if you're coming
     from another language。 I'm going to add a number。 That's right。This is not a typed
     list。 You might be used to something like C++ where well， you have to have a specific
     type。 it can only have strings or only have numbers。Python is not like that at
     all。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们有两个字符串在里面。如果你来自另一种语言，这可能会让你很困惑。我将添加一个数字。没错，这不是一个类型列表。你可能习惯于像C++这样的东西，在那里你必须有一个特定的类型，它只能包含字符串或数字。Python完全不是这样的。
 - en: It makes it very flexible， very easy。So let's go ahead and put a note in here。We
     can mix data types。And let's go ahead and print this out。And I want to say list。Go'ming
     to print our list out。It'll copy and paste。 Let's put this down here and let's
     get the length。So you can see right off the bat， our list is this right here and
     it's inside those square brackets。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 这使得它非常灵活，非常简单。所以让我们在这里写个笔记。我们可以混合数据类型。接下来我们要打印出来。我想说列表。我要打印我们的列表。它会复制和粘贴。让我们把它放在这里并获取长度。因此，你可以看到我们的列表就在这里，并且它在这些方括号内。
 - en: always remember square brackets are lists， and we can have two strings and a
     number we could add whatever we want。 and there are three items in there。If you're
     coming from another language。 this may actually hurt your brain because you're
     going to go wait a minute。 you can't have multiple types， but with Python you
     can。It makes it super convenient。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 始终记住方括号是列表，我们可以有两个字符串和一个数字，我们可以添加任何我们想要的，并且其中有三个项目。如果你来自另一种语言，这可能会让你感到困惑，因为你会想，等一下，你不能有多种类型，但在Python中可以。这使得它非常方便。
 - en: super easy to create your own data structures on the fly。Let's make a special
     note here about indexing and positioning。 so this really confuses a lot of people。We
     think like， well， humans， the first item is always one。 well computers don't think
     that way and the first item is always zero because you're starting with nothing。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 动态创建自己的数据结构非常简单。让我们在这里特别注意索引和位置。这让很多人感到困惑。我们认为，嗯，人类，第一个项目总是1。可是计算机并不这样认为，第一个项目总是0，因为你是从零开始的。
 - en: So when we talk about lists， this is zero based。Let's go ahead and let's grab
     our friend print here。And let's say， we want the 0。So to grab the first item in
     that list。Simply say square brackets and the index。 Now， note we are not creating
     a list。 We're saying inside of that list， get that index。 In this case， it's the0
     or the first item。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以当我们谈论列表时，这是基于零的。让我们继续，叫上我们的朋友打印，并说我们想要0。所以要抓取那个列表中的第一个项目。只需说方括号和索引。现在，请注意，我们并不是在创建一个列表。我们是在说，在那个列表中，获取那个索引。在这个例子中，是0或第一个项目。
 - en: I'm going to put that in all caps for you newbies out there， the first item
     is0。Remember。 humans think the first item is one， computers think the first item
     is zero because you're starting with nothing。Now， if you watched the previous
     video on strings， and I hope you did。 you understand what slicing is。 But just
     in case you skipped it。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将把这一点用大写字母写出来，供新手参考，第一个项目是0。请记住。人类认为第一个项目是1，计算机认为第一个项目是0，因为你是从零开始的。现在，如果你看过前一个关于字符串的视频，我希望你看过。你应该理解切片是什么。但以防你跳过了。
 - en: a slice is a lot like making a slice of bread。 You have a nice bake loaf of
     bread in front of you。And you don't want the whole loaf if you just want a slice
     of it or a slice of pie is probably a better example。So we're going to print this
     out and we're going to slice this。So I'm going to say， I want X。 and then we're
     going to。 You guessed it。 Now， notice those are square brackets as well。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 切片很像切面包。你面前有一块新鲜烤制的面包。如果你只想要一片，而不是整个面包，或者一块派可能是更好的例子。所以我们将把这个打印出来，我们将进行切片。所以我将说，我想要X。然后我们要，你猜对了。现在，请注意，这些也是方括号。
 - en: We didn't cover this in the last video。 But， yes， when you see that square bracket。
     that means we want a piece of this list。 or in this case， a slice of it。I'm just
     going to put some quotes here。P are some quote some comments， slice the list。So
     what this is going to do is it's going to say X and we have a starting position
     and an ending position。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们在上一个视频中没有涵盖这一点。但是，当你看到方括号时，这意味着我们想要这个列表中的一部分，或者在这种情况下，是它的一部分。我只会在这里放一些引号。P是一些引用和评论，切片列表。所以这将意味着X，并且我们有一个起始位置和一个结束位置。
 - en: we're going to go from the first to the second。 Now， remember the first is not
     the first item。 It's position one。 Remember that gets super confusing as far as
     zero based indexes。To illustrate that。One to two position is actually Karen's。So
     what we're doing is we're taking this list here。And we're saying0，1。To two， so
     it's going to stop。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将从第一个位置转到第二个位置。现在，请记住，第一个不是第一个项目，而是位置零。记住，这在零基索引方面会非常混淆。为了说明这一点，从一到二的位置实际上是凯伦的。所以我们正在拿这个列表，并且我们说0，1。到2，所以它将停止。
 - en: If we omit this second position， we're going to get the remainder of this。 We're
     going to say we want that whole slice right there。 So let's demonstrate that works
     as expected。Slicing is a very convenient way of getting a sub item。![](img/b0272746902c5defc47db2b7d950ab97_8.png)
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们省略这个第二个位置，我们将获得其余部分。我们将说我们想要那个整个切片。让我们演示一下这是否按预期工作。切片是一种非常方便获取子项目的方法。![](img/b0272746902c5defc47db2b7d950ab97_8.png)
 - en: '![](img/b0272746902c5defc47db2b7d950ab97_9.png)'
+  id: totrans-20
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/b0272746902c5defc47db2b7d950ab97_9.png)'
 - en: You may be thinking lists are great， but now that I've created the list， how
     do I add items to it。 that's a common question。So that's what we're going to cover
     in this little section here is how to add the items and you can either append
     or insert。And both of them do well exactly what they sound like they do， for example，
     X。pen。We are going to say a pen pizza。And let's go ahead and X dot append。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可能会想，列表很好，但现在我创建了列表，如何向其中添加项目呢？这是一个常见问题。所以我们将在这一小节中讨论如何添加项目，你可以选择追加或插入。它们的功能确实如同听起来那样，举个例子，X。pen。我们要说一根笔披萨。让我们继续进行
+    X dot append。
 - en: I'm doing this twice for a reason， and you'll see why here in just a second。And
     add beer because everybody likes pizza and beer， right now we want to insert。So
     aend will put things at the end in the order you put them。 noticeice we did two
     appends。 pizza and beer， so it's going to add pizza， then it's going to add beer
     and it's going to do both of those at the end。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 我这样做两次是有原因的，你稍后会明白。并添加啤酒，因为每个人都喜欢披萨和啤酒，对吧？现在我们想要插入。因此，aend 会将项目按顺序放在末尾。注意我们进行了两个追加。披萨和啤酒，所以它将添加披萨，然后添加啤酒，两个都会放在末尾。
 - en: Now insert。Allows you to say， I want to put this at a specific position。So because
     we're talking about a specific， I need to give it a number。 and in this case one。
     you notice it wants an index， an integer of where you're going to put this in
     the list。So I'm simply going to say one。And let's add cats。So following along。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在插入。允许你说，我想把这个放在特定的位置。因此，因为我们在谈论一个特定的，我需要给它一个数字。在这种情况下是 1。你注意到它需要一个索引，一个整数，说明你要把这个放在哪里。所以我会简单地说
+    1。然后我们添加猫。继续跟着。
 - en: what we're doing here is we're adding pizza to the end of this list， then we're
     adding beer。Then we're going to go to the one position， not the beginning。 the
     beginning would be 0。 remember。 we're going to go to the one position。And add
     cats。Let's go ahead and add a few notes here。That way。 anybody who downloads this
     code off GitHub will just have the notes and be able to easily follow along。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们在这里做的是将披萨添加到这个列表的末尾，然后添加啤酒。接着我们要去到一的位置，而不是开头。开头是 0。记得哦。我们要去到一的位置。并添加猫。让我们在这里添加一些注释。这样，任何从
+    GitHub 下载此代码的人都能有注释并轻松跟随。
 - en: Now， let's go ahead and do a print。And I want to see this list in its entirety。And
     let's see what this looks like。Okay， down here。 you can see we have our list and
     we have Brian and then cats got inserted in the first position。And then my name
     Karen's 46， and then it did pizzas and beer。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，让我们进行打印。我想查看这个列表的完整内容。让我们看看这是什么样子。好的，在这里。你可以看到我们的列表，我们有布莱恩，然后猫被插入到第一个位置。接着是我的名字凯伦的
+    46，然后是披萨和啤酒。
 - en: Very important to understand that append will do it in the order you append
     it。 So it put pizza at the into the list。Then it put beer at the end of the list。Very
     simple once you wrap your head around that just trips up a lot of newbies。Just
     bear that in mind when you're adding things if you want a specific。Index。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 理解追加会按你追加的顺序进行是非常重要的。所以它把披萨放入了列表。然后把啤酒放在了列表的末尾。一旦你理解这一点，就会很简单，但这常常让很多新手困惑。记住这一点，当你想添加特定的索引时。
 - en: you need to do insert if you want to slab it at the end， you do a pen。![](img/b0272746902c5defc47db2b7d950ab97_11.png)
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你想将其放在末尾，你需要执行插入，你要做 append。![](img/b0272746902c5defc47db2b7d950ab97_11.png)
 - en: '![](img/b0272746902c5defc47db2b7d950ab97_12.png)'
+  id: totrans-28
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/b0272746902c5defc47db2b7d950ab97_12.png)'
 - en: Okay， now that we've added items， let's talk about how we get rid of items。
     We're talking about removing。 Let's remove pop and delete。 And these do things
     very differently。 even though。At first glance， they may seem very， very similar，
     so I'm going to say X。That remove。No want to remove cats。I'm not a big fan of
     removing cats becauseuse I happen to love cats。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，现在我们添加了项目，接下来我们来谈谈如何移除项目。我们说的是删除。我们要删除 pop 和 delete。这两者的功能非常不同。乍一看，它们可能看起来非常相似，所以我会说
+    X。那就移除。可我不想移除猫。我不是特别喜欢移除猫，因为我正好爱猫。
 - en: But you know what I mean， we sometimes you just got to get the cats out。So what
     remove is going to do is go through and remove the first item here。Sra our print
     statement。 slap that down here， and let's run this。All right， so you can see Brian
     Kas， Karens。 now it's Brian Karen's， we remove cats， so just remove that first
     item there。Now， let's talk about。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 但你知道我的意思，有时你就是得把猫弄出去。因此，remove 将做的是遍历并移除这里的第一个项目。Sra 我们的打印语句。把它放在这里，然后运行这个。好的，你可以看到布莱恩卡斯，凯伦。现在是布莱恩凯伦，我们移除了猫，所以只移除了那个第一个项目。现在，让我们谈谈。
 - en: Up now。Don't get excited， pop is not like Coke or pepsi or anything like that
     but。What we want to do is we want to remove an item， but at the same time return
     it。 meaning we want to be able to work with it here。So I'm going to say I equals。
     and we're going to do X dot index because we want to find something here。 We want
     to find pizza。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在。不要太兴奋，pop 不像可乐或百事可乐之类的。但我们想做的是删除一个项目，同时返回它。这意味着我们希望能够在这里处理它。所以我要说我等于。我们将做
+    X.dot.index，因为我们想在这里找到某些东西。我们想找到比萨。
 - en: Now this will raise an error if it's not found in there， so if you just look
     for something crazy。 it's not going to return negative one and there really isn't
     a fine remember we talked about fine in the last video where it returned a negative
@@ -194,310 +265,415 @@
     your program。That sounds really bad until we get into more advanced discussions
     where we talk about how to get around that and why it even exists in the first
     place。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果在里面没有找到，这将引发错误，所以如果你只是找一些疯狂的东西。它不会返回负一，实际上并没有“fine”，记得我们在上个视频中谈到的“fine”吗，它返回了负一。这只会说，嘿，有个错误，它会让你的程序崩溃。听起来确实很糟糕，直到我们进入更高级的讨论，讨论如何绕过这个问题，以及它为什么会存在。
 - en: So。Just big leap of faith at the moment。We know that pizza is in there because
     we appended it。We're going to get that index because nobody wants to sit here
     and count and figure out what position this is actually at。We're going to say
     food。And we're going to pop。Now， when you think pop。Think of it like popping the
     top off of an nice cold soda or beer， whatever your favorite beverages。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，现在要大跨步信任一下。我们知道比萨在里面，因为我们已经添加了它。我们要获取那个索引，因为没有人想坐在这里数数，弄清楚这个位置实际上在哪。我们要说食物。然后我们要
+    pop。现在，当你想到 pop 时，想象一下把一个冰凉的汽水或啤酒的顶部打开，或者任何你喜欢的饮料。
 - en: you now have that cap in your hand after you've popped it off。That's at least
     how I learn P。 so when you pop off the cap you still have that cap in this case。
     it is the item at index of whatever pizzas is at。Sounds super confusing， it really，
     really does。 but it's really simple once you see it in action。 So what we're going
     to do here is I'm going to clear this list just to avoid any confusion。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在你手里有那个盖子了，当你把它打开的时候。这就是我学习 P 的方式。所以当你打开盖子时，你仍然有这个盖子，在这种情况下，它是索引中任意比萨的项目。听起来超级混乱，确实是，但一旦你看到它的实际操作，就会觉得很简单。所以我们要做的是，我将清空这个列表，以避免任何混淆。
 - en: And we're going to run this。Boom， so what's going on here。 We have our list
     and see there's pizza in there。And we're going to pop。 meaning we're going to
     pop the cap off that thing that's in our hand and we now have that bottle cap。And
     that bottle cap is pizza， so we can now use that， but once we've popped it。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们要运行这个。砰，所以这里发生了什么。我们有我们的列表，看看里面有比萨。我们要 pop。意思是我们要把手里的那个东西的盖子打开，现在我们有了那个瓶盖。这个瓶盖是比萨，所以我们现在可以使用它，但一旦我们打开它。
 - en: it's no longer in the list， see how it removed it。Very convenient if you want
     to remove the item。 but at the same time， use the item。Seems a little confusing，
     but bear with me。That is actually used quite a bit when you get in a little bit
     more advanced programming。All right。 next up， we're going to talk about deleting。So
     I want to say I equals。Say X index。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 它不再在列表中，看看它是如何被移除的。如果你想移除项目，这非常方便，但同时也可以使用该项目。听起来有点混淆，但请耐心一点。实际上，在更高级的编程中，这种情况会用得很多。好的，接下来，我们要谈谈删除。所以我想说我等于。说
+    X 索引。
 - en: And let's get the index of beer。Because again， no one wants to sit here and
     go zero，1，2， three。 no one wants to do that， we just want the computer to figure
     out where it's actually at for us。So once we get that index， and I should put
     a special note here。This will raise an error。 if not found。But once we get that，
     we want to actually just delete it。 So we're going to say D EL。X。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们获取啤酒的索引。因为毕竟，没有人想坐在这里一个个数零、1、2、3。没有人想这样做，我们只想让计算机为我们找到它实际上在哪儿。所以一旦我们获得那个索引，我应该在这里做个特别说明。如果没有找到，这会引发错误。但一旦我们获得它，我们就想实际删除它。所以我们要说
+    D EL。X。
 - en: and then whatever that position was。Now this will delete the item without returning
     it。 and I'm going to copy and paste some notes in here。So delete a specific item
     without returning it。Where pop will remove。And return the item。Fundamental difference
     there。Which one would you use and why， Well， pop is if you want to actually use
     it。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后无论那个位置是什么。现在这将删除项目而不返回它。我会在这里复制并粘贴一些笔记。所以删除特定项目而不返回它。而 pop 将移除并返回项目。这是根本的区别。你会使用哪个，为什么呢？好吧，pop
+    是如果你想实际使用它的话。
 - en: delete is if you want it gone。 Now， when you delete this。It's gone， you cannot
     use it。 it doesn't even exist in memory anymore。And that's why it's called delete。
     because you're literally deleting that out of memory。 If you're coming from like
     C or C plus plus or any other language that does memory management， Yes。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 删除就是如果你想让它消失。现在，当你删除它时，它就不复存在了，你不能再使用它。它甚至在内存中都不存在了。这就是它被称为删除的原因，因为你实际上是将其从内存中删除。如果你来自C或C++或其他任何语言进行内存管理，没错。
 - en: you are actually deleting that out of memory。 Now， under the hood。 what's really
     happening is Python's flagging that for garbage collection and all this other
     fancy stuff that newbies don't really understand。 But if you're more of an advanced
     person， that's what's going on is Python saying。😊。Get rid of it out of the Python
     internal list。Were just going to let garbage collection wipe it out later on。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 你实际上是将其从内存中删除。现在，底层发生的事情是Python将其标记为垃圾收集和其他一些新手不太理解的复杂操作。但如果你是更高级的用户，这就是Python在说。😊。将其从Python内部列表中删除。我们只是让垃圾收集稍后清除它。
 - en: Save run， this is what's going on here， so we found the index of beer in we
     deleted it。Pretty cool。 pretty easy to understand so major takeaway from removing
     items if remove will remove the first one。 pop will remove it， but let you play
     with it and you can do whatever you want and delete will well actually delete
     it and get rid of it。Let's talk about extending or adding elements from another
     list。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 保存并运行，这里发生的事情是，我们找到了beer的索引并将其删除。非常酷，非常容易理解，所以从移除项目的主要收获是，如果remove将删除第一个，pop将删除它，但让你操作，而delete将实际删除它并让它消失。让我们谈谈从另一个列表扩展或添加元素。
 - en: and this will be a little bit confusing， but bear with me here。There's a reason
     why you would extend rather than just add a list and it's because Python you can
     actually add lists into list。 which we're going to cover at the very end of this
     video， but it gets super confusing。So let's look at this。 so we're going to say
     we're going to make another list。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 这可能有点困惑，但请耐心点。你会选择扩展而不是简单地添加一个列表，是因为在Python中，你实际上可以将列表添加到列表中。我们将在本视频的最后部分介绍，但这会变得超级复杂。所以让我们看看。我们将说我们要再创建一个列表。
 - en: And let's call this cats。Tma， dogs。那么。Bds and in case somebody out there is
     like， well。 how would you actually add a comma， you wouldn't add a comma directly。
     you'd added as string like that。But we're just going to add in cats， dogs and
     birds。Into our list called Y。 Now the list we've been working with is called X。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们称之为猫。Tma，狗。那么，Bds。如果有人在想，怎么添加逗号，你并不会直接添加逗号，而是像这样添加为字符串。但我们只是要将猫、狗和鸟加入到我们叫做Y的列表中。现在我们正在使用的列表叫做X。
 - en: So we want to take the contents of Y and put it inside of X。 So we're going
     to say x dot extend。Sometimes intelligencetelence helps us out， sometimes it doesn't。And
     we're going to extend with the Y list。Let's go ahead and print this out。Notice
     we're printing X。 what do you think pop quiz， what do you think this is going
     to look like when we run this？Well。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们想把Y的内容放到X里面。我们将使用x dot extend。有时智能会帮我们，有时则不会。我们将使用Y列表来扩展。让我们打印一下。注意我们在打印X。你觉得这运行时会是什么样子？嗯。
 - en: if you said it's going to have the contents of both lists， you're absolutely
     correct。 Now。 notice how what it's done is it's taken R X。And added the elements
     of Y to it。 so these are now。True items inside of X。![](img/b0272746902c5defc47db2b7d950ab97_14.png)
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你说它将包含两个列表的内容，你是完全正确的。现在。注意它所做的事情是它取了RX。并将Y的元素添加到其中。所以这些现在是X内部的真实项。![](img/b0272746902c5defc47db2b7d950ab97_14.png)
 - en: Very cool how that works。![](img/b0272746902c5defc47db2b7d950ab97_16.png)
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个功能真的很酷！![](img/b0272746902c5defc47db2b7d950ab97_16.png)
 - en: So let's talk about sorting and when I say sorting， we mean sorting and reverse
     sorting。 meaning doing the exact opposite of like an alphabetical。 So let's go
     ahead and say。Sort in reverse。 Now， think of this as like sort ascending， sort
     descendending now。Our list is a mixture right now。 And what do I mean by a mixture，
     So if we just take this。Prennt this out， run it。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们谈谈排序，当我说排序时，我们是指排序和反向排序。意味着做与字母顺序相反的事。所以我们来做。反向排序。现在，把它想象成升序、降序。现在我们的列表是混合的。那么我所说的混合是什么意思呢？所以如果我们只取这个。打印出来，运行它。
 - en: You can see how we got string， string， int， string， string， string。We're going
     to have problems with this integer and we're going to have to take that out。 and
     I'll demonstrate this really， really quickly。 so I'm going say x dot sort。And
     this is where a lot of newbies get tripped up and it goes not supported between
     instances of end and string。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到我们得到了字符串、字符串、整数、字符串、字符串、字符串。我们将对这个整数遇到问题，我们需要把它移除。我会非常快地演示一下，所以我将说x.dot.sort。这是很多新手会被绊倒的地方，出现了“整数和字符串之间不支持”。
 - en: and it's exactly that so it's saying it knows how to sort strings。And it knows
     how to sort numbers。 but it doesn't know how to sort a string to a number。So think
     about that。Let's say you have a table in front of you。And I come in and I dump
     a bunch of potatoes and a bunch of apples and I say sort these。Well， how do you
     want them sorted， Do you want the potatoes in the apple sorted or do you want
     them sorted by color。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 这正是这样，所以它在说它知道如何排序字符串，知道如何排序数字，但它不知道如何将字符串与数字排序。想想这个。假设你面前有一张桌子，我进来扔了一堆土豆和一堆苹果，我说，给我排序。好吧，你想如何排序？你想要土豆在苹果之前，还是想按颜色排序？
 - en: but they're all different colors。 And this is what I mean， Python gets really
     confused。 And it just says， you know what， I'm not even going to try and figure
     this out。 I'm just going to drop an arrow and let you just figure it out on your
     own。The easiest way to get rid of this at this point is to simply remove it。 Some
     must say X dot remove。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 但它们都是不同的颜色。这就是我所说的，Python会感到非常困惑。它只会说，知道吗，我甚至不想尝试搞明白这个。我只会抛出一个错误，让你自己去解决。此时摆脱这个的最简单方法就是直接移除它。有些人会说X.dot.remove。
 - en: We're going to just remove that hint。And then we're going to sort。So now it's
     alphabetical because we've removed that。 It knows exactly how to sort these strings。
     Bir。 Bryan， Karen's， cats， dogs。 Very， very simple。 The polar opposite， of course，
     is reverse。 And we're just going to grab this for the sake of time。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将去掉那个提示，然后进行排序。所以现在是按字母顺序，因为我们去掉了那个。它完全知道如何排序这些字符串：Bir，Bryan，Karen的，猫，狗。非常简单。相反的当然就是反转。我们只是为了节省时间来抓取这个。
 - en: Pretty self explanatory what's going on there。This would be like sort ascending，
     sort descendending。I almost wish they didn't call it reverse， but called it like
     sort descend or something like that。 or you know had a parameter inside of sort
     and we'll talk about parameters later on。 but it can be a little bit confusing，
     but just think of sort as you're going to sort alphabetical and reverse is the
     polar opposite of that。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 这显而易见。就像是升序排序，降序排序。我几乎希望他们不叫它反转，而是叫做降序排序之类的，或者在排序内部有一个参数，我们稍后会讨论参数。虽然这可能有点混乱，但只要把排序想象成按字母排序，而反转则是相反的。
 - en: You notice how。When we sorted， we had to remove that int。 simply because sort
     will throw some sort of error if there's a mixed type。 Now。 what if you wanted
     to do that。But you didn't want to really modify the original list。Well what we're
     going to do now is called a copy and some people call this cloning with this various
     shallow clone。
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 你注意到了吗？当我们排序时，我们必须移除那个整数，**因为如果类型混合，排序会抛出某种错误**。现在，如果你想这样做，但又不想真的修改原始列表，那我们现在要做的就是复制，有些人称之为浅复制。
 - en: but basically we're just making a copy here， So we're going to say y equals
     x dot copy。Does exactly what you think it does。 It actually makes a new list and
     copies the elements into it。 so we're going to say。Proopies the elements into
     a new list。Now we can simply say why dot reverse。And we could add items， remove
     items， do whatever we wanted to do so I could say， well， I got aend。
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 基本上我们只是这里在做一个复制，所以我们将说y等于x.dot.copy。这正是你想的那样，实际上它创建了一个新列表并将元素复制到其中。我们将说，将元素复制到新列表中。现在我们可以简单地说why.dot.reverse。我们可以添加项目，移除项目，做我们想做的任何事情，所以我可以说，嗯，我得到了一个。
 - en: Let's go ahead and pan apples。We could do any other thing we really wanted to
     do here。 so let's grab this print statement here。So x is the original。New is R
     Y。Let's see what these look like here。So our original remains unchanged where
     our new now has apples and it's been reversed。Pretty cool the way that works and
     then if you were done with wine and you didn't want anymore。
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们来处理苹果吧。我们可以做任何其他我们真正想做的事情，所以让我们抓取这个打印语句。x是原始的，New是R Y。让我们看看它们的样子。所以我们的原始保持不变，而我们的新列表现在有苹果，并且它已经反转了。这个方式真不错，如果你完成了wine，并且不想再要了。
 - en: you just simply delete it。![](img/b0272746902c5defc47db2b7d950ab97_18.png)
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 你只需简单地删除它。![](img/b0272746902c5defc47db2b7d950ab97_18.png)
 - en: Which is what we're going to talk about next。![](img/b0272746902c5defc47db2b7d950ab97_20.png)
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是我们接下来要讨论的内容。![](img/b0272746902c5defc47db2b7d950ab97_20.png)
 - en: Okay， so deleting。嗯。Delete the whole thing is really what I'm going to put here。Why
     would you want to delete something？ Well， in the previous little segment here。
     we said we're going to make Y and Y is a copy of X Now that we're done with Y。
     we don't need it anymore more。 We can do one of two things。
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，所以删除。嗯。删除整个内容实际上就是我在这里要说的。你为什么想删除某样东西呢？在之前的小段落中，我们提到我们要创建 Y，而 Y 是 X 的一个副本。现在我们完成了
+    Y，就不再需要它了。我们可以做两件事。
 - en: We can either let Python garbage collect it， meaning it's going to figure out
     when it's not needed any more。 or we can specifically say delete the whole list。And
     yes， that deletes the whole thing。So if I try to say something like print， why。It's
     going to have a bad time here and it's going to say name why is not defined。 And
     you remember from a previous video， whenever you see is not defined。
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以让 Python 自动垃圾回收，意味着它会在不再需要时自行处理。或者我们可以明确地说删除整个列表。是的，这确实会删除整个内容。如果我尝试打印 why，会出错并提示名称
+    why 未定义。你还记得在之前的视频中，每当你看到未定义的情况。
 - en: it means it simply does not exist， meaningan we have now destroyed why and everything
     in it has been destroyed as well。 So all that memory for your computer nerds out
     there iss now freed up and gone。 We can use it for other things。This really becomes
     important when you start talking about embedded systems and things of that nature
     where memory might be a little bit more constrained than。 say your desktop or
     your laptop。You got to understand that when you delete something， it is gone。
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 这意味着它根本不存在了，意味着我们现在已经摧毁了 why，里面的所有内容也被摧毁了。所以对于你们这些计算机爱好者来说，所有的内存现在都被释放并消失了。我们可以用它做其他事情。当你开始谈论嵌入式系统等内存可能会比你的台式机或笔记本更有限时，这一点尤为重要。你要明白，删除某样东西，它就消失了。
 - en: And I mean， gone gone is not defined means you would have to rebuild this entire
     data structure from scratch。 There's simply no way to recover it。Deleting can
     be a little bit drastic， as we saw。 name Y is not defined is well kind of a problem。
     I mean。 what if you didn't want to delete the entire variable you just want to
     delete part of it or clear the whole thing off。
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 我是说，消失得无影无踪，未定义意味着你必须从头开始重建整个数据结构。根本没有恢复它的方式。删除可能有点激烈，正如我们所见，名称 Y 未定义确实是个问题。我是说，如果你不想删除整个变量，而只想删除其中的一部分或清空整个内容呢？
 - en: That's what we're going to talk about in this little segment here。We're talking
     about clearing。 Think of your list like a big table， and you got plates and dishes
     and all sorts of stuff on there。 You don't want to throw the whole table out。
     You just want to clear it off。 And that's exactly what clear does。So it's going
     to clear。All of those elements out of the list。
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是我们在这个小段落中要讨论的内容。我们在谈论清空。把你的列表想象成一张大桌子，上面有盘子、碗碟和各种东西。你不想把整张桌子扔掉。你只想把它清理掉。这正是
+    clear 所做的。所以它会清除列表中的所有元素。
 - en: but the list itself will still exist。 It will just be blank。 demonstrate that。The'
     type cleared。So most of the time in programming land， you don't actually want
     to delete。 You just want to clear it out。 So our list exists， you can see by these
     brackets。 there's just no elements in there。And we can actually test that。
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 但列表本身仍然存在。它只是会是空的。演示一下，类型被清空了。因此，在编程的世界里，大多数时候你并不想删除。你只想清空它。所以我们的列表存在，你可以通过这些括号看到，里面只是没有元素。我们实际上可以测试一下。
 - en: Let's go ahead and get the length of X。So it exists， but there's no items in
     there。Most of the time。 if you're confused， just think of it this way。 Delete
     is throwing the entire thing out。 You're throwing the whole kitchen table out
     where clear is you're just clearing the dishes off the table。Usually you want
     clear， not delete， but delete exists in case you need to free up that memory。
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们获取 X 的长度。所以它存在，但里面没有项目。大多数时候，如果你感到困惑，可以这样想：删除就是把整个东西扔掉。你是把整个餐桌都扔掉，而清空只是把桌子上的碗碟清理掉。通常你想要清空，而不是删除，但删除存在是为了你需要释放内存时。
 - en: '![](img/b0272746902c5defc47db2b7d950ab97_22.png)'
+  id: totrans-65
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/b0272746902c5defc47db2b7d950ab97_22.png)'
 - en: '![](img/b0272746902c5defc47db2b7d950ab97_23.png)'
+  id: totrans-66
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/b0272746902c5defc47db2b7d950ab97_23.png)'
 - en: You want to do something a little crazy。 A list can contain other lists。 And
     if you look at this。 it looks kind of weird。But just think you have a start bracket
     and an in bracket。 followed by start end， start end and start and end。 So that's
     right a list。Can contain other lists。 If you're coming from another language，
     think of this like an array of arrays。
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 你想做点疯狂的事情。一个列表可以包含其他列表。如果你看这个，它看起来有点奇怪。但想象一下，你有一个开始括号和一个结束括号，接着是开始结束、开始结束，再到开始和结束。所以没错，一个列表可以包含其他列表。如果你来自另一种语言，想象这就像一个数组的数组。
 - en: It's kind of advanced and it's not something a newbie really understands。 But
     in case you're curious。 this is how you would do it。 So we're going to say x equals。
     and we're going to turn x into a blank list with nothing in it。W equals。 and we're
     going to create another list， and we're going to say 1，2，3。
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 这有点复杂，新手可能不太理解。但如果你感兴趣，这就是你该怎么做。所以我们要说x等于，并将x变成一个空列表，里面什么都没有。w等于，我们要创建另一个列表，内容是1，2，3。
 - en: And let's go ahead and make another list， called Z。And in here， I'm going to
     say。My name。 you go ahead and put your name。Or cats， dogs， birds， whatever you
     want to put in there。So now we have three different lists。 What we want to do
     is we want to。Take the contents of。Z and y and put them in X。 Some say x stop
     aend。Let's go ahead and pen why。Now。
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们再创建一个列表，叫做Z。在这里，我要说。我的名字。你可以把你的名字放进去，或者猫、狗、鸟，随便你想放的东西。所以现在我们有三个不同的列表。我们想要做的是把Z和Y的内容放入X。有人说X停止，接下来让我们加入Y。现在。
 - en: what I've done is I've taken。All of these numbers and put them inside of X。Let's
     go ahead and print this out。Now， I'm saying merge， but that's not really what
     we're doing here。 We're actually merging all these into one giant data structure。
     You notice how we've got these double brackets here。So what we're saying is this
     item。
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 我做的是把所有这些数字放在X里面。让我们打印一下。现在，我说合并，但这其实不是我们在做的事情。我们实际上是把所有这些合并成一个巨大的数据结构。你注意到我们有这些双括号吗？所以我们所说的就是这个项目。
 - en: this individual element is its own unique list。So I'm going to say list。Enless。All
     right。 now what we want to do is we want to take。The contents of Z。And put them
     in X。 but we want to put them before all the other stuff that we put in there。Say
     X insert。And let's go ahead and put this at the zero index， and we're going to
     put all of Z in there。
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个独立元素是它自己独特的列表。所以我说列表。无穷大。好吧，现在我们想要做的是将Z的内容放入X，但我们想把它放在我们放进去的其他东西之前。说X插入。让我们把这个放在零索引处，把所有的Z放进去。
 - en: Let's go ahead and run this。And you see now our list。Actually， is made up of
     two smaller lists。Newbies may look at this and go， well， there's five items in
     here。 there's really not。 Let's go ahead and test this out here。 So we're going
     to say。Grab this and let's call this our lists。And let's go， Lyn。
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们继续运行这个。你现在看到我们的列表。实际上，它由两个较小的列表组成。新手可能会看到这里有五个项目，但其实并没有。让我们在这里测试一下。所以我们说，抓住这个，叫它我们的列表。让我们开始吧，Lyn。
 - en: And we're going to get the number of items in here。There's only two items in
     there。Very simple。 very easy to understand。Now let's say we want to grab the first
     item。We want to say zero and we want to go。0。And let's go ahead and grab that
     second item。So our first item is this list here， which is its own little list
     and。Second item is this list here。
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们要获取这里面的项目数量。这里面只有两个项目。非常简单，非常容易理解。现在假设我们想抓取第一个项目。我们要说零，然后去0。让我们抓住那个第二个项目。所以我们的第一个项目是这个列表，它是自己的小列表。第二个项目是这个列表。
 - en: And in case you're wondering， yes， you can get kind of nuts here。What we're
     doing now is we're diving into those lists。So in our first list。Right here。 we're
     going to grab the first item。Which is prime In our second list。 we're going to
     grab the second item notice that's at the one position， which is2。
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你在想，是的，你可以在这里有点疯狂。我们现在所做的是深入这些列表。所以在我们的第一个列表中，就在这里，我们要抓取第一个项目，它是素数。在我们的第二个列表中，我们要抓取第二个项目，注意那是在位置一，即2。
 - en: Seems super confusing， but just think of it this way。 Think of it like a stair
     step every time you see these brackets。You're going deeper down a step into the
     basement。So for example， we could switch this around here。And we can grab the
     very first item， which was one。
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 这看起来超级混乱，但你可以这样想。想象每次看到这些括号时，你就像是一步步走向地下室。所以例如，我们可以把这个调换过来，抓住第一个项目，就是1。
 - en: We could switch this around again and say we want the second item。Which is three。Seems
     super confusing if you're in a newbie， but trust me， once you get into more advanced
     stuff。 this is a huge， huge time saver is just simply putting lists and lists
     and when you start working with things like web services。 you're going to find
     that quite a bit where the data they're going to hand you is basically a list
     of lists and you just simply have to navigate through it。
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以再调整一下，说我们想要第二个项目。那就是三。如果你是新手，这似乎超级困惑，但相信我，一旦你深入更高级的内容，这将是一个巨大的时间节省，仅仅是简单地列出列表。当你开始处理像网络服务这样的事物时，你会发现数据基本上是一个列表的列表，你只需简单地导航。
 - en: Okay， a little bit of bonus material here。 I know I'm going to get the question。
     So I thought I would just add it。 How do you change an item。 Remember， it's positional。So
     for example， let's say x equals， and let's just make some numbers here，1，2，3，4，5。We
     want to actually change this When I say change this。
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，这里有一点额外的材料。我知道我会被问到这个问题，所以我想我就加上。你如何改变一个项目？记住，这是基于位置的。所以比如说，让我们设定x等于一些数字，1，2，3，4，5。我们实际上想改变这个，当我说改变这个时。
 - en: we don't want to change the whole list just one specific item。 So what I'm going
     to do is I'm going to say X。 and then whatever the item number is。 So let's say
     I want to change。The item at position 2。And we want to change this to。The word
     test。Remember， this is zero based and this trips up a lot of newbie， so we have
     zero，1， two。
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们不想改变整个列表，只想改变一个特定的项目。所以我将说X，然后无论项目编号是多少。假设我想改变位置2的项目。我们想把它改为“测试”这个词。记住，这是基于零的，这让很多新手感到困惑，所以我们有零，1，2。
 - en: so this guy right here， we're going to change that。It's go ahead and print this
     out。And let's sit in action， there we go。01，2， our two position is now test 4，
     five。 so that is very simple how you change something。lot of people， especially
     me。 take this for granted because it is so simple and easy to work with。
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们要改变这个家伙。我们直接打印出来。让我们看看实际效果，来吧。01，2，我们的两个位置现在是测试4，5。这就是改变某样东西的非常简单的方法。很多人，尤其是我，会认为这理所当然，因为这太简单易用了。
 - en: and if you worked with other languages， you may be looking for like a change
     element ad or swap element or something like that。 It's actually very simple。
     You take the list， you take the position and then you assign it a value。![](img/b0272746902c5defc47db2b7d950ab97_25.png)
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你使用过其他语言，你可能在寻找像“更改元素”或“交换元素”这样的东西。实际上，这非常简单。你获取列表，取出位置，然后赋值给它。![](img/b0272746902c5defc47db2b7d950ab97_25.png)
