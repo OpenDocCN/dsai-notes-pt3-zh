@@ -2,238 +2,64 @@
 
 ![](img/a5e310b66ad5b4d0e89ea1a7cc4dbf83_0.png)
 
-Hi， this is Jeff Heaton， welcome to applications of Deep neural Networks with Washington University in this video we're going to look at ensembles。
+Hi， this is Jeff Heaton， welcome to applications of Deep neural Networks with Washington University in this video we're going to look at ensembles。We're going to do in particular heterogeneous ensembles this lets you take。Models that are not of the same type and combine them together for even stronger results for the latest on my AI course and projects。 click subscribe and the bell next to it to be notified of every new video。 Now。
 
-We're going to do in particular heterogeneous ensembles this lets you take。
+ we're going look at a couple of techniques that might be very helpful to you for this semester's kle competition。 This allows you to use neural network with ensembles。 ensemmbling is a very important aspect of kggle。 This is where you create heterogeneous ensembles。 Now， ensemmbling is something that's built into many machine learning algorithms such as random forest。
 
-Models that are not of the same type and combine them together for even stronger results for the latest on my AI course and projects。
+ Random forests do ensemmbling just part of itself。 It includes trees and these trees are ensemled with each other。 because there's not multiple different types of model in this。 that's referred to as a homogeneous ensemble。 Now。 we're going to look at evaluating feature importance First。 This is a good paper that talks to you about how to do feature perturbation ranking。 This is a very。😊。![](img/a5e310b66ad5b4d0e89ea1a7cc4dbf83_2.png)
 
- click subscribe and the bell next to it to be notified of every new video。 Now。
+Popular technique that can be used across any type of regression or classification algorithm。 It does not use any internals to the actual model。 This is also an interesting paper because it has both Dr。 Joy and Dr Death in it interesting part about the names of the authors of the paper These are some of the other methods that you can use to evaluate feature importance。
 
- we're going look at a couple of techniques that might be very helpful to you for this semester's kle competition。
+ which input is the most important。 Now this is dealing mainly with tabular data where you have columns like you would see in Excel。 if you're dealing with image data feature importance is a lot more difficult to really determine it's not like one pixel is more important。
 
- This allows you to use neural network with ensembles。
+ say than another pixel。 This is also a paper up here that I was involved in where we publish code that could be used with Tensorflow to implement some of these algorithms up here。 So this is a function that just introduces and gives you a basic perturbation ranking algorithm。
 
- ensemmbling is a very important aspect of kggle。 This is where you create heterogeneous ensembles。
+' go ahead and run it so that it's loaded the way that this。Is actually pretty simple。 I have a separate video that's not part of this course。 but it's a video that I put together on how perturbation ranking works。 I'll put a link to that so that you can access that if you would like to read up more on the internals of it。
 
- Now， ensemmbling is something that's built into many machine learning algorithms such as random forest。
+ But essentially what this is going to do is it's going to go through each column of the data set and shuffle them1 by one by one。 we're going to use the same neural network to evaluate all the columns。 but we're going to score at once for each column。 So say there are 10 columns in your x10 predictors。 You want to know which of those 10 is the most important。
 
- Random forests do ensemmbling just part of itself。
+ You start with the first one and you shuffle those you perturb them so that column1 is randomized that effectively destroys column1。 but the max and the men， the standard deviation the mean the median and all that is still exactly the same。 So you're not introducing any sort of bias， but yet you're destroying one of the columns。 Now you evaluate the error。On that neural network producing predictions with that column randomized like that。
 
- It includes trees and these trees are ensemled with each other。
+ If column1 was not very important， then the score is not going to drop much。 Your accuracy or your log loss or whichever one you're using if column1 was very important。 then shuffle in it is going to really， really hurt your score。 So that's why this perturbation rank。 it's essentially looping for I in the range of how many columns we have。
 
- because there's not multiple different types of model in this。
+ we make a copy of the column because we're about to shuffle it then we shuffle it effectively destroying it。 but we have a copy so that we can we don't want to be like a tornado it'll lightnt a path of destruction across the countryside。 we want to restore it and not be a tornado。 So then we look at if it's regression。 if it's regression， we do a prediction on this and we look at the mean squared error。
 
- that's referred to as a homogeneous ensemble。 Now。
+ if it is a classification， then we predict the probabilities and we do log loss。 Both of those give us an error that we want to minimize。And we keep track of our errors and then we restore the column that we previously destroyed。 We determine what the max error was and we basically calculate the importance of each of these relative to how close it was to the maximum error。
 
- we're going to look at evaluating feature importance First。
+ the maximum error， the column that resulted in the maximum error is the most important column so the most important column is going to have a 1。0 for importance all the others will be some proportion of that。 we're going to run the iris data set through this the decent sizeized neural network well that just fit it so we have a model now fit for that then I'm going to get the accuracy which perfect accuracy。 not hard to do with the iris data set and I'm going to run and you can see basically the importance so the pal length is the most important column to predicting what ir you're dealing with and then it drops considerably you will only know which column is the most important you won't know how important the most important column is you just have a ranking of these so。
 
- This is a good paper that talks to you about how to do feature perturbation ranking。 This is a very。
-
-😊。
-
-![](img/a5e310b66ad5b4d0e89ea1a7cc4dbf83_2.png)
-
-Popular technique that can be used across any type of regression or classification algorithm。
-
- It does not use any internals to the actual model。
-
- This is also an interesting paper because it has both Dr。
-
- Joy and Dr Death in it interesting part about the names of the authors of the paper These are some of the other methods that you can use to evaluate feature importance。
-
- which input is the most important。 Now this is dealing mainly with tabular data where you have columns like you would see in Excel。
-
- if you're dealing with image data feature importance is a lot more difficult to really determine it's not like one pixel is more important。
-
- say than another pixel。 This is also a paper up here that I was involved in where we publish code that could be used with Tensorflow to implement some of these algorithms up here。
-
- So this is a function that just introduces and gives you a basic perturbation ranking algorithm。
-
-' go ahead and run it so that it's loaded the way that this。Is actually pretty simple。
-
- I have a separate video that's not part of this course。
-
- but it's a video that I put together on how perturbation ranking works。
-
- I'll put a link to that so that you can access that if you would like to read up more on the internals of it。
-
- But essentially what this is going to do is it's going to go through each column of the data set and shuffle them1 by one by one。
-
- we're going to use the same neural network to evaluate all the columns。
-
- but we're going to score at once for each column。 So say there are 10 columns in your x10 predictors。
-
- You want to know which of those 10 is the most important。
-
- You start with the first one and you shuffle those you perturb them so that column1 is randomized that effectively destroys column1。
-
- but the max and the men， the standard deviation the mean the median and all that is still exactly the same。
-
- So you're not introducing any sort of bias， but yet you're destroying one of the columns。
-
- Now you evaluate the error。On that neural network producing predictions with that column randomized like that。
-
- If column1 was not very important， then the score is not going to drop much。
-
- Your accuracy or your log loss or whichever one you're using if column1 was very important。
-
- then shuffle in it is going to really， really hurt your score。 So that's why this perturbation rank。
-
- it's essentially looping for I in the range of how many columns we have。
-
- we make a copy of the column because we're about to shuffle it then we shuffle it effectively destroying it。
-
- but we have a copy so that we can we don't want to be like a tornado it'll lightnt a path of destruction across the countryside。
-
- we want to restore it and not be a tornado。 So then we look at if it's regression。
-
- if it's regression， we do a prediction on this and we look at the mean squared error。
-
- if it is a classification， then we predict the probabilities and we do log loss。
-
- Both of those give us an error that we want to minimize。
-
-And we keep track of our errors and then we restore the column that we previously destroyed。
-
- We determine what the max error was and we basically calculate the importance of each of these relative to how close it was to the maximum error。
-
- the maximum error， the column that resulted in the maximum error is the most important column so the most important column is going to have a 1。
-
-0 for importance all the others will be some proportion of that。
-
- we're going to run the iris data set through this the decent sizeized neural network well that just fit it so we have a model now fit for that then I'm going to get the accuracy which perfect accuracy。
-
- not hard to do with the iris data set and I'm going to run and you can see basically the importance so the pal length is the most important column to predicting what ir you're dealing with and then it drops considerably you will only know which column is the most important you won't know how important the most important column is you just have a ranking of these so。
-
-You'll never see anything higher or lower than 1。0 for the most important column We can also do this on regression。
-
- We'll use the miles per gallon database because that is a pretty simple one。
-
- you can apply this to much， much more complicated neural networks it will take a little bit longer to run if you're doing this on your kggle because you might have 2030。
-
-40100 columns and it needs to run across each of those Now after running this we can see which of the various fields are most important to the miles per gallon neural network we can see that the displacement。
+You'll never see anything higher or lower than 1。0 for the most important column We can also do this on regression。 We'll use the miles per gallon database because that is a pretty simple one。 you can apply this to much， much more complicated neural networks it will take a little bit longer to run if you're doing this on your kggle because you might have 2030。40100 columns and it needs to run across each of those Now after running this we can see which of the various fields are most important to the miles per gallon neural network we can see that the displacement。
 
  which is just the cubic inches or some other volume of measure for the engine is the most important next is horsepower weight year so on and so forth cylinders would be already represented by the displacement so it's not too surprising to me that that is a less important one but you'll notice most of these are period close in terms of their overall importance to that Now we're going to take a。
 
-At the biological response data set that is provided by Cale。
+At the biological response data set that is provided by Cale。 because I'm going to use this as an example of how to build an ensemble。 If we open this one up。 I'm not going to do it， but I have a link there that you can look at。 It's basically got nearly 1700 columns and maybe 3000 or so rows。
 
- because I'm going to use this as an example of how to build an ensemble。 If we open this one up。
+ So it's got a tremendous amount of columns Feature importance could be useful to maybe remove some of those。 Unfortunately， most of them are pretty important。 What we're going to look at here is how we can combine these。Into a ensemble。 And by these， I mean several different models like neural network， random forest。 gradient boosting and so on。 So I'm going to go ahead and run this。
 
- I'm not going to do it， but I have a link there that you can look at。
+ which will essentially open these， these files。 I have them resident here on a local drive。 These are kagle files。 So I can't actually put them in a place that would let you access them。 You need to download them yourself from Kagal。 I just put them in a data directory。 You can really put that any location you want。 And I run that。
 
- It's basically got nearly 1700 columns and maybe 3000 or so rows。
+ You can see here when I print out the shape of this。 It's really a fairly square data set， which is。 which is difficult where you've got nearly as many columns as you do row 3700 rows 17，7，7 columns。 So let's go ahead and we're going to run this， fit a neural network on this and get some predictions。 This is a classification。Neural network， because it is basically telling us if a biological response happened or not。
 
- So it's got a tremendous amount of columns Feature importance could be useful to maybe remove some of those。
+ You can see that the validation log loss is around 0。55。 log losses is what Cagel is actually using for this particular one to rank it。 The validation accuracy is around 76%。 So not good not horrible。 We'll look at the feature。 importance for this one。 It essentially， most of these are in the 90s。
 
- Unfortunately， most of them are pretty important。 What we're going to look at here is how we can combine these。
+ And even past into the 1700s is also 90s。 So they're all important。 So that is very difficult with this particular one。 ensembles were very critical to getting a good score for this one for the actual kagle competitors who worked on it。 So I am going to start by just introducing some code that I have here。
 
-Into a ensemble。 And by these， I mean several different models like neural network， random forest。
+ and you can use this to build up an ensemble。 You see here I have code that builds a artificial neural network。 I'm going go ahead and run this because it takes it a little while to run and explain what's going on while it is actually。This builds the artificial neural network。 I am giving it a number of classes here。 Typically you'll want this is really just placeholder code。
 
- gradient boosting and so on。 So I'm going to go ahead and run this。
+ you'll want to put in more dense layers than I have here。 I also calculate the log loss multi log loss。 that's a type of error calculation that we saw earlier in the modules。 and the stretch code here is basically used to normalize the y ranges that are predicted。 So it's it's type of averaging or normalization to stretch it out。
 
- which will essentially open these， these files。 I have them resident here on a local drive。
+ This is a technique that I've seen in a couple of kggs。 I copied it from one of the winning solutions here。 you'll want to look if you're doing a regression or single classification like this it might be useful to you。 I am going to use the stratified kfold Basically that is making sure that each of our folds are balanced in the same way that the training set is Otherwise you might introduce。
 
- These are kagle files。 So I can't actually put them in a place that would let you access them。
+Inconsistencies， if you have， say 20% positive in the overall training set。 you want 20% positive in each of those kfolds。 Otherwise your ground truth is going to be off。 I have information on the stratified kfold in the previous module that talks about。How to do cross validation Here we have a list of models and these models。
 
- You need to download them yourself from Kagal。 I just put them in a data directory。
+ these are all the ones that you want to ensemble together。 So I am building an ensemble of the kras classifier to we basically build that artificial neural network that we have up there。 random forest classifier a couple of times and also extra trees。 which is a type of random forest and then also gradient boosting。
 
- You can really put that any location you want。 And I run that。
+ I load my data sets and I run across all of these and build up the ensemble。 I have other videos that I'll link to that get into really the mechanics of what this is all doing overall what is happening here is it's building up a data set where each of these model predictions is one column So since we have  one。
 
- You can see here when I print out the shape of this。 It's really a fairly square data set， which is。
+2，3，4，56，7 we have 7 of those。 you're going to essentially have seven columns the Y is going to be the real。😊，From the data set， whether the biological response happened or not。 and you're essentially training a linear regression across all of these。 So using the outputs。 the predictions from all of these classifiers to predict what the actual output would be。
 
- which is difficult where you've got nearly as many columns as you do row 3700 rows 17，7，7 columns。
+ You're using these models as inputs to another model。 which is the ensembling model to form that prediction， Then we blend it together。 we're using logistic regression to do that。It's a type of linear regression。 And we build that fit based on that。 And then we finally build our prediction file based on the output from that linear regression。
 
- So let's go ahead and we're going to run this， fit a neural network on this and get some predictions。
+ Here you can see we're basically going through all of the folds on each of these various model types and it continues At the end。 it will give you the final submission file that you will actually send to Cagel。 Thank you for watching this video in the next video。 we're going to take a survey of all of the hyperparameters that make up neural networks and see how you can better optimize those。
 
- This is a classification。Neural network， because it is basically telling us if a biological response happened or not。
-
- You can see that the validation log loss is around 0。55。
-
- log losses is what Cagel is actually using for this particular one to rank it。
-
- The validation accuracy is around 76%。 So not good not horrible。 We'll look at the feature。
-
- importance for this one。 It essentially， most of these are in the 90s。
-
- And even past into the 1700s is also 90s。 So they're all important。
-
- So that is very difficult with this particular one。
-
- ensembles were very critical to getting a good score for this one for the actual kagle competitors who worked on it。
-
- So I am going to start by just introducing some code that I have here。
-
- and you can use this to build up an ensemble。 You see here I have code that builds a artificial neural network。
-
- I'm going go ahead and run this because it takes it a little while to run and explain what's going on while it is actually。
-
-This builds the artificial neural network。 I am giving it a number of classes here。
-
- Typically you'll want this is really just placeholder code。
-
- you'll want to put in more dense layers than I have here。
-
- I also calculate the log loss multi log loss。 that's a type of error calculation that we saw earlier in the modules。
-
- and the stretch code here is basically used to normalize the y ranges that are predicted。
-
- So it's it's type of averaging or normalization to stretch it out。
-
- This is a technique that I've seen in a couple of kggs。
-
- I copied it from one of the winning solutions here。
-
- you'll want to look if you're doing a regression or single classification like this it might be useful to you。
-
- I am going to use the stratified kfold Basically that is making sure that each of our folds are balanced in the same way that the training set is Otherwise you might introduce。
-
-Inconsistencies， if you have， say 20% positive in the overall training set。
-
- you want 20% positive in each of those kfolds。 Otherwise your ground truth is going to be off。
-
- I have information on the stratified kfold in the previous module that talks about。
-
-How to do cross validation Here we have a list of models and these models。
-
- these are all the ones that you want to ensemble together。
-
- So I am building an ensemble of the kras classifier to we basically build that artificial neural network that we have up there。
-
- random forest classifier a couple of times and also extra trees。
-
- which is a type of random forest and then also gradient boosting。
-
- I load my data sets and I run across all of these and build up the ensemble。
-
- I have other videos that I'll link to that get into really the mechanics of what this is all doing overall what is happening here is it's building up a data set where each of these model predictions is one column So since we have  one。
-
-2，3，4，56，7 we have 7 of those。 you're going to essentially have seven columns the Y is going to be the real。
-
-😊，From the data set， whether the biological response happened or not。
-
- and you're essentially training a linear regression across all of these。 So using the outputs。
-
- the predictions from all of these classifiers to predict what the actual output would be。
-
- You're using these models as inputs to another model。
-
- which is the ensembling model to form that prediction， Then we blend it together。
-
- we're using logistic regression to do that。It's a type of linear regression。
-
- And we build that fit based on that。 And then we finally build our prediction file based on the output from that linear regression。
-
- Here you can see we're basically going through all of the folds on each of these various model types and it continues At the end。
-
- it will give you the final submission file that you will actually send to Cagel。
-
- Thank you for watching this video in the next video。
-
- we're going to take a survey of all of the hyperparameters that make up neural networks and see how you can better optimize those。
-
- This content changes often。 So subscribe to the channel to stay up to date on this course and other topics in artificial intelligence。
-
-😊。
-
-![](img/a5e310b66ad5b4d0e89ea1a7cc4dbf83_4.png)
+ This content changes often。 So subscribe to the channel to stay up to date on this course and other topics in artificial intelligence。😊。![](img/a5e310b66ad5b4d0e89ea1a7cc4dbf83_4.png)

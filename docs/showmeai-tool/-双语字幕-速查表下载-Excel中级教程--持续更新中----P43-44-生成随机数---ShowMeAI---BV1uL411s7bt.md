@@ -2,84 +2,28 @@
 
 ![](img/7373d6018b43ea784652d9a0d3f0a1c4_0.png)
 
-In this tutorial， I will show you how to quickly generate random numbers in Excel。
+In this tutorial， I will show you how to quickly generate random numbers in Excel。 Every once in a while， you'll find yourself in a situation in Excel。 when you might need to have a random number。 and we're gonna look at how to generate two different kinds of random numbers。 The first example is a random number between0 and1 to do this。
 
- Every once in a while， you'll find yourself in a situation in Excel。
+ All you have to do is click on a cell type the equal sign。 and then type in R。 and you can see the pop up here， it tells me what R does。 returns a random number greater than or equal to0 and less than one。 and notice what it says here。 changes on recalculation。 I think you'll see what that means in just a minute。
 
- when you might need to have a random number。 and we're gonna look at how to generate two different kinds of random numbers。
+ So after typing equals R， all I have to do is put in a left parenthesis and then a right parenthesis。 There's nothing to put between the two。 Then just tap enter on the keyboard。 and you have a random number between 0 and1。 Now， what if I want a series of random numbers。 Well。 all I have to do is use the autofill handle。 If you're not familiar with the autofill。
 
- The first example is a random number between0 and1 to do this。
+Watch one of my other tutorials that teaches about the autofi handle。 but it's a wonderful tool that makes just this kind of thing really easy。 So I want a series of random numbers。 This is a random number。 all I have to do is click on the cell that has the random function and the formula。
 
- All you have to do is click on a cell type the equal sign。 and then type in R。
+ So that's this go to the lower right corner where there's a little green square put my mouse on the green square and then click and drag down。 I'll just go down to row number 12。 I'll release and a whole series of random numbers gets generated。 Now you may have noticed that my first random number actually changed a little bit。 it gets recalculated whenever you redo it or adjust any of the random numbers。
 
- and you can see the pop up here， it tells me what R does。
+ look they all pretty well changed。 so now that I've got the random number。 What I could do is click on column B to select the entire column and then if I wanted to maybe I could click up here on percentages and that changes the decimals into a percentage79%82%。
 
- returns a random number greater than or equal to0 and less than one。 and notice what it says here。
-
- changes on recalculation。 I think you'll see what that means in just a minute。
-
- So after typing equals R， all I have to do is put in a left parenthesis and then a right parenthesis。
-
- There's nothing to put between the two。 Then just tap enter on the keyboard。
-
- and you have a random number between 0 and1。 Now， what if I want a series of random numbers。 Well。
-
- all I have to do is use the autofill handle。 If you're not familiar with the autofill。
-
-Watch one of my other tutorials that teaches about the autofi handle。
-
- but it's a wonderful tool that makes just this kind of thing really easy。
-
- So I want a series of random numbers。 This is a random number。
-
- all I have to do is click on the cell that has the random function and the formula。
-
- So that's this go to the lower right corner where there's a little green square put my mouse on the green square and then click and drag down。
-
- I'll just go down to row number 12。 I'll release and a whole series of random numbers gets generated。
-
- Now you may have noticed that my first random number actually changed a little bit。
-
- it gets recalculated whenever you redo it or adjust any of the random numbers。
-
- look they all pretty well changed。 so now that I've got the random number。
-
- What I could do is click on column B to select the entire column and then if I wanted to maybe I could click up here on percentages and that changes the decimals into a percentage79%82%。
-
- That's a little bit more readable and understandable。
-
-Now what if you just want a random number between 5 and 5000 or between 1 and 10000。
-
- and you want it to be whole numbers， not decimals Well。
-
- in that case you use a little bit different function and formula In that case you type equals R between and notice what it says returns a random number between the numbers you specify you put in a left parenthesis and then the lowest number that you want it to maybe generate So1 in this case comma and let's say 5000 is the highest number and then I put in the right parenthesis and tap enter on the keyboard。
+ That's a little bit more readable and understandable。Now what if you just want a random number between 5 and 5000 or between 1 and 10000。 and you want it to be whole numbers， not decimals Well。 in that case you use a little bit different function and formula In that case you type equals R between and notice what it says returns a random number between the numbers you specify you put in a left parenthesis and then the lowest number that you want it to maybe generate So1 in this case comma and let's say 5000 is the highest number and then I put in the right parenthesis and tap enter on the keyboard。
 
  theres my random number between1 and 5000 Now notice even doing that changed my random numbers over here in column B now I can use the autofill handle to pull this down and I'll get a series of random numbers none of these are less than 0 and none of them are more than 5000 to test this out to make sure it's really working I could do R between。
 
-esis and let's say5 comma 9。 So this will be a lot easier to see if it's really working。
+esis and let's say5 comma 9。 So this will be a lot easier to see if it's really working。 Every number that's generated should be between 5 and 9。 and that is the case。 Allright。 so now that we've got these random numbers What if I want them to stop recalculating if I'm happy with this random set of numbers I don't want them to keep changing。 So what I could do is select the range of numbers by clicking and dragging and then I could copy that information I just did control C to copy and then I could click in another column just pick a cell。
 
- Every number that's generated should be between 5 and 9。 and that is the case。 Allright。
+ I'll just pick this cell here and I'll do a paste special So here and paste I'm just going go down to paste special and I'll choose values so it's gonna to paste just the values。 So now if you click on one of the numbers。 these were randomly generated but they were generated here in this column using the ran between function and you can see that here in the formula bar up here but these numbers are just numbers。
 
- so now that we've got these random numbers What if I want them to stop recalculating if I'm happy with this random set of numbers I don't want them to keep changing。
-
- So what I could do is select the range of numbers by clicking and dragging and then I could copy that information I just did control C to copy and then I could click in another column just pick a cell。
-
- I'll just pick this cell here and I'll do a paste special So here and paste I'm just going go down to paste special and I'll choose values so it's gonna to paste just the values。
-
- So now if you click on one of the numbers。 these were randomly generated but they were generated here in this column using the ran between function and you can see that here in the formula bar up here but these numbers are just numbers。
-
-I copied formulas and pasted them using pastespec as values。
-
- So these numbers will not change in the future， even though these clearly will you saw it change before your eyes just a minute ago so I could do the same thing with these numbers。
-
- select the range， control C to copy click here and I want to paste it but remember I need to do a paste special so I go here to the bottom part of the paste button and at the very bottom of that paste special values。
-
- click okay and those exact values got pasted and of course I could change them again to percentages Now these numbers will continue to change because they still are random but these are set in stone。
+I copied formulas and pasted them using pastespec as values。 So these numbers will not change in the future， even though these clearly will you saw it change before your eyes just a minute ago so I could do the same thing with these numbers。 select the range， control C to copy click here and I want to paste it but remember I need to do a paste special so I go here to the bottom part of the paste button and at the very bottom of that paste special values。 click okay and those exact values got pasted and of course I could change them again to percentages Now these numbers will continue to change because they still are random but these are set in stone。
 
  They're just values。 So now with that done， if I wanted to I could just copy paste this column title over delete the column that's randomized because it'll keep changing or actually I could just copy the values and paste them on top of the formulas and then delete this column here。
 
-However you want to do it， but now I have generated random numbers and these are stable ones they won't just keep changing。
-
-
-
-![](img/7373d6018b43ea784652d9a0d3f0a1c4_2.png)
+However you want to do it， but now I have generated random numbers and these are stable ones they won't just keep changing。![](img/7373d6018b43ea784652d9a0d3f0a1c4_2.png)

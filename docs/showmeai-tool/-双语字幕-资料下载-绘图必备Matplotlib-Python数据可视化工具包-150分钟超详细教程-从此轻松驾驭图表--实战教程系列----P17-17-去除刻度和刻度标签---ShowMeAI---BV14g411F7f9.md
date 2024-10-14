@@ -2,43 +2,18 @@
 
 ![](img/f8244fb7eb5333199c259ae56b73eb84_0.png)
 
-Okay， these next two， I think， are pretty cool because they're。
-
- they're a nice way of kind of cleaning up your graph by removing things if you don't want them。
-
- So I do use these sometimes as well。 So let's say， how do you remove ticks and tick labels。😊。
-
-
+Okay， these next two， I think， are pretty cool because they're。 they're a nice way of kind of cleaning up your graph by removing things if you don't want them。 So I do use these sometimes as well。 So let's say， how do you remove ticks and tick labels。😊。
 
 ![](img/f8244fb7eb5333199c259ae56b73eb84_2.png)
 
-So let's get our plot here。
+So let's get our plot here。![](img/f8244fb7eb5333199c259ae56b73eb84_4.png)
 
-![](img/f8244fb7eb5333199c259ae56b73eb84_4.png)
-
-And in this case， we are going to go back up to the set X ticks method and set y ticks， set X ticks。
-
-
-
-![](img/f8244fb7eb5333199c259ae56b73eb84_6.png)
+And in this case， we are going to go back up to the set X ticks method and set y ticks， set X ticks。![](img/f8244fb7eb5333199c259ae56b73eb84_6.png)
 
 ![](img/f8244fb7eb5333199c259ae56b73eb84_7.png)
 
-And we're just going pass in an empty list。And there you go。 So we're basically saying， you know。
+And we're just going pass in an empty list。And there you go。 So we're basically saying， you know。 hey， we don't want， we don' want to apply any X tick labels。 We can do the same thing with y。![](img/f8244fb7eb5333199c259ae56b73eb84_9.png)
 
- hey， we don't want， we don' want to apply any X tick labels。 We can do the same thing with y。
-
-
-
-![](img/f8244fb7eb5333199c259ae56b73eb84_9.png)
-
-And we can just make this graph totally context list， which is， you know。
-
- admittedly not very helpful。But it does look nice and clean， doesn't it， so。
-
-
-
-![](img/f8244fb7eb5333199c259ae56b73eb84_11.png)
+And we can just make this graph totally context list， which is， you know。 admittedly not very helpful。But it does look nice and clean， doesn't it， so。![](img/f8244fb7eb5333199c259ae56b73eb84_11.png)
 
 Um， you know， if you want to do this for any reason， there you go。
-

@@ -1,180 +1,69 @@
 # 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P61：L11.5- 使用Keras和TensorFlow从头开始学习英语 - ShowMeAI - BV15f4y1w7b8
 
-Hi， this is Jeffine。 welcomelcom to applications of deep neural networks with Washington University。
+Hi， this is Jeffine。 welcomelcom to applications of deep neural networks with Washington University。 You know what， Maybe we humans are overrated。After all。 Al 0 was able to master chess in hours without even the benefit of human knowledge。 We try to do natural language processing。 we use all these fancy addins like an L T K and Space E and other things。
 
- You know what， Maybe we humans are overrated。After all。
-
- Al 0 was able to master chess in hours without even the benefit of human knowledge。
-
- We try to do natural language processing。 we use all these fancy addins like an L T K and Space E and other things。
-
- Maybe we should just let the neural networks， try to learn English from scratch or other languages as well。
-
- This is called end to end neural networks。 For the latest on my AI course and projects。
-
- Click subscribe and the bell next to it to be notified of every new video。 Connuing onward。
-
- We're going to look at another type of。😊。
+ Maybe we should just let the neural networks， try to learn English from scratch or other languages as well。 This is called end to end neural networks。 For the latest on my AI course and projects。 Click subscribe and the bell next to it to be notified of every new video。 Connuing onward。 We're going to look at another type of。😊。
 
 ![](img/511897e72e03ef43ebc5740c467bd96e_1.png)
 
 Welcome to applications of deep learning with Washington University and see how we can teach a neural network to learn to read So these are the two papers that I am pulling this from based on and then I'm also using the code from the Kira's examples where the creator of Kiuras implemented intoto end neural networks as an example of cururas this will probably eventually be built intokira's layer specific type so that you can use this directly but for now you see some of the plumbing used to actually implement this network type and there's also an online JavaScript demo that you can use to play with this if you would like to as well we are going to go ahead and actually create a end to end neural network here and make use of it so these are just some necessary imports and utility functions that were created by in the Ki's example I made some changes to these to make it work a little bit better and eliminate some of the warnings that Hatheng was generated because it was generated possibly on an older version of Kis I also added a Q&A part at the end。
 
-The original code it trained the network and it gave you the accuracy but it didn't give you any way to use it。
-
- So I created that part at the end。 Let's go ahead and run this。
-
- It tells you it's using Tensorflows the back end and then we see that it is still running。
-
- it takes it a little while to little end but while it's doing that let me show you some of the parts that we're doing here。
+The original code it trained the network and it gave you the accuracy but it didn't give you any way to use it。 So I created that part at the end。 Let's go ahead and run this。 It tells you it's using Tensorflows the back end and then we see that it is still running。 it takes it a little while to little end but while it's doing that let me show you some of the parts that we're doing here。
 
  This is the tokenized function it uses a regular expression to split apart the words of a sentence so this would turn something like Bob D the apple period where is the apple question mark so this is very much in the tasks form but this gives you an array of words rather than just one big sentence So this is called tokenization it tokenizes the sentence and breaks it apart for you This par is the stories So this takes stories that are in Babbby task format and breaks them into the three parts So you will get and sort of separated by tab delineation I won't take you through all of the steps of this but basically what it is doing is taking the three parts the parts are you will have a story where it'll say John walk to the bathroom Mary went to the bedroom that's essentially。
 
 First part of it the first of three the second part is in the question where is John or some other some other thing and then the third is the answer the answer to this type of neural network is always a single word so you are asking a questions about the story and then you then give it a question about it and it gives you a word back the important thing to realize about the training of the neural network is the weights and the training of the neural network are learning to read not learning the specific sentences because after the neural network is trained you'll give it new sentences and it should be able to answer questions about them because the training data has all sorts of instances of Mary's in the bathroom Marys in the bedroom all different locations those are specific to that particular training example it's not the locations that it's trying to learn it's trying to learn how to read new stories and be able to answer about them and then this function here that we call will get the stories by calling the other functions that that we just had the parse stories and it returns the stories in a vector format that can be passed to the neural network find。
 
-vectorize the stories I will show what this specifically looks like。
-
- but essentially what it's doing is it's taking all of the sentences， the stories。
-
- figuring out how many unique words there are and then vectorizing them and changing them into pure numeric form where each word has a numeric index that it gets replaced by and we'll see how that works in just a little bit this block of code here basically downloads the data so we're getting the data from AWS and downloading it to this GZ file then we extract out the parts that we want we're doing the 10k challenge。
+vectorize the stories I will show what this specifically looks like。 but essentially what it's doing is it's taking all of the sentences， the stories。 figuring out how many unique words there are and then vectorizing them and changing them into pure numeric form where each word has a numeric index that it gets replaced by and we'll see how that works in just a little bit this block of code here basically downloads the data so we're getting the data from AWS and downloading it to this GZ file then we extract out the parts that we want we're doing the 10k challenge。
 
  This is a smaller data， it's still fairly big that keeps us able to run it on our computers I should point out the computer that I normally run these examples from we're using a AWS instance like I discussed before I basically hit my website you won't be able to use that URL because it's my AWS instance and it it costs me money not a lot but I normally use a8 gigab。
 
-instancest to do this class session since there's considerably more I use a I actually use a 16 gigte。
+instancest to do this class session since there's considerably more I use a I actually use a 16 gigte。 if I was using the full the bigger data sets forms of these。 I would need a much much more ra might work on a computer with8TP so we run this I am going to go ahead and run this portion since I ran the previous portion。 it is extracting the stories for the challenge and it gets them Now I had already run this it had already downloaded them if you were rent this for the first time it will probably have to download those。
 
- if I was using the full the bigger data sets forms of these。
+ Let me run this so you can see what the data actually looks like So here's a story Mary moved to the bathroom John went to the hallway where is Mary answer is bathroom Here's another story and he gonna be multiple sentences。 Mary moved to the bathroom John went to the hallway Daniel went back to the hallway Sand move to the garden Where is Daniel So it needs to read these and find the last location that he said that he moved to and they describe it different ways。
 
- I would need a much much more ra might work on a computer with8TP so we run this I am going to go ahead and run this portion since I ran the previous portion。
+ back to move to went to So it really does need to learn to read this are。Training examples I need to emphasize again the neural network is not remembering that Mary is in the bathroom。 That's just unique to this particular sentence。 and there's a whole bunch of these。 there's like 10000 of these that it trains over and the answer is always a single word so it learns to read a sentence like this and we'll see that in the end we can make up our own ad hoc story for it it will read it and it will answer something about it but we'll see that it has some very important limitations So first we need to build the vocabulary and this is a very important limitation of this program we will run that and let me show you what that looks like It builds the vocabulary very quickly What it did is it went over all 10000 of these training stories and the 1000 test stories so we're going to train it on these and we're going to test it on these and we're going to see how well it can learn to read it pulls out some very important maximums here that are going to be implied are imposed on the trained neural network We have 22 unique words that's going to be the vocabulary if you look over all of those sentences and you。
 
- it is extracting the stories for the challenge and it gets them Now I had already run this it had already downloaded them if you were rent this for the first time it will probably have to download those。
-
- Let me run this so you can see what the data actually looks like So here's a story Mary moved to the bathroom John went to the hallway where is Mary answer is bathroom Here's another story and he gonna be multiple sentences。
-
- Mary moved to the bathroom John went to the hallway Daniel went back to the hallway Sand move to the garden Where is Daniel So it needs to read these and find the last location that he said that he moved to and they describe it different ways。
-
- back to move to went to So it really does need to learn to read this are。
-
-Training examples I need to emphasize again the neural network is not remembering that Mary is in the bathroom。
-
- That's just unique to this particular sentence。 and there's a whole bunch of these。
-
- there's like 10000 of these that it trains over and the answer is always a single word so it learns to read a sentence like this and we'll see that in the end we can make up our own ad hoc story for it it will read it and it will answer something about it but we'll see that it has some very important limitations So first we need to build the vocabulary and this is a very important limitation of this program we will run that and let me show you what that looks like It builds the vocabulary very quickly What it did is it went over all 10000 of these training stories and the 1000 test stories so we're going to train it on these and we're going to test it on these and we're going to see how well it can learn to read it pulls out some very important maximums here that are going to be implied are imposed on the trained neural network We have 22 unique words that's going to be the vocabulary if you look over all of those sentences and you。
-
-Mary move to bathroom all those words and you find out how many unique。 There's only 22 unique words。
-
- This neural network gets very， very memory intense when you add more words because those are basically becoming dummy variables so that is a big limitation of this but if you throw a memory at it and you throw a computer at it there are examples of this that can learn much bigger vocabularies the maximum story length is 68 so we're going to essentially create an input that is 68 words by 22 dummy variables that's the embedding and another input of the question so the query or the question the maximum length that any query was in there is four words。
+Mary move to bathroom all those words and you find out how many unique。 There's only 22 unique words。 This neural network gets very， very memory intense when you add more words because those are basically becoming dummy variables so that is a big limitation of this but if you throw a memory at it and you throw a computer at it there are examples of this that can learn much bigger vocabularies the maximum story length is 68 so we're going to essentially create an input that is 68 words by 22 dummy variables that's the embedding and another input of the question so the query or the question the maximum length that any query was in there is four words。
 
  So the input to this neural network is going to become the story which is a maximum of 68 words by dummy by 22 dummies and the query length is four words by 22 so it effectively becomes 7268 plus4 times the 22 dummies is the input you can see this gets big quickly if you start to add additional words for that and this is what the vocabulary looks like。
 
-Now this neural network will take a while to train it will take up to on the faster instance that I'm running this on。
+Now this neural network will take a while to train it will take up to on the faster instance that I'm running this on。 it will take about four minutes to train but on slower instances with with fewer compute cores this could take longer so we want to save the neural network We also want to save this vocabulary because we need the lookup This is based on maps and Python can change the ordering for maps you're not guaranteed that putting things into the map will always be the same size so this is the lookup table this is telling us that zero is period two is Daniel and so on and so forth so when we vectorize these what it's going to do is it'll change these words into lookups so Mary is4 Mary will become a4 moved 15 so that'll become 415 etc so to build the training set let me go ahead and execute this part of it it tells you what the input is going to look like so you have a 10000 times 68 that's the input vector 10000 times4 and then the answers which is going to be the vocab size let me show you some individual train。
 
- it will take about four minutes to train but on slower instances with with fewer compute cores this could take longer so we want to save the neural network We also want to save this vocabulary because we need the lookup This is based on maps and Python can change the ordering for maps you're not guaranteed that putting things into the map will always be the same size so this is the lookup table this is telling us that zero is period two is Daniel and so on and so forth so when we vectorize these what it's going to do is it'll change these words into lookups so Mary is4 Mary will become a4 moved 15 so that'll become 415 etc so to build the training set let me go ahead and execute this part of it it tells you what the input is going to look like so you have a 10000 times 68 that's the input vector 10000 times4 and then the answers which is going to be the vocab size let me show you some individual train。
-
-ElementsSo this shows you the story so you'll notice we're always making this be the same length。
-
- so the 68， which was the maximum word size of any of the stories and it's padded。
-
- it's padded to the left So all zeros at the beginning and then the actual the actual words that you get here Now one important thing to show you these zeros the way the padding works and we have to adjust for this at the end。
-
- it's a very important part and I will show you this at the end but notice how it says notice how we have 21 words if you count these two things if you were paying attention you probably saw 22 unique words so the math doesn't quite add up the additional value that we have is really the empty So null 0 is actually null0 is the first the first value in that map but really the value is going in get one added to it so0 would be one and so on we see that we have to adjust for that at the end but that is why we have zeros here So those are actually nulls and then we get into the actual values of of the lookup same thing here for the question Now this question was the maximum of four。
+ElementsSo this shows you the story so you'll notice we're always making this be the same length。 so the 68， which was the maximum word size of any of the stories and it's padded。 it's padded to the left So all zeros at the beginning and then the actual the actual words that you get here Now one important thing to show you these zeros the way the padding works and we have to adjust for this at the end。 it's a very important part and I will show you this at the end but notice how it says notice how we have 21 words if you count these two things if you were paying attention you probably saw 22 unique words so the math doesn't quite add up the additional value that we have is really the empty So null 0 is actually null0 is the first the first value in that map but really the value is going in get one added to it so0 would be one and so on we see that we have to adjust for that at the end but that is why we have zeros here So those are actually nulls and then we get into the actual values of of the lookup same thing here for the question Now this question was the maximum of four。
 
 So we have no zero padding now we need to compile the neural network because Karas does not natively support the end to end neural network there is basically the compute graph has to be created here at least to some degree I will show you a little bit of what this looks like we won't go really through all the details I would have to go I would have to take you through the entire paper really to get through that but we're basically creating three encoders two for the sentences and then two for the you sort of extract facts out of the sentence and then you encode those facts into with the question to try to build up the answer so that's why you need two encoders for for the input which are there and then you have another encoder for the question and the input dimension becomes the vocabulary size so they can build out those dummy variables to hold that output dimension then becomes essentially the number of values in in the next layer then we feed these all together and eventually all funnels into an LSTM we're using dropouts regularization。
 
-Throughout this and then it finally goes into a softmax on the answer。
+Throughout this and then it finally goes into a softmax on the answer。 which is essentially the classification of which of the vocabulary does it feel is the answer to this。 And then finally we create the model and train it or in compile it。 we don't train it This part runs pretty quickly It creates basically the neural network and the neural network is now built and compiled This is where we're going to actually train it we're going to use a batch size of 32 and 120 epos Now this is very important。
 
- which is essentially the classification of which of the vocabulary does it feel is the answer to this。
+ We're going to save the neural network so that since it takes a while to build this。 we don't want to just throw it away so we save the neural network。 I added this code from the original example。 they did not save the neural network but we save it to a H5 file which is a binary file。 I also save the vocabulary to a pickle file Pickle is your standard serialization in Python and I report on the elapsed time So I am going to go ahead and run this and this will I'll speed this up。
 
- And then finally we create the model and train it or in compile it。
-
- we don't train it This part runs pretty quickly It creates basically the neural network and the neural network is now built and compiled This is where we're going to actually train it we're going to use a batch size of 32 and 120 epos Now this is very important。
-
- We're going to save the neural network so that since it takes a while to build this。
-
- we don't want to just throw it away so we save the neural network。
-
- I added this code from the original example。 they did not save the neural network but we save it to a H5 file which is a binary file。
-
- I also save the vocabulary to a pickle file Pickle is your standard serialization in Python and I report on the elapsed time So I am going to go ahead and run this and this will I'll speed this up。
-
- but itll could take4 to 8 minutes to actually do this you see the epoch speeding along here and it's going through the training set。
-
- which is100 elements， so it just continues to go through this。
-
-Using any sort of early stopping it is just going to stop at 120 Okay not too bad。
-
- about four minutes with this faster AWS instance。 This code I'm not going to execute the neural network was saved the chatbot was saved H5 and the vocabulary to a pickle file if you were running this and you already had the chat bot and the pickle file saved you could basically just run this part instead of the training we're going to evaluate the accuracy noticeice that we we do this very similar to the code that we've done before except look at the input the input due to the way that that compute graph was structured earlier。
+ but itll could take4 to 8 minutes to actually do this you see the epoch speeding along here and it's going through the training set。 which is100 elements， so it just continues to go through this。Using any sort of early stopping it is just going to stop at 120 Okay not too bad。 about four minutes with this faster AWS instance。 This code I'm not going to execute the neural network was saved the chatbot was saved H5 and the vocabulary to a pickle file if you were running this and you already had the chat bot and the pickle file saved you could basically just run this part instead of the training we're going to evaluate the accuracy noticeice that we we do this very similar to the code that we've done before except look at the input the input due to the way that that compute graph was structured earlier。
 
  the input is actually two vectors it is the inputs and the queries so the inputs are the stories Mary went to the hallway etc queries are the questions are where is Mary and we'll run it and we'll print out the predictions so this is the typical probability that that we've had before you'll see now we're not seeing all of the values but each row is basically showing you the 22 vocab words that you had is showing you what the probability of。
 
-of those words being the answer。 Now you can see if you use a decentsized vocabulary where you have maybe 20000 words。
+of those words being the answer。 Now you can see if you use a decentsized vocabulary where you have maybe 20000 words。 you can the inputs to this type of network become very， very large。 So just like before we're gonna take the arg maxes of these the arg max now is basically the index of each of these so that's showing vocabular word 12 was the expected answer9 was the expected answer there are 151215 not all of the words and the vocab list tend to have tend to be the answer very often you can definitely see that certain numbers are chosen more often than others we can also print out our final accuracy95%'s actually very good Now I want to show you how to do an ad hoc query the original example from Cars that I copy these from didn't do didn't display the accuracy or show you how to break these vectors apart so that's all added by this class if you happen to look at the original the original example that I have a link to just above they also don't show you how to do an ad hoc query which I think is probably the coolest part of this you've trained this great neural network that learns how to read so you want to try to test。
 
- you can the inputs to this type of network become very， very large。
+So I am giving it literally raw text right here。 It prints out its vocabulary。 It's reminding you。 remember I only know these words and I tell it Mary moved to the bathroom。 John went to the garden。 etc。 Where is Mary， and I run it the ad hoc query This is an area that I added to the program so you'll see Mary moved to the garden。 John went to the garden That's an easy one I just kind of made that up and I say where is Mary。
 
- So just like before we're gonna take the arg maxes of these the arg max now is basically the index of each of these so that's showing vocabular word 12 was the expected answer9 was the expected answer there are 151215 not all of the words and the vocab list tend to have tend to be the answer very often you can definitely see that certain numbers are chosen more often than others we can also print out our final accuracy95%'s actually very good Now I want to show you how to do an ad hoc query the original example from Cars that I copy these from didn't do didn't display the accuracy or show you how to break these vectors apart so that's all added by this class if you happen to look at the original the original example that I have a link to just above they also don't show you how to do an ad hoc query which I think is probably the coolest part of this you've trained this great neural network that learns how to read so you want to try to test。
-
-So I am giving it literally raw text right here。 It prints out its vocabulary。 It's reminding you。
-
- remember I only know these words and I tell it Mary moved to the bathroom。 John went to the garden。
-
- etc。 Where is Mary， and I run it the ad hoc query This is an area that I added to the program so you'll see Mary moved to the garden。
-
- John went to the garden That's an easy one I just kind of made that up and I say where is Mary。
-
- they're both in the garden So if if I run that it'll say garden。
-
- I can change this to Mary went to the bathroom and it better change its example or it's answer there。
-
- a live demo bathroom good Mary traveled and there's several ways you can spell travel depending on the English system。
-
- they're using the two L so I have to used the2 Ls but it doesn't matter it's still understand that John went to the garden。
+ they're both in the garden So if if I run that it'll say garden。 I can change this to Mary went to the bathroom and it better change its example or it's answer there。 a live demo bathroom good Mary traveled and there's several ways you can spell travel depending on the English system。 they're using the two L so I have to used the2 Ls but it doesn't matter it's still understand that John went to the garden。
 
  there's additional people that you can add into here I can add Daniel and we're moving Mary to the hallway and we can run it and it's not retraining the neural network It's using the neural network that is learned to read these type of sentences and answering the questions。
 
- I can also change the query。Say where is Daniel and it adjust it for that。
+ I can also change the query。Say where is Daniel and it adjust it for that。 I'll try Now let me show you a few things that don't work so well。 If I say Daniel went to the game。 that's outside the vocabulary。 it will blow up on that because that's not in the dictionary to look up so we can't say Daniel went to the game I have not honestly tried this one but I'm going to try here。 I'm just curious what it will do does it have a concept of time So if I say Daniel went to the hallway。
 
- I'll try Now let me show you a few things that don't work so well。 If I say Daniel went to the game。
+ Mary went to the bathroom。 Daniel went to the bedroom Daniel has changed his location he was in the hallway。 then he went to the bedroom。 what happens if I ask it about that it's smart。 it figures that out because if I change this Daniel was in the hallway。 he went to the bathroom and then it updates it for the other one。
 
- that's outside the vocabulary。 it will blow up on that because that's not in the dictionary to look up so we can't say Daniel went to the game I have not honestly tried this one but I'm going to try here。
+ if you think about writing a traditional program to do this。 you would be parsing this apart and keeping some sort of state of where everybody is at The neural network is just figuring out how to do that and it figures out how to override it with subsequent answers and I bet there's examples in the training set that teach it this teach it that the last answer is correct you could adjust the training set so that the first answer is correct like。
 
- I'm just curious what it will do does it have a concept of time So if I say Daniel went to the hallway。
+groundund information it would learn that you could also put the word originally in there and train it for Daniel went to the hallway。 Mary went to the bathroom。 Daniel went to the bedroom。 Where was Daniel originally and it would very likely learn to know that that was the first location that the given person was in。 I'm going to also try something else mean to it。 I'm going to ask it where is Sandra who does not even appear in this in this story。
 
- Mary went to the bathroom。 Daniel went to the bedroom Daniel has changed his location he was in the hallway。
+ So it can't say I don't know。 it's saying that she's in the garden。 if I had to wager and let me actually go ahead and print it's prediction。 So that's the probability except I had switched it to a Max So I'm printing out just the probability it's confidence almost So it is showing that yeah it's pretty sure it's 90% sure that's the highest probability that I see here yeah if I had to venture a guess it is saying that Sandra is in the garden because in the train set that's probably where she most commonly was。
 
- then he went to the bedroom。 what happens if I ask it about that it's smart。
-
- it figures that out because if I change this Daniel was in the hallway。
-
- he went to the bathroom and then it updates it for the other one。
-
- if you think about writing a traditional program to do this。
-
- you would be parsing this apart and keeping some sort of state of where everybody is at The neural network is just figuring out how to do that and it figures out how to override it with subsequent answers and I bet there's examples in the training set that teach it this teach it that the last answer is correct you could adjust the training set so that the first answer is correct like。
-
-groundund information it would learn that you could also put the word originally in there and train it for Daniel went to the hallway。
-
- Mary went to the bathroom。 Daniel went to the bedroom。
-
- Where was Daniel originally and it would very likely learn to know that that was the first location that the given person was in。
-
- I'm going to also try something else mean to it。 I'm going to ask it where is Sandra who does not even appear in this in this story。
-
- So it can't say I don't know。 it's saying that she's in the garden。
-
- if I had to wager and let me actually go ahead and print it's prediction。
-
- So that's the probability except I had switched it to a Max So I'm printing out just the probability it's confidence almost So it is showing that yeah it's pretty sure it's 90% sure that's the highest probability that I see here yeah if I had to venture a guess it is saying that Sandra is in the garden because in the train set that's probably where she most commonly was。
-
- I don't know I would have to I would have to verify that that hypothesis but this is really a pretty cool technology This is。
-
-You could play with this pretty easily and train it to learn your own types of sentences。
-
- You could do things like whereas Daniel originally like I had told you there。
-
- you just need to generate the appropriate training data for this and it will literally learn to read those sentences that you have the more complicated those sentences become the more difficult the bigger the neural network needs needs to be so the neural network back up here I didn't really show you a lot of its architecture without having to go into into the paper but you would need to increase that size of 32 and then some of these dense layers here right now it's just doing a dense layer the vocab size so that's what's fed into the softmax but you could create some additional dense and regularization layers In fact the cares author is even noting that you would probably need to add those So this is showing you how you can basically teach the neural network to read completely from scratch it's limited it's got a small vocabulary but for four minutes on a 16 gigab computer this is actually pretty Thank you for watching the video and。
+ I don't know I would have to I would have to verify that that hypothesis but this is really a pretty cool technology This is。You could play with this pretty easily and train it to learn your own types of sentences。 You could do things like whereas Daniel originally like I had told you there。 you just need to generate the appropriate training data for this and it will literally learn to read those sentences that you have the more complicated those sentences become the more difficult the bigger the neural network needs needs to be so the neural network back up here I didn't really show you a lot of its architecture without having to go into into the paper but you would need to increase that size of 32 and then some of these dense layers here right now it's just doing a dense layer the vocab size so that's what's fed into the softmax but you could create some additional dense and regularization layers In fact the cares author is even noting that you would probably need to add those So this is showing you how you can basically teach the neural network to read completely from scratch it's limited it's got a small vocabulary but for four minutes on a 16 gigab computer this is actually pretty Thank you for watching the video and。
 
 
 
 ![](img/511897e72e03ef43ebc5740c467bd96e_3.png)
 
 Next module we're going to look at reinforcement learning this content changes often so subscribe to the channel to stay up to date on this course and other topics in artificial intelligence。
-

@@ -1,8 +1,6 @@
 # 【双语字幕+资料下载】更简单的绘图工具包 Seaborn，一行代码做到 Python 可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ - P3：L3- 导入数据和数据集 - ShowMeAI - BV1wZ4y1S7Jc
 
-In regards to loading data， you're going to be able to come in and load CSV files and countless other different file types that are provided through using pandas。
-
- which is what I'm using right here so I can come in and go computer sales which is a CSV file I've used in the past and you can see examples of what that looks like here and there we go but I'm not going to be doing that for this tutorial just to make it super easy for everybody I'm mainly going to be using seaborns built in data sets and you can see the type of things that are built into it just by going git data set names and there you can see in this don' just don't pay attention to this it's an error that comes up sometimes whenever we call for these data sets if we don't go and use them properly and it doesn't know what type of parcel we're using just don't worry about it so there's all kinds of different builtin data sets and I'm going be using at least three or。
+In regards to loading data， you're going to be able to come in and load CSV files and countless other different file types that are provided through using pandas。 which is what I'm using right here so I can come in and go computer sales which is a CSV file I've used in the past and you can see examples of what that looks like here and there we go but I'm not going to be doing that for this tutorial just to make it super easy for everybody I'm mainly going to be using seaborns built in data sets and you can see the type of things that are built into it just by going git data set names and there you can see in this don' just don't pay attention to this it's an error that comes up sometimes whenever we call for these data sets if we don't go and use them properly and it doesn't know what type of parcel we're using just don't worry about it so there's all kinds of different builtin data sets and I'm going be using at least three or。
 
 
 
@@ -12,27 +10,14 @@ In regards to loading data， you're going to be able to come in and load CSV fi
 
 ![](img/5bee53f2a5a6b75e28fce706ce3d0092_3.png)
 
-For them in this tutorial series so you may say to yourself well。
+For them in this tutorial series so you may say to yourself well。 how exactly do I load one of those data sets Well， there's a car crash data set。 which I'm going to use here first and you just go load data set and then you type in the name for it which is car crashes right and you can see an example of what that looks like right here So you can see these are the total number of car crashes。 this is states So Alabama， Alaska， Arizona， Arkansas， California。
 
- how exactly do I load one of those data sets Well， there's a car crash data set。
+ the total number of crashes that they analyzed whether the people were speeding。 they were using alcohol， whether they were not distracted if they had no previous accidents and insurance premiums insurance losses All right so that's what we're going to be analyzing and also in the description underneath the video you're going to find a Jupiter notebook。
 
- which I'm going to use here first and you just go load data set and then you type in the name for it which is car crashes right and you can see an example of what that looks like right here So you can see these are the total number of car crashes。
-
- this is states So Alabama， Alaska， Arizona， Arkansas， California。
-
- the total number of crashes that they analyzed whether the people were speeding。
-
- they were using alcohol， whether they were not distracted if they had no previous accidents and insurance premiums insurance losses All right so that's what we're going to be analyzing and also in the description underneath the video you're going to find a Jupiter notebook。
-
- everything that I do here except I'm going to include。
-
-
-
-![](img/5bee53f2a5a6b75e28fce706ce3d0092_5.png)
+ everything that I do here except I'm going to include。![](img/5bee53f2a5a6b75e28fce706ce3d0092_5.png)
 
 ![](img/5bee53f2a5a6b75e28fce706ce3d0092_6.png)
 
 ![](img/5bee53f2a5a6b75e28fce706ce3d0092_7.png)
 
 A ton of comments to help you out， so a massive cheat sheet and of course， it's all free because。
-

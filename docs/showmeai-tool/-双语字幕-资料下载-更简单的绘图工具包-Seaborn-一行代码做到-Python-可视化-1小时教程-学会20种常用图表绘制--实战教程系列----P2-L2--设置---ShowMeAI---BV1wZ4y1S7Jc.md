@@ -10,17 +10,9 @@ Cious。Now this is Jupiter notebooks， which is that way I'm going to do every
 
 ![](img/1f5782138b1dd6d829937e1517a2eda6_3.png)
 
-First， just to set up everything is to import nuy， I'm also going to import pandas and Im going to import Madplotlib and of course。
+First， just to set up everything is to import nuy， I'm also going to import pandas and Im going to import Madplotlib and of course。 I am going to import seaborn kind of hard to do a seaborn tutorial if you don't do that going to do a couple other things here。
 
- I am going to import seaborn kind of hard to do a seaborn tutorial if you don't do that going to do a couple other things here。
-
- I'm going to set it up so that my plots are going to show up directly inside of my Jupiter notebook like this。
-
- and then I'm going to add a couple other commands for auto reloading。
-
-
-
-![](img/1f5782138b1dd6d829937e1517a2eda6_5.png)
+ I'm going to set it up so that my plots are going to show up directly inside of my Jupiter notebook like this。 and then I'm going to add a couple other commands for auto reloading。![](img/1f5782138b1dd6d829937e1517a2eda6_5.png)
 
 ![](img/1f5782138b1dd6d829937e1517a2eda6_6.png)
 
@@ -28,12 +20,6 @@ First， just to set up everything is to import nuy， I'm also going to import 
 
 ![](img/1f5782138b1dd6d829937e1517a2eda6_8.png)
 
-And you don't need to do these， but it may help you out All right。
-
- so everything is a set up and then of course I just hit control and return to load everything the way we have there。
-
-
-
-![](img/1f5782138b1dd6d829937e1517a2eda6_10.png)
+And you don't need to do these， but it may help you out All right。 so everything is a set up and then of course I just hit control and return to load everything the way we have there。![](img/1f5782138b1dd6d829937e1517a2eda6_10.png)
 
 ![](img/1f5782138b1dd6d829937e1517a2eda6_11.png)

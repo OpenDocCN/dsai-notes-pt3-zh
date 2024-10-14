@@ -1,90 +1,26 @@
 # 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞ - P2：L1.2- Hugging Face流水线功能 - ShowMeAI - BV1Jm4y1X7UL
 
-It's type end function。The pipeline function is the most I level API of the Transformers library。
+It's type end function。The pipeline function is the most I level API of the Transformers library。It groupsgroup together all the steps to go from vertex to usable predictions。The we used is at the core of a pipeline， but the pipeline also include all the necessary prepoing since the model does not expect texts but number。As well as some post processing to make the output of the model human readable。
 
-It groupsgroup together all the steps to go from vertex to usable predictions。
+Let's look at the first things example Paul with the sentiment analysis lies pipeline。This pipeline performs text classification on a given input and determines if it's positive or negative。Here it attributed the positive label on the given text， with a confidence of 95%。You can pass multiple texts to the same pipeline， which will be processed and passed through the model together as a batch。
 
-The we used is at the core of a pipeline， but the pipeline also include all the necessary prepoing since the model does not expect texts but number。
+The output is a list of individual results in the same order as the input text。Here we find the same label and score for the first text。 and the second text is church negative with a confidence of 99。9%。The zero shot classification pipeline is a more general text classification pipeline。
 
-As well as some post processing to make the output of the model human readable。
+It allows you to provide the labels you want。Here we want to classify our input text along the labels education。 politics， and business。The pipeline successfully recognizes it's more about education than the other labels。With a confidence of 84%。Moving on to our tasks， the text generation pipeline will to complete a given prompt。The output is generated with a bit of randomness， so it changes each time you call the generator object on a given prompt。
 
-Let's look at the first things example Paul with the sentiment analysis lies pipeline。
+U until now， we've used the Bplan API with a default model associated to each task。But you can use it with any model that has been pretrained or fine tune on this task。Going on the model H， again F that go slash models。You can filter the available models by task。The defaultform adults used in our previous example was GPT2。
 
-This pipeline performs text classification on a given input and determines if it's positive or negative。
+ but were many more models available and not just in English。Let's go back to the next generation pipeline and load it with another model， dist GPT2。This is a lighter version of GPT2 created by the Eingface team。When applying the pipeline to a given prompt， we can specify several arguments。
 
-Here it attributed the positive label on the given text， with a confidence of 95%。
+Such as the maximum length of the generated text， all the number of sentences we want to return since there is some randomness in the generation。Generating text by guess in X2 ininess intense， why the pering objective of GPD2。The field mass pipeline is a per objective of Bro， which is to guess the value of mass qua。In this case， we ask the two most likely values for the missing words according to the model。
 
-You can pass multiple texts to the same pipeline， which will be processed and passed through the model together as a batch。
+ and get mathematical or computational as possible answers。And task transformer model than per form is to classify each word in a sentence instead of the sentence as a wall。One example of this is named entity recognition。Which is the task of identifying entities such as persons。 organizations， or locations in a sentence。Here the model correctly finds the person， sva。
 
-The output is a list of individual results in the same order as the input text。
+ the organization， againface， as well as the location Brooklyn inside the input text。The group entities equal2 argument use is to make the pipeline group together the different walls linked to the same entity。 such as eggging and face here。Another task available with the byg API is extractive question and sorry。Providing a context and a question， the model will identify the span of text in the context containing the answer to the question。
 
-Here we find the same label and score for the first text。
+Getting short summaries of very egogaicals is also something the Transers library can help with with the summarization bike。Finally， the last task supported by the pipelineline API is translation。Here we use a French English model found on the Mo hub to get the English version of our input text。Here is a brief summary of all the taskss we've looked into in this video。Drave my mode。
 
- and the second text is church negative with a confidence of 99。9%。
-
-The zero shot classification pipeline is a more general text classification pipeline。
-
-It allows you to provide the labels you want。Here we want to classify our input text along the labels education。
-
- politics， and business。The pipeline successfully recognizes it's more about education than the other labels。
-
-With a confidence of 84%。Moving on to our tasks， the text generation pipeline will to complete a given prompt。
-
-The output is generated with a bit of randomness， so it changes each time you call the generator object on a given prompt。
-
-U until now， we've used the Bplan API with a default model associated to each task。
-
-But you can use it with any model that has been pretrained or fine tune on this task。
-
-Going on the model H， again F that go slash models。You can filter the available models by task。
-
-The defaultform adults used in our previous example was GPT2。
-
- but were many more models available and not just in English。
-
-Let's go back to the next generation pipeline and load it with another model， dist GPT2。
-
-This is a lighter version of GPT2 created by the Eingface team。
-
-When applying the pipeline to a given prompt， we can specify several arguments。
-
-Such as the maximum length of the generated text， all the number of sentences we want to return since there is some randomness in the generation。
-
-Generating text by guess in X2 ininess intense， why the pering objective of GPD2。
-
-The field mass pipeline is a per objective of Bro， which is to guess the value of mass qua。
-
-In this case， we ask the two most likely values for the missing words according to the model。
-
- and get mathematical or computational as possible answers。
-
-And task transformer model than per form is to classify each word in a sentence instead of the sentence as a wall。
-
-One example of this is named entity recognition。Which is the task of identifying entities such as persons。
-
- organizations， or locations in a sentence。Here the model correctly finds the person， sva。
-
- the organization， againface， as well as the location Brooklyn inside the input text。
-
-The group entities equal2 argument use is to make the pipeline group together the different walls linked to the same entity。
-
- such as eggging and face here。Another task available with the byg API is extractive question and sorry。
-
-Providing a context and a question， the model will identify the span of text in the context containing the answer to the question。
-
-Getting short summaries of very egogaicals is also something the Transers library can help with with the summarization bike。
-
-Finally， the last task supported by the pipelineline API is translation。
-
-Here we use a French English model found on the Mo hub to get the English version of our input text。
-
-Here is a brief summary of all the taskss we've looked into in this video。Drave my mode。
-
- so with the influence switch jets in the modern hub。
-
-
-
-![](img/26a82ad66929f50aa4d393256dcbc298_1.png)
+ so with the influence switch jets in the modern hub。![](img/26a82ad66929f50aa4d393256dcbc298_1.png)
 
 。
 

@@ -2,195 +2,56 @@
 
 ![](img/490c3ee68650a01d4e089ac56f8d78b1_0.png)
 
-In this tutorial， I'm going to show you one way to add check boxes into your Excel spreadsheets and we'll look at how that can be useful to you In a previous video。
+In this tutorial， I'm going to show you one way to add check boxes into your Excel spreadsheets and we'll look at how that can be useful to you In a previous video。 I showed you how to use a form control here on the developer tab in the controls group。
 
- I showed you how to use a form control here on the developer tab in the controls group。
+ You can insert form controls。 And I showed you an example of one of those。 There was a lot of interest in that video。 And so I promised to make another form control video and here it is。 So you can see in this spreadsheet， I have an employee list with some basic information about the employees in a hypothetical company。 And I would like to create a couple of columns with check boxes。 So， for example。
 
- You can insert form controls。 And I showed you an example of one of those。
+ have they updated their contact information for the year 2020。 and have they completed the driver's safety training。 And there really are two or three different ways to add check boxes and to think about them。 I'd like to show you the easiest example first。 So here in cell E2， I would like to create。
 
- There was a lot of interest in that video。 And so I promised to make another form control video and here it is。
+Checkbox Now， the absolute first step that you need to do is to make sure that you have the developer tab。 It's not there by default。 So for many of you， you won't see that the way you get the developer tab。 there's a couple of ways you could click on here。 but probably the easiest way is to right click on the ribbon。 So I'll just right click here。 customize the ribbon。
 
- So you can see in this spreadsheet， I have an employee list with some basic information about the employees in a hypothetical company。
+ it brings up some options that I can use to change the way the ribbon looks and what options appear there。 and I'm just gonna go here to the right side where it says main tabs。 and you'll notice that I have developer checked。 if you don't。 you need to check that if you want to add checkbox like I'm about to show So I'll click okay I have the developer tab。
 
- And I would like to create a couple of columns with check boxes。 So， for example。
+ So I would like to add a checkbox right here。 all I need to do is make sure I'm on the developer tab in the controls group。 and I click on insert， here are all the form controls。 Now there's two sets of form controls。 There's active x controls。 those are a little bit harder but more powerful。 But in this case。 I don't。Need anything that powerful。 I'll just go with regular form controls。 These are easier。
 
- have they updated their contact information for the year 2020。
+ and they'll do the job in this case。 So here it is checkbox form control。 I'll just click and then I need to click on the screen where I want that checkbox to appear。 So I'll click right there。 Now， it didn't quite go in where I want it to be。 And if I click away。 you can see that。 And if I click back on it， look what happened it just check the box。 Well。
 
- and have they completed the driver's safety training。
+ I want to move it up a little bit。 and line it up correctly with Gina Puen。 So the way to do this。 you can't left click and drag you have to right click and drag。 So not your typical process for moving something。 but just because of the nature of form controls。 you do have to use right click drag in order to move these form controls in many cases。
 
- And there really are two or three different ways to add check boxes and to think about them。
+ So I'll click move here。 and that's a lot better。 Now you'll notice the checkbox comes in with some text。 Sometimes you want that text。 sometimes you don't in this case。I do want to use the text。 but I want to change what the text says。 So I'm gonna right click on it。 click edit text and I get a cursor now that I can use to erase。
 
- I'd like to show you the easiest example first。 So here in cell E2， I would like to create。
+ So I just tapped the right arrow key and I'm going use the delete key on the keyboard to delete what's there and I'll just type in updated。 So if this checkbox is checked， I know that this person has updated their contact information recently I'll uncheck that for now So now I need to do all of that all over again right for Marcelinina Rerepo for Regia Lofts and for all of these other wonderful people。
 
-Checkbox Now， the absolute first step that you need to do is to make sure that you have the developer tab。
+ Well， the good news is that you can click on in this case E2 and you can use the autofill handle。 this little square in the lower right corner of the cell that's selected you can click and drag and pull that down and look what it does it just copies the contents of that cell all the way down。
 
- It's not there by default。 So for many of you， you won't see that the way you get the developer tab。
+ and in this case the cell had。In it， a form control。 So that's a big relief that you can just click and drag to add these check boxes all the way down the spreadsheet。 So that really is pretty easy， pretty doable， right， to add simple check boxes。 Well。 I want to show you a little bit harder example。 But I think it'll be rewarding for you to watch this。
 
- there's a couple of ways you could click on here。 but probably the easiest way is to right click on the ribbon。
+ It is possible to use these check boxes for more than just a visual cu that something has been completed or that some characteristic can be applied to this person or thing。 So I'm gonna click here on F to in this case。 again， on the developer tab in the controls group。
 
- So I'll just right click here。 customize the ribbon。
+ I will click insert checkbox and do the same steps， right。 click and drag to put it in the proper place。 In this case。 I'm going right click on it and just delete the text just so that you can see that you do have both options。 So the checkbox now， just simply means that yes， they did complete the driver' safety training。
 
- it brings up some options that I can use to change the way the ribbon looks and what options appear there。
+ But next， I'm going to right click on the。😊，Checkbox and I'm gonna go down to format control。 And this brings up some options for that checkbox。 What's the default value of that checkbox unchecked or checked or mixed mixed is basically grayed out。 I'm going go with unchecked。 That's the default。 next， there's an option for a cell link。
 
- and I'm just gonna go here to the right side where it says main tabs。
+ So I can link this checkbox to a cell。 And the results of this checkbox can go to that other cell。 So I'm gonna click here on this arrow。 It's a button。 So I click there。 And now it hides the rest of the options。 And now I can just click on the cell that I want to be linked to this checkbox。 So I'm gonna click here on G2 and then I can go back and click that arrow again。 That's great。
 
- and you'll notice that I have developer checked。 if you don't。
+ if I want to， I can add some 3D shading to the checkbox。 let's see what that looks like。 So now I click okay And you can see my checkbox now does have some 3D shading。 That's kind of cool。 Now， look what happens when I check the box。Because I linked cell G2 to the check box。 It's telling me whether it's true or not that the box is checked。
 
- you need to check that if you want to add checkbox like I'm about to show So I'll click okay I have the developer tab。
+ And it's also saying it's true that they have had the driver safety training。 right。 that's all linked up。 So this is great。 I like this a lot。 So now let's try the same thing that we did before。 Let's try the autofill handle to copy this down the page。 Now it's a little tricky here。
 
- So I would like to add a checkbox right here。 all I need to do is make sure I'm on the developer tab in the controls group。
+ sometimes if you click， you might be clicking on the checkbox。 So just be careful。 you might need to right click in order to select the cell。 But just get that same autofill handle and you can copy it down。 Now， let's see if it works。 Notice when I check one checkbox， they all get checked。 And they're all working off of G2。
 
- and I click on insert， here are all the form controls。 Now there's two sets of form controls。
+ And so that's a problem。 I need to right click on my second checkbox and go to form control。 and I need to update this to be G3。 and then I'll go back， click O。And I'll click away。 Let's try it now。 Okay， so now it's working independently from the other ones。 And so this is one of the downsides to the way the checkbox form control works in Excel。
 
- There's active x controls。 those are a little bit harder but more powerful。 But in this case。
+ I am gonna have to update each of these。 Now， learning the pattern， I can just go in and type。 I can just type4 for G4。 And it works。 So I'll be honest that this is a little bit of a hassle。 especially if you have a giant spreadsheet。 That's why I think in this case。 the example of a list of employees for a small business or a midsized business。
 
- I don't。Need anything that powerful。 I'll just go with regular form controls。 These are easier。
+ I think that's a good example of when I would do this more difficult。 more complicated kind of checkbox。 because this way it's not an outrageous amount of work。 If I had a spreadsheet with1 thousand records。 I don't think this would be a wise way to create checkboxes。 And there are other ways that you can get to something similar to this。 In my opinion。
 
- and they'll do the job in this case。 So here it is checkbox form control。
+ these are the best methods for adding checkbox。But this is the downside what I just showed that you have to update the cell reference。 If you want to use the data the way I'm about to show。 So give me a minute to fix the rest of these form control cell links。 and then I'll resume the video。 so I've finished updating these and now you can see that I can very easily mark whether or not each employee has completed their driver safety training。
 
- I'll just click and then I need to click on the screen where I want that checkbox to appear。
+ Now the nice thing about having this report false or true is that then you could set up a formula basically an if statement you could click here so this cell is equal to if and then you could basically say if this cell says true。 then do something you could also use conditional formatting as well。 So for example。
 
- So I'll click right there。 Now， it didn't quite go in where I want it to be。 And if I click away。
+ I could have the employees who have not completed the driver safety training highlight in red。 So there's a visual cu saying that they need to get this completed。 And then of course。 if I wanted to I could even hide this column just by。![](img/490c3ee68650a01d4e089ac56f8d78b1_2.png)
 
- you can see that。 And if I click back on it， look what happened it just check the box。 Well。
-
- I want to move it up a little bit。 and line it up correctly with Gina Puen。 So the way to do this。
-
- you can't left click and drag you have to right click and drag。
-
- So not your typical process for moving something。 but just because of the nature of form controls。
-
- you do have to use right click drag in order to move these form controls in many cases。
-
- So I'll click move here。 and that's a lot better。 Now you'll notice the checkbox comes in with some text。
-
- Sometimes you want that text。 sometimes you don't in this case。I do want to use the text。
-
- but I want to change what the text says。 So I'm gonna right click on it。
-
- click edit text and I get a cursor now that I can use to erase。
-
- So I just tapped the right arrow key and I'm going use the delete key on the keyboard to delete what's there and I'll just type in updated。
-
- So if this checkbox is checked， I know that this person has updated their contact information recently I'll uncheck that for now So now I need to do all of that all over again right for Marcelinina Rerepo for Regia Lofts and for all of these other wonderful people。
-
- Well， the good news is that you can click on in this case E2 and you can use the autofill handle。
-
- this little square in the lower right corner of the cell that's selected you can click and drag and pull that down and look what it does it just copies the contents of that cell all the way down。
-
- and in this case the cell had。In it， a form control。
-
- So that's a big relief that you can just click and drag to add these check boxes all the way down the spreadsheet。
-
- So that really is pretty easy， pretty doable， right， to add simple check boxes。 Well。
-
- I want to show you a little bit harder example。 But I think it'll be rewarding for you to watch this。
-
- It is possible to use these check boxes for more than just a visual cu that something has been completed or that some characteristic can be applied to this person or thing。
-
- So I'm gonna click here on F to in this case。 again， on the developer tab in the controls group。
-
- I will click insert checkbox and do the same steps， right。
-
- click and drag to put it in the proper place。 In this case。
-
- I'm going right click on it and just delete the text just so that you can see that you do have both options。
-
- So the checkbox now， just simply means that yes， they did complete the driver' safety training。
-
- But next， I'm going to right click on the。😊，Checkbox and I'm gonna go down to format control。
-
- And this brings up some options for that checkbox。
-
- What's the default value of that checkbox unchecked or checked or mixed mixed is basically grayed out。
-
- I'm going go with unchecked。 That's the default。 next， there's an option for a cell link。
-
- So I can link this checkbox to a cell。 And the results of this checkbox can go to that other cell。
-
- So I'm gonna click here on this arrow。 It's a button。 So I click there。
-
- And now it hides the rest of the options。 And now I can just click on the cell that I want to be linked to this checkbox。
-
- So I'm gonna click here on G2 and then I can go back and click that arrow again。 That's great。
-
- if I want to， I can add some 3D shading to the checkbox。 let's see what that looks like。
-
- So now I click okay And you can see my checkbox now does have some 3D shading。 That's kind of cool。
-
- Now， look what happens when I check the box。Because I linked cell G2 to the check box。
-
- It's telling me whether it's true or not that the box is checked。
-
- And it's also saying it's true that they have had the driver safety training。 right。
-
- that's all linked up。 So this is great。 I like this a lot。
-
- So now let's try the same thing that we did before。
-
- Let's try the autofill handle to copy this down the page。 Now it's a little tricky here。
-
- sometimes if you click， you might be clicking on the checkbox。 So just be careful。
-
- you might need to right click in order to select the cell。
-
- But just get that same autofill handle and you can copy it down。 Now， let's see if it works。
-
- Notice when I check one checkbox， they all get checked。 And they're all working off of G2。
-
- And so that's a problem。 I need to right click on my second checkbox and go to form control。
-
- and I need to update this to be G3。 and then I'll go back， click O。And I'll click away。
-
- Let's try it now。 Okay， so now it's working independently from the other ones。
-
- And so this is one of the downsides to the way the checkbox form control works in Excel。
-
- I am gonna have to update each of these。 Now， learning the pattern， I can just go in and type。
-
- I can just type4 for G4。 And it works。 So I'll be honest that this is a little bit of a hassle。
-
- especially if you have a giant spreadsheet。 That's why I think in this case。
-
- the example of a list of employees for a small business or a midsized business。
-
- I think that's a good example of when I would do this more difficult。
-
- more complicated kind of checkbox。 because this way it's not an outrageous amount of work。
-
- If I had a spreadsheet with1 thousand records。 I don't think this would be a wise way to create checkboxes。
-
- And there are other ways that you can get to something similar to this。 In my opinion。
-
- these are the best methods for adding checkbox。But this is the downside what I just showed that you have to update the cell reference。
-
- If you want to use the data the way I'm about to show。
-
- So give me a minute to fix the rest of these form control cell links。
-
- and then I'll resume the video。 so I've finished updating these and now you can see that I can very easily mark whether or not each employee has completed their driver safety training。
-
- Now the nice thing about having this report false or true is that then you could set up a formula basically an if statement you could click here so this cell is equal to if and then you could basically say if this cell says true。
-
- then do something you could also use conditional formatting as well。 So for example。
-
- I could have the employees who have not completed the driver safety training highlight in red。
-
- So there's a visual cu saying that they need to get this completed。 And then of course。
-
- if I wanted to I could even hide this column just by。
-
-
-
-![](img/490c3ee68650a01d4e089ac56f8d78b1_2.png)
-
-Right clicking on the column letter。 I could go down to hide。 And that true fault， true fault。
-
- It still exists is still in the spreadsheet， but it's hidden from the view of the people that look at the spreadsheet。
-
- So now it's just about the text boxes， at least visually。
-
- If you're interested in seeing how I could make the records light up in red or green or any other color by using the conditional formatting and also the ways I could use if functions to do some things with this spreadsheet。
+Right clicking on the column letter。 I could go down to hide。 And that true fault， true fault。 It still exists is still in the spreadsheet， but it's hidden from the view of the people that look at the spreadsheet。 So now it's just about the text boxes， at least visually。 If you're interested in seeing how I could make the records light up in red or green or any other color by using the conditional formatting and also the ways I could use if functions to do some things with this spreadsheet。
 
  leave me a message in the comments below。 And I'll consider making a follow up video。
-

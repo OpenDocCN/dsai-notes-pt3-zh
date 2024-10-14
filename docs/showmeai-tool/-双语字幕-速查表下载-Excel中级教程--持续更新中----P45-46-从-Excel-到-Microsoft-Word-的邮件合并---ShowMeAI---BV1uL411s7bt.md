@@ -2,325 +2,85 @@
 
 ![](img/9a4671cff4a74eb9e893e1edbd30bc84_0.png)
 
-In this video， I will show you how to do a mail merge from Microsoft Excel to Microsoft Word。
+In this video， I will show you how to do a mail merge from Microsoft Excel to Microsoft Word。 And let me show you what I mean by that Here I have a form letter that I've written up for a hypothetical small business。 and it's just about ready to be sent out to all of my business contacts。 But you see that some aspects of the form letter need to be customized。
 
- And let me show you what I mean by that Here I have a form letter that I've written up for a hypothetical small business。
+ Instead of saying dear recipient name， I want the actual person's name to be inserted there。 Also。 the recipient's company name。 their address and other details。 I have contact information here in Microsoft Excel。 These are my business contacts with names。 company name， address， et cetera。 And the good news is that by using mail merge。
 
- and it's just about ready to be sent out to all of my business contacts。
+ I don't have to recreate this form letter 50 times once for each of my contacts。 Instead。 I can simply pull the important data from this Excel spreadsheet。 Let's look at how to do that。 So step 1 is to take a close。😊，Look at the Excel spreadsheet with the contact information。 In my case， this is a spreadsheet that I have customized and I've created from scratch and added to and been pretty careful with。
 
- But you see that some aspects of the form letter need to be customized。
+ I've organized it the way I want it to be organized。 But in your case。 you might be exporting this data from another program or another source。 And so the first thing you need to do is make sure that your Excel data is in good shape。 For example， it really helps to have a header row。
 
- Instead of saying dear recipient name， I want the actual person's name to be inserted there。 Also。
+ you can see row number one for me has column headings。 This is gonna to be very helpful when doing a mail merge。 Each of these header names will basically become a placeholder in my Microsoft Word document。 Another thing you might consider is， do you want the business addresses or the contact addresses to be split up like this。
 
- the recipient's company name。 their address and other details。
+ You can see I've got the street address here， the city， the state and zip code all separated out。 Now， in your case， it may not be necessary to do that。 It might be okay just to keep。The entire address together in one column。 there are pros and cons。 But just be aware that if you want to change it， it's best to do it before the mail merge。
 
- I have contact information here in Microsoft Excel。 These are my business contacts with names。
+ Sam with names。 Do you really want first name and last name separated out。 It should be okay。 but you just want to try to make sure that your data is ready to be merged into word。 I'm satisfied with this data。 So I'll go ahead at this point。 I'm going to just exit out of this document， In fact， I want to save it， and then exit。
 
- company name， address， et cetera。 And the good news is that by using mail merge。
+ and then the data will be ready to be pulled into Microsoft Word。 Now， back in Microsoft word。 All I have to do to customize my form letter for each recipient in that Excel spreadsheet is use this mailings tab。 So I'll click on mailings and it opens up the mailings ribbon。 And here toward the left。 notice it says start mail merge。 And it's tempting to just click that start mail merge button。
 
- I don't have to recreate this form letter 50 times once for each of my contacts。 Instead。
+ Instead， though， I need to first select recipients。 This gives me three options。 I could pull my。From my outlook contacts that's definitely a good option。 If you use Microsoft Outlook a lot。 you can also click here to type a new list。 I could go in and type in contact information for all 62 people that I want to mail this to。 but that's gonna be a lot of work and it's unnecessary in this case。
 
- I can simply pull the important data from this Excel spreadsheet。 Let's look at how to do that。
+ So I'll cancel out the option I really want to use is the second one Use existing list So I click there。 and hopefully I know where I stored that Excel spreadsheet In my case I stored it on the desktop so I can just click there。 and there is my contact list for the mail merge In your case you may need to browse your documents you may need to search your computer in order to find where you stored the source spreadsheet。 but there it is for me， I'll just double click on it to open it up。
 
- So step 1 is to take a close。😊，Look at the Excel spreadsheet with the contact information。
+ And now Microsoft Word is just trying to verify what part of that Excel workbook do I want to use for my recipient source。 And in this case， there's only one option sheet number one my Excel。Contacts list only has one spreadsheet that has data。 And so word figured out。 that's probably the1 I want。 And it is。 It's important to also notice this checkbox in the lower left corner。
 
- In my case， this is a spreadsheet that I have customized and I've created from scratch and added to and been pretty careful with。
+ First row of data contains column headers。 If you remember。 I said it's easier to do a mail merge if you have column headers， which I do in my spreadsheet。 So I need to make sure that that is checked and then click O。 Now， when I clicked okay。 it looked like nothing happened。 But if you were watching closely。
 
- I've organized it the way I want it to be organized。 But in your case。
+ you may have noticed that some of these buttons changed a little bit。 They look a little different。 Many of them were grayed out like this。 but now are not。 And one of the changes is this notice that there's now edit recipient list。 Now that I've selected my recipient list， I can go in and click edit and you can see all of the names that were in sheet one of my workbook in Excel are now included here in my recipient list。
 
- you might be exporting this data from another program or another source。
+ Now， what if I want to send this form letter to everybody on this list except。For Lana。 Well。 I can just uncheck her name。 What if I want to send it to everyone except for people that live in one particular state。 Well， I can click filter， and I can filter out based on the state that the contact lives in or based on any of these other things。 zip code maybe notice that you can also sort， which really shouldn't make that much difference。
 
- And so the first thing you need to do is make sure that your Excel data is in good shape。
+ but if you want to， you can sort your list of recipients。 You can also look for duplicates。 and you can even try to validate the addresses to make sure that their real addresses。 So there's lots of great options here。 I'm going to put Lana back into the list of recipients。 and I'll click O。 Okay， now I'm ready to begin identifying where I want information from Excel to be pulled into Microsoft word。
 
- For example， it really helps to have a header row。
+ So this information here in the upper left is information about my fictional small business。 So I don't need that to change based on who the recipient is。 But this。 I do need to change the recipient name。And if you look below， there's another recipient name。 So I'm going to highlight all of that， including the comma。 That's what I'd like to replace。
 
- you can see row number one for me has column headings。
+ So now on the mailings tab， mailing's ribbon here in the right an insert fields group。 Notice that there is a greeting line button。 If I click on that。 it makes it really easy to customize this。 So I can say De， so and so or two， so and so。 or just leave out the Deer or two。 I think I'll leave it with Dear。
 
- This is gonna to be very helpful when doing a mail merge。
+ Do I want the recipient's entire name to be listed， or is that just a little bit too much。 Maybe I just want the last name， Mr。 Rndall， or maybe I would want to just use the first name。 And then I get to decide， do I want a comma or a semicolon or nothing after the dear Joshua in this case。 And next， look at this， it says greeting line for invalid recipient names。 So from time to time。
 
- Each of these header names will basically become a placeholder in my Microsoft Word document。
+ there's an error。 if there is an error， what do I want the default message to be。 And this is it。Dear sir or ma'am， But there are other options here as well。 Now， look what we have below that。 This is great。 It's a preview to make sure that what I'm doing is going to work。 So dear Lana。 dear Ellis， De Douglas， for the most part， these seem to be first names。
 
- Another thing you might consider is， do you want the business addresses or the contact addresses to be split up like this。
+ and it seems to be working really well。 So I can browse through quite a few of these in just a preview。 Now， if I notice some problems。 You know， maybe it says dear Texas or dear Louisiana， in that case。 I could tell that there was a problem。 In order to fix that， all I have to do is go to match fields。 And this shows me how Microsoft word is trying to figure out the data from Excel。Here at the left。
 
- You can see I've got the street address here， the city， the state and zip code all separated out。
+ word gives me some common data fields that are in form letters。 And then here at the right。 these are the column headings from my source from my Excel workbook。 So it matched first name to first name。 Last name to last name。 But a lot of these other things aren't matched。 And it's probably okay。
 
- Now， in your case， it may not be necessary to do that。 It might be okay just to keep。
+ I don't need to have something for every possible field。 But if there is a mistake。 I can correct that here。 for now， I'll just click O and click O。 Now， notice what's happened。 Microsoft word has put greeting line right here。 Now that it's there。 I don't need to keep this original wording or text。 So I can highlight it。
 
-The entire address together in one column。 there are pros and cons。
+ tap delete or backspace on the keyboard。 And that one part of my form letter is now ready。So it looks like the rest of the letter looks good。 But up at the top， if you recall。 I want to have the recipient's name again here。 and then the rest of this information。 So just like before I'm going to highlight recipient name， you don't actually have to do that。
 
- But just be aware that if you want to change it， it's best to do it before the mail merge。
+ I just find it a useful way to approach the task。 But anyway， I highlight recipient name。 This time。 it's not quite a greeting line。 So instead， I'm going to select this。 insert merge field。 Now。 for some reason， it's grayed out。 I can't use it。 I've noticed that whenever this happens。 I can just click away from my selected text， and then just triple click on it fast。
 
- Sam with names。 Do you really want first name and last name separated out。 It should be okay。
+ And sometimes that works。 but look what it did。 Now I can select insert merge field。 When I click it， it gives me a list of all of the pieces of data from my Excel worksheet。 You should recognize this。 So I'll go with first name。 I'll click insert and last name。 and I'll click insert。 and then I can click close。 Now that I've got those in there。
 
- but you just want to try to make sure that your data is ready to be merged into word。
+ I can delete company name。 Now， I've left out one little step。😊。But I want to save that for a little bit later and highlight it。 So next。 I'll move on to street address。 I'll select the street address and the city state zip code。 all of it。 It's all highlighted， and I'll come up here。
 
- I'm satisfied with this data。 So I'll go ahead at this point。
+ and I could go here again to insert merge field。 and I could piece together each aspect of an address。 or notice that there is a specific button for address block。 So I can just click there。 and it gives me a preview。 Ellen Hawkins Chinotic music and here's the address。 And I can cycle through my previews just by clicking these buttons here at the right and also at the left。
 
- I'm going to just exit out of this document， In fact， I want to save it， and then exit。
+ Now， the more I look at this， the more I can see that there's a problem。 The address is missing the street address。 It's just got the city， state and zip code。 So similar to what I showed you earlier， I can go here to match fields。 And I'm going to take a look at address。 address 1 not matched。 So here's the problem。
 
- and then the data will be ready to be pulled into Microsoft Word。 Now， back in Microsoft word。
+ All I have to do is click the arrow and select business address in my。😊，Case in your document。 it might be a different phrase or a different heading。 but in my case。 that's where the street address is stored。 Now I can click O。 Let's see if that fixes it。 Stephanie Ba Sth City， there's the street address。 there's the city state and zip code。
 
- All I have to do to customize my form letter for each recipient in that Excel spreadsheet is use this mailings tab。
+ So match fields can really save you when there are errors in the output of the mail merge。 Not here at the left， you can customize how the name is displayed。 You can also choose to take out the company name if you don't want it included。 I do want it。 and there are other options as well that you can try。 I'm happy with how this looks， I'll click O。
 
- So I'll click on mailings and it opens up the mailings ribbon。 And here toward the left。
+ Now I can delete the previous text that I had there。 And I think this document now is ready for a mail merge。 before I show that。 I do want you to know that it is possible to insert anywhere in this document。 Anything that is included in this insert merge field list。 So I could put in email addresses。
 
- notice it says start mail merge。 And it's tempting to just click that start mail merge button。
+ I could put in phone numbers or anything else listed。Here， and again。 this information is being pulled from my Excel workbook。 Okay， before I click finish and merge。 I want to click preview results。 If you recall， I said I had missed a step or two。 let's take a look at the mistakes that I made。 In this case， I have Stephanie Ba repeated。 Also。
 
- Instead， though， I need to first select recipients。 This gives me three options。 I could pull my。
+ there's no space between the word Stephanie and the word ball。 Now， in this preview results mode。 you can just go in and fix the mistake。 So let's try that。 Now that I've put a space between Stephanie and ball。 If I go up and click the next arrow to look at the next recipient。 Look， it's fixed for genie。
 
-From my outlook contacts that's definitely a good option。 If you use Microsoft Outlook a lot。
+ It's fixed for Aez and Reginald。 and all of these other people。 So that's one of the nice things about the preview results。 Turn it on and then make your changes。 Now you can turn it off。 It's a toggle so you can go back and forth。 and I could have made the same change here， outside of preview mode。 I could have put in a space。
 
- you can also click here to type a new list。 I could go in and type in contact information for all 62 people that I want to mail this to。
+ Okay， but the larger problem is the name is repeated twice。 When I set up the address block。I didn't think twice about it， but notice it is going to insert the recipient's name again。 So I don't need that first name at all。 So I'll highlight it， delete。 And just like before。 I can preview and see that it will fix it for all of the recipients。
 
- but that's gonna be a lot of work and it's unnecessary in this case。
+ and you'll notice it's changing the data here and here and anywhere else that I've inserted a merge field from Microsoft Excel。 If you'd like， you can click check for errors。 and you can see the three options there。 but in my case， I can tell that this is working exactly the way I want it to work。 So I'll click finish and merge。 And that gives me three options， I can edit individual documents。
 
- So I'll cancel out the option I really want to use is the second one Use existing list So I click there。
+ This would create basically 62 different separate documents one for each person that I'm gonna mail this to。 I could also send email messages that include this document。 And notice what it did。 It's pulling automatically from my source Excel spreadsheet。 It found that I had a column heading named email address and it automatically。
 
- and hopefully I know where I stored that Excel spreadsheet In my case I stored it on the desktop so I can just click there。
+Pick that I could then type in a subject line and double check all of these settings and then just click OK and it should open up outlook。 and I'll be able to send an email to each of these people。 In my case， though。 I just want to print the documents。 so I can click print And so even though this is just one page。 you can see it down here in the lower left page one of one。
 
- and there is my contact list for the mail merge In your case you may need to browse your documents you may need to search your computer in order to find where you stored the source spreadsheet。
+ I will be printing this directly to the printer。 and it will print actually 62 different times one for each record that I merged from Microsoft Excel。 and I can just click O select my printer and click O and it will print out one at a time。 At this point， if I think I might use this document again。 It's a good idea to go here to the file tab and save a copy of this document so I can easily bring it up。
 
- but there it is for me， I'll just double click on it to open it up。
-
- And now Microsoft Word is just trying to verify what part of that Excel workbook do I want to use for my recipient source。
-
- And in this case， there's only one option sheet number one my Excel。
-
-Contacts list only has one spreadsheet that has data。 And so word figured out。
-
- that's probably the1 I want。 And it is。 It's important to also notice this checkbox in the lower left corner。
-
- First row of data contains column headers。 If you remember。
-
- I said it's easier to do a mail merge if you have column headers， which I do in my spreadsheet。
-
- So I need to make sure that that is checked and then click O。 Now， when I clicked okay。
-
- it looked like nothing happened。 But if you were watching closely。
-
- you may have noticed that some of these buttons changed a little bit。 They look a little different。
-
- Many of them were grayed out like this。 but now are not。
-
- And one of the changes is this notice that there's now edit recipient list。
-
- Now that I've selected my recipient list， I can go in and click edit and you can see all of the names that were in sheet one of my workbook in Excel are now included here in my recipient list。
-
- Now， what if I want to send this form letter to everybody on this list except。For Lana。 Well。
-
- I can just uncheck her name。 What if I want to send it to everyone except for people that live in one particular state。
-
- Well， I can click filter， and I can filter out based on the state that the contact lives in or based on any of these other things。
-
- zip code maybe notice that you can also sort， which really shouldn't make that much difference。
-
- but if you want to， you can sort your list of recipients。 You can also look for duplicates。
-
- and you can even try to validate the addresses to make sure that their real addresses。
-
- So there's lots of great options here。 I'm going to put Lana back into the list of recipients。
-
- and I'll click O。 Okay， now I'm ready to begin identifying where I want information from Excel to be pulled into Microsoft word。
-
- So this information here in the upper left is information about my fictional small business。
-
- So I don't need that to change based on who the recipient is。 But this。
-
- I do need to change the recipient name。And if you look below， there's another recipient name。
-
- So I'm going to highlight all of that， including the comma。 That's what I'd like to replace。
-
- So now on the mailings tab， mailing's ribbon here in the right an insert fields group。
-
- Notice that there is a greeting line button。 If I click on that。
-
- it makes it really easy to customize this。 So I can say De， so and so or two， so and so。
-
- or just leave out the Deer or two。 I think I'll leave it with Dear。
-
- Do I want the recipient's entire name to be listed， or is that just a little bit too much。
-
- Maybe I just want the last name， Mr。 Rndall， or maybe I would want to just use the first name。
-
- And then I get to decide， do I want a comma or a semicolon or nothing after the dear Joshua in this case。
-
- And next， look at this， it says greeting line for invalid recipient names。 So from time to time。
-
- there's an error。 if there is an error， what do I want the default message to be。 And this is it。
-
-Dear sir or ma'am， But there are other options here as well。 Now， look what we have below that。
-
- This is great。 It's a preview to make sure that what I'm doing is going to work。 So dear Lana。
-
- dear Ellis， De Douglas， for the most part， these seem to be first names。
-
- and it seems to be working really well。 So I can browse through quite a few of these in just a preview。
-
- Now， if I notice some problems。 You know， maybe it says dear Texas or dear Louisiana， in that case。
-
- I could tell that there was a problem。 In order to fix that， all I have to do is go to match fields。
-
- And this shows me how Microsoft word is trying to figure out the data from Excel。Here at the left。
-
- word gives me some common data fields that are in form letters。 And then here at the right。
-
- these are the column headings from my source from my Excel workbook。
-
- So it matched first name to first name。 Last name to last name。
-
- But a lot of these other things aren't matched。 And it's probably okay。
-
- I don't need to have something for every possible field。 But if there is a mistake。
-
- I can correct that here。 for now， I'll just click O and click O。 Now， notice what's happened。
-
- Microsoft word has put greeting line right here。 Now that it's there。
-
- I don't need to keep this original wording or text。 So I can highlight it。
-
- tap delete or backspace on the keyboard。 And that one part of my form letter is now ready。
-
-So it looks like the rest of the letter looks good。 But up at the top， if you recall。
-
- I want to have the recipient's name again here。 and then the rest of this information。
-
- So just like before I'm going to highlight recipient name， you don't actually have to do that。
-
- I just find it a useful way to approach the task。 But anyway， I highlight recipient name。 This time。
-
- it's not quite a greeting line。 So instead， I'm going to select this。 insert merge field。 Now。
-
- for some reason， it's grayed out。 I can't use it。 I've noticed that whenever this happens。
-
- I can just click away from my selected text， and then just triple click on it fast。
-
- And sometimes that works。 but look what it did。 Now I can select insert merge field。
-
- When I click it， it gives me a list of all of the pieces of data from my Excel worksheet。
-
- You should recognize this。 So I'll go with first name。 I'll click insert and last name。
-
- and I'll click insert。 and then I can click close。 Now that I've got those in there。
-
- I can delete company name。 Now， I've left out one little step。😊。
-
-But I want to save that for a little bit later and highlight it。 So next。
-
- I'll move on to street address。 I'll select the street address and the city state zip code。
-
- all of it。 It's all highlighted， and I'll come up here。
-
- and I could go here again to insert merge field。 and I could piece together each aspect of an address。
-
- or notice that there is a specific button for address block。 So I can just click there。
-
- and it gives me a preview。 Ellen Hawkins Chinotic music and here's the address。
-
- And I can cycle through my previews just by clicking these buttons here at the right and also at the left。
-
- Now， the more I look at this， the more I can see that there's a problem。
-
- The address is missing the street address。 It's just got the city， state and zip code。
-
- So similar to what I showed you earlier， I can go here to match fields。
-
- And I'm going to take a look at address。 address 1 not matched。 So here's the problem。
-
- All I have to do is click the arrow and select business address in my。😊，Case in your document。
-
- it might be a different phrase or a different heading。 but in my case。
-
- that's where the street address is stored。 Now I can click O。 Let's see if that fixes it。
-
- Stephanie Ba Sth City， there's the street address。 there's the city state and zip code。
-
- So match fields can really save you when there are errors in the output of the mail merge。
-
- Not here at the left， you can customize how the name is displayed。
-
- You can also choose to take out the company name if you don't want it included。 I do want it。
-
- and there are other options as well that you can try。 I'm happy with how this looks， I'll click O。
-
- Now I can delete the previous text that I had there。
-
- And I think this document now is ready for a mail merge。 before I show that。
-
- I do want you to know that it is possible to insert anywhere in this document。
-
- Anything that is included in this insert merge field list。 So I could put in email addresses。
-
- I could put in phone numbers or anything else listed。Here， and again。
-
- this information is being pulled from my Excel workbook。 Okay， before I click finish and merge。
-
- I want to click preview results。 If you recall， I said I had missed a step or two。
-
- let's take a look at the mistakes that I made。 In this case， I have Stephanie Ba repeated。 Also。
-
- there's no space between the word Stephanie and the word ball。 Now， in this preview results mode。
-
- you can just go in and fix the mistake。 So let's try that。
-
- Now that I've put a space between Stephanie and ball。
-
- If I go up and click the next arrow to look at the next recipient。 Look， it's fixed for genie。
-
- It's fixed for Aez and Reginald。 and all of these other people。
-
- So that's one of the nice things about the preview results。 Turn it on and then make your changes。
-
- Now you can turn it off。 It's a toggle so you can go back and forth。
-
- and I could have made the same change here， outside of preview mode。 I could have put in a space。
-
- Okay， but the larger problem is the name is repeated twice。 When I set up the address block。
-
-I didn't think twice about it， but notice it is going to insert the recipient's name again。
-
- So I don't need that first name at all。 So I'll highlight it， delete。 And just like before。
-
- I can preview and see that it will fix it for all of the recipients。
-
- and you'll notice it's changing the data here and here and anywhere else that I've inserted a merge field from Microsoft Excel。
-
- If you'd like， you can click check for errors。 and you can see the three options there。
-
- but in my case， I can tell that this is working exactly the way I want it to work。
-
- So I'll click finish and merge。 And that gives me three options， I can edit individual documents。
-
- This would create basically 62 different separate documents one for each person that I'm gonna mail this to。
-
- I could also send email messages that include this document。 And notice what it did。
-
- It's pulling automatically from my source Excel spreadsheet。
-
- It found that I had a column heading named email address and it automatically。
-
-Pick that I could then type in a subject line and double check all of these settings and then just click OK and it should open up outlook。
-
- and I'll be able to send an email to each of these people。 In my case， though。
-
- I just want to print the documents。 so I can click print And so even though this is just one page。
-
- you can see it down here in the lower left page one of one。
-
- I will be printing this directly to the printer。 and it will print actually 62 different times one for each record that I merged from Microsoft Excel。
-
- and I can just click O select my printer and click O and it will print out one at a time。
-
- At this point， if I think I might use this document again。
-
- It's a good idea to go here to the file tab and save a copy of this document so I can easily bring it up。
-
- merge it with a different contacts list and send it to those other people。 Now。
-
- I want you to see that there's also an option to do this same kind of thing with envelopes。
-
- I can set up and。EnWith a mail merge and customize that envelope so that it can also be printed along with my form letter。
-
- If there's interest in this， I'd be happy to create another tutorial that reviews some of these steps and shows you how to create a mail merge envelope。
+ merge it with a different contacts list and send it to those other people。 Now。 I want you to see that there's also an option to do this same kind of thing with envelopes。 I can set up and。EnWith a mail merge and customize that envelope so that it can also be printed along with my form letter。 If there's interest in this， I'd be happy to create another tutorial that reviews some of these steps and shows you how to create a mail merge envelope。
 
 
 

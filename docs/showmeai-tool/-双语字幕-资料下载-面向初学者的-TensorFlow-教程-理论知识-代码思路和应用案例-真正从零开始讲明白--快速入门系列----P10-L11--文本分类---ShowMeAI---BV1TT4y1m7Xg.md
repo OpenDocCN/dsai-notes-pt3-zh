@@ -2,352 +2,92 @@
 
 ![](img/cf77d9b01a43fab5f293c40eb502060f_0.png)
 
-🎼，Hey， guys， and welcome to another Tensorflow tutorial。 In this video。
+🎼，Hey， guys， and welcome to another Tensorflow tutorial。 In this video。 we will learn how to use an R and N for text classification。 So last time I gave you a quick overview and showed you how we treat our input as a sequence。 and then create an R and N model。 And now we apply this to a very interesting task。
 
- we will learn how to use an R and N for text classification。
+ which is text classification from real worldor data。 So we analyze Twitter tweets and want to predict if the text is about a disaster event or not。 So here I'm in a two pointer notebook。 and I already imported the things we need。 And then the data set we are going to use， is available on kgggle。
 
- So last time I gave you a quick overview and showed you how we treat our input as a sequence。
+ So I put the link in the description， of course。 And this is called the disaster tweets。 So we want to predict which tweets are about real disasters and which are not。😊。And there are two files available。 so the training and testing CSsv。 but the testing CSsv doesn't include the labels。 So this is for the submission if you want to participate in this competition。
 
- and then create an R and N model。 And now we apply this to a very interesting task。
+ So I only downloaded this train do CSsv and then put it in my folder already and then we use pans to load the data so we can call panndas read CSsv and then the name of the file。 And now we if we have a look at the shape， then we see we have 7630 samples and then five columns。
 
- which is text classification from real worldor data。
+ So now let's have a look at the first five rows。 So here we see we get some additional information like the I。 the keyword and the location which we don't need now。 and then we have the text。 So this is the actual tweet。And then the target label。 So zero for no disaster and one for this is a disaster tweet。
 
- So we analyze Twitter tweets and want to predict if the text is about a disaster event or not。
+ So let's also analyze how many of both classes we have。So we have this many。 which are about an actual disaster and this many， which are not about a disaster。 So I guess it's pretty much balanced here。 I think that's that's okay。 And yeah。 So now we can go ahead and want to to preproces this text a little bit before we can use an R and N later。
 
- So here I'm in a two pointer notebook。 and I already imported the things we need。
+ So the first thing I want to do is to clean this data a little bit。 And I want to remove URL。 because it doesn't give us any information。 And I also want to remove punctuation。So for this。 I already implemented these helper functions。 So this one is using regular expressions。 And if you want to learn more about this， then I also have a full guide on my channel that you can check out。
 
- And then the data set we are going to use， is available on kgggle。
+And yeah， so now let's define these two functions。 And here， for example。 these are all the punctuation characters that we want to remove。So now if we have a look at this example， then here it finds one tweet with a URL。 and if we remove this， then it has only this format。So now with these two functions。
 
- So I put the link in the description， of course。 And this is called the disaster tweets。
+ we can simply for our data frames or penda this data frame。 we can call this map function and only for this。Text column。 So we say data frame dot text dot map。 And then these two functions。 And then again， we assign it to the text column。 So now this means we remove all the URLs and all the punctuation characters。
 
- So we want to predict which tweets are about real disasters and which are not。😊。
+So this is the first prepro I want to do。 and then I also want to remove stop words。 And for this。 we are going to use the famous N LTK libraries。 So this is a very popular library and Python for natural language processing。 and then you also probably have to say N LT K dot download。 And by the way。 you can simply install it with Pip。And then here I want to get all the stop words and then remove them。
 
-And there are two files available。 so the training and testing CSsv。
+ So by definition here， a stop word is commonly is a commonly used words。 such as D A N in that a search engine has been programmed to ignore。 So we want to ignore these stop words。 So we get all the stop words from N L T K。 And then we remove it again with a little helper function。 And let's here print the stop words。
 
- but the testing CSsv doesn't include the labels。 So this is for the submission if you want to participate in this competition。
+ So here you see all the different stop wordss。And then again。 we call this map function with this function。 and on the text column。 So this removes all the stop words。 And now let's have a look at some example text。 So this is the text column。And now we want to prepare this text so that we can use it for a R and N。
 
- So I only downloaded this train do CSsv and then put it in my folder already and then we use pans to load the data so we can call panndas read CSsv and then the name of the file。
+ So we， we cannot use it like this with all the strings。 So we somehow have to transform this to a representation that our model understands。And for this。 the first thing we want to do is count all the different words。 And here we want to make use of a very nice object， the counter object。
 
- And now we if we have a look at the shape， then we see we have 7630 samples and then five columns。
+ which is available in the collections module in Python。 and then we count all the unique words。 So we iterate over over the text column， and then we say for each text。 So basically for each line in this text column， we say we iterate over each line。 and then for each line， we split it。 So we get an array of all the different words。
 
- So now let's have a look at the first five rows。 So here we see we get some additional information like the I。
+And then we iterate over all the words and put it in our counter。 And then each time this word appears， we increase the counter by one。 So now if we do this and then return the counter and apply this function for the data frame text column。 then we get the counter and we get the length of the counter。 So this is the number of unique words。
 
- the keyword and the location which we don't need now。 and then we have the text。
+So we see that we have almost 18000 different words in all these tweets。So let's also have a look at the counter itself。 So this is basically looks like a dictionary。 So here the keys are the different words。 and then we have the count of this word here as a value。 So this is how the counter looks。 And what's also very nice with this counter object。
 
- So this is the actual tweet。And then the target label。
+ We can call this most common function。 So here we can have a look at the five， most common words。 So we see that the word like is the most common one and appears 345 times。😊，And yeah， then again。 let's assign this length of the counter to the to a variable and call this nu unique words。 So we need this later。 And now I want to split the data set into training and validation set。
 
- So zero for no disaster and one for this is a disaster tweet。
+ and for this， I define an integer of。This should be 80% of our whole data we want to use as training。 and then the rest of this。 So 20% for validation。 and then we can use the slicing on the data frame。 and then the first 80% of the samples is used for training and the rest for validation。 So now we get that。 And then we also So right now we still have the whole data frame。
 
- So let's also analyze how many of both classes we have。So we have this many。
+ So now we want to split the text and the labels and we can simply do this by assessing the different columns。 So we say train data frame dot text dots to nuy and the same for data frame dot target。 So we say these are our training sentences and our training labels。 And then again。 we do the same for the validation set。So if we have a look at both the training sentences shape and the validation sentences shape。
 
- which are about an actual disaster and this many， which are not about a disaster。
+ then we see that we clearly have more in our training set。 and now the next thing we want to do is to apply a tokenizer。 So with tokenization we vectorize a text corpus by turning each text into a sequence of integers。 So you will see an example in a second which makes this more clearer。
 
- So I guess it's pretty much balanced here。 I think that's that's okay。 And yeah。
+ But for now we want to import this tokenizer from Tensorflowcars dot preprocessing dot text。 and then we create a tokenizer object。 And for this we need to give it the number of unique words。 So that's why we calculate this earlier。 And then we have to call tokenizer dot fit on texts and then。the training sentences。 So only the training data here。 And now when we did this。
 
- So now we can go ahead and want to to preproces this text a little bit before we can use an R and N later。
+ we can get this word index。 So here each word has a unique index。 So let's say word index equals tokenizer dot word index and then have a look at this word index。And then we see each of these words has a unique index。 So this is what this tokenizer does。And then we can convert these text to a sequence， so we can call tokenizer dot texts to sequences and then give it the sentences。
 
- So the first thing I want to do is to clean this data a little bit。 And I want to remove URL。
+ So don't get confused by this。 we have the sentences。 then。 So this is the original text。 And then we get a sequence。 So this has the same size。 But now it has these unique indices。 So now we do this for the training set and the validation set。 And now here， for example。 I compare five samples of the training sentences and the corresponding sequences。
 
- because it doesn't give us any information。 And I also want to remove punctuation。So for this。
+ So let's print this。And this is how it looks like。 So now it maybe gets a little bit clearer。 So the sentence is the normal text。 And then after we applied the tokenization。 we get this sequence。 So now we have the same length of this array as the text。 But now we have an index for each word。So now now we have that。
 
- I already implemented these helper functions。 So this one is using regular expressions。
+ And now we want to do one more thing because right now the sequences can have a different length。 So that's what you can see here。 but we want to have the same length for every sequence。 And for this we apply padding。 So again， we import this we import Pat sequences from tensofflowcars do preprocessing do sequence。 and then we have to specify a maximum length。 So in this case we say it's 20 but you can play around with more or other ones here or maybe a tweet might be even longer than 20 different words。
 
- And if you want to learn more about this， then I also have a full guide on my channel that you can check out。
+ So you might increase this a little bit。 but then also your training might be longer。 So now when we specify this， we can call this function pad sequences and we call this with the。Rining sequences and our specified max length。And here we say padding and truncating equals posts。 So this means it just uses zeros。 So then we do this for the training and validation sequence。
 
-And yeah， so now let's define these two functions。 And here， for example。
+ And then if we have a look at the shape here， then we see that they all have the shape 20 in the second dimension。 because this is the max length。And now if we print one padded sequence。 we see that it's used zero padding here。 So now again。 let's print one sample of our training sentences， one sample of our training sequences and one sample of the padded sequence so that you see the difference。
 
- these are all the punctuation characters that we want to remove。
+And then again， here you see for the sentence， we have all the words for the sequence。 we have these indices， and then for the padded sequence， we use0 padding。So now we can check if we。 if this is actually correct。 So if we can reverse this。 So for this。 we create a dictionary where we flip around the keys and the values in this word index。
 
-So now if we have a look at this example， then here it finds one tweet with a URL。
+ So if we have a look against this is how this word index looks as key。 we have the word and as value， we have this index。 and now we want to store this in another dictionary and do it the other way around。 So now we say the key is the index and the word is the value。So this is our reverse dictionary。
 
- and if we remove this， then it has only this format。So now with these two functions。
+ So let's have a look at that。 And then we see all these indices are our keys。 and all these words are the values。 And now we can define this decocode function。 which gets a sequence。 And then we simply。😊，Call the get function with for each index in the sequence。 So this returns the corresponding value。 And if it's not available。
 
- we can simply for our data frames or penda this data frame。
+ then it should return a question mark。 but so this is if we get new indices。 but if we stay in the same training data set then it should find a corresponding word for each index。 So this is the decocode function。 and then let's try it out。 So we call the deco function for one sample of the training sequences。
 
- we can call this map function and only for this。Text column。 So we say data frame dot text dot map。
+ So this one and then I print the original sequence and the decoded text。 and here we see we have this sequence and this decoded sequence and I think so we say we have three people。Dight heat way far。 So if we have a look at where did I already print it。 So here I printed the samples from 10 to 15。 So that's the original sentence。
 
- And then these two functions。 And then again， we assign it to the text column。
+ So we see that our decoding is correct。So now that we have that。 we can come to the actual implementation of the model。 So last time I showed you that we can very easily create an simple R N model or a LSTM model or a GR U model。 So in this case， we use an LSTM。 So for this we create a first a sequential model。
 
- So now this means we remove all the URLs and all the punctuation characters。
+ And now since we use text data， we also use this embedding layer。 So word embeddings。 give us a way to use an efficient dense representation in which similar words have a similar encoding。 So if you want to learn more about this， I can recommend this official guide in the on the Tensorflow website。 So here you see that another representation might be one hot encoding。 and。
 
-So this is the first prepro I want to do。 and then I also want to remove stop words。 And for this。
+Here we simply use a0 or a1。 but then there's also this embedding representation。 So with this embedding layer， we get this representation。 So a dense vector of floating point values。 So right now we still have this padded sequence with all the word indices。 And now this embedding layer turns this indices into a dense vector of fixed size。
 
- we are going to use the famous N LTK libraries。 So this is a very popular library and Python for natural language processing。
+ So that's why we needed this tokenization first。 and now we can use this embedding layer。 So this gets the number of unique words。 And then a size that you specify and then also the maximum length。 and that we specified。 So this is the input length。And now after we define this。 then we can apply our LSTM or R and N layer， like the last time where we only specify the number of output units。
 
- and then you also probably have to say N LT K dot download。 And by the way。
+ And here I also said dropout equals 10%。And then since we want to classify this。 So a0 or one classification， we use a dense layer with only one output at the end。 And then we also apply the sigmoid function。 So let's do this and print the model summary。 So we see after our embedding。 we get the output shape of this。 So the number of batches。
 
- you can simply install it with Pip。And then here I want to get all the stop words and then remove them。
+ And then the 20 is the maximum length and the 32 is just the size that we specified here as output size。Then our LSTM has this output shape because we specified 64 output units。 and then we have our dense layer。And now since we use binary classification。 we use this binary cross entropy loss and here we say from Loit equals falses because we already used the activation function here and then again we use a optimizer and define the metrics that we want to track and compile the model and then we simply train it so we fit it and here we want to use the padded sequence and then the corresponding labels and then the epochs and now this is also new。
 
- So by definition here， a stop word is commonly is a commonly used words。
+ I think I didn't use this before so you can in this fit method you can use the validation data parameter and this is a tuple and here we use the validation padded sequence and the validation label and now if we do this。 then it automatically during training uses a validation。Data set to do the fine tuning。
 
- such as D A N in that a search engine has been programmed to ignore。
+ So this is a nice tip to keep in mind that you can already automatically do this validation if you specify the validation data here。So now let's train this。Al right， and training is done。 And as you can see。 the final accuracy on the training data is 98%。 so pretty good。 But for the validation accuracy。 and we only have 73%。 So this might be a sign of overfitting。
 
- So we want to ignore these stop words。 So we get all the stop words from N L T K。
+ So this might be a homework for you that you can further improve or tweak。 the model a little bit so that this one also gets higher。 But as we can see our。 we did the correct preprocesing with our text data。 and we set up a nice LSTM model and then get a very nice accuracy here。 So let's do some prediction。
 
- And then we remove it again with a little helper function。 And let's here print the stop words。
+ So we simply call model predict on the。😊，Training padded sequence in this case。 And as I said。 we used the sigmoid function at the end。 So we still have to convert this to a label 0 or1。 So we simply say if our predicted output probability is higher than 0。5。 then it's one and otherwise 0。 And now let's print some original training sentences。
 
- So here you see all the different stop wordss。And then again。
+ and the corresponding labels and the predictions。So here， yeah。 so we see five of these are classified as a as a disaster and the other one are no disasters and all of our corrections are correct in this case。 So we say for so we see， for example here we we have three people died， blah， blah， blah。 So this is a disaster。 And here Ta getting flooded， also a disaster。 And here at the end。
 
- we call this map function with this function。 and on the text column。
+ we have some a lovely， no disaster。 So yeah， it looks good。 And yeah。 I think we learned a lot in this tutorial。 Now you know how to apply some basic and natural language processing techniques and then use an LSTM for text classification。And I hope you enjoyed this tutorial。 If you liked it。 then please hit the like button and consider subscribing to the channel。
 
- So this removes all the stop words。 And now let's have a look at some example text。
-
- So this is the text column。And now we want to prepare this text so that we can use it for a R and N。
-
- So we， we cannot use it like this with all the strings。
-
- So we somehow have to transform this to a representation that our model understands。And for this。
-
- the first thing we want to do is count all the different words。
-
- And here we want to make use of a very nice object， the counter object。
-
- which is available in the collections module in Python。 and then we count all the unique words。
-
- So we iterate over over the text column， and then we say for each text。
-
- So basically for each line in this text column， we say we iterate over each line。
-
- and then for each line， we split it。 So we get an array of all the different words。
-
-And then we iterate over all the words and put it in our counter。
-
- And then each time this word appears， we increase the counter by one。
-
- So now if we do this and then return the counter and apply this function for the data frame text column。
-
- then we get the counter and we get the length of the counter。 So this is the number of unique words。
-
-So we see that we have almost 18000 different words in all these tweets。
-
-So let's also have a look at the counter itself。 So this is basically looks like a dictionary。
-
- So here the keys are the different words。 and then we have the count of this word here as a value。
-
- So this is how the counter looks。 And what's also very nice with this counter object。
-
- We can call this most common function。 So here we can have a look at the five， most common words。
-
- So we see that the word like is the most common one and appears 345 times。😊，And yeah， then again。
-
- let's assign this length of the counter to the to a variable and call this nu unique words。
-
- So we need this later。 And now I want to split the data set into training and validation set。
-
- and for this， I define an integer of。This should be 80% of our whole data we want to use as training。
-
- and then the rest of this。 So 20% for validation。 and then we can use the slicing on the data frame。
-
- and then the first 80% of the samples is used for training and the rest for validation。
-
- So now we get that。 And then we also So right now we still have the whole data frame。
-
- So now we want to split the text and the labels and we can simply do this by assessing the different columns。
-
- So we say train data frame dot text dots to nuy and the same for data frame dot target。
-
- So we say these are our training sentences and our training labels。 And then again。
-
- we do the same for the validation set。So if we have a look at both the training sentences shape and the validation sentences shape。
-
- then we see that we clearly have more in our training set。
-
- and now the next thing we want to do is to apply a tokenizer。
-
- So with tokenization we vectorize a text corpus by turning each text into a sequence of integers。
-
- So you will see an example in a second which makes this more clearer。
-
- But for now we want to import this tokenizer from Tensorflowcars dot preprocessing dot text。
-
- and then we create a tokenizer object。 And for this we need to give it the number of unique words。
-
- So that's why we calculate this earlier。 And then we have to call tokenizer dot fit on texts and then。
-
-the training sentences。 So only the training data here。 And now when we did this。
-
- we can get this word index。 So here each word has a unique index。
-
- So let's say word index equals tokenizer dot word index and then have a look at this word index。
-
-And then we see each of these words has a unique index。 So this is what this tokenizer does。
-
-And then we can convert these text to a sequence， so we can call tokenizer dot texts to sequences and then give it the sentences。
-
- So don't get confused by this。 we have the sentences。 then。 So this is the original text。
-
- And then we get a sequence。 So this has the same size。 But now it has these unique indices。
-
- So now we do this for the training set and the validation set。 And now here， for example。
-
- I compare five samples of the training sentences and the corresponding sequences。
-
- So let's print this。And this is how it looks like。 So now it maybe gets a little bit clearer。
-
- So the sentence is the normal text。 And then after we applied the tokenization。
-
- we get this sequence。 So now we have the same length of this array as the text。
-
- But now we have an index for each word。So now now we have that。
-
- And now we want to do one more thing because right now the sequences can have a different length。
-
- So that's what you can see here。 but we want to have the same length for every sequence。
-
- And for this we apply padding。 So again， we import this we import Pat sequences from tensofflowcars do preprocessing do sequence。
-
- and then we have to specify a maximum length。 So in this case we say it's 20 but you can play around with more or other ones here or maybe a tweet might be even longer than 20 different words。
-
- So you might increase this a little bit。 but then also your training might be longer。
-
- So now when we specify this， we can call this function pad sequences and we call this with the。
-
-Rining sequences and our specified max length。And here we say padding and truncating equals posts。
-
- So this means it just uses zeros。 So then we do this for the training and validation sequence。
-
- And then if we have a look at the shape here， then we see that they all have the shape 20 in the second dimension。
-
- because this is the max length。And now if we print one padded sequence。
-
- we see that it's used zero padding here。 So now again。
-
- let's print one sample of our training sentences， one sample of our training sequences and one sample of the padded sequence so that you see the difference。
-
-And then again， here you see for the sentence， we have all the words for the sequence。
-
- we have these indices， and then for the padded sequence， we use0 padding。So now we can check if we。
-
- if this is actually correct。 So if we can reverse this。 So for this。
-
- we create a dictionary where we flip around the keys and the values in this word index。
-
- So if we have a look against this is how this word index looks as key。
-
- we have the word and as value， we have this index。
-
- and now we want to store this in another dictionary and do it the other way around。
-
- So now we say the key is the index and the word is the value。So this is our reverse dictionary。
-
- So let's have a look at that。 And then we see all these indices are our keys。
-
- and all these words are the values。 And now we can define this decocode function。
-
- which gets a sequence。 And then we simply。😊，Call the get function with for each index in the sequence。
-
- So this returns the corresponding value。 And if it's not available。
-
- then it should return a question mark。 but so this is if we get new indices。
-
- but if we stay in the same training data set then it should find a corresponding word for each index。
-
- So this is the decocode function。 and then let's try it out。
-
- So we call the deco function for one sample of the training sequences。
-
- So this one and then I print the original sequence and the decoded text。
-
- and here we see we have this sequence and this decoded sequence and I think so we say we have three people。
-
-Dight heat way far。 So if we have a look at where did I already print it。
-
- So here I printed the samples from 10 to 15。 So that's the original sentence。
-
- So we see that our decoding is correct。So now that we have that。
-
- we can come to the actual implementation of the model。
-
- So last time I showed you that we can very easily create an simple R N model or a LSTM model or a GR U model。
-
- So in this case， we use an LSTM。 So for this we create a first a sequential model。
-
- And now since we use text data， we also use this embedding layer。 So word embeddings。
-
- give us a way to use an efficient dense representation in which similar words have a similar encoding。
-
- So if you want to learn more about this， I can recommend this official guide in the on the Tensorflow website。
-
- So here you see that another representation might be one hot encoding。 and。
-
-Here we simply use a0 or a1。 but then there's also this embedding representation。
-
- So with this embedding layer， we get this representation。
-
- So a dense vector of floating point values。 So right now we still have this padded sequence with all the word indices。
-
- And now this embedding layer turns this indices into a dense vector of fixed size。
-
- So that's why we needed this tokenization first。 and now we can use this embedding layer。
-
- So this gets the number of unique words。 And then a size that you specify and then also the maximum length。
-
- and that we specified。 So this is the input length。And now after we define this。
-
- then we can apply our LSTM or R and N layer， like the last time where we only specify the number of output units。
-
- And here I also said dropout equals 10%。And then since we want to classify this。
-
- So a0 or one classification， we use a dense layer with only one output at the end。
-
- And then we also apply the sigmoid function。 So let's do this and print the model summary。
-
- So we see after our embedding。 we get the output shape of this。 So the number of batches。
-
- And then the 20 is the maximum length and the 32 is just the size that we specified here as output size。
-
-Then our LSTM has this output shape because we specified 64 output units。
-
- and then we have our dense layer。And now since we use binary classification。
-
- we use this binary cross entropy loss and here we say from Loit equals falses because we already used the activation function here and then again we use a optimizer and define the metrics that we want to track and compile the model and then we simply train it so we fit it and here we want to use the padded sequence and then the corresponding labels and then the epochs and now this is also new。
-
- I think I didn't use this before so you can in this fit method you can use the validation data parameter and this is a tuple and here we use the validation padded sequence and the validation label and now if we do this。
-
- then it automatically during training uses a validation。Data set to do the fine tuning。
-
- So this is a nice tip to keep in mind that you can already automatically do this validation if you specify the validation data here。
-
-So now let's train this。Al right， and training is done。 And as you can see。
-
- the final accuracy on the training data is 98%。 so pretty good。 But for the validation accuracy。
-
- and we only have 73%。 So this might be a sign of overfitting。
-
- So this might be a homework for you that you can further improve or tweak。
-
- the model a little bit so that this one also gets higher。 But as we can see our。
-
- we did the correct preprocesing with our text data。
-
- and we set up a nice LSTM model and then get a very nice accuracy here。 So let's do some prediction。
-
- So we simply call model predict on the。😊，Training padded sequence in this case。 And as I said。
-
- we used the sigmoid function at the end。 So we still have to convert this to a label 0 or1。
-
- So we simply say if our predicted output probability is higher than 0。5。
-
- then it's one and otherwise 0。 And now let's print some original training sentences。
-
- and the corresponding labels and the predictions。So here， yeah。
-
- so we see five of these are classified as a as a disaster and the other one are no disasters and all of our corrections are correct in this case。
-
- So we say for so we see， for example here we we have three people died， blah， blah， blah。
-
- So this is a disaster。 And here Ta getting flooded， also a disaster。 And here at the end。
-
- we have some a lovely， no disaster。 So yeah， it looks good。 And yeah。
-
- I think we learned a lot in this tutorial。 Now you know how to apply some basic and natural language processing techniques and then use an LSTM for text classification。
-
-And I hope you enjoyed this tutorial。 If you liked it。
-
- then please hit the like button and consider subscribing to the channel。
-
- And then I hope to see you in the next video， bye。😊。
-
-
-
-![](img/cf77d9b01a43fab5f293c40eb502060f_2.png)
+ And then I hope to see you in the next video， bye。😊。![](img/cf77d9b01a43fab5f293c40eb502060f_2.png)

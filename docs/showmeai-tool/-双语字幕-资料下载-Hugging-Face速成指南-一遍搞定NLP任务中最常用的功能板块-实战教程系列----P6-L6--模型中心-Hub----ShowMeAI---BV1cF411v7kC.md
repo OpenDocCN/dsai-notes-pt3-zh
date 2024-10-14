@@ -1,99 +1,33 @@
 # 【双语字幕+资料下载】Hugging Face速成指南！一遍搞定NLP任务中最常用的功能板块＜实战教程系列＞ - P6：L6- 模型中心(Hub) - ShowMeAI - BV1cF411v7kC
 
-And now let's have a look at how we can use a different model。 So like here。
+And now let's have a look at how we can use a different model。 So like here。 you can either load this from your disk if you already have a print model somewhere on your computer。 But what you can also do is you can go to the huggingface model hub。 So you can find this at huggingface do co slash models。
 
- you can either load this from your disk if you already have a print model somewhere on your computer。
+ And here you have the model hub and you can search through different models。 So for example。 you could filter for the tasks。 So in this case， we want to do text classification。 which is the same as sentiment analysis。 And then it filter is applies this filter。 So you can see the most popular model is already this one。
 
- But what you can also do is you can go to the huggingface model hub。
+ And then we can click on this and get some more information。 And as you could see So this is the exact same model name that we。😊。![](img/c49080a006eb77701b68e6f3b6db92e5_1.png)
 
- So you can find this at huggingface do co slash models。
+In our code。 So once you've decided for a model， you can click here and copy this name and then paste into your code。 So let's say in this case， we want to use a different model。 So in this case。 I want to do sentiment classification with Germanman sentences。 So then， of course。 I need one that is trained on chairman。 So you can filter here so you can search so I can either again search for distt bird and see what different versions there are available。
 
- And here you have the model hub and you can search through different models。 So for example。
+ or let me search for Germanman。And then here， let's take the most popular one。 So by Oliver Gour。 And then we see this is a German sentiment bird。 And then we get more information。 And sometimes we also see some example code， which is helpful。 So yeah， this is nice。 And now what we have to do is we want to click here and copy。 this will just copy the name。
 
- you could filter for the tasks。 So in this case， we want to do text classification。
-
- which is the same as sentiment analysis。 And then it filter is applies this filter。
-
- So you can see the most popular model is already this one。
-
- And then we can click on this and get some more information。
-
- And as you could see So this is the exact same model name that we。😊。
-
-
-
-![](img/c49080a006eb77701b68e6f3b6db92e5_1.png)
-
-In our code。 So once you've decided for a model， you can click here and copy this name and then paste into your code。
-
- So let's say in this case， we want to use a different model。 So in this case。
-
- I want to do sentiment classification with Germanman sentences。 So then， of course。
-
- I need one that is trained on chairman。 So you can filter here so you can search so I can either again search for distt bird and see what different versions there are available。
-
- or let me search for Germanman。And then here， let's take the most popular one。 So by Oliver Gour。
-
- And then we see this is a German sentiment bird。 And then we get more information。
-
- And sometimes we also see some example code， which is helpful。 So yeah， this is nice。
-
- And now what we have to do is we want to click here and copy。 this will just copy the name。
-
- And then in our application， let me comment this out。 And then let's again say model name equals。
-
- And now I hit paste。 So now it pasted this string here。 So now we have this。
-
- And now here we can give our model and tokenizer the model name。 So model name and model name。
-
- And now let's do this for some example text and Germanman。 So let me copy and paste this in here。😊。
+ And then in our application， let me comment this out。 And then let's again say model name equals。 And now I hit paste。 So now it pasted this string here。 So now we have this。 And now here we can give our model and tokenizer the model name。 So model name and model name。 And now let's do this for some example text and Germanman。 So let me copy and paste this in here。😊。
 
 
 
 ![](img/c49080a006eb77701b68e6f3b6db92e5_3.png)
 
-So basically， let me quickly translate this for you that this as not a good result。 This was unfair。
+So basically， let me quickly translate this for you that this as not a good result。 This was unfair。 This was not good， not as bad as expected， this was good and she drives a green car So basically these three texts are negative This one is rather positive and this is neutral。
 
- This was not good， not as bad as expected， this was good and she drives a green car So basically these three texts are negative This one is rather positive and this is neutral。
+ So let's see if our model can detect this correctly So now again。 like above we do the same steps so we could copy and paste this so let's copy and paste this and then the same as above we say with torch torch dot no gras and then we call the model So we say outputs equals model and then here we unpack our batch then we have the model then we want to have。
 
- So let's see if our model can detect this correctly So now again。
+Label I， so let's say label I equals。 and then we use the torch do arc max function with the outputs and along dimension equals one and let me remove this one and then we print the label I So print the label I and then we do the same as we do here。 So we want to convert them to the actual label names by calling model dot config I to label label I for label in here we call this label Is to list and then print the labels and now let's run this and actually let's also print the batch in this case and let's have a look at how this looks like。
 
- like above we do the same steps so we could copy and paste this so let's copy and paste this and then the same as above we say with torch torch dot no gras and then we call the model So we say outputs equals model and then here we unpack our batch then we have the model then we want to have。
+ So let's run this and I get anarrow。 So here I forgot to。Say outputs dot loets like we did before。 So let's try it again。 And this is only two results。 So of course， here in our tokenr。 we want to use these texts。 So let's call this X train underscore grman and then let's use x train underscore Germanman here and let's run it again。 Alright， and as we can see we get the labels 1，1，1，0。
 
-Label I， so let's say label I equals。 and then we use the torch do arc max function with the outputs and along dimension equals one and let me remove this one and then we print the label I So print the label I and then we do the same as we do here。
+0 and2 and this is equal to negative negative negative then two times positive and then neutral。 So yeah， this is exactly what I told you the first three sentences are rather negative than two positive ones and this one is neutral。 So yeah now our Germanman model works as well。 And this is how we can use different models So we simply search the model hub and。Hopefully there is an already pretrained version for the task we want and then we can just use this here as our model name and then we are good to go Or if there is not a already pretrained version then we have to do this ourselves and find you in our own model so I will show you how you do this in a moment but now one more thing I want to mention。
 
- So we want to convert them to the actual label names by calling model dot config I to label label I for label in here we call this label Is to list and then print the labels and now let's run this and actually let's also print the batch in this case and let's have a look at how this looks like。
+ So I want to talk about this return Tenos equals P。 So if we here we print the batch and here the input Is and then we see this is a Tenor So right now it's already in the Pyth format。 So we could use Tenorflow here or we just omit this and if we omit this then we don't have this in the Tenzo format So now it is just a Python list I think then。What you could do is you could convert this so we can say batch equals and then we convert this to a tenor by saying torch dotenor and then we give it the we call this batch and this is a dictionary so we can say batch and then access the key input IDs like we see here and now we created a actual tenor out of this and then we don't have to unpackick it like this here so now we remove this and then if we run it again then this should work as well and yeah this work too so we get the same result and here we printed our batch and now we see this is a tenor directly so yeah be careful here to specify what you want So it's actually if you use pytorch then it's just simpler to use this。
 
- So let's run this and I get anarrow。 So here I forgot to。Say outputs dot loets like we did before。
-
- So let's try it again。 And this is only two results。 So of course， here in our tokenr。
-
- we want to use these texts。 So let's call this X train underscore grman and then let's use x train underscore Germanman here and let's run it again。
-
- Alright， and as we can see we get the labels 1，1，1，0。
-
-0 and2 and this is equal to negative negative negative then two times positive and then neutral。
-
- So yeah， this is exactly what I told you the first three sentences are rather negative than two positive ones and this one is neutral。
-
- So yeah now our Germanman model works as well。 And this is how we can use different models So we simply search the model hub and。
-
-Hopefully there is an already pretrained version for the task we want and then we can just use this here as our model name and then we are good to go Or if there is not a already pretrained version then we have to do this ourselves and find you in our own model so I will show you how you do this in a moment but now one more thing I want to mention。
-
- So I want to talk about this return Tenos equals P。
-
- So if we here we print the batch and here the input Is and then we see this is a Tenor So right now it's already in the Pyth format。
-
- So we could use Tenorflow here or we just omit this and if we omit this then we don't have this in the Tenzo format So now it is just a Python list I think then。
-
-What you could do is you could convert this so we can say batch equals and then we convert this to a tenor by saying torch dotenor and then we give it the we call this batch and this is a dictionary so we can say batch and then access the key input IDs like we see here and now we created a actual tenor out of this and then we don't have to unpackick it like this here so now we remove this and then if we run it again then this should work as well and yeah this work too so we get the same result and here we printed our batch and now we see this is a tenor directly so yeah be careful here to specify what you want So it's actually if you use pytorch then it's just simpler to use this。
-
-As a return argument。 So return tenos equals P。 But if you don't use this。
-
- then you know what you can do otherwise。 Alright， so now we know how we can use different models。
-
- So yeah， try this out for other models in your language and see if this works。 And now let's have。
-
-
+As a return argument。 So return tenos equals P。 But if you don't use this。 then you know what you can do otherwise。 Alright， so now we know how we can use different models。 So yeah， try this out for other models in your language and see if this works。 And now let's have。
 
 ![](img/c49080a006eb77701b68e6f3b6db92e5_5.png)

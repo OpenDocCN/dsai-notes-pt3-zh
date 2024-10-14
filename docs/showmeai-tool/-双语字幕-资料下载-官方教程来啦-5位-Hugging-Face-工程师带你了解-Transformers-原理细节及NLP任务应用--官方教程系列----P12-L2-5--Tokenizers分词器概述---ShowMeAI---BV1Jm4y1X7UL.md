@@ -1,26 +1,10 @@
 # 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞ - P12：L2.5- Tokenizers分词器概述 - ShowMeAI - BV1Jm4y1X7UL
 
-In the next few videos， we'll take a look at the tokens。In natural language processing。
+In the next few videos， we'll take a look at the tokens。In natural language processing。 most of the data that we handle consists of raw text。 However。 machine learning models cannot read or understand text in its raw form。They can only work with numbers。So the tokenizer objective will be to translate the text into numbers。
 
- most of the data that we handle consists of raw text。 However。
+There are several possible approaches to this conversion。 and the objective is to find the most meaningful representation。We'll take a look at three distinct organization algorithms。 We compare them one to one。 So we recommend you take a look at the videos in the following order。 first， word based。
 
- machine learning models cannot read or understand text in its raw form。
-
-They can only work with numbers。So the tokenizer objective will be to translate the text into numbers。
-
-There are several possible approaches to this conversion。
-
- and the objective is to find the most meaningful representation。
-
-We'll take a look at three distinct organization algorithms。 We compare them one to one。
-
- So we recommend you take a look at the videos in the following order。 first， word based。
-
- followed by character based， and finally， sub word based。😊。
-
-
-
-![](img/6c883a64f121aa7d5774c3337aefd2f1_1.png)
+ followed by character based， and finally， sub word based。😊。![](img/6c883a64f121aa7d5774c3337aefd2f1_1.png)
 
 ![](img/6c883a64f121aa7d5774c3337aefd2f1_2.png)
 

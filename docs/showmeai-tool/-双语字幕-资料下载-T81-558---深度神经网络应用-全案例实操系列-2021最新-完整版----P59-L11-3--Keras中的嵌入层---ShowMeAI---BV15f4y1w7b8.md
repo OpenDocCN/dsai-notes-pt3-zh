@@ -2,313 +2,87 @@
 
 ![](img/6c6a4e57e3618c11a532abc5118438e7_0.png)
 
-Hi， this is Jeff Heaton。 Wel to applications of deep neural networks with Washington University。
+Hi， this is Jeff Heaton。 Wel to applications of deep neural networks with Washington University。 So what are Kira's embedding layers。 This is another layer type that you can use in Kias。 But what do they do， They're used with natural language processing for the latest on my AI course and projects。 click subscribe in the bell next to it to be notified of every new video。
 
- So what are Kira's embedding layers。 This is another layer type that you can use in Kias。
+ Kis provides something called an embedding layer。 These are very often used with natural language processing in Kiras。 However， they don't really have to be used just with NLP。 really。 how I think of an embedding layer is almost an alternative to one hot encoding with one hot encoding you or dummy variables or whatever you want to call that where you take a categorical value So say you have 100 different possibilities for that categorical value Now you need a way to encode that into。
 
- But what do they do， They're used with natural language processing for the latest on my AI course and projects。
+ say dummy variables。 You're going to have 100 dummy variables。 That gets impractical if you deal with extremely large cardinalities for。😊。![](img/6c6a4e57e3618c11a532abc5118438e7_2.png)
 
- click subscribe in the bell next to it to be notified of every new video。
+Those categoricals， particularlyicular if you're dealing with words in the English language。 Think about how you would dummy and code just English words。 You would need one dummy variable for every English word that you had。 Now。 some of the options in spacey could be useful for that。
 
- Kis provides something called an embedding layer。 These are very often used with natural language processing in Kiras。
+ You could turn words into their stem words like having could be transformed into have that way you just have one of those to deal with a lot of the verbs you could transform like bra。 you could always have a run。 So that way you don't have to brought could always be bring or bringing also going to the reword of brought。
 
- However， they don't really have to be used just with NLP。 really。
+ But those are those are some of the things you can do to get that dimension down。 But the embedding layer， you can actually learn an embedding layer for your words or whatever vocabulary or categorical。 you want to send it towards。 Now， this is most often used on sequences。 The type that we would send into an LsTM or a temporal convolution neural network， but。
 
- how I think of an embedding layer is almost an alternative to one hot encoding with one hot encoding you or dummy variables or whatever you want to call that where you take a categorical value So say you have 100 different possibilities for that categorical value Now you need a way to encode that into。
+That also does not have to be the case。 So let's look at a simple embedding layer。 Now。 we're going to see that when we create an embedding layer like here。 And by the way。 you can see another example of this back in our image captioning example。 we made use of embedding and we loaded the glove embedding layer directly into it。
 
- say dummy variables。 You're going to have 100 dummy variables。
+ but we didn't talk a lot about what the embedding layer actually did。 It's all exactly like what you're going to see here。 So now we're learning how to actually even train an embedding layer。 So here we've defined this embedding layer。 and our input dimension count is going to be 10。
 
- That gets impractical if you deal with extremely large cardinalities for。😊。
+ So input dimension。 that's essentially how many categories or how many words。 what's your vocabulary size。 If you were using one hot encoding。 you would have ended up with 10 dummy variables here。 However。 we're going to sort of dimension reduce this a little bit， not really a dimension reduction。
 
+ but we're going to encode these into four number of vectors rather than the 10 number vector that a dummy。Normally have and it's not zeros and ones。 All of these four elements are going to be used in that vector。 Now， the input link。 This is kind of interesting。 This is essentially your sequence link。 If you're dealing with natural language processing。 So in this case。
 
+ we're just going to have two of these because this is a really， really simple example。 and you'll notice this neural network。 and I use the term loosely only has one embedding layer。 So this neural network is going to essentially just kick out the embedding directly to the output layer and you'll see it。 I'm saying atom and mean square error， but that really doesn't matter。
 
-![](img/6c6a4e57e3618c11a532abc5118438e7_2.png)
+ we're not going to train this very simple neural network that we're creating。 I'll go ahead and run this。 and it doesn't really do anything other than define this model。 Now you should really think of the embedding layer as a lookup table。 So we've got these 10 input dimensions。 And each of those 10 categorical values that you're going to pass in。
 
-Those categoricals， particularlyicular if you're dealing with words in the English language。
+ each one of those will return a different unique。Set of four numbers from the output dimensions。 So this lookup table， you can really think of it as 10 rows and four columns。 It's a lookup table。 That is all an embedding layer is is a lookup table。 We're going to go ahead and now run this。 We're going to give it some input data。 The input data is just going to be a little sequence here of one。
 
- Think about how you would dummy and code just English words。
+2，1 and two are both well within that input range， and it is going to change these two input categoricals。 these two integers。 The input into these as always integer。 So you're transforming your characters or your words。 and this is most often used for words Le often for characters。 So that doesn't have to be the case。
 
- You would need one dummy variable for every English word that you had。 Now。
+ You transform you always provide integers。 because they're basically lookups。 These are essentially the rows in that weight matrix That is the embedding layer。 And then we're going to request to predict this。 and we're going to print out the shape of the input data and also the prediction that came back。 The lookup table。 You might have expected that to be all zero。
 
- some of the options in spacey could be useful for that。
-
- You could turn words into their stem words like having could be transformed into have that way you just have one of those to deal with a lot of the verbs you could transform like bra。
-
- you could always have a run。 So that way you don't have to brought could always be bring or bringing also going to the reword of brought。
-
- But those are those are some of the things you can do to get that dimension down。
-
- But the embedding layer， you can actually learn an embedding layer for your words or whatever vocabulary or categorical。
-
- you want to send it towards。 Now， this is most often used on sequences。
-
- The type that we would send into an LsTM or a temporal convolution neural network， but。
-
-That also does not have to be the case。 So let's look at a simple embedding layer。 Now。
-
- we're going to see that when we create an embedding layer like here。 And by the way。
-
- you can see another example of this back in our image captioning example。
-
- we made use of embedding and we loaded the glove embedding layer directly into it。
-
- but we didn't talk a lot about what the embedding layer actually did。
-
- It's all exactly like what you're going to see here。
-
- So now we're learning how to actually even train an embedding layer。
-
- So here we've defined this embedding layer。 and our input dimension count is going to be 10。
-
- So input dimension。 that's essentially how many categories or how many words。
-
- what's your vocabulary size。 If you were using one hot encoding。
-
- you would have ended up with 10 dummy variables here。 However。
-
- we're going to sort of dimension reduce this a little bit， not really a dimension reduction。
-
- but we're going to encode these into four number of vectors rather than the 10 number vector that a dummy。
-
-Normally have and it's not zeros and ones。 All of these four elements are going to be used in that vector。
-
- Now， the input link。 This is kind of interesting。 This is essentially your sequence link。
-
- If you're dealing with natural language processing。 So in this case。
-
- we're just going to have two of these because this is a really， really simple example。
-
- and you'll notice this neural network。 and I use the term loosely only has one embedding layer。
-
- So this neural network is going to essentially just kick out the embedding directly to the output layer and you'll see it。
-
- I'm saying atom and mean square error， but that really doesn't matter。
-
- we're not going to train this very simple neural network that we're creating。
-
- I'll go ahead and run this。 and it doesn't really do anything other than define this model。
-
- Now you should really think of the embedding layer as a lookup table。
-
- So we've got these 10 input dimensions。 And each of those 10 categorical values that you're going to pass in。
-
- each one of those will return a different unique。Set of four numbers from the output dimensions。
-
- So this lookup table， you can really think of it as 10 rows and four columns。 It's a lookup table。
-
- That is all an embedding layer is is a lookup table。 We're going to go ahead and now run this。
-
- We're going to give it some input data。 The input data is just going to be a little sequence here of one。
-
-2，1 and two are both well within that input range， and it is going to change these two input categoricals。
-
- these two integers。 The input into these as always integer。
-
- So you're transforming your characters or your words。
-
- and this is most often used for words Le often for characters。 So that doesn't have to be the case。
-
- You transform you always provide integers。 because they're basically lookups。
-
- These are essentially the rows in that weight matrix That is the embedding layer。
-
- And then we're going to request to predict this。 and we're going to print out the shape of the input data and also the prediction that came back。
-
- The lookup table。 You might have expected that to be all zero。
-
-Because we never defined a lookup table。 We never trained this neural network。
-
- So where are these numbers coming from， They're random initializations， essentially。
-
- So they're like the random weights that all layers of a neural network have。
-
- This doesn't really make a lot of sense until you actually look at the embedding weights。
+Because we never defined a lookup table。 We never trained this neural network。 So where are these numbers coming from， They're random initializations， essentially。 So they're like the random weights that all layers of a neural network have。 This doesn't really make a lot of sense until you actually look at the embedding weights。
 
  So if we look at the embedding weights。 notice there's 10 rows and four columns So these are the 10 vocabulary elements And then we we just requested there be four of these that four is arbitrary we could have made that six or8 or 102 wouldn't really matter。
 
- It's sort of a dimension reduction concept， though though not exactly。
+ It's sort of a dimension reduction concept， though though not exactly。 now what we're going to do But again， along the lines of why I call it a dimension reduction is because instead of having the 10 dummy variables you would have now you have these four values。
 
- now what we're going to do But again， along the lines of why I call it a dimension reduction is because instead of having the 10 dummy variables you would have now you have these four values。
+ Now let's see what these weights actually mean。 So this first one that one that corresponds to this very。 very first column and this whole thing can be。is a column or dimension。 vector， notice the 0。4763。 Not it is exactly the same vector as this one right here。 the second one。 This is row。 assuming you count with 0 as you're starting number，0，1， This is1，2 is the next one negative 2，70，2。
 
- Now let's see what these weights actually mean。 So this first one that one that corresponds to this very。
+7。 Look at that。 It's just a lookup table。 That's all the embedding layer really is。 So the glove embeddings that we used in earlier in this class。 that is essentially just a table for a large number of English words， I forget how many。 And I think it had vector sizes of 200。 if my memory serves。 Don't quote me on that。
 
- very first column and this whole thing can be。is a column or dimension。 vector， notice the 0。4763。
+ but it had some arbitrary vector length for each of those glove embeddings。 We just took that matrix and loaded it right into the weights。 We called set weights on it。 It's all we did。 And we defined this embedding layer。 Now， when you train that neural network。 You want to mark those embedding weight。😊，As nontrainable， otherwise。
 
- Not it is exactly the same vector as this one right here。 the second one。 This is row。
+ they'll start to get pulled away from the values that they were originally set at by whoever trained it。 And if you're doing transfer learning， you probably don't want those weights modified。 We'll see more about how to train these in a moment。 Now， I compared this to dummy variables。 So usually what you want to do to prove that something is equivalent to something else is see if you can emulate that thing in something else。
 
- assuming you count with 0 as you're starting number，0，1， This is1，2 is the next one negative 2，70，2。
+ So we're going to use an embedding layer to basically provide dummy variables for us。 So what I am doing here is I am creating an input dimension 3。 So that would be a categorical variable that had three possible values。 The dummies for this would look like this。 essentially the diagonal that you see with dummy variables because dummies just a briefly review essentially one of the values is is one or hot。
 
-7。 Look at that。 It's just a lookup table。 That's all the embedding layer really is。
+ That's why it's called one hot。 And the rest are 0。 And this is a simple way that you can encode categorical。Values the output dimension is also going to be three because there's three columns in what we're encoding it to。 If you're doing dummy variables， these will always be the same。
 
- So the glove embeddings that we used in earlier in this class。
+ And this is why dummy variables are so inefficient， because say your input dimensions was 100。 You had 100 categories。 You could still make this very small。 You want to want to make it too small。 but you can make it say 4 or 8 and train for it。 We'll see how we can do that in just a moment。 Then input length， that's your sequence length。 So that's how many of these you want to encode at a time。
 
- that is essentially just a table for a large number of English words， I forget how many。
+ Then we're going compile it with atom and MSC again， we're going to never train this neural network。 So these two really don't matter。 but we're going to do set weights on the embedding layer。 Now we do have to transform this look up up here into a list because you can potentially not going to really get into that。 but you can you can have multiple lookup matrices for this if it's going sort of in multiple directions。
 
- And I think it had vector sizes of 200。 if my memory serves。 Don't quote me on that。
+ but that would be a more advanced set。 you can refer to the Kira's documentation if you're interested in。Exactly， that is a list。 Let's go ahead and run it。 But for now。 just always embed your matrix list and you'll be good to go gonna go ahead and run that。 Now we have created essentially our dummy emulator as an embedding layer。
 
- but it had some arbitrary vector length for each of those glove embeddings。
+ I'm going to go ahead and run it down here， we're going to encode these two categoricals and run it and essentially look what it's doing。 There's the dummy variables。 so you could put one of these on the front of your neural network and not even have to encode your dummy variables。
 
- We just took that matrix and loaded it right into the weights。 We called set weights on it。
+ there's better ways of going about it。 but this is one way that you you could do that。 if you wanted to make your neural network truly so that you could pass in these enter your values and have it automatically transform these into dummies。 This is cool。 you'll do this kind of thing a lot， this is when you want to use transfer learning to bring your dummy variables in。 However， the real fun gets in。 maybe it's not the real fun。😊，You can train these yourself。
 
- It's all we did。 And we defined this embedding layer。 Now， when you train that neural network。
+ and this is a great way to deal with if your neural network needs to take in a high dimensionmen categorical that does not have an easy way that you can transform it into dummies。 say you have I don't know a 20000 Carnality categorical。 you could literally just define it as a embedding pick some arbitrary number of dimensions like I don't know。2040。 It's a hyperparameter you'd have to play with it and literally the atom update rule or back propagation。
 
- You want to mark those embedding weight。😊，As nontrainable， otherwise。
+ All of them。 it'll do gradient descent and it will train your embeddings for you。 Let's go ahead and see how we can do this。 This uses some of the curs functions for natural language processing。 This shows really how easily you can build these NLP neural networks now So here are 10 restaurant reviews。 The first ones are all bad。 Never coming back。 horriblerrible service。
 
- they'll start to get pulled away from the values that they were originally set at by whoever trained it。
+ rude waitress Col food horrible food these other guys。Re liked it。 Awesome， awesomewesome service。 Rocks。 Poor work couldn't have done better。 So these are all just different。 different values that you can choose for this。 And notice I put in random exclamation points。 and then even just a sort of random one that was more applying to say， evaluating contractors。
 
- And if you're doing transfer learning， you probably don't want those weights modified。
+ but noise is good。 One means negative 0 is positive。 So these are the labels。 This is the y。 we're going train a neural network on it。 So we're gonna say our vocabulary size is 50。 We can just pick that to be whatever the heck we want。 We don't have to really count the number of words in there。
 
- We'll see more about how to train these in a moment。 Now， I compared this to dummy variables。
+ And we're going to use the car is one hot。 The car is one hot is kind of cool。😊。It sort of scares me a little bit， but it's good for examples。 It is basically going in there and tokenizing for you。 So breaking these words into breaking these sentences into words。
 
- So usually what you want to do to prove that something is equivalent to something else is see if you can emulate that thing in something else。
+ and then assigning each to an index。 So it's doing a lot in the background。Normally。 I like to have a little more control over that， I want to know how it's being tokenized and I would like to know how it is assigning these indexes to it。 But this is good for for an example。 when we get into showing how to connect one of these to an API that others will use sort of in a production environment。 we'll see that we really care about locking down what these index values are。
 
- So we're going to use an embedding layer to basically provide dummy variables for us。
+ I wouldn't want if'm if I'm deploying this in a real worldor corporate situation。 I wouldn't want coming to become an index of， say，5 one time retrain an now for。 and potentially the data coming in is now encoded wrong。So you have to be careful with all of that。 Then I am going to go ahead and go ahead and run this part。
 
- So what I am doing here is I am creating an input dimension 3。
+ We're going to go ahead and run it and encode these。 These are all of your sequences。 We would like these to all be of consistent length because that's how sequences work。 We're going to do the max length of4。 Look at that。 They're all nice and zero padded。 Thank you。 Kiras， We're going to create a very simple sequential neural network。
 
- So that would be a categorical variable that had three possible values。
+ We are going to have one dense layer at the end。 So there is learning going on in here。 There is one weight matrix。 But then we're also learning in the embedding layer。 The neural network is going to actually learn how to create these embeddings so that they are a way that separate those words and map them into Euclidean space in a meaningful way。 This saves you having to deal with tons and tons of dummy variables and creating a very complex neural network。
 
- The dummies for this would look like this。 essentially the diagonal that you see with dummy variables because dummies just a briefly review essentially one of the values is is one or hot。
+ embeddings are great for NLP。 go ahead and run it We'll print a summary。 There you see it。 go ahead and fit it。 I'm just running at。😊，100 epochs， very， very fast to train。 Let's look at essentially the embeddings。 Each line is an embedding for a different word。 I'm not even going to try to explain the rhyme or reason for this。
 
- That's why it's called one hot。 And the rest are 0。
+ There' essentially like weights that were calculated in the same way that the weights were for the actual layers。 and there is one layer on here that's learning as well。 but the embeddings learn right or long with the other weights in the neural network。 and then we can evaluate this neural network at the end。 accuracy is perfect。 actually。
 
- And this is a simple way that you can encode categorical。
-
-Values the output dimension is also going to be three because there's three columns in what we're encoding it to。
-
- If you're doing dummy variables， these will always be the same。
-
- And this is why dummy variables are so inefficient， because say your input dimensions was 100。
-
- You had 100 categories。 You could still make this very small。 You want to want to make it too small。
-
- but you can make it say 4 or 8 and train for it。 We'll see how we can do that in just a moment。
-
- Then input length， that's your sequence length。 So that's how many of these you want to encode at a time。
-
- Then we're going compile it with atom and MSC again， we're going to never train this neural network。
-
- So these two really don't matter。 but we're going to do set weights on the embedding layer。
-
- Now we do have to transform this look up up here into a list because you can potentially not going to really get into that。
-
- but you can you can have multiple lookup matrices for this if it's going sort of in multiple directions。
-
- but that would be a more advanced set。 you can refer to the Kira's documentation if you're interested in。
-
-Exactly， that is a list。 Let's go ahead and run it。 But for now。
-
- just always embed your matrix list and you'll be good to go gonna go ahead and run that。
-
- Now we have created essentially our dummy emulator as an embedding layer。
-
- I'm going to go ahead and run it down here， we're going to encode these two categoricals and run it and essentially look what it's doing。
-
- There's the dummy variables。 so you could put one of these on the front of your neural network and not even have to encode your dummy variables。
-
- there's better ways of going about it。 but this is one way that you you could do that。
-
- if you wanted to make your neural network truly so that you could pass in these enter your values and have it automatically transform these into dummies。
-
- This is cool。 you'll do this kind of thing a lot， this is when you want to use transfer learning to bring your dummy variables in。
-
- However， the real fun gets in。 maybe it's not the real fun。😊，You can train these yourself。
-
- and this is a great way to deal with if your neural network needs to take in a high dimensionmen categorical that does not have an easy way that you can transform it into dummies。
-
- say you have I don't know a 20000 Carnality categorical。
-
- you could literally just define it as a embedding pick some arbitrary number of dimensions like I don't know。
-
-2040。 It's a hyperparameter you'd have to play with it and literally the atom update rule or back propagation。
-
- All of them。 it'll do gradient descent and it will train your embeddings for you。
-
- Let's go ahead and see how we can do this。 This uses some of the curs functions for natural language processing。
-
- This shows really how easily you can build these NLP neural networks now So here are 10 restaurant reviews。
-
- The first ones are all bad。 Never coming back。 horriblerrible service。
-
- rude waitress Col food horrible food these other guys。Re liked it。 Awesome， awesomewesome service。
-
- Rocks。 Poor work couldn't have done better。 So these are all just different。
-
- different values that you can choose for this。 And notice I put in random exclamation points。
-
- and then even just a sort of random one that was more applying to say， evaluating contractors。
-
- but noise is good。 One means negative 0 is positive。 So these are the labels。 This is the y。
-
- we're going train a neural network on it。 So we're gonna say our vocabulary size is 50。
-
- We can just pick that to be whatever the heck we want。
-
- We don't have to really count the number of words in there。
-
- And we're going to use the car is one hot。 The car is one hot is kind of cool。😊。
-
-It sort of scares me a little bit， but it's good for examples。
-
- It is basically going in there and tokenizing for you。
-
- So breaking these words into breaking these sentences into words。
-
- and then assigning each to an index。 So it's doing a lot in the background。Normally。
-
- I like to have a little more control over that， I want to know how it's being tokenized and I would like to know how it is assigning these indexes to it。
-
- But this is good for for an example。 when we get into showing how to connect one of these to an API that others will use sort of in a production environment。
-
- we'll see that we really care about locking down what these index values are。
-
- I wouldn't want if'm if I'm deploying this in a real worldor corporate situation。
-
- I wouldn't want coming to become an index of， say，5 one time retrain an now for。
-
- and potentially the data coming in is now encoded wrong。So you have to be careful with all of that。
-
- Then I am going to go ahead and go ahead and run this part。
-
- We're going to go ahead and run it and encode these。 These are all of your sequences。
-
- We would like these to all be of consistent length because that's how sequences work。
-
- We're going to do the max length of4。 Look at that。 They're all nice and zero padded。 Thank you。
-
- Kiras， We're going to create a very simple sequential neural network。
-
- We are going to have one dense layer at the end。 So there is learning going on in here。
-
- There is one weight matrix。 But then we're also learning in the embedding layer。
-
- The neural network is going to actually learn how to create these embeddings so that they are a way that separate those words and map them into Euclidean space in a meaningful way。
-
- This saves you having to deal with tons and tons of dummy variables and creating a very complex neural network。
-
- embeddings are great for NLP。 go ahead and run it We'll print a summary。 There you see it。
-
- go ahead and fit it。 I'm just running at。😊，100 epochs， very， very fast to train。
-
- Let's look at essentially the embeddings。 Each line is an embedding for a different word。
-
- I'm not even going to try to explain the rhyme or reason for this。
-
- There' essentially like weights that were calculated in the same way that the weights were for the actual layers。
-
- and there is one layer on here that's learning as well。
-
- but the embeddings learn right or long with the other weights in the neural network。
-
- and then we can evaluate this neural network at the end。 accuracy is perfect。 actually。
-
- The reason accuracy is perfect is I really didn't put any overlap here。
-
- All the words for negative reviews werere not in the positive reviews。 This is just a toy example。
-
- Thank you for watching this video and the next video we're going to look at end to end natural language processing This content changes often。
-
- So subscribe to the channel to stay up to date on this course and other topics in artificial intelligence。
+ The reason accuracy is perfect is I really didn't put any overlap here。 All the words for negative reviews werere not in the positive reviews。 This is just a toy example。 Thank you for watching this video and the next video we're going to look at end to end natural language processing This content changes often。 So subscribe to the channel to stay up to date on this course and other topics in artificial intelligence。
 
 
 

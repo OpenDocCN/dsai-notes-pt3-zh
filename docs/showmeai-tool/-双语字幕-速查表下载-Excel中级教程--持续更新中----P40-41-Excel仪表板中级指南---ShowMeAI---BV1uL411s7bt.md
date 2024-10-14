@@ -2,218 +2,62 @@
 
 ![](img/f5736a42cae3095467764d512652e09b_0.png)
 
-This is the intermediate guide to Excel dashboards。
+This is the intermediate guide to Excel dashboards。 And I hope you watched my beginner's guide to Excel dashboards。 If you did。 you know how I set these up。 This is just the beginnings of a dashboard to track certain data that's in the rest of my workbook。 You can see I've got three spreadsheets full of data。
 
- And I hope you watched my beginner's guide to Excel dashboards。 If you did。
+ And I am highlighting these three pieces of data on my dashboard。 in this intermediate guide。 I'm going to show how to add some additional functionality to the dashboard。 I'm also going show you how to dress it up a little bit， make it look a little nicer。 and then we'll finish by looking at how to pull data from a completely separate workbook。
 
- you know how I set these up。 This is just the beginnings of a dashboard to track certain data that's in the rest of my workbook。
+ and put it on the dashboard on this spreadsheet。 So the first thing I'd like to focus on。 If you look at this dashboard。 This is nice。 I can see the total gross sales。 and I can see the total number of sales in the average cell price。 And that's a good start。 But from time to time， I might want to dig deeper into the data。 and to help me with that。
 
- You can see I've got three spreadsheets full of data。
+ I'm going to add some hyperlinks。😊，On the insert tab and here on the ribbon I'm just gonna add some text。 and I'll click and add the text box here， and I'll just type click for more detail。 and then I'll click here on the very edge of the text box and drag it to where I want it to be。 I think that looks good， I might want to actually make that smaller。 But whatever you want to do。
 
- And I am highlighting these three pieces of data on my dashboard。 in this intermediate guide。
+ you can adjust the look and feel of that text box。 I really should group that text with the rest of this element of the dashboard。 but that's okay for now。 Now I'll triple click on the text to highlight it。 Or if you prefer you can click and drag to highlight it。
 
- I'm going to show how to add some additional functionality to the dashboard。
+ and then go back to the insert tab insert ribbon and look for the links group and just click the link button。 and this pop up helps me decide what to link this text to。 I don't want it to link to this existing file or any existing file really or to an email address or anything like that。 What I want is this place in this workbook。 and maybe I want to focus in on the data that's on my 2。
 
- I'm also going show you how to dress it up a little bit， make it look a little nicer。
+20Spsheet here。 So click O。 So now when anyone clicks on that button。 it takes them directly to the 2020 spreadsheet， and they can see the underlying data。 Now。 going back to my dashboard spreadsheet。 I actually might want to adjust that link。 So I'm going right click on it and go to edit link。
 
- and then we'll finish by looking at how to pull data from a completely separate workbook。
+ because notice it's taking me directly to sell a1。 and gross sales are actually in H1。 So I'm going to change that to H1。 click O， And now when I click on the hyperlink。 it takes me to H1。 So that way， you can focus right in on the specific cell or part of a spreadsheet that you would like to link to。 I could easily do the same thing with links for total number of sales and average sale price。 Now。
 
- and put it on the dashboard on this spreadsheet。 So the first thing I'd like to focus on。
+ let's look at some ways。 I can dress up this dashboard and make it look nicer。 I could， for example。 go into my underlying data here。 And I could create a chart to add to the dashboard。 Now。 this may not make sense in this particular。But if I wanted to include a chart， I could。 I could click and drag to highlight one portion of the chart that I care about。
 
- If you look at this dashboard。 This is nice。 I can see the total gross sales。
+ maybe the product titles。 and then holding the control key。 I'll move over and click and drag to select units sold。 So with both of those selected I'm going to hold the alt key and then tap F1 on the keyboard and that brings up a chart of the data that I've selected。 Now like I said in this case， the chart doesn't really tell me a whole lot。
 
- and I can see the total number of sales in the average cell price。 And that's a good start。
+ but now with this chart I can right click on it， cut it and then go to my dashboard and paste in my chart。 And this chart has to do with units sold total number of sales。 I suppose and I can put that where I want it to be。 and it becomes an important part of my dashboard。 Another way that I can dress up the dashboard is by going to view and looking in the show group。
 
- But from time to time， I might want to dig deeper into the data。 and to help me with that。
+ Sometimes I like having the grid lines visible。 but other times it just makes it look cluttered。 So I'm going to remove the grid lines out of this spreadsheet。If I want to。 I can also remove the headings so I get rid of ABC D etc ce。 and the formula bar here。 I could uncheck that and it's gone。 Now， what about the ribbon If I don't want the ribbon distracting from my dashboard。
 
- I'm going to add some hyperlinks。😊，On the insert tab and here on the ribbon I'm just gonna add some text。
+ it is possible to hide that If you go here to the upper right corner。 It says ribbon display options and I can click to auto hideide the ribbon so it just goes away when I don't need it。 if I need it， I click here up at the top on the green and the ribbon appears and then if I click away。 it hides again。 Now if you don't want that， you can have it show tabs it'll only show the tabs or you can have it just do the default。
 
- and I'll click and add the text box here， and I'll just type click for more detail。
+ show tabs and commands。 I'm gonna go back and auto hideide the ribbon completely and now watch if I go back to the 2020 spreadsheet or the 2019 spreadsheet or 2018 you notice that the ribbon is still gone。 It's auto hidden。 but I still do have the grid lines I still have my headings and so at least the option。
 
- and then I'll click here on the very edge of the text box and drag it to where I want it to be。
+That I selected here in the view tab in the show group。 those apply just to this particular spreadsheet that I'm working on in setting up as my dashboard。 So that's a good thing to know。 So the point of doing all of that is just to make the dashboard look nicer We want it to look attractive and to simply show the data that is important to me or to my audience or to the shareholders or whomever your audience is Another way to do that to make it look a little nicer is to adjust the zoom level。
 
- I think that looks good， I might want to actually make that smaller。 But whatever you want to do。
+ and this is already pretty well zoomed in。 but I want to adjust it a little bit。 and normally I have in the lower right corner some zoom options。 a slider basically that I can use to adjust the zoom because I've hidden the ribbon that option is gone。 But if I click here up above on the green。 it brings back that zoom level slider。
 
- you can adjust the look and feel of that text box。
+ So I'd like to zoom in a little bit so I'm dragging that to the right that's a little too much I can just use trial and error to get that to the proper zoom that I want for it and then I can。Click and I think that looks really pretty good。 If I want to。
 
- I really should group that text with the rest of this element of the dashboard。
+ I can pull this over a little bit to make that really centered well and look the way I want it to look Now。 the final thing I want to show you how to do is to pull data not from another spreadsheet in the current workbook but rather from a completely different Excel workbook So you can see when I put my mouse down here on the Excel symbol on my taskbar。
 
- but that's okay for now。 Now I'll triple click on the text to highlight it。
+ it pops up with two workbooks。 the one I've been working in and a second workbook where I'm tracking competitor average sales。 let's say the company's competitors publish their data of their average sale price going back historically。 and I want to use some of this information in my dashboard。 let's look at how to do that。 First of all， I want to add another dashboard element。 I could just copy paste what I have here。
 
- Or if you prefer you can click and drag to highlight it。
+ So I clicked on it to highlight it control C to copy control V to paste。 and now I've got another dashboard element。 Now I'll adjust the text instead of average。Sall price。 I'll call this competitors average sale price。 My text is way too big。 so I select it。 and I'll shrink down the text。 Still too big。 There we go。
 
- and then go back to the insert tab insert ribbon and look for the links group and just click the link button。
+ And of course I could have just adjusted the size of the box that the text is in but now the data itself I'm going to double click on it I get a cursor and I can delete that text。 because I want to pull the number that goes here from that other separate workbook。
 
- and this pop up helps me decide what to link this text to。
+ So next I'm going to click away from my shape and to do this properly， I think it makes more sense。 if I click to bring back my ribbon and then I put in the formula bar。 And I think I'll make the ribbon stay at least for now。 So show tabs and ribbon。 So now I'll click on my shape and delete the number that was there already。
 
- I don't want it to link to this existing file or any existing file really or to an email address or anything like that。
+ and with the cursor flashing， I'm going go up here and type equals here in the formula bar and then I'll just hold the alt key and tap tab and that shows me all of the options of the different windows and files that are open。 I had to tap tab。A couple of times until I selected the workbook that has the data I want to pull。
 
- What I want is this place in this workbook。 and maybe I want to focus in on the data that's on my 2。
+ And here it is 2020 average cell price of my competitor。 and I select that cell tap enter on the keyboard。 and look。 it's now pulling information for my dashboard， but it's pulling it from a separate workbook completely。 I'm gonna go back to my workbook and the dashboard that I'm working on。 Obviously。
 
-20Spsheet here。 So click O。 So now when anyone clicks on that button。
+ I could change the text。 I could work to change the color scheme and things like that。 I could change the background color， try to change the text color。 but honestly。 I'm pretty happy with the way it is right now。 And now I can save this workbook and my dashboard should always have a connection between this workbook and the other workbook that I'm pulling the data from。 So if this number gets updated in my second workbook。
 
- it takes them directly to the 2020 spreadsheet， and they can see the underlying data。 Now。
+ It should update also on my dashboard in the current workbook。😊，Now。 if you pull data often from other workbooks into a dashboard from time to time。 you may run into some problems。 What if that other workbook gets deleted， What if it gets moved。 the link might get corrupted。 So if that happens， what you'll want to do is go to the data tab and look in the queries and connections group。
 
- going back to my dashboard spreadsheet。 I actually might want to adjust that link。
+ there it says edit links。 So you can click that and it will show you the links that it has。 So this workbook only has the one link that I just created。 I can click on it and click check status and it tells me the sources open。 So I've got a good connection and the sources open。 Now。
 
- So I'm going right click on it and go to edit link。
+ if I close this pop up and go in and close that second workbook that I'm pulling the information from I can go back to the data tab。 queries and connections group， click edit links。 And this time if I click check status。 It's got a connection still， but notice there is a warning values referring to other workbooks were not updated so I can click update values。And that should update the values。 I can change my source。
 
- because notice it's taking me directly to sell a1。 and gross sales are actually in H1。
+ I can open the source by clicking open source。 It opens that other work book。 There's just quite a lot of options that I have here to help me make sure that my links to other work bookss are still valid and working。 So this has been the intermediate guide to Excel dashboards。 From here。 you could keep adding more data， more visual elements。
 
- So I'm going to change that to H1。 click O， And now when I click on the hyperlink。
-
- it takes me to H1。 So that way， you can focus right in on the specific cell or part of a spreadsheet that you would like to link to。
-
- I could easily do the same thing with links for total number of sales and average sale price。 Now。
-
- let's look at some ways。 I can dress up this dashboard and make it look nicer。 I could， for example。
-
- go into my underlying data here。 And I could create a chart to add to the dashboard。 Now。
-
- this may not make sense in this particular。But if I wanted to include a chart， I could。
-
- I could click and drag to highlight one portion of the chart that I care about。
-
- maybe the product titles。 and then holding the control key。
-
- I'll move over and click and drag to select units sold。
-
- So with both of those selected I'm going to hold the alt key and then tap F1 on the keyboard and that brings up a chart of the data that I've selected。
-
- Now like I said in this case， the chart doesn't really tell me a whole lot。
-
- but now with this chart I can right click on it， cut it and then go to my dashboard and paste in my chart。
-
- And this chart has to do with units sold total number of sales。
-
- I suppose and I can put that where I want it to be。
-
- and it becomes an important part of my dashboard。 Another way that I can dress up the dashboard is by going to view and looking in the show group。
-
- Sometimes I like having the grid lines visible。 but other times it just makes it look cluttered。
-
- So I'm going to remove the grid lines out of this spreadsheet。If I want to。
-
- I can also remove the headings so I get rid of ABC D etc ce。 and the formula bar here。
-
- I could uncheck that and it's gone。 Now， what about the ribbon If I don't want the ribbon distracting from my dashboard。
-
- it is possible to hide that If you go here to the upper right corner。
-
- It says ribbon display options and I can click to auto hideide the ribbon so it just goes away when I don't need it。
-
- if I need it， I click here up at the top on the green and the ribbon appears and then if I click away。
-
- it hides again。 Now if you don't want that， you can have it show tabs it'll only show the tabs or you can have it just do the default。
-
- show tabs and commands。 I'm gonna go back and auto hideide the ribbon completely and now watch if I go back to the 2020 spreadsheet or the 2019 spreadsheet or 2018 you notice that the ribbon is still gone。
-
- It's auto hidden。 but I still do have the grid lines I still have my headings and so at least the option。
-
-That I selected here in the view tab in the show group。
-
- those apply just to this particular spreadsheet that I'm working on in setting up as my dashboard。
-
- So that's a good thing to know。 So the point of doing all of that is just to make the dashboard look nicer We want it to look attractive and to simply show the data that is important to me or to my audience or to the shareholders or whomever your audience is Another way to do that to make it look a little nicer is to adjust the zoom level。
-
- and this is already pretty well zoomed in。 but I want to adjust it a little bit。
-
- and normally I have in the lower right corner some zoom options。
-
- a slider basically that I can use to adjust the zoom because I've hidden the ribbon that option is gone。
-
- But if I click here up above on the green。 it brings back that zoom level slider。
-
- So I'd like to zoom in a little bit so I'm dragging that to the right that's a little too much I can just use trial and error to get that to the proper zoom that I want for it and then I can。
-
-Click and I think that looks really pretty good。 If I want to。
-
- I can pull this over a little bit to make that really centered well and look the way I want it to look Now。
-
- the final thing I want to show you how to do is to pull data not from another spreadsheet in the current workbook but rather from a completely different Excel workbook So you can see when I put my mouse down here on the Excel symbol on my taskbar。
-
- it pops up with two workbooks。 the one I've been working in and a second workbook where I'm tracking competitor average sales。
-
- let's say the company's competitors publish their data of their average sale price going back historically。
-
- and I want to use some of this information in my dashboard。 let's look at how to do that。
-
- First of all， I want to add another dashboard element。 I could just copy paste what I have here。
-
- So I clicked on it to highlight it control C to copy control V to paste。
-
- and now I've got another dashboard element。 Now I'll adjust the text instead of average。Sall price。
-
- I'll call this competitors average sale price。 My text is way too big。 so I select it。
-
- and I'll shrink down the text。 Still too big。 There we go。
-
- And of course I could have just adjusted the size of the box that the text is in but now the data itself I'm going to double click on it I get a cursor and I can delete that text。
-
- because I want to pull the number that goes here from that other separate workbook。
-
- So next I'm going to click away from my shape and to do this properly， I think it makes more sense。
-
- if I click to bring back my ribbon and then I put in the formula bar。
-
- And I think I'll make the ribbon stay at least for now。 So show tabs and ribbon。
-
- So now I'll click on my shape and delete the number that was there already。
-
- and with the cursor flashing， I'm going go up here and type equals here in the formula bar and then I'll just hold the alt key and tap tab and that shows me all of the options of the different windows and files that are open。
-
- I had to tap tab。A couple of times until I selected the workbook that has the data I want to pull。
-
- And here it is 2020 average cell price of my competitor。
-
- and I select that cell tap enter on the keyboard。 and look。
-
- it's now pulling information for my dashboard， but it's pulling it from a separate workbook completely。
-
- I'm gonna go back to my workbook and the dashboard that I'm working on。 Obviously。
-
- I could change the text。 I could work to change the color scheme and things like that。
-
- I could change the background color， try to change the text color。 but honestly。
-
- I'm pretty happy with the way it is right now。 And now I can save this workbook and my dashboard should always have a connection between this workbook and the other workbook that I'm pulling the data from。
-
- So if this number gets updated in my second workbook。
-
- It should update also on my dashboard in the current workbook。😊，Now。
-
- if you pull data often from other workbooks into a dashboard from time to time。
-
- you may run into some problems。 What if that other workbook gets deleted， What if it gets moved。
-
- the link might get corrupted。 So if that happens， what you'll want to do is go to the data tab and look in the queries and connections group。
-
- there it says edit links。 So you can click that and it will show you the links that it has。
-
- So this workbook only has the one link that I just created。
-
- I can click on it and click check status and it tells me the sources open。
-
- So I've got a good connection and the sources open。 Now。
-
- if I close this pop up and go in and close that second workbook that I'm pulling the information from I can go back to the data tab。
-
- queries and connections group， click edit links。 And this time if I click check status。
-
- It's got a connection still， but notice there is a warning values referring to other workbooks were not updated so I can click update values。
-
-And that should update the values。 I can change my source。
-
- I can open the source by clicking open source。 It opens that other work book。
-
- There's just quite a lot of options that I have here to help me make sure that my links to other work bookss are still valid and working。
-
- So this has been the intermediate guide to Excel dashboards。 From here。
-
- you could keep adding more data， more visual elements。
-
- like graphs and charts and make it look better and better and pull together just the information that you want to highlight onto your dashboard。
-
-😊。
-
-![](img/f5736a42cae3095467764d512652e09b_2.png)
+ like graphs and charts and make it look better and better and pull together just the information that you want to highlight onto your dashboard。😊。![](img/f5736a42cae3095467764d512652e09b_2.png)

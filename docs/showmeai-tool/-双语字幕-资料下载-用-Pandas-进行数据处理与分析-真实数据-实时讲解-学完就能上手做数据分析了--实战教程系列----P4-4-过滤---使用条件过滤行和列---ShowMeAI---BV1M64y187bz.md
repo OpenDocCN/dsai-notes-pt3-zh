@@ -1,400 +1,114 @@
 # 【双语字幕+资料下载】用 Pandas 进行数据处理与分析！真实数据&实时讲解，学完就能上手做数据分析了！＜实战教程系列＞ - P4：4）过滤 - 使用条件过滤行和列 - ShowMeAI - BV1M64y187bz
 
-Hey there。 How's it going， everybody。 In this video。
+Hey there。 How's it going， everybody。 In this video。 we're gonna go over the basics of filtering data from data frames and series objects。 So。 for example， if we wanted to look at our survey data and only look at people who know Python。 Then we can filter that data out。 Or maybe we only want to see results from a specific country or people that have a specific salary range。
 
- we're gonna go over the basics of filtering data from data frames and series objects。 So。
+ Anything like that。 We can do all of that by filtering out data from our series and data frame objects。 and we'll learn how to do that in this video， So filtering is one of the main things to learn with pandas because it's basically how we begin every project by filtering the data that we want from the data that we don't。
 
- for example， if we wanted to look at our survey data and only look at people who know Python。
+ Now， I'd also like to mention that we do have a sponsor for this video。 And that is brilliant org。 So I'd really like to thank brilliant for sponsoring this series。 And it would be great if you all could check them out using the link in the description section below and support the sponsors。 And I'll talk more about their services in just a bit。 So with that said。
 
- Then we can filter that data out。 Or maybe we only want to see results from a specific country or people that have a specific salary range。
+ let's go ahead and get started。 Okay， so first of all。 let me show you something that's going to be the basis for our filters。 If we perform。😊。basic comparisons using our data frames。 Then we'll get back some interesting results。 So let's see what this looks like。 So right now， I have my snippets notebook open that we've seen a couple of times throughout the series。
 
- Anything like that。 We can do all of that by filtering out data from our series and data frame objects。
+ and at the bottom here。 I'm going to make a basic comparison and see what the result looks like。 So let's say that I wanted everyone that has the last name of do from our data frame。 there should be two， since we have a Jane do and a John Do here in our data frame。 So in our bottom cell here， I'm going to put a comparison that says Df。
 
- and we'll learn how to do that in this video， So filtering is one of the main things to learn with pandas because it's basically how we begin every project by filtering the data that we want from the data that we don't。
+ and then we want to access that last name column。 And now we can just say if that last name equals equals do。 So if I run this then what we get back is a series object。 And this might not be what you expected。 So maybe you thought we would just get a data frame back with all of the values that met our criteria。 But what we got back is a series with a bunch of true false values。😊，Now。
 
- Now， I'd also like to mention that we do have a sponsor for this video。 And that is brilliant org。
+ these true false values actually correspond to our original data frame and the true values are the rows that met our filter criteria and the false values are the rows that didn't meet our filter criteria。 So you can basically think of this like a mask。 So we can see here up here in our simple data frame the last name of shaffer is false。
 
- So I'd really like to thank brilliant for sponsoring this series。
+ and these two last names here with do are true。 So this is a filter mask when and when you apply it to a data frame。 it will give you all of the rows that meet that filter criteria。 So now let's apply this filter to our data frame。 So first。 I'm going to assign this this return series here to a variable。
 
- And it would be great if you all could check them out using the link in the description section below and support the sponsors。
+ And I'm just gonna call this variable filter。 So I'll say Fil is equal to。 and then this comparison here。 Now filter is a built in Python keyword。 So be sure to use something else。 Anytime I assign these two variables。 I usually just use this fil keyword here。We not keyword， but variable name。 Now。
 
- And I'll talk more about their services in just a bit。 So with that said。
+ I also usually like to wrap my entire filter in parentheses because I find it easier to read。 So this isn't going to change anything。 but I'm just going to put this entire thing here within parentheses so that I can see that this assignment here is separate from this equal sign。
 
- let's go ahead and get started。 Okay， so first of all。
+ Okay， so now we have this filter here。 and remember that this this filter variable here is equal to this series here of true and false values。 And now let's apply this filter to our data frame。 And we can do this in a couple of ways。 So you might see some people do it like this。 We can just pass that directly in like we are searching for a column。 we can pass in a filter there。 And if I run this。 oops。
 
- let me show you something that's going to be the basis for our filters。 If we perform。😊。
+ and I got an error there because I did not run this cell to set that variable。 So I'll rerun that And now if I run this。 Then now we can see that we get a data frame back where it returned all of the rows that have。😊，Last name of Do。 Now， we only assigned the filter on a different line because I think that's easy to read。 but you might see some people put these comparisons directly in the brackets for the data frame。
 
-basic comparisons using our data frames。 Then we'll get back some interesting results。
+ So you might see something like this。 So I'm just going to comment that out right now and just grab this entire filter here。 you might see some people do it like this and just paste it or put it directly in there。 and we can see that that works too。 Now I think that that's a little more difficult to read than just assigning this to a variable。 So I'm just going to use that as a variable， but you should know that it is a possibility since you will see some people put the filter directly in there。
 
- So let's see what this looks like。 So right now， I have my snippets notebook open that we've seen a couple of times throughout the series。
+ Okay so that's one way of narrowing down those rows。 Now another way that you can do this。 And the way that I prefer to do it is to use the dot lo indexer that we've seen a few times now。 And I'll talk a bit about why I prefer this in a second。 But if we pass in that。Of bullions into dot Lo， then it should give us the same results that we currently have。
 
- and at the bottom here。 I'm going to make a basic comparison and see what the result looks like。
+ So if I say Df dot lo and pass in that same filter。 then we can see that we get the exact same thing。 This here gave us the same results as our dot Lo down here。 So this is one reason why pandas can be a bit confusing to people because there are multiple things that you can pass into these different brackets to get different results。 So like I said before， do Lo is used to look up rows and columns by label。
 
- So let's say that I wanted everyone that has the last name of do from our data frame。
+ But if you pass in a series of bulloles like we did here， then you can also filter data out。 Now。 the reason that I like using dot Lo for this is because we can still grab these specific columns that we want as well。 So， for example， if I wanted the email column then I could simply say pass in a second value here into dot Lo。 and just say that we want that email column。 if I run that。
 
- there should be two， since we have a Jane do and a John Do here in our data frame。
-
- So in our bottom cell here， I'm going to put a comparison that says Df。
-
- and then we want to access that last name column。 And now we can just say if that last name equals equals do。
-
- So if I run this then what we get back is a series object。 And this might not be what you expected。
-
- So maybe you thought we would just get a data frame back with all of the values that met our criteria。
-
- But what we got back is a series with a bunch of true false values。😊，Now。
-
- these true false values actually correspond to our original data frame and the true values are the rows that met our filter criteria and the false values are the rows that didn't meet our filter criteria。
-
- So you can basically think of this like a mask。 So we can see here up here in our simple data frame the last name of shaffer is false。
-
- and these two last names here with do are true。 So this is a filter mask when and when you apply it to a data frame。
-
- it will give you all of the rows that meet that filter criteria。
-
- So now let's apply this filter to our data frame。 So first。
-
- I'm going to assign this this return series here to a variable。
-
- And I'm just gonna call this variable filter。 So I'll say Fil is equal to。
-
- and then this comparison here。 Now filter is a built in Python keyword。
-
- So be sure to use something else。 Anytime I assign these two variables。
-
- I usually just use this fil keyword here。We not keyword， but variable name。 Now。
-
- I also usually like to wrap my entire filter in parentheses because I find it easier to read。
-
- So this isn't going to change anything。 but I'm just going to put this entire thing here within parentheses so that I can see that this assignment here is separate from this equal sign。
-
- Okay， so now we have this filter here。 and remember that this this filter variable here is equal to this series here of true and false values。
-
- And now let's apply this filter to our data frame。 And we can do this in a couple of ways。
-
- So you might see some people do it like this。 We can just pass that directly in like we are searching for a column。
-
- we can pass in a filter there。 And if I run this。 oops。
-
- and I got an error there because I did not run this cell to set that variable。
-
- So I'll rerun that And now if I run this。 Then now we can see that we get a data frame back where it returned all of the rows that have。
-
-😊，Last name of Do。 Now， we only assigned the filter on a different line because I think that's easy to read。
-
- but you might see some people put these comparisons directly in the brackets for the data frame。
-
- So you might see something like this。 So I'm just going to comment that out right now and just grab this entire filter here。
-
- you might see some people do it like this and just paste it or put it directly in there。
-
- and we can see that that works too。 Now I think that that's a little more difficult to read than just assigning this to a variable。
-
- So I'm just going to use that as a variable， but you should know that it is a possibility since you will see some people put the filter directly in there。
-
- Okay so that's one way of narrowing down those rows。 Now another way that you can do this。
-
- And the way that I prefer to do it is to use the dot lo indexer that we've seen a few times now。
-
- And I'll talk a bit about why I prefer this in a second。 But if we pass in that。
-
-Of bullions into dot Lo， then it should give us the same results that we currently have。
-
- So if I say Df dot lo and pass in that same filter。
-
- then we can see that we get the exact same thing。 This here gave us the same results as our dot Lo down here。
-
- So this is one reason why pandas can be a bit confusing to people because there are multiple things that you can pass into these different brackets to get different results。
-
- So like I said before， do Lo is used to look up rows and columns by label。
-
- But if you pass in a series of bulloles like we did here， then you can also filter data out。 Now。
-
- the reason that I like using dot Lo for this is because we can still grab these specific columns that we want as well。
-
- So， for example， if I wanted the email column then I could simply say pass in a second value here into dot Lo。
-
- and just say that we want that email column。 if I run that。
-
- then we can see that we get the emails that match those last names。
-
-So remember the first value to dot Lo are the rows that we want and the second value here。
-
- are the columns that we want。 So since I wanted the email column。
-
- it gives me a series of those emails where the last name is equal to Do so real quick let's go over some other ways to filter data out here。
+ then we can see that we get the emails that match those last names。So remember the first value to dot Lo are the rows that we want and the second value here。 are the columns that we want。 So since I wanted the email column。 it gives me a series of those emails where the last name is equal to Do so real quick let's go over some other ways to filter data out here。
 
  So first， let's go over the and and or operators。 Now we can't use the python built in and and or keywords for our filters So we're going to be using some other symbols and the ss that we're going to use here are the ampersand for and let me write these out here。
 
- the ampersand for an and and this vertical bar for an or。
+ the ampersand for an and and this vertical bar for an or。 So these symbols carry over from other programming conventions So you may have seen them before。 So for example， let's say that we wanted our filter to get all of the rows where the last name is Do and the first name is John which should only return this one result。So in order to do this， we can go back up to our filter here and I'm just going to get rid of this cell here because I'm just going to be using dot Lo from now on。
 
- So these symbols carry over from other programming conventions So you may have seen them before。
+ so now with our filter here， let's say that we want a last name equal to dough and which we're going to use the Ampersand and we want the first name equal to John。So I will put that in here。 And I also let me actually separate these out as well。 I like to have each one wrapped in parentheses。 I think it makes it a bit easier to read。 So now if I rerun that filter and then rerun our dot Lo。
 
- So for example， let's say that we wanted our filter to get all of the rows where the last name is Do and the first name is John which should only return this one result。
+ then we can see that now we're just getting that single email address。 And that email。 again is where all of the last names were equal to Doe。 and the first names were equal to John。 So in this case， it's just one result。 So now let's look at an example using the or operator。 Now for this， we can use the vertical bar character。
 
-So in order to do this， we can go back up to our filter here and I'm just going to get rid of this cell here because I'm just going to be using dot Lo from now on。
+ So let's say that I wanted a filter where the last name is equal to shaeffer or the first name is equal to John。 Okay， so if I wanted the last name to be equal to chaeffer。 or the first name is equal to John for the or， we're going to do a vertical bar character there。 So now if I rerun this。 then we can see that we get back all of the rows or all the email addresses。
 
- so now with our filter here， let's say that we want a last name equal to dough and which we're going to use the Ampersand and we want the first name equal to John。
+😊，Where the last name is equal to shafer or the first name is equal to John。 So in this case。 it was these two rows here。 Now we can also get the opposite of a filter。 So let's say that I wanted to get the complete opposite of this filter where we want all of the rows where the last name isn't shaefffer and the first name isn't John。 Now I could go in here and fiddle around with this query that I currently have trying to get everything right。
 
-So I will put that in here。 And I also let me actually separate these out as well。
+ or I could simply add in a tilda at the beginning of this filter。 and it will give me everything that didn't match that filter。 So if I just come in here and put a tilda there。 then that is going to negate that filter and give me the opposite of those results。 So we can see here that we get Jane Doe。 because that are that is all the results where the last name was not shaffer or the first name wasn't John。
 
- I like to have each one wrapped in parentheses。 I think it makes it a bit easier to read。
+ So this goes back to truth tables that some of us may have studied in。School now。 if anyone is unfamiliar with true tables， then let me know and maybe I can make a future video on that subject。 but it's more mathematical related than programming related。 although the two do overlap very frequently。 Okay so that kind of covers the basics of filtering on a small data frame。
 
- So now if I rerun that filter and then rerun our dot Lo。
+ But now let's go back to our larger data set of survey data and look at some real worldorl examples of some filters that we might want to take a look at。 So I'm going bring up my other notebook here。 and here we have the stack overflow survey data that we've been using throughout the series。
 
- then we can see that now we're just getting that single email address。 And that email。
+ and again， if you'd like to follow along， then you can find a link to this code and the data in the description section below。 Okay so now that we've learned about some basic filtering。 let's see if we can run some filters on our survey data here。 So for example。 let's say that we wanted to look at the data for people who are making a salary over a certain amount。
 
- again is where all of the last names were equal to Doe。 and the first names were equal to John。
+ Now maybe want want to take a look at what languages are earning the higher salaries or something like that。So in order to do that， I'm going to first create a filter。 Now。 if you don't know which column and the data frame gives the salary。 then you can always find that using the schema data frame that we've seen throughout the series that tells us what each of these columns here means。
 
- So in this case， it's just one result。 So now let's look at an example using the or operator。
+ but for the sake of time here， I'll just tell you that the column for salary if I go over here。 I think I can find it here pretty quick it is this converted comp right here。 So if we scroll down through some of these survey results we can see that this person says that they make about 9000 this person makes 61000 and these are converted to USD and real quick。 let me reload this page here just to make sure that I have run all of these cells and that I'm that all of these variables here have been initialized。
 
- Now for this， we can use the vertical bar character。
+ okay so if we wanted to get a filter with all of the high salaries then let me come over here and again I。copypy this column name here。 and now let's make a filter。 and I'll call this filter high salary。 and I'll set this equal to a conditional here where we're saying that we want the Df of this converted comp column of our data frame。 we want that to be over let's say a high salary is over 7000。
 
- So let's say that I wanted a filter where the last name is equal to shaeffer or the first name is equal to John。
+ you know this is kind of subjective but we'll do that as a filter here。 And now let's apply that filter to our data frame。 So just like we saw before。 I can say Df do Lo and I can pass in that high salary filter there。 And now we can see that we get some results here。 and this isn't all of our respondents。
 
- Okay， so if I wanted the last name to be equal to chaeffer。
+ we can see that now it's respondent 6 and 9 and 13。 So if I scroll over to our to our converted comp。 then all of these salaries here should be over 70000。 and it looks like they are。Now， in order to narrow these columns down a bit。 let's just grab a certain number of columns。 So I'll grab the country。
 
- or the first name is equal to John for the or， we're going to do a vertical bar character there。
+ the programming languages and the salary。 So to do this， remember。 we can just pass these into dot Lo。 So up here where we are doing dot Lo。 I'll put in a comma here。 And now I'll put in a list for the columns that we want。 And let's say that we want to get the country， we also want to get the programming languages that they that the these people have worked with。
 
- So now if I rerun this。 then we can see that we get back all of the rows or all the email addresses。
+ And this here， and like I said， you can look all of these up in the schema。 But this is under languages worked with。 we can see that this person knows Java R Sql and so on。 So I'll paste that in as one of the columns that we want。 And also I will get the converted comp。 So I will paste that in as well。 And now let's run that。
 
-😊，Where the last name is equal to shafer or the first name is equal to John。 So in this case。
+ Now we can see that we get not only the people who meet this。High salary standard filter that we set， but also we're getting we're only getting the country。 the languages that they know and their salary。 So our filter does seem like it is being applied correctly and that this is working nice so now that I'm actually seeing the countries here that reminds me that we might want to do some filtering with multiple values。
 
- it was these two rows here。 Now we can also get the opposite of a filter。
+ So for example， you know my YouTube audience comes mainly from the United States， India。 the United Kingdom Germany and Canada。 well， that's where the largest percentages of the audience of people who are watching the videos come from。 So let's say that I wanted to filter out the survey results here so that I only see the results from those five countries that I mentioned now I could create a super long filter up here where I say。 you know if the country is equal to the United States or if the country is equal to India or if the country is equal to the United Kingdom。
 
- So let's say that I wanted to get the complete opposite of this filter where we want all of the rows where the last name isn't shaefffer and the first name isn't John。
+That would take up a lot of space。 Instead， let's just create a list of those countries。 And then I'll show you a neat trick that we can do to filter those out。 So now up here。 instead of using this high salary filter here， I'm just going to call make a list of countries here。 And I'll set this equal to。 I'm kind of a slow typer here。 So let me type these out really quick。
 
- Now I could go in here and fiddle around with this query that I currently have trying to get everything right。
+Okay， so now if we want all of these survey results where the respondents said that they were from one of these five countries。 then I can simply say， I'll set a new filter here。 Actually， let me do that up here。 I'll set a new filter， and I'll set this equal to D F。Of country。 So where the country dot is in。And we want the country to be in this list of countries here。 So I'm going to run that cell。 and now。
 
- or I could simply add in a tilda at the beginning of this filter。
+Let's apply that filter。To our data frame。 So if I run this。 and just to narrow down these results to make sure to where we can see the country right off the bat。 I'm just going to only grab the country there。 So if I run this， then we can see okay。 we get United Kingdom， United States， Canada， India。
 
- and it will give me everything that didn't match that filter。
+ So it looks like that applied correctly as well。 Now。 let me show you one more common filter operation that you'll probably use a lot。 So we can actually use string methods within pandas as well to do some alterations to our data frame。 or in this case to help with a conditional。 So let me show you what I mean。
 
- So if I just come in here and put a tilda there。 then that is going to negate that filter and give me the opposite of those results。
+ So let's say that we only want to look at people who answered that they knew Python as a programming language。 So let's see how we do this。 So first of all， the column that list。 the programming languages that each person said that they know is that language worked with column。 So let's see what this looks like。 So in this here。 I'm just going to grab。That language。
 
- So we can see here that we get Jane Doe。 because that are that is all the results where the last name was not shaffer or the first name wasn't John。
+Worked with column oops， and I spelled language wrong。 So language worked with。 I that right。 Y。 okay， so we can see that we get some programming languages here and each different language is separated by a semicolon。 So we can't just do a query where we say， you know if the language worked with equals Python because the actual value of that column will be any combination of the languages listed on the survey。 So one way that we could do this is to instead use a string method and see if Python is within this string of these languages that they know。
 
- So this goes back to truth tables that some of us may have studied in。School now。
+ So to do this， I'm going to rewrite my filter here。 And I'm just going to say that my filter is going to be equal to。 and we want to grab the language is worked with for each person。 and then we're going to use some string method。 So I'm going to say dot STR dot contained。
 
- if anyone is unfamiliar with true tables， then let me know and maybe I can make a future video on that subject。
+And then I will pass in Python Now also we can see that we have some inN values here。 but not a number。 Now we need to also set a fill value for those or else we're gonna to probably get an error so that is part of the contains method here。 I can just say in is equal to false we're just not going to do anything with those。 So let me explain this one more time here。 So this filter that we're putting in place here。
 
- but it's more mathematical related than programming related。
+ it's saying， okay， for this column here， the language is worked with。 which are all of these results here。 we are saying the string in that column does it contain Python So that's my filter。 I'm going to run that cell and now let's apply that filter to our data frame by saying dot Lo and I will pass in that filter and now let's also just grab the languages worked with column to make sure that that。Worked correctly。 So if I run that， then all of these results here or all of these rows that it gave us back should have Python in their languages known。
 
- although the two do overlap very frequently。 Okay so that kind of covers the basics of filtering on a small data frame。
+ so we can see that we have Python there there there So yes。 it does seem to be in all of these results。 Now this one here number8 we can't actually see it here but we have these ellipses here So it's probably just being truncated here。 Now in my last video I kept saying that these were being concatenated。 I meant truncated。 a few people pointed that out in the comments。 So yeah。
 
- But now let's go back to our larger data set of survey data and look at some real worldorl examples of some filters that we might want to take a look at。
+ these are being truncated here So we just can't see the python value there but they are there。 and I'll probably do a complete video on string methods here in the future since there's so much more that we can do with these we can use them to replace text to split values and all kinds of different stuff。
 
- So I'm going bring up my other notebook here。 and here we have the stack overflow survey data that we've been using throughout the series。
+ So it's very these string methods are extremely useful in pandas So that's a basic overview of doing some filters with our data frames。Again， the key takeaways are that we can do these conditionals here and have them as a filter and again let me print out just the filter without applying it to the data frame。
 
- and again， if you'd like to follow along， then you can find a link to this code and the data in the description section below。
+ we can see that the filters return a series of true false values and when we apply that to our data frame。Those true false values basically apply a mask to our data frames where we get all of the true values back and not the false。 So if I look down here， we have respondent 12，4 and 5 as true and 3 was false。 So if I look at my data frame here。 We can see that we get  one to 4 and 5 and 3 is not there because that value was false。
 
- Okay so now that we've learned about some basic filtering。
-
- let's see if we can run some filters on our survey data here。 So for example。
-
- let's say that we wanted to look at the data for people who are making a salary over a certain amount。
-
- Now maybe want want to take a look at what languages are earning the higher salaries or something like that。
-
-So in order to do that， I'm going to first create a filter。 Now。
-
- if you don't know which column and the data frame gives the salary。
-
- then you can always find that using the schema data frame that we've seen throughout the series that tells us what each of these columns here means。
-
- but for the sake of time here， I'll just tell you that the column for salary if I go over here。
-
- I think I can find it here pretty quick it is this converted comp right here。
-
- So if we scroll down through some of these survey results we can see that this person says that they make about 9000 this person makes 61000 and these are converted to USD and real quick。
-
- let me reload this page here just to make sure that I have run all of these cells and that I'm that all of these variables here have been initialized。
-
- okay so if we wanted to get a filter with all of the high salaries then let me come over here and again I。
-
-copypy this column name here。 and now let's make a filter。 and I'll call this filter high salary。
-
- and I'll set this equal to a conditional here where we're saying that we want the Df of this converted comp column of our data frame。
-
- we want that to be over let's say a high salary is over 7000。
-
- you know this is kind of subjective but we'll do that as a filter here。
-
- And now let's apply that filter to our data frame。 So just like we saw before。
-
- I can say Df do Lo and I can pass in that high salary filter there。
-
- And now we can see that we get some results here。 and this isn't all of our respondents。
-
- we can see that now it's respondent 6 and 9 and 13。
-
- So if I scroll over to our to our converted comp。 then all of these salaries here should be over 70000。
-
- and it looks like they are。Now， in order to narrow these columns down a bit。
-
- let's just grab a certain number of columns。 So I'll grab the country。
-
- the programming languages and the salary。 So to do this， remember。
-
- we can just pass these into dot Lo。 So up here where we are doing dot Lo。 I'll put in a comma here。
-
- And now I'll put in a list for the columns that we want。
-
- And let's say that we want to get the country， we also want to get the programming languages that they that the these people have worked with。
-
- And this here， and like I said， you can look all of these up in the schema。
-
- But this is under languages worked with。 we can see that this person knows Java R Sql and so on。
-
- So I'll paste that in as one of the columns that we want。 And also I will get the converted comp。
-
- So I will paste that in as well。 And now let's run that。
-
- Now we can see that we get not only the people who meet this。
-
-High salary standard filter that we set， but also we're getting we're only getting the country。
-
- the languages that they know and their salary。 So our filter does seem like it is being applied correctly and that this is working nice so now that I'm actually seeing the countries here that reminds me that we might want to do some filtering with multiple values。
-
- So for example， you know my YouTube audience comes mainly from the United States， India。
-
- the United Kingdom Germany and Canada。 well， that's where the largest percentages of the audience of people who are watching the videos come from。
-
- So let's say that I wanted to filter out the survey results here so that I only see the results from those five countries that I mentioned now I could create a super long filter up here where I say。
-
- you know if the country is equal to the United States or if the country is equal to India or if the country is equal to the United Kingdom。
-
-That would take up a lot of space。 Instead， let's just create a list of those countries。
-
- And then I'll show you a neat trick that we can do to filter those out。 So now up here。
-
- instead of using this high salary filter here， I'm just going to call make a list of countries here。
-
- And I'll set this equal to。 I'm kind of a slow typer here。 So let me type these out really quick。
-
-Okay， so now if we want all of these survey results where the respondents said that they were from one of these five countries。
-
- then I can simply say， I'll set a new filter here。 Actually， let me do that up here。
-
- I'll set a new filter， and I'll set this equal to D F。Of country。 So where the country dot is in。
-
-And we want the country to be in this list of countries here。 So I'm going to run that cell。 and now。
-
-Let's apply that filter。To our data frame。 So if I run this。
-
- and just to narrow down these results to make sure to where we can see the country right off the bat。
-
- I'm just going to only grab the country there。 So if I run this， then we can see okay。
-
- we get United Kingdom， United States， Canada， India。
-
- So it looks like that applied correctly as well。 Now。
-
- let me show you one more common filter operation that you'll probably use a lot。
-
- So we can actually use string methods within pandas as well to do some alterations to our data frame。
-
- or in this case to help with a conditional。 So let me show you what I mean。
-
- So let's say that we only want to look at people who answered that they knew Python as a programming language。
-
- So let's see how we do this。 So first of all， the column that list。
-
- the programming languages that each person said that they know is that language worked with column。
-
- So let's see what this looks like。 So in this here。 I'm just going to grab。That language。
-
-Worked with column oops， and I spelled language wrong。 So language worked with。 I that right。 Y。
-
- okay， so we can see that we get some programming languages here and each different language is separated by a semicolon。
-
- So we can't just do a query where we say， you know if the language worked with equals Python because the actual value of that column will be any combination of the languages listed on the survey。
-
- So one way that we could do this is to instead use a string method and see if Python is within this string of these languages that they know。
-
- So to do this， I'm going to rewrite my filter here。
-
- And I'm just going to say that my filter is going to be equal to。
-
- and we want to grab the language is worked with for each person。
-
- and then we're going to use some string method。 So I'm going to say dot STR dot contained。
-
-And then I will pass in Python Now also we can see that we have some inN values here。
-
- but not a number。 Now we need to also set a fill value for those or else we're gonna to probably get an error so that is part of the contains method here。
-
- I can just say in is equal to false we're just not going to do anything with those。
-
- So let me explain this one more time here。 So this filter that we're putting in place here。
-
- it's saying， okay， for this column here， the language is worked with。
-
- which are all of these results here。 we are saying the string in that column does it contain Python So that's my filter。
-
- I'm going to run that cell and now let's apply that filter to our data frame by saying dot Lo and I will pass in that filter and now let's also just grab the languages worked with column to make sure that that。
-
-Worked correctly。 So if I run that， then all of these results here or all of these rows that it gave us back should have Python in their languages known。
-
- so we can see that we have Python there there there So yes。
-
- it does seem to be in all of these results。 Now this one here number8 we can't actually see it here but we have these ellipses here So it's probably just being truncated here。
-
- Now in my last video I kept saying that these were being concatenated。 I meant truncated。
-
- a few people pointed that out in the comments。 So yeah。
-
- these are being truncated here So we just can't see the python value there but they are there。
-
- and I'll probably do a complete video on string methods here in the future since there's so much more that we can do with these we can use them to replace text to split values and all kinds of different stuff。
-
- So it's very these string methods are extremely useful in pandas So that's a basic overview of doing some filters with our data frames。
-
-Again， the key takeaways are that we can do these conditionals here and have them as a filter and again let me print out just the filter without applying it to the data frame。
-
- we can see that the filters return a series of true false values and when we apply that to our data frame。
-
-Those true false values basically apply a mask to our data frames where we get all of the true values back and not the false。
-
- So if I look down here， we have respondent 12，4 and 5 as true and 3 was false。
-
- So if I look at my data frame here。 We can see that we get  one to 4 and 5 and 3 is not there because that value was false。
-
- So that's how filters work。 And again， it's an essential part of pandas。
-
- because this is the one of the first things that we do with our data whenever we are loading it into pandas。
-
- Okay， so before we end here。 I would like to mention that we do have a sponsor for this video。
-
- And that is brilliant dot org。
+ So that's how filters work。 And again， it's an essential part of pandas。 because this is the one of the first things that we do with our data whenever we are loading it into pandas。 Okay， so before we end here。 I would like to mention that we do have a sponsor for this video。 And that is brilliant dot org。
 
 ![](img/dd05cb8c181c3adeeebf376747608bf2_1.png)
 
-Briiant is a problem solving website that helps you understand underlying concepts by actively working through guided lessons and brilliant would be an excellent way to supplement what you learn here with their handson courses。
+Briiant is a problem solving website that helps you understand underlying concepts by actively working through guided lessons and brilliant would be an excellent way to supplement what you learn here with their handson courses。 They have some excellent courses and lessons on data science that do a deep dive on how to think about and analyze data correctly。
 
- They have some excellent courses and lessons on data science that do a deep dive on how to think about and analyze data correctly。
+ So if you're watching my panda series because you're getting into the data science field。 then I would highly recommend also checking out brilliant and seeing what other data science skills you can learn。 They even use Python in their statistics course and will quiz you on how to correctly analyze the data within the language。 Their guided lessons will challenge you， but you also have the ability to get hints or even solutions if you need them。
 
- So if you're watching my panda series because you're getting into the data science field。
+ It's really tailored towards understanding the material。 So to support my channel and learn more about brilliant。 You can go to brilliant org for Cms to sign up for free。 And also the first 200 people to go to that link will get 20% off the annual premium subscription。
 
- then I would highly recommend also checking out brilliant and seeing what other data science skills you can learn。
-
- They even use Python in their statistics course and will quiz you on how to correctly analyze the data within the language。
-
- Their guided lessons will challenge you， but you also have the ability to get hints or even solutions if you need them。
-
- It's really tailored towards understanding the material。
-
- So to support my channel and learn more about brilliant。
-
- You can go to brilliant org for Cms to sign up for free。
-
- And also the first 200 people to go to that link will get 20% off the annual premium subscription。
-
- And you can find that link in the description section below。 again， that's brilliant org forge。😊。
-
-
-
-![](img/dd05cb8c181c3adeeebf376747608bf2_3.png)
+ And you can find that link in the description section below。 again， that's brilliant org forge。😊。![](img/dd05cb8c181c3adeeebf376747608bf2_3.png)
 
 ![](img/dd05cb8c181c3adeeebf376747608bf2_4.png)
 
@@ -404,37 +118,13 @@ Briiant is a problem solving website that helps you understand underlying concep
 
 ![](img/dd05cb8c181c3adeeebf376747608bf2_7.png)
 
-MS okay， so I think that's going to do it for this pandas video。
+MS okay， so I think that's going to do it for this pandas video。 I hope you feel like you got a good idea for how to filter the data within our data frames to find the information that you're looking for。 Like I said， this is a fundamental skill and pandas which is usually one of the first things that we do with our data in the next video will be learning how to alter the data in our data frames and make changes。 So we'll learn how to make changes to specific values。
 
- I hope you feel like you got a good idea for how to filter the data within our data frames to find the information that you're looking for。
+ and also how to make multiple changes at once across the entire data frame。 So for example。 maybe you want to make it so that email addresses are all cast to lowercase。 so that they're easier to search。 or maybe you want to take out any spaces of your column names and replace them with underscores。 So all of that will be covered in the next video。 So be sure to stick around for that。
 
- Like I said， this is a fundamental skill and pandas which is usually one of the first things that we do with our data in the next video will be learning how to alter the data in our data frames and make changes。
+ But if anyone has any questions about what be covered in this video。 then feel free to ask in the comment section below and I'll do my best to answer those。 And if you enjoy these tutorials and would like to support them then there are several ways you can do that。 The easiest ways to。😊，Like the video and give it a thumbs up。 And also。
 
- So we'll learn how to make changes to specific values。
-
- and also how to make multiple changes at once across the entire data frame。 So for example。
-
- maybe you want to make it so that email addresses are all cast to lowercase。
-
- so that they're easier to search。 or maybe you want to take out any spaces of your column names and replace them with underscores。
-
- So all of that will be covered in the next video。 So be sure to stick around for that。
-
- But if anyone has any questions about what be covered in this video。
-
- then feel free to ask in the comment section below and I'll do my best to answer those。
-
- And if you enjoy these tutorials and would like to support them then there are several ways you can do that。
-
- The easiest ways to。😊，Like the video and give it a thumbs up。 And also。
-
- it's a huge help to share these videos with anyone who you think would find them useful。
-
- And if you have the meansme， you can contribute through Patreon。
-
- And there's a link to that page in the description section below。
-
- Be sure to subscribe for future videos。 And thank you all for watching。😊。
+ it's a huge help to share these videos with anyone who you think would find them useful。 And if you have the meansme， you can contribute through Patreon。 And there's a link to that page in the description section below。 Be sure to subscribe for future videos。 And thank you all for watching。😊。
 
 
 

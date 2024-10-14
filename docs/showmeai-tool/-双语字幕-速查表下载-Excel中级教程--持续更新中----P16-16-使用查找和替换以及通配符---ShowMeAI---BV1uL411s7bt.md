@@ -2,84 +2,24 @@
 
 ![](img/8801600da88e4d950bc0f99c8b338540_0.png)
 
-In this Excel tutorial， I will show you how to use the find and replace feature in Excel to locate data in your spreadsheet。
+In this Excel tutorial， I will show you how to use the find and replace feature in Excel to locate data in your spreadsheet。 So here I have a spreadsheet of movie titles and some information about those movies。 But let's say I want to quickly check to see if I've included a specific movie。 All I have to do is hold the control key and tap F。 and it brings up find and replace。
 
- So here I have a spreadsheet of movie titles and some information about those movies。
+ Let's look first at find。 So with the find tab selected。 I can just type in what I'm trying to locate。 let's say the movie dark night。 After typing it in。 I can just tap enter on the keyboard or click find next。 and it locates that data。 Now。 if that's all I needed， just to verify that the data is there。 that I'm done。
 
- But let's say I want to quickly check to see if I've included a specific movie。
+ But sometimes I might want to find and replace with something else。 So maybe it should be titled the dark night。 instead of just dark night。 I can type that in。 click replace。And if there is more than one instance of this problem。 I could just click replace all， and it would fix all of them。 I click， O。
 
- All I have to do is hold the control key and tap F。 and it brings up find and replace。
+ So that's a great time saver。 If you've made a spelling mistake or some other error。 You can have Excel。 Find all instances of that error and replace them with the correct data。 Now。 what happens if you know that you're looking for something but you don't know exactly what that is。 you're not quite sure what mistake you made， but you know that you probably made one。
 
- Let's look first at find。 So with the find tab selected。
+ or let's say you're looking for all data in Excel that is similar。 What you can do is you can use wild card characters in Excel。 So let's look at the wild card symbols。 We have the question mark and we have the asterisk。 Those are the two main wild card symbols。 So let's say I'm looking for some movies that include the letters S T in the name。
 
- I can just type in what I'm trying to locate。 let's say the movie dark night。 After typing it in。
+ But maybe I'm not sure what comes next。So after the S T， I could put in a question mark。 and that question mark is a wild card。 It can represent any one character。 So S T followed by any character at all， and then followed by an R。 Any example of that should be found when I click find next， So let's try it out。
 
- I can just tap enter on the keyboard or click find next。 and it locates that data。 Now。
+ It found the court jester， because S T E R， the question mark can fill in for that E。 Let's find the next one。 Western， it found the word Western Star Trek 4 and star Wars。 So each of those is found when I use this question mark wild card。 because it can replace any one character。 Okay， let's try it again but this time。
 
- if that's all I needed， just to verify that the data is there。 that I'm done。
+ let's use the asterisk wild card。 So S T asterisk R。 the asterisk can fill in for any number of characters。 So this should find any data in this。Spreadsheet at all that has an S T and as many characters as possible。 and then followed by an R。 So let's try that。 It found Western。 It found Star Trek and Star Wars。
 
- But sometimes I might want to find and replace with something else。
+ but it also found strange brew and the court jer。 So it gave us an additional search result。 St brew。 So find and replace is a very useful tool built into Excel。 You can use it to find data to find and replace data。 And when you need to remember to use the question mark and the asterisk。
 
- So maybe it should be titled the dark night。 instead of just dark night。 I can type that in。
-
- click replace。And if there is more than one instance of this problem。
-
- I could just click replace all， and it would fix all of them。 I click， O。
-
- So that's a great time saver。 If you've made a spelling mistake or some other error。
-
- You can have Excel。 Find all instances of that error and replace them with the correct data。 Now。
-
- what happens if you know that you're looking for something but you don't know exactly what that is。
-
- you're not quite sure what mistake you made， but you know that you probably made one。
-
- or let's say you're looking for all data in Excel that is similar。
-
- What you can do is you can use wild card characters in Excel。
-
- So let's look at the wild card symbols。 We have the question mark and we have the asterisk。
-
- Those are the two main wild card symbols。 So let's say I'm looking for some movies that include the letters S T in the name。
-
- But maybe I'm not sure what comes next。So after the S T， I could put in a question mark。
-
- and that question mark is a wild card。 It can represent any one character。
-
- So S T followed by any character at all， and then followed by an R。
-
- Any example of that should be found when I click find next， So let's try it out。
-
- It found the court jester， because S T E R， the question mark can fill in for that E。
-
- Let's find the next one。 Western， it found the word Western Star Trek 4 and star Wars。
-
- So each of those is found when I use this question mark wild card。
-
- because it can replace any one character。 Okay， let's try it again but this time。
-
- let's use the asterisk wild card。 So S T asterisk R。
-
- the asterisk can fill in for any number of characters。 So this should find any data in this。
-
-Spreadsheet at all that has an S T and as many characters as possible。 and then followed by an R。
-
- So let's try that。 It found Western。 It found Star Trek and Star Wars。
-
- but it also found strange brew and the court jer。 So it gave us an additional search result。
-
- St brew。 So find and replace is a very useful tool built into Excel。
-
- You can use it to find data to find and replace data。
-
- And when you need to remember to use the question mark and the asterisk。
-
- which are your wild cards to help you find data that you may not know exactly how to spell or if you've made spelling mistakes。
-
- but you still want to be able to locate it。 Thanks for watching。
-
- I hope you found this tutorial to be helpful。 If you did， please click the like button below。
-
-
+ which are your wild cards to help you find data that you may not know exactly how to spell or if you've made spelling mistakes。 but you still want to be able to locate it。 Thanks for watching。 I hope you found this tutorial to be helpful。 If you did， please click the like button below。
 
 ![](img/8801600da88e4d950bc0f99c8b338540_2.png)

@@ -1,12 +1,8 @@
 # 【双语字幕+资料下载】更简单的绘图工具包 Seaborn，一行代码做到 Python 可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ - P12：L12- 计数图 - ShowMeAI - BV1wZ4y1S7Jc
 
-And now I want to talk about count plots now a count plot is kind of like a bar plot。
+And now I want to talk about count plots now a count plot is kind of like a bar plot。 but the estimator is just simply going to count the number of occurrences and how you call it is we say count plot and X let's say we want to find out the number of males and females from our data frame that we're working with and there you can see the total number of males versus the total number of females and like I said。
 
- but the estimator is just simply going to count the number of occurrences and how you call it is we say count plot and X let's say we want to find out the number of males and females from our data frame that we're working with and there you can see the total number of males versus the total number of females and like I said。
-
- you can come right after this function and click on shift and tab to see all of the additional options。
-
- there's Hue which we've already talked about can change the order could change the color we're working with and pallets and saturation and I'm going talk about Dodge and all of these other different options as we continue down below and you can also read about all of the different things that are available and the more specifics on all of the different parameters。
+ you can come right after this function and click on shift and tab to see all of the additional options。 there's Hue which we've already talked about can change the order could change the color we're working with and pallets and saturation and I'm going talk about Dodge and all of these other different options as we continue down below and you can also read about all of the different things that are available and the more specifics on all of the different parameters。
 
 
 
@@ -22,8 +18,4 @@ And now I want to talk about count plots now a count plot is kind of like a bar 
 
 ![](img/1e01839902a44c247e317b96b48ed9df_6.png)
 
-As well Okay， so that's the count plot。 And now I want to talk about box。
-
-
-
-![](img/1e01839902a44c247e317b96b48ed9df_8.png)
+As well Okay， so that's the count plot。 And now I want to talk about box。![](img/1e01839902a44c247e317b96b48ed9df_8.png)

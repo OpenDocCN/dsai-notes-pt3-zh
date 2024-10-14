@@ -1,123 +1,49 @@
 # 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P37：L7.1- 用于图像和数据生成的生成对抗神经网络(GAN)简介 - ShowMeAI - BV15f4y1w7b8
 
-Hi， this is Jeffhein。 welcome to applications of deep neural networks with Washington University in this video we're going to look at GANs。
+Hi， this is Jeffhein。 welcome to applications of deep neural networks with Washington University in this video we're going to look at GANs。 which are pairs of neural networks that are called generative adversarial neural networks You have a neural network that is generating images and another neural network that is trying to determine if those images are fake or real。
 
- which are pairs of neural networks that are called generative adversarial neural networks You have a neural network that is generating images and another neural network that is trying to determine if those images are fake or real。
-
- and it doesn't have to be images it can be really any type of data。
-
- We'll see several types of data in this course for the latest on my AI course and projects click subscribe and the bell next to it to be notified of every new video so let's talk about GganNs。
+ and it doesn't have to be images it can be really any type of data。 We'll see several types of data in this course for the latest on my AI course and projects click subscribe and the bell next to it to be notified of every new video so let's talk about GganNs。
 
  GANs stand for generative adversarial neural network This is really two neural networks that work together to produce a highly realistic image or other type of data So this person that you're looking at here is completely fake they don't exist they were created by a GAN that studied on many。
 
- many， many human faces。
+ many， many human faces。![](img/43d0652afd298839dee22d1ab02e9106_1.png)
 
-![](img/43d0652afd298839dee22d1ab02e9106_1.png)
-
-If you want to just play with this technology go to this person doesnotexist com。
-
- This is the website that I'm using to generate this Later in this course。
-
- I'll show you how to use exactly the same technology that these guys are using on this website and how you can generate your own completely using your own computer or using Google coleb you do need a GPU to actually run stylegan well unless you make some modifications to it let's talk a little bit about how you can tell one of these fakegan images if you look at this person first of all the most obvious thing is always look to the background。
+If you want to just play with this technology go to this person doesnotexist com。 This is the website that I'm using to generate this Later in this course。 I'll show you how to use exactly the same technology that these guys are using on this website and how you can generate your own completely using your own computer or using Google coleb you do need a GPU to actually run stylegan well unless you make some modifications to it let's talk a little bit about how you can tell one of these fakegan images if you look at this person first of all the most obvious thing is always look to the background。
 
  It's a bit surreal looking if you look at the background to one of these images it looks at first glance realistic but if you closely examine it much like a dream it's not real going on in here maybe that's some sort of marble background she's standing in front of there's also kind of a line here with a harsh change from one side to the other so that is definitely something to look for too。
 
-And look at their clothing， look for like the shoulders， so where's her shoulders。
+And look at their clothing， look for like the shoulders， so where's her shoulders。 wheres it's it's not necessarily。Liing up， this is also too usually the headshot that you'll see from one of thesegans right up to the neck because they don't want to get the clothing too involved because that's that's a lot more difficult for the for the G to be dealing with。
 
- wheres it's it's not necessarily。Liing up， this is also too usually the headshot that you'll see from one of thesegans right up to the neck because they don't want to get the clothing too involved because that's that's a lot more difficult for the for the G to be dealing with。
+ not that some of the newer algorithms aren't aren't doing that。 I've seen Gs that are doing entire body shots now。 but let's refresh and see a few other faces because this is really what the Gs are particularly well known for。 Now， this one， the background is pretty solid color and a little photoshopping and you could rip out the G background。
 
- not that some of the newer algorithms aren't aren't doing that。
+😊，And sub in a different， a different background。 Now this speaks more to photoshopping skills。 but you can see these hair that that blend in with the background。 somebody is not doing too good of a job with Photoshop。 they'll clip that right off and the hair will look very additional strands of it going into the background。
 
- I've seen Gs that are doing entire body shots now。
-
- but let's refresh and see a few other faces because this is really what the Gs are particularly well known for。
-
- Now， this one， the background is pretty solid color and a little photoshopping and you could rip out the G background。
-
-😊，And sub in a different， a different background。 Now this speaks more to photoshopping skills。
-
- but you can see these hair that that blend in with the background。
-
- somebody is not doing too good of a job with Photoshop。
-
- they'll clip that right off and the hair will look very additional strands of it going into the background。
-
- We'll go through another thing too， is ears are very often not as symmetric as you would expect。
-
- and especially if they have earrings See if I can find somebody with an earring。
-
-Often the earring on each side will be completely different so let's take a look at what this technology actually is GNs were introduced by Ian Goodfellow in 2014 and this is this is a technology that has really taken deep learning by by storm the first paper and 2014 did some fairly basic faces both with convolution neural networks and without this has been taken a lot further than just the images of digits that were generated and。
+ We'll go through another thing too， is ears are very often not as symmetric as you would expect。 and especially if they have earrings See if I can find somebody with an earring。Often the earring on each side will be completely different so let's take a look at what this technology actually is GNs were introduced by Ian Goodfellow in 2014 and this is this is a technology that has really taken deep learning by by storm the first paper and 2014 did some fairly basic faces both with convolution neural networks and without this has been taken a lot further than just the images of digits that were generated and。
 
 
 
 ![](img/43d0652afd298839dee22d1ab02e9106_3.png)
 
-The fairly simple faces from the Toronto faces data set that Ian Goodfellow first worked with he also generated images and pictures from the CR data sets。
+The fairly simple faces from the Toronto faces data set that Ian Goodfellow first worked with he also generated images and pictures from the CR data sets。 you get kind of。Surreal ghostly looking images of some of the the dogs and cats and frogs and other things that were in this data set the way that again actually works is it is a。
 
- you get kind of。Surreal ghostly looking images of some of the the dogs and cats and frogs and other things that were in this data set the way that again actually works is it is a。
+Genrative， so generative means that it generates something generative models typically work with some sort of random input and they're generating something on the output。 Advdversarial means that there's adversaries。 So that means you need at least two things that are working adversarial to each other。
 
-Genrative， so generative means that it generates something generative models typically work with some sort of random input and they're generating something on the output。
+ So there's two neural networks that are working together yet against each other。There's the discriminator and the generator。The discriminator learns to recognize fake data。 so it learns to recognize fake faces。 The generator， on the other hand。 learns to generate data that will fool the discriminator。
 
- Advdversarial means that there's adversaries。 So that means you need at least two things that are working adversarial to each other。
+ And these two in lock step have sort of an arms race or a game as they try to get better and better。 The discriminator tries to get better and better at detecting attempts by the generator to fool the generator attempts to get better and better at fooling the discriminator。
 
- So there's two neural networks that are working together yet against each other。
+ Now， at the end of all of this training。 you will usually throw away either the discriminator or the generator。 Usually the discriminator。 So you'll get a generator that's very good at generating faces or some other sort of fake data that you want the neural network to create。
 
-There's the discriminator and the generator。The discriminator learns to recognize fake data。
+And then the discriminator is going to not really have that much， that much of an actual use for you。 We'll see later when we deal with semi supervised training。 which is a way that you're able to train a neural network on a data set that might be very large。 yet you only have labels or you only have wises or expected outcome on just a small number of those。
 
- so it learns to recognize fake faces。 The generator， on the other hand。
+ When you have such a data set， you can use semi supervised training so that it learns both from the labeled and unlabeled data。 In that case， the discriminator becomes the one that you keep and you throw away the generator。 We'll deal with that later in this module when we get to。Part4 that actually covers semisupervised learning and also how to use this on nonimage data。
 
- learns to generate data that will fool the discriminator。
+ You typically see this for generating faces， but that does not necessarily have to be the case Now in this module。 we're going to go through several parts This first part just gave you a overview of the technology talking about how this actually how these are actually trained and how we make use ofganNs for images and other things and how they actually work we'll also see how we can actually build one of these from scratch from Kis essentially。
 
- And these two in lock step have sort of an arms race or a game as they try to get better and better。
+ so we will learn how to build the discriminator， how to build the generator and feed in these random values and create faces。You'll need a GPU for this because this is fairly training intense。 You're able to train at least some somewhat blurry faces that we'll see using Google coabab。 Then as we progress through this module， you'll also see how to use NviDdia style GN and that is what was generating those faces on that website that I was looking at earlier in this video then we'll also see how to use GNs for nonim data。
 
- The discriminator tries to get better and better at detecting attempts by the generator to fool the generator attempts to get better and better at fooling the discriminator。
+ just generating random sorts of additional data for data that you may already have。 and then finally we're going to look at some of the new directions in GAN research because this area is absolutely on fire。 I mean GNs are one of the most interesting， I think technologies available for。😊。Deep learning right now， or at least it's getting，' getting a lot of papers and other interest about them。
 
- Now， at the end of all of this training。 you will usually throw away either the discriminator or the generator。
-
- Usually the discriminator。 So you'll get a generator that's very good at generating faces or some other sort of fake data that you want the neural network to create。
-
-And then the discriminator is going to not really have that much， that much of an actual use for you。
-
- We'll see later when we deal with semi supervised training。
-
- which is a way that you're able to train a neural network on a data set that might be very large。
-
- yet you only have labels or you only have wises or expected outcome on just a small number of those。
-
- When you have such a data set， you can use semi supervised training so that it learns both from the labeled and unlabeled data。
-
- In that case， the discriminator becomes the one that you keep and you throw away the generator。
-
- We'll deal with that later in this module when we get to。
-
-Part4 that actually covers semisupervised learning and also how to use this on nonimage data。
-
- You typically see this for generating faces， but that does not necessarily have to be the case Now in this module。
-
- we're going to go through several parts This first part just gave you a overview of the technology talking about how this actually how these are actually trained and how we make use ofganNs for images and other things and how they actually work we'll also see how we can actually build one of these from scratch from Kis essentially。
-
- so we will learn how to build the discriminator， how to build the generator and feed in these random values and create faces。
-
-You'll need a GPU for this because this is fairly training intense。
-
- You're able to train at least some somewhat blurry faces that we'll see using Google coabab。
-
- Then as we progress through this module， you'll also see how to use NviDdia style GN and that is what was generating those faces on that website that I was looking at earlier in this video then we'll also see how to use GNs for nonim data。
-
- just generating random sorts of additional data for data that you may already have。
-
- and then finally we're going to look at some of the new directions in GAN research because this area is absolutely on fire。
-
- I mean GNs are one of the most interesting， I think technologies available for。😊。
-
-Deep learning right now， or at least it's getting，' getting a lot of papers and other interest about them。
-
- Thank you for watching this video。 In the next video。
-
- we're going to see how to actually implement again in Cars。 This content changes often。
-
- So subscribe to the channel to stay up to date on this course and other topics and artificial intelligence。
-
-😊。
+ Thank you for watching this video。 In the next video。 we're going to see how to actually implement again in Cars。 This content changes often。 So subscribe to the channel to stay up to date on this course and other topics and artificial intelligence。😊。
 
 ![](img/43d0652afd298839dee22d1ab02e9106_5.png)

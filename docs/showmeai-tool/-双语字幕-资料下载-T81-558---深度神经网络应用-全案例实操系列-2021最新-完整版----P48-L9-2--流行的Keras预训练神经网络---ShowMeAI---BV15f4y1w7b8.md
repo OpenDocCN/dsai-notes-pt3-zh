@@ -1,56 +1,18 @@
 # 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P48：L9.2- 流行的Keras预训练神经网络 - ShowMeAI - BV15f4y1w7b8
 
-Hi， this is Jeff Hton。 Welcome to applications of deep neural networks with Washington University。
-
- Transfer learning is great。 You can take existing learning and put it into your neural network。
-
- But where do we get these neural networks from In this video。
-
- we're going to look at how you can find。😊。
+Hi， this is Jeff Hton。 Welcome to applications of deep neural networks with Washington University。 Transfer learning is great。 You can take existing learning and put it into your neural network。 But where do we get these neural networks from In this video。 we're going to look at how you can find。😊。
 
 ![](img/56e8d9866f4ec8a3da33b17a92d76bbd_1.png)
 
-These types of neural networks and some of the popular ones。
+These types of neural networks and some of the popular ones。 And if you'd like to see other videos like this on topics such as artificial intelligence。 please subscribe to my YouTube channel by clicking the subscribe button and the bell that will notify you of every video that comes out。 Thank you。 Kiras comes with a number of models already built in that can be transferred in from their provider。
 
- And if you'd like to see other videos like this on topics such as artificial intelligence。
+ So it's important to know how to make use of those。 We'll talk about them。 Now。 you can also find some models outside of Kiras。 Like we did this with Yolo。 Yolo is essentially transfer learning。 We transferred in literally the entire of Yolo and also stylegan。 but this gave us preexisting models to actually work with you could have custom and fine tune trained them further for sure。
 
- please subscribe to my YouTube channel by clicking the subscribe button and the bell that will notify you of every video that comes out。
+ We are going to also look at these two websites。 They're very important。 There's a lot of good information for you here。 Tensorflow models zoo and papers with code。 These two sites have a tremendous number of transfer learning capable。😊。![](img/56e8d9866f4ec8a3da33b17a92d76bbd_3.png)
 
- Thank you。 Kiras comes with a number of models already built in that can be transferred in from their provider。
+Neural networks that you might want to use for your own projects。 If you look at model zoo。 you can see by the stars， some of the ones that are the most popular。 can also subscribe and get new ones。 There's video。 there's not just computer vision Yo with Tensorflow obviously is very popular right now。
 
- So it's important to know how to make use of those。 We'll talk about them。 Now。
-
- you can also find some models outside of Kiras。 Like we did this with Yolo。
-
- Yolo is essentially transfer learning。 We transferred in literally the entire of Yolo and also stylegan。
-
- but this gave us preexisting models to actually work with you could have custom and fine tune trained them further for sure。
-
- We are going to also look at these two websites。 They're very important。
-
- There's a lot of good information for you here。 Tensorflow models zoo and papers with code。
-
- These two sites have a tremendous number of transfer learning capable。😊。
-
-
-
-![](img/56e8d9866f4ec8a3da33b17a92d76bbd_3.png)
-
-Neural networks that you might want to use for your own projects。 If you look at model zoo。
-
- you can see by the stars， some of the ones that are the most popular。
-
- can also subscribe and get new ones。 There's video。
-
- there's not just computer vision Yo with Tensorflow obviously is very popular right now。
-
- Lots of Gs and other things that you will see here。 We will for the class。
-
- I'll give you links to the actual neural networks that we're transferring in and typically we're using ones that are already built into Kis。
-
- but if you want to look for projects of your own in the future。
-
- This is definitely a very valuable site to look at papers with code is also great。
+ Lots of Gs and other things that you will see here。 We will for the class。 I'll give you links to the actual neural networks that we're transferring in and typically we're using ones that are already built into Kis。 but if you want to look for projects of your own in the future。 This is definitely a very valuable site to look at papers with code is also great。
 
  This is where papers that were released with code or sometimes papers without enthusiast will write the code for the paper and publish it here very quickly So this this is another great place to look at to find neural networks that you may wish to transfer in for your own projects。
 
@@ -74,31 +36,10 @@ Obviously our Cars would be a very big download so when you run some of these fo
 
 ![](img/56e8d9866f4ec8a3da33b17a92d76bbd_11.png)
 
-V2 Those are two of my favorites。 You'll see that I use these in the class。
+V2 Those are two of my favorites。 You'll see that I use these in the class。 This lets you use a neural network that was trained extensively for mobile and internet of things。 later in the class。 we talk about how to actually do an IoT sort of deploy。 So do neural network computation。 both at the edge and in the cloud。
 
- This lets you use a neural network that was trained extensively for mobile and internet of things。
+ And these become useful for that。 We'll talk about that at the very。 very end of this of this course。 And you can see in the descriptions Cf 10 and all the various image data sets that these were trained on。 Again， more of the resnets Vg G is a very popular one as well。 I have not worked with it a great deal。 I don't tend to do a lot of computer vision in in my day job。
 
- later in the class。 we talk about how to actually do an IoT sort of deploy。
+ but these are all very good starting points for computer vision Thank you for watching this video。 in the next video， we're going to make use of some of these great。😊。![](img/56e8d9866f4ec8a3da33b17a92d76bbd_13.png)
 
- So do neural network computation。 both at the edge and in the cloud。
-
- And these become useful for that。 We'll talk about that at the very。
-
- very end of this of this course。 And you can see in the descriptions Cf 10 and all the various image data sets that these were trained on。
-
- Again， more of the resnets Vg G is a very popular one as well。
-
- I have not worked with it a great deal。 I don't tend to do a lot of computer vision in in my day job。
-
- but these are all very good starting points for computer vision Thank you for watching this video。
-
- in the next video， we're going to make use of some of these great。😊。
-
-
-
-![](img/56e8d9866f4ec8a3da33b17a92d76bbd_13.png)
-
-Open neural networks that have been developed for us。 We're going to start with computer vision。
-
- This content changes often。 so subscribe to the channel to stay up to date on this course and other topics and artificial intelligence。
-
+Open neural networks that have been developed for us。 We're going to start with computer vision。 This content changes often。 so subscribe to the channel to stay up to date on this course and other topics and artificial intelligence。

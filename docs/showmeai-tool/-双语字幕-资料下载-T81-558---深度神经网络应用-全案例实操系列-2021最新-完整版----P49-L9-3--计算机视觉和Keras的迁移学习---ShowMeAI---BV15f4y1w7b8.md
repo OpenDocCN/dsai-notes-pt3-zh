@@ -1,226 +1,73 @@
 # 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P49：L9.3- 计算机视觉和Keras的迁移学习 - ShowMeAI - BV15f4y1w7b8
 
-Hi， this is Jeffheine welcomel to applications of deep neural networks of Washington University In this video。
+Hi， this is Jeffheine welcomel to applications of deep neural networks of Washington University In this video。 we're going to look at transfer learning and how we can transfer computer vision neural networks that have been developed for us into Cars for the latest on my AI course and projects。
 
- we're going to look at transfer learning and how we can transfer computer vision neural networks that have been developed for us into Cars for the latest on my AI course and projects。
+ Click subscribe in the bell next to it to be notified of every new video。 So let's do some actual transfer learning for computer vision in Cars to show you how to make use of the mobile net。 We're going to transfer this completely into our Python code and we'll be able to recognize 10 different image types。 We're going to also implement a very， very simple example of how we'll extend this to learn。
 
- Click subscribe in the bell next to it to be notified of every new video。
+ We're really trying to see if we can just add a few images to it and actually teach it to recognize a couple of different dog breeds and we'll see that we have some degree of success with this to do this as a real project。 we would have to capture quite a few additional images to do this。 You'll get a chance to try this。
 
- So let's do some actual transfer learning for computer vision in Cars to show you how to make use of the mobile net。
+😊。![](img/fea53c1ab8aaa1af63aff2f2daccb4dc_1.png)
 
- We're going to transfer this completely into our Python code and we'll be able to recognize 10 different image types。
+Out in the assignments to create your own transfer learning for computer vision。 We're going to try to create the Microsoft dog breed image search。 So this is this is a project that Microsoft probably worked on for some degree of time。 We're going try to do a very， very simple poor man's version of this that recognizes just a couple of dog breeds。
 
- We're going to also implement a very， very simple example of how we'll extend this to learn。
+ but you can basically put in pictures of of dogs。 and it will tell you using a convolution。 probably a transfer。 I don't know if they train this from scratch or if they use some transfers from existing neural networks。 But nonetheless， we'll try to do something somewhat like this First。 before we even try transfer learning。 let's just see if we can get mobile net loaded and actually work。
 
- We're really trying to see if we can just add a few images to it and actually teach it to recognize a couple of different dog breeds and we'll see that we have some degree of success with this to do this as a real project。
-
- we would have to capture quite a few additional images to do this。 You'll get a chance to try this。
-
-😊。
-
-![](img/fea53c1ab8aaa1af63aff2f2daccb4dc_1.png)
-
-Out in the assignments to create your own transfer learning for computer vision。
-
- We're going to try to create the Microsoft dog breed image search。
-
- So this is this is a project that Microsoft probably worked on for some degree of time。
-
- We're going try to do a very， very simple poor man's version of this that recognizes just a couple of dog breeds。
-
- but you can basically put in pictures of of dogs。 and it will tell you using a convolution。
-
- probably a transfer。 I don't know if they train this from scratch or if they use some transfers from existing neural networks。
-
- But nonetheless， we'll try to do something somewhat like this First。
-
- before we even try transfer learning。 let's just see if we can get mobile net loaded and actually work。
-
- So I'm going to pull in these imports so that we have it this command here will basically load in imagenet from Kis so that we can make use of it in mobilenet。
-
- Let me go ahead and pull this。😊。
-
-![](img/fea53c1ab8aaa1af63aff2f2daccb4dc_3.png)
+ So I'm going to pull in these imports so that we have it this command here will basically load in imagenet from Kis so that we can make use of it in mobilenet。 Let me go ahead and pull this。😊。![](img/fea53c1ab8aaa1af63aff2f2daccb4dc_3.png)
 
 ![](img/fea53c1ab8aaa1af63aff2f2daccb4dc_4.png)
 
-Now， if this was the first time that you were running it。
+Now， if this was the first time that you were running it。 you'd see download bars go across and it would download the entire mobilenet imagenet waits for you。 This can be a very good way to learn about how to architect neural networks。 you can look at the summary for these and it shows you And by the way。
 
- you'd see download bars go across and it would download the entire mobilenet imagenet waits for you。
+ this include top that I have here true that just means load the whole thing when we go to do transfer learning will say false meaning to share off the output layers like we did in the previous part。 but we'll take the bottom part for feature engineering， but the top part of the network。
 
- This can be a very good way to learn about how to architect neural networks。
+ we're going to put in our own so that we can teach it to classify images that we're never in the original image net。 This is what it looks like。 you'll notice some things here that are kind of interesting。 we're doing fairly small numbers of filters and we tend to get bigger and bigger as we go out 256。512 and so on and so forth you can see that they are using batch normalization extensively so it can be very interesting to look at these and。
 
- you can look at the summary for these and it shows you And by the way。
+how these extremely well researched libraries of weights that were transferring。 how theyve structured their deep neural networks。 When you finally get out to here at the very end。 you'll see these thousands。 that's for the these are the final output layers that will get removed but these are what are used to classify those 1000 different images that this thing is designed to deal with So then let's go ahead and try to see how well it will classify images。
 
- this include top that I have here true that just means load the whole thing when we go to do transfer learning will say false meaning to share off the output layers like we did in the previous part。
+ Now I grabbed just some URLs here from Google image search。 These are a variety of different images。 I just want to see how well imageNe and classify it。 Feel free to put your own in here。 and classify those as well。 you can load them from files too。 let's go ahead and run this。 It should be loading those URLs It's actually done already you'll see that first image that I picked So that first image is a suck ball and it's literally from Shopify。
 
- but we'll take the bottom part for feature engineering， but the top part of the network。
+ So I was actually doing Google image search。Finding an image and just right clicking。 copy image URL and putting it into here。 So this was actually， I guess。 a real soccer ball for sale that I happened upon。 But you'll notice that image the image net train mobile net saying with 99% probability that it believes that is a soccer ball。 So it's quite good。 It's saying honeycomb is the next one down but it's pretty uncertain of that。
 
- we're going to put in our own so that we can teach it to classify images that we're never in the original image net。
+ but I could see where it's going with honeycomb。 It's similar shape， a dumbbell， no idea or balloon。 maybe wall clock who even knows So these are just some of the classifications that it's done。 Now you could take your the python code up there and you could write all kinds of computer vision applications。 you wouldn't even have to train the neural network， just use mobile net。
 
- This is what it looks like。 you'll notice some things here that are kind of interesting。
-
- we're doing fairly small numbers of filters and we tend to get bigger and bigger as we go out 256。
-
-512 and so on and so forth you can see that they are using batch normalization extensively so it can be very interesting to look at these and。
-
-how these extremely well researched libraries of weights that were transferring。
-
- how theyve structured their deep neural networks。 When you finally get out to here at the very end。
-
- you'll see these thousands。 that's for the these are the final output layers that will get removed but these are what are used to classify those 1000 different images that this thing is designed to deal with So then let's go ahead and try to see how well it will classify images。
-
- Now I grabbed just some URLs here from Google image search。 These are a variety of different images。
-
- I just want to see how well imageNe and classify it。 Feel free to put your own in here。
-
- and classify those as well。 you can load them from files too。 let's go ahead and run this。
-
- It should be loading those URLs It's actually done already you'll see that first image that I picked So that first image is a suck ball and it's literally from Shopify。
-
- So I was actually doing Google image search。Finding an image and just right clicking。
-
- copy image URL and putting it into here。 So this was actually， I guess。
-
- a real soccer ball for sale that I happened upon。 But you'll notice that image the image net train mobile net saying with 99% probability that it believes that is a soccer ball。
-
- So it's quite good。 It's saying honeycomb is the next one down but it's pretty uncertain of that。
-
- but I could see where it's going with honeycomb。 It's similar shape， a dumbbell， no idea or balloon。
-
- maybe wall clock who even knows So these are just some of the classifications that it's done。
-
- Now you could take your the python code up there and you could write all kinds of computer vision applications。
-
- you wouldn't even have to train the neural network， just use mobile net。
-
- and you'll have this capability here I pick just a random car。
-
- It actually identified it as a racer definitely not a convertible。 sort of a sports car。
-
- it's a truck。 It does recognize that as a pickup truck。 It's definitely not an amphibian。
-
- if you put that in water， it would sink to the bottom。 pretty So and it's。
+ and you'll have this capability here I pick just a random car。 It actually identified it as a racer definitely not a convertible。 sort of a sports car。 it's a truck。 It does recognize that as a pickup truck。 It's definitely not an amphibian。 if you put that in water， it would sink to the bottom。 pretty So and it's。
 
 Also showing the class number so the classes between 0 and 999 so these are the classes that you have it might be 1 to1000 I'm not totally sure what the indexes are There's me I was hoping it would classify me as a person but OL it classifies me as a suit which I guess is a synonym for a lawyer。
 
-I might take some offense to that。 It says that I have a Winsor tie。 There is no tie on there。
+I might take some offense to that。 It says that I have a Winsor tie。 There is no tie on there。 It's very difficult to get me to wear a tie。 I very rarely wear them groomroom。 I was a groom at one point when my wife and I got married， but that was not the day。 Definite not a trench coat。 And I don't know why it thinks I'm a cellular telephone。
 
- It's very difficult to get me to wear a tie。 I very rarely wear them groomroom。
+ I use him a lot， but I am not a cellular telephone。 This is my dog Hckory。 He's a English bulldog。 but it's a very close up。 So I'm trying to be mean and confuse it， And I do successfully。 There are some dog breeds in image net， So it can do some breed identification already。 but it's saying that it's a pug or maybe a French bulldog wrong country wrong breed altogether。
 
- I was a groom at one point when my wife and I got married， but that was not the day。
-
- Definite not a trench coat。 And I don't know why it thinks I'm a cellular telephone。
-
- I use him a lot， but I am not a cellular telephone。 This is my dog Hckory。 He's a English bulldog。
-
- but it's a very close up。 So I'm trying to be mean and confuse it， And I do successfully。
-
- There are some dog breeds in image net， So it can do some breed identification already。
-
- but it's saying that it's a pug or maybe a French bulldog wrong country wrong breed altogether。
-
- Defite not a boxer， Def not a bullmesteef。 That is one of the biggest dogs that there there is。
-
- And I don't even know what this is。 So using this。 and the code from up here。
-
- You can basically load in this image net。 and you can start to classify this。
-
- or you can use Yolo if。Needed if you want to look at the previous module that I had on that where you can learn to actually create something that needs to recognize several things on the screen。
+ Defite not a boxer， Def not a bullmesteef。 That is one of the biggest dogs that there there is。 And I don't even know what this is。 So using this。 and the code from up here。 You can basically load in this image net。 and you can start to classify this。 or you can use Yolo if。Needed if you want to look at the previous module that I had on that where you can learn to actually create something that needs to recognize several things on the screen。
 
  So maybe a car and a person and know the actual X and Y that they're located at but this you could do a number of things you could potentially write a robotic dog door that only opens for whatever it classifies your dog as thatd be a fun project but this is showing you basically the make square we had that before it just does a Instagram type。
 
- make it make it a portrait。 we go through all the URLs and I basically load the URL 1 by1 convert it into an image load it I resize it to the image heighthen which which is 224 by 224 anti asing convert the image to an array。
+ make it make it a portrait。 we go through all the URLs and I basically load the URL 1 by1 convert it into an image load it I resize it to the image heighthen which which is 224 by 224 anti asing convert the image to an array。 expand the dimensions if necessary and then I preprocess the image preprocess input that's provided by Ks to help you pre-process your image and then I'm ready to。
 
- expand the dimensions if necessary and then I preprocess the image preprocess input that's provided by Ks to help you pre-process your image and then I'm ready to。
+The predictions here I essentially then print out the number， which is the agm。 and I also get the decode predictions function that was provided by Kis。 and this lets me print out this nice list of the probabilities。 So this could be a starting point for all kinds of applications that you might you might want to create。
 
-The predictions here I essentially then print out the number， which is the agm。
+ but let's try to do actual transfer learning。 So here I am going to load the same thing again。 but include top is going to be false。 I load and I print out the summary。 You'll see that those 1000 layers at the bottom are not there。 We stop right at the 1024s。 So it's just like the one that we saw earlier in this part， but we're stopping early。
 
- and I also get the decode predictions function that was provided by Kis。
+ Now everything is still trainable。 Well mark those as nontrainable in a moment here we add on the additional layers。 So I am going to add on two dense layers of 1024 just kind of continuing there。 These will be trainable。 all the stuff that you see up here will not be trainable。 And then I put a softm。Here because we're going to basically add three different types of dog Here I actually build the model。
 
- and this lets me print out this nice list of the probabilities。
+ and here I mark the first 20 as trainable false the last as completely trainable。 Now Kira has some really nice capabilities to let you train from folders Here I am going to train this according to this。 this folder。 Now the structure that you put this into becomes very important。 So this is users Jheton downloads trans。 So that's just where I happen to put it in there。
 
- So this could be a starting point for all kinds of applications that you might you might want to create。
+ So trans for transfer learning。 let me show you that folder。 So this is the folder I have set up。 you'll see I have class A B and C， those are my three types of dog。 I do not have a huge training set here。 So class A。 these are all bulldog type animals and then class B these are poodles Class C。
 
- but let's try to do actual transfer learning。 So here I am going to load the same thing again。
-
- but include top is going to be false。 I load and I print out the summary。
-
- You'll see that those 1000 layers at the bottom are not there。 We stop right at the 1024s。
-
- So it's just like the one that we saw earlier in this part， but we're stopping early。
-
- Now everything is still trainable。 Well mark those as nontrainable in a moment here we add on the additional layers。
-
- So I am going to add on two dense layers of 1024 just kind of continuing there。
-
- These will be trainable。 all the stuff that you see up here will not be trainable。
-
- And then I put a softm。Here because we're going to basically add three different types of dog Here I actually build the model。
-
- and here I mark the first 20 as trainable false the last as completely trainable。
-
- Now Kira has some really nice capabilities to let you train from folders Here I am going to train this according to this。
-
- this folder。 Now the structure that you put this into becomes very important。
-
- So this is users Jheton downloads trans。 So that's just where I happen to put it in there。
-
- So trans for transfer learning。 let me show you that folder。 So this is the folder I have set up。
-
- you'll see I have class A B and C， those are my three types of dog。
-
- I do not have a huge training set here。 So class A。
-
- these are all bulldog type animals and then class B these are poodles Class C。
-
- these are German shepherds。 So this is how you would set it up。 you just to label these。
-
- You have your images here。 they can be Jpegs and PGs and you name the。
-
-
-
-![](img/fea53c1ab8aaa1af63aff2f2daccb4dc_6.png)
+ these are German shepherds。 So this is how you would set it up。 you just to label these。 You have your images here。 they can be Jpegs and PGs and you name the。![](img/fea53c1ab8aaa1af63aff2f2daccb4dc_6.png)
 
 ![](img/fea53c1ab8aaa1af63aff2f2daccb4dc_7.png)
 
-Folds so that the common classes are grouped together。
+Folds so that the common classes are grouped together。 that gives you your whys the folder names and then the actual files going to each of the folders。 what you actually name these files doesn't matter。 And I simply point it to here。 This tells it the target size so it's going scale all of those as need B to 224 We're trying to classify them as categorical so we want the three classes and we go ahead and run this found 9 images belonging to three classes。
 
- that gives you your whys the folder names and then the actual files going to each of the folders。
+ Now if you want to train this， you'll have to go in and pull in your own images and create that directory structure。 some of those images are potentially copyright it so I can't really create a collection of those but you may also not want to do dog breeds as well and you'd probably want to grab quite a few additional images you'd ideally want maybe 50 to 100 in each of the classes but that's just a stab at it Now I'm going to train it。
 
- what you actually name these files doesn't matter。 And I simply point it to here。
+ This will go pretty quick actually I'm only training it for five epos I could certainly do more and that might give us。Better accuracy。 I'll go ahead fast forward this until it's done。 And now we're done。 So let's go ahead。 I put in different URLs for different dogs that were not in the training set。 So let's see how well it actually does。 Again， this is mainly going through the motions You'd want quite a few additional images if you are going to do this for real right there's a German shepherd。
 
- This tells it the target size so it's going scale all of those as need B to 224 We're trying to classify them as categorical so we want the three classes and we go ahead and run this found 9 images belonging to three classes。
+ It's saying it class 2。 Here's another German shepherd also class 2。 Now here's a bulldog。 if this is class 2。 that's an epic fail。 So it is thinking that this bulldog is pretty similar to these German shepherds。 iss probably from not training it quite enough。 This bulldog。 my bulldog it's saying that that's something different entirely。
 
- Now if you want to train this， you'll have to go in and pull in your own images and create that directory structure。
-
- some of those images are potentially copyright it so I can't really create a collection of those but you may also not want to do dog breeds as well and you'd probably want to grab quite a few additional images you'd ideally want maybe 50 to 100 in each of the classes but that's just a stab at it Now I'm going to train it。
-
- This will go pretty quick actually I'm only training it for five epos I could certainly do more and that might give us。
-
-Better accuracy。 I'll go ahead fast forward this until it's done。 And now we're done。
-
- So let's go ahead。 I put in different URLs for different dogs that were not in the training set。
-
- So let's see how well it actually does。 Again， this is mainly going through the motions You'd want quite a few additional images if you are going to do this for real right there's a German shepherd。
-
- It's saying it class 2。 Here's another German shepherd also class 2。 Now here's a bulldog。
-
- if this is class 2。 that's an epic fail。 So it is thinking that this bulldog is pretty similar to these German shepherds。
-
- iss probably from not training it quite enough。 This bulldog。
-
- my bulldog it's saying that that's something different entirely。
-
- And then the poodles are also classifying as two。 So you probably need more images。
-
- but this is just really taking you through the motions for this so that you can build this potentially for any types of images that you want。
-
- Thank you for watching this video。 in the next video we're going continue with transfer learning and see about。
-
-😊。
+ And then the poodles are also classifying as two。 So you probably need more images。 but this is just really taking you through the motions for this so that you can build this potentially for any types of images that you want。 Thank you for watching this video。 in the next video we're going continue with transfer learning and see about。😊。
 
 ![](img/fea53c1ab8aaa1af63aff2f2daccb4dc_9.png)
 
 Han language libraries or neural networks that can be transferred into curs for our use this content changes often so subscribe the channel to stay up to date on this course and other topics in artificial intelligence。
-

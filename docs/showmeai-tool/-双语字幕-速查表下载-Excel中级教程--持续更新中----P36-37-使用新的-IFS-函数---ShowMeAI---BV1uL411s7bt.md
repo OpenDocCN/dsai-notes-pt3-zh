@@ -2,226 +2,60 @@
 
 ![](img/ee8b3e4d42ee82516ef1fc26ea7d4a36_0.png)
 
-In this tutorial， we're going to take a look at the exciting new ifs function in Excel。
+In this tutorial， we're going to take a look at the exciting new ifs function in Excel。 This is a new feature， a new function that was brand new in Excel 2019。 and that also includes Office 365。 So before we dive in to this new ifs function。 let's take a look at the regular if function that's been in Excel for many， many years。
 
- This is a new feature， a new function that was brand new in Excel 2019。
+ here we have a spreadsheet with a list of student numbers， student names and their test scores。 Let's say this is a college class。 They've taken a test， and these are their scores。 Well。 I could use the if function to do some basic automatic grading。 So let's look at how to do that with the traditional if function that we've had for quite some time。
 
- and that also includes Office 365。 So before we dive in to this new ifs function。
-
- let's take a look at the regular if function that's been in Excel for many， many years。
-
- here we have a spreadsheet with a list of student numbers， student names and their test scores。
-
- Let's say this is a college class。 They've taken a test， and these are their scores。 Well。
-
- I could use the if function to do some basic automatic grading。
-
- So let's look at how to do that with the traditional if function that we've had for quite some time。
-
- Step 1 would be to click on a cell tap equals if left parenthesis。
-
- And we get a pop up with some help。 It says if logical test value if true comma value if faults。
-
- So I need a logical test。😊，Let's say if D2 is greater than 59 then and I'll put a comma to represent then if you look at the help text that we're getting here。
-
- it says now value if true so here I'm supposed to put what is displayed if D2 is indeed greater than 59 Well I want it to print on the screen the word pass the quotes signify print on the screen now I put a comma and here this is like saying if not so let's back up if D2 is greater than 59。
+ Step 1 would be to click on a cell tap equals if left parenthesis。 And we get a pop up with some help。 It says if logical test value if true comma value if faults。 So I need a logical test。😊，Let's say if D2 is greater than 59 then and I'll put a comma to represent then if you look at the help text that we're getting here。 it says now value if true so here I'm supposed to put what is displayed if D2 is indeed greater than 59 Well I want it to print on the screen the word pass the quotes signify print on the screen now I put a comma and here this is like saying if not so let's back up if D2 is greater than 59。
 
  then print pass If not then print fail and then I'll put in the parenthesis and tap enter on the keyboard and notice what it does Excel tests to see if D2 is greater than 59 if it is pass and that's what happened pass so now I can just use the autofill handle by clicking on E2 where my formula is and going to the autofill handle I can click and hold and drag down for the entire list of students。
 
-And we can calculate whether they passed or failed。 Now， there's an even faster way to do that。
+And we can calculate whether they passed or failed。 Now， there's an even faster way to do that。 I could just double click on the autofill handle， and that will automatically deploy it all the way down the column。 So this is great， right， Well， yes， it is。 But what if I want to do more than pass fail。 What if I want to say if it's greater than 92， then it's an a。 Well。
 
- I could just double click on the autofill handle， and that will automatically deploy it all the way down the column。
+ I could go in and say equals if left parentheesis。 D2 is greater than 92 then print a。 And I don't have to put and if not， or if false， I don't have to， I could just stop it there。 or I could continue and say if it's not greater than 92。 then what would I say pass or fail or B or C， I need more here。
 
- So this is great， right， Well， yes， it is。 But what if I want to do more than pass fail。
+ I need to be able to create a formula that calculates more than just whether one statement is true。 You can see the results I'm getting here。 They're all either falses or a。 That's all that it's capable of doing。 So traditionally。The solution to this problem was to create a formula with what's called a nested if。
 
- What if I want to say if it's greater than 92， then it's an a。 Well。
+ but nested ifs can be pretty confusing and pretty hard at first。 And so in Excel 2019。 and also if you have Office 365。 Now we have a new solution。 We have a new function called ifs。 And it really does solve this issue that I just explained to you。 I'll just click and drag down and erase the results that were generated with the formula that I created。
 
- I could go in and say equals if left parentheesis。 D2 is greater than 92 then print a。
+ So back up to the top here， let's do a similar thing， but use ifs。 So I clicked on cell E2 equals ifs left parenthesis。 and you can see again， I get some help text。 it wants a logical test and then comma value if true， comma， etc ce。 So let's take a look at how this could work。 First， I'll start by clicking on D2。
 
- And I don't have to put and if not， or if false， I don't have to， I could just stop it there。
+ just like I did before。 So ifs D2 is greater than 92， then print a。And then I'll put another comma。 What if it's not greater than 92。 If it's not， then maybe this next logical test is true。 Maybe D2 is greater than 89。 and then comm， if that's the case， then I want to print a minus。 Let me scoot over a little bit so you can see this a little better， What if that's not true， Well。
 
- or I could continue and say if it's not greater than 92。
+ then maybe D2 is greater than 84， and if it is， then print B plus I put the close Well。 what if that's not true。 What if none of these are true， then， let's see if D2 is greater than 79。 if it is， then print B。 So hopefully you're seeing the pattern here， I'm creating a series of tests。 If the first test is true， then the logic stops there， Excel will just put an a in cell E2。
 
- then what would I say pass or fail or B or C， I need more here。
+ But if that test comes up falses， then it will look for the next test and see if the results of this test are true。 if they are a minus。 And so it just keeps。Looking for something that is true。 give me a minute to finish this pattern， and then I'll resume the video。 Okay。 so I've finished my formula。 Let me just quickly show it to you。 As you can see。
 
- I need to be able to create a formula that calculates more than just whether one statement is true。
+ I've established different score ranges for each of the letter grades。 And notice that after D minus。 I say if D2 is less than 58。 Then it's an F。 Okay。 so now that I've got my formula with many， many ifs in it。 That's why the function is called ifs。 All I have to do is tap enter on the keyboard。 and it calculates the grade for this first person in my list for Gina。
 
- You can see the results I'm getting here。 They're all either falses or a。
+ Now I can just double click on the autofill handle。 and it should calculate the grades all the way down for all of the students。 You can see the range of scores and letter grades。 This example。 I think demonstrates why ifs is so important。 and it's such a great addition to Excel。
 
- That's all that it's capable of doing。 So traditionally。
+ It's so much easier than a nested if。 Now， watch what happens， What if let's say。New student comes in to the class。 Good old John White， and we extend the formula down。 noticeice that it gives John an F。 Well， John hasn't really taken the test。 So let's say I have not applicable in here or something similar。
 
-The solution to this problem was to create a formula with what's called a nested if。
+ The formula is getting messed up a little bit。 So let's look at something that we can do to perhaps fix this。 It doesn't always need to happen。 but sometimes when you use ifs to create a formula。 you might need to put in one final logical test at the end of your formula。 What if none of these logical tests result in a true。 Well。
 
- but nested ifs can be pretty confusing and pretty hard at first。 And so in Excel 2019。
+ what you can do is you can force there to be a true to do that， just put another comma in。 type the word true。 put a comma and then in quotes what you want to have appear。 if none of these other logical tests are true。 So I'm forcing this to be true as a last resort。 And what I'll put is test not taken。 I'll put that in quotes， tap enter on the keyboard and let's。
 
- and also if you have Office 365。 Now we have a new solution。 We have a new function called ifs。
+Auttofi that down。 But notice it still didn't quite work。 The reason why。 for some reason the formula is interpreting this as being greater than 92。 In Excel。 letters can sometimes be interpreted to have a numerical value。 And so that may be why this is showing up as an A。
 
- And it really does solve this issue that I just explained to you。
+ So even though it didn't really help us in this case。 It is important to know about this true logical test at the end of the formula。 Let's look at a second example of when the ifs function might be helpful here on my second spreadsheet。 It's an employee list。 So I've got my employees here。
 
- I'll just click and drag down and erase the results that were generated with the formula that I created。
+ I've got the department that they're part of here。 And I would like Excel to automatically calculate and display who their supervisor is。 Yes。 I could do this manually。 but in the future， new employees will be added。 I'll put in their department and the supervisor will be automatically calculate and printed on the screen。
 
- So back up to the top here， let's do a similar thing， but use ifs。
+ So how to do that。 Well， just like before， I'll start by clicking， typing equals。Left parenthesis B2 is equal to custodial。 Now， because I'm dealing with a word here。 I'm dealing with text， not a number。 I have to put it in quotes。 and it's easy to forget that but you've got to do it。
 
- So I clicked on cell E2 equals ifs left parenthesis。 and you can see again， I get some help text。
+ So if B2 is equal to custodial in quote then print Tiffany as the supervisor Now if that logical test is not true。 then test to see if B is equal to marketing。 If it is then print at。 If that logical test fails。 then test to see if B2 is equal to customer service。 Give me a minute to complete this formula and then I'll resume the video。
 
- it wants a logical test and then comma value if true， comma， etc ce。
+ so I've finished my formula at least for now， and you can see what it looks like。 this is a pretty complicated if's formula， and it's just going work from left to right。 it's going check to see if this is true if it is it'll print Tiffany， if it's not true。 it'll move on to the next one。 It's looking for something that's true。
 
- So let's take a look at how this could work。 First， I'll start by clicking on D2。
+ Now you can see I didn't put in every single。So let's see what happens when I tap enter on the keyboard to make that formula effective。 It found that Alan's supervisor in the custodial department is Tiffany。 Well。 let's autofill this down， double clicking on the autofill handle。 Let's see how it works。 you can see it looks like it's working pretty well。 But look。
 
- just like I did before。 So ifs D2 is greater than 92， then print a。And then I'll put another comma。
+ I didn't put in anything in the formula for human resources。 And so Excel sees that as an error。 and it puts in an N error message not applicable。 And there's other examples of that here， too。 And that looks kind of ugly。 It doesn't look great。 So this is a good example of when it can be important to force a true at the end of your formula。
 
- What if it's not greater than 92。 If it's not， then maybe this next logical test is true。
+ So let's do that。 And in order to see this better。 I'm gonna have to zoom out a little bit。 but I'll just double click on the formula。 And so you can see here at the end。 I'll just put in a comma， and then force a true statement。 So true comma。 and then I'll type in not applicable。 Now you'll notice true is not in quotes。
 
- Maybe D2 is greater than 89。 and then comm， if that's the case， then I want to print a minus。
+ because it's not really。Text it's a function。 Basically。 All right。 I'm gonna tap enter on the keyboard。 Let's autofill that down and you can see what happens。 Now there are no error messages。 It just says not applicable。 Now， of course， later。 I might decide to change that and say something like reports to CEO。
 
- Let me scoot over a little bit so you can see this a little better， What if that's not true， Well。
+ So there's no supervisor just reports directly to the top。 Lucy people。 So I can autofill that down and it changes it all the way down。 Let's say a person switches departments。 Todd switches to legal。 their supervisor changes。 So I hope you can see the great potential in the ifs function and using it in your formulas。
 
- then maybe D2 is greater than 84， and if it is， then print B plus I put the close Well。
-
- what if that's not true。 What if none of these are true， then， let's see if D2 is greater than 79。
-
- if it is， then print B。 So hopefully you're seeing the pattern here， I'm creating a series of tests。
-
- If the first test is true， then the logic stops there， Excel will just put an a in cell E2。
-
- But if that test comes up falses， then it will look for the next test and see if the results of this test are true。
-
- if they are a minus。 And so it just keeps。Looking for something that is true。
-
- give me a minute to finish this pattern， and then I'll resume the video。 Okay。
-
- so I've finished my formula。 Let me just quickly show it to you。 As you can see。
-
- I've established different score ranges for each of the letter grades。
-
- And notice that after D minus。 I say if D2 is less than 58。 Then it's an F。 Okay。
-
- so now that I've got my formula with many， many ifs in it。 That's why the function is called ifs。
-
- All I have to do is tap enter on the keyboard。 and it calculates the grade for this first person in my list for Gina。
-
- Now I can just double click on the autofill handle。
-
- and it should calculate the grades all the way down for all of the students。
-
- You can see the range of scores and letter grades。 This example。
-
- I think demonstrates why ifs is so important。 and it's such a great addition to Excel。
-
- It's so much easier than a nested if。 Now， watch what happens， What if let's say。
-
-New student comes in to the class。 Good old John White， and we extend the formula down。
-
- noticeice that it gives John an F。 Well， John hasn't really taken the test。
-
- So let's say I have not applicable in here or something similar。
-
- The formula is getting messed up a little bit。 So let's look at something that we can do to perhaps fix this。
-
- It doesn't always need to happen。 but sometimes when you use ifs to create a formula。
-
- you might need to put in one final logical test at the end of your formula。
-
- What if none of these logical tests result in a true。 Well。
-
- what you can do is you can force there to be a true to do that， just put another comma in。
-
- type the word true。 put a comma and then in quotes what you want to have appear。
-
- if none of these other logical tests are true。 So I'm forcing this to be true as a last resort。
-
- And what I'll put is test not taken。 I'll put that in quotes， tap enter on the keyboard and let's。
-
-Auttofi that down。 But notice it still didn't quite work。 The reason why。
-
- for some reason the formula is interpreting this as being greater than 92。 In Excel。
-
- letters can sometimes be interpreted to have a numerical value。
-
- And so that may be why this is showing up as an A。
-
- So even though it didn't really help us in this case。
-
- It is important to know about this true logical test at the end of the formula。
-
- Let's look at a second example of when the ifs function might be helpful here on my second spreadsheet。
-
- It's an employee list。 So I've got my employees here。
-
- I've got the department that they're part of here。
-
- And I would like Excel to automatically calculate and display who their supervisor is。 Yes。
-
- I could do this manually。 but in the future， new employees will be added。
-
- I'll put in their department and the supervisor will be automatically calculate and printed on the screen。
-
- So how to do that。 Well， just like before， I'll start by clicking， typing equals。
-
-Left parenthesis B2 is equal to custodial。 Now， because I'm dealing with a word here。
-
- I'm dealing with text， not a number。 I have to put it in quotes。
-
- and it's easy to forget that but you've got to do it。
-
- So if B2 is equal to custodial in quote then print Tiffany as the supervisor Now if that logical test is not true。
-
- then test to see if B is equal to marketing。 If it is then print at。 If that logical test fails。
-
- then test to see if B2 is equal to customer service。
-
- Give me a minute to complete this formula and then I'll resume the video。
-
- so I've finished my formula at least for now， and you can see what it looks like。
-
- this is a pretty complicated if's formula， and it's just going work from left to right。
-
- it's going check to see if this is true if it is it'll print Tiffany， if it's not true。
-
- it'll move on to the next one。 It's looking for something that's true。
-
- Now you can see I didn't put in every single。So let's see what happens when I tap enter on the keyboard to make that formula effective。
-
- It found that Alan's supervisor in the custodial department is Tiffany。 Well。
-
- let's autofill this down， double clicking on the autofill handle。 Let's see how it works。
-
- you can see it looks like it's working pretty well。 But look。
-
- I didn't put in anything in the formula for human resources。 And so Excel sees that as an error。
-
- and it puts in an N error message not applicable。 And there's other examples of that here， too。
-
- And that looks kind of ugly。 It doesn't look great。
-
- So this is a good example of when it can be important to force a true at the end of your formula。
-
- So let's do that。 And in order to see this better。 I'm gonna have to zoom out a little bit。
-
- but I'll just double click on the formula。 And so you can see here at the end。
-
- I'll just put in a comma， and then force a true statement。 So true comma。
-
- and then I'll type in not applicable。 Now you'll notice true is not in quotes。
-
- because it's not really。Text it's a function。 Basically。 All right。
-
- I'm gonna tap enter on the keyboard。 Let's autofill that down and you can see what happens。
-
- Now there are no error messages。 It just says not applicable。 Now， of course， later。
-
- I might decide to change that and say something like reports to CEO。
-
- So there's no supervisor just reports directly to the top。 Lucy people。
-
- So I can autofill that down and it changes it all the way down。
-
- Let's say a person switches departments。 Todd switches to legal。 their supervisor changes。
-
- So I hope you can see the great potential in the ifs function and using it in your formulas。
-
- You can do something like  a hundred and 50 some odd logical tests in one formula using the ifs function。
-
- I hope you found this tutorial to be helpful。
-
-![](img/ee8b3e4d42ee82516ef1fc26ea7d4a36_2.png)
+ You can do something like  a hundred and 50 some odd logical tests in one formula using the ifs function。 I hope you found this tutorial to be helpful。![](img/ee8b3e4d42ee82516ef1fc26ea7d4a36_2.png)

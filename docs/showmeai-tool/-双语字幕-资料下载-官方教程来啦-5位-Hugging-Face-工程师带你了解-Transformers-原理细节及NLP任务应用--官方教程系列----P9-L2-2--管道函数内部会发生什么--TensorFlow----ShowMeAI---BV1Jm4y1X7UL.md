@@ -4,147 +4,53 @@
 
 ![](img/77009730db8ae748615a56ed0788b98a_1.png)
 
-What happens inside the pipelineplan function？In this video。
-
- we will look at what actually happens when we use the pipeline function of the transformformerss library。
-
-More specifically， we will look at the scientific analysis pipeline and know it went from the two following sentences to the positive and negative labels with the respective scores。
-
-
+What happens inside the pipelineplan function？In this video。 we will look at what actually happens when we use the pipeline function of the transformformerss library。More specifically， we will look at the scientific analysis pipeline and know it went from the two following sentences to the positive and negative labels with the respective scores。
 
 ![](img/77009730db8ae748615a56ed0788b98a_3.png)
 
-As we have seen in the pipeline video， there are three stages in the pipeline。First。
-
-We conduct the Rotex through numbers the model can make sense of using a tokenizer。
-
-Then was number goess with the model which outputs legs。Finally。
-
- the processinging steps transform thoselogs into labels and skull。
+As we have seen in the pipeline video， there are three stages in the pipeline。First。We conduct the Rotex through numbers the model can make sense of using a tokenizer。Then was number goess with the model which outputs legs。Finally。 the processinging steps transform thoselogs into labels and skull。
 
 
 
 ![](img/77009730db8ae748615a56ed0788b98a_5.png)
 
-Let's look in detail about threes steps and now to replicate them in the transformformers library。
+Let's look in detail about threes steps and now to replicate them in the transformformers library。 beginning with the first stage tokenization。![](img/77009730db8ae748615a56ed0788b98a_7.png)
 
- beginning with the first stage tokenization。
+The tokenization process has several steps first， the text is split into small chunks called token。They get me words， part of words， or punctuation symbols。Then the tokenizer will add some special tokens to the model expected。Here。 the model used expects a CS token at the beginning and a s token at the end of the sentence to classify。
 
-![](img/77009730db8ae748615a56ed0788b98a_7.png)
+Lastly， the tokenizer matches each token to its unique ID in the vocabulary of the protrained model。![](img/77009730db8ae748615a56ed0788b98a_9.png)
 
-The tokenization process has several steps first， the text is split into small chunks called token。
+To load such a tokenizer， the transformformer library provides the autotokenizer API。The most important method of this gas is from betray trade。Which will download and cache the configuration and the vocabulary associateded to a given checkpoint。Here the check used by default for the sentiment analysis pipeline is dist belt paste andcase fine tune SS through English。
 
-They get me words， part of words， or punctuation symbols。
+ which is a bit of a mouth。We instance shade tookken associated with a checkpoint。 then feed it the two sentences。Since those two sentences are not of the same size。 we will need to pad the short one to be able to be an array。This is done by the tokenizer with ytion， patting equal。With truation equal through。
 
-Then the tokenizer will add some special tokens to the model expected。Here。
+ we ensure that any sentence longer than the maximum the model can handle is truncated。Lastly。 the returntensil option tells the tukener return a by doch tensil。Looking at the result。 we see we have a dictionary with two keys。Input IDs contains the IDs of both sentences with zeros where the padding is applied。The second key attention mask indicates where patting has been applied。
 
- the model used expects a CS token at the beginning and a s token at the end of the sentence to classify。
+ so the model does not pay attention to it。![](img/77009730db8ae748615a56ed0788b98a_11.png)
 
-Lastly， the tokenizer matches each token to its unique ID in the vocabulary of the protrained model。
+This is always what is inside the organization step。![](img/77009730db8ae748615a56ed0788b98a_13.png)
 
+Now let's have a look at the second step。The model。![](img/77009730db8ae748615a56ed0788b98a_15.png)
 
+As for the tokenezizer produce the newmod API with a from between method。It will download and cache the configuration of the model， as well as the pretrained weights。However。 the Auto API will only instants the body of the model。That is the part of the model that is left once the pro tradinging edge is remove。
 
-![](img/77009730db8ae748615a56ed0788b98a_9.png)
-
-To load such a tokenizer， the transformformer library provides the autotokenizer API。
-
-The most important method of this gas is from betray trade。
-
-Which will download and cache the configuration and the vocabulary associateded to a given checkpoint。
-
-Here the check used by default for the sentiment analysis pipeline is dist belt paste andcase fine tune SS through English。
-
- which is a bit of a mouth。We instance shade tookken associated with a checkpoint。
-
- then feed it the two sentences。Since those two sentences are not of the same size。
-
- we will need to pad the short one to be able to be an array。
-
-This is done by the tokenizer with ytion， patting equal。With truation equal through。
-
- we ensure that any sentence longer than the maximum the model can handle is truncated。Lastly。
-
- the returntensil option tells the tukener return a by doch tensil。Looking at the result。
-
- we see we have a dictionary with two keys。Input IDs contains the IDs of both sentences with zeros where the padding is applied。
-
-The second key attention mask indicates where patting has been applied。
-
- so the model does not pay attention to it。
-
-![](img/77009730db8ae748615a56ed0788b98a_11.png)
-
-This is always what is inside the organization step。
-
-
-
-![](img/77009730db8ae748615a56ed0788b98a_13.png)
-
-Now let's have a look at the second step。The model。
-
-
-
-![](img/77009730db8ae748615a56ed0788b98a_15.png)
-
-As for the tokenezizer produce the newmod API with a from between method。
-
-It will download and cache the configuration of the model， as well as the pretrained weights。However。
-
- the Auto API will only instants the body of the model。
-
-That is the part of the model that is left once the pro tradinging edge is remove。
-
-It will output a high dimensional tensor that is a representation of the sentences past。
-
- but which is not directly useful for a classification problem。Here the tennsor has two sentences。
-
- each of 16 token， and the last dimension is ill in size of a model，768。
-
-
+It will output a high dimensional tensor that is a representation of the sentences past。 but which is not directly useful for a classification problem。Here the tennsor has two sentences。 each of 16 token， and the last dimension is ill in size of a model，768。
 
 ![](img/77009730db8ae748615a56ed0788b98a_17.png)
 
-To get an output link to our classification problem。
+To get an output link to our classification problem。 we need to use the Automod for sequence classification class。It works exactly as zero to model class， except that it will build a model with a classification head。Price1 not a class for each common LLP task in the Transformers library。Here。
 
- we need to use the Automod for sequence classification class。
+ after giving our model the two sentences， we get the tens source size2 by 2。 one result for each sentence and for each possible label。Those outputs are not probabilities yet。 we can see they don't sell up to one。This is because each model of the transformer library returns lugg it。To make sense of us look it， we need to dig into the field and last step of the pipeline。
 
-It works exactly as zero to model class， except that it will build a model with a classification head。
-
-Price1 not a class for each common LLP task in the Transformers library。Here。
-
- after giving our model the two sentences， we get the tens source size2 by 2。
-
- one result for each sentence and for each possible label。Those outputs are not probabilities yet。
-
- we can see they don't sell up to one。This is because each model of the transformer library returns lugg it。
-
-To make sense of us look it， we need to dig into the field and last step of the pipeline。
-
- plus processing。To convert logits into probabilities， we need to apply a C max layer to them。
-
-As we can see， this transforms them into positive numbers， by's them up to one。
-
-The last step is to know which of those correspond to the positive or the negative label。
-
-
+ plus processing。To convert logits into probabilities， we need to apply a C max layer to them。As we can see， this transforms them into positive numbers， by's them up to one。The last step is to know which of those correspond to the positive or the negative label。
 
 ![](img/77009730db8ae748615a56ed0788b98a_19.png)
 
-This is given by the ID2lipold field of the model config。The first proba is index 0。
-
- correspond to the negative level and the seconds index 1 correspond to the positive level。
-
-This is how our classifier built with the pipeline function， peaks+ labels and computed vicos。
-
-
+This is given by the ID2lipold field of the model config。The first proba is index 0。 correspond to the negative level and the seconds index 1 correspond to the positive level。This is how our classifier built with the pipeline function， peaks+ labels and computed vicos。
 
 ![](img/77009730db8ae748615a56ed0788b98a_21.png)
 
-Now that you know how each steps works， you can easily tweak them to your needs。
-
-
-
-![](img/77009730db8ae748615a56ed0788b98a_23.png)
+Now that you know how each steps works， you can easily tweak them to your needs。![](img/77009730db8ae748615a56ed0788b98a_23.png)
 
 ![](img/77009730db8ae748615a56ed0788b98a_24.png)
 

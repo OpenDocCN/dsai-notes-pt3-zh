@@ -2,131 +2,39 @@
 
 ![](img/50bb6b5301b650cc2149f5090f089eae_0.png)
 
-Hello again， everyone。 This is Brian。 And in this video。
-
- we're going to cover the dictionary in Python 3。 So what is a dictionary。
-
- It's a key value pair More appropriately， it is a list that's indexed by keys。
-
- If you want to be really specific。 you notice the brackets。 This is actually a set indexed by keys。
+Hello again， everyone。 This is Brian。 And in this video。 we're going to cover the dictionary in Python 3。 So what is a dictionary。 It's a key value pair More appropriately， it is a list that's indexed by keys。 If you want to be really specific。 you notice the brackets。 This is actually a set indexed by keys。
 
 😊，Which can be any immutable type， what does that mean any immutable type means unchangeable？
 
-So let's take a look and let's see what it takes to create and work with a dictionary。
+So let's take a look and let's see what it takes to create and work with a dictionary。Let's take a look and see what it really takes to create a dictionary。 We're going to do this two different ways。 We're going to do it the hard way and the easy way。 First， let's do it the hard way。 I must say D equals。 We've got our brackets。
 
-Let's take a look and see what it really takes to create a dictionary。
+ We need a key value pair。 So let's create the key。He is going to be the string pet。Polen。 and now we need a value。 Let's say， dog。That's it。 That's really all there is to it。 Now。 if we want to make another one， we just separate it by a comma。Now we need a key。 and let's call this age。B is going to be five。Let's go ahead and make another one。
 
- We're going to do this two different ways。 We're going to do it the hard way and the easy way。
+ let's call it name。And its value is going to be spot。 I'm always bad at picking pet names。Then print out the dictionary in all of its glory。There it is。Pet dog， age 5， name spot。Now。 let's do it the easy way。 I'm going to say D equals， and we're going to call the diic function。Bunny names。 sayy that real loud in class and watch everybody just kind of look at you。
 
- First， let's do it the hard way。 I must say D equals。 We've got our brackets。
+ But we're gonna say pet equals。Dog。Age equals。5ve。And name spot。 So what's really going on here is it's doing all this formatting for you。 That's why I call it the easy way。The end result。However， is exactly the same。They are exactly the same， doesn't matter which way you create it。
 
- We need a key value pair。 So let's create the key。He is going to be the string pet。Polen。
+Just under the hood know that you have to have a key value pair， for example， pet dog H5 name spot。Let's take a look at the keys and values and how we get at them。 There's a third type really。 and it's called items。 We're going to work with that one first。 so we're going to say print。And we go F。Items。And we're going to call the dictionary It function。Save run。
 
- and now we need a value。 Let's say， dog。That's it。 That's really all there is to it。 Now。
+ And this is going to return a di underscore items， which you guessed it。 Look at this thing。 This is insane。 So we have a tuple containing a list containing tuples。But what it's really done is it's packaged it into individual items so you can very distinctly see the key value pairs。Not abundantly useful for us， what we really worry about are well， the keys and the items。
 
- if we want to make another one， we just separate it by a comma。Now we need a key。
+ so let's go ahead and look at those real quick。Im to just say keys。And values， I say items earlier。 I did。 All right， so we want to look at the keys and the values。Save and run and voila so we're returning three different things， di underscore items， di。 underscore keys， di， underscore values。But what we've got is all of the information in this dictionary right here in these three functions。
 
- and let's call this age。B is going to be five。Let's go ahead and make another one。
+ see items returns pretty much everything nice in packaged， the keys。 it's going to tell us what keys are available because remember everything's a key value pair。So when we go to look something up， we can't do it by index， we have to do it by key。 which is why these keys exist。You could easily make these keys， integers or numbers of some kind。
 
- let's call it name。And its value is going to be spot。 I'm always bad at picking pet names。
-
-Then print out the dictionary in all of its glory。There it is。Pet dog， age 5， name spot。Now。
-
- let's do it the easy way。 I'm going to say D equals， and we're going to call the diic function。
-
-Bunny names。 sayy that real loud in class and watch everybody just kind of look at you。
-
- But we're gonna say pet equals。Dog。Age equals。5ve。And name spot。
-
- So what's really going on here is it's doing all this formatting for you。
-
- That's why I call it the easy way。The end result。However， is exactly the same。
-
-They are exactly the same， doesn't matter which way you create it。
-
-Just under the hood know that you have to have a key value pair， for example， pet dog H5 name spot。
-
-Let's take a look at the keys and values and how we get at them。 There's a third type really。
-
- and it's called items。 We're going to work with that one first。 so we're going to say print。
-
-And we go F。Items。And we're going to call the dictionary It function。Save run。
-
- And this is going to return a di underscore items， which you guessed it。 Look at this thing。
-
- This is insane。 So we have a tuple containing a list containing tuples。
-
-But what it's really done is it's packaged it into individual items so you can very distinctly see the key value pairs。
-
-Not abundantly useful for us， what we really worry about are well， the keys and the items。
-
- so let's go ahead and look at those real quick。Im to just say keys。And values， I say items earlier。
-
- I did。 All right， so we want to look at the keys and the values。
-
-Save and run and voila so we're returning three different things， di underscore items， di。
-
- underscore keys， di， underscore values。But what we've got is all of the information in this dictionary right here in these three functions。
-
- see items returns pretty much everything nice in packaged， the keys。
-
- it's going to tell us what keys are available because remember everything's a key value pair。
-
-So when we go to look something up， we can't do it by index， we have to do it by key。
-
- which is why these keys exist。You could easily make these keys， integers or numbers of some kind。
-
- but we've done it as a string。We can also get the values dogg5 and spot。
-
- which are abundantly unusful without the keys。So in the next section here。
-
- we're going to take a look at how you would actually get those。
-
-
-
-![](img/50bb6b5301b650cc2149f5090f089eae_2.png)
+ but we've done it as a string。We can also get the values dogg5 and spot。 which are abundantly unusful without the keys。So in the next section here。 we're going to take a look at how you would actually get those。![](img/50bb6b5301b650cc2149f5090f089eae_2.png)
 
 ![](img/50bb6b5301b650cc2149f5090f089eae_3.png)
 
-Let's go ahead and take a look at how we would get a value from a key because these are key value pairs。
+Let's go ahead and take a look at how we would get a value from a key because these are key value pairs。 It's called the key because it unlocks the door to the value and let's take a look at what I mean here。So I want to format this， and I'm going to say。Name， let's capitalize that。And we're going to say D and you inclined to do something like this， D0。Let's run this in key error。
 
- It's called the key because it unlocks the door to the value and let's take a look at what I mean here。
+ What does that mean， key error， It means the key was simply not found。 We don't have a key named 0。 We do， however， have a key。Name name， we also have one called PE and age。So you have to use the key to get the value。 Let's demonstrate that。 See， the name is spot。Now。 you notice how I have different quotes， I have single quote and double quote。
 
-So I want to format this， and I'm going to say。Name， let's capitalize that。
+There is a very interesting little issue here， where if we do a single quote within a single quote。Bad things happen very quickly， we get an invalid syntax。And you're looking at this going， now。 wait a minute。It should treat everything in these brackets as a separate entity。 but it really doesn't， so you do have。A quote issue that we've talked about in a previous video。
 
-And we're going to say D and you inclined to do something like this， D0。Let's run this in key error。
+All right， so now that we've wrapped our head around that。Let's take a look at the key error in depth。And let's call this test。And let's just say blah is some key we know doesn't exist。Really what's going on here is it's going out and it's trying to find any key of that value。
 
- What does that mean， key error， It means the key was simply not found。 We don't have a key named 0。
-
- We do， however， have a key。Name name， we also have one called PE and age。
-
-So you have to use the key to get the value。 Let's demonstrate that。 See， the name is spot。Now。
-
- you notice how I have different quotes， I have single quote and double quote。
-
-There is a very interesting little issue here， where if we do a single quote within a single quote。
-
-Bad things happen very quickly， we get an invalid syntax。And you're looking at this going， now。
-
- wait a minute。It should treat everything in these brackets as a separate entity。
-
- but it really doesn't， so you do have。A quote issue that we've talked about in a previous video。
-
-All right， so now that we've wrapped our head around that。
-
-Let's take a look at the key error in depth。And let's call this test。
-
-And let's just say blah is some key we know doesn't exist。
-
-Really what's going on here is it's going out and it's trying to find any key of that value。
-
- if it doesn't find it。 It throws a key error。At the very end of this。
-
- we're going to show you a little trick using some simple logic which we haven't covered yet to get around that to determine if the key even exists in the first place。
-
- But just right now， know that you have to have the key。 otherwise it will throw an error。
-
-So just put a quick note there， we'll throw an error if the key is not found。
+ if it doesn't find it。 It throws a key error。At the very end of this。 we're going to show you a little trick using some simple logic which we haven't covered yet to get around that to determine if the key even exists in the first place。 But just right now， know that you have to have the key。 otherwise it will throw an error。So just put a quick note there， we'll throw an error if the key is not found。
 
 
 
@@ -134,124 +42,34 @@ So just put a quick note there， we'll throw an error if the key is not found�
 
 ![](img/50bb6b5301b650cc2149f5090f089eae_6.png)
 
-Let's go ahead and take a look at how hard is it to add an item to a dictionary。 Well， it's not。
+Let's go ahead and take a look at how hard is it to add an item to a dictionary。 Well， it's not。 It's ridiculously simple。 You just simply do something like this。There you go， It's that simple。 you just simply say dictionary and then some key that's not in use equals a value and it will add it automatically。 it's very cool how it does that。Now， you should note， and we're just going to copy and paste this。
 
- It's ridiculously simple。 You just simply do something like this。There you go， It's that simple。
+What happens if the key already exists？So here we're adding。And here， what's going to happen。 Let's run and find out。It's just simply changed it。 This is what I mean by the key is immutable。 We cannot change this key。 We could delete it and re add it。 But once that key is in there。 all we can do is update the value or delete it。The key itself cannot change。
 
- you just simply say dictionary and then some key that's not in use equals a value and it will add it automatically。
+And let's take a look at what it takes to remove an item。Our good old buddy， the delete statement。 so we're going to delete。You guessed it the trick。Now this is what I mean by this is a key value pair when we run this。And we delete a key。The value associated with that key is also removed。 you see right here。Trick roll over。
 
- it's very cool how it does that。Now， you should note， and we're just going to copy and paste this。
+ We've deleted it， and now it's just simply gone。 It's not in there。Very simple to do that。 But just understand that once you delete the key， the value is gone。 However。 if you were to try to delete the value， the key will be there， but you'll have a null value。And that could lead to some issues down the road that's a more complex topic we're going to cover in a future video I just want you to be aware of that。
 
-What happens if the key already exists？So here we're adding。And here， what's going to happen。
+I've been getting a lot of really good feedback about this video series。 and some people have said。 hey， dude， you're going a little too slow。 I realize these's if for beginners， but I want more now。 so we're going to give you a little preview of what to come。 So we're going to test for existence and we're going to do something called a loopt。
 
- Let's run and find out。It's just simply changed it。 This is what I mean by the key is immutable。
+And both of these may be a little challenging， especially for newbie programmers。 but if you're an experienced programmer and you just want to learn it now。 let's just go over it and get it out of the way。 So we're going to say if， and this is basic logic。I say， name。In。李可文。And hit enter。 What we've done here is an if statement， this is a logic。If。
 
- We cannot change this key。 We could delete it and re add it。 But once that key is in there。
+This key is in the dictionary do something。Now， Python has this little guy right here this colon at the end saying。 hey， it's not the end of the statement。 expect more。 And then you have to have。 It's either spaces or a tab。 It doesn't really matter， but it has to be the same amount。 If you're from another language， you're expecting something like this。And you may be going。
 
- all we can do is update the value or delete it。The key itself cannot change。
+ why do you need tabs， Well， if you think about it， your code。Is he。And if you get rid of the tabs。It looks like this， so it just makes sense。But a lot of people in their first starting Python can't wrap their head around the tabs or the white spaces and it just infuiates them。
 
-And let's take a look at what it takes to remove an item。Our good old buddy， the delete statement。
+So。This is what I was saying earlier about we're going to test to see if that key exists before we try to access it。Now if the key was not in the dictionary， it would throw a key error， but we're saying if。 so only if this exists in the dictionary are we going to run this code。 we're going to go over all of this in more detail in a future video but I've had a lot of people saying hey。
 
- so we're going to delete。You guessed it the trick。
+ they want more now so there's one now let's go over loops。This is the other thing that really trips people up， especially in Newbyland， is because they're new。 They don't understand this stuff。 Nobody's explained it to them。What is a loop well。Have you ever gotten in trouble as a child and like your mom or dad says。
 
-Now this is what I mean by this is a key value pair when we run this。And we delete a key。
+ you know go do this until I tell you to stop， that's basically what you're telling the computer to do。You're going to say four。K。In the these。 And this may look really confusing if you're complete movie。Again， got to have that white space。We're going to go ahead and print。And let's go ahead and format this。And I am going to explain this。 But at the moment。
 
-The value associated with that key is also removed。 you see right here。Trick roll over。
+ you take a huge leap of faith with me here。So we got our key。And then we're going to say dictionary and then the specific key。This looks ugly if you're a newbie。 but let's run it， it works。So it's saying。Heet dog， H 5 name spot。That's what we're doing right there。So what's going on here is we're saying for every key in。
 
- We've deleted it， and now it's just simply gone。 It's not in there。Very simple to do that。
+ there's that in keyword again， the dictionary keys， remember we talked about this way up here。For every key in the dictionary keys， go ahead and print out the key and the dictionary value that correlates with that key。Again， you have to have that tab there。We're going to cover looping also in a future video but this is just because people have been saying we want more and we want more now。 so if you're having trouble wrapping your head around these two right here。
 
- But just understand that once you delete the key， the value is gone。 However。
+ don't worry I'm going to make a future video that's going to cover those in depth and we're going to talk about them and I do mean in depth。But if you are a season programmer， that's very simply how you do it。 If you are having trouble wrapping your head around these tabs。Just think of it like this。You have some code。And then， normally。You would do something like this。
 
- if you were to try to delete the value， the key will be there， but you'll have a null value。
+And Python's trying to help me out here， but you would have something like that stripped us out to replace it with that。And of course， you have something here。Sad code， I know。 let's say sad code here。 but then you strip these out， and it becomes that。 And that's why Python is so much smaller than other languages compared to something like Java。
 
-And that could lead to some issues down the road that's a more complex topic we're going to cover in a future video I just want you to be aware of that。
-
-I've been getting a lot of really good feedback about this video series。 and some people have said。
-
- hey， dude， you're going a little too slow。 I realize these's if for beginners， but I want more now。
-
- so we're going to give you a little preview of what to come。
-
- So we're going to test for existence and we're going to do something called a loopt。
-
-And both of these may be a little challenging， especially for newbie programmers。
-
- but if you're an experienced programmer and you just want to learn it now。
-
- let's just go over it and get it out of the way。 So we're going to say if， and this is basic logic。
-
-I say， name。In。李可文。And hit enter。 What we've done here is an if statement， this is a logic。If。
-
-This key is in the dictionary do something。Now， Python has this little guy right here this colon at the end saying。
-
- hey， it's not the end of the statement。 expect more。 And then you have to have。
-
- It's either spaces or a tab。 It doesn't really matter， but it has to be the same amount。
-
- If you're from another language， you're expecting something like this。And you may be going。
-
- why do you need tabs， Well， if you think about it， your code。Is he。And if you get rid of the tabs。
-
-It looks like this， so it just makes sense。But a lot of people in their first starting Python can't wrap their head around the tabs or the white spaces and it just infuiates them。
-
-So。This is what I was saying earlier about we're going to test to see if that key exists before we try to access it。
-
-Now if the key was not in the dictionary， it would throw a key error， but we're saying if。
-
- so only if this exists in the dictionary are we going to run this code。
-
- we're going to go over all of this in more detail in a future video but I've had a lot of people saying hey。
-
- they want more now so there's one now let's go over loops。
-
-This is the other thing that really trips people up， especially in Newbyland， is because they're new。
-
- They don't understand this stuff。 Nobody's explained it to them。What is a loop well。
-
-Have you ever gotten in trouble as a child and like your mom or dad says。
-
- you know go do this until I tell you to stop， that's basically what you're telling the computer to do。
-
-You're going to say four。K。In the these。 And this may look really confusing if you're complete movie。
-
-Again， got to have that white space。We're going to go ahead and print。
-
-And let's go ahead and format this。And I am going to explain this。 But at the moment。
-
- you take a huge leap of faith with me here。So we got our key。
-
-And then we're going to say dictionary and then the specific key。This looks ugly if you're a newbie。
-
- but let's run it， it works。So it's saying。Heet dog， H 5 name spot。
-
-That's what we're doing right there。So what's going on here is we're saying for every key in。
-
- there's that in keyword again， the dictionary keys， remember we talked about this way up here。
-
-For every key in the dictionary keys， go ahead and print out the key and the dictionary value that correlates with that key。
-
-Again， you have to have that tab there。We're going to cover looping also in a future video but this is just because people have been saying we want more and we want more now。
-
- so if you're having trouble wrapping your head around these two right here。
-
- don't worry I'm going to make a future video that's going to cover those in depth and we're going to talk about them and I do mean in depth。
-
-But if you are a season programmer， that's very simply how you do it。
-
- If you are having trouble wrapping your head around these tabs。Just think of it like this。
-
-You have some code。And then， normally。You would do something like this。
-
-And Python's trying to help me out here， but you would have something like that stripped us out to replace it with that。
-
-And of course， you have something here。Sad code， I know。 let's say sad code here。
-
- but then you strip these out， and it becomes that。
-
- And that's why Python is so much smaller than other languages compared to something like Java。
-
- Javascript， because it takes all those special characters out of there。
-
-
-
-![](img/50bb6b5301b650cc2149f5090f089eae_8.png)
+ Javascript， because it takes all those special characters out of there。![](img/50bb6b5301b650cc2149f5090f089eae_8.png)

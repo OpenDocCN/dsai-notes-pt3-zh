@@ -1,898 +1,250 @@
 # 【双语字幕+资料下载】用 Pandas 进行数据处理与分析！真实数据&实时讲解，学完就能上手做数据分析了！＜实战教程系列＞ - P8：8）分组和聚合 - 数据的分析和探索 - ShowMeAI - BV1M64y187bz
 
-Hey there。 How's it going， everybody。 In this video。
+Hey there。 How's it going， everybody。 In this video。 we're gonna be learning how we can group and aggregate our data。 Now。 if you don't know what grouping and aggregating really entails。 then I'd really recommend sticking around for this video。 because basically。
 
- we're gonna be learning how we can group and aggregate our data。 Now。
+ this is what most people think of when they think of actually analyzing data in a meaningful sense。 So this will be the first video where we actually get some statistics back on our data sets and aren't just modifying our data frames in different ways。
 
- if you don't know what grouping and aggregating really entails。
+ So， for example， maybe you want to know what the average salary for a developer is。 Or maybe you want to know how many people from each country knows Python or another programming language。 So what we're going learn here is going to allow us to answer those types of questions。 Now。 I would like to mention that we do have a sponsor for this series of videos and that is brilliant。
 
- then I'd really recommend sticking around for this video。 because basically。
+ So I really want to think brilliant for sponsoring this series。 And it would be great if you all could check them out using the link in the description section below and support the sponsors。 And I'll talk more about their services in just a bit。 So with that said。 let's go ahead and get started。 Okay， so before we start doing some more advanced data analysis。😊。
 
- this is what most people think of when they think of actually analyzing data in a meaningful sense。
+Start off slow and build up to the more advanced stuff so that all of this makes sense along the way。 So I have my developer survey data open here that we've been using throughout this series。 And as usual， if you'd like to follow along， then I have links to this code and the data in the description section below。 So let's look at some basic aggregations。 So if you don't know what aggregation means， basically。
 
- So this will be the first video where we actually get some statistics back on our data sets and aren't just modifying our data frames in different ways。
+ it means that we're going to be combining multiple pieces of data into a single results。 So。 for example， if you've ever used a mean median or mode and mathematics。 these are aggregate functions， because they take multiple values and give you either the mean median or mode of those results。 So if we wanted to run some analysis on our developer survey here。 one question we might ask is。
 
- So， for example， maybe you want to know what the average salary for a developer is。
+ okay， what is a typical salary for developers who answered this survey。 So that might be some good information to have if you're looking for a job and want to get an idea of what the salaries look like at the moment。 So to do this， we can grab the。Meedn salaries of our data frame。 So first。 let's look at these salaries。 So our salary column within this data frame here of all these survey results is called converted comp。
 
- Or maybe you want to know how many people from each country knows Python or another programming language。
+ And that is converted to US dollars。 it's actually further over here in the survey。 It is about right here。 So I'm going to copy that。 Now， first， let's just look at this column。 So as we've seen before， we can just access the column just like we're accessing a key of a dictionary。 And I'm going grab the first， let's get the first 15 salaries or so。
 
- So what we're going learn here is going to allow us to answer those types of questions。 Now。
+ So I'm going to look at the head of the of the results here。 And these are salaries here。 that developers put down for this survey。 and these N N values here。 just mean not a number in this context。 It means that they just skipped that question in the survey。 Okay， so we can see the median salary for this survey。
 
- I would like to mention that we do have a sponsor for this series of videos and that is brilliant。
+Just by running the median method on this series。 So to do this。 I'm going to go ahead and copy what I have here。 And now， instead of looking at the head。 I can just run median on that series。 So if I run this。 Then we can see that the median salary for this survey was around 57000。
 
- So I really want to think brilliant for sponsoring this series。
+ So that takes all of the salary responses from our survey from this series here。 And it gives us the median value of all of those and ignores the N in values。 So。 this probably doesn't give us as much information as we'd really like to have。 So， for example。 different countries pay different amounts since there are different costs of living and things like that。
 
- And it would be great if you all could check them out using the link in the description section below and support the sponsors。
+ So it' would be nice if we could look at the median salary broken down by country。 And we'll look at that here in a second when we learn about grouping data。 So first。 I want to cover a few more basic concepts before we move on to grouping。 So one thing that I'd like to look at is running these aggregate functions on our entire data frame。
 
- And I'll talk more about their services in just a bit。 So with that said。
+😊，So let's see what we get if we just run this median function that we just ran on our entire data frame instead of just this single series。 So here I'm just going to say Df do median。 So we're no longer accessing just a single column。 So if I run this， then it might take a second to spin up here。 So when I do this。 it's going to look through our data frame and find the columns that contain numerical values where it can grab a median value and some of these might not make sense to use with the median but others might be pretty useful to us。
 
- let's go ahead and get started。 Okay， so before we start doing some more advanced data analysis。😊。
+ So for example， we can see that the median age down here at the bottom for this survey was 29 years old。 and the median number of work hours per week。 that was 40， which is pretty standard。 So that makes sense。 Now， if you want to get a broad overview of your data and a statistical overview。 we can use the describe method on our data frame instead。 So if I。Instead run， describe。
 
-Start off slow and build up to the more advanced stuff so that all of this makes sense along the way。
+ instead of median。 And I run this。 then this is going to give us a broad overview of some different stats。 So if we look at the converted comp column here， then we can see a few different stats about this column。 So it gives us the count。 It gives us the mean， it gives us the standard deviation， the minimum。 and then it also gives us the 25，50 and 75% quantiles here。
 
- So I have my developer survey data open here that we've been using throughout this series。
+ Now this 50% marker is just the median value， by the way。 And just like we saw before。 when we look this median value up specifically， this is around 57000。 Now this is in scientific notation here。 So it looks a little bit different。 Basically。 this means that we just need to move 4 spots over from the decimal point。 So 1，2，3，4。
 
- And as usual， if you'd like to follow along， then I have links to this code and the data in the description section below。
+ So that would be 57000 there。 So this describe method gives us a bunch of these aggregates in one place。 If we just want to get a quick overview of our date。Now。 if you're wondering why I wanted to look at the median of our salaries instead of the mean。 which is the average， basically it's because the mean is affected too heavily by outliers。
 
- So let's look at some basic aggregations。 So if you don't know what aggregation means， basically。
+ It's not really a good metric to use because a few outliers can affect the average very heavily we can see that the mean salary up here。 if I highlight this right here。 if we were to count this up。 then that's actually about 127000 on average， but that gives us an unrealistic expectation of what a typical developer salary is。 because the largest salaries on our data set are just pulling up that average so heavily。
 
- it means that we're going to be combining multiple pieces of data into a single results。 So。
+ So in cases like that， you definitely want to use the mean instead I think that's a better representation or I'm sorry you're going to want to use the median instead because that's a better representation。 Now if we only wanted to get this overview for a single column then we could just run this describe method on a single column as well and get those results for that。
 
- for example， if you've ever used a mean median or mode and mathematics。
+Now， you might be wondering what that count value is listed at the top of these described results。 Now， the count value is the number of non in a rows。 which basically means that it counts the non missing rows。 So in the context of this survey。 a missing row just means that the respondent didn't answer that a specific question。
 
- these are aggregate functions， because they take multiple values and give you either the mean median or mode of those results。
+ So if I look at the count for the converted comp column。 So I'm going to go up here。And grab this。 And instead of grabbing the median。I'm just going grab the count。 We can see here that only about 55 to 65 or 55 to 56000 people answered that question。 Now。 I think there are about 89000 rows for this data， So that means that there are about 30000 people or so who didn't answer the salary question on this survey。
 
- So if we wanted to run some analysis on our developer survey here。 one question we might ask is。
+ Now， I sometimes see the mistake that some people think that the count function will count up the individual values and a specific row and report how many of those values were in the column。 But if that's what you're trying to do。 then that's what we would use the value counts function for。
 
- okay， what is a typical salary for developers who answered this survey。
+ Now， in case that doesn't quite make sense。 let's look at an example， to see what this looks like。 So， for example， we had the question on the survey that asked each person whether they coded in their free time as a hobby。 So to see all of these responses for that question。 we can look at the hobbyist column。 So I'll just access。That hobbyist column here and run that。
 
- So that might be some good information to have if you're looking for a job and want to get an idea of what the salaries look like at the moment。
+ And we can see that we get a series returned here。 And these are just a bunch of yes or no questions。 So it was just a yes or no question that each person answered。 So you might get the survey results back and you might think to yourself， okay， well。 I can see the responses here in the survey， But I just want to know how many people answered。 yes and how many people answered， no， So how would we do that。 well。 we can get that information with the value counts function。 So if I just look at the value counts。 and that is value underscore counts。 if we run that method on that series then that is going to give us a breakdown of how many people answered。
 
- So to do this， we can grab the。Meedn salaries of our data frame。 So first。
+ yes， and how many people answered， no as the whether or not they code as a hobby。 So I use the value counts all the time when exploring data。 And we can find out some interesting things from our survey by using this on some different fields。 So， for example， there is a question on this survey。😊。
 
- let's look at these salaries。 So our salary column within this data frame here of all these survey results is called converted comp。
+That ask each person what social media platform they use the most。 So if you're building an app or a website and want to keep track of the most popular social media sites。 then you might be interested in what the most popular answers to that question so to view these results we can access the social media column of the survey。 So let me do that。 And before I run value counts on this。
 
- And that is converted to US dollars。 it's actually further over here in the survey。
+ let me just show you what this column looks like。 So this column was called social media So I'm going run this。 and we can see that respondent number one said that they used Twitter more than any other social media。 this person used Instagram， Reddit， Reddit， Facebook， YouTube and so on。 Now I've pointed this out in previous video so far。
 
- It is about right here。 So I'm going to copy that。 Now， first， let's just look at this column。
+ But if you've forgotten or if this is your first video that you've watched in this series then at the top of my notebook here。 I've also loaded in a schema data frame right here and this。Data frame tells us the exact question that was asked on the survey for each of these column names。 So， for example， if we want to see the exact question that was asked for this social media column。
 
- So as we've seen before， we can just access the column just like we're accessing a key of a dictionary。
+ then I can just access that schema data frame and do a dot Lo because the indexes are going to be the column names And then we can just search for social media and if I run that。 then we can see that the question that they asked on the survey specifically was what social media site do you use the most so we can see that we get a few different responses here But which of these are the most popular So to find that out。
 
- And I'm going grab the first， let's get the first 15 salaries or so。
+ let's look at the value counts of this series to see what the most popular social media sites are overall for these developers So I'm going to run this and then I'm going to run that value counts function here。 And now we can see here at the top that Reddit was the most popular with about 14000 people and then we have。
 
- So I'm going to look at the head of the of the results here。 And these are salaries here。
+YouTube， Whatsapp， Facebook， Twitter， Instagram， I don't use social media was one of the answers。 Now we also have some foreign social networks here。 So I've never heard of these。 but I believe these are Chinese characters So this is probably a Chinese social media site I don't know really Russian writing。 but I would assume that this is Russian writing here。
 
- that developers put down for this survey。 and these N N values here。
+ So this is probably a Russian social media site。 So it's kind of interesting seeing all of these different answers from around the world。 Now one more quick tip if we want to see these broken down by percentage instead of raw numbers。 then we can pass in the normalized argument to the value counts function and set that equal to true。 So let me show you what this looks like。 So I can say normalizedize equals true。
 
- just mean not a number in this context。 It means that they just skipped that question in the survey。
+ And now we're gonna get these broken down by percentage So 17% of the people so that they use Reddit 16 said YouTube。About 16 said Whatsapp and so on。 Okay， so we can see that we have some social media sites here from some other countries。 So obviously， this is most likely a regional thing。 My guess would be that the popularity of the social media platforms。
 
- Okay， so we can see the median salary for this survey。
+ varies a lot based on what country you're in。 So how would we break up these results so that we can see the most popular social media sites for each country。 Now， in order to do this， we're going to have to learn about grouping our data。 So again。 this is a topic that can be a little confusing when you first see it。 So let me start off slow so that we can see exactly what's going on here。 So first of all。
 
-Just by running the median method on this series。 So to do this。
+ if we want to see specific results based on the country or based on some other column。 then we're going to have to group on that specific column。 And we have the group by function for this。 So what actually does it mean to say that we're going to use the group by function。 So in the pandas documentation， it says that a group by operation involves some combination。
 
- I'm going to go ahead and copy what I have here。 And now， instead of looking at the head。
+Of splitting the object， applying a function and combining the results。 So I'm going to try to walk through each of those processes one at a time so that we can see exactly how this works。 So again， in the pandas documentation， it says that a group by operation involves some combination of splitting up our object applying a function and then combining those results。 So let's do each of those。 Now， first， just for a reference。
 
- I can just run median on that series。 So if I run this。
+ let's display the value counts for each country so that we can see the countries that have the most results for this particular survey so to do this we can just access the country column。 And if I run this， we can see that this gives us the country that each respondent said that they were from。
 
- Then we can see that the median salary for this survey was around 57000。
+ And if we look at the value counts for this。 then this is going to tally up all of the unique responses so we can see that the majority of this survey was answered by developers in the United States。And in second was India， then Germany， United Kingdom， Canada and so on。 Okay。
 
- So that takes all of the salary responses from our survey from this series here。
+ so now let's look at how to use the group by function on our country column。 So first。 we're going to split the object。 and then we're going to apply a function。 And then it will combine those results。 So first， let's look at splitting the object。 Now。 in this case， we want to group all of the results by country。 So to do this。
 
- And it gives us the median value of all of those and ignores the N in values。 So。
+ we can simply say D F dot group by。 And then we will pass in。 This is going to be a list of columns that we want to group1。 And I'm just going to pass in a single column here for country。 So if I run this。 then what we get back here is this data frame group by object。
 
- this probably doesn't give us as much information as we'd really like to have。 So， for example。
+ So what is this object and what exactly can we do with this。 So first。 let's explain a bit what this is。 So this object contains a bunch of groups and better understand what this is。Let's take a look at an individual group that this beta frame has。 Now， before we do that。 I'm going to set this as a variable so that we can reuse this and not have to retype our code over and over and also it'll be easier to read。
 
- different countries pay different amounts since there are different costs of living and things like that。
+ So I'm going to call this country group and I'm just going to set this equal to this Df do group by and now instead of typing this every time we can just reference this country group variable here。 So now let's take a look at one of these groups。 So since we grouped our rows by country then we can grab a specific group by country name。
 
- So it' would be nice if we could look at the median salary broken down by country。
+ So I'll grab the group for the United States。 so to do this we can say country group do git underscore group and then pass in the name of the group in this case I'm want to get the group for United States。 So if I run this cell whoops and this is telling me that country group is not defined。
 
- And we'll look at that here in a second when we learn about grouping data。 So first。
+And it's because I didn't rerun this cell up here after I set that variable。 So if I run this and grab the group for the United States。 then we can see that we get a data frame returned here with some survey results。 So this doesn't look like anything special yet。 But if I look at the country name for each of these survey results。
 
- I want to cover a few more basic concepts before we move on to grouping。
+ the country is listed right here。 then we can see that all of these responses are from people who said that they were from the United States。 And if I look at the group for India。 So if I instead change United States to India here and grab that group。
 
- So one thing that I'd like to look at is running these aggregate functions on our entire data frame。
+ If we look at the country here。 then these are all the survey results for people who said that they were from India。 So that's what our data frame group by object that we saw before consists of。 it has broken up all of the different responses into groups by country name。 So this would be similar to running a filter on our original data frame。
 
-😊，So let's see what we get if we just run this median function that we just ran on our entire data frame instead of just this single series。
+ So I should be able to get these same。ultFor a single country。 just by doing what we've seen in previous videos and creating a filter。 So I could say， okay。 I want to grab。I want our filter to be equal to anytime the country is equal to the。United States。 and then I can apply this to our data frame by saying， okay。
 
- So here I'm just going to say Df do median。 So we're no longer accessing just a single column。
+ Df do Lo and give me all the results that match that filter。 And if I run this cell。 then we can see over here in the country column that all of these results are respondents from the United States。 So if we're just looking to get information on a single country。 then it's very similar to just creating a filter like we did here。
 
- So if I run this， then it might take a second to spin up here。 So when I do this。
+ But instead of just grabbing the results for one country。 group by instead splits all of these responses up by country name。 So now that we have all of those split up and grouped by country name。 now we can apply a function and bring those results back together。
 
- it's going to look through our data frame and find the columns that contain numerical values where it can grab a median value and some of these might not make sense to use with the median but others might be pretty useful to us。
+ So what kind of function would we like to apply。 Well， like I mentioned before。 maybe we want to see the most popular social media sites broken down by country。 Now。 if you just wanted to get the most popular social media sites by the。United States or by India。 then we've already seen how we can do this。 So right here I have some filtered results down to where we have the responses for the United States。
 
- So for example， we can see that the median age down here at the bottom for this survey was 29 years old。
+ so we can just do what we did before where we ran the value counts method on the social media column。 So I could just say here at the end。 I could access that social media column of that filtered data frame。 And then I could just run value counts。Here。So if I run this。 then we can see that for the United States， we have Reddit and Twitter and Facebook and YouTube as the top four social media sites。
 
- and the median number of work hours per week。 that was 40， which is pretty standard。
+ And if we wanted to look at these specifically for India then I could instead change that filter for India and run this and we can see that Whatsapp came first and then YouTube then LinkedIn and then Facebook。 So these are the results for one specific country。
 
- So that makes sense。 Now， if you want to get a broad overview of your data and a statistical overview。
+ but if we were to run this on our data frame group by object then it will give us the results for all of those country groups。 So if it helps you with how you think about this， you can imagine that it's similar to running a filter and then applying a function like we did here with a single country。
 
- we can use the describe method on our data frame instead。 So if I。Instead run， describe。
+ but when we group these using the group by function and then apply a function then it will combine those groups to give us the results for all of those unique countries。 So I think this will make sense once we just see this here。 So remember I called our group up here。
 
- instead of median。 And I run this。 then this is going to give us a broad overview of some different stats。
+country group， so if we come down here to the bottom， then we can say， okay， for the country group。 now I want to look at the social media column and I want to grab the value counts。For that column for that entire country group。 So if I run this。 then what this returns is a series with the most popular social media sites broken down by country。
 
- So if we look at the converted comp column here， then we can see a few different stats about this column。
+ Now， this actually cuts off a little early here。 So let me grab a larger chunk of this series to get a better idea of what this looks like。 So right here at the end， I'm just gonna say dothead and look at the top 50 results or so。 So if we run this， then we can see here that our first country is Afghanistan。 and we can look at the most popular social media for that。 And then go down the list。 Albania。
 
- So it gives us the count。 It gives us the mean， it gives us the standard deviation， the minimum。
+ Algeria， Argentina and so on。 Now this is actually returning a series and this series has multiple indexes。 It has this country index and this social media index。 Now we haven't discussed multiple indexes in this series yet。 But if anyone is curious about how this works， then maybe just leave a comment in the description section below。
 
- and then it also gives us the 25，50 and 75% quantiles here。
+ And maybe we can cover that topic in a future video。 But the country is the first index。And we can grab these just like we would with any other series。 So， again。 if I wanted to grab those most popular social media sites for India， for example。 then I could just come up here。 And with that returned series。 actually。
 
- Now this 50% marker is just the median value， by the way。 And just like we saw before。
+ let's take a look at this again。 So here's the index here。 I can grab that series just by saying dot Lo。And then looking for India。 And we can see that those are the same results that we got before。 Now， you might be wondering。 well， hey， if those are the same results that I got before， then why is this even useful。
 
- when we look this median value up specifically， this is around 57000。
+ And it's useful because now we can see this result with any country without running a filter on each individual country in the world。 So， for example， if I wanted to see the most popular social media sites for the United States。 then now， instead of you know changing a filter over and over， I could just。 you know go here and look at the United States index for this return series。
 
- Now this is in scientific notation here。 So it looks a little bit different。 Basically。
+ And now we can see those results。 So I think it's really interesting being able to play around with your data like this and being able to explore。 I really like seeing the different results for different countries。 And a lot of these sites I've never heard of。 So for example。 if we look at the most popular social media sites in China or in Russia。
 
- this means that we just need to move 4 spots over from the decimal point。 So 1，2，3，4。
+ then let me look at China here。We can see that yeah it does look like that was a Chinese social media site。 this waychat or Wechat， and then we have I'm assuming this is pronounced Webo maybe but yeah I think that's very interesting if we want to look at Russia then we can't actually say just Russia in this survey Russia was called the Russian Federation I've made that mistake before where I just type in Russia and it'll tell you that it cannot find an index with that name so this is actually Russian Federation and if we search for that then we can see I don't know how to pronounce this but the one that I thought was Russian writing before it does look like that was in fact Russian and just remember if it makes more sense for you to look at percentages instead of just raw numbers here then you can always set normalizedize equal to true and it will give you percentage results instead of the raw number。
 
- So that would be 57000 there。 So this describe method gives us a bunch of these aggregates in one place。
+So we can see that this Russian social media site here has 30% or 30% of the people from Russia said that that was their most popular social network。 And if we go back to China then we can see that this one here at the top。 that has 67% of the developers from China said that that was the social media site that they used the most。 So I just thought that was really interesting being able to play around with these numbers and seeing the different results for different countries。
 
- If we just want to get a quick overview of our date。Now。
+ And this is the kind of thing that we can do once we've got these skills down within pandas。 And a lot of the times it's just fun being able to explore your data like this。 and finding things within your data that you might not have expected。 Now bringing this back to what we were discussing at the beginning of the video we can also use this to run more traditional aggregate functions like mean median and things like that。
 
- if you're wondering why I wanted to look at the median of our salaries instead of the mean。
+ So before we looked at the median salaries for the entire survey。 But now let's break these down。😊。Co instead。 So just like we looked at the value counts of the social media column we can look at the median of the salary column and that salary column is labeled converted comp。
 
- which is the average， basically it's because the mean is affected too heavily by outliers。
+ So to do this， I can just grab our country group here。 and we want to look at this converted comp column and now we need to tell it what aggregate function we want to see for all these countries。 and I want to see the median salaryaries for all these countries。 So if I run this then we can see that our result here is that it says okay。
 
- It's not really a good metric to use because a few outliers can affect the average very heavily we can see that the mean salary up here。
+ here is the median salary in Afghanistan here it is for Albania and so on。 So now if you wanted to。 for example， see the median salary in a place like Germany。 then we can just simply come up here。 and this is the result that we get here。 and these are our indexes。 So the index。 the indexes are country name。 So if I want to grab a specific country then I can just use dot Lo and type in the country。
 
- if I highlight this right here。 if we were to count this up。
+So if I run this， then we can see that the median salary here in Germany is about 63000。 Now。 maybe you're working on some analysis where you want to group your data。 but you also want to run multiple aggregate functions on your group。 So let's say that we just didn't want to see the median。 But we also wanted to see the mean as well。
 
- then that's actually about 127000 on average， but that gives us an unrealistic expectation of what a typical developer salary is。
+ So to do this， we can use the ag method A G G and pass in all of the aggregate functions that we want to use。 So to do this here， I could just say， let me grab where we ran our median here。 instead of running just the median aggregate function。 We're going to use this ag method here。 A G G。 and now we're going to pass in a list of the aggregate functions。
 
- because the largest salaries on our data set are just pulling up that average so heavily。
+ So let's say that I want to get the median first。 And then I also want to be able to see the mean。 So if we run this。 Then we can see that we get a data frame with the mean and the median salaries for every country。 And again， just like we did before。OrIf I wanted to narrow this down by a specific country。 then we could easily do that just by grabbing one of these indexes here by country name。
 
- So in cases like that， you definitely want to use the mean instead I think that's a better representation or I'm sorry you're going to want to use the median instead because that's a better representation。
+ So if we wanted to look at the mean and median salaries for Canada。 then I could just come up here and say dot Lo and then pass in。Canada here。 Let me spell that correctly。 And now we can see the median salary and the mean salary for Canada。 Now， depending on what you're trying to do， you might run into some issues that you didn't quite expect。
 
- Now if we only wanted to get this overview for a single column then we could just run this describe method on a single column as well and get those results for that。
+ So， for example， let's say that you're trying to figure out how many people in each country know how to use Python。 So before we do this to our group， let's first look at how we do this with a single country using the filtering approach that we used earlier。
 
-Now， you might be wondering what that count value is listed at the top of these described results。
+ So I'm going to scroll up to where we had that filter。 And I'm going to copy that and paste that in down here。 And then I'm just going to get rid of this value counts section here。 So currently。 the filter that we have here is we are filtering the countries down to people who said that they were from India。
 
- Now， the count value is the number of non in a rows。
+ So now， in order to figure out how many people said that they knew Python within this survey。 we're going to use these string methods that we've seen in previous videos。 And if you don't remember what these look like。 then we could do this。By doing something like this。 we could say， okay， I want all of the responses for the people who said that they were from India。
 
- which basically means that it counts the non missing rows。 So in the context of this survey。
+ and now when I get that result， remember that this result here is just going to be a filtered version of our data frame。 our original data frame and now we can say okay， I also want。The language worked with is where they put difference the different languages that they actually use。 So if we look at this language worked with column here。
 
- a missing row just means that the respondent didn't answer that a specific question。
+ then we can see that they list all of the languages that they said that they know and to see if Python is within this column here then I can say dot STR and use the string class on that return series and say。 okay， we want where the STr dot contains Python。 So this will return true for the rows that have Python and the languages worked with and false for the responses that don't So if I run this。
 
- So if I look at the count for the converted comp column。 So I'm going to go up here。And grab this。
+ then this just returns a series of true and false values where it tells us whether the language worked with column for each respondent contained that string of Python。 Now， if we want to actually count the number of people who know Python。 then we can use the sum function to add all of these up。 Now normally you。think that some would only work with numerical data， but some will also work on bulloleanions。
 
- And instead of grabbing the median。I'm just going grab the count。
+ It will count all of the trues as one and all the falses as 0。 So to find out how many people know Python Then I could simply just do a dot sum here at the end。 And if I run this， then we can see that around 3100 people from India who answered the survey said that they knew Python as one of the languages that they work with。 Now， before when we wanted to run a similar aggregation function on our data frame group by object。
 
- We can see here that only about 55 to 65 or 55 to 56000 people answered that question。 Now。
+ we simply took the same approach on our group by object。 So， for example。 you might think that we could just do something like this to see all of these to see how many people。 new Python from each country， you might think that we could say， okay， Well。 I should just be able to do this。 I could just say， okay， for this country group。
 
- I think there are about 89000 rows for this data， So that means that there are about 30000 people or so who didn't answer the salary question on this survey。
+ I want to look at this language worked with。Column and then see the strings that contain Python and sum those up。 But if I run this here。 then we can see that we get an error。 Now， like I said in a previous video。 Sometimes it can be hard to read these panddas errors and understand exactly what we did wrong。 But in this case， it actually gives us a pretty good clue as to what we did wrong。
 
- Now， I sometimes see the mistake that some people think that the count function will count up the individual values and a specific row and report how many of those values were in the column。
+ It tells us that we cannot access the attribute string of a series group by object。 And then it says， try using the apply method instead。 So the reason that we get this error here。 is because this is no longer just a series。 Instead， this is a series group by object。 and it tells us to instead use the apply method。 So when we run an apply method on a group object like this。
 
- But if that's what you're trying to do。 then that's what we would use the value counts function for。
+ we're going to specify a function that we want to be run on every series in this group。 And I know that can sound a little bit confusing， So let's actually see what this looks like。 and hopefully it'll clear this up a bit。So。Instead of accessing this string class directly here。 I'm instead going to use the apply method。 And for anybody following along or who will download this。
 
- Now， in case that doesn't quite make sense。 let's look at an example， to see what this looks like。
+ I'm going to go ahead and leave this cell with this error here so that you can run that and reproduce that error。 And then I'm going to do the correct way in this cell。 So again。 instead of using the string class directly on this series group object。 I'm instead going to use the apply method。 So let me just cut that out。 And I'll say dot apply。
 
- So， for example， we had the question on the survey that asked each person whether they coded in their free time as a hobby。
+ And now we can apply a function that we want to run on each series in this group。 So if you've seen one of the previous videos。 Then you'll know that if we just want a nice quick。 easy function， then we can use a lambda function， you could write another separate function if you wanted to。 But here I'm going to use lambmbda。 So lambmbda here is going to be。😊，A series。 So now we can say。
 
- So to see all of these responses for that question。 we can look at the hobbyist column。
+ okay， well， what do we want to return？ Al right， Well， I want to return X and then。Since this is a series， we can say x dot string dot contains Python dot sum。 So again。 just one more time， we are running the apply method on this series group。 and then we are passing in a function that is going to run on each one of these series。
 
- So I'll just access。That hobbyist column here and run that。
+ and the function that we want or what we want returned from that function is the sum of any of the values in that series that contain the string Python。 and it's going to do that for every country since we're using this country group。 So if I run this。
 
- And we can see that we get a series returned here。
+Then we can see here that we see， okay， in Afghanistan。8 of the respondents said that they know Python。 Albania was 23 and so on。 Now。 seeing these numbers by itself isn't really that big of a help if we're trying to get an understanding of the percentage of people in each country who said that they know Python because with these results here。 we only see a single number。 we'd have to go back and forth and compare， okay。
 
- And these are just a bunch of yes or no questions。
+ how many people answer the survey from each country and how many of them use Python。 And then we can do a calculation from there to figure out the percentage of people from that country who knew Python。 But we don't want to do that。 That is too much to do manually。 So we want to figure our way so that we can get Python and pandas to do this calculation for us。
 
- So it was just a yes or no question that each person answered。
+ Now， a lot of people have asked me to put together coding problems to practice what we learn in these videos So you can think of this as practice。 So I'll do this here。 So can any of you think of a way where we can。Figure out what percentage of people in each country know how to use Python。 If you think that you can figure that out， then you can pause the video here and try to work through this yourself。
 
- So you might get the survey results back and you might think to yourself， okay， well。
+ and it's going to combine a few topics that we've discussed in the series so far in order to do this。 But with that said， I'm going to go ahead and move along with my solution So again。 if you want to try to figure that that out on your own。 then you can pause the video and try to work that out。 And if you did do that。
 
- I can see the responses here in the survey， But I just want to know how many people answered。
+ then I hope that you were able to get something figured out there。 But if not。 then no worries let's go ahead and walk through my solution here so that you can use this as practice to get better with pandas so that you can do this type of analysis in the future。
 
- yes and how many people answered， no， So how would we do that。 well。
+ So like I said， in order to get the percentage of developers who know Python for each country。 we're going to use a combination of a few different things that we've learned throughout this series so far。 Now there are probably several different ways of answering this question。 And if you have a different way that you answered this question。
 
- we can get that information with the value counts function。 So if I just look at the value counts。
+Than me then definitely leave it in the description section below so that people can see different approaches to this。 You know， it's absolutely possible that there's a more efficient way than how I'm about to do it here。 So if there is， then I'll highlight that so others can see what the best approach is。 But here's how I'm going to do this。 So first， I'm going grab the total number of respondents from each country。
 
- and that is value underscore counts。 if we run that method on that series then that is going to give us a breakdown of how many people answered。
+ That way we know the total number of people from each country who responded to this survey。 So I will just call this country respondents， and I will set this equal to。We。Want to grab the value counts。Of the countries here， so。If I print out what we get here。 we've seen this before。 whoops， and I got an error there because I put county。
 
- yes， and how many people answered， no as the whether or not they code as a hobby。
+ I'm into book country。 So if I look at this。 then these are the total number of respondents who said that they were from each country。 And again， we saw this earlier in the video。 So now I'm going to grab the total number of people from each country who know Python。
 
- So I use the value counts all the time when exploring data。
+ And we just did this a second ago right here。 But I'll go ahead and do this again and set it as a variable so that we have all of these steps。 So I'm going to grab。All of that that we just calculated。 And now I'm going to set this as a variable。 And I'm going to call this， you know。 country uses Python。 and then I'll set it equal to that。 And now。
 
- And we can find out some interesting things from our survey by using this on some different fields。
+Let's print out that variable as well。 So let me go to the next line here， my computers。Kind of give them me some grief。 Okay， so these are all the people from each country who said that they know how to use Python。 So now we have one variable that is a series that has the total number of people from each country right here called country respondents。 And then we have another variable that is a series。
 
- So， for example， there is a question on this survey。😊。
+ That is the total number of people from each country who know Python。 So now we need to combine these two。 Now， I'm actually going to use a method here that we haven't discussed in this series yet。 So if you got stuck here， then that's completely understandable。 I probably should have mention this in the video where we appended rows to a data frame。
 
-That ask each person what social media platform they use the most。
+ but we can combine more than one series together using the pandas concat function。 So let's see what this would look like。 So I can say， and I'll just call this data frame Python Df。 And now I'm going create a data frame where we can cat those two series in the one。 So I can say P D dot concat。And now I'm going to pass in a list of the series that we want to concatenate。
 
- So if you're building an app or a website and want to keep track of the most popular social media sites。
+ So I want this to be our country respondents。 And I also want to。Add in this country uses Python series， and now。We also want to set axis equal to columns because by default。 it's going to try to concatenate these on row， but we want to match up the indexes here so that it concates it that way instead。 So we want to say axis is equal to columns and then finally。
 
- then you might be interested in what the most popular answers to that question so to view these results we can access the social media column of the survey。
+ I'm also going to put sort is equal to false。 Now， if you watch a previous video。 this isn't absolutely necessary， but if you run it without sort equal to false。 then it'll give you a warning saying that in a future version of pandas。 that it'll sort by default or sort by false on default。
 
- So let me do that。 And before I run value counts on this。
-
- let me just show you what this column looks like。 So this column was called social media So I'm going run this。
-
- and we can see that respondent number one said that they used Twitter more than any other social media。
-
- this person used Instagram， Reddit， Reddit， Facebook， YouTube and so on。
-
- Now I've pointed this out in previous video so far。
-
- But if you've forgotten or if this is your first video that you've watched in this series then at the top of my notebook here。
-
- I've also loaded in a schema data frame right here and this。
-
-Data frame tells us the exact question that was asked on the survey for each of these column names。
-
- So， for example， if we want to see the exact question that was asked for this social media column。
-
- then I can just access that schema data frame and do a dot Lo because the indexes are going to be the column names And then we can just search for social media and if I run that。
-
- then we can see that the question that they asked on the survey specifically was what social media site do you use the most so we can see that we get a few different responses here But which of these are the most popular So to find that out。
-
- let's look at the value counts of this series to see what the most popular social media sites are overall for these developers So I'm going to run this and then I'm going to run that value counts function here。
-
- And now we can see here at the top that Reddit was the most popular with about 14000 people and then we have。
-
-YouTube， Whatsapp， Facebook， Twitter， Instagram， I don't use social media was one of the answers。
-
- Now we also have some foreign social networks here。 So I've never heard of these。
-
- but I believe these are Chinese characters So this is probably a Chinese social media site I don't know really Russian writing。
-
- but I would assume that this is Russian writing here。
-
- So this is probably a Russian social media site。 So it's kind of interesting seeing all of these different answers from around the world。
-
- Now one more quick tip if we want to see these broken down by percentage instead of raw numbers。
-
- then we can pass in the normalized argument to the value counts function and set that equal to true。
-
- So let me show you what this looks like。 So I can say normalizedize equals true。
-
- And now we're gonna get these broken down by percentage So 17% of the people so that they use Reddit 16 said YouTube。
-
-About 16 said Whatsapp and so on。 Okay， so we can see that we have some social media sites here from some other countries。
-
- So obviously， this is most likely a regional thing。
-
- My guess would be that the popularity of the social media platforms。
-
- varies a lot based on what country you're in。 So how would we break up these results so that we can see the most popular social media sites for each country。
-
- Now， in order to do this， we're going to have to learn about grouping our data。 So again。
-
- this is a topic that can be a little confusing when you first see it。
-
- So let me start off slow so that we can see exactly what's going on here。 So first of all。
-
- if we want to see specific results based on the country or based on some other column。
-
- then we're going to have to group on that specific column。
-
- And we have the group by function for this。 So what actually does it mean to say that we're going to use the group by function。
-
- So in the pandas documentation， it says that a group by operation involves some combination。
-
-Of splitting the object， applying a function and combining the results。
-
- So I'm going to try to walk through each of those processes one at a time so that we can see exactly how this works。
-
- So again， in the pandas documentation， it says that a group by operation involves some combination of splitting up our object applying a function and then combining those results。
-
- So let's do each of those。 Now， first， just for a reference。
-
- let's display the value counts for each country so that we can see the countries that have the most results for this particular survey so to do this we can just access the country column。
-
- And if I run this， we can see that this gives us the country that each respondent said that they were from。
-
- And if we look at the value counts for this。 then this is going to tally up all of the unique responses so we can see that the majority of this survey was answered by developers in the United States。
-
-And in second was India， then Germany， United Kingdom， Canada and so on。 Okay。
-
- so now let's look at how to use the group by function on our country column。 So first。
-
- we're going to split the object。 and then we're going to apply a function。
-
- And then it will combine those results。 So first， let's look at splitting the object。 Now。
-
- in this case， we want to group all of the results by country。 So to do this。
-
- we can simply say D F dot group by。 And then we will pass in。
-
- This is going to be a list of columns that we want to group1。
-
- And I'm just going to pass in a single column here for country。 So if I run this。
-
- then what we get back here is this data frame group by object。
-
- So what is this object and what exactly can we do with this。 So first。
-
- let's explain a bit what this is。 So this object contains a bunch of groups and better understand what this is。
-
-Let's take a look at an individual group that this beta frame has。 Now， before we do that。
-
- I'm going to set this as a variable so that we can reuse this and not have to retype our code over and over and also it'll be easier to read。
-
- So I'm going to call this country group and I'm just going to set this equal to this Df do group by and now instead of typing this every time we can just reference this country group variable here。
-
- So now let's take a look at one of these groups。 So since we grouped our rows by country then we can grab a specific group by country name。
-
- So I'll grab the group for the United States。 so to do this we can say country group do git underscore group and then pass in the name of the group in this case I'm want to get the group for United States。
-
- So if I run this cell whoops and this is telling me that country group is not defined。
-
-And it's because I didn't rerun this cell up here after I set that variable。
-
- So if I run this and grab the group for the United States。
-
- then we can see that we get a data frame returned here with some survey results。
-
- So this doesn't look like anything special yet。 But if I look at the country name for each of these survey results。
-
- the country is listed right here。 then we can see that all of these responses are from people who said that they were from the United States。
-
- And if I look at the group for India。 So if I instead change United States to India here and grab that group。
-
- If we look at the country here。 then these are all the survey results for people who said that they were from India。
-
- So that's what our data frame group by object that we saw before consists of。
-
- it has broken up all of the different responses into groups by country name。
-
- So this would be similar to running a filter on our original data frame。
-
- So I should be able to get these same。ultFor a single country。
-
- just by doing what we've seen in previous videos and creating a filter。 So I could say， okay。
-
- I want to grab。I want our filter to be equal to anytime the country is equal to the。United States。
-
- and then I can apply this to our data frame by saying， okay。
-
- Df do Lo and give me all the results that match that filter。 And if I run this cell。
-
- then we can see over here in the country column that all of these results are respondents from the United States。
-
- So if we're just looking to get information on a single country。
-
- then it's very similar to just creating a filter like we did here。
-
- But instead of just grabbing the results for one country。
-
- group by instead splits all of these responses up by country name。
-
- So now that we have all of those split up and grouped by country name。
-
- now we can apply a function and bring those results back together。
-
- So what kind of function would we like to apply。 Well， like I mentioned before。
-
- maybe we want to see the most popular social media sites broken down by country。 Now。
-
- if you just wanted to get the most popular social media sites by the。United States or by India。
-
- then we've already seen how we can do this。 So right here I have some filtered results down to where we have the responses for the United States。
-
- so we can just do what we did before where we ran the value counts method on the social media column。
-
- So I could just say here at the end。 I could access that social media column of that filtered data frame。
-
- And then I could just run value counts。Here。So if I run this。
-
- then we can see that for the United States， we have Reddit and Twitter and Facebook and YouTube as the top four social media sites。
-
- And if we wanted to look at these specifically for India then I could instead change that filter for India and run this and we can see that Whatsapp came first and then YouTube then LinkedIn and then Facebook。
-
- So these are the results for one specific country。
-
- but if we were to run this on our data frame group by object then it will give us the results for all of those country groups。
-
- So if it helps you with how you think about this， you can imagine that it's similar to running a filter and then applying a function like we did here with a single country。
-
- but when we group these using the group by function and then apply a function then it will combine those groups to give us the results for all of those unique countries。
-
- So I think this will make sense once we just see this here。 So remember I called our group up here。
-
-country group， so if we come down here to the bottom， then we can say， okay， for the country group。
-
- now I want to look at the social media column and I want to grab the value counts。
-
-For that column for that entire country group。 So if I run this。
-
- then what this returns is a series with the most popular social media sites broken down by country。
-
- Now， this actually cuts off a little early here。 So let me grab a larger chunk of this series to get a better idea of what this looks like。
-
- So right here at the end， I'm just gonna say dothead and look at the top 50 results or so。
-
- So if we run this， then we can see here that our first country is Afghanistan。
-
- and we can look at the most popular social media for that。 And then go down the list。 Albania。
-
- Algeria， Argentina and so on。 Now this is actually returning a series and this series has multiple indexes。
-
- It has this country index and this social media index。
-
- Now we haven't discussed multiple indexes in this series yet。
-
- But if anyone is curious about how this works， then maybe just leave a comment in the description section below。
-
- And maybe we can cover that topic in a future video。 But the country is the first index。
-
-And we can grab these just like we would with any other series。 So， again。
-
- if I wanted to grab those most popular social media sites for India， for example。
-
- then I could just come up here。 And with that returned series。 actually。
-
- let's take a look at this again。 So here's the index here。
-
- I can grab that series just by saying dot Lo。And then looking for India。
-
- And we can see that those are the same results that we got before。 Now， you might be wondering。
-
- well， hey， if those are the same results that I got before， then why is this even useful。
-
- And it's useful because now we can see this result with any country without running a filter on each individual country in the world。
-
- So， for example， if I wanted to see the most popular social media sites for the United States。
-
- then now， instead of you know changing a filter over and over， I could just。
-
- you know go here and look at the United States index for this return series。
-
- And now we can see those results。 So I think it's really interesting being able to play around with your data like this and being able to explore。
-
- I really like seeing the different results for different countries。
-
- And a lot of these sites I've never heard of。 So for example。
-
- if we look at the most popular social media sites in China or in Russia。
-
- then let me look at China here。We can see that yeah it does look like that was a Chinese social media site。
-
- this waychat or Wechat， and then we have I'm assuming this is pronounced Webo maybe but yeah I think that's very interesting if we want to look at Russia then we can't actually say just Russia in this survey Russia was called the Russian Federation I've made that mistake before where I just type in Russia and it'll tell you that it cannot find an index with that name so this is actually Russian Federation and if we search for that then we can see I don't know how to pronounce this but the one that I thought was Russian writing before it does look like that was in fact Russian and just remember if it makes more sense for you to look at percentages instead of just raw numbers here then you can always set normalizedize equal to true and it will give you percentage results instead of the raw number。
-
-So we can see that this Russian social media site here has 30% or 30% of the people from Russia said that that was their most popular social network。
-
- And if we go back to China then we can see that this one here at the top。
-
- that has 67% of the developers from China said that that was the social media site that they used the most。
-
- So I just thought that was really interesting being able to play around with these numbers and seeing the different results for different countries。
-
- And this is the kind of thing that we can do once we've got these skills down within pandas。
-
- And a lot of the times it's just fun being able to explore your data like this。
-
- and finding things within your data that you might not have expected。
-
- Now bringing this back to what we were discussing at the beginning of the video we can also use this to run more traditional aggregate functions like mean median and things like that。
-
- So before we looked at the median salaries for the entire survey。 But now let's break these down。😊。
-
-Co instead。 So just like we looked at the value counts of the social media column we can look at the median of the salary column and that salary column is labeled converted comp。
-
- So to do this， I can just grab our country group here。
-
- and we want to look at this converted comp column and now we need to tell it what aggregate function we want to see for all these countries。
-
- and I want to see the median salaryaries for all these countries。
-
- So if I run this then we can see that our result here is that it says okay。
-
- here is the median salary in Afghanistan here it is for Albania and so on。 So now if you wanted to。
-
- for example， see the median salary in a place like Germany。 then we can just simply come up here。
-
- and this is the result that we get here。 and these are our indexes。 So the index。
-
- the indexes are country name。 So if I want to grab a specific country then I can just use dot Lo and type in the country。
-
-So if I run this， then we can see that the median salary here in Germany is about 63000。 Now。
-
- maybe you're working on some analysis where you want to group your data。
-
- but you also want to run multiple aggregate functions on your group。
-
- So let's say that we just didn't want to see the median。 But we also wanted to see the mean as well。
-
- So to do this， we can use the ag method A G G and pass in all of the aggregate functions that we want to use。
-
- So to do this here， I could just say， let me grab where we ran our median here。
-
- instead of running just the median aggregate function。 We're going to use this ag method here。
-
- A G G。 and now we're going to pass in a list of the aggregate functions。
-
- So let's say that I want to get the median first。 And then I also want to be able to see the mean。
-
- So if we run this。 Then we can see that we get a data frame with the mean and the median salaries for every country。
-
- And again， just like we did before。OrIf I wanted to narrow this down by a specific country。
-
- then we could easily do that just by grabbing one of these indexes here by country name。
-
- So if we wanted to look at the mean and median salaries for Canada。
-
- then I could just come up here and say dot Lo and then pass in。Canada here。
-
- Let me spell that correctly。 And now we can see the median salary and the mean salary for Canada。
-
- Now， depending on what you're trying to do， you might run into some issues that you didn't quite expect。
-
- So， for example， let's say that you're trying to figure out how many people in each country know how to use Python。
-
- So before we do this to our group， let's first look at how we do this with a single country using the filtering approach that we used earlier。
-
- So I'm going to scroll up to where we had that filter。
-
- And I'm going to copy that and paste that in down here。
-
- And then I'm just going to get rid of this value counts section here。 So currently。
-
- the filter that we have here is we are filtering the countries down to people who said that they were from India。
-
- So now， in order to figure out how many people said that they knew Python within this survey。
-
- we're going to use these string methods that we've seen in previous videos。
-
- And if you don't remember what these look like。 then we could do this。By doing something like this。
-
- we could say， okay， I want all of the responses for the people who said that they were from India。
-
- and now when I get that result， remember that this result here is just going to be a filtered version of our data frame。
-
- our original data frame and now we can say okay， I also want。
-
-The language worked with is where they put difference the different languages that they actually use。
-
- So if we look at this language worked with column here。
-
- then we can see that they list all of the languages that they said that they know and to see if Python is within this column here then I can say dot STR and use the string class on that return series and say。
-
- okay， we want where the STr dot contains Python。 So this will return true for the rows that have Python and the languages worked with and false for the responses that don't So if I run this。
-
- then this just returns a series of true and false values where it tells us whether the language worked with column for each respondent contained that string of Python。
-
- Now， if we want to actually count the number of people who know Python。
-
- then we can use the sum function to add all of these up。 Now normally you。
-
-think that some would only work with numerical data， but some will also work on bulloleanions。
-
- It will count all of the trues as one and all the falses as 0。
-
- So to find out how many people know Python Then I could simply just do a dot sum here at the end。
-
- And if I run this， then we can see that around 3100 people from India who answered the survey said that they knew Python as one of the languages that they work with。
-
- Now， before when we wanted to run a similar aggregation function on our data frame group by object。
-
- we simply took the same approach on our group by object。 So， for example。
-
- you might think that we could just do something like this to see all of these to see how many people。
-
- new Python from each country， you might think that we could say， okay， Well。
-
- I should just be able to do this。 I could just say， okay， for this country group。
-
- I want to look at this language worked with。Column and then see the strings that contain Python and sum those up。
-
- But if I run this here。 then we can see that we get an error。 Now， like I said in a previous video。
-
- Sometimes it can be hard to read these panddas errors and understand exactly what we did wrong。
-
- But in this case， it actually gives us a pretty good clue as to what we did wrong。
-
- It tells us that we cannot access the attribute string of a series group by object。
-
- And then it says， try using the apply method instead。 So the reason that we get this error here。
-
- is because this is no longer just a series。 Instead， this is a series group by object。
-
- and it tells us to instead use the apply method。 So when we run an apply method on a group object like this。
-
- we're going to specify a function that we want to be run on every series in this group。
-
- And I know that can sound a little bit confusing， So let's actually see what this looks like。
-
- and hopefully it'll clear this up a bit。So。Instead of accessing this string class directly here。
-
- I'm instead going to use the apply method。 And for anybody following along or who will download this。
-
- I'm going to go ahead and leave this cell with this error here so that you can run that and reproduce that error。
-
- And then I'm going to do the correct way in this cell。 So again。
-
- instead of using the string class directly on this series group object。
-
- I'm instead going to use the apply method。 So let me just cut that out。 And I'll say dot apply。
-
- And now we can apply a function that we want to run on each series in this group。
-
- So if you've seen one of the previous videos。 Then you'll know that if we just want a nice quick。
-
- easy function， then we can use a lambda function， you could write another separate function if you wanted to。
-
- But here I'm going to use lambmbda。 So lambmbda here is going to be。😊，A series。 So now we can say。
-
- okay， well， what do we want to return？ Al right， Well， I want to return X and then。
-
-Since this is a series， we can say x dot string dot contains Python dot sum。 So again。
-
- just one more time， we are running the apply method on this series group。
-
- and then we are passing in a function that is going to run on each one of these series。
-
- and the function that we want or what we want returned from that function is the sum of any of the values in that series that contain the string Python。
-
- and it's going to do that for every country since we're using this country group。 So if I run this。
-
-Then we can see here that we see， okay， in Afghanistan。
-
-8 of the respondents said that they know Python。 Albania was 23 and so on。 Now。
-
- seeing these numbers by itself isn't really that big of a help if we're trying to get an understanding of the percentage of people in each country who said that they know Python because with these results here。
-
- we only see a single number。 we'd have to go back and forth and compare， okay。
-
- how many people answer the survey from each country and how many of them use Python。
-
- And then we can do a calculation from there to figure out the percentage of people from that country who knew Python。
-
- But we don't want to do that。 That is too much to do manually。
-
- So we want to figure our way so that we can get Python and pandas to do this calculation for us。
-
- Now， a lot of people have asked me to put together coding problems to practice what we learn in these videos So you can think of this as practice。
-
- So I'll do this here。 So can any of you think of a way where we can。
-
-Figure out what percentage of people in each country know how to use Python。
-
- If you think that you can figure that out， then you can pause the video here and try to work through this yourself。
-
- and it's going to combine a few topics that we've discussed in the series so far in order to do this。
-
- But with that said， I'm going to go ahead and move along with my solution So again。
-
- if you want to try to figure that that out on your own。
-
- then you can pause the video and try to work that out。 And if you did do that。
-
- then I hope that you were able to get something figured out there。 But if not。
-
- then no worries let's go ahead and walk through my solution here so that you can use this as practice to get better with pandas so that you can do this type of analysis in the future。
-
- So like I said， in order to get the percentage of developers who know Python for each country。
-
- we're going to use a combination of a few different things that we've learned throughout this series so far。
-
- Now there are probably several different ways of answering this question。
-
- And if you have a different way that you answered this question。
-
-Than me then definitely leave it in the description section below so that people can see different approaches to this。
-
- You know， it's absolutely possible that there's a more efficient way than how I'm about to do it here。
-
- So if there is， then I'll highlight that so others can see what the best approach is。
-
- But here's how I'm going to do this。 So first， I'm going grab the total number of respondents from each country。
-
- That way we know the total number of people from each country who responded to this survey。
-
- So I will just call this country respondents， and I will set this equal to。We。
-
-Want to grab the value counts。Of the countries here， so。If I print out what we get here。
-
- we've seen this before。 whoops， and I got an error there because I put county。
-
- I'm into book country。 So if I look at this。 then these are the total number of respondents who said that they were from each country。
-
- And again， we saw this earlier in the video。 So now I'm going to grab the total number of people from each country who know Python。
-
- And we just did this a second ago right here。 But I'll go ahead and do this again and set it as a variable so that we have all of these steps。
-
- So I'm going to grab。All of that that we just calculated。
-
- And now I'm going to set this as a variable。 And I'm going to call this， you know。
-
- country uses Python。 and then I'll set it equal to that。 And now。
-
-Let's print out that variable as well。 So let me go to the next line here， my computers。
-
-Kind of give them me some grief。 Okay， so these are all the people from each country who said that they know how to use Python。
-
- So now we have one variable that is a series that has the total number of people from each country right here called country respondents。
-
- And then we have another variable that is a series。
-
- That is the total number of people from each country who know Python。
-
- So now we need to combine these two。 Now， I'm actually going to use a method here that we haven't discussed in this series yet。
-
- So if you got stuck here， then that's completely understandable。
-
- I probably should have mention this in the video where we appended rows to a data frame。
-
- but we can combine more than one series together using the pandas concat function。
-
- So let's see what this would look like。 So I can say， and I'll just call this data frame Python Df。
-
- And now I'm going create a data frame where we can cat those two series in the one。
-
- So I can say P D dot concat。And now I'm going to pass in a list of the series that we want to concatenate。
-
- So I want this to be our country respondents。 And I also want to。
-
-Add in this country uses Python series， and now。We also want to set axis equal to columns because by default。
-
- it's going to try to concatenate these on row， but we want to match up the indexes here so that it concates it that way instead。
-
- So we want to say axis is equal to columns and then finally。
-
- I'm also going to put sort is equal to false。 Now， if you watch a previous video。
-
- this isn't absolutely necessary， but if you run it without sort equal to false。
-
- then it'll give you a warning saying that in a future version of pandas。
-
- that it'll sort by default or sort by false on default。
-
- So it's better just to go ahead and specify if you want the resulting data frame sorted or not。
-
- So now let's look at this concatenated data frame here。 Okay， so now we have a data frame here。
-
- where these two series have been concatenated and match up on the same index。
-
- So this is a lot more useful because。Now we can see， okay there were about 20，000 or 21。
+ So it's better just to go ahead and specify if you want the resulting data frame sorted or not。 So now let's look at this concatenated data frame here。 Okay， so now we have a data frame here。 where these two series have been concatenated and match up on the same index。 So this is a lot more useful because。Now we can see， okay there were about 20，000 or 21。
 
 000 people who said that they were from the United States and about 10000 people who said that they know Python so that's definitely a lot better and more useful information Now one thing about this new data frame that we have is some columns that don't really relate to what we're talking about anymore we can see here that this one is just called country and this one is called languages worked with so let's rename these so that they make more sense in the context of what we're actually trying to do and we saw how to rename columns in a previous video as well。
 
- but if you forgot， then you can do this just by grabbing our data frame here and I'll say Python Df。
+ but if you forgot， then you can do this just by grabbing our data frame here and I'll say Python Df。 which is our data frame dot rename and now what do we want to rename we want to rename the columns and now I'm going to pass in a dictionary here where。
 
- which is our data frame dot rename and now what do we want to rename we want to rename the columns and now I'm going to pass in a dictionary here where。
+The key is the previous value， and the value is going to be the updated value。 So I will call this a number of respondents。And then I also want to change this languages worked with column here。 And I want to change this to be。Let's call this nu nose Python。 And if I run this。 then we can see that this looks good。 We have number of respondents from the United States and number nose Python from the United States。
 
-The key is the previous value， and the value is going to be the updated value。
+ So that looks good to me。 So since it looks good， I'm going to say in place is equal to true。 so that it actually modifies our data frame。 So if I run that and then look at our data frame one more time。 then。😊，We can see that it has been updated with those new columns。 Now we have the total number of respondents from each country and the number of people who know Python from each country in one data frame。
 
- So I will call this a number of respondents。And then I also want to change this languages worked with column here。
+ So we have all the information that we need to calculate a percentage。 Now all we need to do is create a new column and calculate this。 So if you remember in order to create a new column， we can simply just assign it。 So I will call this column PCt for percentage， knows Python。
 
- And I want to change this to be。Let's call this nu nose Python。 And if I run this。
+ And now what do we want this to be equal to。 Well。 if you don't know how to calculate a percentage mathematically。 basically what you do is you take the part and then divide that by the whole。 and then you multiply that by 100。 So our part here is the number of people who know Python。
 
- then we can see that this looks good。 We have number of respondents from the United States and number nose Python from the United States。
+ So I will grab that and say。on underscore DF and access that series， access that column。 and then I want to divide that by the whole and the whole are the total number of people from that country。 so that is nu respondents。And now， if we want this to be a whole number percentage。 then we can multiply this by 100。 Okay， so if I did all of this correctly。
 
- So that looks good to me。 So since it looks good， I'm going to say in place is equal to true。
+ and it's very possible I made a mistake。 But if I did all this correctly。 then we should have a data frame here with the percentage of people who know Python from each country。 And now we can work with this just like any other data frame。 So let's say that we wanted to sort these results。
 
- so that it actually modifies our data frame。 So if I run that and then look at our data frame one more time。
+ Now we learned this in a previous video on how to sort values in a series。 So let's say that we want to sort the countries by the largest percentage of respondents who know Python。 So to do this， I can just say Python D F。t sort。Underscore values。 And if you forget how to do any of this， then you can always go back to our pandas video where we learn about sorting。
 
- then。😊，We can see that it has been updated with those new columns。
+ So in order to sort by the people who know Python or the percentage， we can say， okay， sort by。 what did I call this here。 Percent knows Python。 And then I actually want this to be in ascending。Order equal to false， because I want the largest percentage of people who know Python at the top。And I was about to put in place equals true first。 But let's see what this looks like。 Okay。
 
- Now we have the total number of respondents from each country and the number of people who know Python from each country in one data frame。
+ so it looks like that that sort worked， and it looks good。 So now I'll say in place is equal to true so that it modifies our data frame。 And now we can look at our results here。 So we can see here that some of these are a little misleading here because you know。100% of people from Sal May and Princippe， No Python。
 
- So we have all the information that we need to calculate a percentage。
+ But we only had one person from the country who answered the survey。 And he happens to know Python or she。 So that is 100%。 So instead， let's look at the head here。 and grab。See if we can find a country here with a larger number of respondents。 So， okay。 we have 72 people from Uganda and 47 of them new Python。 So that's 65%。 that's pretty good。
 
- Now all we need to do is create a new column and calculate this。
+ we have oh， okay， so this is United States， that's not bad either。 We have about 21000 here。 about 10000 new Python。 So that's 48%。 So that's in the higher range。 that's pretty good。 So， yeah。 I think this is a great way to practice working with pandas。 And also。 it's just fun being able to explore your information in this way。
 
- So if you remember in order to create a new column， we can simply just assign it。
+ And now that we have a data frame with all this information。 Then we can also inspect a specific country to see what the percentage of developers are from a specific country who know Python。 So， for example， instead of looking through， what if I wanted to see Japan。 instead of looking through all of these。 I could just say， okay， Python。😊，D F dot Lo。
 
- So I will call this column PCt for percentage， knows Python。
+ And since our country names are our indexes here。 then we can just do a dot Lo of Japan。 and then we can see that we get these statistics for that specific country。 Okay。 so I know that that may have been a lot to take in and that we covered a lot of ground in this video。 We definitely covered some more advanced topics here than we did in previous videos。
 
- And now what do we want this to be equal to。 Well。
+ but I hope this kind of got you a little excited to learn what you can do with pandas。 and the types of problems that we can solve。 You know。 when you are exploring through your data like this。 you're probably going to make a ton of mistakes along the way， you know。
 
- if you don't know how to calculate a percentage mathematically。
+ I still make mistakes in pandas all the time， even in these videos， I've made some mistakes。 and I have these scripted out。 So it definitely happens。 But you know。 each problem that we work through similar to this。 just makes it easier and easier each time to work through additional problems。
 
- basically what you do is you take the part and then divide that by the whole。
+ So if you need to go back and rewatch some of these steps in order to work through these problems like this on your own。 then that's。😊，Completely normal。 know， don't think that just because this may have seemed difficult that there's something wrong with you。
 
- and then you multiply that by 100。 So our part here is the number of people who know Python。
+ It's definitely normal for this stuff to be a lot of information to take in And also。 like I said before， if you have some other ways of solving the problems that we answered here。 then like I said， definitely leave a comment with your solution in the description section below。 and I'll take a look at those。 and I'll highlight some if they are better than what I did here。
 
- So I will grab that and say。on underscore DF and access that series， access that column。
+ Okay so before we end here I would like to mention the sponsor of this video。 And that is brilliant。 So in this series， we've been learning about pandas and how to analyze data and Python and brilliant would be an excellent way to supplement what you learn here with their handson courses they have some excellent courses and lessons that do a deep dive on how to think about and analyze data correctly。
 
- and then I want to divide that by the whole and the whole are the total number of people from that country。
-
- so that is nu respondents。And now， if we want this to be a whole number percentage。
-
- then we can multiply this by 100。 Okay， so if I did all of this correctly。
-
- and it's very possible I made a mistake。 But if I did all this correctly。
-
- then we should have a data frame here with the percentage of people who know Python from each country。
-
- And now we can work with this just like any other data frame。
-
- So let's say that we wanted to sort these results。
-
- Now we learned this in a previous video on how to sort values in a series。
-
- So let's say that we want to sort the countries by the largest percentage of respondents who know Python。
-
- So to do this， I can just say Python D F。t sort。Underscore values。
-
- And if you forget how to do any of this， then you can always go back to our pandas video where we learn about sorting。
-
- So in order to sort by the people who know Python or the percentage， we can say， okay， sort by。
-
- what did I call this here。 Percent knows Python。 And then I actually want this to be in ascending。
-
-Order equal to false， because I want the largest percentage of people who know Python at the top。
-
-And I was about to put in place equals true first。 But let's see what this looks like。 Okay。
-
- so it looks like that that sort worked， and it looks good。
-
- So now I'll say in place is equal to true so that it modifies our data frame。
-
- And now we can look at our results here。 So we can see here that some of these are a little misleading here because you know。
-
-100% of people from Sal May and Princippe， No Python。
-
- But we only had one person from the country who answered the survey。
-
- And he happens to know Python or she。 So that is 100%。 So instead， let's look at the head here。
-
- and grab。See if we can find a country here with a larger number of respondents。 So， okay。
-
- we have 72 people from Uganda and 47 of them new Python。 So that's 65%。 that's pretty good。
-
- we have oh， okay， so this is United States， that's not bad either。 We have about 21000 here。
-
- about 10000 new Python。 So that's 48%。 So that's in the higher range。 that's pretty good。 So， yeah。
-
- I think this is a great way to practice working with pandas。 And also。
-
- it's just fun being able to explore your information in this way。
-
- And now that we have a data frame with all this information。
-
- Then we can also inspect a specific country to see what the percentage of developers are from a specific country who know Python。
-
- So， for example， instead of looking through， what if I wanted to see Japan。
-
- instead of looking through all of these。 I could just say， okay， Python。😊，D F dot Lo。
-
- And since our country names are our indexes here。 then we can just do a dot Lo of Japan。
-
- and then we can see that we get these statistics for that specific country。 Okay。
-
- so I know that that may have been a lot to take in and that we covered a lot of ground in this video。
-
- We definitely covered some more advanced topics here than we did in previous videos。
-
- but I hope this kind of got you a little excited to learn what you can do with pandas。
-
- and the types of problems that we can solve。 You know。
-
- when you are exploring through your data like this。
-
- you're probably going to make a ton of mistakes along the way， you know。
-
- I still make mistakes in pandas all the time， even in these videos， I've made some mistakes。
-
- and I have these scripted out。 So it definitely happens。 But you know。
-
- each problem that we work through similar to this。
-
- just makes it easier and easier each time to work through additional problems。
-
- So if you need to go back and rewatch some of these steps in order to work through these problems like this on your own。
-
- then that's。😊，Completely normal。 know， don't think that just because this may have seemed difficult that there's something wrong with you。
-
- It's definitely normal for this stuff to be a lot of information to take in And also。
-
- like I said before， if you have some other ways of solving the problems that we answered here。
-
- then like I said， definitely leave a comment with your solution in the description section below。
-
- and I'll take a look at those。 and I'll highlight some if they are better than what I did here。
-
- Okay so before we end here I would like to mention the sponsor of this video。 And that is brilliant。
-
- So in this series， we've been learning about pandas and how to analyze data and Python and brilliant would be an excellent way to supplement what you learn here with their handson courses they have some excellent courses and lessons that do a deep dive on how to think about and analyze data correctly。
-
- for data analysis fundamentals， I would really recommend checking out their statistics course。
-
- which shows you how to analyze graphs and determine significance in the data。
-
- and I would also recommend their machine learning course， which takes data analysis。
-
-
+ for data analysis fundamentals， I would really recommend checking out their statistics course。 which shows you how to analyze graphs and determine significance in the data。 and I would also recommend their machine learning course， which takes data analysis。
 
 ![](img/f68605379f547ff8d305f85d92ec3497_1.png)
 
@@ -904,42 +256,14 @@ And I was about to put in place equals true first。 But let's see what this loo
 
 ![](img/f68605379f547ff8d305f85d92ec3497_5.png)
 
-to a new level where you'll learn about the techniques being used that allow machines to make decisions where there's just too many variables for a human to consider。
+to a new level where you'll learn about the techniques being used that allow machines to make decisions where there's just too many variables for a human to consider。 So to support my channel and learn more about brilliant。 you can go to brilliantg cs to sign up for free and also the first 200 people that go to that link will get 20% off the annual premium subscription。 and you can find that link in the description section below again。
 
- So to support my channel and learn more about brilliant。
+ that's brilliantg so I think that's going to do it for this pandas video I hope you feel like you got a good idea for how to use these aggregate functions and also how we can group our data so that we can explore our data in interesting ways。 I would really encourage you to take some time after this video and play around with the data a bit see if you can answer certain questions that someone might have about this data。
 
- you can go to brilliantg cs to sign up for free and also the first 200 people that go to that link will get 20% off the annual premium subscription。
+ So for example， what is the most common education level for people who answered this survey that's definitely something that we could answer by what we learned here。😊，I hope you feel like you got a good introduction to being able to answer those types of questions。
 
- and you can find that link in the description section below again。
+ Now， in the next video， we're gonna be learning about how to handle missing data and how to clean up your data。 It's very common for data to have missing values。 So knowing how to sanitize and clean our data is definitely going to be important。 But if anyone has any questions about what we covered in this video。 then feel free to ask in the comment section below， and I'll do my best to answer those。
 
- that's brilliantg so I think that's going to do it for this pandas video I hope you feel like you got a good idea for how to use these aggregate functions and also how we can group our data so that we can explore our data in interesting ways。
+ And if you enjoy these tutorials and would like to support them。 Then there are several ways you can do that。 The easiest ways to simply like the video and give it a thumbs up。 And also， it's a huge help to share these videos with anyone who you think would find them useful。 And if you have the means you can contribute through Patreon。
 
- I would really encourage you to take some time after this video and play around with the data a bit see if you can answer certain questions that someone might have about this data。
-
- So for example， what is the most common education level for people who answered this survey that's definitely something that we could answer by what we learned here。
-
-😊，I hope you feel like you got a good introduction to being able to answer those types of questions。
-
- Now， in the next video， we're gonna be learning about how to handle missing data and how to clean up your data。
-
- It's very common for data to have missing values。 So knowing how to sanitize and clean our data is definitely going to be important。
-
- But if anyone has any questions about what we covered in this video。
-
- then feel free to ask in the comment section below， and I'll do my best to answer those。
-
- And if you enjoy these tutorials and would like to support them。
-
- Then there are several ways you can do that。 The easiest ways to simply like the video and give it a thumbs up。
-
- And also， it's a huge help to share these videos with anyone who you think would find them useful。
-
- And if you have the means you can contribute through Patreon。
-
- And there's a link to that page in the description section below。
-
- be sure to subscribe to your future videos and thank you all for watching。😊。
-
-
-
-![](img/f68605379f547ff8d305f85d92ec3497_7.png)
+ And there's a link to that page in the description section below。 be sure to subscribe to your future videos and thank you all for watching。😊。![](img/f68605379f547ff8d305f85d92ec3497_7.png)

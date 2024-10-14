@@ -2,24 +2,10 @@
 
 ![](img/eaf068e6bde73d21d7bbfe9147424a36_0.png)
 
-哦。So you have learned how to insert and update data in this lecture we're going to finish this section by learning how to delete data that is very easy。
+哦。So you have learned how to insert and update data in this lecture we're going to finish this section by learning how to delete data that is very easy。 we use the delete from statement to delete records from a table let's say the invoices table Now optionally we can add a search condition to identify the records we want to delete if you don't write this word class with this statement will delete all the records in this table and obviously that's very dangerous so be very careful when executing the statement。
 
- we use the delete from statement to delete records from a table let's say the invoices table Now optionally we can add a search condition to identify the records we want to delete if you don't write this word class with this statement will delete all the records in this table and obviously that's very dangerous so be very careful when executing the statement。
+😊，Now here， let's say we want to delete the invoice with the ID1， so where invoice ID equals to one。Now here we can also use subqueries， let's say we want to delete all the invoices for the client called My works First let's find this client。 so select everything from the clients table where name equals to my works。😊。Let's execute the second query。So。Here's our client。
 
-😊，Now here， let's say we want to delete the invoice with the ID1， so where invoice ID equals to one。
-
-Now here we can also use subqueries， let's say we want to delete all the invoices for the client called My works First let's find this client。
-
- so select everything from the clients table where name equals to my works。😊。
-
-Let's execute the second query。So。Here's our client。
-
- Now we can get this client ID and use it in our search condition。 So where client ID equals to。
-
- this is where we add our sub queryry。😊，There you go， just like before。Beautiful。
-
- so this is how we can delete data in SQL。😊。
-
-![](img/eaf068e6bde73d21d7bbfe9147424a36_2.png)
+ Now we can get this client ID and use it in our search condition。 So where client ID equals to。 this is where we add our sub queryry。😊，There you go， just like before。Beautiful。 so this is how we can delete data in SQL。😊。![](img/eaf068e6bde73d21d7bbfe9147424a36_2.png)
 
 Oh。

@@ -2,61 +2,18 @@
 
 ![](img/f955fa113e72b809ef9ef19a670ec0e3_0.png)
 
-In this Excel tutorial， we're going to focus on duplicates。
+In this Excel tutorial， we're going to focus on duplicates。 So you can see here I have a spreadsheet of synth pop bands and albums。 and this spreadsheet belongs to a hypothetical synth pop C D store。 And you can see there's a list here of some of the classic synth pop bands and their latest releases。
 
- So you can see here I have a spreadsheet of synth pop bands and albums。
+ But I'm also including here， some more recent synth pop bands and ones that you may not have heard of before。 Now， the problem with this spreadsheet， though， I when I initially created it。 I was focusing on the different quarters of the year， quarter 1， quarter 2， quarter 3。 And so the result is that I end up with several different records for each band。
 
- and this spreadsheet belongs to a hypothetical synth pop C D store。
+ And that's what I wanted in this spreadsheet to begin with。 But let's say I decide， you what。 I just want to create a list of all of the bands whose music I sell。 Or maybe I want to create a list just of all of the albums that I'm selling。 Let's look at how we could do that。 What I have to do is just go to data。
 
- And you can see there's a list here of some of the classic synth pop bands and their latest releases。
+And look on the data ribbon in the data tools group。 you'll notice that there's an option to remove duplicates。 When you click that by default。 it's probably going to check all of your columns。 So it's going look for duplicates throughout the entire spreadsheet at this point。 And that may not be what I want。 if I just want to see a list of the unique band titles in my spreadsheet。
 
- But I'm also including here， some more recent synth pop bands and ones that you may not have heard of before。
+ All I have to do is unselect all and then choose band。 So it's going to look for duplicates only in the list of bands。 I click O It found 33 duplicates and remove them 15 unique values remain。 So I click okay and look at that。 It now is a list just of the bands whose Cds I hypothetically sell。
 
- Now， the problem with this spreadsheet， though， I when I initially created it。
+ So that's how you can remove duplicates and how you can pull out just the unique data in your spreadsheet。 So now， of course， I could go up and choose file save as and I could save this as a different。![](img/f955fa113e72b809ef9ef19a670ec0e3_2.png)
 
- I was focusing on the different quarters of the year， quarter 1， quarter 2， quarter 3。
-
- And so the result is that I end up with several different records for each band。
-
- And that's what I wanted in this spreadsheet to begin with。 But let's say I decide， you what。
-
- I just want to create a list of all of the bands whose music I sell。
-
- Or maybe I want to create a list just of all of the albums that I'm selling。
-
- Let's look at how we could do that。 What I have to do is just go to data。
-
-And look on the data ribbon in the data tools group。
-
- you'll notice that there's an option to remove duplicates。 When you click that by default。
-
- it's probably going to check all of your columns。 So it's going look for duplicates throughout the entire spreadsheet at this point。
-
- And that may not be what I want。 if I just want to see a list of the unique band titles in my spreadsheet。
-
- All I have to do is unselect all and then choose band。
-
- So it's going to look for duplicates only in the list of bands。
-
- I click O It found 33 duplicates and remove them 15 unique values remain。
-
- So I click okay and look at that。 It now is a list just of the bands whose Cds I hypothetically sell。
-
- So that's how you can remove duplicates and how you can pull out just the unique data in your spreadsheet。
-
- So now， of course， I could go up and choose file save as and I could save this as a different。
-
-
-
-![](img/f955fa113e72b809ef9ef19a670ec0e3_2.png)
-
-Separate spreadsheet that's just a list of all the bands。 And then here in my original spreadsheet。
-
- if I wanted to keep the list the way it was， I could just exit out and not save over the original。
-
- and I should be able to have both copies of the spreadsheet。
-
-So I think remove duplicates is a very useful tool。
+Separate spreadsheet that's just a list of all the bands。 And then here in my original spreadsheet。 if I wanted to keep the list the way it was， I could just exit out and not save over the original。 and I should be able to have both copies of the spreadsheet。So I think remove duplicates is a very useful tool。
 
  I hope that you found the tutorial to be helpful if you did， please click the like button below。
-

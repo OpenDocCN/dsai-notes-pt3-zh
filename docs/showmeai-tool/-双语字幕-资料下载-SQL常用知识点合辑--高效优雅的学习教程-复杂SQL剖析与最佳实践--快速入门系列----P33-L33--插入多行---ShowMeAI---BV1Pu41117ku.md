@@ -2,62 +2,18 @@
 
 ![](img/2cd7cd85a2ac13b9ae45113f35ad6b73_0.png)
 
-哦。In this tutorial， you're going to learn how to insert multiple rows in one go for this demo。
+哦。In this tutorial， you're going to learn how to insert multiple rows in one go for this demo。 we're going to use this shipperss table。 Let's have a quick look at the table definition。😊。So here we have two columns， shipper ID and name。😊，Shiper ID is a primary key， it's not nullable。 and it's an auto incremented column， so we're going to let my SQl generate values for this column easy。
 
- we're going to use this shipperss table。 Let's have a quick look at the table definition。😊。
+😊，We only need to supply a value for the name column， so back to our query editor window。😊。We type out， insert into shippers。In parenthsesis， we specify the name of the columns we want to insert values into。 in this case， name followed by the values clause。Here we add a pair of parentheses with a value like shipper1。Now to insert multiple rows， all you have to do is to add a comma followed by another pair of parenthses。
 
-So here we have two columns， shipper ID and name。😊，Shiper ID is a primary key， it's not nullable。
+ so Shiper two， and one more time， comma， parentheses， Shiper3。😊。This is how you can insert multiple rows in one go。Now let's execute this statement。😊，Allright。 and then inspect the data in the shippers table。There you go。So initially we had only five shippers and here are the three new shippers that we inserted。
 
- and it's an auto incremented column， so we're going to let my SQl generate values for this column easy。
+ note that my Schula automatically generated the values for the shipper ID column， so we have 6。7 and 8。😊，嗯。All right， here's your exercise for this tutorial。 write a statement to insert three rows in the products table that's pretty easy。 you can knock it out in a minute。😊，So here's our products table， we only have four columns。
 
-😊，We only need to supply a value for the name column， so back to our query editor window。😊。
+ we're going to leave out the first column because it's an auto incremented column。 so we only have to supply values for name， quantity and unit price。😊。Back to our query editor window。😊，Let's insert into product。The columns are name。Quantity in stock and unit price。And the values are going to be， let's say product1。
 
-We type out， insert into shippers。In parenthsesis， we specify the name of the columns we want to insert values into。
+Stock is going to be 10 and the unit price is going to be 1。95。 Now。 I'm going to select these values， copy。Come on。Paste it。Like this。Change the values accordingly。And finally， the last row product3。There you go， let's execute this statement。😊，All right。And then verify the result。 So in the products table。 Now we should have three new records。 Now。
 
- in this case， name followed by the values clause。Here we add a pair of parentheses with a value like shipper1。
+ the ideas you see here are 15，16 and 17， because before recording this video I actually inserted a few records in this table and then deleted them。 So I had product I 111213 and 14。 Now even though they're actually deleted from this table。 my skill remembers their ideas。 So instead of incrementing 10 by 11， it incremented 14。 which was the last record from before。 and that's why it generated 15。 on your computer。
 
-Now to insert multiple rows， all you have to do is to add a comma followed by another pair of parenthses。
-
- so Shiper two， and one more time， comma， parentheses， Shiper3。😊。
-
-This is how you can insert multiple rows in one go。Now let's execute this statement。😊，Allright。
-
- and then inspect the data in the shippers table。There you go。
-
-So initially we had only five shippers and here are the three new shippers that we inserted。
-
- note that my Schula automatically generated the values for the shipper ID column， so we have 6。
-
-7 and 8。😊，嗯。All right， here's your exercise for this tutorial。
-
- write a statement to insert three rows in the products table that's pretty easy。
-
- you can knock it out in a minute。😊，So here's our products table， we only have four columns。
-
- we're going to leave out the first column because it's an auto incremented column。
-
- so we only have to supply values for name， quantity and unit price。😊。
-
-Back to our query editor window。😊，Let's insert into product。The columns are name。
-
-Quantity in stock and unit price。And the values are going to be， let's say product1。
-
-Stock is going to be 10 and the unit price is going to be 1。95。 Now。
-
- I'm going to select these values， copy。Come on。Paste it。Like this。Change the values accordingly。
-
-And finally， the last row product3。There you go， let's execute this statement。😊，All right。
-
-And then verify the result。 So in the products table。 Now we should have three new records。 Now。
-
- the ideas you see here are 15，16 and 17， because before recording this video I actually inserted a few records in this table and then deleted them。
-
- So I had product I 111213 and 14。 Now even though they're actually deleted from this table。
-
- my skill remembers their ideas。 So instead of incrementing 10 by 11， it incremented 14。
-
- which was the last record from before。 and that's why it generated 15。 on your computer。
-
- the ideas are going to be 1112 and 13。😊，Oh。
-
-![](img/2cd7cd85a2ac13b9ae45113f35ad6b73_2.png)
+ the ideas are going to be 1112 and 13。😊，Oh。![](img/2cd7cd85a2ac13b9ae45113f35ad6b73_2.png)

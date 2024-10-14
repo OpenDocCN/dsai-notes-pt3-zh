@@ -1,118 +1,44 @@
 # 【双语字幕+资料下载】“当前最好的 TensorFlow 教程！”，看完就能自己动手做项目啦！＜实战教程系列＞ - P9：L9- 自定义图层 - ShowMeAI - BV1em4y1U7ib
 
-What is going on， guys， hope you're doing freaking awesome。 So in this video。
-
- I want to show you how to create custom layers。😊。
-
-![](img/2b96deb5c7669b397136afafb6aca66a_1.png)
+What is going on， guys， hope you're doing freaking awesome。 So in this video。 I want to show you how to create custom layers。😊。![](img/2b96deb5c7669b397136afafb6aca66a_1.png)
 
 ![](img/2b96deb5c7669b397136afafb6aca66a_2.png)
 
-So far we've seen how to build very flexible models using subclassing and now we want to go one level deeper and even create the layers by ourselves。
+So far we've seen how to build very flexible models using subclassing and now we want to go one level deeper and even create the layers by ourselves。 So I'll show you what I mean by that but first just to explain the code we have in front of us right now we just have the import that we've seen pretty much every video and then we have these two lines to avoid any GPU errors and then lastly we're just loading the Ms data so this is just to save some time and so what we're going to start with is creating our own custom model sort of like we did in the last video so it's going to be very simple we're going to do class my model we're going to inherit from Kast model we're going to start with finding the init method we're going do self and then we could specify the number of classes for Ms 10 and then we're going just going call the super super mymod self do in it。
 
- So I'll show you what I mean by that but first just to explain the code we have in front of us right now we just have the import that we've seen pretty much every video and then we have these two lines to avoid any GPU errors and then lastly we're just loading the Ms data so this is just to save some time and so what we're going to start with is creating our own custom model sort of like we did in the last video so it's going to be very simple we're going to do class my model we're going to inherit from Kast model we're going to start with finding the init method we're going do self and then we could specify the number of classes for Ms 10 and then we're going just going call the super super mymod self do in it。
+And then we're going to do self dense1， So all we're going to do here is just create two dense layers Allright。 we're going to do layers do dense， let's do 64 nodes and then self dense2 is layers dense of nu classes we're just going to do the call So we're going to call self and then x。
 
-And then we're going to do self dense1， So all we're going to do here is just create two dense layers Allright。
+ So the input or let's call input tensor。And then we're going to do self do den one of input tensor。And then let's run a Tf。nn。relu on top of that。So this is just what we've seen in the last video。 this is why I'm going through it pretty quickly， and then we want to return self do then2 of x。 al right。So now let's quickly build a。And just a model compile a model fit on that。
 
- we're going to do layers do dense， let's do 64 nodes and then self dense2 is layers dense of nu classes we're just going to do the call So we're going to call self and then x。
+ So we'll do model equals my model。 We'll do model do compile。Loss equals ks， losses， bars。 categorical cross entropy。From logic equals true。😔，And then let's do our model that fit。 so you've seen all of this before， so I'm just going to write it out pretty quickly。Alright so now we have a custom model using subclassing and then we're just defining our compile and our fit and our evaluate so let's just make sure that this actually works so if we run this we see that it's actually training and this should go relatively quickly because we just have yeah so we have a very very small network like 64 nodes and then 10 output nodes let's actually talk about what I want to show you in this video so。
 
- So the input or let's call input tensor。And then we're going to do self do den one of input tensor。
+We now want to actually create these layers by ourselves right now we're using the layers from Ks and that has the dense layers in it and then we're using Tf。n。relu and that's all right and you can build very flexible models using that that's actually in most use cases that's fine but sometimes and just for understanding you want to actually be able to build those layers by yourself so that you really understand what's going on a more under the hood so I'm going to show you how to do that and let's do class and let's do dense and we're going to inherit from layers layer。
 
-And then let's run a Tf。nn。relu on top of that。So this is just what we've seen in the last video。
-
- this is why I'm going through it pretty quickly， and then we want to return self do then2 of x。
-
- al right。So now let's quickly build a。And just a model compile a model fit on that。
-
- So we'll do model equals my model。 We'll do model do compile。Loss equals ks， losses， bars。
-
- categorical cross entropy。From logic equals true。😔，And then let's do our model that fit。
-
- so you've seen all of this before， so I'm just going to write it out pretty quickly。
-
-Alright so now we have a custom model using subclassing and then we're just defining our compile and our fit and our evaluate so let's just make sure that this actually works so if we run this we see that it's actually training and this should go relatively quickly because we just have yeah so we have a very very small network like 64 nodes and then 10 output nodes let's actually talk about what I want to show you in this video so。
-
-We now want to actually create these layers by ourselves right now we're using the layers from Ks and that has the dense layers in it and then we're using Tf。
-
-n。relu and that's all right and you can build very flexible models using that that's actually in most use cases that's fine but sometimes and just for understanding you want to actually be able to build those layers by yourself so that you really understand what's going on a more under the hood so I'm going to show you how to do that and let's do class and let's do dense and we're going to inherit from layers layer。
-
-We're going to create our in function， so we're going to do init and then self unit。
-
- and then we're going to specify the input dimension。
-
-So all we got to do then is we got to run this super method， so super dense self thatt in it。
-
-Then we're going to do self that W is self add weight。
+We're going to create our in function， so we're going to do init and then self unit。 and then we're going to specify the input dimension。So all we got to do then is we got to run this super method， so super dense self thatt in it。Then we're going to do self that W is self add weight。
 
 So there are actually multiple ways of doing this。 this is the more easy way you could also do initialize it by yourself with a T dot variable but this is the easy way I'm going to show you in this way Now the first thing we got to do is we've got to set it to a name let's just call it W and actually this is quite important you'll see in the next video how we can save and load models and I found out if you don't actually specify a name you can't save the model so this is very important and then we're just going to do a shape we're going to specify a shape as input dimension and then to unit All right so input dimension is just what we have in the beginning it's going to be 784 which is 28 times 28 and then unit is just what we're gonna map it to so when we're using layers164 the unit is 64 then we can also。
 
-the initializer so we're going to do random normal and you could check out what other initialization methods you can do。
+the initializer so we're going to do random normal and you could check out what other initialization methods you can do。 and then we're going to specify trainable equals true。And so trainable equals true。 this is for layers like batch norm and so on where some of the parameters are not actually trainable。 but so all of our parameters in this dense layer are going to be trainable then we're going to do self。
 
- and then we're going to specify trainable equals true。And so trainable equals true。
+ B is self。 add weight。We're going to call it B and then shape is just going to be unit。RightSo't have so we're doing the matrix multiply with W and that's why it has to have the input dimension。 but then it's just going to be unit nodes so we're going to add one for each of them。 that's why we just have units right here。Then we can do initializer and we're just going to initialize it as zeros。
 
- this is for layers like batch norm and so on where some of the parameters are not actually trainable。
+ and then this is also a trainable parameter。And lastly， we just have to do the call method。 So call of some input。 we're going to return T of dot matrix multiply with the input。And then self to W， and lastly， we just got to add B。So now。We can actually replace this right here so we can do let's do selfta dense 1 is dense and then let's do 64 and then 784。
 
- but so all of our parameters in this dense layer are going to be trainable then we're going to do self。
+ and then let's do selfta dense 2 is dense of 10 and then 64 as input。So let's out that one right there and let's see if this works。 Allright。 so we seem to get pretty much equal results as we did on the last one and most importantly it actually runs So one thing you can notice here first of all is that on these ones we didn't have to specify the input dimension and this is what we're going call it making the layers lazy in that you don't have to actually even say what the input dimension is it's just going to work that out So that's what we want to do now we want to actually remove this part and make it work regardless of the input dimension So how we can do that is that we're going to create a build method all right so we have our in it right now and we're going to remove the input dimension right here。
 
- B is self。 add weight。We're going to call it B and then shape is just going to be unit。
-
-RightSo't have so we're doing the matrix multiply with W and that's why it has to have the input dimension。
-
- but then it's just going to be unit nodes so we're going to add one for each of them。
-
- that's why we just have units right here。Then we can do initializer and we're just going to initialize it as zeros。
-
- and then this is also a trainable parameter。And lastly， we just have to do the call method。
-
- So call of some input。 we're going to return T of dot matrix multiply with the input。
-
-And then self to W， and lastly， we just got to add B。So now。
-
-We can actually replace this right here so we can do let's do selfta dense 1 is dense and then let's do 64 and then 784。
-
- and then let's do selfta dense 2 is dense of 10 and then 64 as input。
-
-So let's out that one right there and let's see if this works。 Allright。
-
- so we seem to get pretty much equal results as we did on the last one and most importantly it actually runs So one thing you can notice here first of all is that on these ones we didn't have to specify the input dimension and this is what we're going call it making the layers lazy in that you don't have to actually even say what the input dimension is it's just going to work that out So that's what we want to do now we want to actually remove this part and make it work regardless of the input dimension So how we can do that is that we're going to create a build method all right so we have our in it right now and we're going to remove the input dimension right here。
-
-And then we're going to do a build method。So we're going to do define build。
-
- we're going to have self， and then we're going to have an input shape。
-
-And then we're actually going to create the Ws right here。
-
- so we're going to paste that in the build method instead。
+And then we're going to do a build method。So we're going to do define build。 we're going to have self， and then we're going to have an input shape。And then we're actually going to create the Ws right here。 so we're going to paste that in the build method instead。
 
  and now what's so great is that instead of using input input dim we can do input shape and then we're going to do sort of the last of those so in this case we have the training examples on the first dimension and then we have 784 because of the way we've reshaped it right here。
 
- so that's why we do minus1 here and then we're going to do units although what we're going to do in the in methods is do selft units equals units。
+ so that's why we do minus1 here and then we're going to do units although what we're going to do in the in methods is do selft units equals units。And then we got to do replace these units right here with self dot units for both of the for the W and then self dot B。
 
-And then we got to do replace these units right here with self dot units for both of the for the W and then self dot B。
+ So what's amazing now is that if we would run this。 we wouldn't have to specify the input dimension this hopefully we work so we can actually we can do that classes So let's run this now and let's see what we get。And it seems to work and now we see that this like these two are pretty similar right the functionality of them are pretty much identical and then you might be saying well we're still using TfN and dot Reello it would be nice to actually create this ourselves as well and so that's our next step you can do this in two ways you can create a function or you can create a class like we're doing so far I think the most common way is actually defining a function but let's just create a class and you can try making a function。
 
- So what's amazing now is that if we would run this。
+It's going to be pretty much the same。But we're going to do class Mireello。 and then we're going to do layers taught layer。And we're going to do define in it。Of just self。 we've gotta call super of my reello。Self， and then that in it。And then for our actual call。We're just going to return Tf。 mathath。 maximum。Of x and0。
 
- we wouldn't have to specify the input dimension this hopefully we work so we can actually we can do that classes So let's run this now and let's see what we get。
+ this is just going to return the maximum of x or 0， which is exactly the the relative， right。 So at this point， you might be saying， well， how would we actually create this Tf math maximum function。You might be feeling that this is a way of cheating and so what I would say is that this would be even more low level and this is something you can try out and you could read the documentation and the source code for how they've actually implemented this function and so on but there will always be times where you can go even deeper and explore the details and so this is where I would draw the line and that we can use these mathematical operations on these tensors so when we have this myrelu we can do self。
 
-And it seems to work and now we see that this like these two are pretty similar right the functionality of them are pretty much identical and then you might be saying well we're still using TfN and dot Reello it would be nice to actually create this ourselves as well and so that's our next step you can do this in two ways you can create a function or you can create a class like we're doing so far I think the most common way is actually defining a function but let's just create a class and you can try making a function。
-
-It's going to be pretty much the same。But we're going to do class Mireello。
-
- and then we're going to do layers taught layer。And we're going to do define in it。Of just self。
-
- we've gotta call super of my reello。Self， and then that in it。And then for our actual call。
-
-We're just going to return Tf。 mathath。 maximum。Of x and0。
-
- this is just going to return the maximum of x or 0， which is exactly the the relative， right。
-
- So at this point， you might be saying， well， how would we actually create this Tf math maximum function。
-
-You might be feeling that this is a way of cheating and so what I would say is that this would be even more low level and this is something you can try out and you could read the documentation and the source code for how they've actually implemented this function and so on but there will always be times where you can go even deeper and explore the details and so this is where I would draw the line and that we can use these mathematical operations on these tensors so when we have this myrelu we can do self。
-
-tre is my Relu so we got to instantiate the class although if you use a function this wouldn't be the case what we got to do then is we got to replace this Tf and then do relu and then we're going to do selftrelu on top of that。
-
-So we can run this first of all。So now you've seen how to build these models by yourself with Kaa subclassing and then also how to actually build these layers like dense layers and re functions so these are pretty simple ones but you can imagine building more complex ones as well and I also suggest you to try that out Alright so that's it for this video thank you so much for watching and I hope to see you in the next one。
+tre is my Relu so we got to instantiate the class although if you use a function this wouldn't be the case what we got to do then is we got to replace this Tf and then do relu and then we're going to do selftrelu on top of that。So we can run this first of all。So now you've seen how to build these models by yourself with Kaa subclassing and then also how to actually build these layers like dense layers and re functions so these are pretty simple ones but you can imagine building more complex ones as well and I also suggest you to try that out Alright so that's it for this video thank you so much for watching and I hope to see you in the next one。
 
 
 

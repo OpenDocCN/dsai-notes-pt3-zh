@@ -10,15 +10,8 @@ to us Now another plot that is very similar to a box plot is what is called a vi
 
 ![](img/3291c1f26707fc060f6722a60954d1f7_3.png)
 
-Like this and splits going to allow you to compare how the categories compare to each other。
-
- So kind of useful。 And like I said， it's just going to depend on your type of data to for you to find which plot is going to work best for you。
-
- And next， I want to talk about a strip plots。 And then I'm going to get more into some styling options with。
-
-
+Like this and splits going to allow you to compare how the categories compare to each other。 So kind of useful。 And like I said， it's just going to depend on your type of data to for you to find which plot is going to work best for you。 And next， I want to talk about a strip plots。 And then I'm going to get more into some styling options with。
 
 ![](img/3291c1f26707fc060f6722a60954d1f7_5.png)
 
 Different palettes that are available to you， but first we're going to。
-

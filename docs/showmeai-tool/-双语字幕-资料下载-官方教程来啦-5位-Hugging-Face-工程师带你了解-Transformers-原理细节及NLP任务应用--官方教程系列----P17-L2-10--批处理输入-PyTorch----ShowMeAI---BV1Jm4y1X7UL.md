@@ -1,56 +1,18 @@
 # 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞ - P17：L2.10- 批处理输入(PyTorch) - ShowMeAI - BV1Jm4y1X7UL
 
-How to batch inputs together in this video， we also see how2 batch input sequences together。
+How to batch inputs together in this video， we also see how2 batch input sequences together。In general all of the sentences we want to pass through our model won't all have the same length。Here we are using the model we saw in the sentiment analysis pipeline and want to classify two sentences。When tokenizing them and mapping each token to its corresponding input ID。
 
-In general all of the sentences we want to pass through our model won't all have the same length。
+We get two lists of different length。Trying to create a tensor or an Mbi array from the stool list will result in an error because all arrays and densilrs should be recangra。One way to overcome this limit is to make the second sentence the same length at the first by adding a special token as many times as necessary。
 
-Here we are using the model we saw in the sentiment analysis pipeline and want to classify two sentences。
+Another way would be to2k the first sequence to the length of the second。But you would then lose a lot of information that might be necessary to properly classify the sentence。In general， we only truncate sentences when we are longer than the maximum length the model can handle。The value used to pad the circum sentence should not be picked randomly。
 
-When tokenizing them and mapping each token to its corresponding input ID。
+The model has been portrayed with a certain padding ID， which you can find in tokenazizerpa token8。Now that we have better or sentences， we can make a batch with them。If we pass the two sentences to the model separately and patch together however。 we notice that we don't get the same results for the sentence that is pad here the second one h is that a bug in the transformers library now if you remember that transformers will all make easy user of attention layers。
 
-We get two lists of different length。Trying to create a tensor or an Mbi array from the stool list will result in an error because all arrays and densilrs should be recangra。
+ this should not come as a total surprise。When computing is the contextual representation of each token。The attention layers look at all the other words in the sentence。If you have just a sentence or the sentence with several padic tokens that it。 it's logical we don't get the same values。To get the same results with or without padding。
 
-One way to overcome this limit is to make the second sentence the same length at the first by adding a special token as many times as necessary。
+ we need to indicate to the attention layers that we should ignore those padding targets。This is done by creating an attention mask， a tonsil with the same shape as the input ID with series and ones。Once indicates the tokens the attention layers should consider in the context。 and the the tokens which should ignore。Now， passing this attention mask along with the input ID will give us the same results as when we send the two sentences individually to the model。
 
-Another way would be to2k the first sequence to the length of the second。
-
-But you would then lose a lot of information that might be necessary to properly classify the sentence。
-
-In general， we only truncate sentences when we are longer than the maximum length the model can handle。
-
-The value used to pad the circum sentence should not be picked randomly。
-
-The model has been portrayed with a certain padding ID， which you can find in tokenazizerpa token8。
-
-Now that we have better or sentences， we can make a batch with them。
-
-If we pass the two sentences to the model separately and patch together however。
-
- we notice that we don't get the same results for the sentence that is pad here the second one h is that a bug in the transformers library now if you remember that transformers will all make easy user of attention layers。
-
- this should not come as a total surprise。When computing is the contextual representation of each token。
-
-The attention layers look at all the other words in the sentence。
-
-If you have just a sentence or the sentence with several padic tokens that it。
-
- it's logical we don't get the same values。To get the same results with or without padding。
-
- we need to indicate to the attention layers that we should ignore those padding targets。
-
-This is done by creating an attention mask， a tonsil with the same shape as the input ID with series and ones。
-
-Once indicates the tokens the attention layers should consider in the context。
-
- and the the tokens which should ignore。Now， passing this attention mask along with the input ID will give us the same results as when we send the two sentences individually to the model。
-
-This is all done behind the scenes by the tokenizer when you apply it to several sentences with the flag padding equal to。
-
-It will apply his bedding with a proper value to the smaller sentences and create the appropriate attention mask。
-
-
-
-![](img/bcdf10aa45eed9c71073117b58d40576_1.png)
+This is all done behind the scenes by the tokenizer when you apply it to several sentences with the flag padding equal to。It will apply his bedding with a proper value to the smaller sentences and create the appropriate attention mask。![](img/bcdf10aa45eed9c71073117b58d40576_1.png)
 
 。
 

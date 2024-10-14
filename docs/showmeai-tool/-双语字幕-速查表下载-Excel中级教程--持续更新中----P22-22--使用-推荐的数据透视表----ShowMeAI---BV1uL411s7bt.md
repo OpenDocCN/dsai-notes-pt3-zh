@@ -2,75 +2,23 @@
 
 ![](img/18cad6350589a03a039e2409f1f6d2d0_0.png)
 
-In this short tutorial， I'm going to show you the easiest。
+In this short tutorial， I'm going to show you the easiest。 simplest way to add pivot tables to your Excel spreadsheets。 And this feature is called recommended pivot tables。 And it's only available in the more recent versions of Excel。 So you'll have to check to see if your version of Excel has it。 And the place to go to check is here in the upper left corner。 just click on insert and you should see next to pivot table。 you should see recommended pivot tables。 Now， if you haven't already done so。
 
- simplest way to add pivot tables to your Excel spreadsheets。
+ you really should watch my previous video that focused just on regular pivot tables。 and how to set them up how to arrange it to get the data that you want to show up using pivot tables。 So please watch that video before you watch this one， or at least in addition to watching this one。 And in that previous video， I used this same spreadsheet with a list of bands and the spreadsheet is supposed to be an inventory for a hypothetical synth pop music store。
 
- And this feature is called recommended pivot tables。
+ And so we've got a list here of some amazing。😊，Pop bands and their most recent C releases。 and it's arranged in a way that's pretty typical for an inventory。 You've got an item number。 you've got the price。 you've got fourquarter of the year。 you've got total copy sold and the total sales In other words， the total amount of money brought in。
 
- And it's only available in the more recent versions of Excel。
+ but if I wanted to pull out specific data from this spreadsheet and look at it in a new way I could use the pivot table tool to do that but next to the pivot table tool。 there's something called recommended pivot tables and this is the easiest way to do it if you just click on recommended pivot tables you get a popup and I'm going to see if I can stretch that out a little bit。
 
- So you'll have to check to see if your version of Excel has it。
+ and recommended pivot tables is just what it sounds like。 Excel here is recommending based on the data that I have in the spreadsheet。 It's recommending possible pivot tables to me so I could have a pivot table report of the sum of price by genre。 And so this would help me to know for each genre that I sell in my store。 what the price is。
 
- And the place to go to check is here in the upper left corner。
+ but is that really what I want to know。mean， this is the sum of the price of the items that might be sold。 but they haven't necessarily been sold yet。 And so I don't know if that's really what I want。 I don't think it is so I'm gonna click down here on some of sales by genre Now this might be more useful to me Now I can look and identify which genre of music that I sell in my hypothetical store performs best with my customers and my hypothetical customers have amazing taste in music and so you can see Sth pop that's the one that's generating the most sales for me So that recommended pivot table might actually be a useful pivot table for me next there's some of item number and some of copies sold and some of quarter by genre for me this isn't that helpful I don't really need to know the item number and you know maybe the sum of copies sold that would be useful but I don't like that one so I'm gonna go down and pick the next one so the idea is that you can just go down and select one of these recommended pivot tables Excel。
 
- just click on insert and you should see next to pivot table。
+Has already done the work for you Basically you're just looking at it to see oh。 is that useful to me or is it not useful to me。 Here's some of copies sold by band。 That's pretty useful， I think it also lists the genre that goes with that band So that could be pretty useful and then the sum of quarter by band。 So it's adding up the quarters notice that they all come to the same number except for brandon flowers。
 
- you should see recommended pivot tables。 Now， if you haven't already done so。
+ because I only put his Cd in for one quarter。 So this is another example of a pivot table report。 even though it's recommended it's pretty useless。 it's not really telling me information that I want or need。 So in this case for this example， I'm just gonna pick some of copies sold by band。 I click on it。 click okay and notice what it did， it added a sheet for me where I can see this pivot table report and I can glean the information from it that I want If I want to tweak this report。
 
- you really should watch my previous video that focused just on regular pivot tables。
-
- and how to set them up how to arrange it to get the data that you want to show up using pivot tables。
-
- So please watch that video before you watch this one， or at least in addition to watching this one。
-
- And in that previous video， I used this same spreadsheet with a list of bands and the spreadsheet is supposed to be an inventory for a hypothetical synth pop music store。
-
- And so we've got a list here of some amazing。😊，Pop bands and their most recent C releases。
-
- and it's arranged in a way that's pretty typical for an inventory。 You've got an item number。
-
- you've got the price。 you've got fourquarter of the year。
-
- you've got total copy sold and the total sales In other words， the total amount of money brought in。
-
- but if I wanted to pull out specific data from this spreadsheet and look at it in a new way I could use the pivot table tool to do that but next to the pivot table tool。
-
- there's something called recommended pivot tables and this is the easiest way to do it if you just click on recommended pivot tables you get a popup and I'm going to see if I can stretch that out a little bit。
-
- and recommended pivot tables is just what it sounds like。
-
- Excel here is recommending based on the data that I have in the spreadsheet。
-
- It's recommending possible pivot tables to me so I could have a pivot table report of the sum of price by genre。
-
- And so this would help me to know for each genre that I sell in my store。 what the price is。
-
- but is that really what I want to know。mean， this is the sum of the price of the items that might be sold。
-
- but they haven't necessarily been sold yet。 And so I don't know if that's really what I want。
-
- I don't think it is so I'm gonna click down here on some of sales by genre Now this might be more useful to me Now I can look and identify which genre of music that I sell in my hypothetical store performs best with my customers and my hypothetical customers have amazing taste in music and so you can see Sth pop that's the one that's generating the most sales for me So that recommended pivot table might actually be a useful pivot table for me next there's some of item number and some of copies sold and some of quarter by genre for me this isn't that helpful I don't really need to know the item number and you know maybe the sum of copies sold that would be useful but I don't like that one so I'm gonna go down and pick the next one so the idea is that you can just go down and select one of these recommended pivot tables Excel。
-
-Has already done the work for you Basically you're just looking at it to see oh。
-
- is that useful to me or is it not useful to me。 Here's some of copies sold by band。
-
- That's pretty useful， I think it also lists the genre that goes with that band So that could be pretty useful and then the sum of quarter by band。
-
- So it's adding up the quarters notice that they all come to the same number except for brandon flowers。
-
- because I only put his Cd in for one quarter。 So this is another example of a pivot table report。
-
- even though it's recommended it's pretty useless。 it's not really telling me information that I want or need。
-
- So in this case for this example， I'm just gonna pick some of copies sold by band。 I click on it。
-
- click okay and notice what it did， it added a sheet for me where I can see this pivot table report and I can glean the information from it that I want If I want to tweak this report。
-
- if I want to maybe add to it or change it in some way over here in the right， I have。
-
-Pivt table Field panel and I could adjust it I could add quarter in as a column or do any number of changes and if you're interested in learning more about how this works watch my previous video called advanced Excel introduction to pivot tables so I really like pivot tables and most often I do just make them myself I just use insert pivot table that's what I do most often because I usually know exactly what I want in my pivot table report but other times I'm not exactly sure and so I do insert recommended pivot tables and then I just look and see oh I wonder if this would be helpful to me I wonder if that piece of information would be helpful to me and so it's a great way to get ideas about how a pivot table might benefit you and draw out information about your data So thanks for watching I hope you found this video to be helpful if you did please click the like button below。
+ if I want to maybe add to it or change it in some way over here in the right， I have。Pivt table Field panel and I could adjust it I could add quarter in as a column or do any number of changes and if you're interested in learning more about how this works watch my previous video called advanced Excel introduction to pivot tables so I really like pivot tables and most often I do just make them myself I just use insert pivot table that's what I do most often because I usually know exactly what I want in my pivot table report but other times I'm not exactly sure and so I do insert recommended pivot tables and then I just look and see oh I wonder if this would be helpful to me I wonder if that piece of information would be helpful to me and so it's a great way to get ideas about how a pivot table might benefit you and draw out information about your data So thanks for watching I hope you found this video to be helpful if you did please click the like button below。
 
 
 

@@ -2,168 +2,46 @@
 
 ![](img/e554f8159d767499386bbce64f73d9d1_0.png)
 
-In this short Excel tutorial， I want to show you how to add some images into your Excel spreadsheets。
+In this short Excel tutorial， I want to show you how to add some images into your Excel spreadsheets。 And this is mostly for presentation purposes。 Let's say you want to show a spreadsheet to an audience。 you want to spice it up a little bit。 make it look a little bit more visual and attractive。 These are a couple of tips that you could use。 So the first option is to add a background。
 
- And this is mostly for presentation purposes。 Let's say you want to show a spreadsheet to an audience。
+ And you can do that here on the page layout tab， page layout ribbon。 And here in the page setup group right there， it says background。 So I can add a background。 So I'll click background。 And at this point， I can browse my computer for an image。 I'll just double click on one of these， select this cool nature picture， click insert。
 
- you want to spice it up a little bit。 make it look a little bit more visual and attractive。
+ And now I have this beautiful background behind my data。 And you can see what happens as I browse down the page or as I move to the right。 You can see that the picture is just repeating itself over and over in the background。 So there are some upsides to doing this。And also some downsides。 The upside is。
 
- These are a couple of tips that you could use。 So the first option is to add a background。
+ obviously it added a lot of color， a lot of beauty to my spreadsheet。 The downside is that the background image is obscuring some of the text。 It's hard to read what's in this cell。 It's hard to read what's in this cell。 And these here as well。 So just be very careful about adding backgrounds。
 
- And you can do that here on the page layout tab， page layout ribbon。
+ the other downside is this。 notice what happens if I zoom out。 So I'm zooming out。 my data gets smaller。 but for the most part， the image is staying the same size。 If I increase the zoom zoom in quite a bit。 it does look like the image is changing a little bit。 but for the most part， the image stays pretty static in the background while the text gets much smaller or much bigger。
 
- And here in the page setup group right there， it says background。 So I can add a background。
+ And so the background image does not follow the data。 it doesn't stay proportional to the data itself。 So just be aware of that。 Now。 another option that I have in page layout。Now that I have a background。 I can delete the background and I can add a new one and notice that there is an option for a being image search。
 
- So I'll click background。 And at this point， I can browse my computer for an image。
+ and this is better in a lot of cases， better than uploading from your computer because a lot of times you won't have that perfect image already on your computer。 You can also pull from Onerive if you use Onedrive。 And if you're not familiar with Oneeddrive。
 
- I'll just double click on one of these， select this cool nature picture， click insert。
+ please watch my video tutorial about it。 But here in being image search I'm just going to click and do a search for DVDs。 This spreadsheet that I'm using as an example is a DVD inventory。 And so I'm going to do a search for images of DVDs by default。 it's looking only for creative commons images。 So these are images that were uploaded to the Internet in order to be shared。
 
- And now I have this beautiful background behind my data。
+ if you want more than that， you can uncheck that and it will give you many more results。 There's also a filter button here that you can click to say I only want large images I only want clip。t or line drawings。 Now， the benefit of line drawings is because that they're black and white。 if you add them， sometimes they don't obscure the text quite as much。 I'm going to undo that。
 
- And you can see what happens as I browse down the page or as I move to the right。
+ though， and go back to background and again， search for DVDs。 I will stick to creative commons in this case。 These are images that were uploaded to be shared。 And I'll just click on this particular image and insert。 Again， that really affects the readability。 And so I might need to go in and format my text so that it's a different color so that I can actually read it。
 
- You can see that the picture is just repeating itself over and over in the background。
+ And even that is tough to read。 I'm going to jump back to page layout and delete the background。 So backgrounds can be really nice， but you do really have to be careful that they don't obscure your text and make it unreadable。 The other thing to know about backgrounds。 When you add a background into your spreadsheets。 If you then go to print or even print preview。 noticeice that the background images。Do not print。
 
- So there are some upsides to doing this。And also some downsides。 The upside is。
+ and they don't show in the print preview。 So the only real purpose of background images in Excel is for when you're doing a presentation when you're showing your data to someone else。 And you want to grab their attention。 Now， let's look at a second option that you have。
 
- obviously it added a lot of color， a lot of beauty to my spreadsheet。
+ Instead of adding a background。 in many cases， it's better just to click insert。 And here on the insert ribbon， go to illustrations and choose pictures。 Now。 this may look a little bit different in your version of Excel。 I'm using a very small screen to create this tutorial。
 
- The downside is that the background image is obscuring some of the text。
+ And so it couldn't fit these icons here in the space provided。 So for you。 it might look a little bit different。 But generally， it's found here on the insert tab。 insert ribbon in the illustrations group。 Look for pictures。 So I can upload that same image or just for variety， I'm going to pick a different image。
 
- It's hard to read what's in this cell。 It's hard to read what's in this cell。
+ But this time， it's not a background image。 This is actually。Picture that's floating on top of the spreadsheet on top of the data。 And if I increase the zoom。 the picture gets bigger， if I decrease the zoom， the picture gets smaller。 And so this works fundamentally differently than background images。
 
- And these here as well。 So just be very careful about adding backgrounds。
+ So I can shrink that to whatever size I want it to be。 and then I can put it next to or on top of the data that I want it to go with。 So I know that that is not really a match to the title of the DVD。 but it works。 I can also try clicking insert illustrations online pictures。
 
- the other downside is this。 notice what happens if I zoom out。 So I'm zooming out。
+ and this is similar to what I showed when we were looking at backgrounds。 but in this case。 I have categories of images that I can pull up and use， I can browse through these。 and I can also do searches。 So I'm going to search for the Princess bridede。 and it's finding creative commons only， which in this case that's perfect。
 
- my data gets smaller。 but for the most part， the image is staying the same size。
+ and I can select an image， click insert， and it came in way too big。But again。 I can shrink that down。 and then I can put it with the data that it goes with。 I might even consider in my spreadsheet inserting a new column。 That's a blank column。 And there in the column， I can put these images that go with the different DVDs。
 
- If I increase the zoom zoom in quite a bit。 it does look like the image is changing a little bit。
+ And I can really make that small if I wanted to and fit it in the cell。 Now it's not really in the cell， it's actually hovering over the cell。 but it appears to be in the cell。 Now， one of the advantages of inserting pictures instead of using a background image。 is that once you've inserted the picture， you can click on it and you get a format tab and you can click on the format tab and look at all the formatting options that you have。
 
- but for the most part， the image stays pretty static in the background while the text gets much smaller or much bigger。
+ I can put a frame around this image。 I can make it curved at the edges， turn it into an oval shape。 I can give it a 3D effect or a bevellled look。 There's all of these picture styles。 I can also change the transparency。And this could be particularly useful in a spreadsheet。 So at this point， even though this is not a background image。
 
- And so the background image does not follow the data。
+ it's almost behaving like a background image。 And the nice thing about these formatting options。 I was able to use this transparency tool to make this image transparent so that it can sit behind the data。 and yet， I can still read the data。 So this may be the better way to put a background image into your spreadsheets。 Even though it's not truly a background image。 So these are two ways to add images into your Excel spreadsheets。
 
- it doesn't stay proportional to the data itself。 So just be aware of that。 Now。
-
- another option that I have in page layout。Now that I have a background。
-
- I can delete the background and I can add a new one and notice that there is an option for a being image search。
-
- and this is better in a lot of cases， better than uploading from your computer because a lot of times you won't have that perfect image already on your computer。
-
- You can also pull from Onerive if you use Onedrive。 And if you're not familiar with Oneeddrive。
-
- please watch my video tutorial about it。 But here in being image search I'm just going to click and do a search for DVDs。
-
- This spreadsheet that I'm using as an example is a DVD inventory。
-
- And so I'm going to do a search for images of DVDs by default。
-
- it's looking only for creative commons images。 So these are images that were uploaded to the Internet in order to be shared。
-
- if you want more than that， you can uncheck that and it will give you many more results。
-
- There's also a filter button here that you can click to say I only want large images I only want clip。
-
-t or line drawings。 Now， the benefit of line drawings is because that they're black and white。
-
- if you add them， sometimes they don't obscure the text quite as much。 I'm going to undo that。
-
- though， and go back to background and again， search for DVDs。
-
- I will stick to creative commons in this case。 These are images that were uploaded to be shared。
-
- And I'll just click on this particular image and insert。 Again， that really affects the readability。
-
- And so I might need to go in and format my text so that it's a different color so that I can actually read it。
-
- And even that is tough to read。 I'm going to jump back to page layout and delete the background。
-
- So backgrounds can be really nice， but you do really have to be careful that they don't obscure your text and make it unreadable。
-
- The other thing to know about backgrounds。 When you add a background into your spreadsheets。
-
- If you then go to print or even print preview。 noticeice that the background images。Do not print。
-
- and they don't show in the print preview。 So the only real purpose of background images in Excel is for when you're doing a presentation when you're showing your data to someone else。
-
- And you want to grab their attention。 Now， let's look at a second option that you have。
-
- Instead of adding a background。 in many cases， it's better just to click insert。
-
- And here on the insert ribbon， go to illustrations and choose pictures。 Now。
-
- this may look a little bit different in your version of Excel。
-
- I'm using a very small screen to create this tutorial。
-
- And so it couldn't fit these icons here in the space provided。 So for you。
-
- it might look a little bit different。 But generally， it's found here on the insert tab。
-
- insert ribbon in the illustrations group。 Look for pictures。
-
- So I can upload that same image or just for variety， I'm going to pick a different image。
-
- But this time， it's not a background image。 This is actually。
-
-Picture that's floating on top of the spreadsheet on top of the data。 And if I increase the zoom。
-
- the picture gets bigger， if I decrease the zoom， the picture gets smaller。
-
- And so this works fundamentally differently than background images。
-
- So I can shrink that to whatever size I want it to be。
-
- and then I can put it next to or on top of the data that I want it to go with。
-
- So I know that that is not really a match to the title of the DVD。 but it works。
-
- I can also try clicking insert illustrations online pictures。
-
- and this is similar to what I showed when we were looking at backgrounds。 but in this case。
-
- I have categories of images that I can pull up and use， I can browse through these。
-
- and I can also do searches。 So I'm going to search for the Princess bridede。
-
- and it's finding creative commons only， which in this case that's perfect。
-
- and I can select an image， click insert， and it came in way too big。But again。
-
- I can shrink that down。 and then I can put it with the data that it goes with。
-
- I might even consider in my spreadsheet inserting a new column。 That's a blank column。
-
- And there in the column， I can put these images that go with the different DVDs。
-
- And I can really make that small if I wanted to and fit it in the cell。
-
- Now it's not really in the cell， it's actually hovering over the cell。
-
- but it appears to be in the cell。 Now， one of the advantages of inserting pictures instead of using a background image。
-
- is that once you've inserted the picture， you can click on it and you get a format tab and you can click on the format tab and look at all the formatting options that you have。
-
- I can put a frame around this image。 I can make it curved at the edges， turn it into an oval shape。
-
- I can give it a 3D effect or a bevellled look。 There's all of these picture styles。
-
- I can also change the transparency。And this could be particularly useful in a spreadsheet。
-
- So at this point， even though this is not a background image。
-
- it's almost behaving like a background image。 And the nice thing about these formatting options。
-
- I was able to use this transparency tool to make this image transparent so that it can sit behind the data。
-
- and yet， I can still read the data。 So this may be the better way to put a background image into your spreadsheets。
-
- Even though it's not truly a background image。 So these are two ways to add images into your Excel spreadsheets。
-
- Thanks for watching， I hope you found this tutorial to be helpful。 If you did。
-
- please click the like button below。
-
-![](img/e554f8159d767499386bbce64f73d9d1_2.png)
+ Thanks for watching， I hope you found this tutorial to be helpful。 If you did。 please click the like button below。![](img/e554f8159d767499386bbce64f73d9d1_2.png)

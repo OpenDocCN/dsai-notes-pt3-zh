@@ -2,81 +2,31 @@
 
 ![](img/2e3c2d66bc28098e64ec67375fb085cb_0.png)
 
-In this video， I'm going to show you how to use Microsoft Excel completely for free。
+In this video， I'm going to show you how to use Microsoft Excel completely for free。 Not only can you view other people's Excel spreadsheets， you can create your own。 you can save them in various formats， you can share them easily with other people。 This really is an underappreciated way to use Microsoft Excel。
 
- Not only can you view other people's Excel spreadsheets， you can create your own。
+ And what it is is it's called Excel for web。 So this is an online version of Microsoft Excel to access it。 just go to Office do co。 It'll look something like this。 and you can see it says sign up for the free version of office， you can also just click sign in。 Now if you click this button here， get office。 Microsoft will encourage you to buy Microsoft 365 and it's got some options for you。
 
- you can save them in various formats， you can share them easily with other people。
+ But if you want to use it completely free， just click sign in or sign up for the free version of office。 I'll click sign in。 It takes me to this screen where I can put in any of my Microsoft email addresses。 If you have an outlook email address or an Xbox account。 If you've ever set up an account with Microsoft。😊。
 
- This really is an underappreciated way to use Microsoft Excel。
+Chances are you already can sign in just using that preexisting Microsoft account。 Give me a minute to sign in my Microsoft account and then I'll resume the video。 Okay so here I am in my Microsoft Office online interface and you can see here at the left I should have quick access to each of the most common Microsoft Office products there's word Excel PowerPoint there's outlooklook Onenote to do and more so this is great I can quickly switch between those products if I want to I can even add a shortcut on my desktop that will quickly take me here I'm not gonna do that in this case but it's a good option So here at the left you'll also see a create button looks like a plus sign if I click that I can quickly create any of these types of documents online in my new office online account that's completely free I'll just go here and choose spreadsheet and if any of you have used the G suite Google Docs Google sheetets Google slides this is a similar idea。
 
- And what it is is it's called Excel for web。 So this is an online version of Microsoft Excel to access it。
+But it's from Microsoft， these are real Microsoft spreadsheets that we'll be creating and same with PowerPoint and Word so what we have here。 like I say， is Microsoft Excel， but it's in the cloud it's online we still have a similar layout that you get in Excel for Windows or for Mac I have tabs so each of these tabs can be clicked on when I click on a tab it changes the ribbon Now you'll notice the ribbon isn't quite the same as with the installed downloaded version that you have to pay for of Microsoft Excel the ribbon has the most essential the most commonly used options and features but it doesn't have everything If I look at the insert tab and ribbon I can see that I can insert graphs and charts but I don't see smart artt listed there so we get the most important most common options and settings but not everything just like with the desktop versions of Microsoft Excel I can click once to get on a I can click。
 
- just go to Office do co。 It'll look something like this。
+Twice on a cell to jump inside that cell。 Once you're on or in a cell。 you can type and then tap enter or tab to make that data go into the cell。 En generally moves you down the spreadsheet tab moves you to the right if you hold shift and tap tab it moves you to the left Shi and tap enter and it moves you up。 So with tab and shift tab， you can move right and left and with enter and shift enter。
 
- and you can see it says sign up for the free version of office， you can also just click sign in。
+ you can move down and up。 Of course， you can also use your mouse to click on the specific cell that you want to go to So I can enter information that way right into Excel。 Give me a minute to enter some data， and then I'll resume the video。 I can format my spreadsheet and the data just by clicking and dragging。 I can select what I want to effect。 that's my motto when using Excel select to effect。
 
- Now if you click this button here， get office。 Microsoft will encourage you to buy Microsoft 365 and it's got some options for you。
+ Once I've selected a range， I can go up and click bold in this case。 I could also center the data。 I could highlight the data， change the text color。 We really do。Have the most important features and most commonly used features in Microsoft Excel。 but they're online for free in Excel for web。 I'm going to add just a little bit more data here。
 
- But if you want to use it completely free， just click sign in or sign up for the free version of office。
-
- I'll click sign in。 It takes me to this screen where I can put in any of my Microsoft email addresses。
-
- If you have an outlook email address or an Xbox account。
-
- If you've ever set up an account with Microsoft。😊。
-
-Chances are you already can sign in just using that preexisting Microsoft account。
-
- Give me a minute to sign in my Microsoft account and then I'll resume the video。
-
- Okay so here I am in my Microsoft Office online interface and you can see here at the left I should have quick access to each of the most common Microsoft Office products there's word Excel PowerPoint there's outlooklook Onenote to do and more so this is great I can quickly switch between those products if I want to I can even add a shortcut on my desktop that will quickly take me here I'm not gonna do that in this case but it's a good option So here at the left you'll also see a create button looks like a plus sign if I click that I can quickly create any of these types of documents online in my new office online account that's completely free I'll just go here and choose spreadsheet and if any of you have used the G suite Google Docs Google sheetets Google slides this is a similar idea。
-
-But it's from Microsoft， these are real Microsoft spreadsheets that we'll be creating and same with PowerPoint and Word so what we have here。
-
- like I say， is Microsoft Excel， but it's in the cloud it's online we still have a similar layout that you get in Excel for Windows or for Mac I have tabs so each of these tabs can be clicked on when I click on a tab it changes the ribbon Now you'll notice the ribbon isn't quite the same as with the installed downloaded version that you have to pay for of Microsoft Excel the ribbon has the most essential the most commonly used options and features but it doesn't have everything If I look at the insert tab and ribbon I can see that I can insert graphs and charts but I don't see smart artt listed there so we get the most important most common options and settings but not everything just like with the desktop versions of Microsoft Excel I can click once to get on a I can click。
-
-Twice on a cell to jump inside that cell。 Once you're on or in a cell。
-
- you can type and then tap enter or tab to make that data go into the cell。
-
- En generally moves you down the spreadsheet tab moves you to the right if you hold shift and tap tab it moves you to the left Shi and tap enter and it moves you up。
-
- So with tab and shift tab， you can move right and left and with enter and shift enter。
-
- you can move down and up。 Of course， you can also use your mouse to click on the specific cell that you want to go to So I can enter information that way right into Excel。
-
- Give me a minute to enter some data， and then I'll resume the video。
-
- I can format my spreadsheet and the data just by clicking and dragging。
-
- I can select what I want to effect。 that's my motto when using Excel select to effect。
-
- Once I've selected a range， I can go up and click bold in this case。 I could also center the data。
-
- I could highlight the data， change the text color。 We really do。
-
-Have the most important features and most commonly used features in Microsoft Excel。
-
- but they're online for free in Excel for web。 I'm going to add just a little bit more data here。
-
- and this new data I wish it were formatted like the rest of the data here。
-
- All I have to do is select an example of what I want it to be formatted like and then go to the home tab click here on the format painter and then click on the new information that I would like to format the same way and it formats it I'm really glad that the format painter is part of this Excel for the web I want you to also see that formulas work in Excel for web so I'll click here on equals and I'll type in a formula。
+ and this new data I wish it were formatted like the rest of the data here。 All I have to do is select an example of what I want it to be formatted like and then go to the home tab click here on the format painter and then click on the new information that I would like to format the same way and it formats it I'm really glad that the format painter is part of this Excel for the web I want you to also see that formulas work in Excel for web so I'll click here on equals and I'll type in a formula。
 
  some left parenthesis and then I can either select what I want to be added up or I can describe it so I can type in D2 through and we indicate through with a colon D4 and then put my right parenthesis you don't really have to put it there but it's probably a good idea to get in the habit and then I can tap enter and it adds up the total years of experience。
 
 The way to do the same thing would be to type equals sum left parentheesis and then click and drag to show Excel the data that I want added up and then just tap enter and because sum is so common there actually is an autos option so I can click on the cell underneath in this case the years of experience and I can go here on the home tab here there is an autos button that I can click tap enter and it does the same thing So with this free version of Excel for web I can really use Excel This is definitely Excel but it's completely free and easy to share and access wherever I want to access it speaking of sharing the way you would share this with other people is by clicking here on the share button and we have some settings to think about here right now anyone with the link will be able to edit this data if I want to change that I have to click I can take off editing people will be able to see it but they won't be able to change it I could put an expiration date which is kind of exciting but that's a premium feature so you would have to pay for micro。
 
-of365 to have that option and same with password protecting So I need to decide。
+of365 to have that option and same with password protecting So I need to decide。 do I want people to be able to edit or only to see in my case， I'm gonna allow editing。 I'll click apply and then I can send it to a group of people each member of that team would be able to either edit it or view it or I could just copy a link So now anyone with this link will be able to edit the spreadsheet so I copy that and then I could paste it into an email send it to people or share it in any other way that I want to share that link Now what if at some point I want to turn this into a document that's actually on my computer because so far this spreadsheet exists only in the cloud on the internet all I would have to do is click on file and take a look down here at some of the options that I have I can save this as and one of the options is download a copy this would be a real Excel document Another option is to download it as an OD file an open document file I'll go with this download a copy and this is saved a copy of。
 
- do I want people to be able to edit or only to see in my case， I'm gonna allow editing。
-
- I'll click apply and then I can send it to a group of people each member of that team would be able to either edit it or view it or I could just copy a link So now anyone with this link will be able to edit the spreadsheet so I copy that and then I could paste it into an email send it to people or share it in any other way that I want to share that link Now what if at some point I want to turn this into a document that's actually on my computer because so far this spreadsheet exists only in the cloud on the internet all I would have to do is click on file and take a look down here at some of the options that I have I can save this as and one of the options is download a copy this would be a real Excel document Another option is to download it as an OD file an open document file I'll go with this download a copy and this is saved a copy of。
-
-Spreadsheet to my computer I probably should have named it first I can do that here where it says book I can call this employee list and click away and now when I download it。
-
- save as download a copy now it downloads with the proper name and I can click and open this up in actual Microsoft Excel installed on my computer Now there is another way to access Excel for the web what I can do is go down here to the lower left corner click here on the search magnifying glass and I can just type in office notice that there's an office app if I click on that it opens up an interface that looks quite similar to what I showed you on office co but this is on my actual computer you can see there's the document that I just created in Excel for the web and I can open it up from this office app but it also shows me every single Microsoft Office document that's on my computer so that's nice It combines what's online with what's on the computer and then if I want to get directly into Excel for web。
+Spreadsheet to my computer I probably should have named it first I can do that here where it says book I can call this employee list and click away and now when I download it。 save as download a copy now it downloads with the proper name and I can click and open this up in actual Microsoft Excel installed on my computer Now there is another way to access Excel for the web what I can do is go down here to the lower left corner click here on the search magnifying glass and I can just type in office notice that there's an office app if I click on that it opens up an interface that looks quite similar to what I showed you on office co but this is on my actual computer you can see there's the document that I just created in Excel for the web and I can open it up from this office app but it also shows me every single Microsoft Office document that's on my computer so that's nice It combines what's online with what's on the computer and then if I want to get directly into Excel for web。
 
 
 
@@ -86,9 +36,7 @@ Spreadsheet to my computer I probably should have named it first I can do that h
 
 I can just click here newb workbook。 It takes me to Excel for web or Excel online and I can create another document So this office app that should be on just about every modern version of Microsoft Windows It's kind of a little known option that you have and tool to help you quickly get into your Excel for web or Excel online documents Thanks for watching if you'd like to learn more about using Excel for the web or Excel On you can watch my other Excel tutorials。
 
- including the beginner's guide to Microsoft Excel。
-
- pretty much everything that you'll learn in the beginner's guide to Microsoft Excel will apply to Excel for web and most of the rest of my Excel videos will also apply to this version of Excel I hope you found this tutorial to be helpful if you did please like follow and subscribe and when you do click the bell so you'll be notified when I post another video if you want to support my channel you can do that through my Patreon account or by buying channel merch you'll see information about those options in the description below the video。
+ including the beginner's guide to Microsoft Excel。 pretty much everything that you'll learn in the beginner's guide to Microsoft Excel will apply to Excel for web and most of the rest of my Excel videos will also apply to this version of Excel I hope you found this tutorial to be helpful if you did please like follow and subscribe and when you do click the bell so you'll be notified when I post another video if you want to support my channel you can do that through my Patreon account or by buying channel merch you'll see information about those options in the description below the video。
 
 
 

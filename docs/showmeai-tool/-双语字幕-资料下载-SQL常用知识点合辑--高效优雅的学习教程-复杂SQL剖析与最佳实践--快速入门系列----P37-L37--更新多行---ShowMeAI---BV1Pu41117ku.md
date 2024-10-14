@@ -2,66 +2,24 @@
 
 ![](img/fbbd58c0784c4771a79466d0c54f1fca_0.png)
 
-哦。In the last tutorial you learned how to update a single record using the update statement Now if you want to update multiple records。
+哦。In the last tutorial you learned how to update a single record using the update statement Now if you want to update multiple records。 the syntax is exactly the same， but the condition that you type out here has to be more general for example。 back to the invoices table we can see that we have multiple invoices for client number three we can write a statement to update all the invoices for this client so back to our core editor window we change our condition to where client ID equals to3。However， if you execute this statement with MyQl workbench。
 
- the syntax is exactly the same， but the condition that you type out here has to be more general for example。
+ which is the software we' have been using in this course。 you're going to get an error because by default， MyosQql workbench runs in the Sa update mode。 So it allows you to update only a single record you're not going have this problem if you use another client for MyQl or if you write this statement in your application code。 This is only specific to Myql workbench。 Now let me show you how to get around this。
 
- back to the invoices table we can see that we have multiple invoices for client number three we can write a statement to update all the invoices for this client so back to our core editor window we change our condition to where client ID equals to3。
+ So on the top we go to Mysql workbench menu and then preferences。😊。On this dialog box on the left side， click on SQL Ed。😊，And then， down to bottom。Unt this checkbox save updates。 So this prevents you from accidentally updating or deleting a bunch of records in a table。 So let's go ahead with this。Now we need to reconnect to this instance of Mysql。
 
-However， if you execute this statement with MyQl workbench。
+Let's copy all the code here and close this local instance window。Allright， now on the homepage。 double will click this connection to reconnect， there you go。😊，And then paste all that SQL code。Now let's execute this Bea， all the invoices for client number three were updated here we can also use the in operator。 let's say we want to update all the invoices for clients number3 and number4。😊。
 
- which is the software we' have been using in this course。
-
- you're going to get an error because by default， MyosQql workbench runs in the Sa update mode。
-
- So it allows you to update only a single record you're not going have this problem if you use another client for MyQl or if you write this statement in your application code。
-
- This is only specific to Myql workbench。 Now let me show you how to get around this。
-
- So on the top we go to Mysql workbench menu and then preferences。😊。
-
-On this dialog box on the left side， click on SQL Ed。😊，And then， down to bottom。
-
-Unt this checkbox save updates。 So this prevents you from accidentally updating or deleting a bunch of records in a table。
-
- So let's go ahead with this。Now we need to reconnect to this instance of Mysql。
-
-Let's copy all the code here and close this local instance window。Allright， now on the homepage。
-
- double will click this connection to reconnect， there you go。😊，And then paste all that SQL code。
-
-Now let's execute this Bea， all the invoices for client number three were updated here we can also use the in operator。
-
- let's say we want to update all the invoices for clients number3 and number4。😊。
-
-So all the operators you learn to use in the where clauses also apply here。
-
- but technically this where clause is optional， so if you want to update all the records in a table。
-
- you simply leave it out。😊，Now here's your exercise for this tutorial， back to our SQL to database。
-
- write a SQL statement to give any customers born before 1990， 50 extra points。
+So all the operators you learn to use in the where clauses also apply here。 but technically this where clause is optional， so if you want to update all the records in a table。 you simply leave it out。😊，Now here's your exercise for this tutorial， back to our SQL to database。 write a SQL statement to give any customers born before 1990， 50 extra points。
 
 
 
 ![](img/fbbd58c0784c4771a79466d0c54f1fca_2.png)
 
-嗯。
+嗯。![](img/fbbd58c0784c4771a79466d0c54f1fca_4.png)
 
-![](img/fbbd58c0784c4771a79466d0c54f1fca_4.png)
+All right， first I'm going to use SQL store。😊，Then write an update statement to update the customer's table。Set the points to points plus 50， so here we are using an expression to update the points column。For anyone born before 1990， So where birth date is less than 1990。January 1t。All right。 let's execute this query。😊，Alright， now。Let's open up the customers table one more time。
 
-All right， first I'm going to use SQL store。😊，Then write an update statement to update the customer's table。
-
-Set the points to points plus 50， so here we are using an expression to update the points column。
-
-For anyone born before 1990， So where birth date is less than 1990。January 1t。All right。
-
- let's execute this query。😊，Alright， now。Let's open up the customers table one more time。
-
-So anyone who was born before 1990 now has an extra 50 points。
-
-
-
-![](img/fbbd58c0784c4771a79466d0c54f1fca_6.png)
+So anyone who was born before 1990 now has an extra 50 points。![](img/fbbd58c0784c4771a79466d0c54f1fca_6.png)
 
 Oh。

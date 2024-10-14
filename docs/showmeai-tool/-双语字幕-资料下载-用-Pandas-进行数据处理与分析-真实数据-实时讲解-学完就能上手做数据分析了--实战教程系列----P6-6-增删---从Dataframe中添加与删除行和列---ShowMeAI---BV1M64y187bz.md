@@ -1,260 +1,84 @@
 # 【双语字幕+资料下载】用 Pandas 进行数据处理与分析！真实数据&实时讲解，学完就能上手做数据分析了！＜实战教程系列＞ - P6：6）增删 - 从Dataframe中添加与删除行和列 - ShowMeAI - BV1M64y187bz
 
-Hey there。 How's it going， everybody。 In this video。
+Hey there。 How's it going， everybody。 In this video。 we're gonna be learning how to add and remove columns from our data frames。 We'll also take a look at how we can combine information from multiple columns into one。 Now。 in my last video on updating rows and columns that one was pretty long。
 
- we're gonna be learning how to add and remove columns from our data frames。
+ But this one should be a lot shorter。 Now， I'd like to mention that we do have a sponsor for the series of videos。 And that is brilliant。 So I really want to think brilliant for sponsoring this series。 and it would be great if you all could check them out using the link in the description section below and support the sponsors。 And I'll talk more about their services in just a bit。 So with that said。
 
- We'll also take a look at how we can combine information from multiple columns into one。 Now。
+ let's go ahead and get started。 Now， like I said， in the last video。 we saw how to update information within our rows and columns。 Now we're going to see how we can add and remove rows and columns。 First。 let's look at adding columns。 Now， adding columns is going be pretty easy for us because it's basically the same thing that we did when we were updating values。
 
- in my last video on updating rows and columns that one was pretty long。
+ we can simply create a column。 And pass in a series of values that we want that column to have。 So I currently have my snippets file open here that we've seen in previous videos。😊。We can see what this looks like on a smaller data and as usual， if you want to follow along。 then I'll have links to the code and the notebooks and the data that I'm using in this series in the description section below so for example。
 
- But this one should be a lot shorter。 Now， I'd like to mention that we do have a sponsor for the series of videos。
-
- And that is brilliant。 So I really want to think brilliant for sponsoring this series。
-
- and it would be great if you all could check them out using the link in the description section below and support the sponsors。
-
- And I'll talk more about their services in just a bit。 So with that said。
-
- let's go ahead and get started。 Now， like I said， in the last video。
-
- we saw how to update information within our rows and columns。
-
- Now we're going to see how we can add and remove rows and columns。 First。
-
- let's look at adding columns。 Now， adding columns is going be pretty easy for us because it's basically the same thing that we did when we were updating values。
-
- we can simply create a column。 And pass in a series of values that we want that column to have。
-
- So I currently have my snippets file open here that we've seen in previous videos。😊。
-
-We can see what this looks like on a smaller data and as usual， if you want to follow along。
-
- then I'll have links to the code and the notebooks and the data that I'm using in this series in the description section below so for example。
-
- let's say that we wanted to combine our first name and last name column into a single column and simply call that column first name So first。
-
- in order to get a series of the first name and last name combined we could simply say when I come down here to the bottom we can simply grab that first column and then we can just add these together and I'm putting a space between there。
+ let's say that we wanted to combine our first name and last name column into a single column and simply call that column first name So first。 in order to get a series of the first name and last name combined we could simply say when I come down here to the bottom we can simply grab that first column and then we can just add these together and I'm putting a space between there。
 
  and then I will add in the last name and if I run this whoops and I missed my second plus symbol there now if I run this then we can see that we get the first name and then a space that's what this section is doing here and then the last name so now that we have this series of values here。
 
- we can see that we have three values in order to add。
-
-These to a new column with these values we can simply say Df and then the name of what we want our new column do to be。
-
- I'm going to call this full name and then I'm just going to copy this that gave us that series before and assign this full name column to that returned series So if I run that and then we look at our data frame then now we can see that our data frame here has this new column that is the first and the last name combined and again。
+ we can see that we have three values in order to add。These to a new column with these values we can simply say Df and then the name of what we want our new column do to be。 I'm going to call this full name and then I'm just going to copy this that gave us that series before and assign this full name column to that returned series So if I run that and then we look at our data frame then now we can see that our data frame here has this new column that is the first and the last name combined and again。
 
  I'm using strings here but you could also create a new column using the apply method that we saw in the last video to have a new column for some mathematical analysis for another column in the data frame as well Now I do want to point out that you can't use the dot notation when assigning a column like this we have to use the brackets like we did here in order to make these assignments because if you use dot notation then Python is going to think that you're trying to assign an attribute onto the data frame。
 
-and not a column。 Okay， so that's how we'd add a column to our data frames。
+and not a column。 Okay， so that's how we'd add a column to our data frames。 Now let's look at removing columns。 So now that we have our full name column。 let's say that we no longer need or want our first and last name columns so to remove these。 I can use the drop method on our data frame。 So it's as easy as just saying Df do drop。
 
- Now let's look at removing columns。 So now that we have our full name column。
+ And now what do we want to drop。 we want to drop columns and the columns are going to be equal to。 And I'm going to pass in a list because we want to to delete multiple columns here。 So I want to delete the first column and the last column。 So if I run this。 then we can see that it returns a data frame without those columns。 And like we've seen before。
 
- let's say that we no longer need or want our first and last name columns so to remove these。
+ this just gives us a view of what our data frame would look like。 but it doesn't actually apply those changes if we're happy with those changes。 then we can set the in place argument to true so that it changes our data frame in place So I can。Over here and just say in place equal to true within our drop method。 And if I run that。
 
- I can use the drop method on our data frame。 So it's as easy as just saying Df do drop。
+ and then we look at our data frame， then now we can see that our data frame no longer has that first and last name column。 Now if we wanted to reverse that process and split that full name column into two different columns then that's a little more complicated but still pretty simple。
 
- And now what do we want to drop。 we want to drop columns and the columns are going to be equal to。
+ So we've seen the string split method a few times in the series so far。 So let's run that on our full name column and see what we get。 So I'm going to say Df and access that full name column。 And now I'm going to use that string class on our series。 and then we will do a split。
 
- And I'm going to pass in a list because we want to to delete multiple columns here。
+ and we'll just split this on a space。 Now split splits on spaces by default。 but I just want to be explicit here。 So if we run this then the result of that split method is that we get the first name and the last name and a list。 So。First name is the first value and the last name is the second value。 Now。 if we want to assign these two two different columns。
 
- So I want to delete the first column and the last column。 So if I run this。
+ then we need to expand this list so that they're actually in two different columns。 So to do this in pandas we can use the expand argument so let's see what this looks like So this is within the split method here and we can just pass in another argument and say expand is equal to true。
 
- then we can see that it returns a data frame without those columns。 And like we've seen before。
+ So if I run this then we can see that the results are pretty similar。 but now everything that was in our list is split up into columns So now we have two columns here of those split results。 So now what we need to do is set two columns in our data frame to those two columns that were just returned So we can say I'm going to if we remember from earlier in the series if we want to access multiple columns then within the brackets we can pass in a list so we're going to have two pairs of brackets here the inner bracket is our list。
 
- this just gives us a view of what our data frame would look like。
+Of columns。 So I want to add a first column and a last column and we're going to set that equal to this what we did here with the split method。 So if I run this。 then now our first and last columns should have been assigned to these columns here。 So let's take a look at our data frame and see if that worked。 So we can see that now we added a first and a last column with the values that we returned up here。
 
- but it doesn't actually apply those changes if we're happy with those changes。
+ Okay， so that's how we would add and remove columns。 So now let's look at adding and removing rows of data。 So there are a couple of different ways that we might want to add rows to our data frame。 So first。 we might just want to add a single row to our data frame of new data。 And second。
 
- then we can set the in place argument to true so that it changes our data frame in place So I can。
+ maybe we want to combine two data frames together into a single data frame by appending the rows of one to another。 So first， let's look at adding a single row of data。So we can do this with the appendned method。 So if I want to add a single row， then I can just say Df do append。 and now we can pass in our values here。 So I'm just going to pass in a dictionary here and we'll pass in a first name of Tony。
 
-Over here and just say in place equal to true within our drop method。 And if I run that。
+ So if I run this。 then we can see that we get an error。 Now。 this is because this currently doesn't have an index。 Now it can sometimes be difficult to read these panda as errors and figure out what the problem is。 But in this case it tells us exactly what to do。 It says down here at the bottom can only append a series if ignore index is equal to true or if the series has a name。
 
- and then we look at our data frame， then now we can see that our data frame no longer has that first and last name column。
+ So let's just ignore the index and our existing data frame will automatically assign this new row an index itself。 So up here at the top， we can simply pass in an argument of ignore underscore index。 and set that equal to true。 Now if I run this。Then we can see that that worked。 We're no longer getting an error And also down here at the bottom。
 
- Now if we wanted to reverse that process and split that full name column into two different columns then that's a little more complicated but still pretty simple。
+ We can see that this new name was appendant。 Now we only assign this row a first name value So we can see here that we assign that as Tony and all of the other column values are set to in a which is not a number which is used for missing values。 So you can pass in an entire series or list of information there in order to add a single row of data of any information that you want。
 
- So we've seen the string split method a few times in the series so far。
+ Now if we have a data frame that we'd like to append to our existing data frame。 then we can do that as well。 So let me create a new data frame here from our existing values up here at the top。 So I'm just going to scroll up here。 And I'm going to grab our first dictionary here of the data that we originally created our data frame with。 and I'm going to modify this a bit。 So I'm going to just have this B two names here。 So I'm。
 
- So let's run that on our full name column and see what we get。
+Take out these third values and then we will go ahead and update these So update these。 So for the first name I'll do Tony and Steve and for the last name。 I'll do stark and Rogers and for the email addresses let's see I'll do Ironman at Avenge do co and for the second one。 I'll do cap at Avenge do co。 So now I'm going to create a new data frame here from this new dictionary。
 
- So I'm going to say Df and access that full name column。
+ Now I'm going to call this Df2。 So now I can just say PD。t data frame。 and pass in that people dictionary there。 And now we should have a second data frame。 Okay。 so now let's say that we want to add this to our existing data frame。 So one way we can do this is to simply append the one data frame to the other。
 
- And now I'm going to use that string class on our series。 and then we will do a split。
+ Now these have conflicting indexes and they also have columns that are not in the same order。 So again， we're going to want to ignore the indexes when appending these so that they are assigned indexes properly。 So I'm going to say Df dot append And I'm going to pass in Df2。 so that it appends it to our original data frame。 and then I'm going to say ignore underscore index is equal to true。
 
- and we'll just split this on a space。 Now split splits on spaces by default。
-
- but I just want to be explicit here。 So if we run this then the result of that split method is that we get the first name and the last name and a list。
-
- So。First name is the first value and the last name is the second value。 Now。
-
- if we want to assign these two two different columns。
-
- then we need to expand this list so that they're actually in two different columns。
-
- So to do this in pandas we can use the expand argument so let's see what this looks like So this is within the split method here and we can just pass in another argument and say expand is equal to true。
-
- So if I run this then we can see that the results are pretty similar。
-
- but now everything that was in our list is split up into columns So now we have two columns here of those split results。
-
- So now what we need to do is set two columns in our data frame to those two columns that were just returned So we can say I'm going to if we remember from earlier in the series if we want to access multiple columns then within the brackets we can pass in a list so we're going to have two pairs of brackets here the inner bracket is our list。
-
-Of columns。 So I want to add a first column and a last column and we're going to set that equal to this what we did here with the split method。
-
- So if I run this。 then now our first and last columns should have been assigned to these columns here。
-
- So let's take a look at our data frame and see if that worked。
-
- So we can see that now we added a first and a last column with the values that we returned up here。
-
- Okay， so that's how we would add and remove columns。
-
- So now let's look at adding and removing rows of data。
-
- So there are a couple of different ways that we might want to add rows to our data frame。 So first。
-
- we might just want to add a single row to our data frame of new data。 And second。
-
- maybe we want to combine two data frames together into a single data frame by appending the rows of one to another。
-
- So first， let's look at adding a single row of data。So we can do this with the appendned method。
-
- So if I want to add a single row， then I can just say Df do append。
-
- and now we can pass in our values here。 So I'm just going to pass in a dictionary here and we'll pass in a first name of Tony。
-
- So if I run this。 then we can see that we get an error。 Now。
-
- this is because this currently doesn't have an index。
-
- Now it can sometimes be difficult to read these panda as errors and figure out what the problem is。
-
- But in this case it tells us exactly what to do。 It says down here at the bottom can only append a series if ignore index is equal to true or if the series has a name。
-
- So let's just ignore the index and our existing data frame will automatically assign this new row an index itself。
-
- So up here at the top， we can simply pass in an argument of ignore underscore index。
-
- and set that equal to true。 Now if I run this。Then we can see that that worked。
-
- We're no longer getting an error And also down here at the bottom。
-
- We can see that this new name was appendant。 Now we only assign this row a first name value So we can see here that we assign that as Tony and all of the other column values are set to in a which is not a number which is used for missing values。
-
- So you can pass in an entire series or list of information there in order to add a single row of data of any information that you want。
-
- Now if we have a data frame that we'd like to append to our existing data frame。
-
- then we can do that as well。 So let me create a new data frame here from our existing values up here at the top。
-
- So I'm just going to scroll up here。 And I'm going to grab our first dictionary here of the data that we originally created our data frame with。
-
- and I'm going to modify this a bit。 So I'm going to just have this B two names here。 So I'm。
-
-Take out these third values and then we will go ahead and update these So update these。
-
- So for the first name I'll do Tony and Steve and for the last name。
-
- I'll do stark and Rogers and for the email addresses let's see I'll do Ironman at Avenge do co and for the second one。
-
- I'll do cap at Avenge do co。 So now I'm going to create a new data frame here from this new dictionary。
-
- Now I'm going to call this Df2。 So now I can just say PD。t data frame。
-
- and pass in that people dictionary there。 And now we should have a second data frame。 Okay。
-
- so now let's say that we want to add this to our existing data frame。
-
- So one way we can do this is to simply append the one data frame to the other。
-
- Now these have conflicting indexes and they also have columns that are not in the same order。
-
- So again， we're going to want to ignore the indexes when appending these so that they are assigned indexes properly。
-
- So I'm going to say Df dot append And I'm going to pass in Df2。
-
- so that it appends it to our original data frame。 and then I'm going to say ignore underscore index is equal to true。
-
- and if I run this here。 then we can see down here at the bottom that it added these new rows。 Now。
-
- if you got a warning here， then the reason for this is because we didn't pass in all of the columns in the same order when appendending these。
-
- So it's。Given us a warning here that there are different ways that it could have sorted the columns。
-
- so don't worry too much about that but in the future version of pandas。
+ and if I run this here。 then we can see down here at the bottom that it added these new rows。 Now。 if you got a warning here， then the reason for this is because we didn't pass in all of the columns in the same order when appendending these。 So it's。Given us a warning here that there are different ways that it could have sorted the columns。 so don't worry too much about that but in the future version of pandas。
 
  it's going to set the sort to false by default and actually pandas version 1 was just released as I was recording this series so this may have already been done but we can ignore this for now but if we wanted to then we could pass in the value of sort equal to false and get rid of this warning so if I went back up here and I pass in sort is equal to false and also when I run this it's no longer going to sort these columns here so if I run this。
 
  then we can see that we no longer get that warning and now it's not sorting the columns anymore now unlike the drop method if we want to make these changes permanent then we don't have an inplace method to use instead we'd have to just set the data frame to this returned data frame by copying this and then we can say Df is equal to。
 
-Then just pass in that returned data frame there。 So if I run that。
+Then just pass in that returned data frame there。 So if I run that。 then we look at our original data frame， then we can see that those rows were added on there。 Now I'll be honest some of you might want to ask in the comment section below why some of these have an inplace argument and others don't but honestly I'm not really sure I'm sure there's a reason but I'd have to do some more digging around to find out exactly why but this append method doesn't have an inplace argument like the drop method has so we have to do it this way。
 
- then we look at our original data frame， then we can see that those rows were added on there。
+ so lastly， let's look at removing rows so let's say that you're an Ironman fan and you want to remove Steve Rogers here from our data frame。 Now we can do that in almost the same way that we dropped our columns but instead of specifying the columns that we want to drop we can simply pass in the indexes that we want to drop So I can come down here and say Df do drop and we can see here on the far left if you watch my video on indexes this has an index of four so let's。
 
- Now I'll be honest some of you might want to ask in the comment section below why some of these have an inplace argument and others don't but honestly I'm not really sure I'm sure there's a reason but I'd have to do some more digging around to find out exactly why but this append method doesn't have an inplace argument like the drop method has so we have to do it this way。
+Just say we want to drop an index of four。 So if I run this。 and we could see that we still have Ironman and Tony Stark here， but we no longer have Steve Rogers。 So that fourth index was deleted。 And again， if you want to actually apply that to the data frame。 then you'll need to set the in place argument to true。
 
- so lastly， let's look at removing rows so let's say that you're an Ironman fan and you want to remove Steve Rogers here from our data frame。
+ Now you might want to do something a little more complicated and drop rows using a conditional。 Now I'd probably do this using Lo， like we saw in the previous video where we were learning about filtering data from our data frame。 So we can also do this using drop。 So if I wanted to drop all of the rows where the last name is equal to do。 So we have two of those values here。 then I can pass in the indexes of that filter。
 
- Now we can do that in almost the same way that we dropped our columns but instead of specifying the columns that we want to drop we can simply pass in the indexes that we want to drop So I can come down here and say Df do drop and we can see here on the far left if you watch my video on indexes this has an index of four so let's。
+ So let me show you what this means and it won't be as complicated。 So I can say Df do drop。 and now I'm going to say index is equal to。 And now I'm going to put in my conditional。 So if you remember。From the filtering video， we can actually pass the conditional here inside of our brackets。 So now I can say， okay， I want a conditional where the last name of that column equals equals do。
 
-Just say we want to drop an index of four。 So if I run this。
+ Now， the only difference here。 is that we have a conditional here。 So we want the indexes since we're saying index is equal to。 So just here at the end。 I'm going to use this method and just say dot index。 So if I run this。 then we can see that it removed those values with the last name of do。 Now。
 
- and we could see that we still have Ironman and Tony Stark here， but we no longer have Steve Rogers。
+ like I said in that filtering video I don't really like all of this being bunched up together because I think that it's hard to read and you always want your code to be easy to read by other developers。 So I would pull the conditional out into its own variable。 and instead。
 
- So that fourth index was deleted。 And again， if you want to actually apply that to the data frame。
+ I would say something like this。 I would say filteril for filter is equal to。 And then I'll just grab our conditional here。😊，Cut that out and paste that here。 And now we can say that we want our filtered applied to that data frame and then grab the index of that。 So if I run this， then we can see that that gives us the exact same result。
 
- then you'll need to set the in place argument to true。
+ but that's a little bit easier to read so that's been an overview of adding and removing rows and columns from our data frames Now before we end here I'd like to mention the sponsor of this video and that sponsor is brilliant。 So in this series， we've been learning about pandas and how to analyze data in Python and brilliant would be an excellent way to supplement what you learn here with their handson courses。
 
- Now you might want to do something a little more complicated and drop rows using a conditional。
+ They have some excellent courses and lessons that do a deep dive on how to think about and analyze data correctly for data analysis fundamentals。 I would really recommend checking out their statistics course which shows you how to analyze graphs and determine significance in the data。
 
- Now I'd probably do this using Lo， like we saw in the previous video where we were learning about filtering data from our data frame。
-
- So we can also do this using drop。 So if I wanted to drop all of the rows where the last name is equal to do。
-
- So we have two of those values here。 then I can pass in the indexes of that filter。
-
- So let me show you what this means and it won't be as complicated。 So I can say Df do drop。
-
- and now I'm going to say index is equal to。 And now I'm going to put in my conditional。
-
- So if you remember。From the filtering video， we can actually pass the conditional here inside of our brackets。
-
- So now I can say， okay， I want a conditional where the last name of that column equals equals do。
-
- Now， the only difference here。 is that we have a conditional here。
-
- So we want the indexes since we're saying index is equal to。 So just here at the end。
-
- I'm going to use this method and just say dot index。 So if I run this。
-
- then we can see that it removed those values with the last name of do。 Now。
-
- like I said in that filtering video I don't really like all of this being bunched up together because I think that it's hard to read and you always want your code to be easy to read by other developers。
-
- So I would pull the conditional out into its own variable。 and instead。
-
- I would say something like this。 I would say filteril for filter is equal to。
-
- And then I'll just grab our conditional here。😊，Cut that out and paste that here。
-
- And now we can say that we want our filtered applied to that data frame and then grab the index of that。
-
- So if I run this， then we can see that that gives us the exact same result。
-
- but that's a little bit easier to read so that's been an overview of adding and removing rows and columns from our data frames Now before we end here I'd like to mention the sponsor of this video and that sponsor is brilliant。
-
- So in this series， we've been learning about pandas and how to analyze data in Python and brilliant would be an excellent way to supplement what you learn here with their handson courses。
-
- They have some excellent courses and lessons that do a deep dive on how to think about and analyze data correctly for data analysis fundamentals。
-
- I would really recommend checking out their statistics course which shows you how to analyze graphs and determine significance in the data。
-
- and I would also recommend their machine learning course which takes data analysis to a new level where you' learn about the techniques being used that allow machines to make。
-
-😊。
-
-![](img/5df007f7bc271b60efa09726ca478ccf_1.png)
+ and I would also recommend their machine learning course which takes data analysis to a new level where you' learn about the techniques being used that allow machines to make。😊。![](img/5df007f7bc271b60efa09726ca478ccf_1.png)
 
 ![](img/5df007f7bc271b60efa09726ca478ccf_2.png)
 
@@ -262,42 +86,12 @@ Just say we want to drop an index of four。 So if I run this。
 
 ![](img/5df007f7bc271b60efa09726ca478ccf_4.png)
 
-Decisions where there's just too many variables for a human to consider。
+Decisions where there's just too many variables for a human to consider。 So to support my channel and learn more about brilliant。 you can go to brilliant org forgelash cms to sign up for free。 And also the first 200 people they go to that link well get 20% off the annual premium subscription。
 
- So to support my channel and learn more about brilliant。
+ And you can find that link in the description section below。 Again， that's brilliant org forge。 Okay， so I think that's gonna do it for this pandas video。 I hope you feel like you got a good idea for how to add and remove columns and rows from your data frame and feel comfortable doing that。 in the next video we'll be learning about different ways to sort our data。
 
- you can go to brilliant org forgelash cms to sign up for free。
+ But if anyone has any questions about what we covered in this video。 then feel free to ask in the comments section below and I'll do my best to answer those。 And if you enjoy these tutorials and would like to support them。 then there are several ways you can do that。 the easiest ways to simply like the video and give it a thumbs up。
 
- And also the first 200 people they go to that link well get 20% off the annual premium subscription。
+ And also， it's a huge help to share these videos with anyone who you think would find them useful。 And if you have the means you can contribute through Patreon。 And there's a link to that page in the description section below。😊。![](img/5df007f7bc271b60efa09726ca478ccf_6.png)
 
- And you can find that link in the description section below。 Again， that's brilliant org forge。
-
- Okay， so I think that's gonna do it for this pandas video。
-
- I hope you feel like you got a good idea for how to add and remove columns and rows from your data frame and feel comfortable doing that。
-
- in the next video we'll be learning about different ways to sort our data。
-
- But if anyone has any questions about what we covered in this video。
-
- then feel free to ask in the comments section below and I'll do my best to answer those。
-
- And if you enjoy these tutorials and would like to support them。
-
- then there are several ways you can do that。 the easiest ways to simply like the video and give it a thumbs up。
-
- And also， it's a huge help to share these videos with anyone who you think would find them useful。
-
- And if you have the means you can contribute through Patreon。
-
- And there's a link to that page in the description section below。😊。
-
-
-
-![](img/5df007f7bc271b60efa09726ca478ccf_6.png)
-
-Be sure to subscribe for future videos， and thank you all for watching。
-
-
-
-![](img/5df007f7bc271b60efa09726ca478ccf_8.png)
+Be sure to subscribe for future videos， and thank you all for watching。![](img/5df007f7bc271b60efa09726ca478ccf_8.png)

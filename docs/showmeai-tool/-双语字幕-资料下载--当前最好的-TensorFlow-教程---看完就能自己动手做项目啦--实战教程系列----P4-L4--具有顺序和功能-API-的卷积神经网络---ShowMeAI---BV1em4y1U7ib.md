@@ -4,209 +4,69 @@
 
 Welcome back guys， hope you're doing awesome and in this video we will continue and now build a convolutional neural network and as usual there are resources of video lectures in the description to find more about the concepts for this video So with that said。
 
- let's get started we're going first import OS and we're going to do OS dot environment and do Tf CPP Min log level and again this is just for ignoring information messages from Tensorflowlow that can be a little bit annoying。
+ let's get started we're going first import OS and we're going to do OS dot environment and do Tf CPP Min log level and again this is just for ignoring information messages from Tensorflowlow that can be a little bit annoying。And then we're going to do import Tensorflow as Tf。From Tensorflow， import ks。
 
-And then we're going to do import Tensorflow as Tf。From Tensorflow， import ks。
+From Tensorflow dot ks import layers and then from Tensorflow dot Cars do data sets。 we're going to import Cypher 10。 So in this video we're going to take a look at the Cypher 10 data set and it's basically more natural images of of 10 different classes from airplane。
 
-From Tensorflow dot ks import layers and then from Tensorflow dot Cars do data sets。
+ automobile mobile bird truck， etc cetera。 and the images are。![](img/1090d091c86a18e1ad139b92203046b6_2.png)
 
- we're going to import Cypher 10。 So in this video we're going to take a look at the Cypher 10 data set and it's basically more natural images of of 10 different classes from airplane。
-
- automobile mobile bird truck， etc cetera。 and the images are。
-
-
-
-![](img/1090d091c86a18e1ad139b92203046b6_2.png)
-
-we have 50，000 training images and then we have 10，000 test images， total of 60。
-
-000 where each image is 32 by 32 pixels so they are relatively small and then we have RGB colored so they have three channels I found this pretty interesting blog post by Andrea Kpathy that where he actually trained himself on Cypher 10 and he came to the conclusion let's see that Cypher 10 human level accuracy is approximately 94% and if you actually check the most recent models trained on Cypher10 they go beyond this so the more recent models are much much better than human level performance on this dataset set。
+we have 50，000 training images and then we have 10，000 test images， total of 60。000 where each image is 32 by 32 pixels so they are relatively small and then we have RGB colored so they have three channels I found this pretty interesting blog post by Andrea Kpathy that where he actually trained himself on Cypher 10 and he came to the conclusion let's see that Cypher 10 human level accuracy is approximately 94% and if you actually check the most recent models trained on Cypher10 they go beyond this so the more recent models are much much better than human level performance on this dataset set。
 
 
 
 ![](img/1090d091c86a18e1ad139b92203046b6_4.png)
 
-Now I'm going to copy in two lines and most likely you don't need them。
+Now I'm going to copy in two lines and most likely you don't need them。 but if you're running on GPU and you're run into any trouble。 then most likely these two lines here are going to help you out。Al right。 so let's go back to sort of what we actually want to do in this video。
 
- but if you're running on GPU and you're run into any trouble。
+ which is first we want to load the Cypher 10 data set。 and this is very similar to how we loaded MNIS。In the last video。 and then so we're going to do x train， Y train， X test， Y test。And then Cypher 10 dot load data。And。Again， we want to convert it into F 32 because efficiency essentially computing it in F 64 is a bit of unnecessary necessary computation。
 
- then most likely these two lines here are going to help you out。Al right。
+ so what we can do is we can do xtrain equals xtrain s type and then float 32 and then for normalization we can also divide by 255 so that the pixel values are between 0 and1。And then similarly for X test， we can do x test equals x test as type float 32。
 
- so let's go back to sort of what we actually want to do in this video。
+ and then we're just going divide by 255。 Allright。 so for our actual model let's start out with a sequential model and then we're going to build and make that a little bit more advanced。 so we're going to do model equals Kas that sequential and we're going to start with Kas that input specifying the input shape in this case。Since we're using convolutional neural networks， we are not going to reshape it so that we don't flatten it in the beginning。
 
- which is first we want to load the Cypher 10 data set。
+ so that means we're going to maintain the height， so 32 in height。 32 and width and then three channels for RGB so that they are colored so that's the input shape of each image then we're going to do layers。 co2 d and we're going to do I don't know， 32 out channels so the first。First argument here of comm 2 do is that how many channels we want this convolutional layer to output so in the beginning we have three channels we want the output to then be 32 then we're going to specify the kernel size we're just going to set that to three and so if we set just a single integer here that's going to be expanded to be the same kernel size for the height and the width so that's essentially writing this just more I guess less of verbo just writing the integer。
 
- and this is very similar to how we loaded MNIS。In the last video。
+And then we can specify padding so here you can specify valid or same so valid here is the default and then so what's going to happen is that these pixel values here。 if we use same convolution then theyre going to be maintained so after this layer they're still going to be 32 pixels height and then 32 pixels width。
 
- and then so we're going to do x train， Y train， X test， Y test。And then Cypher 10 dot load data。And。
+ but if we use valid then that's going to change depending on our kernel size。 so in this case they're actually going to become 30 by 30 pixels。So this is essentially just a hyperparameter that you can play around with。 I'm just going to set it to valid， although there's really no point since this is the default argument。
 
-Again， we want to convert it into F 32 because efficiency essentially computing it in F 64 is a bit of unnecessary necessary computation。
+And then we can set the activation similarly to how we did for our neural network to RE。And then let's do a max pooling to D。And so here we can specify the pool size。 let's say two by two so that it's halfd in the input， so for example。 if we use a valid convolution here， this is going to be 30 by 30 and of course you can do print model summary to actually see these changes。
 
- so what we can do is we can do xtrain equals xtrain s type and then float 32 and then for normalization we can also divide by 255 so that the pixel values are between 0 and1。
+Maybe we can do that actually， so let's do print model that summary。And let's see。 So as we can see here now， after the first come， it's going to be 30 by 30 and then we have 32 channels and then after the max pullinging。 it's going to have the input size pixel， so they're going to be 15 by 15。And then we could do just another couple of layers。 So layers come to D。
 
-And then similarly for X test， we can do x test equals x test as type float 32。
+ let's say 64 out channels and then same。 I mean， kernel size 3。 and then let's just use valid again and activation re。嗯。Let's do another max pooling。And then。Again。 we're going to have 128 channels we just double it and then three and activation equals relative again。 so then for our actual output we're going to do layers do flatten we're going to have let's say one intermediate so we're going to have 64 nodes in this fully connected and activation equals relative and then for our output we're just going to do layer dense and then 10 output nodes。
 
- and then we're just going divide by 255。 Allright。
+So that's for our actual model。 then we're going to compile our model。 So model that compile specify the loss function to be CAs that losses that spars。Categorical cross entropy， so the same that we use in the last video from logics equals true because we're not having a softmax activation on our output。And then let's say optimizer， let's use at。So if we're going to set also the learning rate。
 
- so for our actual model let's start out with a sequential model and then we're going to build and make that a little bit more advanced。
+ let's set it to 3 e minus4。And then metrics， let's keep track of accuracy。Alright。 so that's where a model compile now to actually train the model。 let's just do model that fit x train， y train， batch size， let's say， 264。And then let's run for 10 epochs and let's say verbose equals 2 so that it prints after each epoch in this way you won't get a progress bar。
 
- so we're going to do model equals Kas that sequential and we're going to start with Kas that input specifying the input shape in this case。
+ but it's going to print information about the training every epoch。And then after training。 let's do model dot evaluate on the test set。And then also again。 let's set the batch size to the same and no epochs because we're just going to run at once and then verboos equals2。 Allright， so let's run this and hopefully we should still have okay。
 
-Since we're using convolutional neural networks， we are not going to reshape it so that we don't flatten it in the beginning。
+ so let' let's do also print model that summary here。And then we can inspect that。😔，So。Alright。 so we're letting a train。 So we can see here that。We can sort of see the number parameters。 let's see。 it's here are the most of the parameters of the model and。So as we can see here we can see sort of the total number of parameters， 1225，000。
 
- so that means we're going to maintain the height， so 32 in height。
+ and that's actually a very， very small network， so we're not expecting to get very。 very high accuracy on this but sort of just to illustrate how to build convolutions and then using Mac pullinging and so on。I believe that Alexnett。I believe that AlexNe， which was sort of the first convolutional neural network that really revolutionized computer vision。 had about 60 million parameters， so just to get a perspective on how small 225，000 actually is。
 
- 32 and width and then three channels for RGB so that they are colored so that's the input shape of each image then we're going to do layers。
+Alright， so let's see it's done training and then it's printing the model of summary again okay so let's remove that。😔，And then let's see sort of what we get so we get 72% training accuracy at end and then 68% test accuracy。 Now as you can see we have a lot of room for improvement So if you train this for long。 you would probably get a better accuracy but we're not really interested in that So what we're going to do now is take a look at how we can build a functional using the functional API and sort of build a very similar convolution in neural network but we're going to add some more advanced things so。
 
- co2 d and we're going to do I don't know， 32 out channels so the first。
-
-First argument here of comm 2 do is that how many channels we want this convolutional layer to output so in the beginning we have three channels we want the output to then be 32 then we're going to specify the kernel size we're just going to set that to three and so if we set just a single integer here that's going to be expanded to be the same kernel size for the height and the width so that's essentially writing this just more I guess less of verbo just writing the integer。
-
-And then we can specify padding so here you can specify valid or same so valid here is the default and then so what's going to happen is that these pixel values here。
-
- if we use same convolution then theyre going to be maintained so after this layer they're still going to be 32 pixels height and then 32 pixels width。
-
- but if we use valid then that's going to change depending on our kernel size。
-
- so in this case they're actually going to become 30 by 30 pixels。
-
-So this is essentially just a hyperparameter that you can play around with。
-
- I'm just going to set it to valid， although there's really no point since this is the default argument。
-
-And then we can set the activation similarly to how we did for our neural network to RE。
-
-And then let's do a max pooling to D。And so here we can specify the pool size。
-
- let's say two by two so that it's halfd in the input， so for example。
-
- if we use a valid convolution here， this is going to be 30 by 30 and of course you can do print model summary to actually see these changes。
-
-Maybe we can do that actually， so let's do print model that summary。And let's see。
-
- So as we can see here now， after the first come， it's going to be 30 by 30 and then we have 32 channels and then after the max pullinging。
-
- it's going to have the input size pixel， so they're going to be 15 by 15。
-
-And then we could do just another couple of layers。 So layers come to D。
-
- let's say 64 out channels and then same。 I mean， kernel size 3。
-
- and then let's just use valid again and activation re。嗯。Let's do another max pooling。And then。Again。
-
- we're going to have 128 channels we just double it and then three and activation equals relative again。
-
- so then for our actual output we're going to do layers do flatten we're going to have let's say one intermediate so we're going to have 64 nodes in this fully connected and activation equals relative and then for our output we're just going to do layer dense and then 10 output nodes。
-
-So that's for our actual model。 then we're going to compile our model。
-
- So model that compile specify the loss function to be CAs that losses that spars。
-
-Categorical cross entropy， so the same that we use in the last video from logics equals true because we're not having a softmax activation on our output。
-
-And then let's say optimizer， let's use at。So if we're going to set also the learning rate。
-
- let's set it to 3 e minus4。And then metrics， let's keep track of accuracy。Alright。
-
- so that's where a model compile now to actually train the model。
-
- let's just do model that fit x train， y train， batch size， let's say， 264。
-
-And then let's run for 10 epochs and let's say verbose equals 2 so that it prints after each epoch in this way you won't get a progress bar。
-
- but it's going to print information about the training every epoch。And then after training。
-
- let's do model dot evaluate on the test set。And then also again。
-
- let's set the batch size to the same and no epochs because we're just going to run at once and then verboos equals2。
-
- Allright， so let's run this and hopefully we should still have okay。
-
- so let' let's do also print model that summary here。And then we can inspect that。😔，So。Alright。
-
- so we're letting a train。 So we can see here that。We can sort of see the number parameters。
-
- let's see。 it's here are the most of the parameters of the model and。
-
-So as we can see here we can see sort of the total number of parameters， 1225，000。
-
- and that's actually a very， very small network， so we're not expecting to get very。
-
- very high accuracy on this but sort of just to illustrate how to build convolutions and then using Mac pullinging and so on。
-
-I believe that Alexnett。I believe that AlexNe， which was sort of the first convolutional neural network that really revolutionized computer vision。
-
- had about 60 million parameters， so just to get a perspective on how small 225，000 actually is。
-
-Alright， so let's see it's done training and then it's printing the model of summary again okay so let's remove that。
-
-😔，And then let's see sort of what we get so we get 72% training accuracy at end and then 68% test accuracy。
-
- Now as you can see we have a lot of room for improvement So if you train this for long。
-
- you would probably get a better accuracy but we're not really interested in that So what we're going to do now is take a look at how we can build a functional using the functional API and sort of build a very similar convolution in neural network but we're going to add some more advanced things so。
-
-Let's do， let's actually do a function。 So let's do define my model。 and then inside this。
-
- let's do input equals。Kas input and then shape let's see， 32，32，3。And then let's do x equals layers。
-
-com2 d， let's do the same channels with 32 and then kernel size 3。
-
- and then we're going to send the input through that layer。And then。
+Let's do， let's actually do a function。 So let's do define my model。 and then inside this。 let's do input equals。Kas input and then shape let's see， 32，32，3。And then let's do x equals layers。com2 d， let's do the same channels with 32 and then kernel size 3。 and then we're going to send the input through that layer。And then。
 
 We're going to use batch normalization and so that's going to be in the video description if you if you're unfamiliar with batch norm so batch normalization and we're going to initialize that and then we're just going to send in x through that one and then as you might have noticed here we're not using a activation function here that's because if we're using batch norm we want to sort of send it through the convolutional area first and then through the batch norm and then we want to send it through the activation function so how we can do that is by doing cares。
 
-That activation start re than of x。And yeah， so let's add some max pullinging， max pullinging to D。
+That activation start re than of x。And yeah， so let's add some max pullinging， max pullinging to D。And we actually don't have to specify the pool size， so let's see， yeah I did it here。 but we don't have to such probably mentioned that when we did this one。 but you don't have to specify the pool size to be 2 by 2， that's the default argument。
 
-And we actually don't have to specify the pool size， so let's see， yeah I did it here。
+ but of course you can change it to whatever you want。 it's just that 2 by  two is what you most frequently use。So let's just do max pulling and then send it through that one and then let's create another one。 so let's do layers column to d 64 and I don't know。
 
- but we don't have to such probably mentioned that when we did this one。
+ let's do a kernel size of 5 and let's do padding equals same and just for one and then let's do。AndAnother batch norm， so batch normalization。Of x。And then cares that activations dot relu。Of X。And then after this， let's do one more， so let's do layers come to D 128，3。And then of x。Of X。 and then。Another batch worm。Of X activation。Rello。
 
- but you don't have to specify the pool size to be 2 by 2， that's the default argument。
+And then we're going to now send it through a a dense layer。 So we're going to do layers that dense。64 nodes。And activation is re。And then the outputs is going to be just layers dense of 10 nodes of x。And then to create our model， we're going to do model equals。Cas that model。 and then we need to specify the inputs and the outputs。
 
- but of course you can change it to whatever you want。
+ and it's going to create the model from those。 So we're going to do outputs and rather inputs equals inputs。 outputs equals outputs。And then we're just going to return our model right so this is this is now our model very similar looking to the previous one just that we added batch norm and what we can do now is we can do model equals my model we can call that and then we can use the same compile and fit and evaluate as we did for the sequential one so let's run this now。
 
- it's just that 2 by  two is what you most frequently use。
+Alright， we get an error。 Let's see what is the problem。All right。 so I think I know what the problem is we need to do a flatten layer in between because the shapes aren't going to match when we send it through the fully connected layer。 so we're just going to do layers that flatten and then of X and hopefully it should work now。Alright， so one thing we can see here is that after 10 epos using these batch normalization it's much faster to train so I think before it had 72% training accuracy now it's almost 93%。
 
-So let's just do max pulling and then send it through that one and then let's create another one。
+ although the test set accuracy hasn't actually improved that much， I think it's actually gone worse。 which is a obvious sign of the model overfitting to the training data and so what we need to when the model is overfitting we need to use regularization in different ways so that's actually what we're going to take a look at in the next video to try to see how we can improve this to make this gap a little bit closer to each other so that there's not this wide of a gap。
 
- so let's do layers column to d 64 and I don't know。
-
- let's do a kernel size of 5 and let's do padding equals same and just for one and then let's do。
-
-AndAnother batch norm， so batch normalization。Of x。And then cares that activations dot relu。Of X。
-
-And then after this， let's do one more， so let's do layers come to D 128，3。And then of x。Of X。
-
- and then。Another batch worm。Of X activation。Rello。
-
-And then we're going to now send it through a a dense layer。 So we're going to do layers that dense。
-
-64 nodes。And activation is re。And then the outputs is going to be just layers dense of 10 nodes of x。
-
-And then to create our model， we're going to do model equals。Cas that model。
-
- and then we need to specify the inputs and the outputs。
-
- and it's going to create the model from those。 So we're going to do outputs and rather inputs equals inputs。
-
- outputs equals outputs。And then we're just going to return our model right so this is this is now our model very similar looking to the previous one just that we added batch norm and what we can do now is we can do model equals my model we can call that and then we can use the same compile and fit and evaluate as we did for the sequential one so let's run this now。
-
-Alright， we get an error。 Let's see what is the problem。All right。
-
- so I think I know what the problem is we need to do a flatten layer in between because the shapes aren't going to match when we send it through the fully connected layer。
-
- so we're just going to do layers that flatten and then of X and hopefully it should work now。
-
-Alright， so one thing we can see here is that after 10 epos using these batch normalization it's much faster to train so I think before it had 72% training accuracy now it's almost 93%。
-
- although the test set accuracy hasn't actually improved that much， I think it's actually gone worse。
-
- which is a obvious sign of the model overfitting to the training data and so what we need to when the model is overfitting we need to use regularization in different ways so that's actually what we're going to take a look at in the next video to try to see how we can improve this to make this gap a little bit closer to each other so that there's not this wide of a gap。
-
-Here are a couple of suggestions to play around with the code and try to get some more experience The first thing is check what kind of accuracy you can get on the test set by you training for longer increasing the model size。
-
- maybe changing kernel sizes play around with padding and so on the second thing is that in the last video we trained a fully connected neural network on Eminist what can you get by in using a COvnet on that instead on that data set but anyways that is how but anyways in this video you saw how to train a basic neural network using the sequential and the functional API if you have any questions leaving them in the comments below Thank you so much for watching the video and I hope to see you in the next one。
+Here are a couple of suggestions to play around with the code and try to get some more experience The first thing is check what kind of accuracy you can get on the test set by you training for longer increasing the model size。 maybe changing kernel sizes play around with padding and so on the second thing is that in the last video we trained a fully connected neural network on Eminist what can you get by in using a COvnet on that instead on that data set but anyways that is how but anyways in this video you saw how to train a basic neural network using the sequential and the functional API if you have any questions leaving them in the comments below Thank you so much for watching the video and I hope to see you in the next one。
 
 
 

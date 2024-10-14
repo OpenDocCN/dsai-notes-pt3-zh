@@ -14,13 +14,9 @@ And distribution plot。Distribution plot and of course you can go and find out 
 
 ![](img/038ed56b7665de55bd9a707070b413db_4.png)
 
-If you come in here and you don't want that on there。
+If you come in here and you don't want that on there。 you can just come in and say KdeE is equal to false and see there it's gone now and basically it's just going to provide an estimation of the total results in your data set all right so pretty simple stuff and what else can we do here。
 
- you can just come in and say KdeE is equal to false and see there it's gone now and basically it's just going to provide an estimation of the total results in your data set all right so pretty simple stuff and what else can we do here。
-
- we can also define bins so we can say bins is equal to $25 see how that changes our data and basically a bins like a bucket that is going to be used to divide the data up into between different intervals so for example。
-
- if you were doing something with profits you could say put all profits between 10 and 20 in a bucket or a bin and it's just going to decide how many of these bars you're going to see across your data and so that's basically a distribution。
+ we can also define bins so we can say bins is equal to $25 see how that changes our data and basically a bins like a bucket that is going to be used to divide the data up into between different intervals so for example。 if you were doing something with profits you could say put all profits between 10 and 20 in a bucket or a bin and it's just going to decide how many of these bars you're going to see across your data and so that's basically a distribution。
 
 
 

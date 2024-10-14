@@ -22,35 +22,13 @@ The data， of course， we're going to be pulling from our crash data frame and
 
 ![](img/d099f39520c1422517235b16d2e5384c_8.png)
 
-Grid， and there you can see the change there。 that looks kind of nice and the other option available。
+Grid， and there you can see the change there。 that looks kind of nice and the other option available。 I'm going to show you all of them。 You're also going to have white grid。![](img/d099f39520c1422517235b16d2e5384c_10.png)
 
- I'm going to show you all of them。 You're also going to have white grid。
+So there's that。 And you're also going to have dark。 Let's throw dark inside of here。 and there's dark。 looks kind of nice also。 and then you have ticks。 and that is all of the different options that I have there。 And depending upon what your data is and the palette you're using。
 
+ you're going to use different grids and some of them look nice and some of them， maybe not so much。 so that's ticks。 I'm going just stick with ticks here for a second。 So one thing is your labels in the text and everything's kind of hard to see。 So how can we change our labels and our lines and other different elements to best fit and present our data nice。
 
-
-![](img/d099f39520c1422517235b16d2e5384c_10.png)
-
-So there's that。 And you're also going to have dark。 Let's throw dark inside of here。
-
- and there's dark。 looks kind of nice also。 and then you have ticks。
-
- and that is all of the different options that I have there。
-
- And depending upon what your data is and the palette you're using。
-
- you're going to use different grids and some of them look nice and some of them， maybe not so much。
-
- so that's ticks。 I'm going just stick with ticks here for a second。
-
- So one thing is your labels in the text and everything's kind of hard to see。
-
- So how can we change our labels and our lines and other different elements to best fit and present our data nice。
-
- Well， to do that， you go set context and there's three options here。 you can have paper。
-
- I'm going change the font as well。
-
-![](img/d099f39520c1422517235b16d2e5384c_12.png)
+ Well， to do that， you go set context and there's three options here。 you can have paper。 I'm going change the font as well。![](img/d099f39520c1422517235b16d2e5384c_12.png)
 
 ![](img/d099f39520c1422517235b16d2e5384c_13.png)
 
@@ -64,17 +42,9 @@ So there's that。 And you're also going to have dark。 Let's throw dark inside
 
 ![](img/d099f39520c1422517235b16d2e5384c_18.png)
 
-So I'm gonna to say font scales E01。4 and there you can see the fonts changed and so forth。
+So I'm gonna to say font scales E01。4 and there you can see the fonts changed and so forth。 and then I'm going to go and also show you the other different options available。 You can have paper， you can have talk， you can see that's much easier to see right there and also you're going to have poster。 which is going to be super clear as well。 and you can see that is super big and this would be like what you would use on a poster and while talk would be what you would use in a presentation and paper is what you would use in like a Jupyter notebook Allright。
 
- and then I'm going to go and also show you the other different options available。
-
- You can have paper， you can have talk， you can see that's much easier to see right there and also you're going to have poster。
-
- which is going to be super clear as well。 and you can see that is super big and this would be like what you would use on a poster and while talk would be what you would use in a presentation and paper is what you would use in like a Jupyter notebook Allright。
-
- so let's stick with paper here。
-
-![](img/d099f39520c1422517235b16d2e5384c_20.png)
+ so let's stick with paper here。![](img/d099f39520c1422517235b16d2e5384c_20.png)
 
 ![](img/d099f39520c1422517235b16d2e5384c_21.png)
 
@@ -90,19 +60,9 @@ So I'm gonna to say font scales E01。4 and there you can see the fonts changed 
 
 ![](img/d099f39520c1422517235b16d2e5384c_27.png)
 
-And see how that looks。 And I think that's pretty readable。 And of course。
+And see how that looks。 And I think that's pretty readable。 And of course。 you could change your font size if you'd like to get it exactly where you would like it to。 And another thing is sometimes these different axes you have on here。 these spines are kind of obtrusive and might not really help you with your data。 Well。
 
- you could change your font size if you'd like to get it exactly where you would like it to。
-
- And another thing is sometimes these different axes you have on here。
-
- these spines are kind of obtrusive and might not really help you with your data。 Well。
-
- you can also go and decide which ones to turn on and which ones to turn off by calling D spine And let's say that you want。
-
-
-
-![](img/d099f39520c1422517235b16d2e5384c_29.png)
+ you can also go and decide which ones to turn on and which ones to turn off by calling D spine And let's say that you want。![](img/d099f39520c1422517235b16d2e5384c_29.png)
 
 ![](img/d099f39520c1422517235b16d2e5384c_30.png)
 
@@ -110,13 +70,9 @@ And see how that looks。 And I think that's pretty readable。 And of course。
 
 ![](img/d099f39520c1422517235b16d2e5384c_32.png)
 
-Its going left is equal to。False whoops accidentally hit a T there instead of an E and you could see that we have our left axes on there。
+Its going left is equal to。False whoops accidentally hit a T there instead of an E and you could see that we have our left axes on there。 Let's set this to true。 And now you see that it's missing alright and let's say that we would also like to get rid of this bottom one for some reason you can also come in and say bottom true and now we don't have a bottom and so forth and so on。
 
- Let's set this to true。 And now you see that it's missing alright and let's say that we would also like to get rid of this bottom one for some reason you can also come in and say bottom true and now we don't have a bottom and so forth and so on。
-
- And as you can see here， they sort of default that what happens to the left happens to the right and what happens to the bottom also happens to the top and of course。
-
- you can also come in and decide if you want right as well as the top spine to be showing or not or you could decide to not use either of them and get this layout All right so there's some different styling options and I'm going to get into other different styling options as we continue as well as talk about different coloring options through color maps that are also available with matpllibb but now what I want to do is talk。
+ And as you can see here， they sort of default that what happens to the left happens to the right and what happens to the bottom also happens to the top and of course。 you can also come in and decide if you want right as well as the top spine to be showing or not or you could decide to not use either of them and get this layout All right so there's some different styling options and I'm going to get into other different styling options as we continue as well as talk about different coloring options through color maps that are also available with matpllibb but now what I want to do is talk。
 
 
 

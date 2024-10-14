@@ -2,130 +2,34 @@
 
 ![](img/8772423eae323c491c259246fc223492_0.png)
 
-In this Excel tutorial， we're going to look at how to take data from Excel and insert it into Microsoft Word。
+In this Excel tutorial， we're going to look at how to take data from Excel and insert it into Microsoft Word。 Let's say I just want to copy this data here and paste it into Microsoft Word。 Is that going to work， Let's try it out。 If I click and drag with the mouse and select the data I want to copy。 I can then use a control C keyboard shortcut to copy that range。 And then in Microsoft Word。
 
- Let's say I just want to copy this data here and paste it into Microsoft Word。
+ I can hold control and tap V for paste。 And the data paste it in pretty well。 And as you can see。 the data is editable。 I can change this amount。 Let's see what that does。 It did change the amount。 but the total did not adjust。 And so it's treating this basically as simply text。 Let's see if there's a better way to insert the data into Microsoft Word。
 
- Is that going to work， Let's try it out。 If I click and drag with the mouse and select the data I want to copy。
+ We could try converting this range into a table by clicking insert and clicking on tables and just choosing a regular table。Click O。 It's now turned this into a table。 Now， if I click and drag to select the data。 copy it and go into word and paste。 the results seem to be a little better。 But even so。 if I change numbers。 Look， changing that number did not update the total below。
 
- I can then use a control C keyboard shortcut to copy that range。 And then in Microsoft Word。
+ there's got to be a better way。 In my opinion， the best method for inserting this data into word is to first copy the range and then go into Microsoft word。 and instead of simply pasting， go up here to the home tab in the clipboard group。 if you click on the paste button， but the bottom half of the paste button。 it brings up some options。 And one of them is paste special。
 
- I can hold control and tap V for paste。 And the data paste it in pretty well。 And as you can see。
+ and that gives me all sorts of special ways that I can paste this data。 But the one at the very top is the1 I'm looking for。 Microsoft Excel worksheet object。 I select it。 click O， and it's gonna paste my data in as an Excel object。 Now you can see my chart here off to the right， but that's okay。Now， this time。
 
- the data is editable。 I can change this amount。 Let's see what that does。 It did change the amount。
+ because I've inserted this data as an Excel object。 let's look at how it behaves。 Can I change the numbers， Yes， I can。 If I double click on it， I'm still in Microsoft Word。 but I'm seeing some of the Microsoft Excel options。 And let's say I get as。 I tap enter on the keyboard， and it adjusts the total。
 
- but the total did not adjust。 And so it's treating this basically as simply text。
+ It's treating this like what it is an Excel object。 Also。 notice I can access Excel filters and change some of those to filter out some of the data。 And so in many ways， this is Excel from within Microsoft Word。 You can even see the green Excel color scheme appearing here at the top。
 
- Let's see if there's a better way to insert the data into Microsoft Word。
+ even though I am in Microsoft Word。 When I'm ready to continue composing my word document。 I can just click away from the Excel object。 and now it's clear that I'm back in Microsoft Word。 But my changes are still in effect。 So this is great。 but it's important for you to know that this is a link and embed。😊。
 
- We could try converting this range into a table by clicking insert and clicking on tables and just choosing a regular table。
+So the data in this word document is linked to my Microsoft Excel document。 Now let's look at the chart。 Is it possible for me to copy paste this chart into Microsoft Word Well。 I'll start by selecting it and using the control C keyboard shortcut。 and then in Microsoft word I'm gonna tap enter a couple of times to move my cursor down the page a little bit。
 
-Click O。 It's now turned this into a table。 Now， if I click and drag to select the data。
+ and I'm going go here to paste and I'll click at the bottom half just like I did before。 go to paste special and I'll paste this as a Microsoft Excel chart object。 I click and there's my chart。 It came in a little big。 so I can click and drag on the corner to shrink that down a bit I can also click on the side here and squeeze it that way as well。
 
- copy it and go into word and paste。 the results seem to be a little better。 But even so。
+ and with my pie chart selected notice what it says double click to edit Microsoft Excel worksheet。 So if I double click that similar to what I showed above it basically tries to open up Excel from within word and I can make some。I can then double click just like I can from within Excel to select a portion of the pie chart。 and then I can click and drag to explode it out。 I can right click on a slice of the pie or on the chart itself to make some changes just like I can from within Excel。
 
- if I change numbers。 Look， changing that number did not update the total below。
+ So this can be a great method for bringing your Excel content into word。 Now。 there are cases when you wouldn't want the data or the chart to be editable like they are in this case。 What if I'm gonna be sending this word document to someone else。 and I don't want them to be able to edit the Excel data or the pie chart。 In that case。
 
- there's got to be a better way。 In my opinion， the best method for inserting this data into word is to first copy the range and then go into Microsoft word。
+ from within Excel。 What I would do is I would select the data。 And then go here to the clipboard group。 and I would choose not the main button copy but the arrow next to it。 If you click the arrow。 it says copy as picture。 and I can choose to copy it as it would look when printed on paper or as it is on the screen。 And the format can be either as a picture or a bitm。 So those are good。
 
- and instead of simply pasting， go up here to the home tab in the clipboard group。
+To play around with In my case， I'm gonna go with as shown on screen and picture。 But before I do。 I think I'll cancel that and I'll move this chart just out of the way a little bit and try it again。 I'll select it， go into copy as picture click O So now that that data is copied as a picture。 I'll go into word on this new page and I will go to paste And this time I can just click on the top half of paste I'm just pasting this as an image。
 
- if you click on the paste button， but the bottom half of the paste button。
+ I don't need this text to be editable。 So now when I double click on it。 I don't have the option to edit the data。 and of course I could do the same exact thing with my pie chart。 select it， go to the arrow button next to copy， choose copy as picture， click O and then in Word。 I can do control V to paste or I can just go to the home tab and click the paste button。
 
- it brings up some options。 And one of them is paste special。
-
- and that gives me all sorts of special ways that I can paste this data。
-
- But the one at the very top is the1 I'm looking for。 Microsoft Excel worksheet object。 I select it。
-
- click O， and it's gonna paste my data in as an Excel object。
-
- Now you can see my chart here off to the right， but that's okay。Now， this time。
-
- because I've inserted this data as an Excel object。 let's look at how it behaves。
-
- Can I change the numbers， Yes， I can。 If I double click on it， I'm still in Microsoft Word。
-
- but I'm seeing some of the Microsoft Excel options。 And let's say I get as。
-
- I tap enter on the keyboard， and it adjusts the total。
-
- It's treating this like what it is an Excel object。 Also。
-
- notice I can access Excel filters and change some of those to filter out some of the data。
-
- And so in many ways， this is Excel from within Microsoft Word。
-
- You can even see the green Excel color scheme appearing here at the top。
-
- even though I am in Microsoft Word。 When I'm ready to continue composing my word document。
-
- I can just click away from the Excel object。 and now it's clear that I'm back in Microsoft Word。
-
- But my changes are still in effect。 So this is great。
-
- but it's important for you to know that this is a link and embed。😊。
-
-So the data in this word document is linked to my Microsoft Excel document。
-
- Now let's look at the chart。 Is it possible for me to copy paste this chart into Microsoft Word Well。
-
- I'll start by selecting it and using the control C keyboard shortcut。
-
- and then in Microsoft word I'm gonna tap enter a couple of times to move my cursor down the page a little bit。
-
- and I'm going go here to paste and I'll click at the bottom half just like I did before。
-
- go to paste special and I'll paste this as a Microsoft Excel chart object。
-
- I click and there's my chart。 It came in a little big。
-
- so I can click and drag on the corner to shrink that down a bit I can also click on the side here and squeeze it that way as well。
-
- and with my pie chart selected notice what it says double click to edit Microsoft Excel worksheet。
-
- So if I double click that similar to what I showed above it basically tries to open up Excel from within word and I can make some。
-
-I can then double click just like I can from within Excel to select a portion of the pie chart。
-
- and then I can click and drag to explode it out。 I can right click on a slice of the pie or on the chart itself to make some changes just like I can from within Excel。
-
- So this can be a great method for bringing your Excel content into word。 Now。
-
- there are cases when you wouldn't want the data or the chart to be editable like they are in this case。
-
- What if I'm gonna be sending this word document to someone else。
-
- and I don't want them to be able to edit the Excel data or the pie chart。 In that case。
-
- from within Excel。 What I would do is I would select the data。
-
- And then go here to the clipboard group。 and I would choose not the main button copy but the arrow next to it。
-
- If you click the arrow。 it says copy as picture。 and I can choose to copy it as it would look when printed on paper or as it is on the screen。
-
- And the format can be either as a picture or a bitm。 So those are good。
-
-To play around with In my case， I'm gonna go with as shown on screen and picture。 But before I do。
-
- I think I'll cancel that and I'll move this chart just out of the way a little bit and try it again。
-
- I'll select it， go into copy as picture click O So now that that data is copied as a picture。
-
- I'll go into word on this new page and I will go to paste And this time I can just click on the top half of paste I'm just pasting this as an image。
-
- I don't need this text to be editable。 So now when I double click on it。
-
- I don't have the option to edit the data。 and of course I could do the same exact thing with my pie chart。
-
- select it， go to the arrow button next to copy， choose copy as picture， click O and then in Word。
-
- I can do control V to paste or I can just go to the home tab and click the paste button。
-
- and of course I could drag those to put them in the right order。
-
- So those are two ways to bring Excel data into your word documents。
-
-
-
-![](img/8772423eae323c491c259246fc223492_2.png)
+ and of course I could drag those to put them in the right order。 So those are two ways to bring Excel data into your word documents。![](img/8772423eae323c491c259246fc223492_2.png)

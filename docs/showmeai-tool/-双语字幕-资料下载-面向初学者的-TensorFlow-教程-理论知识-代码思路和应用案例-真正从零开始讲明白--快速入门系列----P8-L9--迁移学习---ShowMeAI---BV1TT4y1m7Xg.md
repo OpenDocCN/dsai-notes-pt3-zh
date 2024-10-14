@@ -2,75 +2,25 @@
 
 ![](img/61fab98aab26950654922e0fb57a2416_0.png)
 
-🎼，Hey， guys， and welcome to a new Tensorflowlow tutorial。 Today。
+🎼，Hey， guys， and welcome to a new Tensorflowlow tutorial。 Today。 we will continue where we left off last time and applied transfer learning together get a model with a good performance。😊，So I highly recommend that you watch the last tutorial first if you haven't already。 And as a quick recap。 So we used a dataset set from Kegle with Lego Star Wars Minfi。
 
- we will continue where we left off last time and applied transfer learning together get a model with a good performance。
+ and we applied our own convolutional neural net。 and then we had the problem that for the training。 we got a very good accuracy。 So this was close to a 100%。 but it didn't perform well on our validation data set and also for the final evaluation with the test data set。 We only got an accuracy of 40%。 So this is not very good。
 
-😊，So I highly recommend that you watch the last tutorial first if you haven't already。
+ So now what we want to do is we want to apply transfer learning to improve our model。😊。And transfer learning is a very nice， simple but very powerful technique。So the concept is that we use a model that has been already trained and this is probably a very good model that with a lot of features and that also has been trained on a lot of data and now what we do here is so we we take this model and then we only modify the last layers so we cut them out and then apply our own classification layers at the end and train only these layers at the end so with this our training can be very quick but we can also get the power of the rest of the neural network that is already pretrained So this is the whole concept behind transfer learning and now I show you how we do that with Ks so the first thing。
 
- And as a quick recap。 So we used a dataset set from Kegle with Lego Star Wars Minfi。
+We want to do is to load a pretrain model。 So there are already some models available in Ks。 For example， the popular Vg G16 model。 So you get this by saying Tensorflow kas applications and then the name of our model。 So if we download the if we call this， then it's downloading this model and saves it in your folder。 So let's run this and print this summary。 And here we have the。Archiecture。
 
- and we applied our own convolutional neural net。 and then we had the problem that for the training。
-
- we got a very good accuracy。 So this was close to a 100%。
-
- but it didn't perform well on our validation data set and also for the final evaluation with the test data set。
-
- We only got an accuracy of 40%。 So this is not very good。
-
- So now what we want to do is we want to apply transfer learning to improve our model。😊。
-
-And transfer learning is a very nice， simple but very powerful technique。
-
-So the concept is that we use a model that has been already trained and this is probably a very good model that with a lot of features and that also has been trained on a lot of data and now what we do here is so we we take this model and then we only modify the last layers so we cut them out and then apply our own classification layers at the end and train only these layers at the end so with this our training can be very quick but we can also get the power of the rest of the neural network that is already pretrained So this is the whole concept behind transfer learning and now I show you how we do that with Ks so the first thing。
-
-We want to do is to load a pretrain model。 So there are already some models available in Ks。
-
- For example， the popular Vg G16 model。 So you get this by saying Tensorflow kas applications and then the name of our model。
-
- So if we download the if we call this， then it's downloading this model and saves it in your folder。
-
- So let's run this and print this summary。 And here we have the。Archiecture。
-
-So you can have a look at that。And now what we want to do here is， as I said， we want to。
-
-
-
-![](img/61fab98aab26950654922e0fb57a2416_2.png)
+So you can have a look at that。And now what we want to do here is， as I said， we want to。![](img/61fab98aab26950654922e0fb57a2416_2.png)
 
 ![](img/61fab98aab26950654922e0fb57a2416_3.png)
 
-Delette the last layer。 so you can delete only the very last layer。
+Delette the last layer。 so you can delete only the very last layer。 or you can also delete more and then apply your own。 So in this example， we only take out the last。Layer， so this dense layer and then apply our own dense layer with five different outputs。 because in our example， we have five different classes。 And right now。
 
- or you can also delete more and then apply your own。 So in this example， we only take out the last。
+ this is a Kaas functional model。 So I already talked about the functional API。 And if you haven't。 then I also recommend to watch this one first and I will put the link in the description。 But I also said that we can easily convert this to a sequential model。 So we can do this by setting up a new model and say this is a sequential model。
 
-Layer， so this dense layer and then apply our own dense layer with five different outputs。
+ and then we iterate over all the layers except the last one。 So this is not included and say model and layer。 So now let's run this and print the summary。 and then。It should be the same， except that you don't see this layer， so。Oh sorry。 So here。 this is the original summary。 and here we have this as last layer with10 outputs。
 
- because in our example， we have five different classes。 And right now。
-
- this is a Kaas functional model。 So I already talked about the functional API。 And if you haven't。
-
- then I also recommend to watch this one first and I will put the link in the description。
-
- But I also said that we can easily convert this to a sequential model。
-
- So we can do this by setting up a new model and say this is a sequential model。
-
- and then we iterate over all the layers except the last one。
-
- So this is not included and say model and layer。 So now let's run this and print the summary。
-
- and then。It should be the same， except that you don't see this layer， so。Oh sorry。 So here。
-
- this is the original summary。 and here we have this as last layer with10 outputs。
-
- And now in our case， this should be the last layer。 So let's have a look。 And yes， here this。
-
- This is the last layer。 And now what we want to do here is we want to set all of those layers to trainable equals falses。
-
- because we don't have to retrain these again。 we only have to train our new classification layer。
-
- So we loop over all layers and say layer trainable equals false。
+ And now in our case， this should be the last layer。 So let's have a look。 And yes， here this。 This is the last layer。 And now what we want to do here is we want to set all of those layers to trainable equals falses。 because we don't have to retrain these again。 we only have to train our new classification layer。 So we loop over all layers and say layer trainable equals false。
 
 
 
@@ -78,113 +28,31 @@ Layer， so this dense layer and then apply our own dense layer with five differ
 
 ![](img/61fab98aab26950654922e0fb57a2416_6.png)
 
-And for example， here， you see the trainable parameters and the nontrainable parameters。
+And for example， here， you see the trainable parameters and the nontrainable parameters。 And now if we do this and print the summary again。 then we see that now all of our parameters are non trainable。 and now we add a last dense layer。 And by default。 Now this is trainable again。 And then again。
 
- And now if we do this and print the summary again。
+ we set up a loss and a optimizer and compile our model。And then so last time I told you how we can use this。Image data generator and then call this dot flow from directory function。 And this very easily loads the images from a directory。 and we can also apply preprocessing and rescaling and even image augmentation here。 So last time we applied this rescaling here。And now this time， what we want to do。 we want to apply the same pre processingcessing function as in our base model。 So in this weci G net。So， and we also get this by saying this is available in tensor flowcaras applications than the name of our model and then dot pre process input。
 
- then we see that now all of our parameters are non trainable。 and now we add a last dense layer。
+So this is our pre processing function， and then we can give this to our image data generator for with the argument pre processinging function。 So this is the same for our training validation and test set。And then we call this flow from directory for each one。 And this is。 these are the same arguments as last time。 And now this is loading them the images from the different models。
 
- And by default。 Now this is trainable again。 And then again。
+I didn't run this cell。 So let's run this and this again。 And now we have it。 And now， again。 this is the same as last time。 So we fitted our model。 and we apply this early stopping call back。 So if our validation loss does not increase for or improve for5 epos。 Then it does an early stopping。 So let's apply this again here。 And now let's fit our data。
 
- we set up a loss and a optimizer and compile our model。
+ So this is giving an error。 You must compile your model before training and testing。 So I think I already did this in this cell。 So let's run this again。 and run this and this and now our training。 So now it's working。 I guess I didn't run the cell the first time。 So now let's see how our transfer learning model is doing。
 
-And then so last time I told you how we can use this。
+All right。 And now our training is done。 And again， we had an early stopping。 So we see that our accuracy on the test data set is 100 per。 so perfect。And the validation accuracy is almost 94%。 So yeah， I think this is now very good。 And it's a lot better than last time。 And now we specified 30 epochs。
 
-Image data generator and then call this dot flow from directory function。
+ but then our validation loss had the lowest value here。 And then it didn't get better over the next five epoch。 So we set patients is 5。 And that's why that the early stopping。 So we already had a validation accuracy of 100% in the second epoch。 But this might be the case because we don't have so many images available in our validation data set。
 
- And this very easily loads the images from a directory。
+ So I think this result is not very reliable。 But yeah。 I think we can see how powerful this transfer learning is。 because last time we had problem with overfitting so that we had a。Good accuracy on the test。 on the training data， but not on the validation data and not on the test data。
 
- and we can also apply preprocessing and rescaling and even image augmentation here。
+ And now with a transfer learning technique， we can get this after only two epochs And even in this example where we don't have so many images available。 and this is very good。 So now let's evaluate our model on the test data set。 And we see in this case， we got 100 percent on accuracy on the test data。 So I guess I' am a little bit lucky this time。 But yeah。
 
- So last time we applied this rescaling here。And now this time， what we want to do。
+ we see how powerful this technique is again and how simple it is。 So you load a pretrained model。😊。And。So。So this one。 and then we converted it in this case， to a sequential model。 So you don't have to do this。 but this makes it a little bit simpler for you because I know the sequential API is easier to understand。And then we excluded the last layer and added our own dense layer。
 
- we want to apply the same pre processingcessing function as in our base model。
+ and then we also set layers trainable to false except for our last dense layer。 And then we did a new training。And as a homework， you can try out other pretrain nets。 So。 for example， the mobile net version 2 is another very popular net。 so you can go to this link And then here you have all the different available net。
 
- So in this weci G net。So， and we also get this by saying this is available in tensor flowcaras applications than the name of our model and then dot pre process input。
+ So here's our V G16， you also have reachi G19。 you have the mobile net and the mobile net version 2 and the resnet。 So yeah， try them out for itself。 and I can tell you that you might run into a problem when you try to convert your model to a sequential model because this only works if the architecture of your model is linear。
 
-So this is our pre processing function， and then we can give this to our image data generator for with the argument pre processinging function。
-
- So this is the same for our training validation and test set。
-
-And then we call this flow from directory for each one。 And this is。
-
- these are the same arguments as last time。 And now this is loading them the images from the different models。
-
-I didn't run this cell。 So let's run this and this again。 And now we have it。 And now， again。
-
- this is the same as last time。 So we fitted our model。 and we apply this early stopping call back。
-
- So if our validation loss does not increase for or improve for5 epos。
-
- Then it does an early stopping。 So let's apply this again here。 And now let's fit our data。
-
- So this is giving an error。 You must compile your model before training and testing。
-
- So I think I already did this in this cell。 So let's run this again。
-
- and run this and this and now our training。 So now it's working。
-
- I guess I didn't run the cell the first time。 So now let's see how our transfer learning model is doing。
-
-All right。 And now our training is done。 And again， we had an early stopping。
-
- So we see that our accuracy on the test data set is 100 per。 so perfect。
-
-And the validation accuracy is almost 94%。 So yeah， I think this is now very good。
-
- And it's a lot better than last time。 And now we specified 30 epochs。
-
- but then our validation loss had the lowest value here。
-
- And then it didn't get better over the next five epoch。 So we set patients is 5。
-
- And that's why that the early stopping。 So we already had a validation accuracy of 100% in the second epoch。
-
- But this might be the case because we don't have so many images available in our validation data set。
-
- So I think this result is not very reliable。 But yeah。
-
- I think we can see how powerful this transfer learning is。
-
- because last time we had problem with overfitting so that we had a。Good accuracy on the test。
-
- on the training data， but not on the validation data and not on the test data。
-
- And now with a transfer learning technique， we can get this after only two epochs And even in this example where we don't have so many images available。
-
- and this is very good。 So now let's evaluate our model on the test data set。
-
- And we see in this case， we got 100 percent on accuracy on the test data。
-
- So I guess I' am a little bit lucky this time。 But yeah。
-
- we see how powerful this technique is again and how simple it is。 So you load a pretrained model。😊。
-
-And。So。So this one。 and then we converted it in this case， to a sequential model。
-
- So you don't have to do this。 but this makes it a little bit simpler for you because I know the sequential API is easier to understand。
-
-And then we excluded the last layer and added our own dense layer。
-
- and then we also set layers trainable to false except for our last dense layer。
-
- And then we did a new training。And as a homework， you can try out other pretrain nets。 So。
-
- for example， the mobile net version 2 is another very popular net。
-
- so you can go to this link And then here you have all the different available net。
-
- So here's our V G16， you also have reachi G19。 you have the mobile net and the mobile net version 2 and the resnet。
-
- So yeah， try them out for itself。 and I can tell you that you might run into a problem when you try to convert your model to a sequential model because this only works if the architecture of your model is linear。
-
- and if you don't know how you do this， if your architecture is not linear。
-
- then you can watch my tutorial about the functional API because there I gave you a tip at the end and showed you how you can still。
-
-Do transfer learning with a functional model。 So yeah check it out and let me know if you can also get a accuracy of 100% and I hope to see you in the next video then。
-
- And if you enjoy this video， please hit the like button and consider subscribing to the channel bye。
+ and if you don't know how you do this， if your architecture is not linear。 then you can watch my tutorial about the functional API because there I gave you a tip at the end and showed you how you can still。Do transfer learning with a functional model。 So yeah check it out and let me know if you can also get a accuracy of 100% and I hope to see you in the next video then。 And if you enjoy this video， please hit the like button and consider subscribing to the channel bye。
 
 
 

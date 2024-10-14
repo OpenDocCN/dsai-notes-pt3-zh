@@ -2,152 +2,40 @@
 
 ![](img/d8e871579df3542450c8bbdaa7799af1_0.png)
 
-In this tutorial， I'm going to focus on the autofill handle in Excel。
+In this tutorial， I'm going to focus on the autofill handle in Excel。 sometimes also just called the fill handle。 And I touched on this in my intermediate Excel skills tutorial。 But I wanted to in this tutorial to focus exclusively on the autofill handle。 And what is the autofill handle， Basically， it is just this innocent looking green square in the lower right corner of a cell that you've clicked on。
 
- sometimes also just called the fill handle。 And I touched on this in my intermediate Excel skills tutorial。
+ So if I click on this cell， there it is looking innocent and not particularly powerful or useful。 there it is again， there it is again， So that little green square。 What is its purpose。 General。 it helps you to copy the contents of a cell。 For example。 if I click here in I1 and I type a name and tap enter on the keyboard。 That name is now in cell I1。
 
- But I wanted to in this tutorial to focus exclusively on the autofill handle。
+ And I can then click on I1 and go to the autofill handle and click and hold the click and then drag down and what is。It do。 It copies the contents of I1 copies it down as far as I clicked and dragged。 Now it works that way， particularly with text。 There are some exceptions。 but if you want text to be copied click on the cell that has the text。 go to the autofill handle。
 
- And what is the autofill handle， Basically， it is just this innocent looking green square in the lower right corner of a cell that you've clicked on。
+ click and drag and it copies it down。 Now with numbers， sometimes it's a little different。 So let's try some numbers。 here in J1， I'm going type in number1。 and then click away and then back to the one， and then I'll click on the autofill handle and drag down。 and you can see it's still copied the number1 copied it down。
 
- So if I click on this cell， there it is looking innocent and not particularly powerful or useful。
+ So it worked the same way with numbers。 However， the autofill handle can also be used to extend a pattern so I can establish a pattern 1。2，3。 and then I can click and drag to show Excel that pattern to identify it。 by highlighting this1。2，3， Excel is smart。 and it's figuring out， okay， that's what he wants。To continue that pattern。 So now as I use the autofi handle， look what it did， it extended the pattern。 Now。
 
- there it is again， there it is again， So that little green square。 What is its purpose。 General。
+ the pattern can be kind of complicated。 if you want it to be。 So I could put in。 let's say some odd numbers only click and drag to highlight the odd numbers。 use the autofill handle。 And look， it continued the pattern only odd numbers。 So you can play with that。 and see what kind of patterns the autofi handle in Excel can recognize。
 
- it helps you to copy the contents of a cell。 For example。
+ Now， the autofill handle， or again， it can be called just the fill handle also works particularly well with anything related to time。 And so here we have a time here at the left， This is a weekly schedule。 And we have one day Sunday。 but I'd like to add all of the days here。 Well， do days relate to time。 Yes， they do。 And so watch what happens if I click on Sunday and use the autofi handle。
 
- if I click here in I1 and I type a name and tap enter on the keyboard。 That name is now in cell I1。
+ I can click and drag And as I do， you can see a preview appear down here。 So I can see that it is extending。The pattern。 Now， there wasn't a pattern。 but because Sunday is related to time。 The Autofill handle just figures it out and realizes that I'd like to have Monday come after Sunday。 Now， what if that's not the case。 typicallyy， yes， you want Monday to follow Sunday。
 
- And I can then click on I1 and go to the autofill handle and click and hold the click and then drag down and what is。
+ But what if I just want the word Sunday repeated over and over。 If you want to force the autofill handle in Excel to copy like it did with Jason Smith and not to extend a pattern。 all you have to do is click on the cell， use the autofill handle， But before you click。 hold the control key on the keyboard。 and then drag And that way。
 
-It do。 It copies the contents of I1 copies it down as far as I clicked and dragged。
+ it forces it to copy and not to extend the pattern or follow a time sequence。 I'm going undo that because I really do want the days of the week。 And I'll just clear out Jason Smith here at least the extra ones。 Now， let's look at times。 here we have 6 AM， I'll just go to the Ofill handle， click and drag and pull that down until。
 
- Now it works that way， particularly with text。 There are some exceptions。
+say 10 PM because the time of day is related to time。 The autofill handle just knows what to do。 It just added an hour to each cell。 And when it got to PM。 it didn't hesitate it just switched to PM。 Now， you might be thinking。 what if you want it to be not 6 AM to 7 AM。 but maybe 6 AM to 6，30 AM。 Well， just type in 6，30 AM。
 
- but if you want text to be copied click on the cell that has the text。 go to the autofill handle。
+ And then show， Excel the pattern。 So I click and drag to highlight 6 and 6，30。 That's the pattern。 I go to the autofill handle。 click and drag and pull down。 And now the pattern goes every 30 minutes， not every 60 minutes。 So this autofill handle is really pretty smart。 Other things related to time that work well with this include also the months。
 
- click and drag and it copies it down。 Now with numbers， sometimes it's a little different。
+ So January。 And you can spell it out， or you can abbreviate it either way。 But it's understood by the autofill handle to be months， which are related to time。 And so it just。Automatically extends the pattern。 But again， if you don't want it to do that。 hold control and click and drag the autofill handle， and it will just copy and not extend a pattern。
 
- So let's try some numbers。 here in J1， I'm going type in number1。
+ Now， one other thing to be aware of。 when you're working with a small manageable spreadsheet like this one that really only has 20 or 30 rows in it。 It's totally reasonable to just click and hold the autofill handle and drag down， right。 that's not a burden， it's not difficult， but imagine a spreadsheet with 500 rows。1000 records or whatever it is。 how tedious would that be to click and drag the autofill handle down。
 
- and then click away and then back to the one， and then I'll click on the autofill handle and drag down。
+ Well， the good news is， instead of clicking and dragging it down。 you can highlight the cell。 or in this case， the pattern， the range that you want to copy or extend。 and then just go to the autofill handle and double click。 Now， you can see what it did。 it extended the pattern all the way down as far as my data goes。
 
- and you can see it's still copied the number1 copied it down。
+ So because my data only reaches row 19。That's as far as the autofill double click went。 It didn't go any further because there's no data below that。 And so that's why if I go to a new sheet and I just type in January。 and then I click on the cell and double click on the autofill handle。 look， nothing happens。 Why。
 
- So it worked the same way with numbers。 However， the autofill handle can also be used to extend a pattern so I can establish a pattern 1。
+ because January is already as far down as my data goes， there's no data below it。 if I add some data like that。 then now I can double click and it extends the pattern or the time sequence as far down as my data exists。 So back on sheet 1， I can just double click here on the April autofill handle and it fills it in the rest of the way down。 So I hope that you'll look for opportunities to use the autofill handle。 when you're using it。
 
-2，3。 and then I can click and drag to show Excel that pattern to identify it。 by highlighting this1。
+ use the click and drag method when you're dealing with a short list like this one here。 If if the list is much longer， you might want to just double click on the autofill handle and have it automatically populate down。On the page。 And then remember， if you don't want to extend the pattern or the time sequence。 just hold the control key when you click and drag， and it will just simply copy and repeat。
 
-2，3， Excel is smart。 and it's figuring out， okay， that's what he wants。To continue that pattern。
-
- So now as I use the autofi handle， look what it did， it extended the pattern。 Now。
-
- the pattern can be kind of complicated。 if you want it to be。 So I could put in。
-
- let's say some odd numbers only click and drag to highlight the odd numbers。
-
- use the autofill handle。 And look， it continued the pattern only odd numbers。
-
- So you can play with that。 and see what kind of patterns the autofi handle in Excel can recognize。
-
- Now， the autofill handle， or again， it can be called just the fill handle also works particularly well with anything related to time。
-
- And so here we have a time here at the left， This is a weekly schedule。 And we have one day Sunday。
-
- but I'd like to add all of the days here。 Well， do days relate to time。 Yes， they do。
-
- And so watch what happens if I click on Sunday and use the autofi handle。
-
- I can click and drag And as I do， you can see a preview appear down here。
-
- So I can see that it is extending。The pattern。 Now， there wasn't a pattern。
-
- but because Sunday is related to time。 The Autofill handle just figures it out and realizes that I'd like to have Monday come after Sunday。
-
- Now， what if that's not the case。 typicallyy， yes， you want Monday to follow Sunday。
-
- But what if I just want the word Sunday repeated over and over。
-
- If you want to force the autofill handle in Excel to copy like it did with Jason Smith and not to extend a pattern。
-
- all you have to do is click on the cell， use the autofill handle， But before you click。
-
- hold the control key on the keyboard。 and then drag And that way。
-
- it forces it to copy and not to extend the pattern or follow a time sequence。
-
- I'm going undo that because I really do want the days of the week。
-
- And I'll just clear out Jason Smith here at least the extra ones。 Now， let's look at times。
-
- here we have 6 AM， I'll just go to the Ofill handle， click and drag and pull that down until。
-
-say 10 PM because the time of day is related to time。 The autofill handle just knows what to do。
-
- It just added an hour to each cell。 And when it got to PM。
-
- it didn't hesitate it just switched to PM。 Now， you might be thinking。
-
- what if you want it to be not 6 AM to 7 AM。 but maybe 6 AM to 6，30 AM。 Well， just type in 6，30 AM。
-
- And then show， Excel the pattern。 So I click and drag to highlight 6 and 6，30。 That's the pattern。
-
- I go to the autofill handle。 click and drag and pull down。
-
- And now the pattern goes every 30 minutes， not every 60 minutes。
-
- So this autofill handle is really pretty smart。 Other things related to time that work well with this include also the months。
-
- So January。 And you can spell it out， or you can abbreviate it either way。
-
- But it's understood by the autofill handle to be months， which are related to time。 And so it just。
-
-Automatically extends the pattern。 But again， if you don't want it to do that。
-
- hold control and click and drag the autofill handle， and it will just copy and not extend a pattern。
-
- Now， one other thing to be aware of。 when you're working with a small manageable spreadsheet like this one that really only has 20 or 30 rows in it。
-
- It's totally reasonable to just click and hold the autofill handle and drag down， right。
-
- that's not a burden， it's not difficult， but imagine a spreadsheet with 500 rows。
-
-1000 records or whatever it is。 how tedious would that be to click and drag the autofill handle down。
-
- Well， the good news is， instead of clicking and dragging it down。 you can highlight the cell。
-
- or in this case， the pattern， the range that you want to copy or extend。
-
- and then just go to the autofill handle and double click。 Now， you can see what it did。
-
- it extended the pattern all the way down as far as my data goes。
-
- So because my data only reaches row 19。That's as far as the autofill double click went。
-
- It didn't go any further because there's no data below that。
-
- And so that's why if I go to a new sheet and I just type in January。
-
- and then I click on the cell and double click on the autofill handle。 look， nothing happens。 Why。
-
- because January is already as far down as my data goes， there's no data below it。
-
- if I add some data like that。 then now I can double click and it extends the pattern or the time sequence as far down as my data exists。
-
- So back on sheet 1， I can just double click here on the April autofill handle and it fills it in the rest of the way down。
-
- So I hope that you'll look for opportunities to use the autofill handle。 when you're using it。
-
- use the click and drag method when you're dealing with a short list like this one here。
-
- If if the list is much longer， you might want to just double click on the autofill handle and have it automatically populate down。
-
-On the page。 And then remember， if you don't want to extend the pattern or the time sequence。
-
- just hold the control key when you click and drag， and it will just simply copy and repeat。
-
- Thanks for watching。 I hope you found this tutorial to be helpful。 If you did。
-
- please click the like button below。
-
-![](img/d8e871579df3542450c8bbdaa7799af1_2.png)
+ Thanks for watching。 I hope you found this tutorial to be helpful。 If you did。 please click the like button below。![](img/d8e871579df3542450c8bbdaa7799af1_2.png)

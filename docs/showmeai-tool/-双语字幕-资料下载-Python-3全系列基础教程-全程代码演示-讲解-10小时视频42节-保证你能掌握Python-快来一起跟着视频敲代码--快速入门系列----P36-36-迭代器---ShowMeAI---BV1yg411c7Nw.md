@@ -2,57 +2,19 @@
 
 ![](img/f2e780b69e031634fbfadb8557d184c4_0.png)
 
-Welcome back， everyone。 This is Brian。 In this episode， we're going to talk about iterators。
+Welcome back， everyone。 This is Brian。 In this episode， we're going to talk about iterators。 They make counting easy， and we've actually worked with these before。 but we're going to really dive under the hood and see what makes them work。 So， for example。 if you're really confused about what an iterator is， let's just say。😊，1，2，3，4。
 
- They make counting easy， and we've actually worked with these before。
+ We've got a simple topple here。 and we're going to say 4 x in。Qi。When print。Ex。Run this。voila， 1，2。3，4， but how does that actually work， how does Python know how to go through each and every single item and how to treat each item that's what we're really going to dive into in this video。
 
- but we're going to really dive under the hood and see what makes them work。 So， for example。
+Let's pop open the hood and see what's going on here， so we're talking about Ier basics。Well。 Lis tuple's dictionary sets， even strings and vastly huge amounts of other objects are iterable。We use a function called ider to get the iterable object。 Let's take a look here。I'm going to say people equals。 and we're just going to make a simple list here。Brian comm。田明。
 
- if you're really confused about what an iterator is， let's just say。😊，1，2，3，4。
+And our family dog， the old lazy， stinky dog， Rango。And we want to eitherer through that。So I'm going to say I equals IT ER。And we're going to。Use that list right there。 So if we go and print this out。Let's take a quick peek at what I actually is。It is a list iterator object at， so this is a separate object from our list。It's not the list。
 
- We've got a simple topple here。 and we're going to say 4 x in。Qi。When print。Ex。Run this。voila， 1，2。
+ it's an iterator which tells Python how to maneuver through that list。Okay， great。 now let's actually go through this。I'm going to say print。 I'm going to call the next function。 which is going to tell the iterator， hey， move to the next position。Assuming。That。This started at the very beginning， the next position is well， Brian， so let's go ahead and run this。
 
-3，4， but how does that actually work， how does Python know how to go through each and every single item and how to treat each item that's what we're really going to dive into in this video。
+And sure enough， there's Brian。And now， instead of knowing some sort of index， we can just say next。 next， next。See， Brian Tammy Ro， and it's just going to keep moving or iterating through that list。Now an interesting little bit here is if we try to go beyond the scope of that list。Notice how it throws an error， It's a stop iteration。
 
-Let's pop open the hood and see what's going on here， so we're talking about Ier basics。Well。
-
- Lis tuple's dictionary sets， even strings and vastly huge amounts of other objects are iterable。
-
-We use a function called ider to get the iterable object。 Let's take a look here。
-
-I'm going to say people equals。 and we're just going to make a simple list here。Brian comm。田明。
-
-And our family dog， the old lazy， stinky dog， Rango。And we want to eitherer through that。
-
-So I'm going to say I equals IT ER。And we're going to。Use that list right there。
-
- So if we go and print this out。Let's take a quick peek at what I actually is。
-
-It is a list iterator object at， so this is a separate object from our list。It's not the list。
-
- it's an iterator which tells Python how to maneuver through that list。Okay， great。
-
- now let's actually go through this。I'm going to say print。 I'm going to call the next function。
-
- which is going to tell the iterator， hey， move to the next position。Assuming。That。
-
-This started at the very beginning， the next position is well， Brian， so let's go ahead and run this。
-
-And sure enough， there's Brian。And now， instead of knowing some sort of index， we can just say next。
-
- next， next。See， Brian Tammy Ro， and it's just going to keep moving or iterating through that list。
-
-Now an interesting little bit here is if we try to go beyond the scope of that list。
-
-Notice how it throws an error， It's a stop iteration。
-
-This is what Python's using under the hood to tell itself it needs to stop moving through this because it simply hit the end。
-
-So we can continue on， I'm going to comment that out。
-
- but it's very important you understand what a stop iteration is and why it's there。
-
- it simply tells Python， hey， we've hit the end， stop processing this。
+This is what Python's using under the hood to tell itself it needs to stop moving through this because it simply hit the end。So we can continue on， I'm going to comment that out。 but it's very important you understand what a stop iteration is and why it's there。 it simply tells Python， hey， we've hit the end， stop processing this。
 
 
 
@@ -60,88 +22,24 @@ So we can continue on， I'm going to comment that out。
 
 ![](img/f2e780b69e031634fbfadb8557d184c4_3.png)
 
-Now that we understand the basics， we're going to make our own class。
+Now that we understand the basics， we're going to make our own class。 so we're going to say 4 x in our custom class iterate through it and under the hood it's going to call next and all that fun stuff。And we're not going to play around the stop iteration， but I wanted you to understand that exists。 so if you're trying to push through next and you get some sort of error， you know what it's doing。
 
- so we're going to say 4 x in our custom class iterate through it and under the hood it's going to call next and all that fun stuff。
+Older tutorials， you would actually have to raise that yourself， so it gets a little confusing。We're going to do it the easy way， or I should say the Python3 way。We're going to say import random。 and we're going to make a random number generator or a lottery class。ALot of people want to win the lottery。 I know I do。Man， the things I would do if I want the lottto。
 
-And we're not going to play around the stop iteration， but I wanted you to understand that exists。
+ So we're going to say deaf。Inette self。This is just simply our constructor。 and we're going to say self dot。Underscore max equals5 if you have no idea why there's an underscore again。 watch the previous videos right。Deaf， and then we want to call iter。Unders underscore so and this is where we were really deviating from other tutorials out there because other would have the Ier plus you'd have a next function and you have to track where you are in some internal list。
 
- so if you're trying to push through next and you get some sort of error， you know what it's doing。
+ We're not going to do any of that because we simply don't need to。So in the ider function。 we're going to use what's called yield。 And yield is incredibly cool。 I'm going to pay some notes here。 The yield statement suspends the function's execution and sends a value back a lot like how return would return a value。 however。😊，Instead of returning out， we stay right here where we are。
 
-Older tutorials， you would actually have to raise that yourself， so it gets a little confusing。
+ and we retain enough state to continue on where we left off。This is extremely powerful。 So instead of returning， which is going to break out。 and then we call this function over and over again， we're going to say4。Undercors。 I don't need a variable。In。Range。And we're simply going to say self do underscore square max。
 
-We're going to do it the easy way， or I should say the Python3 way。We're going to say import random。
+We're going to go ahead and call our yield。And we're going to create a random。And we want a ran range。Between 0 and whatever number the Lotery commission would want as a maximum。All right， now we want to allow them to tweak this if they wanted to。 So I'm to say just because I'm a nice guy， De。Set next。Self value that way。
 
- and we're going to make a random number generator or a lottery class。
+Whoever' is using our little lottery class can set the maximum if they want to。From here。 it becomes ridiculously simple to use， you're going to see other tutorials out there there where they got all these functions and you're tracking some internal counter yet we're not going to play out any of that。
 
-ALot of people want to win the lottery。 I know I do。Man， the things I would do if I want the lottto。
+Then print。Just want to separate this out on the screen。Let's going and create an instance of our lotto class。And let's go ahead and say， lotto dot。That max。And I want maximum of 10 values。Now comes the fun bit。 we're going to say or x in。Moto。Right？X。So let's go ahead and run this see what happens today， we have got our random numbers。
 
- So we're going to say deaf。Inette self。This is just simply our constructor。
+And we can even if we wanted to say we want， say 50 of these。 so it's going to kick out a lot of numbers here， let's go ahead and clear that and bang。 there's our 50 random numbers。Extremely cool the way this works， so quick quick recap。What we're doing here is we're just simply making a class。
 
- and we're going to say self dot。Underscore max equals5 if you have no idea why there's an underscore again。
+Caing the constructor setting some internal values， and then we have this ider function。Other tutorials， you're going to see something similar to this。 but it's also going to be followed up with。暂定位。Next。And then you would have some code。 we don't need that。Because we're using yield。And unlike return， yield will return the value。
 
- watch the previous videos right。Deaf， and then we want to call iter。
-
-Unders underscore so and this is where we were really deviating from other tutorials out there because other would have the Ier plus you'd have a next function and you have to track where you are in some internal list。
-
- We're not going to do any of that because we simply don't need to。So in the ider function。
-
- we're going to use what's called yield。 And yield is incredibly cool。
-
- I'm going to pay some notes here。 The yield statement suspends the function's execution and sends a value back a lot like how return would return a value。
-
- however。😊，Instead of returning out， we stay right here where we are。
-
- and we retain enough state to continue on where we left off。This is extremely powerful。
-
- So instead of returning， which is going to break out。
-
- and then we call this function over and over again， we're going to say4。Undercors。
-
- I don't need a variable。In。Range。And we're simply going to say self do underscore square max。
-
-We're going to go ahead and call our yield。And we're going to create a random。
-
-And we want a ran range。Between 0 and whatever number the Lotery commission would want as a maximum。
-
-All right， now we want to allow them to tweak this if they wanted to。
-
- So I'm to say just because I'm a nice guy， De。Set next。Self value that way。
-
-Whoever' is using our little lottery class can set the maximum if they want to。From here。
-
- it becomes ridiculously simple to use， you're going to see other tutorials out there there where they got all these functions and you're tracking some internal counter yet we're not going to play out any of that。
-
-Then print。Just want to separate this out on the screen。
-
-Let's going and create an instance of our lotto class。And let's go ahead and say， lotto dot。That max。
-
-And I want maximum of 10 values。Now comes the fun bit。 we're going to say or x in。Moto。Right？X。
-
-So let's go ahead and run this see what happens today， we have got our random numbers。
-
-And we can even if we wanted to say we want， say 50 of these。
-
- so it's going to kick out a lot of numbers here， let's go ahead and clear that and bang。
-
- there's our 50 random numbers。Extremely cool the way this works， so quick quick recap。
-
-What we're doing here is we're just simply making a class。
-
-Caing the constructor setting some internal values， and then we have this ider function。
-
-Other tutorials， you're going to see something similar to this。
-
- but it's also going to be followed up with。暂定位。Next。And then you would have some code。
-
- we don't need that。Because we're using yield。And unlike return， yield will return the value。
-
- but then stave right here in this current context。And when the execution pops back。
-
- it will just continue on its merry way。Very cool， very powerful feature makes life very。
-
- very simple compared to how it used to be。Gotta love Python3。
-
-
-
-![](img/f2e780b69e031634fbfadb8557d184c4_5.png)
+ but then stave right here in this current context。And when the execution pops back。 it will just continue on its merry way。Very cool， very powerful feature makes life very。 very simple compared to how it used to be。Gotta love Python3。![](img/f2e780b69e031634fbfadb8557d184c4_5.png)

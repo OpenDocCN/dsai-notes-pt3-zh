@@ -2,542 +2,148 @@
 
 ![](img/8892c901c6b889b0878d2715f8e7128b_0.png)
 
-Yeah。Hello， so when we started learning about machine learning。
+Yeah。Hello， so when we started learning about machine learning。 the first kind of problem we talked about was regression and after we learned about regression。 we learned about some of the linear algebra underlying it and now we're going to be moving on to a second kind of machine learning problem。 which is classification。And so I just want to review the main categories of machine learning。
 
- the first kind of problem we talked about was regression and after we learned about regression。
+There's three main categories， some people will say four。 but there's reinforcement learning which is about these multily stage decisions。 we're not doing that in 320。We're really interested in supervised machine learning。 which is where we're trying to make some sort of prediction about maybe the future or about some other unknown。
 
- we learned about some of the linear algebra underlying it and now we're going to be moving on to a second kind of machine learning problem。
+ and then there's unsupervised where there is no particular thing that we're trying to predict。 but we're looking for some sort of patterns or simplicity within the data。We've been learning about regression， which is where we want to predict a quantity。 and so we're going to be learning about the other most common kind of supervised machine learning which is。
 
- which is classification。And so I just want to review the main categories of machine learning。
+ well how do we predict a category and that's called classification。So just to review these。 the two differences， here I have a big data frame and all of these things here are features and among these features I have a mix。Of both quantities and categories。 And that's not really relevant looking at my features to figure out what kind of problem this is。 when I want to think about what kind of problem I'm dealing with I while looking at this label。
 
-There's three main categories， some people will say four。
+ What am I trying to predict is that quantitative。Or categorical in this case， it's quantitative。 so this is a regression problem。And so what will we do。 I might have some data up here where both my features and my labels are known。 and so I'll fit a model to that， and then I'll use that same model to predict。
 
- but there's reinforcement learning which is about these multily stage decisions。
+Perhaps where that label is unknown， or I might pretend it's unknown so I can basically test the effectiveness of my model。If that's some sort of test data set。A classification problem looks very similar again。 I might have some mix of quantities or categories as my features。 the main difference now is that I have a categorical y or label column。
 
- we're not doing that in 320。We're really interested in supervised machine learning。
+ otherwise I'm still going to be fitting my features to my label and then trying to do some sort of prediction on it。So as I've mentioned， right we have these four big categories and S KL has so many different algorithms for each of them or implementations for each of them。
 
- which is where we're trying to make some sort of prediction about maybe the future or about some other unknown。
+And so the one we've learned so far is linear regression。 That's what we've been using for regression。 So a linear regression model is what we call a regressiongressor。Very confusingly， what we're going to be learning now is called a logistic regression and it is not a regression it's actually a classifier right so the name says linear regression but classifier。 so don't get confused right even though we're learning linear regression of logistic regression。
 
- and then there's unsupervised where there is no particular thing that we're trying to predict。
+ I am teaching you a regression model and then also a classification model。So I'm going to exit out of here and head over to my notebook to try to introduce this。![](img/8892c901c6b889b0878d2715f8e7128b_2.png)
 
- but we're looking for some sort of patterns or simplicity within the data。
+And let me see here。 Here is my notebook。 I have some self important。 Maybe I'll come back to that later。 let me just jump down here for now。I have this data frame。 which has some data from a very famous machine learning dataset set called the IIS data set。The idea of the IIS data set is that you have all these measurements about iris flowers。
 
-We've been learning about regression， which is where we want to predict a quantity。
+ so for example， what is the size of the petals， what is the length or width of the sappals which are I guess like the grain leaves between the petals。There are different varieties of ires， so I put the varieties here in this far right column。This whole thing I'm looking at right now is a test data set and it only has 10 samples in it。 which is tiny right normally we'd have a much larger test data。
 
- and so we're going to be learning about the other most common kind of supervised machine learning which is。
+ I'm just trying to keep it small and simple in this case。I'm passing in this random state， so that。Even though it's somewhat random， I mean every time I run。 it'll be the same if I put a different number here。I would jet a different。Random。 and I'm using random kind of carefully order each time。 So this is just so I can reproduce it。
 
- well how do we predict a category and that's called classification。So just to review these。
+ even though it wants me basically random。 I want random， but reproducible。So I've done that train test， but I'm just putting 10 here。 and so what we're going be doing is we're going to be fitting different models to the training data and then just seeing how they act with this very small test data set。And looking at this， there are three features I' may be interested in when we look at the dimensions of the sepals。
 
- the two differences， here I have a big data frame and all of these things here are features and among these features I have a mix。
+And then I have this constant column， remember that sometimes when you have these models。 you could have coefficients in a separate intercept。Or you could just have coefficients。And then the last coefficient should be multiplying the one column and that's what I'm doing here。 I think I'll make the later examples a little bit simpler。 Those are my features。
 
-Of both quantities and categories。 And that's not really relevant looking at my features to figure out what kind of problem this is。
+ I actually have multiple y columns here。 Im just try to see if I can predict different things over here Can I predict what the pedal widtht is。And I predict whether or not a particular variety is a Ctosa。 there's actually three varieties in general， so can I just predict any variety。 you can see that whenever I have a Ctosa here。It's true for cases。
 
- when I want to think about what kind of problem I'm dealing with I while looking at this label。
+ it's false right because it's not acetosa， so that's what I'm going do。 I'm going to see if I can predict these three different columns based on these three different features。 I guess it's really like two features。And so there's four things we're going to do。 where're I do a regression on the pedal with， and that's really just kind of review。
 
- What am I trying to predict is that quantitative。Or categorical in this case， it's quantitative。
-
- so this is a regression problem。And so what will we do。
-
- I might have some data up here where both my features and my labels are known。
-
- and so I'll fit a model to that， and then I'll use that same model to predict。
-
-Perhaps where that label is unknown， or I might pretend it's unknown so I can basically test the effectiveness of my model。
-
-If that's some sort of test data set。A classification problem looks very similar again。
-
- I might have some mix of quantities or categories as my features。
-
- the main difference now is that I have a categorical y or label column。
-
- otherwise I'm still going to be fitting my features to my label and then trying to do some sort of prediction on it。
-
-So as I've mentioned， right we have these four big categories and S KL has so many different algorithms for each of them or implementations for each of them。
-
-And so the one we've learned so far is linear regression。
-
- That's what we've been using for regression。 So a linear regression model is what we call a regressiongressor。
-
-Very confusingly， what we're going to be learning now is called a logistic regression and it is not a regression it's actually a classifier right so the name says linear regression but classifier。
-
- so don't get confused right even though we're learning linear regression of logistic regression。
-
- I am teaching you a regression model and then also a classification model。
-
-So I'm going to exit out of here and head over to my notebook to try to introduce this。
-
-
-
-![](img/8892c901c6b889b0878d2715f8e7128b_2.png)
-
-And let me see here。 Here is my notebook。 I have some self important。
-
- Maybe I'll come back to that later。 let me just jump down here for now。I have this data frame。
-
- which has some data from a very famous machine learning dataset set called the IIS data set。
-
-The idea of the IIS data set is that you have all these measurements about iris flowers。
-
- so for example， what is the size of the petals， what is the length or width of the sappals which are I guess like the grain leaves between the petals。
-
-There are different varieties of ires， so I put the varieties here in this far right column。
-
-This whole thing I'm looking at right now is a test data set and it only has 10 samples in it。
-
- which is tiny right normally we'd have a much larger test data。
-
- I'm just trying to keep it small and simple in this case。I'm passing in this random state， so that。
-
-Even though it's somewhat random， I mean every time I run。
-
- it'll be the same if I put a different number here。I would jet a different。Random。
-
- and I'm using random kind of carefully order each time。 So this is just so I can reproduce it。
-
- even though it wants me basically random。 I want random， but reproducible。
-
-So I've done that train test， but I'm just putting 10 here。
-
- and so what we're going be doing is we're going to be fitting different models to the training data and then just seeing how they act with this very small test data set。
-
-And looking at this， there are three features I' may be interested in when we look at the dimensions of the sepals。
-
-And then I have this constant column， remember that sometimes when you have these models。
-
- you could have coefficients in a separate intercept。Or you could just have coefficients。
-
-And then the last coefficient should be multiplying the one column and that's what I'm doing here。
-
- I think I'll make the later examples a little bit simpler。 Those are my features。
-
- I actually have multiple y columns here。 Im just try to see if I can predict different things over here Can I predict what the pedal widtht is。
-
-And I predict whether or not a particular variety is a Ctosa。
-
- there's actually three varieties in general， so can I just predict any variety。
-
- you can see that whenever I have a Ctosa here。It's true for cases。
-
- it's false right because it's not acetosa， so that's what I'm going do。
-
- I'm going to see if I can predict these three different columns based on these three different features。
-
- I guess it's really like two features。And so there's four things we're going to do。
-
- where're I do a regression on the pedal with， and that's really just kind of review。
-
-We're going to do a binary classification on the Setosa column， and so we're going to try to predict。
-
-Whether it's true or false， binary means two， and so that's why they're just two things here all。
-
- it's either true or false。I'm going to use that same model to not just tell me whether it's true or false。
-
- I'm going to ask the model for some sort of probability that it's true and probability that it's false。
+We're going to do a binary classification on the Setosa column， and so we're going to try to predict。Whether it's true or false， binary means two， and so that's why they're just two things here all。 it's either true or false。I'm going to use that same model to not just tell me whether it's true or false。 I'm going to ask the model for some sort of probability that it's true and probability that it's false。
 
 
 
 ![](img/8892c901c6b889b0878d2715f8e7128b_4.png)
 
-Rather than just say， hey， it's true， I'd like to see somebody like， oh。
+Rather than just say， hey， it's true， I'd like to see somebody like， oh。 there's a 95% chance it's true。And then finally， so multi binary means two。 multiclass means I guess more than two， and so we're going to do that over here right you can see I have three different categories here and things get a little bit more complicated in that situation。Okay， so I'm right head down here and I am going to first just start with a regression and some'm going to say regression equals linear regression。
 
- there's a 95% chance it's true。And then finally， so multi binary means two。
+ This is just review from before and。I have all these options in here。And this fit intercept  one is something I'm make sure I turn to be false， so fit intercept。s false what this normally does if it's true is it would add this one's column for me effectively when I'm saying false because well I've already done that manually。 and that just gives give me my example a little cleaner later on。So I have this thing。
 
- multiclass means I guess more than two， and so we're going to do that over here right you can see I have three different categories here and things get a little bit more complicated in that situation。
+And I want to fit it to some data， so I'm going to say regression dot fit。And when I fit what do I do I have my x and my Y， and then after that I could do regression dot predict。Maybe some other x's， and then that would return a Y right， so I had something like this。Maybe I'll say y， y 2 and x2。So in my particular example。
 
-Okay， so I'm right head down here and I am going to first just start with a regression and some'm going to say regression equals linear regression。
+ I have my training and test data and so what am I trying to predict right now。 I'm trying to predict the pal wet。Right， I'm going to copy this column name。And I am going to。 when I'm doing my。When I'm doing my fitting， I'm going to pull that out of。My training data。 so I'm going to put that in here and quotes。That's my why。And then then my axe， well， it will be。
 
- This is just review from before and。I have all these options in here。
+It will be again my training data， and then I have to have like some columns here。I guess a list of columns。And so I actually already created that right here I have these x columns。 those are the sepple length， sepple width， and then constant。 and so this will be my list that I put inside of here。And I'll basically get those three columns。
 
-And this fit intercept  one is something I'm make sure I turn to be false， so fit intercept。
+ let me just。So if anybody's having trouble visualizing it。 I'm getting just those three columns out of my bigger， bigger one。Whereas when I'm doing this。I'm regular a panda series。That contains that pedal width column so I'll try to predict this。Based on。On these three things。Okay， so I'm doing that and now I want to do some predictions down here and that's going to be the same right。
 
-s false what this normally does if it's true is it would add this one's column for me effectively when I'm saying false because well I've already done that manually。
+ I'm going to put in access basically the same format except now I'm going to use my test data。And maybe rather than capture that a variable and just see what it looks like for now。So these are my predictions。Or what should draw in this。A pedal width column。And so if I wanted to。 I could maybe even add those into my training data frame， my test data frame。
 
- and that just gives give me my example a little cleaner later on。So I have this thing。
+ and I could say my prediction。Equals that。And then I could look at my test data frame。And the thing that it's complaining about is that I'm trying to add some values to a slice of another data set。 So when I did this here right these are slices of the rows inside of my big data frame。 and so if it's confused when I'm trying to add columns to one of these。
 
-And I want to fit it to some data， so I'm going to say regression dot fit。
+ that's not of the original success an easy thing to fix。 I can just say like test equals test do copy and then test will be completely detached from my data frame and I can add columns to it。 without complaint。So let me run that。And now I can see I have this prediction column over here。 and I can go through and see how these predictions are if I predict 1。3， it's actually 1。2。
 
-And when I fit what do I do I have my x and my Y， and then after that I could do regression dot predict。
+ I predict 1。59， actually 1。4。Oh。And so I can see sometimes the predictions are good and sometimes they're well not so great anyway。 that's a regression。Oh let me， as I was this part of one here。 let me go on and try this next piece。I want to do a binary classification。On this column right here。And so the code is actually going to be very similar to before。 right I hand down here。
 
-Maybe some other x's， and then that would return a Y right， so I had something like this。
+ I'm going to change a few things， first off。I want to have a logistic regression。 And remember。it is。A classifier。Despite the name。so I can deal with a category like this。And then for my why。 I'm going to just have the Ctosa column， is it a Setosa variety or is it not？And so I'm doing that。 I may also rename this just so remember it's a classifier， I'm going to call it CLS。
 
-Maybe I'll say y， y 2 and x2。So in my particular example。
+Then down here I also need CLS。And I do that。 and now I can see my predictions here， I can see that。This column is telling me what the flower actually is and this column over here is telling me what the model predicts it is。 and actually I guess we're doing quite well here right every one of our predictions。Is completely accurate， which is great。All right， let me go back up here the turn things we want to do。
 
- I have my training and test data and so what am I trying to predict right now。
+ so we did the regression using linear regression， we did the binary classification using logistic regression。And and then basically saying， well， do I have a true or false now what I'd actually like to do is know well what is the probability of getting a true。
 
- I'm trying to predict the pal wet。Right， I'm going to copy this column name。And I am going to。
+And so I can do that like this， I can say。哦。This has an extra functions very similar to the product。But it'll be like this， it'll be predict。Probability A and then we get an lumpy array of all the probabilities。And so what this means is the way I'd interpret this is that there's a 94% chance。 a false and a 5% chance of true。 And that's why it ultimately reduced that to a false，97。
 
- when I'm doing my。When I'm doing my fitting， I'm going to pull that out of。My training data。
+9% chance of false and only a 2% chance of true。 That's why you know they' false。 Let me look at this one。 This one had a 90 93% chance of being true， which is why I have true。truerue there。 And so I could even， if I wanted to， I could try to pull out that last column。 I could say something like。I want to have some sort of slice in right like a real slice。
 
- so I'm going to put that in here and quotes。That's my why。And then then my axe， well， it will be。
+And then a column slice when I'm doing this， I want all the rows。And I want that second column。 these are just the probabilities of it being true。 and so if I wanted to。 I could say something like test。T。Of probability equals that， and then I can look at it again。And I can kind of see in each case well based on these dimensions。
 
-It will be again my training data， and then I have to have like some columns here。
+ what probability does a model think it has of being a Setoa and so sometimes I's not quite sure right I based on this。 I could identify the cases where the model was not very confident and then I could identify other cases where it was quite obvious。Of what it was。So I don't have to do a new model for that。 I just have to call predict probability A instead of predict。And okay。
 
-I guess a list of columns。And so I actually already created that right here I have these x columns。
+ let me head up here and we're going to do this last piece now。 how can I do a multi class classification on variety？And variety is a little bit trickier， because。I have three different categories there， I guess it's going to be trickier when we actually get into the math behind it。 but it is not trickier in terms of it is not trickier in terms of actually running the code。
 
- those are the sepple length， sepple width， and then constant。
+ So if I actually copy this here。And then I head down here。I'm just going call the salt multi so I can remember my three different models。Then may I say multi。And。And then when else do I need to change， I'm doing a different column this time。And so I can do that and now what is going tell me for my predictions。
 
- and so this will be my list that I put inside of here。And I'll basically get those three columns。
+I see'd say my predictions are still。False and true。 And that came from here。 And so this is returning true and false because all my new model is called multi and I'm using my old model。I'm going to do that and now I can see well we' writing that。 I can see what was it predict for this one that one it taught right that one it taught right here it actually made a mistake right models make mistakes that not's not surprising because guess that was the only a mistake in the data set。
 
- let me just。So if anybody's having trouble visualizing it。
+And then， of course， this probability column。Was from earlier right so Im trying ignore that。is I keep on running of this probability or this prediction column for each of my four examples。Okay。 so there we've seen a few different things， right， we've seen a regression。 and then we've seen these two different kinds of classifications。
 
- I'm getting just those three columns out of my bigger， bigger one。Whereas when I'm doing this。
+Let's try to get into the linear algebra behind each of these examples。And so on my head down here。And remember that I had R EG， that was my model earlier and。Inside of here， I have coefficient。And I also have。Hetercepted。And the intercept is 0 because earlier what happened。 I passed in that intercept equals false to all of these。If I had not done that。
 
-I'm regular a panda series。That contains that pedal width column so I'll try to predict this。
+Then what would have happened， then my coi fishers I'd only have these two columns here or two numbers here correspondinging to the weights on these two columns。And then instead of this being basically my interap。 that would have gone to the separate variable down here to me here。 so basically these are my weights on my real columns。
 
-Based on。On these three things。Okay， so I'm doing that and now I want to do some predictions down here and that's going to be the same right。
+And then this is the the intercept or the weight on my ones column， Okay， so I have that thing。And what I'd like to do is。I'll reshape it。So that it could be。I want it to be however many rows necessary than one column， so it'll be vertical like that。Another thing I want to do is I want to get my x data， which will be my。Will be my test data frame。
 
- I'm going to put in access basically the same format except now I'm going to use my test data。
+And then it'll be those x columns。And maybe I'll say， God values。And so I'll look at that。 so I'm pulling those first three columns out of here。Okay。 so I have three columns here and then the column over here is basically three entries in it。 and so if I wanted to I can take the dot product of this with these down here。
 
-And maybe rather than capture that a variable and just see what it looks like for now。
+ and that's exactly how a linear regression does predictions。 so if I come down here so I can say find regression predict。And if I have some x values here。 what I can do is I can return x dot。Oh basically these things， right， so I could say。Maybe I'll call this like vector 1， or I'll call it tro efficient。You know what I'm going actually。
 
-So these are my predictions。Or what should draw in this。A pedal width column。And so if I wanted to。
+Why not just put it here directly， I don't need a separate variable for that。 and so I'm going to look at this regression predict。And I'm going to do it on my X data and I get these predictions 1。32， 1。59。Let me actually draw up here earlier。And。I see that。
 
- I could maybe even add those into my training data frame， my test data frame。
+Those are exactly the predictions that myline regression made earlier，1。321。59。So this regular regression do predict like this。All it's doing。Is this right here is doing this this math right like this。Okay。 let's try to see what the logistic regression is doing。So it's actually going to be very similar。
 
- and I could say my prediction。Equals that。And then I could look at my test data frame。
+ so remember before what was I doing， I was saying CLS。I classifier or not predict。And I can just do that， these were the values I was getting out of my classifier。 what math is this doing it's actually almost identical to this。Let me copy this， in fact。 I'm just going to tweak it very slightly。I'm going to have my CLS。Pect。And they I say CLS。Proect。す。
 
-And the thing that it's complaining about is that I'm trying to add some values to a slice of another data set。
+And my X datata。And。And the difference， right I have these all these numbers now and actually， sorry。 I want my coefficients from my other one。 so my CS coefficients。 I should look at those as well before I jump into this。I may have different toy fish as I call why are all the numbers the same。 that doesn't make sense。
 
- So when I did this here right these are slices of the rows inside of my big data frame。
+And I get all of these numbers。 and remember， our goal is to predict false。 false or true or things like that。And so the way it works is that we're getting a score for each entry。 and if the score is greater than0， we predict true， otherwise we predict false。 And so the shape is a little bit different here。 maybe I can just reshaped so it's more obvious。
 
- and so if it's confused when I'm trying to add columns to one of these。
+But otherwise。That's what it's doing。 All these numbers up here are the same。Same down here。 and I think maybe this is why they。Maybe they even call this logistic regression。 even though it's a classifier， the math is basically identical to what we have for a linear regression right at the heart of we're just doing a dot product。 the only difference between the linear regression that we did before and the logistic regression we now。
 
- that's not of the original success an easy thing to fix。
+I we're just checking if some number is greater than 0。Okay， so let's do this next piece right。 so the next piece was， I'm kind of going back through my examples before。After we。Did predict。 which was trying to say， well， are we predicting to false， we wanted to get this probability。 What is the probability that's aytoa。 And so how can we get a probability out of this。
 
- I can just say like test equals test do copy and then test will be completely detached from my data frame and I can add columns to it。
+If I head back down here， you actually see that before I added this greater than I had a numeric course。 I'm going to go back to that。And I'm going to say I want to predict probability A now。I'm just let to go back to this。And。Predict by a probability。And I'm going to do that。 and I see I have all these scores。 and of course， these are not probabilities because a probability would be between 0 and one。
 
- without complaint。So let me run that。And now I can see I have this prediction column over here。
+ but it turns out there's a very simple function that can turn it into。probabilityb and that function is called the sigmoid function and I had it at the beginning of the notebook but I haven't talked about it yet Im just try head up briefly and when I talk about the sigmoid in function and how we going use it。
 
- and I can go through and see how these predictions are if I predict 1。3， it's actually 1。2。
+ we don't have to go into a lot of the details on the math I don't care if you remember that I certainly don't remember it。The important thing for it is that the x value that's going in and be as large or small as we want。 But if I get very， very negative numbers I effectively approach 0 and if I get very large numbers I effectively approach one。 So the nice thing is that I could take any sort of numeric score in and it's going to give me back a result between 0 and1。
 
- I predict 1。59， actually 1。4。Oh。And so I can see sometimes the predictions are good and sometimes they're well not so great anyway。
+ so basically I can take some other sort of score and turn it into something that at least looks like a probability And so what I'm going to do is I'm going call this smoid function。Down here right and so instead of having all these numbers like negative 2。76 or 2。57。
 
- that's a regression。Oh let me， as I was this part of one here。 let me go on and try this next piece。
+ I'm just trying to take the same point of all of those things。And then they will be these numbers all between0 and1 and it turns out that that's how we were would actually be doing the probabilities right so just like before I was trying to say well I'll predict the category on X the same way down here if I。
 
-I want to do a binary classification。On this column right here。
+Maybe I'll do this。Right here above， Rece predicts the probability。Of a。Let me just look at what's happening here， these numbers right here。 which is the probability of it being true。Is this column right here the probably of the being true the way I'm written this code I'm not computing the probability of it being false because well that's boring right I need to add up to one So why would I do both of them but you can see these numbers here are exactly identical。
 
-And so the code is actually going to be very similar to before。 right I hand down here。
+This town here right so again the probability is very simple， right， I'm still just doing that core。Dot product and then I'm just uping the sigmoid to every number inside of the result right so we've seen for all these cases so far。 this dot product is just extremely important right I'm taking the dot product of a matrix。With a vertical vector。Let me go up and talk about the fourth model we did with a multiclass model。
 
- I'm going to change a few things， first off。I want to have a logistic regression。 And remember。
+ the multi class model that was right here， and I was trying to predict variety and variety。Could be any one of these three things， and what is going to turn out is that my coefficients for variety。Orre going to be a lot more complicated if I look at。So this is my binary one。 if I look at the coefficients for my binary one， I just have these three numbers。
 
-it is。A classifier。Despite the name。so I can deal with a category like this。And then for my why。
+But if I look at my coefficients for my multi class progression， I actually have not a vector。 but a whole matrix with all these numbers in it。And。And so let me。Let me use these now。What we're going to do is actually， I think just like the way they set it off。 we're going to have to transpose them。We're going to do that。Let me grab this here。
 
- I'm going to just have the Ctosa column， is it a Setosa variety or is it not？And so I'm doing that。
-
- I may also rename this just so remember it's a classifier， I'm going to call it CLS。
-
-Then down here I also need CLS。And I do that。 and now I can see my predictions here， I can see that。
-
-This column is telling me what the flower actually is and this column over here is telling me what the model predicts it is。
-
- and actually I guess we're doing quite well here right every one of our predictions。
-
-Is completely accurate， which is great。All right， let me go back up here the turn things we want to do。
-
- so we did the regression using linear regression， we did the binary classification using logistic regression。
-
-And and then basically saying， well， do I have a true or false now what I'd actually like to do is know well what is the probability of getting a true。
-
-And so I can do that like this， I can say。哦。This has an extra functions very similar to the product。
-
-But it'll be like this， it'll be predict。Probability A and then we get an lumpy array of all the probabilities。
-
-And so what this means is the way I'd interpret this is that there's a 94% chance。
-
- a false and a 5% chance of true。 And that's why it ultimately reduced that to a false，97。
-
-9% chance of false and only a 2% chance of true。 That's why you know they' false。
-
- Let me look at this one。 This one had a 90 93% chance of being true， which is why I have true。
-
-truerue there。 And so I could even， if I wanted to， I could try to pull out that last column。
-
- I could say something like。I want to have some sort of slice in right like a real slice。
-
-And then a column slice when I'm doing this， I want all the rows。And I want that second column。
-
- these are just the probabilities of it being true。 and so if I wanted to。
-
- I could say something like test。T。Of probability equals that， and then I can look at it again。
-
-And I can kind of see in each case well based on these dimensions。
-
- what probability does a model think it has of being a Setoa and so sometimes I's not quite sure right I based on this。
-
- I could identify the cases where the model was not very confident and then I could identify other cases where it was quite obvious。
-
-Of what it was。So I don't have to do a new model for that。
-
- I just have to call predict probability A instead of predict。And okay。
-
- let me head up here and we're going to do this last piece now。
-
- how can I do a multi class classification on variety？And variety is a little bit trickier， because。
-
-I have three different categories there， I guess it's going to be trickier when we actually get into the math behind it。
-
- but it is not trickier in terms of it is not trickier in terms of actually running the code。
-
- So if I actually copy this here。And then I head down here。
-
-I'm just going call the salt multi so I can remember my three different models。Then may I say multi。
-
-And。And then when else do I need to change， I'm doing a different column this time。
-
-And so I can do that and now what is going tell me for my predictions。
-
-I see'd say my predictions are still。False and true。 And that came from here。
-
- And so this is returning true and false because all my new model is called multi and I'm using my old model。
-
-I'm going to do that and now I can see well we' writing that。
-
- I can see what was it predict for this one that one it taught right that one it taught right here it actually made a mistake right models make mistakes that not's not surprising because guess that was the only a mistake in the data set。
-
-And then， of course， this probability column。Was from earlier right so Im trying ignore that。
-
-is I keep on running of this probability or this prediction column for each of my four examples。Okay。
-
- so there we've seen a few different things， right， we've seen a regression。
-
- and then we've seen these two different kinds of classifications。
-
-Let's try to get into the linear algebra behind each of these examples。And so on my head down here。
-
-And remember that I had R EG， that was my model earlier and。Inside of here， I have coefficient。
-
-And I also have。Hetercepted。And the intercept is 0 because earlier what happened。
-
- I passed in that intercept equals false to all of these。If I had not done that。
-
-Then what would have happened， then my coi fishers I'd only have these two columns here or two numbers here correspondinging to the weights on these two columns。
-
-And then instead of this being basically my interap。
-
- that would have gone to the separate variable down here to me here。
-
- so basically these are my weights on my real columns。
-
-And then this is the the intercept or the weight on my ones column， Okay， so I have that thing。
-
-And what I'd like to do is。I'll reshape it。So that it could be。
-
-I want it to be however many rows necessary than one column， so it'll be vertical like that。
-
-Another thing I want to do is I want to get my x data， which will be my。Will be my test data frame。
-
-And then it'll be those x columns。And maybe I'll say， God values。And so I'll look at that。
-
- so I'm pulling those first three columns out of here。Okay。
-
- so I have three columns here and then the column over here is basically three entries in it。
-
- and so if I wanted to I can take the dot product of this with these down here。
-
- and that's exactly how a linear regression does predictions。
-
- so if I come down here so I can say find regression predict。And if I have some x values here。
-
- what I can do is I can return x dot。Oh basically these things， right， so I could say。
-
-Maybe I'll call this like vector 1， or I'll call it tro efficient。You know what I'm going actually。
-
-Why not just put it here directly， I don't need a separate variable for that。
-
- and so I'm going to look at this regression predict。
-
-And I'm going to do it on my X data and I get these predictions 1。32， 1。59。
-
-Let me actually draw up here earlier。And。I see that。
-
-Those are exactly the predictions that myline regression made earlier，1。321。59。
-
-So this regular regression do predict like this。All it's doing。
-
-Is this right here is doing this this math right like this。Okay。
-
- let's try to see what the logistic regression is doing。So it's actually going to be very similar。
-
- so remember before what was I doing， I was saying CLS。I classifier or not predict。
-
-And I can just do that， these were the values I was getting out of my classifier。
-
- what math is this doing it's actually almost identical to this。Let me copy this， in fact。
-
- I'm just going to tweak it very slightly。I'm going to have my CLS。Pect。And they I say CLS。Proect。す。
-
-And my X datata。And。And the difference， right I have these all these numbers now and actually， sorry。
-
- I want my coefficients from my other one。 so my CS coefficients。
-
- I should look at those as well before I jump into this。
-
-I may have different toy fish as I call why are all the numbers the same。 that doesn't make sense。
-
-And I get all of these numbers。 and remember， our goal is to predict false。
-
- false or true or things like that。And so the way it works is that we're getting a score for each entry。
-
- and if the score is greater than0， we predict true， otherwise we predict false。
-
- And so the shape is a little bit different here。 maybe I can just reshaped so it's more obvious。
-
-But otherwise。That's what it's doing。 All these numbers up here are the same。Same down here。
-
- and I think maybe this is why they。Maybe they even call this logistic regression。
-
- even though it's a classifier， the math is basically identical to what we have for a linear regression right at the heart of we're just doing a dot product。
-
- the only difference between the linear regression that we did before and the logistic regression we now。
-
-I we're just checking if some number is greater than 0。Okay， so let's do this next piece right。
-
- so the next piece was， I'm kind of going back through my examples before。After we。Did predict。
-
- which was trying to say， well， are we predicting to false， we wanted to get this probability。
-
- What is the probability that's aytoa。 And so how can we get a probability out of this。
-
-If I head back down here， you actually see that before I added this greater than I had a numeric course。
-
- I'm going to go back to that。And I'm going to say I want to predict probability A now。
-
-I'm just let to go back to this。And。Predict by a probability。And I'm going to do that。
-
- and I see I have all these scores。 and of course， these are not probabilities because a probability would be between 0 and one。
-
- but it turns out there's a very simple function that can turn it into。
-
-probabilityb and that function is called the sigmoid function and I had it at the beginning of the notebook but I haven't talked about it yet Im just try head up briefly and when I talk about the sigmoid in function and how we going use it。
-
- we don't have to go into a lot of the details on the math I don't care if you remember that I certainly don't remember it。
-
-The important thing for it is that the x value that's going in and be as large or small as we want。
-
- But if I get very， very negative numbers I effectively approach 0 and if I get very large numbers I effectively approach one。
-
- So the nice thing is that I could take any sort of numeric score in and it's going to give me back a result between 0 and1。
-
- so basically I can take some other sort of score and turn it into something that at least looks like a probability And so what I'm going to do is I'm going call this smoid function。
-
-Down here right and so instead of having all these numbers like negative 2。76 or 2。57。
-
- I'm just trying to take the same point of all of those things。
-
-And then they will be these numbers all between0 and1 and it turns out that that's how we were would actually be doing the probabilities right so just like before I was trying to say well I'll predict the category on X the same way down here if I。
-
-Maybe I'll do this。Right here above， Rece predicts the probability。Of a。
-
-Let me just look at what's happening here， these numbers right here。
-
- which is the probability of it being true。Is this column right here the probably of the being true the way I'm written this code I'm not computing the probability of it being false because well that's boring right I need to add up to one So why would I do both of them but you can see these numbers here are exactly identical。
-
-This town here right so again the probability is very simple， right， I'm still just doing that core。
-
-Dot product and then I'm just uping the sigmoid to every number inside of the result right so we've seen for all these cases so far。
-
- this dot product is just extremely important right I'm taking the dot product of a matrix。
-
-With a vertical vector。Let me go up and talk about the fourth model we did with a multiclass model。
-
- the multi class model that was right here， and I was trying to predict variety and variety。
-
-Could be any one of these three things， and what is going to turn out is that my coefficients for variety。
-
-Orre going to be a lot more complicated if I look at。So this is my binary one。
-
- if I look at the coefficients for my binary one， I just have these three numbers。
-
-But if I look at my coefficients for my multi class progression， I actually have not a vector。
-
- but a whole matrix with all these numbers in it。And。And so let me。Let me use these now。
-
-What we're going to do is actually， I think just like the way they set it off。
-
- we're going to have to transpose them。We're going to do that。Let me grab this here。
-
- it's going to be very similar again。But。Instead of multiplying xs by just a vertical vector。
-
-I am going to multiply it by this whole thing right here。 I multiply it by that whole thing。
-
- And then I get this result。 And some'm going just call this quickly。 I'm sorry。
-
- this is multiply per now。Wellal I predict。And I might call that。Mie。Predive Xs。
+ it's going to be very similar again。But。Instead of multiplying xs by just a vertical vector。I am going to multiply it by this whole thing right here。 I multiply it by that whole thing。 And then I get this result。 And some'm going just call this quickly。 I'm sorry。 this is multiply per now。Wellal I predict。And I might call that。Mie。Predive Xs。
 
 And I'm actually not doing a soid anymore at this point。I apologies。And so how do I interpret this？
 
-Basically， every one of these columns。Or responses to one of the three varieties。
+Basically， every one of these columns。Or responses to one of the three varieties。If I had had more varieties， I would have had more columns up here when I would have still had three rows in this coefficient matrix。So you might imagine， I don't know if which one is which。 but you might imagine that this is this atosa variety。
 
-If I had had more varieties， I would have had more columns up here when I would have still had three rows in this coefficient matrix。
+And it turns out when I take my big matrix of data。And I multiply it by all of these columns right here。What it really does is itro column by column。 It takes this column。Is my data matrix， and it uses that to produce this output column。So these might be the scores for how much it looks like a sattosa。And。
 
-So you might imagine， I don't know if which one is which。
+Then maybe let's say these are the coefficients for reversea color， Then these would be。The scores for versa color， if these were the coefficients for a Viinica。 then these might be the scores for the Viica。And so what I can do is that each one of these rows corresponds to a row in my original data。 which means this row corresponds to one particular flower， one particular iris。
 
- but you might imagine that this is this atosa variety。
+And so for that one particular iris I have a score， how much is it like sattosa。 how much is it like a versic color， how much is it like a virginica and so what I can do is I can try to take these and I can see which score is the highest and in this case it's this middle one so whatever type of iris corresponds them middle a column is what Id want to predict。
 
-And it turns out when I take my big matrix of data。
+And so I can check that， I could say。If I go back to this， I could say。I think it's classes。I could see， okay， well this I guess I guess， well， this is the Setosa， and that first one would be。Averse the color。Ands one of the ways I could actually do this。Is theres a it turns out that there is an arc。哦。Hard men。
 
-And I multiply it by all of these columns right here。What it really does is itro column by column。
+Call on me to try to do this here and make sure I get it right。I am being right， okay。 and so what or I guess I want Agon max what this is going to do is it's going to give me which index。It is basically giving me the largest value， but I have to specify what to access and I zero is down and one is across and I say one。And what is this telling me， I'm going to reshape。 It's also a little bit more obvious。
 
- It takes this column。Is my data matrix， and it uses that to produce this output column。
+Reay negative 1，1。What this means is that。At index 1， I have the biggest number in that first place。 the second position， the biggest number is here。 Is that true。 Yeah， that's true。 This number is bigger than those other ones。 Let me check the fourth one。 That means a0 position is bigger， So this is bigger。And these， so it's absolutely true。
 
-So these might be the scores for how much it looks like a sattosa。And。
+And so what's cool about if I have an  onpire like this。I can put that into another lumpy。Aray like this so I can I can take these classes and I can put this array of numbers into here。 and I'm going to get basically， well what are all these categories。And so I'm going to take all of this。And。And I'm going to put it back in here。And。
 
-Then maybe let's say these are the coefficients for reversea color， Then these would be。
+I can see that then I'm going to get the predictions for all my for all of my。For all of my flowers。 right I can see。For each of them， well what am I predicting it is right and this will correspond with my predictions earlier。 right so again。Dy product is at the heart of it。But now， since I have different possible classes。 I have to have coefficient to get a score for each class。And that's why。
 
-The scores for versa color， if these were the coefficients for a Viinica。
-
- then these might be the scores for the Viica。And so what I can do is that each one of these rows corresponds to a row in my original data。
-
- which means this row corresponds to one particular flower， one particular iris。
-
-And so for that one particular iris I have a score， how much is it like sattosa。
-
- how much is it like a versic color， how much is it like a virginica and so what I can do is I can try to take these and I can see which score is the highest and in this case it's this middle one so whatever type of iris corresponds them middle a column is what Id want to predict。
-
-And so I can check that， I could say。If I go back to this， I could say。I think it's classes。
-
-I could see， okay， well this I guess I guess， well， this is the Setosa， and that first one would be。
-
-Averse the color。Ands one of the ways I could actually do this。
-
-Is theres a it turns out that there is an arc。哦。Hard men。
-
-Call on me to try to do this here and make sure I get it right。I am being right， okay。
-
- and so what or I guess I want Agon max what this is going to do is it's going to give me which index。
-
-It is basically giving me the largest value， but I have to specify what to access and I zero is down and one is across and I say one。
-
-And what is this telling me， I'm going to reshape。 It's also a little bit more obvious。
-
-Reay negative 1，1。What this means is that。At index 1， I have the biggest number in that first place。
-
- the second position， the biggest number is here。 Is that true。 Yeah， that's true。
-
- This number is bigger than those other ones。 Let me check the fourth one。
-
- That means a0 position is bigger， So this is bigger。And these， so it's absolutely true。
-
-And so what's cool about if I have an  onpire like this。I can put that into another lumpy。
-
-Aray like this so I can I can take these classes and I can put this array of numbers into here。
-
- and I'm going to get basically， well what are all these categories。
-
-And so I'm going to take all of this。And。And I'm going to put it back in here。And。
-
-I can see that then I'm going to get the predictions for all my for all of my。For all of my flowers。
-
- right I can see。For each of them， well what am I predicting it is right and this will correspond with my predictions earlier。
-
- right so again。Dy product is at the heart of it。But now， since I have different possible classes。
-
- I have to have coefficient to get a score for each class。And that's why。
-
-We have to multiply the data by a full matrix instead of a subbacterron。
-
- that's the first example that we've seen like that a real practical use case in this course。
-
-
-
-![](img/8892c901c6b889b0878d2715f8e7128b_6.png)
+We have to multiply the data by a full matrix instead of a subbacterron。 that's the first example that we've seen like that a real practical use case in this course。![](img/8892c901c6b889b0878d2715f8e7128b_6.png)

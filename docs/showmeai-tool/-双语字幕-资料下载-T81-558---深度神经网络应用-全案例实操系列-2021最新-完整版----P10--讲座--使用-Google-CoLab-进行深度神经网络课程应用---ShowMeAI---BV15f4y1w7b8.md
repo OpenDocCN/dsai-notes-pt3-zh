@@ -1,249 +1,69 @@
 # 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P10：[讲座] 使用 Google CoLab 进行深度神经网络课程应用 - ShowMeAI - BV15f4y1w7b8
 
-Hi， this is Jeff Heaton。 Welcome to applications of deep neural networks with Washington University。
+Hi， this is Jeff Heaton。 Welcome to applications of deep neural networks with Washington University。 In this video， I'm going to introduce Google Coab。 and I'm going to show you how to make use of Google Coabab to run the various modules from this course and also how to use it to submit assignments。😊，Most things will work in Google Coab。 In fact， most things in this course will run quite a bit faster in Google Coab due to the fact that it gives you a GPU。
 
- In this video， I'm going to introduce Google Coab。
-
- and I'm going to show you how to make use of Google Coabab to run the various modules from this course and also how to use it to submit assignments。
-
-😊，Most things will work in Google Coab。 In fact， most things in this course will run quite a bit faster in Google Coab due to the fact that it gives you a GPU。
-
- Now you might have a superior GPU to Google Coabab on your local machine。 and if that's the case。
-
- then I definitely encourage you to install the GPU edition of Tensorflow on your actual computer。
-
- however， it can be somewhat complex to get the GPU working in TensorFlow For the latest on my AI course and projects。
-
- click subscribe in the bell next to it to be notified of every new video。
+ Now you might have a superior GPU to Google Coabab on your local machine。 and if that's the case。 then I definitely encourage you to install the GPU edition of Tensorflow on your actual computer。 however， it can be somewhat complex to get the GPU working in TensorFlow For the latest on my AI course and projects。 click subscribe in the bell next to it to be notified of every new video。
 
 
 
 ![](img/9b3166bd64e1d412ba7306144df7359f_1.png)
 
-Google Coab can be a great way to get through this course。
+Google Coab can be a great way to get through this course。 You can do the entire course completely in the cloud using Google Coab。 just a few things you need to be aware of。 And that's what I'm going to take you through this video。 First of all， just to get into Google Coab。 I recommend just do a Google search on Google coab and it'll take you right to it。
 
- You can do the entire course completely in the cloud using Google Coab。
+ It's coab research， Google co I've also got a link to it on my course website。 Now when it pops you into Google Coab， you're gonna see a lot of things going on here。 I have used this for a number of different things。 So I'll have a lot more files in here probably than you will。
 
- just a few things you need to be aware of。 And that's what I'm going to take you through this video。
+ All of your notebooks that you're going to work on。 are going to be stored in your Google Drive。 So let's go ahead and show you how you could get say the very， very first module 1 course 1。 Click on Github and you will type Jeff Heaton all。😊。![](img/9b3166bd64e1d412ba7306144df7359f_3.png)
 
- First of all， just to get into Google Coab。 I recommend just do a Google search on Google coab and it'll take you right to it。
+ord that is the name of my Github repository。 Now， you might get something like this。 This is actually the first time Ive I've seen this。 Apparently。 I have been using Github in conjunction with coab enough that they want me to authorize the API access。 This is just fine， I will go ahead and click that。
 
- It's coab research， Google co I've also got a link to it on my course website。
+ and authorize Google Coab wants me to log into here。 Okay， now we're authorized。 it probably won't ask you for that at first， But if it does definitely go ahead and author so that you can get to things。 Now it'll say Jeff Heaton。 and it gives you all of my repositories。 And there is a considerable number of these。 This is the one you want。 T 81，5，58 deep learning。
 
- Now when it pops you into Google Coab， you're gonna see a lot of things going on here。
+ That's the course number at Washington University。 The first things you'll see up here are the assignments。 and these assignments will get to that in a moment。Let's go ahead and just open up class1 module 1。 This is a notebook。 So it opens up here and you can basically see this right now。
 
- I have used this for a number of different things。
+ it is not saved to your G drive。 If you want to copy it to G drive and that's a good idea。 you'll have to do that when you submit assignments， but let's just go ahead and copy that。 So it'll create a copy of it。 You'll see the name of here。 It says copy of T 81。 That is literally going right into your G drive。 If we go into G drive。 And again。
 
- So I'll have a lot more files in here probably than you will。
+ I have all sorts of things in my Google Drive that you probably will not。 but you'll have a directory called coabab notebooks。 This is where Google coabab places all of your notebooks。 So here's the copy of this one。 I would suggest renaming it to to something else。 So here we are in Google coab。
 
- All of your notebooks that you're going to work on。 are going to be stored in your Google Drive。
+ I'm going to scroll through this one。 I've got an entire video where I talk。![](img/9b3166bd64e1d412ba7306144df7359f_5.png)
 
- So let's go ahead and show you how you could get say the very， very first module 1 course 1。
+About the intro to this class， but this little bit of Python code here to run for the Python versions。Now， notice here， it is 2。0。0。 Google， at least as of this recording has not yet updated coabab to 2。0 of Tensorflowlow， I suspect that'll happen sometime this semester。 So this is why I end up rerecording this video just about every single time。
 
- Click on Github and you will type Jeff Heaton all。😊。
+ I'm going to run this and we'll see that it'll go to one of the1。 something versions of it。 Yeah。 so 1。14， which is a pretty recent version。 I've made sure that all the code in here。 or at least most of it is compatible with coabab。 The parts that aren't。 which is probably less than 10% of the course。 I give you a warning as to why that is。
 
+ and I also don't make any of the assignments require any features that are not supported by Google Coab。 Now， notice here， it says GPU is not available。 This is a really cool thing about Google Coab。 Let's go to runtime。 change runtime type。 We'll leave that。The same。 But let's put in a GPU。 Now it says GPU is available。 Later on， this will really save you some time in executing these programs。
 
+ So this shows you how to basically get the course modules over to Google coab if you want to run them unfortunately。 you need to copy them sort of one at a time like this。 You could download and this would be a quick way to do it。 You could download the entire Github repository and basically just copy the files into your G drive and then they would show up and they would be available。
 
-![](img/9b3166bd64e1d412ba7306144df7359f_3.png)
+ Now let's see how to actually submit an assignment using Google coab。 So if we go back to coabab and we essentially try to open a notebook。 We'll go right back to Github just like we were before。 It's annoying。 it wants me to keep reauthorizing that。 It defaults to the assignments。
 
-ord that is the name of my Github repository。 Now， you might get something like this。
-
- This is actually the first time Ive I've seen this。 Apparently。
-
- I have been using Github in conjunction with coab enough that they want me to authorize the API access。
-
- This is just fine， I will go ahead and click that。
-
- and authorize Google Coab wants me to log into here。 Okay， now we're authorized。
-
- it probably won't ask you for that at first， But if it does definitely go ahead and author so that you can get to things。
-
- Now it'll say Jeff Heaton。 and it gives you all of my repositories。
-
- And there is a considerable number of these。 This is the one you want。 T 81，5，58 deep learning。
-
- That's the course number at Washington University。
-
- The first things you'll see up here are the assignments。
-
- and these assignments will get to that in a moment。Let's go ahead and just open up class1 module 1。
-
- This is a notebook。 So it opens up here and you can basically see this right now。
-
- it is not saved to your G drive。 If you want to copy it to G drive and that's a good idea。
-
- you'll have to do that when you submit assignments， but let's just go ahead and copy that。
-
- So it'll create a copy of it。 You'll see the name of here。 It says copy of T 81。
-
- That is literally going right into your G drive。 If we go into G drive。 And again。
-
- I have all sorts of things in my Google Drive that you probably will not。
-
- but you'll have a directory called coabab notebooks。
-
- This is where Google coabab places all of your notebooks。 So here's the copy of this one。
-
- I would suggest renaming it to to something else。 So here we are in Google coab。
-
- I'm going to scroll through this one。 I've got an entire video where I talk。
-
-
-
-![](img/9b3166bd64e1d412ba7306144df7359f_5.png)
-
-About the intro to this class， but this little bit of Python code here to run for the Python versions。
-
-Now， notice here， it is 2。0。0。 Google， at least as of this recording has not yet updated coabab to 2。
-
-0 of Tensorflowlow， I suspect that'll happen sometime this semester。
-
- So this is why I end up rerecording this video just about every single time。
-
- I'm going to run this and we'll see that it'll go to one of the1。 something versions of it。 Yeah。
-
- so 1。14， which is a pretty recent version。 I've made sure that all the code in here。
-
- or at least most of it is compatible with coabab。 The parts that aren't。
-
- which is probably less than 10% of the course。 I give you a warning as to why that is。
-
- and I also don't make any of the assignments require any features that are not supported by Google Coab。
-
- Now， notice here， it says GPU is not available。 This is a really cool thing about Google Coab。
-
- Let's go to runtime。 change runtime type。 We'll leave that。The same。 But let's put in a GPU。
-
- Now it says GPU is available。 Later on， this will really save you some time in executing these programs。
-
- So this shows you how to basically get the course modules over to Google coab if you want to run them unfortunately。
-
- you need to copy them sort of one at a time like this。
-
- You could download and this would be a quick way to do it。
-
- You could download the entire Github repository and basically just copy the files into your G drive and then they would show up and they would be available。
-
- Now let's see how to actually submit an assignment using Google coab。
-
- So if we go back to coabab and we essentially try to open a notebook。
-
- We'll go right back to Github just like we were before。 It's annoying。
-
- it wants me to keep reauthorizing that。 It defaults to the assignments。
-
- and that's just because assignment starts with a so we're。
-
-
-
-![](img/9b3166bd64e1d412ba7306144df7359f_7.png)
+ and that's just because assignment starts with a so we're。![](img/9b3166bd64e1d412ba7306144df7359f_7.png)
 
 ![](img/9b3166bd64e1d412ba7306144df7359f_8.png)
 
-Going to do the class1 assignment real quick here I've opened it up and we absolutely have got to copy it to your Google Drive or it won't work。
+Going to do the class1 assignment real quick here I've opened it up and we absolutely have got to copy it to your Google Drive or it won't work。 You will want to change the name of it。 Don't do copy of just call it assignment and I'm gonna assignment J Heaton。
 
- You will want to change the name of it。 Don't do copy of just call it assignment and I'm gonna assignment J Heaton。
+ make that your own name and class1 put your name in here。 and here's the instructions。 some common problems that will go on。 you're going to basically use this submit function。 So go ahead and run this so that the submit function is built。 This is simply a function that I provide for you。 We're not going to talk really about how it works。
 
- make that your own name and class1 put your name in here。 and here's the instructions。
+ It's more just a utility for using this course。 This is an important part。 You'll want to do this so that you can basically use files from your Google coab inside of your notebook。 This will let you be able to submit your assignments and also some of the coursework has you down。load a Cv file as your input data or images or other things。
 
- some common problems that will go on。 you're going to basically use this submit function。
+ You'll need to copy those to your Google G drive and then access it through this。 So let's see how that works。 We're going to go ahead and run this。 And it is going to ask me to authenticate this as well。 I need an authorization code from Google。 I click this。 And here is my authorization code。 I don't believe you can do anything bad with this because I don't think they last very long。
 
- So go ahead and run this so that the submit function is built。
+ but I'm going to go ahead and blur this just to be safe。 put it into here， press enter。 and now it's mounted。 It's mounted at this location。 So you'll want to prefix your files with thatlash contentlash drive just prove that it's really there。 I can run exclamation point L。 So that's the Unix Ls command。 So I'm listing the files in here。
 
- This is simply a function that I provide for you。 We're not going to talk really about how it works。
+ And here's these these files that I've created。 You are also given an API key with this course。 And I send this。Really just to the students who are taking the course。 If you're a member of the general Internet。 there are， if you look on my linked Patreon site。 there are some levels that will give you access to this if you're interested in that。
 
- It's more just a utility for using this course。 This is an important part。
+ but this API key。 The one that I have in there is actually not a real one。 It was a real one at some point。 but I essentially swap them out so that I don't have everybody submitting on my one demo key。 So by the time the course starts by the time you're watching this video。 This will no longer be a valid key。 I'm going to run this program。 assignmentment one is very easy。
 
- You'll want to do this so that you can basically use files from your Google coab inside of your notebook。
+ It's just proving that you can go through the motions and actually get a python program running and submit it。 I run it here， Now you might get an error like this， this is important。 So it's saying users Jheton file I found it needs to know where your notebook file is so that it can send it。 This is more for Mac Linux。 So switch。To this one for coabab。 Now， you will need to modify this。
 
- This will let you be able to submit your assignments and also some of the coursework has you down。
+ perhaps。 So don't you won't have your name。 It'll be whoever your name is。 So J Heaton underbar class 1。 So wherever this is named， it'll probably be this pretty exactly。 but make sure you put your name in there。 And now we can try to submit it again。 and it worked。Success， you have submitted assignment1。 This is just a demo account。 that's actually my wife's name。
 
-load a Cv file as your input data or images or other things。
+ You have submitted this assignment four times， which is fine。 So you can submit these as many times as you want。 if you get warnings down here telling you that there's something wrong with it definitely fix those warnings because they will that will surely cause you to lose points。 Now， sometimes it'll say that your value is off from mine by some number if that's like 0。0123。
 
- You'll need to copy those to your Google G drive and then access it through this。
+ something like that， a small small number。It probably doesn't matter， but again。 no guarantees on your actual grade from the auto assessor。 It's just there to help you out。 to give you。A chance to not lose points on easily corrected issues。 These are due each week。 Make sure that you submit them。 If you submit them late， you'll lose points。
 
- So let's see how that works。 We're going to go ahead and run this。
+ That's just the way that that works。 If you submit them too late， you will get no points at all。 So make sure that you。Stay on top of these。 This is a hybrid course。 so it's very important that you stay up with it on a week to week basis。And not just try to ask。Turn everything in on the last last day of course。 You can also check your submission。
 
- And it is going to ask me to authenticate this as well。 I need an authorization code from Google。
+ This is just some additional code。 You put your key in there and you can make sure that I've gotten an assignment or not。 now you won't see these pop into canvas until I actually grade them。 and then it becomes part of your your actual course grade。 Okay。 that is how you make use of Google coab。 This is a very good option for if you don't want to go through all the trouble of installing Python and the various utilities on your computer。
 
- I click this。 And here is my authorization code。 I don't believe you can do anything bad with this because I don't think they last very long。
-
- but I'm going to go ahead and blur this just to be safe。 put it into here， press enter。
-
- and now it's mounted。 It's mounted at this location。
-
- So you'll want to prefix your files with thatlash contentlash drive just prove that it's really there。
-
- I can run exclamation point L。 So that's the Unix Ls command。 So I'm listing the files in here。
-
- And here's these these files that I've created。 You are also given an API key with this course。
-
- And I send this。Really just to the students who are taking the course。
-
- If you're a member of the general Internet。 there are， if you look on my linked Patreon site。
-
- there are some levels that will give you access to this if you're interested in that。
-
- but this API key。 The one that I have in there is actually not a real one。
-
- It was a real one at some point。 but I essentially swap them out so that I don't have everybody submitting on my one demo key。
-
- So by the time the course starts by the time you're watching this video。
-
- This will no longer be a valid key。 I'm going to run this program。 assignmentment one is very easy。
-
- It's just proving that you can go through the motions and actually get a python program running and submit it。
-
- I run it here， Now you might get an error like this， this is important。
-
- So it's saying users Jheton file I found it needs to know where your notebook file is so that it can send it。
-
- This is more for Mac Linux。 So switch。To this one for coabab。 Now， you will need to modify this。
-
- perhaps。 So don't you won't have your name。 It'll be whoever your name is。
-
- So J Heaton underbar class 1。 So wherever this is named， it'll probably be this pretty exactly。
-
- but make sure you put your name in there。 And now we can try to submit it again。 and it worked。
-
-Success， you have submitted assignment1。 This is just a demo account。 that's actually my wife's name。
-
- You have submitted this assignment four times， which is fine。
-
- So you can submit these as many times as you want。
-
- if you get warnings down here telling you that there's something wrong with it definitely fix those warnings because they will that will surely cause you to lose points。
-
- Now， sometimes it'll say that your value is off from mine by some number if that's like 0。0123。
-
- something like that， a small small number。It probably doesn't matter， but again。
-
- no guarantees on your actual grade from the auto assessor。 It's just there to help you out。
-
- to give you。A chance to not lose points on easily corrected issues。 These are due each week。
-
- Make sure that you submit them。 If you submit them late， you'll lose points。
-
- That's just the way that that works。 If you submit them too late， you will get no points at all。
-
- So make sure that you。Stay on top of these。 This is a hybrid course。
-
- so it's very important that you stay up with it on a week to week basis。And not just try to ask。
-
-Turn everything in on the last last day of course。 You can also check your submission。
-
- This is just some additional code。 You put your key in there and you can make sure that I've gotten an assignment or not。
-
- now you won't see these pop into canvas until I actually grade them。
-
- and then it becomes part of your your actual course grade。 Okay。
-
- that is how you make use of Google coab。 This is a very good option for if you don't want to go through all the trouble of installing Python and the various utilities on your computer。
-
- And this gets you access to a pretty good GPU。 This content changes often。
-
- So subscribe to the channel to stay up to date on this course and other topics and artificial intelligence。
-
-
-
-![](img/9b3166bd64e1d412ba7306144df7359f_10.png)
+ And this gets you access to a pretty good GPU。 This content changes often。 So subscribe to the channel to stay up to date on this course and other topics and artificial intelligence。![](img/9b3166bd64e1d412ba7306144df7359f_10.png)

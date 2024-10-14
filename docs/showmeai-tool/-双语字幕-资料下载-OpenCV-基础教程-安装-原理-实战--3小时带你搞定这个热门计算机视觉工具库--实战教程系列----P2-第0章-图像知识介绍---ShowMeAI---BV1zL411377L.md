@@ -2,43 +2,19 @@
 
 ![](img/0927cb9227e01b87e39550b44a9db204_0.png)
 
-So let's start with introduction to images。 So what are images made of。
-
- Let's say I wanted to display the number 3。 I will take an array of boxes where each box could be filled or empty。
-
-
-
-![](img/0927cb9227e01b87e39550b44a9db204_2.png)
+So let's start with introduction to images。 So what are images made of。 Let's say I wanted to display the number 3。 I will take an array of boxes where each box could be filled or empty。![](img/0927cb9227e01b87e39550b44a9db204_2.png)
 
 ![](img/0927cb9227e01b87e39550b44a9db204_3.png)
 
-So to write the number3， we would color a few boxes to create that shape。 Now。
+So to write the number3， we would color a few boxes to create that shape。 Now。 some boxes are white in color， whereas some are black。We can denote all the black boxes as0 and all the white boxes as one。In this example。 we have 10 by 10 boxes。If we wanted more detail， we can increase the number of boxes。In reality。
 
- some boxes are white in color， whereas some are black。
-
-We can denote all the black boxes as0 and all the white boxes as one。In this example。
-
- we have 10 by 10 boxes。If we wanted more detail， we can increase the number of boxes。In reality。
-
- these boxes are pixels。 You would have heard of Vga， H D， full D and 4K。
-
- All of these represent a fixed number of pixels。 For example， VGA is 640 by 480。
-
-
-
-![](img/0927cb9227e01b87e39550b44a9db204_5.png)
+ these boxes are pixels。 You would have heard of Vga， H D， full D and 4K。 All of these represent a fixed number of pixels。 For example， VGA is 640 by 480。![](img/0927cb9227e01b87e39550b44a9db204_5.png)
 
 ![](img/0927cb9227e01b87e39550b44a9db204_6.png)
 
 ![](img/0927cb9227e01b87e39550b44a9db204_7.png)
 
-HD is 1280 by 720。This means VGA has 6，40 boxes in the width and 480 boxes or pixels in the height。
-
- Currentlyly， the image werew has only two colors， black and white。 This is known as a binary image。
-
- In order to get more detail， we can have an image with more levels。
-
- This would mean instead of having only 0 and1， we will have a range of values。
+HD is 1280 by 720。This means VGA has 6，40 boxes in the width and 480 boxes or pixels in the height。 Currentlyly， the image werew has only two colors， black and white。 This is known as a binary image。 In order to get more detail， we can have an image with more levels。 This would mean instead of having only 0 and1， we will have a range of values。
 
 
 
@@ -46,33 +22,15 @@ HD is 1280 by 720。This means VGA has 6，40 boxes in the width and 480 boxes o
 
 ![](img/0927cb9227e01b87e39550b44a9db204_10.png)
 
-Here we can see the difference between 2，6 and 16 levels or shades of gray。
+Here we can see the difference between 2，6 and 16 levels or shades of gray。 but still the image is not very clear， so we will be using an 8 bit value。 This will give us a resolution of 256， where 0 will be black and 255 will be white。 This means we now have 254 colors between white and black。In other words。
 
- but still the image is not very clear， so we will be using an 8 bit value。
+ we have 254 shades of gray。![](img/0927cb9227e01b87e39550b44a9db204_12.png)
 
- This will give us a resolution of 256， where 0 will be black and 255 will be white。
-
- This means we now have 254 colors between white and black。In other words。
-
- we have 254 shades of gray。
-
-![](img/0927cb9227e01b87e39550b44a9db204_12.png)
-
-This image is now known as a gray scale image。
-
-![](img/0927cb9227e01b87e39550b44a9db204_14.png)
+This image is now known as a gray scale image。![](img/0927cb9227e01b87e39550b44a9db204_14.png)
 
 ![](img/0927cb9227e01b87e39550b44a9db204_15.png)
 
-For a colored image， we have three grayscale images representing the intensities of red。
-
- green and blue。 In short， RGB adding these images together gives us a full color image。
-
- This means a colored VGA image is 6，40 by 4，80 by 3。
-
-
-
-![](img/0927cb9227e01b87e39550b44a9db204_17.png)
+For a colored image， we have three grayscale images representing the intensities of red。 green and blue。 In short， RGB adding these images together gives us a full color image。 This means a colored VGA image is 6，40 by 4，80 by 3。![](img/0927cb9227e01b87e39550b44a9db204_17.png)
 
 ![](img/0927cb9227e01b87e39550b44a9db204_18.png)
 

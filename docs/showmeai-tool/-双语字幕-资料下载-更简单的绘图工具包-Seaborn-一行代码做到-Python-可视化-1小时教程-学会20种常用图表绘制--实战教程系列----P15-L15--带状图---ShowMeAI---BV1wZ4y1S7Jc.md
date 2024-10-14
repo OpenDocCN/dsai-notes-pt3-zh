@@ -8,11 +8,7 @@ Talk about strip plots Allright， so another thing we can do here is we can cha
 
 ![](img/aa7de4aeb2764a1b96659abb0b40556a_2.png)
 
-Total and y is equal to total bill。 and again， data is going to be our tips。
-
-
-
-![](img/aa7de4aeb2764a1b96659abb0b40556a_4.png)
+Total and y is equal to total bill。 and again， data is going to be our tips。![](img/aa7de4aeb2764a1b96659abb0b40556a_4.png)
 
 Data frame whoops I've got an error here。 This is figure There we are and you can see how a strips plot is going to work out here and one thing we can do is we can put in another attribute called jitter and it's going to spread our data points out so that they aren't going to be stacked on top of each other and you just say jitter is equal to true and you see how they spread out a little bit and let's say that we wanted to break this data up even further into men and women again we're going to use H for this。
 

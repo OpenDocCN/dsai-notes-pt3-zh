@@ -2,14 +2,6 @@
 
 ![](img/1a3bebe5e3b6be5376d8331c9a6944e0_0.png)
 
-Hey guys， Mosh here。 I just wanted to let you know that you really don't have to memorize anything in this course because I've created a complete cheat sheet with summary notes for you。
+Hey guys， Mosh here。 I just wanted to let you know that you really don't have to memorize anything in this course because I've created a complete cheat sheet with summary notes for you。 You can find it below this video in the description box。 So I have done my best to create the best possible most comprehensive SQL course for you。 and I would really appreciate it if you support my hard work by liking and sharing this video。
 
- You can find it below this video in the description box。
-
- So I have done my best to create the best possible most comprehensive SQL course for you。
-
- and I would really appreciate it if you support my hard work by liking and sharing this video。
-
- Thank you so much。 Now， let's continue。😊。
-
-![](img/1a3bebe5e3b6be5376d8331c9a6944e0_2.png)
+ Thank you so much。 Now， let's continue。😊。![](img/1a3bebe5e3b6be5376d8331c9a6944e0_2.png)

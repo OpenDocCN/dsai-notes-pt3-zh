@@ -1,80 +1,28 @@
 # 【双语字幕+资料下载】Jupyter Notebook 超棒教程！50分钟，把安装、常用功能、隐藏功能和Terminal讲解得清清楚楚。学完新手也能玩转！ - P12：12）Jupyter Notebook魔术命令 - ShowMeAI - BV1yv411379J
 
-Alright， so the last thing I'll show you before we save and exit out of the notebook here is magic commands。
+Alright， so the last thing I'll show you before we save and exit out of the notebook here is magic commands。 Now， this is kind of a cool name。 Magic commands makes you feel pretty powerful， and it does。 because these are pretty cool， so。😊。![](img/48c3eb139983bc807bec7c1942f7eacd_1.png)
 
- Now， this is kind of a cool name。 Magic commands makes you feel pretty powerful， and it does。
+I will， let's see。 Let me copy over this link here。 Or actually。 if you just Google Jupiter magic commands。![](img/48c3eb139983bc807bec7c1942f7eacd_3.png)
 
- because these are pretty cool， so。😊。
+Should pop up here right at the top， built in magicic commands。![](img/48c3eb139983bc807bec7c1942f7eacd_5.png)
 
-![](img/48c3eb139983bc807bec7c1942f7eacd_1.png)
+So these are things that are not part of your standard Python that you can do。![](img/48c3eb139983bc807bec7c1942f7eacd_7.png)
 
-I will， let's see。 Let me copy over this link here。 Or actually。
+In Jupiter notebooks。 So， for example， let's scroll down。![](img/48c3eb139983bc807bec7c1942f7eacd_9.png)
 
- if you just Google Jupiter magic commands。
+To a cool one， which is debug。So。Debug， for example， let's say that we break some code。![](img/48c3eb139983bc807bec7c1942f7eacd_11.png)
 
-![](img/48c3eb139983bc807bec7c1942f7eacd_3.png)
-
-Should pop up here right at the top， built in magicic commands。
-
-
-
-![](img/48c3eb139983bc807bec7c1942f7eacd_5.png)
-
-So these are things that are not part of your standard Python that you can do。
-
-
-
-![](img/48c3eb139983bc807bec7c1942f7eacd_7.png)
-
-In Jupiter notebooks。 So， for example， let's scroll down。
-
-
-
-![](img/48c3eb139983bc807bec7c1942f7eacd_9.png)
-
-To a cool one， which is debug。So。Debug， for example， let's say that we break some code。
-
-
-
-![](img/48c3eb139983bc807bec7c1942f7eacd_11.png)
-
-So maybe I will say， you know， in this cell， let's say x equals。Hello worlds。
-
-And then we'll maybe say y equals true。And maybe if y well。
-
- then let's try to do z equals 1 divided by 0。 So let's， let's break， let's break this code here。
-
-
-
-![](img/48c3eb139983bc807bec7c1942f7eacd_13.png)
+So maybe I will say， you know， in this cell， let's say x equals。Hello worlds。And then we'll maybe say y equals true。And maybe if y well。 then let's try to do z equals 1 divided by 0。 So let's， let's break， let's break this code here。![](img/48c3eb139983bc807bec7c1942f7eacd_13.png)
 
 ![](img/48c3eb139983bc807bec7c1942f7eacd_14.png)
 
-So we run this。This breaks。Let's type in debug， shall we because we want to debug our code。
+So we run this。This breaks。Let's type in debug， shall we because we want to debug our code。And this drops us in to this cell at the point of execution， right where our code broke。So if I print out why， for example。Then you see that y is true。 Maybe I want to try z equals 1 over0。 and you'll see that we get that zero division error。
 
-And this drops us in to this cell at the point of execution， right where our code broke。
-
-So if I print out why， for example。Then you see that y is true。 Maybe I want to try z equals 1 over0。
-
- and you'll see that we get that zero division error。
-
-And so you're able to be dropped right into where your code breaks using this handy dandy Dbug magic command。
-
- Now， there are a ton of other magic commands here。
-
-
-
-![](img/48c3eb139983bc807bec7c1942f7eacd_16.png)
+And so you're able to be dropped right into where your code breaks using this handy dandy Dbug magic command。 Now， there are a ton of other magic commands here。![](img/48c3eb139983bc807bec7c1942f7eacd_16.png)
 
 ![](img/48c3eb139983bc807bec7c1942f7eacd_17.png)
 
-For example， you can save out various portions of your Jupyter notebook。
-
- You can change how the notebook runs all kinds of interesting stuff。
-
- You can look at the history of what you've been running。All kinds of cool stuff。
-
-I would recommend at least scrolling through these so that you have an awareness of them in case you need to use them in。
+For example， you can save out various portions of your Jupyter notebook。 You can change how the notebook runs all kinds of interesting stuff。 You can look at the history of what you've been running。All kinds of cool stuff。I would recommend at least scrolling through these so that you have an awareness of them in case you need to use them in。
 
 
 
