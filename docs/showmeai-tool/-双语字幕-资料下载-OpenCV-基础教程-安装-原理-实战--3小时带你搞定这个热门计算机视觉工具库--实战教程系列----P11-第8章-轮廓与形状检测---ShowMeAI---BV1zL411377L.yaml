@@ -1,301 +1,419 @@
 - en: 【双语字幕+资料下载】OpenCV 基础教程，安装、原理、实战， 3小时带你搞定这个热门计算机视觉工具库！＜实战教程系列＞ - P11：第8章：轮廓与形状检测
     - ShowMeAI - BV1zL411377L
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】OpenCV 基础教程，安装、原理、实战，3小时带你搞定这个热门计算机视觉工具库！＜实战教程系列＞ - P11：第8章：轮廓与形状检测
+    - ShowMeAI - BV1zL411377L
 - en: '![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_0.png)'
 - en: '![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_1.png)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_1.png)'
 - en: So now we are going to detect shapes in an image， so we will detect their contours。
     the corner points， and based on those， we will decide what is the shape of this
     object。So what we have is our packages。We have the image of shapes in the resources。
     and what we are doing is we are just。Printing it out using the IM show function。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们要在图像中检测形状，因此我们将检测它们的轮廓、角点，并根据这些决定该物体的形状。我们有我们的包，资源中有形状的图像，我们所做的只是使用IM show函数将其打印出来。
 - en: so this is our image it has triangles， circles， square and rectangles。 so we
     are going to detect each one of them and we will categorize which category it
     belongs to and we will show how many corner points it has plus the area of each
     of the shape。So， let's start。So we are going to pre processces our image first。
     so we are going to convert it into grayscale and then we will find the edges so
     that we can find their corner points。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我们的图像，它包含三角形、圆形、正方形和矩形。我们将检测每一个，并将其分类，显示每个形状的角点数量以及面积。那么，让我们开始。首先我们将预处理我们的图像，将其转换为灰度图像，然后找到边缘以便找到角点。
 - en: So let's start by converting it into grayscale。So we will use the CVT color
     function。And here we will write our image。That we want to change， and we will
     define。What color do we want the channels to be， So we will say B G R2 gray。Then
     we will add a little bit of blur。So we will use the Wassian blur function。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们先将其转换为灰度图像。因此，我们将使用CVT color函数。在这里，我们将写我们想要更改的图像，并定义我们希望通道是什么颜色，因此我们将说BGR2
+    gray。然后我们会添加一点模糊。因此，我们将使用Wassian模糊函数。
 - en: So we have our image gray。And then we need to define the kernel， so we will
     say。 let's say it is7 by 7 and then we have the sigma， so the higher the value
     of the sigma。 the more blur you will get， so let's put it at one and we will see
     if we need more。So then we are going to detect the edges。Actually， before that。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们得到了灰度图像。然后我们需要定义卷积核，假设它是7乘7，然后我们有了sigma，sigma值越高，模糊程度越大，所以我们先将其设为1，看看是否需要更多。接下来我们要检测边缘，实际上，在此之前。
 - en: let's print it out and see if everything is working well。 So we have the。Image
     gray。Image gray。 And then we have the image blur。 So we will write here。Gray，
     and we will write here blur。So if we run this。We should get three images。And yeah，
     so we are getting。The gray image and then we have some blur added to it。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们打印出来，看看一切是否正常。所以我们有图像灰度、图像灰度，然后是图像模糊。我们将在这里写灰度，并在这里写模糊。如果我们运行这个，我们应该得到三幅图像。是的，我们得到了灰度图像，并且增加了一些模糊效果。
 - en: '![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_3.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_3.png)'
 - en: Actually， at this point， it will be a good idea to use our stacking function
     so that we don't have to play with that too much。 So in chapter 6 we yeah， this
     is the function。We used。 so let's copy that。And we will go back and we will paste
     it here at the top。So。Let's use the stocking。 So we will say that our。Image stock。Is
     equals to stacked images。 We will give it a scale of 0。6。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 实际上，此时使用我们的堆叠函数是个好主意，这样我们就不需要过多处理了。在第6章中，我们使用了这个函数。所以让我们复制它，然后回去粘贴到顶部。那么，让我们使用堆叠。所以我们将说我们的图像堆叠等于堆叠图像。我们将其缩放至0.6。
 - en: and then we will define our image array。Now， inside that。 let's say we are going
     to put our image and then image gray。And then， our image blur。So we can remove
     all of these and then we can just say stock。And then， image stuck。So if we're
     on this and there you go， So we have our image， all three images stacked together。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将定义我们的图像数组。现在，在里面，假设我们将放入我们的图像和图像灰度，然后是我们的图像模糊。我们可以去掉所有这些，然后可以直接说stock。然后，image
+    stuck。所以如果我们在这上面，就这样，我们得到了图像，所有三幅图像堆叠在一起。
 - en: So next we are going to find the edges in our image。So we will use the canny
     edge detector。 so we will write image canny。Is equals to C2 dot scanningny。Canny，
     we will define the image。 We will give it the blur image， and then we have to
     define the threshold。 so we can just pick some threshold， let's say 50 and 50
     and see if it works well。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来我们要在图像中找到边缘，因此我们将使用Canny边缘检测器。我们将写image canny等于C2.dot scanningny。Canny，我们将定义图像，给它模糊图像，然后我们必须定义阈值，我们可以选择一些阈值，比如50和50，看看效果如何。
 - en: So we can add another。Another row。And。So we can add。Image Gny。 image， Gny。And
     then the rest。 we can keep the same， or we can define a black image so we can
     define our image blank so we can say image。Mage blank is equals to nuy dot。Zeros，
     like。Image。And then， we can put this。Here。Let's run this。 And there you go。 So
     now we have our edges。 And from these edges， we are going to find our contours。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们可以添加另一行。并且。我们可以添加。图像 Gny。图像，Gny。然后其余的。我们可以保持不变，或者我们可以定义一张黑色图像，所以我们可以定义我们的图像为空白图像，所以我们可以说图像。Mage
+    blank 等于 nuy dot。Zeros，像。图像。然后，我们可以把这个。放在这里。让我们运行这个。就这样。所以现在我们有了我们的边缘。从这些边缘，我们将找到我们的轮廓。
 - en: '![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_5.png)'
+  id: totrans-13
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_5.png)'
 - en: '![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_6.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_6.png)'
 - en: So， let's go back and。Now we are going to create a function。 so earlier we were
     not creating functions， but because this is a little bit of more code。So now we
     are going to create a function。 So let's go up here and we are going to define
     a function by the name get contours。So in this， we are going to define our image。And
     it will input an image。 And then from there。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，让我们回去。现在我们要创建一个函数。之前我们没有创建函数，但因为这段代码稍微多一点。所以现在我们要创建一个函数。所以让我们在这里向上定义一个名为
+    get contours 的函数。在这个函数中，我们将定义我们的图像。它将输入一张图像。从这里开始。
 - en: we will find our contours。 So the first thing we will do is we will write。Conuntours。And
     then。 we will write hierarchy。Hi are。Let's keep it small。And then we are going
     to use our C2 dot find contour function。Find contours。Now in that。 we have to
     define our image， the one we want to find the contours in and the second parameter
     is our retrieval method。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将找到我们的轮廓。所以我们要做的第一件事是写。轮廓。然后。我们将写层级。Hi are。让我们保持小一点。然后我们将使用我们的 C2 dot find
+    contour 函数。查找轮廓。在这方面。我们必须定义我们的图像，即我们要查找轮廓的图像，第二个参数是我们的检索方法。
 - en: We have different types of retrieval methods。 The one we are going to use is
     the external method。 so retrieval。We will write R E。 What is it， R， E T。E are，
     yeah。R， E， T， E， R yeah， external。 And what this does is it。It retrieves the extreme
     outer contours。 There are other alternatives that will detect all the contours。
     They will not be filtered out。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们有不同类型的检索方法。我们要使用的是外部方法。所以检索。我们将写 R E。是什么，R，E T。E 是，没错。R，E，T，E，R 对，外部。这做的就是它。它检索极端的外轮廓。还有其他替代方法可以检测所有轮廓。它们不会被过滤掉。
 - en: but this one is specifically good if you want to find the outer details or the
     outer corners。 So we will use this。 And then we have the。Approxiation where you
     can request for all of the information。 or you can request for compressed values。
     So it will reduce the points for you for this example。 we are going to get all
     the contours that we have found。 So we will say。C， V2 dot chain。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 但如果你想找到外部细节或外部角落，这个方法特别好。所以我们将使用这个。然后我们有了近似，你可以请求所有信息。或者你可以请求压缩值。因此，它将为这个例子减少点数。我们将获取所有找到的轮廓。所以我们会说。C，V2
+    dot chain。
 - en: Approxiation as none。So once we have our contours， they are saved in the contours。So
     what we will do is we will say that we want to loop through it so for。C and T
     in contours。干。Tos。So for each contour， we are going to。Find the area first。 So
     we will say area。Is equals to CB2 dots。Contour。Area， and we will just mention
     the contour that we want to find the area for。Now。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 近似为 none。所以一旦我们有了轮廓，它们将保存在轮廓中。我们将说我们想要循环遍历它，所以对于。C 和 T 在轮廓中。干。Tos。所以对于每个轮廓，我们将。首先找到区域。所以我们会说区域。等于
+    CB2 dots。Contour。Area，我们只需提到我们要查找区域的轮廓。现在。
 - en: the second thing we will do is we will draw this contour。So okay， let's， before
     we do that。 let's just print it out so you can see。What kind of areas are we getting，
     So if we run this。Oh。 actually， we have to call the function。 My God。 So we need
     to go down and here we will say。Get contours， and we will send the image canny。And
     there you go。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们要做的第二件事是绘制这个轮廓。那么好吧，等一下，在此之前。让我们先打印出来，以便你能看到。我们得到了什么样的区域。所以如果我们运行这个。哦，实际上，我们必须调用这个函数。天哪。所以我们需要下去，在这里我们会说。获取轮廓，我们将发送图像
+    canny。就这样。
 - en: So these are all the areas we are finding for each of what you call the shapes
     that we have detected。So next， we are going to draw them so that we can see them
     clearly。We are going to use the drop contours function。 So C V2 dot draw。Contours。
     we will give it the image that we want to draw it on。So we are going to use let's
     create。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这些是我们为每个你所说的形状找到的区域。接下来，我们将绘制它们，以便清楚地看到。我们将使用 drop contours 函数。所以 C V2 dot
+    draw。Contours。我们将给它我们想要绘制的图像。所以我们将创建。
 - en: I don't want to put it on the original image。 So what we can do is we can create
     a copy of our original image。 so we can say here that。Image contour。Is equals
     to。Image dot， copy。So we will copy the image so that we can。Put the drawings on
     this image， the image contour。 So we are going to define where is it。 So we will
     say image contour。 We want to put it on that。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 我不想把它放在原始图像上。所以我们可以做的是创建一个原始图像的副本。因此我们可以在这里说。图像轮廓。等于。图像.复制。因此我们将复制图像，以便我们可以。在此图像上绘制图形，即图像轮廓。因此我们将定义它在哪里。所以我们将说图像轮廓。我们想把它放在那。
 - en: and then we have to give it the contour itself。 So that will be C and T。And
     then we have the contour index。 So here we will say negative one because we want
     to draw all the contours。 and then we have to write 2，5，5。Then let's say， we are
     going to make it。What color is that that is blue。 Okay， and then we will put it。As
     thickness as 3。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们必须给它轮廓本身。所以这将是C和T。然后我们有轮廓索引。因此这里我们将说负一，因为我们想要绘制所有的轮廓。接着我们必须写2，5，5。然后我们假设，我们将要制作它。那是什么颜色？是蓝色。好的，然后我们将其设置为厚度为3。
 - en: So so each time it will loop， it will draw the complete contour it finds in
     CNT。So this is what this statement is doing。 So let's run that。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_8.png)
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，每次循环时，它将绘制在CNT中找到的完整轮廓。这就是这个语句所做的。所以让我们运行它。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_8.png)
 - en: And oh， we did not put the image contour here。 So image。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_10.png)
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦，我们没有在这里放图像轮廓。所以图像。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_10.png)
 - en: Contour。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_12.png)
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 轮廓。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_12.png)
 - en: And there you go。 So now we have all the shapes and we have detected all the
     contours。 You can see there is a blue line around them and it seems to have detected
     fairly well。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_14.png)
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是结果。因此现在我们有了所有的形状，并且我们检测到了所有的轮廓。你可以看到它们周围有一条蓝线，似乎检测得相当好。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_14.png)
 - en: So next， what are we going to do。 So next， we are going to check for the minimum
     area。 So we will give it a threshold normally， if if it's just an image like this，
     you don't have to。 but it's a good idea to give a minimum threshold for the area
     so that it does not detect any noise。 So we can say if our。Area is greater than，
     for example， 500， 500 pixels。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以下一步，我们要做什么。因此接下来，我们将检查最小面积。因此我们将给它一个阈值，通常，如果这只是一个图像，你不需要。但是给一个最小阈值以确保它不检测到任何噪音是个好主意。因此我们可以说，如果我们的。面积大于，例如，500，500像素。
 - en: Then we are going to do the calculations， the maths of it if you want to completely
     neglect it。 then we will just put it down here rather than up there。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_16.png)
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将进行计算，数学运算，如果你想完全忽略它。那么我们就把它放在这里，而不是上面。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_16.png)
 - en: And if we write that， and we can see all of our shapes have areas greater than
     500。 so we should not have any。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_18.png)
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们写下这个，我们可以看到所有的形状的面积都大于500。所以我们不应该有任何的。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_18.png)
 - en: Issues， so the next thing we are going to do is we will calculate the curve
     length。So the curve length will help us approximate the corners of our edges，
     corners of our shape。 So let's write that down so we are going to write here。Pimeter
     is equals to C， V2 dot Aland。And we want to find the Arkland off。Our contour。And
     we will say that it is closed。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 问题，因此我们接下来要做的是计算曲线长度。因此曲线长度将帮助我们近似边缘的角落，形状的角落。因此我们将把它写下来。所以我们将写这里。周长等于C，V2.阿兰。我们想找到我们轮廓的阿克兰。我们将说它是封闭的。
 - en: so we will put it as true。So， we can。We can print this out if you want to see
     it print。Barry and。So。So now we are getting the length of each of the contour，
     the arc。The Arkland or the parametermeter。What do you call。Or the control parameter。So
     next， we are going to approximate the。 the corner points， how many corner points
     we have。 So we will write a pro is equals to。C， V 2 dots。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将其设置为真。因此，我们可以。如果你想看到它打印出来，我们可以打印出来。巴里和。因此。现在我们正在获取每个轮廓的长度，弧。阿克兰或控制参数。你称之为什么？或者控制参数。因此接下来，我们将近似。角点，我们有多少个角点。因此我们将写一个pro等于。C，V
+    2点。
 - en: Approx polllly。And we are going to give our contour， and then we will give it
     a resolution。 So this you can play around with。So we will multiply it with our
     length。The Aland， so。Here you can play around with this a little bit if you are
     not getting good results。And then you can write here through again because it
     is closed。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 近似多边形。我们将给我们的轮廓，然后我们将给它一个分辨率。所以你可以在这里进行调整。如果你没有得到好的结果，我们将用我们的长度乘以它。这里你可以稍微调整一下，如果你没有得到好的结果。然后你可以再写一次，因为它是封闭的。
 - en: We are expecting all our shapes to be closed。 So next。 we are going to print
     the value of our blocks。Now。 this will give us the points of the corner points。
     So of each of them， each of the shapes。 So if we see here for each of them， we
     have certain number of points。 So here， for example。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们希望所有的形状都是封闭的。那么接下来，我们将打印出我们的块的值。现在，这将给我们每个角点的坐标。所以对于它们中的每一个，每个形状都是如此。所以如果我们在这里看到，对于它们中的每一个，我们都有一定数量的点。所以这里，例如。
 - en: we have three points。Here we have more than three， maybe seven or eight。Then
     we have 1，2，3，3。 and then so on。 So what we can do is instead of printing this。
     we can print the length of each one of them。So that will give us the idea of what
     the shape is。So here you can see we have 383， so we can say that 3 is triangle。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们有三个点。这里我们有超过三个，也许是七个或八个。然后我们有1，2，3，3。然后继续。那么我们可以做的是，不打印这些。我们可以打印每个形状的长度。这样就能让我们了解形状是什么。所以在这里你可以看到我们有383，所以我们可以说3是三角形。
 - en: 4 is either a square or a rectangle that we will find out later as well。 and
     then we can say that anything above four is a circle。So because we are only detecting
     three or four categories so we can assume that。So next we are going to create
     our。Object corners。 So object corners is equals to length of our approximation。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 4要么是一个正方形，要么是一个矩形，我们稍后也会找到答案。然后我们可以说，任何大于四的形状都是一个圆形。所以因为我们只检测三到四个类别，所以我们可以假设。那么接下来，我们将创建我们的对象角点。对象角点等于我们近似值的长度。
 - en: And now we are going to create a bounding box around our。Detect object。So now
     we are going to get the values of our bounding box。 If we were to draw draw a
     bounding box around our object。 what will be the x and y and the width and the
     height。 So let's get that x。Wai。Weth and height。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们将为我们的检测对象创建一个边界框。所以现在我们将获得边界框的值。如果我们要在我们的对象周围绘制一个边界框，那么X和Y，以及宽度和高度将是什么？那么让我们获取那个X、Y、宽度和高度。
 - en: So we will get that from C2 dots。Bounding box， bounding rectangle， and then
     a rockx。Okay。 let's put some spaces here。And here as。Okay， so this will give us
     the X Y and the width and height of each of the objects or the shapes。 and let
     let's draw them right away so that we get a clear picture of what we are doing
     C2 dot rectangle。And we we want to draw it。 So where do you want to draw it。 Let's
     draw it on the image contour。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将从C2点获取这个。边界框，边界矩形，然后一个rockx。好的，我们在这里放一些空格。然后这里也是。好的，这将给我们每个对象或形状的X、Y坐标和宽度、高度。让我们立即绘制它们，以便我们能清楚地了解我们在做什么，C2点矩形。我们想绘制它。那么你想在哪里绘制它？让我们在图像轮廓上绘制。
 - en: And then we are going to give it the point number one， which will be your x
     and y。 so it will be x and y and your point number two will be your x plus width
     and x plus y plus height。 so it will be x plus width and y plus height。Then we
     are going to give it a color。 Let's give it a different color so that we can tell
     it is a bounding rectangle。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将给它第一个点，这将是你的X和Y。它将是X和Y，而你的第二个点将是X加上宽度和Y加上高度。所以它将是X加上宽度和Y加上高度。接下来我们将给它一个颜色。让我们给它一个不同的颜色，这样我们就能辨别它是一个边界矩形。
 - en: and then we will give it a thickness。So that should do it。 So let's rerun it。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_20.png)
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将给它一个厚度。这样就可以了。那么让我们重新运行它。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_20.png)
 - en: And there you go so now we can see that we have bounding boxes around each of
     the shapes we are detecting so from these bounding boxes we can get information
     such as what is the total width and height of the object where is the center point
     of the object so these kind of things can be useful maybe in another project。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 就这样，现在我们可以看到我们在检测的每个形状周围都有边界框。通过这些边界框，我们可以获取信息，例如对象的总宽度和高度，以及对象的中心点在哪里，这些信息在其他项目中可能会很有用。
 - en: but for now what we will do is we will categorize these objects。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_22.png)
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 但现在我们要做的是对这些对象进行分类。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_22.png)
 - en: Into whether they are circle， whether they are triangle， rectangle or square。
     So the first one is let's start with the smallest one， which will be our triangle。
     So we will say that if。Our object。Cners are3。Then we want our object type。Object
     type。 This is a variable to be。Triangle。There's just a string。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 关于它们是圆形、三角形、矩形还是方形。首先，我们从最小的开始，那就是我们的三角形。所以我们可以说如果。我们的对象。角数是3。然后我们希望我们的对象类型。对象类型。这个变量将是。三角形。这只是一个字符串。
 - en: What we can do is we can print this string out。In our image， so we can say CB2
     dot put text。We will define our image contour， and then we are going to write
     what we want to print。 which will be our object。What did I write it as， Oh， this
     is capital。 Let's make it small。 So object type。And then we are going to write
     where do we want to print it out。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以做的是把这个字符串打印出来。在我们的图像中，所以我们可以说CB2.dot put text。我们将定义我们的图像轮廓，然后我们将写下我们想要打印的内容。那就是我们的对象。我写成什么了，哦，这个要大写。让我们改成小写。对象类型。然后我们要写下我们希望在哪里打印它。
 - en: So let's print it at the center of the object a little bit shifted from the
     center of the object。 So what is the center of the object。So this will take some
     room。 So I will put it down here。 So the center of the object will be x plus。Wait。Divided
     by 2。And we will shift it a little bit。 so we will reduce 10 pixels。And then we
     will write the center of our y， which will be y plus。Height。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们在对象的中心稍微偏移一下打印它。那么对象的中心是什么呢？这会占用一些空间。所以我会把它放在这里。那么对象的中心将是x加上。等等。除以2。然后我们稍微偏移一下，所以我们会减少10个像素。接着我们会写出y的中心，也就是y加上。高度。
 - en: divided by 2。And this we will keep the same。Or should we let's let's put some
     what do you call。Dviation in this as well。 So let's put -10。 So it will be a little
     bit higher than the center point。 So what is the next thing， Yeah， the next thing
     is the font。 So we will write C V2 dot font。 We don't want anything fancy。 So
     we will write。We will use the first one。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 除以2。这个我们保持不变。还是应该我们加一些你说的。偏差在这里。所以让我们设为-10。这样会比中心点稍微高一点。那么接下来是什么呢？是的，接下来是字体。所以我们会写C
+    V2.dot font。我们不想要什么花哨的东西。所以我们会写。我们将使用第一个。
 - en: and then we will write our scale。Scale， let's put it 0。5。 And then we have our
     color。So let's put the color as 0，2，5，5， and then 2，5，5。And then the font scale，
     we will put it as2。Okay。 so where did I do the mistake， Ca it's not showing it
     properly。 Yes， the comma。Okay。So that should give us triangle everywhere。 There
     is a triangle。Object type reference before。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们会写出我们的缩放。缩放，我们设为0。5。然后我们有我们的颜色。所以我们设定颜色为0，2，5，5，以及2，5，5。然后字体缩放，我们设为2。好的。那么我在哪里出错了，Ca它没有正确显示。是的，逗号。好的。那么这应该让我们在每个地方都有三角形。之前的对象类型引用。
 - en: objectject type。Okay， so we did not define what happens if it's not3。 So for
     now， we can say else。Object type is equals to。Is equals to none。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_24.png)
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 对象类型。好的，所以我们没有定义如果不是3会发生什么。所以现在，我们可以说else。对象类型等于。等于none。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_24.png)
 - en: So there you go。 Oh， that's yellow in color。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_26.png)
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以你看。哦，那是黄色的。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_26.png)
 - en: Which is kind of hard to read。So we will put it in a different color。 Let's
     put it black。 I think black will be easy to read。And we can increase the size
     a little bit。 So it's easier to see。And we can also increase the size cause we
     still have some room。So， let's run that。And there you go。 So now we can see that
     all the triangles。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 这有点难以阅读。所以我们将换成不同的颜色。让我们用黑色。我认为黑色会更容易阅读。我们还可以稍微增大一点尺寸。这样更容易看清。而且我们还可以增加尺寸，因为我们还有一些空间。所以，让我们运行这个。看吧。现在我们可以看到所有的三角形。
 - en: '![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_28.png)'
+  id: totrans-51
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_28.png)'
 - en: '![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_29.png)'
+  id: totrans-52
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_29.png)'
 - en: They are detected correctly， and the rest of them are none。 So next。 we are
     going to define the rest of them。 So that will be here。 if our object or it should
     be else if else if。Our objects。Cners equals 4。Now this one is a little bit tricky
@@ -305,32 +423,44 @@
     so what we can do is we can see that if we divide them we will get the aspect
     ratio and if that aspect ratio is between a certain range we can say it is a square
     if it's not we will say it's a rectangle。
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 它们被正确检测，其余的没有。因此接下来。我们将定义其余的。这将在这里。如果我们的对象或者应该是否则如果。我们的对象。角数等于4。现在这个有点棘手，我们要检查我们得到的是正方形还是矩形。我们怎么能判断呢？我们知道，如果我们将宽度和高度相除，应该得到1，因为正方形的宽度和高度是相同的。我们可以查看，如果我们将它们相除，将得到宽高比，如果该宽高比在某个范围内，我们可以说它是正方形；如果不在，我们将说它是矩形。
 - en: So the first thing we will do is we will get the aspect ratio。 so we will write
     aspect ratio is equals to it will be width divided by height since we are dealing
     with disimal numbers。 we have to define one of them as float。Loloat， so it gives
     us。Float value。 So once we have that。 we are going to put another if statement
     if our aspect ratio。Is greater than 0。95。And。
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们要做的第一件事是获取宽高比。所以我们将写宽高比等于宽度除以高度。由于我们处理的是小数，我们必须将其中一个定义为浮点数。这样可以给我们。浮点值。因此，一旦我们有了，我们将放置另一个if语句，如果我们的宽高比。大于0.95。并且。
 - en: Our aspect ratio。Is。Less than  one point。0，5， which means we can have a deviation
     of 5%。Then we will say that our object type。Is equals 2。squarequare。If that's
     not the case。 then our object type is equals 2。Bectangle。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_31.png)
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们的宽高比。小于1.0，5，这意味着我们可以有5%的偏差。然后我们将说我们的对象类型。等于2。正方形。如果不是这样。则我们的对象类型等于2。矩形。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_31.png)
 - en: So let's run that。And there you go。 So here we are getting a square rectangle，
     square， square。 rectangle square。 So next， we will write it for the circle， so
     we will write。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_33.png)
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么我们来运行一下。就这样。这里我们得到了一个正方形矩形，正方形，正方形。矩形正方形。接下来，我们将为圆形编写代码，所以我们会写。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_33.png)
 - en: Else， if。Object corner。Is greater than 4。Then we are going to write object type
     is equals 2。Circles。So， let's run that。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_35.png)
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 否则，如果。对象的角数。大于4。那么我们将写对象类型等于2。圆形。所以，让我们运行一下。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_35.png)
 - en: And there you go。 So now we have the circle， we have the rectangle and we have
     the squared triangle。 So all of them we are detecting properly， except for this
     one。 it will take a little more complication to solve that， but we can try that
     later on。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_37.png)
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 就这样。现在我们有了圆形、矩形和平方三角形。它们都被正确检测，除了这个。解决这个问题会稍微复杂一些，但我们可以稍后再尝试。![](img/f0258ec39c3f39fcba3cbd8d5e72e07e_37.png)

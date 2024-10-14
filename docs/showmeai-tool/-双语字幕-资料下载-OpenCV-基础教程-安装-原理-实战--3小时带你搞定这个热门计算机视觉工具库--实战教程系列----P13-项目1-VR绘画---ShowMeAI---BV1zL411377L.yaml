@@ -1,75 +1,102 @@
 - en: 【双语字幕+资料下载】OpenCV 基础教程，安装、原理、实战， 3小时带你搞定这个热门计算机视觉工具库！＜实战教程系列＞ - P13：项目1：VR绘画
     - ShowMeAI - BV1zL411377L
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】OpenCV基础教程，安装、原理、实战，3小时带你搞定这个热门计算机视觉工具库！＜实战教程系列＞ - P13：项目1：VR绘画 -
+    ShowMeAI - BV1zL411377L
 - en: '![](img/97368d43feac0c0e171afdc6ab7e7dfc_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/97368d43feac0c0e171afdc6ab7e7dfc_0.png)'
 - en: '![](img/97368d43feac0c0e171afdc6ab7e7dfc_1.png)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/97368d43feac0c0e171afdc6ab7e7dfc_1.png)'
 - en: '![](img/97368d43feac0c0e171afdc6ab7e7dfc_2.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/97368d43feac0c0e171afdc6ab7e7dfc_2.png)'
 - en: '![](img/97368d43feac0c0e171afdc6ab7e7dfc_3.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/97368d43feac0c0e171afdc6ab7e7dfc_3.png)'
 - en: So for this project， we need to find our colors and we need to find it using
     a webcam and then we can place different points wherever we find our colors to
     create。The paint example， so what we need first is the webcam so what we are going
     to do is we are going to take the code from our different projects and we will
     merge these together so that we can see how we can efficiently create different
     projects so we are going to go back to our chapter1。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于这个项目，我们需要找到我们的颜色，并需要使用网络摄像头找到它，然后我们可以在找到颜色的地方放置不同的点，以创建绘画示例。所以我们首先需要网络摄像头，所以我们将从不同的项目中提取代码，然后将它们合并，以便我们可以看到如何有效地创建不同的项目，所以我们要回到第一章。
 - en: And here we have the code for our webcam， so we are going to copy this。And we
     will paste it。In our project。So as we can see we are importing our library。 we
     are setting the width and height of our frame and these are ID number three and
     ID number four then we are also setting up the brightness let's make it 150 and
     then we have our。Now our device is not zero， is' supposed to be one。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里是我们的网络摄像头代码，所以我们将复制这个。然后我们会把它粘贴到我们的项目中。正如我们所见，我们正在导入我们的库，设置帧的宽度和高度，这些是ID号三和ID号四，然后我们还在设置亮度，设为150，然后我们的设备现在不是零，而应该是1。
 - en: And then we are getting into our wide loop where we are getting our image and
     then we are displaying it using the IM show function and thats pretty much it。So
     if I run this now， it should。Show me the webcam。 And there you go。 So here we
     have our webcam。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们进入宽循环，在这里我们获取图像，然后使用IM显示函数展示它，这差不多就是这样。所以如果我现在运行这个，它应该会显示网络摄像头。就这样。这里是我们的网络摄像头。
 - en: And let's see if we can see， yeah， so that is clear。So once we have this。 the
     next step we are going to do is we are going to find our colors， so to find our
     color。 what we need to do is we need to bring in the code of the color detection
     so that was in chapter。7 or 6。 it wasn't7。 So here we have the code。 so we don't
     need the stacking。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看看是否能看到，是的，清晰可见。所以一旦我们有了这个，接下来的步骤是找到我们的颜色，为了找到我们的颜色，我们需要引入颜色检测的代码，这在第7章或第6章。不是第7章。所以这里是代码，我们不需要堆叠。
 - en: We're trying to make it simplified。And so we don't need that。 So what we will
     do is we will copy the main code of our。Coner detection。 which is basically the
     lower upper and the mask。 so this is the main thing that we will be needing。And
     we will also need to convert it into this HSV space。 So the normal image into
     HSV。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们试图简化它。所以我们不需要那个。我们将要做的是复制我们边缘检测的主要代码。这基本上就是上限、下限和掩模。所以这是我们所需的主要内容。我们还需要将其转换为HSV空间。所以将普通图像转换为HSV。
 - en: so let's let's copy that first， so we will copy it here。And here。We are going
     to。Define。Deefine a function to find our color。 So we will say。Find。Color儿。And
     then we are going to input an image。At least for now。 we will just keep it an
     image and then we will take this image and we will convert it into the HSV space。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们先复制这个，我们将在这里复制它。然后我们将定义一个函数来查找我们的颜色。所以我们会说，查找颜色。然后我们将输入一张图像。至少现在我们会把它保持为一张图像，然后我们会将这张图像转换为HSV空间。
 - en: And from there， we are going to use our upper and lower limits。2。So。Let me remove
     that。So here we have our upper and lower limits and then。What can we do。 then
     we can just show that if it's working properly or not， so cv2。 I show。And we can
     put。 for example， image and we need to show our mask。 So this just for testing，
     we'll remove it later on。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将使用我们的上限和下限。2。所以，让我去掉那个。在这里我们有上限和下限，然后我们能做什么呢。我们可以看看它是否正常工作，所以cv2。我展示。我们可以放，比如，图像，我们需要展示我们的掩模。这只是为了测试，我们稍后会去掉它。
 - en: So we don't want to find just one color。 We want to find different colors。 So
     whenever we call upon the function find color， we want to find all the different
     types of colors and whatever is present。 we want to see that as the output。 So
     what we can do is。At the top here。 we can define something in the form of a list
     as our color minimum and maximum for the hue。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们不想只找一种颜色。我们想找到不同的颜色。因此每当我们调用函数找到颜色时，我们想找到所有不同类型的颜色以及存在的内容。我们希望将其视为输出。所以我们可以做的是。在这里顶部。我们可以定义一些作为我们颜色的最小和最大色调的列表。
 - en: So what do I mean by that？ So let me write that down。 We will say my colors。Is
     equals to a list。 Now。 this is a list。 Let me。Common discs， annoying。So my colors
     is basically a list of colors that we have that we want to detect。 so we need
@@ -77,302 +104,400 @@
     written down a code by the name color picker so basically what it does it it helps
     us pick the right h and saturation values using a webcam so it's pretty much the
     same code but added with the webcam that we have done in our color chapter。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 我所说的是什么意思？让我写下来。我们将说我的颜色。等于一个列表。现在。这是一个列表。让我。常见的盘，烦人。所以我的颜色基本上是我们想要检测的颜色列表。因此我们需要给出最小和最大色调和饱和度值，为此我写了一段名为颜色选择器的代码，基本上它帮助我们使用网络摄像头选择正确的色调和饱和度值，所以这几乎是相同的代码，但增加了我们在颜色章节中使用的网络摄像头。
 - en: '![](img/97368d43feac0c0e171afdc6ab7e7dfc_5.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/97368d43feac0c0e171afdc6ab7e7dfc_5.png)'
 - en: So here we have our webcam and we have the color orange， so let me find the
     values for that。 What you need to do is you need to keep the orange。As white。![](img/97368d43feac0c0e171afdc6ab7e7dfc_7.png)
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里我们有我们的网络摄像头，颜色是橙色，所以让我找出它的值。你需要做的是把橙色保持为白色。![](img/97368d43feac0c0e171afdc6ab7e7dfc_7.png)
 - en: And the rest you have to remove。 So here you can see。You have to go until。Yeah。
     so I would say that is a good point， so if I move it around， it's not so bad。
     but my hand color is also being detected， so we need to remove that。😔，LetBring
     it down a little bit。And there you go， so it's much better now。So this way what
     we need to do is we need to note down these values。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 其余的你需要删除。所以在这里你可以看到。你需要一直向下。是的。我会说这是一个好点，所以如果我把它移动一下，也还不错。但我的手的颜色也被检测到了，所以我们需要把它去掉。😔，把它稍微往下调一点。这样就好多了。所以我们需要记下这些值。
 - en: so it's 5，107，019255， so what we will do is we will create a list。![](img/97368d43feac0c0e171afdc6ab7e7dfc_9.png)
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以是5，107，019，255，所以我们将创建一个列表。![](img/97368d43feac0c0e171afdc6ab7e7dfc_9.png)
 - en: Over here and inside that list， we are going to write down these values， so
     let me write this down。So we have five。So we have five。5，10，7，0，19，2，55 and then
     255。 so these are our values。 as you can see here。So we will create a list of
     these values， different types。Where。OhWhat happened there？Where we will write
     down all the different types of colors that we want to detect。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，在那个列表里，我们要把这些值写下来，所以让我把它写下来。我们有五个。我们有五个。5，10，7，0，19，2，55，然后255。这些是我们的值。你可以在这里看到。因此我们将创建一个这些值的列表，包含不同类型的颜色。在哪里。哦，发生了什么？我们将写下我们想要检测的所有不同颜色类型。
 - en: so I have done it for blue， not blue， a purple and green， so we will just copy
     that。Values here。 So this is one of them。 And then we have。Another one。Over here。So
     these are our values。 so the first one is orange， then purple and then green。So
     these are the values that you can find from the color picker。 Once we have done
     that。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我已经为蓝色、非蓝色、紫色和绿色做了这些，我们就复制一下这些值。这是其中一个值。然后我们还有另一个值。在这里。这些是我们的值。所以第一个是橙色，然后是紫色，接着是绿色。这些是你可以从颜色选择器中找到的值。一旦我们完成这些。
 - en: now we can simply。Create our mask So here。We can see。That's okay， we need to
     add nupi。So。 import number by。Has N。And the second thing we need to do is we need
     to。Put down our values。 So we know that this part here is basically the first
     three values here。And then this part here is the。The other three values， sorry，
     the other three values over here。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们可以简单地。创建我们的掩膜。所以在这里。我们可以看到。没问题，我们需要添加nupi。所以。导入数字。需要N。我们需要做的第二件事是。写下我们的值。所以我们知道这里的部分基本上是前面三个值。然后这一部分是其他三个值，抱歉，是这里的其他三个值。
 - en: So what we can do is we can simply write。That。Our。What do you call list of my
     colors。Basically。 my colors。And we can define， let's say we will pick the first
     element， which is zero。 and then we will write down that from0。From 0 till3， we
     need those as the first element so。We can define here that we need my color as
     the input。And then we can do the same thing here。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们能做的就是简单地写下。那。我们的。你把我的颜色列表叫什么。基本上。我的颜色。然后我们可以定义，比如说我们选择第一个元素，也就是零。然后我们写下从0开始。从0到3，我们需要这些作为第一个元素。所以。我们可以在这里定义需要我的颜色作为输入。然后我们可以在这里做同样的事情。
 - en: And this will be the upper limit， which will be from three to six。So that should
     give us one of them。 which is the first one， which is。I think orange， so let's
     run that。This is the previous code we need to run。Project 1。So let's run that。And
     now we need to call the function as well。So here after this， we are going to call
     our function。嗯。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将是上限，从三到六。所以这应该给我们其中一个，也就是第一个，我认为是橙色，所以让我们运行它。这是我们需要运行的之前的代码。项目1。所以让我们运行它。现在我们也需要调用这个函数。所以在这里之后，我们要调用我们的函数。嗯。
 - en: My colors。So let's turn that。![](img/97368d43feac0c0e171afdc6ab7e7dfc_11.png)
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 我的颜色。所以让我们转动一下。![](img/97368d43feac0c0e171afdc6ab7e7dfc_11.png)
 - en: And there you go， we are getting the mask and if I bring my orange。Color。 and
     you can see that it is detected properly。 but that's the thing like we are only
     detecting orange。 We need to detect all the colors we have in this list。 So for
     that。 we need to add on a for loop so we can save for。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 看吧，我们得到了掩模，如果我放入我的橙色。颜色。你可以看到它被正确检测到了。但问题是我们仅仅检测到了橙色。我们需要检测到这个列表中的所有颜色。为此。我们需要添加一个for循环，这样我们可以保存。
 - en: '![](img/97368d43feac0c0e171afdc6ab7e7dfc_13.png)'
+  id: totrans-25
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/97368d43feac0c0e171afdc6ab7e7dfc_13.png)'
 - en: Let's say color。Color in my colors for each of these colors， we are going to
     create a mask。So we don't need to write this down， we can just replace this with
     colors。Color， And then again。Color。So if we want to display this out。We cannot
     have a genetic name。 we need to put a name that is changing。Let's use。So the first
     element is different for each one of them。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设颜色。我的颜色中的颜色，对于这些颜色，我们将创建一个掩模。所以我们不需要写下这个，我们可以用颜色来替换它。颜色，然后再次。颜色。因此，如果我们想显示出来。我们不能有一个通用的名字。我们需要给一个变化的名字。让我们使用。所以第一个元素对它们每一个都是不同的。
 - en: so we can put that as a name so we can say string and then color。The first elements。And
     that should give us three different windows。 So if we run that。![](img/97368d43feac0c0e171afdc6ab7e7dfc_15.png)
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们可以把它作为一个名字，所以我们可以说字符串，然后颜色。第一个元素。这应该给我们三个不同的窗口。所以如果我们运行它。![](img/97368d43feac0c0e171afdc6ab7e7dfc_15.png)
 - en: And there you go， So we are getting three different windows。Forget about the
     naming for now we're just testing it out so if I put the orange color I can see
     the orange one。 if I put the purple one， I can see purple and then if I put green
     I can see the third one in green so if I wanted to add more colors I can simply
     just add it to the list and that should give me。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 看吧，所以我们得到了三个不同的窗口。暂时忘记命名，我们只是测试一下，如果我放入橙色，我可以看到橙色。如果我放入紫色，我可以看到紫色，然后如果我放入绿色，我可以看到第三个绿色的。如果我想添加更多颜色，我可以简单地将它添加到列表中，这样就能给我。
 - en: '![](img/97368d43feac0c0e171afdc6ab7e7dfc_17.png)'
+  id: totrans-29
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/97368d43feac0c0e171afdc6ab7e7dfc_17.png)'
 - en: More colors， for example， if I remove this now。Let me remove that and it will
     only give me two of the masks。 so it will not show me green anymore。![](img/97368d43feac0c0e171afdc6ab7e7dfc_19.png)
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 更多颜色，比如说，如果我现在移除这个。让我移除它，这样只会给我两个掩模。所以它将不再显示绿色。![](img/97368d43feac0c0e171afdc6ab7e7dfc_19.png)
 - en: '![](img/97368d43feac0c0e171afdc6ab7e7dfc_20.png)'
+  id: totrans-31
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/97368d43feac0c0e171afdc6ab7e7dfc_20.png)'
 - en: So this way we have created something genetic that will work for multiple colors
     so you can keep adding more and more now for each of the masks that we have detected。
     let me comment this out。For each of the masks that we have detected。 we need to
     find where is this object that we have found in our image。 now to find that we
     need to get our contours and we need to approximate the bounding box around it
     so we can find our location of the object。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过这种方式，我们创建了某种通用的东西，可以用于多种颜色，所以你可以不断添加。现在对于我们检测到的每个掩模，让我注释掉这个。对于我们检测到的每个掩模，我们需要找出在图像中找到的这个对象的位置。现在要找到这个，我们需要获得轮廓，并需要近似包围框，以便找到对象的位置。
 - en: So for that， we need to get into the code of our one of our previous chapters
     in which we learned how to find contours so if we go back。This is the code for
     finding conours。So what we will do is we will just get this function as it is。And
     we don't need to differentiate between different shapes， so we will get it till
     our bounding box。 we will copy this。And in the project， we will paste it。Here。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 为此，我们需要进入我们前几章的代码中，我们学习了如何找到轮廓，如果我们回去。这是找到轮廓的代码。因此，我们要做的是直接获取这个函数。我们不需要区分不同的形状，所以我们会一直获取到我们的边界框。我们将复制这个。在项目中，我们将粘贴它。这里。
 - en: So this is our get contours function and now what we need to do is we need to
     change it a little bit so that we get the relevant information that we need。So。There's
     not a lot of things that will change。 so let's remove anything。Image contour。Okay。
     what we can do is we can create a new image。We can say， let's say， image。Result。Is
     equals to。Image copy。 So this will be the image that will have all the final information
     on it。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我们的获取轮廓函数，现在我们需要稍微更改一下，以便获得我们所需的相关信息。因此，改变的东西不多。让我们去掉任何东西。图像轮廓。好吧。我们可以创建一个新图像。我们可以说，假设图像。结果等于图像拷贝。因此，这将是包含所有最终信息的图像。
 - en: So all the drawings and everything will be on this image so we can copy image
     result and we can replace it here。 So it will draw the contours on this image。And
     then。What we don't need， Okay。 we can remove the parameters and we don't need
     the length or the object。And that's that's pretty much it。 So what we can do is
     now just to see if we are on the right track。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以所有的绘图和所有内容都将在这个图像上，因此我们可以复制图像结果并在这里替换。所以它将在这个图像上绘制轮廓。然后。我们不需要的，好的。我们可以去掉参数，不需要长度或对象。就这些。所以我们现在可以做的就是看看我们是否在正确的轨道上。
 - en: we just can see that if it's printing properly or not。 So from the find color
     we are going to send this image of our mask to find the contours so we will send
     this。We will say get contours and we will send the mask。And because we are calling
     this function。 it should draw on this image， so let's see if that works。So what
     happened， Okay， I mean yeah。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们只需要看看它是否正确打印。因此从寻找颜色中，我们将发送我们遮罩的图像来找到轮廓，所以我们会发送这个。我们会说获取轮廓，然后发送遮罩。因为我们在调用这个函数，它应该在这个图像上绘制，让我们看看是否有效。那么发生了什么，好吧，我的意思是，是的。
 - en: we remove that so it should not display any of the masks， so let's try that
     out。Orange， green。Purple， so none of them are working great。Let's find out why。So
     when we are sending the mask。Oh。 okay， because we did not put here image results。So
     we need to display the image result because that is the one that will have the
     elements on it。So let's run that there you go， so we have orange， we have green
     and we have purple， perfect。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们移除了那个，因此不应该显示任何遮罩，让我们试试看。橙色，绿色。紫色，所以它们都没有很好地工作。让我们找出原因。当我们发送遮罩时。哦，好吧，因为我们没有在这里放图像结果。所以我们需要显示图像结果，因为那才是有元素的地方。让我们运行一下，看看，橙色，绿色和紫色，完美。
 - en: So now that we know that we are getting those and we are getting the bounding
     box around it。All we need to do is we need to send these values。 Now we can send
     the center point。 but we want to draw from the tip of the pen， not from the center
     of the object detected。 so we will send the center rather than so we will send
     the tip rather than the center So what we will do is we will return。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们知道我们得到了那些，并且周围有边界框。我们需要做的就是发送这些值。现在我们可以发送中心点。但是我们想从笔尖开始绘制，而不是从检测到的物体的中心开始。因此我们会发送笔尖而不是中心。我们要做的是返回。
 - en: So here we will return。And we are going to return the value of x。Plus， our weight。Divided
     by two。 so it's in the center。And then we are going to send the value of Y as
     it is。So this will give us the top point of our tip points and the center of it
     as well。And in case。If it's not， if it's not greater than 500 or if it's not detected，
     we still need to return something。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这里我们将返回。我们将返回x的值，加上我们的宽度，除以二。因此它在中心。然后我们将按原样发送y的值。所以这将给我们笔尖的顶部点以及它的中心。如果没有，如果不大于500或者没有检测到，我们仍然需要返回一些东西。
 - en: So for that we need to declare these as zeros so we can say x Y。X， Y， W and
     height。 just in case if we need it later on， we can put all of them as zeros。So。We
     can get those。 so it will return this value so we need to get this value over
     here so that we can use it so we will put it here as x and y。So once we have that
     value， we can draw a circle around it so we can say Cv2 dot circle。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们需要将这些声明为零，我们可以说x，y，w和高度。以防我们稍后需要它，我们可以将它们全部设为零。因此，我们可以获得这些。这将返回这个值，所以我们需要在这里获取这个值，以便我们可以使用它，所以我们将其放在这里作为x和y。获得该值后，我们可以在周围绘制一个圆圈，所以我们可以说Cv2.dot.circle。
 - en: And we need to draw it on the image results。And our center point will be x and
     Y。And then we will define the radius， let's say 10， then we have to define the
     color for now。 let's say25，5，0 and0。And then we are going to write C2 dot filled
     as we want it to fill。So。If we run that now， let's see what happens。So if I go
     here， yeah。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们需要在图像结果上绘制它。我们的中心点将是x和y。然后我们将定义半径，假设为10，然后我们需要定义颜色，暂时设为25，5，0和0。然后我们将写C2.dot.filled，因为我们希望它填充。因此，如果我们现在运行看看会发生什么。如果我去这里，是的。
 - en: so I'm getting the blue point now I can see。That。I'm getting。你的。Correct point。Now
     again。 this this is the center of the bounding box， so if I turn it around the
     bounding box。 it will be the center of the bounding box， not the center of the
     contours to fix that it's a little bit tricky so we are not going to go into damaged
     detail。 but for now it should be fine if we keep the pen straight。Now。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 我现在得到了蓝色点，我可以看到。我得到了正确的点。现在再次，这是边界框的中心，所以如果我围绕边界框旋转，它将是边界框的中心，而不是轮廓的中心。解决这个问题有点棘手，所以我们不打算深入细节，但现在如果我们保持笔直应该没问题。
 - en: one thing we need to change is the color， so it should not be blue。 It should
     be the color that we are detecting so。We can remove the contour。We don't need
     the contours anymore， we know that we are detecting it properly。 but we need to
     change the colors of these objects so what we need to do is we need to define
     our color values so for example。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们需要更改的一件事是颜色，所以它不应该是蓝色。它应该是我们正在检测的颜色。因此，我们可以移除轮廓。我们不再需要轮廓，我们知道我们正在正确地检测，但我们需要更改这些对象的颜色，因此我们需要定义我们的颜色值，例如。
 - en: if this is detected what should be my color on my drawing。So we can say that
     we can call this my color values。And again。 we have to create it as a list and
     in that list， we need to define all the colors that we want to display。 so we
     have three， so we will define three。Now， next here we are going to write our values。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果检测到这个，我的绘图颜色应该是什么？我们可以说这就是我的颜色值。再一次，我们需要将其创建为一个列表，并在该列表中定义所有我们想要显示的颜色。我们有三个，因此我们将定义三个。接下来，我们将在这里写下我们的值。
 - en: '![](img/97368d43feac0c0e171afdc6ab7e7dfc_22.png)'
+  id: totrans-45
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/97368d43feac0c0e171afdc6ab7e7dfc_22.png)'
 - en: So how can you find these values？So here we can see an example website where
     you can find the RGB values。 so if I go to orange， so orange right now， if I click
     on it， you can see it's 2，55，153 and 51。So this is my value of the orange。 So
     what I can do is I can use these values in my。What do you call code so。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么你如何找到这些值呢？在这里我们可以看到一个示例网站，你可以找到RGB值。如果我选择橙色，现在橙色，如果我点击它，你可以看到它是2，55，153和51。这就是我的橙色值。那么我可以在我的代码中使用这些值。
 - en: '![](img/97368d43feac0c0e171afdc6ab7e7dfc_24.png)'
+  id: totrans-47
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/97368d43feac0c0e171afdc6ab7e7dfc_24.png)'
 - en: So but again， you have to make sure you are writing in the format of BGR。 so
     let me write that down here， so it is BGR， not RGB， so we have to write so here
     we will have 51。 then 153 and then 255。Similarly， we can find for purple and green，
     so for that for purple。 it is 2550 and 255 and for green we all know it is BGR
     so it should be 0， 255 and0。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是再次提醒，你必须确保以BGR的格式书写。所以让我在这里写下来，它是BGR，而不是RGB。因此我们这里将有51，然后153，然后255。同样，我们可以找到紫色和绿色，对于紫色，它是255，0和255，对于绿色，我们都知道它是BGR，所以它应该是0，255和0。
 - en: So these are our colors now and what we can do is we can draw the color of the
     circle based on these values。What happened？What we can say is we can say that
     we need。My color value as the input， as well。So if we go down。When we are sending
     the values， we need my color values as well， so we can say。What can we say， Okay，
     we need a counter to actually count how many times so we'll put the count is equals
     to0。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些是我们的颜色，现在我们可以根据这些值绘制圆圈的颜色。发生了什么？我们可以说，我们需要我的颜色值作为输入。如果我们继续，当我们发送这些值时，我们也需要我的颜色值，所以我们可以说。我们可以说，好吧，我们需要一个计数器来实际计算次数，所以我们将计数设为0。
 - en: And every time it counts， we need to know which color are we talking about。
     so we can say here counts。Plus， equals one。So instead of our main blue color here。
     we can say my color values。And I need to get the value of my counter index。 So
     my count right now。 whatever my count is， I need to get that value from。This what
     you call list。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 每次计数时，我们需要知道我们在谈论哪个颜色。所以我们可以在这里说`count`加1。因此，在我们主要的蓝色这里。我们可以说`my color values`。我需要获取我计数器索引的值。因此，我的计数现在。不管我的计数是什么，我需要从这个我们所称的列表中获取那个值。
 - en: So if it's count is equals to 0， it will get this value。 count is 1， it will
     get this value。So I can write here。呃。Count。So this should give us the correct
     color of our。What do you call marker。 So let's run that。So if I have purple， it's
     giving me the color purple， if I have orange。 it's giving me orange， it's a little
     bit hard to see。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以如果计数等于0，它将得到这个值。计数是1，它将得到这个值。所以我可以在这里写。呃。计数。所以这应该给我们我们所称的标记的正确颜色。让我们运行一下。如果我有紫色，它给我紫色，如果我有橙色，它给我橙色，稍微有点难以看到。
 - en: but you get the gesture and then you have green so we are getting green。So that
     is good we are getting the correct colors and the correct values now what we need
     to do is we need to draw these points so in order to draw it's actually fairly
     simple we are going to create a list of points and we are just going to display
     it every time and we are going to loop it around。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是你得到了手势，然后你有绿色，所以我们得到了绿色。这很好，我们得到了正确的颜色和正确的值。现在我们需要做的是绘制这些点。因此，绘制实际上很简单，我们将创建一个点的列表，每次都显示它，我们将循环它。
 - en: So at the bottom， let's go at the top first and we are going to create a list
     called My pointss。And inside this list， we are going to have three things， we
     are going to have the value of x。 we are going to have the value of y， and we
     are going to have the value of the color or not the color itself。 let's put the
     index of the color。So we can say if it's  zero， it will be this color， if it's
     one。
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以在底部，我们先去顶部，我们将创建一个名为`My pointss`的列表。在这个列表中，我们将有三样东西，我们将有x的值。我们将有y的值，我们将有颜色的值，或者不是颜色本身。让我们放置颜色的索引。所以我们可以说，如果它是零，它将是这种颜色，如果是1。
 - en: it will be this color and so on。 So instead of the real thing， we can put this。
     So let me copy that。And let me put it as a comment here。So。So what we can say
     is we can loop this my point and every time we can check the value of x Y and
     we can draw the circle of this color at this point。
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 它将是这种颜色，依此类推。因此，我们可以放置这个而不是实际的东西。让我复制一下。让我把它放在这里作为注释。所以。所以我们可以说我们可以循环这个`my point`，每次检查x和y的值，并在这个点绘制这个颜色的圆圈。
 - en: so it's fairly simple。So in order to do that， what we can do is we can create
     a new function。Called drawaw on Can。So， we can name it。Draw。On canvas。And then
     what do we need， we need。I， yeah。 we need the points。And we will also need the
     color values。Colored values。So what we will do is we will say that for each point。In。My
     points。
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这很简单。为了做到这一点，我们可以创建一个新的函数。称为`drawaw`在画布上。所以，我们可以把它命名为`Draw`。在画布上。接下来，我们需要什么呢？我，是的。我们需要那些点。我们还需要颜色值。带颜色的值。因此，我们将说对每一个点。在我的点中。
 - en: What we need to do is we need to iterate and we need to just draw a circle。
     Let me just copy it from up。Here。You copy it。The circle。 and we can put it here
     that what we need to do is we need to。Draw on I am result， our image result。 and
     we need to use the color of our count。 So this time around。The values are inside
     the point。
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们需要做的是迭代，我们只需要绘制一个圆圈。让我从上面复制。这里。你复制它。这个圆圈。我们可以把它放在这里，我们需要做的是在我们的图像结果上绘制。因此，这一次，值是在点内。
 - en: so we will say that point。At 0 is our x points at。One is our y and。Our I D is
     point at number 2。So this will give us the point at。This color of this color。
     Now。 what we need to do is whenever we are finding the colors。We need to send
     to draw。Okay。 so what we can say is that we can say that our new points。
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们会说`point`的第0位是我们的x，`point`的第1位是我们的y，`point`的第2位是我们的ID。所以这将给我们这个颜色的点。现在，我们需要做的是每当我们找到颜色时。我们需要发送给绘制。好的。因此，我们可以说我们的新点。
 - en: Point is equals to whatever we are getting from our colors。And then we need
     to draw them。So in order to draw them or should we do that first let's go up and
     let's return something over here。 So once we are finding the color we need to
     return our new points。 but we need to make sure that these points are not like
     they are detected properly these are not00 so if it's 00。
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 点等于我们从颜色中得到的任何值。然后我们需要绘制它们。因此为了绘制它们，或者我们应该先这样做，让我们回到上面，并在这里返回一些东西。因此一旦我们找到颜色，我们需要返回我们的新点。但是我们需要确保这些点没有被正确检测，这些不是00，如果是00。
 - en: If the x and y， if the value that we are returning is 00， then we don't need
     to do anything。 we don't need to plot it。It will just add on the memory。 So what
     we can say is that before the count。We can see that if x is not equals to0。And
     if why。Is not equals to 0。Then only we are going to append our point。 So we will
     say new points。Dot append。
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果x和y，如果我们返回的值是00，那么我们不需要做任何事情。我们不需要绘制它。它将仅仅添加到内存中。所以我们可以说在计数之前。我们可以看到如果x不等于0。并且如果y不等于0。那么只有在这种情况下我们才会附加我们的点。所以我们将说新点。点附加。
 - en: And we are going to say that we are going to write down the X。 Y and the count
     because that is our ID， and we need to define the new point every time。So every
     time the new points will change， so it will start with an empty empty list and
     then it will append and it will return these values。 So here we need to write
     return。Not in the loop， we need to write here return。
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将说我们要写下X、Y和计数，因为那是我们的ID，我们需要每次定义新点。因此每次新点都会变化，所以它将从一个空列表开始，然后附加并返回这些值。所以在这里我们需要写返回。不在循环中，我们需要在这里写返回。
 - en: and then we are going to return our points。So every time it。Adds on to these
     points。 it will send these new points over here Now once we have our new points。
     what we can do is we can check if the new points are actually there or not。 so
     we will say that if the length of our new points。
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将返回我们的点。因此每次它都会添加到这些点上。它将把这些新点发送到这里。现在一旦我们有了新点，我们可以检查新点是否实际上存在。所以我们将说，如果我们新点的长度。
 - en: Is not equals to 0 that we are getting something。Then oh what is that？Eals to
     0。Then we need toerate through our points， so for new points。诶嗯。New points。We
     are going to append my points。 My points， thoughts append。And we are going to
@@ -382,14 +507,18 @@
     a list inside a list so this is a list we need to break it down to points again
     so that's why we are putting a loop here so for new point in in our new points
     we are going to append each one of them in our points。
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们得到的东西并不等于0。那么，哦，那是什么呢？等于0。那么我们需要遍历我们的点，所以对于新点。嗯，新点。我们将添加我的点。我的点，思想附加。我们将添加我们的新点。那么，为什么我们在这里放一个完整的循环，因为我们得到的是一个列表，所以我们不能将一个列表放在另一个列表里面，然后在画布上运行我们的代码，因为那样是不行的，我们需要所有的点，而不是一个列表里面有一个列表，所以这是一个列表，我们需要将其分解为点，这就是我们在这里放循环的原因。所以对于新点，在我们的新点中，我们将逐个添加到我们的点中。
 - en: And at the end， we all we need to do is we need to draw these points if they
     are available so we can say that if the length of my points。Is not equals to 0。Then
     we need to draw them， so draw。Draw on canvas and my points and use my color can
     value。So this should draw all our colors in the right values， let's see。
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，我们需要做的就是在这些点可用的情况下绘制它们，所以我们可以说如果我的点的长度。不等于0。那么我们需要绘制它们，因此绘制。绘制在画布上和我的点，并使用我的颜色值。所以这应该在正确的值中绘制所有颜色，让我们看看。
 - en: So here we have our purple and there you go， so you can see it's drawing purple。Then
     we have orange。 it's drawing orange。And then we have our green， so it's drawing
     green。So there you go So this is very simple and it is a very kind of a generic
@@ -398,20 +527,28 @@
     them together So if you wanted to add a new color it's very simple all you need
     to do is you need to go and add to my colors and my color value So for example
     if I wanted to do blue。
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这里有我们的紫色，来吧，你可以看到它在绘制紫色。然后我们有橙色，它在绘制橙色。然后我们有绿色，所以它在绘制绿色。所以你看，这很简单，而且是一个非常通用的代码，你可以在其上进行添加，它并不是硬编码的，这种颜色等于这种，这种颜色等于那种，我们并没有创建很多硬编码的掩码并将它们放在一起。因此，如果你想添加一种新颜色，这非常简单，你需要做的就是去添加到我的颜色和我的颜色值。例如，如果我想做蓝色。
 - en: I have checked out the values for blue and again you can use the color picker
     code to find the values。 you can add that and we know already that our blue is
     basically BGR so it will be 2550 and0 so this will add the blue color and if we
     run it now and let me try the blue here。
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 我检查了蓝色的值，你可以使用颜色选择器代码找到这些值。你可以添加这些，我们已经知道蓝色的基本值是BGR，因此它将是2550和0，所以这将添加蓝色。如果我们现在运行它，让我在这里尝试一下蓝色。
 - en: And there you go。 So now it's detecting blue as well。 So this is how simple
     it is to add more colors。 So the good thing about this is that it will detect
     all the colors at the same time as well。So if we look here。We have these four
     colors and we can detect them at the same time。 you can see that looks nice。
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 就这样。所以现在它也能检测蓝色了。这就是添加更多颜色的简单方法。好在它能够同时检测所有颜色。如果我们看看这里，我们有这四种颜色，可以同时检测它们。你可以看到效果不错。
 - en: '![](img/97368d43feac0c0e171afdc6ab7e7dfc_26.png)'
+  id: totrans-67
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/97368d43feac0c0e171afdc6ab7e7dfc_26.png)'

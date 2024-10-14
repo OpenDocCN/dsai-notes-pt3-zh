@@ -1,258 +1,348 @@
 - en: 【双语字幕+资料下载】OpenCV 基础教程，安装、原理、实战， 3小时带你搞定这个热门计算机视觉工具库！＜实战教程系列＞ - P10：第7章：图像颜色检测识别
     - ShowMeAI - BV1zL411377L
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】OpenCV基础教程，安装、原理、实战，3小时带你搞定这个热门计算机视觉工具库！＜实战教程系列＞ - P10：第7章：图像颜色检测识别
+    - ShowMeAI - BV1zL411377L
 - en: '![](img/07947795d9caed2cc20e4ef5ab09c052_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/07947795d9caed2cc20e4ef5ab09c052_0.png)'
 - en: '![](img/07947795d9caed2cc20e4ef5ab09c052_1.png)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/07947795d9caed2cc20e4ef5ab09c052_1.png)'
 - en: 。So here we are importing our library and we are importing an image in the resources
     folder by the name Labo。pG。So we are just displaying it using the IM show function
     and we are adding a delay so that it stop。 it does not disappear。So this is our
     image， so our task will be to detect the orange color in this image。So first，
     we are going to convert this into HSV space， so we will say image。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们在导入我们的库，同时也在导入名为Labo的资源文件夹中的图像。我们使用IM show函数显示它，并添加延迟，以便它不会消失。所以这是我们的图像，我们的任务是检测图像中的橙色。因此，首先我们将其转换为HSV空间，所以我们会说图像。
 - en: HSV is equals to now as you remember， we have been using the CVT color to convert
     it into grayscale。 so we will use the same function， C2。Color to convert it into
     HSV。 so we will say that we want to convert our image and we want it to be c2
     dot color。Color underscore。BGR to HSV。So this will convert the image into HSV，
     we can copy this。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: HSV现在等于，正如你所记得的，我们一直在使用CVT颜色将其转换为灰度图像。因此，我们将使用相同的函数，C2。颜色将其转换为HSV。因此，我们将说我们希望转换我们的图像，并希望它是c2.dot
+    color。颜色_。BGR到HSV。因此，这将把图像转换为HSV，我们可以复制这个。
 - en: and then we can check out our new image。So here we have our new image， which
     is the HSV。 and I did not write a new name that's why it's overr HSV。So this is
     the original and this is the HSV， so now we need to define some color values。
     some ranges in which we want our color to be so we will define the hue。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们可以检查一下我们的新图像。所以这里是我们的新图像，它是HSV的。我没有写一个新名称，所以它覆盖了HSV。这是原始图像，这是HSV，所以现在我们需要定义一些颜色值。一些我们希望颜色在其中的范围，因此我们将定义色调。
 - en: the saturation and the value limits and within that limit if the image region
     falls within that color range we will grab that so let's do that。SoBut one thing
     to note is that we do not actually know what are the minimum and maximum values
     that we need for this particular orange color。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 饱和度和数值的限制，在这个限制范围内，如果图像区域在这个颜色范围内，我们将抓取它，所以让我们这样做。但是需要注意的是，我们实际上并不知道这个特定橙色所需的最小和最大值。
 - en: so what we are going to do we are going to introduce something known as track
     bars that will help us play around with the values in real time so that we can
     find the optimum minimum and maximum values of our color。So to introduce track
     bars， we are going to create。Let's create it on the top。Here。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将要做的是引入一些被称为滑块的东西，这将帮助我们实时调整值，以便找到我们颜色的最佳最小值和最大值。因此，为了引入滑块，我们将创建它。让我们在顶部创建它。
 - en: so we are going to create a new window by， let's say by the name track bars。
     so we will say c2 dot named window， we will call it track。Mars and。Then we are
     going to resize it so that it is not。We're looking and we will write here track。Bs
     now this name should be the same， so just keep in mind not to do any spelling
     mistakes here and then we need to define the size。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，我们将创建一个新窗口，比如命名为滑块。因此我们将说c2.dot命名窗口，我们将其称为track。Mars，然后我们将调整其大小，以便它看起来不那么奇怪，我们将在这里写滑块。现在这个名称应该是相同的，所以请记住不要拼写错误，然后我们需要定义大小。
 - en: let's say 640 by。2，40。Then we are going to create our first track bar， CB2 dot。Create
     now we are using the create track bar function。 Now keep in mind that the T here
     is capital so first we will define what value are we going to change using this
     track bar so。This is just a name so we can write anything。So the first value we
     will be changing will be the h minimum。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设640乘以240。然后我们将创建我们的第一个滑块，CB2.dot。创建，现在我们正在使用创建滑块函数。请记住，这里的T是大写的，因此我们首先将定义我们将使用此滑块更改的值。因此，这只是一个名称，我们可以写任何东西。我们将要更改的第一个值将是h的最小值。
 - en: And next we are going to define which window are we going to put this track
     bar on so we have already named our window as track bars so we are going to use
     that now we have to define the the current value so when the script runs what
     will be the initial value that it will run with so we will put it at0 and what
     will be the maximum value of our h now as you know here has a maximum value of
     360 now but we do not have 360 here in。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，我们将定义哪个窗口上放置这个滑块，因此我们已经将窗口命名为滑块，因此我们现在将使用它。我们必须定义当前值，因此当脚本运行时，它将使用什么初始值运行，我们将其设置为0，而我们h的最大值现在如你所知这里的最大值是360，但我们在这里没有360。
 - en: Open C， we have till 1，79， which is basically 1，80 values。So we will put 179
     and at the end we have we have to call a function which will run every time something
     changes in the track bar so every time the user changes the track bar it will
     call this function but we are going to get the values in another way I will show
     how we will use that later on but for now we do have to define this function so
     but we can say this is an empty function and。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 打开C，我们有直到1，79，这基本上是1，80个值。所以我们将放179，最后我们必须调用一个函数，每次滑块变化时都会运行这个函数，所以每次用户更改滑块时，它将调用这个函数，但我们将以另一种方式获取值，我稍后会展示如何使用，但现在我们确实需要定义这个函数，但我们可以说这是一个空函数。
 - en: At the top， we can define。Empty。And we can say that just pass。That's it。So that
     will pretty much do nothing， so that's how you create the track bar so all you
     need to do now is to run and see what happens。Whoopps。Okay， so once we run it，
     we are getting this error which say c2。t resize。 it's not actually resize， it's
     resize window。So we will resize window and let's play that again。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 在顶部，我们可以定义。空的。我们可以说只是传递。这就是了。这基本上不会做任何事情，所以这就是你创建滑块的方法，现在你需要做的就是运行一下看看会发生什么。哦。好的，所以一旦我们运行它，我们就会收到这个错误，提示c2。t
+    resize。其实不是resize，而是resize window。所以我们将其改为resize window，然后再玩一次。
 - en: And we should have a yeah， we have the track bar here so we have the h minimum
     and you can see that the value is basically going okay。 we are missing yeah we
     just need to put here something it will take in an argument and that's it。We will
     run that again and if we use the trackbar again。 so now you can see that the U
     value is moving around。And the minimum is zero and the maximum is 179。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们应该有一个，是的，我们在这里有滑块，所以我们有h最小值，你可以看到值基本上在变化。我们缺少的是，我们只需在这里放一些东西，它将接受一个参数，就这样。我们将再次运行，如果我们再次使用滑块。现在你可以看到U值在变化。最小值是零，最大值是179。
 - en: So how many values do we need， we need six values because we will have h minimum，
     then h maximum。 then saturation minimum， saturation maximum and value minimum
     and value maximum。 so we will copy this。A couple of times。And we will just change
     this to Max。And then we will change this to。Sauration。Sauration and again， we
     will change this to max。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们需要多少个值，我们需要六个值，因为我们将有h最小值，然后是h最大值。然后是饱和度最小值、饱和度最大值、值最小值和值最大值。所以我们将复制这个几次。然后我们将其改为Max。然后我们将其改为饱和度。饱和度，然后我们再次将其改为max。
 - en: And minimum will stay the same。 This will be value。 This will be value， and
     this will be max。So now these values they range from  zero to2，5，5。So we will
     write 255 and the initial values。 we will keep them the same， but for the maximums
     we will keep them at maximum。 so here we will put 179 here we will put 255 and
     here we will put 255。So if we run that now。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 最小值保持不变。这将是值。这将是值，这将是最大值。所以现在这些值的范围是从零到2，5，5。所以我们将写255，初始值我们保持不变，但对于最大值我们将保持在最大。所以这里我们将放179，这里我们放255，这里我们放255。所以如果我们现在运行它。
 - en: we will have six track bars that we can move around。So that is good。😔，Yeah，
     that's pretty much good。 So what we will do next is we are going to read these
     trackbar values so we can apply on our image。So here we are going to get our values
     using the get track bar position function。 so we will say our edge minimum basically
     is equals to C2。CV2 dots gets。Track bar。Position。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将有六个滑块可以移动。这很好。😔，是的，这基本上很好。那么接下来我们要做的是读取这些滑块值，以便我们可以应用到我们的图像上。所以在这里我们将使用获取滑块位置函数来获取我们的值。因此我们将说我们的边缘最小值基本上等于C2。CV2点获取。滑块。位置。
 - en: there you go。So then we will write which which value are we talking about now
     the spelling here have to be exactly the same。 so we will write this here and
     then we are going to say to which track bar window does it belong？
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们来写一下，我们现在讨论的是哪个值，这里的拼写必须完全相同。所以我们将在这里写下这个，然后我们要说它属于哪个滑块窗口？
 - en: So our window name is track bars。 So I'm going to copy this。And I will paste
     this here。So to confirm。 we can just print。Edge underscore minimum。Now， in order
     to get the value。What we need to do is we need to put it in a loop because we
     have to run it again and again to keep getting that value。 So instead of the image
     we will have to change it to a webcam or。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们的窗口名称是滑块。我将复制这个。然后在这里粘贴。所以确认一下。我们可以打印。边缘_最小值。现在，为了获得值，我们需要将其放入循环中，因为我们必须一次又一次地运行以保持获取那个值。因此，我们需要将图像改为摄像头或者。
 - en: Just add a loop so we can write here while。Shiwu。We want this to keep running。And
     we will put this in as well。 so instead of adding complexity。 we can just put
     one here and that should do it。So right now we can see the value is0。And then
     if we change it， you can see the value keeps changing。Right。So next。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 只需添加一个循环，以便我们可以在这里写。是的。我们希望它持续运行。我们也会把这个放进去。因此，与其增加复杂性，我们只需在这里放一个，这就足够了。目前我们可以看到值是0。如果我们改变它，你可以看到值一直在变化。对吧。接下来。
 - en: we are going to apply this to all of them。And we will copy this so that we have
     all the values。 so we will do it again five times。And this time around， this will
     be max。Then minimum and max and then minimum and max。Then we will have the saturation。Okay。
     then we have the saturation， then the value。And then the value。So that is about
     that。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将对所有这些进行应用。我们将复制这个，以便我们拥有所有的值。因此，我们将重复五次。这一次，将是最大值。然后是最小值和最大值，然后是最小值和最大值。然后我们将有饱和度。好的。然后我们有饱和度，然后是值。然后是值。就这样。
 - en: and then we will write here max and here will be saturation。Sauration， and then
     max。Here will be minimum value， and then value。And then， max。So we can print all
     of them out just to see just to make sure that if it is correct。 we will just
     say H minimum。Then。Hdge， maximum。Then we will say S minimum。S maximum than value。Value。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们会在这里写最大值，这里是饱和度。饱和度，然后是最大值。这里是最小值，然后是值。然后，最大值。我们可以将它们全部打印出来，以确保它是正确的。我们将说H最小值。然后。H最大值。然后我们会说S最小值。S最大值和值。值。
 - en: minimum and value。Maximum。So let's see how that works out。😔，So there we have
     it 017902550 and 255。 so if I change my values you can see the track bar actually
     changes these values in real time。So now that we have these minimum and maximum
     ranges of the hue saturation and value。 we will use these values to filter out
     our image so that we get that particular image in that range。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 最小值和最大值。那么我们来看看效果如何。😔，所以我们得到了017902550和255。因此，如果我改变我的值，你会看到滑动条实际上实时更改这些值。现在我们有了色相、饱和度和亮度的最小和最大范围。我们将使用这些值来过滤图像，以便在该范围内获取特定图像。
 - en: Particular color in that range。 so now we will create a mask， we will say that
     the mask。Is equals to Cv2 dot in range。So we are creating a mask that is in the
     range of these colors。 So which image are we talking about， We are talking about
     the。HSV image and then we have to give it the minimum and the maximum range。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 在该范围内的特定颜色。因此，现在我们将创建一个掩码，我们将说掩码。等于Cv2.inRange。因此，我们正在创建一个在这些颜色范围内的掩码。那么我们在谈论哪幅图像，我们在谈论。HSV图像，然后我们必须提供最小和最大范围。
 - en: so we will say this is the lower limit and we will say。This is the upper limit。Now
     we need to define this lower and upper limit， so we will right here， let's do
     the lower first。 lower is equals2。We will create a Ny array， so let me just add
     that here。Import nuy。As MP。Now down here， we are going to add a N array so N。Dot
     array。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将说这是下限，我们将说。这是上限。现在我们需要定义这个下限和上限，因此我们在这里写，让我们先处理下限。下限等于2。我们将创建一个N数组，所以让我在这里添加。导入numpy。作为MP。现在在这里，我们将添加一个N数组，所以N。数组。
 - en: And then we are going to create the minimum array， so which is edge minimum。And
     then we have S minimum。And then we have the value minimum。唔发。他就没了么。The same way
     we are going to do for the maximum， so we will say upper is equals to nu pi dot
     array and we will add our maximum limits。Which is Em。Then， S max。And then， vmax。Okay，
     so this will give us the mask。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将创建最小数组，即边缘最小值。然后我们有S最小值。然后我们有值最小值。唔发。他就没了么。以同样的方式，我们将为最大值做同样的事情，因此我们将说上限等于numpy.array，我们将添加最大限制。即Em。然后是S最大值。然后是vmax。好的，所以这将给我们掩码。
 - en: so basically what it will do， it will filter out and give us the filtered out
     image of that color。So let's see how that looks like。Or no need to copy that。
     we can just paste this here and we can say this is the mask and this will be。😔，Mask。So
     let's run that and there we have the mask here we have the original image and
     here we have the track bar。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 基本上，它将过滤并给我们该颜色的过滤图像。我们来看看效果如何。或者不需要复制。我们可以直接把这个粘贴在这里，我们可以说这是掩码，这将是。😔，掩码。运行一下，我们得到了掩码，这里有原始图像，这里有滑动条。
 - en: So if I move this around， you can see how。The value of how the image changes。So
     we want to keep all the colors that we don't want as black and we want to keep
     the color that we need in white。 So if I was to detect the orange。I would say
     that is pretty much good。So I recommend keep changing the values， try to keep
     it smoother and smoother。Eventually。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以如果我移动这个，你可以看到图像变化的值。所以我们想把所有不需要的颜色保留为黑色，而把需要的颜色保留为白色。所以如果我想检测橙色，我会说这非常好。因此，我建议不断调整值，尽量让它更加平滑。最终。
 - en: you will get some good results。 So now that we have these。These values。 what
     we can do is we can put them as our initial values。 so we have 019 110 to 4153
     and 255 so we can go back here。We can still open up our track bar。And we can go
     up here。Let me keep it on the side， and I can just。See what it is。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 你将获得一些不错的结果。现在我们有这些值。我们可以把它们作为我们的初始值。所以我们有019、110、4153和255，所以我们可以回到这里。我们仍然可以打开我们的轨迹条。然后我们可以在这里向上移动。让我把它放在一旁，我可以看看是什么。
 - en: so this is zero and then this is 19， this is 110。And this one is 2，40。Then we
     have 153。And then 255。 So now if I run this again by default， I will get the mask。![](img/07947795d9caed2cc20e4ef5ab09c052_3.png)
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这是零，然后这是19，这个是110。这个是2，40。然后我们有153。然后是255。所以现在如果我再次运行这个，默认情况下，我将得到蒙版。![](img/07947795d9caed2cc20e4ef5ab09c052_3.png)
 - en: Right， and next what we can do。![](img/07947795d9caed2cc20e4ef5ab09c052_5.png)
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 对，接下来我们可以做什么。![](img/07947795d9caed2cc20e4ef5ab09c052_5.png)
 - en: Is we can get our result， which will be our original image。 so instead of getting
     this black and white mask， we can get the actual colored parts。 the orange color
     over here。So how we can do that is by creating using this mask。 we will create
     a new image so we can say image。Results。Is equals2。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以得到我们的结果，这将是我们的原始图像。因此，我们不再得到这个黑白蒙版，而是得到实际的彩色部分，这里是橙色。我们可以通过使用这个蒙版来做到这一点。我们将创建一张新图像，所以我们可以说图像结果等于2。
 - en: We are going are going to use the and operation， so we have the bitwise。And
     Op。 which will add two images together to create a new image。It is basically checking
     both the images and wherever the pixels are both present。 it will take that as
     a yes or as a one。And it will store that in the new image。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将使用与运算，所以我们有位运算符。与运算，它将把两幅图像加在一起以创建一幅新图像。基本上，它检查两幅图像，在像素都存在的地方，它将其视为“是”或“1”。并将其存储在新图像中。
 - en: So what it does is we are going to say that we have our。Original image that
     we want to use。And our new image will be also like our original image， but with
     a mask applied。Which is our mask。 which is。The one we created before。So let's
     look at the image result。Image result。 and we should change the name here。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们要做的是，我们有一个想要使用的**原始图像**。而我们的新图像将与原始图像相似，但会应用一个**蒙版**。这是我们之前创建的那个蒙版。让我们来看一下图像结果。图像结果，我们应该在这里更改名称。
 - en: '![](img/07947795d9caed2cc20e4ef5ab09c052_7.png)'
+  id: totrans-34
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/07947795d9caed2cc20e4ef5ab09c052_7.png)'
 - en: Let's run that。And there you go。 So now we have the colored image， So if you
     did not get that。 basically we are we are checking these two images。![](img/07947795d9caed2cc20e4ef5ab09c052_9.png)
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们运行这个。好了，现在我们得到了彩色图像，所以如果你没有明白，基本上我们正在检查这两幅图像。![](img/07947795d9caed2cc20e4ef5ab09c052_9.png)
 - en: The mask and the original image， and we are checking wherever we have these
     white pixels we are getting from this image and creating a completely new image
     from it。![](img/07947795d9caed2cc20e4ef5ab09c052_11.png)
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 蒙版和原始图像，我们正在检查这些白色像素，看看我们从这个图像中得到什么，并从中创建一张全新的图像。![](img/07947795d9caed2cc20e4ef5ab09c052_11.png)
 - en: So that is what we are doing。So one thing we can do here is to add our function
     from our previous chapter in which we joined the images so that we don't have
     to play with all these images again and again。 so if we go back to。Our previous
     chapter， we have the stacking function。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是我们正在做的事情。因此，我们可以做的一件事是添加我们上一章的功能，其中我们合并了图像，这样我们就不必一次又一次地处理所有这些图像。所以如果我们回到之前的章节，我们有堆叠函数。
 - en: we can copy that and bring it here。Yeah， let's bring it here and then now we
     can go down。 this is the by the way， the tracking function， so sorry the stacking
     function。 so it is stack images。So we can go down and instead of showing all these
     images separate。 we can just show the stacking image。What we can say is that。Sttapped。Or
     we can say I M G stock。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以复制这个并把它带到这里。是的，让我们把它带到这里，然后现在我们可以向下。这是顺便提一下，跟踪函数，所以抱歉是堆叠函数。所以它是堆叠图像。所以我们可以向下走，而不是单独显示所有这些图像。我们可以只显示堆叠图像。我们可以说是堆叠。或者我们可以说I
+    M G堆叠。
 - en: I M D stack is equal still。Now we have to write our function， which is。Stock
     images。We have to define the scale， the scale。 Let's keep it at 0。6。 And then
     we have to define the array of images。 So we are going to。Put here。We are going
     to put here the images that we need， so we can put。Two images and then two images。
     Okay。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: I M D 堆栈仍然相等。现在我们必须编写我们的函数，内容是。股票图像。我们必须定义比例，比例。让我们将其保持在0.6。然后我们必须定义图像数组。因此我们要在这里放。我们将把我们需要的图像放在这里，所以我们可以放。两个图像，然后两个图像。好的。
 - en: so we will create IMG and then IM G HSV。 And then in the new role， we can create。We
     can add the mask and then the image。Result。And then we just need to display the
     final image。So we can stay say start。Images and we will write here IMD style。So
     let's remove all of these and we can play again。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将创建IMG，然后创建IM G HSV。然后在新的角色中，我们可以创建。我们可以添加遮罩，然后是图像。结果。接下来，我们只需要显示最终图像。所以我们可以说开始。图像，我们将在这里写IMD样式。现在让我们移除所有这些，然后再玩一次。
 - en: And there you go so now so now we have a neat image with all these images stacked
     up and showing us the values altogether。 so now we can have the track part on
     one side and we can see the results directly applied in real time。So， let's。Check
     what the results are。 and yeah so。So that's how you can detect colors。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 看，这样我们就有了一幅整齐的图像，所有这些图像堆叠在一起，向我们展示了所有的值。所以现在我们可以在一侧查看轨道部分，并且可以实时看到结果的直接应用。所以，让我们检查一下结果是什么。是的，就是这样。所以这就是你如何检测颜色。
 - en: '![](img/07947795d9caed2cc20e4ef5ab09c052_13.png)'
+  id: totrans-42
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/07947795d9caed2cc20e4ef5ab09c052_13.png)'
