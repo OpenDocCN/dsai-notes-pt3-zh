@@ -1,130 +1,184 @@
 - en: 【双语字幕+资料下载】Pytorch 进阶学习讲座！14位Facebook工程师带你解锁 PyTorch 的生产应用与技术细节 ＜官方教程系列＞ - P7：L7-
     TorchText - ShowMeAI - BV1ZZ4y1U7dg
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Pytorch 进阶学习讲座！14位Facebook工程师带你解锁 PyTorch 的生产应用与技术细节 ＜官方教程系列＞ - P7：L7-
+    TorchText - ShowMeAI - BV1ZZ4y1U7dg
 - en: 🎼。![](img/aaa011e1dc72912baa590f68c0c043cd_1.png)
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 🎼。![](img/aaa011e1dc72912baa590f68c0c043cd_1.png)
 - en: Hello everyone， welcome to PyTchDeveloper Day for 2020。My name is George。 I'm
     a software engineer at Facebook， I work for the text domain in Pytot。My job at
     Facebook is to support the PyToch user， especially in the text domain for research
     to production。 so in this talk I will go over some major update in 2020 and help
     you understand how our work can facilitate your research and production for the
     PyToch。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，欢迎参加2020年的PyTch开发者日。我叫乔治。我是Facebook的一个软件工程师，工作于Pytot的文本领域。我在Facebook的工作是支持PyToch用户，特别是在文本领域，从研究到生产。因此，在这次演讲中，我将讲解2020年的一些主要更新，并帮助你了解我们的工作如何促进你的研究和PyToch的生产。
 - en: '![](img/aaa011e1dc72912baa590f68c0c043cd_3.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/aaa011e1dc72912baa590f68c0c043cd_3.png)'
 - en: So why we want to have a text domain in addition to Pyth。First。We want to accelerate
     NLP research and provide some reusful orthogonal and correct building block for
     cutting edge research。Based on our knowledge for the text domain and the research
     community。We want to work with the both internal team and external open source
     community to build a pipeline like can better support。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么为什么我们希望在Pyth之外有一个文本领域呢？首先。我们希望加速NLP研究，并为前沿研究提供一些可重用的正交和正确的构建块。基于我们对文本领域和研究社区的了解。我们希望与内部团队和外部开源社区合作，建立一个更好支持的管道。
 - en: Both the Facebook products and external research。Second。😊。We want to provide
     a solution to transfer from research to production。What we mean here is we integrate
     those pipeline and module with a wide range of py capabilities such as touchscript
     quantization。 distribute data parallel and mobile with this goal we want to have
     a better support for research to production transition for most end an NLP pipeline
     thirdly we want to engage with the community and Disc novel technology。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 同时支持Facebook的产品和外部研究。其次。😊。我们希望提供一个解决方案，将研究转化为生产。我们在这里的意思是将这些管道和模块与广泛的py能力集成，如touchscript量化、分布式数据并行和移动。我们的目标是为大多数NLP管道的研究到生产过渡提供更好的支持，第三，我们希望与社区互动，探索新技术。
 - en: As people notes， the NRP domain。Move very fast。 So the text domain in Pyth team
     want to develop a good technology understanding。In the NLP area and build a new
     research collaboration。For the future community。With those go in mind， we provide
     those easy access to data sets。Text processing pipeline。And some NLP related module。So
     if you have time， please go over those one by one。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如人们所注意到的，NRP领域发展非常迅速。所以Pyth团队希望在NLP领域发展良好的技术理解，并建立新的研究合作。为了未来的社区。考虑到这些，我们提供了对数据集的便捷访问、文本处理管道和一些与NLP相关的模块。所以如果你有时间，请逐一查看这些内容。
 - en: our row text data set， the transform。And our more some NP related module， I
     will go。 go over this one by one with you。![](img/aaa011e1dc72912baa590f68c0c043cd_5.png)
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们的行文本数据集和转换。还有一些与NP相关的模块，我会逐一和你讲解。![](img/aaa011e1dc72912baa590f68c0c043cd_5.png)
 - en: Okay， so the new data set in To text。We have also rewrite a few existing data
     set in To text nightly release。So here。For the nightly release， we consider those
     new stuff as a prototype。 So we will release those new data sets with our。😊，Better
     release very soon。So the new data set show here are fully compatible with data
     loader in Py。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，所以新的数据集在文本中。我们也重写了一些现有的数据集，在文本夜间发布中。所以在这里。对于夜间发布，我们将这些新内容视为原型。因此，我们将很快发布这些新的数据集。😊，很快就会发布。所以这里展示的新数据集与Py中的数据加载器完全兼容。
 - en: User will have the flexibility to build the data processing pipeline with some
     standard tokenizer and vocabulary blocks。Okay， here I list all the new data set
     available to our user in our beta release。 at same。 you may wondering， once I
     have those raw data， what should I do to convert this raw data into。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 用户将能够灵活构建数据处理管道，并使用一些标准的分词器和词汇块。好的，在这里我列出了我们beta发布中可用的新数据集。与此同时，你可能会想，一旦我有了这些原始数据，我该如何将其转换。
 - en: '![](img/aaa011e1dc72912baa590f68c0c043cd_7.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/aaa011e1dc72912baa590f68c0c043cd_7.png)'
 - en: A tensor like can be used to train a model okay， so here we provide some improved
     performance we provide some data pipeline with improved performance。With some
     C+ plus extension。So the goal here is we want to have an easy transfer to production。Here's
     the overview of some end to end pipeline with Ptoch and Torch text。The row data
     string read and send to a field transform here here you can see like tokenizer。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 像张量可以用于训练模型，所以在这里我们提供了一些改进的性能，我们提供了一些具有改进性能的数据管道。使用一些 C++ 扩展。因此，这里的目标是我们希望能轻松转移到生产环境。以下是使用
+    PyTorch 和 Torch Text 的一些端到端管道的概述。原始数据字符串被读取并发送到字段转换，这里您可以看到分词器。
 - en: vocabulary， vector took up and convertive cancer， right？
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 词汇，向量占用和转换癌症，对吧？
 - en: So currently we are rewriting this data processing transform as an orthogonal
     building block with the G port。So after this after this step， we call this a pre
     processing。 The data are sent to data loader and sampler， where we generate。They
     have bachelor。Then the data are ready for the model。So we are do our best to write
     those a building block。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 目前我们正在将此数据处理转换重写为一个正交构建模块，并与 G 端口结合。因此，在这一步之后，我们称之为预处理。数据被发送到数据加载器和采样器，在那里我们生成。它们有学士学位。然后数据就准备好供模型使用。因此，我们尽力将这些写成一个构建模块。
 - en: individual building block， like so you will have the full flexibility to combine
     them together。And with the C++ extension， we are able to support the Gt for all
     this transform。And we believe that's a better support for the production。Okay，
     so now we go to the。The NLP related module， so we released a new multiha attention
     module in Tor text。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 单独的构建模块，这样您将拥有完全的灵活性来将它们组合在一起。通过 C++ 扩展，我们能够支持所有这些转换的 Gt。我们相信这对生产环境提供了更好的支持。好的，现在我们进入与
+    NLP 相关的模块，我们在 Torch Text 中发布了新的多头注意力模块。
 - en: so in addition to the dropping replacement， if you are using the multiha attention
     in Pytoch co library。 we support the dropping replacement so you can easily switch
     from a Pytoch multiha attention to To text multiha attention。In addition。The new
     multi attention container also for touch script。Based on the feedback from our
     user， we add the incremental decoding and the broadcasting support。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 除了丢弃替换之外，如果您在 PyTorch 库中使用多头注意力，我们支持丢弃替换，因此您可以轻松地从 PyTorch 的多头注意力切换到文本的多头注意力。此外，新的多头注意力容器也适用于
+    Touch 脚本。根据用户的反馈，我们添加了增量解码和广播支持。
 - en: The idea for this new multi high attention container is to facilitate user with
     some novel research idea under the transformer architecture。Right now， the transformer
     architecture is very popular across the text， audio and vision domain。We hope
     here like we can provide a very flexible multiha attention module so our user
     can apply this with different idea here I give you an example like how you switch
     from the Pych multiha attention to our Tosh text multiha attention container。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个新多头注意力容器的想法是为用户提供一些在变换器架构下的新颖研究理念。现在，变换器架构在文本、音频和视觉领域非常流行。我们希望能提供一个非常灵活的多头注意力模块，以便用户可以在不同的想法中应用它。这里我给您一个例子，展示如何将
+    PyTorch 的多头注意力切换到我们的 Torch Text 多头注意力容器。
 - en: '![](img/aaa011e1dc72912baa590f68c0c043cd_9.png)'
+  id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/aaa011e1dc72912baa590f68c0c043cd_9.png)'
 - en: Just with this a few lines。User has more flexibility to try different custom
     component with the concept multi attention。You can put。Custom in projection container，
     multihaitation container。O skilled dog products。 you can apply different idea
     with this multi hair attention container。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 仅通过这几行，用户可以更灵活地尝试不同的自定义组件，与多头注意力的概念相结合。您可以放置自定义的投影容器、多头注意力容器。O 技能狗产品。您可以在这个多头注意力容器中应用不同的想法。
 - en: '![](img/aaa011e1dc72912baa590f68c0c043cd_11.png)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/aaa011e1dc72912baa590f68c0c043cd_11.png)'
 - en: Okay， last， but not least。On our website， we have several text related tutorials。Including
     the one to show how to use the new data set for text classification analysis。Please
     check out those tutorial and have some idea about how to write those into an NLP
     pipeline。Keep in mind， like we will also update this tutorial and to show how
     to build the N to N pipeline with the。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，最后但同样重要的是。在我们的网站上，我们有几个与文本相关的教程，包括一个展示如何使用新的数据集进行文本分类分析的教程。请查看这些教程，了解如何将其写入
+    NLP 管道。请记住，我们也会更新这个教程，以展示如何构建 N 到 N 管道。
 - en: With the new Tosht library for different NLP task at the end， thank you for
     watching this video。 and I hope you enjoy the Pytor Develop day for this year，
     and I will see you around。![](img/aaa011e1dc72912baa590f68c0c043cd_13.png)
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 在视频的最后，感谢观看这个视频，并希望你享受今年的**Pytor开发日**，我们下次再见！![](img/aaa011e1dc72912baa590f68c0c043cd_13.png)
 - en: '![](img/aaa011e1dc72912baa590f68c0c043cd_14.png)'
+  id: totrans-22
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/aaa011e1dc72912baa590f68c0c043cd_14.png)'
 - en: '![](img/aaa011e1dc72912baa590f68c0c043cd_15.png)'
+  id: totrans-23
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/aaa011e1dc72912baa590f68c0c043cd_15.png)'

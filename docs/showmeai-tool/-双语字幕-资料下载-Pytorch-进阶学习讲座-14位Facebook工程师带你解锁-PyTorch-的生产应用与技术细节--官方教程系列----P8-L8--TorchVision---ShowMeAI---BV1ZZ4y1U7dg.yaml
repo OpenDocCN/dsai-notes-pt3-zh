@@ -1,129 +1,189 @@
 - en: 【双语字幕+资料下载】Pytorch 进阶学习讲座！14位Facebook工程师带你解锁 PyTorch 的生产应用与技术细节 ＜官方教程系列＞ - P8：L8-
     TorchVision - ShowMeAI - BV1ZZ4y1U7dg
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Pytorch 进阶学习讲座！14 位 Facebook 工程师带你解锁 PyTorch 的生产应用与技术细节 ＜官方教程系列＞
+    - P8：L8- TorchVision - ShowMeAI - BV1ZZ4y1U7dg
 - en: 🎼。![](img/7c9cde7419cd5ccaaa7e02943dd416e4_1.png)
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 🎼。![](img/7c9cde7419cd5ccaaa7e02943dd416e4_1.png)
 - en: Hi everyone and welcome to the 2020 P Georgeor Developer Day。I'm Francisco Massa
     and I'm a researcher at Facebook AI。I work in the Ptorrch team and I'm the maintainer
     of Torch Vision。Today。 I'll be talking about what TorteViion is， how it can enable
     you to get started in computer Visual with Byytorch。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，欢迎来到 2020 P Georgeor 开发者日。我是 Francisco Massa，Facebook AI 的研究员。我在 Ptorrch
+    团队工作，并且是 Torch Vision 的维护者。今天，我将讨论 TorteViion 是什么，以及它如何帮助你在 Byytorch 中开始计算机视觉的旅程。
 - en: and the latest additions that have been introduced to TorVision over the last
     year。![](img/7c9cde7419cd5ccaaa7e02943dd416e4_3.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 最近一年中，TorVision 引入的最新功能。![](img/7c9cde7419cd5ccaaa7e02943dd416e4_3.png)
 - en: The first question you might ask yourself is， what a storage vision？
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可能首先会问自己，什么是存储视觉？
 - en: Torch Vision is a library that is built to facilitate research and experimentation
     and computer vision。It extends Pytorch with functionality which is very specific
     and useful to computer vision。 so that keeps the Pytorch library lean and focused
     on core different abstractions。But what is actually is there in our vision， let's
     have a closer look。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: Torch Vision 是一个旨在促进计算机视觉研究和实验的库。它扩展了 Pytorch，增加了非常特定且对计算机视觉有用的功能，从而保持 Pytorch
+    库的精简和专注于核心抽象。但我们的视觉中实际有哪些内容，让我们仔细看看。
 - en: T Divisionion facilitates research and experimentation in computer vision by
     providing a number of building blocks that allows you to quickly start a new project
     end to end。It provides data sets， common data sets for a number of mainstream
     vision tasks such as classification and object detection。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: T Divisionion 通过提供多个构建模块，促进计算机视觉的研究和实验，使你能够快速启动一个新项目。它提供数据集，常见数据集涵盖了许多主流视觉任务，如分类和目标检测。
 - en: It also has models， we provide reference per models for classification， detection，
     and more。TtVision also has stored print operators specific to computer vision
     models。And data transformation operators to simplify creating data augmentation
     pipelines。Additionally。 it contains primitives for efficient image and video reading
     and finally reference training scripts。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 它也有模型，我们提供分类、检测等模型的参考。TtVision 还具有专门针对计算机视觉模型的存储打印操作符，以及数据转换操作符，以简化数据增强管道的创建。此外，它包含高效图像和视频读取的原语，最后提供参考训练脚本。
 - en: which illustrates with a few files how it can train yourself the model to vision。😊。![](img/7c9cde7419cd5ccaaa7e02943dd416e4_5.png)
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 下面几个文件展示了如何训练模型以进行视觉处理。😊。![](img/7c9cde7419cd5ccaaa7e02943dd416e4_5.png)
 - en: Leveraging the building blocks that we provide。Over the last year。 we have been
     improving through our vision in order to simplify the path from research to production。![](img/7c9cde7419cd5ccaaa7e02943dd416e4_7.png)
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 利用我们提供的构建模块。在过去的一年里，我们一直在通过我们的视觉进行改进，以简化从研究到生产的路径。![](img/7c9cde7419cd5ccaaa7e02943dd416e4_7.png)
 - en: The way Pytororch enables the research production path is via Trot script。 an
     intermediate representation of your Pytororch program that it can be exportable
     to run on C++ environments via the T script runtime。The core part of every deep
     learning pipeline resides on its models。By closely working with the Torch script
     and Onx teams。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: Pytororch 通过 Trot 脚本来实现研究到生产的路径，Trot 脚本是你 Pytororch 程序的中间表示，可以导出以在 C++ 环境中运行。每个深度学习管道的核心部分都依赖于其模型。通过与
+    Torch 脚本和 Onx 团队密切合作。
 - en: we have enabled all Tortvis models to natively support Trch script and OnX export。Thanks
     to the preed models and for visionion， you can quickly build C+ classifications。
     leveraging the power of deep learning。But models are only part of the story when
     it comes to embedding your Python code into a C++ run time。Very often you need
     to prepare the input data into a format that is compatible with the model。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们已经使所有 Tortvis 模型原生支持 Trch 脚本和 OnX 导出。得益于预训练模型和视觉工具，你可以快速构建 C+ 分类，利用深度学习的力量。但在将你的
+    Python 代码嵌入 C++ 运行时时，模型仅仅是故事的一部分。你常常需要将输入数据准备成与模型兼容的格式。
 - en: DVi used to rely on pillow for most of the data transformations。 so moving your
     application C++ required re implementingpleing the transformations in a way which
     is compatible with C++。Now， Torch Vi transforms can directly work on Torch dance
     and it can be exported to Torch script。 so you only need to implement the transforms
     once in Python。Finally。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: DVi 以前依赖 pillow 进行大多数数据转换，因此将您的应用程序移动到 C++ 需要以兼容 C++ 的方式重新实现转换。现在，Torch Vi 转换可以直接在
+    Torch dance 上工作，并且可以导出到 Torch 脚本，因此您只需在 Python 中实现一次转换。最后。
 - en: T Divisionion now provides native IO functions for image and video decoding。
     enabling the full raw data to model production pipeline to be converted from Python
     to C++。![](img/7c9cde7419cd5ccaaa7e02943dd416e4_9.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: T Divisionion 现在提供原生 IO 功能用于图像和视频解码，使得完整的原始数据到模型生产管道可以从 Python 转换为 C++。![](img/7c9cde7419cd5ccaaa7e02943dd416e4_9.png)
 - en: Now let's take a closer look at each one of those points。![](img/7c9cde7419cd5ccaaa7e02943dd416e4_11.png)
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们更详细地看看这些要点。![](img/7c9cde7419cd5ccaaa7e02943dd416e4_11.png)
 - en: All charger Vi models have native Trar script and Onx support so that exporting
     them to C+ can be done with a couple of lines of code。Additionally， mixeding precision
     training and inference is available for all models enabling having faster run
     time with lower memory footprint。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 所有充电的 Vi 模型都支持原生 Trar 脚本和 Onx 导出，因此可以用几行代码将它们导出到 C+。此外，所有模型都支持混合精度训练和推理，使运行时间更快，同时内存占用更低。
 - en: 😊，Tort vision transforms have been a to inherit from N module and accepts torch
     tensors as input with torch cry compatibility。This brings several benefits to
     the data augmentation pipeline， such as off the shelf GPU support。 video use case
     enablement， via efficient batch transformations of frames。 and the possibility
     to export the transforms together with your model in C++ environment。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，Tort vision 转换已从 N 模块继承，并接受带有 torch cry 兼容性的 torch 张量作为输入。这为数据增强管道带来了几个好处，例如现成的
+    GPU 支持，视频使用案例的启用，通过高效的帧批量转换，以及将转换与模型一起在 C++ 环境中导出的可能性。
 - en: TorchVision now provides image， reading and writing operators for JPEG and PNG
     formats with native TorchQ support。You can directly read local image path into
     a torch densesr。 or alternatively decompose the operators into raw file reading。
     where only the bites of the file are read and returned as the U8 densesor and
     the cutting of the raw data into an image densesr。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: TorchVision 现在提供 JPEG 和 PNG 格式的图像读取和写入操作符，支持原生 TorchQ。您可以将本地图像路径直接读取到 torch
+    densesr，或者将操作符分解为原始文件读取，仅读取文件的字节并返回为 U8 densesor，并将原始数据切割为图像 densesr。
 - en: Thanks to native charge food support， image decocoding can be embedded together
     with your model for an N to end export experience。Finally， TVision provides a
     frame based video written API with support for both audio and video and Tr script
     compibility。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 由于原生充电食品支持，图像解码可以与您的模型一起嵌入，实现端到端导出体验。最后，TVision 提供了一个基于帧的视频编写 API，支持音频和视频以及
+    Tr 脚本兼容性。
 - en: The video reader is an iterator and can be combined with it tools for advanced
     video reading patterns such as reading the next10 frames after a specified timestamp
     or skipping every other frame of the video or reading all frames between two timestamps。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 视频读取器是一个迭代器，可以与工具结合使用，实现高级视频读取模式，例如在指定时间戳后读取下一个 10 帧，或跳过视频的每隔一帧，或读取两个时间戳之间的所有帧。
 - en: This new video reader API is currently released as better and its API can change
     following user feedback。![](img/7c9cde7419cd5ccaaa7e02943dd416e4_13.png)
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个新的视频读取 API 当前作为 beta 发布，其 API 可能会根据用户反馈而改变。![](img/7c9cde7419cd5ccaaa7e02943dd416e4_13.png)
 - en: We have some additional examples of the new functionalities and our in the examples
     followed on GitHub。 where you can find notebooks for the Vi Read API as well as
     the transforms。In Tro vision。 we welcome any contributions。If you find a bug，
     have a request for an improvement or a new feature inclusion。 let us know if via
     the issue tracker on the ToVision Github page or contribute via pull request。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们在 GitHub 上的示例中有一些新功能的附加示例，您可以找到 Vi Read API 及其转换的笔记本。在 Tro vision 中，我们欢迎任何贡献。如果您发现错误，或者有改进或新功能的请求，请通过
+    ToVision GitHub 页面的问题跟踪器告诉我们，或通过拉取请求贡献。
 - en: 🎼I'd like to thank you for watching and I hope that Torch Vision can help you
     build great new applications leveraging by Torch。![](img/7c9cde7419cd5ccaaa7e02943dd416e4_15.png)
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 🎼感谢您观看，希望 Torch Vision 能帮助您构建利用 Torch 的出色新应用。![](img/7c9cde7419cd5ccaaa7e02943dd416e4_15.png)
 - en: '![](img/7c9cde7419cd5ccaaa7e02943dd416e4_16.png)'
+  id: totrans-23
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/7c9cde7419cd5ccaaa7e02943dd416e4_16.png)'
 - en: '![](img/7c9cde7419cd5ccaaa7e02943dd416e4_17.png)'
+  id: totrans-24
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/7c9cde7419cd5ccaaa7e02943dd416e4_17.png)'

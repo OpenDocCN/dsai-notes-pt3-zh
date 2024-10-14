@@ -1,145 +1,207 @@
 - en: 【双语字幕+资料下载】Pytorch 进阶学习讲座！14位Facebook工程师带你解锁 PyTorch 的生产应用与技术细节 ＜官方教程系列＞ - P6：L6-
     TorchAudio - ShowMeAI - BV1ZZ4y1U7dg
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Pytorch 进阶学习讲座！14位Facebook工程师带你解锁 PyTorch 的生产应用与技术细节 ＜官方教程系列＞ - P6：L6-
+    TorchAudio - ShowMeAI - BV1ZZ4y1U7dg
 - en: 🎼。![](img/d47b4dd266be755b011d1bea67152b4b_1.png)
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 🎼。![](img/d47b4dd266be755b011d1bea67152b4b_1.png)
 - en: Hello everyone， my name is Vincent Kenville Bellair and I'm the tech lead for
     Tordu。 which is what I'm going to talk about today。The goal of Torruio is to provide
     building blocks to other researchers and engineers that allows them to bring research
     to production。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，我是Vincent Kenville Bellair，我是Tordu的技术负责人。这就是我今天要谈论的内容。Torruio的目标是为其他研究人员和工程师提供构建模块，使他们能够将研究带入生产。
 - en: This way， Tortrivio can accelerate the development of other libraries in the
     open sourceurce ecosystem。Toorodo is built around the following core functionalities。The
     first functionality is IO to read and save tensors from various file formats like
     MP3， wave。 Fl and Sp， we can also download and use common audio datasets where
     samples are loaded in parallel using torch multi processingcessing workers。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过这种方式，Tortrivio 可以加速其他开源生态系统库的开发。Toorodo 是围绕以下核心功能构建的。第一个功能是IO，用于从各种文件格式（如MP3、wave、FL和SP）读取和保存张量。我们还可以下载并使用常见的音频数据集，样本在使用torch多进程工作时并行加载。
 - en: The second functionality is transforms for audio and signal processing such
     as spectrogram and FCC and resembling。The transforms are provided as neural network
     modules in Tor2 dot transforms。Since the transforms are written using pure Pytorrch
     operations。 the computations can be done on the GPU and it can be compiled using
     Trchcr。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 第二个功能是用于音频和信号处理的变换，例如谱图和FCC。变换作为Tor2 dot transforms中的神经网络模块提供。由于变换是使用纯Pytorch操作编写的，因此计算可以在GPU上进行，并可以使用Trchcr进行编译。
 - en: The third is Sox and Cdi compatibility。 Sox and Cdi our audio processingces
     library written in C++ for Sox。 we provide an interface to use their transforms
     for CAdi。 we provide reading and writing of CAdi binary files。 as well as equivalent
     features like spectrogram Ns NF bank。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 第三个是Sox和Cdi兼容性。Sox和Cdi是用C++为Sox编写的音频处理库。我们提供接口以使用它们的变换进行CAdi的操作，支持读取和写入CAdi二进制文件，以及提供与谱图、Ns
+    NF bank等同等功能。
 - en: The final functionality is a distribution of models。 along with canonical example
     pipelines for distributed training for major tasks。![](img/d47b4dd266be755b011d1bea67152b4b_3.png)
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 最终的功能是模型的分发，以及用于主要任务的分布式训练的标准示例管道。![](img/d47b4dd266be755b011d1bea67152b4b_3.png)
 - en: As I said， the first set of functionality revolves around IO。![](img/d47b4dd266be755b011d1bea67152b4b_5.png)
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 如我所说，第一个功能集围绕IO展开。![](img/d47b4dd266be755b011d1bea67152b4b_5.png)
 - en: Here's a small snippet using To dualode and transform。The waveform variable
     is a tensor。 which is read from file， and the correspondingpon example rate of
     the file is read as a scalar。The torture to transform spectrogram is given an
     input parameter to configure its behavior。 It is then past the input tensor， which
     computes the spectrogram tensors as output。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个使用双重编码和变换的小片段。波形变量是一个张量，它是从文件中读取的，文件的相应采样率作为标量读取。变换谱图的输入参数用来配置其行为。然后将输入张量传递过去，计算得到谱图张量作为输出。
 - en: What's special here that I want to highlight is that not only are the transform
     standard torch and and module and so can be compiled using Jt。 but the loads function
     uses torch minings and so can also be compiled and ported wherever Git is supported。
     The goal is thus to make it possible to Jit an entire pipeline to be around in
     production easily。😊。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 我想强调的特别之处在于，变换不仅是标准的torch模块，因此可以使用Jit进行编译，而加载函数使用torch minings，因此也可以在支持Git的地方编译和移植。目标是使整个管道能够轻松在生产中使用Jit。😊。
 - en: '![](img/d47b4dd266be755b011d1bea67152b4b_7.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d47b4dd266be755b011d1bea67152b4b_7.png)'
 - en: We support several data sets for different tasks， for instance， library speech。
     for speech recognition， library TTS for text to speech。![](img/d47b4dd266be755b011d1bea67152b4b_9.png)
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们支持针对不同任务的多个数据集，例如用于语音识别的库语音和用于文本到语音的库TTS。![](img/d47b4dd266be755b011d1bea67152b4b_9.png)
 - en: The next set of functionalities I mentioned is transforms， as I said before。
     they're written in pure Pi torch and as such support， batching， torch grip and
     GPU。Here's another example， since each transform is a torch and a module。 they
     can be combined in a standard sequential wrapper for convenient data augmentation。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 我提到的下一个功能集是变换，正如我之前所说，它们是用纯Pytorch编写的，因此支持批处理、torch grip和GPU。这里是另一个例子，由于每个变换都是一个torch模块，因此它们可以组合在一个标准的顺序包装器中，以方便数据增强。
 - en: Here we take a spectrogram， apply a random time stretch， computeute the complex
     norm。 apply a random frequency masking and a random time masking。 and then convert
     the amplitude to decibel。 Frency masking and time masking are part of speckcle
     meant。 which is what I'm illrating in the image。 A band of frequency and another
     in time are randomly masked。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，我们获取一个声谱图，应用随机时间拉伸，计算复数范数，应用随机频率掩蔽和随机时间掩蔽，然后将幅度转换为分贝。频率掩蔽和时间掩蔽是声学信号处理的一部分，这就是我在图像中展示的内容。一段频率和另一段时间被随机掩蔽。
 - en: '![](img/d47b4dd266be755b011d1bea67152b4b_11.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d47b4dd266be755b011d1bea67152b4b_11.png)'
 - en: The code is divided in functional that perform the computation and a transform。
     which is an NN module that wraps each functional and keeps their state Here I'm
     listing a few new functional that we added recently。 You can see， for instance，
     maone axis that is used within the the frequency and time masking。 We also have
     several bicode filters that are used in signal processing or voice executeded
     detection operation to detect voice。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 代码被分为执行计算的功能和一个变换，后者是一个NN模块，包装每个功能并保持其状态。这里我列出了一些我们最近添加的新功能。例如，你可以看到用于频率和时间掩蔽的maone轴。我们还有几个在信号处理或语音执行检测操作中使用的双通道滤波器，以检测语音。
 - en: '![](img/d47b4dd266be755b011d1bea67152b4b_13.png)'
+  id: totrans-16
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d47b4dd266be755b011d1bea67152b4b_13.png)'
 - en: The next functionality is the interface with socks and qualitydi。![](img/d47b4dd266be755b011d1bea67152b4b_15.png)
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 下一个功能是与socks和qualitydi的接口。![](img/d47b4dd266be755b011d1bea67152b4b_15.png)
 - en: For suck， we offer a way of using their efficiency plus operations directly
     within Pytorrch in a torchscriptable manner。 For instance， here I am applying
     a sequence of gain， speed， rate change。 pad and trim using apply effects tensor
     directly on the Pytorrch tensor。For CAdi。 Torrode provides a wrapper for Torrodo
     transforms that mimics the flags provided to CAdi binaries。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于suck，我们提供了一种直接在Pytorrch中以torchscriptable方式使用其效率加操作的方法。例如，这里我正在对Pytorrch张量直接应用增益、速度、速率变化、填充和修剪的效果。对于CAdi，Torrode为Torrodo转换提供了一个包装器，模拟提供给CAdi二进制文件的标志。
 - en: you can also read Arc and SCP files through Torrojiio so that the processed
     output of CAdi can be used within your Torrod program CAdi is used quite a lot
     in the Aio community。 so we want to make it easy to interface with it。![](img/d47b4dd266be755b011d1bea67152b4b_17.png)
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 你还可以通过Torrojiio读取Arc和SCP文件，以便CAdi的处理输出可以在你的Torrod程序中使用。CAdi在Aio社区中使用非常广泛，因此我们希望简化与它的接口。![](img/d47b4dd266be755b011d1bea67152b4b_17.png)
 - en: The final set of functionalities that I want to talk about is the addition of
     models within the library。![](img/d47b4dd266be755b011d1bea67152b4b_19.png)
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 我想谈论的最终功能集是库中模型的添加。![](img/d47b4dd266be755b011d1bea67152b4b_19.png)
 - en: For speech recognition， we added a training example pipeline for speech recognition
     that uses Lib speech data set and the Wa to letter model。For text to speech， we
     added a vcoder based on the WaR&N model。 along with an example training pipeline
     in the example folder that uses Libris TTS dataset。For source separation， we added
     the COVtizedNe model and an example training pipeline with the Wall Street Journal0
     mixed data set。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于语音识别，我们添加了一个使用Lib语音数据集和Wa到字母模型的语音识别训练示例管道。对于文本到语音，我们添加了基于WaR&N模型的vcoder，以及在示例文件夹中使用Libris
+    TTS数据集的示例训练管道。对于源分离，我们添加了COVtizedNe模型和一个使用华尔街日报混合数据集的示例训练管道。
 - en: '![](img/d47b4dd266be755b011d1bea67152b4b_21.png)'
+  id: totrans-22
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d47b4dd266be755b011d1bea67152b4b_21.png)'
 - en: Before finishing， I would like to highlight a few features that are on our roadmap。![](img/d47b4dd266be755b011d1bea67152b4b_23.png)
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 在结束之前，我想强调几个在我们路线图上的功能。![](img/d47b4dd266be755b011d1bea67152b4b_23.png)
 - en: First， we would like to include the qualityy pitch feature extraction due to
     demand from the community。Second， we are interested in including a beam surge
     decoder interface。 this is especially useful for speech recognition application。And
     finally。 another loss that has been requested by users is the addition of the
     RNN transducer loss。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，由于社区的需求，我们希望包含质量音调特征提取。其次，我们有兴趣包括一个波束涌现解码器接口，这对语音识别应用尤其有用。最后，用户请求的另一个损失是添加RNN转导损失。
 - en: '![](img/d47b4dd266be755b011d1bea67152b4b_25.png)'
+  id: totrans-25
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d47b4dd266be755b011d1bea67152b4b_25.png)'
 - en: To use and learn about Pytorch， you can visit Pytorch。org/udio。 It contains
     documentation about the API， installation instructions。 tutorials and links to
     the Gitthub page。 We also have a new tutorial for the recognition of speech command。
     have fun playing with it。Torchd is compatible with Linux， Mac OS， Windows， and
     supports Python 3。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 要使用和了解 Pytorch，你可以访问 [Pytorch](https://pytorch.org/udio)。它包含关于 API 的文档、安装说明、教程以及链接到
+    GitHub 页面。我们还有一个新的语音命令识别教程，玩得开心！Torchd 兼容 Linux、Mac OS、Windows，并支持 Python 3。
 - en: 6 and up， just like Pytororch。![](img/d47b4dd266be755b011d1bea67152b4b_27.png)
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 6 及以上，就像 Pytororch 一样。![](img/d47b4dd266be755b011d1bea67152b4b_27.png)
 - en: Thank you for watching。![](img/d47b4dd266be755b011d1bea67152b4b_29.png)
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 感谢观看。![](img/d47b4dd266be755b011d1bea67152b4b_29.png)

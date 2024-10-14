@@ -1,71 +1,103 @@
 - en: 【双语字幕+资料下载】Pytorch 进阶学习讲座！14位Facebook工程师带你解锁 PyTorch 的生产应用与技术细节 ＜官方教程系列＞ - P9：L9-
     最新的 Profiler API 和最佳实践 - ShowMeAI - BV1ZZ4y1U7dg
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Pytorch进阶学习讲座！14位Facebook工程师带你解锁PyTorch的生产应用与技术细节 ＜官方教程系列＞ - P9：L9-
+    最新的Profiler API和最佳实践 - ShowMeAI - BV1ZZ4y1U7dg
 - en: 🎼。![](img/8ecf516795c50978f573dce9c644f972_1.png)
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 🎼。![](img/8ecf516795c50978f573dce9c644f972_1.png)
 - en: Hello， my name is Ellia， I'm a software engineer at Facebook working on PyOch
     and in this presentation I'll talk about PyTch Pror and two new features that
     we recently added。![](img/8ecf516795c50978f573dce9c644f972_3.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 你好，我叫Ellia，我是一名在Facebook工作的软件工程师，专注于PyOch。在这次演讲中，我将讨论PyTch Pror和我们最近添加的两个新功能。![](img/8ecf516795c50978f573dce9c644f972_3.png)
 - en: So what is Pytoch Pror Pytoch includes an easy to use tool that allows you to
     measure runtime and other performance metrics of models operators。In a simple
     example， we first start with necessary module inputs。 then we create Gsite 18
     model and then as you can see we're on model inference inside。By profile Cons
     manager。Everything inside this Conx Manager is profiled， and once you have finished。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么Pytoch Pror是什么？Pytoch包含一个易于使用的工具，允许你测量模型操作符的运行时和其他性能指标。在一个简单的例子中，我们首先开始必要的模块输入，然后创建Gsite
+    18模型，正如你所看到的，我们在模型推理中。通过Profile Cons管理器。一切都在这个Conx管理器内部被分析，一旦你完成。
 - en: you can print out the results。In this case， you will see a table with entries
     grouped by operator name。And with some rail metrics such as self and total CPU
     time。Profiller also has more features such as group by operator input shapes。
     support for both CPU and GPU operators， custom labeled code rangers。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以打印出结果。在这种情况下，你会看到一个按操作符名称分组的表格，并且有一些关于自我和总CPU时间的指标。Profiler还具有更多功能，例如按操作符输入形状分组，支持CPU和GPU操作符，自定义标签代码范围。
 - en: and saving the trace in Chrome JON format。For example。 if you want to see the
     input shapes of the operators。Just past record shapes true and grew by input shapes。In
     this case。 we see multiple operators such as convolution with different input
     shapes as expected。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 并以Chrome JON格式保存跟踪。例如，如果你想查看操作符的输入形状，只需传递记录形状为真，并按输入形状分组。在这种情况下，我们看到多个操作符，例如卷积，具有不同的输入形状。
 - en: So let's check the check in memory usage feature that we recently added。In addition
     to measuring runtime， Pror can also be used to measure the amount of tensor memory
     used by the model's operators。Just pass Pro memory true， and then you can sort
     by CPU or Quda memory usage。In our example。 we see that most of the memory was
     consumed by empty operator。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们检查最近添加的内存使用情况功能。除了测量运行时，Pror还可以用来测量模型操作符使用的张量内存量。只需传递Pro内存为真，然后你可以按CPU或Quda内存使用量进行排序。在我们的示例中，我们看到大部分内存被空操作符消耗。
 - en: which is not surprising because we use this operator to create new tensors。And
     also memory was consumed by Resize operator， which is used to change tensor size。Based
     on the total CPU memory column， you can see that there are other operators that
     directly or indirectly call empty and resize。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 这并不令人惊讶，因为我们使用这个操作符来创建新的张量。此外，Resize操作符也消耗了内存，它用于改变张量的大小。根据总CPU内存列，你可以看到还有其他操作符直接或间接调用空和resize。
 - en: '![](img/8ecf516795c50978f573dce9c644f972_5.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8ecf516795c50978f573dce9c644f972_5.png)'
 - en: But what if you want to know not only the operator， but where in the model the
     operator is？
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是如果你想知道的不仅是操作符，还有操作符在模型中的位置呢？
 - en: '![](img/8ecf516795c50978f573dce9c644f972_7.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8ecf516795c50978f573dce9c644f972_7.png)'
 - en: Stack traces are helpful in cases like this。So you can just。Pass with stack2。
     and then you can group by top and stack entries。And in our example。 we see that
     there are two top Mkelian N convolution operators。And in the source location。
     we can see not only the location inside torch andM convolution model。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 堆栈跟踪在这种情况下很有帮助。因此你可以只需传递stack2，然后按顶部和堆栈条目进行分组。在我们的示例中，我们看到有两个顶部Mkelian N卷积操作符。在源位置，我们不仅可以看到torch和M卷积模型内部的位置。
 - en: but also two different coal sites in the original Resnet model script。![](img/8ecf516795c50978f573dce9c644f972_9.png)
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 但也有两个不同的煤炭站点在原始Resnet模型脚本中。![](img/8ecf516795c50978f573dce9c644f972_9.png)
 - en: If you want to learn more about Profilr and see more examples。 please check
     out our Pror recipe on website Thank you very much。![](img/8ecf516795c50978f573dce9c644f972_11.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你想了解更多关于Profilr的内容并查看更多示例，请查看我们网站上的Pror食谱，非常感谢你。![](img/8ecf516795c50978f573dce9c644f972_11.png)
 - en: '![](img/8ecf516795c50978f573dce9c644f972_12.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8ecf516795c50978f573dce9c644f972_12.png)'

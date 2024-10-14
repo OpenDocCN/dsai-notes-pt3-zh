@@ -4,10 +4,13 @@
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Pytorch进阶学习讲座！14位Facebook工程师带你解锁PyTorch的生产应用与技术细节＜官方教程系列＞ - P3：L3-
+    Autograd的高级API - ShowMeAI - BV1ZZ4y1U7dg
 - en: 🎼。![](img/ae640e7b46aaf17bba8e02172f49117e_1.png)
   id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 🎼。![](img/ae640e7b46aaf17bba8e02172f49117e_1.png)
 - en: Hi everyone， my name is Alban， I'm a research engineer here at Facebook and
     I'm working on the frontend team for Pytorch in New York。More particularly on
     the Autograd sub system。 and so today I'm going to talk to you about the brand
@@ -15,12 +18,14 @@
   id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，我的名字是Alban，我是Facebook的一名研究工程师，正在纽约的Pytorch前端团队工作。更具体地说，我在Autograd子系统上工作。所以今天我将与大家讨论我们为Autograd添加的全新高级API。
 - en: In particular， I'm going to give you a quick overview of like the motivations
     for this new API。 what it actually looks like and how to use it and finally some
     future works for what's going to come for it。![](img/ae640e7b46aaf17bba8e02172f49117e_3.png)
   id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 特别是，我将简要概述这个新API的动机、实际样子以及如何使用，最后介绍一些未来的工作计划！[](img/ae640e7b46aaf17bba8e02172f49117e_3.png)
 - en: So to begin with the motivation for it is that the current autograd API we have
     is not for everyone。In particular， the dot backward function is really geared
     toward Torch。t andN users as it populates the dot grad fields of all the tensors
@@ -31,6 +36,8 @@
   id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，这个新API的动机是当前的autograd API并不适合所有人。特别是，dot backward函数非常针对Torch和N用户，因为它填充了所有张量的dot
+    grad字段，并且与我们在StN中使用的状态和优化器紧密相关。类似地，autogradgrad则更倾向于神经网络用户，因为它是为反向传播构建的，所有命名和API设计都是如此。
 - en: Thinking about neural networks。And so we think that now nowadays that we have
     more general users that use Autograd to do more optimization than just neural
     network。We needed a good generic API that these people can use to actually do
@@ -38,6 +45,7 @@
   id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 想到神经网络。因此，我们认为，现在有更多的普通用户使用Autograd进行比单纯的神经网络更多的优化。我们需要一个好的通用API，供这些人使用，以满足他们的所有需求。此外。
 - en: for higher level functions such as computing a Jacobian that I'm going to use
     here is like an example for many things。It's very nice to have a reference implementation
     within Pythtorch。The reason for that is up to fairly recently if you wanted to
@@ -46,6 +54,7 @@
   id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于更高级的功能，比如计算雅可比，我将在这里用作许多事情的示例。在Pythtorch中拥有一个参考实现是非常好的。原因是直到最近，如果你想用Spytorch计算雅可比，你需要复制粘贴几年前做的代码。
 - en: And so people have basically a stale version of that g， potentially in their
     code。 And we can't really make any improvement to the way。Jacoian are computed
     for everyone to basically get automatically this new upgraded version。And so this
@@ -54,6 +63,7 @@
   id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，人们在他们的代码中基本上拥有一个过时的版本g。我们不能真的对计算雅可比的方式进行改进，让每个人自动获得这个新的升级版本。因此，这个新API将帮助我们通过这个通用API为用户带来更多性能改进。
 - en: And。Following this idea， we also added recently a whole benchmark system around
     this API to make sure that existing models and models that are used very often
     by our users。Have good performance， and we can also measure improvements we're
@@ -61,11 +71,13 @@
   id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 而且，基于这个想法，我们最近还围绕这个API添加了一个完整的基准系统，以确保现有模型和我们用户经常使用的模型具有良好的性能，并且我们也可以通过不同的变化来衡量我们正在做的改进。
 - en: but also we can measure regressions and make sure they are not significant and
     we can catch them and fix them before they hit main releases。![](img/ae640e7b46aaf17bba8e02172f49117e_5.png)
   id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我们也可以测量回归并确保它们不显著，并在它们影响主要发布之前捕捉并修复它们！[](img/ae640e7b46aaf17bba8e02172f49117e_5.png)
 - en: So where does this new API live？So it lives under the torch dot autogra dot
     functional symbolial。You can find it in the autograd documentation under like
     the functional higher level API name。And it has a slightly different spirit comparing
@@ -74,6 +86,7 @@
   id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么这个新API在哪里呢？它位于torch.dot.autogra.functional符号下。你可以在autograd文档中找到它，名为功能性高级API。与现有API相比，它具有稍微不同的理念，主要是将函数作为输入，而不是前向传递的结果。
 - en: The main reason for that is our twofold， one is because it's closer to the mathematical
     formulation and people are getting used to differentiate functions directly。 not
     do the forward paths and then as for the gradient。Second。 it also allows us to
@@ -82,16 +95,19 @@
   id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 这样做的主要原因有两个，一个是因为它更接近数学公式，且人们习惯于直接对函数进行求导，而不是先进行前向路径再计算梯度。第二，它还使我们在前向传播中对发生的事情有了更多的自由，特别是对于我们计划的一些优化。
 - en: we will need to do some special things during the forward pass that we don't
     want the user to have to worry about。 and so this new pay is going to allow us
     to do that very efficiently。![](img/ae640e7b46aaf17bba8e02172f49117e_7.png)
   id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 在前向传播期间，我们需要做一些特殊的事情，不希望用户担心。因此，这个新API将允许我们非常高效地做到这一点。![](img/ae640e7b46aaf17bba8e02172f49117e_7.png)
 - en: '![](img/ae640e7b46aaf17bba8e02172f49117e_8.png)'
   id: totrans-13
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ae640e7b46aaf17bba8e02172f49117e_8.png)'
 - en: So what does this new API contain The first big part is first order gradients。So
     as I mentioned before， we have a function that directly computed Jacobian for
     you。 given a function and some input points。We also have a vector Jacobian product
@@ -100,6 +116,7 @@
   id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么这个新API包含什么呢？第一大部分是一阶梯度。正如我之前提到的，我们有一个直接为你计算雅可比矩阵的函数，给定一个函数和一些输入点。我们还有一个向量雅可比乘积，它对应于反向模式自动微分，在神经网络领域对应于反向传播算法。
 - en: So this is actually very close to the existing autograd dot grad function。And
     finally。 we also provide a Jacobin vector product。 So the other way around。 and
     this one corresponds more to forward mode automatic differentiation。And can be
@@ -107,6 +124,7 @@
   id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 这实际上非常接近现有的autograd dot grad函数。最后，我们还提供了一个雅可比向量乘积。另一种方式，这个对应于前向模式自动微分，可以用于计算方向导数。
 - en: And we also have the second product of this API corresponds to second order
     gradient and very similar functions so。A hassian function that computes all the
     second order derivatives。A vector Hessian product which allows us to efficiently
@@ -115,15 +133,18 @@
   id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个API的第二个部分对应于二阶梯度以及非常相似的函数。一个计算所有二阶导数的海森矩阵函数。一个向量海森乘积，它使我们能够有效地进行反向模式自动微分，计算海森矩阵与给定向量之间的乘积。
 - en: '![](img/ae640e7b46aaf17bba8e02172f49117e_10.png)'
   id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ae640e7b46aaf17bba8e02172f49117e_10.png)'
 - en: And the similarly， the other way around the hesian vector product to that corresponds
     more to foreign mode automatic differentiation。![](img/ae640e7b46aaf17bba8e02172f49117e_12.png)
   id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 同样，海森向量乘积则更对应于前向模式自动微分。![](img/ae640e7b46aaf17bba8e02172f49117e_12.png)
 - en: So now an example on how to use DC APII。So again， as an example for the Jacobian
     function。 now you don't have to copy past code from that old guest， you can just
     import it from torch。And as you can see in the first example， where you have some
@@ -132,6 +153,7 @@
   id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在来举一个如何使用DC API的例子。再次作为雅可比函数的例子，现在你不需要从旧的代码中复制粘贴代码，你可以直接从torch导入。正如你在第一个例子中看到的，当你有一些输入时，只需调用雅可比函数，你就能得到雅可比值，这很简单。
 - en: that's everything you need to do。What is very nice as well is that you can compose
     this new API with the existing autoquad API and here。 for example， if you input
     requires gradients， you can ask the Jacobian computation to create graph and so
@@ -140,10 +162,12 @@
   id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是你需要做的所有事情。很不错的是，你可以将这个新API与现有的autoquad API组合起来。例如，如果你输入需要梯度，你可以请求雅可比矩阵的计算来创建图形，从而能够反向传播，正如你所看到的，你可以计算刚得到的雅可比矩阵的范数并进行反向传播。
 - en: '![](img/ae640e7b46aaf17bba8e02172f49117e_14.png)'
   id: totrans-21
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ae640e7b46aaf17bba8e02172f49117e_14.png)'
 - en: And then you can compose that with the rest of your training to get all the
     quantities that you need。There are many more examples and。A few examples here
     are like gradient penalties based on Jacobn computations。Jacoian vector product
