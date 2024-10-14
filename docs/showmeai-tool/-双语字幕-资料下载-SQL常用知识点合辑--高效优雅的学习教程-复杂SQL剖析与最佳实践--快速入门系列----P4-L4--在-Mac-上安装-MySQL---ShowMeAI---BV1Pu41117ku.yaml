@@ -1,93 +1,129 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P4：L4- 在 Mac 上安装 MySQL
     - ShowMeAI - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P4：L4- 在Mac上安装MySQL
+    - ShowMeAI - BV1Pu41117ku
 - en: '![](img/00ef5f07fbdae9a975a3e66fe2b003c7_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/00ef5f07fbdae9a975a3e66fe2b003c7_0.png)'
 - en: 哦。In this tutorial I'm going to show you how to install MyQl on your computer
     now here I'm using a Mac。 so first I will show you how to install MyQl on a Mac
     computer and then I will show you how to install it on Windows。 So if you're a
     Windows user， feel free to skip this tutorial。😊，Now。 open up your browser and
     head over to MysqL。com。Then go to the downloads page and scroll down to the bottom。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。在这个教程中，我将向你展示如何在你的电脑上安装MySQL。现在我使用的是Mac，所以首先我会展示如何在Mac电脑上安装MySQL，然后我会展示如何在Windows上安装它。如果你是Windows用户，可以跳过这个教程。😊，现在，打开你的浏览器，访问MySQL.com。然后进入下载页面，向下滚动到底部。
 - en: Here you should see my SQL community edition。 This is absolutely free。 And we're
     going to use that throughout this course。 So let's go ahead with that。😊，Now on
     this page。 click on My SQL Community Ser。And then， on this page。You should see
     available releases for Mac OS。 so in this list， download the first item which
     is a DMG archive。All right， now on the next page。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，你应该能看到MySQL社区版。这是完全免费的。我们将在整个课程中使用它。所以我们继续吧。😊，现在在这个页面上，点击MySQL社区服务器。然后，在这个页面上，你应该能看到Mac
+    OS的可用版本。所以在这个列表中，下载第一个项目，即DMG归档文件。好的，现在在下一个页面。
 - en: click on no thanks， Just start my download。😊，All right， as you can see， we are
     getting a DMmG file。 which is basically a setup of wizard。😊，Al right， now the
     Dmg is downloaded。 So let's open it and then double click on this package。This
     will launch an installation wizard。 which is pretty easy to use， so simply click
     on continuein and again and again。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 点击“我不需要”，然后开始下载。😊，好的，如你所见，我们正在获取一个DMG文件。这基本上是一个安装向导。😊，好了，现在DMG已经下载完成。我们来打开它，然后双击这个包。这将启动一个安装向导，使用起来非常简单，所以只需不断点击继续。
 - en: I agree with the license agreement。😊，And install My skill。 It's going to ask
     for your password。 This is the password that used to log into your computer。 So
     let's put that here。😊，All right。Now here we need to set a password for the route
     or the admin user， so click next and in this box。 type a complex password。😊，All
     right， now let's finish the installation。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 我同意许可协议。😊，并安装我的技能。它会要求你输入密码。这是你用来登录电脑的密码。所以我们在这里输入。😊，好的。现在这里我们需要为root或管理员用户设置一个密码，所以点击下一步，在这个框中输入一个复杂密码。😊，好的，现在让我们完成安装。
 - en: And enter your computer's password one more time。嗯。And we're done。 That was
     super easy， and sweet。😊。Al right， we installed MyQl community server。 Now we need
     a graphical tool to connect to the server and manage our databases。 So back to
     the downloads page。😊，One more time， scroll to the bottom。And go to My SQL Community
     Edition。And on this page。Somewhere you should see My SQl workbech。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后再输入一次你电脑的密码。嗯。我们完成了。这真是太简单了，太棒了。😊。好的，我们安装了MySQL社区服务器。现在我们需要一个图形工具来连接到服务器并管理我们的数据库。所以回到下载页面。😊，再一次，向下滚动到底部。然后去MySQL社区版。在这个页面上，你应该能看到MySQL工作台。
 - en: This is a graphical tool that we use to connect to our database server。 So let's
     go ahead and download this as well。😊，Now once again on this page。Wait to download
     a DG archive。 So download。And again， we have to say， no。 we don't want to log
     in or sign up。 So let's just go ahead and download the DMG。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个图形工具，我们用它来连接到我们的数据库服务器。所以我们也下载这个。😊，现在再次在这个页面上。等待下载一个DG归档文件。下载。再一次，我们必须说，不，我们不想登录或注册。所以我们继续下载DMG。
 - en: '![](img/00ef5f07fbdae9a975a3e66fe2b003c7_2.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/00ef5f07fbdae9a975a3e66fe2b003c7_2.png)'
 - en: And then， open it。Alright， you're going to see something like this。 So simply
     drag this minus skill workbench and drop it onto the applications folder。 So let's
     go ahead with that。😊，Now I'm going to copy this into the applications folder。😊。![](img/00ef5f07fbdae9a975a3e66fe2b003c7_4.png)
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后，打开它。好的，你会看到这样的东西。所以只需将MySQL工作台拖动到应用程序文件夹中。我们就这样做吧。😊，现在我要把这个复制到应用程序文件夹。😊。![](img/00ef5f07fbdae9a975a3e66fe2b003c7_4.png)
 - en: Beautiful， so we' are done with the installation。 That was super easy。 Now。
     press command on space and search for my Sql workbench。 There you go。 Let's open
     it。😊，Now。 the first time we get this message because this is an application that
     we have downloaded from the internet。 So we need to tell Mac that we trust this。
     let's go ahead with that。 So this is my SQl workbench。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 很好，所以我们安装完成了。这非常简单。现在，按下命令和空格键，搜索my Sql workbench。来吧，打开它。😊，现在。第一次我们收到这个消息，因为这是我们从互联网下载的应用程序。所以我们需要告诉Mac我们信任它。继续吧。这就是我的SQl
+    workbench。
 - en: Now by default， you should see a connection here。 If you don't see that you
     need to create it。 let me show you how to do that。 So for this demo， I'm going
     to right click this and delete this connection。😊，Alright， now let's create a connection
     from scratch， so click on this plus icon。😊，On this page。 give this connection
     a name， let's say local instance。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在默认情况下，您应该在这里看到一个连接。如果您看不到，您需要创建一个。让我给你演示如何做。为了这个演示，我将右键单击并删除这个连接。😊，好的，现在我们从头开始创建一个连接，点击这个加号图标。😊，在这个页面上，给这个连接起个名字，比如说本地实例。
 - en: Now the connection method that we're going to use is TCpiIP， which is set by
     default。 The host name is 127。0。0。1 which is the address of the local machine
     and the port is 3306 This is the default port for MyQ server that is the username
     of the admin Now we need to enter the password this is the password that we set
     during the installation so click on store in keychain and in this box type the
     password。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们将使用的连接方式是TCpiIP，默认设置。主机名是127.0.0.1，这是本地机器的地址，端口是3306，这是MyQ服务器的默认端口，管理员的用户名。现在我们需要输入密码，这是安装时设置的密码，所以点击存储在钥匙串中，然后在这个框中输入密码。
 - en: For the MyQ server， all right。And， finally。Let's test a connection。Okay。 we
     successfully connected to MyosQl server on the local machine， Beai。 let's click
     OK and here we have a connection on the home page of MyosQql Workbench Every time
     we open MyosQql Workbench。 we use this connection to connect to our local server。😊，Al
     right。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于MyQ服务器，好的。最后，让我们测试一下连接。好的，我们成功连接到本地机器上的MyosQl服务器，Beai。点击确定，这里在MyosQql Workbench的主页上有一个连接。每次我们打开MyosQql
+    Workbench时，我们使用这个连接来连接到本地服务器。😊，好的。
 - en: we're done with the installation of MyosQ on a Mac。 Next I will talk about installing
     MyosQl on a Windows computer， so feel free to skip that tutorial。😊。![](img/00ef5f07fbdae9a975a3e66fe2b003c7_6.png)
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们已经在Mac上完成了MyosQ的安装。接下来，我将讲解如何在Windows电脑上安装MyosQl，所以请随意跳过这个教程。😊。![](img/00ef5f07fbdae9a975a3e66fe2b003c7_6.png)
 - en: Yeah。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的。

@@ -1,14 +1,19 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P8：L8- SELECT 用法 -
     ShowMeAI - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P8：L8- SELECT 用法 -
+    ShowMeAI - BV1Pu41117ku
 - en: In this tutorial， we're going to look at the select clause in detail。 So since
     our current database is SQL store to clean things up。 I'm going to remove the
     first statement you don't really need it now。😊，Also， I'm going to delete。These
     two comments， we just want to focus on the select clause。Alright。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本教程中，我们将详细查看选择子句。因此，由于我们当前的数据库是SQL商店，为了清理，我将删除第一条语句，你现在真的不需要它。😊，另外，我将删除这两条注释，我们只想关注选择子句。好的。
 - en: so what can we do with this select clause Well in the last tutorial you learn
     that if we use an asterisk。 this will return all the columns。 alternatively we
     can specify the columns that we want and this is helpful in situations where you
@@ -16,36 +21,46 @@
     to bring back all that data that's going to put a lot of pressure on the database
     server and this case MyQl as well as the network So that's when we explicitly
     specify the columns that we want to get。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么我们可以用这个选择子句做什么呢？在上一个教程中你学到了，如果我们使用星号，这将返回所有列。相反，我们可以指定我们想要的列，这在你有一个包含许多列和可能数百万条记录的大表时是很有帮助的。如果你想要返回所有这些数据，那将给数据库服务器和网络带来很大的压力。因此这时我们明确指定我们想要获取的列。
 - en: 😊，Let's say we want to get the first name and last name columns， execute the
     query as we can see。😊。We only get these two columns and they're in the same order
     we specified here。 so if we change the order and put the last name first。😊。And
     execute the query again now you can see the last name column comes first。Now。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，假设我们想获取名字和姓氏的列，执行查询，如我们所见。😊。我们只得到了这两列，并且它们的顺序与我们在这里指定的相同。因此，如果我们更改顺序，把姓氏放在前面。😊。再执行查询，现在你可以看到姓氏列在前面。现在。
 - en: let's add a new column to the end。😮，Let's get the points for each customer as
     well。 We're on the query。 So these are the points for each customer。 which are
     calculated based on their shopping。 Now。 let's say we want to get this point and
     put them in a mathematical formula to calculate the discount that we can give
     to each customer。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们在最后添加一个新列。😮，让我们也获取每个客户的积分。我们正在查询中。所以这些是每个客户的积分，根据他们的购物情况计算得出。现在。假设我们想要将这个积分放入一个数学公式中，以计算我们可以给予每个客户的折扣。
 - en: So here we can use an arithmetic expression， let's say points plus 10。 this
     is an arithmetic expression。 So now if you execute this query for the first record。
     you can see that their points will end up being 2283。 Let's run the query one
     more time。😊。There you go。 Now we can put the original points column here for clarity
     sub points。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里我们可以使用一个算术表达式，比如说分数加10。这是一个算术表达式。因此，现在如果你执行这个查询针对第一条记录。你会看到他们的积分最终是2283。我们再运行一次查询。😊。好了。现在为了清晰起见，我们可以把原始分数列放在这里，作为子分数。
 - en: comma points plus 10。 Let's run the query one more time。Now we can see the original
     points and next to that you can see the value that we're going to use to calculate
     the discount。Now here we're using the plus operator， which is for addition， we
     also have multiplication， division。 subtraction and modular， which is the remainder
     of the division so let's change this to something more complex let's say if we
     want to get the points multipied by 10 and then add 100 to it。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: comma points plus 10。我们再运行一次查询。现在我们可以看到原始分数，旁边是我们将用于计算折扣的值。现在这里我们使用的是加法运算符，也有乘法、除法、减法和取模，即除法的余数，所以我们把这个改成更复杂的，比如说如果我们想要将分数乘以10，然后加100。
 - en: 😊，Now you can immediately see that this line1 is getting too long and it doesn't
     fit on the screen in situations like this。 you can break up the select clause
     by placing each column on a new line， so select last name。 then first name points
@@ -53,15 +68,19 @@
     this is our new column with a new calculated value Now one thing you need to understand
     in this arithmetic expression is the order of operators and this is based on the
     order of operators in math so in math。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，现在你可以立即看到这一行变得太长，无法在屏幕上显示。在这种情况下，你可以通过将每个列放在新行上来分开选择子句，所以选择姓氏，然后是名字、积分，最后是积分乘以10。😊，加上100。我们再执行一次这个查询。所以这是我们的新列，包含新的计算值。现在在这个算术表达式中，你需要理解的是运算符的顺序，这基于数学中的运算符顺序。
 - en: 😊，The multiplication and division operators have higher order or higher precedentnce
     than addition and subtraction。 so in this expression， first points is multiplied
     by 10 and then the result is added to 100。Like if this is not what you want， you
     can always change the order by using parentheses as an example。 let's change this
     multiplication to addition。😊，And then put that multiplication here。😊。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，乘法和除法运算符的优先级高于加法和减法。因此在这个表达式中，首先分数乘以 10，然后结果加上 100。如果这不是你想要的，你可以始终通过使用括号来改变顺序。例如，让我们将这个乘法改为加法。😊，然后把那个乘法放在这里。😊。
 - en: In this expression， first，10 is multiplied by 100， and then the result is added
     to the points。 Now。 let's say this is not what we want so we can change the order
     by using parenthses here。With this parenthsesis first， we get the points， add
@@ -69,87 +88,116 @@
     for changing the order of operations as well as adding clarity to our code so
     someone else reading this code can easily understand the order of this operations
     Now let's execute this query one more time。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个表达式中，首先，10 乘以 100，然后结果加到分数上。现在。假设这不是我们想要的，我们可以通过在这里使用括号来改变顺序。使用这个括号，首先，我们得到分数，加上
+    10，然后将结果乘以 100。因此，这些括号对于改变运算顺序和增加代码的清晰度非常有用，以便其他人阅读这段代码时可以轻松理解运算的顺序。现在让我们再执行一次这个查询。
 - en: 😊，All right， now look at the name of this column here。😊。It's said to the expression
     that we have on line 5， that doesn't quite make sense。 we want to have a clear
     descriptive name。So we can give this column an alias using the as keyword So as
     and then we give it a name like discount。😊，This count underlying factor。 Let's
     run a query again。Now the name of this column is changed。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，好的，现在看看这列的名称。😊。它与第5行的表达式相关，但并不完全合理。我们希望有一个清晰的描述性名称。因此，我们可以使用`as`关键字给这列起一个别名。于是，我们就可以给它一个像“discount”的名称。😊，这个计数是基础因素。我们再运行一个查询。现在这列的名称已经改变了。
 - en: so this is the benefit of using an alias， we can give descriptive names to the
     columns and the results set。NowIf you want to have a space and a column name，
     you need to surround it with quotes。 either single or double quotes。 So you put
     quote here。 and then we can add a space in between these two wordst。 Let's execute
     the query one more time。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是使用别名的好处，我们可以给列和结果集赋予描述性名称。现在如果你想在列名称中有空格，你需要用引号把它包围起来。可以是单引号或双引号。所以你在这里放一个引号。然后我们可以在这两个词之间加一个空格。让我们再执行一次查询。
 - en: Now we've got discount factor。So let's quickly recap everything you learn about
     the select clause。 we can use an asterisk to return all the columns or we can
     explicitly specify the columns that we want to return。😊，We can also use arithmetic
     expressions here， and optionally。 we can give an alias to each column in the result
     set。 Now。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们得到了“discount factor”。那么让我们快速回顾一下你在`select`子句中学到的所有内容。我们可以使用星号返回所有列，或者我们可以明确指定要返回的列。😊，我们也可以在这里使用算术表达式，并且可以选择性地给结果集中的每一列起别名。现在。
 - en: there is one more thing you need to know about the select clause。 So let's delete
     this query。😊。And select。The state column。From the customer's table， Take a look。These
     are the states in which our customers are located Now currently in this sample
     data。 we don't have any duplicates。 In other words， we don't have multiple customers
     in any of these states。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 还有一件事你需要知道关于`select`子句。所以让我们删除这个查询。😊。并选择。客户表中的状态列。看看。这些是我们的客户所在的州。目前在这个示例数据中，我们没有任何重复。换句话说，我们在这些州中没有多个客户。
 - en: but for this demo I want to change the state of the first customer to Virginia
     so we end up with duplicates in the results set。So let's open up the Navigator
     panel。😊，Here's our customers table， Let's look at all the data。An。Here's our first
     customer， as you can see。Is located in the state of Massachusetts Now I want to
     change this to Virginia。 so double click V for Virginia， enter done。Now on the
     bottom right corner of the screen。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 但为了这个演示，我想将第一个客户的州改为弗吉尼亚州，这样结果集中就会出现重复。所以让我们打开导航面板。😊，这是我们的客户表，看看所有的数据。我们的第一个客户，如你所见，位于马萨诸塞州。现在我想把这个改为弗吉尼亚州。双击V代表弗吉尼亚，输入完成。现在在屏幕的右下角。
 - en: you should see two buttons apply and revert。 Unfortunately。 I cannot show you
     these buttons because the recording window is a bit smaller than myql workbench。
     but look down the bottom in the bottom right corner， click on apply。You're going
     to see a dialog box like this asking you to review the changes。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 你应该看到两个按钮，应用和还原。不幸的是，我不能给你展示这些按钮，因为录制窗口比MySQL Workbench稍小，但请查看右下角，点击应用。你会看到一个对话框，询问你是否审核更改。
 - en: so go ahead and click the apply button one more time。😊，Allright， beautiful。
     Now let's go back to our first query window and execute this query one more time。😊，As
     you can see。 the first two customers are located in Virginia What if you want
     to get the unique list of states in the results set That's when we use the distinct
     keyword。 so select distinct state with this query we'll retrieve the unique list
     of states on the customer table so with a distinct keyword we can remove the duplicates。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以继续点击应用按钮一次。😊好的，太美了。现在让我们回到第一个查询窗口，再执行一次这个查询。😊如你所见，前两个客户位于弗吉尼亚州。如果你想在结果集中获取唯一的州列表，那就是我们使用distinct关键字的时候。所以选择distinct州，通过这个查询我们将检索客户表中唯一的州列表，因此使用distinct关键字可以去除重复项。
 - en: let's execute the query one more time。Now you can see Virginia is not duplicated。right
     here's an exercise for you。 I want you to rate a SQL query to return all the products
     in our database in the results set。 I want to see three columns name， unit price
     and a new column called new price which is based on this expression unit price
     times 1。1 So let's say we want to increase the price of each product by 10% with
     this query we want to get all the products。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们再执行一次查询。现在你可以看到弗吉尼亚州没有重复。这里有一个练习给你。我想让你写一个SQL查询，返回我们数据库中所有产品的结果集。我想看到三列：名称、单价和一个新的列叫做新价格，这个新价格基于这个表达式：单价乘以1.1。假设我们想将每个产品的价格提高10%，通过这个查询我们想要获取所有的产品。
 - en: the original price and their new price so pause the video and spend one or two
     minutes on this exercise when you're done come back see my solution。😊。![](img/613a2a157138752025db4a99a111ddf8_1.png)
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 原始价格和它们的新价格，所以暂停视频，花一两分钟做这个练习，完成后再回来看看我的解决方案。😊！[](img/613a2a157138752025db4a99a111ddf8_1.png)
 - en: Yeah。![](img/613a2a157138752025db4a99a111ddf8_3.png)
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的。![](img/613a2a157138752025db4a99a111ddf8_3.png)
 - en: All right， this is pretty easy， so we start with select。😊，Now。 what columns
     do you want to select name？Unit underlyingline price。And then here we're going
     to use an arithmetic expression to calculate the new price。 so we type out unit
     price times 1。1 and then give it an alias。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，这很简单，所以我们从select开始。😊现在，你想选择哪些列？名称？单个底线价格。然后在这里我们将使用一个算术表达式来计算新价格，所以我们输入单价乘以1.1，然后给它一个别名。
 - en: So as new underlyingline price or we could put this in quotes and put a space
     between new and price。😊，Now， where do we want to select this columns from？From
     the products table， so from products。Note that I've used uppercase characters
     for all the SQL keywords and lowercase characters for everything else。😊，So let's
     go ahead and execute this query。😊，This is what we get。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以作为新的底线价格，或者我们可以将其放在引号中，并在“新”和“价格”之间留一个空格。😊现在，我们想从哪里选择这些列？从产品表中，所以从产品那里。请注意，我对所有SQL关键字使用了大写字母，对其他所有内容使用了小写字母。😊那么让我们继续执行这个查询。😊这就是我们得到的结果。
 - en: So these are all the products you can see their original price as well as the
     new price。 which is 10% more expensive。![](img/613a2a157138752025db4a99a111ddf8_5.png)
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这些都是你可以看到的所有产品，它们的原始价格以及新的价格，比原来的贵10%。![](img/613a2a157138752025db4a99a111ddf8_5.png)

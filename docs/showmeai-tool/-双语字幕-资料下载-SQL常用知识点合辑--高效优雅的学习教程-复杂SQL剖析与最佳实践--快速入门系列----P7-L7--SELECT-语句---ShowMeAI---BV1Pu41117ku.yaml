@@ -1,85 +1,115 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P7：L7- SELECT 语句 -
     ShowMeAI - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P7：L7- SELECT 语句 -
+    ShowMeAI - BV1Pu41117ku
 - en: '![](img/3ac0cd0bdd7339c70521bd045805fd1d_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/3ac0cd0bdd7339c70521bd045805fd1d_0.png)'
 - en: 哦。In this tutorial I'm going to show you how to retrieve data from a single
     table Now look at the navigator panel Currently none of our databases is displayed
     in bulk that means none of these databases is selected for querying so the first
     step to write a query to get data from a database is to select a database the
     query that will write will be executed against that database。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。在本教程中，我将向你展示如何从单个表中检索数据。现在看看导航面板，目前没有我们的数据库以批量方式显示，这意味着这些数据库都没有被选中用于查询。因此，编写从数据库获取数据的查询的第一步是选择一个数据库。我们将写的查询将针对该数据库执行。
 - en: In this demo， we're going to use this SQL stored database， so we type out use
     SQL online store。Now use is a keyword in the SQL language， and that's the reason
     it's displayed in blue。Now SQL is not a case sensitive language， and that means
     we can use uppercase or lowercase characters。 it doesn't really matter， but as
     a best practice， we should capitalize the SQL keywords and use lowercase characters
     for anything else。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个演示中，我们将使用这个SQL存储数据库，所以我们输入使用SQL在线商店。使用是SQL语言中的一个关键字，这就是它显示为蓝色的原因。现在SQL不是大小写敏感的语言，这意味着我们可以使用大写或小写字符。其实没有关系，但作为最佳实践，我们应该将SQL关键字大写，其他内容小写。
 - en: 😊，So now let's go ahead and execute this query。Allright， look。 this SQL store
     database is now displayed in Bult。Now， in my skill workbe。 you can also select
     a database by double clicking that。 So now I double click SQL invoicing and it's
     the current database。 Now， if we run this query again。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，所以现在让我们继续执行这个查询。好的，看看。这个SQL存储数据库现在在批量中显示。现在，在我的技能工作区，你也可以通过双击来选择一个数据库。所以现在我双击SQL发票，它就是当前数据库。现在，如果我们再次运行这个查询。
 - en: 😊，The SQL store database becomes selected。All right。 now let's write our first
     query to retrieve all the customers in this database。😊。So after the use statement
     we're going to use the select statement here's the basic syntax or basic structure
     of the select statement we type out select in front of that we specify the columns
     that we want to retrieve。 for example， we can retrieve the customer ID column
     as well as the first name column or we can retrieve all columns using an asterisk。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，SQL存储数据库已被选中。好吧。现在让我们写第一个查询，以检索该数据库中的所有客户。😊。在使用语句之后，我们将使用选择语句。以下是选择语句的基本语法或基本结构，我们在前面输入选择，指定我们要检索的列。例如，我们可以检索客户ID列和名字列，或者我们可以使用星号检索所有列。
 - en: Now after that I've used the F clause， and this is where we specify the table
     that we want to query in this case。 the customers table， So this is the simplest
     query to select all the customers in a given table。😊。Now whenever you have multiple
     SQL statements， you need to terminate each statement using a semicolon。 so look
     we have a red underline here that indicates an arrow。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，在此之后，我使用了F子句，这是我们指定要查询的表，在这种情况下是客户表。所以这是选择给定表中所有客户的最简单查询。😊。现在，每当你有多个SQL语句时，你需要用分号终止每个语句。看看，我们这里有一个红色下划线，表示错误。
 - en: if you hover your mouse here you can see this tool tube saying select is not
     valid at this position because we didn't terminate the first statement with a
     semicolon now let's execute this query one more time once again we can click on
     this button here or we can use a shortcut。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你将鼠标悬停在这里，你会看到这个工具提示说选择在这个位置无效，因为我们没有用分号终止第一个语句。现在让我们再执行一次这个查询，我们可以点击这里的按钮，或者使用快捷键。
 - en: 😊，So look at the query menu on the top。😊，The first item is execute。Now here's
     the shortcut for this command on Mac， it's shift command and enter on Windows
     is' going to be different。Honestly， I'm not sure。 So whatever it is， use that。
     So I'm going to press shift command and enter。😊。And here are all the customers
     and a table。So this select statement has two clauses。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，所以请看顶部的查询菜单。😊，第一个项目是执行。现在，这个命令在Mac上的快捷键是shift命令和enter，而在Windows上会有所不同。老实说，我不太确定。所以无论是什么，使用那个。现在我将按shift命令和enter。😊。这里是所有客户和一个表格。所以这个选择语句有两个子句。
 - en: the select clause and the f clause， but there are other clauses that we can
     use to filter and sort data。 for example， we can use the where clauses。To filter
     the result and get the customer with ID1 so we can write an expression like this
     where customer underline ID equals one。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: select 子句和 f 子句，但我们还有其他子句可以用来过滤和排序数据。例如，我们可以使用 where 子句来过滤结果，获取 ID 为 1 的客户，所以我们可以写出这样的表达式
+    where customer_underline ID equals one。
 - en: Now， when we execute this query， we'll only get the customer with I1。😊，So this
     is the where clause。 we can also sort the data so。😊，After where we use the order
     by clause。 And here we specify the columns that we want to sort the result on。
     Let's say we want to sort these customers by their first name。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，当我们执行这个查询时，我们只会得到 ID 为 1 的客户。😊，这就是 where 子句。我们也可以对数据进行排序，所以。😊，在 where 之后我们使用
+    order by 子句。在这里，我们指定希望根据其名字排序的列。假设我们想按客户的名字排序。
 - en: So we type out first on the line name。 that is the name of one of the columns
     in this table。 right Now if we execute this query， this order by doesn't really
     have any impact because we only get one record in the result。 So let me temporarily
     take out the where clause So do that。 we can put two hyphens in front of this
     line。 Now this line is treated as a comment。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们在这一行输入 first name。那是这个表中其中一列的名字。现在如果我们执行这个查询，这个 order by 实际上没有任何影响，因为结果中只有一条记录。所以让我暂时去掉
+    where 子句。为了做到这一点，我们可以在这一行前面加上两个短横线。现在这一行被视为注释。
 - en: which means the SQL engine is not going to execute this。 Okay。 so let's execute
     this query one more time。😊，Now all the customers that we get are sorted based
     on their first name。So that's the basic idea。Now over the next few tutorials。
     you're going to learn more about each of these clauses in detail。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 这意味着 SQL 引擎将不会执行这个。好的，所以让我们再执行一次这个查询。😊，现在我们获取的所有客户都是根据他们的名字排序的。这就是基本的想法。在接下来的几个教程中，你将详细学习每个子句。
 - en: but what you need to take away in this tutorial is that these three clauses
     from where an order by are optional as you can see in this example I'm not using
     the word clause。 we can also comment out the order by clause， we can also comment
@@ -87,8 +117,12 @@
     can select some values like one and two Now if you execute this query one more
     time in the result we get something like this two columns called one and2 and
     in this columns we have these values。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 但在这个教程中你需要记住的是，这三个子句 from、where 和 order by 是可选的，正如你在这个例子中看到的，我没有使用 word clause。我们也可以注释掉
+    order by 子句，我们也可以注释掉 from 子句，所以我们可以选择某些值，比如一和二，而不是选择给定表中的所有列。现在，如果你再次执行这个查询，结果中会有两个名为
+    one 和 two 的列，在这些列中我们有这些值。
 - en: 😊，So all these clauses are optional， but in the real world we quite often use
     all of them。 Now what you need to understand here is that the order of these clauses
     matters。 So we always have select first then we have from then where and finally
@@ -97,21 +131,33 @@
     SQL statement is incorrect so it can't be executed and one last thing before we
     finish this tutorial In this example you can see I've listed all these clauses
     on a new line that technically you don't have to do this because line breaks。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，所有这些子句都是可选的，但在现实世界中我们经常使用它们。现在你需要明白的是，这些子句的顺序很重要。因此我们总是先有 select，然后是 from，再是
+    where，最后是 order by，我们不能改变这些子句的顺序。否则我们会得到一个语法错误，这基本上意味着我们的 SQL 语句的语法或结构不正确，因此无法执行。在结束这个教程之前，还有一件事需要提到。在这个例子中，你可以看到我将所有这些子句列在新的一行上，实际上你不必这样做，因为换行是被忽略的。
 - en: white spaces and tabs are ignored when executing SQL statements So we could
     come back here and put from in front of select So select star from customers all
     in one line and that perfectly fine for simple queries but as your queries get
     more complex it's better to put each clause on a new line。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 在执行 SQL 语句时，空格和制表符会被忽略。因此，我们可以回到这里，将 from 放在 select 前面。所以 select star from customers
+    全部写在一行，这对简单查询来说是完全可以的，但随着查询的复杂性增加，最好将每个子句放在新的一行上。
 - en: 😊，So that's all for this tutorial， and the next tutorial will'll explore the
     set clause in detail。😊。![](img/3ac0cd0bdd7339c70521bd045805fd1d_2.png)
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，所以这就是本教程的全部内容，下一个教程将详细探讨 set 子句。😊。![](img/3ac0cd0bdd7339c70521bd045805fd1d_2.png)
 - en: '![](img/3ac0cd0bdd7339c70521bd045805fd1d_3.png)'
+  id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/3ac0cd0bdd7339c70521bd045805fd1d_3.png)'
 - en: 哦。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。

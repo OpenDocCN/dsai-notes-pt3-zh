@@ -1,27 +1,37 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P6：L6- 为本课程创建数据库 -
     ShowMeAI - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P6：L6- 为本课程创建数据库 -
+    ShowMeAI - BV1Pu41117ku
 - en: 哦。![](img/1793955cfc19fec742600c20f89de07b_1.png)
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。！[](img/1793955cfc19fec742600c20f89de07b_1.png)
 - en: In this tutorial I'm going to show you how to create the databases for this
     course。 So here I've got my SQl workbench open。 Let me quickly give you an overview
     of this interface because the first time you open it。 it might appear a little
     bit intimidating， but actually it's not that difficult。 So here on the top we've
     got this toolbar with this buttons for creating a new tab for writing SQL code
     as well as opening a SQL file。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本教程中，我将向你展示如何创建本课程的数据库。所以我打开了我的 SQL Workbench。让我快速给你介绍一下这个界面，因为第一次打开时，它可能看起来有点吓人，但实际上并不难。所以在顶部我们有一个工具栏，里面有用于创建新标签以编写
+    SQL 代码以及打开 SQL 文件的按钮。
 - en: 😊，And next to that we've got a bunch of buttons for creating a database。 creating
     new tables and so on On the left side we've got the navigator panel with two tabs。
     administration and schemas we use the administration tab to do administrative
     work such as starting or stopping or server。 importing or exporting data and so
     on。😊，The schemos tab shows the databases that we have in the current database
     server。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，接下来我们有一堆用于创建数据库和新表等的按钮。在左侧，我们有导航面板，包含两个选项卡：管理和模式。我们使用管理选项卡进行管理工作，比如启动或停止服务器，导入或导出数据等。😊，模式选项卡显示我们在当前数据库服务器中拥有的数据库。
 - en: so currently we only have one database that existss and this is the database
     that my SQl uses internally to do its work Now in the middle we've got this query
     editor window this is where we write our SQL code So we'll be spending most of
@@ -32,141 +42,190 @@
     on your machine it doesn't really matter Now up here we've got these buttons for
     showing or hiding this panels So to clean this interface I'm going to hide this
     panel on the right side as well as the panel on the bottom。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 目前我们只存在一个数据库，这个数据库是我的 SQL 内部使用的。现在在中间是查询编辑器窗口，这是我们编写 SQL 代码的地方。在本课程中，我们大部分时间都会在这个窗口中度过。在右侧，我们还有一个包含两个选项卡的面板，内容帮助和代码片段。这个界面在
+    Windows 上可能看起来略有不同，但我展示的几乎和 Windows 上的是一样的，所以如果你的机器上看起来略有不同也没关系。现在，在这里我们有这些按钮用于显示或隐藏这些面板。为了清理这个界面，我将隐藏右侧的面板以及底部的面板。
 - en: That is better now to create the databases for this course。 download the zip
     file I've attached below this video。😊。![](img/1793955cfc19fec742600c20f89de07b_3.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在创建本课程所需的数据库是更好的选择。请下载我在视频下方附上的压缩文件。😊！[](img/1793955cfc19fec742600c20f89de07b_3.png)
 - en: When you extract the zip file， you're going to see a bunch of SQL files like
     this。 So the main one that you will be using in this tutorial is called create
     databases do SQL。 So this file contains all the SQL code to create all the databases
     that we need in this course。 Now we also have individual files for creating individual
     databases。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 当你解压缩压缩文件时，会看到一堆这样的 SQL 文件。所以在本教程中，你将使用的主要文件叫做 create databases do SQL。这个文件包含了创建本课程所需所有数据库的
+    SQL 代码。现在我们还有用于创建单独数据库的文件。
 - en: I just added these files in case you need to recreate one of these databases
     in the future。 But for now， don't worry about them。😊。![](img/1793955cfc19fec742600c20f89de07b_5.png)
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 我添加这些文件是为了以防你将来需要重新创建其中一个数据库。但现在，不用担心它们。😊！[](img/1793955cfc19fec742600c20f89de07b_5.png)
 - en: Now， back to My SQL Workbench， let's open the main SQL file that is create databases。So
     this is an example of SQL code now this may look complex at the beginning， but
     trust me。 as you go through the course， you're going to understand exactly how
     everything works here。 you're going to be able to write SQL code like this。😊。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，回到 My SQL Workbench，让我们打开创建数据库的主 SQL 文件。这是一个 SQL 代码的示例，起初可能看起来复杂，但相信我。随着你深入学习，你会准确理解这里的一切工作原理。你将能够像这样编写
+    SQL 代码。😊
 - en: So we want to execute this to create all the databases for this course。😊，To
     do that。 we click on this icon， this yellow thunder icon that we have on this
     toolbar here。 This will execute either the selection or the entire code if there
     is nothing selected。 For example。 if I select this line here and click on this
     icon， this will execute only this line in this case。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们想要执行此操作以创建本课程的所有数据库。😊，为此，我们点击这个图标，也就是工具栏上的黄色闪电图标。这将执行选定的部分或整个代码，如果没有选择任何内容。例如，如果我选择这一行并点击这个图标，这只会执行这一行。
 - en: we want to execute the entire code so we shouldn't select anything。 And now
     let's execute this beautiful。😊，So here down the bottom。 we have this panel called
     the output window that shows all the operations performed in our database server
     so we can check to see if all the operations completed successfully or something
     went wrong。 As we can see， we've got this green ticks next to each operation Beaful。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们想要执行整个代码，所以不应该选择任何内容。现在，让我们执行这个美妙的代码。😊，所以在底部，我们有一个叫做输出窗口的面板，它显示我们数据库服务器上执行的所有操作，这样我们就可以检查所有操作是否成功完成或者是否出现了问题。如我们所见，每个操作旁边都有这个绿色的勾。
 - en: so I'm going to close this panel。😊，That's better Now on the left side in the
     Schemos tab。 currently we don't see the new databases。 So we'll have to refresh
     this view beautiful。 So we've got all these databases that are prefixed with SQl
     or SQL。 I decided to prefix them with SQL so we know that these are the databases
     for this course。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将关闭这个面板。😊，这样更好。现在在左侧的架构标签中，目前我们看不到新数据库。因此我们需要刷新这个视图。美妙的地方是，我们有这些以SQL或SQL为前缀的数据库。我决定将它们以SQL为前缀，这样我们就知道这些是本课程的数据库。
 - en: they don't accidentally clash with another database with the same name on your
     database server。 Now at the time of recording this video， there are only four
     databases here。 But as we go through the course。 I'm going to update the script
     for creating the databases。 So when you watch this course chances are you're gonna
     to see more databases here。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 这样可以避免与数据库服务器上同名的其他数据库意外冲突。录制此视频时，这里只有四个数据库。但在课程进行过程中，我会更新创建数据库的脚本。因此，当你观看这门课程时，你可能会看到更多的数据库。
 - en: don't worry about the difference。😊，Now as an example。 let's explore one of these
     databases and by the way， we don't need this tab anymore。 so let's close it， that's
     better。 Let's expand the SQL store database。😊。Now in every database we have these
     objects， we have tables， this is where we store our data。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 不用担心这些区别。😊，现在作为示例，让我们探索其中一个数据库，顺便说一下，我们不再需要这个标签了。所以让我们关闭它，这样更好。让我们展开SQL存储数据库。😊。在每个数据库中，我们都有这些对象，我们有表，这就是我们存储数据的地方。
 - en: We have views which are kind of like virtual tables so we can combine data from
     multiple tables and put them in a view。 And this is especially powerful for creating
     reports。 You're going to learn about them in the future。 We also have stored procedures
     and functions。 and these are little programs that we store inside of our database
     for querying data。 For example。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们有视图，这种视图就像虚拟表，可以将来自多个表的数据组合并放入一个视图。这在创建报告时特别强大。你将在未来学习到它们。我们还有存储过程和函数，这些是我们存储在数据库中的小程序，用于查询数据。例如。
 - en: we can have a stored procedure for getting all the customers in a given city
     So we call that procedure and say。 hey， give me all the customers in San Francisco。
     and this will return all the customers in San Francisco okay now let's expand
     the tables。😊，So here are the tables in this database， we have customers， we have
     orders， products， shippers。 and so on。Now， select this customer's table whenever
     you hover your mouse or this item。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以有一个存储过程，用于获取某个城市的所有客户。所以我们调用那个过程并说：嘿，给我所有在旧金山的客户。这将返回所有在旧金山的客户。好的，现在让我们展开表。😊，在这个数据库中，我们有客户、订单、产品、运输商等。现在，选择这个客户表，每当你将鼠标悬停在这个项目上时。
 - en: you should see these three icons on the right side。 click on the rightmost icon
     that looks like a table with a thunder。With this。 we can see all the data in this
     table。 so this is our customers table。😊。In this table we have these columns like
     customer ID which we use to uniquely identify customers。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 你应该在右侧看到这三个图标。点击最右侧的图标，它看起来像一个带有闪电的表。这样，我们就可以看到这个表中的所有数据。这是我们的客户表。😊。在这个表中，我们有这些列，比如客户ID，我们用它来唯一标识客户。
 - en: we also have first name， last name， birth date， phone， address， and so on。So
     these are the columns in this table and every row is called a record。 so every
     row represents one customer and these are the pieces of information we know about
     each customer。😊，Now， let's look at another table。 Let's open the orders table。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还拥有名字、姓氏、出生日期、电话、地址等等。这些就是这个表中的列，每一行称为记录。每一行代表一个客户，这些是我们对每个客户所知道的信息。😊现在，让我们看看另一个表。打开订单表。
 - en: In this table we have these columns like order ID， customer ID， order date，
     status and so on。 What is this customer ID here？We use this column to identify
     who has placed each order。 Now what is interesting here is that you are referring
     to these customers using their customer I。 which uniquely identifies them。 In
     other words， if John Smith has placed an order。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个表中，我们有这些列，如订单ID、客户ID、订单日期、状态等等。这里的客户ID是什么？我们使用这一列来识别每个订单是由谁下的。现在有趣的是，你是通过他们的客户ID来引用这些客户，这唯一标识了他们。换句话说，如果约翰·史密斯下了一个订单。
 - en: we don't store John Smith here， we only store John's customer I。 Why is that。Here
     is the reason it is possible that John Smith might have placed multiple orders
     in our system。 that every time John places an order， we need to look up his address
     and phone to ship his order。 Now， it is possible that some of this information
     might change in the future。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们这里不存储约翰·史密斯的记录，我们只存储约翰的客户ID。为什么呢？原因是约翰·史密斯可能在我们的系统中下过多个订单，每次约翰下订单时，我们需要查找他的地址和电话来发货。现在，可能这些信息将来会发生变化。
 - en: John might move to a new place or change his phone number， he might even change
     his name。 If we repeat all that information next to each order。 then we'll have
     to come back and make changes in multiple places。 In contrast， with this design。
     we own store， the idea of John here。 So any time we want to change any information
     about John。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 约翰可能会搬到新地方或更改他的电话号码，甚至可能会更改他的名字。如果我们在每个订单旁边重复所有这些信息，那我们就得回来在多个地方进行修改。相比之下，通过这种设计，我们只需存储约翰的信息。所以每当我们想要更改约翰的任何信息时。
 - en: instead of changing that here， we go back to our customer's table。😊。So let's
     look at the customer with ID 6 that is actually called ElLca。So here are all the
     information about ElLca， this is her phone number， this is her address。 and by
     the way this is all dummy data that I created using a tool。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 而不是在这里进行更改，我们返回到客户表。😊让我们看看客户ID为6的客户，实际上叫ElLca。以下是关于ElLca的所有信息，这是她的电话号码，这是她的地址。顺便说一下，这都是我使用工具创建的虚拟数据。
 - en: so if any information about ElLca changes in the future。 this is the only place
     that we need to modify。So this is how these databases work。 We refer to these
     databases as relational databases。 That basically means in this kind of databases。
     we have multiple tables that are related to each other using a relationship。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以如果关于ElLca的信息将来有任何变化，这就是我们需要修改的唯一地方。这就是这些数据库的工作原理。我们称这些数据库为关系数据库。基本上，这种数据库中有多个表，它们通过关系相互关联。
 - en: So internally there is a relationship between the customer table and the orders
     table。 So the customer ID column and the customers table is related or linked
     or associated with the customer I column in the orders table。😊，Here's the orders
     table and here we have the customer ID column。So this was a brief introduction
     to relational databases。 you learn about databases， tables， columns。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以在内部，客户表和订单表之间存在关系。客户表中的客户ID列与订单表中的客户ID列相关或链接在一起。😊这是订单表，我们有客户ID列。这是对关系数据库的简要介绍，你了解了数据库、表、列。
 - en: rows and relationships In the next section I'm going to show you how to retrieve
     data from a single table in this database。 but before going any further as an
     exercise I want you to explore the invoicing database look at all the tables。
     look at all the data to get an idea of the kind of data we have in this database
     we're going to use this database a lot in the future。😊，So we'll spent a couple
     minutes to explore this database。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 行和关系。在下一部分，我将向你展示如何从这个数据库中的单个表中检索数据，但在进一步之前，作为练习，我希望你探索发票数据库，查看所有表，查看所有数据，以了解我们在这个数据库中拥有的数据类型，我们将来会经常使用这个数据库。😊所以我们花几分钟来探索这个数据库。
 - en: '![](img/1793955cfc19fec742600c20f89de07b_7.png)'
+  id: totrans-25
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1793955cfc19fec742600c20f89de07b_7.png)'
 - en: Yeah。![](img/1793955cfc19fec742600c20f89de07b_9.png)
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的。![](img/1793955cfc19fec742600c20f89de07b_9.png)

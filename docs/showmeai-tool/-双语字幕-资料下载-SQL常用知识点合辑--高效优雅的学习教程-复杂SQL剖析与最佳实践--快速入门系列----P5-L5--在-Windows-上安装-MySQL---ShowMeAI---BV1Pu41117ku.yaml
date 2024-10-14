@@ -1,110 +1,155 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P5：L5- 在 Windows 上安装
     MySQL - ShowMeAI - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P5：L5- 在 Windows 上安装
+    MySQL - ShowMeAI - BV1Pu41117ku
 - en: '![](img/906b095874e6511f73136ed6d2e67382_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/906b095874e6511f73136ed6d2e67382_0.png)'
 - en: 哦。In this tutorial， I'm going to show you how to install MySQl on Windows。 So
     open up your browser and head over to Mysql。 co。😊，Then go to the downloads page。Now，
     here。 scroll down to the bottom。We're going to use My SQL Community Edition， which
     is absolutely free。 so let's go with this。😊，Now select My SQL Community Server。😊，And
     then， scroll down。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。在这个教程中，我将向你展示如何在Windows上安装MySQL。打开你的浏览器，访问Mysql。co。😊，然后去下载页面。现在，在这里，向下滚动到底部。我们将使用My
+    SQL Community Edition，这是完全免费的，所以让我们选择这个。😊，现在选择My SQL Community Server。😊，然后，向下滚动。
 - en: So here you should see something like this My Sql installer for Windows。 This
     is the recommended method for installing My Sql on Windows。 So click on this。All
     right。 on the next page， scroll down。And。Download the first installer here。On
     the next page。 scroll down and click on no thanks。 Just start my download。 Otherwise。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，你应该看到类似于Windows的My Sql安装程序。这是推荐的在Windows上安装My Sql的方法。所以点击这个。好的。在下一页，向下滚动。然后下载这里的第一个安装程序。在下一页，向下滚动并点击“不，谢谢”。只需开始我的下载。否则。
 - en: you have to create an account on login， which is unnecessary for following this
     course。 So let's go with this。And save this file to our computer。😊。![](img/906b095874e6511f73136ed6d2e67382_2.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 你需要在登录时创建一个账户，这对学习本课程并不是必要的。所以让我们继续。然后将此文件保存到我们的电脑。😊。![](img/906b095874e6511f73136ed6d2e67382_2.png)
 - en: And then， run it。![](img/906b095874e6511f73136ed6d2e67382_4.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后，运行它。![](img/906b095874e6511f73136ed6d2e67382_4.png)
 - en: Al we're going to use this setup wizard to install My Sql on our computer。 This
     is very easy。 All you have to do is to click next， but there are a couple of places
     where you need to enter a password。 let me show you。 So on the first page for
     the setup type。 we're going to use the developer default setup。😊，Go to the next
     page here we're getting a little warning because this installation wizard wants
     to install the connector for Python 3。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将使用这个设置向导在我们的电脑上安装My Sql。这非常简单。你只需点击下一步，但有几个地方需要输入密码。让我给你展示一下。在设置类型的第一页，我们将使用开发者默认设置。😊，去到下一页，这里我们收到一个小警告，因为这个安装向导想要安装Python
+    3的连接器。
 - en: 7， but I don't have Python on this machine， so that's why I'm getting this warning
     Now on your machine you might or you might not get this error it doesn't really
     matter just click next and one more time。😊，So here are the products that are going
     to get installed。 The first one is mySql server。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 7，但我在这台机器上没有Python，所以我收到了这个警告。现在在你的机器上你可能会或可能不会收到这个错误，这并不重要，只需点击下一步，再一次。😊。所以这里是将要安装的产品。第一个是mySql服务器。
 - en: The second one is mysql workbench。 This is the graphical tool that we use to
     connect to our database server and manage our databases。 You're going to see that
     soon。 So click on execute。😊。Now this is going to take about five to 10 minutes，
     so I'm going to pause the recording。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 第二个是mysql workbench。这是我们用来连接数据库服务器和管理数据库的图形工具。你很快就会看到这一点。所以点击执行。😊。现在这大约需要五到十分钟，所以我会暂停录制。
 - en: '![](img/906b095874e6511f73136ed6d2e67382_6.png)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/906b095874e6511f73136ed6d2e67382_6.png)'
 - en: '![](img/906b095874e6511f73136ed6d2e67382_7.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/906b095874e6511f73136ed6d2e67382_7.png)'
 - en: Alright， all the products are installed， beautiful。 let's go to the next page
     and again here on the group replication page， also click on next。😊。On the next
     page， which is about networking， leave all the default settings。 So let's go to
     the next page。 Now we should set a password for the root or the admin user。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，所有产品都已安装，太棒了。让我们去下一页，这里在组复制页面上也点击下一步。😊。在下一页，关于网络设置，保留所有默认设置。所以让我们去下一页。现在我们应该为root或admin用户设置一个密码。
 - en: So click on next。😊，And in this box， type a password for the admin user。Allright。
     and then let's go to the next page， once again， leave all the default settings
     and click on next and execute one more time。Alright， and now let's finish the
     installation。 Once again， we have to click on next and then finish。😊，One more
     time， there are so many steps Now here's the page where you need to enter the
     admin password。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以点击下一步。😊，在这个框中，为admin用户输入一个密码。好的。然后我们再次进入下一页，保留所有默认设置，点击下一步，再次执行。好的，现在让我们完成安装。再次，我们必须点击下一步，然后完成。😊，再一次，有这么多步骤。现在这是你需要输入admin密码的页面。
 - en: so the page is called connect to Server。 you can see the username is root。 which
     represents the admin user。😊，So in this box， enter the password that you said earlier。
     then click on check。 Okay， connection was successful， beautiful。 Let's go to the
     next page and click on execute。😊，And finally， finish。There you go。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个页面叫做连接到服务器。你可以看到用户名是root，代表管理员用户。😊，在这个框中，输入你之前设置的密码，然后点击检查。好的，连接成功，太好了。让我们进入下一页并点击执行。😊，最后，完成。好了。
 - en: We have one more step next。 Now finally， after all these steps， the installation
     is complete。 Now this is going to start my Sql workbench， which is the graphical
     tool we use to manage our databases and run SQL queries。 So click on finish。😊。![](img/906b095874e6511f73136ed6d2e67382_9.png)
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还有一步。现在，经过所有这些步骤，安装完成。接下来，这将启动我的Sql工作台，这是我们用来管理数据库和运行SQL查询的图形工具。所以点击完成。😊。![](img/906b095874e6511f73136ed6d2e67382_9.png)
 - en: So now we have a command prompt window where we can type instructions to talk
     to our MyosQl server。 we don't really need this， so close it。😊。![](img/906b095874e6511f73136ed6d2e67382_11.png)
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们有一个命令提示窗口，可以在这里输入指令与我们的MySQL服务器对话。我们其实不需要这个，所以关闭它。😊。![](img/906b095874e6511f73136ed6d2e67382_11.png)
 - en: And here's my SQL workbech。 Now， the first time you open this page by default。
     you shall see a connection here， if you don't see it， click on this plus icon。😊，On
     this page。 give this connection a name， let's say local instance that leave all
     the settings to their default value。 but here for the password， click on store
     Invault。😊，And in this box。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我的SQL工作台。现在，第一次打开这个页面时，你应该会看到一个连接，如果没有看到，点击这个加号图标。😊，在这个页面上，给这个连接起个名字，比如本地实例，将所有设置保持为默认值。但在密码这里，点击存储在保管库。😊，在这个框中。
 - en: type the password that you set for the admin user。 So I'm going to put that
     here。Okay。Now click on Test connectionion。All right， we successfully connected
     to the MyosQL server on this computer。😊，Then click on OK。Now we click on this
     connection to connect to our database server Alright。 so here is the interface
     that you will be using throughout this course on the left side we have the navigator
     panel in the middle we have the query editor。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 输入你为管理员用户设置的密码。所以我将把它放在这里。好的。现在点击测试连接。好的，我们成功连接到了这台电脑上的MySQL服务器。😊，然后点击确定。现在我们点击这个连接以连接到我们的数据库服务器。好的。这里是你在本课程中将使用的界面，左侧是导航面板，中间是查询编辑器。
 - en: which we can resize。😊，This is where we're going to write our SQL queries。 and
     on the right side we have SQL additions。😊，So we're done with the installation
     of MyQQL on our computer。 next I'm going to show you how to create the databases
     for this course。😊。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以调整大小。😊，这里是我们将编写SQL查询的地方。右侧是SQL附加功能。😊，我们已经完成了在电脑上安装MySQL。接下来，我将向你展示如何为本课程创建数据库。😊。
 - en: '![](img/906b095874e6511f73136ed6d2e67382_13.png)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/906b095874e6511f73136ed6d2e67382_13.png)'
 - en: Oh。![](img/906b095874e6511f73136ed6d2e67382_15.png)
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。![](img/906b095874e6511f73136ed6d2e67382_15.png)
