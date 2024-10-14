@@ -1,5 +1,6 @@
 - en: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P15：15）创建子弹图
     - ShowMeAI - BV1iq4y1P77U
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
@@ -8,14 +9,17 @@
     way of displaying data where you have a goal and then some sort of achievement
     towards that goal。 So we're going to connect to some data that has some sales
     goals in it for some imaginary salespeople that I just made up here。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
 - en: And so you can see that our salesperson goals， data has data for John， Jim。
     James and Jeff are four salespeople by month。 along with their sales and their
     goal for that particular month。😊。![](img/c5398f00a344113deb167264c7ddec96_1.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/c5398f00a344113deb167264c7ddec96_2.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
 - en: Now， the easiest way to create one of these is just to drag salespeople over
@@ -23,24 +27,28 @@
     then use the showme function to create a bullet graph。 And then you can see that
     the bar represents the goal。 and the black line represents sales。 That's not really
     the way round that that makes sense。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
 - en: So we can actually swap those quite easily by just clicking swap reference line
     fields。 Now we have goal。😊，By these represented by these lines。 And then we have
     the sales this blue bar。 which is representing what they actually sold。 So obviously。
     when that's higher than the the black line， then they exceeded their goal。 Now。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
 - en: it's all very good to be able to create it with the show me feature。 But I think
     you get a bit more customization if you're able to to create it yourself。 So what
     they're going do is drag salesperson over to the row shelf。 We're going to drag
     sales up to our columns shelf。 And that creates our bars。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
 - en: And then we're going to drag gold to the detail shelf。😊，We're gonna add a reference
     line。This reference line we're going to do per cell。 So there's one per bar。It's
     going to set that to total。 We're going to set this to the sum of the goal。We're
     going to make our line a little bit thicker and a little bit darker。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
 - en: And then we're going to remove the label so that we just have this bar。 which
@@ -48,12 +56,14 @@
     note that if we look back at this one， there's also some shading under this。 that's
     easily done。 So again， we're going to add another reference lines at a second
     reference line。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
 - en: But this time， we're going add a distribution。Again， we're going to do it per
     cell。60% to 80 per of the average is fine， but we want to make sure it's the sum
     of goal。 not the sum of sales。Click out of that again， remove the label。 and then
     we're going to use the fill below option。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
 - en: And that's going to fill up to 60% with this dark gray than up to 80% with a
@@ -61,17 +71,24 @@
     notice that the bars are slightly thinner。 so we can do that just remove this
     size。 Mo that down a little bit。 And you'll see that each of our salespeople now
     has a darker shading up to 60% of their goal。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将填充到60%，使用这种深灰色，然后到80%用稍微浅一些的灰色。点击，哦，再次现在。我们在这里有了阴影，但你会注意到条形图稍微细了一些。所以我们可以去掉这个大小。稍微调小一点。你会看到每位销售人员现在都有一个到60%目标的深色阴影。
 - en: And then this lighter shading up to 80% of their goal。 And then obviously。 a
     bar at 100% of their goal along with this blue line representing what they actually
     achieved。 So packing a ton of information about how people are doing relative
     to a particular goal into a very small space。 that about does it for this episode
     of tableau in two minutes。 If you have any questions。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后这个较浅的阴影填充到他们目标的80%。显然，100%目标的条形图，以及这条代表他们实际达到的蓝线。因此，在一个非常小的空间内压缩了关于人们相对于特定目标表现的大量信息。这就是本期《Tableau
+    两分钟》的全部内容。如果你有任何问题。
 - en: then please leave them in the comments。 If you like what you hear， then subscribe
     to our channel。 And as always， there is a link to the workbook and to the data
     set in the video description。 and we will see you next time。😊。![](img/c5398f00a344113deb167264c7ddec96_4.png)
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你有问题，请在评论中留言。如果你喜欢我们说的内容，请订阅我们的频道。像往常一样，视频描述中有工作簿和数据集的链接。下次再见！😊 ![](img/c5398f00a344113deb167264c7ddec96_4.png)

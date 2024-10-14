@@ -1,8 +1,11 @@
 - en: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P10：10）表格计算获得同比增长
     - ShowMeAI - BV1iq4y1P77U
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P10：10）表格计算获得同比增长
+    - ShowMeAI - BV1iq4y1P77U
 - en: Hi folks and welcome to another video for Tableau in two minutes today we're
     going to be demonstrating how to use a table calculation to create year over year
     change numbers it's really very simple and you can do it with data that's laid
@@ -13,17 +16,25 @@
     plenty of years to calculate the change from this data is not part of the tableableau
     package but you can download it for the Tableau website there is a link in the
     comments if you would like to try this out on your own。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，欢迎观看另一个关于Tableau的两分钟视频。今天我们将演示如何使用表计算来创建同比变化数字，这真的非常简单，你可以用各种方式布局的数据来做到这一点，但理想情况下，你希望将数据布局为时间序列。现在我们在这个建筑支出数据集中有一些这样的数据，这是美国按细分市场的建筑支出，如你所见，我们按细分市场进行分类，并且覆盖了从2002年到现在的几年，因此我们有足够的年份来计算变化。这些数据不是Tableau软件包的一部分，但你可以从Tableau网站下载，如果你想自己尝试，评论中有链接。
 - en: 😊。![](img/c451b5e84cb33ba92e10a3fc08322e0e_1.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/c451b5e84cb33ba92e10a3fc08322e0e_1.png)
 - en: '![](img/c451b5e84cb33ba92e10a3fc08322e0e_2.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c451b5e84cb33ba92e10a3fc08322e0e_2.png)'
 - en: '![](img/c451b5e84cb33ba92e10a3fc08322e0e_3.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c451b5e84cb33ba92e10a3fc08322e0e_3.png)'
 - en: So the first thing we're gonna to do is we're gonna create the the layout for
     our dashboard here。 The first thing is up。Per name， period name。 That's the one
     that's gonna give us our years。 And we're gonna break this out by quarter。So you
@@ -34,27 +45,35 @@
     do that is because we don't want to inadvertently sum up too many categories obviously
     we want to make sure that our data even though we're just playing with this that
     our data is actually real and then we're going to take this valve。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们要做的第一件事是为我们的仪表板创建布局。第一件事是上面。每个名称，期间名称。那是将给我们年份的部分。我们将按季度拆分。因此你可以看到，我们有2002年至2016年，每个季度都被拆分出来，然后我们将实际上将类别描述放在过滤器中，我们希望只过滤出总建筑支出，在底部有它，我们希望这样做的原因是因为我们不想无意中将太多类别相加，显然我们要确保我们的数据，尽管我们只是玩这个，但我们的数据实际上是正确的，然后我们将把这个值。
 - en: 😊，And we're going to drag it into this table right here。 Now。 you can see this
     gives us the raw revenue numbers， which is great。 And because we have a time series，
     Tableau has a really neat option where you can click on。😊。Year over year growth，
     and it will automatically calculate the year over year growth。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，我们将把它拖到这个表格中。现在，你可以看到这给我们提供了原始收入数字，这很好。而且由于我们有一个时间序列，Tableau有一个非常不错的选项，你可以点击。😊。按年增长，它会自动计算年增长率。
 - en: How easy is that in past versions a tableau that wasn't the key。 So you did
     have to create the table calculation manually。 I're actually going to do that
     because it's pretty easy to do。 So just to create a second value field here， we'll
     show you how these match in a second。😊。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 在过去的版本中，一个不是关键的表格是多么容易。因此，你确实需要手动创建表计算。我实际上会这样做，因为这非常简单。所以，创建第二个值字段，我们会在一秒钟内展示这些是如何匹配的。😊。
 - en: We're going to click here， quick to quick table calculation。 and then we're
     going to go percent difference。When we click on percent difference。 it's going
     to default to showing us the difference from the previous value。 So Q2 spending
     was 20。99% greater than Q1。 Q3 was 6。72% greater than Q2 so on down the list Now
     we don't want that。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们要在这里点击，快速进行表计算。然后我们将选择百分比差异。当我们点击百分比差异时，它会默认显示与之前值的差异。因此，Q2的支出比Q1大20.99%。Q3比Q2大6.72%，依此类推。现在我们并不想要这个。
 - en: We want it to be year over year spending so we're going to come in here we're
     going to use the compute using。And then we have a couple of options here， but
     we don't have the year or the quarter。 So to do this。 we're going to go into edit
@@ -65,33 +84,45 @@
     now we're computing relative to the previous everything is highlighted so it's
     computing from the previous item in this list it's uncheck quarter you can see
     that we've now got no data in any of the years from Q。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们希望是逐年支出，所以我们将进入这里，使用计算方法。然后我们有几个选项，但我们没有年份或季度。为了做到这一点，我们将进入编辑表计算。😊，在这里你会看到我们可以选择各种计算选项。我们想要做的是选择特定的维度，这将给我们包含或排除各种内容的选项，所以如果你现在看这个，我们正在相对于前一个项目计算，所有内容都被突出显示，所以它是从这个列表中的前一个项目计算的。如果取消选中季度，你会看到在任何年份中都没有数据。
 - en: 😊，From 2002， which is a good sign。 And only the Q1s are highlighted。 So this
     is computing the difference along this set of values， which is exactly the way
     we want it。😊。So we're essentially again， computing the difference and skipping
     four things in the middle here。 but really computing the difference using the
     year of the period name， which is。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，从2002年开始，这是个好兆头。只有第一季度被突出显示。所以这是在计算这组值之间的差异，这正是我们想要的。😊。所以我们本质上又是在计算差异，中间跳过四个内容，但实际上是使用年份进行差异计算的。
 - en: The values we have up here。So we can close this out and then just look so the
     values match between the two tables so the year over year growth is the same no
     matter which way you do it。 the reason this way is a bit more flexible is because
     Tableau will automaticallymatic add the year over year growth calculation。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们在这里的值。因此，我们可以关闭这个，然后看两个表之间的值是否匹配，所以无论你怎么做，逐年增长都是相同的。这样做的原因是，这种方式更灵活，因为Tableau会自动添加逐年增长计算。
 - en: if you have a date field if you don't have a date field if you just had say
     a column that represented years and a column that represented months or a column
     that represented quarters。 that option wouldn't be available so you need to use
     this other method to get to it。😊，Well。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你有日期字段，如果你只有一个代表年份的列和一个代表月份或代表季度的列，那么那个选项将不可用，因此你需要使用这种其他方法来实现。😊，好吧。
 - en: thanks for joining us for another episode of Tableau in two minutesute again
     if you want to try this out at home the data is in the comments。 please subscribe
     to the channel and if you have any questions please leave them in the comments
     thanks so much。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 感谢您再次加入我们的《Tableau两分钟》节目。如果您想在家试试，数据在评论中。请订阅频道，如果您有任何问题，请在评论中留下，谢谢。
 - en: 😊。![](img/c451b5e84cb33ba92e10a3fc08322e0e_5.png)
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/c451b5e84cb33ba92e10a3fc08322e0e_5.png)

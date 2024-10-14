@@ -1,15 +1,21 @@
 - en: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P12：12）添加自定义颜色
     - ShowMeAI - BV1iq4y1P77U
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P12：12）添加自定义颜色
+    - ShowMeAI - BV1iq4y1P77U
 - en: Hi， folks today， Welcom to another episode of Tableau in two minutes。 Today。
     we're gonna be showing you how you can add a customer color palette to Tableau。
     So it might be that maybe you have some corporate colors or something like that
     that you want to add and you can do that but it actually works mostly outside
     of tableableau。 So what you have to do is edit a file called Pres do Tps。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，大家好，欢迎来到另一集“Tableau两分钟”。今天，我们将展示如何将自定义颜色调色板添加到Tableau中。可能你有一些公司颜色或者其他东西想添加，你可以做到这一点，但实际上它主要是在tableableau外部工作。所以你需要做的是编辑一个叫做Pres
+    do Tps的文件。
 - en: This file is in your My tableableau repository file。 You can see it。 It's right
     there。😊。You can open it up in。Notepad。And once you're in notepad。 you'll probably
     see a file that looks like this because there's nothing added。 So what you need
@@ -17,92 +23,133 @@
     haven't it's very easy to work with everything is contained within a tag like
     this so we have the start of workbook to the end of the workbook and the first
     thing we're going to do is we're going to add this preferences line。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个文件在你的My tableableau存储库中。你可以看到它。就在这里。😊。你可以在Notepad中打开它。一旦你进入Notepad，你可能会看到一个看起来像这样的文件，因为没有添加任何内容。所以你需要做的，只是一个简单的XML文件，如果你以前处理过XML，如果没有，使用起来非常简单，所有内容都包含在这样的标签内，所以我们有工作簿的开始到工作簿的结束，我们要做的第一件事是添加这个preferences行。
 - en: 😊，And this preferences line right here。And then you can see within here we have
     a custom color palette that we have called test that's a regular one that means
     it's going to be individual like blobs of color it's not going to be continuous
     and here we have what's called the hexadeadeciimmal values for each of the colors
     you might be familiar from back in the day playing with paint where you would
     have red。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，这个preferences行就在这里。然后你可以看到我们有一个叫做test的自定义颜色调色板，这是一个常规的颜色调色板，意味着它将是独立的颜色块，而不是连续的。在这里，我们有每种颜色的十六进制值，你可能还记得以前玩绘画时会用到红色。
 - en: green and blue values these are very similar to these they're just the sort
     of internet language version of the same thing。😊。![](img/a75b515a90694e4ca69dcd908cf6e991_1.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 绿色和蓝色的值与这些非常相似，它们只是同样内容的互联网语言版本。😊。![](img/a75b515a90694e4ca69dcd908cf6e991_1.png)
 - en: And then once you have this， you can go ahead and open up Tableau。😊。![](img/a75b515a90694e4ca69dcd908cf6e991_3.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦你有了这个，你就可以打开Tableau。😊。![](img/a75b515a90694e4ca69dcd908cf6e991_3.png)
 - en: And when you do that， let's go ahead and connect ourselves to some data there
     we go。 this will do doesn't really matter what we connect to in this particular
     case。 so say we take country we'll drag it out to the Marx card and then go in
     here and edit the colours。 you can see that our colour palette。😊。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 当你这样做时，让我们连接一些数据，没错。在这个特定情况下，连接什么并不重要。所以假设我们拿国家，将其拖到Mark卡上，然后在这里编辑颜色。你可以看到我们的颜色调色板。😊。
 - en: '![](img/a75b515a90694e4ca69dcd908cf6e991_5.png)'
+  id: totrans-7
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a75b515a90694e4ca69dcd908cf6e991_5.png)'
 - en: Colt。IsRight down here at the bottom。 That's the one that we added in our preferences
     sheet。 So let's show you the whole thing from start to finish。 So what you would
     do is you would go to an internet browser to get the hexadecimal values for some
     colors。 So color hex dot com is a good one。 If you click on latest palettes。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: Colt就在底部。这是我们在preferences表中添加的那个。所以让我们从头到尾展示整个过程。你需要做的是去一个互联网浏览器获取一些颜色的十六进制值。color
+    hex.com是一个不错的网站。如果你点击最新调色板。
 - en: They have a set of pallets here。 I'm rather fond of this McCo tones palettes。
     So you can see we have five different colors。 They seem complementary to me。 And
     then you have's these hexadecimal values for each of the colors。 And these are
     the things that we're going to want to put into our tableau file。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 他们这里有一套调色板。我对这个McCo色调调色板相当喜欢。所以你可以看到我们有五种不同的颜色。对我来说，它们似乎是互补的。然后你有每种颜色的十六进制值。这些就是我们想要放入我们的tableau文件中的内容。
 - en: So we're going to open up the preferences Tps。😊。![](img/a75b515a90694e4ca69dcd908cf6e991_7.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将打开preferences Tps。😊。![](img/a75b515a90694e4ca69dcd908cf6e991_7.png)
 - en: '![](img/a75b515a90694e4ca69dcd908cf6e991_8.png)'
+  id: totrans-11
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a75b515a90694e4ca69dcd908cf6e991_8.png)'
 - en: '![](img/a75b515a90694e4ca69dcd908cf6e991_9.png)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a75b515a90694e4ca69dcd908cf6e991_9.png)'
 - en: Drag it over here so you can see everything together。 And then we're going to
     go ahead and add a new color palette。 So you see how everything is contained between
     two。Of these colour palette。Pieces here。 just go ahead and add the start。At the
     end。And then here you can see we named our other one test。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 将它拖到这里，这样你就可以看到所有内容在一起。然后我们将添加一个新的颜色调色板。你会看到所有内容都在这两个调色板之间。只需在开始和结束时添加即可。然后你可以看到我们为另一个调色板命名为测试。
 - en: since this one has a name， let's go ahead and call it Mac tones。It is a regular
     one。 it's going to be individual like colors for each item so we would use it
     with dimensions。 and then we have five different colors so let's go ahead and
     copy five of these across。😊。Just like that All right， so first thing I'm going
     to do is just delete all the colors or sorry。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 既然这个有名字，我们就叫它 Mac 色调。这是一个常规的，针对每个项目将会有独特的颜色，所以我们将与维度一起使用。然后我们有五种不同的颜色，所以我们来复制五个。😊
+    就这样，首先我要做的就是删除所有颜色，抱歉。
 - en: delete all the values we have in there right now。😊，With those deleted。 I'm going
     to take these hex values here and I'm just going to copy and paste them。Inter
     notepad。All right， now that I've done that， we'll save it。And then we need to
     go ahead and open up Tableau again。😊。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 删除我们现在所有的值。😊 删除后，我将把这些十六进制值复制并粘贴到记事本中。好了，完成后我们将保存它。然后我们需要再次打开 Tableau。😊
 - en: '![](img/a75b515a90694e4ca69dcd908cf6e991_11.png)'
+  id: totrans-16
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a75b515a90694e4ca69dcd908cf6e991_11.png)'
 - en: 。Going to reconnect to the data， make sure that every time you change the colors
     in a color palette you close and reopen tableau。 otherwise it's not going to show
     up in the list，ll just drag country out into our Mars card there and then we can
     go ahead and edit the colors and down here at the bottom you'll see our new palette。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 将重新连接到数据，确保每次更改调色板中的颜色时都关闭并重新打开 Tableau。否则它将不会出现在列表中。我们只需将国家拖到我们的图表卡中，然后我们可以编辑颜色，下面你会看到我们的新调色板。
 - en: 😊。![](img/a75b515a90694e4ca69dcd908cf6e991_13.png)
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊 ![](img/a75b515a90694e4ca69dcd908cf6e991_13.png)
 - en: Which we can then assign。To our countries。 And that's how you use custom custom
     colors in tableableau。 If you have any questions， please leave them in the comments。
     If you like what you're hear。 then please subscribe to our channel。 And there
     is a link to the data in the video description in the video description this time。
     we've also included a quick link to the X Ml you need to add a color palette。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们可以将其分配给我们的国家。这就是如何在 Tableau 中使用自定义颜色。如果你有任何问题，请在评论中留言。如果你喜欢我们的内容，请订阅我们的频道。视频描述中有数据链接，这次我们还包含了一个快速链接，以便你添加颜色调色板所需的
+    XML。
 - en: If you have any questions as I said， please let me know。 and we will see you
     next time。😊。![](img/a75b515a90694e4ca69dcd908cf6e991_15.png)
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你有任何问题，请告诉我。下次再见。😊 ![](img/a75b515a90694e4ca69dcd908cf6e991_15.png)

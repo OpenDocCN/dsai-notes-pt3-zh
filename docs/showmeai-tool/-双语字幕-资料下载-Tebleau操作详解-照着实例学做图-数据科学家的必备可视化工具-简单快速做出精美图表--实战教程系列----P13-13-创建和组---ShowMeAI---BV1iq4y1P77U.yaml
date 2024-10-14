@@ -1,86 +1,119 @@
 - en: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P13：13）创建和组
     - ShowMeAI - BV1iq4y1P77U
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P13：13）创建和组
+    - ShowMeAI - BV1iq4y1P77U
 - en: Hi， folks， and welcome to another episode of Tableau in two minutes。 Today。
     we're going to show you how you can use groups to group dimensions together or
     group levels within dimensions together to create a sort of higher level category。
     So I've gone ahead and connect to a cause data set。 This just has a bunch of information
     about different types of cars。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，欢迎来到《两分钟内掌握Tableau》的另一集。今天，我们将向你展示如何使用组将维度组合在一起，或者将维度内的层级组合在一起，以创建一种更高层次的类别。因此，我已经连接到了一个原因数据集。这只是一些关于不同类型汽车的信息。
 - en: And what we're going to do is we're going to take this cylinders。😊，Dimenssion。I'm
     going to group some of these together to make them a a bit more useful so。![](img/d1d1ac086f0a048b3160080e3ac28376_1.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们要做的是将这个气缸😊维度分组。我将把其中一些组合在一起，使它们更有用。![](img/d1d1ac086f0a048b3160080e3ac28376_1.png)
 - en: To create a group， all you do is you click on this little down arrow， go to
     create and then group。![](img/d1d1ac086f0a048b3160080e3ac28376_3.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 要创建一个组，你只需点击这个小下拉箭头，选择创建，然后选择组。![](img/d1d1ac086f0a048b3160080e3ac28376_3.png)
 - en: Once you have that， we can begin to to put these into categories。 So maybe we
     want to group all sort of large engines together。 So we'll get the 12 and 8 together。
     We'll call that a large engine with a large number of cylinders。 We'll grab。5
     and 6。 and group those together。 and then we'll grab 3 and 2 and call them very
     small。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦你有了这些，我们就可以开始将它们分类。因此，也许我们想把所有大型引擎放在一起。我们将12缸和8缸放在一起。我们称之为具有大量气缸的大型引擎。然后我们会把5和6抓在一起。然后我们会把3和2抓在一起，称它们为非常小的引擎。
 - en: You'll see I've left four out as its own category。 So we'll go ahead and apply
     that。 You can see that it pops up as a just the default name is just the name
     of the dimension followed by group。 And then it has this little paperc next to
     it that tells us it's a calculated group for one of the other dimensions。 So just
     go ahead and click apply。 and then we'll drag that across。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 你会看到我将四个单独列为自己的类别。因此我们继续应用它。你可以看到它弹出为默认名称，仅为维度的名称，后面加上组。然后它旁边有一个小纸张图标，告诉我们这是为其他维度计算的组。所以请继续点击应用，然后我们将其拖动。
 - en: And now you can see that we've created groups based on。![](img/d1d1ac086f0a048b3160080e3ac28376_5.png)
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在你可以看到我们已经基于某些内容创建了组。![](img/d1d1ac086f0a048b3160080e3ac28376_5.png)
 - en: These。Based on the groups that we put them in。 Now。 there's a couple of other
     things that we can do too groups。 it's worth noting aren't dynamic necessarily。
     So if we had another set of cylinders。 we didn't have 10 cylinder engine in here。
     for example， we only had 12 and 8。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些是基于我们将它们放入的组。现在，还有其他一些事情我们可以做。值得注意的是，这些组并不一定是动态的。因此，如果我们有另一组气缸，举例来说，我们这里没有10缸引擎，只包含12缸和8缸。
 - en: So if we had a 10 cylinder engine， that would pop up as a new row in the data
     set and we would have to go and manually assign that to a group。![](img/d1d1ac086f0a048b3160080e3ac28376_7.png)
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以如果我们有一个10缸引擎，它将作为数据集中的新行弹出，我们必须去手动将其分配到一个组中。![](img/d1d1ac086f0a048b3160080e3ac28376_7.png)
 - en: So best to make sure that you have all of the potential values represented before
     you go in and create your group。 but certainly useful， even if you don't。 Now，
     the other thing that we can do with this is include another category。 we don't
     have or we didn't have other category to start with。 we just have four sitting
     out by itself。 But if we included other and then ungroup those。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 最好在创建组之前确保所有潜在值都已表示，但即使没有也非常有用。现在，我们可以做的另一件事是包括另一个类别。我们开始时没有“其他”类别，只有四个单独存在。但如果我们包括“其他”，然后取消分组。
 - en: you can see。 but when we ungroup things。 instead of falling into a bucket that
     has just individual items in it。 They get grouped together in this other category。
     So we could have large engines。5 and 6 cder engines and then other。There you go。
     And that's how that works。 So now you can see that instead of four being all by
     itself and two and3 being all by themselves。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到，但是当我们取消分组时，它们并没有落入一个仅有单独项目的桶中。它们被归类在这个其他类别中。因此，我们可以有大型引擎、5缸和6缸引擎，然后是其他。就是这样。这就是它的工作原理。所以现在你可以看到，四个不再单独存在，2和3也不再单独存在。
 - en: they are in a single group。 if we choose to exclude other。 you can see we just
     get then three individual categories for4，3 and 2。 whether you want to do that
     depends on the context how you're using this particular grouping field。 It is
     helpful sometimes especially if you don't want individual items。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 它们在一个单独的组中。如果我们选择排除其他类别，您会发现我们只得到4、3和2这三个单独的类别。是否这样做取决于您使用该分组字段的上下文。这在某些时候很有帮助，特别是当您不想要单独项时。
 - en: then popping up whenever they are rolled in from the database or something like
     that。 you just want to include them in other category。 It makes a lot of sense。
     just have that category there。 Alright， so that's just about it for using groups。
     they behave just like any other dimension。 So you can drag them around。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后在从数据库中提取时，它们会弹出。您只需将它们包含在其他类别中。这很有意义。只需保留该类别即可。好了，关于使用组的内容就到这里。它们的行为与其他维度一样。所以您可以自由拖动它们。
 - en: use them essentially in place of a dimension。 So thanks for watching this episode
     of tableableau in two minutes。 if you have any questions， please leave them in
     the comments。 there's a link to the workbook。 and the data set in the video description。
     And if you like what you heard and you like more tableau tips and tricks。 please
     give us a thumbs up and subscribe to our channel。😊。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 实际上可以用它们代替一个维度。所以感谢您观看本集的《Tableau两分钟》。如果您有任何问题，请在评论中留言。视频描述中有工作簿的链接和数据集。如果您喜欢我们分享的内容并想要更多Tableau技巧，请给我们点赞并订阅我们的频道。😊
 - en: '![](img/d1d1ac086f0a048b3160080e3ac28376_9.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d1d1ac086f0a048b3160080e3ac28376_9.png)'
 - en: '![](img/d1d1ac086f0a048b3160080e3ac28376_10.png)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/d1d1ac086f0a048b3160080e3ac28376_10.png)'

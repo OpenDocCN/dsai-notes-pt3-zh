@@ -1,433 +1,571 @@
 - en: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P1：1）Tableau
     基础知识 - ShowMeAI - BV1iq4y1P77U
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P1：1）Tableau基础知识
+    - ShowMeAI - BV1iq4y1P77U
 - en: '![](img/42617beed230109fc6b0358beca3faa9_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/42617beed230109fc6b0358beca3faa9_0.png)'
 - en: Hi， folks， and welcome to another episode of Tableau in two minutes。 Today。
     we're going to be doing something a little bit different than what we normally
     do。 and we're going to be walking through the basics of tableableau。 That is how
     you can go from opening the program for the very first time all the way through
     to creating a very basic dashboard。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，大家好，欢迎收看《Tableau两分钟》。今天，我们将做一些与我们通常做的有所不同的事情，我们将走过Tableau的基础知识。也就是说，你可以从第一次打开程序开始，一直到创建一个非常基本的仪表板。
 - en: really， to give you an overview of how everything works in a sort of framework
     to hang your hat on and hang new information on as you watch other videos either
     on this channel。😊，Or on other channels。 So the first thing you get when you open
     up tableableau is this screen。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 真的，给你一个概述，让你在观看这个频道或其他频道的其他视频时，有一个框架来挂钩新信息。😊，所以当你打开Tableau时，首先看到的是这个屏幕。
 - en: This gives you some options to connect to data over here on the left hand side。
     depending on which version of tableableau you're using， whether you're using Tableau
     public。 tableableau professional or tableableau personal。 These will vary somewhat。
     obviously Tableau public has the most limited set of options。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 这给你一些选项，可以在左侧连接数据，具体取决于你使用的Tableau版本，无论你是使用Tableau Public、Tableau Professional还是Tableau
+    Personal。这些会有所不同。显然，Tableau Public的选项最有限。
 - en: particularly when it comes to connecting to data that might be on a server。
     you'll also be able to see any recent files that you've opened。 So if you have
     been working with other tableableau files they'll be listed out。 the thumbnails
     in this big view in the middle， I don't have any。😊，You may see some。 You may not。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 特别是在连接可能在服务器上的数据时。你还可以看到你最近打开的任何文件。如果你之前在使用其他Tableau文件，它们会在中间的大视图中列出缩略图，我没有任何。😊，你可能会看到一些。你可能不会。
 - en: depending on how many times you've opened the program before and what sort of
     things you've done with it。The very， very。Esiest way to connect to data is to
     connect to data either via Microsoft exc or via a text file。You can use both of
     those options up at the top here。 We're going connect to some data using Microsoft
     Excel。 The process for a text file is very。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 这取决于你之前打开程序的次数和你所做的事情。连接数据的最简单方法是通过Microsoft Excel或文本文件连接数据。你可以在顶部使用这两个选项。我们将使用Microsoft
+    Excel连接一些数据。文本文件的过程非常。
 - en: very similar。 I am going select。The tableau superstore sales data set。We're
     going to go ahead and open that up， and you'll see that when we do open that up。
     that brings us to a new page where we can define the data that we want to import
     into our workbook。 There's three sheets on the left hand side。 These are three
     sheets within the sample workbook within this superstore workbook。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 非常相似。我将选择。这个表格超市销售数据集。我们接下来会打开它，你会看到当我们打开它时，这会带我们到一个新页面，在那里我们可以定义想要导入到工作簿中的数据。左侧有三个工作表。这些是在这个超市工作簿中的示例工作簿中的三个工作表。
 - en: We're going to drag orders。Across to this pane right here。 And that's gonna
     import all of the data on the orders sheet into our workbook。If we wanted to。
     we could also drag across people。And then we could use that as a join。 People
     actually has the number of sorry， the the region。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将把订单拖到这个面板上。这将把订单表中的所有数据导入到我们的工作簿中。如果我们愿意，我们也可以拖动人员，然后我们可以将其用作连接。人员实际上有地区的数量。
 - en: along with the person responsible for leading that region。 And you can see that
     just by clicking on this join right here。 we can define how we want that to join。
     We could even add。Returns in there as well。 If we wanted to do that。 again， this
     is joining by this order I D number。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 还有负责领导该地区的人。你可以通过点击这里的连接来看到这一点。我们可以定义如何连接。我们甚至可以在其中添加。退货。如果我们想这么做。再次，这是通过这个订单ID号进行连接。
 - en: Those two are set up automatically because this is a sample data set It's designed
     to be easy to use These set up automatically。 If you wanted to change one of these
     fields， you can see right here。How you would change the field that you're joining
     on。 These joins work just like。Just like sequel joins。So you have an inner left，
     right and a full。Out to join。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 这两个类别是自动设置的，因为这是一个示例数据集，旨在易于使用。这些设置是自动完成的。如果你想更改这些字段中的一个，你可以在这里看到你如何更改连接的字段。这些连接就像SQL连接一样运作。所以你有内连接、左连接、右连接和全连接。
 - en: Don't worry too much about that if you're just getting started。 but I wanted
     to let you know that the flexibility is there。Once we have all this data。 we probably
     want to explore it。 So the first thing we're going to do is go down here where
     it says go to worksheet。 and we are going to click on sheet 1。 This view is where
     we're going to create every individual visualization。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你刚刚开始，不用太担心这个。但我想让你知道，这种灵活性是存在的。一旦我们有了所有这些数据，我们可能想要探索它。所以我们要做的第一件事是下到这里，点击“转到工作表”，我们将点击工作表
+    1。这个视图是我们将创建每个单独可视化的地方。
 - en: It's where we'll do a lot of the heavy lifting when it comes to building any
     sort of tableau workbook。 Any sort of tableau dashboard。 A lot of the work is
     done in this particular sheet。 So let's take a a quick tour， as it were， of all
     of the different areas of the screen。Over on the left hand side， we have all of
     our data items that are part of our data set。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 在构建任何类型的 Tableau 工作簿或 Tableau 仪表板时，这里将会进行大量的重工作。很多工作都是在这个特定的工作表中完成的。所以我们来快速浏览一下屏幕上的不同区域。在左侧，我们有数据集中所有的数据项。
 - en: They're divided into two categories。 We have dimensions， and we have measures。
     Dis are items that are typically categorical。 So， for example。 category that's
     going to be the category of product in our superstore data set。Measures are typically
     numeric， and they are things that we would add， subtract， divide， et cetera。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 它们被分为两个类别。我们有维度，还有度量。维度是通常是分类的项目。例如，类别将是我们超市数据集中产品的类别。度量通常是数字，它们是我们会进行加、减、除等运算的东西。
 - en: These are normally the things that we want to display。 and we want to display
     how these change relative to one of these things， right？ So we want to know。 might
     want to know how many。How much money we have sold in a particular category of，
     of product。You'll notice also that these have different colours when you hover
     over them。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些通常是我们想要显示的内容。我们想要显示这些内容相对于某些事物的变化，对吧？所以我们想知道，我们可能想知道在特定产品类别中销售了多少金额。你会注意到，当你将鼠标悬停在这些项目上时，它们会显示不同的颜色。
 - en: that colourable colour will carry through as we drag them out onto our sheet
     here。 blue coloured items are disc。Green coloured items are continuous。 Most。
     they align with the way the dimensions and measures are set up， but it's not always
     true。 So you have to well watch out for that。 You can do different things with
     continuous than you can do with discrete。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些可着色的颜色在我们拖动到工作表时会保留。蓝色的项目是离散的。绿色的项目是连续的。大多数情况下，它们与维度和度量的设置方式相一致，但并不总是如此。所以你必须注意这一点。你可以对连续的项目做的事情与离散的项目不同。
 - en: So they all have a place。But they are。 They do work a little bit， a little bit
     differently。Moving out to away from the list of our fields here。 we have a number
     of different things that we will call shelves。 So we have the pages shelf。 the
     filter shelf， column shelf， the row shelf。And what's called the Marx card。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以它们都有各自的位置。但它们的运作方式略有不同。从字段列表中移出，我们有几个不同的东西，我们称之为架子。所以我们有页面架、过滤器架、列架、行架，以及被称为马克斯卡片的架子。
 - en: which has a number of different shelves in it。 So we have the colour shelf，
     the detail shelf。 et cetera， et cetera。 And then we have， obviously， our visualization
     up here。 which will build up as we begin to move things out from our fields。Into。Our
     main page and onto each of these shell。 We'll talk a little bit about what each
     of these shells does as we go through。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 其中有几个不同的架子。所以我们有颜色架、细节架等等。然后显然，我们的可视化在这里，它会随着我们将内容从字段中拖出而逐渐建立。我们将在继续过程中讨论每个架的功能。
 - en: Theseai。As we go through this， this exercise。So the first thing to do is is
     just to create a really simple visualization。 So let's take two different items。
     We'll take product category。 as we talked about。 We'll drag that onto the row
     shelf。 And you can now see that our rows are defined by the category of our product
     as three categories。 Fni office supplies and technology。 Then let's take sales。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个过程中，当我们进行这个练习时，首先要做的就是创建一个非常简单的可视化。所以让我们选择两个不同的项目。我们将产品类别拖到行架上。现在你可以看到我们的行由产品类别定义，共有三类：办公用品和技术。然后让我们选择销售。
 - en: and let's click and hold and drag sales out to the column shelf。 And you can
     see that now Tableau has automatically created a bar chart for us。😊，Which is good。
     That works very well in this case。 Tableau is usually pretty smart about the type
     of visualization that you want to create with a particular set of dimensions and
     measures。If you wanted to change the type of chart， you can go up to the show
     me option here， and you can。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们点击并按住，将销售拖到列架上。你可以看到，现在 Tableau 自动为我们创建了一个柱状图。😊这很好，在这种情况下效果非常好。Tableau
+    通常对你想用特定维度和度量创建的可视化类型很聪明。如果你想改变图表类型，可以点击这里的“展示我”选项。
 - en: Click any of these options to try and look at how your data will be displayed
     with different types of visualization so we could try this highlight table。Could
     try stacked bars。Could try a bubble chart。You could try a tree map。Really low。
     the best choice for this data is this is this bar chart。 So we are actually gonna
     leave it like that。For the moment。And。We're going to add a filter。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 点击这些选项中的任何一个，尝试查看不同类型的可视化下数据的显示方式，比如试试高亮表、堆叠柱状图、气泡图或树图。实际上，针对这组数据，最佳选择是柱状图。所以我们现在就这样保留它，并且要添加一个过滤器。
 - en: So the way filters work is filters limit the amount of data that flows into
     your visualization so that we could look at this instead of looking at this。 for
     example， for all regions。 we can look at it for just one specific region。So to
     do that。 take filter， drag it out onto the filters shelf。 And then we have this
     window that pops up。 which allows us to select which regions we want to look at。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 过滤器的工作方式是过滤器限制流入可视化的数据量，因此我们可以查看这个，而不是查看所有区域。例如，我们可以只查看一个特定区域。为了做到这一点，取出过滤器，将其拖到过滤器架上。然后会弹出一个窗口，让我们选择想要查看哪些区域。
 - en: We're going to select all for the moment。And then we're just going to click
     okay。 And you'll see the data didn't change because we're including all of them
     in our region。 If we wanted to change that。We can click on region， click editit
     filter， and then maybe exclude。The south and the west， from our filter。I'm moving
     this out the way so you can see And then watch these bars when we click。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 目前我们将选择全部。然后我们只需点击确认。你会看到数据没有变化，因为我们将它们全部包含在我们的区域内。如果我们想要改变这一点，可以点击区域，点击编辑过滤器，可能排除南部和西部的地区。我把这个移开，以便你可以看到，当我们点击时，观察这些柱状图。
 - en: O。The bars change， and the scale changes in this case， because we have fewer。Data
     points， or sorry。 fewerer sales， because we're only looking at two out of the
     four regions。The other thing you can do with this is you can show it on this visualization。
     So if we go ahead and click show filter， then you can see over on the right hand
     side。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些柱状图和比例在这种情况下会改变，因为我们有更少的数据点，抱歉，销售数量减少，因为我们只查看四个区域中的两个。你还可以在这个可视化中显示它。所以如果我们继续点击显示过滤器，那么你可以看到右侧。
 - en: we get this filter box and you can click through different options。F filtering。And
     watch how the visualization changes with that。 So super useful if you're gonna
     have to change this a bunch of times and you want the data to update on your sheet。
     you want an easy way to do it without having to click through all of these different
     sub menus to get to edit the filter。Once we've done that。We might want to take
     our visualization here and add it to a dashboard。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们得到了这个过滤框，你可以点击不同的选项进行过滤。观察可视化是如何随着变化而变化的。所以如果你需要多次更改，这非常有用，并且希望数据在表格上更新，想要一种简单的方式而不必点击所有不同的子菜单来编辑过滤器。完成后，我们可能想将这里的可视化添加到仪表板上。
 - en: So to create a new sheet or to create a new dashboard， we have these options
     down here。 We can create a new sheet， create a new dashboard or create a new story。
     Sties we're not going to cover today。 They're a little bit more complicated。 Probably
     a little bit more in depth。 What we really want to focus on is the the bones of
     tableau。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以要创建一个新的工作表或创建一个新的仪表板，我们在这里有这些选项。我们可以创建一个新的工作表，创建一个新的仪表板，或者创建一个新的故事。故事我们今天不讨论。它们稍微复杂一点，可能深入一些。我们真正想关注的是Tableau的基本功能。
 - en: which is building worksheets up into dashboards。 So we have our first workshe。
     We just built it。😊。So let's go ahead and create ourselves a dashboard。 Now， the
     dashboard view， as you'll see。 is a little bit different。 First of all， we have
     this。Tab， the dashboard tab。 where we can define the size of our dashboard。 We
     can add sheets to our dashboard。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是将工作表构建成仪表板的过程。所以我们有我们的第一个工作表。我们刚刚创建它。😊所以让我们继续创建一个仪表板。现在，如你所见，仪表板视图略有不同。首先，我们有这个标签，仪表板标签。在这里我们可以定义仪表板的大小。我们可以将工作表添加到我们的仪表板。
 - en: We can add objects that will help us define the layout。 We can show how we want
     to do the layout and we can choose whether we want to show the title or not。And
     then we have a second tab， which is the layout tab。 and this is where we're going
     to be able to fine tune how things are laid out within our dashboard。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以添加一些对象，帮助我们定义布局。我们可以展示我们希望如何布局，并选择是否显示标题。然后我们有第二个标签，即布局标签。这是我们能够微调仪表板中内容布局的地方。
 - en: so you'll see we already have some containers on there。We don't actually need
     any of these containers I'm to delete them in just a second。 but you can see as
     we add sheets， they will appear in this hierarchy and we'll be able to move them
     around in order to make our dashboard as visually appealing as possible。 So to
     start with， as I said， we're just going to clean this out。So we' just cleared
     out everything。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以你会看到我们已经在这里有一些容器。其实我们不需要这些容器，我马上就会删除它们。但你可以看到，随着我们添加工作表，它们会出现在这个层级中，我们可以移动它们，以使我们的仪表板尽可能美观。所以一开始，正如我所说，我们只是清理这个内容。所以我们已经清空了所有东西。
 - en: You can tell we've cleared out everything because we have this option for drop
     sheets here。We're going to take our first sheet that we created， and we're going
     drag it out。On to the dashboard here。 And you can see that it does several things。
     First of all。 it drops the sheet along with a title and the bars and everything
     else。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看出我们已经清空了所有东西，因为我们在这里有这个放置工作表的选项。我们将取出我们创建的第一个工作表，并将其拖到仪表板上。你可以看到这做了几件事。首先，它连同标题、条形和其他内容一起放置了工作表。
 - en: And it also has dropped our filter。 Our region filter up here because that region
     filter is displayed on the sheet。 It will be displayed on the dashboard。 If you
     want to remove any of these。 you can remove them so we could remove them both。By
     clicking the delete button。And then we go back to having。An empty dashboard。 The
     other thing you can do is you can drag it out。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 它还放置了我们的过滤器。我们的区域过滤器在这里，因为该区域过滤器在工作表上显示。因此它会在仪表板上显示。如果你想删除其中任何一个，你可以删除它们，所以我们可以将它们都删除。通过点击删除按钮。然后我们又回到一个空的仪表板。你还可以拖动它。
 - en: but hold down the shift key。 When you drag it out and hold down the shift key。
     that creates what's called a floating layout。 So before this sheet was locked。To
     the full size of the dashboard and everything that came in would sort of tile
     itself together。 If you think of the way tiles are laid out on a bathroom floor。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 但当你拖动时按住shift键，这会创建所谓的浮动布局。因此在此之前，这个工作表被锁定到仪表板的全尺寸，所有进入的内容会相互拼接。如果你想象一下瓷砖在浴室地板上的布局。
 - en: we would be aligning things like that。 sort of like a snap too grid or anything
     like that。 if you've used it in in other image processing programs。 This changes
     it so that now everything's floating so I can move this around to wherever I want。This
     is the way I typically start all of my dashboards with everything floating。That
     way。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们会以那样的方式对齐，类似于对网格的捕捉或其他图像处理程序中的功能。这改变了布局，现在所有内容都是浮动的，所以我可以将其移动到我想要的任何地方。这是我通常开始所有仪表板时的方式，所有内容都是浮动的。这样。
 - en: I can sort out where I want things approximately positioned。 And then if I want
     to put them into the grid， I can build the grid up as I begin to add interesting
     elements to my dashboard and I decide which ones I want to keep and which ones
     I want to get rid of。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 我可以大致整理出我想要的位置。如果我想把它们放入网格中，我可以在开始添加有趣的元素到我的仪表板时逐步建立网格，并决定哪些元素我想保留，哪些我想去掉。
 - en: Once you have everything in a floating layout， it can be quite challenging sometimes。
     particularly if it's a complicated layout to put things in exactly the right place
     or to rearrange things or to say。 hey， I wonder what it would look like if I just
     moved this piece over here or if I moved it to the other side。 So super useful
     to start off with everything。Laid out nicely。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦你所有的元素都在浮动布局中，有时候会变得相当具有挑战性，特别是当布局复杂时，很难将东西放在确切的位置，或者重新排列元素，或者说，嘿，我想知道如果我把这个部分移到这里，或者移到另一边会是什么样子。因此，最好先将所有内容整齐地布局。
 - en: The other thing I'm going to do is I'm just going to change this size Right
     now， we have a range。 So it has a minimum size and a maximum size， and it will
     float based on a screen。 I like to set it to a specific size。 So we're going to
     set it to a fixed size。 And then we're going to set it just to a。Browser sized
     window。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将做的另一件事是改变这个大小。现在，我们有一个范围。所以它有一个最小大小和一个最大大小，并且它会根据屏幕浮动。我喜欢将其设置为特定的大小。所以我们将其设置为固定大小。然后我们将其设置为一个浏览器大小的窗口。
 - en: And you can see that as we resized the dashboard， all of the elements within
     the dashboard resized proportionally。 it worked。 in some cases， it didn't work
     in the case of our filter。 So we're going to have to extend that a bit。 So that's
     something to be aware of。 It's worth picking the size first， then beginning to
     arrange all of the items within the dashboard。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到，当我们调整仪表板大小时，仪表板中的所有元素都按比例调整大小。它工作了。在某些情况下，它在我们的过滤器中没有工作。所以我们需要将其延伸一点。这是需要注意的事情。先选择大小，然后开始安排仪表板中的所有项目是值得的。
 - en: If you pick the size or you try and change the size significantly once you have
     everything laid out。 that's going to be quite challenging to maintain。So this
     dashboard is not particularly interesting。 right， because we only have one element
     on it at the moment。 What we want to add is a second element。That will allow us
     to look at how the two things interact with one another。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你在所有元素布局完成后，选择大小或尝试大幅更改大小，这将会非常困难来维护。因此，这个仪表板目前不是特别有趣，对吧，因为我们现在只有一个元素。我们想要添加的是第二个元素，这将使我们能够查看这两个事物之间的相互作用。
 - en: So right now we are looking at sales by category。 So another thing that we might
     want to look at is sales by time。 So to add that， we're going to go ahead and
     we're going to use the button to create ourselves a new sheet。I am going to drag
     this sheet to rearrange items here behind the dashboard。 The reason I'm going
     to do that is because I want all of my sheets organized so that I have first sheet
     on the dashboard。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们正在查看按类别的销售情况。我们可能还想查看按时间的销售情况。为了添加这个，我们将继续使用按钮来创建一个新的工作表。我将拖动这个工作表以在仪表板后面重新排列项目。这样做的原因是我希望所有的工作表都井然有序，以便我可以在仪表板上看到第一个工作表。
 - en: second sheet on the dashboard。 then the dashboard。 If I was creating a second
     dashboard in the same workbook， I would do the same thing。 So I would have another
     sheet， another sheet and then another dashboard out to the right hand side。You
     can see that we've got a second blank sheet。Let's go ahead and drag sales out。
     And this time。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 仪表板上的第二个工作表。如果我在同一个工作簿中创建第二个仪表板，我会做同样的事情。所以我会再添加一个工作表，再加一个工作表，然后再添加一个仪表板到右侧。你可以看到我们有第二个空白工作表。我们来拖动销售数据。这次。
 - en: we're going to take sales to the road shelf。 And you can see it's automatically
     created as a bar chart because that's the best way to display sales。 but。What
     we're going to do is we're going to drag order date。Out to our columns shelf。
     And I want to point out two things。 Number one， it has changed the type of graph
     that we have from a bar chart to a line chart。 because a line chart makes more
     sense when we have a date and order date is the data type is date。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将把销售数据放到行架上。你可以看到它被自动创建为柱状图，因为这是一种最佳的销售展示方式。但是，我们要做的是将订单日期拖到我们的列架上。我想指出两件事。第一，它将我们的图表类型从柱状图更改为折线图，因为当我们有日期时，折线图更合理，而订单日期的数据类型是日期。
 - en: You can see that from the little calendar icon next to it here。 Secondly。 order
     date has come across as a year。 We have more detail behind order date。 order date
     goes all the way down to a single date。But when you drag it out。 it's gonna default
     to a year。And we can expand that。By clicking on the plus sign。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以从旁边的小日历图标看到这一点。其次，订单日期已作为年份显示。我们有关于订单日期的更多详细信息。订单日期一直延伸到具体的日期。但当你拖出来时，它会默认显示为年份。我们可以通过点击加号来展开它。
 - en: It goes to year to quarter to month， and then eventually out to the day。We can
     remove individual portions of this if we didn't want one by dragging it off。 and
     we'll do that in a second， but we can also contract it just by clicking on the
     plus。 sorry clicking on the minus sign， and that will pull everything back together。Now。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 它从年到季度再到月份，最终到达天。如果我们不想要某个部分，可以通过拖拽将其移除。稍后我们会做到这一点，但我们也可以通过点击加号来收缩它。抱歉，是点击减号，这会把所有内容收拢到一起。现在。
 - en: I like it displayed at the month level。 I think that makes sense for this particular
     data。 but I don't like the fact that we're dividing it。With lines between each
     quarter。 So I'm going to go ahead and take quarter out。 So now we have the year
     and the month of our order date without the quarter in there。And as you can see。We
     have it displayed。Over time， by month。For the last four years。Excellent。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 我喜欢以月份级别显示。我认为这对于这组数据来说很有意义，但我不喜欢我们在每个季度之间分隔的方式。所以我将把季度去掉。现在我们有订单日期的年份和月份，没有季度。如你所见，我们按月份显示了过去四年的数据。很好。
 - en: looks good to me。 I like that。 Let's add it to our dashboard。 So I'm gonna go
     back to our dashboard。😊，You see， we have a second sheet here。 When you hover over
     it， it's going to give you a preview。 that's very helpful。 I'm going to drag that
     out。I'm going hold shift， rather。And I'm gonna drop it onto my dashboard。And then
     I'm going to expand it out to be nice and big。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 看起来不错。我喜欢这个。让我们把它添加到仪表板上。所以我回到我们的仪表板。😊你看，我们这里有第二个工作表。当你将鼠标悬停在上面时，它会给你一个预览，非常有帮助。我将把它拖出来。我会按住Shift，然后把它放到我的仪表板上。然后我会将其扩展得大一些。
 - en: And then。You can see now。That we have both the sales， and。The sales by category
     and the sales over time defined on the same graph。 Now。 these two things currently
     are independent of one another。 So this is showing us all of the sales over time。
     And this is showing us， sorry。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在你可以看到，我们有销售额，以及按类别划分的销售额和按时间划分的销售额在同一图表上。现在，这两个数据目前是相互独立的。这显示的是所有时间的销售额，而这是显示的，抱歉。
 - en: This is showing us the sales for each individual category for all of the time
     that we have。 whereas this is showing us the sales by month。For all categories。Good
     information。 But it would be helpful if we could have these two interact with
     one each other。 one another so that we had a better sense of what was going on。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是显示每个类别在我们拥有的所有时间内的销售额，而这是显示所有类别按月份的销售额。好信息。但是如果这两个可以互相互动，那就更好了，这样我们能更好地了解发生了什么。
 - en: So the first thing is that when we change this region filter。It changes this
     sheet。But doesn't change anything to do with this sheet。So to fix that。We're going
     to go back to our bar chart。 I just clicked on the sheet at the bottom here。We're
     going to go up to our filter。And we're gonna go to apply to works sheetets。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以第一件事是，当我们更改这个区域过滤器时，它会改变这个工作表，但不会改变与这个工作表相关的任何内容。为了修复这个问题，我们要回到我们的柱状图。我刚刚点击了底部的工作表。我们要上去调整过滤器。然后应用到工作表。
 - en: And we have a few options。 Now， what this will do is this will take our region
     filter。 and then it will apply it across。All of our workshes， some of our works
     sheetets。 we can select which works sheetets。The two options for all of the worksheets
     are all items using this data source or all items using related data sources。
     which is obviously including this data source。 For the moment we're just going
     to use all items using this data source。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们有几个选项。现在，这将使我们的区域过滤器应用到所有工作表中，我们可以选择哪些工作表。对于所有工作表，有两个选项：使用此数据源的所有项目或使用相关数据源的所有项目，显然包括此数据源。现在，我们暂时将使用所有项目，使用此数据源。
 - en: related data sources are a little bit complicated。 We won't get too deep into
     that today。 but just know that you can apply a filter across as many data sets
     as you have related。ACouple of things change。 first of all， if you hover over
     it。 it says that it also applies to sheet number two， which is the sheet we created
     with our line graph。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 相关数据源有点复杂。我们今天不会深入探讨这个，但只需知道你可以在所有相关的数据集上应用过滤器。几个方面会有所变化。首先，如果你将鼠标悬停在上面，它会显示它也适用于第二个工作表，即我们用折线图创建的工作表。
 - en: and you can also see that we have this little sort of database type icon next
     to the filter。So this filter will now apply to multiple sheets or our two sheets。
     rather。 if we click on sheet2。 you can see that we have the filter up here on
     the top left。 And if we go back to our dashboard and we start changing things，
     you can see that now。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 你还可以看到过滤器旁边有一个小数据库图标。因此，这个过滤器现在将适用于多个工作表，或者说我们的两个工作表。如果我们点击工作表2，可以看到左上角有这个过滤器。如果我们返回仪表板并开始更改内容，你会看到现在的变化。
 - en: Things change If we take all of them off， they both go clear。 So both things
     are changing in parallel。That is excellent。One other thing that we might want
     to do is have some contextual filters。 So one very helpful way to explore data
     is to be able to see something curious and then click on it。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我们将所有过滤器去掉时，它们都会清空。因此，这两个东西是并行变化的。这太好了。我们还可以考虑添加一些上下文过滤器。探索数据的一种非常有用的方法是能够看到一些有趣的东西，然后点击它。
 - en: for example。We seem to have a spike in September 2014。 We have this spike in
     March of 2017 and this spike in September of 2017。 Wouldn't it be helpful if I
     could see how that spike broke down between product categories。 just by clicking
     on it。What tableau allows you to do that。This little item that looks like a funnel。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，我们在2014年9月似乎有一个高峰。在2017年3月和2017年9月也有高峰。如果我能看到这个高峰在产品类别之间的分布，那不是很好吗？只需点击一下。Tableau允许你这样做。这个看起来像漏斗的小图标。
 - en: Go ahead and click on that。What that will do is that will set this sheet。 sheet
     number 2 to act as a filter for all of the other sheets on the dashboard。When
     we click on it。 I can now click on September of 2017， and you can see how the
     sales have changed between the categories looking just at September。 We can look
     just at March。 You can see how that changes。We can look again just at September
     2014。
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 点击那个。这会将第二个工作表设置为仪表板上所有其他工作表的过滤器。当我们点击它时，我现在可以点击2017年9月，你可以看到在类别之间的销售如何变化，仅查看九月。我们也可以只查看三月。你可以看到这些变化。我们再次查看2014年9月。
 - en: You can see how that changes if you wanted to pick a specific year。You can click
     on the whole year。So we can click on 2017， we can click on 2016。We can click on
     different things。 I can control， click。On a number of months and see how every
     time I click on something。 it's changing this visualization at the top to show
     us what is。
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你想选择特定年份，可以看到它的变化。你可以点击整年。所以我们可以点击2017年，点击2016年，点击不同的选项。我可以控制点击多个月份，看到每次点击时，这个可视化图像在顶部会发生变化。
 - en: Going on with just the highlighted data points。 When I want to click off everything。I
     can just click anywhere else。 clears everything。 And then we go back to our total。It
     would be helpful， too， if we could do the same thing with sheet 1。 If I wanted
     to see the trends in technology or in furniture， I can't do that at the moment。
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我只想关注高亮的数据点时，我可以点击其他地方，清除所有内容。然后我们回到总数。如果我们能在工作表1上做到同样的事情，那就太好了。如果我想查看技术或家具的趋势，目前是做不到的。
 - en: I can only see the trends for the total， so。Again， we're going click Use filter。And
     you can see that as we click on each of the product categories。It changes this
     time series graph at the bottom。 Again。 we could click on two if we wanted to
     changes this time series graph at the bottom to reflect what's happening in both
     of those two categories。
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 我只能看到总趋势。所以，我们再次点击使用过滤器。你可以看到当我们点击每个产品类别时，这个时间序列图在底部发生了变化。再一次，如果我们想更改这个时间序列图以反映这两个类别的情况，我们可以点击两个类别。
 - en: Now， there's a number of other refinements that we could make to this particular
     dashboard。 So let's go ahead and just make this a bit smaller。Maybe a bit bigger。
     There we go。Move it down a bit。 We would probably want some sort of title。So we
     can create that by taking this text object。Again， dragging it up。
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，我们可以对这个特定的仪表板进行一些其他改进。所以让我们先把它缩小一点。也许再大一点。好了。往下移动一点。我们可能需要某种标题。我们可以通过取这个文本对象来创建它。再一次，拖上去。
 - en: I'm holding down shift so that I get a floating box。And it's gonna give me an
     option to enter the text。We just enter a sort of generic title at the moment。Again，
     if I want to edit it。 I can double click on it。I can change the font size。Make
     it nice and big。
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 我按住 Shift，这样我就可以获得一个浮动框。它会给我一个输入文本的选项。我们暂时输入一个通用标题。如果我想编辑它，可以双击它。我可以更改字体大小。让它变得大一些。
 - en: Drg it all the way out across the top。 And there I have a nice big。Title。 we
     also want to make sure that we give our visualization some descriptive titles。
     So I just double clicked on sheet number one。 and you can see the default title
     for one of our sheets when it comes on a dashboard is the sheet name。Sometimes
     that's helpful。 Sometimes it's not。 So typically， we want to change it or add
     something。
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 拖到顶部的最外侧。这样我就有了一个漂亮的大标题。我们还要确保给我们的可视化添加一些描述性标题。所以我刚刚双击了工作表 1。你可以看到，当一个工作表出现在仪表板上时，它的默认标题是工作表名称。有时这很有帮助，有时则不是。因此通常，我们想要更改它或添加一些内容。
 - en: In this case， sheet 1 is the sales by category。 So we'll just call it sales
     by category。And apply it。And then click， Ok， You can see we now have a descriptive
     title for our first visualization。Let's double click on the second one。 This is
     sales by month。And now we have a descriptive visualization， or sorry。
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种情况下，工作表 1 是按类别的销售数据。所以我们就叫它“按类别的销售”。并应用它。然后点击“确定”，你可以看到我们现在有了一个描述性标题用于我们的第一个可视化。让我们双击第二个。这是按月份的销售数据。现在我们有了一个描述性可视化，抱歉。
 - en: descriptive title for our second visualization。And fundamentally。 what we have
     is a very simple sales dashboard that we created in really just a few minutes。Using
     some basic tableau principles。Armed with this information。 I hope you're able
     to go out and explore tableau。 We have obviously many more advanced videos。
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 为我们的第二个可视化创建一个描述性标题。从根本上说，我们所拥有的是一个非常简单的销售仪表板，实际上我们只用了几分钟。使用一些基本的 Tableau 原则。掌握这些信息后，我希望你能去探索
+    Tableau。显然，我们还有很多更高级的视频。
 - en: If you wanted to get on to how to do certain things。 how to put a lot of information
     onto a dashboard， how to work with different data sources。 So check out our channel。
     subscribescribe to our channel。 We have information on all that sort of stuff。
     there's a link to this workbook that we just created。
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你想了解如何做某些事情，如何将大量信息放入仪表板，如何处理不同的数据源。那么请查看我们的频道，订阅我们的频道。我们有关于所有这些内容的信息，还有一个链接到我们刚创建的这个工作簿。
 - en: and to the data set， this sample data set in the video description。 So go ahead
     and download those and check those out。 if you wanted a little bit more information。😊。And
     obviously， as I said， if you like what you hear then click like or if you have
     any questions。 please leave the questions in the comments and we look forward
     to seeing you on other videos in the future。
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 以及数据集，视频描述中的这个示例数据集。所以请下载这些内容并查看。如果你想要更多信息。😊。显然，正如我所说，如果你喜欢你所听到的，请点击“喜欢”，或者如果你有任何问题，请在评论中留言，我们期待在未来的其他视频中见到你。
 - en: 😊。![](img/42617beed230109fc6b0358beca3faa9_2.png)
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/42617beed230109fc6b0358beca3faa9_2.png)
 - en: '![](img/42617beed230109fc6b0358beca3faa9_3.png)'
+  id: totrans-65
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/42617beed230109fc6b0358beca3faa9_3.png)'

@@ -1,83 +1,120 @@
 - en: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P14：14）创建组合轴图
     - ShowMeAI - BV1iq4y1P77U
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P14：14）创建组合轴图
+    - ShowMeAI - BV1iq4y1P77U
 - en: Hi， folks， welcomecome to another episode of Tableau in two minutes。 Today。
     We're going to be showing you how to create a combined access chart。 This is one
     of the sort of basic foundational things that you'll need to do with Tableau。
     It's also part of the tableableau certification for the desktop qualified associate
     level。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，欢迎收看《两分钟学会Tableau》的另一集。今天，我们将向您展示如何创建一个组合轴图。这是使用Tableau时需要掌握的基本基础之一。它也是桌面合格助理级别Tableau认证的一部分。
 - en: and it's dead easy。 So I've got to happen connected to the superstore sample
     data set。 And what we're going do is we're just going create a nice baseline。
     I'm going to drag order date out here， give order date。 space it out so that we
     have some data at the quarter level。 Then we're going take sales。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 这非常简单。我连接了超级商店的示例数据集。我们要做的是创建一个不错的基线。我将把订单日期拖到这里，设置订单日期。以便我们在季度级别上有一些数据。然后我们要添加销售额。
 - en: and we're going drag sales up onto the Rose shelf。😊。![](img/59d9626fe82a67653ef27d8b8c74ac21_1.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们要将销售额拖到行架上。😊。![](img/59d9626fe82a67653ef27d8b8c74ac21_1.png)
 - en: '![](img/59d9626fe82a67653ef27d8b8c74ac21_2.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/59d9626fe82a67653ef27d8b8c74ac21_2.png)'
 - en: When we do that， you'll see that we get a line graph for sales for each of the
     quarters。![](img/59d9626fe82a67653ef27d8b8c74ac21_4.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我们这样做时，你会看到我们为每个季度得到了销售的折线图。![](img/59d9626fe82a67653ef27d8b8c74ac21_4.png)
 - en: And then we're gonna take profit。 We're also going drag it up onto the row shelf。
     Now。 you'll notice that we have sales and profit one on top of the other here。
     We don't want that。 We want them to be combined on the same axis。 So just hover
     over this little triangle fell in the corner drag it up above onto the sales axis。
     So drag profit onto the sales axis。 You'll see you get two green bars next to
     one another。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们要添加利润。我们也要将其拖到行架上。现在，你会注意到销售和利润在这里一个叠一个。我们不想这样。我们希望它们在同一轴上组合。所以只需将鼠标悬停在这个小三角形上，拖到销售轴上方。将利润拖到销售轴上。你会看到两个绿色条形图并排显示。
 - en: Drop it there。 And then you get this dual axis， this combined chart where we
     have the measure values on pill on the row shelf。 and then the measure values
     shelf down here， showing us what we have within our what we have displayed。 So
     this orange line now is the。![](img/59d9626fe82a67653ef27d8b8c74ac21_6.png)
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 将其拖到这里。这样你就得到了这个双轴图，结合了我们在行架上的度量值。这里的度量值架显示我们所展示的内容。因此，这条橙色线现在是。![](img/59d9626fe82a67653ef27d8b8c74ac21_6.png)
 - en: '![](img/59d9626fe82a67653ef27d8b8c74ac21_7.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/59d9626fe82a67653ef27d8b8c74ac21_7.png)'
 - en: Is the sales and the blue line is the profit and again they're on the same scale
     This is not a dual axis chart。 if we had a dual access chart they would have independent
     scales。 The combined chart has both of them using the same scale and just on a
     single y axis rather than having two y axises as we have with a dual axis chart。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里是销售，蓝线是利润，二者在同一比例尺上。这不是一个双轴图。如果我们有一个双轴图，它们将有独立的比例尺。组合图则使用相同的比例尺，只在一个y轴上，而不是像双轴图那样有两个y轴。
 - en: '![](img/59d9626fe82a67653ef27d8b8c74ac21_9.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/59d9626fe82a67653ef27d8b8c74ac21_9.png)'
 - en: '![](img/59d9626fe82a67653ef27d8b8c74ac21_10.png)'
+  id: totrans-11
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/59d9626fe82a67653ef27d8b8c74ac21_10.png)'
 - en: If we wanted to add more， we could drag， say discount out onto this shelf。 obviously
     discounts very small。 So that's not really showing up。 You could also drag quantity
     out onto this shelf。 Again， quantity is very small。 not really showing up。 But
     you can see how you could add and remove measures from this measure values shelf。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们想要添加更多，可以将折扣拖到这个架上。显然折扣非常小，因此并没有明显显示出来。你也可以将数量拖到这个架上。同样，数量也很小，不太明显。但你可以看到如何在这个度量值架上添加和移除度量。
 - en: And that wraps it up for this episode of tabau in two minutes， that's a really
     quick。 simple version of how to create a combined access chart。 if you have any
     questions。 please leave them in the comments。 if you would like there is a link
     to the workbook and to the data set in the video description。 if you like what
     you hear then please give us a thumbs up and subscribe to our channel and we will
     see you next time。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 本集的《两分钟学会Tableau》到此结束，这是一种非常快速简单的创建组合轴图的方法。如果你有任何问题，请在评论中留言。如果你需要，视频描述中有工作簿和数据集的链接。如果你喜欢我们的内容，请给我们点赞并订阅我们的频道，我们下次见。
 - en: '![](img/59d9626fe82a67653ef27d8b8c74ac21_12.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/59d9626fe82a67653ef27d8b8c74ac21_12.png)'
 - en: '![](img/59d9626fe82a67653ef27d8b8c74ac21_13.png)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/59d9626fe82a67653ef27d8b8c74ac21_13.png)'
 - en: '![](img/59d9626fe82a67653ef27d8b8c74ac21_14.png)'
+  id: totrans-16
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/59d9626fe82a67653ef27d8b8c74ac21_14.png)'
 - en: '![](img/59d9626fe82a67653ef27d8b8c74ac21_15.png)'
+  id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/59d9626fe82a67653ef27d8b8c74ac21_15.png)'

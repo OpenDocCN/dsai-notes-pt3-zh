@@ -1,8 +1,11 @@
 - en: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P11：11） If
     Then 计算 - ShowMeAI - BV1iq4y1P77U
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P11：11） If
+    Then 计算 - ShowMeAI - BV1iq4y1P77U
 - en: Hi folks， welcome to another episode of Tableau in two minutes Today we're going
     to be demonstrating if then calculations and to do that we're going to create
     a single field out of two different fields we're going to use a data about passengers
@@ -13,33 +16,47 @@
     of information about each passenger including whether they survived the name was
     sex ages etc etc etc What we're interested though are these two fields here so
     we have sibling spouse。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，各位，欢迎来到《Tableau 两分钟》系列的另一集。今天我们将演示 if then 计算，为此我们将用两个不同的字段创建一个单一字段，我们将使用关于泰坦尼克号乘客的数据。这是一个相当著名的数据科学数据，你可能已经处理过，如果你还没有处理过，评论区有一个链接供你下载这个特定的数据，这也可以在
+    Tableau 的网站上找到，这是他们的一个示例数据集。现在你可以看到我们有关于每个乘客的大量信息，包括他们是否幸存、姓名、性别、年龄等等。不过我们感兴趣的是这两个字段：兄弟配偶。
 - en: 😊。![](img/6142dd60a06d105f2c321393a06363dc_1.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/6142dd60a06d105f2c321393a06363dc_1.png)
 - en: '![](img/6142dd60a06d105f2c321393a06363dc_2.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6142dd60a06d105f2c321393a06363dc_2.png)'
 - en: And parent child。And what we're gonna do is we're gonna use the two of those
     to create a composite field called Ha family。 And we're gonna do that using if
     and then calculations。 So we're gonna go to our sheet here。 We are quickly gonna
     add name to our row shelf。 It's gonna give us a warning that we have too many
     members。 We're gonna ignore it and say， add all of them anyway。 Then we're gonna
     take the parent child field。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 还有父子关系。我们要做的是使用这两个字段创建一个叫做“有家庭”的复合字段。我们将通过 if 和 then 计算来实现这一点。所以我们去到我们的表格。我们将快速将姓名添加到我们的行架构中。这将给我们一个警告，提示成员太多。我们会忽略它，并说无论如何添加所有成员。然后我们将拿到父子字段。
 - en: drag that over to the。😊。![](img/6142dd60a06d105f2c321393a06363dc_4.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 拖到这里的。😊。![](img/6142dd60a06d105f2c321393a06363dc_4.png)
 - en: Into the Viz right here we're going to add sibling spouse and drag that over
     into Viz right here and the reason we're going to do that is because when we create
     our calculated field we want to have a quick way of validating whether it is correct
     and then we're going to create our FMm field so we're going to click on the down
     arrow here create calculated field we're going to give it a name like has family
     that is a good name then we're going to start off by typing if。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里的 Viz 中，我们将添加兄弟配偶并拖到这里的 Viz 中，原因是当我们创建计算字段时，我们希望有一个快速的方法来验证它是否正确，然后我们将创建我们的
+    FMm 字段，所以我们将在这里点击向下箭头创建计算字段，我们将给它一个名字，比如“有家庭”，这是个好名字，然后我们将开始输入 if。
 - en: 😊，Parent child。Is greater than zero then。Whoops， have accidentally pressed therea
     then has family。Elsif。Note that is all one word in this particular case。 And then
     we're going to say else。 if sibling spouse is greater than 0， then it also has
@@ -48,24 +65,36 @@
     an end at the end of each if statement that is not particularly complicated to
     troubleshoot in this particular case because obviously we only have one set of
     ifs and elses。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，如果父子关系大于零，那么。哎呀，意外按错了一个键，然后是有家庭。else if。请注意在这种情况下这是一个单词。然后我们将说 else。如果兄弟配偶大于
+    0，那么它也有家庭。否则。没有家庭。然后我们将输入 end。我写这些计算时总是让我困惑的一件事是你确实需要在每个 if 语句的末尾放一个 end，在这种情况下并不特别复杂，因为显然我们只有一组
+    if 和 else。
 - en: but if you have a number of nested statements， then it can be tricky to figure
     out where you've put the end so it's a good。😊，Practice to make sure that as you
     construct each level， you're putting the full if， Els if， else。 and end in for
     each item。Although you can skip elses if。 obviously if you don't need a second
     piece Allright， so this calculation is valid， that's good。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是如果你有多个嵌套语句，那么弄清楚你放在哪里的结束会很棘手，所以这很重要。😊，练习确保在构建每一层时，你都将完整的 if、else if、else 和
+    end 放在每一项中。虽然如果你不需要第二个部分，可以跳过 else，没问题，这个计算是有效的，这很好。
 - en: we're going to click apply， it's going to create that family for us that calculation
     for us over here。 click okay drag family to our shelf here and then you can see
     that when we have zero and zero we have no family when we have a number in one
     of these it has family if not it's no family and that might be a variable that
     we can use to help predict whether or not somebody survived the Titanic All right
     that is it for this episode of Tau in two minutes if you have any questions。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将点击应用，这将为我们创建那个家庭，在这里进行计算。点击确定，将家庭拖到我们的架子上，然后你会看到当我们有零和零时没有家庭，当我们在其中一个有数字时就有家庭，如果没有则没有家庭，这可能是我们用来帮助预测某人是否在泰坦尼克号上幸存的一个变量。好的，这就是《Tau
+    in two minutes》这一集的全部内容，如果你有任何问题。
 - en: please leave them in the comments again the data is also available in the video
     description and from our website。😊。![](img/6142dd60a06d105f2c321393a06363dc_6.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 请再次在评论中留下它们，数据也可以在视频描述和我们的网站上找到。😊。![](img/6142dd60a06d105f2c321393a06363dc_6.png)
