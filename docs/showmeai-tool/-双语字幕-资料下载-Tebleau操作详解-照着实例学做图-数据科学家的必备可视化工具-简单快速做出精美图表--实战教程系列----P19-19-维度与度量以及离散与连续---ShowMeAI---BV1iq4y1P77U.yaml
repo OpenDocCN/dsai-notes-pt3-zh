@@ -1,129 +1,178 @@
 - en: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P19：19）维度与度量以及离散与连续
     - ShowMeAI - BV1iq4y1P77U
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P19：19）维度与度量以及离散与连续
+    - ShowMeAI - BV1iq4y1P77U
 - en: Hi， folks， and welcome to another episode of Tableau in two minutes。 Today。
     we're going to be covering the difference between dimensions and measures and
     the difference between discrete and continuous items within Tableau。😊，So basically，
     the way these work is that each one of these items is a column in our data set。
     So if we look at our data source， you can see each item in the dimensions and
     measures pane over here represents a column within our data source。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，大家好，欢迎收看又一期《Tableau两分钟》。今天，我们将讨论维度与度量之间的区别，以及Tableau中离散和连续项之间的区别。😊基本上，这些项在我们的数据集中每一项都是一列。如果我们查看数据源，你可以看到维度和度量面板中的每一项都代表数据源中的一列。
 - en: Now， there are sort of two types of columns。 There are columns by which we want
     to divide our data。 So we might want to segment something。 and there are things
     that we want to to measure。![](img/eb9295e8ad3b4416cd7540e51d7be69d_1.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，有两种类型的列。我们有想要划分数据的列，所以我们可能想要进行某种分段；还有一些我们想要测量的东西。![](img/eb9295e8ad3b4416cd7540e51d7be69d_1.png)
 - en: '![](img/eb9295e8ad3b4416cd7540e51d7be69d_2.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/eb9295e8ad3b4416cd7540e51d7be69d_2.png)'
 - en: The things that we want to measure are going to be things like sales。 You can
     see we have sales。 profit， discount， quantity。 Those are all things that we would
     sum up that we would aggregate that we would average。Basically， numbers。On the
     dimension side， we have things that we might want to compare。 so we might want
     to compare what's happening between different products。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们想要测量的东西像销售数据。你可以看到我们有销售、利润、折扣和数量。这些都是我们会进行求和、汇总和平均的东西。基本上，就是数字。在维度这一侧，我们有一些我们可能想要比较的东西，所以我们可能想比较不同产品之间发生的事情。
 - en: We might want to compare what's happening between different regions。 So these
     are things that are going to divide our data set。 So let's take a look at how
     this works in practice。 Let's take a product name。 just drag that out to the row
     shelf。![](img/eb9295e8ad3b4416cd7540e51d7be69d_4.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可能想比较不同区域之间发生的事情。这些都是将我们的数据集划分开的东西。让我们看看这在实际中的运作。我们以产品名称为例，将其拖到行架上。![](img/eb9295e8ad3b4416cd7540e51d7be69d_4.png)
 - en: And then take sales and drag that out。![](img/eb9295e8ad3b4416cd7540e51d7be69d_6.png)
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后拖出销售数据。![](img/eb9295e8ad3b4416cd7540e51d7be69d_6.png)
 - en: Also to the row shelf edges， put on the column shelf， there we go。 So now you
     can see that we have by product name， we have the sum of sales。![](img/eb9295e8ad3b4416cd7540e51d7be69d_8.png)
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 另外，把它放到行架边缘，放到列架上，就这样。现在你可以看到，我们按产品名称，有销售总和。![](img/eb9295e8ad3b4416cd7540e51d7be69d_8.png)
 - en: For that particular product。 now， it might be that we don't want to look at
     sales。 We want to look at region。 And all these are doing。 You see。 is we're just
     dividing the data differently， And it's telling us how we're going to aggregate
     sales and how we're going to compare。 That's what our dimensions do。 And then
     our measures are the things that we sum up。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于该特定产品，现在可能我们不想看销售数据，而是想看区域。这一切在做的就是我们在以不同方式划分数据，并且告诉我们如何汇总销售数据以及如何比较。这就是我们的维度所做的。而我们的度量就是我们汇总的东西。
 - en: So we could do some of sales。 we could look at the sum of profit。![](img/eb9295e8ad3b4416cd7540e51d7be69d_10.png)
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们可以做一些销售的汇总，也可以查看利润的总和。![](img/eb9295e8ad3b4416cd7540e51d7be69d_10.png)
 - en: Et cetera， et cetera。 Now， you'll notice that when we drag these out， we have
     a blue pill for region。 and we have a green pill for profit。Blue pills represent
     items that are disc。 So that is each。Item is a single item。 We can't sum up central
     and east， for example。 that that wouldn't make any sense to try and do that。So
     these are items that are。Individual points。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 依此类推。现在，当我们拖动这些时，你会注意到区域有一个蓝色小药丸，利润有一个绿色小药丸。蓝色小药丸代表离散项。所以每个项都是单个项。比如说，我们不能将中部和东部的结果相加，这样做没有任何意义。所以这些都是单独的点。
 - en: nominal， some would call them。 you might call them text fields in other context，
     strings。That's really what that means， it's not something that we're ever going
     to aggregate。 it's something that we are going to use to divide our data in different
     ways。😡。So it's what's called discrete single points。Profit， on the other hand，
     that is continuous。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 有些人称之为名义型，你可以在其他语境中称它们为文本字段或字符串。这其实意味着它不是我们要汇总的东西，而是我们用来以不同方式划分数据的东西。😡这就是所谓的离散单点。而利润则是连续的。
 - en: It's also called It would be numeric。 In other cases。 I would sometimes be called
     an interval variable。And that's something that we can sum up。 that we can average，
     that we can count， et cetera， et cea， et cea。Two different pieces of our visualization
     puzzle。Dimenssions are often， but not always discet。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 这也被称为数字变量。在其他情况下，我有时会称之为区间变量。这是我们可以求和的，可以取平均的，可以计数的，等等。这是我们可视化拼图中的两个不同部分。维度通常是，但并不总是离散的。
 - en: Measures are almost always continuous， but we could turn， for example。 our product
     name into a measure。And then， it would count。![](img/eb9295e8ad3b4416cd7540e51d7be69d_12.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 度量几乎总是连续的，但我们可以将，例如，我们的产品名称转变为一个度量。然后，它会计数。![](img/eb9295e8ad3b4416cd7540e51d7be69d_12.png)
 - en: You see， now we're doing count of the product names。 So instead of just having
     the product name。 we've turned it into account of all the different product names。
     So that sort of makes it a measure。![](img/eb9295e8ad3b4416cd7540e51d7be69d_14.png)
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 你看到，现在我们在计算产品名称的数量。因此，不仅仅是有产品名称，我们将其转变为所有不同产品名称的计数。所以这算是一种度量。![](img/eb9295e8ad3b4416cd7540e51d7be69d_14.png)
 - en: Let's go ahead and move that back。 There it is。All right。Now。 the way these
     work within the visualization， as I said。 is that we'll typically use dimensions
     to partition the data and then we'll use willll aggregate the measures in some
     way。 or perform some calculation on the measures in some way to give us this piece。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们继续把这个移回去。就是这样。好的。现在，这些在可视化中的工作方式，正如我所说的，是我们通常会使用维度来划分数据，然后以某种方式聚合度量，或者对度量进行某种计算，以给我们这个部分。
 - en: One other thing I want to show you is that you can actually have a dimension
     that is continuous。 So if we take order date out here， you'll see it defaults。![](img/eb9295e8ad3b4416cd7540e51d7be69d_16.png)
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 我想给你展示的另一件事是，你实际上可以有一个连续的维度。所以如果我们把订单日期拿掉，你会看到它默认。![](img/eb9295e8ad3b4416cd7540e51d7be69d_16.png)
 - en: To a discrete form for the date。 So we have a discrete for year， discreteet
     for quarter， but。We can。 actually。Using these options down here， see we have year
     quarter month day。 these are all going to be discrete in this top section， but
     down in this bottom section。These。Are going to be continuous。 So you now see the
     pill has turned green because we're looking at a continuous version。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 以离散形式表示日期。因此我们有离散的年份，离散的季度，但我们实际上可以使用下面这些选项，看到我们有年份、季度、月份、日期。这些在顶部部分都是离散的，但在底部部分，这些将是连续的。所以你现在看到药丸变绿，因为我们在查看连续版本。
 - en: and the visualization has changed slightly as one。 if we wanted to look at sales。
     you can see how now we have a line graph because we're looking at。A continuous
     date。![](img/eb9295e8ad3b4416cd7540e51d7be69d_18.png)
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 可视化略有变化。如果我们想查看销售额，你可以看到我们现在有一条线图，因为我们在查看一个连续的日期。![](img/eb9295e8ad3b4416cd7540e51d7be69d_18.png)
 - en: Depending what we do up here。We might still have a quarter， but this will segment
     now， see itll。Split this between the years because we're using discrete years
     and discrete quarters。Whereas if we go back to using years and quarters。![](img/eb9295e8ad3b4416cd7540e51d7be69d_20.png)
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 根据我们在这里所做的，我们可能仍然有一个季度，但这现在会分段，看到它会在年份之间分开，因为我们在使用离散的年份和季度。而如果我们回去使用年份和季度。![](img/eb9295e8ad3b4416cd7540e51d7be69d_20.png)
 - en: It's still segmenting a little bit。![](img/eb9295e8ad3b4416cd7540e51d7be69d_22.png)
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 这仍然有点分段。![](img/eb9295e8ad3b4416cd7540e51d7be69d_22.png)
 - en: Because we have quarter in there that we go。 So now it's looking instead of
     segmenting each year and having a pain for each year。 we now have a continuous
     because it's green year and quarter all the way across our data set。So that's
     a basic introduction to how dimensions and measures function。 as I said dimensions
     we use to partition our data measures are typically the thing that we want to
     sum up。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 因为我们有季度在里面。所以现在它看起来不是对每年进行分段，而是我们现在有一个连续的，因为它是绿色的年份和季度贯穿我们的数据集。所以这就是维度和度量如何运作的基本介绍。正如我所说，维度用于划分我们的数据，而度量通常是我们想要求和的东西。
 - en: and dimensions are typically but not always discrete so they contain individual
     items and measures are almost always continuous because they are numbers。 they're
     things that we will want to sum up， average， otherwise analyze。So that does it
     for this episode of Tableau in two minutes if you have any questions。 please leave
     them in the comments if you like what you hear then go ahead and hit subscribe
     to our channel and we will see you next time。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 维度通常是离散的，但不总是如此，因此它们包含单独的项目，而度量几乎总是连续的，因为它们是数字。它们是我们希望进行求和、平均或其他分析的内容。这就是本期《Tableau两分钟》的内容，如果你有任何问题，请在评论中留言。如果你喜欢我们的内容，请点击订阅我们的频道，我们下次再见。
 - en: '![](img/eb9295e8ad3b4416cd7540e51d7be69d_24.png)'
+  id: totrans-23
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/eb9295e8ad3b4416cd7540e51d7be69d_24.png)'

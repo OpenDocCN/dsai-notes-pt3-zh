@@ -1,85 +1,123 @@
 - en: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P16：16）突出显示条形图上的最大值和最小值
     - ShowMeAI - BV1iq4y1P77U
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P16：16）突出显示条形图上的最大值和最小值
+    - ShowMeAI - BV1iq4y1P77U
 - en: Hi， folks， and welcome to another episode of Tableau in two minutes。 Today。
     we're going to walk through how to highlight the minimum and maximum values in
     a bar chart。 If you watched the previous video， you may have seen how we did this
     for a line chart。 and it was a little bit complicated。 We had to do some funky
     stuff with some dual axes and create a table calculation and all that sort of
     fun stuff。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，欢迎来到另一个《两分钟学Tableau》的节目。今天，我们将讲解如何在条形图中突出显示最小值和最大值。如果你观看了之前的视频，你可能已经看到了我们是如何在折线图中做到这一点的，这有点复杂。我们必须使用一些双轴进行一些奇怪的操作，并创建一个表计算，还有那些有趣的东西。
 - en: but to do with a line chart， Fortunatelyly， is a little bit easier。 So we're
     gonna to go ahead and drag order date。😊。![](img/65ef3ad18e55e2be53811e4fb3562acc_1.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 但使用折线图有些麻烦，幸运的是，使用线形图稍微简单一些。所以我们将继续拖动订单日期。😊。![](img/65ef3ad18e55e2be53811e4fb3562acc_1.png)
 - en: '![](img/65ef3ad18e55e2be53811e4fb3562acc_2.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/65ef3ad18e55e2be53811e4fb3562acc_2.png)'
 - en: Out onto our row shelf。 or sorry， our columns shelf here。 get rid of quarter。
     And then we're going to take sales， drag sales out onto the row shelf。 And then
     we're going to go ahead and set this to be a bar chart instead of a line chart。![](img/65ef3ad18e55e2be53811e4fb3562acc_4.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 拖到我们的行货架上。哦，抱歉，是我们的列货架。去掉季度。然后我们将销售额拖到行货架上。接着我们将把这设置为条形图，而不是折线图。![](img/65ef3ad18e55e2be53811e4fb3562acc_4.png)
 - en: '![](img/65ef3ad18e55e2be53811e4fb3562acc_5.png)'
+  id: totrans-5
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/65ef3ad18e55e2be53811e4fb3562acc_5.png)'
 - en: Now， because we have this set as a bar chart， we can take our min maxim medium。![](img/65ef3ad18e55e2be53811e4fb3562acc_7.png)
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，由于我们将其设置为条形图，我们可以取最小值、最大值和中位数。![](img/65ef3ad18e55e2be53811e4fb3562acc_7.png)
 - en: And you can see already that we've gone ahead。 and the colors have already been
     set for us based on the maximum and based on the minimum。 But let's go ahead and
     edit this as we did before。 We're just going to compute this within each year。
     So we're going to set specific dimensions。 We're going to take out year。 Now you
     can see that。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到，我们已经提前完成了。颜色已经根据最大值和最小值为我们设置好了。但让我们像之前那样编辑一下。我们只是想在每一年内计算这一点。所以我们将设置特定的维度。我们将移除年份。现在你可以看到。
 - en: '![](img/65ef3ad18e55e2be53811e4fb3562acc_9.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/65ef3ad18e55e2be53811e4fb3562acc_9.png)'
 - en: '![](img/65ef3ad18e55e2be53811e4fb3562acc_10.png)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/65ef3ad18e55e2be53811e4fb3562acc_10.png)'
 - en: We've highlighted the minimum year and the maximum year。 Just as a reminder。
     let's go ahead and look at this calculation。 You can see that。![](img/65ef3ad18e55e2be53811e4fb3562acc_12.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们已经突出显示了最小年份和最大年份。作为提醒，让我们来看看这个计算。你可以看到。![](img/65ef3ad18e55e2be53811e4fb3562acc_12.png)
 - en: Some of sales。 Sorry， we're looking for the maximum value when the sum of sales
     in any particular month equals the window max for the sum of sales。 Now， we set
     the window。To be a full year。 So in this case， the full year 2014， that is our
     window。 And if the sum of sales in that particular month equals the maximum sum
     of sales within that window。 which it does in September。 Then we're going to call
     that the max and the max。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 一些销售额。抱歉，我们寻找的是，当某个月的销售总额等于该窗口的最大销售额时的最大值。现在，我们设置窗口为整整一年。所以在这种情况下，整整2014年就是我们的窗口。如果该月份的销售总额等于该窗口内的最大销售额。九月份就是如此。然后我们将其称为最大值。
 - en: we're going to highlight blue。![](img/65ef3ad18e55e2be53811e4fb3562acc_14.png)
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将突出显示蓝色。![](img/65ef3ad18e55e2be53811e4fb3562acc_14.png)
 - en: Otherwise， if the sum of sales is the lowest value。Within that window。All right。
     so it still within 2014。To February， that's the lowest value within the minute，
     the the window。 Then we're going to call that min。 and we're going highlight it
     red。Otherwise。 all of the other ones we don't particularly care about。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 否则，如果销售总额是最低值。在那个窗口内。好的，所以它仍然在2014年。到2月份，这就是在那个时间窗口内的最低值。然后我们将称之为最小值，并将其标记为红色。否则，其他的我们并不特别关心。
 - en: We only want to look at the maximum and the minimum and they are going be highlighted
     gray。![](img/65ef3ad18e55e2be53811e4fb3562acc_16.png)
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们只想查看最大值和最小值，它们将被标记为灰色。![](img/65ef3ad18e55e2be53811e4fb3562acc_16.png)
 - en: '![](img/65ef3ad18e55e2be53811e4fb3562acc_17.png)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/65ef3ad18e55e2be53811e4fb3562acc_17.png)'
 - en: You can use this in any number of ways to pull out specific values。So， again。
     super helpful way of highlighting the maximum and minimum values。 a great way
     of using colour to bring some pop to dashboard and helping demonstrate when a
     particularly impactful or unimpactful as it were a month was。😊，Thanks for watching
     this episode of Tableau in two minutes。 If you have any questions。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以以多种方式使用它来提取特定值。因此，再次强调，突出最大值和最小值的方式非常有帮助。使用颜色为仪表板增添亮点的绝佳方式，并帮助展示某个月份的影响力或缺乏影响力。😊感谢您观看本期的《Tableau
+    in two minutes》。如果您有任何问题，
 - en: please leave them in the comments。 As always， there's a link to the dataset
     set and the workbook in the video description。 and if you like what you're here，
     please give us a thumbs up and subscribe to our channel and we'll see you next
     time。😊。![](img/65ef3ad18e55e2be53811e4fb3562acc_19.png)
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 请在评论中留下。和往常一样，视频描述中有数据集和工作簿的链接。如果你喜欢我们分享的内容，请给我们一个赞并订阅我们的频道，下次见。😊！![](img/65ef3ad18e55e2be53811e4fb3562acc_19.png)

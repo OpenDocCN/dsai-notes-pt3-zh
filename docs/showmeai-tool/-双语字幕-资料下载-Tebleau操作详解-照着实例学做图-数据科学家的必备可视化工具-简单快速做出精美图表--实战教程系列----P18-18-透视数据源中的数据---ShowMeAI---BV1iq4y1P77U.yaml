@@ -1,77 +1,110 @@
 - en: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P18：18）透视数据源中的数据
     - ShowMeAI - BV1iq4y1P77U
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P18：18）透视数据源中的数据
+    - ShowMeAI - BV1iq4y1P77U
 - en: '![](img/6cf5071c6014640752e60e20265aa9b5_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6cf5071c6014640752e60e20265aa9b5_0.png)'
 - en: Hi， folks， welcomee to another episode of Tableau in two minutes。 Today。 we're
     going to be covering how you can use the pivot function with your data sources
     to turn column wise data into row wise data。 So what do I mean by that？ Well，
     I've gone ahead and connected to a data source that gives us the ranking of various
     sports by the skills needed。😊，So you can see we have the sport here over on the
     left hand side。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，各位，欢迎来到另一集“在两分钟内了解 Tableau”。今天，我们将讨论如何使用透视功能将按列的数据转换为按行的数据。我说的是什么意思呢？好吧，我已经连接到一个数据源，该数据源提供了不同运动的技能排名。😊，所以你可以看到，我们在左侧有运动项目。
 - en: and we have a number of different skill categories as it were。 and then a ranking
     out of 10 for each of those skill categories， along with a total and a rank。 I
     think this was some makeover Monday data from from many， many moons ago。 But what
     if we wanted this to be row wise。 instead of column wise right right now。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们有许多不同的技能类别，以及每个技能类别的 10 分制排名，还有一个总数和排名。我认为这是一段很久以前的某个“变革星期一”的数据。但如果我们想将其转换为按行的，而不是按列的，那该怎么办呢。
 - en: we have columnwise data。 So everything we have to sum up to get to this total
     is across the rows。What tableableau allows us to turn these into a column。😡，By
     pivoting the data。 So what we want to do is you want to click on all of these
     whoops， click on all of these columns。 So I just clicked on the first1 I held
     down shift。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们拥有的是按列的数据。所以我们必须将所有内容相加，以获得这个总数，而这些数据都是跨越行的。Tableau 允许我们通过数据透视将这些数据变成一列。😡，所以我们要做的是点击所有这些，哎呀，点击所有这些列。我刚点击了第一个，按住
+    Shift。
 - en: '![](img/6cf5071c6014640752e60e20265aa9b5_2.png)'
+  id: totrans-5
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6cf5071c6014640752e60e20265aa9b5_2.png)'
 - en: And then click on the last one and then click on this downward arrow above any
     of the columns and click pivotvo。![](img/6cf5071c6014640752e60e20265aa9b5_4.png)
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后点击最后一个，再点击任何列上方的向下箭头，然后点击透视。![](img/6cf5071c6014640752e60e20265aa9b5_4.png)
 - en: What that does is it takes that column wise data， flips it row wise。 So now
     we have a field representing that skill category， and we have a field representing
     the value。 So let's go ahead and rename these。 So they make a bit more sense。Skill
     category。Right here。 we're going to rename this。Uh what would we call this just
     the value for the moment or the rating？
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 这样做是将按列的数据转换为按行的数据。现在我们有一个字段表示技能类别，还有一个字段表示值。让我们重命名这些字段，使它们更有意义。技能类别。就在这里。我们将其重命名为目前的值或评级。
 - en: Then we have our sport and then we have total and rank。 Now these fields in
     sport。Total and rank。They will all be duplicated for each of these values， right。
     so any so boxing is going to have this total in there a number of times。 so we
     don't really want the total and rank fields。So we can go ahead and hide these。And
     now we have。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们有了运动、总数和排名。现在这些在运动、总数和排名中的字段都会为这些值重复，对吧。所以拳击的总数会出现很多次。所以我们并不想要总数和排名字段。所以我们可以隐藏这些。现在我们有了。
 - en: Just the sport， the skill category and the value。 And in tableableau terms。
     that makes the data a lot easier to work with Tableau as it much prefers。Row wise
     data the column wise data。😡。![](img/6cf5071c6014640752e60e20265aa9b5_6.png)
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 仅仅是运动、技能类别和价值。在 Tableau 的术语中，这使得数据在处理时变得更加简单，因为它更喜欢按行的数据而不是按列的数据。😡。![](img/6cf5071c6014640752e60e20265aa9b5_6.png)
 - en: Let's go ahead and just hop into a sheet here。 We'll put the sports down the
     right hand side。 or we'll put the skill categories up across the top。 And you
     can see that if we drag the values out。 this is pretty much the data structure
     that we have before。 All we've done is we've taken this skill category。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们进入一个工作表。我们将把运动放在右侧，或者把技能类别放在顶部。你可以看到，如果我们拖动值出来，这几乎是我们之前的数据结构。我们所做的就是把这个技能类别拿出来。
 - en: '![](img/6cf5071c6014640752e60e20265aa9b5_8.png)'
+  id: totrans-11
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6cf5071c6014640752e60e20265aa9b5_8.png)'
 - en: '![](img/6cf5071c6014640752e60e20265aa9b5_9.png)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6cf5071c6014640752e60e20265aa9b5_9.png)'
 - en: And done that with it so that now we have the sport and the skill category column
     wise instead of row wise。That's it for this episode of Tableau in two minutes。
     There's a link to the data set and to the workbook in the video description。 If
     you have any questions， please leave them in the comments and if you like what
     you hear and you'd like more tableableau tips and tricks。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们已经将运动和技能类别以列的形式而非行的形式展示。这就是本期《两分钟学 Tableau》的内容。视频描述中有数据集和工作簿的链接。如果你有任何问题，请在评论中留言。如果你喜欢我们的内容，并希望获取更多
+    Tableau 的技巧和窍门，
 - en: then please subscribe to our channel and we'll see you next time。😊。![](img/6cf5071c6014640752e60e20265aa9b5_11.png)
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么请订阅我们的频道，我们下次再见。😊。![](img/6cf5071c6014640752e60e20265aa9b5_11.png)

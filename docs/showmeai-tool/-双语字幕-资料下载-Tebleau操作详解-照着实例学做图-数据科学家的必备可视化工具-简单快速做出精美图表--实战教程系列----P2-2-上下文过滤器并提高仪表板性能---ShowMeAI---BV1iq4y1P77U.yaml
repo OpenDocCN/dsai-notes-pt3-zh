@@ -1,103 +1,142 @@
 - en: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P2：2）上下文过滤器并提高仪表板性能
     - ShowMeAI - BV1iq4y1P77U
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P2：2）上下文过滤器并提高仪表板性能
+    - ShowMeAI - BV1iq4y1P77U
 - en: Hi， folks， and welcome to another episode of Tableau in two minutes。 Today。
     we're going to be talking about context filters and how you can use them to improve
     the performance of your dashboard。 as well as how they impact what is displayed
     on particular sheets To do that。 we're going to connect to the superstore data
     set using the orders sheet。😊。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，欢迎来到另一集《Tableau 两分钟》。今天，我们将讨论上下文过滤器以及如何使用它们来改善仪表板的性能，以及它们如何影响特定表格上显示的内容。为此，我们将使用订单表连接到超市数据集。😊。
 - en: '![](img/54cf097445843aea9943c80d251cb297_1.png)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/54cf097445843aea9943c80d251cb297_1.png)'
 - en: '![](img/54cf097445843aea9943c80d251cb297_2.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/54cf097445843aea9943c80d251cb297_2.png)'
 - en: Then we're going to go to sheet one。And we're going demonstrate this very simply，
     just using。I category， I'm sorry。 we're going to put category on the filters shelf。
     We're going to select all of those。 Then we're going to take subcatego and put
     subcatego on the row shelf。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: '然后我们要去第一张表。我们将非常简单地演示这一点，只使用。我对类别感到抱歉。我们将把类别放在过滤器上。我们将选择所有这些。然后我们将子类别放在行上。 '
 - en: '![](img/54cf097445843aea9943c80d251cb297_4.png)'
+  id: totrans-5
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/54cf097445843aea9943c80d251cb297_4.png)'
 - en: And then we're going to take our sales and put it on the cons shelf。 So we have
     a nice list。 I like to sort this too。 Just going do it descending by the sum of
     the sail。 So we get a nice。 neat looking graph。 Now， say we only wanted the top  five
     subcategories to display in our visualization。 We can do that very easily by just
     applying a filter to the subcategory setting it to be the top  five by sales。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: '然后我们将销售额放在过滤器上。这样我们有了一个不错的列表。我也喜欢对其进行排序。只需按销售总额降序排列，这样我们就能得到一个整洁的图表。现在，假设我们只想在可视化中显示前五个子类别。我们可以通过简单地应用一个过滤器来设置为按销售额前五名来轻松做到这一点。 '
 - en: 😊。![](img/54cf097445843aea9943c80d251cb297_6.png)
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/54cf097445843aea9943c80d251cb297_6.png)
 - en: '![](img/54cf097445843aea9943c80d251cb297_7.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/54cf097445843aea9943c80d251cb297_7.png)'
 - en: '![](img/54cf097445843aea9943c80d251cb297_8.png)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/54cf097445843aea9943c80d251cb297_8.png)'
 - en: We the sum of sales clicking O。 And now you can see we have our top five categories，
     but。That's a little bit of a challenge。 So if we show the category filter。 you
     can see we have three top categories for our all of our subcategories。 And if
     we take these。In and out。You'll note that our top 5 is no longer a top 5。 It's
     sometimes a top 3。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: '我们点击销售总额 O。现在你可以看到我们的前五个类别，但这有点挑战性。所以如果我们显示类别过滤器，你会看到所有子类别中有三个顶级类别。如果我们将它们进进出出，你会注意到我们的前五个不再是前五个。有时是前三个。 '
 - en: We can even take it down to a top 1 because it's filtering out each of the categories。But
     not actually replacing the items， the subcategories with items from other categories。
     And the reason it's doing that is because the way tableau processes a top 5 filter
     is it takes everything。From the database calculates the top five， in this case，
     the top five subcategories。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: '我们甚至可以将其减少到前一个，因为它过滤掉了每个类别。但实际上并没有用其他类别的项目替换子类别的项目。这样做的原因是，因为 Tableau 处理前五个过滤器的方式是，它从数据库中获取所有数据，计算出前五个，在这种情况下是前五个子类别。 '
 - en: And then applies the filters after it's already calculated what the top  five
     are。 So every time we remove a category， we just remove those items from the top
     5。 and we get the top5 as they are without that category， which in this case，
     is only a top 3。What context filters do is context filters change the order。In
     which it happens so。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: '然后在计算出前五个之后再应用过滤器。所以每次我们移除一个类别时，我们只是从前五个中移除那些项目。我们得到的前五个项目就是不包含该类别的结果，在这种情况下，只剩下前三个。上下文过滤器的作用是改变顺序。 '
 - en: Everything else will only be applied now that we've turned this into a context
     filter rate。 So you just click that and then click add to context。Everything that
     we do now is only going to be applied to data that has already passed through
     that category filter。 So what that means in the grand scheme of things is that
     when we uncheck one of these categories。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: '其他所有操作现在只会在我们将其转换为上下文过滤器后应用。所以你只需点击它，然后点击“添加到上下文”。我们现在所做的一切只会应用于已经通过该类别过滤器的数据。这在总体上意味着，当我们取消选中其中一个类别时。 '
 - en: For example， if we uncheck furniture。We still have a top 5。 we have the top  five
     excluding anything from the furniture category。 because that furniture data didn't
     pass through our context filter。And our top 5 is being calculated on only the
     data that we have left。 Now。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，如果我们取消选择家具，我们仍然有前五名，排除了家具类别的任何数据。因为家具数据没有通过我们的上下文筛选器，而我们的前五名仅基于剩余的数据进行计算。
 - en: why is this particularly important well。Obviously， it helps with the top fives。
     But beyond that。 if you use this on your dashboards， particularly in ones where
     you're struggling for performance。 because each filter now has to be calculated
     on fewer values because now we don't have any data from furniture flowing through。
     we only have office supplies and technology。That will speed up the processing
     of any subsequent filters that you have after the context filter。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 为什么这特别重要呢？显然，这有助于前五名。但更重要的是，如果你在仪表板中使用这个，特别是在性能较差的仪表板中，因为每个筛选器现在只需在更少的值上进行计算，因为现在我们没有家具的数据流入，我们只有办公用品和技术。这将加快上下文筛选器后任何后续筛选器的处理速度。
 - en: It will also help speed up any calculations or anything like that。 And this
     can have a significant impact on how your。Visualizations， how your dashboards
     perform。 The other thing that it will do is it will。Only show。Values that make
     sense in the other filters。 so。If we look at our filter for subcategory now， So
     we'll show the filter， you will see that。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 这也将帮助加速任何计算或类似的事情。这会对你的可视化和仪表板的性能产生显著影响。另一件事是，它只会显示在其他筛选器中有意义的值。所以，如果我们现在查看子类别的筛选器，你会看到。
 - en: Whenever we add or remove things。Then only values that make sense will show
     up in hour。Subcate filter。So there you go。 So that about does it for this episode
     of Tableau in  two minutes。 Go ahead and give context filters a try。 Let us know
     how they work for are you。 If you have any questions， please leave them in the
     comments。 As always。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 每当我们添加或移除内容时，只有有意义的值会出现在我们的子类别筛选器中。这就是本期《Tableau两分钟》的内容。赶快试试上下文筛选器，告诉我们它们对你来说效果如何。如果你有任何问题，请在评论中留言，像往常一样。
 - en: there's a link to the data set and to the workbook in the video description。
     and we will see you next time。😊。![](img/54cf097445843aea9943c80d251cb297_10.png)
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 视频描述中有数据集和工作簿的链接，我们下次再见。😊！[](img/54cf097445843aea9943c80d251cb297_10.png)

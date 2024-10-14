@@ -4,6 +4,8 @@
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P15：15）创建子弹图
+    - ShowMeAI - BV1iq4y1P77U
 - en: Hi， folks， and welcome to another episode of Tableau in two minutes。 Today。
     We're going to show you how to create a bullet graph。 Bullet graphs are a great
     way of displaying data where you have a goal and then some sort of achievement
@@ -12,16 +14,19 @@
   id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，欢迎收看《两分钟学会Tableau》的又一期节目。今天，我们将向您展示如何创建子弹图。子弹图是一种很好的数据展示方式，可以显示目标以及朝着该目标的某种成就。因此，我们将连接一些包含虚构销售人员销售目标的数据。
 - en: And so you can see that our salesperson goals， data has data for John， Jim。
     James and Jeff are four salespeople by month。 along with their sales and their
     goal for that particular month。😊。![](img/c5398f00a344113deb167264c7ddec96_1.png)
   id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，你可以看到我们的销售人员目标数据中，有约翰、吉姆、詹姆斯和杰夫这四位销售人员按月份的数据，以及他们当月的销售和目标😊。![](img/c5398f00a344113deb167264c7ddec96_1.png)
 - en: '![](img/c5398f00a344113deb167264c7ddec96_2.png)'
   id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c5398f00a344113deb167264c7ddec96_2.png)'
 - en: Now， the easiest way to create one of these is just to drag salespeople over
     salesperson over to the row shelf。 drag goal and sales to the columns shelf， and
     then use the showme function to create a bullet graph。 And then you can see that
@@ -30,6 +35,7 @@
   id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，创建这些图表最简单的方法就是将销售人员拖到行架上，将目标和销售拖到列架上，然后使用显示功能来创建一个子弹图。这样你就可以看到，条形图代表目标，而黑线代表销售。这并不是一个合理的顺序。
 - en: So we can actually swap those quite easily by just clicking swap reference line
     fields。 Now we have goal。😊，By these represented by these lines。 And then we have
     the sales this blue bar。 which is representing what they actually sold。 So obviously。
@@ -37,6 +43,7 @@
   id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们实际上可以通过单击交换参考线字段来轻松交换这些图表。现在我们有目标😊，这些是由这些线表示的。然后我们有销售的蓝条，表示他们实际售出的数量。显然，当这条线高于黑线时，他们就超过了目标。现在。
 - en: it's all very good to be able to create it with the show me feature。 But I think
     you get a bit more customization if you're able to to create it yourself。 So what
     they're going do is drag salesperson over to the row shelf。 We're going to drag
@@ -44,6 +51,7 @@
   id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用“显示我”功能来创建这个图表很好，但我认为如果你能够自己创建，就可以获得更多的自定义选项。所以我们将把销售人员拖到行架上。我们将把销售拖到列架上。这样就创建了我们的条形图。
 - en: And then we're going to drag gold to the detail shelf。😊，We're gonna add a reference
     line。This reference line we're going to do per cell。 So there's one per bar。It's
     going to set that to total。 We're going to set this to the sum of the goal。We're
@@ -51,6 +59,7 @@
   id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，我们将把目标拖到详细信息架上😊，然后添加一条参考线。这条参考线我们将按单元格来设置。每个条形图对应一条。我们将其设置为总和。我们将其设置为目标的总和，并使我们的线稍微厚一些，颜色深一些。
 - en: And then we're going to remove the label so that we just have this bar。 which
     shows us what the goal was for each of our individual salespeople。 Now。 you'll
     note that if we look back at this one， there's also some shading under this。 that's
@@ -59,6 +68,7 @@
   id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，我们将删除标签，这样我们就只有这个条形图，显示每个销售人员的目标。现在，如果我们回过头来看看这个图，还有一些阴影部分。这是很容易做到的。所以我们将添加第二条参考线。
 - en: But this time， we're going add a distribution。Again， we're going to do it per
     cell。60% to 80 per of the average is fine， but we want to make sure it's the sum
     of goal。 not the sum of sales。Click out of that again， remove the label。 and then
@@ -66,6 +76,7 @@
   id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 不过这次，我们将添加一个分布。再次，我们将按单元格来做。平均值的60%到80%是可以的，但我们要确保这是目标的总和，而不是销售的总和。再次点击以退出，删除标签，然后使用填充下方选项。
 - en: And that's going to fill up to 60% with this dark gray than up to 80% with a
     slightly lighter gray。Click， O， again now。We have the shading in there， but you'll
     notice that the bars are slightly thinner。 so we can do that just remove this
