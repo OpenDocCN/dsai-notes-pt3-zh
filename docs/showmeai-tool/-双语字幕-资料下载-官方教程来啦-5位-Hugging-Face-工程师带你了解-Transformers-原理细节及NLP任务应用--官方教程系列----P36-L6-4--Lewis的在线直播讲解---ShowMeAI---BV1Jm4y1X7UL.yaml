@@ -1,8 +1,11 @@
 - en: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
     - P36：L6.4- Lewis的在线直播讲解 - ShowMeAI - BV1Jm4y1X7UL
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
+    - P36：L6.4- Lewis的在线直播讲解 - ShowMeAI - BV1Jm4y1X7UL
 - en: Okay， so maybe we can get started All right， so today we're looking at chapter3
     of the Huging F course。And this chapter is kind of like bringing together all
     of the components that we've been looking at in the first two chapters。 so just
@@ -11,164 +14,221 @@
     started taking a deep dive into what really happens inside this pipeline API that
     we were using a lot in the first chapter and trying to really unpack sort of how
     to train a model or at least how to understand the inputs and outputs of a model。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，也许我们可以开始了。那么，今天我们要看的是 Hugging Face 课程的第三章。这一章将把我们在前两章中看到的所有组件结合起来。作为回顾，在第一章中，我们探讨了与
+    transformer 相关的概念，以及与分词和预训练相关的一些概念。在第二章中，我们开始深入了解我们在第一章中大量使用的这个管道 API 实际上发生了什么，并试图真正解析如何训练一个模型，或者至少如何理解模型的输入和输出。
 - en: And also the inputs and outputs for the tokenizer。So today we're actually going
     to bring this all together and we're going to do a couple of things。 we're going
     to look at the datas library， which is this very nifty library developed by hugging
     face for processing data sets of more or less any size。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 还有分词器的输入和输出。所以今天我们将把这一切结合起来，做几件事情。我们将查看数据集库，这是 Hugging Face 开发的一个非常方便的库，用于处理各种规模的数据集。
 - en: And then we're going to train our very first model using something called the
     trainer and the trainer is an API which basically wraps a lot of the complexity
     around writing your own training loop in Pytorch or TensorF。And then we're going
     to sort of take a like we're going to kind of unpack what's going on in some sense
     in that trainer by writing our own training loop。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后，我们将使用一个叫做训练器的东西来训练我们的第一个模型。训练器是一个 API，基本上封装了在 Pytorch 或 TensorFlow 中编写自己训练循环的许多复杂性。然后我们将尝试解析这个训练器中发生的事情，通过编写我们自己的训练循环来实现。
 - en: In Pytorage and this will be a great excuse to introduce a very cool library
     that Sylvanna has developed called Huging Face Acccceerate。And this library is
     really designed for doing what's called distributed training。 so how you can kind
     of speed up your training when you've got multiple GPUs or potentially even TUs。
     which is what we'll see today in Google Coab。And of course， if there's any questions。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 在 Pytorch 中，这将是一个很好的机会来介绍一个非常酷的库，Sylvanna 开发的 Hugging Face Accelerate。这个库旨在进行所谓的分布式训练。也就是说，当你有多个
+    GPU 或者甚至 TPU 时，如何加快训练速度。今天我们将在 Google Colab 中看到这一点。当然，如果有任何问题。
 - en: just ask them in the chat at any time and I'll be pausing at various points
     to take。It's time to answer them。And so maybe just to start。The kind of ecosystem
     that we kind of have a hugging piece at the moment roughly revolves around these
     sort of components。 So we've got the hub， which we've seen several times now already。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 随时在聊天中问我问题，我会在不同的时刻暂停来回答。现在是回答问题的时候。所以，也许我们可以先开始。我们目前的生态系统大致围绕这些组件展开。因此，我们有中心，这一点我们已经看过好几次了。
 - en: And we use the hub for both loading models in transformers， loading tokenizers。
     and also loading data sets。And then transformers interacts with the data sets
     library。 as we'll see today， as a way of training our models。And then once the
     models are trained。 we can then push them back to the hub so that then we can
     share them with our colleagues and we can also interact with them using some of
     the widgets that are developed by the Huging F team。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们使用中心来加载 transformers 中的模型，加载分词器，以及加载数据集。然后，transformers 与数据集库进行交互。正如我们今天将看到的，这是训练我们模型的一种方式。模型训练完成后，我们可以将其推送回中心，以便与同事分享，并使用
+    Hugging Face 团队开发的一些小部件与之互动。
 - en: So， with that， let's。Take a quick look at the dataset sets library so。The data
     sets library is a kind of general purpose library for processing data sets of
     more or less any type。 so originally it was specifically for text data sets for
     NLP。But since then。 it's kind of grown into something that can handle images，
     audio， and over time。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，话不多说，让我们快速看看数据集库。数据集库是一种通用库，用于处理几乎任何类型的数据集。最初，它是专门针对 NLP 的文本数据集。但此后，它逐渐发展成可以处理图像、音频等多种类型的数据集。
 - en: we'll have things like time series and so on。And the main power of this library
     is that it provides a kind of uniform API for processing data and at least for
     me personally。 this has been one of the biggest productivity gains in my sort
     of career as a data scientist because previously like I was always having to manipulate
     different types of data。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将会有时间序列等功能。这个库的主要优势在于它提供了一种统一的API用于处理数据，对我个人而言，这在我作为数据科学家的职业生涯中是最大的生产力提升之一，因为以前我总是需要处理不同类型的数据。
 - en: CSV， Jason text， whatever， and each time it was always a little bit idiosyncratic
     and you had to write your own sort of custom like functions for dealing with all
     these data types and the data sets library provides。A very simple API where you
     can basically load a data set， more or less in one line of code。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: CSV、JSON文本等，每次处理这些数据类型时总是有点独特，你必须为处理所有这些数据类型编写自己的自定义函数，而数据集库提供了一个非常简单的API，你基本上可以在一行代码中加载数据集。
 - en: and then you can process it using something called the map function。 which we'll
     discuss in more detail today。And more or less with this map function。 you can
     kind of do extremely like fast and crazy processing。 even on monster data sets
     that are like you know a terabyte in size。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后你可以使用一个叫做map函数来处理它。我们今天会更详细地讨论这个函数。大致上，使用这个map函数，你可以对大型数据集进行极其快速和疯狂的处理，即使数据集的大小达到一TB。
 - en: you can actually process this on your laptop because this does a very clever
     kind of lazy loading of memory using something called Apache arrow。Okay， so let
     me just have a quick look。Great。😊，Cool。 so maybe what we can do is we can start
     by looking at this introductory video on the DiocS Library。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 你实际上可以在笔记本电脑上处理这个，因为它使用一种叫做Apache Arrow的聪明懒加载内存的方式。好的，让我快速看一下。太好了。😊，酷。也许我们可以从看这个DiocS库的介绍视频开始。
 - en: '![](img/a1136557282a500704797139dc43d7b8_1.png)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a1136557282a500704797139dc43d7b8_1.png)'
 - en: So I'm going to play this and please let me know if you can't hear it。The Egen
     F dataset sets library， a quick overview。The Eing F Datas Library is a library
     that provides an API to quickly download many public dataset sets and pre them。This
     video well explore how to do that。St dig part is easy with the load that asset
     function。You can directly download and cache a dataset from its identifier on
     the dataset app。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 我要播放这个视频，如果你听不见，请告诉我。Egen F数据集库的快速概述。Eing F数据集库是一个提供API的库，可以快速下载许多公共数据集并进行预处理。这个视频将探讨如何做到这一点。加载数据集的资产功能使这部分变得简单。你可以直接从数据集应用中根据其标识符下载和缓存数据集。
 - en: Here we fetch the M PC dataset set from the G benchmark。 which is a dataset
     set containing pairs of sentences where the task is to determine the power phase。The
     object returned by the Lo dataset function is the dataset diict。 which is sort
     of dictionary containing each split of a dataset。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里我们从G基准测试中获取M PC数据集，这个数据集包含句子对，任务是确定相似度。Lo数据集函数返回的对象是数据集字典，它是一种包含数据集每个分片的字典。
 - en: Can access each split by indexing with its name。This split is within an instance
     of the dataset class with columns here。 sometimes1， sometimes two label on IDX
     and root。We can access a given element by its index。The amazing thing about the
     Ugen phase Data library is that everything is saved to disk using apppasharo。Which
     means that even if your dataset is huge， you won't get out of R。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 可以通过名称索引访问每个分片。这个分片是在数据集类的一个实例中，列有时为1，有时为2，标签为IDX和root。我们可以通过索引访问给定元素。Ugen Phase数据库的惊人之处在于，所有内容都使用Apache
+    Arrow保存到磁盘。这意味着即使你的数据集很大，也不会耗尽R的内存。
 - en: only these elements you request are in memory。Accessing a slice of your dataset
     is as easy as one element。 so result is when dictionary with list of values for
     each case here the list of labels。 the list of first sentences and the list of
     circumstances sentences。The features attribute of a data gives us more information
     about its columns。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 只有你请求的这些元素会在内存中。访问数据集的一部分就像访问一个元素一样简单。因此结果是一个字典，其中包含每个案例的值列表，这里是标签列表、第一句话列表和上下文句子列表。数据的特征属性为我们提供了关于其列的更多信息。
 - en: particularicular we can see here， it gives us a correspondence between the integers
     and names for the labels。0 stands for not equivalent and one for equivalent。To
     process all the elements of our data set。 we need to tokenize them。Have a look
     at the video prepoed sentence pairs for a refresher。 but you just have to send
     the two sentences to the decokenizer with some additional keyword arguments。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 具体来看，我们可以看到这里给出了整数与标签名称之间的对应关系。0代表不等价，1代表等价。为了处理我们数据集中的所有元素，我们需要对它们进行标记。查看视频中预处理的句子对以获取更多回顾，但你只需将这两个句子发送到解码器，并附上其他一些关键字参数。
 - en: Here we indicate a maximum length of 128 and pet inputs shorter than in length
     trunc get inputs for longer。We put all of this in the tokenized function but we
     can directly apply to all the splits in our data set with the map method。As long
     as the function returns a dictionary like object。 the map pattern will add new
     columns as needed or update existing ones。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，我们指定最大长度为128，并且对比输入长度较短的进行截断处理。我们将这一切放在tokenized函数中，但我们可以直接应用到数据集的所有拆分上，使用map方法。只要函数返回一个字典类型的对象，map模式就会根据需要添加新列或更新现有列。
 - en: To speed up prepoing and take advantage of the fact all tokener is back by rust
     thanks to the Eging phase tokenos library。We can process several elements at the
     same time in autokenized function using the batch equal2 argument。Since the tokenizer
     can adult list of first sentences， list of second sentences。 the tokenized function
     does not need to change for this。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了加速预处理，并利用所有tokenizer是由rust支持的这一事实，得益于Eging phase tokenos库。我们可以在autokenized函数中使用batch
+    equal2参数同时处理多个元素。由于tokenizer可以处理第一句的列表和第二句的列表，因此tokenized函数不需要对此进行更改。
 - en: You can also use printer processing with the MA method， check out its documentationation
     link below。Once this is done， we're almost ready for training。 we just remove
     the columns we don't need anymore with the remove columns method。 we name label
     to labels since the models from the Uing phase transformforms library expect that。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 你还可以使用MA方法进行打印处理，查看下面的文档链接。一旦完成，我们几乎可以准备进行训练。我们只需使用remove columns方法删除不再需要的列。我们将label命名为labels，因为Uing
+    phase transformforms库中的模型期望这样。
 - en: And set the output format with a desired packetant， dorch， turns of flu on imp。If
     needed。 we can also generate a short sample of a data set using the select method。![](img/a1136557282a500704797139dc43d7b8_3.png)
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 并设置所需的输出格式，dorch，流动性转换为imp。如果需要，我们还可以使用select方法生成数据集的短样本。![](img/a1136557282a500704797139dc43d7b8_3.png)
 - en: Great， so that was a whirlwind tour of the Do Library。 Are there any questions
     at this stage before we dive into some code。Okay so feel free to post them in
     the chat as they come so one thing I just want to mention that might be useful
     so on the Hi phase hub。We have looked at the models。Hub in the last lesson。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 很好，这就是Do库的快速介绍。在我们深入代码之前，这个阶段有没有什么问题？好的，请随时在聊天中提出问题，我想提到的一点是，这可能会有用，在Hi phase
+    hub中。我们在上一课中看过模型。
 - en: and today we're going to kind of be looking a lot more closely at the data sets。And
     there was a question last week about sort of how do you figure out like a good
     choice of model for。 say， multiclass versus multila？And at the time we sort of
     realized that there's no sort of easy way of like filtering these types of models。
     but it turns out that for data sets there is a little bit better search for this，
     so for example。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 今天我们将更仔细地查看数据集。上周有一个问题，关于如何选择模型，比如多类与多标签？当时我们意识到没有简单的方法来筛选这些类型的模型，但事实证明，对于数据集来说，有一些更好的搜索方法，比如说。
 - en: if I'm working on a new project， one of the fastest ways to get results early
     is to basically build a sort of baseline or prototype using some public data。
     this is often much cheaper and faster than waiting for you know to get permission
     to access data in your company or waiting for some domain experts to help you
     with the labeling。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我在进行一个新项目，获得早期结果的最快方法之一是基本上使用一些公共数据构建一个基线或原型。这通常比等待获得公司数据访问权限或等待一些领域专家帮助你进行标注便宜得多且快得多。
 - en: And so for example， if we were looking at like maybe like a multiclass thing。
     maybe I would pick a text classification。And then there are other tags here that
     I can sort of filter by。 so just in case I was interested in question answering，
     I can select that。And then inside text classification， there are a set of subtasks
     that we can look at。 So for example。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，如果我们正在查看多类的内容。也许我会选择文本分类。然后这里有其他标签可以进行过滤。所以如果我对问答感兴趣，我可以选择它。在文本分类中，我们可以查看一组子任务。例如。
 - en: here I can maybe select multi label classification。And then this will return
     a range of data sets which are candidates for the multilabel case。 so perhaps
     I'm doing something about fake news， then I can look at data set called fake news
@@ -176,100 +236,132 @@
     your machine learning projects at work。 and I've found this is a great way also
     of finding some interesting data sets that maybe go beyond the standard ones that
     you often see in NLP。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，我可以选择多标签分类。这将返回一系列数据集，作为多标签案例的候选项。因此，也许我正在处理假新闻，那么我可以查看一个名为假新闻英语的数据集，反之亦然，因此数据集中心是启动工作中机器学习项目的好方法。我发现这也是寻找一些有趣的数据集的好方法，可能超出你在NLP中常见的标准数据集。
 - en: so almost everyone uses IMDV movie reviews to show their training but there's
     a lot of extra things here that are quite interesting and challenging because
     many of these are community provided。And just a side note， if you have an interesting
     data set。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 几乎每个人都使用IMDB电影评论来展示他们的训练，但这里有很多额外的东西非常有趣和具有挑战性，因为许多数据集是社区提供的。顺便说一下，如果你有一个有趣的数据集。
 - en: That you think would be valuable to the community， you can either contribute
     it directly to the data sets repository。And so inside the datasets repository，
     we have a datasets folder which has all of these hundreds of data sets that are
     basically reviewed and curated by the Huging piece team so you can open a pull
     request and there's instructions in the documentation on how to do this。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你认为对社区有价值，你可以直接将其贡献给数据集库。因此，在数据集库内部，我们有一个数据集文件夹，里面有数百个基本上由Hugging Face团队审核和策划的数据集，你可以打开一个拉取请求，文档中有关于如何做到这一点的说明。
 - en: Or if you wish to provide a community data set， which is something that more
     or less you don't have to integrate into the library directly。 you can also do
     that and there are some links in the documentation on how to basically submit
     data sets to the hub。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者如果你想提供一个社区数据集，基本上是你不需要直接将其集成到库中。你也可以这样做，文档中有一些链接关于如何提交数据集到中心。
 - en: So let's have a look if there's any questions done so far。Great。 so maybe Oma
     can put some links to that community。诶。Versus canonical des。Okay so there's a
     question from SRM sumUma datas library looks very specific to NLP I couldn't find
     many data sets related to vision。 is there a limitation to host vision related
     data？So the short answer is no。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么让我们看看到目前为止是否有任何问题。太好了。也许Oma可以将一些链接放到那个社区。诶。与规范的des相比。好吧，SRM sumUma有个问题，数据集库看起来非常具体于NLP，我找不到很多与视觉相关的数据集。是否有托管视觉相关数据的限制？简短的回答是没有。
 - en: there isn't a limitation in the library， it's just that we haven't devoted a
     lot of effort to integrating vision dataset sets and if you have some ideas of
     vision dataset sets you would like to add by all means feel free to either open
     a PR in the dataset sets library。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 库中没有限制，只是我们尚未投入大量精力整合视觉数据集，如果你有一些想添加的视觉数据集的想法，请随意在数据集库中打开一个拉取请求。
 - en: Or just reach out in the forums basically。At the moment， we have， if I look
     here， let's see。 Can I find vision。Do we have tag revision？Let's have a look。So
     I don't think we have a tag for vision yet。But I know that we have， let's see。
     I think we have CFAR。We don't have CFfa， maybe imt。Interesting。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者基本上在论坛上联系。在此时，如果我查看这里，看看。我能找到视觉吗？我们有标签修订吗？让我们看看。所以我不认为我们还有视觉标签。但我知道我们有，让我看看。我想我们有CFAR。我们没有CFfa，可能是imt。很有趣。
 - en: I was fairly sure we had these data sets。 Okay， so。 so maybe some of these vision
     data sets are not yet's because I this okay。CA， yeah， good Okay。 so we have CF
     10， CF 100 and these data sets you can use using the data library。And there's
     also others， I think I'm pretty sure mnes is here。 So there's fashion mnesist。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 我相当确定我们有这些数据集。好的，那么。也许一些视觉数据集还未上线，因为我这好吧。CA，是的，好的。所以我们有CF 10，CF 100，这些数据集可以使用数据库。还有其他的，我想我很确定mnes也在这里。所以有时尚mnesist。
 - en: mist and so on。So great question。So I think I can ch the link in the chat here。
     So this will。 this is the link to Mist。Let's put this here。😔，Cool。 so I hope that
     answers your question S our consumer。嗯。😊，Okay。 so now maybe what we can do to
     start with is let's have a sort of look at the coabab for the data sets library。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: mist等等。所以这是个好问题。我想我可以在聊天中分享链接。这是。这个是Mist的链接。让我们放在这里。😔，酷。希望这能回答你的问题，消费者。嗯。😊，好的。现在我们可以做的事情是先看看数据集库的coabab。
 - en: So we kind of get our hands dirty with this， so。As usual。 the first thing I
     want to do is install data sets and transformers。 and I'm going to use the capture。![](img/a1136557282a500704797139dc43d7b8_5.png)
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们开始动手操作。和往常一样，我想做的第一件事是安装数据集和变换器。我将使用捕获。![](img/a1136557282a500704797139dc43d7b8_5.png)
 - en: '![](img/a1136557282a500704797139dc43d7b8_6.png)'
+  id: totrans-36
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a1136557282a500704797139dc43d7b8_6.png)'
 - en: Magic command to capture all the Pip junk that comes out。嗯。😊，So once this will
     take a few minutes。And remember that the basic process in the sort of transformers's
     workflow is we first we need a tokenizer to convert our text raw text into input
     IDs。And then we need a model to process those input ID and convert them into numerical
     outputs that we can build predictions on。So basically here， I'm just instantiating
     a tokenizer and a model。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 魔法命令来捕获所有输出的Pip垃圾。嗯。😊，所以这将花费几分钟。请记住，变换器工作流中的基本过程是，我们首先需要一个分词器来将原始文本转换为输入ID。然后我们需要一个模型来处理这些输入ID并将其转换为我们可以构建预测的数值输出。因此，在这里，我只是实例化了一个分词器和一个模型。
 - en: So this is going to be Bt based uncased， and this model is an auto model for
     sequence classification。 so it's a text classification head that we're adding
     on top of the pretrain model。And this is just a little code snippet that shows
     an example of how to process basically the raw sequences。 convert them into input
     IDs。And then pass this and the labels through the， through the model。Okay。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这将是基于Bt的无大小写模型，这是一个用于序列分类的自动模型。因此，这是我们在预训练模型上添加的文本分类头。这只是一个小代码片段，展示了如何处理基本的原始序列，将其转换为输入ID。然后通过模型传递这些和标签。好的。
 - en: but we saw that last week， so should be clear the thing that is more interesting
     for us today is to start looking at the data sets they read so。The first thing
     or the most common thing you're going to encounter。Is the load dataset set function？
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我们上周已经看过了，所以今天对我们更有趣的事情是开始查看它们读取的数据集。你将遇到的第一件事或最常见的事情是加载数据集函数？
 - en: And if we just have a look at this load。Oops。Load data set function。You can
     see that it has a lot of different arguments that you can provide the most common
     ones that I use are the path。 which is essentially the name of the data set this
     is what you will see for example， on the hub。 so in this case we have glue， but
     it could be MNIST it could be whatever。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们看一下这个加载。哎呀。加载数据集函数。你可以看到它有很多不同的参数，你可以提供，我使用的最常见的参数是路径。它本质上是数据集的名称，这就是你在中心看到的内容，所以在这个案例中我们有glue，但它可以是MNIST，或者其他任何东西。
 - en: And many data sets on the hub， they often have configurations which are like
     sortized subsets。 so for example glue is a benchmark which has many different
     tasks and each task has a name so here we have the Microsoft paraphrase comprehension
     task。And so if you want to access a subtask or a subset in a given data set， you
     use this name argument。And then the other one that we'll see that is really common
     is to specify the split。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 在中心上，许多数据集通常有配置，就像细分子集。例如，glue是一个基准，它有许多不同的任务，每个任务都有一个名称，这里我们有微软的同义句理解任务。如果你想访问给定数据集中的子任务或子集，你使用这个名称参数。然后我们将看到的另一个非常常见的参数是指定拆分。
 - en: So a lot of the time by well by default， it will return all the splits that
     are defined in the。In the library so here we're getting a train validation and
     test split。 but sometimes you just want the train split and so you can specify
@@ -277,72 +369,92 @@
     get a data sets object and there are two sort of types of objects you'll typically
     see so the most common one you'll get at the start is something called a data
     dit。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以很多时候默认情况下，它将返回库中定义的所有拆分。在这里，我们得到了训练、验证和测试拆分。但有时你只想要训练拆分，因此可以明确指定这些，我会告诉你怎么做。好的，现在当我们加载数据集时，我们得到一个数据集对象，通常你会看到两种类型的对象，最常见的是称为数据集的东西。
 - en: And this is， you can think of it as basically a dictionary where the keys are
     just a string that correspond to the split。And the values are something called
     a data set object。So let's just have a look at one of these examples here。 so
     if I index into the train key or the train set， I'm going to get now a data set
     object。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以把它想象成一个字典，键是对应于划分的字符串，值是称为数据集对象的东西。让我们来看看这里的一个示例。所以如果我索引训练键或训练集，我现在将得到一个数据集对象。
 - en: And if I look at the first element in that data object， I've got an ID， I've
     got a label。 and I've got the two sentences that I need to figure out if one is
     a paraphrase of the other or not。So in this case， we can see that the first sentence
     says Amrosy accused his brother whom he called the witness of deliberately distorting
     his evidence。And the second sentence says， referring to him as only the witness
     and Rosy accused his brother of deliberately destroy the evidence。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我查看该数据对象中的第一个元素，我有一个ID，一个标签，以及我需要判断一个句子是否是另一个句子的同义改写的两个句子。在这种情况下，我们可以看到第一个句子说“阿姆罗西指控他称为证人的兄弟故意歪曲证据”。而第二个句子则说，称他为仅仅是证人，阿姆罗西指控他的兄弟故意销毁证据。
 - en: So that's a pretty good example of the second sentence being a or maybe the
     first one being a paraphrase of the second one。 so it's a bit shorter and it captures
     the same information。And we can see that the label here is one， which as a guess，
     is probably indicating that that's true。It is a paraphrasible。Okay， so just to
     like unpack a little bit this data set dit versus data set thing so because this
     was a bit confusing to me the first time I saw this。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这是一个相当好的例子，第二个句子是第一个句子的同义改写，或者也许第一个是第二个的同义改写。所以它稍微短一点，捕捉到了相同的信息。我们可以看到这里的标签是1，作为一个猜测，可能表示这是真的。它是可以改写的。好，所以为了稍微拆解一下这个数据集字典和数据集对象的区别，因为第一次看到这个时我觉得有点困惑。
 - en: so we know that the raw data sets are given by this data set diict object。And
     this data set D object has these keys， right， so we have train validation and
     Teset。And if we look at just like a normal sort of Python dictionary， we look
     at the values。 then we get now a dictionary or we get a list of the different
     values。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们知道原始数据集是由这个数据集字典对象给出的。这个数据集对象有这些键，对吧，所以我们有训练、验证和测试。如果我们像查看普通的Python字典那样查看它的值，那么我们现在得到的是一个字典，或者我们得到不同值的列表。
 - en: So just think of dataset as a dictionary which maps keys or splits to dataset
     sets and the thing that you do nearly all of your work or your heavy work on are
     actually the data set objects so if we look at a data set object。So， this raw。Train
     data。 This data object has a large number of operations that we can do。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以把数据集想象成一个字典，将键或划分映射到数据集，而你几乎所有的工作或重工作都是在数据集对象上进行的，所以如果我们查看一个数据集对象。这些原始训练数据，这个数据对象有很多操作可以执行。
 - en: and we're going to see some of them today。 so we can add columns。 We can do
     filtering。 we can load from different formats。 We can extract some information
     about the data。 So maybe let's have a look at that。 If we look at the the info
     attribute of a data set。 This will often tell us maybe we can print it。This will
     okay， that like that。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 今天我们将看到其中的一些内容。所以我们可以添加列。我们可以进行过滤。我们可以从不同格式加载数据。我们可以提取一些关于数据的信息。所以也许我们来看看这个。如果我们查看数据集的信息属性，这通常会告诉我们，也许我们可以打印出来。这就可以了，就这样。
 - en: So this will tell us a bit of a description about the data set itself。 And there's
     a bunch of information about the data types and so on。USo yeah。 basically just
     remember that data set is the thing that we're going to be doing most of our work
     on and data D is just a way of collecting all the splits together。So let's just
     see if there's any questions none so far， Okay， good。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这将告诉我们一些关于数据集本身的描述。还有关于数据类型等的信息。所以，是的，基本上只需记住数据集是我们将要做大部分工作的地方，而数据D只是收集所有划分在一起的一种方式。所以我们来看看有没有问题，暂时没有，好。
 - en: So one of the important aspects of a data set is that it has essentially types
     so one of the things that you may have experienced in your work is that most of
     the data you deal with is very like messy or maybe it has like like a CSV file
     and you've got a mix of strings and numbers and so on so forth。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以数据集的一个重要方面是它本质上有类型，所以你在工作中可能经历过的大部分数据是非常混乱的，或者也许它像一个CSV文件，里面混合了字符串、数字等等。
 - en: And what the datasets library does is it defines very explicitly what the types
     should be for every column in the dataset set。And so this is very useful because
     it allows you to catch errors earlier and also to do some very fast processing。So
     if you look at the features attribute of a data set。What you'll get is a dictionary
     which shows you essentially the column name as a key and then the data type for
     that column and so we can see here that indeed sentence one is a string。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据集库所做的就是明确地定义每一列在数据集中的类型。这非常有用，因为它允许你更早地捕捉错误，同时也能进行一些非常快速的处理。因此，如果你查看数据集的特征属性，你会得到一个字典，基本上显示列名作为键，然后是该列的数据类型，所以我们可以看到，确实，句子一是一个字符串。
 - en: so we get something called a value type and here it specifies a string。But the
     other one that's kind of interesting is maybe the label so here the label column
     it's not just an integer I mean it could be an integer。 but data sets provides
@@ -350,29 +462,37 @@
     about the number of classes that we have or the number of unique labels that we
     have。 what the names of those labels are。And those are the more basically the
     two things that you need to know is just the names and the number of classes。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们得到一个叫做值类型的东西，这里它指定为字符串。但另一个有趣的可能是标签，因此这里的标签列不仅仅是一个整数，虽然它可以是一个整数，但数据集提供了一种叫做类标签类型的东西，这个类标签类型包含我们拥有的类别数量或唯一标签的数量的信息，以及这些标签的名称。这基本上就是你需要了解的两个要点：标签的名称和类别的数量。
 - en: And then we can see that， for example， the ID has just got a data type of integer
     32。And so one of the things you can do with these features， so one thing that's
     like kind of nice。 if we so features are just a dictionary so we can access the
     values by key。So if we get the label。 this is going to give us this class label
     type。And this class label type has a couple of handy functions。
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们可以看到，例如，ID的数据显示类型为整数32。因此，你可以对这些特征做的一件事情是，特征只是一个字典，所以我们可以通过键访问值。如果我们获取标签，这将给我们这个类标签类型。这个类标签类型有几个方便的功能。
 - en: so one function that I often use a lot is how do I convert my numerical features
     so label one into something that I is like human readable so what I can do is
     there's an int to string function。And if I put label one here。It should tell me，
     indeed， that。That corresponds to equivalent。
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我经常使用的一个功能是如何将我的数值特征转换为类似于人类可读的形式，所以我可以使用一个整数转字符串的函数。如果我在这里放入标签一，它应该告诉我，确实，它对应于等效值。
 - en: which means that one sentence is a paraphrase or the other。And just as a sandy
     check， if we do zero。 then it should be the same for not to equivalent。And so
     this class label feature。Has some documentation on the hub with other functions
     you can look at。 but I find this is quite a powerful way of quickly switching
     between labels that are numbers and labels that are strings so that you can understand
     what's in your data set。
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 这意味着一句话是另一个的同义句。作为一个简单的检查，如果我们使用零，那么对于非等效的情况，它应该是相同的。因此，这个类标签特征在中心有一些文档以及其他你可以查看的功能，但我发现这是一个非常强大的方法，可以快速在数字标签和字符串标签之间切换，以便你能理解你的数据集中的内容。
 - en: So let's have a look， are there any questions。Okay， so there's a question from
     IM homess。 is there a way to benefit from the convenience of the data set library
     but use a data set that might be private。 for example， customer data？Yes， that's
@@ -381,162 +501,214 @@
     completely closed off in you know on premise we couldn't use Huging face hubub
     so I actually had to solve this problem so the way you could do this or the way
     I used to do this most frequently is I would actually use pandas。
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么我们来看看，有没有问题。好的，IM homess提了一个问题，是否有办法利用数据集库的便利，但使用可能是私有的数据集，例如客户数据？是的，这是个好问题，答案是可以的，所以之前在我加入Hugging
+    Face之前，我为一家电信公司工作，一切都是完全封闭的，我们无法使用Hugging Face hub，因此我实际上必须解决这个问题。我通常使用的方式是利用pandas。
 - en: So I would say input pandas as PD。And then I would create my data frame。 So
     let's suppose I'm going to just make a dummy data frame。 So let's say I have。Oops。My
     data frame as follows， and I'm going to say， okay。Let's call this a text。Then
     I'm going to put。Hello world。And then maybe another element today。Okay， and then
     I'll add another column。
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我会导入 pandas 为 PD。然后我会创建我的数据框。所以假设我打算创建一个虚拟的数据框。比如说我有。哎呀。我的数据框如下，我要说，好的。我们称之为文本。然后我会写。你好，世界。然后可能再添加另一个元素，今天。好的，然后我会添加另一列。
 - en: which is maybe the say the label。And then maybe this is going to be positive，
     positive。So this is a super simple data frame， but this is something that I would
     load locally。And of course。 pandas is amazing for data processing。 But if you
     want to use the the data sets functionality。 what you can do is create your own
     data set， your own custom data set。 So from data sets。
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 这可能是标签。然后这可能是正面的，正面的。所以这是一个超级简单的数据框，但这是我会本地加载的东西。当然，pandas 对数据处理非常棒。但如果你想使用数据集功能，你可以创建自己的数据集，自己的自定义数据集。所以从数据集开始。
 - en: you can import。The data set objective itself。And then what we can do is we can
     create。Data set。From the。Let's see， so I think it's from， is it from pandas， I
     think？
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以导入。数据集的目标本身。然后我们可以创建。数据集。我们看看，我想这是来自于 pandas，是吗？
 - en: And then this should fingers crossed create now a data set object。Which has
     the features of text and label， has two rows。 And if we now， for example。 look
     at all the elements， we can see that indeed， we've now got our own custom data
     set。So this is more or less how I used to work 90% of the time。
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后这应该，祝好运，现在创建一个数据集对象。它具有文本和标签的特征，包含两行。如果我们现在，例如，查看所有元素，我们可以看到确实得到了我们自己的自定义数据集。所以这大致就是我工作
+    90% 的方式。
 - en: I hope that answers your question I'm homes there are other ways of。Loading
     data。 you can load it from CSV， you can load it from Jason。And I think that more
     or less covers most of the use cases。The only time things get a little bit painful
     is if you're dealing with very large data sets。
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 我希望这能回答你的问题，我想还有其他加载数据的方法。你可以从 CSV 加载，可以从 JSON 加载。我认为这大致涵盖了大部分用例。唯一让事情有点痛苦的情况是当你处理非常大的数据集时。
 - en: you know， things that maybe don't fit into a pandas data frame。 but there's
     a streaming functionality that has just been implemented into the data sets library。And
     so yeah， I think basically you can cover almost all use cases this way。Okay， cool，
     so。嗯。What we've just done so far is we've just loaded our raw data set。
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 你知道，有些东西可能不适合放入 pandas 数据框中，但数据集库中刚刚实现了流式功能。所以是的，我认为这样可以基本覆盖几乎所有的用例。好的，酷，所以。嗯。到目前为止，我们只加载了我们的原始数据集。
 - en: And the thing that we we would like to do right is we would like to tokenise
     this so what we've been doing in all of the lessons so far is we've basically
     been tokenizing kind of like string by string or like maybe a list of strings
     so if we look at this example here。
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们希望做的事情是对其进行标记化，所以到目前为止我们在所有课程中基本上都是逐个字符串或者字符串列表进行标记化，如果我们看看这里的这个例子。
 - en: Then when we do the tokenization。You can see that。Tokenizing the first sentence
     column is giving us now a list of input IDs。 so we have now basically a set of
     input IDs， well let's just have a look at these guys。嗯。So yeah。 we've got a big
     list of input IDs corresponding to the first sentence and also to the second sentence。And
     remember that these Is is what are we used to feed into the transformer。
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后当我们进行标记化时。你可以看到。标记化第一句列现在给我们带来了一个输入 ID 的列表。所以我们现在基本上有一组输入 ID，嗯。是的。我们得到了一个与第一句和第二句对应的大输入
+    ID 列表。请记住，这些 ID 是我们用于输入到变换器的。
 - en: These are the things that go into the embedding layer and then into the transformer
     stack。 And at the end， we get something like budgets we can make predictions with。Okay，
     so。That's the stuff we've been doing all the time and you can also， as I think
     we may have seen。 you can convert your IDs back to tokens using the convert IDs
     to tokens。
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些是进入嵌入层然后进入变换器堆栈的东西。最后，我们得到一些预算，可以用来进行预测。好的，所以。这就是我们一直在做的事情，你也可以，正如我想我们可能看到的那样，可以使用将
+    ID 转换为标记的功能。
 - en: But the thing that is like maybe most interesting or most common is how do you
     basically tokenise the whole data set？
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 但可能最有趣或最常见的事情是你如何基本上对整个数据集进行标记化？
 - en: And the most common way to do this is to define a function。You can call it whatever
     you want。 here it's called tokenized function。And what this function will do is
     it will operate on every row of the data set and apply whatever you define the
     operation to be in that function。
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 最常见的做法是定义一个函数。你可以随意命名。在这里它被称为标记化函数。这个函数会在数据集的每一行上进行操作，并应用你在函数中定义的操作。
 - en: So once you've defined your function， you can then。Apply a map。Onto your dataset
     and then this will automatically tokenize every single row in your data。 so we've
     got all the raw strings， sentence one， sentence two。 and it's converted them automatically
     into input IDs and also this attention mask that we saw last week where we needed
     to figure out how to sort of disable the padding tokens from the attention mechanism。
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦你定义了你的函数，你就可以。对你的数据集应用映射。这将自动对你数据中的每一行进行标记。因此我们得到了所有的原始字符串，句子一，句子二。它们被自动转换为输入ID，以及我们上周看到的这个注意力掩码，我们需要找出如何禁用填充标记以适应注意力机制。
 - en: So。😊，This is a very powerful way of kind of in just more or less one or two
     lines of code。 automatically tokenizing every single example in your data set
     and it's very fast it can be basically multi processcesed and it can also be run
     in a batched way on a GPU to be even faster。
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以。😊这是一个非常强大的方法，可以在大约一到两行代码中，自动对数据集中每一个示例进行标记，速度非常快，基本上可以进行多进程处理，并且也可以在GPU上批量运行，以更快的速度处理。
 - en: But maybe let's just sort of look at a sort of very simple example just to break
     down what's going on here。Let's suppose I wanted to do something which is quite
     common。 maybe adding a column now that there are faster ways of doing this in
     data sets。 but I'm going to show you how we could do this with a function。So let's
     add a column。
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 但也许我们来看看一个非常简单的示例，以便更好地理解这里发生的事情。假设我想做一些比较常见的事情。也许添加一个列，现在在数据集中有更快的方法来做到这一点。但我将向你展示如何用一个函数来做到这一点。我们来添加一个列。
 - en: And what this column should expect is an example， or let's just maybe even makeia，
     it's a row。 it's a row in our data set。And the main thing that this function is
     to return is it has to return a dictionary。And the reason for that is， if you
     look at。One of our examples from the training set。 you can see that it's kind
     of like a dictionary right we've got keys for the column name and value for the
     actual element or you know the element in that say cell if it was a table。
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 而这个列应该期望的是一个示例，或者说让我们假设这是一行。它是我们数据集中的一行。而这个函数主要需要返回的是，它必须返回一个字典。这样做的原因是，如果你查看。我们的训练集中的一个示例。你会看到它有点像一个字典，对吧，我们有列名的键和实际元素的值，或者说如果这是一个表格中的单元格。
 - en: So what we need to do is we need to return。It's strange。Seems a coab does two。So
     we need to return a dictionary and let's just， I'm going to make something up。
     I'm going to say this is a new column。And I'm going to just make all the value
     of menu new column be。Just a word， hello okay。And if we do this。Then if I take
     my raw data sets。
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们需要做的是返回。奇怪。似乎协同应用了两次。所以我们需要返回一个字典，假设我随便编造一个。我将说这是一个新列。并且我会把新列的所有值都设置为。只是一个单词，hello，好吗。如果我们这样做。那么如果我拿我的原始数据集。
 - en: Well let's just take maybe the raw training dataset set。Just to keep it simple。Then
     when we apply map， we just need to feed at this function。And it will then automatically
     create a new column。And just add it to our raw data set。Now one thing you should
     be aware of is that this operation is not in place。
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，我们就用原始训练数据集来进行示范。为了简化起见。当我们应用映射时，我们只需要在这个函数中提供输入。然后它会自动创建一个新列。并将其添加到我们的原始数据集中。现在你需要注意的一点是，这个操作不是就地进行的。
 - en: so if you're familiar with pandas， there's often operations that are in place。
     which means you just run this line and then it kind of changes the state of the
     object in data sets most。 if not all operations out of place and so what this
     would mean is that if you wanted to actually have that column stored in your memory。
     you would create you know data set with say extra column one you column。And you
     would then do。
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你熟悉pandas，通常会有就地操作。这意味着你只需运行这一行，然后它会改变数据集对象的状态。大多数情况下，所有操作都不是就地进行的，这意味着如果你想将该列存储在内存中。你需要创建一个包含额外列的数据集，比如说“额外列一”。
 - en: you know， that equals the map。And then， when you。Look at。This。You now see that
     we have a new column with Ho。So that's been now sort of stored in the memory of
     this new data set object。Okay， so just to recap， you a function and the function
     has to always return a dictionary where the key is the name of the column and
     the value is the value you want for that row。Cool， so let's take a small thing。
     Let's see。I am Homemes just asking。
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 你知道，这等于映射。然后，当你查看这个时。你现在会看到我们有一个新的列Ho。因此，这现在在这个新数据集对象的内存中存储了。好的，总结一下，你有一个函数，而这个函数必须始终返回一个字典，其中键是列的名称，值是你想要的那一行的值。好吧，让我们看看一个小的例子。我是Homemes，只是在询问。
 - en: please could you explain what the attention mask does again okay， great， very
     good question。So let's have a look at this example here。So in this example， we've
     got two sentences。And we can see that， this is maybe not a good example， maybe
     let's add some padding。嗯。Okay， actually。 what I need to do to show you an example。Is
     I'm going to。Yeah， I'm going to do this。
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 请你再解释一下注意力掩码的作用，好吗？很好，非常好的问题。让我们看看这个例子。在这个例子中，我们有两个句子。我们可以看到，这可能不是一个好的例子，也许我们来添加一些填充。嗯。好的，实际上。我需要做的是给你展示一个例子。我要。是的，我要这样做。
 - en: So I'm going to。I'm going to apply truncation in my function， and I'm going
     to add some padding。And then this is just to show you。What we're talking about
     here。Okay。 so here I've just tokenized the raw data sets and I've got this tokenized
     data sets object。And list。Get the first element， which hopefully will show us。哈哈。嗯。Okay，
     this is a bit of a messy one。Okay。
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我要在我的函数中应用截断，并且我要添加一些填充。然后这只是为了向你展示我们在这里讨论的内容。好的。在这里，我只是对原始数据集进行了分词，得到了这个分词数据集对象。然后列表。获取第一个元素，希望能显示给我们。哈哈。嗯。好的，这个有点混乱。好的。
 - en: but let me just try to summarizerise so remember in the last chapter。 we looked
     at this concept of padding and the reason we had to do padding is that all the
     operations that we do inside the transformer are basically matrix multiplication。And
     when you do matrix multiification， you want to make sure that the matrices you're
     operating on are more or less square。 So if I have， for example， one sentence
     and I represent this as a vector。
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 但让我尝试总结一下，所以记住在上一章，我们看到了填充的概念，而我们需要填充的原因是我们在变换器内部进行的所有操作基本上都是矩阵乘法。当你进行矩阵乘法时，你想确保你操作的矩阵大致是方形的。所以如果我有一个句子，并且我将其表示为一个向量。
 - en: Then in order to compare one sentence to another sentence。 it helps if those
     arrays or those vectors have the same size。And so padding is a technique where
     you can basically in the simplest case。 look at the longest sentence in your batch
     and then just put a zero at the end of every other sentence which basically pads
     out to the length of the longest one and then this will guarantee that your sentence
     or your batch has all vectors of the same size。
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后，为了比较一个句子和另一个句子，如果这些数组或向量的大小相同会更有帮助。因此，填充是一种技术，基本上在最简单的情况下，你可以查看批次中最长的句子，然后在每个其他句子的末尾加一个零，这样就填充到最长句子的长度，从而保证你的句子或批次中所有向量的大小相同。
 - en: and then when you stack them together， youve notice something that's rectangular。Now
     that's padding and more or less we do it for just computation reasons。But the
     problem that it introduces is that the attention mechanism you may remember from
@@ -544,64 +716,84 @@
     representations that we have of the sequence and it then updates them to create
     something called a contextualized embedding and these contextualized embeddings
     essentially contain for every token in that sequence。
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后，当你将它们堆叠在一起时，你会注意到它呈矩形。现在这就是填充，我们这样做多多少少是出于计算的原因。但它带来的问题是你可能还记得之前章节提到的注意力机制。它基本上取一个嵌入，也就是我们对序列的数值表示，然后更新它们以创建称为上下文化嵌入的东西，而这些上下文化嵌入本质上为序列中的每个标记包含信息。
 - en: they contain information that relates the sort of meaning of that token relative
     to the whole sequence。So an example would be if I have a sentence like， I don't
     know， time flies like an arrow。 then flies is a verb in that case。But if I have
     another sentence。 which is like fruit flies like a banana， then flies is an insect。
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 它们包含与该标记相对于整个序列的意义相关的信息。例如，如果我有一个句子，比如，我不知道，时间像箭一样飞逝。然后在这种情况下，“飞”是一个动词。但如果我有另一个句子，比如“果蝇像香蕉一样飞”，那么“飞”就是一种昆虫。
 - en: And so the attention mechanism allows us to distinguish these two cases because
     the contextualized embedding that represents flies is different in those two cases
     and it uses the whole sequence to develop that representation。Now， because attention
     operates on every single token in the sequence。
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，注意力机制使我们能够区分这两种情况，因为代表飞行的上下文化嵌入在这两种情况下是不同的，并且它使用整个序列来发展该表示。现在，由于注意力在序列中的每个单个标记上进行操作。
 - en: it also operates on padding tokens and this would be like a bit of a problem
     because these padding tokens are like these artificial things we injected just
     to make sure all the matrices are square。And so the attention mask is a way of
     saying to the attention mechanism。
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 它也会作用于填充标记，这可能会有些问题，因为这些填充标记就像是我们注入的人工东西，以确保所有矩阵是方形的。因此，注意力掩码是一种告诉注意力机制的方法。
 - en: pay no attention to the padding tokens。And what an attention mask will look
     like？Here。It will have a bunch of ones， so these will be all the tokens at the
     start of the sequence that are just the things we want to develop contextualized
     embeddings for。
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 不要关注填充标记。那么注意力掩码看起来会是什么样子？在这里。它会有一堆一，所以这些将是序列开头的所有标记，这些正是我们希望开发上下文化嵌入的内容。
 - en: And then at some point you will hit the start of the padding sequence。 so you've
     got all your words and now you're just adding zeros to your token embeddings。And
     here the attention mask will then switch to a zero。 and that will when it goes
     through the attention layer。
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后在某个时刻，你会达到填充序列的开始。所以你已经有了所有的单词，现在只是在你的标记嵌入中添加零。此时，注意力掩码将切换为零，这样它通过注意力层时。
 - en: it will just disable attention computations on that。So I hope that explains
     your question I Homemes。 it was a bit of a long winded one。And so ones for all
     the input Is correct exactly right Yep。 so all the input Is which are not zero
     or generally not zero。 it will be a one and then it will be zero for all the input
     Is that are zero so we can have a look here。
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 它将禁用该部分的注意力计算。所以我希望这解释了你的问题，我的朋友。这个问题有点长。而且所有输入ID是完全正确的。没错，所有不为零的输入ID会是1，而所有为零的输入ID会是0，我们可以在这里查看。
 - en: All the input IDs are on zero and now we've got the padding。嗯。Ids。Okay， great。
     so there's another question which is from Resh Mecheik， can we do the reverse
     of a map function？嗯。Let me think if I understand what you mean。😔，So what kind
     of example would you have in mind， Rash？
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 所有输入ID为零，现在我们有了填充。嗯。好的，接下来有个问题来自Resh Mecheik，我们能否做map函数的反向操作？嗯。让我想想我是否理解你的意思。😔，那么你心中有什么样的例子，Rash？
 - en: I'mNot sure I understand the question， but maybe you can write it in the chat
     and then I'll come back to it in a bit。Okay， so。We've seen how to。Do tokenization
     across the whole dataset set using the map function。And the。I think that's more
     or less the main thing in this co。 So I'm just going to delete this。And the other
     thing。😊，That is worth pointing out is there's kind of two ways you can do padding。
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 我不确定我理解这个问题，但也许你可以把它写在聊天中，我稍后再回到这个问题。好的，所以。我们已经看到如何使用map函数对整个数据集进行标记化。我认为这大致是这个课程的主要内容。所以我将删除这一部分。还有另一件值得指出的事情是，有两种方法可以进行填充。
 - en: So one way is to explicitly define the padding in the tokenization step。 So
     what you do is you say padding true or however you wish to implement it。And then
     when you do tokenization with the mat function。 it will automatically pad all
     the sequences according to how you defined it。Now。
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 一种方法是在标记化步骤中明确定义填充。所以你可以设置填充为真，或者按你想要的方式实现它。当你用mat函数进行标记化时，它会根据你的定义自动填充所有序列。现在。
 - en: the drawback with this is that when you do training。Maybe your padding， for
     example， here。 picked the longest sentence in the whole data set and then paded
     everything out to the thing in the whole data set。But when we do training， what
@@ -609,79 +801,106 @@
     quite common is to do something called dynamic padding。 which we'll see shortly，
     which is a way of basically sort of adding the padding tokens on the fly and this
     lets us do computations much more efficiently。
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 这样做的缺点是，当你进行训练时。也许你的填充，例如这里，选择了整个数据集中最长的句子，然后填充到整个数据集中的内容。但是当我们进行训练时，我们实际上是在对批次进行训练，因此常见的一种做法是进行动态填充。我们很快就会看到这是一种在运行时添加填充标记的方法，这让我们可以更有效地进行计算。
 - en: So I think let's take a look at that video now。![](img/a1136557282a500704797139dc43d7b8_8.png)
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我想现在来看一下那个视频。![](img/a1136557282a500704797139dc43d7b8_8.png)
 - en: So let's have a look at how we can do padding on the flow。![](img/a1136557282a500704797139dc43d7b8_10.png)
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么让我们看看如何在流上进行填充。![](img/a1136557282a500704797139dc43d7b8_10.png)
 - en: What is dynamic bedding？In the batchching inputs Together video。 we have seen
     that to be able to group inputs of different lengths in the same batch。We need
     to add adding togans to all the shot inputs until by all of the sims。Here， for
     instance。 the longest sentence is the third one， and we need to add five。
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 什么是动态填充？在批处理输入的同时，我们发现能够将不同长度的输入分组到同一个批次中。我们需要为所有短输入添加填充，直到所有样本都达到最长的长度。例如，这里最长的句子是第三个句子，我们需要添加五个填充。
 - en: two or seven petans to the other sentences to have four sentences of the same
     length。When dealing with a word data set， there are value being strategies we
     can apply。So most of one is to add all the elements of the data set to the same
     length。 the length of the longest sample， this will then give us patches that
     all have the same shape determined by the maximum sequence length。
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 为其他句子添加两个或七个填充，以使四个句子具有相同的长度。在处理词数据集时，有一些我们可以应用的策略。因此，最常见的一种是将数据集的所有元素调整为相同的长度，即最长样本的长度，这样就会得到所有形状相同的块，形状由最大序列长度决定。
 - en: The downside is that patches composed from short sentences we have a lot of
     patting tokens。 which will introduce more computations in the model we ultimately
     don't need。To avoid this。 another strategy is to patch the elements when we batch
     them together to the longerest sentence inside the batch。This way， batches compose
     of short input voltage gets smaller and the batch containing the longest sentence
     in the dataset set。
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 缺点是由短句子组成的块中有很多填充标记，这会在模型中引入更多不必要的计算。为了避免这种情况，另一种策略是在将元素批处理在一起时，使用批次中的最长句子进行填充。这样，由短输入组成的批次体积变小，而包含数据集中最长句子的批次则保持较大。
 - en: This will lead some nice speed on CPU and GPU。So the downside is that all batches
     will then have different shapes。 which slow down things on accelerators like TUs。Let's
     do have to apply both strategies in practice。We have actually seen to applied
     fixed padding in the dataset sets of a view video when we proposepo the R PCC
     dataset。 aftering the dataset Enkenizer， we applied the tokenization to all the
     data set with padding and procation to make all samples of lengths 128。
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将提高 CPU 和 GPU 的速度。因此，缺点是所有批次将具有不同的形状，这会在像 TUs 这样的加速器上导致速度变慢。我们确实需要在实践中同时应用这两种策略。实际上，在我们提出
+    R PCC 数据集时，我们在一段视频的数据集中应用了固定填充，在处理数据集时，我们对所有数据集进行了带填充的标记化，并确保所有样本的长度为 128。
 - en: As a result， if we pass this data set to a byy toch data， we get patches of
     shape patch size here。 16 by 128。To apply a dynamic padding， we must defer the
     padding to the batch preparation。So we remove that part from a tokenized function
     we still leave the transition part so that inputs that are bigger than the maximum
     lengths accepted by the model。 usually 512 get trunccateated to that length。Then
     we paddle samples poll dynamically by using a data curator。
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 结果是，如果我们将这个数据集传递给一个 byy toch 数据，我们会得到形状为 patch size 的块，这里是 16 x 128。为了应用动态填充，我们必须将填充推迟到批次准备中。因此，我们将这一部分从标记化函数中移除，但仍然保留转换部分，以确保大于模型接受的最大长度（通常为
+    512）的输入被截断到该长度。然后我们通过使用数据策划者动态填充样本。
 - en: Those classes in the Tos library are responsible for applyinging all the final
     preproing needed before forming a batch。Here， the decorulator with padding will
     pass the samples whose maximum length inside a patch of sentences。We pass it to
     the Pythto staalloor as a collate function and observe that the batch sheets generated
     at various lengths all way below the 128 from before。Dynamic pitching will almost
     always be faster on CPUs and GPUs， so you should apply it if you can。
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: Tos 库中的这些类负责在形成批次之前进行所有最终的预处理。这里，带填充的装饰器将通过句子的最大长度传递样本。我们将其作为聚合函数传递给 Pythto，并观察到生成的各种长度的批次都低于之前的
+    128。动态填充几乎总是在 CPU 和 GPU 上更快，因此如果可以的话，你应该应用它。
 - en: Remember to switch back to fixed bidding however， if you run your training script
     on TU or need batches of fixed chips。Okay， so that was a nice explanation of dynamic
     padding， so just to summarize。 if I have a data set we say a thousand examples。And
     let's suppose that one example is just way longer than all the others。 maybe there's
     an error or something。So if I just did my tokenization。嗯。On this data set。
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 记得如果你在TU上运行训练脚本或需要固定芯片批次，还是要切换回固定竞标模式。好的，刚才对动态填充的解释很好，所以总结一下。如果我有一个数据集，比如说一千个例子。假设其中一个例子的长度远远超过其他例子。也许是有错误或者其他原因。那么如果我只是对这个数据集进行了标记化。嗯。
 - en: as we just did before in the colaab。 And we just paded to the maximum length
     of the longest example。 Then all the samples will get pushed out to this very
     long one。 And so we'll have a lot of zeros everywhere that we have to then do
     computations on。 which are slower。So the alternative is that since we do most
     of our training in terms of batches that we just pad at the batch level。
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 就像我们之前在colaab中做的那样。我们只对最长例子的最大长度进行了填充。然后所有样本都会被推送到这个很长的例子上。因此我们会在需要计算的地方有很多零，这样会变得更慢。因此，替代方案是因为我们大部分训练都是以批次进行的，所以我们在批次级别进行填充。
 - en: so instead of padding for the whole data set， we just look at the elements in
     a batch and we pad to the longest for example element in that batch or the longest
     example in that batch。And what this will do is it will then require less computation，
     so it will be faster。
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，我们不是对整个数据集进行填充，而是只查看一个批次中的元素，并对该批次中最长的例子进行填充。这样做的结果是将需要更少的计算，因此会更快。
 - en: But the downside as Svan explained is that each batch will have different sizes。
     so we're going to have you know maybe in one batch the sentence is only 10 tokens
     long for the longest one。 so everything is 10 tokens long， maybe the second batch
@@ -689,102 +908,133 @@
     these data collators are basically functions that allow us to kind of cleverly
     package together all these different size batches in a way that we can then do
     training efficiently。
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: 但正如Svan所解释的那样，每个批次的大小会有所不同。所以我们可能在一个批次中，最长的句子只有10个标记。因此所有的句子都是10个标记，也许第二个批次是30个，以此类推。在Transformers库中，我们有所谓的数据整理器。这些数据整理器基本上是允许我们聪明地将这些不同大小的批次打包在一起，以便我们可以高效地进行训练的函数。
 - en: So let's maybe look at some questions and then just revisit this col datac stuff。So
     there's a question from， let's see。Okay， so we've got a question from which says
     hi there's a limited labeled data sets that aren't English。 would it make sense
     to machine translate a data set to a certain language or domain specific genre
     to fine tune on Yes。 that's a very good question and generally highly recommended
     so。
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们看看一些问题，然后再回到这个col datac的内容。有一个问题是，让我看看。好的，我们收到了一个问题，内容是“嗨，有一些有限的标注数据集不是英文的。将数据集机器翻译成某种语言或特定领域的类型进行微调是否合理？”是的，这是一个非常好的问题，通常是强烈推荐的。
 - en: '![](img/a1136557282a500704797139dc43d7b8_12.png)'
+  id: totrans-104
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a1136557282a500704797139dc43d7b8_12.png)'
 - en: A good example of this is there's a data set called MLQA。![](img/a1136557282a500704797139dc43d7b8_14.png)
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个很好的例子是有一个数据集叫做MLQA。![](img/a1136557282a500704797139dc43d7b8_14.png)
 - en: And this is a multilingual question answering dataset and the authors of this
     dataset basically translated the S dataset。 which is in English into several languages
     so I think they have German， Spanish， Hindi， Vietnamese。 simplified Chinese。So
     this is one way of creating data in your domain or your language。 which you can
     then build models on。The only drawback is that it's often being known that if
     you're training like very large transform models。
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个多语言问答数据集，该数据集的作者基本上将英语的S数据集翻译成了几种语言，所以我认为他们有德语、西班牙语、印地语、越南语和简体中文。这是创建你所在领域或语言数据的一种方式，你可以在其上构建模型。唯一的缺点是，如果你在训练非常大的变换模型时，通常会被认为有问题。
 - en: they can learn somehow that。There's a translation that's been made and they
     will take shortcuts to get good performance so in the end the model that you get
     on your translated text it may be good just in the translated context。 but if
     you then deploy this with real human interactions then this could be sort of out
     of domain and maybe the model has only really learned how to detect that it was
     translated and not how to actually solve the task you care about。
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 他们总能以某种方式学习到这一点。已经有一个翻译被做过，他们会采取捷径来获得良好的表现，因此最终你在翻译文本中得到的模型可能在翻译的上下文中表现良好。但如果你将其用于真实的人际交互，这可能就会超出领域，或许模型只是学会了检测出这是翻译过的，而不是如何真正解决你关心的任务。
 - en: So you have to be a bit careful with this， but it's something that is worth
     trying and it's something I've used as well in Switzerland where I live。 there
     are four national languages plus English and so most of the time you don't have
     data in English it comes in Italian or French and so you need to do some of this
     translation tricks。
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以你要对此稍微小心一些，但这值得尝试，我在瑞士住的时候也用过这一点。那里有四种国家语言加上英语，因此大部分情况下你没有英语的数据，都是意大利语或法语，因此你需要进行一些翻译技巧。
 - en: 嗯。😊，And one thing that came out recently， which is， I think。 quite cool is Facebook
     released a model called M2 M 100。And this model is a translation model。 so it's
     a sequence or it's an encoded decoder transformer that we saw in chapter1 and
     it can do basically translations across 100 different languages。 so you imagine
     you've got basically 100 by 100 matrix of all languages and for every single pair
     you can do a translation。
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗯。😊 最近出现的一件事情，我认为挺酷的是，Facebook发布了一个叫M2M 100的模型。这是一个翻译模型。所以它是一个序列或者是我们在第一章看到的编码解码变换器，它可以基本上进行100种不同语言之间的翻译。所以你可以想象，你有一个100乘100的所有语言的矩阵，对于每一个语言对你都可以进行翻译。
 - en: And so this gives you 9900 pairs you can translate across and it's a very good
     model。 so if you're looking to do translation， I would recommend using this if
     your language is in the1 hundred0 that they cover。Okay， and then maybe to revisit
     Russia's question， how could you revert the column that was created before in
     the map？
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这给你提供了9900对可以翻译的内容，而且这是一个非常好的模型。如果你正在寻找翻译，我建议你使用这个，如果你的语言在他们涵盖的1000种语言中。好的，接下来也许可以回到俄罗斯的问题，如何恢复在地图中之前创建的列？
 - en: Okay now understand what you're asking， so the question is let's suppose we've
     added this column。And we've now got a data set with a new column， which says hello。I'll
     show you the specific one for this example is like if I want to delete the column。
     then what I can do is I can remove columns。And then here I just need to provide
     a list of column names so I could provide new column。
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我明白你在问什么，所以问题是，假设我们添加了这一列。现在我们有一个数据集，新增了一列，显示“hello”。我会给你展示一个具体的例子，比如如果我想删除这一列。那么我可以移除列。接着在这里我只需提供一个列名的列表，所以我可以提供“new
+    column”。
 - en: And then this will delete。The new column and recover back the original data
     set that we had。That more or less， I think would cover most of the cases that
     you want to undo the map operation。The only time it won't really work is if you
     then do other things to your data set。 maybe you change the content of these original
     columns and then you know undoing that isn't easily done。
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后这将删除。新列，并恢复到我们原来的数据集。差不多，我认为这涵盖了你想要撤销映射操作的大多数情况。唯一的情况是如果你对数据集进行了其他操作。也许你改变了这些原始列的内容，那么你知道，撤销这一步就不那么容易了。
 - en: Okay， and then we have another question by SRM Zuma， which is。Why is dynamic
     padding slow on TUs compared to GPUs is there any intuition behind this Okay。
     so this is testing my very limited TPU knowledge， but my understanding very limited
     understanding is that it's a sort of fundamentally different architecture for
     basically doing numerical or numerical linear algebra or algebraic equations or
     multiplications of matrices。
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，然后我们有另一个问题，来自SRM Zuma，问题是。为什么在TUs上动态填充比在GPU上慢？这背后有什么直觉吗？好的，所以这考验我的有限TPU知识，但我的理解是，这是一种从根本上不同的架构，主要用于进行数值、数值线性代数或代数方程，或者矩阵的乘法。
 - en: And I think it's simply just due to the way that the chips are designed。 that
     they are much more efficient if everything is a fixed sized matrix and you're
     not trying to do this like shuffling of data to do the collation。But Omar， who's
     in the chat as Haka Lama， used to work at Google so he can maybe provide a much
     better answer in the chat。😊，嗯。So yeah， this is it's a very good question。 I will
     also really like to know a detailed answer。
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 我认为这仅仅是由于芯片设计的方式。如果所有内容都是固定大小的矩阵，它们会更有效，而不是试图对数据进行洗牌以进行聚合。但是在聊天中以Haka Lama身份出现的Omar曾在谷歌工作，所以他或许可以在聊天中提供一个更好的答案。😊，嗯。所以，是的，这是一个很好的问题。我也想知道详细的答案。
 - en: So that'll be couple one note。😊，Okay， so what I wanted to do before we start
     training the model is just have a quick look at this what this data col is doing。So
     in transformers， there are different data collators to basically handle this dynamic
     padding。
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这里有几点需要注意。😊，好的，我想在开始训练模型之前，快速看一下这个数据聚合器在做什么。在transformers中，有不同的数据聚合器来处理这种动态填充。
 - en: And the one that most of the time we use is data col with padding。And what this
     will do is。 let's see。 can I see it， Yeah， if I get a few samples from my data
     set。What I've got here in my samples。Is just a list of， you know， the tokenized。Inputs
     and they've got the。The same length for their inputes。
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: 而我们大多数时间使用的是带填充的数据聚合器。这将会……让我看看。我可以看到它吗？是的，如果我从数据集中获取几个样本，我这里的样本只是一个标记化输入的列表，它们的输入长度是相同的。
 - en: So they've been that's probably because I。Addded padding， so let me get rid
     of padding here。Sorry。So I'm just going to retokenize my data without the padding
     in the tokenizer。Because we want to do dynamic padding。And one thing that's very
@@ -795,223 +1045,298 @@
     fast so you can see that took like a second and this is very cool if you've done
     something that you know you process like a million examples and then you restart
     the notebook and you don't have to wait again to reprocess them。
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以他们可能是因为我加了填充，抱歉，让我把这里的填充去掉。所以我只是想在分词器中对数据进行重新分词，而不加填充。因为我们想要做动态填充。有一件非常酷的事情我没有提到，就是在数据中你所做的所有操作都是缓存的，因此它们基本上是作为箭头表存储在你的硬盘上，所以当你想要重新处理时，它基本上会检查我是否之前做过这个计算，如果做过，它会直接加载缓存版本，这样非常快，你会看到这只用了大约一秒钟，如果你处理过像一百万个示例，然后重新启动笔记本，你就不必再等待重新处理它们。
 - en: the cache will just do that instantaneously。Okay， good。 so so now I've got I've
     tokenized my data。 I have no padding， so all the examples of different lengths。And
     so。What the data creator will do when I pass it through these samples is it will
     automatically resize in that batch。All the samples to the longest length in that
     batch。
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: 缓存会瞬间完成这一切。好的，所以现在我已经对数据进行了分词，没有填充，因此所有示例的长度各不相同。那么，当我将数据传递给这些样本时，数据创建器会自动将该批次中所有样本调整为该批次中的最长长度。
 - en: So you can see here that the longest example has 67 tokens。 And so what it's
     done now is it's created tensesors， each of which have essentially 67。Columns
     you know， for each of the longest tokens and some of those will have padding。
     and that's what the data colator has done for us。 and And then when we do training。
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到，最长的示例有67个标记。因此现在它创建了张量，每个张量本质上有67列，你知道的，针对每个最长的标记，其中一些会有填充。这就是数据聚合器为我们做的。当我们进行训练时。
 - en: it will do all of that for us on the fly。嗯。Yeah exactly so the question that
     SRum is asking about the TPUs is that square matrices are what GPUs like as well
     yes that's true so if I'm not mistaken the TPU context is to do with this distinction
     of whether you do dynamic padding or not and with dynamic padding we are kind
     of creating square matrices。
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 它会为我们即时处理所有这些。嗯，没错，SRum问TPU的问题是，平方矩阵也是GPU喜欢的，是的，没错。所以如果我没记错的话，TPU的上下文是与动态填充的区别有关，而使用动态填充时，我们实际上是在创建平方矩阵。
 - en: On a batch level， but we're also moving data around。 so we're having to sort
     of kind of dynamically create data on the fly with different shapes and my suspicion
     is that's the thing that maybe slows it down but it's a great question and I should
     look at the answer at some point。
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: 在批处理级别上，我们还在移动数据，因此我们必须动态创建不同形状的数据。我怀疑这可能是减慢速度的原因，但这是个好问题，我应该在某个时候查看答案。
 - en: Cool， so it's you've asked a very good question that stumped the two guys in
     the course。 They great。 thanks。😊，Okay， cool， so that's more or less data sets
     tokenization。😊。Let's now take a look at training。So。What we're going to do is
     look at the trainer API。So'll launch the video。Sotrino API。The Transforms library
     provides a Traer API that allows you to easily function transformformals models
     and your data set。
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: 很好，你提出了一个非常好的问题，这让课程中的两位老师感到困惑。他们很棒。谢谢。😊 好吧，很好，这差不多就是数据集的分词处理。😊 现在让我们看看训练。我们要做的是查看训练器
+    API。我们将启动视频。Sotrino API。Transforms 库提供了一个训练器 API，允许你轻松地转换模型和数据集。
 - en: The trainer class takes sure that assets your model。 as well as the training
     IP parameters and can perform the training on any kind of setup， CPUU， GPU。 multiple
     GPus， TUus。Can also compute the predictions on any dataset set。 and if you provide
     a matrix， evaluate your model on any dataset set。
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 训练器类确保你的模型以及训练 IP 参数，并可以在任何设置上执行训练，包括 CPU、GPU、多 GPU、TPU。也可以在任何数据集上计算预测，如果你提供矩阵，可以在任何数据集上评估你的模型。
 - en: You can also involve final data processing such as dynamic padding as long as
     you provide a tokenizer or given data coulator World5 CP in the MRRPC data set
     since it's relatively small and easy to preprocess。As we saw in the dataset sets
     of a view video， and we can proposepo it。
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 你也可以进行最终的数据处理，例如动态填充，只要你提供一个分词器或在 MRRPC 数据集中给定的数据计算器 World5 CP，因为它相对较小且易于预处理。正如我们在数据集中的视频集中看到的那样，我们可以提出这些。
 - en: You do not apply padding during the preproing， as we will use dynamic padding
     before dataator with padding。Note that we don't do the final steps of renaming
     removing ins or set the format to torch tensils。The trainer will do all of this
     automatically for us by analyzing the model signature。The last step before creating
     the trainer are to define a model and some training of epi parameterss。
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: 你在预处理过程中不应用填充，因为我们将在填充数据器之前使用动态填充。请注意，我们不会进行最终步骤的重命名、删除或设置格式为 torch 张量。训练器将通过分析模型签名自动完成所有这些工作。在创建训练器之前的最后一步是定义模型和一些训练的超参数。
 - en: We saw to do the first in the model API video。For the second， we use the training
     argument class。It only takes a path to a folder where results and checkpoint will
     be saved。 but you can also customize all the app parameters your trainer will
     use learning grade。 number of training as， etc。It's been very easy to create a
     trainer and launch a training。
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们首先在模型 API 视频中进行了第一步。对于第二步，我们使用了训练参数类。它只需要一个文件夹路径来保存结果和检查点，但你也可以自定义训练器将使用的所有参数，例如学习率、训练次数等。创建一个训练器并启动训练非常简单。
 - en: This should display your properties bar and after a few minutes if you're running
     on a GPU。 you should have the training finished。The result will be however antiticclmatic
     however。 as you will only get a training class which doesn't really tell you anything
     about how well your model is performing。This is because we didn't specify any
     metric for the evaluation to get those metrics。
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: 这应该会显示你的属性栏，如果你在使用 GPU，过几分钟你应该就能完成训练。然而，结果可能会让人感到意外，因为你只会得到一个训练类别，这并不能真正告诉你模型表现得如何。这是因为我们没有指定任何评估指标来获取这些指标。
 - en: we'll first gave the predictions on the wall evaluation set using the predict
     method。It returns a namem to poll with three fields prediction， which contains
     the model predictions。 level IDs， which contains the levels if you let as a add
     web and matrix， which is empty here。 we're trying to do that。The predictions are
     the lus of the model for all the sentences in the dataset set。
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们首先使用预测方法对墙评估集进行了预测。它返回一个名称，包含三个字段：预测，包含模型预测；级别 ID，包含级别；如果你让我们添加网络和矩阵，这里是空的。我们正在尝试做到这一点。预测是模型对数据集中所有句子的输出。
 - en: so an by array of shape 408 by2。To match them with our labels。 we need to take
     the maximum look for each prediction to know which of the two classes was predicted
     we do this with the a max function。Then we can use the matrix from the dataset
     library。 it can be loaded as easily as a dataset set with a load metric function。
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，有一个形状为408x2的数组。为了将它们与我们的标签匹配，我们需要对每个预测取最大值，以了解预测的是两个类中的哪一个，我们用max函数完成这一点。然后，我们可以使用数据集库中的矩阵，它可以像加载数据集一样轻松加载。
 - en: and it returns the evaluation metric used for the dataset。We can see our model
     did learn something as it is 85。7% accurate。To monitor the evaluation matrix during
     trainingee， we need to define a compute matrix function。 but does the same step
     as before， it takes a name to hold with predictions on labels and must return
     a dictionary with the metrics we want to keep track of。
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: 它返回用于数据集的评估指标。我们可以看到我们的模型确实学习了一些东西，准确率为85.7%。为了在训练过程中监控评估矩阵，我们需要定义一个计算矩阵函数。它的步骤与之前相同，接受一个名称来保存对标签的预测，并且必须返回一个包含我们想要跟踪的指标的字典。
 - en: By passing the epoC evaluation strategy to our training arguments。 we tell the
     trainer to evaluate at the end of every epoch。Lunching a training inside your
     notebook will then display a progress bar and complete the table you see here
     as you pass every apo。
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过将epoC评估策略传递给我们的训练参数，我们告诉训练器在每个epoch结束时进行评估。在你的笔记本中启动训练将显示进度条，并在每个周期结束时完成你在这里看到的表格。
 - en: '![](img/a1136557282a500704797139dc43d7b8_16.png)'
+  id: totrans-132
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a1136557282a500704797139dc43d7b8_16.png)'
 - en: '![](img/a1136557282a500704797139dc43d7b8_17.png)'
+  id: totrans-133
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a1136557282a500704797139dc43d7b8_17.png)'
 - en: Okay， so that was a lot of information if you've never seen the trainer。 it
     might be too many things at once so what we're going to do is kind of walk through
     this together and then hopefully at the end of this you'll then have all the tools
     you need to start training your own models。
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，这信息量很大，如果你从未见过训练器，这可能一下子有太多内容，所以我们将一起走过这个过程，希望到最后你将拥有开始训练自己模型所需的所有工具。
 - en: And solving your own problems。So in Google CoLab there are different runtime
     available。 so by default， most of the time it's like a CPU， so there's no acceleration
     and so what you need to do is hit runtime。 select the runtime type and for this
     notebook we're going to use a GPU later we'll see how to use a GPU。
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: 解决你自己的问题。因此，在Google CoLab中有不同的运行时可用。通常情况下，默认是CPU，没有加速，因此你需要做的是点击运行时，选择运行时类型，对于这个笔记本，我们将稍后使用GPU，看看如何使用GPU。
 - en: '![](img/a1136557282a500704797139dc43d7b8_19.png)'
+  id: totrans-136
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a1136557282a500704797139dc43d7b8_19.png)'
 - en: '![](img/a1136557282a500704797139dc43d7b8_20.png)'
+  id: totrans-137
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a1136557282a500704797139dc43d7b8_20.png)'
 - en: So then we save this。And now this is going to launch in Google Coab sort of
     a machine that has a GPU in the back end。And one thing you can do。![](img/a1136557282a500704797139dc43d7b8_22.png)
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们保存这个。现在这将在Google Coab中启动一种具有GPU的机器。你可以做的一件事。![](img/a1136557282a500704797139dc43d7b8_22.png)
 - en: To check what kind of GP you're running is to do NviDdia SMI。![](img/a1136557282a500704797139dc43d7b8_24.png)
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: 检查你正在运行哪种GP的方法是执行NviDdia SMI。![](img/a1136557282a500704797139dc43d7b8_24.png)
 - en: And let's see what we get。If it wakes up。So here we've got a Tesla Kaie。 so
     these are most of the time。sort of default GPU you get， they're not super great。
     but if you look online you can often find there's people who have saved the state
     of things like P100 collabs and then you can just use them and then they're very
     fast。And of course， if you reset the the run time， so this is sometimes a hack
     if I'm。
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看看我们得到什么。如果它醒来。这里我们得到了Tesla Kaie，这些通常是你得到的默认GPU，虽然不是特别好，但如果你在网上查找，通常可以找到有人保存了像P100这样的协作状态，你可以直接使用它们，非常快。当然，如果你重置运行时，有时这是一个小技巧。
 - en: '![](img/a1136557282a500704797139dc43d7b8_26.png)'
+  id: totrans-141
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a1136557282a500704797139dc43d7b8_26.png)'
 - en: Trying to。Get a better GP。 You can do factory reset。![](img/a1136557282a500704797139dc43d7b8_28.png)
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: 尝试获得更好的GP。你可以进行出厂重置。![](img/a1136557282a500704797139dc43d7b8_28.png)
 - en: And then this will just wipe the whole back end and hopefully should now still
     be a GPU yep。And maybe we'll get something a little bit different to a K， let's
     see what we get。Okay。 I'm still stuck with a Katie， but sometimes if you're lucky。
     it will give you a P100 or even a Tesla。Okay。😊，So we've got our GPU back to coab
     now。 So again。
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后这将清除整个后端，希望现在仍然是GPU。也许我们会得到一些与K有点不同的东西，看看我们得到什么。好的，我仍然卡在Katie，但有时如果你运气好，它会给你一个P100或甚至是Tesla。好的。😊，所以我们把我们的GPU恢复到coab了。再一次。
 - en: we do the same thing we。Install our dependencies。And what we have here in this
     code is just the same things we did before。 so we load a data set。And then we
     define a tokenizer from a checkpoint， so we're using B basincased。 We have our
     tokenize function。And what this tokenized function is doing is it's taking the
     two sentences。 remember that this data set。Is about trying to predict whether
     one sentence is a paraphrase of another。
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们做同样的事情，安装我们的依赖项。我们在这段代码中所做的就是之前做过的事情。所以我们加载数据集。然后我们从检查点定义一个分词器，因此我们使用B basincased。我们有我们的分词函数。这个分词函数的作用是获取这两个句子。记住，这个数据集是关于尝试预测一个句子是否是另一个句子的释义。
 - en: so we pass both sentences to the tokenizer。We use truncation is true so that
     if one of the sentences is longer than the maximum。Sequence length of Bt， which
     is 512 tokens， it will just trunccate it to 512。And then we tokenize everything
     and we define this data color so we can do dynamic padding。So I'm just going to
     run that。And it should be pretty fast。😔，Okay， so so while that's running。
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将这两个句子传递给分词器。我们使用截断为真，这样如果其中一个句子超过了最大序列长度Bt（512个标记），它会将其截断为512。然后我们对所有内容进行分词，并定义这个数据集，以便我们可以进行动态填充。所以我就要运行这个了，应该会非常快。😔，好的，所以在它运行的时候。
 - en: let's start by looking at。This training arguments。 this is the first thing that
     you encounter with the trainer， so training arguments。 you can think of it as
     just like a config， it's basically a class where you can define various hyperpara
     for training。And the only thing you need to specify is an output directory where
     all the information from the training will be stored。
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们先来看一下训练参数。这是你与训练师接触的第一件事，所以训练参数。你可以把它看作是一个配置，它基本上是一个类，你可以在其中定义各种超参数用于训练。你需要指定的唯一内容是一个输出目录，所有训练的信息都会存储在这里。
 - en: Or if you save the model， this is where it will go so if we look at training
     arguments。We can see that let's see， can we see through here。 you can see that
     we have this output directory and then there's a huge range of things like really
     a lot。 you can specify the learning rate， you can specify the parameters of the
     optimizer。
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你保存模型，它将存放在这里，因此如果我们查看训练参数，我们可以看到，让我们看看，我们能否透过这里看到。你可以看到我们有这个输出目录，还有许多内容，确实很多。你可以指定学习率，也可以指定优化器的参数。
 - en: you can define the optimizer， you can define callbacks kind of like fast AI。
     which is no surprise because Sil develop the trainer。And these callbacks lead
     to control training in clever ways like early stopping and things like this。So
     I won't go through all of this， but there's basically a large number of parameters
     you can set and you can find that in the documentation for the trainer。
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以定义优化器，你可以定义类似于fast AI的回调。这并不奇怪，因为Sil开发了这个训练器。这些回调可以以聪明的方式控制训练，例如提前停止等。所以我不会详细介绍所有这些，但基本上你可以设置大量参数，你可以在训练器的文档中找到。
 - en: And it comes with some pretty good defaults， so most of the time it will just
     work out of the box。So now we need to load a model， and we're specifying two labels
     because we've got just two classes。 Is it a paraphrase or not。And again， it's
     a sequence classification model as we're doing text classification。And then comes
     the next period， which is， you know maybe the more complicated part。
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: 并且它提供了一些相当不错的默认值，所以大多数时候它会直接开箱即用。现在我们需要加载模型，并且我们指定两个标签，因为我们只有两个类别。它是一个释义还是不是。再次强调，这是一个序列分类模型，因为我们正在进行文本分类。接下来是下一个阶段，这可能是更复杂的部分。
 - en: so we need to instantiate a trainer， so a trainer more or less at minimum needs
     a few things。 it needs a model。So this is the model that we're going to train，
     it needs training arguments。 these are the things that define how the training
     will operate。And it needs one of a few data sets。 so it needs either a training
     data set or a evaluation data set or a test set and you can have one and none
     of the others。
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们需要实例化一个训练器，一个训练器至少需要一些东西。它需要一个模型。这是我们要训练的模型，它需要训练参数。这些是定义训练如何运行的内容。它需要一些数据集，因此需要一个训练数据集或评估数据集或测试集，你可以有一个，而没有其他的。
 - en: but it needs at least one thing basically needs at least one data set generally
     that you want to train on you can instantiate it without it。 but generally you
     want to specify one。So here we're passing the tokenized data and that's important
     you don't want to pass the raw data to your trainer because it will feed it to
     the model and then the model will go。
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: 但它至少需要一件事，基本上至少需要一个你想要训练的数据集。你可以在没有它的情况下实例化，但一般来说你想要指定一个。所以在这里我们传递了分词后的数据，这很重要，因为你不想将原始数据传递给你的训练器，因为它会将其喂给模型，然后模型就会开始处理。
 - en: I don't know what you're doing what I should do with these strings。And the other
     two things that are kind of interesting is passing a data coator。And a tokenizer
     so providing these two arguments will do dynamic padding。 which will be faster
     for training。And the way it works is you say give me a colalleator。
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: 我不知道你在做什么，我该如何处理这些字符串。还有另外两件有趣的事是传递数据协调器和分词器，因此提供这两个参数将实现动态填充，这样训练会更快。它的工作方式是你要求给我一个协调器。
 - en: and there are different types of data colalator， but the one we're using is
     the most common one。And it also needs tokenizer， so it's basically the way the
     data cl works is it kind of combines the tokenizer with the batching to work out
     how to arrange the inputs。
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据协调器有不同类型，但我们使用的是最常见的一种。同时它也需要分词器，因此数据协调器的工作方式是将分词器与批处理结合起来，以确定如何安排输入。
 - en: And so by providing these two arguments， we will then get some speed up in training。嗯m。And
     so this will instantiate the trainer。And。Let's see if it works。It's crossed okay
     good so one thing that I usually do before I launch training is I just do like
@@ -1019,46 +1344,62 @@
     what happens is when you run train and or train you will train for some number
     of steps and then you will evaluate you know maybe at the end of an epoOC and
     that's kind of like one of the default strategies。
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，通过提供这两个参数，我们将会加快训练速度。嗯。这样就会实例化训练器。让我们看看它是否有效。好的，一切正常，所以在我启动训练之前，通常我会进行一个理智检查，确保我可以运行评估函数，因为很多时候发生的情况是，当你运行训练时，你会训练若干步，然后在一个周期结束时进行评估，这基本上是默认策略之一。
 - en: But then you know if your evaluation， maybe your metrics are not implemented
     correctly or whatever。 if your evaluation fails， then you're going to fail after
     waiting for a whole training of one epoch and that's like really annoying so a
     sort of sanity check that I do is just to make sure that I can run evaluate。
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: 但如果你的评估，可能你的指标实现得不正确或者其他原因。如果评估失败，那么你在等待整个一个周期的训练后也会失败，这真的很让人烦恼。因此，我做的一个理智检查就是确保我可以运行评估。
 - en: And if that works， then I'm relatively confident that the training run will
     work and what you can see that this evaluation has done is it's given us some
     information about the number of examples in the validation set and it's provided
     us with a value of the loss and then some kind of runtime metrics。
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果这样有效，我相对有信心训练过程会成功，你可以看到这个评估提供了关于验证集中示例数量的信息，并且给出了损失值和一些运行时指标。
 - en: sort of how performance is this processing batches。And so obviously this is
     a random model at the moment。 we've just initialized Bert as a backbone and just
     stacked on like a linear layer with random weights so this is kind of a garbage
     loss so the goal will be after training for this to be going down。Cool， so I'm
     gonna now run the training。 And this takes a few minutes。 So while it's running。
+  id: totrans-157
   prefs: []
   type: TYPE_NORMAL
+  zh: 这种处理批次的性能如何？显然，目前这是一个随机模型。我们只是初始化了Bert作为骨干网络，然后堆叠了一个带有随机权重的线性层，所以这算是一个无用的损失，目标是在训练后使其下降。酷，所以我现在要运行训练。这需要几分钟。因此在它运行时。
 - en: we'll then watch the accelerate video， which will show us how to。Well， maybe
     not。 maybe I'll just run this and then see if there's any questions。Okay。So。DK
     crazy diviv asks。We're using Bt base uncased and the article mentions word piece
     for Bt。 but we Pip installed transformer sentence piece， are we're using it here。
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们会观看加速视频，它会向我们展示如何。嗯，也许不是。也许我会先运行这个，然后看看是否有任何问题。好的。DK crazy diviv问。我们正在使用Bt
+    base uncased，文章提到Bt使用的是WordPiece，但我们通过pip安装了transformers的sentence piece，我们在这里使用它吗？
 - en: If I were to reverse engineer， how would I programmatically get from checkpoint
     and figure out which tokenize。 that's a great question。So。The question we have
     is。 why are we doing Pip install transformformers sentence piece？So this is an
     optional dependency。 which is a different tokenization algorithm that is used
     by models like XLM Robbaa。
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我想反向工程，我该如何以编程方式从检查点获取并弄清楚使用哪个分词器。这是个好问题。所以。我们的问题是。为什么我们要进行Pip安装transformers
+    sentence piece？这是一个可选依赖项，它是XLM Robbaa等模型使用的不同分词算法。
 - en: And it's listed as an optional dependency because it's a bit heavy。 so if you
     don't want to use any models that don't require sentence piece for the tokenization。
     you can just leave it and it will work。So for example。 if we just did PIip install
     with transformers， we will get word peace for free。
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: 它被列为可选依赖项，因为它有点重。因此，如果你不想使用任何不需要句子分片进行分词的模型，可以直接不安装，它仍然会正常工作。所以例如，如果我们仅通过transformers进行Pip安装，我们将免费获得wordpiece。
 - en: it will come part of it， but if we want to use these other models we have to
     define explicitly the sentence piece dependency。So that's like maybe clarifies
     the first part of the question。We're always using wordpiece with Bt and we only
@@ -1066,75 +1407,100 @@
     in the course is because there are some cases later in the future parts where
     we're going to be using the sentence piece tokenizer and so it's just useful if
     we just always have access to it。
+  id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: 它会作为一部分，但如果我们想使用其他模型，就必须明确地定义句子分片依赖项。所以这可能澄清了问题的第一部分。我们始终与Bt一起使用wordpiece，仅在需要时才为模型安装句子分片。我们在课程中包含它的原因是，因为在未来的某些部分中，我们会使用句子分片分词器，因此如果我们始终能够访问它会很有用。
 - en: Okay， so。If I were to reverse engineer， how would I programmatically get from
     checkpoint to figuring out which tokenizer to use？
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，如果我想反向工程，我该如何以编程方式从检查点弄清楚使用哪个分词器？
 - en: Okay， so maybe we can。I'll answer this in two ways。 so the simplest way is the
     following in transformers。We have an auto model。AClas for different types of models，
     so this auto model will just do the the encoding and we also have auto tokenizer。And。Oh，
     oops。Input。And these classes， they do this I pairing。 So if I take auto tokenizer
     from。
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，所以也许我们可以。我将用两种方式来回答这个问题。所以最简单的方法如下，在transformers中。我们有一个自动模型。适用于不同类型模型的AClas，因此这个自动模型将进行编码，我们也有自动分词器。哦，哎呀。输入。这些类会进行配对。所以如果我从自动分词器获取。
 - en: Pre trained。 And I put B base。Uncaseed。It will automatically assign the tokenizer
     that was associated with that checkpoint and then load it into my tokenization
     of my tokenizer object。And similarly， if I do auto model。From pre trained。 And
     I do the same。嗯。Checkpoint。
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: 预训练。我放入B基础。无大小写。它会自动分配与该检查点关联的分词器，然后加载到我的分词器对象的分词中。同样，如果我做自动模型。从预训练。然后我做同样的。嗯。检查点。
 - en: it will automatically figure out that for that checkpoint I need these set of
     weights。So the most important thing that you need to know is just to make sure
     that you use the same checkpoint for both the tokenizer and the model when you
     do the from pretrained and so what I often do in my code is I'll have an explicit
     variable。
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: 它会自动确定对于该检查点我需要这组权重。所以你需要知道的最重要的事情就是确保在使用from pretrained时，分词器和模型使用相同的检查点。因此，我在代码中经常会有一个显式变量。
 - en: which is Bt base uncaseops。Like this， and then I'll just load this variable
     into all of my pre trained。Calls so that then I know that they're matched。🤧啊。Okay，
     so that's sort of， let's say。 standard way of how we link these things together。嗯。😊，Now
     you're asking。 how could we programmatically get from checkpoint to tokenizer？Let's
     have a look at what's inside。
+  id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是Bt基础无大小写的内容。像这样，然后我会将这个变量加载到我的所有预训练调用中，这样我就知道它们是匹配的。🤧啊。好的，这就是我们将这些东西连接在一起的标准方法。嗯。😊，现在你在问。我们如何以编程方式从检查点获取到分词器？让我们看看里面有什么。
 - en: One of these model files。这这这。Let's just check that my training is working。😔，Yeah，Good。Okay。
     so in the model we have a config。And。This config。Let's see。Okay。 so the config
     tells us the name of the checkpoint。嗯。So。If you wanted to programmatically make
     sure that， I mean。
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些模型文件之一。这这这。让我们检查一下我的训练是否正常。😔，好的，很好。好的。在模型中，我们有一个配置。这个配置。让我们看看。好的。这个配置告诉我们检查点的名称。嗯。所以。如果你想以编程方式确保，我的意思是。
 - en: let's suppose you start with like the config。I guess what you could do is you
     could then use this attribute as the thing that you feed to the tokenizer。 So，
     for example， I could do tokenizer equals auto tokenizer from pretrain。And then
     I would take my model， I would take my config， and then I would access what is
     it？
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设你从配置开始。我想你可以把这个属性用作传递给分词器的内容。因此，例如，我可以这样做：tokenizer 等于 auto tokenizer from
+    pretrain。然后我会拿我的模型，我会拿我的配置，然后我会访问它是什么？
 - en: Is it name？哦。Can I exit this as an attribute。Yeah， so I could do this。So I could
     load my tokenizer this way and then this would let's say guarantee that the checkpoints
     match。 but to be honest this is like a bit complicated， so I would more often
     than not just recommend defining a variable with your checkpoint and then just
     feeding that variable into your tokenizer model。So I hope that answers that question，
     D， crazyative。😔，But feel free to ask if it's not clear。Okay。
+  id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: 是名字吗？哦。我可以把这个当作一个属性吗？是的，我可以这样做。所以我可以这样加载我的分词器，这样可以保证检查点匹配。但老实说，这有点复杂，所以我更倾向于定义一个变量来保存检查点，然后把这个变量传递给分词器模型。我希望这能回答你的问题，D，crazyative。😔，但如果不清楚，请随时问。
 - en: so our model is pretty close to being done with the training and you can see
     that by default in the trainer。 every 500 steps， the model will run an evaluation
     on the validation set and log the loss。By default。 So this is just the training
     loss。But the thing that Sylvan explained in the video is that what we really want
     to do is compute metrics like accuracy or F1 score or whatever。And so the way
     you do this in practice is you define a function called compute metrics。
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们的模型接近完成训练，你可以看到在训练器中默认每 500 步，模型将在验证集上进行评估并记录损失。默认情况下。这只是训练损失。但 Sylvan 在视频中解释的事情是我们真正想做的是计算像准确率或
+    F1 分数这样的指标。因此，实际上你这样做的方式是定义一个名为 compute metrics 的函数。
 - en: And this metrics function has to basically return a dictionary where you have
     a key corresponding to the name of the metric。And then the values that you would
     compute from your predictions。And so in this example here。 Sylvan is leveraging
     the Datas library， which has its own metrics as well。And then once you have loaded
     the metric for this task in glue。
+  id: totrans-171
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个指标函数基本上必须返回一个字典，其中包含与指标名称对应的键，以及你从预测中计算出的值。因此在这里的这个例子中，Sylvan 利用 Datas 库，该库也有自己的指标。一旦你加载了该任务在
+    glue 中的指标。
 - en: you just have to extract the predictions and the ground truth labels。And then
     you can just do metric。compute and this will automatically create this dictionary
     for you which you can then feed into the trainer as follows so you can do compute
@@ -1142,147 +1508,195 @@
     it will then compute the metrics in addition to the training loss and this is
     quite handy because this is how you can track the performance of the model on
     the validation set as you train and you can make decisions about okay。
+  id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: 你只需要提取预测和真实标签。然后你只需调用 metric.compute，这将自动为你创建这个字典，然后你可以将其传递给训练器，如下所示，因此你可以像这样计算指标，这样默认情况下每
+    500 步就会计算一次指标，除了训练损失之外，这非常方便，因为这就是你在训练时跟踪模型在验证集上表现的方法，从而做出决策。
 - en: is it getting better or。あこの。Okay， so let's just have a look at this。 So Okay，
     so good， the model is。Trained。嗯。And you can see that the training loss here is
     around 0。35。 We saw when we did the evaluation loss， it was roughly double， and
     that was with the random weights。 So now， if I run evaluate again。I should see
     hopefully the loss has gone down。Okay。
+  id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: 是在变好还是？啊，这个。好的，我们来看看这个。所以，好吧，模型已经训练好了。嗯。你可以看到这里的训练损失大约是 0.35。当我们进行评估时，损失大约是双倍，并且那是随机权重。所以现在，如果我再运行评估，希望损失能降低。好的。
 - en: it's gone it's gone up， that's very interesting。😊，I'm not sure where that's
     the case。So I'm going to just say that's the demo gods being meant to me。Generally。
     this should have gone down， unusual， might just be a random fluctuation in what
     we've done。Okay。 and so just to sort of dig down a little bit into how we build
     this metrics function。
+  id: totrans-174
   prefs: []
   type: TYPE_NORMAL
+  zh: 它升高了，这很有趣。😊，我不确定为什么会这样。所以我只能说这是演示之神在捉弄我。一般来说，这应该是降低的，反常，可能只是我们所做的随机波动。好的。为了深入探讨我们是如何构建这个指标函数的。
 - en: The trainer has a predict method and you can just feed into that predict method
     data set from data sets。And this predicts method will return an object called
     predictions。And this's how look。So。 this predictions。Is a prediction output object，
     it's just like a data class which has attributes and the attributes it has are
     predictions。So if we look at predictions。Oops。That's not going to work。
+  id: totrans-175
   prefs: []
   type: TYPE_NORMAL
+  zh: 训练器有一个预测方法，您可以将数据集输入到该预测方法中。这个预测方法将返回一个名为predictions的对象。这个对象看起来是这样的。这个predictions是一个预测输出对象，就像一个具有属性的数据类，具有的属性是预测。因此，如果我们查看预测。哎呀，这不行。
 - en: It's just an array of basically all of the logicits from the model and we also
     have the ground truth。Labels listed like as IDs， so this is you know paraphrase，
     not paraphrase， not paraphrase。 on and so forth。So the main work you often have
     to do when you build your compute metrics function is you need to convert your
     logicits into let's say。 integers or label IDs because that's the thing that you
     want to compare against。
+  id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: 这基本上是模型中所有逻辑单位的数组，我们也有真实标签。标签以ID的形式列出，因此这是你知道的同义句、非同义句、非同义句，等等。因此，构建计算指标函数时，您通常需要做的主要工作是将逻辑单位转换为整数或标签ID，因为这是您希望进行比较的内容。
 - en: And so one way to do that is to just compute an AGmax。 which will basically
     say for every prediction in terms of logics。 find the index with the largest or
     the highest logic。And so then once we apply that。 our pres now is a tensor of
     integers。And then I can feed those predictions into my my metric from data sets。
+  id: totrans-177
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，有一种方法是计算AGmax，这基本上会说，对于每个预测的逻辑，找到最大的或最高的逻辑索引。因此，一旦我们应用这个，我们的预测现在是一个整数张量。然后我可以将这些预测输入到我的数据集指标中。
 - en: and then I can run compute on that and it should。Hopefully give us these values。So
     any questions about computing metrics？Okay。😊，So I'm not going to run this last
     cell。 it's just the same thing we did before， it will run the training but instead
     of showing the training loss it will show the validation metrics that we use。
     but I encourage you to play with this yourself， maybe with a new data set just
     to understand how this is really working。
+  id: totrans-178
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我可以在此基础上运行计算，它应该希望给我们这些值。那么关于计算指标有什么问题吗？好的。😊，所以我不打算运行最后一个单元，它只是我们之前做的同样的事情，它将运行训练，但不是显示训练损失，而是显示我们使用的验证指标。不过，我鼓励您自己尝试一下，可能使用一个新的数据集，以便理解它是如何真正工作的。
 - en: Okay so that's the trainer API， this is what I use let's say 90% of the time
     it's just very convenient。 it works and it means I don't have to think too much
     about writing my own lowlevel training script or my training code which can often
     be errorprone right and so a good reason to use like highle APIs like the trainer
     or you know fast AI or Ptorch lightning or whatever is that they abstract away
     a lot of the boilerplate code which if you do it yourself will probably have mistakes。
+  id: totrans-179
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，这就是训练器API，这大约是我90%的时间所使用的，它非常方便，能够正常工作，这意味着我不必过多考虑编写自己的低级训练脚本或训练代码，这通常容易出错。因此，使用像训练器、fast
+    AI或Pytorch lightning这样的高级API的一个好理由是，它们抽象掉了很多模板代码，如果自己做可能会有错误。
 - en: And this has been kind of battle tested through， you know thousands of users。Okay。
     so to wrap up the session， I want to now look at something that's like really
     exciting for me。 at least is Silvan developed a library could accelerate， which
     says， you know。 sometimes I really need to have control of the training loop。And
     you can do this on， you know。
+  id: totrans-180
   prefs: []
   type: TYPE_NORMAL
+  zh: 而且这经过数千名用户的实际检验。好的，结束本次会议，我想现在看看一些对我来说非常令人兴奋的事情。至少是Silvan开发的一个库可以加速，说明，有时我真的需要控制训练循环。您可以在这些方面进行操作。
 - en: CPU and GPU pretty easily。 There's lots of tutorials on doing that。But there's
     been a kind of say trend in the last few years towards having access to like multi
     GPU or TU machines and these offer in principle a lot of speed up because you
     can now distribute your training so you you can distribute your batches to these
     devices。
+  id: totrans-181
   prefs: []
   type: TYPE_NORMAL
+  zh: CPU和GPU的使用相对简单。有很多教程可以做到这一点。但在过去几年中，有一种趋势是访问多GPU或TU机器，这些机器原则上可以提供很多加速，因为您可以分配训练，从而将批次分配到这些设备上。
 - en: do your computations on these devices and then do back propagation through the
     whole say cluster of devices。But in practice， it's been very difficult to do this
     as a beginner and that's because you have to understand all this distributed setup
     in Pytorrch or TensorFlow and again many ways to make errors and you know keeping
     track of how data is basically parallellyed across nodes is a bit of a pain。
+  id: totrans-182
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这些设备上进行计算，然后在整个设备集群中进行反向传播。但实际上，作为初学者做到这一点非常困难，因为你需要理解PyTorch或TensorFlow中的所有分布式设置，再加上容易出错的多种方式，跟踪数据如何在节点之间并行分配也有点麻烦。
 - en: So this accelerate library is designed to make this simple for us and so let's
     take a look at the final video。Is it this one。Ter。Supercharge your by doch training
     loop with eggging face accelerate。There are multiple setups on which you can run
     your training， it could be on CPUU， GPUus， GPUs。Distributed on one machine with
     several devices or even several machines。
+  id: totrans-183
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，这个加速库旨在让我们简单化，让我们看看最后的视频。是这个吗？Ter。通过Egging Face加速你的PyTorch训练循环。有多个设置可以运行你的训练，可能是在CPU、GPU或多个GPU上。分布在一台机器上或甚至多台机器上。
 - en: often called nodes with multiplepo devices。On top of that。 there are new tweaks
     to make your training faster or more efficient。 like mixed precision and dip speed。Each
     of a setup or training trick requires you to change the code of your training
     loop in one way or another and to learn a new API。All were setups sound all by
     the trainer API and also have all field party libraries that can help。
+  id: totrans-184
   prefs: []
   type: TYPE_NORMAL
+  zh: 通常被称为具有多个设备的节点。此外，还有新的调整可以使你的训练更快或更高效，比如混合精度和dip速度。每个设置或训练技巧都需要你以某种方式更改训练循环的代码，并学习新的API。所有的设置都由训练器API管理，还有各种第三方库可以提供帮助。
 - en: The problem with those is that it can feel like a black box and that it might
     not be easy to implement the tweak to the training loop you need。Accelerate has
     been designed specifically to let you retain full control over your training loop
     and be as nontrusive as possible with just four lines of code to add to your training
     loop you are shown of the example of the training loop video。
+  id: totrans-185
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些的一个问题是，它可能会让人感觉像一个黑箱，且实现你所需的训练循环调整可能不容易。Accelerate被特别设计成让你保持对训练循环的完全控制，并尽可能不干扰，只需向你的训练循环添加四行代码，你可以在训练循环视频的示例中看到。
 - en: Accelerate will install all the seteps and training tricks monsoons on the first
     slide。It's only one API to learn on master instead of 10 different ones。More specifically。
     you have to import and instant sheet an accelerator object that will handle all
     the necessary code for your specific set。Then you have to send it to model， optimizer，
     and data you're using in the prepare method。
+  id: totrans-186
   prefs: []
   type: TYPE_NORMAL
+  zh: Accelerate将会在第一张幻灯片上安装所有的步骤和训练技巧。只需学习一个API，而不是10个不同的。更具体地说，你必须导入并即时创建一个加速器对象，它将处理你特定设置所需的所有代码。然后，你需要将其发送到模型、优化器和你在prepare方法中使用的数据。
 - en: This is the main method to remember。Accelerate on those device placement。 so
     you don't need to put your batchge on the specific device you're using。Finally。
     you have to replace the lost dot backward line by Ac tall dot backward loss。And
     that's all it。Accelator also involves distributed evaluation。You can still use
     the classic evaluation loop。
+  id: totrans-187
   prefs: []
   type: TYPE_NORMAL
+  zh: 记住这是主要的方法。Accelerate处理设备放置，因此你不需要将你的批量放置在你正在使用的特定设备上。最后，你需要用`Ac tall dot backward
+    loss`替换丢失的`dot backward`行。就这样。加速器还涉及分布式评估。你仍然可以使用经典的评估循环。
 - en: such as what we saw in the training group video， in which case all processes
     will perform the full evaluation。To use a distributed evaluation， you just have
     to adapt your evaluation look like this。 that along the evaluation that error
     to the acceleratedccelerator or per like training。Then you can dismiss the line
     that places the batch on the proper device。
+  id: totrans-188
   prefs: []
   type: TYPE_NORMAL
+  zh: 就像我们在训练组视频中看到的那样，在这种情况下，所有过程将执行完整评估。要使用分布式评估，你只需将评估循环调整如下，沿着评估将错误传递给加速器，或像训练一样。然后你可以省略将批量放置在适当设备上的那一行。
 - en: And just before passing your predictions and labels to your metric。 use accelerator
     to gather to give the predictions and labels from each process。A distributed training
     script has to be launched several times on different processes， for instance。
     one per GPU you're using， you can use the Pytoch tools to do that if you're familiar
     with them。
+  id: totrans-189
   prefs: []
   type: TYPE_NORMAL
+  zh: 在将你的预测和标签传递给你的指标之前，使用加速器来收集每个过程的预测和标签。一个分布式训练脚本必须在不同的进程上多次启动，例如，每个GPU一个，如果你熟悉它们，可以使用PyTorch工具来实现。
 - en: The Acrate also provides an easy API to configure your setup and launch your
     training script。In a terminal， run accelerate Config and answer a small questionnaireer
     to generate a configuration file with all the relevant information。Then you can
     just run accelerate launch followed by the past or your training script。In a notebook。
     you can use a notebook launcher function to launch your training。
+  id: totrans-190
   prefs: []
   type: TYPE_NORMAL
+  zh: Acrate还提供了一个简单的API来配置你的设置并启动你的训练脚本。在终端中，运行accelerate config并回答一个小问卷，以生成包含所有相关信息的配置文件。然后你可以运行accelerate
+    launch，后面跟上你的训练脚本。在笔记本中，你可以使用笔记本启动函数来启动训练。
 - en: '![](img/a1136557282a500704797139dc43d7b8_30.png)'
+  id: totrans-191
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a1136557282a500704797139dc43d7b8_30.png)'
 - en: '![](img/a1136557282a500704797139dc43d7b8_31.png)'
+  id: totrans-192
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a1136557282a500704797139dc43d7b8_31.png)'
 - en: Okay。So before we have a look at low level training loops in Pytorch and the
     Accelator。 there's a question from EBtan who says，Can I find out how many labeled
     samples do we need to get good results with transfer learning and fine tuning？
+  id: totrans-193
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的。在我们查看Pytorch和加速器中的低级训练循环之前，有个问题来自EBtan，他问，我可以找出需要多少标记样本才能在迁移学习和微调中获得好结果吗？
 - en: Is there a rule of thumb here？That's a really， really good question。😊，At least
     in my experience。 the answer really depends on the task that youre trying to tackle
     so generally speaking and you know the language that you're dealing with and the
@@ -1290,76 +1704,98 @@
     my perspective is that text classification is generally one of the simpler tasks
     to tackle with this and in a sort of standard text classification context you
     may only need maybe 100 samples with transfer learning to get quite good results。
+  id: totrans-194
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有没有经验法则？这是个非常，非常好的问题。😊，至少在我看来，答案真的取决于你想要解决的任务，所以一般来说，你需要考虑你所处理的语言和领域，这些都是需要考虑的因素。从我的角度来看，粗略的层次结构是文本分类通常是最简单的任务之一，在标准文本分类的背景下，你可能只需要大约100个样本，通过迁移学习可以获得相当不错的结果。
 - en: And of course， the thing that you should always do is build a baseline， so build
     a really。 really simple model， not a transformer， do something like naive phase
     or logistic regression or something like this。Just as a sanity check that on your
     small data set， your， your， your results when they。 do they transfer from the
     training set to the。Validation set because there's a really。
+  id: totrans-195
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然，你应该始终做的事情是建立基准，因此构建一个非常，非常简单的模型，不要使用变换器，做一些像朴素贝叶斯或逻辑回归之类的事情。仅仅作为一个理智检查，看看在你的小数据集上，当你的结果是否能从训练集转移到验证集，因为确实存在。
 - en: really good chance of overfitting here。So roughly a few like a hundred to a
     few hundred samples for text classification。 at least for me has worked well，
     but then it gets a bit harder as you do different tasks so if you move to say
     question answering。
+  id: totrans-196
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有很大的过拟合风险。所以大致上，几百个样本对于文本分类来说至少对我来说效果很好，但随着你处理不同的任务，这会变得有点困难，比如如果你转向问答。
 - en: Here there's like say， two strategies you can take。So one strategy。Which is
     maybe the first one to start with。Is if you're doing question answering or extractive
     question answering like S。Is to look for a model that has been trained already
     on squad in your domain ideally。 So let's suppose I was doing。Squad in German，
     which is a bit different to the standard case。
+  id: totrans-197
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有两种策略可以选择。其中一种策略，可能是开始时的第一种，就是如果你在进行问答或抽取式问答，比如S，那么要寻找一个在你所在领域的SQUAD上已经训练好的模型。假设我在做德语的SQUAD，这与标准情况有些不同。
 - en: maybe I look for squad here。And， let's see。I believe there's a German squad
     and maybe I can specify the language to German。Okay， we don't have that。So let's
     have a look， I believe。There's a company called Deepset who have done this It's
     called Quad， okay。So German here is basically a language model that has been fine
     tuned on a German version of S。
+  id: totrans-198
   prefs: []
   type: TYPE_NORMAL
+  zh: 也许我在这里寻找SQUAD。让我们看看。我相信有一个德语SQUAD，也许我可以将语言指定为德语。好的，我们没有那个。让我们看看，我相信，有一家公司叫Deepset做了这个，它叫Quad，好的。所以德语在这里基本上是一个在德语版本的S上微调的语言模型。
 - en: and now this lets you answer questions in German。Um， so。😊。Then I would take
     this model and if my corpus is in German， but it's like， you know， custom。 maybe
     it's my business data， I would then just try to see how this model works on that
     data set。Now。 generally， you'll find that it doesn't perform as good as the original
     squad model。
+  id: totrans-199
   prefs: []
   type: TYPE_NORMAL
+  zh: 这使你能够用德语回答问题。嗯，所以。😊。然后我会拿这个模型，如果我的语料库是德语，但它是定制的，可能是我的商业数据，我会尝试看看这个模型在那个数据集上的表现。通常，你会发现它的表现不如原始的SQUAD模型。
 - en: And then you will do some say domain adaptation from the S model to your domain。
     so you basically just do a little bit of fine tuning on your domain and typically
     you'll then see the model adapts to your corpus and you'll get much better performance。And
     in that context for， say， question answering， typically you need light on the
     scale of a few thousand。 you， a thousand to a few thousand examples to get at
     least good results。
+  id: totrans-200
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后你将会从S模型到你的领域进行一些领域适配。所以你基本上只是对你的领域进行一些微调，通常你会看到模型适应你的语料库，并且你会获得更好的表现。在这个背景下，比如问答任务，通常你需要大约几千个示例，大约一千到几千个示例才能获得至少不错的结果。
 - en: But you have to be very careful because sometimes when you do this domain adaptation
     from one model to another。 if you sort of overfit your domain， you'll end up forgetting
     all of the good features that the fine tune model had to start with and so it's
     generally tricky in that sense。
+  id: totrans-201
   prefs: []
   type: TYPE_NORMAL
+  zh: 但你必须非常小心，因为有时候在将一个模型的领域适配到另一个模型时，如果你过度拟合你的领域，你将会忘记微调模型起初具备的所有优良特征，因此在这个意义上通常是很棘手的。
 - en: 嗯。😊，And then for other tasks like named entity recognition， this is I think
     very problem specific。 it really depends on the entities， what are the frequencies
     of the entities that you have and here again I think you're dealing with on the
     scale of like a few thousand examples to get okay results。
+  id: totrans-202
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗯。😊 然后对于其他任务，比如命名实体识别，我认为这是非常问题特定的，真的取决于你拥有的实体，以及这些实体的频率，我觉得你可能需要几千个示例才能获得还不错的结果。
 - en: So to summarize。😊，嗯。😊，Okay， well just to summarize I'll answer to the question。
     so to summarize we're talking about maybe a few hundred examples。 labeled examples
     for simple problems like text classification to a few thousand。For the labeled
     case and maybe even more if you're doing something that's very niche。
+  id: totrans-203
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以总结一下。😊 嗯。😊 好吧，简单总结一下我的回答。我们在谈论的可能是几百个标记示例用于像文本分类这样简单的问题，或者几千个。在标记的情况下，如果你做的事情非常小众，甚至可能需要更多。
 - en: I mean if you're doing maybe I'm doing like maybe like legal analysis of legal
     contracts and maybe the domain is so different from any existing pret model that
     I actually need to do some sort of finetning on a legal corpus that looks like
     what I have and so then you don't need labeled data per say you just need a lot
     of unlabeled legal contracts that you can then finet a language model and then
     transfer to your domain。
+  id: totrans-204
   prefs: []
   type: TYPE_NORMAL
+  zh: 我的意思是，如果我在做法律合同的法律分析，可能这个领域与现有的预训练模型有很大不同，我实际上需要对一个看起来像我拥有的法律语料库进行某种微调，因此你不需要标记数据，你只需要大量的未标记法律合同，然后可以微调一个语言模型，接着转移到你的领域。
 - en: Okay， so there's a follow up question which says， thank you for the answer。
     What if I have more than a few hundred。Of classes for a task。 Okay， yes。 so then
     that thing gets very hard。I would put that in so maybe for text classification
@@ -1373,34 +1809,46 @@
     and most of the time it's like a power law so you'll have a few classes that are
     very common and then there'll be some that are quite rare just because you know
     they tags or something that people don't really use very often。
+  id: totrans-205
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，所以有一个后续问题，感谢你的回答。如果我有几百个以上的任务类别，好的，是的。那么这就变得非常困难。我认为这可以归入文本分类的复杂性层次中，最简单的情况是二分类，接着可能是多分类，然后是有很多标签的多分类，比如一百或一千个不同的标签或类别，然后多标签大致在这个范围内，所以我认为总体上会更难。如果你有一个数据集，有一千个或更多类别，你会发现模型会对主要类别非常自信，通常在这些类别中总会有一种分布，而大多数情况下是幂律分布，所以你会有一些非常常见的类别，还有一些非常稀有的类别，只因为这些标签或者其他人不常用。
 - en: So the model will struggle a lot in those rare tasks， in those rare tags or
     those rare labels。And so then what I would recommend you do is you try to focus
     on the hard examples。 so you try to collect more data for those rare examples
     to boost the signal for the model。So you don't need maybe like 10 more examples
     of the common class。
+  id: totrans-206
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以模型在那些稀有任务、稀有标签或稀有标签上会遇到很多困难。因此，我建议你集中精力处理困难示例，尽量收集更多稀有示例的数据，以增强模型的信号。因此，你可能不需要多收集10个常见类别的示例。
 - en: you need100 more examples of the rare ones。m but in general。 as long as you
     can kind of get like a good coverage in the labels。 it should work except it it's
     just going to be tough because， you know， with 100 options。 the model has more
     chances to pay mistakes。And in fact， there's a very good trick I should mention。
+  id: totrans-207
   prefs: []
   type: TYPE_NORMAL
+  zh: 你需要多100个稀有示例。但一般来说，只要在标签上有良好的覆盖，它应该就能工作，只是会比较困难，因为你知道，有100个选项，模型犯错误的几率更高。事实上，有一个很好的技巧我应该提到。
 - en: is that when you train a model。You can extract or compute the loss that the
     model has on every single sample。And if you do this， this will tell you roughly
     which examples the model is most confused about。 and this is actually a technique
     from FastAo。![](img/a1136557282a500704797139dc43d7b8_33.png)
+  id: totrans-208
   prefs: []
   type: TYPE_NORMAL
+  zh: 训练模型时，你可以提取或计算模型在每个样本上的损失。如果你这样做，这将大致告诉你模型在哪些示例上最困惑，而这实际上是FastAo中的一种技术。![](img/a1136557282a500704797139dc43d7b8_33.png)
 - en: '![](img/a1136557282a500704797139dc43d7b8_34.png)'
+  id: totrans-209
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a1136557282a500704797139dc43d7b8_34.png)'
 - en: Well， I don't know if they've entered it， but。At least this is where I first
     saw it。![](img/a1136557282a500704797139dc43d7b8_36.png)
+  id: totrans-210
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗯，我不知道他们是否已经输入了，但至少这是我第一次看到它的地方。![](img/a1136557282a500704797139dc43d7b8_36.png)
 - en: And。Let's see if we look here at fast AI。嗯。So， I think。It's called most confused。😔，But
     let's see。Okay， so things have changed a bit in V2。😔，Okay， I can't quite find
     it。 but basically in the FAA library they have a function which lets you plot
@@ -1409,60 +1857,84 @@
     what's happening is it just confuse the loss for every example in your validation
     set and then just sorts them and so if you do that yourself manually you'll be
     able to see where you need to improve the model。
+  id: totrans-211
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么，让我们看看fast AI。如果我们看看。嗯。我想，叫做“最困惑的”。😔，但让我们看看。好的，V2中情况有所变化。😔，好的，我找不到它。但基本上在FAA库中，他们有一个功能，可以绘制模型遇到困难的最困惑示例，然后通过这些你可以找出需要收集更多数据的地方。但大致来说，发生的情况是它会混淆验证集中每个示例的损失，然后对它们进行排序，所以如果你手动这样做，你将能看到需要改进的地方。
 - en: Okay， so let's wrap up by diving into the Acelerate library。So the difference
     here is that。 instead of using。![](img/a1136557282a500704797139dc43d7b8_38.png)
+  id: totrans-212
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，我们来总结一下，深入了解Acelerate库。所以这里的区别是，不是使用。![](img/a1136557282a500704797139dc43d7b8_38.png)
 - en: 。
+  id: totrans-213
   prefs: []
   type: TYPE_NORMAL
+  zh: 。
 - en: '![](img/a1136557282a500704797139dc43d7b8_40.png)'
+  id: totrans-214
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a1136557282a500704797139dc43d7b8_40.png)'
 - en: GPPU， we're going to use the TPU hardware in the back end。 So we activate it
     this way。![](img/a1136557282a500704797139dc43d7b8_42.png)
+  id: totrans-215
   prefs: []
   type: TYPE_NORMAL
+  zh: GPPU，我们将使用后端的TPU硬件。所以我们以这种方式激活它。![](img/a1136557282a500704797139dc43d7b8_42.png)
 - en: And we install transformers and data sets， as we always have。![](img/a1136557282a500704797139dc43d7b8_44.png)
+  id: totrans-216
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们像往常一样安装transformers和数据集。![](img/a1136557282a500704797139dc43d7b8_44.png)
 - en: And the the main thing that you need to do now is you need to install some accelerate
     and some TPU specific libraries。 So in order to run pie torch on a TPU， we need
     some special wheels they called more basically a binary file that we can install
     here and。
+  id: totrans-217
   prefs: []
   type: TYPE_NORMAL
+  zh: 你现在需要做的主要事情是安装一些加速和TPU特定的库。因此，为了在TPU上运行PyTorch，我们需要一些特殊的轮子，他们基本上称之为二进制文件，我们可以在这里安装。
 - en: This will then allow us to run Pitorrch on TPU。And the first thing we do is
     always the same。 it's like we just tokenize the data， So this is pretty familiar
     by now。And one thing that Sylvan is doing here is he's removing all of the text
     columns or the columns that we don't really want for training。Explicitly。This
     is to make it easier so that the trainer doesn't get confused when it receives
     raw text。
+  id: totrans-218
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将允许我们在TPU上运行PyTorch。我们要做的第一件事总是一样的，就像我们只是对数据进行分词。这现在已经很熟悉了。Sylvan在这里做的一件事是移除所有文本列或我们在训练时不需要的列。明确来说，这是为了让训练者在接收原始文本时不至于混淆。
 - en: And he's also renaming the label column to labels and this just helps the trainer
     auto detect which column it should compute the metrics on。And the other thing
     that he's doing is setting the format of the elements in the data set to pytorage
     tensors。So I'm just going to show you that just quickly。If we look at our tokenized。Tokenized
     data sets。 train oops。😔，We look at one element。嗯m。Now， what we've seen so far
     in today's session is that everything was just a Python list。
+  id: totrans-219
   prefs: []
   type: TYPE_NORMAL
+  zh: 他还将标签列重命名为 labels，这有助于训练器自动检测应该在哪一列计算指标。另一件他正在做的事情是将数据集中元素的格式设置为 Pytorch 张量。因此，我只是想快速给你展示一下。如果我们查看我们的标记化数据集，训练
+    oops。😔，我们查看一个元素。嗯m。现在，我们在今天的会议中看到的一切都只是一个 Python 列表。
 - en: but you can change the format of your data set from lists to。Tsors。 but you
     can also set them to tensorflow tensors if you're running Tensorflow or even I
     think you can do it for nu arrays。 So it really depends on what you're operating
     on that you want to manipulate。 but this is a very handy way of switching the
     formats。Oops。So yeah， torture， by torture doesn't？
+  id: totrans-220
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是你可以将数据集的格式从列表更改为张量。但你也可以将它们设置为 TensorFlow 张量，如果你运行 TensorFlow，甚至我认为你可以为 nu
+    数组执行此操作。因此，这实际上取决于你想要操作和修改的内容，但这是一个非常方便的切换格式的方法。哎呀，所以，是的，逼迫，真的不？
 - en: Okay， so because we're not using the trainer and we're going to use our own
     training loop。 we need to have what are called data loaders so in Pytorch。There's
     kind of two concepts that are important one is like the concept of a data set。
     So these are the things that we've been doing most of the time so far。
+  id: totrans-221
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，因为我们不使用训练器，而是使用自己的训练循环，我们需要被称为数据加载器的东西，所以在 Pytorch 中，有两个重要的概念，一个是数据集的概念。这些都是我们到目前为止大部分时间所做的事情。
 - en: But then when you want to feed batches to your model， there's an API called
     data loader。 which will automatically sample from the data set and then provide
     those samples to the model so you basically feed in the data set you care about
@@ -1470,96 +1942,125 @@
     that's important for training just in case you have some you ordering in your
     data that is artificial you can specify the batchche and also how the collation
     is done for the dynamic padding so speak。
+  id: totrans-222
   prefs: []
   type: TYPE_NORMAL
+  zh: 不过，当你想要向模型输入批次时，有一个叫做数据加载器的 API，它会自动从数据集中抽样，然后将这些样本提供给模型，因此你基本上只需输入你关心的数据集，然后可以指定是否想要随机打乱元素，这对训练很重要，以防数据中有一些人为的顺序，你还可以指定批次以及动态填充的汇总方式。
 - en: Okay， so you can create a data loader and then if you look at an element of
     a data loader。 it's just going to be basically a set of tensesors associated with
     each batch。And then we stand here our model just like we always have。And。Then。Once
     this is loaded。We can just do a sanity check that if we feed a single batch which
     just has input IDs。
+  id: totrans-223
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，你可以创建一个数据加载器，然后如果你查看数据加载器的一个元素，它基本上将是与每个批次关联的一组张量。然后我们像往常一样在这里站着我们的模型。一旦加载完成，我们可以做一个
+    sanity check，如果我们输入一个只有输入 ID 的单一批次。
 - en: attention to mask label， and these other ideas I want to talk about。 it returns
     a tensor which is the loss， so this is like a sanity check that our model is working。And
     because we're going low level into the training loop。 now。 we also have to specify
     the optimization algorithm for basically minimizing the loss function。
+  id: totrans-224
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意掩码标签，以及我想谈论的其他想法。它返回一个张量，这是损失，因此这就像是一个 sanity check，确保我们的模型在工作。而且，因为我们进入训练循环的低层次，现在我们还必须指定优化算法，以基本上最小化损失函数。
 - en: So I would say the default， a very good default is to use this modified at called
     Adam W。 and you can just use the default learning rate。And you just pass the parameters
     of your model that you want to optimize。So just to show you quickly， if we have
     a look at this。This is a generator。 so I need to create a list。And then if I just
     look at one of these elements。
+  id: totrans-225
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我会说默认情况下，一个非常好的默认值是使用这个修改过的 Adam W，并且你可以使用默认的学习率。你只需传递你想要优化的模型参数。因此，只是为了快速展示，如果我们看看这个，这是一个生成器。所以我需要创建一个列表。如果我查看其中一个元素。
 - en: You can see that the parameters of the model consists of tenss。 So these are
     like our weights and biases。Along with a name that tells us you know which layer
     we're looking at and so by feeding these to Adam we're basically saying here is
     my instructions of weights and biases I want you to optimize and then it will
     proceed when we do the training to do the optimization。
+  id: totrans-226
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到模型的参数由张量组成。因此，这些就像我们的权重和偏置。还有一个名称告诉我们你知道我们在看哪个层，因此通过将这些传递给Adam，我们基本上是在说这是我想要你优化的权重和偏置的指令，然后在我们进行训练时它将继续进行优化。
 - en: And there's also some extra things we need to specify， like the number of epochs。
     the number of training steps and the scheduler for how we want to sort of control
     the learning rate during training。So if these concepts are kind of the first time
     you've seen them。 we have information in the course notes to help you understand
     that。
+  id: totrans-227
   prefs: []
   type: TYPE_NORMAL
+  zh: 还有一些额外的东西需要指定，比如epochs的数量、训练步骤的数量，以及我们想要控制训练期间学习率的调度器。因此，如果这些概念是你第一次见到，我们在课程笔记中提供了信息来帮助你理解。
 - en: but basically speaking using a constant learning rate throughout training is
     suboptimal。 both in terms of speed in terms of just getting to like a good local
     minimum and so we have schedulers which will essentially control how the learning
     rate increases and decreases during training。
+  id: totrans-228
   prefs: []
   type: TYPE_NORMAL
+  zh: 但基本上说，在整个训练过程中使用恒定学习率是次优的，无论是在速度上还是在获得良好局部最小值方面，因此我们有调度器，基本上控制学习率在训练期间如何增加和减少。
 - en: And so we can define the scheduler。Did I not define the optimizer？Okay， so。I'm
     just going to load this， this is just an example when you're doing things on a
     GPU。 you specify the device。And this is then more or less what a training loop
     looks like in Pytage。 So you say we're going to do training now， so we're going
     to activate dropout in the model。
+  id: totrans-229
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此我们可以定义调度器。我没有定义优化器吗？好的。那么，我只是要加载这个，这只是你在GPU上进行操作时的一个示例。你需要指定设备。这大致就是在Pytage中训练循环的样子。因此你说我们现在要进行训练，所以我们将在模型中激活dropout。
 - en: And then we loop over for every epoC and every single epoC we're going to loop
     over every single batch in the training data loader and then we're going to set
     those tensors to the device we care about we're going to compute the loss and
     then we're going to just do the backward pass in Pywch and then we just basically
     take a step now with the optimizer and the scheduler and then we update and this
     will then just do training in a normal way on a GPU。
+  id: totrans-230
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们对每个epoch循环，对于每个epoch，我们将循环遍历训练数据加载器中的每一个batch，然后我们将这些张量设置到我们关心的设备上，我们将计算损失，然后我们将在Pywch中执行反向传播，然后我们基本上会与优化器和调度器一起采取一步，现在我们更新，这将以正常方式在GPU上进行训练。
 - en: Or a CPU。But the thing that's kind of cool is that we're using a TPU so we have
     in a TPU we have eight cores on coLab and so what we want to do is we want to
     basically be able to do distributed training this way。And there's a nice kind
     of picture here of what's going on in the distributed training。Where。
+  id: totrans-231
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者是CPU。但有趣的是我们正在使用TPU，因此在TPU中，我们在coLab上有八个核心，因此我们想要基本上以这种方式进行分布式训练。这有一个关于分布式训练中发生的事情的不错的示意图。
 - en: I'll put this in the chat， you can have a bunch of different machines and each
     machine has its own process so you can think of each process as being like its
     own little like a controller that is processing data。And so what we can do with
     with a TPU is we can think of it as having eight different processes and we need
     to communicate the sharing of weights。
+  id: totrans-232
   prefs: []
   type: TYPE_NORMAL
+  zh: 我会把这个放在聊天中，你可以拥有一堆不同的机器，每台机器都有自己的进程，因此你可以把每个进程想象成一个处理数据的小控制器。因此，我们可以将TPU视为拥有八个不同进程，我们需要进行权重共享的通信。
 - en: essentially how we do back propagation across these processes。 and the accelerateerate
     library allows us to do that very simply。嗯。By， basically。We define something called
     an accelerator。And then we have to prepare the data loader。 the evaluation data
     loader and the model using this accelerator API。
+  id: totrans-233
   prefs: []
   type: TYPE_NORMAL
+  zh: 本质上，我们如何在这些进程中进行反向传播。而accelerate库使我们能够非常简单地做到这一点。嗯。基本上，我们定义了一种叫做加速器的东西。然后我们必须使用这个加速器API准备数据加载器、评估数据加载器和模型。
 - en: and this will automatically work out what hardware I'm running。 how many cores
     I have how should I distribute the data。 how I should you know basically copy
     the model across these nodes or these devices and then everything else after that
     is exactly the same as we saw before。 so you don't really have to change。Anything
     in your training script is basically untouched it's just the way you prepare the。
+  id: totrans-234
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将自动计算我正在运行的硬件。我有多少核心，应该如何分配数据。我基本上应该如何在这些节点或设备之间复制模型，之后的其他一切与我们之前看到的完全相同。所以你实际上不需要更改。你的训练脚本基本上保持不变，只是准备数据的方式有所不同。
 - en: The the training loop。So if you run this， it won't work as it stands。 what we
     need to do is we need to wrap all of the accelerator code inside a training function。And
     so if we do that。We just need to。Put all this。Inside a training function。And one
     thing I discovered yesterday is we need to make sure that the data loaders we
     use here。诶诶。
+  id: totrans-235
   prefs: []
   type: TYPE_NORMAL
+  zh: 训练循环。所以如果你这样运行，这不会生效。我们需要做的是将所有的加速器代码包装在一个训练函数内。所以如果我们这样做。我们只需要。把这一切。放在一个训练函数里。而我昨天发现的一件事是，我们需要确保我们在这里使用的数据加载器。诶诶。
 - en: ice's have a quick look。嗯。And you are not global variables。That's how I think
     I just do this。Okay。😊。So here I'm just initializing a model I'm initializing the
     optimizes we did before and here the magic of accelerate is basically going to
@@ -1567,28 +2068,38 @@
     a model and an optr and then everything else runs as normal and this is where
     this question about tokenizing the data is important so what we've been doing
     previously is using dynamic padding so we don't use padding in the tokenizer directly。
+  id: totrans-236
   prefs: []
   type: TYPE_NORMAL
+  zh: 先快速看一下。嗯。你没有全局变量。这就是我想我该怎么做。好的。😊。所以在这里我只是初始化一个模型，初始化我们之前做的优化器，而这里“加速”的魔力基本上会为我们做这个分布式放置，所以它将给我们数据加载器、模型和优化器，然后其他一切正常运行，这也是为什么关于标记化数据的问题很重要，我们之前所做的是使用动态填充，因此我们在标记化器中并不直接使用填充。
 - en: And in fact， here， if you look at when I tokenized the data。Where is it。Here
     but in my tokenizing function， I just use truncation。But because we're running
     on a TPU。 I want to activate padding， so I need to put padding equals true。And
     I'm going to specify the max length that I want to pad not to the max length of
     the full model because it's too large。
+  id: totrans-237
   prefs: []
   type: TYPE_NORMAL
+  zh: 事实上，在这里，如果你查看我标记化数据的时刻。在哪里。这里在我的标记化函数中，我只使用了截断。但是因为我们在TPU上运行。我想要激活填充，所以我需要设置padding
+    equals true。我将指定我想要填充的最大长度，而不是整个模型的最大长度，因为那太大了。
 - en: I'm just going to specify kind of arbitrarily that it's 128 tokens。And so once
     you've paded all your inputs， we can then wrap。There。 we need to then also re
     instantsantiate the data loaders here。And now， we can。Create a training function。And
     fingers crossed， this will then allow us to launch。A TPU training。So。
+  id: totrans-238
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将任意指定为128个标记。所以一旦你填充了所有输入，我们就可以进行包装。我们需要在这里重新实例化数据加载器。现在，我们可以。创建一个训练函数。希望这样能让我们启动。TPU训练。
 - en: Okay， so while that's working， let's have a quick look at the questions。嗯。Okay。
     so there's a question from I am Home。 There is a hugging past Titch session today
     and tomorrow all labels chapter 3。 The main difference is the time zones。 So we
     try to capture people who live on the sort of east and west of globe。And there's
     also a TensorFlow session tonight with Matt Carrigan。
+  id: totrans-239
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，在这进行的同时，我们快速看看问题。嗯。好的。那么有一个来自“I am Home”的问题。今天和明天都有一个关于Titch的拥抱会，所有标签都是第三章。主要的区别在于时区。所以我们尝试捕捉居住在地球东西两侧的人们。今晚还有一个与Matt
+    Carrigan的TensorFlow会议。
 - en: and so that's for all the TensorFficionados。嗯。There's a question from Uns about
     regarding the domainspec cases for text classification before I train my model
     for my downstream task would it make sense to pre- fine tune with language modeling
@@ -1599,8 +2110,10 @@
     but on my corpus won't be so much but if my corpus is like very different in domain
     like maybe it's like source code or something like this then then you will see
     typically a bigger boost in performance。
+  id: totrans-240
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这是为所有TensorFficionados准备的。嗯。有一个来自Uns的问题，关于文本分类的领域特定案例，在我为下游任务训练模型之前，预先微调语言建模以更好地理解上下文是否有意义？是的，通常来说，这是非常好的做法，你在性能上获得的提升与领域转移密切相关，因此如果我有一个在维基百科上预训练的Bt，而我的文本又有点像说事实性或类似于维基百科的内容，那么我从微调我的语料库中获得的提升就不会那么大，但如果我的语料库在领域上非常不同，比如可能是源代码之类的，那么通常会看到性能的更大提升。
 - en: So it's always worth doing and in general it's pretty easy to do。There's a question
     about if I want to classify articles instead of sentences does Bert and friends
     still work or should I look at something like a long form that's a great question
@@ -1609,47 +2122,63 @@
     or two things use a model which can process longer sequences like longform or
     big bird from memory I think they can process 4096 tokens so they're much much
     bigger like eight times bigger than BerRT。
+  id: totrans-241
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这总是值得去做，并且通常比较容易做到。有一个问题是，如果我想对文章而不是句子进行分类，Bert和相关模型是否仍然有效，或者我是否应该考虑像长文本这样的模型，这个问题非常好。因此，Bert基本上是有限的，或者说大多数这种普通模型的限制是512个标记，如果你的文档长度超过这个，你将不得不做一两件事，使用一个可以处理更长序列的模型，比如longform或big
+    bird，记得它们可以处理4096个标记，所以它们要大得多，大约是Bert的八倍。
 - en: But if that's not like sufficient， you'll then have to basically chunk or kind
     of split your document into passages and then you'll have to feed those passages
     into the model and then do some aggregation to work out how you build up a kind
     of representation for the full document that you can then feed into your classification
     head。
+  id: totrans-242
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是如果这还不够，你就需要将文档基本上分块或拆分成多个段落，然后将这些段落输入到模型中，再进行一些聚合，以便构建出一个可以输入到分类头的完整文档的表示。
 - en: There's a question about to improve the baseline model， take a Roberta model，
     train it。Yes。 that's right， exactly。I am Holmes asks， what is the difference between
     using P Toch's default Adam W and the transformformers one？
+  id: totrans-243
   prefs: []
   type: TYPE_NORMAL
+  zh: 有一个问题是关于如何改进基线模型，使用Roberta模型进行训练。是的，没错，正是这样。我是Holmes，问道使用P Toch的默认Adam W和transformers的版本有什么区别？
 - en: That's a good question off the top of my head I don't know my guess is that
     there are some I mean there's a long history of Adam and not being implemented
     correctly so。😊，Yeah， off the top of my head， I have a suspicion that perhaps the
     transformers one is is correct and the point which one maybe isn't but。
+  id: totrans-244
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是个好问题，按理说我不太确定，我猜是有一些，我的意思是Adam有很长的历史，可能没有被正确实现。所以，😊，对，我的直觉是transformers的版本可能是正确的，而P
+    Toch的那个可能不太准确，但。
 - en: Maybe do some experiments， find out， sorry， I don't know that off top of my
     head。Okay， cool。 So those are more or less the questions。 Let's see Something
     went wrong。 And this is now where I get to do some debugging。 So let's have a
     look。 I got an error and it says you should probably activate truncation or padding
     with padding equals true。
+  id: totrans-245
   prefs: []
   type: TYPE_NORMAL
+  zh: 也许做一些实验，找出答案，抱歉，我当下不太清楚。好的，酷。这些问题大致上就是这些。让我们看看出了什么问题。这时我可以进行一些调试。让我们看看。我收到了一个错误，提示你可能应该激活截断或填充，并将填充设置为true。
 - en: To have batched tenses with the same length。Okay， so I clearly did something
     wrong when I。D find my data loader。 So let's have a look。At what went wrong。So。I。First，
     tokenized。My daughter。Which is good。I then need to set the format。啊。I want to
     get rid of this clay function。This co function is going to be the thing that gave
     us problems。Okay， so now。Should be我 to。
+  id: totrans-246
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了批处理具有相同长度的张量。好吧，所以我显然在数据加载器时做错了什么。让我们看看出了什么问题。首先，我对我的数据进行了标记，这是好的。然后我需要设置格式。啊。我想摆脱这个clay函数。这个co函数将是导致我们问题的所在。好吧，现在应该是我。
 - en: Wunch the TPU training。Okay， so this is now launching on these eight TPU cores。And
     fingers crossed。 I didn't make any mistakes。Great， thanks for the feedback。 I
     am Homeme and DK creativezative。 I'm hoping you're enjoying it and thanks for
     the questions。😊，So this looks like it is training。And。Yes， great。 Oh no， no problem。Okay，
     so。What is it， Stack expects tensor to be equal size but 96。😔。
+  id: totrans-247
   prefs: []
   type: TYPE_NORMAL
+  zh: 启动TPU训练。好的，现在在这八个TPU核心上启动。希望不会出错。谢谢你的反馈。我是Homeme和DK creativezative。希望你喜欢这个，谢谢你的提问。😊，所以这看起来在训练中。是的，太好了。哦不，没问题。好的，那么。Stack期望张量大小相等，但有96。😔。
 - en: Okay， so。嗯。Okay， so here I'm going to do some， I know we're running over time。
     so I apologize。 I'm going to see， let's see if I can debug this。Fast and if not。
     then I'll just fix the notebook later。 Okay， so so basically I'm running into
@@ -1658,89 +2187,115 @@
     entry0 and 100 entry 1 So this is suggesting to me that somehow I've screwed up
     the tokenization So instead of having everything with the same shape there there's
     some。
+  id: totrans-248
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，所以。嗯。好的，在这里我将进行一些，我知道我们超时了。对此我感到抱歉。我会看看，看看能否快速调试。如果不能。那我稍后会修复笔记本。好的，基本上我遇到了一个错误，这是一个很好的方式来看到TPU比其他的更有趣。它说堆栈期望每个张量大小相等，但在entry0有96，在entry1有100。所以这让我觉得我在分词时搞错了。因此，原本应该是相同形状的，现在却出现了一些问题。
 - en: Like something's gone wrong。 So let's have a look at。My data loader。Okay， so。So
     let's have a look at my tokenization first。When I did tokenization。I set padding
     equals true and max length。And so now。When I look at my tokenized data sets。Let's
     have a look at。这这这。So maybe let's have a look at the input Is。So the input IDs。
+  id: totrans-249
   prefs: []
   type: TYPE_NORMAL
+  zh: 好像出错了。让我们看看。我的数据加载器。好的，所以。我们先看看我的分词。当我进行分词时。我设置了padding为true和最大长度。所以现在。当我查看我的分词数据集。让我们看看。这这这。所以也许让我们看看输入是。输入ID。
 - en: we want these to all be the same shape。I'm going to just take。嗯。Let's just take，
     say 10 of them。And then what I'm going to do is I'm just going to say tensort
     size。For tensor in this。So let's see what we get。Okay， so this is telling me that
     all the tensors have the same size。 which is good。嗯。Let's just do a sanitity check，
     if I。Go from the end。Yeah， thats good。Okay。
+  id: totrans-250
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们希望它们都是相同形状。我会直接取。嗯。我们就取，比如说10个。然后我将说张量大小。对于这个张量。所以让我们看看得到的结果。好的，这告诉我所有的张量都有相同的大小。这很好。嗯。我们再做个完整性检查，如果我。从末尾开始。是的，这很好。好的。
 - en: so my tensors are all the same size。And should just do this again。And let's
     see。Now。What is complaining on about this？😔，Invalid type。吓。Because I need to。Return
     tenses equals。Quite toch。This is so annoying， okay， let's not do that。The too
     petting。And then let's remove the column。 Let's set the format， good。Okay。😊，Now
     let's see what we get here。Okay。
+  id: totrans-251
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我的张量都是相同大小的。应该再做一次。让我们看看。现在。关于这点有什么抱怨？😔，无效类型。吓。因为我需要。返回张量等于。相当恼人。好的，别这样做。太过麻烦。然后我们去掉这一列。设置格式，好的。😊，现在让我们看看这里得到的是什么。好的。
 - en: so we can see there's already a problem。Interesting， so。嗯。😊，呵呵。😊，Cool， all right。
     so we're going to try and deg this and in fact， if someone sees what I'm doing
     wrong。 this will be great so so here's a problem The problem is I've created a
     data loader。😊，Here。 train data loader， and it's complaining that when I try to
     put the tensesors together。
+  id: totrans-252
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们已经看到有个问题。有趣，所以。嗯。😊，呵呵。😊，很好，好的。所以我们要尝试调试这个，实际上，如果有人看到我做错了什么。这将很棒，所以这是一个问题，问题是我创建了一个数据加载器。😊，在这里。训练数据加载器，它抱怨当我尝试把张量放在一起时。
 - en: they're somehow not of the same shape。So。Let's see what have I done wrong？Okay，
     so。Let's do that。😔。So， let's。Let's look at the first batch。And let's look at。Okay，
     let's look at the input I。And then let's look at the size of each tensor。In here。啊哈。😊，So。It
     seems that my tokenized data sets are not。The ones I was looking for。
+  id: totrans-253
   prefs: []
   type: TYPE_NORMAL
+  zh: 它们的形状似乎不一样。所以。让我们看看我做错了什么？好的，所以。我们来试试。😔。那么，让我们。看看第一批。然后我们来看。好的，看看我输入的内容。我，然后看看每个张量的大小。在这里。啊哈。😊，所以。看来我的分词数据集不是。我想要的那些。
 - en: So let's have a look what's going on if I look at。So we saw before that these
     were meant to be 89 in size。 so let's have a look at this。And then we go T dot
     size or T in here。嗯。Okay。So。You can see that in my tokenized data sets， all the
     inputs have size 89。But。For some reason。 in the batch of the training loader，
     everything is 71。嗯。😊，So let's see。Wch。
+  id: totrans-254
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么让我们看看发生了什么。如果我查看的话。我们之前看到这些应该是89的大小。让我们看看这个。然后我们这里使用T.dot.size或T。嗯。好的。所以。你可以看到在我的分词数据集中，所有输入的大小都是89。但是。出于某种原因。在训练加载器的批次中，一切都是71。嗯。😊，所以让我们看看。Wch。
 - en: Why would that be different， Why would the batch be different。嗯。对对都。嗯。😊。Don't
     tell me I need this clay function。😔，No， that's not what I want because now。😔。They're
     going to be dynamically powdered。嗯。😊，That's an interesting thing I'm going to
     have a look。う。So， let's see if we have。So just to just to tell you what I've done。
+  id: totrans-255
   prefs: []
   type: TYPE_NORMAL
+  zh: 为什么会不同，为什么批次会不同。嗯。对对都。嗯。😊。别告诉我我需要这个合并函数。😔，不，这不是我想要的，因为现在。😔。它们将动态填充。嗯。😊，这很有趣，我要看看。う。所以，让我们看看我们有没有。就只是告诉你我做了什么。
 - en: so I've reintroduced a collate function into the。Into the data load。Here。I was
     pretty sure we don't want to have that because we want to have fixed sizes。But，
     let's see。If this has。Sort of magically debug the problem Okay。 so for reasons
     I don't understand adding a collate function to the data loader seems to have
     been important。
+  id: totrans-256
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我重新引入了一个合并函数到数据加载中。在这里。我相当确定我们不想这样做，因为我们想要固定的大小。但是，让我们看看。这是否有某种魔力来调试这个问题。好的，所以出于我不明白的原因，向数据加载器添加合并函数似乎是重要的。
 - en: For letting us do the training。 And you can see here I'm doing on one TPU core，
     I'm running。The training。And what should all these。All these messages right。 you
     can see here these are the warning messages you often get when you instantiate
     a model and so what accelator has done is it's copied the model into the eight
     TPU core but done so in a way that the initialization is the same so we've got
     the same model at the start。
+  id: totrans-257
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们进行训练。你可以看到在一个TPU核心上，我正在运行。训练。所有这些消息对吧。你可以看到这些是你在实例化模型时经常收到的警告消息，所以加速器所做的就是将模型复制到八个TPU核心，但以相同的方式进行初始化，所以我们一开始得到了相同的模型。
 - en: And then it should instantiate。Another seven parallel trainings。 so now we're
     training the model copied in eight pieces across eight cores and each core will
     get its own batch of data and then back propagation will be synchronized so that
     then when we update the model we update based on the losses computed for every
     device。
+  id: totrans-258
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后它应该实例化另外七个并行训练。所以现在我们在八个核心上训练复制的模型，每个核心都会获得自己的数据批次，然后反向传播将被同步，这样当我们更新模型时，我们是基于每个设备计算的损失进行更新。
 - en: 嗯。😊，So this is yeah， obviously a little bit of a hack I'm a bit unhappy that
     it's everything I said about needing to use padding seems to have been mixed up
     with the colade function but yeah that's the joy of life coding maybe you can
     dive into this yourself and try to understand exactly you know how one is to set
     this up there's something I'm still kind of missing in my head at the moment。
+  id: totrans-259
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗯。😊，所以这显然有点小技巧，我有点不高兴的是，我所说的需要使用填充的内容似乎和合并函数混淆在一起，但这就是生活编码的乐趣，也许你可以自己深入了解并尝试理解究竟如何设置这个，我脑中仍然有一些东西缺失。
 - en: 😊，But neverthelessus， that's some。Let's say training on a TPU and one thing
     that I would recommend you do as like a homework problem is try to work through
     these training notebooks on a new data set。And so you can find many options on
     the hub， so if you go to data sets。
+  id: totrans-260
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，但是无论如何，那是一些。我们可以说在TPU上训练，我推荐你做的一个家庭作业是尝试在新的数据集上处理这些训练笔记本。所以你可以在中心找到许多选项，如果你去数据集。
 - en: you can look at text classification and for most of the time this will cover
     all the things you have everything you need now to study this。And the other thing
     that you can。Do is， for example， we're doing paraphrase detection right。 we're
@@ -1751,39 +2306,56 @@
     or not and so this would be a nice data set to use which would be very similar
     to what we've done but give you a kind of different flavor of dealing with different
     columns and different inputs so I'm going to put that in the chat as a suggestion。
+  id: totrans-261
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看看文本分类，大部分时间这将涵盖你现在学习这一切所需的所有内容。而你可以做的另一件事是，比如说，我们正在进行同义句检测。我们正在检查两个句子是否是彼此的同义句。另一个例子是Corera数据集。这是像Stack
+    Overflow或Q&A网站上非常常见的问题，因为有人在提问，有时问题是重复的，你通常依赖社区标记问题是否重复。因此，这将是一个不错的数据集，可以使用，与我们做的非常相似，但会让你体验到处理不同列和不同输入的不同风格，所以我会把这个建议放在聊天中。
 - en: And yeah， I would also recommend see if you can get the TPU training working。
     I think TPUs are a very exciting development because they offer in principle eight
     times as much speed up in principle。 but reality is around three times。Over conventional
     say GPU training and they're free on co labs。 so now you can use accelerate to
     train faster than normal and do really cool distributed stuff。
+  id: totrans-262
   prefs: []
   type: TYPE_NORMAL
+  zh: 而且我也建议你看看能否让TPU训练运行起来。我认为TPU是一个非常令人兴奋的发展，因为它们原则上提供八倍的加速，但实际上大约是三倍。与传统的GPU训练相比，它们在Colab上是免费的。因此，现在你可以使用TPU来比正常情况下更快地训练，并进行非常酷的分布式操作。
 - en: All right so that was a bit longer and sorry for that that's my fault for not
     being able to deog my code so I hope you enjoyed it and tonight there's Matt doing
     TensorFlow if you're into that and I think tomorrow is then Sil doing the next
     round of this。
+  id: totrans-263
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，这有点长，对此我感到抱歉，这都是我没有调试代码造成的，希望你喜欢今晚的内容，Matt将做TensorFlow，如果你对此感兴趣，而我认为明天Sil将进行下一轮的讲解。
 - en: 😊，And next week， we're going to be。Diving into the sort of more advanced parts
     of the library。 So what we're going to be doing next week is how do we share models
     in the hub。 How do we push everything to the hub， How do we share metrics。 And
     so this is going to be the kind of icing on the cake for everything we don't。
+  id: totrans-264
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，下周我们将深入库的更高级部分。我们下周要做的事情是如何在中心共享模型，如何将所有内容推送到中心，以及如何共享指标。因此，这将是我们所做的一切的点睛之笔。
 - en: So I'm not back for chapter four， but Omar is and Omar is awesome。 he's in the
     chat right now and so you should definitely come。 I'll actually be in the chat
     so it'll be like a body swap。And so I hope you guys see you then。😊。Cool， so with
     that I'm going to stop recording and stop the stream so if you have any questions。
+  id: totrans-265
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我还没回到第四章，但Omar回来了，Omar很棒。他现在在聊天中，所以你绝对应该来。我实际上也会在聊天中，所以这就像换身体一样。希望你们到时候能见到我。😊。好的，所以我现在要停止录制和直播，如果你有任何问题。
 - en: just put them in the forum and see you next time。![](img/a1136557282a500704797139dc43d7b8_46.png)
+  id: totrans-266
   prefs: []
   type: TYPE_NORMAL
+  zh: 把它们放在论坛上，我们下次见。![](img/a1136557282a500704797139dc43d7b8_46.png)
 - en: '![](img/a1136557282a500704797139dc43d7b8_47.png)'
+  id: totrans-267
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/a1136557282a500704797139dc43d7b8_47.png)'
 - en: 。
+  id: totrans-268
   prefs: []
   type: TYPE_NORMAL
+  zh: 。

@@ -84,6 +84,8 @@
   id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一种NLP任务是生成文本内容。因此，完成一个提示是Jo smartF在你尝试撰写消息时所做的。通常它会建议使用X，甚至Gmail现在在邮件中也这样做。嗯。填充B
+    syn文本，这是另一种文本生成。另一种任务是从文本中提取答案。
 - en: so given a very long text and then a question being able a model。 being able
     to extract the answer to that model。The answer sort of that question。 sorry from
     the context or generating these new sentences from an input text。 So this is for
@@ -92,6 +94,7 @@
   id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，给定一个非常长的文本，然后一个问题，模型能够提取该问题的答案。答案是从上下文中提取，或根据输入文本生成这些新句子。例如，生成文本的翻译，总结我最近看到的一个新文本的内容。
 - en: for instance， a casual style or more。嗯。Foral style。So those are all the kind
     of enLP testque tackle in the course， especially in section2。And so it's rather
     challenging because a computer doesn't process information the same way as we
@@ -99,6 +102,7 @@
   id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，一种随意风格或更正式的风格。所以这些都是课程中，特别是第2部分将要处理的各种enLP任务。而且这相当具有挑战性，因为计算机处理信息的方式与我们不同。因此，一个新的变换模型让你可以深入学习。
 - en: Are able to from like a few from a few samples that you have label for are able
     to generalize properly without you having to to create。Rs for instance， so before
     deep learning was all the rage。 one thing would be to pass the text and have some
@@ -108,6 +112,7 @@
   id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 能够从你有标签的几个样本中恰当地进行概括，而不需要你去创建。例如，在深度学习盛行之前，一件事情是解析文本并有一些特殊规则，如果我看到这个词，也许意味着这是积极的；如果我看到这个词，也许意味着这是消极的，等等。对吧。所以这不是现在所做的，主要是使用可变换模型和再次使用face库。
 - en: And those models， you should， if you have not yet you should follow an introduction
     to a deep learning course。 those model are usually trained and they don't follow
     a set of given role that has been written by your human。 they have weights， which
@@ -118,6 +123,7 @@
   id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些模型，如果你还没有，你应该跟随一个深度学习课程的介绍。这些模型通常是经过训练的，并不遵循人类编写的一组特定规则。它们有权重，遵循一种称为梯度下降的算法，并根据输入的训练数据，它们在每一步使损失函数或指标变得更好，因此我们最终得到的模型有点像一个黑匣子。但我们可以使用并在数据上进行良好的概括，但看起来与训练集的数据相似。
 - en: So let's look at what this model can do in practice。 so there are two ways we'll
     be able to do that the first way is by clicking on this open in color button。So
     Collab is a platform maintained by Google which provides free access to resources
@@ -125,14 +131,18 @@
   id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们看看这个模型在实践中能做什么。因此，我们有两种方式可以做到这一点，第一种方式是点击这个“在颜色中打开”按钮。所以Collab是由谷歌维护的平台，提供免费的资源访问，例如在Jupyter
+    Notebook环境中的GPU或TPU。
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_1.png)'
   id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_1.png)'
 - en: So， you can execute。Good directly。![](img/1b5e5fce582c60e42117fe3a72e59e6a_3.png)
   id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，你可以直接执行。好。![](img/1b5e5fce582c60e42117fe3a72e59e6a_3.png)
 - en: Inside it。And so the first cell needs to be executed to install all the library
     I'm going to let this run where we go through a little bit of the course and then
     we'll be able to run the other good samples I'm going to come back to that window
@@ -143,6 +153,7 @@
   id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 在其中。因此，第一个单元需要执行以安装我将要使用的所有库。我会让它运行，我们会稍微了解一下课程，然后我们就能运行其他好的样本，我稍后会回到那个窗口。所以变换模型无处不在，现在许多公司都在使用它们，这些是使用Gface模型的公司的示例，我们有预训练的模型，并可能在内部使用它们。
 - en: And the Transformless library is the main interface library that provide access
     to those model。And the bottle up。Which we're going to have a quick look。And a
     little bit later。 the model app is where all post Sptrain model as taught is part
@@ -219,6 +230,7 @@
   id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看一下保罗与情感分析管道的第一阶段。该管道对给定输入执行文本分类，并确定它是正面还是负面。这里它将正面标签归因于给定文本，置信度为 95%。你可以将多个文本传递给同一管道，这些文本将作为批处理一起处理并传递给模型。
 - en: The output is a list of individual results in the same order as the input text。Here
     we find the same label on score for the first text。 and the second text is church
     negative with a confidence of 99。9%。The zero shot classification pipeline is a
@@ -226,6 +238,8 @@
   id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 输出是与输入文本顺序相同的个别结果列表。这里我们发现第一个文本的分数标签相同。第二个文本的标签是 church negative，置信度为 99.9%。零-shot
+    分类管道是一种更通用的文本分类管道。
 - en: It allows you to provide the labels you want。Here we want to classify our input
     text along the labels education。 politics， and business。The pipeline successfully
     recognizes it's more about education than the yoga labels。With a confidence of
@@ -235,6 +249,7 @@
   id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 它允许你提供想要的标签。这里我们想沿着教育、政治和商业的标签对输入文本进行分类。管道成功识别出它与教育标签的关系比与瑜伽标签更密切，置信度为 84%。接下来，我们的任务是文本生成管道，它将完成给定提示。输出是带有一点随机性的生成，因此每次在给定提示上调用生成器对象时都会有所不同。
 - en: Up until now， we've used the Biman APIpi with a default model associated to
     each task。But you can use it with any model that has been freetrained or fine
     tune on this task。Oh。Going on the model H， again F dogo slash models。You can filter
@@ -243,6 +258,8 @@
   id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 直到现在，我们一直使用与每个任务相关的默认模型的 Biman APIpi。但你可以使用任何已经经过自由训练或微调的模型。哦。继续使用模型 H，再次是 F
+    dogo slash models。你可以按任务过滤可用模型。我们之前示例中使用的默认成人模型是 GPT2。
 - en: but were many more models available and not just in English。Let's go back to
     the next generation pipeline and load it with another model， distill JPT2。This
     is a lighter version of GT2 created by the Eingface team。When applying the pipeline
@@ -250,6 +267,8 @@
   id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 但还有许多其他可用模型，而不仅仅是英文。让我们回到下一个生成管道，并用另一个模型 distill JPT2 加载它。这是由 Eingface 团队创建的
+    GT2 的轻量版本。将管道应用于给定提示时，我们可以指定多个参数。
 - en: Such as the maximum length of the generated text， all the number of sentences
     we want to return since there is some randomness in the generation。Generating
     text by guess the X12 in is intense， why the pertraining objective of GPT2。The
@@ -259,6 +278,8 @@
   id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如生成文本的最大长度，以及我们想返回的句子数，因为生成中存在一些随机性。通过猜测 X12 生成文本是强度很大的，这也是 GPT2 的预训练目标。领域质量管道是
+    Bro 的一个预训练目标，目的是猜测质量的值。在这种情况下，我们根据模型询问两个最可能缺失单词的值。
 - en: and get mathematical or computational as possible answers。And a task transform
     most model than form is to classify each word in a sentence instead of the sentence
     as a wall。One example of this is named entity recognition。Which is the task of
@@ -267,6 +288,7 @@
   id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 并尽可能获得数学或计算方面的答案。任务转换模型的形式是对句子中的每个单词进行分类，而不是将整个句子作为一个整体。例如，这就是命名实体识别，它的任务是在句子中识别如人、组织或地点等实体。这里，模型正确识别了人，sva。
 - en: the organization， Gface， as well as the location Brooklyn inside the input text。The
     group entities equal2 argument use is to make the pipeline group together the
     different walls linked to the same entity。 such as eggging and face here。novel
@@ -276,6 +298,8 @@
   id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 组织 Gface 以及输入文本中的布鲁克林位置。该组实体 equal2 参数的使用是将与同一实体相关的不同墙壁聚集在一起，例如这里的 eggging 和
+    face。通过 byg API 提供的新任务是提取式问题和对不起。提供一个上下文和一个问题，模型将识别上下文中包含答案的文本范围。
 - en: Getting short summaries of very longats is also something the Transers library
     can help with with the summarization bike。Finally， the last task supported by
     the B API is translation。Here we use a French English model found on the Mo hub
@@ -285,14 +309,18 @@
   id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 获取非常长文本的简短摘要也是Transformers库可以帮助的，特别是在摘要方面。最后，B API支持的最后一个任务是翻译。在这里，我们使用一个法英模型，从Mo
+    Hub找到，用于获取我们快速文本的英文版本。这里是我们在这个视频中研究的所有任务的简要总结，可以通过现代Hub中的影响切换进行尝试。
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_9.png)'
   id: totrans-34
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_9.png)'
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_10.png)'
   id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_10.png)'
 - en: Yeah。Sorry about the song at the beginning so I'm trying to get better wrong
     A I can't have my head on at the same time I'm playing the video so that part
     seem to have been dealt with and for the fact that it's leggy and be angle a lot
@@ -302,10 +330,12 @@
   id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的。抱歉一开始的歌曲，我试着让自己更好，我不能在播放视频的同时专心，所以那部分似乎已经处理过了，对于延迟的问题，我尝试找到解决方案，但我不知道可能是什么，所以下一个视频可能会更好，我试着最小化操作系统，画面可能会更好。
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_12.png)'
   id: totrans-37
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_12.png)'
 - en: So the question I skipped before the video was when you do pipeline sentiment
     analysis。 how can you determine which model it is using the dog string doesn't
     help much。 Pat true its not in the documentation and we should probably make an
@@ -314,6 +344,7 @@
   id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我在视频前跳过的问题是，当你进行管道情感分析时，如何确定使用的是哪个模型，狗字符串并没有太大帮助。确实，它没有在文档中，我们可能应该努力使其更好地记录，最好的方法是检查源代码，现在我将给你展示这一点。所以，你需要继续。
 - en: Into pipelines in it and that's a great question we actually make it more accessible
     and easier to see。 but you need to go in the source code in the pipelines module
     and in the in file and where you will see for each pipeline the default model
@@ -323,6 +354,7 @@
   id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 进入管道，这是个很好的问题，实际上我们使其更易于访问和查看，但你需要进入管道模块的源代码，在文件中，你会看到每个管道所使用的默认模型，所以在这里我们使用文本分类和情感分析的默认模型是基于SS2英语的。
 - en: Don't know why the person didn't pick a short name， but。That's the name of it。Let
     me see if there are any other questions。Yes， I'll send the links of the next video
     on the chat。 or you can follow on the on the course chapter at the same time and
@@ -331,16 +363,19 @@
   id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 不知道为什么那个人没有选择一个短名字，但这就是它的名字。让我看看还有没有其他问题。是的，我会在聊天中发送下一个视频的链接，或者你可以同时在课程章节中跟随并直接查看它们，好的，看起来有很多其他问题，所以让我们继续。那么这一章。
 - en: So the rest of this section is just a good samples but shown in the video。 So
     I'm not going to go through that Instead， I'm going to look at my call up， which
     hopefully。Should as。![](img/1b5e5fce582c60e42117fe3a72e59e6a_14.png)
   id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以本节的其余部分只是视频中展示的良好示例。所以我不打算详细介绍，而是要看看我的调用，希望。应该是。![](img/1b5e5fce582c60e42117fe3a72e59e6a_14.png)
 - en: I need to restart own time， all lovely。![](img/1b5e5fce582c60e42117fe3a72e59e6a_16.png)
   id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 我需要重启自己的时间，所有都是美好的。![](img/1b5e5fce582c60e42117fe3a72e59e6a_16.png)
 - en: So hopefully it's not going to take a long time to reinstall everything。好好好。Why
     are you being with me。Okay。So for could be a little bit smoother for you。So once
     we have installed the Transformers library， we can run the first cell， for instance。
@@ -349,6 +384,7 @@
   id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 希望重新安装所有内容不会花太长时间。好好好。你为什么要和我在一起？好的。这样对你会更顺畅一点。一旦我们安装了Transformers库，我们可以运行第一个单元，例如。与视频中的内容相同，没错。V是刚发布的最新版本的书。
 - en: and so we can't run anything on Collab。So that's also lovely。Not sure if we
     can get this。you know your version somehow。あ。Okay， so hopefully the Pytoch works
     folks will fix the bug very soon and you will all be able to run all the collapse
@@ -424,6 +460,7 @@
   id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我认为变压器库现在有大约60种不同的架构，并在论文发布后尽快添加新模型。因此我们将在这里讨论的不是变压器模型内部的细节，而是一个概览。在本节中，我们将探讨三种类型的变压器模型，包括被称为自回归模型的GT模型。
 - en: Wwhichch are transformable models that are basically to generate text。 look
     so what we were talking about before， like when your phone is trying to suggest
     you ideas of words that you could put in the sentence afterward。The other type
@@ -433,6 +470,7 @@
   id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些变压器模型基本上是用于生成文本的。例如，当你的手机试图建议你可以在后续句子中使用的单词时，之前讨论的内容就是这种情况。另一种类型的变压器模型是类似于GT的模型，抱歉，不是编码器模型，而是解码器模型，抱歉，是自回归或解码器模型。
 - en: so those models are best suited to classify things so generate a9 representation
     of the sentence which allows you to either classify the whole sentence。 classify
     every words in the sentence are they also very good for the extractive question
@@ -440,6 +478,7 @@
   id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这些模型最适合分类事物，生成句子的a9表示，使你能够分类整个句子或句子中的每个单词，它们在我们之前讨论的提取式问答任务中也非常有效。
 - en: And the last type of model are the sequence to sequence transformer models are
     encode decos model。 which has the ones that are better suited for the sequence
     to sequence text such as translation。 sumorization， basically writing a new text
@@ -448,6 +487,7 @@
   id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后一种模型是序列到序列的变压器模型，即编码解码模型，它更适合处理序列到序列的文本，如翻译、摘要，基本上是从输入文本写出新的文本。因此，所有这些变压器模型都是语言模型，而前两种类型之间的主要区别在于。
 - en: the encodeders and the decoders is that the decoders are portrayed by kissing
     the next world。 so that's why we are very good at generating text because that's
     how they are betrayed。Whereas the en those models are usually betweened with feeling
@@ -458,6 +498,7 @@
   id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 编码器和解码器的区别在于解码器通过预测下一个单词来进行操作。这就是我们在生成文本方面表现出色的原因，因为这就是它们的运作方式。而编码器模型通常是通过在句子中填充一些随机掩码来进行训练。因此我们这里有两个例子。这些变压器模型非常庞大，我们最开始的开放AGTD模型仅有数百万个参数，而现在我们有数十亿或数百亿个参数的模型。
 - en: Which is why it's very important to reuse this model， which is the whole point
     of transfer learning。 so transfer learning is when you take your betweentrain
     model。 which is huge and between on lots and lots of amount of data which took
@@ -467,12 +508,14 @@
   id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是为什么重用这个模型非常重要的原因，这就是迁移学习的全部意义。迁移学习是指你使用一个训练好的大模型，该模型在大量数据上进行训练，这需要消耗大量计算资源，排放了大量二氧化碳，然后重用该模型来解决新的任务。你希望处理的任务。因此，通过减少模型，而不是从头开始训练一个新的模型。
 - en: you're saving compute， you're saving money and you need less data than what
     the model always be trained on。Let you see our new questions。Very one question
     is GT3 the only model that allows you to do zero short learning？
   id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 你节省了计算资源，节省了金钱，并且需要的数据比模型训练时所需的少。让我们来看一下我们新的问题。第一个问题是GT3是否是唯一允许零样本学习的模型？
 - en: So that is how this model was advertised， it's not the only one because T5 for
     instance。 has the same kind of prompt where you tell it， for instance。 summarize
     this text or translate this text from this language to this language and so it
@@ -483,14 +526,17 @@
   id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是这个模型的推广方式，但并不是唯一的，因为 T5 也有类似的提示，例如让你总结这段文本或将这段文本从一种语言翻译成另一种语言，因此它也可以进行某种零学习。链接已经被回答过，所以让我们去看迁移学习的视频，希望这次比之前的要好一些，如果你想直接观看，我会在聊天中分享链接。
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_18.png)'
   id: totrans-59
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_18.png)'
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_19.png)'
   id: totrans-60
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_19.png)'
 - en: What is transfer learning？The idea of transfer learning is to leverage signal
     knowledge acquired by a model train with lotss of data on another task。The Model
     A will be trained specifically for task A。Now let's say you want to train Ad all
@@ -499,6 +545,8 @@
   id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 什么是迁移学习？迁移学习的理念是利用在另一个任务上通过大量数据训练的模型所获得的知识。模型 A 将专门为任务 A 进行训练。现在假设你想为不同的任务训练模型
+    B，一个选择是从头开始训练模型。这可能需要大量计算。
 - en: time and data。Instead， we could initialize Model B with the same weights as
     Model A。 transferring the knowledge of Model A on T P。When trend from scratch。
     all the middle's weights are initialized randomly。In this example。 we are training
@@ -506,6 +554,7 @@
   id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 时间和数据。相反，我们可以用与模型 A 相同的权重初始化模型 B，从而转移模型 A 在 T P 上的知识。当从头开始训练时，所有中间的权重都是随机初始化的。在这个例子中，我们正在训练一个模型，以识别两个句子是否相似。
 - en: On the left， it's trained from scratch。And on the right， it's venting a proed
     model。As we can see。 using transfer learning on the preed model yields better
     results。And it doesn't matter if we train longer， so training from scratch is
@@ -513,6 +562,8 @@
   id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 左侧是从头开始训练的模型，右侧是经过预训练的模型。可以看出，使用迁移学习的预训练模型产生了更好的结果。无论我们训练多长时间，从头训练的模型保持在 70%
+    的准确率，而经过迁移学习的模型轻松超过 86%。
 - en: This is because portraytrained models are usually trained on large amounts of
     data but provides a model with a statistical understanding of the language used
     during portraytraining。In computer visions， transfer learning has been applied
@@ -520,6 +571,7 @@
   id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是因为预训练模型通常在大量数据上进行训练，但为模型提供了对训练期间使用的语言的统计理解。在计算机视觉领域，迁移学习成功应用了近 10 年。
 - en: Models are frequently proed on ImageNet by a asset containing 1。2 million of
     photo images。Each image is classified by one of 1000 levels。Training like this。
     unlabeled data is called supervised learning。In natural language processing。 transfer
@@ -528,6 +580,8 @@
   id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型经常在 ImageNet 上经过训练，该数据集包含 120 万张照片。每张图像被分类为 1000 个级别之一。这样的训练方法被称为监督学习，而在自然语言处理领域，迁移学习则相对较新。与
+    ImageNet 的一个关键区别在于，训练通常是自我监督的。
 - en: Which means it doesn't require humanation for the labels。A very common portraying
     objective is to guess the next word in a sentence。Which only requires lots and
     lots of text。GPT2， for instance。 was retrieveed this way using the content of
@@ -535,6 +589,8 @@
   id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 这意味着它不需要人工标注标签。一个非常常见的目标是预测句子中的下一个单词，这只需要大量文本。例如，GPT-2 就是通过使用用户在网络上发布的 4500
+    万个链接的内容进行训练的。
 - en: Another example of selfupvised per training objective is to predict the value
     of randomly massed quals。Which is similar to fit in blood B tests you may have
     done in school。Brt was between this way using the English Wikiped and had100 and
@@ -543,6 +599,7 @@
   id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一个自我监督预训练目标的例子是预测随机掩盖的单词。这类似于你在学校中可能做过的血液测试。这种方法使用了英文维基百科和 100 本已出版的书籍进行训练。在实践中，通过抛弃给定模型的头部来应用迁移学习。
 - en: that is its last layers focused on the per training objective。And' with a new
     randomly initialized a suitable for the desk attempt。For instance。 when invented
     in the build model earlier， we remove the a that classified Mque and replaced
@@ -552,6 +609,7 @@
   id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 其最后的层专注于预训练目标。并且使用一个新的随机初始化的适合任务的模型。例如，在之前构建模型时，我们移除了分类Mque的层，并用一个有两个输出的分类器替换，因为我们的任务在两个层面上。为了尽可能高效，使用的预训练模型应与其微调的任务尽可能相似。
 - en: For instance， if the problem is to classify German sentences。It's best to use
     a German portraying model。But with the good comes to bad。 the proed model does
     not only transfer its knowledge， but also any bias it may contain。ImageNe mostly
@@ -559,6 +617,7 @@
   id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，如果问题是对德语句子进行分类，最好使用一个德语模型。但好事与坏事相伴，预训练模型不仅转移了它的知识，还包括它可能包含的任何偏见。ImageNe主要包含来自美国和西欧的图像。
 - en: so models fine tuned with it usually will perform better on images from these
     countries。But Beni also studied the bias in the prediction of its Gpyy3。 which
     was between using the guess and X world objectives。Changing the gender of the
@@ -567,23 +626,28 @@
   id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，使用微调模型通常会在这些国家的图像上表现更好。但是贝尼也研究了其**Gpyy3**预测中的偏差，涉及使用猜测和**X世界目标**。将**E Westbury**的性别从“他”更改为“她”会改变预测结果，主要为中立目标。
 - en: To almost only physical ones。In the model code of the GT2 Mor。 Open AI also
     acknowledges its bias and discourages its use in systems that interact with humans。![](img/1b5e5fce582c60e42117fe3a72e59e6a_21.png)
   id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 几乎只针对物理模型。在**GT2 Mor**的模型代码中，OpenAI也承认其偏见，并不鼓励在与人类互动的系统中使用它。![](img/1b5e5fce582c60e42117fe3a72e59e6a_21.png)
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_22.png)'
   id: totrans-72
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_22.png)'
 - en: 嗯。![](img/1b5e5fce582c60e42117fe3a72e59e6a_24.png)
   id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗯。![](img/1b5e5fce582c60e42117fe3a72e59e6a_24.png)
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_25.png)'
   id: totrans-74
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_25.png)'
 - en: Okay， so let me see if there are any questions on the video。😔，I don't think
     so。Okay。 so this was what transfer learning is very high level introductionions
     and this is what's usually done with transformerss model。And for instance， the
@@ -594,6 +658,8 @@
   id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，让我看看视频上是否有任何问题。😔 我认为没有。好的，这就是迁移学习的非常高层次的介绍，这通常是用变换器模型完成的。例如，我们之前使用的模型**distill
+    B**，它在**62**数据集上进行了微调，这个数据集包含句子，你需要将它们分类为正面或负面。
 - en: And。Unlesss are are any new questions， I don't think so we're already to dive
     into the transformer architecture a little bit more so Omar will post the link
     of that video in the chat。 I hope it's not too leggy again， so this video is going
@@ -602,6 +668,7 @@
   id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 除非有新的问题，否则我认为我们已经可以稍微深入探讨变换器架构，因此奥马尔将在聊天中发布该视频的链接。我希望这次不会再卡顿，因此这个视频将介绍我们之前简要讨论过的**Odo解码器**与**序列到序列变换器模型**之间的区别。
 - en: Let's study the transformer architecture。This video is the introductory video
     to the Ens。 decoders and Ender decoder series of videos。In the series。 we'll try
     to understand what makes a transformer network and we'll try to explain it in
@@ -609,6 +676,7 @@
   id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们研究变换器架构。这个视频是关于**Ens解码器**和**Ender解码器**系列视频的介绍。在这一系列中，我们将尝试理解变换器网络的构成，并试图用简单的高层次术语进行解释。对神经网络的深入理解并不是必要的。
 - en: but an understanding of basic vectors and tensors may help。To get started。 we'll
     take up this diagram from the original transformer paper entitledAttention is
     All you need by Vawaing it up。As we'll see here， we can leverage only some parts
@@ -617,6 +685,7 @@
   id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 但对基本向量和张量的理解可能会有所帮助。为了开始，我们将引用原始变换器论文中的这一图表，题为**“注意力即一切”**，通过对其进行阐述。如我们所见，我们只能根据我们的目标利用其中的部分内容。我们希望深入探讨这些特定的层，构建出该架构。
 - en: but we' try to understand the different ways this architecture can be used。Let's
     first start by splitting that architecture into two parts on the left you have
     the encoder and on the right。 the decoder。These two can be used together， but
@@ -625,6 +694,7 @@
   id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我们将尝试理解这种架构的不同使用方式。让我们首先将架构分为两部分，左边是编码器，右边是解码器。这两者可以一起使用，但也可以独立使用。让我们理解它们是如何工作的。编码器接受表示文本的输入。
 - en: it converts these text， these words into numerical representations。These numerical
     representations can also be called embeddings or features。We'll see that it uses
     the self attention mechanism as its main component。And we recommend you check
@@ -633,6 +703,7 @@
   id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 它将这些文本，这些词转换为数值表示。这些数值表示也可以称为嵌入或特征。我们将看到它使用自注意力机制作为其主要组件。我们建议你专门查看关于编码器的视频，以理解这种数值表示是什么以及它是如何运作的。
 - en: 😊，We'll study the self attention mechanism in more detail， as well as its bidirectional
     properties。😊。The decoder is similar to the encoder， it can also accept text inputs。It
     uses a similar mechanism as the encoder， which is the masked self attention as
@@ -641,6 +712,7 @@
   id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，我们将更详细地研究自注意力机制及其双向特性。😊。解码器与编码器类似，它也可以接受文本输入。它使用与编码器相似的机制，即掩蔽自注意力。由于其单向特性，它与编码器有所不同，传统上以自回归方式使用。
 - en: Here too， we recommend you check out the video on decoders。 especially to understand
     how all of this works。Combining the two parts results in what is known as an anchor
     decoder or a sequence to sequence transform。The encoder accepts inputs and computes
@@ -650,24 +722,29 @@
   id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，我们也建议你查看关于解码器的视频，特别是为了理解这一切是如何运作的。将这两个部分结合起来，形成了所谓的锚解码器或序列到序列转换。编码器接受输入并计算这些输入的高级表示。这些输出随后传递给解码器。解码器使用编码器的输出和其他输入来生成预测。
 - en: And then predict an output， which is will reuse in future iterations， hence
     the term autoregressive。Finally， to get an understanding of encoder decoders as
     a whole。 we recommend you check out the video on encoder decoder。![](img/1b5e5fce582c60e42117fe3a72e59e6a_27.png)
   id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后预测一个输出，这将在未来的迭代中重用，因此称为自回归。最后，为了全面理解编码器解码器，我们建议你查看关于编码器解码器的视频。![](img/1b5e5fce582c60e42117fe3a72e59e6a_27.png)
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_28.png)'
   id: totrans-84
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_28.png)'
 - en: 。
   id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 。
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_30.png)'
   id: totrans-86
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_30.png)'
 - en: Okay so that was the general introduction and so basically this is the diagram
     you have to remember about the general transformformers architecture and so what
     is an encode decoder or an encode decoder model we dive into that a little bit
@@ -675,6 +752,7 @@
   id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，这就是一般介绍，基本上这是你需要记住的关于一般变换器架构的图表。那么什么是编码解码器或编码解码器模型呢？在深入了解之前，我们稍微讨论了注意力的内容。
 - en: diagramia for the original paper， so the core of the architecture the transformer
     model is this layer called multied attention。 which is a layer that basically
     as indicates base attention。 so it's going to look at your wall sentence。sequence
@@ -688,6 +766,7 @@
   id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 原始论文的图表，所以架构的核心，变换器模型是这个称为多头注意力的层。这一层基本上表明了基本注意力。因此，它将查看你的整个句子。输入序列中的每个词都将计算一个分数，以关注这个词或其他词。这是因为变换器架构最初是为翻译设计的，当你翻译一个特定的词时，你需要这个词，但你需要理解其周围的上下文。例如，你可能需要在词的性别上下文中，如果词是名词，你可能需要其性别，即前一个词，或者后面的某些词。
 - en: So that attention layer is where on top of computing some contextual representation
     of a given world。 it's there to tell them all all for this specific word also
     in to this one in particular this world not so useful but this one you should
@@ -758,16 +837,19 @@
   id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 蒸馏是另一种减少模型大小的方法，其过程是让一个较小的模型尝试输出一个较大模型的结果，并且它的性能仍然相当不错。因此，这背后的直觉是，一个非常大的模型有很多参数。
 - en: but not all of those parameters are really useful。And so let's dive into the
     encoders model so we have three more videos， encoders。 decos and then sequence
     to sequence model。![](img/1b5e5fce582c60e42117fe3a72e59e6a_32.png)
   id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 但并不是所有这些参数都真的有用。因此，让我们深入探讨编码器模型，我们还有三段视频，编码器、解码器，然后是序列到序列模型。![](img/1b5e5fce582c60e42117fe3a72e59e6a_32.png)
 - en: We put it in full screen， and design。![](img/1b5e5fce582c60e42117fe3a72e59e6a_34.png)
   id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将其置于全屏并进行设计。![](img/1b5e5fce582c60e42117fe3a72e59e6a_34.png)
 - en: In this video， we'll study the encoder architecture。An example of a popular
     encoder only architecture is Bt， which is the most popular model of its kind。Let's
     first start by understanding how it works。We'll use a small example using three
@@ -775,6 +857,7 @@
   id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个视频中，我们将研究编码器架构。一个流行的仅编码器架构的例子是Bt，这是同类中最受欢迎的模型。让我们首先了解它是如何工作的。我们将使用三个单词的小示例，将它们作为输入并传递给编码器。
 - en: We retrieve a numerical representation of each word。Here， for example。 the encode
     converts those three words welcomee to NYC in these three sequences of numbers。The
     encode outputs exactly one sequence of numbers per input word。This numerical representation
@@ -782,6 +865,7 @@
   id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们检索每个单词的数值表示。例如，这里的编码器将三个单词“欢迎”、“到”、“NYC”转换为这三个数字序列。编码器对每个输入单词输出恰好一个数字序列。这个数值表示也可以称为特征向量或特征张量。
 - en: Let's dive in this representation。 It contains one vector per word that was
     passed through the encoder。Each of these vector is a numerical representation
     of the word in question。The dimension of that vector is defined by the architecture
@@ -790,6 +874,7 @@
   id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们深入探讨这个表示。它包含一个经过编码器处理的每个单词的向量。每个向量是该单词的数值表示。该向量的维度由基础鸟模型的架构定义，维度为768。这些表示包含了一个单词的值，但具有上下文化。例如。
 - en: the vector attributed to the word2 isn't the representation of only the two
     word。It also takes into account the words around it， which we call the context。As
     in it looks to the left context， the words on the left of the one we studying。
@@ -797,6 +882,7 @@
   id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 与单词2相关的向量不仅是两个单词的表示。它还考虑了周围的单词，我们称之为上下文。例如，它查看左侧上下文，即我们正在研究的单词左边的单词；听到单词“欢迎”，以及右侧的上下文，这里是单词“NYC”。
 - en: and it outputs a value for the word given its context。It is therefore a contextualized
     value。😊。One could say that the vector of 768 values holds the meaning of the word
     within the text。It does this thanks to the self attention mechanism。The self attention
@@ -805,6 +891,7 @@
   id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: 它输出一个值，用于给定上下文中的单词。因此，这是一个上下文化的值。😊可以说，768个值的向量在文本中承载了单词的含义。它依赖于自注意力机制。自注意力机制与单个序列中的不同位置或不同单词相关，以便计算该序列的表示。
 - en: As we've seen before， this means that the originalot representation of a word
     has been affected by other words in the sequence。We won't dive into these specifics
     here， but we' offer some further readings if you want to get a better understanding
@@ -812,6 +899,7 @@
   id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们之前所见，这意味着一个单词的原始表示受到序列中其他单词的影响。我们在这里不会深入这些细节，但如果你想更好地理解幕后发生了什么，我们会提供一些进一步的阅读材料。
 - en: So when should one use an encode？Encodeders can be used as tenderalone models
     in a wide variety of tasks。For example， Bert， arguably the most famous transformer
     model， is a standalone anchor model。 and at the time of release it be the state
@@ -820,6 +908,7 @@
   id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么什么时候应该使用编码器？编码器可以作为独立模型在多种任务中使用。例如，Bert，无疑是最著名的变换模型，是一个独立的锚定模型。在发布时，它在许多序列分类任务、问答任务和掩码语言建模中是最先进的，仅举几例。😊
 - en: The idea is that encoders are very powerful at extracting vectors that carry
     meaningful information about a sequence。This vector can then be handled down the
     road by additional neurons to make sense of it。Let's take a look at some examples
@@ -828,12 +917,14 @@
   id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个想法是编码器在提取携带有意义信息的向量方面非常强大。这个向量可以通过额外的神经元进一步处理，以使其有意义。让我们来看一些编码器真正闪光的例子。首先是掩码语言建模或MLM。这是预测序列中隐藏词的任务。在这里。
 - en: for example， we have hidden the word between my and is。This is one of the objectives
     with which Bert was trained。 It was trained to predict hidden words in a sequence。Encodes
     shine in this scenario in particular as bidirectional information is crucial here。
   id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，我们隐藏了“my”和“is”之间的词。这是Bert训练的目标之一。它的训练目的是预测序列中的隐藏词。编码器在这种情况下特别出色，因为双向信息在这里至关重要。
 - en: If we didn't have the words on the right， is it Silva and the dot。 then there
     is very little chance that Bt would have been able to identify name as the correct
     word。The encoder needs to have a good understanding of the sequence in order to
@@ -842,6 +933,7 @@
   id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们没有右边的词，是Silva和点。那Bt几乎没有机会将名称识别为正确的词。编码器需要对序列有很好的理解，以便预测被掩盖的词，因为即使文本在语法上是正确的，也不一定在序列的上下文中有意义。
 - en: As mentioned earlier， encodes are good at doing sequence classification。😊。Sentiment
     analysis is an example of sequence classification。The model's aim is to identify
     the sentiment of a sequence。It can range from giving a sequence a rating from
@@ -850,6 +942,7 @@
   id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 如前所述，编码器擅长进行序列分类。😊情感分析就是序列分类的一个例子。模型的目标是识别序列的情感。它可以为序列评分，从一到五颗星，或者为序列给予正面或负面的评分。
 - en: which is what is shown here。For example， here， given the two sequences。 we use
     the model to compute a prediction and to classify the sequences among these two
     classes。 positive and negative。While the two sequences are very similar containing
@@ -858,14 +951,17 @@
   id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是这里所展示的。例如，给定这两个序列。我们使用模型来计算预测，并将这两个序列分类为正类和负类。虽然这两个序列非常相似，包含相同的单词，但含义完全不同，而编码模型能够把握这种差异。
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_36.png)'
   id: totrans-110
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_36.png)'
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_37.png)'
   id: totrans-111
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_37.png)'
 - en: 嗯。So that was it forcodo's model， some examples are Albertt， Bt， distill Bt，
     Elect， Roberta。Let's have a look at the next section， which is going to be about
     decoderos and just before that let me check if there are any questions。Don't see
@@ -874,14 +970,17 @@
   id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗯。这就是forcodo模型，一些例子是Albertt、Bt、distill Bt、Elect、Roberta。我们来看看下一部分，将讨论解码器。在此之前，让我检查一下是否有任何问题。聊天中没有看到新的问题，别忘了你可以在聊天中提出任何问题，这正是直播会议的目的。
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_39.png)'
   id: totrans-113
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_39.png)'
 - en: Yeah。![](img/1b5e5fce582c60e42117fe3a72e59e6a_41.png)
   id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的。![](img/1b5e5fce582c60e42117fe3a72e59e6a_41.png)
 - en: In this video， we'll study the decoder architecture。An example of a popular
     decoder only architecture is GPT2。In order to understand how decoders work。 we
     recommend taking a look at the video regarding encoders， they're extremely similar
@@ -889,6 +988,7 @@
   id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个视频中，我们将研究解码器架构。一个流行的仅解码器架构的例子是GPT2。为了理解解码器是如何工作的，我们建议观看关于编码器的视频，它们与解码器非常相似。解码器可以用于大多数与编码器相同的任务。
 - en: albeit with generally a little loss of performance。Let's take the same approach
     we have taken with the encoder to try and understand the architectural differences
     between an encoder and ID coder。We'll use a small example using three words。 We
@@ -897,6 +997,7 @@
   id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管通常性能会稍有损失。让我们采取与编码器相同的方法，尝试理解编码器和ID解码器之间的架构差异。我们将使用一个包含三个单词的小例子。我们将它们传递给解码器。我们为每个单词检索一个数值表示。在这里，例如。
 - en: the decoder converts the three words welcomee to NYC and these are three sequences
     of numbers。The decoder outputs exactly one sequence of numbers per input word。This
     numerical representation can also be called a feature vector or a feature tensor。Let's
@@ -905,6 +1006,7 @@
   id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: 解码器将“welcomee to NYC”这三个词转换为三个数字序列。解码器每个输入词准确输出一个数字序列。这个数值表示也可以称为特征向量或特征张量。让我们深入研究这个表示。它包含通过解码器传递的每个词的一个向量。
 - en: Each of these vectors is a numerical representation of the word in question。😊。The
     dimension of that vector is defined by the architecture of the model。Whether a
     decoder differs from the encoder is principally with its self attention mechanism。
@@ -913,6 +1015,7 @@
   id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些向量中的每一个都是相关词的数值表示。😊该向量的维度由模型的架构决定。解码器与编码器的主要区别在于其自注意力机制。它使用被称为掩蔽自注意力的机制。在这里，例如，如果我们专注于词“2”。
 - en: we'll see that this vector is absolutely unmodified by the NYC word。That's because
     all the words on the right， also known as the right context of the word is masked。Rather
     than benefiting from all the words on the left and right， so the bidirectional
@@ -921,6 +1024,7 @@
   id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们会看到这个向量在纽约市的词汇中完全没有被修改。这是因为右侧的所有词语，也称为该词的右上下文，都被屏蔽了。因此，解码器并没有利用左右两侧的所有词语，也就是双向上下文。解码器只能访问单一的上下文，可以是左上下文或右上下文。
 - en: The mask self attention mechanism differs from the self attention mechanism
     by using an additional mask to hide the context on either side of the word。The
     words numerical representation will not be affected by the words in the hidden
@@ -930,6 +1034,7 @@
   id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 掩蔽自注意力机制与自注意力机制的不同之处在于使用了额外的掩蔽，以隐藏词语两侧的上下文。词语的数值表示不会受到隐藏上下文中词语的影响。那么，何时使用解码器呢？解码器可以像编码器一样作为独立模型使用。因为它们生成数值表示，也可以用于各种任务。
 - en: however， the strength of a decoder lies in the way a word can only have access
     to its left context。Having only access to their left context， they are inherently
     good at text generationration。 the ability to generate a word or a sequence of
@@ -938,6 +1043,7 @@
   id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，解码器的强大之处在于词语只能访问其左侧的上下文。仅访问左侧上下文，使它们在文本生成方面具有天生的优势。给定一个已知的词序列，生成一个词或一系列词的能力。😊这被称为因果语言建模或自然语言生成。
 - en: Here's an example of how causal language modeling works。 We start with an initial
     word， which is my。We use this as input for the decoder。😊，The model outputs a vector
     of numbers。 and this vector contains information about the sequence， which is
@@ -946,6 +1052,7 @@
   id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个因果语言建模如何工作的例子。我们以初始词“my”开始。我们将其用作解码器的输入。😊，模型输出一个数字向量。这个向量包含有关序列的信息，这里是一个单词。我们对该向量应用一个小的变换，以使其映射到模型已知的所有词。
 - en: which is a mapping that we'll see later called a language modeling head。We identify
     that the model believes that the most probable following word is name。We then
     take that new word and add it to the initial sequence。From my， we are now at my
@@ -953,6 +1060,8 @@
   id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我们稍后将看到的一个映射，称为语言模型头。我们识别出模型认为最可能的下一个词是“name”。然后，我们将这个新词添加到初始序列中。从“my”开始，我们现在得到了“my
+    name”。这就是自回归特性的体现。😊
 - en: Outtoregressive models reuse their past outputs as inputs and the following
     steps。Once again。 we do the exact same operation。We cast that sequence through
     the decoder and retrieve the most probable following word。In this case， it is
@@ -961,6 +1070,7 @@
   id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 自回归模型将过去的输出重用为输入和后续步骤。再一次，我们执行完全相同的操作。我们通过解码器处理该序列，并检索出最可能的下一个词。在这种情况下，它是“is”这个词。我们重复这个操作，直到满意为止。从一个单词开始，我们现在生成了一个完整的句子。我们决定在此停止。
 - en: but we could continue for a while。 GP T 2， for example， has a maximum context
     size of 1024。 We could eventually generate up to 1024 words， and the decoder would
     still have some memory of their first words and that sequence。😊，Yeah。게임。Let me
@@ -971,6 +1081,8 @@
   id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我们可以继续一段时间。比如说，GPT-2 的最大上下文大小是 1024。我们最终可以生成多达 1024 个单词，而解码器仍然会记住它们的前几个单词和那个序列。😊，是的。游戏。让我看看关于解码器模型的一些问题。哦，有一个问题是，是否可以使用超过
+    512 个单词的较长句子作为编码器的输入。好问题，这取决于情况，但大多数时候不行。例如，spt 的最大长度是 512，因此您不能使用比这更长的句子。
 - en: Some newer models like Longformer， for instance， can accept a longer context。
     so you should look at the documentation， but first would be very specific on codes。
     like not all ons can do that。Another thing that you can do is split your sentence
@@ -980,6 +1092,8 @@
   id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 一些较新的模型，比如 Longformer，可以接受更长的上下文。因此，您应该查看文档，但首先要对代码非常具体，比如并不是所有的模型都能做到这一点。您可以做的另一件事是将句子拆分成几个部分，每部分
+    512 个单词，然后如果您获得了一个表示，您就将这些片段传递给模型，这样您就能获得每个片段的表示。
 - en: for instance， average where you get at the end to try to train a classifier
     for larger sentences。 but that's kind of the only way， either a specific model
     that has been trained to have longer inputs such as longform or splitting your
@@ -987,6 +1101,7 @@
   id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，您最终在尝试为较长的句子训练分类器时的平均情况。但这大概是唯一的方式，要么是经过特定训练的模型，可以处理较长的输入，比如 Longformer，要么是将输入拆分成多个部分。
 - en: So another question， how does the mask language modeling objective deal with
     long gray worlds that end up being a multi doken world。 example sea planee with
     Pipe becomes。Ci。😊，AshAsh plane。 so you will see about that for those who are more
@@ -995,6 +1110,7 @@
   id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一个问题是，掩码语言建模目标如何处理长灰色单词，这最终会成为一个多令牌单词。例如，海上飞机与管道结合时会变成 Ci。😊，AshAsh plane。对于那些初学者，您将在下一个章节的视频中看到关于这种分离的内容。
 - en: If not using wall wall masking then the model can cheat and see parts of the
     longer world。 so that is absolutely correct and that's why you will see that you
     have several versions of PE there is one that has been pretrained with wall wall
@@ -1003,6 +1119,8 @@
   id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果不使用全掩码，那么模型就会作弊，看到较长单词的部分。因此，这是绝对正确的，这就是为什么您会看到有多个版本的 PE，其中一个经过全掩码预训练，而另一个则没有。如果模型看到
+    ash ash plane，那就会作弊。
 - en: I mean it would be cheating where we're kissing C， sorry when you've got the
     ash ash plane in the context。 when you're trying to guess ash ash plane and you've
     got the shifts because in the context it's less cheating because the model has
@@ -1010,6 +1128,8 @@
   id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: 我的意思是，如果我们在上下文中猜测 ash ash plane，这就是作弊，抱歉，因为您有 ash ash plane 的上下文。当您尝试猜测 ash
+    ash plane 时，您得到的是上下文中的转移，因为这算是较少的作弊，因为模型必须猜测，而模型并没有提前知道。
 - en: but it's true that using world wall masking would remove that kind of specific
     bias and cheating we've seen。Weve the upper ris。Okay， so let's look at the last
     video and then I'll answer to more question after the last video on sequence to
@@ -1017,6 +1137,7 @@
   id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: 但确实，使用全掩码会消除我们所看到的特定偏见和作弊情况。我们已经到了上层。好吧，让我们看看最后一个视频，然后我会在最后一个关于序列到序列的变换模型的视频中回答更多问题，这种模型结合了编码器和解码器。
 - en: In this video， we'll study the encoder decoder architecture。An example of a
     popular encoder decoder model is T5。In order to understand how the encoder decoder
     works。 we recommend you check out the videos on encoders and decoders as a standalone
@@ -1024,6 +1145,7 @@
   id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个视频中，我们将研究编码器-解码器架构。一个流行的编码器-解码器模型的例子是 T5。为了理解编码器-解码器是如何工作的，我们建议您查看有关编码器和解码器的独立模型视频。
 - en: Understanding how they work individually will help understanding how an encoder
     decoder works。Let's start from what we've seen about the encoder。The encoder takes
     words as inputs。 casts them through the encoder， and retrieves a numerical representation
@@ -1032,6 +1154,7 @@
   id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: 了解它们如何单独工作将有助于理解编码器-解码器的工作原理。让我们从我们对编码器的了解开始。编码器以单词作为输入，通过编码器进行处理，并为每个经过它的单词检索出数值表示。我们现在知道，这个数值表示包含了序列的意义信息。
 - en: Let's put this aside and add the decoder to the diagram。In this scenario。 we're
     using the decoder in a manner that we haven't seen before。We're passing the outputs
     of the encoder directly to it。Additionally to the encoder outputs。 we also give
@@ -1040,6 +1163,7 @@
   id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们将其搁置，并将解码器添加到图表中。在这种情况下，我们以一种前所未见的方式使用解码器。我们直接将编码器的输出传递给它。除了编码器的输出外，我们还给解码器一个序列。在没有初始序列的情况下提示解码器输出。
 - en: we can give it the value that indicates the start of a sequence。😊。And that's
     where the anchor to decor magic happens。😊，The encoder accepts a sequence as input。It
     computes a prediction and outputs a numerical representation。😊。Then it sends that
@@ -1047,6 +1171,7 @@
   id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以给它一个值，以指示序列的开始。😊。而这就是解码魔法的锚点所在。😊，编码器将一个序列作为输入。它计算一个预测并输出一个数值表示。😊。然后将其发送给解码器。可以说，它已经对该序列进行了编码。而解码器。
 - en: in turn， using this input alongside its usual sequence input will take a stab
     at decoding the sequence。The decoder dedes a sequence， and outputs a word。As of
     now。 we don't really need to make sense of that word， but we can understand that
@@ -1056,6 +1181,7 @@
   id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: 反过来，使用这个输入与它通常的序列输入一起，解码器将尝试解码这个序列。解码器解码一个序列并输出一个单词。到目前为止，我们并不需要理解这个单词，但我们可以理解解码器实际上是在解码编码器的输出。这里的启动序列，启动序列单词表明它应该开始解码这个序列。
 - en: Now that we have both the encoder numerical representation and an initial generated
     word。 we don't need the encoder anymore。As we have seen before with the decoder。
     it can act in an autoregressive manner。The word it has just output can now be
@@ -1064,6 +1190,7 @@
   id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们有了编码器的数值表示和一个初始生成的单词。我们不再需要编码器。正如我们之前看到的，解码器可以以自回归的方式进行工作。它刚刚输出的单词现在可以用作输入。这与编码器输出的数值表示结合在一起。
 - en: can now be used to generate a second word。Please note that the first word is
     still here as the model still outputs it。 however， we have grade it out as we
     have no need for it anymore。😊，We can continue on and on。 for example， on the decoder
@@ -1072,6 +1199,7 @@
   id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在可以用来生成第二个单词。请注意，第一个单词仍然在这里，因为模型仍然输出它。然而，我们将其标记为无效，因为我们不再需要它。😊，我们可以继续进行。例如，当解码器输出一个我们认为是停止值的值时，比如一个点，表示序列的结束。这里我们已经看到了编码器-解码器变换器的完整机制。
 - en: let's go over one more time。 we have an initial sequence that is sent to the
     encoder。😊。That encoder output is then sent to the decoder for it to be decoded。While
     it can now discard the encoder after a single use。 the decoder will be used several
@@ -1079,6 +1207,7 @@
   id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们再复习一次。我们有一个初始序列发送给编码器。😊。该编码器的输出然后被发送给解码器进行解码。虽然在单次使用后可以丢弃编码器，但解码器将被多次使用，直到我们生成所需的每个单词。
 - en: So let's see a concrete example with translation language modeling， also called
     transduction。 which is the act of translating a sequence。Here we would like to
     translate this English sequence We to NOIC in French。We're using a transformer
@@ -1087,6 +1216,7 @@
   id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看一个具体的例子，涉及翻译语言建模，也称为转导。这是将一个序列翻译的行为。在这里，我们想将这个英文序列"We"翻译成法语的"NOIC"。我们使用一个专门为此任务训练的变换器模型。我们使用编码器来创建英文句子的表示。
 - en: we cast this to the decoder with the use of the start sequence word。 we ask
     it to output the first word。It outputs the avenue， which means' welcome。And we
     then use B avenue as the input sequence for the decoder。This alongside the encoder
@@ -1094,6 +1224,7 @@
   id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将其传递给解码器，使用开始序列词。我们要求它输出第一个词。它输出了“avenue”，这意味着“欢迎”。然后我们使用“B avenue”作为解码器的输入序列。这与编码器的数值表示相结合，使解码器能够预测第二个词“a”。
 - en: which is two in English。😊，Finally， we ask the decoder to predict a third word，
     it predicts NYC。 which is correct， we've translated the sentence。Where the encoder
     decoder really shines is that we have an encoder and a decoder。 which often do
@@ -1102,6 +1233,7 @@
   id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: 这在英语中是两个。😊最后，我们要求解码器预测第三个词，它预测了NYC，这是正确的，我们已经翻译了句子。编码器-解码器真正闪光的地方在于我们有一个编码器和一个解码器，通常不共享权重。因此，我们有一个完整的块，编码器可以训练以理解序列并提取相关信息。
 - en: For the translation scenario we've seen earlier， for example。 this would mean
     parsing and understanding what was said in the English language。It would mean
     extracting information from that language and putting all of that in a vector
@@ -1110,6 +1242,7 @@
   id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们之前看到的翻译场景中，例如，这意味着解析和理解英语中所说的话。这意味着从该语言中提取信息，并将所有信息放入信息密集的向量中。😊另一方面，我们有解码器，其唯一目的是解码编码器输出的数值表示。
 - en: This decoder can be specialized in a completely different language or even modality
     like images or speech。😊，Encos， decoders are special for several reasons。Firstly。
     theyre able to manage sequence to sequence tasks like translation that we have
@@ -1118,6 +1251,7 @@
   id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个解码器可以专门用于完全不同的语言，甚至是图像或语音等模态。😊编码器和解码器在几个方面是特殊的。首先，它们能够处理像我们刚刚看到的翻译这样的序列到序列任务。其次，编码器和解码器部分之间的权重不一定是共享的。
 - en: Let's take another example of translation。Here where translating transformers
     are powerful in French。Firstly， this means that from a sequence of three words。
     we're able to generate a sequence of four words。One could argue that this could
@@ -1127,6 +1261,7 @@
   id: totrans-145
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们再看一个翻译的例子。在这里，翻译变换器在法语中非常强大。首先，这意味着从三个词的序列中，我们能够生成四个词的序列。可以说，这可以由一个以自回归方式生成翻译的解码器来处理。他们是对的。另一个序列到序列变换器发光的例子是摘要。
 - en: 😊，Here we have very very long sequence， generally a full text， and we want to
     summarize it。Since the encoder and decoders are separated， we can have different
     context lengths， for example。 a very long context for the encoder which handles
@@ -1135,6 +1270,7 @@
   id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊在这里我们有非常非常长的序列，通常是一整篇文本，我们想要总结它。由于编码器和解码器是分开的，我们可以有不同的上下文长度，例如。编码器处理文本的非常长的上下文和解码器处理摘要序列的小上下文。有很多序列到序列模型。
 - en: This contains a few examples of popular encoder decoder models available in
     the Transformers library。Additionally， you can load an encoder and a decoder inside
     an encoder decoder model。😊，Therefore。 according to the specific task you're targeting，
@@ -1143,19 +1279,23 @@
   id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: 这包含了一些在Transformers库中可用的流行编码器-解码器模型的示例。此外，你可以在编码器-解码器模型中加载一个编码器和一个解码器。😊因此，根据你针对的具体任务，你可以选择在这些特定任务中已证明其价值的特定编码器和解码器。
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_43.png)'
   id: totrans-148
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_43.png)'
 - en: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_44.png)'
   id: totrans-149
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1b5e5fce582c60e42117fe3a72e59e6a_44.png)'
 - en: Yeah。Okay， so let's see if we have any questions。Oh， okay。 is pararaing kind
     of decodder problem or both encodeder decodder problem？
   id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的。好的，那我们来看看有没有问题。哦，好的。是段落解码器问题还是编码器解码器问题？
 - en: And is there any pipeline available for same？So paraphrasing so generating a
     similar task to the input will be more like an encode or decoder pronym。 however，
     it seems that it's going to be very hard to train a model on that task specifically
@@ -1163,6 +1303,7 @@
   id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: 是否有任何可用的管道来实现同样的功能？所以改写生成与输入类似的任务，更像是一个编码器或解码器原型。然而，似乎在这个特定任务上训练模型会非常困难，因为它倾向于想要包含接收到的相同内容。
 - en: Unless you want to parase in another style， for instance。 going from formal
     style to very casual style。There is no pipeline available provide that desk out
     of the books in the transformformers library。So let's go to the next section of
@@ -1172,6 +1313,7 @@
   id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: 除非你想以另一种风格进行改写，例如从正式风格到非常随意的风格。目前在变换器库中没有提供实现该任务的管道。所以让我们进入 Cha1 的下一部分，这是这一章的最后一部分，谈谈变换器模型的偏见和局限性。像任何深度学习模型一样，变换器只是一个特定的案例。
 - en: but it's really a problem for all kind of deeping model so there are powerful
     tools and as you know probably if you take a deep learning introduction course
     via powerful tools but you don't really control or a get from the input to the
@@ -1181,6 +1323,7 @@
   id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: 但这确实是所有深度模型面临的问题，所以有强大的工具，正如你可能知道的，如果你参加深度学习入门课程，你会接触到这些强大的工具，但你并不能真正控制输入到输出的过程，这主要是通过他们接受的训练数据和训练方式来控制的，但如果你不采取任何预防措施，这些模型可能会做出你并不希望在应用中部署的预测。
 - en: let's just have a very quick look at what B which has been retrained on the
     objective of thin maskQu and just have a similar example to the one we saw in
     the transfer learning video with GPT where we just change the gender of the sentence
@@ -1188,6 +1331,7 @@
   id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们快速看一下经过重新训练的 B 模型，其目标是 thin maskQu，并且有一个类似于我们在 GPT 的迁移学习视频中看到的例子，我们只需改变句子的性别，所以如果你说“这个男人作为一个工作”。
 - en: Cass the word or this woman man works as a guess the word for man。 we get like
     some kind of neutral jobs。Probably moree stere stetype， stereotypically male，
     for women。 we get very stereotypically female jobs and prostitute。 which is necessarily
@@ -1195,6 +1339,7 @@
   id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: 猜这个词或“这个女人作为一个”猜“男人”的词。我们得到一些中性的工作。可能更符合刻板印象的是男性的工作，而女性则得到非常刻板印象的女性工作，甚至是性工作者。这显然不是我们希望模型输出的前五个可能性之一。
 - en: So and that model was not trained on data but was particularly flagged as problematic。
     more like usually considered neutral， it's only Wikipedia and a corus of un publishedlish
     book。So you have to be like GBT， for instance， is more known because it's been
@@ -1207,6 +1352,8 @@
   id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以该模型并不是在数据上训练的，但被特别标记为有问题的。更像是通常被认为是中立的，只有维基百科和一些未出版的书籍。所以你必须像 GBT 一样，举例来说，因其在互联网的墙上训练而更为知名，这被认为有点性别歧视或排外的倾向，所以你必须非常小心，因为这种偏见存在于预训练模型中，因此这次是使用
+    bird paste 和 case checkpoint 特别完成的，并且是完全可重现的，因为在预测中没有随机性，所以如果你在 tris 上运行一个笔记本，你将得到这些结果。
 - en: So this is present in any model in some way or novel and it's also going to
     persist after your fine tu。 so you have always have to be super careful that when
     you fine your model in your training data there are going to be enough samples

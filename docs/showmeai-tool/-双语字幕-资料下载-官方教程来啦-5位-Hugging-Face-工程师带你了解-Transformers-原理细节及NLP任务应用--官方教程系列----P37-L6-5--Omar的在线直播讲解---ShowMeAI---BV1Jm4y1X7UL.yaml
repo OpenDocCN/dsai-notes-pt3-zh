@@ -1,5 +1,6 @@
 - en: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
     - P37：L6.5- Omar的在线直播讲解 - ShowMeAI - BV1Jm4y1X7UL
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
@@ -8,6 +9,7 @@
     is the fourth and last chapter of the course。This is a bit different to the previous
     three。 and this one will show you a bit more how to use the platform and how to
     leverage all of the Hogan phase features。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
 - en: So this is the quick agenda for today， first we'll see a bit of the platform。
@@ -15,6 +17,7 @@
     to the hubub。 both with the push toHub method and the Hogging phase client command
     light interface。Then we'll talk a bit about model cards and to close we'll show
     you like some bonus content that is not part of the。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
 - en: Of the girl of the girls。So yeah， so the Co hub you've already used it a bit
@@ -22,6 +25,7 @@
     use and contribute new state of the art models and data sets。It host a wide variety
     of models。 so it had more than 10，000 public available models we can check right
     now how many it has so right now it has 11。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
 - en: 000 publicly available models for anyone to use。So theHub has support for both
@@ -29,6 +33,7 @@
     the hubub。So the models in the hub are not limited to Hugging F transformers。
     and it's not even limited to natural language processing。There are models from
     Flare and then ALP for NLP。For speech。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
 - en: there is asteroid and P note and there is also the for visionion this is just
@@ -37,6 +42,7 @@
     do。On the the left。 you can look at libraries。And here we have a full list of
     supported libraries and how well supported they are depending on the different
     features so there's showing phase transformers。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
 - en: but there's also adapter transformers， All NLP， asteroid， SPNe， Flare， by note。
@@ -44,6 +50,7 @@
     models is cost as a Git repository， so if you've used Gitthub before。 this will
     be very straightforward to you。Asing a model on the hubb means opening it up to
     all their community。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
 - en: it makes the model accessible to anyone looking to easily use it。In turn。 it
@@ -53,6 +60,7 @@
     deployed hosted inference API that allows you or anyone else in the community
     to try out the model directly on the website so the video will show you a bit
     more of this but just so you have an idea of what I'm talking about。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
 - en: 诶。I think we already did a bit of this in the first chapter。But if you open
@@ -60,163 +68,221 @@
     try this query。 And if you click compute， this is a。Fill mask model。It will predict
     what words should go there。 So the goal of life is life。 Okay， so that wasn't
     great， but you get the idea。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 我想我们在第一章已经做了一点这个。但是如果你打开一个存储库，在这里你可以在朋友API中托管，所以你可以尝试这个查询。如果你点击计算，这是一个填充掩码模型。它会预测应该放入那里哪些单词。因此，生活的目标就是生活。好吧，这并不太好，但你明白我的意思。
 - en: And it's not limited to field mask， actually there are like。A lot of other tasks。so
     okay。 I will show you that。First video of this chapter， but please feel free to
     ask anything in the chat if you have any questions。![](img/c09cf1ac6e21d36580a79d639f204d72_1.png)
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 而且它并不限于字段掩码，实际上还有很多其他任务。好的，我会向你展示这一点。本章的第一个视频，但如果你有任何问题，请随时在聊天中提问。![](img/c09cf1ac6e21d36580a79d639f204d72_1.png)
 - en: '![](img/c09cf1ac6e21d36580a79d639f204d72_2.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c09cf1ac6e21d36580a79d639f204d72_2.png)'
 - en: In this video， we're going to go over the Huging F model H navigation。This is
     the hugging phase dot co landing page。To access the Model hub。 click on the Model
     tab in the upper right corner。You should be facing this web interface。 which can
     be split into several parts。On the left。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个视频中，我们将讨论Hugging Face模型的导航。这是Hugging Face的官方网站。要访问模型中心，请点击右上角的模型选项卡。你应该面对这个网页界面，可以分为几个部分。在左侧。
 - en: you will find categories which you can use to tailor your model search。The first
     category is the tasks。Ms on the hub may be used for a wide variety of tasks。These
     include natural language processing tasks， such as question answering or text
     classification。 but it isn't only limited to an LP。Other tasks from other fields
     are also available。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 你会找到可以用来定制模型搜索的类别。第一个类别是任务。平台上的模型可以用于各种任务。这些包括自然语言处理任务，如问答或文本分类，但不仅限于此。其他领域的任务也可用。
 - en: such as image classification for computer vision or automatic speech recognition
     for speech。The second category is the libraries。Mottles on the hub usually share
     one of three backbones。 pytorch， Tensorflow， or jacks。However， other backbones
     such as rust or onyx also exist。Finally。 this tab can also be used to specify
     from which high level framework the models comes。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 比如说计算机视觉中的图像分类或语音中的自动语音识别。第二个类别是库。平台上的模型通常共享三种基础架构之一：PyTorch、TensorFlow或JAX。然而，还有其他基础架构，如Rust或Onyx。最后，这个选项卡还可以用来指定模型来自哪个高层框架。
 - en: This includes transformers， but it isn't limited to it。 The model hubbbies is
     used to host a lot of different frameworks models。 and we are actively looking
     to host other frameworks models。The third category is the dataset sets tab。Selecting
     a dataset set from this tab means filtering the models so that they were trained
     on that specific dataset。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 这包括变换器，但不局限于此。模型中心用于托管许多不同框架的模型，我们也在积极寻求托管其他框架的模型。第三个类别是数据集选项卡。从这个选项卡选择一个数据集意味着过滤出那些在特定数据集上训练的模型。
 - en: The fourth category is the languages tab。Selecting a language from this tab
     means filtering the models so that they handle the language selected。Finally，
     the last category allows to choose the license with which the model is shared。On
     the right。 you'll find the models available on the Model H。The models are ordered
     by download， by default。When clicking on a model， you should be facing its model
     card。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 第四个类别是语言选项卡。从这个选项卡选择一种语言意味着过滤出能够处理所选语言的模型。最后，最后一个类别允许选择与模型共享的许可证。在右侧，你会找到可用的模型。模型默认按下载排序。点击一个模型时，你应该看到它的模型卡。
 - en: The model card contains information about the model。 itss description intended
     use。 limitations and biases。It can also show code snippets on how to use the model。
     as well as any relevant information， training， procedure， data processing。 evaluation
     results or copyrights。This information is crucial for the model to be used。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型卡包含有关模型的信息，包括其描述、预期用途、限制和偏见。它还可以展示如何使用该模型的代码片段，以及任何相关信息、训练、过程、数据处理、评估结果或版权。这些信息对模型的使用至关重要。
 - en: The better crafted a model card is the easier it will be for other users to
     leverage your model and their applications。On the right of the model card is the
     inference API。This inference API can be used to play with the model directly。Feel
     free to modify the text and click on Comp to see how would the model behave to
     your inputs。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型卡制作得越精细，其他用户就越容易利用你的模型及其应用。在模型卡的右侧是推理 API。这个推理 API 可以直接与模型进行交互。请随意修改文本并点击
+    Comp，查看模型对你输入的反应。
 - en: At the top of your screen， lies the model tags。These includes the model task
     as well as any other tag that is relevant to the categories we have just seen。The
     files and version tab displays the architecture of the repository of that model。Here
     we can see all the files that define this model。You will see all usual features
     of a get repository， the branches available。Do you commit history。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 在屏幕顶部是模型标签。这些标签包括模型任务以及与我们刚才看到的类别相关的其他标签。文件和版本标签显示该模型的仓库架构。在这里我们可以看到定义该模型的所有文件。你将看到一个
+    git 仓库的所有常见特征，包括可用的分支和提交历史。
 - en: As well as the committed diff。Three different buttons are available at the top
     of the model card。![](img/c09cf1ac6e21d36580a79d639f204d72_4.png)
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 还有提交的 diff。在模型卡的顶部，有三个不同的按钮。![](img/c09cf1ac6e21d36580a79d639f204d72_4.png)
 - en: The first one shows how to use the inference API programmatically。The second
     one shows how to train this model in sage maker。And the last one shows how to
     load that model within the appropriate library。For Birt。 this is transformers。![](img/c09cf1ac6e21d36580a79d639f204d72_6.png)
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 第一个示例展示了如何以编程方式使用推理 API。第二个示例展示了如何在 SageMaker 中训练该模型。最后一个示例展示了如何在适当的库中加载该模型。对于
+    Birt，这里是 transformers。![](img/c09cf1ac6e21d36580a79d639f204d72_6.png)
 - en: '![](img/c09cf1ac6e21d36580a79d639f204d72_7.png)'
+  id: totrans-21
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c09cf1ac6e21d36580a79d639f204d72_7.png)'
 - en: Okay， so I think that was quite straightforward。Maybe let me just briefly expand
     a bit on some points so that you I change a bit。 but if you click now deploy accelerated
     inference， you get this code snippet so you can make a。Requests in in Python，
     but this is not limited to Python。 This is like a normal API call so you can just
     jascript or whatever language you use。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，我觉得这非常简单。也许让我稍微扩展一下某些要点，让你们有所了解。但是如果你现在点击部署加速推理，你将获得这个代码片段，以便你可以在 Python
+    中进行请求，但这并不仅限于 Python。这就像一个普通的 API 调用，因此你可以使用 JavaScript 或任何你使用的语言。
 - en: Then here at the right， if you click using transformformers。 you get this called
     snippet that you can use。But as we discussed before。 this is not limited to transformers。So，
     if you go to。The mothers page。And at the left。 you can click here the plus 19
     and here you can see all of the supported libraries。So for example。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后在右侧，如果你点击使用 transformers，你会得到一个可以使用的代码片段。但正如我们之前讨论的，这并不限于 transformers。所以，如果你转到母版页面，在左侧，你可以点击这里的加号，这里可以看到所有支持的库。例如。
 - en: if we go to sentence transformers。That will filter out。All of the sentence transformers。And
     here the code snippet will change so for example here the code snippet is specifically
     for this library so that makes it very nice like a very nice integration with
     their libraries and if you click here compute this in this w yet。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们转到句子 transformers，将过滤出所有句子 transformers。这里的代码片段将发生变化，因此例如，这里的代码片段特别针对这个库，这样就与他们的库实现了非常好的集成，如果你在这里点击计算，这将是很好的。
 - en: Is for sentence similarity， so you get a source sentence。And then destinations
     or sentences。 and you will get the distance between the source sentence。And each
     of the others。 So how similar these are。So for this model， the closest thing to
     that is a happy person is that is a very happy person。 so that makes sense。So
     there is a question， can we use a keyword based search to search for models for
     a particular task？
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 用于句子相似性，因此你会得到一个源句子，然后是目标句子。你将获得源句子与其他句子之间的距离。这样可以了解它们的相似程度。因此，对于这个模型，最接近的表达是“一个快乐的人”与“一个非常快乐的人”，这样是有意义的。这里有一个问题，我们能否使用基于关键字的搜索来寻找特定任务的模型？
 - en: So if you are interested on a particular task。You can go to models， and you
     can then click。text generation， for example， and then here you can do like additional
     search so for example GT。 you can also have like additional filters， so for library
     data sets， languages。 but we are improving the search functionality now so just
     stay tuned and there will be like nicer features for discoverability of the models。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你对某个特定任务感兴趣，可以去模型，然后点击文本生成，例如，然后你可以进行额外的搜索，例如GT。你还可以有额外的过滤器，比如库数据集、语言。但我们现在正在改进搜索功能，请继续关注，未来会有更好的模型发现功能。
 - en: 네， good question的。O。So this was how to use the how to navigate the hub。 let's
     quickly discuss something that you will probably be already familiar since you
     did this in the first and second chapters。So let's say that we're interested in
     a French based model that can perform mask filling。So yeah。 let me remove this
     so we said fill mask。And you went to French。So a。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的，好的问题。所以这是如何使用和浏览hub。让我们快速讨论一些你可能已经熟悉的内容，因为你在第一和第二章中做过。假设我们对一个可以执行填充掩码的法语模型感兴趣。好的，我来去掉这个，所以我们说填充掩码。你选择了法语。
 - en: We can use this one comm face normally what you should do is read the description。
     the model card to understand what this model is about and what's to the purpose
     and if it has anybody biases any limitations。 we'll talk a bit more about this
     in few minutes。Okay。 so there are like three different ways of using the model。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以使用这个comm face，通常你应该阅读描述。模型卡以理解这个模型的用途以及是否存在任何偏见或限制。我们将在几分钟后详细讨论这个。好的，所以有三种不同的使用模型的方法。
 - en: So the first one is like we did in the first chapter。 So we use the pipeline。
     So this like this super high level。Functions， so from transformers import pipeline，
     just specify。What's the task that we're solving， which is film mask？And we specified
     the name。 gun member bird base。And as you can see here。We get a prediction。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以第一个就像我们在第一章做的那样。我们使用管道。这是一个非常高层次的功能，从transformers导入pipeline，只需指定。我们要解决的任务是什么，也就是填充掩码？我们指定了名称。gun
+    member bird base。正如你所看到的，我们得到了一个预测。
 - en: You can also use the specific model architecture to load the model this is similar
     to what you did in the second chapter。So this is a commem bird model， it has a
     commem bird architecture。 so you can import commemered organizeizer and the commem
     bird for masked language model。アん旅カどです。ALguage showed you in one of the previous
     sessions if you go to Gitthub Transformers source Transformers models。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 你也可以使用特定的模型架构来加载模型，这与第二章中的做法类似。这是一个commem bird模型，它有一个commem bird架构。你可以导入commemered组织者和用于掩码语言模型的commem
+    bird。如果你去GitHub Transformers源代码中的Transformers模型，你会看到。
 - en: you can see all of the architectures that are implemented in the Transformers
     library and as you can see there are quite a bit。So what is normally suggested
     is to use the。Oututto to organizer。 and auto model like the auto classes， because
     these are architectural agnostic。And then you don't need to worry about。Yeah，
     about what's the specific architecture。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到在Transformers库中实现的所有架构，确实有很多。因此，通常建议使用Auto类来组织和自动模型，因为这些是架构无关的。这样你就不需要担心具体的架构。
 - en: So let me just briefly step back to the pipeline， which I think is something
     important。 is that you need to make sure that the model you're using。 the checkpoint
     you're using is for this task， so let's say that you want to use instead text
     classification。The model was not trained for this， so of course this will not
     make any sense。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我简要回顾一下管道，这我认为是重要的。你需要确保所使用的模型和检查点是适用于这个任务的。比如说你想使用文本分类。模型并不是为此训练的，所以这当然没有意义。
 - en: So it will give you an output， but it will complain。 it will say that you probably
     need to train the model on a downstream task， as you did in chapter 3。And yeah，
     the prediction is pretty much meaningless here。Okay， so this was nothing new。
     but I think that what will be more interesting is。The next next section。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 它会给你输出，但会抱怨。它会说你可能需要在下游任务上训练模型，就像你在第三章中做的那样。而且，这里的预测几乎没有意义。好的，所以这没什么新鲜的。但我认为更有趣的是下一部分。
 - en: which is how to share pretrained models。 So these are like the last two videos
     of the first part of the course。 So the first one will show you how to manage
     a repo and how to upload files。With a command line interface and the second video
@@ -224,137 +290,187 @@
     ways of doing things so one is the web interface。 one is using the transformers
     or coding F hub a command line interface and the third option is the push to hub
     API。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是如何共享预训练模型。因此，这大概是课程第一部分的最后两个视频。第一个视频将向你展示如何管理一个仓库以及如何上传文件。通过命令行界面，第二个视频将展示如何使用推送到中心的方法。这里有三种不同的操作方式，一种是网页界面，一种是使用transformers或命令行接口的coding
+    F hub，第三种选项是推送到中心的API。
 - en: So let's jump to the video and remember to ask any questions in the chat。![](img/c09cf1ac6e21d36580a79d639f204d72_9.png)
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们跳到视频中，记得在聊天中提出任何问题！![](img/c09cf1ac6e21d36580a79d639f204d72_9.png)
 - en: '![](img/c09cf1ac6e21d36580a79d639f204d72_10.png)'
+  id: totrans-36
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c09cf1ac6e21d36580a79d639f204d72_10.png)'
 - en: In this video， we're going to understand how to manage a model repository on
     the Huging F model hub。In order to handle a repository， you should first have
     a hugging face account。 aging to create a new account is available in the description。Once
     you're logged in。 you can create a new repository by clicking on the new model
     option。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个视频中，我们将了解如何在Hugging Face模型中心管理模型仓库。为了处理仓库，你首先需要有一个Hugging Face账户。创建新账户的链接在描述中可用。一旦你登录，你可以通过点击新模型选项来创建一个新的仓库。
 - en: You should be facing a similar model to the following。In the owner input。 you
     can put either your own namespace or any of your organization's namespaces。The
     model name is the model identifier that will then be used to identify your model
     on the chosen namespace。And final choice is between public and private。Public
     models are accessible by anyone。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 你应该面对一个类似于下面的模型。在所有者输入框中，你可以放入你自己的命名空间或任何组织的命名空间。模型名称是将用于标识你模型的标识符，最终选择是公共或私有。公共模型对任何人可访问。
 - en: This is the recommended free option as this makes your model easily accessible
     and shareable。The owners of your namespace are the only ones who can update and
     change your model。A more advanced option is the private option。In this case。 only
     the owners of your namespace will have visibility over your model。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是推荐的免费选项，因为这使得你的模型易于访问和共享。只有你的命名空间的所有者可以更新和更改你的模型。更高级的选项是私有选项。在这种情况下，只有命名空间的所有者才能查看你的模型。
 - en: Other users won't know it exists and will not be able to use it。Let's create
     a dummy model to play with。Once your model is created comes the management of
     that model。Three tabs are available to you。You're facing the first one， which
     is the model card page。This is the page you used to showcase your model to the
     world。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 其他用户将不知道它的存在，也无法使用它。让我们创建一个虚拟模型来玩。模型创建后，接下来就是管理这个模型。有三个选项卡可供选择。你现在看到的是第一个，即模型卡页面。这是你用来向世界展示你的模型的页面。
 - en: We'll see how it can be completed in a bit。The second one is the files and versions。Your
     model itself is a gate repositor。If you're unaware of what is a get repository。
     you can think of it as a folder containing files which can be versionrged。If you
     have never used Gid before， we recommend looking at an introduction like the one
     provided in this video's description。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们稍后会看到如何完成这个。第二个是文件和版本。你的模型本身就是一个git仓库。如果你不知道什么是git仓库，可以把它想象成一个包含可以版本控制的文件的文件夹。如果你从未使用过Git，我们建议查看这个视频描述中提供的介绍。
 - en: The gett repository allows you to see the changes happening over time in this
     folder。 hence of the term versions。We'll see how to add files and versions in
     a bit。The final tab is the settingss tab， which allow you to manage your model's
     visibility and availability。😊，Let's first start by adding files to the repositor。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: git仓库允许你查看这个文件夹随时间发生的变化，因此称为版本。我们稍后会看到如何添加文件和版本。最后一个选项卡是设置选项卡，它允许你管理模型的可见性和可用性。😊，让我们先开始将文件添加到仓库中。
 - en: Fileles can be added through the web interface thanks to the add file button。The
     added files can be of any type， Python， J text， you name it。Alongside your adult
     file in its content， you should name your change or comment。Generally。 adding
     files is simpler when using the command line。We showcase how to do this using
     Git。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 文件可以通过网页界面通过添加文件按钮添加。添加的文件可以是任何类型的，Python，J文本，随便你。除了你的文件及其内容之外，你还应该命名你的更改或评论。一般来说，使用命令行添加文件更简单。我们将展示如何使用Git来实现这一点。
 - en: In addition to Git， we're using Git L F S， which stands for Git Large file storage
     in order to manage large model files。First， I make sure that both Git and Git
     LFS are correctly installed on my system。Links to install Git and GiLFS are provided
     in the video description。Then we can get to work by cloning the repository locally。We
     have a repository， with a single file。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 除了 Git，我们还使用 Git L F S，这代表 Git 大文件存储，以便管理大型模型文件。首先，我确保在我的系统上正确安装了 Git 和 Git
+    LFS。安装 Git 和 GiLFS 的链接在视频描述中提供。然后，我们可以通过在本地克隆库开始工作。我们有一个包含单个文件的库。
 - en: The file that we have just added to the repository using the web interface。We
     can edit it to see the contents of this file and update these。It turns out I have
     a model handy that can be used for sentiment analysis。I'll send p copy over the
     contents to this folder。This includes the model weights。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们刚刚通过网络界面添加到库的文件。我们可以编辑它以查看该文件的内容并更新它。原来我有一个可以用于情感分析的模型。我会把内容复制到这个文件夹中，包括模型权重。
 - en: configuration file and tokenizer to the repository。I can then track these files
     with the gett add command。Then， I commit the changes。And giving this commit the
     title of add model weights and configuration。😊，Finally。 I can push the new commit
     to the hugging phase dot co remote。😊。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 配置文件和分词器已添加到库中。我可以通过 `gett add` 命令跟踪这些文件。然后，我提交更改，并为此提交命名为“添加模型权重和配置”。😊，最后。我可以将新的提交推送到
+    hugging phase dot co 远程库。😊。
 - en: When going back to the files and version tab on the web interface。 we can now
     see the newly added commit with the updated files。We have some two ways of adding
     files to a repository here。 a third way is explored in the video about the pushush
     to Hub API。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 当返回到网络界面的文件和版本选项卡时，我们现在可以看到新添加的提交及更新的文件。我们在这里有两种添加文件到库的方法，第三种方法在有关推送到 Hub API
+    的视频中探讨。
 - en: A link to this video is in the description。Unfortunately。 the front page of
     our model is still very empty。Let's add a read me Markdown file to complete it
     a little bit。This read me is known as the model card， and it's arguably as important
     as the model and tokenizer files in a model repository。It is the central definition
     of the model， ensuring reusibility by fellow community members and reproducibility
     of results。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 此视频的链接在描述中。不幸的是，我们模型的主页仍然非常空荡。让我们添加一个 README Markdown 文件，让它看起来更完整。这个 README
+    被称为模型卡，它的重要性不亚于模型和分词器文件，是模型库的核心定义，确保其他社区成员能够重用并复制结果。
 - en: And providing a platform on which other members may build their own artifacts。We'll
     only add a title in a small description here for simplicity's sake。 but we encourage
     you to add information relevant to how is the model trained。 its intended uses
     and limitations as well as says identified and potential biases。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 提供一个平台，让其他成员可以构建他们自己的工件。为了简化，我们在这里仅添加一个标题和简短描述，但我们鼓励您添加与模型训练相关的信息，包括其预期用途、局限性，以及识别出的潜在偏见。
 - en: evaluation results and code samples on how should your model be used。😊。Great
     work contributinging a model to the model hub。 This model can now be used in downstream
     libraries simply by specifying your model identifier。😊。![](img/c09cf1ac6e21d36580a79d639f204d72_12.png)
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 评估结果和代码示例，说明您的模型应该如何使用。😊。出色的工作，向模型中心贡献了一个模型。现在，只需指定您的模型标识符，该模型即可在下游库中使用。😊。![](img/c09cf1ac6e21d36580a79d639f204d72_12.png)
 - en: '![](img/c09cf1ac6e21d36580a79d639f204d72_13.png)'
+  id: totrans-51
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c09cf1ac6e21d36580a79d639f204d72_13.png)'
 - en: Okay， feel free to ask any questions in the chat， I am Holmes you ask。 so Do
     can only come into play if we are working with organizations。I guess you are referring
     to the authentication token。 so normally when you log in in your computer to Ho
     interface with a Ho phase command line interface。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，请随时在聊天中提问，我会尽力回答。如果我们与组织合作时，才能发挥作用。我想您是指身份验证令牌。因此，通常在您使用 Ho 界面通过 Ho phase
+    命令行接口登录计算机时。
 - en: Every user has a token that is saved locally and then in the server when you
     push files。The back end make sure that you have access of a specific files so
     if you are a member of an organization and you push a model or you create a rapport
     or the later reportport in an organization。
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 每个用户都有一个令牌，保存在本地，然后在您推送文件时保存到服务器。后端确保您对特定文件的访问权限，因此如果您是某个组织的成员，并且您推送模型或创建报告。
 - en: you will always need to。Your doken will be part of the request。 but this is
     for any request because we need to know like。Which is the user making the request。Let
     me know if that wasn't a very clear explanation or if you were referring to another
     token and not the authentication token。Okay， so let me just show you the last
     video and then we'll do some coding if that sounds good。
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
 - en: And in the meantime， feel free to ask any questions in the chat。![](img/c09cf1ac6e21d36580a79d639f204d72_15.png)
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/c09cf1ac6e21d36580a79d639f204d72_16.png)'
+  id: totrans-56
   prefs: []
   type: TYPE_IMG
 - en: Let's have a look at the push to everyPI。Just before recording this video。 I
     mentioned the bad model and to the crew M PC。We won't go over the find engine
     code here because you can find it in any transformer tutorial or by looking at
     the videos link below。
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
 - en: What interests us here is what happens when the training is finished and we've
@@ -362,12 +478,14 @@
     on the Eingfeaz。go website and two have your audio taken into that website store。
     which can easily be done by typing Eringface CLI login into a terminal or like
     this in a Coab notebook by using an excion mark。
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
 - en: This command won't work if you are using a regular Jupiter notebook。 so if you
     are using that and don't have access to a terminal。 you'll need to copy your access
     token from the Ugingfeest。go website into the training arguments。 I'll show you
     where exactly in a little bit。With that done。
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
 - en: the push API will arise to a to the Iging face our model， its configuration。
@@ -375,6 +493,7 @@
     to set push to equal tool inside the training argument。We can specify a model
     I D for repository。Which will defaultote to the name of the output here if we
     don't say anything。
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
 - en: We can push to an organization as long as we're a member of that organization。
@@ -382,6 +501,7 @@
     if is done。 we can call trainner that pushtub once the training is finished。In
     future developments。 we'll add the ability to automatically push to the app at
     the end of each epoC or every given number of steps。
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
 - en: so stay tuned。The command returns a URL。For a specific commit。 which well be
@@ -389,6 +509,7 @@
     if you are not using the trainer API， you can directly push your model and your
     tokener to the by using the push2 have method。By passing the commator in my browser，
     I can access my repository called Fine Tru Belt M PCC as expected。
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
 - en: And see that of all files have been added。A model card， the configuration of
@@ -396,6 +517,7 @@
     as the tokenizer。The trainer drafted a model class follows， which contained the
     final results on the evaluation set。 the training output parameters， the intermediate
     training results。
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
 - en: as well other frameworks by was using。If I click editit model card to see the
@@ -404,121 +526,170 @@
     also directly access the tonawboard runss inside the model hub by clicking training
     metrics here。Now that the model is in Europe， we can use it from anywhere with
     the from between method。
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 还有其他框架。如果我点击编辑模型卡以查看原始内容。我可以看到训练者还生成了一个元数据表，Ugingfaceco网站将使用该表来正确应用字段到我的模型。我还可以通过点击此处的训练指标直接访问模型中心的tonawboard运行。现在模型在欧洲，我们可以通过from
+    between方法从任何地方使用它。
 - en: We just have to use the identifier from the E and we can see that the model
     configuration and weights are automatically downloaded。We can use this model as
     we would any transformers model， for instance。 by readinging it in a pipeline。Since
     the MRPC dataset set is a dataset set of parallel sentences。 where the task is
     to determine if two sentences are paras of one another or not。
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们只需使用E中的标识符，就可以看到模型配置和权重被自动下载。我们可以像使用任何变换模型一样使用这个模型，例如，通过在管道中读取它。由于MRPC数据集是一组平行句子的集合，其任务是确定两个句子是否相互对应。
 - en: we use it and two sentences separated by step。It's a little bit disappointing
     to see that it's predicting label zero。That's because I didn't specify any label
     when I created the model configuration。Fixing this is super easy with a pushure
     API。First。 we can fix the configuration locally by setting label to  a and8 to
     label with a proper value。
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们使用它，并通过步骤将两个句子分开。看到它预测标签为零有点令人失望。这是因为我在创建模型配置时没有指定任何标签。用pushure API修复这个问题非常简单。首先，我们可以通过将标签设置为a并将8设置为带有适当值的标签来本地修复配置。
 - en: Then we can push the fixed cong to our reportpo with the push to a method。Once
     again。 please return the URL of a commit， which we could inspect and see the exact
     inside the config。And note that the command is going super fat because I'm using
     the same local folder as before。 which on which my report is already cloneed。Once
     this is done and we create a new pipeline。
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们可以通过推送到方法把修复的配置推送到我们的reportpo。再次请返回提交的URL，我们可以检查并查看配置的具体内容。请注意，命令执行得非常快，因为我使用的是之前的同一个本地文件夹，而我的报告已经克隆过了。一旦完成，我们就创建一个新的管道。
 - en: we can see the new configuration is automatically downloaded thanks to the building
     person system and we get the new label。We can also play with the model directly
     on its model card。Bypasing the text I was using and clicking Comp。I just have
     to wait a little bit of time before the model is loaded on the inference API and
     display the result。When the mod is loaded， we can double check we get the same
     results as before directly on the Weget。
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以看到新的配置自动下载，这得益于构建人员系统，我们得到了新的标签。我们还可以直接在模型卡上玩模型。通过更改我使用的文本并点击Comp。我只需稍等一下，模型就会加载到推断API并显示结果。当模型加载后，我们可以再次检查，确认在Weget上得到的结果与之前相同。
 - en: Try the push to a VPA on your models today。All right。Yeah。 going back to the
     question from I am Hols about the authentication token now that I saw this example
     I think that I understood a bit more where your question came from so normally
     when you do Hoging phase clear logging your authentication token will be stored
     in the cache and then you wont need to do it ever again。
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 今天试着把你的模型推送到VPA上。好的，是的。回到I am Hols关于认证令牌的问题，现在我看到这个例子，我觉得我更明白你的问题来自哪里了，所以通常当你进行Hoging阶段的清晰日志记录时，你的认证令牌会被存储在缓存中，然后你就不需要再做了。
 - en: but for example， if you're working in goL or，Yeah。 I don't know in an environment
     in which maybe you't want to do log in。Instead you can specify and for a specific
     authentication token。 and that's the use case of the out token parameter。Okay，
     so let's do some coding。
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 但例如，如果你在goL工作，或者，是的。我不知道在一个可能不想登录的环境中。相反，你可以指定一个特定的认证令牌。这就是out token参数的用例。好的，那我们开始编码吧。
 - en: So you will need to do your configuration in Git if you were yeah， your normal
     git configuration。 I already did it login before。哦。If the table here。ho。系音。Sorry，
     it's who am I。Yeah那回 go。So I already did login before starting the session， so
     my username is Haarte so I showed you a。Few examples， so the nice thing about
     the push to have API is that everything in co phase in transformers has this method。
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，如果你在Git中做配置，如果是你的正常git配置，我之前已经登录过。哦。如果这里的表。ho。系音。抱歉，是谁。是的，那个去。所以我在开始会话之前已经登录，所以我的用户名是Haarte，我给你展示了一些例子，因此推送到API的好处在于，变压器中的一切都具有这种方法。
 - en: so models tokenrs， yeah you name it。So if you do this first three lane。It will
     push the model file and it will push the tokenizer file。What is very nice is that
     if youjos a Tra API。Okay， now I'm getting an neurons， let me just quickly。嗯。Okay，
     this is new。Okay， let me try one more。诶。In the meantime。
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以模型tokenrs，是的，你说的就是这样。如果你先做前三行。它将推送模型文件和tokenizer文件。非常好的是，如果你使用Tra API。好的，现在我正在获取神经元，让我快速一下。嗯。好的，这是新的。好的，让我再试一次。诶。与此同时。
 - en: let me show you an example of a rep uploaded with a trainer API if you follow
     the Piytorch tutorial in chapter3。 you are quite familiar， so just by specifying
     push to H， you will get a bunch of very nice things。So， you will get a。Description，
     you will get the loss accuracy of1 or other metrics。You will get placeholder sections
     that you can later complete。
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我给你展示一个通过训练API上传的示例，如果你跟随Piytorch教程的第3章，你会非常熟悉，所以只需指定push to H，你将获得一堆非常好的东西。因此，你会得到一个描述，你会得到loss
+    accuracy或其他指标。你会得到占位符部分，可以稍后完成。
 - en: You will get all of the training hyperparameters that were used during training。You
     will get this nice table with a results during training for every epoC。And you
     will also get the。Framework versions。 So this is very useful for repproducibility。On
     top of this。There is this very nice feature， which is hosted Tensor bird in the
     hub。
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 你将获得在训练过程中使用的所有训练超参数。你将获得一张很不错的表格，显示每个epoch的训练结果。你还会得到框架版本。这对于可重复性非常有用。除此之外，还有一个非常好的功能，就是托管的Tensor
+    bird在中心。
 - en: So if you have tensor board traces into repository and it's not limited just
     to hogen phase transformers。 like it can be like any tensor board traces， you
     will get automatically a tensor board deployed for you and here you will be able
     to look at the matrix。
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以如果你在仓库中有tensor board的痕迹，并且不限于hogen phase transformers。就像可以是任何tensor board的痕迹，你将自动获得一个tensor
+    board供你使用，在这里你将能够查看矩阵。
 - en: 几。E， it seems like。![](img/c09cf1ac6e21d36580a79d639f204d72_18.png)
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 几。E，看起来像。![](img/c09cf1ac6e21d36580a79d639f204d72_18.png)
 - en: I still have problems， for some reason。Sorry， so let me still just do it in
     the terminal。![](img/c09cf1ac6e21d36580a79d639f204d72_20.png)
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 我仍然有问题，不知为什么。抱歉，所以让我还是在终端中操作。![](img/c09cf1ac6e21d36580a79d639f204d72_20.png)
 - en: This will be a。え。一。So， let's first。Iport。What we care about。![](img/c09cf1ac6e21d36580a79d639f204d72_22.png)
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将是一个。え。一。那么，让我们先。导入。我们关心的内容。![](img/c09cf1ac6e21d36580a79d639f204d72_22.png)
 - en: So here we are just initializing a mod learned organizer。![](img/c09cf1ac6e21d36580a79d639f204d72_24.png)
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们只是初始化一个mod learned organizer。![](img/c09cf1ac6e21d36580a79d639f204d72_24.png)
 - en: As we've done before， some nothingia。![](img/c09cf1ac6e21d36580a79d639f204d72_26.png)
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们之前所做的一样，有些nothingia。![](img/c09cf1ac6e21d36580a79d639f204d72_26.png)
 - en: Okay， it may take a bit。And then they taste to just do model that push to her。And
     then the name all the。So let me just do it to。Yeah， it takes a few seconds。 this
     command is uploading a lot the model for you。![](img/c09cf1ac6e21d36580a79d639f204d72_28.png)
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，可能需要一点时间。然后他们会尝试做模型，推送给她。然后命名所有的。所以让我来做这个。是的，花几秒钟。这条命令正在为你上传很多模型。![](img/c09cf1ac6e21d36580a79d639f204d72_28.png)
 - en: '![](img/c09cf1ac6e21d36580a79d639f204d72_29.png)'
+  id: totrans-82
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c09cf1ac6e21d36580a79d639f204d72_29.png)'
 - en: I'm actually not sure why you go to server because I tried it like 10 minutes
     before。![](img/c09cf1ac6e21d36580a79d639f204d72_31.png)
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 我实际上不确定你为什么去服务器，因为我在大约10分钟前尝试过。![](img/c09cf1ac6e21d36580a79d639f204d72_31.png)
 - en: And I was not having decision， repository not found。嗯。Okay， this is stick。I
     think my computer is having a hard time with the live stream at the same time。Yeah
     in the meantime。 if you also want to specify an organization， you can do so and
     as we were discussing before。 you can also specify a Token if you want。
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 我没有决策，找不到仓库。嗯。好的，这有点麻烦。我觉得我的电脑在同时处理直播时有点吃力。是的，期间。如果你还想指定一个组织，你可以这样做，就像我们之前讨论的那样。如果你想的话，你也可以指定一个Token。
 - en: '![](img/c09cf1ac6e21d36580a79d639f204d72_33.png)'
+  id: totrans-85
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c09cf1ac6e21d36580a79d639f204d72_33.png)'
 - en: '![](img/c09cf1ac6e21d36580a79d639f204d72_34.png)'
+  id: totrans-86
   prefs: []
   type: TYPE_IMG
 - en: Okay， so another option is using the hookging phase。I don't know。Doganer。Push
@@ -526,24 +697,30 @@
     see if the files they are still being uploaded。诶。Yeah， normally it doesn't take
     this long。 I am not sure if this is my computer or if there's any connection issue
     right now with。
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
 - en: Hping the face。![](img/c09cf1ac6e21d36580a79d639f204d72_36.png)
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
 - en: 嗯。![](img/c09cf1ac6e21d36580a79d639f204d72_38.png)
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
 - en: Okay， in the meantime， while that runs， let me show you like the second approach。
     which is using the hook face clay a。![](img/c09cf1ac6e21d36580a79d639f204d72_40.png)
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
 - en: So if youre just hugging basically。Reipple grade Doit2。It normally creates a
     record for you。诶。언디 가？
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
 - en: Yeah， so we ask you， do you want to create repohyite doit2？I say yes。And it
     it it gives you both a link to look at it on the browser。![](img/c09cf1ac6e21d36580a79d639f204d72_42.png)
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
 - en: And it also tells you how to clone it。So this similar to what listen was making
@@ -551,12 +728,14 @@
     can create a model card。Which is this normal marathon file， so this is a test。You
     can procure it。And you can go it。And when you commit。Yeah， you get here like this
     is a test， this is what I wrote in the model card。
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
 - en: You can look at all of the files。You can look at the history of the repository。Yeah。
     and as you can see here a。Have this commit 14 seconds ago。Which I did this change
     So this is like very nice because if you are just to GithHub a workflows。 you
     can use this to create branchess， for example。
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
 - en: you can also revert back changes very easily so it was like very nice personally。え。Yeah，
@@ -564,6 +743,7 @@
     I saw that push to hub。If you go here to files and versions， you can see here
     that the files were uploaded now。诶。一。So。 let me just quickly。Check the history。Yeah，
     so I think that there was some connection error。
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
 - en: as you can see， actually both the model and the tokenr were uploaded， so that's
@@ -571,6 +751,7 @@
     that it analyzes the conation。The configuration specifies a bit like what's architecture。Yeah
     this kind of things and based on this it already tells you like this is a film
     mask model。
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
 - en: it's a kberg model， it's transformers， it's using byytor。 this is all based
@@ -578,21 +759,26 @@
     you will need to wait especially the first time you need to wait for the model
     to load on the background。And you can even like if you want to deploy， you can
     use this in in the accelerated inference API and make as many equal you want。
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
 - en: 예。And play around with a model and you can very easily integrate this to your
     own products。ok 诶。Yeah。 so that was a push to her。So， okay， so we going back to
     the command line interface。 which was the me。Do， I think。糯面都咩啲。Yeah。So right now
     we don't have anything， right。 We don't created the model card。
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/c09cf1ac6e21d36580a79d639f204d72_44.png)'
+  id: totrans-99
   prefs: []
   type: TYPE_IMG
 - en: So， let me know。![](img/c09cf1ac6e21d36580a79d639f204d72_46.png)
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
 - en: Okay， let's make computer that is very slow。 So what we can do now is。![](img/c09cf1ac6e21d36580a79d639f204d72_48.png)
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
 - en: Like a normal Github。Workload， you can do get clone。And then the name of the。
@@ -600,34 +786,41 @@
     which is the only file。 the gate attributes is also there， but it's a hidden file
     so。You won't see it unless you specify also like the hidden files。So as Leandra
     mentioned in the video。
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
 - en: Apart from Git， we also use Git LFS， that is Git a large file storage。 this
     is super useful for files that are very large which is very common in machine
     learning。 so this is for files that are larger than 10 megabytes。![](img/c09cf1ac6e21d36580a79d639f204d72_50.png)
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
 - en: And normally what we do is that you can specify which extensions。You want to
     condo with elephantphis。So yeah， all of this。![](img/c09cf1ac6e21d36580a79d639f204d72_52.png)
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
 - en: So normally what you need to do is to do Gi F install just to make sure it's
     initialized。And掉 let me。![](img/c09cf1ac6e21d36580a79d639f204d72_54.png)
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
 - en: Show you a nice example。So， let's say that we want to。work with a model locally。
     maybe train it and then instead of using a push to her we want to save it locally
     and then push so that's what the safe pretrain method is for so let me just。With
     the right name， which is to me。Do。![](img/c09cf1ac6e21d36580a79d639f204d72_56.png)
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
 - en: Let me now just copy based。All of these called snippet。![](img/c09cf1ac6e21d36580a79d639f204d72_58.png)
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
 - en: So what this is， let me just explain line by line why it runs。Is that it will
     just same thing。 we load the model， we load the tokenizer， then we save the model
     in the directory toittu。 which is where we clone the robot and we also save the
     tokenizer。![](img/c09cf1ac6e21d36580a79d639f204d72_60.png)
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
 - en: But as you can see my computer is having a hard time with a icestream， so it's
@@ -635,6 +828,7 @@
     see all of the files。 so let's just enter the repository。And if you do gi status，
     it's normal gi， you will get like， okay。 all of these files are to be added， they
     are not right you。So if you do Gi。
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
 - en: This will allow all of the files to be tracked。Then you can do get status。And
@@ -645,180 +839,243 @@
     will need to worry if you have like a file with a new extension that is very large
     but it's super easy to just add a new extension so for example you can just change
     the git attributes。
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将允许跟踪所有文件。然后你可以执行`git status`，你会得到一些信息。还有另一件事，你可以使用`git lfs`。这很好，因为现在你可以看到哪些文件将由普通的Git处理，哪些文件将由Git大文件存储处理。这只是额外的信息，不是你需要过于担心的事情。如果你有一个非常大的新扩展名文件，确实需要关注，但只需简单地添加一个新扩展名，例如你可以更改git属性。
 - en: Anyways。Let's commit。My first。我不。So very easy。 And then you just get push。Since
     these are like very large files， normally takes a bit。So， I just keep moving。A
     bit for now。 and I show you。![](img/c09cf1ac6e21d36580a79d639f204d72_62.png)
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: 无论如何。让我们提交。我的第一次。我不。所以非常简单。然后你只需执行`git push`。由于这些是非常大的文件，通常需要一点时间。所以，我会稍微继续一下，展示给你看。![](img/c09cf1ac6e21d36580a79d639f204d72_62.png)
 - en: Okay， so this was pretty much everything for the Sching pretrained models section。Let
     me just quickly， we already saw how to use the web interface。And this is what
     we just did。 which way is how to upload a。![](img/c09cf1ac6e21d36580a79d639f204d72_64.png)
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，这几乎就是关于Sching预训练模型部分的所有内容。让我快速回顾一下，我们已经看到如何使用网页界面。这就是我们刚才所做的，上传一个模型的方式。![](img/c09cf1ac6e21d36580a79d639f204d72_64.png)
 - en: Yeah。So if you can see 80， something megabyte， that's why it's a bit slow even
     with a relatively fast connection。![](img/c09cf1ac6e21d36580a79d639f204d72_66.png)
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的。所以如果你看到80多兆字节，这就是为什么即使在相对较快的连接下也会有点慢。![](img/c09cf1ac6e21d36580a79d639f204d72_66.png)
 - en: Okay， so the last section is a bit。Different， it's about how to build a model
     card。So we already saw like few model cards， just as a recap， the model cards
     is this file。 which is very important。It explains the model， it ensures that it's
     reucable by the rest of the community。 and it provides a platform on which other
     members can build their artifacts。
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，最后一部分有点不同，是关于如何构建模型卡的。我们已经看过几个模型卡，简单回顾一下，模型卡就是这个文件。这非常重要。它解释了模型，确保它可以被社区其他成员复用，并提供了一个平台，让其他成员可以在其上构建他们的成果。
 - en: So documenting how the training and the evaluation was done helps others understand
     what to expect of a model。And it will also provide and providing sufficient information
     regarding the data that was used and the preprocessing and post processing that
     were done ensures that the limitations biasSS and context in which the model is
     not useful。
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 记录训练和评估的过程有助于其他人了解模型的期望。此外，它还将提供关于使用的数据、预处理和后处理的充分信息，以确保了解模型的限制、偏差和不适用的上下文。
 - en: can be identified and understood so if you upload a model without anything in
     the model card。 no one will use it because they wont know what the model is for
     instead if you have like a very nice model card explaining what it does。 how it
     was trained what's the purpose， what are the limitations which are the biasSS
     that will be super useful for other people。And additionally， as we'll see in one
     minute， you can add some special metadata that will make your model a。
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型可以被识别和理解，因此如果你上传一个没有任何内容的模型卡，没人会使用它，因为他们不知道这个模型是做什么的。相反，如果你有一个非常好的模型卡来解释它的功能、训练方式、目的以及限制和偏差，这将对其他人非常有用。此外，正如我们将看到的，你可以添加一些特殊的元数据，使你的模型更具价值。
 - en: Discoverable by the rest of the community。So as we saw， it's just a rhythm。And
     if you're more interested on this。The model card concept originates from a research
     direction from Google。 the paper is called Model Cars for Model reportinging，
     that's by Margaret Mitchell Atel。So there's a lot of very useful information contained
     in that paper。
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: 让社区其他成员能够发现。因此，正如我们所见，这只是一种节奏。如果你对此更感兴趣。模型卡的概念源自谷歌的一个研究方向。该论文名为《模型卡用于模型报告》，作者是**Margaret
+    Mitchell等**。这篇论文包含了许多非常有用的信息。
 - en: so we' recommend you to take a look at it。There are some sections that we recommend。
     model description， intended uses and limitations， how to use limitations and bias。Training
     data。 training procedure and evaluation results。So these are not a strict we don't
     force any specific sections。 so the model card really has a lot of flexibility。
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此我们推荐你去看看。有一些我们推荐的部分。模型描述、预期用途和限制、如何使用限制和偏见、训练数据、训练过程和评估结果。这些不是严格要求的，我们不强迫任何特定部分。因此，模型卡片确实有很大的灵活性。
 - en: So here there's a paragraph explaining each of these sections。 I think that
     you can go over it by yourself， but what might be more useful is to just quickly
     go through。Quickly go through a very nice model card。So this is bird based case。
     probably you're already a bit bored of this report at the time we've seen this
     quite a bit。
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有一段解释这些部分的段落。我认为你可以自己阅读，但更有用的是快速浏览一下。快速浏览一个非常好的模型卡片。这是基于BERT的案例。可能到现在为止你对这个报告有些厌倦了。
 - en: So it has like few sentences explaining the model where it was introduced。え。Yeah。
     then it has a description of the model。Expplainending the high level overview
     of the model。 how it was trained in which objectives。And what is what the model
     learns， so for example。 the model learns an inner representation of the English
     language that can then be used to extract features。
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以它有几句话来解释模型以及它是如何引入的。嗯，是的。然后它有一个模型描述，解释模型的高级概述。它是如何训练的，目标是什么。模型学习了什么，比如说，模型学习了英语的内部表示，可以用来提取特征。
 - en: Useful for downstream tasks。So it also has this intended uses and limitations
     section。So yeah。 it tells you that you can use this for mass language modeling
     or next sentence prediction。 but the intention of this model is to be a fine tune
     on downstream tasks。You can also get here like a goldat snippet。Although now the
     how to use section is we using transformers。
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于下游任务非常有用。因此它还有一个预期用途和限制的部分。所以是的。它告诉你可以将其用于大规模语言建模或下一个句子预测，但这个模型的意图是针对下游任务进行微调。你还可以在这里获取类似的代码片段。虽然现在使用部分是关于使用transformers的。
 - en: You can also just click here using transformers。And load it from here。Yeah。
     then it shows you how to do it in Pytech and intensorflow。Here actually there's
     a bug here。 this is for Tensorflow， it should be just bird model and here it should
     be theF bird model。But theに you getた idea。Then there's a limitations and bias
     section， which is very useful。
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: 你也可以直接点击这里使用transformers，并从这里加载。是的。然后它向你展示如何在PyTorch和TensorFlow中操作。这里实际上有一个错误。这是针对TensorFlow的，它应该只是BERT模型，这里应该是the
+    BERT model。但你明白这个意思了。然后有一个限制和偏见部分，这非常有用。
 - en: I think it's super important。So let's just read it so even if the training data
     used for this model could be characterized as fairly neut。 this model can have
     budget predictions and this is very similar to what we did at the end of the first
     chapter with the pipelines so the man work as and the predictions are lawyer。
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 我认为这非常重要。所以我们就来读一下，即使这个模型使用的训练数据可以被描述为相当中性，这个模型仍然可以进行预算预测，这与我们在第一章结束时所做的管道非常相似，因此人类的工作及预测都是律师。
 - en: waiter， detective doctor。And as you can see， the woman worked as a nurse waitress
     mate。So as you can see， the model has some biases， and as it's mentioned here
     and as we saw before。 this bias will also affect all fine versions of this model。
     So it's important that if you pick a model。You need to understand the biases because
     very likely those biases will probably transfer to your own model as well when
     you do downstream。
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 服务员、侦探、医生。正如你所看到的，女性的职业是护士、服务员、助理。所以你可以看到，这个模型有一些偏见，正如这里提到的，以及我们之前看到的。这种偏见也会影响这个模型的所有精细版本。因此，重要的是如果你选择一个模型，你需要理解这些偏见，因为这些偏见很可能也会转移到你自己的模型中，特别是在下游任务中。
 - en: sorry when you do fine tuning。It also explains what the training data， how the
     training was done。 was the preprocessing， pretraining。A table of the evaluation
     results。 And finally。Yeah。 how to cite it。The model cardss are very flexible。Eh，
     yes， let me quickly show you。The met datata。So at the top， people can add a useful
     metadata， so for example you can specify what's the language was。
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: 抱歉，当你进行微调时。它还解释了训练数据，训练是如何进行的。包括预处理、预训练、评估结果的表格。最后，是的。如何引用它。模型卡片非常灵活。嗯，是的，让我快速展示一下。元数据。所以在顶部，人们可以添加有用的元数据，例如你可以指定语言是什么。
 - en: What's the license。What data sets were used when we need the model。You can also
     add as many tags as you want so then people can click here expert and they will
     find all of the models that have this tag。If you would like to learn a bit more
     about。The metadata， you can go to resources。Mugel hot duck。Then you can search
     here。 We have a couple of sections。On met data。
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 许可证是什么？在需要模型时使用了哪些数据集？你也可以添加任意数量的标签，这样人们就可以在这里点击“专家”，找到所有带有该标签的模型。如果你想了解更多关于元数据的信息，可以去资源页面。Mugel
+    hot duck。然后你可以在这里搜索。我们有几个关于元数据的部分。
 - en: But this link in particular has an example of the model card and what's the
     structure。So which languages you have， the license， which text you want to have。
     so for example you can use this to specify thirdpart libraries or specific tasks，
     data sets metrics。 and also like you can add specific metrics which can later
     on be processed by other pipelines。一诶。
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: 但这个链接特别有一个模型卡的示例以及其结构。你可以查看你拥有的语言、许可证、你想要的文本。所以，比如说，你可以用这个来指定第三方库或特定任务、数据集、指标。此外，你还可以添加特定的指标，这些指标可以稍后由其他管道处理。
 - en: I think that's pretty much it feel free to ask any questions。And if not， I will
     show you yeah。 so this is the end of the chapter。 there are like two very small
     things I would like to show you。Which are part of the Hogging F hub。![](img/c09cf1ac6e21d36580a79d639f204d72_68.png)
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 我想差不多就是这些，随时可以问任何问题。如果没有，我就给你展示一下，是的。所以这就是章节的结束。我想给你展示两件非常小的事情。这些都是Hugging Face
+    Hub的一部分。![](img/c09cf1ac6e21d36580a79d639f204d72_68.png)
 - en: 一。So the first one。Let me just。Both of this。![](img/c09cf1ac6e21d36580a79d639f204d72_70.png)
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: 一。所以第一个部分。让我先展示这两个。![](img/c09cf1ac6e21d36580a79d639f204d72_70.png)
 - en: If you have transformers installed， very likely。 we already have the hooking
     face hub a。![](img/c09cf1ac6e21d36580a79d639f204d72_72.png)
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你已经安装了transformers，很可能我们已经有了Hugging Face Hub的连接。![](img/c09cf1ac6e21d36580a79d639f204d72_72.png)
 - en: Inled， this is a client library that gives you to a lot of things。 So this is
     what allows anyone to。Poish files to De hub， you can do a lot of pretty nice things。And
     if you would like to integrate this to your own code， it's very straightforward。![](img/c09cf1ac6e21d36580a79d639f204d72_74.png)
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: 这实际上是一个客户端库，提供了许多功能。所以这使得任何人都可以将文件上传到Hub，你可以做很多相当不错的事情。如果你想将其集成到自己的代码中，过程非常简单。![](img/c09cf1ac6e21d36580a79d639f204d72_74.png)
 - en: Apart from having like wrappers to upload things or donload things from the
     hook。![](img/c09cf1ac6e21d36580a79d639f204d72_76.png)
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 除了有上传和下载内容的包装器之外。![](img/c09cf1ac6e21d36580a79d639f204d72_76.png)
 - en: You also have access图。Information。Information from from the hub。 So， for example。
     if you would like to。Get all of the models。That are for a specific library， let
     me actually。 this will return quite a bit so。So this will return information，
     not the actual models。Let's say in film mask， I think that will be clearer。So
     this will make a call to the back end。
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: 你还可以访问图。信息。来自Hub的信息。所以，比如说，如果你想获取所有针对特定库的模型，让我实际展示一下。这将返回相当多的信息，而不是实际模型。假设在电影掩码中，我认为这样会更清楚。所以这将向后端发起调用。
 - en: This will return all of the information on all of the field mask。Moels and as
     you can see there are 1000A mask filling models on theHub。So， let me just show
     you。The first item。So as you can see， the model name is Albert basede V1， it gives
     you all of the tags。And it tells you what's the task this model this reportport
     is for。
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将返回关于所有字段掩码的所有信息。正如你所看到的，Hub上有1000A掩码填充模型。所以，让我给你展示一下第一个项目。正如你所见，模型名称是Albert
+    based V1，它给你所有的标签。它还告诉你这个模型报告的任务是什么。
 - en: So there was a person from the community that was doing the course and they
     decided to actually create a hogging phase data set of all of the models that
     are on the hub so that's quite nice so if you would like to do model exploration
     and more of that that's like a phone project that anyone could already with this
     provided in。
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以社区里有一个人正在上课，他们决定实际创建一个Hugging Face数据集，收录Hub上的所有模型，所以这非常不错。如果你想进行模型探索等，这就像是一个任何人都可以进行的项目。
 - en: '![](img/c09cf1ac6e21d36580a79d639f204d72_78.png)'
+  id: totrans-136
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c09cf1ac6e21d36580a79d639f204d72_78.png)'
 - en: So actually， you would like to learn a bit more about。About this。The repository
     is。佢件 face hood。And this is like the open source place for everything related
     to theHub。 so you get a client library to download and publish on the hub。You
     get the inference API for third party libraries。You get the widgets。
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
 - en: So the widgets are the things at the right of the model in which， the model
     card in which you could。Try the model directly on the web。![](img/c09cf1ac6e21d36580a79d639f204d72_80.png)
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
 - en: And more things。 So that's very nice。This is a very recent feature。E， let me
     first。![](img/c09cf1ac6e21d36580a79d639f204d72_82.png)
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
 - en: 诶。Cooking face， clear。![](img/c09cf1ac6e21d36580a79d639f204d72_84.png)
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
 - en: Great。Nome3。Okay so， I'm first gra a ripa。And I need to specify。Re各一份。Aam Holmes
@@ -826,51 +1083,62 @@
     F API。Yeah。 maybe wait for next week， there will be some announcements on that，
     so please stay tuned as well。诶。一。So let me test this， so right now I created a
     ripa。
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/c09cf1ac6e21d36580a79d639f204d72_86.png)'
+  id: totrans-142
   prefs: []
   type: TYPE_IMG
 - en: And let's say this is a context manager， maybe let's first explain the code。So
     the Hogan phase hook has this class， which is repository。 which allows you to
     clone a repository in a specific directory。So I just did Do3。If I met wrong。And
     it will clone yeah， from the me。And this is a context manager。
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
 - en: so you've probably done similar things with files， so you can do with repo。comm
     my first file。Anything that you do know。Will be committed to the hub so it's like
     a very nice proper that will probably make your life easier。![](img/c09cf1ac6e21d36580a79d639f204d72_88.png)
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
 - en: Just let me quickly check that this will work。So wind birdd， yeah。Yeah。 so this
     initial says the repository， so now you can do with red product commit。![](img/c09cf1ac6e21d36580a79d639f204d72_90.png)
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/c09cf1ac6e21d36580a79d639f204d72_91.png)'
+  id: totrans-146
   prefs: []
   type: TYPE_IMG
 - en: So。My first phone。With offend。第。嗯。ok。So， this is a。I mean。 this part grid sorry
     with open file as file bla blah。 this can be anything like this is not limited
     to text files you can do anything that is great so you're probably very familiar
     with this The only new thing is this grper with repo dot commit my first file。
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/c09cf1ac6e21d36580a79d639f204d72_93.png)'
+  id: totrans-148
   prefs: []
   type: TYPE_IMG
 - en: And now if we go to theH， so let's go to mine。Profi。Yeah， here we have Domin3。And
     if we go to fire。![](img/c09cf1ac6e21d36580a79d639f204d72_95.png)
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
 - en: Will see that the file that I just created here。With this with open file lalalah。It's
     not actually a done for locally。 It's done to。Commit that to the repository。 So
     this like a nice way of handling a file。F writing on the hub。![](img/c09cf1ac6e21d36580a79d639f204d72_97.png)
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
 - en: And as you can see， the value is already here。Okay。 so those two were like the
     two bonus things I wanted to show you。 so this is like the last。The the last chapter。But
     we will have like some different activities going on in the next few weeks。We
     also have in the forum this shared your project section。
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
 - en: so at this point you already have a lot of the tools to do fine tuning for example。
@@ -878,23 +1146,34 @@
     for an interesting data set in the hub so here。In the hub， you can go to datas
     and you can search there for interesting datas。And you can work on a classification
     project， text classification project。 And it's quite easy to。
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: 到目前为止，你已经拥有了很多工具来进行微调，例如针对特定任务的文本分类。因此，你现在可以在中心搜索一个有趣的数据集。在中心，你可以去数据部分，搜索有趣的数据。你可以在一个分类项目，文本分类项目上工作。这非常简单。
 - en: It's quite easy to share this and feel free to comment here like， hey。 I train
     this with what I learned on the course， that would be awesome。We have one question
     which is so the advantage of therepo。comit contact manager is that we don't need
     to do a gi commit every time Yeah so this is like an easy programmatic way of
     handling everything with a contact manager。
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: 分享这个非常简单，欢迎随时在这里评论，比如说，“嘿，我用我在课程上学到的内容进行训练，这太棒了。”我们有一个问题，就是therepo.com的联系人管理器的优势是我们不需要每次都进行gi
+    commit，是的，这是一种轻松的编程方式来处理所有联系人管理器的事务。
 - en: it's mostly like a convenience wrapper。I hope that makes sense。All right。Do
     we have any other questions？Thanks， thanks for your welcomes。All right。 then them
     thanks a lot for everyone that was able to ya， yeah and see you in the firm。![](img/c09cf1ac6e21d36580a79d639f204d72_99.png)
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: 这主要像是一个方便的包装器。我希望这样能让你理解。好的。还有其他问题吗？谢谢，感谢你的欢迎。好的，感谢每一个能够参加的人，我们下次在公司见。![](img/c09cf1ac6e21d36580a79d639f204d72_99.png)
 - en: '![](img/c09cf1ac6e21d36580a79d639f204d72_100.png)'
+  id: totrans-155
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c09cf1ac6e21d36580a79d639f204d72_100.png)'
 - en: 。
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: 。
