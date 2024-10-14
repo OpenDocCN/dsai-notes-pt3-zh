@@ -1,42 +1,55 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P10：L10- AND、OR 和 NOT
     运算符 - ShowMeAI - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P10：L10- AND、OR 和 NOT
+    运算符 - ShowMeAI - BV1Pu41117ku
 - en: In this tutorial I'm going to show you how to combine multiple search conditions
     when filtering data。 so let's say we want to get all the customers that are born
     after January 1 1990 who also happen to have more than 1000 points so this is
     where we use the and operator so we type out and and after we type out another
     condition like points。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个教程中，我将向你展示如何在过滤数据时组合多个搜索条件。所以假设我们想要获取在1990年1月1日后出生的所有客户，并且他们的积分超过1000，这时我们使用与运算符，因此我们输入并，然后在输入另一个条件，比如积分。
 - en: 😊，Greater than 1000。 Now， when we execute this query。 we only get customers
     who have both these conditions。 Let's take a look。 So execute。 we only have two
     customers。 And if you look， both these people are born after 1990。 And they have
     more than 1000 points。 So this is the and operator。 when me use this operator。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，大于1000。现在，当我们执行这个查询时，我们只获得满足这两个条件的客户。我们来看一下。所以执行。我们只有两位客户。如果你看，这两位都是在1990年后出生，并且他们的积分超过1000。这就是与运算符的作用。
 - en: both these conditions should be true。 In contrast to the and operator， we have
     the or operator。 So with or， if at least one of these conditions is true。 that
     row will be returned in the results set。 Let's take a look。 Now we execute this
     query again。 instead of two records we have。😊，Quite a few records。 So for example。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 这两个条件都应该为真。与与运算符相对，我们有或运算符。所以使用或时，只要这两个条件中的至少一个为真，该行就会在结果集中返回。我们来看一下。现在我们再次执行这个查询。结果不是两条记录，而是😊，相当多的记录。所以例如。
 - en: we have this person who is not born after 1990， but if you look at their points。
     they have more than 1000 points。 So any customer records that satisfies at least
     one of these conditions will be returned。 Now let's take this to the next level。
     Let's say we want to get customers who are either born after 1990 or they should
     have at least 1 thousand00 points and live in Virginia。 So this is how we do this。We
     type out and， and then we add another condition， state equals Virginia。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们有这个人在1990年后出生，但如果你看他们的积分，他们超过了1000分。因此，任何满足至少一个条件的客户记录都会被返回。现在让我们将其提升到下一个层次。假设我们想要获取在1990年后出生的客户，或者他们应该至少有100000积分并且居住在弗吉尼亚州。所以我们这样做。我们输入并，然后添加另一个条件，州等于弗吉尼亚。
 - en: Let's execute this query and see what we get。 We only get full records。 So these
     are the customers that are born either after 1990 or they have more than 1000
     points and live in Virginia。 If you look at the first customer here， this person
     is not born after 1990。 but you can see that she lives in Virginia and she has
     more than 1000 points。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们执行这个查询，看看我们得到什么。我们只得到完整的记录。因此，这些客户要么是在1990年后出生，要么积分超过1000且居住在弗吉尼亚。如果你看这里的第一个客户，这个人并没有在1990年后出生，但你可以看到她住在弗吉尼亚，并且积分超过1000。
 - en: So the last two conditions are true for this customer。Now when combining multiple
     logical operators。 you need to be aware of the order of these operators。 so earlier
     I talked about the order of arithmetic operators。 I told you that multiplication
@@ -47,78 +60,107 @@
     it doesn't matter that we typed out this condition after the first condition because
     the and operator has a higher precedence Now you can always change the order using
     parenthsesis and this also makes sure code cleaner and easier to understand。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以最后两个条件对于这个客户是成立的。现在，在组合多个逻辑运算符时，你需要注意这些运算符的顺序。早些时候我谈到了算术运算符的顺序。我告诉过你，乘法的优先级高于加法和减法，我们可以使用括号来覆盖默认顺序，逻辑运算符也有相同的概念。所以与运算符总是优先计算。因此，当执行这个查询时，查询执行引擎首先评估这个条件，因为在这里我们使用的是与运算符，即使我们在第一个条件后输入了这个条件也无所谓，因为与运算符具有更高的优先级。现在，你始终可以使用括号改变顺序，这也确保了代码更简洁，更易于理解。
 - en: 😊，So here we can put parenthesesis。Around is last two conditions。And also we
     can put these on a new line。😊，For clarity， something like this。So anyone who reads
     this code can easily understand what is the intent of this query？
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，所以我们可以在最后两个条件周围加上括号。我们也可以把这些放在新的一行。😊，为了清晰，像这样。所以任何阅读这段代码的人都可以很容易理解这个查询的意图？
 - en: Now we also have another logical operator called not， and we use that to negate
     a condition。 let me show you， so I'm going to simplify our word clause。😊，Let's
     say。Re're searchingching for customers who were born after 1990， or they have
     more than 100 points。 If we execute this query， we get。These people， customers
     with ID1， 3，5， and so on。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们还有另一个逻辑操作符称为非，我们用它来否定一个条件。让我给你演示一下，所以我将简化我们的“或”子句。😊假设我们正在寻找1990年后出生的客户，或者他们的积分超过100。
+    如果我们执行这个查询，我们得到。这些人，客户ID为1、3、5，等等。
 - en: Now we can use the not operator to negate this condition。 so we apply not here
     and preferably we also put parenthesis around this condition。 Now。 when we execute
     this query， we'll see other customers that are not in the current result set。
     Let's take a look。😊，So instead of customers with IDs， 1，3，5，6， and so on。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们可以使用非操作符来否定这个条件。所以我们在这里应用非操作符，并且最好在这个条件周围加上括号。现在，当我们执行这个查询时，我们会看到其他不在当前结果集中的客户。让我们来看一下。😊因此，我们看到的客户ID为1、3、5、6，等等。
 - en: we get the customers with IDs 2，4， and 10。Now technically。 these customers were
     born before 1990 and they have less than 1000 points。 So if you look here。This
     first customer was born before 1990， and he has less than 1000 points。 How did
     I know that。 Let me show you a trick that I learned in math。Whenever you have
     a not operator。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们得到的客户ID为2、4和10。现在从技术上讲，这些客户出生在1990年之前，并且积分少于1000。所以如果你看看这里，第一个客户出生在1990年之前，并且他的积分少于1000。我怎么知道的？让我告诉你我在数学中学到的一个技巧。每当你有一个非操作符时。
 - en: you can simplify your expression like this。We apply the knot operator to the
     first condition。People who were born after 1990。How can we ne this condition，
     Well。 the greater than operator becomes less than or equal to。 That is the inverse
     of that condition。 right。Now we apply the no to or to negate the or。 What do we
     get we get and。Finally。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以这样简化你的表达式。我们将非操作符应用于第一个条件，即在1990年后出生的人。我们如何否定这个条件呢？嗯，大于操作符变成了小于或等于。这就是该条件的逆。对吧？现在我们应用“非”来否定“或”。我们得到了“与”。最后。
 - en: apply the nut operator on the last condition， people who have more than 1000
     points。 When we negate this condition， we get customers with less than or equal
     to 1000 points。 Now we can remove the not operator to simplify this。 We don't
     need parenthses anymore because we only have two conditions that are combined
     with an and。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 在最后一个条件上应用非操作符，即拥有超过1000积分的人员。当我们否定这个条件时，我们得到的客户是积分少于或等于1000的客户。现在我们可以去掉非操作符以简化这一点。我们不再需要括号，因为我们只有两个条件是通过“与”连接的。
 - en: Here is the result。As you can see， this is much easier to read and understand
     people who were born before this date and they have less than1 thousand00 points。![](img/13b5d6507d3427a9bc38b390177c87ae_1.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是结果。正如你所看到的，这样阅读和理解要容易得多，出生在这个日期之前的人，他们的积分少于1000。![](img/13b5d6507d3427a9bc38b390177c87ae_1.png)
 - en: 。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 。
 - en: '![](img/13b5d6507d3427a9bc38b390177c87ae_3.png)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/13b5d6507d3427a9bc38b390177c87ae_3.png)'
 - en: All right here's your exercise。From the Order items table。Get the items for
     order number 6。 where the total price for that item is greater than 30。Al right
     here's the order items table in this table we have these columns， order ID， product
     ID。 quantity and unit price if I multiply the quantity by unit price we can get
     the total cost of that item and then we can compare it with 30 so let's go ahead
     and write this query。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，这里是你的练习。从订单项表中获取订单号为6的项目，其中该项目的总价格大于30。好的，这里是订单项表，在这个表中我们有这些列：订单ID、产品ID、数量和单价。如果我将数量乘以单价，我们可以得到该项目的总成本，然后我们可以将其与30进行比较，所以让我们继续编写这个查询。
 - en: Select。Star。From Order items。Where here we need two conditions， one is for the
     order。 so order under ID should be 6。And the second condition， we want to calculate
     the total price。 so we get the unit price。😊，Multiply it by quantity。And this value
     should be greater than 30。 so as we can see， we can use an arithmetic expression
     in a word class。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 选择所有。来自订单项表。在这里我们需要两个条件，一个是订单。所以订单ID应该是6。第二个条件，我们想要计算总价格。所以我们获取单价。😊将其乘以数量。这个值应该大于30。所以如我们所见，我们可以在“或”子句中使用算术表达式。
 - en: it's not limited to the select class okay。😊，Now let's execute this query and
     see what we get。We should get only one item。That is for product1， here the quantity
     is 4 and unit price is just over $8。 so the total price for this item is greater
     than 30。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 这并不局限于选择类。好的，😊现在让我们执行这个查询，看看我们得到什么。我们应该只得到一个项目。该项目为产品1，数量为4，单价略高于$8，因此该项目的总价格大于30。
 - en: '![](img/13b5d6507d3427a9bc38b390177c87ae_5.png)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/13b5d6507d3427a9bc38b390177c87ae_5.png)'

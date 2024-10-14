@@ -1,8 +1,11 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P1：L1- 介绍 - ShowMeAI
     - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P1：L1- 介绍 - ShowMeAI
+    - BV1Pu41117ku
 - en: 🎼Hi， my name is Mosh Hamiddani and I'm super excited to be your instructor In
     this three hour course。 you're going to learn everything you need to get started
     with SQL or SQL。 First I'm going to give you a three minute introduction to SQL
@@ -10,28 +13,42 @@
     This course is ideal for anyone who wants to learn SQl from scratch but also anyone
     with some basic knowledge who wants to fill in the missing gaps By the end of
     this course you'll be able to retrieve insert。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 🎼嗨，我的名字是Mosh Hamiddani，我非常兴奋能成为你的讲师。在这个三个小时的课程中，你将学习到开始使用SQL所需的一切。首先，我将给你一个三分钟的SQL介绍，然后我们将安装必要的工具并编写我们的第一个SQL查询。这个课程非常适合那些想从头开始学习SQL的人，也适合那些有一些基础知识但想填补空白的人。在这个课程结束时，你将能够检索和插入数据。
 - en: update and daily data in databases We'll talk about tables， relationships。 different
     types of joins subqueries， regular expressions and much much more These are the
     essential concepts that every software developer or data scientist must know This
     SQl course is packed with tons of exercises that help you both learn and remember
     the SQl syntax Also there is a table of content below this video so you can quickly
     jump to specific tutorials。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 更新和日常数据在数据库中，我们将讨论表，关系，不同类型的连接，子查询，正则表达式等等。这些是每个软件开发者或数据科学家必须了解的基本概念。这个SQL课程包含大量练习，帮助你学习和记住SQL语法。此外，视频下方有一个目录，可以快速跳转到特定教程。
 - en: 😊。![](img/6d073b334389f003f5556b89c2c0cc1e_1.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊。![](img/6d073b334389f003f5556b89c2c0cc1e_1.png)
 - en: '![](img/6d073b334389f003f5556b89c2c0cc1e_2.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6d073b334389f003f5556b89c2c0cc1e_2.png)'
 - en: '![](img/6d073b334389f003f5556b89c2c0cc1e_3.png)'
+  id: totrans-5
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6d073b334389f003f5556b89c2c0cc1e_3.png)'
 - en: '![](img/6d073b334389f003f5556b89c2c0cc1e_4.png)'
+  id: totrans-6
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6d073b334389f003f5556b89c2c0cc1e_4.png)'
 - en: Now let's jump in and get started。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们开始吧。

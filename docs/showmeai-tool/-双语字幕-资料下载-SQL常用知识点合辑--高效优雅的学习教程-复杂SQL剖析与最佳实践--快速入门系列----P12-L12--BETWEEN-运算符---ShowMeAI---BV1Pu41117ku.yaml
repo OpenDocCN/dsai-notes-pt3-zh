@@ -1,51 +1,76 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P12：L12- BETWEEN 运算符
     - ShowMeAI - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P12：L12- BETWEEN 运算符
+    - ShowMeAI - BV1Pu41117ku
 - en: '![](img/0fd125c9f59bc110486d7eb215bf21b1_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0fd125c9f59bc110486d7eb215bf21b1_0.png)'
 - en: 哦。In this tutorial， we're going to look at the between operator in SQA。So let's
     say we want to get the customers who have more than 1000 and less than 3000 points。When
     me rate the query is like this where points greater than thousand well more accurately
     greater than or equal to 100 and points less than or equal to 3000。 When we execute
     this query， we get。😊，How many we get four people that satisfy this criteria？
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。在本教程中，我们将查看 SQA 中的 between 运算符。所以假设我们想获取积分在1000以上和3000以下的客户。查询是这样的，where points
+    greater than 1000，更准确地说是大于或等于1000，并且 points less than or equal to 3000。当我们执行这个查询时，我们得到。😊，我们得到了多少人，四个人符合这个标准？
 - en: Now whenever you're comparing an attribute with a range of values。 you can use
     the between operator and this makes your code shorter and cleaner so we can rewrite
     this expression like this where points between thousand00 and 3000 This is exactly
     equivalent to what we had before。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，无论何时你在用一个属性与一个范围的值进行比较时，你都可以使用 between 运算符，这使得你的代码更简短、更清晰，因此我们可以将这个表达式重写为
+    where points between 1000 和 3000。这与我们之前的内容完全等效。
 - en: so these range values are also inclusive That means points is going to be greater
     than or equal to 1000 or less than or equal to 3000 let's execute the query。 we
     get the exact same result。😊。![](img/0fd125c9f59bc110486d7eb215bf21b1_2.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这些范围值也是包含的。这意味着点数大于或等于1000，或小于或等于3000，让我们执行这个查询。我们得到完全相同的结果。😊。![](img/0fd125c9f59bc110486d7eb215bf21b1_2.png)
 - en: 嗯。![](img/0fd125c9f59bc110486d7eb215bf21b1_4.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗯。![](img/0fd125c9f59bc110486d7eb215bf21b1_4.png)
 - en: All right now， as an exercise， I wanted to write a query to get the customers
     that are born between January 1st。 1990 and January 1st，2000。![](img/0fd125c9f59bc110486d7eb215bf21b1_6.png)
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，现在作为练习，我想写一个查询来获取出生日期在1990年1月1日到2000年1月1日之间的客户。![](img/0fd125c9f59bc110486d7eb215bf21b1_6.png)
 - en: '![](img/0fd125c9f59bc110486d7eb215bf21b1_7.png)'
+  id: totrans-7
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0fd125c9f59bc110486d7eb215bf21b1_7.png)'
 - en: All right， so we start with select star。From customers， where？Burth on the line
     date between。 so what matters here is that we can use the between operator for
     date values as well。 it's not limited to using numbers。So we're birth date between
     now we need to supply two date values。 so as I told you before， the format for
     dates is four digits for the year， so 1990。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，我们从选择所有开始。从客户那里，哪里？出生日期在这条线上，日期在……所以这里需要注意的是，我们也可以对日期值使用 between 运算符。这不仅限于数字的使用。所以我们出生日期在现在，我们需要提供两个日期值。正如我之前告诉你的，日期的格式是四位数的年份，所以是1990。
 - en: two digits for the month and two digits for the day。So the birthday should be
     between this value and here's a second value， 20，0，1 and 01。Let's execute this
     query。We get。![](img/0fd125c9f59bc110486d7eb215bf21b1_9.png)
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 月份需要两个数字，日期也需要两个数字。所以生日应该在这个值和第二个值之间，20，0，1 和 01。让我们执行这个查询。我们得到。![](img/0fd125c9f59bc110486d7eb215bf21b1_9.png)
 - en: Only three people will match this criteria。Oh。![](img/0fd125c9f59bc110486d7eb215bf21b1_11.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 只有三个人符合这个标准。哦。![](img/0fd125c9f59bc110486d7eb215bf21b1_11.png)
