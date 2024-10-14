@@ -1,5 +1,6 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P49：L9.3- 计算机视觉和Keras的迁移学习
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
@@ -7,6 +8,7 @@
     University In this video。 we're going to look at transfer learning and how we
     can transfer computer vision neural networks that have been developed for us into
     Cars for the latest on my AI course and projects。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
 - en: Click subscribe in the bell next to it to be notified of every new video。 So
@@ -15,15 +17,18 @@
     our Python code and we'll be able to recognize 10 different image types。 We're
     going to also implement a very， very simple example of how we'll extend this to
     learn。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
 - en: We're really trying to see if we can just add a few images to it and actually
     teach it to recognize a couple of different dog breeds and we'll see that we have
     some degree of success with this to do this as a real project。 we would have to
     capture quite a few additional images to do this。 You'll get a chance to try this。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
 - en: 😊。![](img/fea53c1ab8aaa1af63aff2f2daccb4dc_1.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
 - en: Out in the assignments to create your own transfer learning for computer vision。
@@ -31,6 +36,7 @@
     this is a project that Microsoft probably worked on for some degree of time。 We're
     going try to do a very， very simple poor man's version of this that recognizes
     just a couple of dog breeds。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
 - en: but you can basically put in pictures of of dogs。 and it will tell you using
@@ -38,26 +44,31 @@
     or if they use some transfers from existing neural networks。 But nonetheless，
     we'll try to do something somewhat like this First。 before we even try transfer
     learning。 let's just see if we can get mobile net loaded and actually work。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
 - en: So I'm going to pull in these imports so that we have it this command here will
     basically load in imagenet from Kis so that we can make use of it in mobilenet。
     Let me go ahead and pull this。😊。![](img/fea53c1ab8aaa1af63aff2f2daccb4dc_3.png)
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/fea53c1ab8aaa1af63aff2f2daccb4dc_4.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
 - en: Now， if this was the first time that you were running it。 you'd see download
     bars go across and it would download the entire mobilenet imagenet waits for you。
     This can be a very good way to learn about how to architect neural networks。 you
     can look at the summary for these and it shows you And by the way。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
 - en: this include top that I have here true that just means load the whole thing
     when we go to do transfer learning will say false meaning to share off the output
     layers like we did in the previous part。 but we'll take the bottom part for feature
     engineering， but the top part of the network。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
 - en: we're going to put in our own so that we can teach it to classify images that
@@ -66,6 +77,7 @@
     of filters and we tend to get bigger and bigger as we go out 256。512 and so on
     and so forth you can see that they are using batch normalization extensively so
     it can be very interesting to look at these and。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
 - en: how these extremely well researched libraries of weights that were transferring。
@@ -74,6 +86,7 @@
     final output layers that will get removed but these are what are used to classify
     those 1000 different images that this thing is designed to deal with So then let's
     go ahead and try to see how well it will classify images。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
 - en: Now I grabbed just some URLs here from Google image search。 These are a variety
@@ -82,6 +95,7 @@
     files too。 let's go ahead and run this。 It should be loading those URLs It's actually
     done already you'll see that first image that I picked So that first image is
     a suck ball and it's literally from Shopify。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
 - en: So I was actually doing Google image search。Finding an image and just right
@@ -90,6 +104,7 @@
     the image net train mobile net saying with 99% probability that it believes that
     is a soccer ball。 So it's quite good。 It's saying honeycomb is the next one down
     but it's pretty uncertain of that。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
 - en: but I could see where it's going with honeycomb。 It's similar shape， a dumbbell，
@@ -97,18 +112,21 @@
     the classifications that it's done。 Now you could take your the python code up
     there and you could write all kinds of computer vision applications。 you wouldn't
     even have to train the neural network， just use mobile net。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
 - en: and you'll have this capability here I pick just a random car。 It actually identified
     it as a racer definitely not a convertible。 sort of a sports car。 it's a truck。
     It does recognize that as a pickup truck。 It's definitely not an amphibian。 if
     you put that in water， it would sink to the bottom。 pretty So and it's。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
 - en: Also showing the class number so the classes between 0 and 999 so these are
     the classes that you have it might be 1 to1000 I'm not totally sure what the indexes
     are There's me I was hoping it would classify me as a person but OL it classifies
     me as a suit which I guess is a synonym for a lawyer。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
 - en: I might take some offense to that。 It says that I have a Winsor tie。 There is
@@ -116,6 +134,7 @@
     them groomroom。 I was a groom at one point when my wife and I got married， but
     that was not the day。 Definite not a trench coat。 And I don't know why it thinks
     I'm a cellular telephone。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
 - en: I use him a lot， but I am not a cellular telephone。 This is my dog Hckory。 He's
@@ -123,6 +142,7 @@
     it， And I do successfully。 There are some dog breeds in image net， So it can do
     some breed identification already。 but it's saying that it's a pug or maybe a
     French bulldog wrong country wrong breed altogether。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
 - en: Defite not a boxer， Def not a bullmesteef。 That is one of the biggest dogs that
@@ -131,6 +151,7 @@
     this。 or you can use Yolo if。Needed if you want to look at the previous module
     that I had on that where you can learn to actually create something that needs
     to recognize several things on the screen。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
 - en: So maybe a car and a person and know the actual X and Y that they're located
@@ -138,6 +159,7 @@
     dog door that only opens for whatever it classifies your dog as thatd be a fun
     project but this is showing you basically the make square we had that before it
     just does a Instagram type。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
 - en: make it make it a portrait。 we go through all the URLs and I basically load
@@ -145,12 +167,14 @@
     which which is 224 by 224 anti asing convert the image to an array。 expand the
     dimensions if necessary and then I preprocess the image preprocess input that's
     provided by Ks to help you pre-process your image and then I'm ready to。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
 - en: The predictions here I essentially then print out the number， which is the agm。
     and I also get the decode predictions function that was provided by Kis。 and this
     lets me print out this nice list of the probabilities。 So this could be a starting
     point for all kinds of applications that you might you might want to create。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
 - en: but let's try to do actual transfer learning。 So here I am going to load the
@@ -158,6 +182,7 @@
     the summary。 You'll see that those 1000 layers at the bottom are not there。 We
     stop right at the 1024s。 So it's just like the one that we saw earlier in this
     part， but we're stopping early。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
 - en: Now everything is still trainable。 Well mark those as nontrainable in a moment
@@ -166,6 +191,7 @@
     that you see up here will not be trainable。 And then I put a softm。Here because
     we're going to basically add three different types of dog Here I actually build
     the model。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
 - en: and here I mark the first 20 as trainable false the last as completely trainable。
@@ -173,20 +199,24 @@
     I am going to train this according to this。 this folder。 Now the structure that
     you put this into becomes very important。 So this is users Jheton downloads trans。
     So that's just where I happen to put it in there。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
 - en: So trans for transfer learning。 let me show you that folder。 So this is the
     folder I have set up。 you'll see I have class A B and C， those are my three types
     of dog。 I do not have a huge training set here。 So class A。 these are all bulldog
     type animals and then class B these are poodles Class C。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
 - en: these are German shepherds。 So this is how you would set it up。 you just to
     label these。 You have your images here。 they can be Jpegs and PGs and you name
     the。![](img/fea53c1ab8aaa1af63aff2f2daccb4dc_6.png)
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/fea53c1ab8aaa1af63aff2f2daccb4dc_7.png)'
+  id: totrans-29
   prefs: []
   type: TYPE_IMG
 - en: Folds so that the common classes are grouped together。 that gives you your whys
@@ -195,6 +225,7 @@
     tells it the target size so it's going scale all of those as need B to 224 We're
     trying to classify them as categorical so we want the three classes and we go
     ahead and run this found 9 images belonging to three classes。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
 - en: Now if you want to train this， you'll have to go in and pull in your own images
@@ -203,6 +234,7 @@
     do dog breeds as well and you'd probably want to grab quite a few additional images
     you'd ideally want maybe 50 to 100 in each of the classes but that's just a stab
     at it Now I'm going to train it。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
 - en: This will go pretty quick actually I'm only training it for five epos I could
@@ -212,6 +244,7 @@
     it actually does。 Again， this is mainly going through the motions You'd want quite
     a few additional images if you are going to do this for real right there's a German
     shepherd。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
 - en: It's saying it class 2。 Here's another German shepherd also class 2。 Now here's
@@ -219,6 +252,7 @@
     bulldog is pretty similar to these German shepherds。 iss probably from not training
     it quite enough。 This bulldog。 my bulldog it's saying that that's something different
     entirely。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
 - en: And then the poodles are also classifying as two。 So you probably need more
@@ -226,13 +260,19 @@
     you can build this potentially for any types of images that you want。 Thank you
     for watching this video。 in the next video we're going continue with transfer
     learning and see about。😊。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后贵宾犬也被分类为两类。所以你可能需要更多的图像。但这只是让你了解这个过程，以便你可以为任何你想要的图像构建这个。感谢观看这个视频。在下一个视频中，我们将继续讨论迁移学习。😊
 - en: '![](img/fea53c1ab8aaa1af63aff2f2daccb4dc_9.png)'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/fea53c1ab8aaa1af63aff2f2daccb4dc_9.png)'
 - en: Han language libraries or neural networks that can be transferred into curs
     for our use this content changes often so subscribe the channel to stay up to
     date on this course and other topics in artificial intelligence。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 汉语言库或可以转移到我们的用途的神经网络，这个内容经常变化，所以请订阅频道，以便及时了解这门课程和其他人工智能主题。

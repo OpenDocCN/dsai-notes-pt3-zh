@@ -1,17 +1,24 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P45：L8.4- 基于Keras的贝叶斯超参数优化
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P45：L8.4- 基于Keras的贝叶斯超参数优化
+    - ShowMeAI - BV15f4y1w7b8
 - en: '![](img/9925006dbf7cc9645dc4cf05b451019d_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/9925006dbf7cc9645dc4cf05b451019d_0.png)'
 - en: Hi， this is Jeff Heaton。 welcome to applications of deep neural networks with
     Washington University In this video。 we're going to look at how you can use Bayesian
     optimization to tell you how to architect your neural network for the latest on
     my AI course and projects。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是杰夫·希顿。欢迎来到华盛顿大学的深度神经网络应用。在这段视频中，我们将看看如何使用贝叶斯优化来告诉你如何为你的神经网络架构设计。有关我最新的AI课程和项目的信息。
 - en: click subscribe and the bell next to it to be notified of every new video Now
     we're going to look at Bayesian hyperparameter optimization。 believe me this is
     a very big thing in kagle currently， this is how you optimize hyperpara。 the hyperpara
@@ -19,48 +26,62 @@
     for a particular model。 Almost all model types have hyperpara to some degree neural
     networks have the number of hidden layers the neuron counts if you're using batch
     regularization a variety of other things。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 点击订阅和旁边的铃铛，以便在每个新视频发布时获得通知。现在我们要看看贝叶斯超参数优化。相信我，这在Kaggle上是非常重要的，这就是你如何优化超参数。我们之前多次讨论过的超参数就是你需要为特定模型设置的那些东西。几乎所有模型类型在某种程度上都有超参数，神经网络有隐藏层的数量、神经元计数，如果你使用批量正则化，还有许多其他因素。
 - en: Basically there's two sides for this。 There's parameters and their hyperpara
     are the weights and other things of the neural network that back propagation will
     adjust for you。😊。![](img/9925006dbf7cc9645dc4cf05b451019d_2.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 基本上，这里有两个方面。一个是参数，另一个是超参数，超参数是神经网络的权重和其他将由反向传播为你调整的东西。😊。![](img/9925006dbf7cc9645dc4cf05b451019d_2.png)
 - en: expects you to go into the neural network and set each of the weights by hand。
     They haven't done that since the 80s。 However， you do have to set your hyperparameters。
     There is back propagation is not going to go in and remove layers or add layers
     or other things for you You're going to have to set those on your own or use something
     like Bayesian hyperparameter optimization Now Bayesian hyperparameter optimization
     is one of many。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 期望你进入神经网络并手动设置每个权重。自80年代以来他们就没有这样做了。然而，你确实需要设置你的超参数。反向传播不会为你去删除层或添加层或其他事情。你必须自己设置这些，或者使用像贝叶斯超参数优化这样的东西。现在，贝叶斯超参数优化是众多方法之一。
 - en: many， many optimization algorithms Most of these optimization algorithms work
     by simply taking a vector or a very long list of numbers and they adjust those
     numbers so that some objective function is minimized or maximized This is what
     back propagation does back propagation basically uses derivatives and calculus
     and fundamentally gradient descent to adjust those weights to minimize your error
     function you cannot use back propagation。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 许多，许多优化算法。大多数这些优化算法的工作方式是简单地取一个向量或一个很长的数字列表，并调整这些数字，以使某个目标函数最小化或最大化。这就是反向传播所做的，反向传播基本上使用导数和微积分，根本上是梯度下降来调整这些权重，以最小化你的误差函数。你不能使用反向传播。
 - en: To adjust the hidden layers of your neural network or the hidden layer counts
     because the count of hidden layers and neuron counts is not part of the error
     function。 and is also not differentiable。 You can't take a derivative of how many
     hidden layers you have So you need to use a non-differiable optimization function
     on top of your differentiable optimization function。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 调整你的神经网络的隐藏层或隐藏层计数，因为隐藏层的数量和神经元的数量不是误差函数的一部分，并且也不可微分。你无法对你有多少个隐藏层进行求导。因此，你需要在可微分优化函数之上使用一个不可微分的优化函数。
 - en: which is back propagation usually for neural networks。 the atom update rule。
     which is a variant of back propagation。 So what we need to do is we are going
     to as we saw in the previous part of this module we are going to create a function
     that creates neural networks based on a vector that is sent to it。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 反向传播通常用于神经网络。原子更新规则，这是反向传播的一种变体。所以我们需要做的是，如我们在本模块的前一部分中看到的，我们将创建一个基于传递给它的向量创建神经网络的函数。
 - en: So just to briefly review what we had in the previous one we're going to go
     ahead and run this which is uses the simple data that I gave you previously。doesnn't
     really matter what we're trying to solve with with the neural network and then
     I'm going to run this part that evaluates the neural network。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以简单回顾一下我们在前一个部分中所讨论的内容，我们将继续运行这个，它使用的是我之前给你的简单数据。我们试图用神经网络解决的内容并不重要，然后我将运行这个部分来评估神经网络。
 - en: Now it takes it a moment to run。 So we're going to go ahead and let it run。
     see the star shows that it is actually running。 You're passing it a variety of
     parameters that drop out the learning rate the neuron percent in the neuron shrink
@@ -68,33 +89,43 @@
     I am introducing here just get this to a vector So we now have a vector of four
     numbers that we're trying to optimize Now you may want to put well more than that
     in there but we will basically show you how those work。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在它需要一点时间来运行。所以我们将继续让它运行。看到星星表明它确实在运行。你传递给它各种参数，包括学习率、神经元百分比和神经元缩减，这最后两个不是标准的超参数或Tensorflow概念，而是我在这里引入的概念，以便将其转化为一个向量。因此，我们现在有一个四个数字的向量，我们正在尝试优化。你可能想在里面放更多，但我们基本上将向你展示它们的工作原理。
 - en: So the neuron count is going to be basically this neuron percent So this neuron
     percent is what percent of 5000 maximum neurons that we' have Now unfortunately
     this 5000 neurons that's a number that's something we're setting so this is a
     hyper hyperparameter but。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，神经元的数量基本上将是这个神经元百分比。所以这个神经元百分比是我们最大5000个神经元中的百分比。遗憾的是，这5000个神经元是我们设定的一个数字，因此这是一个超超参数，但。
 - en: You have to set some sort of an up bound。 So it's the best I can do。 Sps is，
     by the way。 how many times we're evaluating this because neural networks are stochastic
     and you will get different results each time you try to train it So I set it pretty
     low。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 你必须设定某种上限。因此，这是我能做到的最好。顺便说一下，Sps是我们评估这一点的次数，因为神经网络是随机的，每次训练时你都会得到不同的结果，所以我把它设得相当低。
 - en: you might want to set it higher to actually get something better out of this
     So we get our neuron count and then this neuron shrink basically most neural networks
     set up their hidden layers pyramid styles so that you're either starting with
     a bunch and fewer。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可能想把它设得更高，以便实际上得到更好的结果。因此，我们得到我们的神经元数量，然后这个神经元缩减基本上是大多数神经网络以金字塔样式设置它们的隐藏层，这样你要么从一大堆开始，要么减少。
 - en: fewer， fewer or you're starting with a few and more more more tabular data usually
     not hard and fast。 but usually you'll start out with a fair number of hidden neurons
     and you shrink。 shrink shrink as you go forward。 So that's what I'm basically
     doing here。 I have a neuron。 I have the neuron count， and then we're going to
     use the neuron shrink down here where we're actually building the neural network。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 更少，更少，或者你开始时有一些，更多更多更多的表格数据通常并不是固定的。但通常你会从相当数量的隐藏神经元开始，并在前进过程中减少。就是这样我基本上在做的事情。我有一个神经元。我有神经元的数量，然后我们将在这里使用神经元缩减，实际构建神经网络。
 - en: We're going to go up to as many layers as it takes so long as it's less than
     10。Again。 another potential hyper hyperparameter and we're going to continue long
     as we have at least 25 neurons。 So what this is doing is we're basically picking
@@ -102,8 +133,10 @@
     and then the neuron shrink which tells us how rapidly it shrinks down to build
     that pyramid style So we might start out with a00 in the first one and then if
     the shrink is 0。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将增加到所需的层数，只要不超过10层。再一次，这是另一个潜在的超参数，只要我们至少有25个神经元，我们将继续。因此，这基本上是在选择神经元百分比，这告诉我们整体将有多少个神经元，然后是神经元缩减，这告诉我们缩减的速度来构建这种金字塔风格。所以我们可能在第一个层中从a00开始，然后如果缩减为0。
 - en: 8 we'd shrink down to 80% of that。 so we'd have 800 in the next one and then
     we shrink we keep shrinking by that amount each time through and then we also
     have the dropout percentages and the learning rate so we're going to use Bayesian
@@ -111,8 +144,11 @@
     up there that would have just told me how long this took to actually calculate
     so that that doesn't matter a great deal but the log loss that we got on this
     was negative 62 Now the reason I am using a negative。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将缩小到 80%。所以下一个将是 800，然后我们每次都会以这个数值继续缩小，我们还有 dropout 百分比和学习率，所以我们将使用贝叶斯优化来优化所有这些。我没有在上面定义我的小时和分钟字符串，这本来可以告诉我实际计算花了多长时间，所以这并不重要，但我们得到的对数损失是负
+    62。使用负值的原因是。
 - en: Lo loss。 you'll see that there。 I have a negative right in there。 The reason
     that I have a negative here is because the Bayesian optimization wants to maximize。
     You don't want to maximize a log loss。 So just flipping it around causes it to
@@ -121,73 +157,98 @@
     and one quick thing you do have to install the Bayesian optimizer that Pip command
     will install it for you if if it's not already been installed and it just tells
     me requirement already satisfied。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 对数损失。你会看到那里。我有一个负号在那。之所以这样做是因为贝叶斯优化想要最大化。你不想最大化对数损失。所以翻转一下实际上使得它最小化。现在，为了看到我们在这一部分想要运行的部分，我需要在贝叶斯优化的界限中设置一些值。哦，还有一件事，如果贝叶斯优化器还没有安装，你需要安装它，那个
+    Pip 命令会为你安装，如果已经安装了，它会告诉我要求已满足。
 - en: which is good I already have it installed these bounds say that dropout can
     go between 0 and 0。4990。499 is already a pretty high dropout by the way， I'm going
     go ahead and and run this Now this can actually take a while to run So I'm not
     going to actually run it I'm showing you the optimal values that we got down here。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 这很好，我已经安装好了，这些界限表示 dropout 可以在 0 到 0.499 之间。顺便说一下，0.499 已经是一个相当高的 dropout 了，我现在就要运行这个。实际上，这可能需要一些时间来运行，所以我不会真的运行它，我只是给你们展示我们在这里得到的最佳值。
 - en: So here we are setting the dropout range between 0 and 499 learning rate between。0。0
     and 0。1。 That's probably pretty reasonable。 The neuron percent。 we are going between
     the full range of 1% and 100% and any value in between neuron shrink again。 the
     full percentage range。 So these are the four that we're trying to optimize。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以在这里，我们将 dropout 范围设置在 0 到 0.499 之间，学习率在 0.0 和 0.1 之间。这可能是相当合理的。神经元百分比，我们在
+    1% 到 100% 的全范围之间，任何中间值神经元缩减，再次是完整的百分比范围。所以这四个是我们尝试优化的。
 - en: That's the whole trick to Bayesian optimization。 You need to turn this into
     a vector that will have all of the hyperparameter summarized。 So I'm not truly
     putting in every hyperparameter， like how many rows and how many neurons in each
     of those rows are hidden layers I should call them。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是贝叶斯优化的整个技巧。你需要将其转换为一个向量，以总结所有的超参数。所以我并没有真正放入每个超参数，比如每行有多少行和每个隐藏层中有多少神经元，我应该称它们为隐藏层。
 - en: This is now down to a single vector。 And really， you could use any optimizer
     that you wanted for this。 Any optimizer that does not require derivative。 So you
     could use things like genetic algorithms。 Neder mead。 However， the thing that
     is really good about Bayesian optimization is it causes your optimization function。
     your objective function to be called relatively sparingly because the。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在这是一个单一的向量。实际上，你可以为此使用任何优化器。任何不需要导数的优化器。因此，你可以使用遗传算法、Nelder-Mead 等。然而，贝叶斯优化的一个很好的地方是，它使得你的优化函数、你的目标函数被调用的次数相对较少，因为。
 - en: Objective function here is very expensive。 It trains a neural network。 So this
     could potentially go for many minutes or even many hours。 That's why Bayesian
     optimization is considered better than a lot of the other ones like a Mellder
     mead or something such as that。 it's very optimal on how many times that is actually
     called。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里的目标函数非常昂贵。它训练一个神经网络。所以这可能会持续很多分钟甚至几个小时。这就是为什么贝叶斯优化被认为比其他很多方法更好的原因，比如 Nelder-Mead
+    或其他类似方法。它在实际调用次数上非常高效。
 - en: Then you're going to construct the Bayesian optizer。 You give the function of
     evaluate network that we defined up there。 We pass in the P bounds。 We're going
     to make it fairly verbose。 I'm going to go ahead and run it so that we can see
     some of the results。 We won't be able to run it to entire TV as it takes a long
     time。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后你将构建贝叶斯优化器。你给出我们在上面定义的评估网络的函数。我们传入P的边界。我们将使其相当详细。我将继续运行它，以便我们可以看到一些结果。我们无法将其运行到整个电视，因为这会花费很长时间。
 - en: And then we're going to So since we say verbose 2。 you're seeing it's starting
     to build this already。 Now you can see the first iteration already。 The log losses
     around 74， which is not particularly good。 After running this for a few hours。
     by the way， we get to this。 when I'll explain that in a moment。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们要这样做，由于我们设定为详细模式2。你会看到它已经开始构建这个了。现在你可以看到第一轮已经完成。日志损失在74左右，这并不是特别好。经过几个小时的运行。顺便说一下，我们达到了这个。当我稍后解释。
 - en: And the random state that's just a seed。 Now this is important here。 you have
     the number of a knit points and the。😊，Number of iterations。 This has to do with
     the whole multi bandit in armed bandit optimization。 You can think of this。 the
     multiarmed bandit， if you've not heard of that before， it comes from the casinos。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 随机状态仅仅是一个种子。现在这里很重要。你有一个点的数量和😊，迭代的数量。这与整个多臂强盗优化有关。你可以想象一下这个多臂强盗，如果你以前没听说过，它来自赌场。
 - en: the slot machines。 So say you have a row of slot machines just like this you
     have to optimize between exploit and exploit Exp means trying different slot machines
     in the group because one slot machine might be more generous than the others。
     Explo means once you found a pretty generous slot machine， spending your time
     not Exp the others。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 老虎机。假设你有一排老虎机，就像这样，你必须在利用和探索之间进行优化。探索意味着尝试这一组中的不同老虎机，因为有一个老虎机可能比其他的更慷慨。利用意味着一旦你找到一个相当慷慨的老虎机，就花时间不去探索其他的。
 - en: but pulling the arm on that slot machine and winding as much money as you can
     Looking back at the code。 we can see that the 10， that's the exploit。 So that's
     the number of points we're going to look at。 So we're going try 10 slot machines
     so to speak。 and then once we focus on one is pretty good。 We're going to go deep
     enough， we're going to exploit to 100 iterations。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 拉动那个老虎机的手臂，尽可能多地赢取钱。回顾代码。我们可以看到10，这是利用。所以这就是我们将要观察的点的数量。可以说我们将尝试10个老虎机。然后一旦我们专注于一个表现不错的，我们将深入足够，利用到100次迭代。
 - en: And here you can see this continuing to run。 It's going to tell you okay so
     the second。Iteration we locked in on a slightly better one。 This is going to result
     in about 110 rows because you have 10 plus 100。 And then the best one that I got
@@ -197,8 +258,10 @@
     you could take that vector up to maybe 10 or 20 and just come up with more creative
     ways to break apart and to encode those hyperparameter to encode the architecture
     of the neural network and here you can see basically the optimal parameters。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里你可以看到它继续运行。它会告诉你，好吧，第二次。迭代我们锁定在一个稍微更好的选项上。这将导致大约110行，因为你有10加100。然后当我运行这个全时间段时，得到的最佳结果是日志损失59，这实际上比我手动优化那些超参数要好得多，而且我甚至没有把每个超参数都放进来。你绝对可以制作那个向量。你可以将那个向量增加到10或20，想出更多创造性的方式来拆分和编码那些超参数，编码神经网络的架构，在这里你可以看到基本的最佳参数。
 - en: we ended up liking a dropout rate of about 13 learning rate pretty low 0。01
     neuron percent pretty low and not a huge neural network and shrinking by about
     30% each time This could be something useful for your kaggel competition。 you
@@ -206,8 +269,13 @@
     your neural network， but if you're using other model types as well Thank you for
     this video and next're the of for course content changes often so up to date and
     and artificial intelligence。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们最终喜欢大约13的 dropout 率，学习率相当低0.01，神经元百分比相当低，而且不是一个巨大的神经网络，每次缩小约30%。这可能对你的 Kaggle
+    竞赛有用，你可能想用来优化你的超参数。不仅仅是针对你的神经网络，如果你使用其他模型类型也是如此。感谢你观看这个视频，下一个是课程内容，变化频繁，所以请保持更新，关于人工智能。
 - en: '![](img/9925006dbf7cc9645dc4cf05b451019d_4.png)'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/9925006dbf7cc9645dc4cf05b451019d_4.png)'

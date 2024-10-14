@@ -1,55 +1,74 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P48：L9.2- 流行的Keras预训练神经网络
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P48：L9.2- 流行的Keras预训练神经网络
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeff Hton。 Welcome to applications of deep neural networks with
     Washington University。 Transfer learning is great。 You can take existing learning
     and put it into your neural network。 But where do we get these neural networks
     from In this video。 we're going to look at how you can find。😊。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是杰夫·赫顿。欢迎来到华盛顿大学的深度神经网络应用课程。迁移学习很棒。你可以将现有学习融入到你的神经网络中。但我们从哪里获得这些神经网络？在这个视频中，我们将探讨如何找到它们。😊
 - en: '![](img/56e8d9866f4ec8a3da33b17a92d76bbd_1.png)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/56e8d9866f4ec8a3da33b17a92d76bbd_1.png)'
 - en: These types of neural networks and some of the popular ones。 And if you'd like
     to see other videos like this on topics such as artificial intelligence。 please
     subscribe to my YouTube channel by clicking the subscribe button and the bell
     that will notify you of every video that comes out。 Thank you。 Kiras comes with
     a number of models already built in that can be transferred in from their provider。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些类型的神经网络以及一些流行的网络。如果你想看到更多类似于人工智能主题的视频，请点击订阅按钮和铃铛，订阅我的YouTube频道，这样你就能收到每个新视频的通知。谢谢！Keras内置了许多可以从提供者转移的模型。
 - en: So it's important to know how to make use of those。 We'll talk about them。 Now。
     you can also find some models outside of Kiras。 Like we did this with Yolo。 Yolo
     is essentially transfer learning。 We transferred in literally the entire of Yolo
     and also stylegan。 but this gave us preexisting models to actually work with you
     could have custom and fine tune trained them further for sure。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，了解如何利用这些资源很重要。我们会讨论它们。现在，你也可以在Keras之外找到一些模型。就像我们对Yolo所做的那样。Yolo本质上是迁移学习。我们几乎转移了整个Yolo和StyleGAN，但这为我们提供了可以实际使用的预先存在的模型，你可以根据需要自定义并进一步微调训练。
 - en: We are going to also look at these two websites。 They're very important。 There's
     a lot of good information for you here。 Tensorflow models zoo and papers with
     code。 These two sites have a tremendous number of transfer learning capable。😊。![](img/56e8d9866f4ec8a3da33b17a92d76bbd_3.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还将查看这两个网站。它们非常重要，这里有很多好的信息。TensorFlow模型库和带代码的论文。这两个网站有大量能够进行迁移学习的资源。😊！[](img/56e8d9866f4ec8a3da33b17a92d76bbd_3.png)
 - en: Neural networks that you might want to use for your own projects。 If you look
     at model zoo。 you can see by the stars， some of the ones that are the most popular。
     can also subscribe and get new ones。 There's video。 there's not just computer
     vision Yo with Tensorflow obviously is very popular right now。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可能想在自己的项目中使用的神经网络。如果你查看模型库，可以通过星星看到一些最受欢迎的模型。你也可以订阅以获取新的模型。这里有视频，不仅仅是计算机视觉，TensorFlow显然现在非常受欢迎。
 - en: Lots of Gs and other things that you will see here。 We will for the class。 I'll
     give you links to the actual neural networks that we're transferring in and typically
     we're using ones that are already built into Kis。 but if you want to look for
     projects of your own in the future。 This is definitely a very valuable site to
     look at papers with code is also great。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有很多G和其他你会看到的东西。对于这个课程，我会给你提供链接，指向我们正在转移的实际神经网络，通常我们使用的是已经内置于Kis中的模型，但如果你想在未来寻找自己的项目，这绝对是一个非常有价值的网站，而带代码的论文也很棒。
 - en: This is where papers that were released with code or sometimes papers without
     enthusiast will write the code for the paper and publish it here very quickly
     So this this is another great place to look at to find neural networks that you
     may wish to transfer in for your own projects。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里是那些发布了代码的论文，或者有时没有热情的论文，作者会迅速为论文编写代码并在这里发布。所以这是另一个很好的地方，可以找到你可能希望在自己的项目中转移的神经网络。
 - en: I give you a listing here of all of the。That are built into Kias that you can
     actually load in The complete list is here if you go into the Kiras documentation
     these are the ones mobileNe will be using some of these others can be quite useful
@@ -63,23 +82,35 @@
     of it but I do give you a link here on the provided by Kiras to give you the information
     that Kiraas is given you to actually use this Now all of these weights are not
     downloaded when you install Kira。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 我在这里列出了所有内置于Keras中的内容，你实际上可以加载的完整列表在Keras文档中可以找到。这些是MobileNet将使用的一些，其他的一些也非常有用。MobileNet很好，因为它设计用于在移动设备上运行，因此它所需的计算能力与其他一些相比并不高。很多这些我在这里给你提供了链接，你可以点击这里的主要链接，查看实际论文。通常你需要阅读实际论文中的信息，以了解每个网络的实际用途，并获取一些额外的信息。Keras文档给出的仅是使用它所需的基本信息，但我在这里给你提供了Keras提供的链接，以获取使用这些信息的指导。现在，安装Keras时并不会下载所有这些权重。
 - en: '![](img/56e8d9866f4ec8a3da33b17a92d76bbd_5.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/56e8d9866f4ec8a3da33b17a92d76bbd_5.png)'
 - en: '![](img/56e8d9866f4ec8a3da33b17a92d76bbd_6.png)'
+  id: totrans-11
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/56e8d9866f4ec8a3da33b17a92d76bbd_6.png)'
 - en: '![](img/56e8d9866f4ec8a3da33b17a92d76bbd_7.png)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/56e8d9866f4ec8a3da33b17a92d76bbd_7.png)'
 - en: '![](img/56e8d9866f4ec8a3da33b17a92d76bbd_8.png)'
+  id: totrans-13
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/56e8d9866f4ec8a3da33b17a92d76bbd_8.png)'
 - en: '![](img/56e8d9866f4ec8a3da33b17a92d76bbd_9.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/56e8d9866f4ec8a3da33b17a92d76bbd_9.png)'
 - en: Obviously our Cars would be a very big download so when you run some of these
     for the first time you'll see Cars in the background do a download so that it
     can pull down the weights from the original researcher it's very interesting these
@@ -92,32 +123,44 @@
     that are deeper and deeper than ever before Resnets there's several versions of
     Resnet that are out there and Resnet can give you some very advanced feature recognition
     mobilenet and mobile。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 显然，我们的汽车会是一个非常大的下载，因此当你第一次运行这些时，你会看到汽车在后台进行下载，以便从原始研究者那里提取权重。这些开发这些技术的研究者很有趣，他们并不一定具备某些公司的强大计算能力。我看到几个行业使用Yo的例子，他们尝试微调Yolo权重，以识别多个对象。我们在之前的模块中见过Yolo，但他们往往只是直接使用Yo，因为改进它是困难的，因为它做得非常好。DenseNet等很多都是尝试提供比以往更深的预训练网络。ResNet有几个不同版本，它可以提供一些非常先进的特征识别，MobileNet也很有用。
 - en: '![](img/56e8d9866f4ec8a3da33b17a92d76bbd_11.png)'
+  id: totrans-16
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/56e8d9866f4ec8a3da33b17a92d76bbd_11.png)'
 - en: V2 Those are two of my favorites。 You'll see that I use these in the class。
     This lets you use a neural network that was trained extensively for mobile and
     internet of things。 later in the class。 we talk about how to actually do an IoT
     sort of deploy。 So do neural network computation。 both at the edge and in the
     cloud。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: V2，那是我最喜欢的两个。你会看到我在课堂上使用这些。这让你能够使用一个为移动设备和物联网进行了广泛训练的神经网络。稍后在课程中，我们会谈到如何实际进行物联网的部署。因此，进行神经网络计算，无论是在边缘还是在云端。
 - en: And these become useful for that。 We'll talk about that at the very。 very end
     of this of this course。 And you can see in the descriptions Cf 10 and all the
     various image data sets that these were trained on。 Again， more of the resnets
     Vg G is a very popular one as well。 I have not worked with it a great deal。 I
     don't tend to do a lot of computer vision in in my day job。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些对那会很有用。我们将在本课程的最后谈论这个。你可以在描述中看到Cf 10以及所有这些训练过的各种图像数据集。再说一次，更多的ResNets，VGG也是一个非常受欢迎的选择。我没有过多使用它，我在日常工作中并不经常做计算机视觉。
 - en: but these are all very good starting points for computer vision Thank you for
     watching this video。 in the next video， we're going to make use of some of these
     great。😊。![](img/56e8d9866f4ec8a3da33b17a92d76bbd_13.png)
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 但这些都是计算机视觉的很好的起点。感谢观看本视频。在下一个视频中，我们将利用其中一些优秀的内容。😊。![](img/56e8d9866f4ec8a3da33b17a92d76bbd_13.png)
 - en: Open neural networks that have been developed for us。 We're going to start with
     computer vision。 This content changes often。 so subscribe to the channel to stay
     up to date on this course and other topics and artificial intelligence。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 开放的神经网络是为我们开发的。我们将从计算机视觉开始。这个内容经常更新，所以请订阅频道，以便及时了解本课程和其他人工智能相关主题。

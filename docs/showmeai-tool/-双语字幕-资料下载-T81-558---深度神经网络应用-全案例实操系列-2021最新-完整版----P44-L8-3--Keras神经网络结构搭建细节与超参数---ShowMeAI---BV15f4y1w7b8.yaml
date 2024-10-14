@@ -1,22 +1,29 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P44：L8.3- Keras神经网络结构搭建细节与超参数
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P44：L8.3- Keras神经网络结构搭建细节与超参数
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeff Heaton。 welcome to applications of deep neural networks with
     Washington University。 In this video， we're going to answer a question that I'm
     sure has been bothering you the entire semester。 How do you know how many layers
     to use in your neural network。 How do you know how many neurons to use in your
     neural network。😊。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是杰夫·希顿。欢迎来到华盛顿大学的深度神经网络应用课程。在这个视频中，我们将回答一个我相信在整个学期里困扰着你的问题。你如何知道在神经网络中使用多少层？你如何知道在神经网络中使用多少个神经元？😊
 - en: This is a big enough question that we're going to spend the next two videos
     talking about it for the latest on my AI course and projects click subscribe and
     the bell next to it to be notified of every new video hyper is's really no easy
     answer to this one As we've gone through the various modules looking at neural
     networks you'll see that we have various layers activation types。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个足够大的问题，我们将花接下来的两个视频来讨论。有关我AI课程和项目的最新信息，请点击订阅并按旁边的铃铛，以便在每个新视频发布时收到通知。对此问题真的没有简单的答案。通过各种模块查看神经网络，你会看到我们有各种层和激活类型。
 - en: different ways to do normalization different activation functions all kinds
     of things you can adjust on your neural network neural networks a lot on its own
     those are referred to as are the weights of the neural network However hyper are
@@ -26,19 +33,25 @@
     to specify as the neural network practitioner Now in the next part we'll see how
     to use something called Bayesian optimization to help us fine tune the neural
     network。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 有不同的方法进行归一化，不同的激活函数，以及你可以在神经网络上调整的各种参数。神经网络自身有很多这些被称为神经网络的权重。然而，超参数并不是作为神经网络训练的一部分学习的，而是由你这个神经网络从业者来指定的。因此，作为神经网络从业者，你需要指定你想要的激活函数、正则化等所有这些内容。在接下来的部分中，我们将看到如何使用称为贝叶斯优化的方法来帮助我们微调神经网络。
 - en: '![](img/6ffb2dddbc647a884212a626611b3856_1.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6ffb2dddbc647a884212a626611b3856_1.png)'
 - en: But even then there's some degree still of decision， at least on your part。
     to decide which hyperparameters you're going to optimize and how you want to optimize
     them in this part。 I'm going to take you through the major hyperparameters。 layer
     types and other things that we've gone through up to this point and if you that
     we havent just so that you're aware of them So Kira's layer as you build up the
     neural network。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 但即便如此，仍然有一定程度的决定权，至少在你这边。要决定你要优化哪些超参数以及你想如何优化它们。在这一部分中，我将带你了解到目前为止我们讨论的主要超参数、层类型以及其他内容，如果你觉得我们没有涵盖到的内容，你也要知道。因此，在你构建神经网络时，Keras的层。
 - en: you'll see that the various examples add different sorts of layers onto the
     neural network listed here are all of the layer types that you can add into that
     sequence that you are building for the neural network and ultimately perhaps putting
@@ -46,59 +59,77 @@
     allows you to specify the activation function I don't tend to use this a whole
     lot I tend to specify the activation function as part of the parameters for the
     denses and other types of layers but you can break this out。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 你会看到各种示例将不同类型的层添加到神经网络中，这里列出的是你可以在构建的序列中添加的所有层类型，最终或许放入模型中，如果你使用功能性API激活，这是一个允许你指定激活函数的层。我通常不太使用这个层，而是倾向于将激活函数作为全连接层和其他层类型参数的一部分来指定，但你可以将其分开。
 - en: The activation comes just after a layer activity regularization。 This allows
     you to add L1 and L2 outside of a layer。 Again， L1 and L2。 as far as activity
     and kernel can be added to the individual layer types such as dense。 but you can
     specify this outside of the layer as well。 if you find that to be more express
     it。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 激活发生在层活动正则化之后。这允许你在层之外添加L1和L2。再说一遍，L1和L2，作为活动和内核可以添加到诸如全连接层等单独的层类型中，但如果你发现将其放在层之外更方便，也可以这么做。
 - en: The dense layer。 This is the workhorse of tabular data for sure。 this is mostly
     what your neural network is made up of if you're doing tabular data。 If you're
     doing images and other things， you'll still have dense layers。 If you're dealing
     with non dense layers like the LSTM layers and the convolution layers。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 密集层。这无疑是表格数据的主力军。这基本上是你神经网络的构成部分，如果你处理表格数据。如果你处理图像和其他事物，仍然会有密集层。如果你处理非密集层，如LSTM层和卷积层。
 - en: you'll typically have to flatten。 That's a layer type down here。 before you
     feed things into the dense layer。 Dropout layer allows you to use dropout regularization。
     you specify a percentage usually relatively low。 maybe 5，10，20%。 that is the。😊。Of
     neurons in that layer that are randomly disabled during training。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 你通常需要先扁平化。这是一个层类型，在将数据输入密集层之前。丢弃层允许你使用丢弃正则化。你通常指定一个相对较低的百分比，可能是5%，10%，20%。这就是在训练期间随机禁用该层中神经元的百分比。
 - en: Dropout has no effect when you're actually running the neural network。 when
     you're scoring the percent of neurons that you're going to drop out is not a learn
     parameter。 You have to specify that when you're building up your neural network。
     Flten is used to usually used right before dense layer or right before the output
     that is crunching。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 在实际运行神经网络时，丢弃没有效果。当你计算要丢弃的神经元百分比时，这不是一个可学习的参数。你必须在构建神经网络时指定这一点。Flatten通常在密集层之前或在输出之前使用，用于将多维张量（不是向量，如矩阵和立方体）压缩为可以传递给不设计处理多维输入的层的向量。
 - en: the multidimensional tensors that are not vectors like the matrices and cubes
     down to a vector that can be passed into a layer that's not designed to handle
     something more than one dimension。 input is the input layer that is where data
     comes into your neural network。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 输入层是数据进入神经网络的地方。
 - en: This can be specified as a parameter for the dense or other layers。Lambda layers。
     I really haven't used these a great deal， but you can basically specify a Python
     Lambda function to do some transformation to the data as it goes through masking
     layers。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 这可以作为参数为密集层或其他层指定。Lambda层。我实际上没有太多使用这些，但你基本上可以指定一个Python Lambda函数，对数据进行一些转换，通过掩码层。
 - en: Again， this is something I have not used and all really in in cares。 but it
     is available It's dealing with time stepss。 I'm guessing this has some utility
     when you're dealing with LSTms in recurrent neural networks。 same thing for the
     permute。 that can be used to add some randomization and changing to a given pattern。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 这实际上是我没有使用过的东西，所有的确切信息我也不太清楚。但它是可用的，处理时间步。我猜这在处理递归神经网络中的LSTM时会有一些用处。对于排列也是如此，可以用于为给定模式添加一些随机性和变化。
 - en: I'm not entirely sure if the permute。 I don't believe the permute is random。
     So like I just said。 permute。 that's a way to change around the dimensions of
     a layer as it's going through。 This works pretty similar to reshape。 I usually
     use reshape rather than permute。 I have not used permute a great deal。 repeat
     vector is a way to duplicate things。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 我不太确定排列是否随机。我认为排列不是随机的。就像我刚才说的，排列是一种在层处理时改变维度的方式。这与重塑工作原理非常相似。我通常使用重塑而不是排列。我没有大量使用排列，重复向量是一种复制事物的方式。
 - en: have not used that a great deal。 reshape。 I've used that a great deal that lets
     you change the structure of things as they're going through。😊，For example， you
     had the RGB values in different orders than the neural network expected Permute
@@ -106,34 +137,45 @@
     the actual shape is without necessarily ordering things too much spatial dropout
     is dropout used for convolution layers I have not used these a great deal activation
     functions。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 我没有大量使用那种。重塑。我使用得很多，这让你在数据处理时改变事物的结构。😊例如，你的RGB值的顺序与神经网络预期的不同，排列可能是一个很好的选择，而重塑只是改变实际形状，而不一定过于关注顺序。空间丢弃是用于卷积层的丢弃，我没有大量使用这些激活函数。
 - en: very important topic in neural networks The thing to remember with activation
     functions is there is a lot of history here neural networks have been around for
     a long time and various activation functions have been。Added over the years， some
     of these are not used all that much in the modern era of deep learning。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 激活函数在神经网络中是一个非常重要的话题。需要记住的是，激活函数有很多历史，神经网络存在已久，各种激活函数在这些年里被添加到网络中，其中一些在现代深度学习中并不常用。
 - en: You'll also notice that I have advanced activation functions down here as well。
     advanced activation functions are ones that are actually modified as the fit occurs。
     The regular activation functions， they are just part of the training process。
     but the training process is not affecting any parameters inside of the actual
     activation function。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 你还会注意到我在这里有先进的激活函数。先进的激活函数是在拟合过程中实际上被修改的函数。常规激活函数仅是训练过程的一部分，但训练过程并不会影响实际激活函数内部的任何参数。
 - en: So the softm activation function， you typically see that on the output layer
     of a multiclass classification。 This ensures that all of the outputs from the
     neural network， some to one。 So they're essentially probabilities not at a lot
     of tuning here。 either you're using softmax or you're not。 if you're using multiclass
     classification。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以 softm 激活函数通常在多类分类的输出层上看到。这确保了来自神经网络的所有输出总和为一。因此，它们本质上是概率，这里没有太多调整。要么你在使用
+    softmax，要么你不在使用，如果你在使用多类分类。
 - en: likely you're using softm。 Now， A lot of these come from various papers that
     are being reproduced with care as an EU as one of those。 That's the exponential
     linear unit I've seen。That in a couple of papers with Gs and other things I have
     not worked with these a great deal。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 很可能你在使用 softm。现在，很多这些来自各种被细致复制的论文，EU 是其中之一。这是我见过的指数线性单元。我在一些关于 Gs 和其他内容的论文中看到了它们，我没有太多接触这些。
 - en: something that I'm meaning to work with more。 they do seem to potentially in
     theory anyway。 have some advantages perhaps over re scaled exponential unit is
     similar to ELU except it's scaled by a numeric value that is another hyperparameter
@@ -142,31 +184,43 @@
     one used a lot in later papers not to say it isn't same thing for soft sign rectified
     linear unit Rlu that is absolutely the workhorse of deep learning other than perhaps
     leaky re which receive further down hyperbolic tangent not used a whole lot。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 我打算更多地研究这些。它们在理论上似乎确实有一些优势，可能在重缩放的指数单元方面类似于 ELU，只是通过一个数值值进行缩放，这是另一个超参数，你需要指定你想要缩放的因子。缩放因子简单地乘以
+    SL，因此加上这个是一个历史性的函数，我没有在后来的论文中看到它很多使用，soft sign 修正线性单元 Rlu 也是如此，绝对是深度学习的主力军，除了可能是泄漏的
+    re，在后面是双曲正切，使用得不多。
 - en: I see those in LSTMs and they were very popular in hidden layers before RE came
     on strong Sigmoid。 same thing。Common in classic neural networks for hidden layers
     not used a whole lot in hidden layers in modern neural networks。 However， sigmoid
     is still very common for a logistic regression output neural network。 which is
     basically a binary classifier classifying between two things hard sigmoid I haven't
     seen this used a lot recently。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 我在 LSTM 中看到了这些，在 RE 强劲出现之前，它们在隐层中非常受欢迎，sigmoid 也是如此。经典神经网络的隐层中常见，但在现代神经网络的隐层中不常用。然而，sigmoid
+    在逻辑回归输出神经网络中仍然非常常见，基本上是一个在两者之间分类的二分类器，hard sigmoid 我最近没有看到很多使用。
 - en: it works just like the sigmoid function， the sigmoid function is expensive to
     calculate because there's two EP functions in it。 the hard sigmoid is more of
     an approximation of the sigmoid of the logistic。 So it's potentially cheaper to
     compute。 maybe on mobile devices， this might be a good idea。 I have not dealt
     with it a great deal exponential。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 它的工作方式就像 sigmoid 函数，sigmoid 函数计算开销很大，因为其中有两个 EP 函数。hard sigmoid 更像是 logistic
+    的 sigmoid 的一种近似。因此，它在计算上可能更便宜。也许在移动设备上，这可能是个好主意。我没有深入处理这个指数。
 - en: This is another one that I have not worked with a great deal， but it's a base
     Eactation function。 at least according to the documentation in Kis linear。 This
     is used a lot。 particularly for regression neural networks on the output layer
     I don't think you would necessarily see it anywhere other than the output layer
     unless。Just doing something very custom and you need to basically pass through
     the activation function on something so that it does not make any changes。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是另一个我没有太多接触的，但它是一个基本的 Eactation 函数。根据文档，这个函数是线性的。这在回归神经网络的输出层中使用得很多，除非你正在做一些非常自定义的事情，否则我认为你不太可能在输出层以外的地方看到它。基本上，你需要通过某个东西传递激活函数，以确保它不做任何更改。
 - en: leaky re is a variant of of it allows a very small gradient So it has some special
     rules on the gradients during training This is a very popular one I've used it
     to some degree have not really seen a great deal of improvement within it in all
@@ -176,8 +230,12 @@
     practice used a great deal in deep learning L2 for sure L1 not as much for especially
     in vision networks where I don't think you really want to drop inputs like drop
     an individual pixel so I don't see L1 used a great deal。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: Leaky ReLU 是其变体，它允许非常小的梯度，因此在训练过程中对梯度有一些特殊规则。这是一个非常流行的选择，我在某种程度上使用过，但在所有情况下并没有看到显著的改善。Preu，我在这方面有一些不错的结果，leaky
+    ReLU 中有一个 alpha 项，你通常需要指定，但你可以实际上学习到这一点。因此，这是一件好事。L1、L2 和 dropout，我在深度学习中不太看到
+    L1 和 L2 的广泛使用，L2 是肯定的，L1 则不那么多，尤其是在视觉网络中，我认为你并不想丢弃输入，比如丢弃单个像素，所以我并不经常看到 L1 的使用。
 - en: L2 might have some value but dropout is really the workhorse of these deep neural
     networks the papers that I read in particular you can figure out the dropout percentage
     using some of the Bayesian optimization that I will show you in the next part
@@ -190,59 +248,81 @@
     not in numbers and pretty much collapse your training So batch normalization can
     be quite useful for that and also as a combat to the vanishing gradient problem
     where your gradients。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: L2 可能有一些价值，但 dropout 实际上是这些深度神经网络的主力。在我阅读的论文中，你可以利用一些贝叶斯优化来计算 dropout 百分比，我将在下一部分展示。批量归一化，我在某种程度上也在玩这个，并且越来越多地使用它，它非常方便，通常在实践中，至少我观察到，可以让我将学习率提高到过去会导致不稳定的值。因此，如果你将学习率设置得过高，通常会在一些反向传播步骤甚至前向传播步骤中导致溢出，这取决于你的激活函数，这会导致
+    NANs（非数字），几乎会使你的训练崩溃。因此，批量归一化对此非常有用，也是解决消失梯度问题的一种方法。
 - en: to go to zero and nothing， nothing learns you've also got various training parameters
     that you need to make use of in particular batch size and learning rate。 mini
     batches are very popular in deep learning。 So usually this value is 32 or lower
     for the batch size learning rate also also usually pretty small unless you're
     using batch normalization。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果学习率降到零，什么也学不到。你还需要利用各种训练参数，特别是批量大小和学习率。小批量在深度学习中非常流行。因此，通常这个值是 32 或更低，而学习率通常也比较小，除非你在使用批量归一化。
 - en: but you need to kind of play with the learning rate and batch normalization
     to。See how small you can to see how small it's necessary to make the learning
     rate Learn rate too small will cause the neural network to simply not learn or
     too high will cause your neural network to quickly destabilized。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 但你需要在学习率和批量归一化之间进行一定的调整，以查看学习率需要多小。学习率过小会导致神经网络根本无法学习，过高则会导致神经网络迅速不稳定。
 - en: So if you see the neural network reporting NA AN for the error function。 it's
     usually because your learning rate is too high。 I almost always specify learning
     rates as powers of 101 E negative 10， so。10 to the power of1 times 10 to the power
     of negative3 in that case。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以如果你看到神经网络的误差函数报告为 NA AN，通常是因为你的学习率太高。我几乎总是将学习率指定为 10 的负 10 次幂，因此在这种情况下是 10
+    的 1 次幂乘以 10 的负 3 次幂。
 - en: Now this function that I have here， we will make more use of these。 We will
     make a lot more use of this in the next section。 but let's go ahead and just do
     a quick look at how we can try out some of these hyperparameter。 I'm going go
     ahead and run this that loads a classification job that I want to do。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我这里的这个函数，我们将在下一部分更多地使用这些。让我们快速看看如何尝试一些超参数。我将运行这个，它会加载我想要做的分类任务。
 - en: it's using that simple data set that we looked at before。 This evaluates the
     neural network。 Now this is using bootstrapping like we saw before。 splits is
     how many bootstrapping splits we actually want。 I'm using two just so that it
     runs relatively quickly， but you can experiment with that。 again。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是使用我们之前看到的简单数据集。这评估了神经网络。现在这是使用自助法，就像我们之前看到的。splits是我们实际想要多少个自助法分割。我使用两个，这样运行相对快速，但你可以对此进行实验。
 - en: when we're tuning hyperparameter， sometimes there's parameters usually not very
     many that go into tuning the hyperparameters or almost hyperparameter squares。
     but that would be one of them that you would need to set as you're searching。
     This is another one。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 在调整超参数时，有时会有一些参数，通常不太多，涉及超参数的调整，或者几乎是超参数的平方。但这将是你在搜索时需要设置的一个参数。这是另一个。
 - en: So what I'm basically doing here is allowing these values to be。As I'm trying
     to make the very complex neural network hyperparameters numeric and a vector。
     So dropout would be the first value of the four that we're tuning at once。 Learn
     rate is the learning rate for the neural network。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 我在这里做的基本上是允许这些值存在。我试图将非常复杂的神经网络超参数转化为数值和向量。因此，dropout将是我们一次调优的四个值中的第一个。Learn
+    rate是神经网络的学习率。
 - en: neuron percent is just what percentage of these 500 do we want to use and neuron
     shrink is what should the layer shrink by each time。 So we start out with however
     many neuron percent we have for that neuron count。 and then we shrink it by that
     value each time。 So it could be like 0。8。 if you want to use 80% on your next
     one。 And you can see here that it basically builds up so long as each new layer
     has a neuron count of 25 and is less than 10 Good run this So does's going。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: neuron percent仅仅是我们想使用的这500个中的百分比，neuron shrink是每次该层应该收缩的值。因此我们从该神经元计数的neuron
+    percent开始，然后每次按该值收缩。所以如果你想在下一个中使用80%，可以设为0.8。你可以看到，只要每个新层的神经元计数为25且小于10，就会持续构建。
 - en: It takes a few moments to actually score and it will be made use of in the next
     part because believe me  for Bayesian optimization。 It's very valuable to have
     your neural network hyperpara is just one vector。 You put quite a few additional
@@ -250,22 +330,30 @@
     to do convolution layer count and other things so this is still running I'll go
     ahead and oh just finished ignore that error I will fix that that simply was trying
     to time how long it took this is a log loss of 0。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 实际评分需要几分钟，并将在下一部分中使用，因为相信我，进行贝叶斯优化时，将神经网络超参数作为一个向量是非常有价值的。你在这里放入了相当多的额外超参数，如果你处理的是视觉网络，可能还想做卷积层计数等，因此这仍在运行，我会继续，哦，刚完成，忽略那个错误，我会修复，它只是尝试记录这所需的时间，这是一个0的日志损失。
 - en: 7 and we'll see that in the next part we actually tune that to get down to 0。59
     which is a much better log loss ignore the negatives I'll explain in the next
     part what that's necessary that's just so that we can optimize it because it wants
     to maximize the number and you don't try to maximize a log loss you try to minimize
     it。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 7，我们将在下一部分看到，实际上我们会调整它以降低到0.59，这样的日志损失要好得多，忽略负值，下一部分我会解释这为何必要，这样我们才能优化，因为它想要最大化这个数字，而你并不是试图最大化日志损失，而是试图最小化它。
 - en: '![](img/6ffb2dddbc647a884212a626611b3856_3.png)'
+  id: totrans-36
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/6ffb2dddbc647a884212a626611b3856_3.png)'
 - en: Well those are the hyperparameters that make up a neural network and it probably
     seems intimidating to try to optimize these on your own we'll see in the next
     video that we can use Bayesian hyperparameter optimization to let machine learning
     do a lot of this work for us this content changes often so subscribe to the channel
     to stay up to date on this course and other topics and artificial intelligence。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些是构成神经网络的超参数，可能看起来令人生畏，试图独自优化这些，我们将在下一个视频中看到，可以使用贝叶斯超参数优化，让机器学习为我们完成许多工作，这个内容经常变化，所以订阅频道以保持课程和其他人工智能主题的最新信息。

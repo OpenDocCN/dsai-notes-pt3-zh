@@ -1,111 +1,156 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P46：L8.5- 2020年春季Kaggle深度学习应用竞赛
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P46：L8.5- 2020年春季Kaggle深度学习应用竞赛
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeff Heaton。 Welcome to applications of deep neural networks of
     Washington University。 Well， is that time of the semester Again， It is time for
     the 2020 spring kle competition for my class。 Now， this semester， it's going to
     be on computer vision。 This is the first time we've done computer vision。 So I'm
     excited about this。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是Jeff Heaton。欢迎来到华盛顿大学深度神经网络的应用课程。好吧，又到了学期的这个时候了，是我班级2020年春季Kle比赛的时间。现在，这个学期将围绕计算机视觉。这是我们第一次做计算机视觉，所以我对此感到兴奋。
 - en: we did natural language processing。 Last time， I think this is a great deep
     learning applicable technology in this one。 we're gonna look at faces， and we're
     going to see if we can detect if they're wearing glasses or not。 Now， these are
     faces that I generated with Gs。 So we're going to use the latent vectors of the
     Gs to try to detect eyewear。 as well as the images themselves to see all my videos
     about kggle neural networks and other AI topics。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们进行了自然语言处理。上次，我觉得这是一个很棒的深度学习适用技术。这次，我们将查看脸部，并试图检测他们是否戴眼镜。现在，这些是我用Gs生成的脸。所以我们将使用Gs的潜在向量来尝试检测眼镜，以及图像本身，查看我关于Kaggle神经网络和其他AI主题的所有视频。
 - en: click the subscribe button and the bell next to it and select al to be notified
     of every new video。 if you go to my github repository。 T 81，5，58。 Jeff Heaton
     user URL is provided。 You can scroll down and go to。😊。![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_1.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 点击订阅按钮和旁边的铃铛，选择全部以便接收每个新视频的通知。如果你去我的GitHub仓库。T 81，5，58。Jeff Heaton用户网址已提供。你可以向下滚动并访问。😊。![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_1.png)
 - en: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_2.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_2.png)'
 - en: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_3.png)'
+  id: totrans-5
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_3.png)'
 - en: Where I have the kle。 I swear copy on page searching has made me lazy。 So I
     usually do that8，5。 And there's always a link here to the current semesters kle
     competition。 spring 2020 kle assignment I just put this up you click on that and
     go into here Now mine says this competition hasn't been launched only host and
     kgel andmins can see it。 you won't have this here because I will have open this
     by the time that I release this video but this is the competition。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我有Kle。我发誓，在页面搜索时复制让我变得懒惰。所以我通常会这样做8，5。这里总是有一个链接指向当前学期的Kle比赛。2020年春季Kle作业，我刚刚发布，你点击这个并进入。现在我的说法是这个比赛还没有启动，只有主办方和Kgel的管理员可以看到。你在这里不会看到这个，因为我将在发布这个视频时打开它，但这就是比赛。
 - en: What we are doing this semester is a computer vision competition。 And it's also
     related to Gs。 So I am giving you a bunch of pictures and in those pictures you
     will see faces like this what I am having you do is predict if that face has glasses
     on it。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们这个学期正在进行一个计算机视觉比赛。它也与Gs有关。所以我给你一堆照片，在这些照片中你会看到这样的脸，我让你做的就是预测这个脸上是否有眼镜。
 - en: Now you need to be careful with that because glasses can look a variety of different
     ways you can have sunglasses you can have sunglasses where you。![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_5.png)
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在你需要小心，因为眼镜的样式多种多样，你可以有太阳镜，你可以有那种你。![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_5.png)
 - en: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_6.png)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_6.png)'
 - en: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_7.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_7.png)'
 - en: Even see his eyes。 you can have sunglasses where you can kind of see his eyes。
     You can have thicker frames， thinner frames， and you can have really thin frames。
     I wear this kind of glasses myself。 And at first glance。 you might not think that
     she even has glasses on。 but if you zoom in on her。 you'll see that yes。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 甚至可以看到他的眼睛。你可以有那种可以看到他眼睛的太阳镜。你可以有厚框、薄框，或者真的很薄的框。我自己也戴这种眼镜。乍一看，你可能不会认为她甚至戴了眼镜，但如果你放大她，你会看到，确实如此。
 - en: there are glasses， they're just very， very faint。 I hope the video Koc for this
     video doesn't prevent you from seeing those。 but that is essentially what we're
     doing。 Now one thing that I want to mention for this competition。 you will be
     submitting your code to me， or at least if you're a student at Washington University。
     you'll submit your code to me。 And one thing that I am taking off the table。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 有眼镜，只是非常，非常淡。我希望这个视频的Koc不会妨碍你看到这些，但这基本上就是我们要做的。现在，我想提到的一个事情是，对于这个比赛，你需要将代码提交给我，或者至少如果你是华盛顿大学的学生，你将把代码提交给我。而我将不再接受的一个事情。
 - en: And I asked if you're joining from the Internet， you don't do this either。 There's
     only。😊。![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_9.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 我还问过，如果你是通过互联网加入的，你也不应该这样做。只有。😊 ![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_9.png)
 - en: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_10.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_10.png)'
 - en: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_11.png)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_11.png)'
 - en: A couple thousand or so pictures in the test set that you're submitting。 it
     would not be hard to just sit there and flip through all the pictures and label
     them glasses。 No glasses。 use your human brain， your biological neural network。
     everybody knows you can do that that won't be that that valuable really。 So don't
     do that。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 测试集中大约有几千张你要提交的图片。坐在那里翻阅所有图片并标记为有眼镜或没有眼镜并不困难。利用你的大脑，使用你的生物神经网络。大家都知道你可以做到，但这其实没有太大价值。所以不要这样做。
 - en: you probably would not get a perfect score due to noise in the data。 which will
     be talking about in a moment。 So let's look at the evaluation for this。 you'll
     be evaluated using a log loss function。 So the data set basically as a one。 if
     they have glasses a 0 if they do not have glasses。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 由于数据中的噪声，你可能不会得到满分。稍后我们会讨论这个。所以让我们看看这个评估。你将使用对数损失函数进行评估。数据集基本上是这样的：如果有眼镜则为 1，如果没有眼镜则为
+    0。
 - en: You're going to send a probability of whether you think they have glasses or
     not。 you'll be graded on log loss。 So if you're very confident like it says here
     if you are very confident that it's not somebody with glasses in your term just
     a 0。12。 and the label was actually one that'll be a fairly high loss for that
     individual person submission format。😊。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 你将发送一个概率，表示你认为他们是否戴眼镜。你将根据对数损失进行评分。所以如果你非常自信，比如说你很确信他们不是戴眼镜的人，你就写 0.12，而标签实际上是
+    1，这对于该个体的提交格式来说将会是相当高的损失。😊
 - en: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_13.png)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_13.png)'
 - en: be like this you'll see in these files that we're going to download in a moment
     that there are ID numbers。 All of the training set goes up to 4500。 The test set
     goes from 4501 onward rules you can create teams up to five members you may not
     human label the data you've got to use a model So don't just sit there and go
     through all of my images and label them glasses。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些文件中你会看到 ID 号码。所有训练集的编号最多到 4500。测试集从 4501 开始。规则是你可以组建最多五人的团队，不能人工标记数据，必须使用模型。所以不要只是坐在那里翻阅我的所有图片并标记它们是否戴眼镜。
 - en: no glasses， glasses， glasses everybody knows you can do that that doesn't really
     accomplish that much if this was a real kggle with a lot of money on it the way
     I would solve that as I would give you a punishingly large number of images with
@@ -113,14 +158,19 @@
     in if you're in the top position in a kle competition you've got to submit your
     model anyway and if your model is a hardcoded list of zeros and ones you're probably
     not going to win anything which。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 没有眼镜，眼镜，眼镜。大家都知道你可以做到，如果这是一个真正的 kggle，投入大量资金的那种，我会给你提供大量带噪声的图片，所以不要这样做。如果你在
+    kle 竞赛中处于前位，你无论如何都得提交你的模型，如果你的模型只是硬编码的零和一，你可能不会赢得任何东西。
 - en: me2 prizes。 This competition in kle。 I mean， it's a kle in class。 so it doesn't
     count towards ti or rankings or anything like that。 There are no tangible prizes
     other than bragging rights。 However， and this is more for my students。 although
     somebody from the outside gets in this position。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: me2 奖项。这是一个 kle 竞赛。我是说，这是一个课堂上的 kle。因此，这不算在 ti 或排名中。除了夸耀权利，没有其他实际的奖品。然而，这更多是为了我的学生。虽然外部人士可能会进入这个位置。
 - en: I'll probably I would do this as well for the teams in position one through
     three。 I will write you a really good LinkedIn recommendation saying how you were
     one of the top contestants out of'll probably be 80 or so people competing in
@@ -128,60 +178,83 @@
     these kind of data sets is I never create a data set on Kagel with data that is
     just publicly available on the Internet that's no fun because there's all kinds
     of code and everything published for this。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 我可能也会对排名第一到第三的团队这样做。我会给你写一份很好的 LinkedIn 推荐信，说明你是大约 80 人中最顶尖的选手之一。这至少是本学期 Warho
+    的情况。现在，对我来说，创建这些数据集的挑战在于，我从不在 Kagel 上创建仅在互联网上公开可用的数据集，那样没有乐趣，因为网上已经发布了各种代码。
 - en: There's a number of kggles that might help you with this one。 The cat or dog
     might be kind of useful。 Several techniques you can use for these。![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_15.png)
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 有一些kggles可能对你有帮助。猫或狗可能会有点用处。有几种技术可以用来处理这些。![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_15.png)
 - en: That I'll get into and I'll probably release some code as the semester goes
     on just to give you a few hints。 I won't release anything over the top。 powerful
     for for getting really high on the leader board。 And of course the rule to is
     like I said， no no sitting there and human tagging them。 Now if you can teach
     your cat to tag them。 Okay no no cats either。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 我会深入研究这个，可能会在学期进行中发布一些代码，给你一些提示。我不会发布任何过于强大的东西来在排行榜上获得高分。至于规则，就像我说的，不能有人为标记。现在如果你能教你的猫标记，那就不算。
 - en: So we'll go from there data So the data for this competition。 there's a big
     file here basically its round 6 gig。 So it's not punishingly large。 That' has
     all of the images in it。 If you were to download it。 let me show you what that
     file looks like。 This is the image file。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们从数据开始。这个比赛的数据有一个大文件，大约6GB。所以并不是特别大。这个文件里有所有的图像。如果你下载它，我来给你看看这个文件是什么样的。这是图像文件。
 - en: So it's a big zip file that has all of these PGs。 there are quite a few of them。
     if you go through all of them， you will see that there's around 5000 So around
     500。 I guess it looks like is what the test set is made of。 If you go through
     these individuals。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这是一个包含所有这些PG的大压缩文件。里面有相当多的文件。如果你查看所有这些文件，会发现大约有5000个。大约500。我猜这就是测试集的构成。如果你查看这些个体。
 - en: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_17.png)'
+  id: totrans-28
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_17.png)'
 - en: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_18.png)'
+  id: totrans-29
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_18.png)'
 - en: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_19.png)'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_19.png)'
 - en: You'll see that some have glasses， some do not。 Some have sunglasses。 and you
     have a variety of genders， ethnic backgrounds and facial hair。's hats。 There's
     a lot lot of variety in these images Now as far as how to actually classify these。
     You really have two ways to go about this。 You can use the images。 or you can
     use thegan vectors。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 你会看到有些人戴眼镜，有些人不戴。有些人戴太阳镜，还有各种性别、种族背景和面部毛发以及帽子。这些图像中有很多不同的种类。至于如何真正分类这些，你有两种方式。你可以使用图像，或者使用gan向量。
 - en: I'll show you thegan vectors in just a moment。 but let's talk about a few ways
     that you might deal with these images。 You could write just a simple classifier
     that is going to tell you if the person has glasses or does not You're going to
     go to classifier route。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 我马上会给你展示gan向量，但我们先聊聊几种处理这些图像的方法。你可以写一个简单的分类器，告诉你这个人是否戴眼镜，你可以选择分类器的路径。
 - en: I highly suggest that you use transfer learning and use a data that already
     has a lot of features already learned and then try to train it on top of it。 I
     think that's going to work the best。 you can also use Yolo Yolo looking at this。
     it would be interesting。Honestly haven't tried it， but run Yolo over it。 see if
     it identifies these pieces of the glasses or the glasses themselves as anything。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 我强烈建议你使用迁移学习，利用已经学到很多特征的数据，然后在其基础上进行训练。我认为这会是最有效的方法。你也可以用Yolo来看这个，应该会很有趣。老实说我还没尝试过，但可以运行Yolo看看它是否识别出这些眼镜的部分或眼镜本身。
 - en: I probably should have tried that first。 I don't think Yolo is gonna necessarily
     just lock in 100% on this。 but who knows if if Yolo is is the key to the kingdom
     on this one that might be the case。 but there's several several levels of this。
@@ -189,35 +262,47 @@
     you download them。 if you go over here to data each of these images does have
     a vector that goes with it 512 numbers if the that is what you feed to thevidia
     style again to actually generate that face。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 我可能应该先尝试那个。我不认为Yolo一定会100%锁定这个，但谁知道呢，或许Yolo就是解决这个问题的关键。但这里面有几个层次。现在让我给你展示一下训练样本及这些文件的样子，如果你下载它们。如果你去数据那里，每张图像确实都有一个对应的向量，包含512个数字，这就是你输入给Nvidia风格生成脸的内容。
 - en: So these numbers generated this face and the background for that matter Now
     you might be able to use these 512 numbers。 and honestly that would be really
     if you can create a。preredctor that uses just these numbers and no image to really
     accurately predict glasses or not that that would be really pretty cool。 I would
     be very interested in in how you did that and we could possibly even do some sort。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些数字生成了这个面孔，背景也是如此。现在你可能能够使用这512个数字。老实说，如果你能创建一个仅使用这些数字而不依赖图像的预测器，准确预测眼镜与否，那真的很酷。我对你如何做到这一点很感兴趣，我们甚至可以进行某种合作。
 - en: maybe a medium publication or or something like that。 I would definitely work
     with you on that if you wanted to let's see what these file and you can do both。
     you can use the the vector and the images as well Now when you go to the data
     page down here。 it shows you the files。 So let's look at sample real quick。 This
     is a sample submission。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 也许是中等规模的出版物或其他事情。如果你愿意，我绝对会和你一起工作。让我们看看这些文件，你可以同时使用向量和图像。现在，当你去数据页面时，它会展示文件。让我们快速看看样本。这是一个样本提交。
 - en: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_21.png)'
+  id: totrans-37
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_21.png)'
 - en: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_22.png)'
+  id: totrans-38
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_22.png)'
 - en: So this is a sample。 you can see the 4500， and then for this sample， I just
     predicted 0。64。 which is the percentage of these people overall that have glasses，
     which matches a general。 the general population sample， at least in the United
     States。 and you can see there's about 500 of these。 so definitely don't go through
     and simply label these。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个样本。你可以看到4500，然后对于这个样本，我预测了0.64。这是这些人中总体戴眼镜的百分比，这与一般情况相符。至少在美国，一般人口样本中大约有500人，所以绝对不要简单地给它们标记。
 - en: Now let's look at the training data。 This is the training data。So in the training
     data。 this portion here， that's quite long。 This is the vector。 So this is your
     latent vector。 so there's 512 of those。 and then there's the label glasses 0110
@@ -226,50 +311,66 @@
     challenge of potentially using this vector to actually figure out who has glasses
     and who does not because these numbers for the data that was generated by an algorithm
     of mine。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们来看训练数据。这是训练数据。在训练数据中，这一部分很长。这是向量。这是你的潜在向量，数量为512，然后是标签眼镜0110。我生成了所有这些数据，并没有手动创建5000个个体并逐一标记。这就是潜在使用这个向量来判断谁戴眼镜，谁不戴眼镜的挑战，因为这些数据是通过我一个算法生成的。
 - en: And I have another video on how that algorithm works。 So if you want to do something
     serious with these vectors here you probably want to watch that other video but
     you'll see literally how I created this training set and how I was able to generategan
     vector。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 我还有另一个视频讲解这个算法是如何工作的。如果你想认真对待这些向量，可能需要先观看那个视频，你会看到我如何创建这个训练集，以及我是如何生成GAN向量的。
 - en: That had a very high likelihood of being people with glasses or people without。
     Now， notice。 I say very high likelihood。 The data is not perfect。 So I'm telling
     you this ahead of time。 I was thinking about just letting you discover it。 But
     I would get a bunch of email。 saying your data is incorrect， because I'm seeing
     people in here that you say have glasses that do not and vice versa。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 这有很高的可能性是戴眼镜的人或不戴眼镜的人。现在，请注意。我说的是很高的可能性。数据并不完美。我提前告诉你这些。我原本想让你自己发现，但我会收到很多邮件，告诉我你的数据不正确，因为我看到其中有人戴眼镜，但你说他们没有，反之亦然。
 - en: So let's just take a look at this。 I took it down to just the Id in the glasses。![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_24.png)
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们先来看看这个。我只提取了眼镜中的ID。![](img/c86fcbcc05423ffdaef7f9ffa84b9b4f_24.png)
 - en: And now we've got both up at once。 So let's just kind of validate the data。
     Okay， person 1。 no glasses， glasses， glasses。 So see those two ones over there。
     No glasses。 no glasses。 So two nose in a row，1，2，3 glasses， no glasses。 Okay，
     and then yeah， that's person 10。 person 10 has glasses， none，1， Okay， there's
     probably an error 15， No 15 is 15 is fine。 Okay， so 19。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们同时展示了两者。我们来验证一下数据。好吧，第一人。没有眼镜，有眼镜，有眼镜。看看那两个一。没有眼镜，没有眼镜。所以连续两个没有，1，2，3，有眼镜，没有眼镜。好吧，嗯，那是第10个人。第10个人有眼镜，没有，1，好吧，可能有错误，15，没有，15是没问题的。好吧，那么19。
 - en: Okay， I had to flip through quite a few of these to actually find one。 but this
     one is wrong。 So 30。 it says this person should have glasses。 They do not。 So
     this is my I'm essentially doing the opposite of what I asked you to do。 I asked
     you to look at vectors or look at images and tell me if they have glasses or not。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，我翻了不少这些才找到一个。但这个是错的。所以30。它说这个人应该戴眼镜，但他们没有。所以我实际上是在做我让你们做的事情的反面。我让你们查看向量或图像，告诉我他们是否戴眼镜。
 - en: My challenge to myself when I was researchinggans and working on this was I
     tried to write an algorithm that generated a bunch of vectors that were either
     glasses or no。 I just pure math。 No， even looking at the images。 And my algorithm
     is pretty accurate。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我研究GANs并进行这项工作时，我对自己提出的挑战是尝试编写一个算法，生成一堆要么戴眼镜要么不戴眼镜的向量。我只是纯数学。没有，甚至不查看图像。我的算法相当准确。
 - en: I went through about 30 of these before I found one that was that was not correct。
     So I had asked my algorithm to generate this person with glasses， but it did not。
     So even if you build a perfect classifier。 So you sit there with your teammates
     and label all of these which you're not supposed to do。 but sit there and put
     in。😊，A a1 or a zero completely on your own with no neural network whatsoever。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 我翻了大约30个这些，才找到一个不正确的。所以我让我的算法生成这个戴眼镜的人，但它没有做到。所以即使你建立了一个完美的分类器。你和你的队友坐在那里标注所有这些，而你本不应该这样做。但你可以自己完全用没有任何神经网络的方式输入。😊，1或0。
 - en: you still wouldn't get a perfect score because you would using your human brain
     would have said this person does not have glasses My algorithm。 assume assume
     that you would So if you want to get the absolute highest scores。 there's almost
@@ -278,31 +379,41 @@
     if you truly want to even conquer the noise。 then you could potentially try to
     figure out which of these individuals were misclassified maybe their vectors are
     close to each other in high dimension space。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 你仍然无法获得完美的分数，因为你用人脑可能会说这个人没有戴眼镜。我的算法假设你会。所以如果你想获得绝对最高的分数，这个挑战几乎有两个层次。第一个层次是从向量或图像中找出谁戴眼镜，谁不戴眼镜；第二个层次是如果你真的想征服噪声，那么你可能需要找出这些个体中哪些被错误分类，也许他们的向量在高维空间中彼此接近。
 - en: maybe clustering would figure out I'm honestly not sure I have not tried to
     analyze it。If you watch my other video on looking into the latent vector。 and
     I'll put a link to it in in this competition description link。 you might get some
     clues into how you would do this。 So in theory。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 也许聚类会找出，我老实说不太确定，我还没有尝试去分析它。如果你观看我另一段关于潜在向量的视频。我会在本次竞赛描述链接中放一个链接。你可能会得到一些关于如何做到这一点的线索。所以理论上。
 - en: you could potentially get a perfect zero log loss without hand labeling。 And
     even if you hand labeled again， you're not supposed to。 But if you did。 you would
     still not get a perfect score because you would get these wrong。 I think there
     might。 I think there are clues in the vectors。 I would think that there in some
     sort of high dimensional space close to each other。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可能在没有人工标注的情况下获得完美的零对数损失。即使你进行了人工标注，实际上你也不应该这样做。但如果你这样做了，你仍然无法获得完美的分数，因为你会有错误。我认为向量中可能有线索。我认为它们在某种高维空间中彼此靠近。
 - en: but I'm not not entirely sure。 watch the other video， you， you'll see more about
     that。 All right。 So that is this semester's competition， you have any questions，
     leave them in the feedback。 if you have any questions， leave them in the comments
     and good luck on this semester's competition。 Hopefully， I made it neither too
     easy。😊，Or punishingly hard。 So always my goal。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我并不是完全确定。观看另一段视频，你会看到更多相关内容。好的。这就是本学期的竞赛，如果你有任何问题，请在反馈中留言。如果你有任何问题，请在评论中留言，祝你在本学期的竞赛中好运。希望我没有让它变得太简单。😊或者难以承受。我的目标始终是如此。
 - en: Thank you for watching this video。 This competition is open to members from
     the Internet。 as well as Washington University students currently taking my class。
     If you find this kind of thing interesting， please subscribe to my YouTube channel。
     Thank you very much。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 感谢你观看这个视频。此次竞赛对来自互联网的成员开放，同时也欢迎正在参加我课程的华盛顿大学学生。如果你觉得这种事情有趣，请订阅我的YouTube频道。非常感谢。
