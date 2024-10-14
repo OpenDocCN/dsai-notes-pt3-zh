@@ -1,11 +1,16 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P39：L39- 删除行 - ShowMeAI
     - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P39：L39- 删除行 - ShowMeAI
+    - BV1Pu41117ku
 - en: '![](img/eaf068e6bde73d21d7bbfe9147424a36_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/eaf068e6bde73d21d7bbfe9147424a36_0.png)'
 - en: 哦。So you have learned how to insert and update data in this lecture we're going
     to finish this section by learning how to delete data that is very easy。 we use
     the delete from statement to delete records from a table let's say the invoices
@@ -13,20 +18,29 @@
     want to delete if you don't write this word class with this statement will delete
     all the records in this table and obviously that's very dangerous so be very careful
     when executing the statement。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。所以你已经学会了如何插入和更新数据。在这节课中，我们将通过学习如何删除数据来完成这一部分，这非常简单。我们使用 delete from 语句从表中删除记录，比如说发票表。现在可选地，我们可以添加搜索条件来识别我们想要删除的记录。如果你不写这个条件，这个语句将删除表中的所有记录，显然这是非常危险的，所以在执行这个语句时一定要小心。
 - en: 😊，Now here， let's say we want to delete the invoice with the ID1， so where invoice
     ID equals to one。Now here we can also use subqueries， let's say we want to delete
     all the invoices for the client called My works First let's find this client。
     so select everything from the clients table where name equals to my works。😊。Let's
     execute the second query。So。Here's our client。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，现在这里，假设我们想删除 ID 为 1 的发票，所以发票 ID 等于一。我们也可以使用子查询，假设我们想删除所有名为“我的作品”的客户的发票。首先我们找到这个客户。所以从客户表中选择所有字段，条件是名称等于“我的作品”。😊。现在执行第二个查询。这里是我们的客户。
 - en: Now we can get this client ID and use it in our search condition。 So where client
     ID equals to。 this is where we add our sub queryry。😊，There you go， just like before。Beautiful。
     so this is how we can delete data in SQL。😊。![](img/eaf068e6bde73d21d7bbfe9147424a36_2.png)
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们可以获取这个客户的 ID，并在搜索条件中使用它。所以客户 ID 等于。这是我们添加子查询的地方。😊，就像之前一样。很好。这就是我们如何在 SQL
+    中删除数据。😊。![](img/eaf068e6bde73d21d7bbfe9147424a36_2.png)
 - en: Oh。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。

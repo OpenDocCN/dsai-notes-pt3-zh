@@ -1,11 +1,16 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P37：L37- 更新多行 - ShowMeAI
     - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P37：L37- 更新多行 - ShowMeAI
+    - BV1Pu41117ku
 - en: '![](img/fbbd58c0784c4771a79466d0c54f1fca_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/fbbd58c0784c4771a79466d0c54f1fca_0.png)'
 - en: 哦。In the last tutorial you learned how to update a single record using the update
     statement Now if you want to update multiple records。 the syntax is exactly the
     same， but the condition that you type out here has to be more general for example。
@@ -13,53 +18,75 @@
     number three we can write a statement to update all the invoices for this client
     so back to our core editor window we change our condition to where client ID equals
     to3。However， if you execute this statement with MyQl workbench。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。在上一个教程中，你学习了如何使用更新语句更新单条记录。现在，如果你想更新多条记录，语法是完全相同的，但你在这里输入的条件必须更通用。例如，回到发票表，我们可以看到客户编号为三的客户有多条发票，我们可以写一条语句来更新这个客户的所有发票，因此回到我们的核心编辑窗口，我们将条件改为客户ID等于3。然而，如果你在MySQL
+    Workbench中执行此语句。
 - en: which is the software we' have been using in this course。 you're going to get
     an error because by default， MyosQql workbench runs in the Sa update mode。 So
     it allows you to update only a single record you're not going have this problem
     if you use another client for MyQl or if you write this statement in your application
     code。 This is only specific to Myql workbench。 Now let me show you how to get
     around this。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我们在本课程中一直使用的软件。你将会遇到一个错误，因为默认情况下，MySQL Workbench以安全更新模式运行。因此，它只允许你更新单条记录。如果你使用其他MySQL客户端或在你的应用程序代码中编写这条语句，就不会有这个问题。这仅限于MySQL
+    Workbench。现在让我告诉你如何解决这个问题。
 - en: So on the top we go to Mysql workbench menu and then preferences。😊。On this dialog
     box on the left side， click on SQL Ed。😊，And then， down to bottom。Unt this checkbox
     save updates。 So this prevents you from accidentally updating or deleting a bunch
     of records in a table。 So let's go ahead with this。Now we need to reconnect to
     this instance of Mysql。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以在顶部，我们转到MySQL Workbench菜单，然后选择首选项。😊在这个对话框的左侧，点击SQL编辑。😊然后，向下滚动到底部。取消勾选这个复选框以保存更新。这可以防止你不小心更新或删除表中的一堆记录。现在我们继续这个操作。现在我们需要重新连接到这个MySQL实例。
 - en: Let's copy all the code here and close this local instance window。Allright，
     now on the homepage。 double will click this connection to reconnect， there you
     go。😊，And then paste all that SQL code。Now let's execute this Bea， all the invoices
     for client number three were updated here we can also use the in operator。 let's
     say we want to update all the invoices for clients number3 and number4。😊。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们复制所有代码并关闭这个本地实例窗口。好了，现在在主页上，双击这个连接重新连接，看看吧。😊 然后粘贴所有的SQL代码。现在让我们执行这个操作，客户编号为三的所有发票都在这里更新了，我们还可以使用in运算符。假设我们想更新客户编号为3和4的所有发票。😊
 - en: So all the operators you learn to use in the where clauses also apply here。
     but technically this where clause is optional， so if you want to update all the
     records in a table。 you simply leave it out。😊，Now here's your exercise for this
     tutorial， back to our SQL to database。 write a SQL statement to give any customers
     born before 1990， 50 extra points。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以你在where子句中学习的所有运算符也适用于这里，但技术上来说，这个where子句是可选的，因此如果你想更新表中的所有记录，只需省略它。😊现在这是你本教程的练习，回到我们的SQL数据库。写一条SQL语句，为任何在1990年之前出生的客户增加50分。
 - en: '![](img/fbbd58c0784c4771a79466d0c54f1fca_2.png)'
+  id: totrans-7
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/fbbd58c0784c4771a79466d0c54f1fca_2.png)'
 - en: 嗯。![](img/fbbd58c0784c4771a79466d0c54f1fca_4.png)
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗯。![](img/fbbd58c0784c4771a79466d0c54f1fca_4.png)
 - en: All right， first I'm going to use SQL store。😊，Then write an update statement
     to update the customer's table。Set the points to points plus 50， so here we are
     using an expression to update the points column。For anyone born before 1990， So
     where birth date is less than 1990。January 1t。All right。 let's execute this query。😊，Alright，
     now。Let's open up the customers table one more time。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，我先使用SQL存储。😊然后写一条更新语句来更新客户表。将分数设置为分数加50，因此这里我们使用一个表达式来更新分数列。对于任何在1990年之前出生的人，所以条件是出生日期小于1990年1月1日。好的，让我们执行这个查询。😊好的，现在让我们再打开一次客户表。
 - en: So anyone who was born before 1990 now has an extra 50 points。![](img/fbbd58c0784c4771a79466d0c54f1fca_6.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，任何在1990年之前出生的人现在都有额外的50分。![](img/fbbd58c0784c4771a79466d0c54f1fca_6.png)
 - en: Oh。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。

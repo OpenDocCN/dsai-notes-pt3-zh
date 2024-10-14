@@ -1,11 +1,16 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P38：L38- 在更新中使用子查询
     - ShowMeAI - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P38：L38- 在更新中使用子查询
+    - ShowMeAI - BV1Pu41117ku
 - en: '![](img/1aaccc13121b796c4c981d548aa633d9_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1aaccc13121b796c4c981d548aa633d9_0.png)'
 - en: 哦。In this tutorial you're going to learn how to use subqueries in an update
     statement that's extremely powerful。 So we're going to continue with the example
     from the last tutorial。 but we're going to make it more interesting Here we are
@@ -14,100 +19,137 @@
     and in that application the user types in the name of the client So first we should
     find the I for that client and then use that I to update all their invoices How
     do we do that Well。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。在这个教程中，你将学习如何在更新语句中使用子查询，这非常强大。所以我们将继续上一个教程的例子，但我们会让它更有趣。这里我们正在更新客户编号三的所有发票，但如果我们没有客户的ID，只有名字怎么办？想象一下，你有一个应用程序，在那个应用程序中用户输入客户的名字。所以首先我们应该找到该客户的ID，然后用那个ID更新他们所有的发票。我们该怎么做呢？
 - en: let's have a quick look at our client table。😊，So here we have this client， My
     works。 let's say we have the name， we want to find the ID。😊，So back to our query
     editor window。😊。After this update statement， I'm going to write a select statement
     to select the client ID column。😊。From the client's table， where name equals my
     works。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们快速看一下我们的客户表。😊这里有这个客户，我的工作。假设我们有名字，我们想找到ID。😊所以回到我们的查询编辑器窗口。😊在这个更新语句后，我将写一个选择语句来选择客户ID列。😊来自客户表，条件是名字等于我的工作。
 - en: Now here we have a syntax error because we didn't terminate the last statement
     with a semicollon。 but don't worry about that， we're going to get back to that
     in a second。 let's just select these few lines and execute this query。😊，The idea
     of this client is too beautiful。Now we can use this select statement as a sub
     queryry in an update statement。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在这里出现了语法错误，因为我们没有用分号结束最后一个语句。但不用担心，我们马上会回到这一点。让我们选中这几行并执行这个查询。😊这个客户的想法太美妙了。现在我们可以在更新语句中将这个选择语句用作子查询。
 - en: so as I told you before， a sub queryry is a select statement that is within
     another SQL statement。😊。So instead of hard coding3 here， we're going to use this
     select statement as a sub query。 but we need to put it in parenthsesis。😊，So my
     school will execute this query first。 it will return the client ID and then use
     it in this condition。😊，So for clarity。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我之前所说，子查询是在另一个SQL语句中的选择语句。😊所以，我们不再在这里硬编码，而是将这个选择语句用作子查询，但我们需要将其放在括号中。😊所以，我的学校会首先执行这个查询。它会返回客户ID，然后在这个条件中使用它。😊为了清晰起见。
 - en: let's remove the line break and indent these few lines。😊，So this is the end
     result。Now we execute this query and this updated all the invoices for this client
     Now。 what if this query returns multiple clients， for example， back to the client's
     table。 let's imagine we want to update the invoices for all clients located in
     New York or California。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们去掉换行并缩进这几行。😊这是最终结果。现在我们执行这个查询，这更新了该客户的所有发票。现在，如果这个查询返回多个客户，比如，回到客户表。让我们想象一下，我们想更新所有位于纽约或加利福尼亚的客户的发票。
 - en: so we need to update our subquery like this。😊，Where。State。In。California。And
     New York。Now。 before executing the entire statement， let's just select our sub
     query and execute it to see what we get。So we get two client ID， one and three
     beautiful now because this query。 this sub query returns multiple records， we
     cannot use an equal sign here anymore。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们需要像这样更新我们的子查询。😊在，加利福尼亚和纽约。现在，在执行整个语句之前，让我们先选择我们的子查询并执行它，看看我们得到什么。所以我们得到了两个客户ID，一个和三个，太美妙了。因为这个查询，这个子查询返回多个记录，我们不能再在这里使用等号了。
 - en: so we need to replace this with the in operator。😊。And now this statement updates
     the invoices for all clients located in these two states。 Let's execute it。😊，Beautiful，
     everything worked。So as a best practice。 before executing your update statement，
     run your query to see what records you're going to update so you don't accidentally
     update the records that shouldn't be updated Now here we have a sub queryry。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们需要将其替换为in运算符。😊现在这个语句更新了位于这两个州的所有客户的发票。让我们执行它。😊太美了，一切都正常。作为最佳实践，在执行你的更新语句之前，运行你的查询以查看你将要更新哪些记录，这样你就不会意外更新不应该更新的记录。现在这里有一个子查询。
 - en: but even if it didn't have a sub queryry， we could still query the records that
     we're going to update let me show you so let's imagine we're going to update all
     the invoices where payment date is nu。😊，Before executing this entire update statement，
     I would run a query like this。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是即使没有子查询，我们仍然可以查询要更新的记录，让我给你演示一下。所以假设我们要更新所有支付日期为null的发票。😊，在执行整个更新语句之前，我会运行一个这样的查询。
 - en: select start from invoices where payment date is not。 Now， let's execute this
     query。😊。These are the two records that don't have a payment date。 so once we're
     confident that we are updating the right records， then we come back here。And get
     rid of this select statement and just attach the word clause to our update statement。😊。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 选择开始从发票中支付日期为空。现在，让我们执行这个查询。😊。这两条记录没有支付日期。因此，一旦我们确认更新了正确的记录，我们就会回到这里。去掉这个选择语句，只需将字词子句附加到我们的更新语句上。😊。
 - en: '![](img/1aaccc13121b796c4c981d548aa633d9_2.png)'
+  id: totrans-11
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1aaccc13121b796c4c981d548aa633d9_2.png)'
 - en: '![](img/1aaccc13121b796c4c981d548aa633d9_3.png)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1aaccc13121b796c4c981d548aa633d9_3.png)'
 - en: Al right， here's your exercise for this tutorial Back to our SQL store database。
     Look at the orders table。😊，As you can see， some of your orders don't have a comment。
     I want you to write a SQL statement to update the comments for orders for customers
     who have more than 3000 points。 so customers who have more than 3000 points regard
     them as gold customers Find their orders if they have placed an order update the
     comments column and set it to gold customer that's a really good exercise。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，这是本教程的练习，回到我们的 SQL 商店数据库。查看订单表。😊，如您所见，一些订单没有评论。我希望您编写一个 SQL 语句，更新积分超过3000的客户的订单评论。所以积分超过3000的客户被视为黄金客户。如果他们下过订单，请找到他们的订单，更新评论列并将其设置为“黄金客户”，这是一个很好的练习。
 - en: '![](img/1aaccc13121b796c4c981d548aa633d9_5.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1aaccc13121b796c4c981d548aa633d9_5.png)'
 - en: '![](img/1aaccc13121b796c4c981d548aa633d9_6.png)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/1aaccc13121b796c4c981d548aa633d9_6.png)'
 - en: All at first we need to find the gold customers， so select everything from the
     customers table where points is greater than 3000。 and by the way， because the
     current database is SQL invoicing。 we either have to type out a use statement
     on the top or double click this database before executing this query。So there
     you go。 We have three gold customers。 Now。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，我们需要找到黄金客户，因此从客户表中选择所有记录，条件是积分大于3000。顺便说一下，因为当前数据库是 SQL 发票，我们要么在顶部输入使用语句，要么在执行此查询之前双击此数据库。好了，我们有三个黄金客户。现在。
 - en: we need to get the idea of these customers to use them in an update statement
     map。 So we only select。Customer Id here。And then use this select statement as
     a sub query and an update statement。😊，Update orders， set comments to。Gold customer。Where
     customer I。 because we're dealing with multiple customer IDs， we need to use the
     in operator。😊。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们需要获取这些客户的信息以便在更新语句中使用。所以我们只选择客户ID。然后将此选择语句用作子查询和更新语句。😊，更新订单，设置评论为黄金客户。条件是客户ID。因为我们正在处理多个客户ID，我们需要使用
+    in 操作符。😊。
 - en: And then to use this as a sub query， we need to enclose it in parenthesis。 That's
     it。 Let's indent the code。 that's better。 So here is the final solution。![](img/1aaccc13121b796c4c981d548aa633d9_8.png)
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后要将其用作子查询，我们需要将其放在括号中。这就完成了。让我们缩进代码。这样更好。这里是最终解决方案。![](img/1aaccc13121b796c4c981d548aa633d9_8.png)
 - en: Oh。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。

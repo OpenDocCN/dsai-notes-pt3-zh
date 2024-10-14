@@ -1,76 +1,103 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P36：L36- 更新单行 - ShowMeAI
     - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P36：L36- 更新单行 - ShowMeAI
+    - BV1Pu41117ku
 - en: '![](img/f1453961f41a6ece6590726af431f558_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f1453961f41a6ece6590726af431f558_0.png)'
 - en: 哦。In this tutorial， I'm going to show you how to update data in SQA， so back
     to our invoices table。😊。Look at the first record here。The payment total for this
     record is 0。 and obviously。 there is no payment date。 Now， let's imagine that
     there was a problem in the system that recorded this information。 Let's say the
     client paid $10 for this invoice。 So we should update this record in this table。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。在这个教程中，我将向你展示如何在 SQL 中更新数据，所以回到我们的发票表。😊。看看这里的第一条记录。该记录的付款总额为0，显然没有付款日期。现在，让我们想象系统记录这些信息时出现了问题。假设客户为这张发票支付了$10。所以我们应该在这个表中更新这一记录。
 - en: That is very easy。Back to our query editor window。We use the update statement
     to update one or more records in a table。 What table in this case。 invoices。Next
     we add the set clause， and this is where we specify the new value for one or more
     columns。In this case， we want to update payment total， let's set it to $10。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 这非常简单。回到我们的查询编辑器窗口。我们使用更新语句来更新表中的一条或多条记录。这个案例中的表是发票。接下来，我们添加设置子句，在这里我们指定一列或多列的新值。在这种情况下，我们想要更新付款总额，将其设置为$10。
 - en: we should also update payment date， so we use a comma to add more columns。We
     set this to a date value， let's say， 2019， March 1t。And then we type out a condition。With
     this condition， we identified the record or the records that need to be updated。In
     this case。 we want to update the invoice number one， so back to our query。😊。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还应该更新付款日期，所以我们使用逗号来添加更多列。我们将其设置为日期值，比如说，2019年3月1日。然后我们输入一个条件。通过这个条件，我们识别出需要更新的记录。在这种情况下，我们想要更新发票编号1，所以回到我们的查询。😊
 - en: We type out invoice IDd equal to one。Let's execute this。😊，Beautiful， now back
     to our table。 let's refresh the data by clicking on this icon。😊，Alright。 you can
     see payment total is updated to 10 and we also have a payment date beautiful。😊，Now。
     let's say we actually updated the wrong record。 Maybe we should have updated invoice
     number three。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们输入发票 ID 等于1。让我们执行这个。😊，漂亮，现在回到我们的表格。让我们通过点击这个图标刷新数据。😊，好的。你可以看到付款总额已更新为10，我们也有了付款日期，真漂亮。😊，现在。假设我们实际上更新了错误的记录。也许我们应该更新发票编号3。
 - en: so we should update this table one more time and restore the original values
     in this columns back to a query。We can set the payment total to zero and the payment
     date to nu。So we can use the null keyword to insert the null value in a column
     that accepts null values Now back to the navigator panel。Let's open this table
     into design mode。You can see that the payment total column has a default value
     of 0。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们应该再更新一次这个表，将这一列中的原始值恢复到查询。我们可以将付款总额设置为零，付款日期设置为无。所以我们可以使用空值关键字在接受空值的列中插入空值。现在回到导航面板。让我们以设计模式打开这个表。你可以看到付款总额列的默认值为0。
 - en: 😊，And the payment date column has the default value of no。 So back in our query。We
     can also set payment total to default， and my S will use the default value for
     this column。 which is in this case，0。 So let's execute this statement one more
     time。 Beaful。 Now back to the table， let's refresh the data。😊，So payment total
     is set to zero and payment date is nu。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，而付款日期列的默认值为无。所以回到我们的查询。我们还可以将付款总额设置为默认值，我的 S 将为这一列使用默认值，在这种情况下是0。所以我们再执行一次这个语句。漂亮。现在回到表格，让我们刷新数据。😊，所以付款总额被设置为零，付款日期为无。
 - en: Beautiful， now let's go ahead and update the third payment。Look at the invoice
     total。 That is $147。 For this example， let's imagine that the client made 50%
     of the total amount on the due date。So back to our query window， instead of using
     a literal value here like $70。 we can write an expression， we want to calculate
     50% of invoice total， so invoice total times 0。5。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 漂亮，现在让我们继续更新第三笔付款。看看发票总额。是$147。在这个例子中，假设客户在到期日支付了总金额的50%。所以回到我们的查询窗口，这里不使用像$70这样的字面值，我们可以写一个表达式，我们想要计算发票总额的50%，即发票总额乘以0.5。
 - en: Now let me break this code into multiple lines so we can see clearly。😊。Now we
     should set the payment date， as I told you， this client made the payment on the
     due date so we can set this to due date。 whatever value we have in this column
     will be used to set the payment date。And obviously。 we need to update the inverseice
     ID number three now back in the table。😊，Let's refresh the data。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我把这段代码分成多行，这样我们可以看得更清楚。😊。现在我们应该设置付款日期，正如我告诉你的，这个客户在到期日进行了付款，所以我们可以将其设置为到期日。此列中的任何值都将用于设置付款日期。显然，我们现在需要在表中更新发票ID编号三。😊，让我们刷新数据。
 - en: All right look， payment total is updated and it said to almost 50% of the invoice
     total。 however this number is truncated so we don't have the digits after the
     decimal point。 Don't worry about it for now， we'll come back to this when we talk
     about data types later in the course。Also， you can see that payment date is set
     to the same value we have in the due date column。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，看，付款总额已更新，接近发票总额的50%。然而，这个数字被截断了，所以我们没有小数点后的数字。现在不必担心这个，我们稍后在课程中讨论数据类型时再回到这个问题。此外，你可以看到付款日期与到期日期列中的相同值。
 - en: '![](img/f1453961f41a6ece6590726af431f558_2.png)'
+  id: totrans-11
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/f1453961f41a6ece6590726af431f558_2.png)'
 - en: Yeah。![](img/f1453961f41a6ece6590726af431f558_4.png)
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的。![](img/f1453961f41a6ece6590726af431f558_4.png)
