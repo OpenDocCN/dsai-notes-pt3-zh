@@ -1,72 +1,105 @@
 - en: 【双语字幕+资料下载】OpenCV 基础教程，安装、原理、实战， 3小时带你搞定这个热门计算机视觉工具库！＜实战教程系列＞ - P3：第0章：安装 -
     ShowMeAI - BV1zL411377L
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】OpenCV 基础教程，安装、原理、实战，3小时带你搞定这个热门计算机视觉工具库！＜实战教程系列＞ - P3：第0章：安装 - ShowMeAI
+    - BV1zL411377L
 - en: '![](img/3e015471205daf99a2282111f47514a3_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/3e015471205daf99a2282111f47514a3_0.png)'
 - en: So let's start with the installations。 First， we will go to Python。 or Rg。 and
     we will go to the downloads section。Here we are not going to download the latest
     version。 Instead we are going to download 3。7。6。![](img/3e015471205daf99a2282111f47514a3_2.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们开始安装。首先，我们将去 Python 或 Rg，然后我们将前往下载部分。在这里我们不会下载最新版本，而是下载 3.7.6。![](img/3e015471205daf99a2282111f47514a3_2.png)
 - en: As this works well with Open C。So we will click on download， and then we will
     head on。![](img/3e015471205daf99a2282111f47514a3_4.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 由于它与 Open C 配合得很好，所以我们将点击下载，然后前往。![](img/3e015471205daf99a2282111f47514a3_4.png)
 - en: To the Windows version。 Now， if you have Mac， you can download the Mac version
     as well。Once the download is complete， we will install。Make sure to add Python
     3。7 to the path。So once the installation is done， we will close the dialogueog。And
     head on to pie charm。Now Pycharm is the IDE that we will be using to edit our
     code。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 针对 Windows 版本。如果你有 Mac，你也可以下载 Mac 版本。一旦下载完成，我们将安装。确保将 Python 3.7 添加到路径中。安装完成后，我们将关闭对话框，并前往
+    pie charm。现在 Pycharm 是我们将用来编辑代码的 IDE。
 - en: so it is a code editor that will allow us to write our code。 but it has a lot
     of functionalities which will help us in the coding process。So we will head on
     to its download section and we will download the community version as it is free。Once
     the download is complete， we will run the installation file。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个代码编辑器，可以让我们编写代码，但它具有很多功能，可以帮助我们在编码过程中。所以我们将前往它的下载部分，并下载社区版，因为它是免费的。一旦下载完成，我们将运行安装文件。
 - en: Here we will associate the dot pie files to pie charm。 and we will also add
     launchers directlyy to the path。Next。 we will restart the computer and run pie
     chart。![](img/3e015471205daf99a2282111f47514a3_6.png)
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里我们将把 dot pie 文件关联到 pie charm，并且我们还将直接将启动器添加到路径中。接下来，我们将重启计算机并运行 pie chart。![](img/3e015471205daf99a2282111f47514a3_6.png)
 - en: So now we are going to create our new project。Here， before we start the project。
     we will look into the project interpreter。 Now this has to be 3。7。So if it's automatically
     detected。 then we are good to go。So， let's write down。Open TV。换一托。And hit create。So
     now this is the P Char environment over here we have the area where we will write
     the code and on the left hand side we have the project files and the project folders。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们要创建我们的新项目。在开始项目之前，我们先看看项目解释器。现在必须是3.7。如果自动检测到，那么我们就可以开始了。接下来，写下“打开 TV”，换一托。然后点击“创建”。现在这是
+    P Char 环境，在这里我们有一个区域可以编写代码，而左侧是项目文件和项目文件夹。
 - en: So if we open up our folder， we only have the environment， the virtual environment
     that was created。 now we need to install libraries or packages in these in this
     environment， so we will go to file。Sittings。Project， project interpreter and here
     we will add。And search。 now， we will write open C。And here we have Open CV Python，
     so we will click on install package。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们打开我们的文件夹，我们只会看到环境，即创建的虚拟环境。现在我们需要在这个环境中安装库或包，所以我们将前往“文件”。“设置”。“项目”，项目解释器，然后在这里我们将添加并搜索。现在，我们将写“打开
+    C”。在这里我们有 Open CV Python，所以我们将点击“安装包”。
 - en: So once the installation is done， we will close this， hit O。And now we will
     create our first Python file， so we will right click on our project。We will go
     to new and we will create a Python file。Here， we will say， chapter 1。Now as you
     can see in our project， we have the chapter 1 dot by file。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦安装完成，我们将关闭这个，按 O。现在我们将创建我们的第一个 Python 文件，所以我们将右键点击我们的项目。我们将选择“新建”，并创建一个 Python
+    文件。在这里，我们将命名为“第一章”。现在如你所见，在我们的项目中，我们有一个 chapter 1 dot by 文件。
 - en: '![](img/3e015471205daf99a2282111f47514a3_8.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/3e015471205daf99a2282111f47514a3_8.png)'
 - en: And here is where we can write our code。![](img/3e015471205daf99a2282111f47514a3_10.png)
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里是我们可以编写代码的地方。![](img/3e015471205daf99a2282111f47514a3_10.png)
 - en: So let's import our Open CB package。So we will write import and then CV2 CVv2
     stands for computer Vi。Then， we will print。Backage。Imported。Now， if everything
     runs fine， this should output。Package imported。So we will right click on the chapter
     1 and we will press run。So now in the console we can see the package imported
     message has been sent。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们导入我们的 Open CB 包。我们将写“导入”，然后是 CV2，CVv2 代表计算机视觉。接下来，我们将打印“包已导入”。现在，如果一切正常，这应该输出“包已导入”。所以我们将右键点击第一章，然后点击“运行”。现在在控制台中，我们可以看到包已导入的消息。
 - en: this means that our package is successfully imported and now we can proceed
     further。![](img/3e015471205daf99a2282111f47514a3_12.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 这意味着我们的包已经成功导入，现在我们可以继续进行。![](img/3e015471205daf99a2282111f47514a3_12.png)

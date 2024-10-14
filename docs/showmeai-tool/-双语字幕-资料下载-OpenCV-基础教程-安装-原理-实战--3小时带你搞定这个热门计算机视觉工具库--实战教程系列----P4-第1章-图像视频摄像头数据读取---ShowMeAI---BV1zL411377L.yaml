@@ -1,87 +1,117 @@
 - en: 【双语字幕+资料下载】OpenCV 基础教程，安装、原理、实战， 3小时带你搞定这个热门计算机视觉工具库！＜实战教程系列＞ - P4：第1章：图像视频摄像头数据读取
     - ShowMeAI - BV1zL411377L
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】OpenCV基础教程，安装、原理、实战，3小时带你搞定这个热门计算机视觉工具库！＜实战教程系列＞ - P4：第1章：图像视频摄像头数据读取
+    - ShowMeAI - BV1zL411377L
 - en: '![](img/731f8909febb6ccaa67270b908eccfe1_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/731f8909febb6ccaa67270b908eccfe1_0.png)'
 - en: 。So the first thing we will learn is how to read images， videos and webcam。So
     in order to read images， we have a function by the name I am read。So let's start
     by declaring the variable in which we will store the image， so we will call it
     IMg。And then we are going to。Use our package， which is CVv2。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将学习的第一件事是如何读取图像、视频和摄像头。所以为了读取图像，我们有一个名为I am read的函数。所以让我们开始声明一个变量来存储图像，我们将称之为IMg。然后我们将使用我们的包，CVv2。
 - en: and then inside that package we have the function I am read。Now， this means
     we are reading an image。 Now， all we have to do is mention the path where this
     image is present。So I have created a resources folder in which we have the image
     Lina。pNG。So， we are going to。Define the path of this。So it is in the resources
     and then it is Lena。pNg。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后在那个包中，我们有函数I am read。现在，这意味着我们在读取一张图像。现在，我们只需要提到这张图像所在的路径。所以我创建了一个resources文件夹，里面有图像Lina.pNG。所以，我们将定义这个路径。所以它在resources中，然后是Lena.pNg。
 - en: So this imports our image from our resources folder， but now we need to display
     it。 so to display we have the function known as IM show， so we will use our package
     CB2。im show and in IM show we have to define two arguments。The first one is the
     name of the window。 so we can say our output。And then we have to define which
     image do we want to display。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这将从我们的resources文件夹中导入图像，但现在我们需要显示它。所以为了显示，我们有一个叫做IM show的函数，我们将使用我们的包CB2。im
+    show，在IM show中我们必须定义两个参数。第一个是窗口的名称。所以我们可以说是我们的输出。然后我们需要定义我们想显示哪张图像。
 - en: so we will say IMG。So let's run this。Now the image did appear， but it went out
     immediatelyly。 so in order to add a delay so that we can see we will write CVv2。
     weight key and then we will add the delay if we put0 it means infinite delay。But
     if we add a value。 it means。That many milliseconds， so for example， 1000 will
     mean one second。So for now。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将说IMG。所以让我们运行这个。现在图像确实出现了，但它立刻消失了。所以为了添加延迟，以便我们可以看到，我们将写CVv2。weight key，然后添加延迟，如果我们输入0，则表示无限延迟。但如果我们添加一个值，意味着那么多毫秒，例如1000将意味着一秒。所以目前为止。
 - en: we will put zero and run。So here is our output image。So next we are going to
     learn how to import a video。So we have a video in the resources folder by the
     name test video， so let's import that。So we are going to remove what we had before。
     So now we are going to create a video capture object。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将输入0并运行。所以这是我们的输出图像。接下来我们将学习如何导入视频。所以我们在resources文件夹中有一个名为test video的视频，所以让我们导入它。我们将删除之前的内容。所以现在我们将创建一个视频捕捉对象。
 - en: So let's call it cap。C， V2。Dot。Video capture。So now in this video capture， again。
     we just have to define the path where our video is。So we will type in resources。And
     then。 we will say。We will mention the name of the video， so which is test。Underscore
     video dot M4。So this will import our video， but now we need to display it and
     as you know video is just a sequence of images。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们称之为cap。C，V2。点。视频捕捉。所以现在在这个视频捕捉中，我们只需要定义视频所在的路径。我们将输入resources。然后，我们将说。我们会提到视频的名称，也就是test。下划线video点M4。所以这将导入我们的视频，但现在我们需要显示它，正如你所知道的，视频只是一系列图像。
 - en: so we will need a wide loop to actually go through each frame one by one。So
     we will add a white loop。喂。Zhu。Now we will capture our image。So all this will
     do is it will save our image in this variable and then it will tell us whether
     it was done successfully or not。So this variable will be a booleion， which is
     true or false。Next， we are going to show this result。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们需要一个宽循环来逐帧处理。所以我们将添加一个白循环。喂。Zhu。现在我们将捕捉我们的图像。所以所有这些将做的就是将我们的图像保存在这个变量中，然后告诉我们是否成功完成。所以这个变量将是布尔值，即true或false。接下来，我们将展示这个结果。
 - en: So we will use the IM show function as before， and then we will type in our
     video， for example。And then we will say I G。Now we are going to add something
     that will add the delay and wait for the。Keyboard Q press if we want to break
     out of the loop。So you do not need to go into the detail of how this works。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将像之前一样使用IM show函数，然后我们将输入我们的视频，例如。然后我们会说I G。现在我们将添加一些内容，增加延迟并等待键盘Q按下，如果我们想退出循环。所以你不需要详细了解它是如何工作的。
 - en: all you need to know is that this adds a delay and it looks for the word the
     key pressQ in order to break the loop。So let's run this and see what happens。So
     here we can see our video。 Now， the video is quite short。 so it played and it
     turned off。 So here you can see。 And if we press cu， it will。Close。So that's great。
     Now we have successfully imported a video。Next。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 你需要知道的是，这会增加一个延迟，并寻找按键的单词“key pressQ”来打破循环。所以让我们运行这个，看看会发生什么。这里我们可以看到我们的视频。现在，这个视频相当短，所以它播放后就关闭了。你可以看到这里。如果我们按“cu”，它将会关闭。所以很好。现在我们已经成功导入了一个视频。接下来。
 - en: we are going to learn how to use a webcam。Now using a webcam is very similar
     to importing a video。 so instead of the file path we are just going to write the
     ID of our camera so if you just have one webcam or you have a laptop connected
     so you can press zero and this will use the default webcam if you have more than
     one you can add the ID as you go along so here we will create this webcam object。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将学习如何使用网络摄像头。使用网络摄像头与导入视频非常相似。所以我们将写下摄像头的ID，而不是文件路径。如果你只有一个网络摄像头或者有一个连接的笔记本电脑，你可以按零，这将使用默认的网络摄像头。如果你有多个摄像头，可以在过程中添加ID。现在我们将创建这个摄像头对象。
 - en: And then we will define some parameters for it。So we want it to be of a specific
     size。So we will define the width， which is the ID number 3 as 640。And then we
     will define the height。 which is IDd number 4。As。4，80。Now， the rest of the code
     pretty much remains the same。So let's run this and see what happens。So here you
     can see the live feed from my webcam。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将为它定义一些参数。我们希望它有一个特定的大小。所以我们将定义宽度，ID号为3，设置为640。然后我们将定义高度，ID号为4，设置为480。接下来的代码大致保持不变。所以让我们运行这个，看看会发生什么。这里你可以看到我摄像头的实时画面。
 - en: So as you can see， the brightness is not very pleasant。 so what we can do is
     we can change the brightness from the settings and the ID for that is 10。So we
     can write， for example， 100。So now you can see the brightness。Is much more pleasant。![](img/731f8909febb6ccaa67270b908eccfe1_2.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以你可以看到，亮度不是很理想。所以我们可以从设置中改变亮度，ID为10。比如我们可以写100。现在你可以看到，亮度要舒服得多。![](img/731f8909febb6ccaa67270b908eccfe1_2.png)

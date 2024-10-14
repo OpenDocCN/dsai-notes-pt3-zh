@@ -1,71 +1,108 @@
 - en: 【双语字幕+资料下载】OpenCV 基础教程，安装、原理、实战， 3小时带你搞定这个热门计算机视觉工具库！＜实战教程系列＞ - P2：第0章：图像知识介绍
     - ShowMeAI - BV1zL411377L
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】OpenCV基础教程，安装、原理、实战，3小时带你搞定这个热门计算机视觉工具库！＜实战教程系列＞ - P2：第0章：图像知识介绍
+    - ShowMeAI - BV1zL411377L
 - en: '![](img/0927cb9227e01b87e39550b44a9db204_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0927cb9227e01b87e39550b44a9db204_0.png)'
 - en: So let's start with introduction to images。 So what are images made of。 Let's
     say I wanted to display the number 3。 I will take an array of boxes where each
     box could be filled or empty。![](img/0927cb9227e01b87e39550b44a9db204_2.png)
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们从图像介绍开始。那么图像是由什么组成的呢？假设我想显示数字3。我将采用一个框的数组，每个框可以是填充或空的。![](img/0927cb9227e01b87e39550b44a9db204_2.png)
 - en: '![](img/0927cb9227e01b87e39550b44a9db204_3.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0927cb9227e01b87e39550b44a9db204_3.png)'
 - en: So to write the number3， we would color a few boxes to create that shape。 Now。
     some boxes are white in color， whereas some are black。We can denote all the black
     boxes as0 and all the white boxes as one。In this example。 we have 10 by 10 boxes。If
     we wanted more detail， we can increase the number of boxes。In reality。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以要写数字3，我们会给一些框上色以创建那个形状。现在，一些框是白色的，而一些框是黑色的。我们可以将所有黑色框表示为0，所有白色框表示为1。在这个例子中，我们有10乘10个框。如果我们想要更多细节，可以增加框的数量。实际上。
 - en: these boxes are pixels。 You would have heard of Vga， H D， full D and 4K。 All
     of these represent a fixed number of pixels。 For example， VGA is 640 by 480。![](img/0927cb9227e01b87e39550b44a9db204_5.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些框是像素。你可能听说过VGA、HD、全高清和4K。这些都代表固定数量的像素。例如，VGA是640乘480。![](img/0927cb9227e01b87e39550b44a9db204_5.png)
 - en: '![](img/0927cb9227e01b87e39550b44a9db204_6.png)'
+  id: totrans-6
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0927cb9227e01b87e39550b44a9db204_6.png)'
 - en: '![](img/0927cb9227e01b87e39550b44a9db204_7.png)'
+  id: totrans-7
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0927cb9227e01b87e39550b44a9db204_7.png)'
 - en: HD is 1280 by 720。This means VGA has 6，40 boxes in the width and 480 boxes or
     pixels in the height。 Currentlyly， the image werew has only two colors， black
     and white。 This is known as a binary image。 In order to get more detail， we can
     have an image with more levels。 This would mean instead of having only 0 and1，
     we will have a range of values。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: HD的分辨率是1280乘720。这意味着VGA的宽度是640个像素，高度是480个像素。目前，图像只有两种颜色，黑色和白色。这被称为二值图像。为了获得更多细节，我们可以有一个包含更多级别的图像。这意味着我们将拥有一个值的范围，而不仅仅是0和1。
 - en: '![](img/0927cb9227e01b87e39550b44a9db204_9.png)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0927cb9227e01b87e39550b44a9db204_9.png)'
 - en: '![](img/0927cb9227e01b87e39550b44a9db204_10.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0927cb9227e01b87e39550b44a9db204_10.png)'
 - en: Here we can see the difference between 2，6 and 16 levels or shades of gray。
     but still the image is not very clear， so we will be using an 8 bit value。 This
     will give us a resolution of 256， where 0 will be black and 255 will be white。
     This means we now have 254 colors between white and black。In other words。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，我们可以看到2、6和16级灰度的区别，但图像仍然不是很清晰，所以我们将使用8位值。这将为我们提供256的分辨率，其中0是黑色，255是白色。这意味着我们现在在白色和黑色之间有254种颜色。换句话说。
 - en: we have 254 shades of gray。![](img/0927cb9227e01b87e39550b44a9db204_12.png)
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们有254种灰度。![](img/0927cb9227e01b87e39550b44a9db204_12.png)
 - en: This image is now known as a gray scale image。![](img/0927cb9227e01b87e39550b44a9db204_14.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个图像现在被称为灰度图像。![](img/0927cb9227e01b87e39550b44a9db204_14.png)
 - en: '![](img/0927cb9227e01b87e39550b44a9db204_15.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0927cb9227e01b87e39550b44a9db204_15.png)'
 - en: For a colored image， we have three grayscale images representing the intensities
     of red。 green and blue。 In short， RGB adding these images together gives us a
     full color image。 This means a colored VGA image is 6，40 by 4，80 by 3。![](img/0927cb9227e01b87e39550b44a9db204_17.png)
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于彩色图像，我们有三种灰度图像，分别表示红色、绿色和蓝色的强度。简而言之，RGB将这些图像相加可以得到完整的彩色图像。这意味着一个彩色VGA图像的分辨率是640乘480乘3。![](img/0927cb9227e01b87e39550b44a9db204_17.png)
 - en: '![](img/0927cb9227e01b87e39550b44a9db204_18.png)'
+  id: totrans-16
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0927cb9227e01b87e39550b44a9db204_18.png)'
 - en: '![](img/0927cb9227e01b87e39550b44a9db204_19.png)'
+  id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0927cb9227e01b87e39550b44a9db204_19.png)'

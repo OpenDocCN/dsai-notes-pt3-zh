@@ -524,6 +524,7 @@
   id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们得到了一幅更干净的图像，我们从每一侧移除了20个像素，现在它看起来更像是一张扫描的纸。好的，接下来，我们可以看看你所称之的工作流。我们可以添加我们的连接代码，这就是我们的叠加。如果我们想这么做，我们可以回去。我们可以去第六章。这里有叠加的函数。我们可以复制这个。
 - en: And we can paste it in our current project。And just to put all these images
     together。So which of the images should we put together？So this is just a formality
     to see what is going on。So and there is another case that I will discuss now and
@@ -532,6 +533,7 @@
   id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以把它粘贴到当前项目中。然后把所有这些图像放在一起。那么我们应该把哪些图像放在一起呢？这只是一个形式，看看发生了什么。所以，还有另一个案例我现在会讨论，你会看到这也很重要。我们先把图像叠放起来，所以我们会说我们的图像。
 - en: Aray is equals to we are going to declare an array。So here we'll put our original
     image。Then we can put our image contour。And then we can put the。Image。Biggest。Where
     that image threshold。 So let's put it down so we can put it here。Image threshold。And
@@ -540,6 +542,7 @@
   id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 数组等于我们要声明一个数组。所以在这里我们将放置我们的原始图像。然后我们可以放置我们的图像轮廓。然后我们可以放置。图像。最大的。在哪里那张图像阈值。所以让我们放下它，这样我们可以把它放在这里。图像阈值。然后，我们可以放置。图像工作。所以这应该给我们一个好主意。然后我们只需说。叠加图像。
 - en: so we will see it stacked。Images is equals to stack images。And we will define
     a scale。So let's say 0。6。 and then we are going to define our arrays of image。Oh，
     sorry， imagery。And then here we will copy this and paste it。Paste it。So there
@@ -548,6 +551,7 @@
   id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们会看到它叠加的图像等于叠加图像。我们将定义一个缩放比例。假设为0.6。然后我们将定义我们的图像数组。哦，抱歉，图像。然后在这里我们将复制这个并粘贴。粘贴。所以现在我们可以看到工作流。我们有我们的文档，然后我们获取我们所称的最大的轮廓，然后实际上这应该在这里。
 - en: this should be here the other way around。So。Where is it。So that is better， I
     guess。 Yeah。 so that is better。 So again， now we are rescaling it。 so that it。Because
     of that。 it's looking a little bit weird。But if we print it out separately， it
@@ -555,15 +559,18 @@
   id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个应该放在这里，反过来。所以。它在哪里。所以我想这样更好。是的。所以这样更好。所以再次，现在我们正在重新缩放它。因为这个。它看起来有点奇怪。但如果我们单独打印出来，它应该没问题。每个工作是什么？
 - en: '![](img/04f37d9e927ad86517b1e6fa084d48b2_4.png)'
   id: totrans-63
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/04f37d9e927ad86517b1e6fa084d48b2_4.png)'
 - en: So， here we have our。Final result。Now one thing you will note now， if I remove
     the document。 it should give us an error。![](img/04f37d9e927ad86517b1e6fa084d48b2_6.png)
   id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，在这里我们得到了我们的。最终结果。现在你会注意到的一件事是，如果我删除文档。它应该给我们一个错误。![](img/04f37d9e927ad86517b1e6fa084d48b2_6.png)
 - en: There you go。Now， this error is because we did not define anything when it does
     not define the biggest。 it does not find the biggest contour。 So we need to write
     that down here。So we will say that we are going to find the biggest contour。Let
@@ -571,6 +578,7 @@
   id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 来吧。现在，这个错误是因为我们没有定义任何东西，当它没有定义最大的时。它找不到最大的轮廓。所以我们需要在这里写下这个。所以我们会说我们要找到最大的轮廓。让我看看我们想把它放在上面还是这里。好的。是的，我们正在发送。最大的。
 - en: I think it's better to put it down here。So what we can do is we can say that
     if our biggest is not equals to0 or its if it's not empty。 then we need to go
     forward so we can say。That。If biggest。Dots， sorry， dot size。Is not equals to 0。Then
@@ -580,12 +588,14 @@
   id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 我觉得把它放在这里更好。所以我们可以说，如果我们的最大值不等于0或者它不为空，那么我们需要继续前进，所以我们可以说。如果最大值。点，抱歉，点的大小。不等于0。那么我们将进行这项图像工作，否则。这个也应该在里面。而且这个可以在外面。否则，我们将仍然显示图像，但我们将。
 - en: Not display the contours because we didn't find them， and we will not display
     the work。 We will just。Replace it with the original image。So let's see if that
     works。![](img/04f37d9e927ad86517b1e6fa084d48b2_8.png)
   id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 不显示轮廓，因为我们没有找到它们，我们将不显示工作。我们只会。用原始图像替换它。所以让我们看看这是否有效。![](img/04f37d9e927ad86517b1e6fa084d48b2_8.png)
 - en: So if I remove that， yeah， so when I remove it。It doesn't show anything and
     then when I bring it back。It's now showing me the live image。![](img/04f37d9e927ad86517b1e6fa084d48b2_10.png)
   id: totrans-68

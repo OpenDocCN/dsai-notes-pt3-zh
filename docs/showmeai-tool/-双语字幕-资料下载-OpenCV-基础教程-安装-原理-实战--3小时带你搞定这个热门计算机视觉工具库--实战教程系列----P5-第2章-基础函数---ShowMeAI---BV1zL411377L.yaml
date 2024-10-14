@@ -1,140 +1,197 @@
 - en: 【双语字幕+资料下载】OpenCV 基础教程，安装、原理、实战， 3小时带你搞定这个热门计算机视觉工具库！＜实战教程系列＞ - P5：第2章：基础函数
     - ShowMeAI - BV1zL411377L
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】OpenCV 基础教程，安装、原理、实战，3小时带你搞定这个热门计算机视觉工具库！＜实战教程系列＞ - P5：第2章：基础函数 -
+    ShowMeAI - BV1zL411377L
 - en: '![](img/3a662d2ccf5ce137c1313fc44d7c5a0c_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/3a662d2ccf5ce137c1313fc44d7c5a0c_0.png)'
 - en: '![](img/3a662d2ccf5ce137c1313fc44d7c5a0c_1.png)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/3a662d2ccf5ce137c1313fc44d7c5a0c_1.png)'
 - en: So let's have a look at some basic functions that will be required quite often
     when we are building open CV projects。So let's start by importing an image。We
     will use the IM read function。And we will define the file La as Lina in the resources
     folder。Now。 the first thing we will do is we will convert it into gray scale，
     so to do that。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，让我们看一些在构建 OpenCV 项目时需要的基本函数。我们将从导入图像开始。我们将使用 `imread` 函数。我们将把文件定义为资源文件夹中的
+    Lina。现在，我们做的第一件事是将其转换为灰度图像，因此为此。
 - en: we will define our gray image IMG gray。Which is equals2。Now we are going to
     use the functionality or the function from the CV2 package。Known as color C。Now。
     CT。Color basically converts your image into different color spaces。 So you have
     to define your image， the one you want to convert。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将定义我们的灰度图像 `img_gray`。它等于2。现在我们将使用来自 CV2 包的功能或函数，称为 `cv2.cvtColor`。基本上，`cv2.cvtColor`
+    将你的图像转换为不同的颜色空间。因此，你需要定义你想要转换的图像。
 - en: and then you have to define which color space do you want it to It convert it
     to。 So here we are going to convert it into grayscale。 Now， conventionally， we
     use red， green and blue。 which is RGB。 But in open C， the image convention， the
     channels are Bg R。So we will write B GR 2。Gray。So let's output that and see what
     happens。 So we will use Cv2 dot I am show。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后你必须定义你想要转换成的颜色空间。因此，这里我们将其转换为灰度图像。现在，传统上，我们使用红色、绿色和蓝色，也就是 RGB。但在 OpenCV 的图像约定中，通道是
+    BGR。因此我们将写 `cv2.cvtColor`。灰度图像。让我们输出它，看看会发生什么。我们将使用 `cv2.imshow`。
 - en: and here we will write the file name or the window name。 Let's say we will call
     it gray image。And we will display our gray image， I M T。Great。And again， we need
     to add C2 dot weight key。And we will put it as 0。So let's play this and see what
     happens。So here we have our gray image。Now let's move on to the next function，
     which is blur。So we will declare our blur image。Now。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，我们将写入文件名或窗口名称。假设我们称之为灰度图像。我们将显示我们的灰度图像 `img_gray`。然后，我们需要添加 `cv2.waitKey`，并将其设置为
+    0。让我们运行这个，看看会发生什么。这里是我们的灰度图像。现在，让我们进入下一个函数，即模糊。我们将声明我们的模糊图像。现在。
 - en: we are going to use the Rossian blur function to blur our image， so we will
     write。C。V2 dot was in blur。And we will use our we can use our original image，
     which is the colored image。 or we can use our gray image to add the blur， so let's
     use the gray image。And now next。 if you see here you can see it says k size， which
     is your kernel size。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将使用 Rossian 模糊函数来模糊我们的图像，所以我们将编写`cv2.blur`。我们可以使用我们的原始图像，即彩色图像，或者我们可以使用灰度图像来添加模糊，所以我们选择使用灰度图像。接下来，如果你看到这里，会看到它说的
+    k size，也就是你的内核大小。
 - en: so you need to define the kernel size， so we will say， for example， this is7
     by 7。 so it will add quite a bit of blur， so it has to be odd numbers so it can
     be3 by3，5 by 57 by 7。So we will write that and then we will say that our sigma
     x is 0。So don't worry about too much of all the details。 We are just scratching
     the surface of how we can get up and running。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以你需要定义内核大小，例如，我们可以说这是 7 x 7。所以它将添加相当多的模糊，内核大小必须是奇数，所以可以是 3 x 3、5 x 5、7 x 7。所以我们将写下这个，然后我们将说我们的
+    `sigma_x` 是 0。所以不要担心太多的细节。我们只是触及表面，看看如何快速启动。
 - en: So we will copy this。And we will write here。Bur。And here we will change it to
     blur as well。So let's play that。And here we can see the difference between these
     two images。 So here is the gray image， and here is the image added with the blur。Next。
     we are going to look at an edge detector。 Now， this particular edge detector is
     known as canny edge detector。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将复制这一部分。然后我们将在这里写上 `blur`。在这里，我们也将其更改为模糊。让我们运行这个。在这里我们可以看到这两幅图像之间的区别。这是灰度图像，而这是添加了模糊的图像。接下来，我们将看一个边缘检测器。现在，这个特定的边缘检测器称为
+    Canny 边缘检测器。
 - en: So in order to find the edges in our image， we will use the image canny。We will
     call it image canny and then we will use our canny function。We will assign the
     image。And now we will add the threshold values。 So we have two thresholds。 So
     for the sake of simplicity。 we will put it as hundred and hundred。 So now you
     can go higher or lower。But again。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了找到我们图像中的边缘，我们将使用 `cv2.Canny`。我们将其称为 `image_canny`，然后我们将使用我们的 Canny 函数。我们将分配图像。现在我们将添加阈值值。所以我们有两个阈值。为了简化，我们将其设置为
+    100 和 100。所以你可以选择更高或更低。但同样。
 - en: it depends on your particular situation。So， let's copy that。And we will go and
     write canny。And here we will write the can。So let's run this。And there you go。
     So here you have the canny image。 the blur image， and the gray image。So here we
     can see we are getting a lot of curve a lot of edges。 So if you wanted to reduce
     that， we will change the value of the threshold。 For example。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 这取决于你特定的情况。所以，让我们复制这个。然后我们将去写Canny。在这里我们将写Canny。所以让我们运行这个。这样你就得到了Canny图像，模糊图像和灰度图像。所以在这里我们可以看到，我们得到了很多曲线和边缘。如果你想减少这个，我们将改变阈值的值。例如。
 - en: we can put this to 200， and we can put this to 150。So let's run that again。And
     here you can see the difference。 Now， the edges are quite low。 Next， we will look
     into dilation。 Now， sometimes we are detecting an edge， but because there is a
     gap or because its not joined properly。 it does not detect it as a proper line。So
     what we can do is we can increase the thickness of our edge。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以将这个设置为200，将这个设置为150。所以让我们再运行一次。在这里你可以看到差异。现在，边缘非常低。接下来，我们将深入研究膨胀。现在，有时我们在检测一个边缘，但由于存在间隙或未正确连接，它不会被检测为一条完整的线。所以我们可以增加边缘的厚度。
 - en: so in order to do that， we will use image。Dilation。And then we will write CBv2
     dot diallate。Now here we will use the image canny because we are talking about。Eddges。And
     then we have to add a kernel。Now， a kernel is just a matrix that we have to define
     the size of and the value of。 So in this case， we need a matrix which has all
     one values。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以为了做到这一点，我们将使用图像膨胀。然后我们将写CBv2点diallate。现在这里我们将使用Canny图像，因为我们在谈论边缘。然后我们必须添加一个内核。现在，内核只是一个我们需要定义大小和数值的矩阵。所以在这种情况下，我们需要一个所有值都是1的矩阵。
 - en: But we need to define the size of that matrix as well。So， as I've mentioned
     before。There is a library or a package that helps us deal with matrices， and that
     library is Ny。 but we did not install it yet， so we are going to go to file。We
     are going to go to Sis。Here we will go to our projects。😔，And we will add numpy。And
     we will hit install。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我们还需要定义矩阵的大小。正如我之前提到的，有一个库或包帮助我们处理矩阵，而这个库是Ny。但是我们还没有安装它，所以我们将去文件。我们将去Sis。在这里我们将进入我们的项目。😔然后我们将添加numpy。并且我们将点击安装。
 - en: Once the installation is done， we will go back and we will import Ny。As N。So
     whenever we want to call a function， we can write NP dot， whatever the function
     is。 So in this case we are going to define a kernel。So， let's say our kernel。Is
     equals 2。Numpy dot1。 which means we want all of the values to be one。And we will
     define the size of the matrix。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 安装完成后，我们将返回并导入Ny作为N。每当我们想调用一个函数时，可以写NP点，函数名。所以在这种情况下，我们要定义一个内核。假设我们的内核等于2。Numpy点1，这意味着我们希望所有值为1。我们将定义矩阵的大小。
 - en: which is5。By 5。Then we are just defining the type of the object， which is。Unsigned
     integer of 8 bit。Which means the values can range from 0 to 255。Sou。We go down。
     and here we will add our kernel。After that， we need to define how many iterations
     we want the kernel to move around。 which means how much thickness do we actually
     need So iterations。Is equals2， let's say one。本当？
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是5乘以5。然后我们只是定义对象的类型，即无符号8位整数。这意味着值可以从0到255。所以我们向下走，在这里我们将添加我们的内核。之后，我们需要定义内核移动的迭代次数，这意味着我们实际上需要多少厚度。所以迭代等于2，假设为1。真的吗？
 - en: So we are going to copy that and we will write。Image dilation。And。Here， we will
     write dilation image。Dlation。Image。![](img/3a662d2ccf5ce137c1313fc44d7c5a0c_3.png)
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将复制这个并写上图像膨胀。在这里，我们将写膨胀图像。Dlation。图像。![](img/3a662d2ccf5ce137c1313fc44d7c5a0c_3.png)
 - en: So let's run that and here you can see。😔，This is the original canny image。 and
     this is the image with dilation。![](img/3a662d2ccf5ce137c1313fc44d7c5a0c_5.png)
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们运行这个，在这里你可以看到。😔这是原始的Canny图像，而这是膨胀后的图像。![](img/3a662d2ccf5ce137c1313fc44d7c5a0c_5.png)
 - en: So if we increase the iteration number， let's say we do something dramatic and
     put five。Then we see a massive change。![](img/3a662d2ccf5ce137c1313fc44d7c5a0c_7.png)
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以如果我们增加迭代次数，假设我们做一些戏剧性的事情，把它设为五。那么我们将看到一个巨大的变化。![](img/3a662d2ccf5ce137c1313fc44d7c5a0c_7.png)
 - en: In the thickness。![](img/3a662d2ccf5ce137c1313fc44d7c5a0c_9.png)
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 在厚度中。![](img/3a662d2ccf5ce137c1313fc44d7c5a0c_9.png)
 - en: So。The next function we are going to learn is the opposite of dilation， which
     is erosion。 so we are going to make it thinner。So for that， we will define our
     image as image eroded。Is equals to C2 dot Ero function。And again， we need to define
     which image do we want to erode。 so we will take the dilation image and we will
     erode that。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，我们接下来要学习的函数是扩张的相反，叫做腐蚀。因此，我们要让它变得更薄。为了这个，我们将把我们的图像定义为腐蚀图像。等于C2点Ero函数。再次，我们需要定义我们想要腐蚀的图像。所以我们将取扩张图像进行腐蚀。
 - en: And then we need to define the kernel again， so we will keep the kernel same。And
     again。 we need to define the number of iterations。So in this case， we are going
     to put， for example， one。 so let's put this back to one。And we will add our image。For
     erosion。So here is our eroded image。 here is our dilation image， and here is the
     original cadney image。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们需要再次定义内核，所以我们将保持内核不变。再次，我们需要定义迭代次数。所以在这种情况下，我们将设置为，例如，一次。那我们就把这个设置回一。然后我们将添加我们的图像。用于腐蚀。因此，这里是我们的腐蚀图像，这里是我们的扩张图像，以及原始的cadney图像。
 - en: '![](img/3a662d2ccf5ce137c1313fc44d7c5a0c_11.png)'
+  id: totrans-23
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/3a662d2ccf5ce137c1313fc44d7c5a0c_11.png)'
