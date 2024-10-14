@@ -1,130 +1,177 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P6：L1.5- Python 函数、Lambda
     和 Map／Reduce - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P6：L1.5- Python 函数、Lambda
+    和 Map／Reduce - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeff Heton， welcome to applications of Deep neural networks with
     Washington University in this video we're going to look at how to use functions
     and even Lambdas。 which allows you to pass a function to a function。This is a
     very powerful feature of the Python programming language that allows us to do
     very interesting things with our data processing。 particularly in the next module
     when we start working with pandas We'll see how to use things like map。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是杰夫·赫顿，欢迎来到华盛顿大学的深度神经网络应用视频。在这个视频中，我们将看看如何使用函数，甚至是Lambdas，这使你可以将一个函数传递给另一个函数。这是Python编程语言的一项非常强大的特性，让我们可以用数据处理做出非常有趣的事情，特别是在下一个模块当我们开始使用pandas时，我们将看到如何使用像map这样的东西。
 - en: reduce filter and these basic operations that you do on collections making use
     of Lambda functions that you can pass in for the latest on my AI course and projects。
     click subscribe and the bell next to it to be notified of every new video Funs
     are very common in many different programming languages they allow you to take
     code。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: reduce、filter以及在集合上进行的基本操作，利用可以传入的Lambda函数。有关我最新的AI课程和项目，点击订阅，并点击旁边的铃铛以便接收每个新视频的通知。函数在许多不同的编程语言中非常常见，它们允许你处理代码。
 - en: '![](img/3fd7f642d4ca06b18f409cb51194951e_1.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/3fd7f642d4ca06b18f409cb51194951e_1.png)'
 - en: And package it up as a function and not have to just duplicate it all over the
     place in your program source code。Here I am creating a function called say hello，
     this is how you define them in Python de， say hello。You don't need anything in
     the function definition to say if you're going to return something or not that。Python
     knows that it's a function by the fact that you do return something or that it's
     a procedure by the fact that you do not return something。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 并将其打包为一个函数，而不是在程序源代码中到处重复。这里我创建了一个名为say hello的函数，这就是在Python中定义它们的方式。你在函数定义中不需要任何东西来说明你是否会返回某个值。Python通过你是否返回某个值来知道它是一个函数，或者通过你不返回某个值来知道它是一个过程。
 - en: and a procedure is commonly referred to as a function that doesn't return something。This
     is a procedure so it does not return anything， it takes a couple of values， arguments，
     speaker。 person to greet and the greeting Now notice the equal hello up here。
     that means that it has a default value for greeting so if you don't give it a
     greeting。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 而一个过程通常被称为不返回值的函数。这是一个过程，所以它不返回任何东西，它接受几个值，参数，发言者，问候的人和问候语。现在注意到上面的equal hello。这意味着它有一个默认值，因此如果你不提供问候语。
 - en: then it's just going to default that to hello。And we can run this。It calls it
     three times。 so the first time it calls it with a speaker and a person to greet。Second
     time it calls it with a speaker and a person to greet and it changes the greeting
     so that it's goodbye。You can also use named arguments and this is very useful
     if you have a lot of arguments so that it doesn't get confusing。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后它默认将其设置为“你好”。我们可以运行这个。它调用了三次。第一次，它用一个发言者和一个要问候的人调用它。第二次，它用一个发言者和一个要问候的人调用，并且改变了问候语，所以变成了“再见”。你也可以使用命名参数，这在你有很多参数时非常有用，这样就不会让人感到困惑。
 - en: you can say okay， the speaker is Jeff， the person agreed is John and Greening
     and you can mix that order up。 it does not particularly matter。And if we run this。You
     can see it says hello John， this is Jeff。 goodbye John， this is Jeff and same
     thing for the last one。Now function。 a true function that returns something， here
     you'll see that I basically pass in a string。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以说，发言者是杰夫，同意的人是约翰和格林，你可以随意混合顺序。这并不特别重要。如果我们运行这个，你会看到它说“你好，约翰，我是杰夫。再见，约翰，我是杰夫。”对于最后一个也是同样的情况。现在是函数。一个真正的返回某个值的函数，这里你会看到我基本上传入了一个字符串。
 - en: And what this does is it strips off， so Str removes white space from the beginning
     and the end of the string。A string is basically an array。 so string 0 is going
     to be the first character of the string。 I convert that to uppercase。 and then
     I say， hey， I want the rest of the string from one to the end because I don't
     say anything if I did one to2。 it would。It would get just a portion of the string，
     so if we do that。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 这段代码的作用是剥离，所以Str会去除字符串开头和结尾的空白。字符串基本上是一个数组。因此，字符串的第一个字符是字符串的第0个元素。我将其转换为大写。然后我说，嘿，我想要从1到末尾的其余部分，因为如果我说1到2，它会只获取字符串的一部分，所以如果我们这样做。
 - en: it defines the function and you can now call it quite easily。 I pass in hello
     with this white space and it gives me back hello。With the H capitalized。Python's
     map function is very useful， this comes from functional programming map。Map produce
     of Hadoop fame。 Now this is not dealing with big data or anything like that。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 它定义了函数，现在你可以很容易地调用它。我传入带有空格的 hello，它返回给我大写的 hello。Python 的 map 函数非常有用，这源于函数式编程中的
+    map。Map 来自于 Hadoop 的名声。现在这并不涉及大数据或类似的东西。
 - en: This is simply the map function。 A map takes a list of values。And applies a
     function to each of them。So here I'm going to run it。 the list just converts the
     output from map into a list so that it can be displayed。And we give it the process
     string， that's the function that we when applied across everything。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是简单的 map 函数。map 接受一个值列表，并对每个值应用一个函数。所以在这里我将运行它。list 将输出从 map 转换为一个列表，以便可以显示。我们给它处理字符串，这是我们在所有值上应用的函数。
 - en: Across this list。So it is going to give me a list back。 a map always returns
     a list and it is all of the values that came back from whatever function that
     you had called it against the map。Is very similar to the comprehension that we
     had in Python。 so here we are going to look at this as a comprehension doing basically
     the same thing。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个列表中。所以它将给我返回一个列表。map 总是返回一个列表，包含所有来自你调用 map 的函数的值。与我们在 Python 中的 comprehension
+    非常相似。所以在这里我们将把它看作是一个 comprehension，基本上做相同的事情。
 - en: So here we're calling processing string for X and L Now a comprehension is a
     Python specific sort of thing whereas a map is common in a lot of programming
     languages。I tend to use comprehensions， but others will use maps just because
     they can write their code so that it can be understood by more than just the Python
     programmers。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以在这里我们调用处理字符串为 X 和 L。现在，comprehension 是一种 Python 特有的东西，而 map 在许多编程语言中都很常见。我倾向于使用
+    comprehension，但其他人会使用 map，因为他们可以编写代码，使其能被不仅仅是 Python 程序员理解。
 - en: Because this what this comprehension here is doing is not necessarily clear
     unless you've worked with Python。Filter is another functional。A sort of operator
     that you that you can deal with。 a filter takes a list and filters it down to
     potentially a smaller list。 could be the same size list as what came in， but this
     is defining a function that says is it greater than five？
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 因为这个理解在这里所做的并不一定明确，除非你已经使用过 Python。Filter 是另一个函数式的。你可以处理的一种运算符。filter 接受一个列表，并将其过滤为一个可能更小的列表。可以是与输入列表相同大小的列表，但这定义了一个函数，问它是否大于五？
 - en: And then we're taking this list where some of the values are not greater than
     five and we。Process that list， so only 10 and 20 were。Greater than five。 The rest
     all got filtered out。 so filter can be a very handy way to。Basically， apply a
     function to check to see if items should be included in the list or not。Lambda
     is very handy， it's a type of function， it's an anonymous function。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们取这个列表，其中一些值不大于五，我们处理这个列表，因此只有 10 和 20 大于五。其余的都被过滤掉。所以 filter 可以是一个非常方便的方式。基本上，应用一个函数检查项目是否应该包含在列表中。Lambda
+    非常方便，它是一种函数，属于匿名函数。
 - en: Usually lambmbdas are just one line， but they can certainly be longer。A lambda
     basically makes a function， a expression of sorts that you can assign right into
     variables。 so here I am going to run this instead of writing this big long function
     it's not that long as two lines but still。As we we write it simply as a lambmbda
     so that Lambda replaces the greater than five function。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 通常 lambda 只有一行，但它们当然可以更长。lambda 基本上创建一个函数，一种表达式，你可以直接赋值给变量。所以在这里我将运行这个，而不是写这个冗长的函数，虽然两行不算太长，但仍然。我们简单地将其写为
+    lambda，因此 Lambda 替代了大于五的函数。
 - en: it's nameless， it has no name， it is literally just passed right into the filter
     function。So if you're going to write very short functions to be passed into things
     like maps and reduces and filters。This can be a very good way to write those and
     then reduce。 so these other these other things like filters and maps。 you had
     a list in a list out。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 它没有名字，字面上只是直接传递到 filter 函数中。所以如果你要写非常短的函数以传递给诸如 map 和 reduce 以及 filter 的东西。这可以是编写这些函数的很好方式，然后再
+    reduce。因此这些其他像 filter 和 map 的东西。你有一个列表输入，一个列表输出。
 - en: This is a list in a single value out。 So it is reducing the list into a single
     value。 This is showing how to do a simple summation。😊，So this is the way the reduce
     works。You have two values in the lambmbda， the first one。Is the accumulator that
     is coming through。 And then why is the value that you're adding to that accumulator。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个将列表减少为单一值的示例。所以它将列表简化为一个单一值。这展示了如何进行简单的求和。😊，所以这是`reduce`的工作方式。你在lambda中有两个值，第一个是累加器，来自于前面的值。然后是你要加到这个累加器上的值。
 - en: '![](img/3fd7f642d4ca06b18f409cb51194951e_3.png)'
+  id: totrans-18
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/3fd7f642d4ca06b18f409cb51194951e_3.png)'
 - en: Thank you for watching this module on the Python programming language in the
     next module。 which is a set of parts， we will see how to start to use the Pandas
     library that comes with Python that allows you to prepare data for tabular neural
     networks。This content changes often， so subscribe to the channel to stay up to
     date on this course and other topics in artificial intelligence。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 感谢观看本模块关于Python编程语言的内容。在下一个模块中，我们将看到如何开始使用Python附带的Pandas库，它可以让你为表格神经网络准备数据。这部分内容经常更新，所以请订阅频道，以便及时了解本课程及其他人工智能主题。

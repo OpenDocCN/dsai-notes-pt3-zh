@@ -1,8 +1,11 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P62：L12.1- OpenAI Gym介绍
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P62：L12.1- OpenAI Gym介绍
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeffy。 Wecome to applications of deep neural networks with Washington
     University。 In this module， we're going to look at AI gym。 So AI gym is a。😊。Benchmark
     platform that lets you in Python evaluate your reinforcement learning programs
@@ -10,22 +13,30 @@
     to see how you can actually interface into this and use this to even watch the
     games play on the screen or to train them in an offline way to see all my videos
     about kgel neural networks and other AI topics。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是Jeffy。欢迎来到华盛顿大学的深度神经网络应用模块。在这个模块中，我们将看看AI Gym。所以AI Gym是一个😊基准平台，让你在Python中评估你的强化学习程序，与著名游戏如Atari游戏等进行对比。所以我们将看到如何实际与这个接口，并使用它来观看游戏在屏幕上播放，或者以离线方式训练，看看我关于kgel神经网络和其他AI主题的所有视频。
 - en: click the subscribe button and the bell next to it and select all to be notified
     of every new video So let's take a look at open AI gym So reinforcement learning
     is what we're dealing with for this module and the next five parts So reinforcement
     learning it's not like supervised learning or unsupervised learning it is really
     sometimes referred to a selfupervised It's going to happen is you're going to
     give the computer some sort of a game。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 点击订阅按钮和旁边的铃铛，并选择全部以接收每个新视频的通知。那么让我们来看看OpenAI Gym。在这个模块和接下来的五个部分中，我们将讨论强化学习。强化学习与监督学习或无监督学习不同，它有时被称为自我监督。你将给计算机提供某种游戏。
 - en: '![](img/e05a69d9ca1dbcb4403e08d1b85b5a4e_1.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/e05a69d9ca1dbcb4403e08d1b85b5a4e_1.png)'
 - en: '![](img/e05a69d9ca1dbcb4403e08d1b85b5a4e_2.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/e05a69d9ca1dbcb4403e08d1b85b5a4e_2.png)'
 - en: And it doesn't have to be game。 It could be， it's really anything that has well
     defined rules and can be completely simulated in the computer。 So basically a
     game， but。To use this for other types of learning。 you really need to express
@@ -33,8 +44,10 @@
     kind of an increment as you go through episode So each play of the game so to
     speak is an episode you go through a series of steps at each step the computer
     can take a given action and then at the end。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 并且这不一定是游戏。它可以是任何有明确规则且可以在计算机中完全模拟的东西。所以基本上是一个游戏，但要将其用于其他类型的学习，你需要以某种方式表达你的问题，使规则明确，以便在进行过程中有一种增量的进展。每局游戏可以称为一个回合，你经历一系列步骤，在每一步，计算机可以采取特定的动作，然后在结束时。
 - en: its performance is evaluated， did it succeed or did it not， and at each step。
     it is given a reward based on how well it did And the machine plays it over and
     over and over again and it's able to learn and get very good at playing this This
@@ -42,76 +55,102 @@
     play better than the humans who ever taught it how to do this and it does this
     basically by playing chess essentially with itself because the rules are well
     well defined。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 它的性能被评估，成功了还是失败了，每一步都有所评估。根据表现给予奖励，机器重复进行这个过程，并且能够学习并变得非常擅长。这在围棋和国际象棋中被用来开发出超强的计算机，能够下得比教它的任何人都要好，它基本上是通过与自己下棋来做到这一点，因为规则非常明确。
 - en: It gets better and better and better。 And what's amazing about it is it needs
     no prior knowledge of chess。 So all those chess books that talk about famous openings
     and whatnot。 it's almost like an alien came from another parallel Earth that develop
     chess on their own。 but the two planets did not share any techniques on chess。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 它变得越来越好。令人惊讶的是，它不需要任何关于国际象棋的先前知识。所以那些谈论著名开局的国际象棋书籍，几乎就像是一个来自另一个平行地球的外星人，自主发展了国际象棋，但这两个星球没有分享任何国际象棋的技巧。
 - en: So these extremely advanced chess players from the parallel world came to Earth
     to play and they're playing chess from a whole different rule book。 So I think
     that was part of the complexity too for the goplay as well to beat these highly
     optimized machines。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这些来自平行世界的极高级棋手来到地球下棋，他们遵循完全不同的规则。我认为这也是击败这些高度优化机器的复杂性的一部分。
 - en: So let's see open AI lab。 So open AI lab Jim is basically a bunch of games。
     even the Atari games all set up so that you can have your program compete against
     them。 So this is open AI gym。 you can see that they have Atari games。 these are
     running through an Atari。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们看看OpenAI实验室。OpenAI实验室基本上是一堆游戏。甚至是Atari游戏都设置好，让你的程序可以与它们竞争。这就是OpenAI Gym。你可以看到他们有Atari游戏，这些游戏是通过Atari运行的。
 - en: '![](img/e05a69d9ca1dbcb4403e08d1b85b5a4e_4.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/e05a69d9ca1dbcb4403e08d1b85b5a4e_4.png)'
 - en: LaterThat works really well on Mac and on Linux on Windows。 you can make it
     work。 There is some complexities to getting the Atari emulator working on Windows。
     the classic games like you see here that is the pole cart that's the pendulum。
     Those work just fine and we'll start off using pole cart and using mountain car。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个在Mac和Linux上效果很好，在Windows上，你可以让它工作。但在Windows上让Atari模拟器工作有一些复杂性。你看到的经典游戏，比如这个杆车和摆锤，运行得很好，我们将开始使用杆车和山地车。
 - en: which are some fairly classic games for example， let me show you what those
     look like。 if you click on the environments， you can see these are the classic
     control games。 The ones that we're going to work on in particular are cartpo and
     mountain car。 There's two versions of mountain car and this becomes important
     when we see how to actually interact with these。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些都是一些相当经典的游戏，例如，让我给你展示一下它们的样子。如果你点击环境，你会看到这些是经典的控制游戏。我们特别要处理的游戏是cartpo和山地车。山地车有两个版本，这在我们看到如何实际与这些互动时变得很重要。
 - en: there is this is mountain car that basically has a Boolean throttle。 Either
     you've got your foot on the brake all the way down or you've got your foot on
     the gas all the way down。 the idea of mountain cart mountain car is to try to
     get up here to this flag。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有一辆山地车，它基本上有一个布尔油门。要么你把脚踩在刹车上到底，要么踩在油门上到底。山地车的目的是尽量到达这个旗帜。
 - en: '![](img/e05a69d9ca1dbcb4403e08d1b85b5a4e_6.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/e05a69d9ca1dbcb4403e08d1b85b5a4e_6.png)'
 - en: '![](img/e05a69d9ca1dbcb4403e08d1b85b5a4e_7.png)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/e05a69d9ca1dbcb4403e08d1b85b5a4e_7.png)'
 - en: Car's engine is simply not powerful enough to do it。 It is going to even if
     you floor it。 So we pretty much have to。 you've got three controls on this one
     forward backward and break。 So pushing it up， it's going get to about here and
     then just roll back down。 It just does not have enough momentum So what it needs
     to do is go as fast as it can roll back back back up here。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 车的发动机根本没有足够的动力去做到这一点。即使你全力踩下去，它也是如此。因此我们基本上必须……你在这个游戏中有三个控制：向前、向后和刹车。所以推上去，它大概能到这里，然后就会滑回去。它的动量不足。因此，它需要尽可能快地向后滑回到这里。
 - en: push it hard to go up here and then push it hard to go up here and eventually
     just by rocking back and forth。 you get enough momentum that you make it up the
     hill So it takes a little AI to learn to do that。 I also show you an algorithm
     that I write that is just if statements that is able to solve it to basically
     just whichever direction you're going if you're going up。 always force the throttle
     full speed the way up the hill you're going the continuous one。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 用力推上去，然后用力推上去，最终通过前后摇摆，你会获得足够的动量让它上坡。因此，这需要一点AI来学习如何做到这一点。我还会给你展示一个我写的算法，基本上是一些if语句，能够解决这个问题。无论你往哪个方向走，如果你在上坡，就始终让油门全力以赴向上走。
 - en: you can push the pedal partially down or partially up。 I don't think that really
     helps。 I think you pretty much need to floor it to make it up up the hill。 This
     one's just trying to balance So you've got this pull。I mean。 think of it like
     if you took a meter rod or a yardstick and you tried to balance it on top of your
     hand and now walk across the room and have that not fall off。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以部分踩下油门或部分松开。我认为这并没有什么帮助。我觉得你几乎需要全力踩下去才能上坡。这只是试图保持平衡，所以你有这种拉力。想象一下，如果你拿一根米尺或一根码尺，试图在手上平衡，然后在房间里走动，而不让它掉下来。
 - en: That's basically what it's trying to do。So let's go back here to the notes for
     this section for this part in Google Collab in GitHub actually now we're opening
     it in Collab。 so it's opened here。 Let's look at how to actually make use of AI
@@ -120,6 +159,7 @@
     called an environment and this function that I just defined here essentially queries
     and environment you need to open up the environment and then you need to open
     up the specification for that environment。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
 - en: What I'm doing here is you can run this for each of the environments that we're
@@ -127,6 +167,7 @@
     If you run it for mountain car It tells you the action space The action space
     of this type is discrete So that means you can be doing three discrete things
     to run that mountain car。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
 - en: You can be going backwards， you can be applying the brakes。 I think you're applying
@@ -141,6 +182,7 @@
     is it and in which side so it's essentially the X on that screen that was on and
     then the other value is how fast is it going and that's a plus or minus depending
     on which which direction it is moving it and that's the whole。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
 - en: Unniverse those are the only two values that it needs Max episode steps。 So
@@ -155,6 +197,7 @@
     into here and that's what the nondeterministic means if you seed it then that
     means it will be deterministic but if you don't seed it's it's somewhat random
     So that is。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
 - en: Essentially what this means most of the environments that I've worked with are
@@ -163,61 +206,80 @@
     cart and you have it play it with a different seed it might lose because it's
     facing random situations it's learned some basic ideas about how to how to play
     the game。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 本质上，这意味着我所处理的大多数环境都是非确定性的，因此如果你给它设定种子，它们就会是相同的。这一点很重要，如果你训练了一个神经网络来玩山地车，而你用不同的种子让它玩，它可能会输，因为它面临随机情况。它已经学习了一些关于如何玩游戏的基本理念。
 - en: but if I don't know if you look at the world's best race car driver。 there's
     no guarantee that they're going they're going to win every time because there's
     a lot of random and random are just things outside of their control outside of
     each game and they may not win It's the same thing now for each of those steps。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是如果我不知道，你看世界上最好的赛车手，没有保证他们每次都会赢，因为有很多随机因素，这些随机因素只是他们无法控制的事情，超出每场比赛的范围，他们可能不会赢。现在每一步都是同样的道理。
 - en: you're going to get a reward So you essentially give it the action。 it gives
     you back the observation so what does the world now look like for the next step
     and then you give it another action and tells you what the world looks like the
     reward threshold is essentiallys what that's your basic reward so if you get the
     negative。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 你会得到一个奖励，所以你本质上给它一个动作，它会给你反馈观察结果，那么下一步的世界看起来是怎样的，然后你再给它另一个动作，它会告诉你世界的样子。奖励阈值本质上就是你的基本奖励，所以如果你得到负奖励。
 - en: 110 you didn't do so good。 Now mountain car is very stingy on rewards。 you only
     get a reward when you win which makes it a little difficult to train for because
     it's I mean。 imagine if you had to build this building and you don't get any feedback
     at each step。 you build the entire building and they tell you if it was good at
     the end。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 110你没有做得很好。现在山地车在奖励上非常吝啬。你只有在获胜时才能获得奖励，这使得训练有些困难。想象一下，如果你要建造这座建筑，而在每一步都没有任何反馈。你建造完整个建筑，然后告诉你它的好坏。
 - en: that's very frustrating but the neural network can actually optimize something
     that does win mountain car and we'll see an example of that in in the next class
     Now I can also query the environment for cart pole。 So that's the one where you're
     trying to balance the pole and a cart the accent space for this one is discrete。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 这非常令人沮丧，但神经网络实际上可以优化一些可以赢得山地车的策略，我们将在下节课中看到一个例子。现在我也可以查询环境以获取小车平衡的情况。所以这是一个试图平衡杆子和小车的情况，该动作空间是离散的。
 - en: So you can't stop you are moving in one direction or another and your observation
     space is for values I had to go look at the code to figure out what those are。
     but essentially it's the cart position， you're moving the cart only in two dimensions
     the cart velocity how fast is it going because as you apply greater force from
     those two discrete。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以你不能停止，你在一个方向上移动，或者另一个方向，而你的观察空间有四个值。我不得不查看代码才能弄清楚这些是什么，但本质上是小车的位置，你只在两个维度上移动小车，小车的速度有多快，因为当你从这两个离散值中施加更大的力量时。
 - en: Dires you accelerate what is the angle of the pole and what is the pole velocity
     at tip so that's kind of the physics usually you think of the velocity of a pendulum
     or a pendulum I means it's it's essentially an inverted pendulum。And what is the
     velocity at the tip of that。 And you can push the car to the left or the right。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 驾驶时，你加速，杆子的角度是多少，杆子的末端速度是多少，这就是物理。通常你会想到摆的速度，我的意思是，它本质上是一个倒立摆。末端的速度是多少。你可以把小车推向左边或右边。
 - en: So the only two of these values that we're dealing with are discrete。 meaning
     there's only two So it's one variable， two possible settings or continuous， which
     is box。 So there's four continuous values。 And if you're dealing with the mountain
     car continuous variety。 they're both boxes。 So the action space is just the accelerator。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们处理的这两个值是离散的，意味着只有两个设置。还有一个变量，两个可能的设置或者连续的，这就是箱子。所以有四个连续值。如果你在处理山地车的连续类型，它们都是箱子。所以动作空间只是加速器。
 - en: you can give it positive or negative acceleration and a continuous range or
     zero， meaning nothing。 The maximum episode steps for some reason is 999。 and it
     it's a double negative nondeterministic。 So it is not deterministic so。And then
     the reward range can go from negative to to positive and the reward threshold
     is 90。 Don't worry about this warning。 I think that's a bug actually in open AI
     gym Open AI gym is not maintained a lot there's a lot of issues posted on it。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以给它正加速度或负加速度，以及连续范围或零，意味着什么都没有。出于某种原因，最大剧集步数是 999。而且这是一个双重负面非确定性。因此，它不是确定性的。然后奖励范围可以从负数到正数，奖励阈值是
+    90。别担心这个警告。我认为这实际上是 OpenAI Gym 中的一个错误。OpenAI Gym 维护得不多，上面有很多问题被发布。
 - en: but it's a great toolkit still to use for this Now breakout This is an Atari
     game and I want to show you what they do for some of these Atari games which is
     just kind of fascinating So the observation spaces it's essentially an image 210
@@ -228,29 +290,41 @@
     them Nodeterministic is almost always false on these and the reward range can
     be anything Re threshold they don't even give you one typically I don't use the
     range in the threshold。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 但这仍然是一个很棒的工具包，用于突破。这是一个 Atari 游戏，我想展示他们为一些 Atari 游戏所做的事情，这真的很迷人。所以观察空间本质上是一个
+    210 乘以 160 乘以 3 的图像。因此本质上是一个红绿蓝图像，你在这里做的是使用图像，那么用户在看什么呢？他正在看屏幕，就像一个用户一样，这很酷，它只是看着那个图像并学习如何玩游戏，剧集步数可以持续很久，你知道的，1000
+    次。非确定性几乎总是为假，奖励范围可以是任何东西，阈值他们通常甚至不给你一个，我通常不使用范围和阈值。
 - en: Kd FYs Now， this， I think， is really fascinating。 They also give you breakout
     Ram。 You're looking at the Ram of the Atari 2600。 The Atari 2600 has 128 bys of
     Ram bys not K not meg and certainly not gig。 So this is not that much memory。
     I mean， heck the image size is bigger than the Ram that it took for that game。
     I mean， one row is 210 times three bys。 So that's a lot of that's not a lot of
     memory。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: Kd FYs 现在，我认为这真的很有趣。他们还给你提供了突破性内存。你看到的是 Atari 2600 的内存。Atari 2600 的内存是 128 字节，不是
+    K 不是 MB，当然也不是 GB。因此，这并不是很多内存。我是说，天哪，图像大小比这个游戏所需的内存还要大。我是说，一行是 210 乘以 3 字节。所以，这不算是很多内存。
 - en: but by looking at the memory for this game， you can kind of tell what's going
     on。 And who what are those 128 bys for in the old school。 they call that a memory
     map and who knows only the Atari developers know。 they're probably not even using
     all 128 of them。 And just by looking at the memory manipulate as as you play the
     game。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是通过查看这个游戏的内存，你可以大概知道发生了什么。而那些 128 字节在老式游戏中是用来做什么的。他们称之为内存映射，谁知道，只有 Atari 开发者知道。他们可能甚至没有使用全部的
+    128 个字节。仅仅通过查看内存来操控，你可以在玩游戏时获得信息。
 - en: you're able to to play the game。 Now both of these， the action space。 So the
     input is4。 That's your joystick。Four positions up down left right because you're
     moving that little square around trying to bat the ball and you don't need to
     give a bat the ball command。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 你能够玩这个游戏。现在这两者，动作空间。所以输入是 4。这是你的摇杆。四个方向：上、下、左、右，因为你在移动那个小方块，试图击打球，而你不需要给球一个击打命令。
 - en: just the fact that it hits your player causes it to bounce out and what's fascinating
     and we'll see how to do this we develop a agent that is able to learn to play
     these Atari games this I also want to show you because we're doing coab if you
@@ -262,8 +336,10 @@
     virtual display which is great for something like coab I use it also to generate
     some of the videos that I attach in to show you kind of things playing it gives
     you a Python virtual。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 仅仅因为它击中了你的角色就会导致它弹出，而令人着迷的是，我们将看到如何开发一个代理，它能够学习玩这些雅达利游戏。我还想给你展示，因为我们在CoLab中，如果你在自己的本地计算机上运行，会发生什么，当你尝试渲染和播放这些游戏时，窗口会弹出，你将实际看到雅达利游戏。所以如果你想在CoLab中实际玩雅达利游戏，因为CoLab是一个虚拟环境，我会告诉你如何做到这一点。我们将运行这部分，它会进行pip安装，我们正在安装Python虚拟显示，这对CoLab很有用，我还用它生成一些我附加的展示视频，给你展示一些播放的东西，给你一个Python虚拟环境。
 - en: Environment and it essentially is going to render it to a file that we can then
     turn into a video。 let's go ahead and run these So essentially you're going to
     have it play the guitar game and record a video of it playing and you can potentially
@@ -277,11 +353,15 @@
     not using any AI at all it's essentially doing a it's sampling from the action
     space so it's basically taking random acts and look there's the game This is not
     play。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 环境基本上会将其渲染为文件，然后我们可以将其转换为视频。让我们继续运行这些。所以基本上，你将玩吉他游戏并录制视频，你可以下载视频或在CoLab中观看，所以你不能实时观看，只能事后看到，但这也很好，这就是你在CoLab中能做的。这里的部分我提供了链接，因为我从一个非常方便的写作中获得了这些功能，该写作介绍了如何在CoLab中使用它，所以我将运行这些，只需定义它，以显示视频并为你设置，我们将播放《亚特兰蒂斯》版本零，所以我将继续运行。这里的基本情况是，它没有使用任何AI，而是从动作空间进行采样，基本上在随机行为中取样，看，这就是游戏，这并没有真正进行。
 - en: '![](img/e05a69d9ca1dbcb4403e08d1b85b5a4e_9.png)'
+  id: totrans-38
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/e05a69d9ca1dbcb4403e08d1b85b5a4e_9.png)'
 - en: In real time， this is a video that had been recorded briefly while that cell
     was running。 but now you can watch it play over and over again it's about a minute
     and 16 you can see the players getting beat badly you've got a gun here。 you've
@@ -291,13 +371,19 @@
     water and oops just tuck out the main cannon so it's as you lose your lives but
     this is just an overview of AIG will be using it more in the next to really every
     every module in this every part of this module。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个实时视频，记录了那个细胞运行时的简短片段。现在你可以反复观看，时长约为一分钟16秒，你可以看到玩家被击败得很惨。这里有一把枪，你可以发射一些宇宙飞船，但随着游戏的进行，宇宙飞船最终会将其摧毁。这里的想法是，要热爱1980年代的图形，这是一个水下城市，这里是水，哦，主炮被击毁了，所以当你失去生命时，这是对AIG的概述，我们将在接下来的每个模块中更多地使用它。
 - en: '![](img/e05a69d9ca1dbcb4403e08d1b85b5a4e_11.png)'
+  id: totrans-40
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/e05a69d9ca1dbcb4403e08d1b85b5a4e_11.png)'
 - en: Thank you for watching this video and if you're interested in more things about
     reinforcement learning and training it for games。 please subscribe to my YouTube
     channel， thank you very much。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 感谢观看这个视频，如果你对强化学习和为游戏训练的更多内容感兴趣，请订阅我的YouTube频道，非常感谢。
