@@ -4,10 +4,13 @@
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P29：L29- 交叉连接 - ShowMeAI
+    - BV1Pu41117ku
 - en: '![](img/0171f3687694160a13cbb67ab89ea954_0.png)'
   id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0171f3687694160a13cbb67ab89ea954_0.png)'
 - en: 哦。In this tutorial， we're going to look at cross joins in SQA。 we use cross
     joins to combine or join every record from the first table with every record and
     the second table。 Here's an example。 Let's select everything。😊，From the customer's
@@ -16,6 +19,7 @@
   id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。在本教程中，我们将查看 SQA 中的交叉连接。我们使用交叉连接将第一张表中的每一条记录与第二张表中的每一条记录组合或连接。这里有一个例子。让我们选择所有内容。😊，来自客户表。现在我们在这里进行交叉连接。与产品表。因此，客户表中的每一条记录将与产品表中的每一条记录组合。
 - en: And that is why we don't have a condition here。 Okay， so this is what we call
     a cross join。 Now for clarity， let's pick a couple of columns。 like see that first
     name。We rename it as customer and then。Product the name， which wename to product。Also。
@@ -23,6 +27,7 @@
   id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是为什么我们这里没有条件。好的，这就是我们所说的交叉连接。为了清晰起见，我们选择几列。比如看到这个名字。我们将其重命名为客户，然后是产品名称，我们将其重命名为产品。此外，让我们按客户的名字对结果进行排序。现在执行查询。😊
 - en: Here is the result of a cross joinin。 So first we have Amber as the customer。
     and here are all the combinations of amber with different products。 Next。 we have
     barbara or whatever it is。 And again， we have the combination of this customer
@@ -31,6 +36,7 @@
   id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是交叉连接的结果。所以首先我们有 Amber 作为客户。然后是所有与不同产品的组合。接下来，我们有 Barbara 或其他的。再次，我们有这个客户与所有产品的组合。在这个特定的例子中，使用交叉连接并没有太大意义。
 - en: A real example for using cross joins is where you have a table of sizes like
     small， medium， large。 and a table of colors like red， blue green， whatever。 And
     then you want to combine all the sizes with all the colors。 that is when you use
@@ -39,6 +45,7 @@
   id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用交叉连接的真实例子是当你有一个包含小、中、大的尺寸表和一个包含红、蓝、绿等颜色的表时。然后你想将所有尺寸与所有颜色结合起来。这就是你使用交叉连接的时机。😊现在，我们所拥有的被称为交叉连接的显式语法。
 - en: We also have the implicit syntax， which looks like this instead of typing out
     the cross join。We type out multiple tables in the F clause， so customers and orders。Both
     these queries produce the same result， but I personally prefer to use the explicit
@@ -46,14 +53,17 @@
   id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还有隐式语法，这样看起来就不是输入交叉连接。我们在 F 子句中输入多个表，所以是客户和订单。这两个查询产生相同的结果，但我个人更喜欢使用显式语法，因为它更清晰。
 - en: '![](img/0171f3687694160a13cbb67ab89ea954_2.png)'
   id: totrans-7
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0171f3687694160a13cbb67ab89ea954_2.png)'
 - en: '![](img/0171f3687694160a13cbb67ab89ea954_3.png)'
   id: totrans-8
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0171f3687694160a13cbb67ab89ea954_3.png)'
 - en: And here is a simple exercise for you。 Do a cross join between shippers and
     products。 first do it using the implicit syntax and then using the explicit syntax。
     It's pretty straightforward。 I just want you to get your hands dirty in the code
@@ -61,14 +71,17 @@
   id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有一个简单的练习给你。对运输商和产品做一个交叉连接。首先用隐式语法，然后用显式语法。这个过程相当简单。我只希望你在代码中动手，熟悉这种语法。😊
 - en: '![](img/0171f3687694160a13cbb67ab89ea954_5.png)'
   id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0171f3687694160a13cbb67ab89ea954_5.png)'
 - en: '![](img/0171f3687694160a13cbb67ab89ea954_6.png)'
   id: totrans-11
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0171f3687694160a13cbb67ab89ea954_6.png)'
 - en: Al right， first， I'm going to use the implicit syntax， and then I will show
     you the explicit syntax。 So let's start by selecting everything from two tables，
     shippers。😊，And products。Now for clarity。 let's pick two columns， Shiper do name，
@@ -77,6 +90,7 @@
   id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，首先，我将使用隐式语法，然后我将向你展示显式语法。让我们开始选择两个表中的所有内容，运输商。😊和产品。为了清晰起见。让我们选择两列，运输商的名字，我们将其重命名为运输商。产品名称，我们将其重命名为产品。最后，让我们按运输商的名字对所有内容进行排序。
 - en: Let's execute the query。This is what we get。 So the combination of all shippers
     and all products。 beautiful。 Now let's use the explicit syntax。 So we select everything
     from the base table in this case。 shippers and then do a cross join with products。😊，That
@@ -84,10 +98,12 @@
   id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们执行查询。这是我们得到的结果。所以所有运输商和所有产品的组合。太美了。现在让我们使用显式语法。所以我们从基础表中选择所有内容，在这种情况下，是运输商，然后与产品进行交叉连接。😊这产生了完全相同的结果。
 - en: '![](img/0171f3687694160a13cbb67ab89ea954_8.png)'
   id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/0171f3687694160a13cbb67ab89ea954_8.png)'
 - en: Oh。
   id: totrans-15
   prefs: []

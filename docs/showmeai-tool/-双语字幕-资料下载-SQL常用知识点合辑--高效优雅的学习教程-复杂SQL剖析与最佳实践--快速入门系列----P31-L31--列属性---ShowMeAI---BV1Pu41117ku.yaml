@@ -1,39 +1,52 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P31：L31- 列属性 - ShowMeAI
     - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P31：L31- 列属性 - ShowMeAI
+    - BV1Pu41117ku
 - en: '![](img/bb89ad32d4a36a03434279621d47068b_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bb89ad32d4a36a03434279621d47068b_0.png)'
 - en: 哦。In this section I'm going to teach you how to insert， update and delete data
     Before we get started。 let's have a closer look at our customerss table， so click
     on this middle icon to open this table in the design mode。What you see here might
     look a little bit intimidating at first， but trust me。 this is actually so easy
     and in this tutorial I'm going to explain exactly what we have in these columns。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。在这一部分，我将教你如何插入、更新和删除数据。在开始之前，让我们仔细看看我们的客户表，所以请点击这个中间图标，以设计模式打开这个表。你看到的内容一开始可能看起来有点吓人，但相信我，这其实很简单，在本教程中我将准确解释这些列中的内容。
 - en: 😊，So on the left side， you can see the column name next to that you can see
     the data type for each column。 so our customer ID column can only accept inger
     values。 integers are whole numbers like 1，2，3。4 and so on。 they don't have decimal
     points。 first name is a varchar。 which is short for variable character Now here
     in parenthesesis。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊所以在左侧，你可以看到列名，旁边是每列的数据类型。因此，我们的客户ID列只能接受整数值。整数是像1、2、3、4这样没有小数点的整数。名字是varchar，代表可变字符，现在这里的括号中。
 - en: we can see 50 that basically means in this column， we can have a maximum of
     50 characters。 Now if the name of a customer is only five characters long， we
     only store those five characters。 So even though the maximum length for this column
     is 50。 we are not going to waste space if the customer's name is less than 50
     characters。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以看到50，这基本上意味着在这一列中，我们最多可以有50个字符。现在如果客户的名字只有五个字符长，我们只存储这五个字符。所以即使这一列的最大长度是50，我们也不会浪费空间，如果客户的名字少于50个字符。
 - en: That is why here we have varchar， which is short for variable In contrast we
     have another data type that is character。😊，If we had character 50 here and the
     name of the customer was only five characters long。 my skill would insert additional
     45 spaces to fill this column。 So this is a waste of space。 So as a best practice，
     most of the time we use varchar to store string or textual values。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是为什么我们这里有varchar，代表可变字符。相反，我们还有另一种数据类型是字符。😊如果这里是字符50，而客户的名字只有五个字符长，my skill会插入额外的45个空格以填满这一列。这会浪费空间。因此，作为最佳实践，大多数时候我们使用varchar来存储字符串或文本值。
 - en: Now here on the right side， we have this column PK。 which is short for primary
     key so customer ID is marked as the primary key and that is why we have this yellow
     key here So the values in this column uniquely identify each customer next to
@@ -46,22 +59,30 @@
     let myql or our database engine insert a value in this column So essentially it
     gets the customer ID for the last row and it will incremented by one at the time
     we insert a new record So if you look at the data。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在在右侧，我们有这一列PK，代表主键，因此客户ID被标记为主键，这就是我们这里有这个黄色钥匙的原因。这一列中的值唯一标识每位客户，旁边是NN，代表非空，这决定了这一列是否可以接受null值。在这种情况下，每个客户记录必须具有客户ID、名字、姓氏以及其他属性，但出生日期和电话是可选的，因此在这些列中可以有null值。现在我们还有另一列AI，代表自动递增，通常与主键列一起使用，因此每次我们在这个表中插入新记录时，我们让myql或我们的数据库引擎在这一列中插入一个值。因此，基本上它获取最后一行的客户ID，并在我们插入新记录时将其递增1。因此，如果你查看数据。
 - en: 三？You can see that currently we have only 10 customers here， so if you have
     a new customer here。 myQ will assign 11 to the new customer okay。😊，And finally
     here we have another column that specifies the default value for each column。
     for example， for our birth date and phone columns that default values are null。
     so if we don't supply a value， MyQ will use the null values for these columns。Similarly。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 三？你可以看到目前我们这里只有10位客户，所以如果你有一位新客户，myQ会给新客户分配11，好的。😊最后这里还有另一列，指定每列的默认值。例如，对于我们的出生日期和电话列，默认值是null。因此，如果我们不提供值，myQ会对这些列使用null值。同样。
 - en: we have another default value for the points column。 so if we don't supply the
     points for a customer， My skill will use zero。 Now we have a few other columns
     here which are not important at this stage。 you will learn about them later in
     the course so now that you understand the attributes of each column in this table
     let's go ahead and insert data into this table。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们为积分列设置了另一个默认值。因此，如果我们没有为客户提供积分，我的技能将使用零。现在我们有几个其他列，在这个阶段并不重要。你将在课程的后面学习它们，所以现在你了解了这个表中每列的属性，接下来我们来向这个表中插入数据。
 - en: '![](img/bb89ad32d4a36a03434279621d47068b_2.png)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/bb89ad32d4a36a03434279621d47068b_2.png)'

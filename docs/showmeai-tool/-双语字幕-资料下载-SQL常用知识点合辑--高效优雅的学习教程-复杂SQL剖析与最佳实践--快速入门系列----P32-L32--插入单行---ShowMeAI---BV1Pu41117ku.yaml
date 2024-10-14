@@ -1,110 +1,153 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P32：L32- 插入单行 - ShowMeAI
     - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P32：L32- 插入单行 - ShowMeAI
+    - BV1Pu41117ku
 - en: '![](img/89d6aadd09799eb0a2adeb5a6b77e305_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/89d6aadd09799eb0a2adeb5a6b77e305_0.png)'
 - en: 哦。In this tutorial tutorial， you're going to learn how to insert a row into
     a table for that。 we're going to use the insert into statement。😊，Where are we
     going to insert this row into the customers table。 so we type out the name of
     the table here， followed by the values clause。And here in parentheses we supply
     the values for every column in this table。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。在本教程中，你将学习如何向表中插入一行。为此，我们将使用插入语句。😊 我们要将这一行插入到 customers 表中，所以我们在这里输入表的名称，后面跟上值子句。在这里的括号中，我们为这个表的每一列提供值。
 - en: so back to our table definition， these are all the columns first we need to
     supply a value for the customer ID column。 however， in this column the auto increment
     attribute is enabled and as I told you before。 if we don't supply a value， My
     skill will generate a unique value for us。😊。So we can go back to our statement
     and either assign an explicit value or use default to let MyQl take care of generating
     this value。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以回到我们的表定义，这些是所有的列。首先，我们需要为客户 ID 列提供一个值。然而，在这一列中，启用了自增属性，正如我之前告诉你的。如果我们不提供一个值，MySQL
+    会为我们生成一个唯一的值。😊 所以我们可以回到我们的语句，显式赋值或者使用默认值，让 MySQL 来生成这个值。
 - en: This is the preferred approach because if you use an explicit value like 200
     it is possible that you might have another customer with the same ID。 So when
     you execute this statement you're going to get an error because you cannot have
     duplicate values in this column every value should be unique So here we're going
     to use the default keyword to let MyQl generate a unique value for the customer
     ID。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是首选的方法，因为如果你使用像 200 这样的显式值，可能会有另一个客户拥有相同的 ID。所以当你执行这个语句时，你会得到一个错误，因为这一列中不能有重复值，每个值都应该是唯一的。因此，我们将使用默认关键字，让
+    MySQL 为客户 ID 生成一个唯一的值。
 - en: Now after that， we need to supply a value for the first name and last name columns。
     so let's say John Smith。Note that I have enclosed these values with quotes because
     as I told you before in SQL。 we should always enclose string and date values with
     quotes， either single or double quotes。😊，Now。 what else？Back to our customers'
     table。After the last name we have the birth date， however。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，在此之后，我们需要为名和姓列提供一个值。假设是约翰·史密斯。请注意，我用引号括住这些值，因为正如我之前告诉你的，在 SQL 中，我们应该始终用引号括住字符串和日期值，可以使用单引号或双引号。😊
+    现在，还有什么？回到我们的 customers 表。姓之后是出生日期，不过。
 - en: as we can see this column is optional because this checkbox is not checked。
     so here we can use null or an explicit value， known means the absence of value。😊。So
     back to our statement。We can type out a birth date like 1990， January 1， or we
     could use。The null keyword to leave out this value in this demo I'm going to use。A
     valid date。Now。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们所看到的，这一列是可选的，因为这个复选框没有被选中。所以在这里我们可以使用 null 或显式值，null 表示没有值。😊 所以回到我们的语句。我们可以输入一个出生日期，比如
+    1990 年 1 月 1 日，或者我们可以使用 null 关键字在这个演示中，我将使用一个有效的日期。现在。
 - en: to make this code cleaner and more readable， I'm going to break it up into multiple
     lines。😊。That's better。Now back to our table。Next， we have phone and phone is also
     optional because this checkbox is not checked and none is the default value for
     this column。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了让这段代码更简洁易读，我将把它分成多行。😊 这样更好。现在回到我们的表。接下来，我们有电话，而电话也是可选的，因为这个复选框没有被选中，而 null
+    是这一列的默认值。
 - en: So here we can explicitly pass null or use the default keyword and let Myql
     put null into this column。 It's exactly the same。So back to our statement， we
     can pass null or default。Both these cures will have the same result。In this case，
     I'm going to use the null keyword。😊。All right， let's have one more look at our
     table。😊，Next， we have。For more columns that are required。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以在这里，我们可以显式传递 null 或使用默认关键字，让 MySQL 将 null 放入这一列。这是完全相同的。所以回到我们的语句，我们可以传递 null
+    或默认。这两种方法都会有相同的结果。在这个例子中，我将使用 null 关键字。😊 好的，我们再看一下我们的表。😊 接下来，我们还有更多的必需列。
 - en: so address， city， state and points， and note that points has the default value
     of 0。 so we can either use an explicit value like 200 or use the default key and
     let MyQl generate 0。So back to our statement， let type out an address。It doesn't
     really matter， followed by a city。😊。And a estate， let's say， California。And finally，
     points。Again。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以地址，城市，州和积分，并注意积分的默认值是0。因此，我们可以使用一个显式值，比如200，或者使用默认关键字，让MySQL生成0。回到我们的语句，输入一个地址。实际上无所谓，接着是一个城市。😊。还有一个州，我们说，加州。最后是积分。再次。
 - en: we can use an explicit value or default。😊，So this is how we can insert a row
     into a table。However。 in this example， we are only supplying values for first
     name， last name， birth date。 and this address field。So we are leaving out the
     phone number， the customer ID and the points。 So there is another way to write
     your statement and me' show you。😊，So after the table name。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以使用显式值或默认值。😊，所以这就是我们如何向表中插入一行。然而，在这个例子中，我们只为名字，姓氏，出生日期，以及这个地址字段提供了值。所以我们忽略了电话号码，客户ID和积分。还有另一种写语句的方法，我来给你演示一下。😊，所以在表名后。
 - en: we can optionally supply the list of columns that we want to insert values into
     in this case。 first name。😊，Last name。Birthday。Now， once again， I'm going to break
     off this statementman into multiple lines。😊，So three more columns， address， city，
     and state。So these are the six columns that we're going to supply values for。With
     this change， we don't have to use these default or null values。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种情况下，我们可以选择性地提供我们想要插入值的列列表。名字。😊，姓氏。生日。现在，我将再次把这个语句拆分成多行。😊，所以还有三列，地址，城市，和州。这六列是我们将要提供值的列。通过这个改变，我们不必使用这些默认或空值。
 - en: we only supply values for these columns， so I'm going to remove default from
     here then null。 and finally this last default keyword。So these six values that
     we supplied here are used for these six columns。Now with this change， we can also
     reorder the columns。 we don't have to list them in the same order that they are
     defined in the customers table。😊。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们只为这些列提供值，所以我将从这里删除默认值，然后是空值，最后是这个最后的默认关键字。因此，我们在这里提供的这六个值用于这六列。现在通过这个改变，我们也可以重新排列列的顺序。我们不必按客户表中定义的顺序列出它们。😊
 - en: For example， we can put the last name first。😊，And then obviously。 we should
     also swap the order of these values so we can list them in any orders。 Now。 let's
     execute the statement。😊，Now if you look at the output window down the bottom。
     you should see the statement followed by one rows affected。 Unfortunately。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，我们可以先放姓氏。😊，然后显然，我们也应该交换这些值的顺序，因此我们可以以任何顺序列出它们。现在，让我们执行这个语句。😊，现在如果你看底部的输出窗口，你应该会看到语句后面跟着一行受影响。不幸的是。
 - en: I cannot resize this window to show you this message。 but if you look down below
     you can see that one record was affected。 which basically means one record was
     inserted into this table。Now let's look at the data in the customers table。😊，Okay。So
     the last row is the one that we inserted。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 我无法调整这个窗口的大小来给你显示这个消息，但如果你看下面，你可以看到一条记录受到了影响，这基本上意味着一条记录被插入到这个表中。现在让我们看一下客户表中的数据。😊，好的。所以最后一行是我们插入的那一行。
 - en: You can see that my skill automatically generated the value 11。 This is the
     effect of auto increment attribute。 So it takes the value of the last row and
     increments it by one。😊，So here we have the first name， last name， the birthday。
     we didn't supply a value for the phone attribute， so that's why we have no here。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到我的技能自动生成了值11。这是自增属性的效果。因此，它取最后一行的值并将其加一。😊，所以这里我们有名字，姓氏，生日。我们没有为电话属性提供值，这就是为什么我们没有值。
 - en: We also have address， city， state， and the default value of 0 for the points。![](img/89d6aadd09799eb0a2adeb5a6b77e305_2.png)
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还有地址，城市，州，以及积分的默认值0。![](img/89d6aadd09799eb0a2adeb5a6b77e305_2.png)
 - en: Oh。![](img/89d6aadd09799eb0a2adeb5a6b77e305_4.png)
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。![](img/89d6aadd09799eb0a2adeb5a6b77e305_4.png)

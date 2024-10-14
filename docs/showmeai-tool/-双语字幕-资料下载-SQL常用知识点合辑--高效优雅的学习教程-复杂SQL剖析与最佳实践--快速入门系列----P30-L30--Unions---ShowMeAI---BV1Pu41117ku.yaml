@@ -1,155 +1,208 @@
 - en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P30：L30- Unions - ShowMeAI
     - BV1Pu41117ku
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P30：L30- 联合 - ShowMeAI
+    - BV1Pu41117ku
 - en: '![](img/04095bb29a99dad8fca5419a36682056_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/04095bb29a99dad8fca5419a36682056_0.png)'
 - en: 哦。We covered everything about joints。 youll learn that with joints we can combine
     columns from multiple tables。 but in SQL we can also combine rows from multiple
     tables， and this is extremely powerful。 Let me show you how that works。😊，First，
     let's have a quick look at our orders table。 so select everything from the orders
     table。Now， if you look at the data。😊。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦。我们已经涵盖了所有关于连接的内容。你将了解到，通过连接我们可以组合来自多个表的列。但在SQL中，我们也可以组合来自多个表的行，这个功能极其强大。让我给你展示一下它是如何工作的。😊，首先，让我们快速查看我们的订单表。所以从订单表中选择所有内容。现在，如果你查看数据。😊。
 - en: We can see that the first order was placed in the current year 2019。 all the
     other orders were placed in previous years。Now let's say we want to create a report。
     get all the orders and next to each order add a label， if the order is placed
     in the current year。 the label is going to be active and if the order was placed
     in previous years。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以看到第一个订单是在当前年份2019年下单的。所有其他订单都是在之前的年份下单的。现在假设我们想创建一个报告，获取所有订单，并在每个订单旁边添加一个标签，如果订单是在当前年份下单，标签将是active，如果订单是在之前的年份下单。
 - en: we want to label it as archived so。😊，Let's change our query and add a condition
     here。 First。 we want to get all the orders in the current here， So where。Order。Date
     is greater than or equal to 2019，0，1，01。NowI just want to highlight that this
     is not the ideal way to get the orders in the current year because here we have
     hard coded 2019。 so if we execute the score in next year， we're not going to get
     the right result。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们想将其标记为归档。所以。😊，让我们更改查询并在这里添加一个条件。首先。我们想获取当前年的所有订单，所以条件是。订单日期大于或等于2019年01月01日。现在我只是想强调，这不是获取当前年订单的理想方式，因为这里我们硬编码了2019。所以如果我们在明年执行这个查询，我们不会得到正确的结果。
 - en: but don't worry about this for now later in the course I will show you how to
     get the orders in the current year without hard coding a date here。😊，So let's
     execute this query。😊，Now we get only one order， let's hand pick a couple of columns
     here。So order ID。And or na date。And also， I want to add a string literal here。😊，Like
     active。Right。Let's execute this query。This is what we get。 we have three columns，
     order ID， order date。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 但现在不用担心，稍后在课程中我会告诉你如何在不在这里硬编码日期的情况下获取当前年的订单。😊，所以让我们执行这个查询。😊，现在我们只得到一个订单，让我们挑选几个列。比如订单ID。还有订单日期。并且，我想在这里添加一个字符串字面量。😊，比如active。对吧。让我们执行这个查询。这就是我们得到的结果。我们有三列，订单ID，订单日期。
 - en: and an active， and in this column currently we have this string value active。😊。Now
     let's rename this column too。Status。And execute the queryium。😊，That is better。Now
     we want to write another query similar to this that will return to orders in the
     previous years。 but with a different label archive， so to save time。😊，I'm going
     to copy this few lines。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 还有一个active，在这一列中我们目前有这个字符串值active。😊。现在让我们也把这一列重命名为状态。并执行查询。😊，这更好了。现在我们想写一个类似于这个的查询，返回前几年的订单，但有一个不同的标签归档，所以为了节省时间。😊，我将复制这几行。
 - en: And paste them right after our first select statement Now note that here we
     have a syntax error because we didn't terminate the first select statement with
     a semicolon。 but don't worry about it， we're going to get back to this in a second。So
     for the second queryium。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后将它们粘贴在我们的第一个选择语句后面。请注意，这里我们有一个语法错误，因为我们没有用分号终止第一个选择语句。但现在不用担心，我们马上会回到这个问题。所以对于第二个查询。
 - en: we want to return a different label archive。😊，And we want to change our condition
     to less than 2019。Now。Select only these few lines and execute this query either
     by clicking on this icon here or using the keyboard shortcut that you learned
     earlier in the course。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们想返回一个不同的标签归档。😊，而且我们想将条件更改为小于2019。现在。只需选择这几行并通过点击这里的图标或使用你在课程中学到的键盘快捷键来执行这个查询。
 - en: There you go。Here are all the orders from the previous years with the label
     archive。This query returns nine records， the previous query returned one record
     Now using the union operator。 we can combine data from these two queries。In between
     our select statements。 we type out union now let's execute query one more time。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 看！这里是所有来自前几年的订单，带有归档标签。这个查询返回了九条记录，而之前的查询返回了一条记录。现在使用联合操作符，我们可以将这两个查询的数据结合在一起。在我们的选择语句之间，输入union。现在让我们再执行一次查询。
 - en: So here's our first order in the current year that is active and below that
     we have all the orders in the previous years。 so using the union operator we can
     combine records from multiple queries Now in this example。 both our queries are
     against the same table， but we can also have queries against different tables
     and then combine the result into one result set。😊，Let me show you another example。So
     I'm going to delete everything here。😊。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这是我们当前年份的第一张活动订单，下面是之前年份的所有订单。因此，通过使用`union`运算符，我们可以合并多个查询的记录。在这个例子中，我们的两个查询都是针对同一张表，但我们也可以对不同的表进行查询，然后将结果合并成一个结果集。😊
+    让我给你展示另一个例子。我要把这里的所有内容删除。😊
 - en: Let's select the first name。From the customers table， and then we can union
     that with。😊。Select the name from the shippers's table， Let's execute the queryium。So
     in one result set。 we can see all the customers and all the shippers。As far as
     I know。 there is no real world use case for this particular query。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们从客户表中选择名，然后我们可以将其与。😊 发货人表中的姓名进行`union`。让我们执行查询。这样在一个结果集中，我们可以看到所有的客户和所有的发货人。据我所知，这个特定查询在现实世界中没有实际应用案例。
 - en: but what I want to point out is that with union you can combine results from
     multiple queries。😊。These queries can be against the same table or different tables。In
     your database you could have a table like archived orders and in another table
     like orders。 and then you could combine all the archived and active orders into
     one result set。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 但我想指出的是，通过`union`你可以合并多个查询的结果。😊 这些查询可以针对同一张表或不同的表。在你的数据库中，你可能会有一张类似“归档订单”的表，和另一张“订单”表。然后你可以将所有归档的和活动的订单合并成一个结果集。
 - en: Just remember that the number of columns that each query returns should be equal。
     otherwise you're going to get an error。 for example。 let's select the first name
     and last name from customers and then union that。😊。With the name of shippers，
     let me execute this query will'll get an error because the first part of this
     query returns two columns。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 只需记住，每个查询返回的列数应该相等。否则你会得到一个错误。例如，让我们从客户中选择名和姓，然后将其`union`。😊 用发货人姓名来做，让我执行这个查询，我们会得到一个错误，因为这个查询的第一部分返回了两列。
 - en: but the second part returns one column。 so my skill doesn't know how to combine
     these records。 and one last thing before we finish this tutorial。If you look at
     the result here。The name of this column is based on the first query， so the first
     query returns first name。 and that's why this column is called first name。If we
     change the order of this queries。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 但第二部分返回了一列。因此我的技能不知道如何合并这些记录。在我们完成这个教程之前还有最后一件事。如果你查看这里的结果，这一列的名称基于第一个查询，所以第一个查询返回了名。也正因如此，这一列被称为名。如果我们改变这些查询的顺序。
 - en: And move this union up here。Now let's run this query。😊，As we can see， our column
     is called name。 so whatever we have in the first query is used to determine the
     name of these columns here we can also rename the column to let's say full name。![](img/04095bb29a99dad8fca5419a36682056_2.png)
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 并把这个`union`放到这里。现在让我们运行这个查询。😊 如我们所见，我们的列叫做姓名。因此，我们在第一个查询中的内容用于确定这些列的名称，我们也可以将列重命名为“全名”。![](img/04095bb29a99dad8fca5419a36682056_2.png)
 - en: There一个。![](img/04095bb29a99dad8fca5419a36682056_4.png)
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 有一个。![](img/04095bb29a99dad8fca5419a36682056_4.png)
 - en: Al right， here's your exercise for this tutorial。Write a query to produce this
     report so here we have four columns。 customer ID， first name， points and type
     as you know we don't have this column in the customers table so we have calculated
     the values in this column based on the points each customer has。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，这里是你本教程的练习。写一个查询来生成这个报告，这里我们有四列：客户ID、名、积分和类型。正如你所知，我们在客户表中没有这个列，所以我们根据每个客户的积分计算了这一列的值。
 - en: If they have less than 2000 points， their type is bronze。 If they have between
     2000 to 3000 points。 they are silver customers， and if they have more than 3000
     points， there are gold customers。 Also note that here we have sorted the result
     by the first name。 So go ahead and spend two minutes to write this query。Alright，
     first。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果他们的积分少于2000，他们的类型是青铜；如果他们的积分在2000到3000之间，他们是银客户；如果他们的积分超过3000，他们是金客户。同时请注意，我们在这里是按名对结果进行了排序。那么现在请花两分钟时间来写这个查询。好的，首先。
 - en: let's get the bronze customers。 So select everything from customers where。😊。Points
     is less than 2000。Now here going to pick three columns， customer I D。First name。And
     points。And finally， we add a new column with a string literal。😊，Fronance。Let's
     run this query and see what we get。 So these are all the bronze customers。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们获取青铜客户。所以从客户中选择所有记录，条件是😊，积分少于2000。现在我们要选择三列：客户ID、名字和积分。最后，我们添加一个新列，内容为字符串字面量😊，Fronance。让我们运行这个查询，看看结果。这里是所有的青铜客户。
 - en: but the name of this column is bronze。 We don't want that。 So let's rename this
     two type Now this is off the screen。 So I'm going to break this up into multiple
     lines that makes our query cleaner and easier to read。😊。So there you go。Let's
     run the query one more time。Now the column is called type Beai。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是这个列的名称是青铜。我们不想要这个名称。所以让我们把它重命名为类型。现在这部分超出了屏幕范围。所以我会把它分成多行，使我们的查询更清晰、更易读。😊。好吧，让我们再运行一次查询。现在这个列叫类型
+    Beai。
 - en: Now we should do a union。And repeat this query but extract the silver customers。
     so I'm going to paste this query here。😊，And then make a couple of changes here。I'm
     going to replace bronze with silver。And change the condition to。Between 2000 and
     3000。 let's run our query and see what we get。We have all the bronze customers
     first。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们应该进行一次合并。并重复这个查询，但提取白银客户。所以我会把这个查询粘贴到这里。😊，然后进行一些更改。我将把青铜替换为白银。并将条件改为在2000到3000之间。让我们运行查询，看看结果。我们首先得到了所有的青铜客户。
 - en: followed by all the silver customers。 So the order of these records are based
     on our queries In our first query。 we got the bronze customers。 That's why they
     are listed first。 But this is not what we want。 We want to order the result by
     the first name of our customers。 So let's apply an order by at the end。So order
     by first name。Now there is one more piece remaining。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来是所有的白银客户。这些记录的顺序是根据我们的查询结果。在第一个查询中，我们得到了青铜客户，所以它们排在最前面。但这不是我们想要的。我们想要按客户的名字对结果进行排序。所以让我们在最后添加一个排序。按照名字排序。现在还有一部分内容没有处理。
 - en: we should do a union one more time。I'm ready to query to get the gold customers。
     So I'm going to select these few lines and。😊，Pas them here。Nowhou us change silver
     to gold。And the condition2 points greater than 3000。And finally we do on order
     by。Let's run the query one more time。😊，And here's the end result。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们应该再进行一次合并。我准备查询以获取黄金客户。所以我将选择这几行并😊，把它们粘贴到这里。现在将白银改为黄金。并将条件更改为积分大于3000。最后我们再做一次排序。让我们再运行一次查询。😊，这是最终结果。
 - en: our customers are sorted by their first name。 We see all the bronze， silver
     and gold customers。![](img/04095bb29a99dad8fca5419a36682056_6.png)
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们的客户按名字排序。我们可以看到所有的青铜、白银和黄金客户。![](img/04095bb29a99dad8fca5419a36682056_6.png)
