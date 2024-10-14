@@ -1,17 +1,25 @@
 - en: 【双语字幕+资料下载】PySpark 大数据处理入门，带你玩转Python+Spark大数据操作与分析！＜实战教程系列＞ - P1：L1- Pyspark
     介绍和安装 - ShowMeAI - BV1sL4y147dP
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】PySpark大数据处理入门，带你玩转Python+Spark大数据操作与分析！＜实战教程系列＞ - P1：L1- Pyspark介绍和安装
+    - ShowMeAI - BV1sL4y147dP
 - en: '![](img/ee846c25d771f30e25168217f8991826_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ee846c25d771f30e25168217f8991826_0.png)'
 - en: Hello all。 My name is Krisna and welcome to my YouTube channel。 So guys。 we
     are going to start Apache Spark series， and specifically if I talk about Spark。
     we will be focusing on how we can use Spk with Python。 So we are going to discuss
     about the library call Pi Spk。😊。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，我的名字是Krisna，欢迎来到我的YouTube频道。那么，大家，我们将开始Apache Spark系列，特别是如果我谈到Spark，我们将专注于如何使用Spark与Python。所以我们将讨论一个叫做Pi
+    Spark的库。😊
 - en: We will try to understand everything why Spk is actually required and probably
     we also try to cover a lot of things。 There is something called as Mlib Spk Mlib，
     which will basically say that how you can apply machine learning。 you know in
@@ -19,23 +27,31 @@
     apart from that we'll also try to see in the future once we understand the basics
     of the Pipark library。 how we can actually preprocess our data set， how we can
     use the Pipar data frames we'll also try to see。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将尝试理解为什么实际上需要Spark，并且我们可能还会覆盖很多内容。有一个叫做Mlib Spark Mlib的东西，它基本上会告诉你如何在Apache
+    Spark中应用机器学习。你知道，通过这个叫做Pipark库的Spark API。此外，我们还会在未来看到，一旦我们理解了Pipark库的基础知识，我们如何实际预处理我们的数据集，如何使用Pipark数据框，我们也会尝试了解。
 - en: How we can implement or how we can use Pipark in cloud platforms like data breaks，
     Amazon， Aws。 you know， so all these kind of clouds will try to cover and remember
     Apache spark is quite handy。 Let me tell you just let me just give you some of
     the reasons So why Aache spark is pretty much good because understand。 suppose
     if you have a huge amount of data Okay suppose if I say that I'm having 64 gb
     data，1。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们如何在云平台如Databricks、Amazon、AWS中实施或使用Pipark，你知道，因此所有这些云我们都会尝试覆盖，并且记住Apache Spark非常方便。让我告诉你，给你一些理由，为什么Apache
+    Spark非常好，因为你要理解，假设你有大量的数据。好的，假设我说我有64GB的数据，1。
 - en: 8 gb data， you know， we may have some kind of systems， a standalone systems，
     you know。 where we can have 32 gb of Ram probably 64 gb of Ram right now in the
     workstation that I'm working in it has 64 gb Ram。 So max to Mac， it can directly
     upload a data set of 32 gb。48 gb But what if if we have a data set of 1。8 g you
     know that is the time guys。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 8GB的数据，你知道，我们可能有一些独立系统，知道，在那里我们可能有32GB或64GB的内存。现在我正在工作的工作站有64GB的内存。因此，最大到最大，它可以直接上传一个32GB或48GB的数据集。但是如果我们有一个1.8GB的数据集，你知道，那个时候，大家。
 - en: we don't just depend on a local system will try to preprocess that particular
     data perform any kind of operation in distribute。uted systems right distributeded
     system basically means that all there will be multiple systems。 you know， where
@@ -44,15 +60,20 @@
     and this has been pretty much amazing And yes。 people wanted this kind of videos
     a lot So how we are going to go through this specific playlistes that will try
     to first of all。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们不仅依赖于本地系统，还将尝试在分布式系统中预处理特定数据并执行任何类型的操作。分布式系统基本上意味着将会有多个系统，你知道，我们可以在这些系统上运行这种作业或处理，或尝试做我们真正想做的任何活动，Apache
+    Spark肯定会帮助我们做到这一点，这真的是非常棒。而且，是的，人们非常想要这种类型的视频。所以我们将如何进行这个特定的播放列表，我们将首先。
 - en: start with the installation。 We'll try to use Pipark because that is also Apache
     spark it is a spark API with Python when you are actually working with Python
     we basically use Pipark library And yes。 we can also use spark with other programming
     languages like Java scale and all right and will try to understand from basics
     you know from basic how do we read a data。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 从安装开始。我们将尝试使用Pipark，因为它也是Apache Spark，这是一个与Python一起使用的Spark API。当你实际使用Python时，我们基本上使用Pipark库。而且，是的，我们也可以使用Spark与其他编程语言，如Java、Scala等，我们将从基础知识开始，了解我们如何读取数据。
 - en: how do we connect to a data source probably how do we play with the data frames
     know in this Apache Sp that is your Pi。😊，Also they provide you data structures
     like data frames。 which is pretty much similar to the pans data frame， but yes。
@@ -67,59 +88,80 @@
     and we'll try to see how we can use spark in that right so all those things will
     basically get covered now some of the advantages of Apache Sp and white is very
     much famous because it runs workloads hundred multiplied by。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们如何连接到数据源，可能我们如何使用数据框，在这个Apache Spark中，这是你的Pi。😊他们还提供你数据结构，比如数据框，这与Pandas数据框非常相似，但支持的操作有所不同，我们将逐一查看，然后我们将尝试进入Mlib
+    Apache Spark Mlib，基本上称为Spark Mlib，它将帮助我们执行机器学习，在这里我们将能够执行一些机器学习算法任务，包括回归、分类、聚类，最后我们将尝试看看如何在云中执行相同的操作，我会向你展示一些示例，我们将有一个庞大的数据集，我们将尝试在分布式系统的集群中进行操作，并看看我们如何使用Spark，对吧？所以这些内容基本上都会覆盖到。现在Apache
+    Spark的一些优势以及为什么它如此著名，因为它的工作负载速度是普通的百倍。
 - en: times faster， you know， that basically means And if you know about big data
     guys。 when we talk about big data， we are basically talking about huge data set，
     right。 and there if you have heard of this terminology called as map produce，
     right。Trusush mean Apache Spk is much more faster 00 times faster than map produce
     also。 okay。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 更快，你知道，这基本上意味着。如果你了解大数据，当我们谈论大数据时，我们基本上是在谈论巨大的数据集，对吧？如果你听说过这个叫做MapReduce的术语，Apache
+    Spark的速度比MapReduce快得多，快100倍。好的。
 - en: and it is some of the more advantage that it is ease of use。 you can write application
     quickly in Java scalear Python or R， as I said。 well be focusing on Python where
     we'll be using a library called Pipark。 Then you can also combine SQL streaming
     and complex analytics。 When I talk about complex analytics。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 并且它的一些优势在于易用性。你可以快速用Java、Scala、Python或R编写应用程序，正如我所说的。我们将专注于Python，并将使用一个叫做Pipark的库。然后你还可以结合SQL流处理和复杂分析。当我谈论复杂分析时。
 - en: I'm basically talking about this Mlib machine learning libraries that will work
     definitely well with the Apache Spk。And Apache sparks can run on Hadoop Apache
     meso Knet standalone in or in the clouds cloud。 different types of cloud guys
     when I talk about Aws data breaks， all these things。 we can definitely work。 and
     it actually runs in a cluster cluster basically means in a distributed So these
     are some of the examples。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我基本上是在谈论这个Mlib机器学习库，它肯定能与Apache Spark良好协作。Apache Spark可以在Hadoop、Apache Mesos、Kubernetes、独立模式或云端运行。当我谈到AWS
+    DataBricks等各种云服务时，我们肯定可以工作。它实际上在集群中运行，集群基本上意味着分布式。因此，这些都是一些示例。
 - en: Now if I go with respect to which version ofpar spark will be usingpar 3。1。1
     will be using will try to work and if you just go and search for here you can
     see SQL and data frames and all here you can see spark streaming machineli that
     is called as machine learning in all And apart from that if I go and see the overview
     here you can see that Apache spark is a fast and general purpose cluster computing
     system。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，如果我谈到我们将使用哪个版本的Spark，我们将使用3.1.1，并尝试进行工作。如果你在这里搜索一下，你可以看到SQL和数据框架，以及Spark流处理，机器学习被称为机器学习。除此之外，如果我查看概述，你会看到Apache
+    Spark是一个快速的通用集群计算系统。
 - en: it provides highle APIs in scale or Java and Python that makes parallel job
     easy to write an optimized engine that supports general competition graph。 So
     it is basically to work with huge amount of data。😊，And short， you know。 and that
     is pretty much handy。 will'll try to work。 Now， if I go and search for this park
     in Python。 you know， this page will get basically go open and this things will
     try to discuss how to install it。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 它提供了高效的API，可以在Java和Python中进行扩展，这使得并行作业的编写变得简单，支持通用计算图的优化引擎。所以它基本上是用来处理大量数据的。😊而且简短，你知道的。这非常方便。我们将尝试工作。现在，如果我去搜索这个Python中的Spark，你知道，这个页面基本上会打开，我们将讨论如何安装它。
 - en: And in this video will try to install the Pipar library。 if I talk about Pipar
     library you'll be able to see that Pipar library is pretty much amazing。 this
     library is if you really want to work if you want to work this spark functionality
     with Python。 you basically use the specific library and let's proceed and let's
     try to see that how we can quickly。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个视频中，我们将尝试安装Pipar库。如果我谈到Pipar库，你会发现Pipar库非常棒。这个库是如果你真的想在Python中使用Spark功能的话，你基本上会使用这个特定的库。让我们继续，看看我们能多快做到这一点。
 - en: 😊，Yeah， how we can quickly you know install the specific libraries and check
     out like what all things we can actually do。 Okay， so all these things we'll try
     to see。 So let's begin。 please make sure that you create a new environment when
     you are working with Pi So I have created a new environment called my and here。
     first of all， I'll try to install the Pi libraries。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊是的，我们如何快速安装特定的库，并检查我们可以实际做些什么。好的，所以我们将尝试看看所有这些内容。那么让我们开始吧。请确保在使用Pi时创建一个新环境。所以我创建了一个名为my的新环境。在这里，首先，我将尝试安装Pi库。
 - en: So I'll just install Pipar and let's see in this we'll focus on installation。
     we'll focus on reading some data sets and try to see that what all things we can
     actually do。 Okay and after doing this what we can actually do is that you can
@@ -127,152 +169,213 @@
     is perfect or not I'll just write import Pi So this this looks perfectly find
     it is working know we are able to see that the Pi is basically installed properly
     Now you may be facing some kind of problems。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我将安装Pipar，让我们看看在这方面我们将专注于安装。我们将专注于读取一些数据集，并尝试看看我们实际上可以做些什么。好的，完成这个之后，我们可以看到我们的Pi已经安装。为了检查安装是否完美，我将写import
+    Pi。所以这看起来完全正常，它正在工作。我们能够看到Pi基本上已正确安装。现在你可能会遇到某种问题。
 - en: is with respect to Pipar So that is the reason why I'm telling you create a
     new environment If you' are facing some kind。😊，Isue， just let me know what is
     the error that you are getting probably writing in the comment section。 Okay，
     now let's do one thing。 I'll just open Excel sheet Okay。 and probably I'll just
     try to create a。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是关于Pipar的，所以这就是我告诉你创建一个新环境的原因。如果你遇到某种问题，😊请告诉我你遇到的错误，可能在评论区写一下。好的，现在我们来做一件事。我会打开Excel表格。好的，可能我会试着创建一个。
 - en: '![](img/ee846c25d771f30e25168217f8991826_2.png)'
+  id: totrans-18
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/ee846c25d771f30e25168217f8991826_2.png)'
 - en: Some data sets， I'll say name， probably， I'll just say name。And H， right。 And
     suppose my name over here that I'm going to write is squ and also 31。 I'm going
     to say Suan S。Right， Shoan Shu。 I will just say， okay， 30。 and probably。 I'll
     just write some more names like Sunny。 Probably I'll also give the data as 29。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 一些数据集，我会说名字，可能我会说名字。还有H，对吧。假设我在这里写的名字是squan，还有31。我会说Suan S。对吧，Shoan Shu。我会说，好的，30。可能我会再写一些名字，比如Sunny。可能我还会给出数据29。
 - en: So this three data will just try to see how we can read this specific file。
     Okay。 I'm just going to save it。Let's see。 I'll save it in the same location where
     my Jupiter notebook is guys。 E I created a folder， I guess。You can save it in
     any location where your notebook file is open。 right， So it is not necessary and
     just making sure that you don't see any of my files。Okay。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这三个数据我们将尝试看看如何读取这个特定的文件。好的，我要保存它。让我们看看。我会将其保存在与我的Jupyter笔记本相同的位置。嗯，我创建了一个文件夹，我想。你可以将其保存在任何打开笔记本文件的位置，对吧，所以这不是必要的，只是确保你没有看到我的文件。好的。
 - en: and I'm just saving it。 Okay， I'm saving it as test 1。 Here you can see。 I'm
     saving it as test 1 dot C SV。 So I'll save it。 Let's keep this particular file
     saved。 Okay， now。 if I probably want to， you know。😊。![](img/ee846c25d771f30e25168217f8991826_4.png)
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 我正在保存它。好的，我将其保存为test 1。在这里你可以看到。我将其保存为test 1.dot CSV。所以我会保存它。让我们保持这个特定的文件已保存。好的，现在如果我可能想要，你知道。😊！[](img/ee846c25d771f30e25168217f8991826_4.png)
 - en: Read with the panda。 So what we write， we write P D dot read underscore CSV，
     right。 And I basically use this particular data sets called as。testest1。Dot CS
     Sv。 right So when I am executing this here， you will be able to see this specific
     information。 Now。 when I really want to work with Pipar， always， first of all，
     remember。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 用pandas读取。所以我们写的是`pd.read_csv`，对吧。我基本上使用这个数据集，叫做`testest1.CSV`，对吧？所以当我在这里执行时，你将能看到这个特定信息。现在，当我真的想用Pipar时，首先，记住。
 - en: we need to start a spark session。 And in order to start a spark session。 first
     of all。 let me create some more fields。 Just see this。 Just follow this particular
     steps with respect to creating a pass session。 So Ill write from Pipar。😊，Dot sqL。Import。Spark
     session。 Okay， and then I'll execute this。 You can see that it is exhibiting fine。
     Then I'll write， sorry。I don't know what has opened。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们需要启动一个spark会话。为了启动spark会话，首先让我创建更多字段。请看这个。请遵循创建pass会话的特定步骤。所以我将写`from Pipar`，`Dot
+    sqL`，`Import Spark session`。好的，然后我将执行这个。你可以看到它表现得很好。然后我会写，抱歉。我不知道打开了什么。
 - en: so Ill Ill create a variable called a spark and probably Ill use the spark session
     dot builder。And I'll say app name and here， I'll just give my session name。 Okay，
     so it'll be like practice。 suppose I'm practicing these things。 And then I can
     say get or create。 So when I actually execute this， you'll be able to see a spark
     session will get created。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我将创建一个名为spark的变量，可能我将使用`spark session.builder`。我会说应用名称，这里我只会给我的会话命名。好的，所以它将是练习。假设我在练习这些东西。然后我可以说获取或创建。所以当我实际执行时，你将能看到一个spark会话会被创建。
 - en: And if you' are executing for the first time， itll probably take some amount
     of time other than that if I executed multiple times。 then you'll be able to work
     it now here you can definitely see that in this when you're executing in a local。
     therell always be only one cluster。 But when you are actually working in a cloud。
     you can create multiple clusters and instances。 Okay。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你第一次执行，它可能会花一些时间，除此之外，如果我多次执行，那你就能使用它。现在在这里你绝对可以看到，当你在本地执行时，总是只有一个集群。但当你在云中工作时，你可以创建多个集群和实例。好的。
 - en: so the spark version that you'll be using is v 3。1。1 here you can see that this
     is basically present in the master when probably you'll be working in multiple
     instances。 there you'll be seeing masters and cluster one cluster to all those
     kind of information Okay so this is with respect to Sp Now let's I'll just write
     Df of pipar where I will try to read a data set。😊，With respect to spark。 Okay，
     now in order to read a reader set what I can write。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以你将使用的spark版本是v 3.1.1，在这里你可以看到，这基本上存在于主节点，当你可能在多个实例中工作时，你将看到主节点和集群的信息。好的，这与Spark有关。现在我将写`Df
+    of pipar`，我将尝试读取一个数据集。😊，关于spark。好的，现在为了读取一个数据集，我可以写什么。
 - en: I can write like the spark dot。Read， dot。There is a lot of options like CSV
     format。 JDBC parque scheme or table text， lot of options there。 So here we are
     going to take CSV and here Im just going to write tips1。Teps 1， do C， right。 And
     if I just try to execute it here， I'm getting some error saying that this particular
     file does not exist。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 我可以写`spark.Read`，然后有很多选项，比如CSV格式、JDBC、parquet、scheme或文本等，所以这里我们将采用CSV，我只是写`tips1.Teps
+    1 do C`，对吧。如果我试着在这里执行，我收到一些错误，说这个特定文件不存在。
 - en: Let me see。I think this file is present。嗯嗯嗯。Just let me see guys。 why this is
     not getting executed。 Ti 1。D F file open。 here I can see test 1 dot C V。 Okay，
     sorry， I did not write that C SV file。 I guess test 1 dot C SV。Okay， this has
     now work。 Now， if I go and see D dots Pipar。 it is showing these two strings，
     right this two column C0 and C1。 Now here you can see that guys。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我看看。我想这个文件是存在的。嗯嗯嗯。让我看看，为什么这个没有执行。`Ti 1.D F file open`。这里我能看到`test 1.CV`。好的，抱歉，我没有写那个CSV文件。我想是`test
+    1.CSV`。好的，这现在工作了。现在，如果我去看`D dots Pipar`，它显示这两个字符串，对吧，这两列C0和C1。现在你可以看到，伙计们。
 - en: I've created this particular Cv file right and it is just taking this A B as
     a default column probably So it is saying C0 and C1 So what we can actually do
     is that and probably if you really want to see your entire data set。 you can basically
     see like this Df underscore Pipar dot show here we'll be able to see name and
     age this this information I really want to make my column name or age as my main
     column right But when I'm directly reading this Cv file。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 我创建了这个特定的 Cv 文件，它只是将 A B 作为默认列，可能它在说 C0 和 C1。所以我们实际上可以做的是，可能如果你真的想看到整个数据集，你可以基本上像这样看到
+    `Df underscore Pipar dot show`，在这里我们能看到 name 和 age，我真的想把我的列名或 age 作为我的主要列。但当我直接读取这个
+    Cv 文件时。
 - en: probably we are getting underscore c0 underscore C1。 So in order to solve this
     what I will do is that we have a different technique So I'll write spark dot read
     dot option there is something called as option and inside this option what you
     can basically give is that there'll be an option with respect to。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 可能我们得到了 `underscore c0 underscore C1`。为了解决这个问题，我会使用不同的技术。所以我会写 `spark dot read
+    dot option`，这里有一个叫做 option 的东西，在这个 option 中，你可以基本上提供一个选项。
 - en: 😊，Header， like I see， there will be something like key value that you will be
     providing in option。 So what you can do， you can just write header。Commer true。
     So whatever value。 the first column first row value will be there， that will be
     considered as your header。 And if I write Csv with respect to test1。 now， I'm
     just going to read this test1 dataset set。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 😊，Header，像我看到的，会有一些像 key value 你将在 option 中提供的东西。所以你可以这样做，你可以写 `header.commer
+    true`。这样，第一列第一行的值将被视为你的 header。如果我写 `Csv` 以测试1，现在，我就要读取这个 test1 数据集。
 - en: Test 1 dot CS Sv。 Now， once I execute this here， you'll be able to see that
     I am able to get now name string H string。 Okay， but let's see our complete data
     set。 So here if I execute this now。 I'll be able to see the entire data set with
     this particular columns。 Okay。 so let me just quickly save this in my Df underscore
     Pi spark。😊，And now。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: '`Test 1 dot CS Sv`。现在，一旦我在这里执行这个，你会看到我能够得到现在的 name 字符串和 H 字符串。好的，但让我们看看我们的完整数据集。所以在这里，如果我现在执行这个，我将能够看到整个数据集与这些特定的列。好的。所以让我迅速地将其保存在我的
+    `Df underscore Pi spark` 中。😊，现在。'
 - en: let's go and see the type of。D F underscore pi spa， okay。Now， when I execute
     this here。 you'll be able to see guys when I was reading this Df right when I
     was。 if I go and see the type of this with the help of pandas here you'll be able
     to see that there is pandas dot code do frame do data frame。 But here you'll be
     seeing that when you are reading this particular data set。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们去看看 `type of D F underscore pi spa`。好的。现在，当我在这里执行这个时。你们会看到，大家，当我在阅读这个 Df
+    的时候。对，当我使用 pandas 的帮助来查看这个类型时，你会看到有 `pandas dot code do frame do data frame`。但在这里，你会看到，当你在读取这个特定数据集时。
 - en: it is of type Pipar do sQl do data frame do data frame。 Yes。 so that is pandas
     data frame is sQL dot data frame data frame。 Yes。 most of the Apis are almost
     same。 The functionalities are same There a lot of things that we will be learning
     as we go ahead。 but。😊，If I quickly want to see my。Probably， I don't know whether
     head will work。 Let's see。 Yes。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 它是 `Pipar do sQl do data frame do data frame` 类型。是的。所以 pandas 数据框是 `sQL dot
+    data frame data frame`。是的。大多数 API 几乎是一样的。功能也是一样的。随着我们继续前进，还有很多东西我们会学习。但。😊，如果我快速想看到我的。可能，我不知道
+    `head` 是否会工作。让我们看看。是的。
 - en: head is also working。 So if I use dot head， probably you'll be able to see the
     rose information I basically shown over here。 Now， if I really want to see the
     more information regarding my columns I will be able to use something called as
     print schema now in this this print schema is just like Df dot info。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: '`head` 也可以使用。所以如果我使用 `dot head`，你可能会看到我在这里基本展示的行信息。现在，如果我真的想看到关于我的列的更多信息，我可以使用一个叫做
+    `print schema` 的东西，现在这个 `print schema` 就像 `Df dot info`。'
 - en: which will actually tell about your columns like name is string and age string
     Okay so all these are some basic operations that you have actually done after
     installer again。 the main thing why I'm focusing on this is that just try to install
     this spice spark and keep it ready for my next session I will be trying to show
     you how we can change the data type how we can work with data frames。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 这实际上会告诉你关于列的信息，比如 name 是字符串，age 也是字符串。好的，这些都是你在安装之后实际执行的一些基本操作。我要强调的主要原因是，尽量安装这个
+    Spark，并为我的下一个课程做好准备，我会尝试向你展示如何更改数据类型以及如何处理数据框。
 - en: how we can actually do data precrossing， how we can handle null values， missing
     values。 how we can delete the columns， how we can do various things。 all those
     things will basically really discussing over there， how to drop columns and So
     I hope。😊。![](img/ee846c25d771f30e25168217f8991826_6.png)
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们如何实际进行数据预处理，如何处理空值和缺失值。我们如何删除列，如何做各种事情。这些内容基本上都会在那儿讨论，如何删除列。所以我希望。😊。![](img/ee846c25d771f30e25168217f8991826_6.png)
 - en: Like this particular video。 So this is just my pie spark introduction， okay。And
     we will continue the next session。 Probably。 I'll also give you this information
     in my Github where we will probably。 okay， Pi Sp is already there。![](img/ee846c25d771f30e25168217f8991826_8.png)
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 像这个特定的视频。这只是我对PySpark的介绍，好的。我们将继续下一个环节。可能。我还会在我的GitHub上提供这些信息，那里我们可能会，好的，PySpark已经在那儿了。![](img/ee846c25d771f30e25168217f8991826_8.png)
 - en: 我。Basic introduction， fine， So we will try to do this and we'll try to cover
     this a entire thing as we go ahead in the next session。 Remember， guys， again，
     our main aim is basically to make you understand how probably well be working
@@ -280,10 +383,15 @@
     need to understand regarding Pipar。 But yes， it is an amazing library itll actually
     help us to implement all the spark APIpis functionalityities that are that basically
     supports with Python。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 我。基本介绍，好的，所以我们将尝试完成这个，我们会尽量涵盖所有内容。在下一个环节中。记住，大家，我们的主要目标基本上是让你理解我们如何在云端工作。在此之前，我们真的需要了解所有基本知识，关于Pipar。但确实，这是一个令人惊叹的库，它将帮助我们实现所有与Python相关的Spark
+    API功能。
 - en: So everything all the things that are related to machine learning we can also
     do with the help of Pi。 So I hope you like this particular videoll see all in
     the next video have a great day。 Thank you on doll。😊。![](img/ee846c25d771f30e25168217f8991826_10.png)
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 所有与机器学习相关的内容，我们也可以借助Pi来完成。所以我希望你喜欢这个视频，我们下个视频再见，祝你有个愉快的一天。谢谢大家。😊。![](img/ee846c25d771f30e25168217f8991826_10.png)

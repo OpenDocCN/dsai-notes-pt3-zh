@@ -1,96 +1,131 @@
 - en: 【双语字幕+资料下载】OpenCV 基础教程，安装、原理、实战， 3小时带你搞定这个热门计算机视觉工具库！＜实战教程系列＞ - P6：第3章：图像缩放与截取
     - ShowMeAI - BV1zL411377L
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】OpenCV基础教程，安装、原理、实战，3小时带你搞定这个热门计算机视觉工具库！＜实战教程系列＞ - P6：第3章：图像缩放与截取
+    - ShowMeAI - BV1zL411377L
 - en: '![](img/c02cc4a0b399f0cf618147483dcfffbe_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c02cc4a0b399f0cf618147483dcfffbe_0.png)'
 - en: '![](img/c02cc4a0b399f0cf618147483dcfffbe_1.png)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/c02cc4a0b399f0cf618147483dcfffbe_1.png)'
 - en: Let's have a look at the Open TV convention。![](img/c02cc4a0b399f0cf618147483dcfffbe_3.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看一下Open TV约定。![](img/c02cc4a0b399f0cf618147483dcfffbe_3.png)
 - en: In mathematics， while plotting a graph， the positive side of the X axis is towards
     east。 and the positive side of the Y axis is towards the north。In open C， the
     X axis is the same。 but the positive Y axis is towards the south To understand
     it further， let's look at an image。Given that this image is 640 by 480， the origin
     of the image would be at this point。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 在数学中，绘制图形时，X轴的正方向朝东，Y轴的正方向朝北。在Open C中，X轴是一样的，但正Y轴朝南。为了更进一步理解，我们来看一张图像。假设这张图像是640×480，图像的原点就在这一点。
 - en: Whereas the maximum width and height would be at this point。Looking at a few
     more points。 we can further understand the convention。![](img/c02cc4a0b399f0cf618147483dcfffbe_5.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 此时，最大宽度和高度将是。看看更多的点，我们可以进一步理解约定。![](img/c02cc4a0b399f0cf618147483dcfffbe_5.png)
 - en: First we are going to learn how to resize an image now to resize the image we
     need to know the current size of our image。 so here we have a simple example where
     we are importing the library and then we are importing a image by the name Lamo
     which is shot for Lamborghini and we are just displaying it so let's look at our
     image。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先我们要学习如何调整图像的大小。现在要调整图像大小，我们需要知道图像的当前大小。这里我们有一个简单的例子，我们导入库，然后导入一个名为Lamo的图像，这是兰博基尼的缩写，我们只是在展示它，让我们看看我们的图像。
 - en: So this is our image。Now to find the size of our image， we are going to write
     print。And then we will check the shape of our image， so It dot shape。So if we
     run this again。It gives us 462 by 623 by3 Now this first 462 is the height， 623
     is the width。3 is the number for your channels， which is BGR。Now， in order to
     resize。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这是我们的图像。现在要找到图像的大小，我们将写打印。然后我们将检查图像的形状，所以用 It dot shape。如果我们再运行一次，它会给我们462×623×3。第一个462是高度，623是宽度，3是通道的数量，即BGR。现在，为了调整大小。
 - en: we are going to use the resize function。So we will write。IM G。Resize is equals
     to C2 dots res。And here we are going to write which image we want to resize， which
     is our main image。 and then we need to define the width and the height of our
     resize。 so here we have to define the width first and then the height so the width
     let's say we want to make it。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将使用调整大小函数。所以我们将写。IM G。调整大小等于C2点res。在这里我们将写我们想要调整大小的图像，即我们的主图像。然后我们需要定义调整大小的宽度和高度。这里我们首先定义宽度，然后是高度，假设我们想把宽度设置为。
 - en: So currently we have 623。Let's make it 300。And we can make the height as 200。So
     let's show this image。So here is our original image and here is the image that
     we have resized。So as you can see， we have successfully resized the number of
     pixels。 so if you want to check the shape again， you can write print and instead
     of image we can write image resize。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 目前我们有623。让我们把它改为300。我们可以把高度改为200。现在让我们展示这个图像。这里是我们的原始图像，下面是我们调整大小后的图像。正如你所看到的，我们成功地调整了像素数量。如果你想再次检查形状，可以写打印，而不是图像，我们可以写图像调整大小。
 - en: So if you print that again， you can see the original image is the one above
     and the resized image is the one below。So the same way you can actually increase
     the number of pixels as well。 but of course it will not increase the quality，
     but it can increase the number of pixels。 so for example，1000 by 500。So here we
     have a stretched out image。So yeah， so you can do that too。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以如果你再打印一次，你可以看到上面的原始图像和下面的调整大小的图像。以同样的方式，你也可以增加像素数量，但当然它不会增加质量，但可以增加像素数量。例如，1000×500。所以这里我们有一个拉伸的图像。所以是的，你也可以这样做。
 - en: So next we are going to learn how to crop an image and cropping can be very
     useful when you want specific parts of an image。Now image itself is just a matrix
     or an array of pixels。 so what we can do is we can delete in terms of an array
     or a matrix。What we can do is we can write。Image， corrupt。Is equals to。Image，
     so this is our main image that we want to crop。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来我们要学习如何裁剪图像，裁剪在你想要图像的特定部分时非常有用。现在图像本身只是一个像素的矩阵或数组。所以我们可以以数组或矩阵的形式删除它。我们可以写。图像，裁剪。等于。图像，这就是我们想裁剪的主图像。
 - en: but now we don't need an open CV function。 We can just use the matrix functionality
     so we can say we can define the starting point and the ending point for both our
     width and height。So for example， now this is a little bit tricky because the height
     comes first and then the width above in the open CV function。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是现在我们不需要使用OpenCV函数。我们可以直接使用矩阵功能，所以我们可以定义宽度和高度的起点和终点。例如，现在有点棘手，因为高度先来，然后在OpenCV函数中宽度在上面。
 - en: the width came first and then the height， so here we have the height first and
     then the width。😊。So we want to define how much height do we want to maintain so
     let's say we want so this is our maximum height 462 so let's say we are going
     to keep it from 0 to 000 to 200 so 0 till 200。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 宽度先来，然后是高度，所以这里我们先有高度，然后是宽度。😊。所以我们想定义想要保持的高度，我们设定最大高度为462，所以我们打算保持从0到200，范围是0到200。
 - en: And then the width we are going to keep， let's say， for example， from 200 to
     500。So，200 to 500。So we are going to display this now。So let's run it。😔，And there
     you have it。 So this is your cropped image so we can hide our。Rerecied image。And
     there you go。 this is your cropped image coming directly from your main image，
     so if we can just put it back。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们要保持的宽度，比如说，从200到500。所以，从200到500。现在我们要显示这个。所以让我们运行它。😔，你看，这就是你裁剪后的图像，所以我们可以隐藏我们的。重新裁剪的图像。然后你看，这就是直接来自主图像的裁剪图像，如果我们能把它放回去。
 - en: it will go somewhere here， yes。So what we have done is if you can。Yeah， if we
     can do it like this。 we can see better the numbers so the height we cropped from
     0 to 200。 so this is your starting point0 and till here is 200 so this area till
     here is 200。And then the width is from 200， so we started from this point， 200，
     and we went till 500。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 它会到这里，是的。所以我们所做的是，如果可以的话。是的，如果我们可以这样做。我们可以更好地看到数字，所以高度我们从0裁剪到200。这是你的起点0，到这里是200，所以这个区域到这里是200。然后宽度是从200开始，所以我们从这个点200开始，一直到500。
 - en: which is this point。So this is how you can crop an image。![](img/c02cc4a0b399f0cf618147483dcfffbe_7.png)
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是这个要点。所以这就是你如何裁剪一张图片。![](img/c02cc4a0b399f0cf618147483dcfffbe_7.png)

@@ -1,141 +1,191 @@
 - en: 【双语字幕+资料下载】OpenCV 基础教程，安装、原理、实战， 3小时带你搞定这个热门计算机视觉工具库！＜实战教程系列＞ - P7：第4章：形状与文本
     - ShowMeAI - BV1zL411377L
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】OpenCV基础教程，安装、原理、实战，3小时带你搞定这个热门计算机视觉工具库！＜实战教程系列＞ - P7：第4章：形状与文本 -
+    ShowMeAI - BV1zL411377L
 - en: '![](img/8a937ccf6391fb83a5e9a49c5cfde311_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8a937ccf6391fb83a5e9a49c5cfde311_0.png)'
 - en: So now we are going to learn how to draw shapes on images， we will learn how
     to draw lines。 rectangle， circles， and we will also learn how to put text on images。So
     first we will create a matrix filled with zeros now zero means black。 so we will
     use the Ny library to actually create our matrix。So we will write image。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们要学习如何在图像上绘制形状，我们将学习如何绘制线条、矩形和圆形，同时还会学习如何在图像上放置文本。所以首先我们将创建一个填充了零的矩阵，现在零表示黑色。我们将使用Ny库来实际创建我们的矩阵。所以我们将写图像。
 - en: Is equals to NP dot zeros。Now， inside that， we will define the size of our。Mattrix。
     which will be 512 by 512。 and then we will just display our image。 So let's write
     it down here。Cv2 dot I am show。 And then we have the window， which is image and
     then the image itself。So if we run this。😔，And there you go， so this is our block
     image。Now， this is。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 等于NP.dot zeros。现在，在里面，我们将定义我们的矩阵的大小，将是512乘以512。然后我们只需显示我们的图像。所以让我们在这里写下来。Cv2.dot
+    im show。然后我们有窗口，即图像，然后是图像本身。所以如果我们运行这个。😔，你会看到，这就是我们的块状图像。现在，这就是。
 - en: A gray scale image because it has only 512 by 512 pixels or boxes。 so we can
     confirm that by printing this out and we can write image dot shape。 this is how
     you check the dimensionality of an image。Or a matrix。 So this is 512 by 512 as
     we have mentioned here。 But now if we wanted to add the the color functionality。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 灰度图像因为它只有512乘以512的像素或方块。我们可以通过打印出来来确认这一点，我们可以写图像.dot shape。这是检查图像或矩阵的维度的方式。正如我们在这里提到的那样，这是512乘以512。但现在如果我们想添加颜色功能。
 - en: we have to give it three channels。 So we will write that this is 512。 or this
     is 512 by 512 by 3。This gives us the values from0 to255。Now next we are going
     to look at how we can color this image。 so if we wanted to color the complete
     image， we will just write IG。 we will say that we want to do it for the whole
     image and then we will define the color so for example I want it to be blue so
     I will write 255。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们必须给它三个通道。所以我们将写这是512，或者这是512乘以512乘以3。这给了我们从0到255的值。接下来我们要看看如何给这张图像上色。如果我们想给整个图像上色，我们只需写IG。我们会说我们想为整张图像做这件事，然后定义颜色，例如我想让它变成蓝色，所以我会写255。
 - en: 255 and 0 and0 so if we run this now you will see the whole image becomes blue。Now。
     what does this colon in the middle means？So if you remember from the previous
     chapter when we did cropping。 we used the limits of width and height。 So this
     is the same the same concept。 So for example。 if I write here 200。And 300。Then
     I will write another range。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 255和0和0，所以如果我们现在运行这个，你会看到整个图像变成蓝色。现在，中间的这个冒号是什么意思？如果你还记得前一章我们做裁剪时，使用了宽度和高度的限制。这是同样的概念。所以例如，如果我在这里写200和300，然后我会写另一个范围。
 - en: The first range is the height and the second range is the width。 So let's say
     I write here 100。To。300。So if I run this now， you will see the colored part is
     only the range that we have defined here。So if we wanted to color the whole image，
     we will just write a column this means that it is for the whole image itself or
     the whole matrix。Now moving on， we will learn how to create， let's just put this
     back to black。🤢。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 第一个范围是高度，第二个范围是宽度。所以假设我在这里写100到300。如果我们现在运行这个，你会看到上色部分仅是我们在这里定义的范围。如果我们想给整个图像上色，我们只需写一个冒号，这意味着它是针对整个图像或整个矩阵的。现在继续，我们将学习如何创建，先把这个恢复为黑色。🤢
 - en: And let's just comment this out as well。 Now， we will learn how to create lines。
     So for line。 we have the Cv2 dot line function。 So Cv2 dot line。And then we have
     to define which image are we talking about。 So we we will say IMG。 which is our
     image。 Then we have to define the starting point and the ending point of the line。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们也将这一行注释掉。现在，我们将学习如何创建线条。对于线条，我们有Cv2.dot line函数。所以Cv2.dot line。然后我们必须定义我们在谈论哪个图像。所以我们将说IMG，也就是我们的图像。然后我们必须定义线条的起点和终点。
 - en: So the starting point， let's say we will put 00。And the ending point。 let's
     say we will put 30 and 300。Then we need to define the color， so we will say0，
     then 255。 and let's say 255。 this will give us green。And then we can define the
     thickness。 it is not important， but you can define the thickness， so let's say
     we'll put it as three。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 起点，假设我们放00。终点，让我们放30和300。然后我们需要定义颜色，所以我们将说0，然后255。再说255。这将给我们绿色。然后我们可以定义厚度。虽然不重要，但你可以定义厚度，所以假设我们将其设置为三。
 - en: So let's run that。😔，And there you go， so our image is now green， sorry。 our
     image has now a green line。And it starts from 00 and it goes up to 300， 300。 Now。
     if you wanted to bring it till the end， we what we can do is we can write the
     width and height instead of giving it a number。So we know that image width and
     height we can get from the shape now the shape matrix has three elements。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们运行这个。😔，你看，现在我们的图像是绿色的，抱歉。我们的图像现在有了一条绿色的线。它从00开始，延伸到300，300。现在，如果你想把它延伸到尽头，我们可以做的是直接用宽度和高度，而不是给一个数字。所以我们知道图像的宽度和高度可以从形状中获取，形状矩阵有三个元素。
 - en: the height， the width and the channels， so the first one is0 which is the height
     so in this annotation we have to define the width first so we will write here
     one and then we will write here image dot shape。And then we will write here 0。
     So this is the height。This is the height and this is the width。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 高度、宽度和通道，第一个是0，也就是高度，所以在这个注释中我们必须先定义宽度，我们会在这里写1，然后写image.dot shape。然后我们会写这里的0。这是高度。这是高度，这是宽度。
 - en: So if we're run that， we should get。A diagonal line going all the way。Okay that's
     great。 So next we will move on to rectangle， so we will write cv2 dot rectangle
     and it follows the same convention so you have to write the image and then you
     have to define the points。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以如果我们运行这个，我们应该会得到一条对角线。好的，太好了。接下来我们将继续到矩形，所以我们会写cv2.dot rectangle，遵循相同的约定，你必须写下图像，然后定义点。
 - en: let's say0，0 and then we have to define the ending points。So that would be the
     corner point。 the diagonal point and let's say that is。To 50 by。3，50。Okay， and
     then we will。Add the color。 So let's change the color this time。 So we will put
     0，0 and 2，5，5。And then we have to define the thickness。 So thickness， let's say
     two。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设是0，0，然后我们必须定义结束点。所以那将是角落点，对角点，假设是250和350。好的，然后我们将添加颜色。这次我们改变颜色。所以我们将设置为0，0和2，5，5。然后我们需要定义厚度。所以厚度，假设是2。
 - en: So let's run this and there you have your rectangle。Now the thickness you can
     increase。 but what if you wanted to fill this area？So you can't just keep increasing
     the thickness until it gets you know。 in the middle， well you can do that， but
     it's not a good idea。 but C2 actually has a function for that so you you can write
     CVv2 dot filled。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们运行这个，得到你的矩形。现在你可以增加厚度。但如果你想填充这个区域呢？你不能只是不断增加厚度直到它填满，你知道的。虽然你可以这么做，但这不是个好主意。不过C2实际上有一个功能可以做到这一点，你可以写CVv2.dot
+    filled。
 - en: And you have to write it in capital letters， so you can use that to actually
     fill your rectangle。So next we will move on to little， let's put it back first。
     Next， we will move on to circles。 So we will write C2 dot circle， and then we
     will write our image。We have to define the center point of this the circle。 So
     let's say。450。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 你必须用大写字母书写，这样你才能用它来填充你的矩形。接下来，我们将继续移动到小的部分，先把它放回去。然后，我们将继续到圆形。所以我们会写C2.dot circle，然后我们会写我们的图像。我们必须定义这个圆的中心点。所以我们假设是450。
 - en: Then we have to define the radius， let's say 30， and then we need to define
     the color。Color。 we can put 2，5，5，2，5，5。 I think it will be a shade of blue。 and
     let's put。Thickness as 5。Let's see。 here you go。 Okay， so now you have the circle。And
     you can see our center point is 450。 which means we start from here till here，
     400 and from here till here is 50。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们必须定义半径，假设是30，然后需要定义颜色。颜色我们可以设置为2,5,5,2,5,5。我觉得这会是某种蓝色的阴影。然后我们把厚度设为5。看看，这里来了。好的，现在你有了这个圆。你可以看到我们的中心点是450，这意味着我们从这里开始到这里，400，从这里到这里是50。
 - en: And we have the light blue color okay。So next we are going to learn how to put
     text on images。 so we have the function called Cv2。t put text。And we will write
     again like before we will write our image。 and then we have to define what text
     do you want to show。So we can display here， for example， open。CV。Should't be saying。Open
     TV， and then we will write。The origin where we will start it。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们已经得到了淡蓝色的效果。接下来，我们要学习如何在图像上添加文本。我们有一个叫做Cv2.t put text的函数。我们会像之前一样写我们的图像，然后定义你想要显示的文本。所以我们可以在这里展示，比如说，open.CV。应该说是Open
+    TV，然后我们会写下起始位置。
 - en: So let's say we want to start it。At 300， and。Hundred。Okay， and then。Now this
     one is a little bit different than before we have to define the font of our text。
     so CV2 already has a few fonts in its library， but there's not a lot of them。
     but we have a few so you can write cv2。 font。C we2 dot。Fons， and then a bunch
     of fonts will show up。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设我们想开始。设置为300，然后。设为百。好的，然后。现在这个有点不同于之前，我们需要定义文本的字体。CV2库中已经有几个字体，但数量不多。不过我们有一些，所以你可以写cv2。font。C
+    we2 dot。Fons，然后会显示出一堆字体。
 - en: We don't need anything fancy。 So we will just select the first one。And then
     we have our scale。Then。 we have our color。Let's put it 1，50 and then 0。 And then
     we have our。Tickness。So let's run this and see how it looks like， So there you
     go we have it in green written open CVv。So let's， let's put it down a little bit。
     so we will put it down， let's say， 200。Yeah。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们不需要任何花哨的东西。所以我们只会选择第一个。然后我们有了我们的缩放比例。接着。我们有了颜色。我们设为1，50，然后0。然后我们有我们的。厚度。让我们运行一下，看看效果如何。所以你看，我们以绿色写下了Open
+    CVv。让我们，把它稍微调低一点。设为200。好的。
 - en: so let me show you what thickness and scale does to。The text。 So if I increase
     it to2。Now you will see it's much bigger， in fact it's going out of the image
     itself。So let's put it back to one， by the way， you can put it at point decimal
     places as well。 so you can write 0。5。And it will。It will become really small。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我给你展示一下厚度和缩放比例对文本的影响。如果我把它调高到2。现在你会看到它变得更大，实际上已经超出图像本身了。所以让我们把它调回1，顺便提一下，你也可以设置小数位。所以你可以写0.5。那样它会变得非常小。
 - en: And then you can define the thickness as well。So for example， we'll put this
     as one。And here you can see the difference。![](img/8a937ccf6391fb83a5e9a49c5cfde311_2.png)
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后你可以定义厚度。例如，我们把它设为1。在这里你可以看到差别。![](img/8a937ccf6391fb83a5e9a49c5cfde311_2.png)

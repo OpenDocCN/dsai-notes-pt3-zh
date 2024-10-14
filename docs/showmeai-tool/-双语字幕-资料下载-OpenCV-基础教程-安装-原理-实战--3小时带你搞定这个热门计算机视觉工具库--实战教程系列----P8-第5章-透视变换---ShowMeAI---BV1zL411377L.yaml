@@ -1,63 +1,86 @@
 - en: 【双语字幕+资料下载】OpenCV 基础教程，安装、原理、实战， 3小时带你搞定这个热门计算机视觉工具库！＜实战教程系列＞ - P8：第5章：透视变换
     - ShowMeAI - BV1zL411377L
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】OpenCV基础教程，安装、原理、实战，3小时带你搞定这个热门计算机视觉工具库！＜实战教程系列＞ - P8：第5章：透视变换 -
+    ShowMeAI - BV1zL411377L
 - en: '![](img/34ad9fcfc7c725f798a5ce2938abe563_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/34ad9fcfc7c725f798a5ce2938abe563_0.png)'
 - en: '![](img/34ad9fcfc7c725f798a5ce2938abe563_1.png)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/34ad9fcfc7c725f798a5ce2938abe563_1.png)'
 - en: So now we are going to learn how to use word perspective on an image to get
     its bird eye view。So what we have here is an image by the name cards in the resources
     folder and all we are doing is we are displaying it using the IM show function
     So if we run this we will get our image。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们将学习如何在图像上使用透视以获得其鸟瞰图。我们这里有一张名为cards的图像，位于资源文件夹中，我们所做的就是使用IM show函数显示它。所以如果我们运行这个，我们将得到我们的图像。
 - en: What we will do is we will try to get this king of spades。And we will try to。Get
     it as flat as possible。 So we will need the four points。And using these four points。
     we are going to apply the word perspective。So the first thing we will do is we
     will define our four corner points of the card。 so I've already taken the numbers
     and we will just type them in， so we will declare points。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们要做的是尽量将这张黑桃国王变得平坦。因此我们需要这四个点。使用这四个点，我们将应用透视的概念。首先我们要做的是定义扑克牌的四个角点。我已经记下这些数字，我们只需输入它们，因此我们将声明点。
 - en: As a number array of float。And inside that， we will have four different points。So
     let's type in the values where I have 111。Then we have2，1，9。So this is for this
     particular image and for that particular card that we were referring to before。
     so this is 188。Then 1，54。 if you want to get these values， you can open up paint
     on Windows。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 作为一个浮点数数组。在里面，我们将有四个不同的点。所以让我们输入值，我有111。然后我们有2，1，9。这是针对之前提到的这张特定图像和那张特定扑克牌。因此这是188。然后1，54。如果你想获取这些值，你可以在Windows上打开画图。
 - en: and it will when you move your cursor around at the bottom。 it will give you
     the values of the pixels。So。Those are our points。 Now， for each one of them。 we
     need to define which corner are we referring to。 So is this origin as in the first
     point on the left hand corner and is this the last one。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 当你在底部移动光标时，它将给出像素的值。所以。这些是我们的点。现在，对于每一个点，我们需要定义我们所指的哪个角落。这是左上角的第一个点吗？这是最后一个点吗？
 - en: So you have to define all of these。 So in point2。We are going to define it。Loat
     32。And then again。 we have four points。So first， we have our 0，0。Then we have
     width and0。Then we have0 and height。And then we have。V1 height。Now， we did not
     define width and height。 That's why it's giving error。 So let's define width and
     height。So。A playing card is normally 2。5 by 3。5 inches。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以你必须定义所有这些。在point2中，我们将对其进行定义。Loat 32。然后我们还有四个点。首先，我们有我们的0，0。然后我们有宽度和0。接着是0和高度。最后是V1高度。现在，我们没有定义宽度和高度。这就是为什么会出现错误。所以让我们定义宽度和高度。一个扑克牌通常是2.5乘3.5英寸。
 - en: so we will keep the aspect ratio。So we can put 250 by 350。So now we will get
     our matrix。 the transformation matrix。That will be required for the perspective
     itself。 So the matrix we can get by C2， so we have a function get perspective
     transform。So， get。P。Perspective transform， there you go。 So you have to define
     the points， so。Points1， and  point2。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们将保持纵横比。因此我们可以设置为250乘350。现在我们将得到我们的矩阵，即透视变换矩阵。这个矩阵可以通过C2获得，我们有一个函数来获取透视变换。所以，获取P。透视变换，就这样。所以你必须定义这些点，点1和点2。
 - en: Now we can get our output image based on this matrix。So we can say image output
     is equals to C2。Dot verp perspective。Wp。Perspective， and then we need to define
     our source image。And we have to define our matrix。And then we have to define the
     width and the height。That we defined earlier。 So with and the。Heい。So， now。If we
     output this image。Let's see。C。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们可以根据这个矩阵获得输出图像。因此我们可以说图像输出等于C2。点verp透视。Wp。透视，然后我们需要定义我们的源图像。接着我们必须定义我们的矩阵。然后我们必须定义之前定义的宽度和高度。那就是宽度和高度。所以，现在，如果我们输出这个图像。让我们看看C。
 - en: B2 dot I am show。And then， we can say。Outputs。And then we have our image output。Itcame
     double， okay。So let's run that。😔，And there you go， so we are getting the word
     perspective of this image based on these points。![](img/34ad9fcfc7c725f798a5ce2938abe563_3.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: B2点I am show。然后，我们可以说。输出。然后我们有我们的图像输出。它是双重的，好的。让我们运行这个。😔，就这样，所以我们基于这些点得到了这张图像的透视效果。![](img/34ad9fcfc7c725f798a5ce2938abe563_3.png)

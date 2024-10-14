@@ -1,12 +1,15 @@
 - en: 【双语字幕+资料下载】PySpark 大数据处理入门，带你玩转Python+Spark大数据操作与分析！＜实战教程系列＞ - P3：L3- Pyspark
     DataFrames 处理缺失值 - ShowMeAI - BV1sL4y147dP
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
 - en: 。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/e973b83e1babc963d0d6504ca497ee4d_1.png)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
 - en: Hello。 my name is Krisna。 and welcome to my UD channel。 So guys。 we will be
@@ -15,6 +18,7 @@
     to continue。 and probably this is the tutorial3， which is the part3 with respect
     to data frame operations in this particular video we are going to see how we can
     handle missing values。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
 - en: null values know So in short， this many things will actually try to do we'll
@@ -24,10 +28,12 @@
     handling missing value by mean median or mode so here I'm just going to write
     it as mean median and more probably So all these things we are actually going
     to see again。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
 - en: the main thing is that I really want to show you that how we can handle the
     missing。😊。![](img/e973b83e1babc963d0d6504ca497ee4d_3.png)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
 - en: Vals， this is pretty much important because in pandas and also we try to do
@@ -35,12 +41,14 @@
     we usually start a Pi park。 When we are working with Pi park， we really need to
     start a Pi park session。 So I hope till now you all are familiar。 So I write for
     Pi park dot S Q L。 I'm going to import。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
 - en: Spark session。Okay， and then I'm going to create a variable with spark。 And
     then here I'm going to write spark session dot。Build a。North A。Okay， dot app name。
     let me just keep this app name as practice。 Okay， because I'm just practicing
     things。 and then I write get or create and just execute this。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
 - en: So probably it will take some time to get executed。 Yes， it has got executed
@@ -49,6 +57,7 @@
     all the candidate names and probably they are some values which are left blank
     here you can see some values are left blank So we'll try to see how to probably
     drop an nu values or how to handle this particular missing values and nu okay。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
 - en: so let's proceed so first of all， in order to read the data set I'll just write
@@ -56,12 +65,14 @@
     dot cv and it is saved in the same location where this particular file is anyhow
     I'll be providing the in this Github also and I'm going to use header is equal
     to true and probably there is also infer schemeche is equal to true so that。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
 - en: I'll be able to get the data set properly so probably when I am reading this
     you will be able to see this is my data frame that I'm actually getting if you
     want to see the entire data set this will be like use dot show。And this is your
     entire data set here。 You are having null values and are perfect。 So what。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
 - en: let me do one thing。 Let me just save this in a variable。 So I'll write D F
@@ -69,6 +80,7 @@
     set。 Okay， perfect。 we are pretty much good till here。 We are working fine with
     respect to this。 We know we have actually read some kind of data set also now，
     probably first。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
 - en: let's start how do we drop the columns。 droppinging the columns is very， very
@@ -76,6 +88,7 @@
     and provide my column name like this。 right？ So column。😊，Right， column name， suppose
     I'll write Df dot price spark。 and here column name will be name。So let me write
     it as name。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
 - en: And I can basically go and check out my dot show。 then you'll be able to see
@@ -83,6 +96,7 @@
     showed you probably in the previous session also okay。 and this is how it is basically
     done basically dropping your feature or columns。 but our main focus is dropping
     the nonvalue。 So right now。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
 - en: let me just write Df dot by spark dot show。 So this is my data set right now
@@ -91,12 +105,14 @@
     then you have drop fill and replace。 So first of all， I'll start with drop。Now。
     inside this particular drop， always remember if I don't give anything。Okay， and
     just execute it。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
 - en: Here。 you'll be able to see wherever there is a null values。 those all rows
     will get deleted。 So here you'll be seeing that this last three rows are not present，
     right。 So here you can see till shubum， this particular values present。 remaining
     all the rows has been removed。 perfect， right， So not a problem at all。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
 - en: So here you in short， what you' are doing is that whenever you use dot and a
@@ -104,12 +120,14 @@
     na values are actually present or null values are actually present。 Okay， perfect。
     This much is fine。 If I go and search in the drop， there are two main features。
     One is how and one is threshold。 And then one is subset。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
 - en: So let's try to understand this particular features。 Now， first， I will start
     with how。😊。Any is equal to how I'll just write like this。 Okay。 so suppose if
     I write D F dot Pipar dot any dot drop。 and if my。How the how value can have two
     values，1 is any，1 is all。Okay， one is any。1 is all。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
 - en: Any if the value selected as any drop or row if it contains any nulls。 like
@@ -117,6 +135,7 @@
     is entire nulls。 you know， then by default， it is going to get dropped okay。But
     how is equal to all When do we use all that basically means suppose if in your
     feature， you have。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
 - en: suppose if in your row， you have all the values as null。In this case， you have
@@ -124,12 +143,14 @@
     and well。 then only it will get dropped。 Okay， so lets see whether this will work
     or not。Definitely not going to work because I know all at least one values are
     at least the CO1 values。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
 - en: 11 value，1 none non null values is always there right If I am using how is to
     all。 it is going to drop those records， which is having completely not by default。
     this how value should be having any right so by default。 it is any any basically
     says that whether there is one null or2nal。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
 - en: you are just going to drop it drop those specific records right pretty much
@@ -137,6 +158,7 @@
     to threshold What is this threshold。I'll tell you what is this threshold shot。Now，
     let me just use this， okay。I know how is any。 but there is another one more option
     called as thresh。 Now， in thsh。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
 - en: what we do is that suppose if I write， let's keep the threshold or as2。It basically
@@ -145,6 +167,7 @@
     column has got deleted over here。Okay。 the sorry last row has got deleted why
     it has got deleted because we have kept the threshold value S2 it says that at
     least two non null values should be present。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
 - en: 😊，Okay， at least two non null values。 Now， here you have two non null values，
@@ -153,12 +176,14 @@
     10， this is not got deleted。 This is same over here，3410， right，34，10 you have
     if I go and show you 3410 over here and 38000 at least here you add three non
     nu values here you add two non nu values。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
 - en: So here， whenever we give some threshold value as2。 that basically itll go and
     check whether in that specific row， at least two non nu values are there。 if it
     is there， it is just going to keep that row otherwise。 it is just going to delete
     that is what you can you can also check out with one。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
 - en: So if I go and see one， then you can see that all this particular rows are there
@@ -166,6 +191,7 @@
     if I make it as three， Okay。 that's see what it will come。😊，Now， here you can
     see at least this is the remaining all has been deleted。 right？ See over here，
     you had only two non non values here also， you here you add  three。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
 - en: So this is the 3410，38000 an nu。 So here you can see the value。 That is a understanding
@@ -174,16 +200,21 @@
     the third parameter inside my draw feature。 And remember， these all features are
     pretty much simple with respect to if you have worked with pans the same thing
     we are working away subset。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是3410，38000和nu。所以在这里你可以看到这个值。这是关于阈值的理解。现在，让我们继续下一个，称为子集。所以我将在这里写为subset，因为这是我draw
+    feature中的第三个参数。请记住，这些特征如果你曾在pandas中工作过，都是相当简单的，我们正在处理的也是子集。
 - en: In the subset， we can actually provide。Suppose I'll say in the subject， let's
     remove threshold。 I don't want to keep any threshold。Let's say I just want to
     drop N values only from a specific column。 probably only from experience column。Then
     I can basically give it as a subset so from the experience column you can see
     that wherever there was na values in the records。 all those that whole record
     has been deleted right so like this you can apply with respect to this。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 在子集中，我们实际上可以提供。假设我在子集里说，去掉阈值。我不想保留任何阈值。假设我只想从特定列中删除N值，可能只从经验列中。然后我可以将其作为子集，从经验列中你可以看到在记录中所有的na值。所有这些记录都被删除了，所以你可以这样应用。
 - en: suppose you want to apply it in age you can also apply this right wherever there
     was non values that whole record has got deleted in the age columns。So this is
     with respect to subset So I hope you are getting an idea guys。 this is pretty
@@ -191,39 +222,51 @@
     trying to apply whatever things we actually did in pandas and this is very。 very
     handy when you are working with missing data okay。😊，Let's go with the next thing。
     Now。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设你想在年龄中应用它，你也可以在年龄列中应用这个，任何没有值的记录都会被删除。所以这是关于子集的内容。我希望你们能理解，伙计们。这非常好，因为我们实际上正在尝试应用我们在pandas中所做的事情，这在处理缺失数据时非常方便，好的。😊，我们继续下一个内容。
 - en: let's go and fill the missing value， filling the missing value。Now。 in order
     to fill the missing value again， I' will be using the Ipar dot fill。🤧。Dot okay，
     sorry。 any dot fill。Okay， and inside this， this fill will take two parameters。
     One is value。 and the one is subset。 Okay， now suppose if I go and give value
     like this。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们去填补缺失值，填补缺失值。现在。为了填补缺失值，我将使用Ipar.dot fill。🤧。好的，抱歉，any.dot fill。好的，里面这个fill将接受两个参数。一个是值，另一个是子集。好的，现在假设我这样给出值。
 - en: suppose I say missing value。And if I go and write dot show。Then what it is going
     to do wherever there is an n value is just going to replace with missing values。
     So here you can see here the null value is there。 So missing value， missing value。
     missing value missing。 Suppose if you really want to perform this missing value
     handling in only a specific column。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设我说缺失值。如果我写.dot show。那么它将把所有的n值替换为缺失值。所以你可以看到这里有一个null值。所以缺失值，缺失值，缺失值缺失。假设你真的想在特定列中执行缺失值处理。
 - en: then you can basically write your column name also like this。So this will be
     my X subset。 Okay。 I can also give multiple records like this。See， I can also
     give multiple exs， like experience。 commarma， probably age。Goma。H。In call in list
     right when I give like this。 then it this kind of functionality will happen in
     two columns right， pretty much simple。 So guys。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后你可以像这样写你的列名。这将是我的X subset。好的。我也可以这样提供多个记录。看，我还可以提供多个exs，比如经验，commarma，可能是年龄。Goma。H。在列表中，当我这样提供时，这种功能将在两列中发生，简单得多。所以伙计们。
 - en: now next step， what we are going to do is that we are going to take a specific
     column and probably we are going to handle the missing values with the help of
     mean of that specific column or medium of that specific column。 So right now if
     I go and check out my D dot spice spark here if I go and see my dot show value。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在下一步，我们要做的是选择一个特定的列，可能会通过该特定列的均值或中位数来处理缺失值。所以现在如果我查看我的D.dot spice spark，看看我的.dot
+    show值。
 - en: This is my entire data set over here。 Now what I'm going to do is that I'm going
     to take this particular experience column and probably replace the null values
     with the mean of the experience itself。 So in order to do this， I'm going to use
     an impter function。 And guys。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
 - en: if you know about impter function we basically use that with the help of a scale
@@ -234,6 +277,7 @@
     I'm just saying that for age experience salary I'm just going to find out this
     dot format do C output columns and then I'm going to keep the strategy as mean
     you can also change the strategy as median mode and everything。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
 - en: So I'll execute this this is got execute fine and then we are just going to
@@ -251,20 +295,24 @@
     now you'll be able to see the median value and here is your initial null columns
     which sorry here are the columns which has null values and here are all the columns
     which has basically the imputed values right with respect。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
 - en: To mean media So I hope you like this particular video guys this was with respect
     to tutorial3 And in this video we are tried to see how to drop columns。 how to
     drop rows， how to check out various parameters with respect to dropping functional
     and handling missing values by mean media and mode。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
 - en: You can also try out mode。 It is up to you and you can definitely just try it
     out and try to see whether you are able to do it or not。 So I hope you like this
     particular video。 please just subscribe the channel if youre not subscribe I'll
     see all in the next video Have a great day。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
 - en: Thank you and bye bye。😊。![](img/e973b83e1babc963d0d6504ca497ee4d_5.png)
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
