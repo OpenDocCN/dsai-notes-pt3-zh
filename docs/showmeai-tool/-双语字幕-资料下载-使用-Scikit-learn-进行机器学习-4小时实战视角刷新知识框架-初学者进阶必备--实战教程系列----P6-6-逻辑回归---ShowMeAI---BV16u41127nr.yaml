@@ -1,134 +1,176 @@
 - en: 【双语字幕+资料下载】使用 Scikit-learn 进行机器学习，4小时实战视角刷新知识框架，初学者进阶必备！＜实战教程系列＞ - P6：6）逻辑回归
     - ShowMeAI - BV16u41127nr
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】使用 Scikit-learn 进行机器学习，4小时实战视角刷新知识框架，初学者进阶必备！＜实战教程系列＞ - P6：6）逻辑回归
+    - ShowMeAI - BV16u41127nr
 - en: '![](img/8892c901c6b889b0878d2715f8e7128b_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8892c901c6b889b0878d2715f8e7128b_0.png)'
 - en: Yeah。Hello， so when we started learning about machine learning。 the first kind
     of problem we talked about was regression and after we learned about regression。
     we learned about some of the linear algebra underlying it and now we're going
     to be moving on to a second kind of machine learning problem。 which is classification。And
     so I just want to review the main categories of machine learning。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗯，大家好，当我们开始学习机器学习时，首先讨论的问题是回归。在学习了回归之后，我们了解了一些其基础的线性代数，现在我们将转向第二种机器学习问题，那就是分类。所以我想回顾一下机器学习的主要类别。
 - en: There's three main categories， some people will say four。 but there's reinforcement
     learning which is about these multily stage decisions。 we're not doing that in
     320。We're really interested in supervised machine learning。 which is where we're
     trying to make some sort of prediction about maybe the future or about some other
     unknown。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 主要有三个类别，有些人会说是四个。但有强化学习，这与多阶段决策有关。在 320 课程中我们并不涉及这一点。我们真正感兴趣的是监督学习，也就是我们尝试对未来或其他未知事物进行某种预测。
 - en: and then there's unsupervised where there is no particular thing that we're
     trying to predict。 but we're looking for some sort of patterns or simplicity within
     the data。We've been learning about regression， which is where we want to predict
     a quantity。 and so we're going to be learning about the other most common kind
     of supervised machine learning which is。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后还有无监督学习，那里没有我们想要预测的特定事物。但我们在寻找数据中的某种模式或简化。我们一直在学习回归，这是我们想要预测一个数量的地方。所以我们将学习另一种最常见的监督学习，这就是。
 - en: well how do we predict a category and that's called classification。So just to
     review these。 the two differences， here I have a big data frame and all of these
     things here are features and among these features I have a mix。Of both quantities
     and categories。 And that's not really relevant looking at my features to figure
     out what kind of problem this is。 when I want to think about what kind of problem
     I'm dealing with I while looking at this label。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么我们如何预测一个类别呢，这被称为分类。所以简单回顾一下这两者之间的区别。我这里有一个大数据框，所有这些东西都是特征，而在这些特征中，我有混合的数量和类别。在查看我的特征以确定我面临什么样的问题时，这实际上并不相关。我要考虑我处理的问题类型时，我会查看这个标签。
 - en: What am I trying to predict is that quantitative。Or categorical in this case，
     it's quantitative。 so this is a regression problem。And so what will we do。 I might
     have some data up here where both my features and my labels are known。 and so
     I'll fit a model to that， and then I'll use that same model to predict。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我试图预测的是定量的。或者在这种情况下，是定量的。所以这是一个回归问题。那么我们会怎么做呢？我可能在这里有一些数据，其中我的特征和标签都是已知的。因此我会将一个模型拟合到这些数据上，然后我会用同一个模型进行预测。
 - en: Perhaps where that label is unknown， or I might pretend it's unknown so I can
     basically test the effectiveness of my model。If that's some sort of test data
     set。A classification problem looks very similar again。 I might have some mix of
     quantities or categories as my features。 the main difference now is that I have
     a categorical y or label column。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 或许这个标签是未知的，或者我可能假装它是未知的，以便我可以基本上测试我的模型的有效性。如果这是某种测试数据集。分类问题看起来又非常相似。我可能有一些数量或类别的混合作为我的特征。现在主要的区别是我有一个分类的
+    y 或标签列。
 - en: otherwise I'm still going to be fitting my features to my label and then trying
     to do some sort of prediction on it。So as I've mentioned， right we have these
     four big categories and S KL has so many different algorithms for each of them
     or implementations for each of them。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 否则我仍然会将我的特征与标签相匹配，然后尝试对此进行某种预测。所以如我所提到的，我们有这四个大类，而 S KL 针对每一类都有许多不同的算法或实现。
 - en: And so the one we've learned so far is linear regression。 That's what we've
     been using for regression。 So a linear regression model is what we call a regressiongressor。Very
     confusingly， what we're going to be learning now is called a logistic regression
     and it is not a regression it's actually a classifier right so the name says linear
     regression but classifier。 so don't get confused right even though we're learning
     linear regression of logistic regression。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 到目前为止我们学到的是线性回归。这就是我们一直用于回归的内容。所以线性回归模型被称为回归模型。非常令人困惑的是，我们现在要学习的叫做逻辑回归，它实际上不是回归，而是一个分类器。名字虽然是线性回归，但它是分类器。所以不要搞混，尽管我们正在学习逻辑回归的线性回归。
 - en: I am teaching you a regression model and then also a classification model。So
     I'm going to exit out of here and head over to my notebook to try to introduce
     this。![](img/8892c901c6b889b0878d2715f8e7128b_2.png)
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我正在教你一个回归模型，以及一个分类模型。所以我将退出这里，前往我的笔记本，试着介绍一下这个。![](img/8892c901c6b889b0878d2715f8e7128b_2.png)
 - en: And let me see here。 Here is my notebook。 I have some self important。 Maybe
     I'll come back to that later。 let me just jump down here for now。I have this data
     frame。 which has some data from a very famous machine learning dataset set called
     the IIS data set。The idea of the IIS data set is that you have all these measurements
     about iris flowers。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我看看。这是我的笔记本。我有一些自以为是。也许我稍后会回到这个话题。现在让我先跳到这里。我有这个数据框，它包含了一些来自一个非常著名的机器学习数据集的数据，叫做IIS数据集。IIS数据集的理念是关于鸢尾花的所有这些测量。
 - en: so for example， what is the size of the petals， what is the length or width
     of the sappals which are I guess like the grain leaves between the petals。There
     are different varieties of ires， so I put the varieties here in this far right
     column。This whole thing I'm looking at right now is a test data set and it only
     has 10 samples in it。 which is tiny right normally we'd have a much larger test
     data。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 比如说，花瓣的大小是多少，萼片的长度或宽度是多少，我想它就像花瓣之间的叶子。鸢尾花有不同的品种，所以我把品种放在最右边的这一列。现在我看到的整个内容是一个测试数据集，它只有10个样本，这个数量非常少，通常我们会有更大的测试数据。
 - en: I'm just trying to keep it small and simple in this case。I'm passing in this
     random state， so that。Even though it's somewhat random， I mean every time I run。
     it'll be the same if I put a different number here。I would jet a different。Random。
     and I'm using random kind of carefully order each time。 So this is just so I can
     reproduce it。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 我只是想保持简单和小巧。在这种情况下，我传入这个随机状态。尽管它有点随机，我的意思是每次运行时，结果都会相同。如果我在这里放一个不同的数字，我会得到不同的随机结果。而且我每次都很小心地使用随机数。所以这样做只是为了让我可以复现。
 - en: even though it wants me basically random。 I want random， but reproducible。So
     I've done that train test， but I'm just putting 10 here。 and so what we're going
     be doing is we're going to be fitting different models to the training data and
     then just seeing how they act with this very small test data set。And looking at
     this， there are three features I' may be interested in when we look at the dimensions
     of the sepals。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 即便它希望我基本上是随机的。我想要随机，但可复现。所以我已经进行了训练和测试，但我这里只放了10个样本。因此我们将要做的是将不同的模型拟合到训练数据上，然后看看它们在这个非常小的测试数据集上的表现。看这一点时，有三个特征我可能会感兴趣，当我们查看萼片的维度时。
 - en: And then I have this constant column， remember that sometimes when you have
     these models。 you could have coefficients in a separate intercept。Or you could
     just have coefficients。And then the last coefficient should be multiplying the
     one column and that's what I'm doing here。 I think I'll make the later examples
     a little bit simpler。 Those are my features。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我有这个常量列，记住有时当你有这些模型时，你可能会有单独的截距系数，或者你可能只会有系数。而最后一个系数应该乘以这一列，这就是我在这里所做的。我想我会把后面的例子做得简单一些。这些就是我的特征。
 - en: I actually have multiple y columns here。 Im just try to see if I can predict
     different things over here Can I predict what the pedal widtht is。And I predict
     whether or not a particular variety is a Ctosa。 there's actually three varieties
     in general， so can I just predict any variety。 you can see that whenever I have
     a Ctosa here。It's true for cases。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 我实际上这里有多个y列。我只是想看看我能否预测不同的东西。我能否预测花瓣的宽度？我能否预测特定品种是否为Ctosa？实际上总共有三种品种，所以我能否预测任何一种品种。你可以看到每当我有Ctosa时，它对案例是真实的。
 - en: it's false right because it's not acetosa， so that's what I'm going do。 I'm
     going to see if I can predict these three different columns based on these three
     different features。 I guess it's really like two features。And so there's four
     things we're going to do。 where're I do a regression on the pedal with， and that's
     really just kind of review。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是 false，对吧，因为它不是 Setosa，所以这就是我将要做的。我将看看是否可以根据这三个不同的特征预测这三个不同的列。我想这实际上是两个特征。因此我们将进行四件事。我将在花瓣宽度上进行回归，这实际上只是复习。
 - en: We're going to do a binary classification on the Setosa column， and so we're
     going to try to predict。Whether it's true or false， binary means two， and so that's
     why they're just two things here all。 it's either true or false。I'm going to use
     that same model to not just tell me whether it's true or false。 I'm going to ask
     the model for some sort of probability that it's true and probability that it's
     false。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将对 Setosa 列进行二元分类，因此我们将尝试预测。是否为真或假，二元意味着两个，这就是为什么这里只有两个东西。要么是真的，要么是假的。我将使用同一个模型不仅告诉我它是否为真或假。我将询问模型它为真的概率和为假的概率。
 - en: '![](img/8892c901c6b889b0878d2715f8e7128b_4.png)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/8892c901c6b889b0878d2715f8e7128b_4.png)'
 - en: Rather than just say， hey， it's true， I'd like to see somebody like， oh。 there's
     a 95% chance it's true。And then finally， so multi binary means two。 multiclass
     means I guess more than two， and so we're going to do that over here right you
@@ -136,97 +178,126 @@
     complicated in that situation。Okay， so I'm right head down here and I am going
     to first just start with a regression and some'm going to say regression equals
     linear regression。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 与其说，嘿，是真的，我想看看是否有人说，哦。这有 95% 的机会是真的。最后，多重二元意味着两个。多类意味着我想更多于两个，所以我们将在这里进行，你可以看到我有三个不同的类别，在这种情况下事情会变得复杂一点。好吧，所以我会在这里，然后我首先要开始一个回归，我要说回归等于线性回归。
 - en: This is just review from before and。I have all these options in here。And this
     fit intercept  one is something I'm make sure I turn to be false， so fit intercept。s
     false what this normally does if it's true is it would add this one's column for
     me effectively when I'm saying false because well I've already done that manually。
     and that just gives give me my example a little cleaner later on。So I have this
     thing。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 这只是之前的复习。我在这里有所有这些选项。而这个 fit intercept 一定要确保我设置为 false，所以 fit intercept 是 false。如果它为真，通常会为我添加这一列，因为我已经手动完成了。所以这样可以让我稍后得到更干净的示例。因此我有这个东西。
 - en: And I want to fit it to some data， so I'm going to say regression dot fit。And
     when I fit what do I do I have my x and my Y， and then after that I could do regression
     dot predict。Maybe some other x's， and then that would return a Y right， so I had
     something like this。Maybe I'll say y， y 2 and x2。So in my particular example。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 我想将其适配一些数据，所以我将使用回归 dot fit。当我拟合时，我的 x 和 y 是什么，然后我可以使用回归 dot predict。也许一些其他的
+    x，然后那将返回一个 y，对吧，所以我会有这样的东西。也许我会说 y，y 2 和 x2。在我的特定示例中。
 - en: I have my training and test data and so what am I trying to predict right now。
     I'm trying to predict the pal wet。Right， I'm going to copy this column name。And
     I am going to。 when I'm doing my。When I'm doing my fitting， I'm going to pull
     that out of。My training data。 so I'm going to put that in here and quotes。That's
     my why。And then then my axe， well， it will be。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 我有我的训练和测试数据，所以我现在试图预测什么。我试图预测花瓣湿度。对吧，我将复制这个列名。当我进行拟合时，我会从我的训练数据中提取它。所以我将把它放在这里，并用引号包裹。这就是我的
+    y。然后我的 x，嗯，它将是。
 - en: It will be again my training data， and then I have to have like some columns
     here。I guess a list of columns。And so I actually already created that right here
     I have these x columns。 those are the sepple length， sepple width， and then constant。
     and so this will be my list that I put inside of here。And I'll basically get those
     three columns。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将再次是我的训练数据，然后我需要一些列。我想应该有一个列的列表。因此我实际上已经在这里创建了，我有这些 x 列。这些是花萼长度，花萼宽度，以及常量。因此这将是我放在这里的列表。我基本上会得到这三列。
 - en: let me just。So if anybody's having trouble visualizing it。 I'm getting just
     those three columns out of my bigger， bigger one。Whereas when I'm doing this。I'm
     regular a panda series。That contains that pedal width column so I'll try to predict
     this。Based on。On these three things。Okay， so I'm doing that and now I want to
     do some predictions down here and that's going to be the same right。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我这样做。如果有人在可视化上有困难。我只是在从我更大的数据框中获取这三列。而当我这样做时。我是在处理一个包含花瓣宽度列的pandas系列，所以我会尝试根据这三件事来预测。好的，所以我正在这样做，现在我想在这里进行一些预测，这将是一样的。
 - en: I'm going to put in access basically the same format except now I'm going to
     use my test data。And maybe rather than capture that a variable and just see what
     it looks like for now。So these are my predictions。Or what should draw in this。A
     pedal width column。And so if I wanted to。 I could maybe even add those into my
     training data frame， my test data frame。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将基本上采用相同的格式，只是现在我将使用我的测试数据。也许不捕获那个变量，而只是看看现在的样子。这些是我的预测。或者我应该在这个花瓣宽度列中绘制的内容。所以如果我想的话，我甚至可以将它们添加到我的训练数据框，或者我的测试数据框中。
 - en: and I could say my prediction。Equals that。And then I could look at my test data
     frame。And the thing that it's complaining about is that I'm trying to add some
     values to a slice of another data set。 So when I did this here right these are
     slices of the rows inside of my big data frame。 and so if it's confused when I'm
     trying to add columns to one of these。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 我可以说我的预测等于那个。然后我可以查看我的测试数据框。它抱怨的事情是，我试图将一些值添加到另一个数据集的切片中。所以当我在这里做的时候，这些都是我大数据框中行的切片。如果我在尝试向其中之一添加列时感到困惑。
 - en: that's not of the original success an easy thing to fix。 I can just say like
     test equals test do copy and then test will be completely detached from my data
     frame and I can add columns to it。 without complaint。So let me run that。And now
     I can see I have this prediction column over here。 and I can go through and see
     how these predictions are if I predict 1。3， it's actually 1。2。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 这不是原始成功的简单修复。我可以说像test等于test的复制，然后test将完全与我的数据框脱离，我可以向它添加列。没有抱怨。所以让我运行这个。现在我可以看到这里有这个预测列。我可以看看这些预测如何，如果我预测1。3，实际上是1。2。
 - en: I predict 1。59， actually 1。4。Oh。And so I can see sometimes the predictions are
     good and sometimes they're well not so great anyway。 that's a regression。Oh let
     me， as I was this part of one here。 let me go on and try this next piece。I want
     to do a binary classification。On this column right here。And so the code is actually
     going to be very similar to before。 right I hand down here。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 我预测1。59，实际上是1。4。哦。所以我有时能看到预测不错，有时则不太好，反正这就是回归。哦，让我继续这个部分。让我继续尝试下一个部分。我想做一个二元分类。在这一列上。所以代码实际上会和之前非常相似。对吧，我在这里写下。
 - en: I'm going to change a few things， first off。I want to have a logistic regression。
     And remember。it is。A classifier。Despite the name。so I can deal with a category
     like this。And then for my why。 I'm going to just have the Ctosa column， is it
     a Setosa variety or is it not？And so I'm doing that。 I may also rename this just
     so remember it's a classifier， I'm going to call it CLS。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 我会改变一些东西，首先。我想进行逻辑回归。记住，它是一个分类器。尽管名字如此，所以我可以处理像这样的类别。然后对于我的目标，我将只使用Ctosa列，它是Setosa品种还是不是？所以我这样做。我也可能会重新命名这个，以便记住它是一个分类器，我将把它称为CLS。
 - en: Then down here I also need CLS。And I do that。 and now I can see my predictions
     here， I can see that。This column is telling me what the flower actually is and
     this column over here is telling me what the model predicts it is。 and actually
     I guess we're doing quite well here right every one of our predictions。Is completely
     accurate， which is great。All right， let me go back up here the turn things we
     want to do。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后在这里我也需要CLS。我这样做。现在我可以在这里看到我的预测，我可以看到。这一列告诉我花是什么，另一列告诉我模型预测的结果。实际上，我想我们在这里做得相当不错，每一个预测都是完全准确的，这很好。好的，让我回到这里，转到我们想要做的事情。
 - en: so we did the regression using linear regression， we did the binary classification
     using logistic regression。And and then basically saying， well， do I have a true
     or false now what I'd actually like to do is know well what is the probability
     of getting a true。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们使用线性回归进行了回归，使用逻辑回归进行了二元分类。然后基本上说，好吧，我现在是否有一个真或假，我实际上想知道获取一个真实的概率是多少。
 - en: And so I can do that like this， I can say。哦。This has an extra functions very
     similar to the product。But it'll be like this， it'll be predict。Probability A
     and then we get an lumpy array of all the probabilities。And so what this means
     is the way I'd interpret this is that there's a 94% chance。 a false and a 5% chance
     of true。 And that's why it ultimately reduced that to a false，97。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
 - en: 9% chance of false and only a 2% chance of true。 That's why you know they' false。
@@ -234,6 +305,7 @@
     why I have true。truerue there。 And so I could even， if I wanted to， I could try
     to pull out that last column。 I could say something like。I want to have some sort
     of slice in right like a real slice。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
 - en: And then a column slice when I'm doing this， I want all the rows。And I want
@@ -241,6 +313,7 @@
     if I wanted to。 I could say something like test。T。Of probability equals that，
     and then I can look at it again。And I can kind of see in each case well based
     on these dimensions。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
 - en: what probability does a model think it has of being a Setoa and so sometimes
@@ -248,6 +321,7 @@
     model was not very confident and then I could identify other cases where it was
     quite obvious。Of what it was。So I don't have to do a new model for that。 I just
     have to call predict probability A instead of predict。And okay。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
 - en: let me head up here and we're going to do this last piece now。 how can I do
@@ -255,12 +329,14 @@
     because。I have three different categories there， I guess it's going to be trickier
     when we actually get into the math behind it。 but it is not trickier in terms
     of it is not trickier in terms of actually running the code。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
 - en: So if I actually copy this here。And then I head down here。I'm just going call
     the salt multi so I can remember my three different models。Then may I say multi。And。And
     then when else do I need to change， I'm doing a different column this time。And
     so I can do that and now what is going tell me for my predictions。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
 - en: I see'd say my predictions are still。False and true。 And that came from here。
@@ -270,6 +346,7 @@
     one it taught right here it actually made a mistake right models make mistakes
     that not's not surprising because guess that was the only a mistake in the data
     set。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
 - en: And then， of course， this probability column。Was from earlier right so Im trying
@@ -277,6 +354,7 @@
     for each of my four examples。Okay。 so there we've seen a few different things，
     right， we've seen a regression。 and then we've seen these two different kinds
     of classifications。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
 - en: Let's try to get into the linear algebra behind each of these examples。And so
@@ -284,122 +362,158 @@
     of here， I have coefficient。And I also have。Hetercepted。And the intercept is 0
     because earlier what happened。 I passed in that intercept equals false to all
     of these。If I had not done that。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们尝试深入了解这些示例背后的线性代数。所以在我这里记住我有R EG，那是我之前的模型。在这里，我有系数。我还有。Hetercepted。而截距是0，因为之前发生了什么。我将截距设置为false传入了所有这些。如果我没有这样做。
 - en: Then what would have happened， then my coi fishers I'd only have these two columns
     here or two numbers here correspondinging to the weights on these two columns。And
     then instead of this being basically my interap。 that would have gone to the separate
     variable down here to me here。 so basically these are my weights on my real columns。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么会发生什么呢，我的coi fishers我只会在这里有这两列或这两个数字，对应于这两列的权重。然后不是这个基本上是我的interap。那将转到这里的单独变量。所以基本上这些是我在真实列上的权重。
 - en: And then this is the the intercept or the weight on my ones column， Okay， so
     I have that thing。And what I'd like to do is。I'll reshape it。So that it could
     be。I want it to be however many rows necessary than one column， so it'll be vertical
     like that。Another thing I want to do is I want to get my x data， which will be
     my。Will be my test data frame。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后这是我的1列的截距或权重，好的，所以我有那个东西。我想做的是。我会重塑它。这样可以。我希望它是需要的行数和一列，所以它将是垂直的。另一个我想做的是获取我的x数据，这将是我的测试数据框。
 - en: And then it'll be those x columns。And maybe I'll say， God values。And so I'll
     look at that。 so I'm pulling those first three columns out of here。Okay。 so I
     have three columns here and then the column over here is basically three entries
     in it。 and so if I wanted to I can take the dot product of this with these down
     here。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后它将是这些x列。也许我会说，神值。所以我会看看这个。所以我把这里的前三列提取出来。好的。我有三列在这里，然后这里的列基本上有三个条目。如果我想，我可以把它与下面这些做点积。
 - en: and that's exactly how a linear regression does predictions。 so if I come down
     here so I can say find regression predict。And if I have some x values here。 what
     I can do is I can return x dot。Oh basically these things， right， so I could say。Maybe
     I'll call this like vector 1， or I'll call it tro efficient。You know what I'm
     going actually。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 这正是线性回归进行预测的方式。所以如果我来到这里，我可以说找到回归预测。如果我这里有一些x值，我可以返回x点。哦，基本上这些东西，对吧，所以我可以说。也许我会把它称为向量1，或者称它为tro
+    efficient。你知道我实际上要做什么。
 - en: Why not just put it here directly， I don't need a separate variable for that。
     and so I'm going to look at this regression predict。And I'm going to do it on
     my X data and I get these predictions 1。32， 1。59。Let me actually draw up here
     earlier。And。I see that。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 为什么不直接把它放在这里呢，我不需要为此单独创建一个变量。所以我会看看这个回归预测。我会在我的X数据上做这个，我得到了这些预测1.32，1.59。让我实际上早些时候在这里画一下。然后，我看到了这个。
 - en: Those are exactly the predictions that myline regression made earlier，1。321。59。So
     this regular regression do predict like this。All it's doing。Is this right here
     is doing this this math right like this。Okay。 let's try to see what the logistic
     regression is doing。So it's actually going to be very similar。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些正是我之前的线性回归做出的预测，1.32和1.59。所以这个常规回归确实像这样进行预测。它所做的只是这里的数学，对吧。好的。让我们试着看看逻辑回归在做什么。所以它实际上会非常相似。
 - en: so remember before what was I doing， I was saying CLS。I classifier or not predict。And
     I can just do that， these were the values I was getting out of my classifier。
     what math is this doing it's actually almost identical to this。Let me copy this，
     in fact。 I'm just going to tweak it very slightly。I'm going to have my CLS。Pect。And
     they I say CLS。Proect。す。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以前面我在做什么，我在说CLS。我是分类器还是预测。我可以这样做，这些是我从分类器中得到的值。这个数学在做什么，实际上几乎与这个相同。让我复制这个，实际上我只是稍微调整一下。我将有我的CLS。Pect。然后我说CLS。Proect。す。
 - en: And my X datata。And。And the difference， right I have these all these numbers
     now and actually， sorry。 I want my coefficients from my other one。 so my CS coefficients。
     I should look at those as well before I jump into this。I may have different toy
     fish as I call why are all the numbers the same。 that doesn't make sense。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 还有我的X数据。还有。区别在于，对吧，我现在有这些所有的数字，实际上，抱歉。我想要我其他那个的系数。所以我的CS系数。在我跳入这个之前，我也应该看看那些。我可能有不同的玩具鱼，因为我叫它们，为什么所有的数字都一样。这没有意义。
 - en: And I get all of these numbers。 and remember， our goal is to predict false。
     false or true or things like that。And so the way it works is that we're getting
     a score for each entry。 and if the score is greater than0， we predict true， otherwise
     we predict false。 And so the shape is a little bit different here。 maybe I can
     just reshaped so it's more obvious。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 我得到了所有这些数字。记住，我们的目标是预测真假。方法是我们为每个条目获取一个分数。如果分数大于0，我们预测为真，否则预测为假。所以这里的形状有点不同。也许我可以重新调整形状，这样更明显。
 - en: But otherwise。That's what it's doing。 All these numbers up here are the same。Same
     down here。 and I think maybe this is why they。Maybe they even call this logistic
     regression。 even though it's a classifier， the math is basically identical to
     what we have for a linear regression right at the heart of we're just doing a
     dot product。 the only difference between the linear regression that we did before
     and the logistic regression we now。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 不过，除此之外，这就是它的功能。上面的所有数字都是相同的。下面也是。我想这也许就是他们为什么称之为**逻辑回归**。尽管它是一个分类器，但数学上与我们之前的线性回归基本相同。因为我们只是做了一个点积。我们之前做的线性回归和现在的逻辑回归之间的唯一区别在于。
 - en: I we're just checking if some number is greater than 0。Okay， so let's do this
     next piece right。 so the next piece was， I'm kind of going back through my examples
     before。After we。Did predict。 which was trying to say， well， are we predicting
     to false， we wanted to get this probability。 What is the probability that's aytoa。
     And so how can we get a probability out of this。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们只是检查某个数字是否大于0。好吧，我们来做下一部分。所以下一部分是，我有点回顾之前的例子。在我们进行预测之后，试图说我们是否预测为假，我们想获得这个概率。这个概率是什么呢？
 - en: If I head back down here， you actually see that before I added this greater
     than I had a numeric course。 I'm going to go back to that。And I'm going to say
     I want to predict probability A now。I'm just let to go back to this。And。Predict
     by a probability。And I'm going to do that。 and I see I have all these scores。
     and of course， these are not probabilities because a probability would be between
     0 and one。
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我回到这里，你会发现，在我添加这个大于号之前，我有一个数字课程。我打算回到那个地方。现在我要预测概率A。我只需回到这里。并且。通过概率进行预测。我会这样做。我看到我有所有这些分数。当然，这些并不是概率，因为概率应该在0到1之间。
 - en: but it turns out there's a very simple function that can turn it into。probabilityb
     and that function is called the sigmoid function and I had it at the beginning
     of the notebook but I haven't talked about it yet Im just try head up briefly
     and when I talk about the sigmoid in function and how we going use it。
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 但事实证明，有一个非常简单的函数可以将其转换为概率，而这个函数叫做**sigmoid**函数。我在笔记本的开头提到过它，但我还没有谈论过。我只是简要提及一下，当我讨论sigmoid函数以及我们将如何使用它时。
 - en: we don't have to go into a lot of the details on the math I don't care if you
     remember that I certainly don't remember it。The important thing for it is that
     the x value that's going in and be as large or small as we want。 But if I get
     very， very negative numbers I effectively approach 0 and if I get very large numbers
     I effectively approach one。 So the nice thing is that I could take any sort of
     numeric score in and it's going to give me back a result between 0 and1。
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们不需要深入数学的细节。我不在乎你是否记得，我当然不记得。重要的是输入的x值可以大也可以小。但是如果我得到非常负的数字，我实际上接近于0；如果我得到非常大的数字，我实际上接近于1。所以好的一点是，我可以输入任何种数值分数，它会返回一个在0和1之间的结果。
 - en: so basically I can take some other sort of score and turn it into something
     that at least looks like a probability And so what I'm going to do is I'm going
     call this smoid function。Down here right and so instead of having all these numbers
     like negative 2。76 or 2。57。
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 基本上，我可以将某种分数转换为至少看起来像概率的东西。所以我要调用这个smoid函数。在这里对吗？因此，代替拥有所有这些数字，比如负2.76或2.57。
 - en: I'm just trying to take the same point of all of those things。And then they
     will be these numbers all between0 and1 and it turns out that that's how we were
     would actually be doing the probabilities right so just like before I was trying
     to say well I'll predict the category on X the same way down here if I。
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 我只是想把所有这些点汇总。然后这些数字都会在0和1之间，事实证明，这就是我们实际上如何计算概率的方式。因此，就像之前我试图说我将预测X的类别一样，在这里也是这样。
 - en: Maybe I'll do this。Right here above， Rece predicts the probability。Of a。Let
     me just look at what's happening here， these numbers right here。 which is the
     probability of it being true。Is this column right here the probably of the being
     true the way I'm written this code I'm not computing the probability of it being
     false because well that's boring right I need to add up to one So why would I
     do both of them but you can see these numbers here are exactly identical。
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
 - en: This town here right so again the probability is very simple， right， I'm still
@@ -408,6 +522,7 @@
     dot product is just extremely important right I'm taking the dot product of a
     matrix。With a vertical vector。Let me go up and talk about the fourth model we
     did with a multiclass model。
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
 - en: the multi class model that was right here， and I was trying to predict variety
@@ -415,6 +530,7 @@
     out is that my coefficients for variety。Orre going to be a lot more complicated
     if I look at。So this is my binary one。 if I look at the coefficients for my binary
     one， I just have these three numbers。
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
 - en: But if I look at my coefficients for my multi class progression， I actually
@@ -422,6 +538,7 @@
     let me。Let me use these now。What we're going to do is actually， I think just like
     the way they set it off。 we're going to have to transpose them。We're going to
     do that。Let me grab this here。
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
 - en: it's going to be very similar again。But。Instead of multiplying xs by just a
@@ -429,22 +546,26 @@
     it by that whole thing。 And then I get this result。 And some'm going just call
     this quickly。 I'm sorry。 this is multiply per now。Wellal I predict。And I might
     call that。Mie。Predive Xs。
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
 - en: And I'm actually not doing a soid anymore at this point。I apologies。And so how
     do I interpret this？
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
 - en: Basically， every one of these columns。Or responses to one of the three varieties。If
     I had had more varieties， I would have had more columns up here when I would have
     still had three rows in this coefficient matrix。So you might imagine， I don't
     know if which one is which。 but you might imagine that this is this atosa variety。
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
 - en: And it turns out when I take my big matrix of data。And I multiply it by all
     of these columns right here。What it really does is itro column by column。 It takes
     this column。Is my data matrix， and it uses that to produce this output column。So
     these might be the scores for how much it looks like a sattosa。And。
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
 - en: Then maybe let's say these are the coefficients for reversea color， Then these
@@ -452,52 +573,68 @@
     then these might be the scores for the Viica。And so what I can do is that each
     one of these rows corresponds to a row in my original data。 which means this row
     corresponds to one particular flower， one particular iris。
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么，也许我们说这些是versicolor的系数，那么这些将是。versicolor的分数，如果这些是virginica的系数，那么这些可能是virginica的分数。因此，我可以做到的是，这些行中的每一行对应于我原始数据中的一行。这意味着这一行对应于一朵特定的花，一种特定的鸢尾花。
 - en: And so for that one particular iris I have a score， how much is it like sattosa。
     how much is it like a versic color， how much is it like a virginica and so what
     I can do is I can try to take these and I can see which score is the highest and
     in this case it's this middle one so whatever type of iris corresponds them middle
     a column is what Id want to predict。
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，对于那一特定的鸢尾花，我有一个分数，它有多少像sattosa。它有多少像versicolor，它有多少像virginica，因此我可以尝试把这些分数拿出来，看看哪个分数最高，在这种情况下是中间的那个，所以与中间列对应的鸢尾花类型就是我想要预测的。
 - en: And so I can check that， I could say。If I go back to this， I could say。I think
     it's classes。I could see， okay， well this I guess I guess， well， this is the Setosa，
     and that first one would be。Averse the color。Ands one of the ways I could actually
     do this。Is theres a it turns out that there is an arc。哦。Hard men。
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我可以检查这个，我可以说。如果我回到这个，我可以说。我认为这是类。我可以看到，好吧，我想这应该是Setosa，而第一个应该是。相反的颜色。并且我可以实际做到这一点的方法之一。结果发现确实有一个弧。哦。困难的人们。
 - en: Call on me to try to do this here and make sure I get it right。I am being right，
     okay。 and so what or I guess I want Agon max what this is going to do is it's
     going to give me which index。It is basically giving me the largest value， but
     I have to specify what to access and I zero is down and one is across and I say
     one。And what is this telling me， I'm going to reshape。 It's also a little bit
     more obvious。
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我尝试在这里做这个，并确保我做对了。我是对的，好吧。那么，我想Agon max这将做的是，它将给我哪个索引。基本上是在给我最大的值，但我必须指定如何访问，0是纵向的，1是横向的，我说1。这告诉我什么，我将要重塑。它也更明显一些。
 - en: Reay negative 1，1。What this means is that。At index 1， I have the biggest number
     in that first place。 the second position， the biggest number is here。 Is that
     true。 Yeah， that's true。 This number is bigger than those other ones。 Let me check
     the fourth one。 That means a0 position is bigger， So this is bigger。And these，
     so it's absolutely true。
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 真实负1，1。这意味着。在索引1，我在第一个位置有最大的数字。第二个位置，最大的数字在这里。是真的吗？是的，是真的。这个数字比其他的都大。让我检查第四个。那意味着a0位置更大，所以这是更大。并且这些，所以这绝对是真的。
 - en: And so what's cool about if I have an  onpire like this。I can put that into
     another lumpy。Aray like this so I can I can take these classes and I can put this
     array of numbers into here。 and I'm going to get basically， well what are all
     these categories。And so I'm going to take all of this。And。And I'm going to put
     it back in here。And。
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，如果我有这样的一个对象，酷的地方在于。我可以把它放进另一个这样的数组里。我可以把这些类放进去，并且我可以把这个数字数组放进这里。然后我基本上会得到，所有这些类别是什么。所以我会把这一切都拿走。并且。我会把它放回这里。并且。
 - en: I can see that then I'm going to get the predictions for all my for all of my。For
     all of my flowers。 right I can see。For each of them， well what am I predicting
     it is right and this will correspond with my predictions earlier。 right so again。Dy
     product is at the heart of it。But now， since I have different possible classes。
     I have to have coefficient to get a score for each class。And that's why。
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 我可以看到，然后我将为我所有的花朵得到预测。对，我可以看到。对于每一个，它的预测结果是什么，这将与我之前的预测相对应。对，所以再次强调。点积是核心。但现在，因为我有不同的可能类别。我必须有系数来为每个类别获得分数。这就是原因。
 - en: We have to multiply the data by a full matrix instead of a subbacterron。 that's
     the first example that we've seen like that a real practical use case in this
     course。![](img/8892c901c6b889b0878d2715f8e7128b_6.png)
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们必须用完整矩阵乘以数据，而不是一个子矩阵。这是我们在这门课程中看到的第一个这样的真实应用案例。![](img/8892c901c6b889b0878d2715f8e7128b_6.png)

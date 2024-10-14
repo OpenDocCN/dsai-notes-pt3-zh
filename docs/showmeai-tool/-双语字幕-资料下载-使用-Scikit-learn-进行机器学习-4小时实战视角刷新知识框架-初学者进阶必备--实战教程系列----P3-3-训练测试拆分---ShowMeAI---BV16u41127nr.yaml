@@ -82,6 +82,7 @@
   id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我将从头开始再做一次复习，我要说LR等于线性回归。![](img/816ece20f67a7bafdafc76312ab6259f_4.png)
 - en: And oh， there we go， and that I say Lr。 fit。And I have my train。Data frame。
     and then I have a list of columns here。And then here I may have my Y column。Right。
     so that's the general strategy。 And then what I want to do is I want to score
@@ -90,6 +91,7 @@
   id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 哦，来了，我说Lr.fit。我有我的训练数据框，然后我有一个列的列表。在这里，我可能有我的Y列，对吧？所以这就是总体策略。然后我想做的是给它打分。当我给它打分时，我会提供一个Y列和一个x列。抱歉。
 - en: I have to say， train Diaf here。I'm going to give it that same information。 but
     now I'm going to be doing the test data frame。Where as I may say test data frame
     and then same thing down here， test data frame。And then what I'm going to do is
@@ -97,6 +99,7 @@
   id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我得说，训练数据框在这里。我会给它同样的信息。但现在我将处理测试数据框。我可能会说测试数据框，然后在这里也是一样，测试数据框。然后我将为此传递一个列的列表，就像之前一样。
 - en: And what was I doing last time I was looking at this positive。A seven day average。
     And somebody' may pass that in。Just like that and the same thing here。 and then
     over here I can just look at that thing that I'm trying to predict my Y。 which
@@ -104,11 +107,13 @@
   id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 我上次在看这个正数时在做什么？七天的平均值。有人可能会将其传递过来。就像这样，这里也是一样。然后在这里，我可以查看我试图预测的Y值，这就是这个东西。当我把它传递过来时，这里也是一样。我会这么做。
 - en: and I see that。 okay， my score is 0。16。Whereas what would happen if I wanted
     to run it on my original training data frame？
   id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 我看到这个。好吧，我的得分是0.16。那么如果我想在我原始的训练数据框上运行它，会发生什么呢？
 - en: Like that training data frame。And here it does better on the data I trained
     on。 so this suggests that there is some overfitting here， right。 the model does
     better the data it learned from instead of some new data it hasn't seen before
@@ -117,6 +122,7 @@
   id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 像这样的训练数据框。在我训练的数据上表现得更好。这表明这里存在一些过拟合，对吧？模型在它学习过的数据上表现得更好，而不是在一些它之前没见过的新数据上，这当然是一个问题。因此，我可以尝试不同的方法来避免这种情况，我们最终会在这个学期讨论其中的一些方法。
 - en: Hello， today I'm going to be talking more about how we can determine whether
     or not a model is doing a good job or not。 how can we interpret different scores
     and make sure that we aren't getting a good score just by chance。And so I may
@@ -127,6 +133,7 @@
   id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 大家好，今天我将讨论如何判断一个模型是否表现良好。我们如何解读不同的得分，并确保我们不是偶然得到一个好得分。因此，我可能会接上次的内容，模型试图预测基于当前病例数量的两周后COVID死亡人数，所以让我快速回顾一下上次我们在数据框上进行训练测试分割时的操作，我们的数据框看起来像这样。
 - en: And it was per county。 And then there's every day and the year there。Then I
     created this linear regression model， which I imported from SK learned linearar
     model。And then I did two things with it， I fit it to my training data。And then
@@ -135,6 +142,7 @@
   id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是按县计算的。然后每天和一年的数据在那里。然后我创建了这个线性回归模型，我从SK学习的线性模型中导入了它。然后我用它做了两件事，我把它拟合到我的训练数据上。然后我在我的测试数据上给它打分，这两部分我的训练数据和测试数据来自这里，因此当我做这个时。
 - en: what I basically did is I put in my Y values， which is what I'm ultimately trying
     to predict。And then here I put in my x values or my features， which are things
     I know right now， so for example。 right now I know the seven day rolling average
@@ -143,6 +151,7 @@
   id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 我基本上做的是输入我的Y值，这是我最终想要预测的。然后在这里我输入我的x值或特征，这些是我现在知道的东西，例如，现在我知道阳性病例的七天滚动平均数，然后两周后我试图预测会有多少死亡。这可以是一个单一的序列，这就是为什么我们只输入一个字符串。
 - en: I'm in the brackets after the data frame。Here we actually have to pass in a
     full data frame because in general we might have multiple features and when I
     pass in a list to the brackets after a data frame while I get a smaller data frame。
@@ -150,6 +159,7 @@
   id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 我在数据框后的括号里。这里我们实际上必须传入一个完整的数据框，因为通常我们可能有多个特征，当我在数据框后面的括号里传入一个列表时，我得到的是一个较小的数据框。这就是为什么我会有双括号。所以无论如何，我有这个0。
 - en: 2 and and we know that the score will somewhere be be somewhere between 0 and1。
     So it's a little bit hard to say how good this score is right maybe you always
     get something like 0。2 by chance do we know So that's one of the things I want
@@ -159,6 +169,7 @@
   id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 2，我们知道分数会在0和1之间。因此，很难说这个分数有多好，对吧？也许你总是偶然得到0.2。那么，这是我今天想谈的事情之一。你可能还会注意到，如果我多次重新运行这个，哦，现在我得到了27%、32%、24%、24、28、26。所以你可以看到，基于我如何进行训练测试划分，结果是不同的。
 - en: I can do very different numbers and so that doesn't give us a lot of assurance
     so how can we get some more stable numbers out of the system I'll just give you
     kind of a hint of what the problem is if I look at train DF and I look at this
@@ -167,6 +178,7 @@
   id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 我可以得到非常不同的数字，因此这并没有给我们很多保障。那么我们如何才能从系统中获得更稳定的数字呢？我只给你一个关于问题的提示，如果我查看训练数据框并查看这个列，正是我们要预测的内容。嗯。让我来做这个。所以我有所有这些数字。
 - en: Let me look at the variance of that column variance are just kind of a measure
     of how different values are from the average。And then I'm also going to do that
     thing， same thing for the test。And so when I do it for the test。 I see that actually
@@ -176,6 +188,7 @@
   id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我查看该列的方差，方差只是不同值与平均值之间差异的一个度量。然后我也将对测试集做同样的事情。因此，当我对测试集进行操作时，我看到它们实际上具有相当不同的方差。如果我再运行一次，随机抽样结果不同，现在测试数据的方差实际上比训练数据的方差要高。
 - en: and we eventually look at how this scoring function works。 but it turns out
     that it's very much based on this variance。Which is why we have such a noisy measure。
     So let me head over to the slides and try to give a preview of the things we're
@@ -183,15 +196,18 @@
   id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们最终会看看这个评分函数是如何工作的。但事实证明，它在很大程度上基于这个方差。这就是我们有如此嘈杂的度量的原因。所以让我去看幻灯片，尝试预览一下我们今天要讨论的内容。
 - en: '![](img/816ece20f67a7bafdafc76312ab6259f_6.png)'
   id: totrans-23
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/816ece20f67a7bafdafc76312ab6259f_6.png)'
 - en: We're going to be learning for new functions related model evaluation。 so first
     we're going to learn these two functions here， which will let us score our models。![](img/816ece20f67a7bafdafc76312ab6259f_8.png)
   id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将学习与模型评估相关的新函数。所以首先我们将学习这两个函数，它们将让我们对模型进行评分。![](img/816ece20f67a7bafdafc76312ab6259f_8.png)
 - en: Second， if our model is trying to mediocre like mine is right， I mean 0。2 is
     not great。 how can we know if it's not just chance and then we're going to be
     using something called the permutation test score for that。 and then finally。To
@@ -200,20 +216,24 @@
   id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 第二，如果我们的模型表现平庸，就像我的模型一样，我的意思是0.2并不好。我们怎么知道这不是偶然的呢？因此，我们将使用一种叫做置换检验分数的方法。最后，为了获得一个噪声较少的度量，我们将进行交叉验证评分。
 - en: '![](img/816ece20f67a7bafdafc76312ab6259f_10.png)'
   id: totrans-26
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/816ece20f67a7bafdafc76312ab6259f_10.png)'
 - en: And so let me start here with these two metrics here。 I have this R2 score and
     mean absolute error。 and we'll talk about how those work。![](img/816ece20f67a7bafdafc76312ab6259f_12.png)
   id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么让我从这两个指标开始。我有这个R²分数和平均绝对误差。我们将讨论它们是如何工作的。![](img/816ece20f67a7bafdafc76312ab6259f_12.png)
 - en: If I go back to my slides or go back to my notebook right here。I'm doing the
     scoring here。 I can also up here， I can say， from SKL dot matrix。![](img/816ece20f67a7bafdafc76312ab6259f_14.png)
   id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我回到我的幻灯片或我的笔记本，我在这里进行评分。我也可以在这里说，从SKL.dot矩阵开始。![](img/816ece20f67a7bafdafc76312ab6259f_14.png)
 - en: Import。There's a couple things I want to do。 I want to do the R2 score， and
     then the mean。Absolute error score。And so the way all of these metrics work is
     kind of like this。 I'll call the metrics function。And then I'll say something
@@ -292,6 +312,7 @@
   id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我做预测后，而不是仅仅减去均值。因此，我可以说，嗯，我可以说，还有多少剩余。我可以说剩余除以总数。那么，为什么呢？哦，让我把它放在这里。我可以说剩余除以总数，然后我想，好的。
 - en: why left 79% of the variance on the table basically？Which means that I took
     away 20%。🤧And you can see that that's exactly what this is up here right so really
     this is the the math that people will really kind of use to evaluate how good。A
@@ -300,6 +321,8 @@
   id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 为什么基本上保留了79%的方差？这意味着我减去了20%。🤧你可以看到这正是上面的内容，所以实际上这是人们用来评估回归效果的数学。通常我们可以用R平方分数更简单地做到这一点，甚至更简单的就是默认的vi
+    say线性回归.dot分数。
 - en: Let me give you an example of another metric people might use。So maybe I want
     to just get， well。 what is the average error？And so on that case， I would go back
     to this piece。RightSo this is all of the errors。And if I want to get the average。
@@ -308,6 +331,7 @@
   id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我给你举个例子，说明人们可能会使用的另一种指标。所以也许我只是想知道，嗯，平均误差是多少？在这种情况下，我会回到这一部分。对，这都是错误。如果我想获得平均值，应该考虑绝对误差。然后我可以取那个的均值。对。
 - en: so this would be the average。Absolute error。And it turns out that that is just。Rather
     than be collectulating that myself， I could just grab this mean absolute error
     here。 there's lots of different metrics in here and I think if I hit shift tab。Well。
@@ -315,6 +339,7 @@
   id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这将是平均绝对误差。结果证明，实际上，干脆取这个均值绝对误差就行了。这其中有很多不同的指标，我想如果我按下Shift Tab，嗯。也许只是常规Tab。我可以看到这里所有不同的指标。
 - en: And most of them I have never used。 so I paste this here and I see， well， that's
     kind of strange。 It should be the same It should be the same number。Why is that
     not the same number。Because on。I wanted to get the error of my predictions not
@@ -323,6 +348,7 @@
   id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 而且我大多数都没有使用过。所以我把这个粘贴在这里，我发现，嗯，这有点奇怪。它应该是相同的，应该是同一个数字。为什么不是同一个数字。因为我想要的是我的预测误差，而不是相对于均值。因此，对不起，这是我想要的，这是我想抓的东西。对。
 - en: so I wanted to say。You know， here are all my errors。 take the absolute value
     of them。 right some errors are positive or negative。 I just want to have the absolute
     value。 then I have the average。And why is that。嗯。In balance syntax。 that usually
@@ -330,6 +356,7 @@
   id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我想说，你知道，这里是我所有的错误。取它们的绝对值。对，有些错误是正的或负的。我只是想要绝对值。然后我有平均值。为什么呢。嗯。在平衡语法中，这通常可能意味着我的括号不匹配。我明白了。
 - en: So this one has is matched up there。 So I don't know why I grab that squared。
     Okay。 so I can see that this is all my errors。And then I'm taking the absolute
     and I'm picking the average。 and I'll thankfully， okay， well actually get the
@@ -338,6 +365,7 @@
   id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这个在那儿是匹配的。我不知道为什么我抓住了那个平方。好的。我可以看到这都是我的错误。然后我取绝对值并计算平均值。感谢上天，实际上得到的和我在这里写的相同。因此，再一次。对，这只是这个更复杂数学的捷径。
 - en: but it's another metric in terms of how these metrics work。呃。This one is kind
     of counting all errors more equally， you know。 error that's twice as big is just
     twice as bad。Because this one up here where Im doing the when I'm doing where
@@ -347,6 +375,7 @@
   id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 但这是另一种指标，涉及这些指标如何工作。呃。这种方法对所有错误的计数相对平等，你知道。错误的两倍大只是坏的两倍。因为在这里，我在做R平方分数时，平方我的错误，这会使它看起来更糟，尤其是当我有一些非常大的错误，而不是很多小错误时。
 - en: Okay， so those were a couple metrics， which was one of the things we wanted
     to answer in the slide。 I'm just going to head back here。![](img/816ece20f67a7bafdafc76312ab6259f_16.png)
   id: totrans-44

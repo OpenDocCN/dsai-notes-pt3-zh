@@ -1,185 +1,264 @@
 - en: 【双语字幕+资料下载】使用 Scikit-learn 进行机器学习，4小时实战视角刷新知识框架，初学者进阶必备！＜实战教程系列＞ - P4：4）模型评估
     - ShowMeAI - BV16u41127nr
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】使用 Scikit-learn 进行机器学习，4小时实战视角刷新知识框架，初学者进阶必备！＜实战教程系列＞ - P4：4）模型评估
+    - ShowMeAI - BV16u41127nr
 - en: We talked about our squared score， we talked about being an absolute squared
     or error。And that's different ways we can measure our errors。 The next thing I'
     to talk about is if our score is trying to mediocre like 0。2 out of one。 how do
     I know that that's actually grow and it's not just chance。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们谈到了我们的平方得分，我们谈到了绝对平方误差。这是我们可以衡量误差的不同方式。接下来我想讨论的是，如果我们的得分尝试中等，比如0.2满分1，我如何知道这实际上是增长，而不仅仅是运气。
 - en: '![](img/685f8a9a43bae69c2b04fb232b54014c_1.png)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/685f8a9a43bae69c2b04fb232b54014c_1.png)'
 - en: And the answer is that what we'll do is we'll take our original data here。And
     we'll score it with our model。 We're able to train a model that the x's and the
     y's and just score。 And so let's say my score is 0。8， which is not that dread。What
     I'll do is I'll shuffle around the data。 so I know that there's no relationship
     between the y's and x's。
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 答案是我们要做的是使用我们原始的数据，并用我们的模型对其进行评分。我们能够训练一个模型，使得x和y能够评分。所以假设我的得分是0.8，这并不是那么糟糕。我将打乱数据，因此我知道y和x之间没有关系。
 - en: right， so what I'll do is I'll take this y column and just randomly shuffle
     it。 And the word for that is up permateated。 As I get this permutated version
     of this column， right。 you can see that。For example，5 used to be the first number
     and now now5 this down here So I just kind to randomly shuffle that thing and
     then I train the model on it。 trying to look for the relationship between the
     y's and x's。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，我要做的是把这个y列随机打乱。而这个词就是“排列”。当我得到这个列的排列版本时，你可以看到。例如，5曾经是第一个数字，而现在这里的5变成了下面的数字。所以我只是随意地打乱了一下，然后在这个数据上训练模型，试图寻找y和x之间的关系。
 - en: and there should be no relationship obviously right because I just shuffle everything
     around but I can try to train a model and get a score on it And so if I see that
     when I'm basically training a model on garbage data。 if I get a better score then
     then I did originally。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 显然应该没有关系，因为我只是把所有东西都打乱了，但我可以尝试训练一个模型并对此进行评分。所以如果我看到在垃圾数据上训练模型时，如果我的得分比最初的得分更高。
 - en: well that probably means that I didn't have any sort of significant result originally
     so I probably didn't have any sort of meaningful model And that's the rough idea
     an actual implementation of what this function here is going to do for us is it's
     going to shuffle around the data like this。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗯，这可能意味着我最初没有任何显著的结果，所以我可能没有任何有意义的模型。这就是这个函数的粗略想法，它将为我们打乱数据。
 - en: And it's going to get a score and it's try to shuffle it again and it's going
     to get a score it's trying to get something like know 100 or 100 different scores
     based on these shuffled data。 and then based on that we can estimate and really
     see this score over here。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 它将获取一个得分，然后尝试再次打乱数据，获取一个得分，试图根据这些打乱的数据得到100或100个不同的得分。然后基于此我们可以估计并真正看到这个得分。
 - en: is it kind of unusually good or does it feel like this could fit in with the
     garbage data and based on that we we can basically say。 well hey， do I trust this
     model or that So let me head over here back the notebook？
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是否有点不寻常地好，还是感觉这可能与垃圾数据相符，基于此我们基本上可以说，嘿，我信任这个模型还是那个？那么我去这里回到笔记本？
 - en: '![](img/685f8a9a43bae69c2b04fb232b54014c_3.png)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/685f8a9a43bae69c2b04fb232b54014c_3.png)'
 - en: '![](img/685f8a9a43bae69c2b04fb232b54014c_4.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/685f8a9a43bae69c2b04fb232b54014c_4.png)'
 - en: And。 And so maybe I'm just trying to make some notes in here just so it's clear
     to what we're doing。 So this part was about metrics。![](img/685f8a9a43bae69c2b04fb232b54014c_6.png)
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，可能我只是想在这里做一些笔记，以便我们所做的事情更清楚。这部分是关于指标的。![](img/685f8a9a43bae69c2b04fb232b54014c_6.png)
 - en: '![](img/685f8a9a43bae69c2b04fb232b54014c_7.png)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/685f8a9a43bae69c2b04fb232b54014c_7.png)'
 - en: And then this part is going to be about permutation testing。![](img/685f8a9a43bae69c2b04fb232b54014c_9.png)
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后这部分将会讨论排列测试。![](img/685f8a9a43bae69c2b04fb232b54014c_9.png)
 - en: And so let me I actually already imported it， which is great so all these things
     that are kind of related to model evaluation and they're under this thing called
     model selection because what we'll often do is have a few different models and
     we're trying to have different tools to say well what is the model that we think
     is best and we're going recommend to people So I see that I have this permutation
     test score。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我来看看，我实际上已经导入了它，这很好，所以所有与模型评估相关的东西都在这个模型选择下，因为我们经常会有几种不同的模型，我们尝试使用不同的工具来说出我们认为最好的模型，并推荐给人们。所以我看到我有这个置换检验分数。
 - en: '![](img/685f8a9a43bae69c2b04fb232b54014c_11.png)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/685f8a9a43bae69c2b04fb232b54014c_11.png)'
 - en: '![](img/685f8a9a43bae69c2b04fb232b54014c_12.png)'
+  id: totrans-16
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/685f8a9a43bae69c2b04fb232b54014c_12.png)'
 - en: And I might paste this right here， and I can see that I need three things。At
     a minimum。 I have to have my model， which is just L R。🤧I have to have my own。![](img/685f8a9a43bae69c2b04fb232b54014c_14.png)
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 我可能会把这个粘贴在这里，我可以看到我需要三样东西。至少。我必须有我的模型，也就是 L R。🤧我必须有我自己的。![](img/685f8a9a43bae69c2b04fb232b54014c_14.png)
 - en: My x values and then finally my y values。 And so the way I'm going be doing
     this here is since。嗯。Since here I have this testF and and。For both my x and my
     Y I'm just going to grab these right。 so this was my x right here based on the
     seven day average， I want to predict this right here。And I'm going grab this。And
     it turns out that this is going to return a tuple of length  three。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 我的 x 值，然后最后是我的 y 值。所以我这里要做的就是，因为。嗯。因为我有这个 testF。对于我的 x 和 y，我就直接抓这些对吧。这个是我的 x，根据七天的平均值，我想预测这里的值。我会抓取这个。结果表明这将返回一个长度为三的元组。
 - en: so I'm just going run that， that'll take a moment。 and the three things in that
     tuple are going to be the score of my module model originally。![](img/685f8a9a43bae69c2b04fb232b54014c_16.png)
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我只需要运行它，这需要一点时间。这个元组中的三样东西将是我模块模型的原始分数。![](img/685f8a9a43bae69c2b04fb232b54014c_16.png)
 - en: It will be you know some other scores when I have maybe I'll just tell the garbage
     scores since I'm peruting the data。 I'm not expecting to have any pattern， there's
     going to be a bunch of those。And then there's going to be something called a P
     value。And what the P value is telling me is。Well。 what is the probability that
     a score this good。Would be generated by a system that's generating all these garbage
     scores。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 你知道，当我可能只是在告诉垃圾分数时，会有一些其他分数。因为我在打乱数据。我不期望有任何模式，会有一堆这样的分数。然后会有一个叫做 P 值的东西。P 值告诉我的是什么。嗯。什么是这样的好分数被一个生成所有这些垃圾分数的系统生成的概率。
 - en: Right， and so if this is really small， then I can see， well。 this is actually
     much better than my garbage cores。 And so I actually have a significant result。
     So since these are the three things I was returning。😊，Right I know that T is a
     tuple。 I just put that here and it'll automatically unpack those things for me。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 对，如果这个值真的很小，那么我可以看到，这实际上比我的垃圾分数好得多。所以我实际上得到了一个显著的结果。因为这些是我返回的三样东西。😊，对，我知道 T
+    是一个元组。我只是把它放在这里，它会自动为我解包这些东西。
 - en: so I'll take a look at this。And then I get a score for my model。 and then I
     can have my garbage cores here。 I see there's a whole bunch of them。 If I want
     to。 I can put those in a series。![](img/685f8a9a43bae69c2b04fb232b54014c_18.png)
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我来看看这个。然后我会得到我模型的一个分数。然后我可以在这里有我的垃圾分数。我看到有一大堆。如果我想的话，可以把它们放到一个系列中。![](img/685f8a9a43bae69c2b04fb232b54014c_18.png)
 - en: And then I could do a histogram of those。![](img/685f8a9a43bae69c2b04fb232b54014c_20.png)
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我可以做一个这些的直方图。![](img/685f8a9a43bae69c2b04fb232b54014c_20.png)
 - en: And I can see that， you know， they're actually around0 or less， right， all of
     these。 And this was around 0 point。0，9， which is。Actually。Ptty far over here。
     So it seems like we're pretty far away from these garbage scores。 And therefore。
     this P value is going to be pretty small。 It seems like whatever process。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 我能看到，实际上它们都在 0 或更低，对吧，所有这些。而这大约是 0.0，9，实际上。这很远。所以看起来我们离这些垃圾分数相当远。因此，这个 P 值将会很小。似乎无论什么过程。
 - en: '![](img/685f8a9a43bae69c2b04fb232b54014c_22.png)'
+  id: totrans-25
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/685f8a9a43bae69c2b04fb232b54014c_22.png)'
 - en: '![](img/685f8a9a43bae69c2b04fb232b54014c_23.png)'
+  id: totrans-26
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/685f8a9a43bae69c2b04fb232b54014c_23.png)'
 - en: I'm using to get all these garbage cores is not likely to have a score this
     good。 so I will take this as a meaningful result。![](img/685f8a9a43bae69c2b04fb232b54014c_25.png)
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 我用来获取这些垃圾分数的方法不太可能得到这么好的分数。所以我会把这个作为一个有意义的结果。![](img/685f8a9a43bae69c2b04fb232b54014c_25.png)
 - en: '![](img/685f8a9a43bae69c2b04fb232b54014c_26.png)'
+  id: totrans-28
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/685f8a9a43bae69c2b04fb232b54014c_26.png)'
 - en: Let me head back here for another idea， so how do we deal with the noise。 we
     saw that when I kept doing it a bunch of times I was getting different scores
     and for that we're going to use as something called a cross Val。![](img/685f8a9a43bae69c2b04fb232b54014c_28.png)
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我再回到这里想一个主意，我们如何处理噪声。我们看到当我不断做这个时，得到了不同的分数，为此我们将使用一种叫做交叉验证的东西。![](img/685f8a9a43bae69c2b04fb232b54014c_28.png)
 - en: Cross validation score。 And And the way it' will work is I'm going splitlin
     my data instead of just having these train and tasks。 Im going split into four
     pieces。And then each of those four pieces are going to take turns being the test
     data。 so maybe first I'll train my data on these rows， and then I'll test it on
     this。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 交叉验证分数。它的工作方式是我将把数据拆分，而不仅仅是有这些训练和任务。我将分成四个部分。然后这四个部分将轮流作为测试数据。所以也许我会先在这些行上训练我的数据，然后在这个上进行测试。
 - en: '![](img/685f8a9a43bae69c2b04fb232b54014c_30.png)'
+  id: totrans-31
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/685f8a9a43bae69c2b04fb232b54014c_30.png)'
 - en: And then my model will get， let's say， a score of 0。2。And then I'll take a different
     chunk of the data， and each of these are called a fold of the data。 by the way，
     and so I'll train on those first， second and fourth pieces。So I get a model and
     then I evaluate on that test data set and let's say this time I get a little bit
     luckier and it's 0。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我的模型会得到，比如说，0。2 的分数。接着我会拿一块不同的数据，每一个都叫做数据的一个折叠。顺便说一下，我会先在第一、第二和第四部分上进行训练。所以我得到一个模型，然后在那个测试数据集上进行评估，假设这次我运气好一些，得到了
+    0。
 - en: 3， do it again， 01 again 0。2， and then I could take the average of these and
     that would be a more stable measurement of kind of how well my model does us not
     as。Its not kind of as vulnerable to what happens to go on the test or training
     data set is all the data at some point is in the test data。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 3，再做一次，01再来一次0。2，然后我可以取这些的平均值，这样会是一个更稳定的衡量我模型表现的方式，不会太脆弱于测试或训练数据集上发生的事情，因为所有的数据在某个时候都在测试数据中。
 - en: Or the training data。 So I going head over here and and do this， right， So this
     is called。![](img/685f8a9a43bae69c2b04fb232b54014c_32.png)
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者训练数据。所以我过来这里做这个，对吧，所以这就叫做。![](img/685f8a9a43bae69c2b04fb232b54014c_32.png)
 - en: '![](img/685f8a9a43bae69c2b04fb232b54014c_33.png)'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/685f8a9a43bae69c2b04fb232b54014c_33.png)'
 - en: Cross validation。And let me call this thing so cross validation score。And what
     I have to pass in here， I pass in my estimator。And then I have to pass in my x
     values and then my y values。![](img/685f8a9a43bae69c2b04fb232b54014c_35.png)
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 交叉验证。让我把这个称为交叉验证分数。我需要传入的内容是我的估算器。然后我必须传入我的 x 值和我的 y 值。![](img/685f8a9a43bae69c2b04fb232b54014c_35.png)
 - en: Right， so let me grab those things。So it's actually， I guess identical to this
     right here。 so I me grab my model， my x values and my y values。![](img/685f8a9a43bae69c2b04fb232b54014c_37.png)
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，让我把这些东西拿过来。其实，我想这和这里的内容是一样的。所以我来抓取我的模型、我的 x 值和我的 y 值。![](img/685f8a9a43bae69c2b04fb232b54014c_37.png)
 - en: And at this time， I just want to do it on all my data。 So can I say data frame。And
     then data frame and actually really what is kind of the best practices is just
     to that of the training data。And so I'm going to do that and then I get all these
@@ -188,63 +267,90 @@
     there were five that's why I got five scores I can say I want 10 of them and I'd
     be fine I these 10 scores back and these times look like those numbers we were
     seeing earlier like 0。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 这次，我只想在我的所有数据上进行操作。所以我可以说数据框。然后数据框，实际上最佳实践就是这样做训练数据。因此，我将这样做，然后我会得到所有这些分数，原因是默认情况下有五个折叠，所以我可以说，你知道在这张图里，有四个，这里我看到默认情况下有五个，这就是我得到五个分数的原因。我可以说我想要
+    10 个，这样我就能得到这些 10 个分数，这些分数看起来像之前看到的数字，比如 0。
 - en: 27 0。17 another 0。27 is 0。304 right if I head back here and I just kind of run
     this thing a few times those are the kinds of numbers I'm getting out of it as
     I randomly split my train of my test。![](img/685f8a9a43bae69c2b04fb232b54014c_39.png)
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 27 0。17 另一个 0。27 是 0。304，如果我回到这里，再运行这个几次，这就是我随机拆分我的训练和测试后得到的数字。![](img/685f8a9a43bae69c2b04fb232b54014c_39.png)
 - en: '![](img/685f8a9a43bae69c2b04fb232b54014c_40.png)'
+  id: totrans-40
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/685f8a9a43bae69c2b04fb232b54014c_40.png)'
 - en: So why is this useful while I can have my scores here。And I can say a couple
     things I can say scores I mean。![](img/685f8a9a43bae69c2b04fb232b54014c_42.png)
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么，为什么这很有用呢？因为我可以在这里得到我的分数。我可以说几件事情，我的意思是分数。![](img/685f8a9a43bae69c2b04fb232b54014c_42.png)
 - en: And so I can see while on average， R2 square R squared score is going to be
     0。21。 but I could also get some sense of the variance， and that'll tell me how
     sensitive I am to what data happens to end off in the test or training data set。
     and that probably depends how much on how much I have some outliers and how much
     outliers to。What happens with the scoring？Okay， so this will be the way we'll
     generally do it。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我可以看到，平均而言，R²平方得分将是0.21。但我也可以获得一些方差的感觉，这将告诉我我对测试或训练数据集中数据发生什么是多么敏感，这可能取决于我有多少异常值，以及这些异常值的数量。评分会有什么影响？好的，这将是我们通常的做法。
 - en: And so one last thing， right， when I was。![](img/685f8a9a43bae69c2b04fb232b54014c_44.png)
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以最后一件事，对吧，当我在。![](img/685f8a9a43bae69c2b04fb232b54014c_44.png)
 - en: Showing this picture here right， I kind of said， well， hey， I have all my data。
     then I just split it up into train and test。![](img/685f8a9a43bae69c2b04fb232b54014c_46.png)
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里展示这张图片，我有点说，嘿，我有我所有的数据。然后我只是把它分成训练集和测试集。![](img/685f8a9a43bae69c2b04fb232b54014c_46.png)
 - en: Why didn I use all my data here and the reason is that。Is that even though that
     would have been fine to do in this example what you're often going to be doing
     is you're going be trying to do a few different models and what you'll want to
     do is you'll want to do cross validation on each of the models and then you'll
     see well what one has the best score on average and you say well that one's the
     winner that's one where you use in the future。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 我为什么没有在这里使用我所有的数据，原因是。尽管在这个例子中这样做是可以的，但你通常会尝试进行几个不同的模型，而你会想要在每个模型上进行交叉验证，然后你会看到哪个模型的平均得分最好，然后你就会说，这个模型是赢家，未来会使用它。
 - en: And so there's this risk when you're doing that， let's say I evaluate 20 models。And
     pick the best one。 the best one probably did a little bit better than it should。
     right。 if I do 20 models， some will just by luck， do better and some will do worse。
     And so even though that's the right process to pick the best model I shouldn't
     throw brag about this cross validation score because it wasn't like I was just
     doing one model as in here。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以在做这个时存在风险，比如说我评估了20个模型，并选择最佳的那个。最好的模型可能比应该的表现得更好。对吧？如果我做了20个模型，有些模型只是因为运气而表现得更好，有些则表现得更差。因此，尽管这是选择最佳模型的正确过程，但我不应该夸耀这个交叉验证得分，因为我并不是只做一个模型。
 - en: I doing many models。 So what I would do is I look at this cross validation score
     across each of my models。 pick the best one， And then finally what I go back and
     actually do my real test data which is still hanging out here。 and then that's
     what I would report is the kind of accuracy of my favorite chosen model。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 我做了许多模型。所以我会查看每个模型的交叉验证得分，选择最佳的，然后最后我会回过头来实际使用我的真实测试数据，这些数据仍然在这里。然后我会报告我最喜欢的模型的准确性。
 - en: '![](img/685f8a9a43bae69c2b04fb232b54014c_48.png)'
+  id: totrans-48
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/685f8a9a43bae69c2b04fb232b54014c_48.png)'
 - en: '![](img/685f8a9a43bae69c2b04fb232b54014c_49.png)'
+  id: totrans-49
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/685f8a9a43bae69c2b04fb232b54014c_49.png)'
 - en: '![](img/685f8a9a43bae69c2b04fb232b54014c_50.png)'
+  id: totrans-50
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/685f8a9a43bae69c2b04fb232b54014c_50.png)'
