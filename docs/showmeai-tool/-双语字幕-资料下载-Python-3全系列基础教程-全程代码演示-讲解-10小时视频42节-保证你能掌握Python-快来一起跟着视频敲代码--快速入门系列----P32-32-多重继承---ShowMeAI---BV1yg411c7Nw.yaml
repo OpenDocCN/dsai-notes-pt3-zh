@@ -1,178 +1,245 @@
 - en: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
     - P32：32）多重继承 - ShowMeAI - BV1yg411c7Nw
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】Python 3全系列基础教程，全程代码演示&讲解！10小时视频42节，保证你能掌握Python！快来一起跟着视频敲代码~＜快速入门系列＞
+    - P32：32）多重继承 - ShowMeAI - BV1yg411c7Nw
 - en: '![](img/b285cbe4465ee6598e70099a1c292e32_0.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/b285cbe4465ee6598e70099a1c292e32_0.png)'
 - en: Welcome back everyone， this is Brian and we're going to talk about multiple
     inheritance。 we covered classes， we covered inheriting from another class。 but
     what if you have multiple classes you want to inherit from？
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 欢迎回来，大家好，我是布莱恩，我们要谈谈多重继承。我们已经覆盖了类，已经讨论了从另一个类继承。但是，如果你有多个类想要继承呢？
 - en: That's exactly what we're going to do。 some languages don't even allow this
     because it gets so complex。 Let's dive in and take a look。![](img/b285cbe4465ee6598e70099a1c292e32_2.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 这正是我们要做的。有些语言甚至不允许这样，因为它变得非常复杂。让我们深入看看。![](img/b285cbe4465ee6598e70099a1c292e32_2.png)
 - en: '![](img/b285cbe4465ee6598e70099a1c292e32_3.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/b285cbe4465ee6598e70099a1c292e32_3.png)'
 - en: Let's go ahead and make a class here。 So we're going to make a vehicle class。
     or' going say class。别说。And if you remember from the last video， I definitely love
     to make sure that the instances of the variables are actually created so we don't
     get that nasty。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们在这里继续创建一个类。所以我们要创建一个车辆类。或者说是类。别说。如果你记得上一段视频，我绝对喜欢确保变量的实例确实被创建，这样我们就不会遇到那种讨厌的。
 - en: not defined error。We'm going to go ahead and save drive。 Not how we're not putting
     in a knit here。 We just simply don't need it。 We're going to leave the default
     constructor。And I'm going to say so。Comma and then speed。We're going to keep those
     just super ridiculously simple。We're going to say drive， we're going to set the
     speed， we're going to just copy and paste this。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 未定义错误。我们要继续保存驾驶。不是说我们没有放入初始化，这里我们根本不需要它。我们将保留默认构造函数。我会说，因此。逗号，然后是速度。我们会把这些保持得非常简单。我们会说驾驶，我们会设置速度，我们会简单地复制并粘贴这个。
 - en: and I want another function called stop。We're going to just set the speed to
     0。 We don't need。That parameter there。Now let's go ahead and make another function。Allll
     display。And this is where things are going to get a little bit interesting。 Take
     special note of this function because we're going to do this function again in
     another class。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 我想要另一个叫做停止的函数。我们将把速度设置为0。我们不需要。那个参数。现在让我们继续创建另一个函数。全部显示。这个地方会变得有点有趣。特别注意这个函数，因为我们将在另一个类中再次使用这个函数。
 - en: When say print。And we're just going to simply say driving at whatever the speed
     is speed。![](img/b285cbe4465ee6598e70099a1c292e32_5.png)
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 当说打印。我们只会简单地说以某个速度行驶。![](img/b285cbe4465ee6598e70099a1c292e32_5.png)
 - en: Very simple little self contained class here。![](img/b285cbe4465ee6598e70099a1c292e32_7.png)
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 非常简单的小自包含类。![](img/b285cbe4465ee6598e70099a1c292e32_7.png)
 - en: Let's go ahead and make another very， very simple class。 I'm just going to make
     a freezer class。 And this thing exists solely to well freeze food。Theres a freezer。And
     let's go ahead and make a variable。 let's call it temp equals 0。 So we're just
     going to set the temperature20 by default here。Now， I going say tough。Breeze。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们继续创建另一个非常、非常简单的类。我只打算创建一个冷冻机类。这个东西存在的唯一目的是冷冻食物。有一个冷冻机。让我们继续创建一个变量。我们叫它temp，等于0。所以我们将在这里默认将温度设置为20。现在，我会说困难。冷冻。
 - en: So we're going to be able to freeze some food at a specific temperature。E must
     say， self that temp。Was whatever temperature we just handed it。And let's go ahead
     and print out。Freezing just so we know that the freezer is actually going to，
     you know， shockingly freeze the food。Now I'm going to actually grab this right
     here from the vehicle class， De display self。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们能够在特定温度下冷冻一些食物。我必须说，自我.温度。是我们刚传入的温度。现在我们来打印一下。正在冷冻，以便我们知道冷冻机实际上会，你知道，令人震惊地冷冻食物。现在我要从车辆类中实际获取这个，显示自我。
 - en: and we're going to modify this， but we're going to put it in our freezer class。You
     don't have to copy and paste it just as long as the name is the same。 what we're
     going to do is intentionally create a naming collision between these two classes。So
     both the vehicle and the freezer have a display function。 I must say freezing。At
     self dot temp。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将修改这个，但我们会把它放在冷冻机类中。你不必完全复制和粘贴，只要名称相同即可。我们要做的是故意在这两个类之间创建命名冲突。因此车辆和冷冻机都有一个显示函数。我必须说正在冷冻。自我.温度。
 - en: as there is no speed in the freezer class。Very， very simple， very easy to understand。
     So what we can do is call these independently called display and see exactly what's
     going on into the hood。Now let's see what happens if we use multiple inheritance
     and smash these two together。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 因为冷藏类中没有速度。非常简单，非常容易理解。所以我们可以独立调用这些，调用`display`，看看到底发生了什么。现在让我们看看如果使用多重继承并将这两者结合在一起会发生什么。
 - en: '![](img/b285cbe4465ee6598e70099a1c292e32_9.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/b285cbe4465ee6598e70099a1c292e32_9.png)'
 - en: '![](img/b285cbe4465ee6598e70099a1c292e32_10.png)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/b285cbe4465ee6598e70099a1c292e32_10.png)'
 - en: Okay， let's go ahead and combine these two together。 we're going to make a freezer
     truck class。 I'm going to say class。Rraazer truck。And we want a freezer。And a
     vehicle。We're going to smash those into one giant glass， and initially I'm just
     going to say pass。So we're just declaring the class and it does nothing else，
     that's what pass does in Python。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的，让我们继续将这两者结合在一起。我们要创建一个冷藏卡车类。我将说`class FreezerTruck`。我们需要一个冷冻机和一辆车。我们将把它们合并成一个巨大的类，最初我只会说`pass`。所以我们只是声明这个类，它没有其他功能，这就是在
+    Python 中`pass`的作用。
 - en: And we're going to go ahead and create it。 I'm going to say T equals。Rraer truck。T
     dot drive and we want to go at 50 miles per here in the states that's actually
     relatively fast。And then we're going to say T dot freeze。 I'm going to put this
     at negative 30。Ca whatever we're carrying， we don't want it to， you know， thawud
     on the way to the store。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们将继续创建它。我将说`T = FreezerTruck()`。`T.drive()`，我们希望以每小时50英里的速度行驶，在美国这实际上相对较快。然后我们将说`T.freeze()`，我会把这个设置为负30。无论我们携带什么，我们都不希望它在去商店的路上融化。
 - en: Then I'm just going to go ahead and print。Now， we are going to print out。Some
     dashes here。 just to kind of separate。Now， we want to say tea display and pop
     quiz。We have multiple displays。 we have the freezer class display and the vehicle
     display。Which one of these is going to be displayed？So we're either going to see
     freezing at or driving at which one is going to happen here。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我将继续打印。现在，我们将打印出一些破折号，以便进行分隔。现在，我们要说`tea display`和小测验。我们有多个显示。我们有冷藏类显示和车辆显示。哪一个将被显示？所以我们要么看到`Freezing`，要么看到`Driving`，到底哪个会发生呢？
 - en: let's find out， save run。Breezing at negative 30。 and we don't get the speed。
     We don't see that driving at。So now we've got multiple problems， we want to be
     able to see。Both of those。But what we've defined， whether we realize it or not，
     is a new concept called。A method resolution order， or the MRO。And you'll hear
     this time and time again。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们找出，保存并运行。以负30的速度冷冻。我们没有速度。我们看不到驾驶。因此，现在我们有多个问题，我们希望能够看到这两个。但是我们所定义的，无论我们意识到与否，是一个新概念，称为方法解析顺序，或称
+    MRO。你会一次又一次地听到这个。
 - en: you'll see people in forums asking how you access or why this is happening。
     So the order is very simple。 It's first come first serve。 So we defined freezer
     first。Therefore。 it's going to display the freezer。 And if we just switch these
     around。We're still doing the same thing。 We're still inheriting both of these。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 你会看到论坛上的人们在问如何访问或为什么会发生这种情况。所以顺序非常简单。先来先服务。所以我们先定义了冷冻机。因此，它将显示冷冻机。如果我们只是交换这两个，我们仍然在做同样的事情。我们仍然在继承这两个。
 - en: but watch what happens down here。Driving at 50 speed。 So that is the method
     resolution order。 It first come， first serve。That is frustrating。 So how do we
     get past this now， let's say deaf。 good display。走。And let's go ahead and let's。Brennt
     these out， say Prince。F。I want to show you a little trick here。 I want to make
     sure these are actually subclasses。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是看看这里会发生什么。以50的速度驾驶。所以这就是方法解析顺序。先来先服务。这真让人沮丧。那么我们怎么能解决这个问题呢？让我们说`def display()`。走吧，让我们继续，并打印这些，假设是`print()`。我想给你展示一个小把戏。我想确保这些实际上是子类。
 - en: So I'm going to say is a。Re， Sir。I're going to say is。Sb。Basss。And we want freezer
     truck。So basically we're giving it the current class we're saying。So it's freezer
     truck。诶。Rreezer。Then we're just going to say， is a。猎好。And grab that。Good on hear
     bang。Watch what happens when we call display now。Is a freezer true Is a vehicle
     true。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我将说`is a FreezerTruck`。我们希望它是`Sb.Basss`。基本上我们是在给当前类定义，所以它是冷藏卡车。诶，`Freezer`。然后我们只会说，`is
+    a Vehicle`。抓住这个。不错，听着，看看当我们现在调用`display`时会发生什么。是冷藏吗？是车辆吗？
 - en: So now we are calling our own function， and we can actually determine whether
     or not it's inheriting a specific class。 The class you want to check is always
     first。 The class you want to check against is second。So now。Let's go ahead and
     see。How we would get around this。 I'm going to say super。So we're going to call
     the parent， the problem is we have two parents now。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们调用自己的函数，实际上我们可以判断它是否继承特定类。你想检查的类总是放在第一位。你想对比的类放在第二位。现在。让我们看看我们如何解决这个问题。我将说super。所以我们要调用父类，问题是我们现在有两个父类。
 - en: so let's try calling them independently。Say， freezer。Myself。That display。And
     I'm going to take the same thing。But we're going to use the vehicle。So we're saying
     super。 call the vehicle， super， call the freezer using the self object， the current
     object。 and call display directly and see， let's just see what happens here。 Oh，
     we had a bad time。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么我们试着独立调用它们。比如，冰箱。自己。那个显示。我要使用同样的东西。但我们要用车辆。所以我们在说“super”。调用车辆，super，使用当前对象调用冰箱，然后直接调用显示，看看这里会发生什么。哦，我们遇到了麻烦。
 - en: So let's look at this in depth here， So on line 42。T display， so this guy down
     here。And then it's jumping up to line 36， which is this guy right here。Super as。Super
     object has no attribute display。 Now， wait just a minute。 We do。So if we look
     at freezer。 it's right there。 What is going on here。 Well， again。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以让我们在这里深入看看，在第42行，T显示，这个家伙在这里。然后它跳到第36行，就是这个家伙。Super对象没有属性显示。现在，等一下。我们是有的。如果我们看冰箱，它就在那。那么这里发生了什么。好吧，再次。
 - en: method resolution order is popping in and saying， nope can't do that。 So just
     to prove it。Let's comment out freezer those vehicles first， let's run this again。Everything
     magically works。That is super frustrating。All right。Let's go ahead and just comment
     these out。 This is not what I consider the correct way to do it。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 方法解析顺序出现了问题，提示我们“不能这样做”。所以为了证明这一点，我们先把冰箱和那些车辆注释掉，然后再运行一次。一切神奇地运作了。这真让人沮丧。好的，我们继续把这些注释掉。这并不是我认为的正确做法。
 - en: but I'm going to put some comments in here just in case somebody grabs the source
     code here。So what's the best way or the correct way of doing this， Well。 we're
     going to call that class directly， and there are other ways， probably even better
     ways。 But this is what we're going to do with our limited knowledge set of Python
     at this moment。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 不过我会在这里添加一些注释，以防有人抓取源代码。那么，做这件事的最佳或正确方法是什么呢？我们将直接调用那个类，还有其他方法，可能还有更好的方法。但这就是我们在目前有限的Python知识下要做的。
 - en: We're going to say freezer dot。Display。Remember what I said when we inherit
     an object。 Python's creating it。 So it knows that the freezer truck has a freezer。In
     it。So we're going to call freezer display。We're going to call vehicle display。And
     let's watch this work。Now we can see we are freezing and we are driving。Oh my
     gosh， super confusing。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们要说冰箱.显示。记住我说过，当我们继承一个对象时，Python正在创建它。所以它知道冰箱卡车里有一个冰箱。因此，我们要调用冰箱的显示。我们要调用车辆的显示。让我们看看这个运作情况。现在我们可以看到我们在冷冻和驾驶。哦，天哪，超级
+    confusing。
 - en: So the major takeaways from this video is Python does allow multiple inheritance。
     but it has some gotchas mainly naming collisions。 For example。 we saw that the
     vehicle and the freezer have a display function。 But once we inherit both of them。
     MO steps in and says we're only going to use the first ones。 So if we want to
     use multiple。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这段视频的主要要点是，Python确实允许多重继承，但它有一些陷阱，主要是命名冲突。例如，我们看到车辆和冰箱都有一个显示函数。但是一旦我们同时继承它们，MO就会介入并说我们只会使用第一个。所以如果我们想使用多个。
 - en: we have to independently call them。😊，Super challenging， but once we wrap our
     head around it。 it's also very elegant。![](img/b285cbe4465ee6598e70099a1c292e32_12.png)
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们必须独立调用它们。😊，超级具有挑战性，但一旦我们理解了这一点，它也是非常优雅的。![](img/b285cbe4465ee6598e70099a1c292e32_12.png)
