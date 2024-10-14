@@ -1,0 +1,219 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P60：61）从头开始创建 Excel 宏 - 自动调整列 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P60：61）从头开始创建 Excel 宏 - 自动调整列 - ShowMeAI - BV1uL411s7bt
+- en: '![](img/b0396bafa7c7fe03dd9fc56da1ac0d7b_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/b0396bafa7c7fe03dd9fc56da1ac0d7b_0.png)'
+- en: In this video， I will show you how to create your own Excel macro。 and specifically
+    in this video。 it's gonna to be a macro that will make it so that you can just
+    click a button。 And by doing so all of the columns in your Excel spreadsheet。
+    will automatically fit the data that's in those columns and look at the spreadsheet
+    that we're using for this。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个视频中，我将向你展示如何创建自己的Excel宏。具体来说，这个视频将介绍一个宏，你只需点击一个按钮。通过这样做，你的Excel电子表格中的所有列将自动调整为这些列中的数据，并查看我们正在使用的电子表格。
+- en: It's a contacts list with all sorts of personal information for some fictional
+    people。 And you can get a copy of this in the description below the video。 But
+    as you can see。 the widthits of some of these columns are off a bit。 This column
+    B for example。 is way too wide And of course， I can adjust that by clicking and
+    dragging between column B and column C in this example。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是一个包含一些虚构人物所有种类个人信息的联系人列表。你可以在视频描述中获取这个副本。但正如你所看到的，一些列的宽度有点不对。例如，B列太宽。当然，我可以通过点击并拖动B列和C列之间的区域来调整它。
+- en: just right on that line， click and drag to resize that column。 There's also
+    a faster way to do this。 I could resize all of these columns by clicking and dragging
+    to select all of the column headings。 And then I could double click between any
+    two of those and it resizes all of them to the perfect width。I just did control
+    Z to undo。 So even though that's faster。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在那条线上，点击并拖动来调整列的大小。还有一个更快的方法。我可以通过点击并拖动来选择所有列标题来调整所有列的大小。然后我可以在任意两个列之间双击，这样所有列就会调整到完美的宽度。我刚刚按了Ctrl
+    Z撤销。因此，尽管这样更快。
+- en: I can create a macro to do it even faster than that？ So how would I go about
+    creating my own macro。 Well， one way to do that is to record your own macro。 And
+    if you haven't already watched my beginner's guide to Excel macros。 You should
+    watch that in a lot of cases。 That's the best option is just to record a macro。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以创建一个宏，让这一切变得更快吗？那么，我该如何创建自己的宏呢？其中一种方法是录制自己的宏。如果你还没有观看我的Excel宏初学者指南，建议你观看。在很多情况下，录制宏是最佳选择。
+- en: And then assign it to a button。 But let's look at how to create a macro from
+    scratch。 Step1 is to make sure that you have the developer tab added to Excel。
+    right now。 I don't have that developer tab。 There are a couple of ways that you
+    can add that developer tab。 One of the easiest is just to right click on any of
+    these tabs and choose customize the ribbon。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后将其分配给一个按钮。但让我们看看如何从头开始创建一个宏。第一步是确保你已经在Excel中添加了开发者选项卡。目前，我没有开发者选项卡。有几种方法可以添加开发者选项卡。最简单的方法之一是右键单击任何一个选项卡，选择“自定义功能区”。
+- en: That brings up these options。 and you can look here at the right where it says
+    main tabs。 you can look for developer and make sure that box is checked then click
+    O Now I have a developer tab here on the developer tab。 you can just look in the
+    code group。 and there we have visual basic。And go ahead and click that。 notice
+    that there's also a keyboard shortcut alt F 11。 And that opens the visual basic
+    editor。 Now。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这将弹出这些选项。你可以在右侧查看，那里有主选项卡，你可以查找“开发者”，确保该框被选中，然后点击确定。现在我在开发者选项卡上有一个开发者选项卡。在开发者选项卡中，你可以查看代码组，在那里我们有Visual
+    Basic。去点击它。请注意，还有一个键盘快捷键Alt F 11，可以打开Visual Basic编辑器。
+- en: what is visual basic。 Well， it's a programming language like C plus plus or
+    other programming languages。 and Microsoft includes visual basic a version of
+    it for you to use inside of Microsoft word Powerpoint and Excel。 But instead of
+    calling it visual basic， it's Vba visual basic for applications。 And so we're
+    going to do a little bit of programming here。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 什么是Visual Basic？它是一种编程语言，类似于C++或其他编程语言。微软为你在Word、PowerPoint和Excel中使用包含了Visual
+    Basic的一个版本。但它的名称是VBA，即“应用程序的Visual Basic”。因此，我们将在这里进行一些编程。
+- en: But I hope you'll find it to be pretty simple not too intimidating。 So what
+    we're going to want to do here is select sheet 1。 that's the spreadsheet that
+    I'm working on right now。 And if I double click that。 you'll notice that I get
+    a window that pops up。 And this is where I can put my code。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但我希望你会发现这很简单，不会太令人畏惧。那么我们要做的是选择工作表1。这是我现在正在处理的电子表格。如果我双击它，你会注意到弹出一个窗口。在这里我可以放入我的代码。
+- en: And if you're familiar with visual basic。 and you know how to code in it。 you
+    can just type that code in。 and you've created an Excel macro。 in this video we're
+    just going to use a simple bit of code。 And I'm including this in the description。Below
+    the video in case you want to just copy paste it in so we're going start by typing
+    sub Sub stands for subroutine procedure and then I'm just going to type in autofit
+    all columns left parenthesis right parenthesis I'll tap enter activateivate enter
+    C dot select and notice when I typed dot it brought up a popup menu that I could
+    just click to pick which of these I want to use I'll just go with select so I
+    can either keep typing or doublecl to enter the word select there tap enter on
+    the keyboard cellss dot entire column dot autofit and here I can just tap enter
+    to choose autofit and then the last part is added automatically and sub in other
+    words we're done with this subroutine procedure At this point I'll just go ahead
+    and X out of the Vba coding window and now on the developer tab in the code group
+    I can just go directly to the macros button and I can。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你熟悉Visual Basic，并且知道如何编写代码，你可以直接输入那段代码。你就创建了一个Excel宏。在这个视频中，我们将使用一小段简单的代码。我会把它包含在描述中，放在视频下方，以便你想复制粘贴的话。我们将开始输入sub，sub代表子程序，然后我将输入autofit
+    all columns（自动调整所有列）括号，按下回车键，输入C.dot.select，注意当我输入dot时，弹出了一个菜单，我可以点击选择其中的选项。我就选择select，所以我可以继续输入或者双击输入select，然后在键盘上按回车，输入cellss.dot.entire
+    column.dot.autofit，在这里我可以直接按回车选择autofit，最后一部分会自动添加，sub，换句话说，我们完成了这个子程序。此时我将关闭VBA编码窗口，然后在开发者选项卡的代码组中，我可以直接点击宏按钮。
+- en: Cose this one macro that I've created and click Run。 Notice what it did。 It
+    automatically resized all columns to fit exactly perfectly the content in those
+    columns so that everything fits and the biggest item just barely fits in each
+    column Okay I'm going mess up some of these columns again just to show you that
+    there is an even better way to sometimes use a macro and that is by creating a
+    button and attaching that button to the macro that you've created。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 运行我创建的这个宏，并点击运行。注意它做了什么。它自动调整了所有列的大小，以完美适应这些列中的内容，这样一切都能适合，而最大的项目刚好适应每一列。好吧，我会再次搞乱一些列，只是为了向你展示，有时候使用宏的更好方法是创建一个按钮并将那个按钮附加到你创建的宏上。
+- en: So here on the developer tab， I'm just going go to the insert button and I'll
+    choose a form control to add and it's going to be a button you can also add active
+    X controls。 but for simplicity， I'm just gonna to click form control button and
+    then click and drag on the screen to create the outline of that button。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以在开发者选项卡上，我将去插入按钮，选择一个表单控件来添加，它将是一个按钮。你也可以添加Active X控件，但为了简单起见，我将点击表单控件按钮，然后在屏幕上点击并拖动来创建按钮的轮廓。
+- en: next， I'm supposed to assign a macro to that button Now sometimes the macro
+    doesn't exist yet in which case you can just click okay and then assign the button
+    later。 but in this case， I do have the macro it's already created。This auto fit
+    all columns。 I click O。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 接下来，我应该为那个按钮分配一个宏。有时候，宏还不存在，在这种情况下，你可以直接点击确定，然后稍后再分配按钮。但在这个案例中，我已经创建了宏。它是自动调整所有列的。我点击O。
+- en: Now I can change the name of the button if I want to just click to highlight
+    the text。 delete it out， and I'll call this button。 autofit columns。 Next。 I want
+    to move this button off to the side so that it's not covering the data。 Now。 with
+    these developer buttons you can't left click and drag to move the buttons。 Instead。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，如果我想更改按钮的名称，只需点击高亮文本，删除它，我将这个按钮命名为autofit columns（自动调整列）。接下来，我想把这个按钮移到一边，以便它不覆盖数据。现在，使用这些开发者按钮，你不能左键点击并拖动来移动按钮。相反。
+- en: you have to right click and drag。 So I'll just pull it over to the side。 release
+    the mouse button。 move here。 And then once you click off that developer button。
+    You're not gonna to be able to move it or do anything other than click the button
+    instead you right click on the button。 That gives you the options。 You can format
+    the control， assign a different macro。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你需要右键点击并拖动。所以我会把它拉到一边，松开鼠标按钮，移动到这里。然后，一旦你点击了那个开发者按钮，你就无法再移动它或进行其他操作，只能点击按钮。相反，你需要右键点击按钮。这会给你提供选项。你可以格式化控件，分配一个不同的宏。
+- en: cut it or copy it or whatever you need to do。 But it's the right click that
+    enables those options。 So I'm gonna go ahead and left click on it and let's see
+    if it executes the macro。 I click and it worked。 It beautifully resized all the
+    columns to make sure everything fits perfectly once again。 Now， at this point，
+    I want to。😊，Save this workbook and this spreadsheet because I'd like to be able
+    to use this button in the future。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 剪切、复制或进行任何你需要的操作。但启用这些选项的是右键单击。所以我将继续左键单击它，看看是否能执行宏。我单击了，它成功了。它漂亮地调整了所有列的大小，确保一切再次完美契合。现在，此时我想😊，保存这个工作簿和这个电子表格，因为我希望在未来能使用这个按钮。
+- en: I don't want to have to create my macro and my button every time I use this
+    spreadsheet。 so I can just go up and click the save button， but watch what happens。
+    It's giving me a warning。 The following features cannot be saved in macrofr workbooks。
+    because I have created a macro。 and I've used visual basic for applications to
+    create this great feature。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我不想每次使用这个电子表格时都创建我的宏和按钮。所以我可以直接点击保存按钮，但看看会发生什么。它给我发出了警告。以下功能无法保存在启用宏的工作簿中，因为我创建了一个宏，并且我使用了Visual
+    Basic for Applications来创建这个伟大的功能。
+- en: I have to save this workbook in a special way。 Not it says to save a file with
+    these features。 click no and then choose a macro enabledable file type in the
+    file type list。 So I'll do that。 click no， and then I'll go up here to the file
+    type。 and I'll change it to Excel macro enabledable workbook。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我必须以特殊的方式保存这个工作簿。系统提示要保存带有这些功能的文件。点击否，然后在文件类型列表中选择一个启用宏的文件类型。所以我会这样做。点击否，然后我会在这里更改文件类型，选择Excel启用宏的工作簿。
+- en: noticeice that it adds an M to the end of the file extension。 I'm going also
+    changed the name of the file itself just a little bit just for my own reasons。
+    And now when I close this file。 It closes out， and then maybe in a day or a week。
+    I go to file and I'll choose that same spreadsheet。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 注意它在文件扩展名末尾添加了一个M。我也稍微更改了文件名，仅仅是出于我自己的原因。现在当我关闭这个文件时，它会关闭，然后也许在一天或一周后，我会去文件，选择那个相同的电子表格。
+- en: Open up there's my autofit columns button that I created and link to my macro。
+    but notice it's not gonna to work unless I click this button to enable macros。
+    So I'll click enable content。 And now as I work， let's say I type in somebody's
+    address and it's much longer than the other addresses so the data doesn't fit
+    in the column anymore I can just click this button and it will autoresize。 So
+    these visual basic scripts or bits of code that you can type in in a way they
+    can seem almost like magic spells。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 打开后，这就是我创建并链接到我的宏的自适应列按钮。但请注意，除非我单击此按钮以启用宏，否则它不会工作。所以我会点击启用内容。现在，当我工作时，假设我输入某个地址，而这个地址比其他地址长得多，因此数据不再适合该列，我只需单击这个按钮，它就会自动调整大小。因此，这些可视基本脚本或代码片段，输入时几乎看起来像魔法咒语。
+- en: until you understand the coding itself。 it does kind of seem like magic。 if
+    I know these words and if I paste them into this window。 it can do powerful things
+    almost like magic。 and that is one way to proceed from here。 if you want to， you
+    can just search the internet for bits of VB code。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 直到你理解代码本身。它确实有点像魔法。如果我知道这些单词，并把它们粘贴到这个窗口中，它可以做出几乎像魔法一样强大的事情。这是从这里继续进行的一种方式。如果你愿意，可以在互联网上搜索一些VB代码的片段。
+- en: plug them in and see how they affect your spreadsheets Now make sure you're
+    getting those codes from reputable sources。 and that you understand what the code
+    is gonna do otherwise it could mess up your data。 in addition to just searching
+    the Internet。There are also some good books you can get。 and I'll put links in
+    the description below to some books about VBA and Excel。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 插入它们，看看它们如何影响你的电子表格。现在确保你从可信的来源获取这些代码，并理解这些代码会做什么，否则可能会破坏你的数据。除了在互联网上搜索之外，还有一些不错的书籍可以参考。我会在下面的描述中提供一些关于VBA和Excel的书籍链接。
+- en: and if this video is well received， I'd love to make additional videos showing
+    you some other useful Excel macros that you can build from scratch in Microsoft
+    Excel。![](img/b0396bafa7c7fe03dd9fc56da1ac0d7b_2.png)
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果这个视频反响良好，我很乐意制作其他视频，向你展示一些你可以从零开始在Microsoft Excel中构建的有用Excel宏。![](img/b0396bafa7c7fe03dd9fc56da1ac0d7b_2.png)

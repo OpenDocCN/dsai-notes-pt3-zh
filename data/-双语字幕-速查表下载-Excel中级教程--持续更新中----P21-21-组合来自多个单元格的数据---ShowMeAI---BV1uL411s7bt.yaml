@@ -1,0 +1,147 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P21：21）组合来自多个单元格的数据 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P21：21）组合来自多个单元格的数据 - ShowMeAI - BV1uL411s7bt
+- en: '![](img/6689f1c6c070627a588a751f13ea0a13_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/6689f1c6c070627a588a751f13ea0a13_0.png)'
+- en: In this tutorial， I'm going to show you how to easily combine data from more
+    than one cell in Excel。 So let's look at this spreadsheet here。 This is a customer
+    relationship tracker for a hypothetical company。 And these are all customers of
+    this company。 You can see that their first name is here。 Last name in a separate
+    column。 The total amount of purchases that they've made from the company and some
+    other data。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个教程中，我将向你展示如何轻松地将多个单元格中的数据合并在Excel中。所以我们来看这个电子表格。这是一个假设公司的客户关系追踪器。这些都是这个公司的客户。你可以看到他们的名字在这里。姓在单独的列中。他们从公司购买的总额和其他一些数据。
+- en: So what if I would like to combine some of this data together。 Let's say to
+    produce a customer profile。 and to put that information in one column here at
+    the right。 So I can just click here in G2。 and I'll just type customer profile。
+    Looks like it did not copy the format。 I'll just click here on the cell whose
+    format I want to copy and I'll go here on the home tab home ribbon。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那么如果我想将一些数据合并在一起呢？假设要生成一个客户档案，并将这些信息放在右侧的一列中。所以我可以在G2中点击这里，输入客户档案。看起来它没有复制格式。我只需点击我想要复制格式的单元格，然后去主页选项卡。
+- en: click the format painter and then click here。 and it makes the format the same。
+    Okay。 so watch how I can do this。 How I can add the word Gina to the word pullin
+    and。Let's say the total amount of purchases that they've made in dollars。 So I'll
+    just click here in cell G3， and I'll type equals。 So this cell equals。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 点击格式刷，然后点击这里。这样格式就一致了。好的，看看我怎么能做到这一点。我可以将单词Gina添加到单词pullin中。假设他们的购买总额是以美元计的。我只需在G3单元格点击这里，输入等于。这个单元格等于。
+- en: and I want it to equal Gina， So I click on Gina。 and then I also want it to
+    include the word pullin。 But if I click on pullin， it changes to B3。 So what if
+    I click Gina plus pullen and hit return。 Look， Excel doesn't understand。 It doesn't
+    seem to compute。 You know。 how do you add a name plus another name。 So the way
+    you do this properly is you type equals click on Gina。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想要它等于Gina，所以我点击Gina。然后我还想要它包含单词pullin。但如果我点击pullin，它就变成了B3。那么如果我点击Gina加pullen并按回车，会怎么样呢？看，Excel似乎不理解。它似乎无法计算。你知道，如何将一个名字加上另一个名字。所以正确的做法是输入等于，点击Gina。
+- en: and then you type an mpersand， or some people just call it the and sign。 So
+    a3 mpersand pullen Now watch what happens If I tap enter or return on the keyboard。
+    it says Gina pullen， It combined the contents of cell a3 with the contents of
+    cell B3。 Now there's a problem here。There's no space between Gina and pullen。
+    So let's fix that。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后你输入一个&，有些人称它为“和”符号。所以输入A3&pullen。现在看，如果我在键盘上按Enter或Return，会发生什么。它显示Gina pullen，它将A3单元格的内容与B3单元格的内容合并。现在这里有个问题。Gina和pullen之间没有空格。我们来解决这个问题。
+- en: All I have to do to put a space in is after the ampersand。 type in quotation
+    marks a space using the space bar and then quotation marks again and then type
+    in ampersand again。 So what this should do is it connects whatever is in a3 with
+    a space and then it connects that with whatever is in B3 So I tap return or enter
+    on the keyboard and it worked。 Now let's change it even more。 I want to add now
+    the total purchases。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我只需在&后面放一个空格。输入引号，按空格键，再输入引号，然后再输入&。这样做应该将A3中的内容与一个空格连接，然后再与B3中的内容连接。所以我在键盘上按回车，成功了。现在我们再做一点改变。我想要添加购买总额。
+- en: So I'll just add another ampersand， and I should probably put a space in there
+    again or maybe a colon。 let's try a colon， and then I put the close another ampersand
+    and maybe I want another space in there。 So I put in quote space close another
+    ampersand and now I'm gonna click on the total amount of purchases here and tap
+    enter on the keyboard or return if youre using。a Mac and look what we have。 Gina
+    pullin $40。 If I really wanted to get picky with this。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我再添加一个&，可能还要再加一个空格，或者也许是一个冒号。我们试试冒号，然后再加一个&，可能我还想再加一个空格。所以我在引号中输入空格，然后再加一个&，现在我要点击这里的购买总额，按键盘上的Enter键，或者如果你用的是Mac，按回车，看看我们得到了什么。Gina
+    pullin $40。如果我真的想要挑剔一下这个。
+- en: I could go in and add a dollar sign。 So after the last ampersand quotation marks
+    dollar sign quotation marks。 I'll need another ampersand tapap return or enter
+    on the keyboard。 And now that looks just how I want it to look。 So this is a very
+    simple customer profile。 but it lets me know the names of the customers who have
+    purchased the most from us over the years。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以进去加一个美元符号。所以在最后的和号引号美元符号引号之后，我需要另一个和号，然后在键盘上按回车或输入。现在看起来正是我想要的样子。所以这是一个非常简单的客户档案，但它让我知道多年来购买我们产品最多的客户名字。
+- en: Now， unfortunately， I'm going have to do that again for every single one of
+    these customers， right？
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，不幸的是，我必须对每一个客户都这样做，对吧？
+- en: Well， actually know all I have to do is click on Gina pullin 40 and go to the
+    autofill handle。 I'm going to zoom in on this a little bit。 But you can see it
+    here。 any time you've clicked on a cell in the lower right corner of that cell。
+    there should be a very small square。 You can see it there。 It's green。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 嗯，实际上我只需要点击Gina Pullin 40，然后去自动填充手柄。我会稍微放大一下。但是你可以在这里看到，每当你点击单元格的右下角时，应该会有一个非常小的方块。你可以在那看到它，绿色的。
+- en: And that is the autofill handle。 And what it does is that it copy。When you click
+    and drag it。 it copies whatever is in the cell that is selected。 Now， sometimes
+    it doesn't just copy， it extends。 And if you haven't watched my tutorial on the
+    autofill handle， you really need to do that。 But in this case， I really do just
+    want to copy whatever is in this cell。 Now。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这就是自动填充手柄。它的作用是复制。当你点击并拖动时，它会复制所选单元格中的内容。有时它不仅复制，还会扩展。如果你还没看我关于自动填充手柄的教程，真的需要去看一下。但在这种情况下，我确实只想复制这个单元格中的内容。现在。
+- en: some of you might say， no， you don't。 You don't want to copy Geninool and 40。
+    Well。 if you think about it， that's not really what's in this cell。 If I double
+    click on that cell。 Or if I just click on it once and look up here at the formula
+    bar。 you can see that this is actually a formula。 It's not just geninaol and $40。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 有些人可能会说，不，你不想复制Gina 40。好吧，如果你想想，这并不是这个单元格里的内容。如果我双击这个单元格，或者只点击一次并查看公式栏，你可以看到这实际上是一个公式。它不仅仅是Gina和$40。
+- en: So I want to copy that formula down this column。 So I'll click and hold that
+    autofill handle and just drag down the sheet and release。 And look what it did。
+    It combine the first name， the last name and combine that with the total sales
+    from each customer。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我想把这个公式复制到这一列。于是我点击并按住自动填充手柄，向下拖动表格并释放。看看它做了什么。它将名字、姓氏和每个客户的总销售额组合在一起。
+- en: Now， just one thing to take note of。 the results here in column G。 They end
+    up being treated like text。 So these aren't really numerical。They have numbers
+    included。 but if I were to do an auto sumum， it doesn't really know how to handle
+    that because these aren't really numbers。 They're just formulas that combine text
+    with numbers and the result is treated basically like text。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，有一点需要注意的是，G列的结果会被视为文本。所以这些并不是真正的数字。虽然包含数字，但如果我做自动求和，它实际上不知道如何处理，因为这些并不是真正的数字。它们只是将文本与数字组合在一起的公式，结果基本上被视为文本。
+- en: And I really think the more you use Excel。 The more you'll see opportunities
+    to use the ampersand to combine data from more than one cell。 and pull that data
+    together into one cell。 Thanks for watching。 I hope you found this tutorial to
+    be helpful。 If you did， please click the like button below。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我真的认为你使用Excel越多，你就越会看到机会使用和号将多个单元格的数据组合在一起，汇总到一个单元格中。感谢观看。我希望你觉得这个教程有帮助。如果你觉得有帮助，请点击下面的喜欢按钮。
+- en: '![](img/6689f1c6c070627a588a751f13ea0a13_2.png)'
+  id: totrans-17
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/6689f1c6c070627a588a751f13ea0a13_2.png)'

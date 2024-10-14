@@ -1,0 +1,156 @@
+- en: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P45：45）两个动态数组函数：UNIQUE 和 SORT - ShowMeAI
+    - BV1Jg411F7cS
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P45：45）两个动态数组函数：UNIQUE 和 SORT - ShowMeAI
+    - BV1Jg411F7cS
+- en: '![](img/d297961bf4ff678426926aaad9188dbb_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/d297961bf4ff678426926aaad9188dbb_0.png)'
+- en: In this video， we're going to look at two of Excel's new dynamic array functions。
+    the unique function and the sort function。 and we'll look at how you can use the
+    two together to do some pretty exciting things。 So here I have a spreadsheet with
+    a list of bands albums and some more information about those albums。 But as you
+    can see the bands are repeated。 and so are the albums why because it's listed
+    out by quarter each quarter of the year。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个视频中，我们将看一下Excel的两个新的动态数组函数：unique函数和sort函数。我们还将看看如何将这两个函数结合起来做一些相当令人兴奋的事情。所以这里我有一个电子表格，上面有乐队专辑及其更多信息。但正如你所看到的，乐队是重复的，专辑也是重复的，为什么呢？因为它是按季度列出的，每个季度都有。
+- en: different sales results， things like that。 So now what if I want to generate
+    just a list of all of the bands。 That's it， I don't need duplicates， I just need
+    a list of every single band。 Well。 I can do that now by using the fairly new unique
+    function in Microsoft Excel。 and you should be able to use this function if you
+    have the Microsoft 365 version of Excel。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 不同的销售结果，诸如此类。那么，如果我想生成一个所有乐队的列表呢？就这样，我不需要重复项，我只需要每个乐队的列表。好吧。我现在可以通过在Microsoft
+    Excel中使用相对较新的unique函数来做到这一点。如果你有Microsoft 365版本的Excel，你应该能够使用这个函数。
+- en: So I'm going click here on cell J2 and then I'll type equals unique and you'll
+    notice as I start typing unique Excel suggests some possible functions that I
+    might want to use but unique is。What I want， I put in my left parenthesis。 Now，
+    what comes next。 Excel is asking for an array。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我将在J2单元格上单击，然后输入等于unique，你会注意到当我开始输入unique时，Excel会建议我可能想要使用的一些函数，但unique就是我想要的。我输入左括号。那么，接下来是什么呢？Excel在询问一个数组。
+- en: So what's the array that I want Excel to look for unique items in。 Well， it's
+    this。 It's column B。 Now I could select the whole column just by left clicking
+    on B。 You can see what Excel does。 it puts in B colon B。 In other words， the entire
+    B column。 I should put in my right parenthesis。 I don't really have to。 I'll tap
+    enter。 and you'll notice what it did。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那么我想让Excel查找独特项的数组是什么呢？好吧，就是这个。是B列。现在我可以通过左键单击B来选择整个列。你可以看到Excel的表现。它输入了B:B。换句话说，整个B列。我应该输入我的右括号。其实我并不真的需要。我会按下回车键，你会注意到它做了什么。
+- en: It found every unique word or phrase in that column and reproduced it over here
+    in J2。 Now it couldn't fit all of the data in J2。 And so it spilled the results。
+    Hopefully you watched my previous video on spilled results in Excel。 Now， these
+    results are dynamic。 We've spilled a dynamic array or range。 So now watch what
+    happens。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它找到了该列中每个独特的单词或短语，并在J2中重现了它。现在，它无法将所有数据放入J2，因此结果溢出。希望你看过我之前关于Excel中溢出结果的视频。现在，这些结果是动态的。我们已经溢出一个动态数组或范围。所以现在看看会发生什么。
+- en: if I change the data that that's based upon。 For example， let's say I delete
+    the jelly rocks。 They're a really fun band。 If I remove all reference。to them
+    out of the band list。 you'll notice that my spilled results change to reflect
+    that。 I'm gonna undo that。 Okay。 let's try it again。 but this time I want to not
+    only get the bands。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我更改其基础数据。例如，假设我删除了jelly rocks。他们是一支非常有趣的乐队。如果我将他们从乐队列表中删除所有引用，你会注意到我的溢出结果会反映出这一点。我将撤销这一操作。好吧，我们再试一次，但这次我不仅想要获取乐队。
+- en: but I also want to get the albums。 Let's try that。 I'll click on J 2。 and I
+    could click on J1 doesn't really matter。 Actually， I think I'll go with J1 this
+    time。 equals unique left parenthesis。 I'll click and drag from B to C， write parenthesis
+    tap enter。 and look at the spilled results。 it spilled both the album and the
+    band。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但我也想获取专辑。我们来试试。我将在J2单元格上单击，也可以单击J1，这其实没什么关系。实际上，我想这次选择J1。等于unique左括号。我会从B拖动到C，右括号，按下回车，看看溢出结果。它溢出了专辑和乐队。
+- en: but only the ones that are unique。 So take a look at what happens。 if I insert
+    another record。 let's say the killers， wonderful wonderful， I tap enter。 look
+    what happened to my dynamic range or dynamic array。 the spilled results change
+    to reflect what I've added。 Now， you might say， but wait， the band。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 而且只想要独特的乐队。看看会发生什么。如果我插入另一条记录。比如说the killers，太棒了，我按下回车。看看我的动态范围或动态数组发生了什么。溢出结果会反映我添加的内容。现在，你可能会说，等等，乐队。
+- en: the killers is not unique from the band。 the killers。 Well， that's true。 But
+    in my formula。 I said I wanted。What's unique in columns B and C。 So it takes into
+    account the data in B and the data in C to decide what is unique and what is not。
+    So because the band and album together are unique。 it is listed here in my results。
+    the next thing I'd like to try is I would like to not only filter out the things
+    that are not unique。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: '"杀手乐队"并不是乐队的独特之处。的确如此。但在我的公式中，我说我想要的是B和C列中的独特内容。所以它考虑了B列和C列中的数据，以决定什么是独特的，什么不是。所以因为乐队和专辑的组合是独特的，所以它在我的结果中列出。接下来我想尝试的不仅是过滤掉那些不独特的内容。'
+- en: but I also want to sort the results based on the band name。 let's see if we
+    can do that。 So I'll click on J1， I'll delete the contents of that cell。 and as
+    you know。 all of this spilled data is generated based on the formula in J1。 So
+    when I delete that it gets rid of all the spilled data。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但我也想根据乐队名称对结果进行排序。让我们看看能否做到这一点。所以我会点击J1，删除该单元格的内容。正如你所知道的，所有这些溢出数据都是基于J1中的公式生成的。所以当我删除它时，它会去掉所有的溢出数据。
+- en: So here in J1 this time I'll type equals unique left parenthesis and then I'll
+    type in sort。 So is another dynamic array function。 Left parenthesis。 and then
+    I'll go over and choose B and C let's take a look at my formula so far。 and often
+    it's best to look in the formula bar for this。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这次在J1，我会输入=unique左括号，然后输入sort。这是另一个动态数组函数。左括号。然后我会选择B和C，让我们看看我目前的公式。通常查看公式栏是最好的选择。
+- en: Look up there at this point I'm going to put a right parenthesis and then another
+    right parenthesis tapap enter on the keyboard and just take a look at those results
+    here at the right not only did it produce the unique albums together with the
+    bands but they're all alphabetized based on the band name Now it's also possible
+    to do a sort just by typing equals sort left parenthesis and picking a range in
+    this case a whole column tapping enter so you can just use the sort function to
+    sort any range and spill the results below and sometimes to the right so you can
+    do it that way。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 看那里，现在我会放一个右括号，然后再一个右括号，按下键盘上的回车键，看看右侧的结果。不仅生成了与乐队一起的独特专辑，而且它们还按乐队名称的字母顺序排列。现在也可以通过输入=sort左括号，选择一个范围来进行排序，在这种情况下是整列，按下回车，所以你可以使用排序函数对任何范围进行排序，并将结果溢出到下面，有时是右侧，所以你可以这样做。
+- en: but I think it's particularly exciting to do it the way I showed to combine
+    sort with unique in this case but you can also combine it with other dynamic array
+    functions to do two things at once to produce only the unique data and then to
+    sort it Thanks for watching this tutorial。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但我认为以我展示的方式结合排序和独特功能特别令人兴奋，但你也可以将其与其他动态数组函数结合，做到同时生成唯一数据和排序。感谢观看这个教程。
+- en: I hope you found it to be helpful if you did please check out my other dynamic
+    array function videos and also my video on spilled results but if you did find
+    it to be helpful please。![](img/d297961bf4ff678426926aaad9188dbb_2.png)
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我希望你觉得这个视频有帮助，如果是的话，请查看我的其他动态数组函数视频，以及我关于溢出结果的视频，但如果你觉得有帮助，请。![](img/d297961bf4ff678426926aaad9188dbb_2.png)
+- en: Follow and subscribe and when you do click the bell so you'll be notified when
+    I posted another video if you'd like to support my channel you can do that through
+    my Patreon account and by buying channel mech and you'll see links to those opportunities
+    in the description below the video。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 关注并订阅，当你这样做时点击铃铛，这样你就会在我发布另一个视频时收到通知。如果你想支持我的频道，可以通过我的Patreon账户和购买频道商品来做到这一点，你会在视频下方的描述中看到这些机会的链接。
+- en: '![](img/d297961bf4ff678426926aaad9188dbb_4.png)'
+  id: totrans-17
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/d297961bf4ff678426926aaad9188dbb_4.png)'
+- en: '![](img/d297961bf4ff678426926aaad9188dbb_5.png)'
+  id: totrans-18
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/d297961bf4ff678426926aaad9188dbb_5.png)'

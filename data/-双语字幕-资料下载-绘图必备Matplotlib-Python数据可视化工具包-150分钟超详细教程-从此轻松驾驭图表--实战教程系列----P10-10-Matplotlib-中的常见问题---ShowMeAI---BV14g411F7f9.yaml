@@ -1,0 +1,69 @@
+- en: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P10：10）Matplotlib
+    中的常见问题 - ShowMeAI - BV14g411F7f9
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P10：10）Matplotlib中的常见问题
+    - ShowMeAI - BV14g411F7f9
+- en: '![](img/efafff3542e0679f768329459b56c018_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/efafff3542e0679f768329459b56c018_0.png)'
+- en: Okay， so now we're going to go on to our last section here。 which is a little
+    bit of a longer section。 and that's because let's see section 6 here。 section
+    number6， That's because when we're talking about common map plot lib questions。
+    there are a lot of these because weve you know we've walked you through the basics
+    here。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，现在我们要进入最后一个部分。这是一个相对较长的部分，因为我们要讨论第六部分。第六部分，之所以这样，是因为当我们谈论常见的map plot lib问题时，有很多这样的情况，因为我们已经带你了解了基础知识。
+- en: you now have all the information that you need to be able to take your data
+    and do some basic plots。 some basic line graphs， you know bar plots， scatter plots，
+    etc ceter。 and to set the titles to set the X and the y axis labels to do multiple
+    plots。 you have all that knowledge， but。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在你已经拥有了进行数据处理和基本绘图所需的所有信息。一些基本的折线图，你知道的柱状图、散点图等。此外，还可以设置标题、X轴和Y轴标签，以及进行多个图的绘制。你掌握了这些知识，但是。
+- en: '![](img/efafff3542e0679f768329459b56c018_2.png)'
+  id: totrans-4
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/efafff3542e0679f768329459b56c018_2.png)'
+- en: '![](img/efafff3542e0679f768329459b56c018_3.png)'
+  id: totrans-5
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/efafff3542e0679f768329459b56c018_3.png)'
+- en: '![](img/efafff3542e0679f768329459b56c018_4.png)'
+  id: totrans-6
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/efafff3542e0679f768329459b56c018_4.png)'
+- en: '![](img/efafff3542e0679f768329459b56c018_5.png)'
+  id: totrans-7
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/efafff3542e0679f768329459b56c018_5.png)'
+- en: '![](img/efafff3542e0679f768329459b56c018_6.png)'
+  id: totrans-8
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/efafff3542e0679f768329459b56c018_6.png)'
+- en: Typically， whenever people are doing plots。They want to do something specific。
+    And there are a lot of different specific visualizations and specific ways to
+    alter a visualization that people typically want to do that you might want to
+    do。 So this common question section here is going to go through a lot of the most
+    common things you might want to do with your plot starting with。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 通常，当人们进行绘图时，他们想要实现一些特定的目标。而且有很多不同的特定可视化方式和常见的可视化修改方法，通常人们都想做这些，你可能也想做。所以这个常见问题部分将介绍你可能想要在绘图中实现的许多常见功能，首先从。
+- en: '![](img/efafff3542e0679f768329459b56c018_8.png)'
+  id: totrans-10
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/efafff3542e0679f768329459b56c018_8.png)'

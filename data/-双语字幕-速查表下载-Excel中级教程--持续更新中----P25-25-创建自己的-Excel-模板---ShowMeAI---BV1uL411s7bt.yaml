@@ -1,0 +1,137 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P25：25）创建自己的 Excel 模板 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P25：25）创建自己的 Excel 模板 - ShowMeAI - BV1uL411s7bt
+- en: In this short Excel tutorial， I want to show you how to create your own Excel
+    templates。 And just so that you can see right away what I'm talking about。 let
+    me show you what I mean Here I am in Excel in the info section。![](img/d3f5b5c9fc5ee2f04a826197a1bf2331_1.png)
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个简短的Excel教程中，我想向你展示如何创建自己的Excel模板。为了让你立即看到我在说什么，让我给你展示一下。我现在在Excel的资讯部分。![](img/d3f5b5c9fc5ee2f04a826197a1bf2331_1.png)
+- en: And I'm just gonna go click on new。 So I click on new。 and it takes me to a
+    page where I can create a completely blank workbook。 or I could open up one of
+    these premade templates that other people have made and that Excel is making available
+    to me so that I can easily just click to open up one of these templates。 And there's
+    all sorts of templates that I can open up and use， And for the most part。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我只需点击新建。于是我点击新建，它带我到一个页面，在那里我可以创建一个完全空白的工作簿，或者我可以打开其他人制作的预制模板，Excel也为我提供了这些模板，我可以轻松点击打开其中一个。这些模板种类繁多，我可以打开并使用，大部分情况下。
+- en: they are wonderful。 But in addition to these。 notice what else I have。 I have
+    a button here that says personal， And when I click on that。 I can get personal
+    templates that I have made。 No one else can see these just me。 but I can click
+    on these and open up quickly an Excel template that I can then adapt for my own
+    needs and for my own uses。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它们很棒。但除了这些，注意我还有什么。我这里有一个按钮，上面写着个人，当我点击它时，我可以看到我制作的个人模板。其他人看不到这些，只有我可以看到，但我可以点击这些，快速打开一个Excel模板，然后根据自己的需求进行调整。
+- en: So let's look at how I did this。 How did I save this particular spreadsheet
+    to be a personal template。 Well， to show you this， I'm going open up a spreadsheet
+    that I've been working on。 This is a monthly family。😊，Budt that I'd like to use
+    for my family。 And I actually found this online。 And I've gone in and changed
+    some of the categories。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以让我们看看我是怎么做到的。我是如何将这个特定的电子表格保存为个人模板的。好吧，为了向你展示这一点，我要打开一个我一直在使用的电子表格。这是一个每月的家庭预算😊，我想用它为我的家庭。实际上，我是在网上找到这个的。我进入后更改了一些类别。
+- en: some of the expenses and things like that that they had in here。 Most of these
+    are relevant to me。 but there are a few that don't necessarily apply to me and
+    my family。 and so I went in and change them。 So anyway， now that I've made a few
+    changes here。 I want to save this so that on a monthly basis， I can just open
+    up the template and start putting in the numbers for that month。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 其中一些支出和其他事项与我相关。但有一些并不适用于我和我的家庭。所以我进入并进行了更改。总之，现在我做了一些更改，我想保存这个模板，这样每个月我只需打开它并开始输入当月的数字。
+- en: And because it's a template， there won't be any danger of me over writing the
+    last month's budget。 Okay， so to save this as a template。 What I need to do is
+    go up to file。 choose save as And I'm going save this to this PC。 So I'll double
+    click on that this PC。 it opened up a window here that I can use to look at my
+    computer， the contents of my computer。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 由于这是一个模板，所以我不必担心覆盖上个月的预算。好的，为了将其保存为模板，我需要上去点击文件，选择另存为。我将把它保存到这台电脑。所以我会双击这台电脑，它会打开一个窗口，让我查看我的电脑内容。
+- en: In this case， my documents。 But I want to save this not as a typical Excel workbook。As
+    an Excel template。 So I'm gonna select template。 and upon doing that。 notice that
+    it opened up a folder that I wasn't aware of， or I hadn't even selected really。
+    it just automatically opened it up。 and I can see up here at the top what it is。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这种情况下，我的文档。但是我想将其保存为Excel模板，而不是典型的Excel工作簿。所以我要选择模板。这样做后，注意它打开了一个我并不知晓的文件夹，或者我实际上没有选择的文件夹，它只是自动打开了。上面我可以看到它是什么。
+- en: It's in documents and it's called custom office template。 There's a folder called
+    that。 And I just have one template in there right now。 But because I changed this
+    save as type to be Excel template。 It automatically opened up this particular
+    folder。 Now I can name this template family budget planner1。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这在文档中，被称为自定义办公模板。那里有一个名为这个的文件夹。目前我只有一个模板在里面。但是因为我将保存类型更改为Excel模板，它自动打开了这个特定的文件夹。现在我可以把这个模板命名为家庭预算规划器1。
+- en: I want to change that probably and just call it family budget。 and maybe I should
+    put the word template in there。 So family budget template。 I'll click save。 And
+    so now I'm gonna X out of this。 And let's pretend like a few days later， I go
+    into Excel。 I open it up。 and I would like to make a new monthly budget for this
+    upcoming month。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想可能要更改，直接称之为家庭预算。也许我应该把“模板”这个词放进去。所以家庭预算模板。我将点击保存。所以现在我要关闭这个。假设几天后，我进入Excel。我打开它，并且我想为即将到来的月份制定一个新的月度预算。
+- en: I don't have to open up last month and then change。The dates and change all
+    the numbers and delete out the numbers that were there from last month。 Instead，
+    I just open up Excel。 I go in and choose personal。 and there it is family budget
+    template and I double click on it。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我不需要打开上个月再进行更改。日期和所有数字都要更改，并删除上个月的数字。相反，我只需打开Excel。我进入，选择个人。那里就是家庭预算模板，我双击它。
+- en: It opens up everything is blank and now I can go in and click or double click
+    and type in the next month in there。 and then I can start putting in the numbers
+    that apply。 and I can change。 let's say the extra income for the month or whatever
+    it might be。 But this way there's no need to open up last month and then delete
+    all the numbers。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它打开后所有都是空白，现在我可以进去，点击或双击，输入下一个月的内容。然后我可以开始输入相关的数字。我可以更改。比如这个月的额外收入或者其他内容。但这样就不需要打开上个月，然后删除所有数字。
+- en: change everything。 This will save you a lot of time a lot of work。 and one of
+    the nicest things about it is you're not going to accidentally click save and
+    erase last month。 let's say you opened up October's spreadsheet， change the numbers
+    in preparation to do November family budget and then you accidentally click save。
+    It's gonna erase October's spreadsheet and over write。So using a template solves
+    that problem。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 更改所有内容。这将节省你很多时间和精力。而且最好的事情之一是你不会意外地点击保存，擦除上个月的内容。假设你打开了10月的电子表格，准备在11月家庭预算中更改数字，然后你意外地点击保存。这会擦除10月的电子表格并覆盖。因此，使用模板可以解决这个问题。
+- en: You're not going to accidentally overwrite last month's work。 Okay so let's
+    pretend like I've put in all the numbers and this budget is done。 I'm gonna go
+    up to file， save as this PC this time I'm not saving it as a template I'm just
+    saving it as a workbook and all I have to do is take out the word template。 family
+    budget November 2017 and click save And then just to reiterate next month I can
+    go in。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你不会意外地覆盖上个月的工作。好吧，假设我已经输入了所有数字，这个预算完成了。我将打开文件，选择另存为这台电脑，这次我不把它保存为模板，我只是保存为工作簿，所有我需要做的就是去掉“模板”这个词。家庭预算2017年11月，点击保存。然后再重申一下，下个月我可以进去。
+- en: click personal， open up family budget again and it's the blank version of the
+    budget again and this time I'll put in December so hopefully you get the idea
+    and you see the advantage to doing it this way to using Excel template to create
+    content that you need to generate on a monthly basis or maybe a quarterly basis
+    or even a yearly basis but you don't want to have to recreate the will each time
+    you want the template available in a partially blank format。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 点击个人，再次打开家庭预算，这又是预算的空白版本，这次我将输入12月，所以希望你明白这个想法，并且看到这样做的好处，使用Excel模板来创建你需要每月、每季度甚至每年生成的内容，但你不想每次都重新创建轮子，模板应以部分空白格式可用。
+- en: The numbers are zeroed out many of them。 and then you can just build from there
+    for the current month or quarter or year。 So I hope you enjoyed watching this
+    video。![](img/d3f5b5c9fc5ee2f04a826197a1bf2331_3.png)
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 许多数字被归零。然后你可以从那里开始为当前的月份、季度或年份构建。所以我希望你喜欢观看这个视频。![](img/d3f5b5c9fc5ee2f04a826197a1bf2331_3.png)

@@ -1,0 +1,125 @@
+- en: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P43：43）通过分组工作表一次处理多个 Excel 工作表 - ShowMeAI
+    - BV1Jg411F7cS
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P43：43）通过分组工作表一次处理多个Excel工作表 - ShowMeAI
+    - BV1Jg411F7cS
+- en: '![](img/dbe3adaf002f1c6ab91c4ac3462410dc_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/dbe3adaf002f1c6ab91c4ac3462410dc_0.png)'
+- en: In this video， I'm going to show you a couple of tricks for working with multiple
+    spreadsheets in an Excel workbook。 and specifically， we're gonna to look at how
+    to edit multiple Excel sheets all at the same time。 So here I have a completely
+    blank Excel workbook and there's just one sheet here in the lower left。 I'm going
+    go down and click the plus sign to add sheet2 sheet 3， How about five sheets。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个视频中，我将向你展示一些在Excel工作簿中处理多个电子表格的技巧。具体来说，我们将看看如何同时编辑多个Excel表。这里我有一个完全空白的Excel工作簿，左下角只有一个工作表。我将向下点击加号添加工作表2、工作表3，怎么添加五个工作表。
+- en: And let's say each of these sheets is going to start with basically the same
+    information here in column a。 I want to put the months and then in row 1， I want
+    to put a series of tasks that need to be done during each month。 So I could set
+    up each spreadshe 1 at a time that would be pretty time consuming or I could do
+    the following。 I could click on sheet 1 hold shift and then click on sheet 5 As
+    you can see all five sheets now have a white background on the tabs for the sheets。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设这些工作表在A列的基本信息是相同的。我想放入月份，然后在第1行中放置一系列每个月需要完成的任务。我可以一次设置一个电子表格，这样会非常耗时，或者我可以这样做。我可以点击工作表1，按住shift，然后点击工作表5。如你所见，现在所有五个工作表的标签背景都是白色的。
+- en: So all five are selected。 And now I can go here to the upper left in a1。 I click。I'll
+    type a month。 I'll tap enter， and then I'll just go ahead and type in January。
+    as you probably know。 we have the autofill handle， this little green square in
+    the lower right corner of the cell that I can click and drag and pull down to
+    put in the rest of the month Now in B1 I can type in the first task that I want
+    done each month。 I'll double click between B and C just to create some room for
+    that text to fit in and then I'll move on to C1 and D1 and give me a minute to
+    add a few more items and then I'll resume the video。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以所有五个工作表都被选中了。现在我可以在左上角的A1点击。我会输入一个月份，然后按回车，然后继续输入January。正如你所知，我们有自动填充手柄，这个小绿方块在单元格的右下角，我可以点击并拖动向下填入其余的月份。现在在B1我可以输入每个月要完成的第一项任务。我会在B和C之间双击，以便为文本腾出空间，然后我会移动到C1和D1，给我一点时间添加更多项目，然后我会继续视频。
+- en: Okay so this is the information that I want to be on all five spreadsheets and
+    I also want to apply some formatting so I'll click on row1 and I'll make it bold
+    and column a I'll make that bold I had to click twice in that case。 and I could
+    even click and drag to select a through F and I could just go here to the home
+    tab in the font group I could apply a background color if I want to so I've set
+    this up the way I want it to B。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，这就是我希望出现在所有五个电子表格上的信息，我还想应用一些格式，所以我会点击第1行并使其加粗，A列我也会加粗。在这种情况下，我需要点击两次。我甚至可以点击并拖动选择A到F，然后我可以去字体组的主页选项卡，如果我想的话可以应用背景颜色。所以我已按照我的想法设置好了。
+- en: let's take a look at sheet 2。3， sheet 4， they're not all zoomed to the same
+    level as sheet 1。 but other than that， all of the changes that I made on sheet1
+    have been applied to the rest of the sheets。 This is a great time saver。 Now what
+    if you want to make changes to a couple of the spreadshes。 but not all of them，
+    let's say I want to change sheet 1 and sheet 3。 instead of holding shift。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们看看工作表2、3，工作表4，它们并没有全部缩放到与工作表1相同的级别，但除此之外，我在工作表1上所做的所有更改都已应用到其余工作表。这是一个极大的节省时间的方法。那么如果你想对几张电子表格进行更改，而不是全部，更改工作表1和工作表3如何？不需要按住shift。
+- en: I would hold control and then click on sheet 3。 So now sheet 1 and sheet 3 are
+    selected。 I'm going type in done in B2 tap enter。 and now if I click on sheet
+    2。 you'll see that it does not have the word done but sheet 3 does。 so by using
+    the shift button to select all of the sheets。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我会按住控制键，然后点击工作表3。现在工作表1和工作表3被选中了。我将在B2输入done并按回车。现在如果我点击工作表2，你会看到它没有“done”这个词，而工作表3有。因此，通过使用shift键选择所有工作表。
+- en: or you could use the control button to select or deselect certain sheets you're
+    able to actually work on more than one spreadsheet at a time。 Now in some of my
+    spreadshes， I end up with so many tabs and sheets that it gets to be kind of hard
+    to move from one sheet to the next。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 或者你可以使用控制键选择或取消选择某些工作表，实际上你可以同时处理多个电子表格。现在在我的一些电子表格中，我会有太多的标签和工作表，以至于在一个工作表和下一个工作表之间切换变得有点困难。
+- en: For example。My budgeting spreadsheets。 they go back months and months and months
+    and even years。 And so how do I jump to a specific month。 Let's say December from
+    five years ago。 Well。 it can be kind of hard。 you'd have to click here in the
+    lower left and click on this arrow to move through the spreadsheets until you
+    find the sheet that you want。 and then you can click on it。 Well， there's actually
+    a faster way to do that instead of left clicking on the arrow。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 例如，我的预算电子表格，它们回溯了几个月、几个月甚至几年。那么，我该如何跳转到特定月份呢？比如五年前的十二月。其实，这可能有点困难，你需要在左下角点击这里，然后点击这个箭头，逐步浏览电子表格，直到找到你想要的工作表，然后点击它。不过，有一种更快的方法可以做到这一点，而不是左键点击箭头。
+- en: you can right click on the arrow。 It brings up the entire list of sheets that
+    you have in your current workbook and then you can pick the specific sheet that
+    you want to go to sheet 9 in this case。 as you probably already know you can easily
+    rename these sheets just by double clicking on the sheet tab and then typing and
+    tapping enter when you're done。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以右键点击箭头，这样会弹出你当前工作簿中所有工作表的完整列表，然后你可以选择你想要的特定工作表，比如在这种情况下的第9个工作表。正如你可能已经知道的，你可以通过双击工作表标签轻松重命名这些工作表，然后输入名称，最后按下回车键完成。
+- en: you can also right click on it and choose rename if you prefer that。 and you
+    also probably know that you can click and drag to reorder these sheets any time
+    you need to if you want to move them around。 So I hope that you found this video
+    on how to work on multiple。Excel spreadsheets at the same time and also how to
+    manage multiple sheets in a workbook I hope you found it to be helpful if you
+    did please like follow and subscribe and when you do subscribe click the bell
+    so you'll be notified when I posted another video If you'd like to support my
+    channel you can do that through my Patreon account or by buying channel merch
+    and you'll see links to those opportunities in the description below the video
+    Speaking of Patreon I'd like to give a quick shout out to my $5 Patreon supporters
+    Thank you so much for all that you do to support the channel you can also support
+    at the $1 level and there are other options as well and I appreciate all of my
+    Patreon supporters Thank you so much。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你也可以右键点击它并选择重命名，如果你喜欢这样的话。你可能也知道，随时可以点击并拖动重新排序这些工作表。如果你希望移动它们，我希望你觉得这个视频关于如何同时处理多个Excel电子表格，以及如何管理工作簿中的多个工作表是有帮助的。如果你觉得有帮助，请点赞、关注和订阅，当你订阅时，点击铃铛，这样你会在我发布新视频时收到通知。如果你想支持我的频道，可以通过我的Patreon账户或者购买频道周边产品来支持，你会在视频描述中看到相关链接。说到Patreon，我想快速感谢我的5美元Patreon支持者，非常感谢你们对频道的支持，你也可以选择1美元的支持级别，还有其他选项，我非常感激所有Patreon支持者。谢谢你们。
+- en: '![](img/dbe3adaf002f1c6ab91c4ac3462410dc_2.png)'
+  id: totrans-12
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/dbe3adaf002f1c6ab91c4ac3462410dc_2.png)'
+- en: '![](img/dbe3adaf002f1c6ab91c4ac3462410dc_3.png)'
+  id: totrans-13
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/dbe3adaf002f1c6ab91c4ac3462410dc_3.png)'

@@ -1,0 +1,60 @@
+- en: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P17：17）去除刻度和刻度标签
+    - ShowMeAI - BV14g411F7f9
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P17：17）去除刻度和刻度标签
+    - ShowMeAI - BV14g411F7f9
+- en: '![](img/f8244fb7eb5333199c259ae56b73eb84_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/f8244fb7eb5333199c259ae56b73eb84_0.png)'
+- en: Okay， these next two， I think， are pretty cool because they're。 they're a nice
+    way of kind of cleaning up your graph by removing things if you don't want them。
+    So I do use these sometimes as well。 So let's say， how do you remove ticks and
+    tick labels。😊。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好吧，接下来的两个，我觉得挺酷的，因为它们是一种通过去除不想要的东西来清理图表的好方法。所以我有时也会用这些。那么，我们怎么去除刻度和刻度标签呢？😊
+- en: '![](img/f8244fb7eb5333199c259ae56b73eb84_2.png)'
+  id: totrans-3
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/f8244fb7eb5333199c259ae56b73eb84_2.png)'
+- en: So let's get our plot here。![](img/f8244fb7eb5333199c259ae56b73eb84_4.png)
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那我们来绘制这个图表。![](img/f8244fb7eb5333199c259ae56b73eb84_4.png)
+- en: And in this case， we are going to go back up to the set X ticks method and set
+    y ticks， set X ticks。![](img/f8244fb7eb5333199c259ae56b73eb84_6.png)
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这种情况下，我们将回到设置 X 刻度的方法，并设置 Y 刻度，设置 X 刻度。![](img/f8244fb7eb5333199c259ae56b73eb84_6.png)
+- en: '![](img/f8244fb7eb5333199c259ae56b73eb84_7.png)'
+  id: totrans-6
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/f8244fb7eb5333199c259ae56b73eb84_7.png)'
+- en: And we're just going pass in an empty list。And there you go。 So we're basically
+    saying， you know。 hey， we don't want， we don' want to apply any X tick labels。
+    We can do the same thing with y。![](img/f8244fb7eb5333199c259ae56b73eb84_9.png)
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们只是传递一个空列表。所以，基本上我们在说，你知道的。嘿，我们不想应用任何 X 刻度标签。Y 也可以这样做。![](img/f8244fb7eb5333199c259ae56b73eb84_9.png)
+- en: And we can just make this graph totally context list， which is， you know。 admittedly
+    not very helpful。But it does look nice and clean， doesn't it， so。![](img/f8244fb7eb5333199c259ae56b73eb84_11.png)
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们可以让这个图表完全没有上下文，老实说，这并不是很有帮助。但它看起来确实干净漂亮，不是吗？![](img/f8244fb7eb5333199c259ae56b73eb84_11.png)
+- en: Um， you know， if you want to do this for any reason， there you go。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 嗯，你知道，如果你出于任何原因想这样做，那就来吧。

@@ -1,0 +1,177 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P20：20）使用切片器筛选数据 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P20：20）使用切片器筛选数据 - ShowMeAI - BV1uL411s7bt
+- en: '![](img/1a16bf7124803b0951f6a76597d440e4_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/1a16bf7124803b0951f6a76597d440e4_0.png)'
+- en: In this tutorial， I will show you how to use slicers in Excel to show the exact
+    data that you want to see。 Now， what are slicers。 Basically， a slicer is an alternative
+    to a filter。 So in a previous video。 I showed how you can sort and filter in Excel。
+    And I demonstrated how you can just select the row that has the column headings。
+    and you can go to the home tab home ribbon。 go here to sort and filter and click
+    filter。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在本教程中，我将向你展示如何在Excel中使用切片器来显示你想查看的确切数据。那么，什么是切片器呢？基本上，切片器是过滤器的替代方案。在之前的视频中，我展示了如何在Excel中排序和过滤。我演示了如何选择包含列标题的行，然后去主页选项卡，点击排序和过滤，再点击过滤。
+- en: and that makes it so that you can filter out specific data。 For example。 let's
+    say I don't want to see any of the Pg13 movies in this list。 I just uncheck Pg13。
+    click O and all of the Pg13 results are now hidden because of that filter。 So
+    that's one way to show just the data that you want to show in a spreadsheet。 But
+    in some cases。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这使得你可以过滤特定数据。例如，假设我不想在这个列表中看到任何Pg13的电影。我只需取消选择Pg13，点击“确定”，所有Pg13的结果现在都因为这个过滤器而被隐藏。这是展示你想在电子表格中显示数据的一种方式。但在某些情况下。
+- en: filters are not ideal。 They can end up hiding data so that other people that
+    might use the same spreadsheet。Might not know that that data even exists。 They
+    might miss it。 And also。 filters can sometimes be a little bit clunky and difficult
+    to use。 So I want to show you slicers as an alternative to filters。 Now， if you're
+    going use slicers。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 过滤器并不是理想的选择。它们可能会隐藏数据，使得其他可能使用同一电子表格的人不知道这些数据的存在，可能会错过它。此外，过滤器有时可能会有点笨重且难以使用。因此，我想向你展示切片器作为过滤器的替代方案。如果你打算使用切片器。
+- en: The first thing you've got to do is clean up your spreadsheet。 And this is a
+    spreadsheet that I used way back in my very first Excel video。 The beginner's
+    guide to Excel。 but I need to clean some things up。 First。 I want to get rid of
+    this movie inventory heading here at the top。 I don't really need that。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 首先，你必须清理你的电子表格。这是我在很早之前的第一个Excel视频中使用的电子表格。《Excel初学者指南》。但我需要清理一些东西。首先，我想去掉顶部的这个电影库存标题。我其实不需要它。
+- en: that's in the name of the spreadsheet up here。 So I don't really need that。
+    it's actually going get in the way of what I want to do。 So I'm going delete that。
+    all I have to do is right click on row number one and select delete it gets rid
+    of the entire row。 Another thing I need to do to clean up this spreadsheet is
+    notice at the bottom of the data here。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是电子表格上方的名称。所以我其实不需要它。它实际上会妨碍我想做的事情。所以我会删除它。我只需右键点击行号一，选择删除，就可以删除整个行。清理这个电子表格的另一件事是注意数据底部的情况。
+- en: I have some extra information。 But in order to create slicers and do em properly。
+    You don't want to have extra。Da underneath the main data of your spreadsheet。
+    So I'm going to clear that out， and one way to do that is just to select the data
+    right click and choose clear contents。And I'm even going to go over here on the
+    right and do the same thing with this extra data here。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我有一些额外的信息。但是为了创建切片器并正确使用它们，你不想在电子表格的主要数据下面有额外的数据。因此，我将把这些清除掉，清除的方法之一是选择数据，右键点击并选择清除内容。我甚至会在右侧做同样的事情，清除这里的额外数据。
+- en: Just select it。 right click， clear contents。 And I'll also go ahead and clear
+    this out as well。 I'll select no borders to get rid of that。 Now， the reason for
+    cleaning up the spreadsheet like this is that I want to turn this into a table
+    right now。 it's just a bunch of data all in one range。 This is a range of data。
+    But I want to make it a formal table to do that。 all I have to do is click somewhere
+    inside the data。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 只需选择它，右键点击，清除内容。我也会清除这部分内容。我将选择无边框来去掉这个。现在，清理电子表格的原因是我想把它变成一个表格，现在它只是一堆在一个范围内的数据。这是一个数据范围。但我想将其变为正式的表格，所要做的就是在数据内部的某个地方点击。
+- en: How about right there。 And then I'll go here to the insert tab on the insert
+    ribbon。 There's the option for table。 So I click table。 and Excel looks at the
+    data and tries to guess where I want the table to be。 I think it guess correctly。
+    I'll just click O， and look what it did It formatted this data as a table。 Now，
+    if I don't like the formatting that it did， I could go up here to table design。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 就在这里。然后我会去插入功能区的插入选项卡。那里有表格的选项。所以我点击表格，Excel会查看数据并试图猜测我想要表格的位置。我觉得它猜对了。我会点击O，看看它做了什么，它将这些数据格式化为表格。如果我不喜欢它的格式，我可以上去选择表格设计。
+- en: and I could make some changes。pick different colors and things like that。 But
+    this is fine for what I want to do。 All right。 the next step in order to add slicers
+    that will help me to more easily and more visually filter my data。 All I have
+    to do is click inside the table。 And when I do that， I get the table design tab。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以做一些更改，选择不同的颜色和其他东西。但这对我想做的事情来说已经很好了。好的，下一步是添加切片器，这将帮助我更轻松、更直观地筛选数据。我只需点击表格内的任意位置。当我这样做时，我会得到表格设计选项卡。
+- en: I'll click there。 And then here in the tools group， it says insert slicer。 So
+    I'll click that。 And Excel gives me the option of choosing which slicers to use
+    in the spreadsheet。 And here what you do is you just pick the data that you care
+    about the most。 that's the most important to you。 So， for example， with movies，
+    I think genre is pretty important。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我会在那里点击。然后在工具组中，它显示插入切片器。所以我会点击。Excel给我提供了选择在电子表格中使用哪些切片器的选项。在这里，你只需选择你最关心的数据，也就是对你最重要的数据。例如，对于电影，我认为类型是相当重要的。
+- en: I might want to watch a fantasy movie。 I might want to watch a mystery。 And
+    so that's a pretty important type of data。 The location in the house where it's
+    stored。 That's pretty important。 And how about the movie rating like P G P G 13，
+    that kind of thing。 So I'm gonna go with those three。 And then I'll click O。 And
+    look what it does。 it gives me。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可能想看一部奇幻电影。我可能想看一个悬疑片。所以这是一种非常重要的数据。存储在房子里的位置，这很重要。还有电影评分，比如P G、P G 13，这类的。所以我就选择这三项。然后我会点击O。看看它做了什么，它给了我。
+- en: 3 slicers， kindin of a weird name for it。 But these three boxes really give
+    me a lot of control over what is shown in my spreadsheet。 I'm gonna shrink them
+    down a little bit。 So they're easier to place on the screen。 This one is just
+    gonna have trouble fitting。 I guess I could shrink the view down here in the lower
+    right。 And that should make it easier to fit everything。 I'll just put it there。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 三个切片器，这个名字有点奇怪。但这三个框确实让我对电子表格中显示的内容有很大的控制。我会把它们缩小一点，这样在屏幕上放置会更容易。这个框可能会有点麻烦，适应不良。我想我可以把右下角的视图缩小。这应该能更容易地适应所有内容。我就把它放在那儿。
+- en: and I'll zoom in a little bit more。 So with these slicers now activated。 all
+    I have to do is click some of these buttons that it created。 So let's say there's
+    a family coming over to visit my family。 There's some friends of ours。 and we're
+    inviting them over to watch a movie with us。 and let's say we want to watch a
+    comedy。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我会再放大一点。因此，现在激活了这些切片器，我只需点击它创建的一些按钮。假设有个家庭要来我家拜访。我们的一些朋友，我们邀请他们来和我们一起看电影。假设我们想看一部喜剧。
+- en: All I have to do is click comedy。 And look， it shows me there's only two options。
+    Now。 because both of those two options are stored in the living room。 Notice what
+    happened to basement。 Basement is grayed out。 I can't pick that because there's
+    no results that will happen。 I could also now filter by rating。 let's say。The
+    kids are gonna be watching。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我所要做的就是点击喜剧。看，只有两个选项。现在，因为这两个选项都存储在客厅。注意地下室发生了什么，地下室变灰了。我不能选择，因为没有结果会发生。我现在也可以按评分进行筛选。假设孩子们要观看。
+- en: and we don't want P G 13。 I could click P G。 So now I know what movie we're
+    gonna watch again。 Great movie， though。 Okay， so that worked great for me。 But
+    now let's say I want to run it again。 What I have to do is clear the filters。
+    You can't just click to deselect living room and deselect P G。 You have to click
+    this button， which clears the filter clears the filter clears the filter。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 而且我们不想要P G 13。我可以点击P G。现在我知道我们要再看哪部电影。太好了。不过，现在假设我想再运行一次。我所要做的就是清除筛选器。你不能只点击取消选择客厅和取消选择P
+    G。你必须点击这个按钮，清除筛选器，清除筛选器，清除筛选器。
+- en: Now we're back to the full list of movies。 Now， some of you may have noticed
+    a little problem that I had there。 When I clicked on comedy， it excluded comedy
+    dramas。 Well， those are also comedies。 So there's a little button here that you
+    need to be aware of。 It's called multi selectlect。 If you want to be able to click
+    more than one of these buttons。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们回到了完整的电影列表。有些人可能注意到我之前遇到的小问题。当我点击喜剧时，它排除了喜剧剧情片。好吧，那些也是喜剧。所以这里有一个小按钮，你需要了解一下。它叫做多重选择。如果你想能够点击多个按钮。
+- en: you actually need to click this button to allow you to select more than one。
+    So if I want to see comedy dramas and comedies listed here。 Watch what you do。
+    First。 you click one of the two。 let's say comedies。 Again， it only。Give me two
+    results。 And then I try to click comedy drama， but that switches off of comedy。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你实际上需要点击这个按钮，以允许你选择多个。所以如果我想在这里看到喜剧剧情片和喜剧，看看你该怎么做。首先，你点击这两个中的一个，假设是喜剧。再一次，它只给我两个结果。然后我尝试点击喜剧剧情片，但那会切换掉喜剧。
+- en: So that's where you need to click the multi selectlect to allow you to select
+    a second option。 All right， so now I see the list of three movies to watch。 So
+    I hope that you see the usefulness of slicers in Excel。 It's a great way to generate
+    a list of just the specific data that you want to see and that you want to show。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以你需要点击多重选择，以便选择第二个选项。好的，现在我看到有三部电影的观看列表。希望你能看到Excel中切片器的实用性。这是生成你想查看和展示的特定数据列表的好方法。
+- en: Thanks for watching this tutorial。 I hope that you found it to be useful。😊。![](img/1a16bf7124803b0951f6a76597d440e4_2.png)
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 感谢观看本教程。希望你觉得它有用。😊![](img/1a16bf7124803b0951f6a76597d440e4_2.png)

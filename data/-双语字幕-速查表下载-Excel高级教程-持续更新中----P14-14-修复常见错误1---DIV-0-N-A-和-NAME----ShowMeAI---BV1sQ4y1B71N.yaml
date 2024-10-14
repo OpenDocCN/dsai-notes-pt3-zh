@@ -1,0 +1,359 @@
+- en: 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P14：14）修复常见错误1 - DIV／0、N／A 和 NAME？ - ShowMeAI
+    - BV1sQ4y1B71N
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P14：14）修复常见错误1 - DIV／0、N／A 和 NAME？ - ShowMeAI
+    - BV1sQ4y1B71N
+- en: '![](img/a772639f19db80e5142dc568635a534a_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/a772639f19db80e5142dc568635a534a_0.png)'
+- en: In this tutorial， we're going to look at how to fix common Excel errors。 And
+    this is the first in a three part series。 In part 1， we're going to look at the
+    div0 error。 The N error and the name error。 And to help with this。 I have a workbook
+    with three unrelated spreadsheets。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个教程中，我们将看看如何修复常见的Excel错误。这是三部分系列中的第一部分。在第一部分中，我们将查看`div0`错误、`N`错误和名称错误。为了帮助解决这些问题，我有一个包含三个不相关电子表格的工作簿。
+- en: Each one is a good example of one of those errors。 If you would like to follow
+    along with me in the description below this video。 I have a link that you can
+    use to download this workbook。 and it makes it so much easier to follow along。
+    But let's get started First with the div0 error。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 每一个都是这些错误的一个很好的示例。如果你想和我一起操作，在这个视频的描述中，我有一个链接，你可以用来下载这个工作簿，这样跟着我就容易多了。但让我们先从`div0`错误开始。
+- en: You can see my spreadsheet here， is tracking my purchase history for some supplies。
+    And you can see I'm getting a div 0 error a couple of times here in the spreadsheet。
+    Well。 what this stands for， is dividing by0。 dividing by0， as you probably know，
+    is not possible。 And so because it's impossible when I try to do it。I get this
+    error message in Excel。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以在这里看到我的电子表格，它记录了一些用品的购买历史。而且你可以看到，我在电子表格中出现了几次`div 0`错误。那么，这代表的是除以0。除以0，正如你可能知道的，是不可能的。因此，当我尝试这样做时，我在Excel中得到了这个错误信息。
+- en: So what's happening here。 Well， I have a formula set up。 You can see it here
+    where what's happening is it's dividing the total cost of a particular item tape
+    in this case。 by the quantity that I purchased， and it gives me the total cost
+    per item。 So this is being divided by this。 Okay， so let's look at the next row。
+    here I have nothing0。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那么这里发生了什么呢？我设置了一个公式。你可以在这里看到，发生的事情是，它正在将某个特定项目的总成本（在这种情况下是胶带）除以我购买的数量，从而得出每个项目的总成本。因此这是由这个进行除法。好的，那么我们看下一行。这里我没有任何0。
+- en: basically divided by 0。 Well， that produces an error message because it's not
+    possible to divide 0 by 0。 It's not possible to divide 100 by 0 either。 So that
+    error message is accurate。 It's telling me the truth。 There's an error going on
+    here。 The thing is， it looks so bad。 It looks so ugly in my spreadsheet。 So how
+    could I fix that。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 基本上除以0。那么，这会产生一个错误信息，因为0除以0是不可能的。100除以0也不可能。因此，这个错误信息是准确的。它告诉我真相。这里发生了一个错误。问题是，这在我的电子表格中看起来太糟糕了。看起来太难看了。那么我该如何修复呢？
+- en: And you can see there's another example of it down here。 Well。 one way to fix
+    it would be to not divide by 0。 So if I go out and buy a box of markers。 Let's
+    say it's $6。 and I get one。Now that I have something other than0 in this cell。
+    it updates and there's no error message。 But what if I don't want to buy a box
+    of markers or don't need to。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以在这里看到另一个示例。那么，解决这个问题的一种方法就是不除以0。所以如果我出去买一盒马克笔，假设是6美元，而我买了一个。现在这个单元格中的值不再是0，它会更新，并且没有错误信息。但是如果我不想买一盒马克笔或者不需要呢？
+- en: Well， let's just zero those out。 and now what I'll do instead is I'll change
+    up my formula。 So I'm going go back up here to cell F2 click on the cell。 and
+    I'm going delete what's there in the formula bar。 I of course could do the same
+    thing here inside the cell。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好吧，我们就把这些归零。现在我会改变我的公式。所以我会回到这里的单元格F2，点击该单元格。我当然可以在公式栏中删除那里的内容。
+- en: but sometimes it's nice to use this formula bar。 It's just a little bit cleaner
+    sometimes So I'll type equals。 and then I'll start out with something called if
+    error。 it's kind of a weird function to use。 but notice what it says returns value
+    if error if expression is an error and the value of the expression itself otherwise。
+    So this basically helps guard against error and produces something if there is
+    an error。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但有时使用这个公式栏是不错的。它有时看起来更干净。所以我会输入等于，然后我会开始用一个叫做`if error`的东西。使用这个功能有点奇怪，但请注意它的意思是：如果表达式是错误，则返回错误的值，否则返回表达式本身的值。因此，这基本上有助于防范错误，如果有错误则返回一些值。
+- en: Okay so if error left parentheesis。 and now I'll put in the total cost for the
+    tape。So D2。 So I type in D2 divided by E2。 and then I put in a comma。 And then
+    after the comma。 look what it's expecting。 It's expecting the value if error。
+    So if there is an error in cell F2 based on dividing 60 by 32， If theres an error。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，如果出现错误左括号。我现在将输入胶带的总成本。所以 D2。所以我输入 D2 除以 E2，然后我放一个逗号。在逗号后面，看看它期望的是什么。它期望的是如果出错的值。所以如果在
+    F2 单元格中，基于将 60 除以 32 的计算有错误，若有错误。
+- en: what do I want it to print on the screen。 Well， I could just put two quotes
+    or a quotation mark a space and another quotation mark and then close parenthesis。
+    You really don't need the space in between。 though。 Now I'll just tap enter on
+    the keyboard。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想在屏幕上打印什么。好吧，我可以只放两个引号，或者一个引号、一个空格和另一个引号，然后闭合括号。其实你不需要中间的空格。不过，现在我会在键盘上按下回车。
+- en: And look， there wasn't an error。 And so it just produced the result of D2 divided
+    by E2。 And now I'll drag that down all the way down to the bottom and release
+    what changed。 Well。 the div0 errors went away And why because of this new formula，
+    It's checking for an error。 And if there is an error， I tell it to print nothing
+    in the cell。 And I copied that down using。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 看，没出现错误。所以它只产生了 D2 除以 E2 的结果。现在我会把这个公式拖到最底部，看看有什么变化。嗯，div0 错误消失了。为什么呢？因为这个新公式在检查错误。如果有错误，我告诉它在单元格中不输出任何内容。我使用了这个公式向下复制。
+- en: Autfill handle。 So that's true of all of this column。 So that's one way to handle
+    it。 Another way would be to instead of putting nothing in the cell。 I could put
+    a message to the person who's looking at the spreadsheet。 I could type in something
+    like no purchases。 So that would explain why it's blank。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 自动填充手柄。所以这一列的所有内容都是如此。这是处理它的一种方式。另一种方式是，不是在单元格中放置空内容，我可以给查看电子表格的人输入一条信息。我可以输入类似“没有购买”的内容。这会解释为什么它是空白的。
+- en: There have been no purchases。 So I tap enter and notice that it updated the
+    entire column。 probably because I'm in a table， it did it that way。 So now instead
+    of the ugly error code。 I get this no purchases message。 So that's a little bit
+    about the div0 error in Excel。 Let's move on to another spreadsheet and look at
+    a second error that comes up from time to time。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 没有购买。所以我按下回车，注意到它更新了整个列。可能是因为我在一个表格中，它是这样做的。所以现在，取代丑陋的错误代码，我得到这个“没有购买”的信息。这就是
+    Excel 中 div0 错误的一些内容。让我们继续到另一个电子表格，看看偶尔出现的第二个错误。
+- en: And this is the N error。 And this comes up most often when you're using V lookup
+    or H lookup or any other function or tool in Excel where it's looking for a specific
+    thing。 So you can see here I have a movie inventory and I'm using V lookup to
+    tell me the。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是 N 错误。当你使用 V lookup、H lookup 或 Excel 中任何其他查找特定内容的功能或工具时，这个错误最常出现。所以你可以看到这里我有一个电影库存，我使用
+    V lookup 来告诉我。
+- en: Of various movies。 so I could click here， type in the Martian tap enter on the
+    keyboard。 and it tells me Pg13。 So that's using Vlookup。 If you haven't already
+    watched my tutorial on Vlookup。 you're missing out， you need to watch that。 But
+    for the purposes of this tutorial。 Let's just move on and watch what happens when
+    I type the lion king。 I tap enter。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 各种电影。所以我可以点击这里，输入《火星救援》，然后在键盘上按下回车键。它告诉我 Pg13。这就是使用 Vlookup。如果你还没看过我关于 Vlookup
+    的教程，你就错过了，你需要去看看。不过为了本教程的目的，让我们继续，看看当我输入《狮子王》时会发生什么。我按下回车。
+- en: and I get the NA error。 So you can probably figure out the reason why I'm getting
+    NA because it's searching the spreadsheet。 it's searching the data that I've provided
+    for the lion King and it's not available。 it's not finding it。 Now watch what
+    happens if I put the lion king into this spreadsheet。 So the Lion King。 and I'll
+    put in the 2019 version of it。 So I've put that information in。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我得到了 NA 错误。所以你可能能推测出我收到 NA 的原因，因为它在搜索电子表格。它在搜索我提供的数据中关于《狮子王》的信息，但它不可用，找不到。现在看看如果我把《狮子王》放入这个电子表格会发生什么。所以《狮子王》，我会输入
+    2019 版的信息。我已经把这些信息输入了。
+- en: Now let's go back up and try it again。 the lion king。 I tap enter。 It still
+    doesn't work。 I still get that NA error。Now， if you get an error like that and
+    you're pretty confident that the words that you're looking for are in the range
+    that you're looking in。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在让我们回到上面再试一次。《狮子王》。我按下回车。它仍然不起作用。我仍然收到那个 NA 错误。现在，如果你遇到这样的错误，而且你相当确信你要找的词在你正在查看的范围内。
+- en: That could be for a couple of different reasons。 In this case。 it could be that
+    I've accidentally put in too many spaces in a cell。 So， for example， here。 the
+    lion king。 noticeice that there's an extra space after the G。 when I search for
+    the lion king without a space， it doesn't work。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这可能有几种不同的原因。在这种情况下，可能是我在某个单元格中不小心输入了太多空格。例如，这里《狮子王》。注意在G后面有个额外的空格。当我搜索没有空格的《狮子王》时，它不管用。
+- en: If I add a space in here after the G， will it work， will it fix it， Yes， it
+    does。 But instead of fixing the search term here。 there is a way to actually fix
+    the data。 And it could be that other movie titles also have too many spaces included。
+    So I want to repair that data to make sure that there are no extra spaces。 to
+    do that。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我在G后面加一个空格，这会有效吗？它会修复吗？是的，确实会。但这并不是修复搜索词的办法。其实有方法可以修复数据。可能其他电影标题也有过多的空格。所以我想修复这些数据，确保没有额外的空格。
+- en: there may be a better way， but this is how I would do it。 I would just right
+    click here on column B and choose insert。 So that gives me a new column。 And then
+    here in the column， I'll click on cell B。Tap equals。 and then the word trim left
+    parenthesis。 I'm gonna to trim the title Star Wars。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 可能有更好的方法，但我会这样做。我只需右键点击B列并选择插入。这会给我一个新列。然后在这个列中，我会点击单元格B。输入等于号，然后是单词trim（去除空格）左括号。我会去除《星球大战》的空格。
+- en: And then I should put a right parenthesis。 You don't really have to。 but it's
+    a good idea to get in that habit。 I'll tap enter。 And it seems like nothing changed。
+    And that's true。 Nothing changed。 But the reason why is because Star Wars didn't
+    have an extra space in it。 But some of these other titles do。 So now that that's
+    done。 I'll use the autofill handle。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我应该加一个右括号。你其实不必这样做，但养成这个习惯是个好主意。我会按回车。看起来没有任何变化。确实，没有变化。但原因是《星球大战》没有额外的空格。而其他一些标题则有。所以现在完成后，我会使用自动填充手柄。
+- en: click and drag down the page to copy that formula。 And now I want to replace
+    what's in column A with what's in column B。 but the tricky thing is column B is
+    really made up of just formulas that depend on column A。 So I do have to be a
+    little careful with this。 but I'm just going to call this title as well。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 点击并向下拖动页面以复制该公式。现在我想用B列的内容替换A列的内容，但棘手的是，B列实际上是由仅依赖A列的公式组成。所以我确实需要小心一点，但我也会称这个为标题。
+- en: And then I'm going click and drag from title all the way down to the bottom
+    of my data。 And then I will copy that either by right clicking and choosing copy
+    or control C to copy。 And then I'll click here and。Right click。 but I don't want
+    to just paste。 if I paste。 there will be some errors。 But if I go here to paste
+    values。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我会从标题向下拖动到我的数据底部。然后我会通过右键点击并选择复制或按Ctrl+C进行复制。然后我会点击这里，右键点击。但我不想直接粘贴。如果我粘贴，会出现一些错误。但如果我去这里粘贴值。
+- en: What it does is it converts these formulas into actual values In this case，
+    titles of movies。 So now I don't need this column anymore。 I can right click on
+    B。 choose delete。 And that should have cleaned up all of these titles。 it should
+    have trimmed out extra spaces and look， it worked。 So now when I type in the lion
+    king。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它会把这些公式转换为实际值，在这种情况下，就是电影的标题。所以现在我不再需要这个列了。我可以右键点击B，选择删除。这应该清理掉所有这些标题。应该去掉多余的空格，看看，成功了。所以现在当我输入《狮子王》时。
+- en: it tells me the rating。 Let me show you another example of how you could have
+    the correct data in the sheet。 but it still gives you the N error。 a few years
+    ago， a movie came out called 42。 So I'll just type in 42。 I don't recall exactly
+    the year it came out。 but I'll put in some data for it。 Okay， so now that that's
+    in if I do a search for 42。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它告诉我评分。让我给你展示另一个例子，如何在表格中拥有正确的数据，但仍然会给你N错误。几年前，有部电影叫《42》。所以我只输入42。我不记得确切的上映年份，但我会输入一些数据。好了，现在如果我搜索42。
+- en: it's gonna work。 it finds it。 It says it's P G 13。 But from time to time。 that
+    might not work for you。And if it doesn't， it probably has to do with the number
+    format。 So right now， this number in this cell is considered to be a number， but
+    in some cases。 it might be considered to be a text 42 is actually the title of
+    the movie。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它会有效。它找到了。它说是PG-13。但有时这可能对你不起作用。如果不行，可能和数字格式有关。目前，这个单元格中的数字被视为数字，但在某些情况下，它可能被视为文本。42实际上是电影的标题。
+- en: It's not really just a raw number。 So if you're ever doing a V lookup and it
+    gives you an NA error and you're dealing with numbers。 you might consider making
+    sure that the column or row is formatted correctly。 either as text in this case
+    or as numbers。 just to make sure that these cells match the format of this cell。
+    Now， similarly to my purchase history example。 I can fix this。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它并不只是一个原始数字。如果你在进行 V 查找时出现 NA 错误，并且处理的是数字，你可能需要确保这一列或这一行的格式正确。要么作为文本，要么作为数字，以确保这些单元格与该单元格的格式匹配。现在，类似于我之前提到的购买历史示例，我可以修复这个问题。
+- en: I can make it so that if I type in a movie that's not in my collection。 I don't
+    get this ugly error message。 The way that I would fix that is I would click on
+    the cell and change the formula in front of V lookup。 I'm going click in front
+    of the V， I'm just going type if error left print。And then after the Vlookup information，
+    I'll put a comma。 and then in quotes。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以这样设置：如果我输入一个不在我收藏中的电影，我就不会收到这个丑陋的错误信息。我修复这个问题的方法是点击该单元格并更改 V 查找前面的公式。我会在
+    V 前面点击，只需输入 if error left print。然后在 V 查找信息后放一个逗号，再加上引号。
+- en: I'm just going to put the message that I want to send to the user of this spreadsheet。
+    not in inventory。 Put in the quote put in the right parenthesis and then I'll
+    tap enter on the keyboard。 Starman is not in inventory。 So now if I type in star
+    Trek。 that's also not in inventory。 but if I type the BfG it is there and has
+    a rating of Pg。 So once again。
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我会将我想发送给这个电子表格用户的信息放入，不在库存中。放入引号，加上右括号，然后在键盘上按 Enter。Starman 不在库存中。所以现在如果我输入
+    Star Trek，那也不在库存中，但如果我输入 BfG，它在库存中，并且评级为 Pg。所以再次确认。
+- en: this if error function saves the day， and makes our spreadsheets look not so
+    ugly when these error messages come up。 There's one more error message that we're
+    going to tackle in this video。 and that is the name error in another video， I
+    show you how to name cells in Excel。 and I've done that in this spreadsheet。 This
+    is a health tracker for Jason Smith and notice that the cell that has his age
+    in it。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这个 if error 函数拯救了局面，并且让我们的电子表格在出现这些错误信息时看起来不那么丑陋。我们在这个视频中要处理的还有一个错误信息，那就是名称错误。在另一个视频中，我会告诉你如何在
+    Excel 中命名单元格，我在这个电子表格中已经这样做了。这是 Jason Smith 的健康追踪器，注意那个包含他年龄的单元格。
+- en: cell B3 has been rename。It's called age。 And I've also renamed B4。 I've called
+    that height。 So now when I want to calculate the Bmi or body mass index for Jason。
+    I can just click here type equals。 and then I'll grab his weight So B7 multiplied
+    by 703 divided by。 and I can just type in the word height， and it should grab
+    the data that's in the cell called height in this case B4。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 单元格 B3 已被重命名，称为 age。我也重命名了 B4，称为 height。现在，当我想为 Jason 计算 BMI 或体重指数时，我只需点击这里输入等于，然后获取他的体重。也就是
+    B7 乘以 703 再除以，然后我可以输入单词 height，它应该获取单元格中名为 height 的数据，此例中是 B4。
+- en: But what if I misspell height。 What if I type in something like that。 And then
+    I continue on with my formula， which would look something like this。 and then
+    I tap enter on the keyboard。 Look， I get a name error。 and what this is trying
+    to tell me is Excel thinks I might have used the wrong name。
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但如果我拼错了 height 呢？如果我输入了这样的内容。然后我继续我的公式，可能看起来是这样的。然后我在键盘上按 Enter。看，我得到了名称错误，而这正试图告诉我
+    Excel 认为我可能使用了错误的名称。
+- en: and I did instead of spelling height correctly。 when I was trying to reference
+    the cell called height。 I spelled it incorrectly， And so there is a name problem。
+    and that's why I get the name error message。 So how do you。Fix that。 you just
+    need to be careful whenever you see that name error。
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 而我在试图引用名为 height 的单元格时，拼写错误了。因此出现了名称问题，这就是我收到名称错误信息的原因。那么你如何解决这个问题呢？只需在看到名称错误时小心处理即可。
+- en: it usually means that you've typed something incorrectly。 you've misspelled
+    it。 or maybe there isn't a cell named this exact thing。 So you need to check to
+    make sure that you've used the correct words spelled correctly。 One way to do
+    that with named cells is just go here to the upper left corner， This is the name
+    box。
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这通常意味着你输入了错误的内容。你拼写错误了。或者可能没有一个单元格正好叫这个名字。所以你需要检查确保你使用了正确的单词，拼写也正确。一种检查命名单元格的方法就是去左上角，这里是名称框。
+- en: And if you click this arrow， it gives you a list of all of the names that you've
+    used in this workbook or spreadsheet。 So you can see height， it's spelled that
+    way。 that's how I need to spell it when I'm typing another example of this error
+    could be when you're trying to do a sum or really any other function。
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你点击这个箭头，它会列出你在这个工作簿或电子表格中使用过的所有名称。所以你可以看到“height”，它就是这么拼写的。当我输入时，我需要这样拼写它。这个错误的另一个例子可能是在你尝试进行求和或其他任何函数时。
+- en: So let's say I try to type sum and I want to sum this entire column left parenthesis
+    B1 through B59。 and I tap enter。 and that works fine。 but what if I accidentally
+    leave the M off of sum and I tap enter。 Well， that doesn't make sense。 sum without
+    the M is just not gonna work。And so Excel is telling me there's a naming problem。
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设我尝试输入“sum”，我想对整个列进行求和（B1 到 B59），然后按下回车键，这样是可以的。但是如果我不小心把“sum”中的“M”去掉了，然后按下回车键，这就没有意义了。“sum”去掉“M”是行不通的。所以
+    Excel 告诉我有一个命名问题。
+- en: you'll have the same problem if you try to do an average。 But instead of typing
+    out average。 what if you just put A V G， it's going give you a name error。 One
+    more thing to watch for。 when you get that name， error message。 it's possible
+    that the reason why is because in your formula。 you've used quotes。 when you shouldn't
+    use quotes， or you needed to use quotes。 So， for example。
+  id: totrans-38
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你尝试计算平均值，也会遇到同样的问题。但是如果你不输入“average”，而是直接输入 A V G，它会给你一个名称错误。还有一件事需要注意。当你收到那个名称错误信息时，可能的原因是因为在你的公式中使用了不该使用的引号，或者你应该使用引号。所以，举个例子。
+- en: in this case， I've added quotes around the word height。 when I tap enter， I
+    get an error message。 It's a little bit different error message。 but still， that
+    is something also to watch out for。 So those are three common Excel errors。 div
+    divided by0 N a and name。 in a future video。 I'll look at other error messages，
+    including null， nu， ref and value。
+  id: totrans-39
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这种情况下，我在“height”这个词周围添加了引号。当我按下回车键时，我收到一条错误信息。这是一条略有不同的错误信息，但仍然需要注意。所以这三种常见的
+    Excel 错误就是：div 被 0 除、N A 和名称。在未来的视频中，我会查看其他错误信息，包括 null、nu、ref 和 value。
+- en: '![](img/a772639f19db80e5142dc568635a534a_2.png)'
+  id: totrans-40
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/a772639f19db80e5142dc568635a534a_2.png)'

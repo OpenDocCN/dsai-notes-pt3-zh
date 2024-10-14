@@ -1,0 +1,345 @@
+- en: 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P7：7）Excel仪表板初学者指南 - ShowMeAI - BV1sQ4y1B71N
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P7：7）Excel仪表板初学者指南 - ShowMeAI - BV1sQ4y1B71N
+- en: '![](img/c48406ee7026112b42364e2d9cbadc00_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/c48406ee7026112b42364e2d9cbadc00_0.png)'
+- en: This is the beginner's guide to creating dashboards for your Excel workbooks。
+    And what is a dashboard。 I can give you a couple of examples。 Here's an example
+    of a dashboard。 Now。 this is a beautiful complex， very complicated dashboard。
+    That's not what I'm going to show in this particular video。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是创建Excel工作簿仪表板的初学者指南。那么什么是仪表板呢？我可以给你几个例子。这是一个仪表板的例子。现在，这是一个美丽复杂、非常复杂的仪表板。但这不是我在这个视频中要展示的内容。
+- en: we're going to start at the beginning with the basics and how to get started
+    creating dashboards。 But you can see that there's a summary for the year here。
+    And this is data that's being shown on a dashboard。 but the data actually comes
+    from another spreadsheet。 or in some cases， another workbook。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们将从基础开始，看看如何开始创建仪表板。但你可以看到这里有一年的摘要。而这个数据是在仪表板上显示的，但实际上数据来自另一个电子表格，或者在某些情况下，来自另一个工作簿。
+- en: And here is a chart， a pie chart here， some graphs and things And again。 all
+    of the data that's being shown here in this dashboard。 comes from a spreadsheet。
+    General。 the spreadsheet looks much more complicated。 It's cluttered full of data。
+    but dashboards lets you focus in on specifically the kind of data and the metrics
+    that。😊。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这里有一个图表，一个饼图，还有一些图形。再一次，所有在这个仪表板上显示的数据都来自于电子表格。一般来说，电子表格看起来复杂得多，数据杂乱无章，但仪表板让你专注于特定类型的数据和指标。😊
+- en: '![](img/c48406ee7026112b42364e2d9cbadc00_2.png)'
+  id: totrans-5
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/c48406ee7026112b42364e2d9cbadc00_2.png)'
+- en: You want to look at Here's another example。 This one showing sales total and
+    trend by state。 Now。 of course， in Excel， you can create stuff like this。 Just
+    write on a regular spreadsheet。 But with a dashboard， it makes it look a little
+    nicer to pull the charts， the graphs。 the numbers that matter most to pull those
+    out from the regular spreadsheet that you normally use and separate them and put
+    them on their own spreadsheet。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你想看看这里的另一个例子。这一个显示了各州的销售总额和趋势。现在，当然，在Excel中，你可以创建这样的东西。只需在常规电子表格上写入。但有了仪表板，它让拉取图表、图形、最重要的数字看起来更好，从你通常使用的常规电子表格中将这些分离出来并放在自己的电子表格上。
+- en: Here's a third example， So again， those are very advanced， complicated examples。
+    But now let's look at the basics of getting started creating your own Excel dashboards。
+    So here I have a complicated large financial data spreadsheet。 There are hundreds
+    and hundreds of rows of data， hundreds of records。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是第三个例子。因此，这些都是非常高级、复杂的例子。但现在让我们看看创建自己Excel仪表板的基础知识。所以这里我有一个复杂的大型财务数据电子表格。数据行数成百上千，记录也成百上千。
+- en: and just lots and lots of information here。 Also notice that past years are
+    listed to the right。 So we have 2018，2019 and 2020。![](img/c48406ee7026112b42364e2d9cbadc00_4.png)
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这里有很多信息。此外，请注意右侧列出了过去几年的数据。所以我们有2018、2019和2020年。![](img/c48406ee7026112b42364e2d9cbadc00_4.png)
+- en: So this is just a lot of information。 How do I know what I'm looking at here。
+    How do I know what's important？ Well， if I know how to create a spreadsheet。 know
+    how to read a spreadsheet， I can certainly get that information just by paying
+    attention to what I'm seeing。 But sometimes we need to simplify things。 So here
+    in the lower left corner。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这只是很多信息。我怎么知道我在看什么。我怎么知道什么是重要的？好吧，如果我知道怎么创建电子表格，知道怎么阅读电子表格，我当然可以通过关注我所看到的来获取这些信息。但是有时我们需要简化事情。所以在左下角这里。
+- en: I want to set up in this case， a fourth spreadsheet， a new sheet。 So I'll click
+    the plus sign。 and it automatically called it sheet4。 but I'm going to double
+    click on that name and change it and call it dashboard。Now， you could call it
+    something else if you prefer。 I'll tap enter on the keyboard。 and there's my fourth
+    spreadsheet。 I'm going to move it to the front。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想在这种情况下设置一个第四个电子表格，一个新的工作表。所以我会点击加号，它自动叫做sheet4，但我会双击那个名字并更改它，叫它仪表板。现在，如果你愿意，可以叫它别的名字。我会在键盘上按下回车键，这就是我的第四个电子表格。我将把它移动到前面。
+- en: And that's going to be my dashboard。 Now， it's a good idea。 whenever you're
+    creating a dashboard to kind of map out what exactly you're going to show on the
+    dashboard。 Maybe here in the upper left， I want a list of total sales for the
+    year。 maybe over here。 I want average price or something like that to be shown。
+    So it's a good idea to map this out。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这将成为我的仪表板。现在，创建仪表板时，最好先规划一下你要展示的内容。也许在左上角，我想要一份年度总销售额的列表。也许在这里，我想显示平均价格或类似的东西。因此，规划一下是个好主意。
+- en: Sometimes it helps to do it on paper， or you could cut some corners and just
+    do it right in Excel。 And that's what I'm going to do here in this tutorial。 So
+    what I want to do is go up here to insert。 And one of the simplest ways to start
+    setting up a dashboard is just to use some simple shapes。 And for me， Shas are
+    hidden here under illustrations。 So for you。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 有时在纸上做规划会有所帮助，或者你可以省点事，直接在Excel中做。这就是我在这个教程中要做的。所以我想去这里插入。设置仪表板最简单的方法之一就是使用一些简单的形状。对我来说，形状隐藏在插图下。所以对你而言。
+- en: just look for your illustrations group。 and you should see it。 And I'll just
+    go in here to shapes。 And there are a whole bunch of shapes that I could use。😊，I'll
+    use rectangle。 but maybe one that's got curved edges or something like that。 So
+    I'll just click and drag to set up a shape here。 Alright， and I would like my
+    current ear。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 找到你的插图组。你应该能看到它。我会进去选择形状。我可以使用很多形状。😊，我会使用矩形。但也许选择一个边缘圆滑的形状。所以我会点击并拖动在这里设置一个形状。好的，我希望它显示当前年份。
+- en: let's say 2020 total gross sales to appear here。 I want it to appear here in
+    this blue box。 Now I can click on the box， and I can type。 I can type in text。
+    I can type in numbers。 and I could just figure out what the gross sales number
+    is for 2020。 and I could just type it in there。 But there's nothing special about
+    that。 right。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设2020年的总销售额要在这里显示。我希望它出现在这个蓝色框中。现在我可以点击这个框，并且可以输入。我可以输入文本。我可以输入数字。我可以搞清楚2020年的总销售额是多少。我可以直接输入。但是这样做并没有什么特别之处，对吧。
+- en: it wouldn't get updated as more items sell。 So let's look at how to make it
+    automatically update and sync with the actual data。 So I'll just delete the numbers
+    that I put in there。 And the trick for this is to click on the shape so that the
+    shape is here and then to link the shape to the data in question。 The way you
+    do that is once the shape is selected just go up here to the formula bar and type
+    in equal。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 随着更多商品的销售，这个数字不会自动更新。那么我们来看看如何使它自动更新并与实际数据同步。所以我会删除我输入的数字。这个技巧是点击形状，使形状在这里，然后将形状链接到相关数据。方法是选中形状后，去公式栏输入等于。
+- en: So this shape equals。 and then just click on 2020。 and I want gross sales。 So
+    I'm gonna go down all the way to the bottom of this data。 and it's quite a big
+    spreadsheet。 So let me just quickly show you a trick。 If I click here on gross
+    sales。 Even on the title I can hold control。 and then the down arrow。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这个形状等于。然后只需点击2020。我想要总销售额。我要一直向下滚动到数据的底部。这个电子表格相当大。所以让我快速给你展示一个技巧。如果我在总销售额这里点击。甚至在标题上我可以按住控制键。然后按下向下箭头。
+- en: and that should take me down to the bottom of the spreadsheet。 Okay， look。 there's
+    totals right here。 so I can click on the exact cell that I want to use。 and then
+    up here。 look my cursor is flashing。 That's what I'm working on right now。 So
+    I tap enter on the keyboard and look， it has linked this shape with the data on
+    this spreadsheet。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这应该可以让我滚动到电子表格的底部。好吧，看看，这里有总计。所以我可以点击我想使用的确切单元格。然后在这里，看看我的光标在闪烁。这就是我现在正在处理的内容。所以我在键盘上按下回车，看看，它已经将这个形状与这个电子表格上的数据链接起来了。
+- en: All right， so you can see it ends in 598。5598。5 Now back here on the dashboard。
+    I can make this look better。 by clicking on it。 and I could work on， let's say
+    the font size。 make that bigger。Maybe that's too big。 There we go。 I can decide
+    if I want to center it， which I do。 I could center it horizontally and vertically。
+    I think that looks a lot better。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，你可以看到它以598结束。5598.5。现在在仪表板上。我可以通过点击它来让它看起来更好。我可以调整，比如说字体大小。让它变大。也许这太大了。这样可以。我可以决定是否要居中，当然我想要。我可以水平和垂直居中。我觉得这样看起来好多了。
+- en: I can also go here to the font color， And I could select something other than
+    black。 I could go with white。 I think that looks pretty good。 could go with yellow。
+    just about any of these colors here to make that look a little nicer。 Make it
+    pop so that people like to look at it。 You can also change the shape background
+    color or fill color。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我也可以在这里选择字体颜色，并选择其他颜色，而不是黑色。我可以选择白色。我觉得看起来不错。可以选择黄色，几乎可以选择这些颜色中的任何一种，让它看起来更好看。让它更显眼，以便人们喜欢看它。你也可以改变形状的背景颜色或填充颜色。
+- en: So play with the font and shape fill colors to find what looks best to you。
+    Now。 you might be thinking that that's just all cosmetic。 It doesn't matter that
+    much。 And you might be right。 but really， that's the whole point of dashboards
+    is to make it look nice to make it look attractive and easy for people to access
+    and read the information that they're looking for。 All right， so now I've got
+    this shape and it's linked to the data on this spreadsheet。 Now。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以请尝试不同的字体和形状填充颜色，找出最适合你的样式。现在，你可能会想这只是外观上的变化。这并没有那么重要。你可能是对的，但实际上，仪表盘的重点就是让其看起来美观，吸引人，并便于人们访问和阅读他们所需的信息。好了，现在我有了这个形状，它与这个电子表格上的数据相连。现在。
+- en: let's take a look at what happens if the data on the。Under sheet changes。 So
+    here we have 5061。 What if that becomes 25065。 When I enter that data， it changes
+    the total here。 Does it update the dashboard。 Yes， it does。 The dashboard should
+    always match the data that it's linked to。 Now， I do have a minor problem with
+    this。 And that is， I'm not exactly sure what this number means。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们看看如果数据在底表上更改会发生什么。这里我们有5061。如果变成25065呢？当我输入那个数据时，这里的总数会变化。仪表盘会更新吗？是的，它会。仪表盘应该始终与其链接的数据保持一致。现在，我确实有一个小问题，那就是我不太确定这个数字意味着什么。
+- en: And there's a couple of ways I could fix that。 I could go here to insert。 and
+    add a text box。 so I can click here text box and just click and type total gross
+    sales。 I could click and drag and put that inside the same box and then make it
+    bold。 make the font size bigger， Perhaps And again， when it comes to dashboards。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以用几种方法来解决这个问题。我可以在这里插入，并添加一个文本框。这样我可以点击文本框，直接输入总销售额。我可以点击并拖动，将其放入同一个框中，然后加粗字体，增大字体大小，或许还可以。再说，当涉及到仪表盘时。
+- en: a lot of what we're doing is making things look nice。 So I think that looks
+    really pretty good。 Now。 what if I decide later to move this somewhere else。 I
+    could click and drag。To move it。 But look。 these two items， the text box and the
+    shape with the number。 they're not really connected。 They're not really linked
+    together。 So that might be a problem。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们所做的很多事情都是为了让外观更美观。所以我觉得这看起来真的不错。现在，如果我后来决定将其移到其他地方呢？我可以点击并拖动来移动它。但看看，这两个项目，文本框和带数字的形状，它们并没有真正连接在一起。这可能会成为一个问题。
+- en: What you could do to try to fix that is you can click on the shape。 hold control
+    and click on the text box。 So now they're both selected。 and then go here to the
+    page layout tab in the arrange group。 There's an option to group objects。 And
+    so I'll just click that group。 And now they act as if they were one object。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以尝试的修复方法是点击形状，同时按住控制键再点击文本框。现在它们都被选中了，然后去页面布局选项卡的排列组。那里有一个选项可以将对象分组。然后我就点击那个分组。现在它们就像一个对象一样运作。
+- en: So now I can really easily move elements of my dashboard and put them where
+    I want them to be。 Now that's just one way to create the beginnings of a dashboard。
+    There's many other options that you could do。 And instead of putting the title
+    of what it is here inside the box。 I could insert another shape and have it appear
+    here。 And so maybe I have another rectangle above。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以现在我可以非常轻松地移动仪表盘的元素，并将它们放置在我想要的位置。现在，这只是创建仪表盘开端的一种方式。你还有很多其他的选择。而且，除了把它的标题放在框内外，我还可以插入另一个形状并让它出现在这里。也许我会在上面再加一个矩形。
+- en: and that's where I put the text， and then I could group them together。 But for
+    now。 I'm going to stick with this， This is just a basic Excel。DashboardNow。 for
+    the next element of my dashboard， let's say I want to track the total number of
+    items sold。 But this time I want to save myself a little bit of time。 So what
+    am I going do。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是我放置文本的地方，然后我可以将它们组合在一起。但现在，我先坚持这个。这只是一个基本的Excel仪表盘。接下来，对于我仪表盘的下一个元素，假设我想跟踪总销售的项目数量。但这次我想节省一点时间。所以我该怎么做。
+- en: I'm gonna right click on the dashboard element that I've already created。 and
+    I'll choose copy and then right click paste。 So now I've got two of them。 It didn't
+    copy the title。 unfortunately， total gross sales。 So I still do want that。 I'll
+    just select it control C control V to copy paste and then I'll drag it over here。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我会右击已经创建的仪表板元素，选择复制，然后右击粘贴。现在我有两个了。不幸的是，它没有复制标题，总毛销售额。所以我仍然想要这个。我会选择它，控制C控制V进行复制粘贴，然后把它拖到这里。
+- en: So now I can double click on it to highlight the whole bit of text and I can
+    type total number of sales。 So this is dollars here at the left， and this is just
+    total number of items sold。 Now， obviously。 the data that I have here is linked
+    improperly。 It doesn't match the text that I just typed。 So I have to change what
+    this shape is linked to。 But that's not hard。 I just click on it。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我可以双击它来高亮显示整段文本，我可以输入销售总数。所以左边是美元，这只是售出的总项数。显然，我这里的数据链接不正确。它与我刚输入的文本不匹配。所以我必须更改这个形状链接的内容。但这并不难。我只需点击它。
+- en: And then I go up here to the formula bar。'。L what's there。 And then I'll go
+    in to the 2020 spreadsheet， and I'll find units sold。 So here it is。 hold control
+    and tap the down arrow。 It takes me down to the lowermost part of the spreadsheet
+    and you'll notice that I did cheat a little bit。 I added averages underneath totals。
+    But right now I'm still dealing with totals。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我会到这里的公式栏看看有什么。接着，我会进入2020年的电子表格，找到销售单位。就在这里。按住控制键并点击向下箭头。这会让我到达电子表格的最底部，你会注意到我确实有点作弊。我在总数下添加了平均值。但现在我仍然在处理总数。
+- en: So I'll click there on the total number of items sold。 and you can see up here。
+    it's entered it into the formula bar。 I tapped enter to take me back here to this
+    screen。 And you'll see it is linked up properly，806806。 Now， unfortunately， it
+    did change the formatting。 but that's okay。 I can just click away then click back
+    to it。
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我会点击售出项的总数。你可以看到这里，它已经输入到公式栏中。我按下回车键返回到这个屏幕。你会看到它链接正确，806806。现在，不幸的是，它确实改变了格式，但没关系。我可以点击其他地方再点击回来。
+- en: and I can just go up here and make those same adjustments that I made before。
+    Once again。 if I want these two things to be linked。 I should click on them holding
+    the control key while I do it and then go to page layout and group。Give me a minute
+    to add one more element to this dashboard。 And that's going be the average price
+    of the item sold。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以在这里进行之前做过的相同调整。如果我希望这两个东西链接在一起，我应该在按住控制键的同时点击它们，然后转到页面布局并进行分组。给我一点时间再添加一个元素到这个仪表板。这将是售出商品的平均价格。
+- en: So I'll need to get one of these averages numbers。 I think it's this one here。
+    And that's one of the things about dashboards。 You have to be really careful。
+    You have to make sure that you're getting the proper source data。 If you don't。
+    it can be a huge mistake and cause a lot of problems for people。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我需要得到这些平均数中的一个。我想就是这个。这就是仪表板的一部分。你必须非常小心。必须确保获取正确的源数据。如果不这样，会造成巨大的错误，并给人们带来很多问题。
+- en: So give me a minute to set up that third dashboard element。 It's very similar
+    to what I've just done twice。 And then I'll resume the video。 So this is a great
+    beginning to the dashboard for this work book。 And I'm pretty much going to leave
+    it here for this beginner's guide。
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以给我一分钟设置第三个仪表板元素。它和我刚做的两次非常相似。然后我会继续视频。这是为这个工作簿建立仪表板的一个很好的开始。我基本上会在这里结束这个初学者指南。
+- en: But there are a couple of little housekeeping things that I need to do before
+    I end this video。 Number one， this is money。 This should have a dollar sign attached
+    to it。 So I understand what I'm looking at。 This one's fine， as is。 this one here，
+    again。 should have a dollar sign。 Also， this doesn't make a lot of sense to have
+    1 hundred and 18 in all of those numbers for the sense。
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但是在结束这个视频之前，我需要做几件小的整理工作。第一，这涉及金钱。这应该附上美元符号，以便我能理解我看到的内容。这个没问题，依旧如此。而这个，也应该附上美元符号。此外，这些数字中的118并不太合理。
+- en: I want to change these up so they are easier to read and understand。 But watch
+    what happens if I click here and then go to the home tab home ribbon。 typicallyyp。
+    I could use these tools here to change how those numbers appear。 And it looks
+    like they're grayed out。 I can't do that。 So here's the trick。
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想要改变这些，以使其更易于阅读和理解。但请看看，如果我点击这里然后去主页选项卡的主页功能区，会发生什么。通常，我可以使用这些工具来改变这些数字的显示方式。但看起来它们是灰色的，我无法这样做。所以这里有个小窍门。
+- en: What I have to do is go to the source data。 So here on the 2020 spreadsheet。
+    Here's the first piece of information。 So I need to click on it and then change
+    the formatting here。 So I'll change it to currency。 and notice that that took
+    care of the sense problem as well。 So now if I go back to the dashboard。 Look，
+    it shows up as dollars and cents。
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我需要做的就是去源数据。因此在2020年的电子表格上，这是第一条信息。我需要点击它，然后在这里更改格式。所以我将其更改为货币格式，并注意到这也解决了小数的问题。现在如果我返回到仪表板，看看，它显示为美元和美分。
+- en: Now that numbers so big that I'll have to make some changes to make it fit。
+    In fact。 I might have to just stretch out the rectangle。 I think that looks pretty
+    good the way it is there。 But at least that's readable。 And wow， take a look at
+    that。 I wish this was my company。 Now。 let's try the same thing with average。Price，
+    so I'll go in here。 Here's the average sale price。
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在这个数字太大了，我需要进行一些更改以使其适应。事实上，我可能需要拉伸矩形。我觉得现在的样子还不错，至少是可读的。哇，看看这个！我希望这是我的公司。现在，让我们尝试对平均价格做同样的事情，所以我将进入这里。这是平均销售价格。
+- en: Notice that I could just go to the home tab home ribbon and use these tools
+    here to increase the decimals or decrease the decimals。 So I could get it down
+    to just two digits in the decimal area。 And if you go back to dashboard。 look，
+    it solved that part of the problem。 But in fact， this number is currency。 So all
+    I really have to do is switch it to currency。 and that'll solve the problem too。
+    There we go。
+  id: totrans-38
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 注意，我可以直接去主页选项卡的主页功能区，使用这些工具来增加或减少小数位数。所以我可以将小数部分减少到只有两位数字。如果你回到仪表板，看看，这部分问题也解决了。但事实上，这个数字是货币格式。所以我真正需要做的就是将其切换为货币格式，这样也能解决问题。好了。
+- en: So that's pretty much what you need to know to get started creating your own
+    Excel dashboard。 There are some other intermediate skills that you might want
+    to learn and some advanced skills。 So if there's a lot of interest in this video
+    and in this topic。 I'll consider creating an intermediate guide to Excel dashboards
+    and then maybe an advanced guide to Excel dashboards。
+  id: totrans-39
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这就是你开始创建自己Excel仪表板所需了解的基本信息。还有一些其他的中级技能你可能想学习，以及一些高级技能。因此，如果大家对这个视频和这个主题有很多兴趣，我会考虑制作一个关于Excel仪表板的中级指南，然后可能再制作一个高级指南。
+- en: '![](img/c48406ee7026112b42364e2d9cbadc00_6.png)'
+  id: totrans-40
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/c48406ee7026112b42364e2d9cbadc00_6.png)'

@@ -1,0 +1,170 @@
+- en: 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P13：13）3D 公式 - ShowMeAI - BV1sQ4y1B71N
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P13：13）3D公式 - ShowMeAI - BV1sQ4y1B71N
+- en: '![](img/c18c440e729b03f2cd0cd192ae3454a3_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/c18c440e729b03f2cd0cd192ae3454a3_0.png)'
+- en: In this short video tutorial， we're going to look at an advanced Excel technique。
+    And that is how to produce 3D formulas。 If you haven't already watched my beginner's
+    guide to using Excel or the intermediate tips and tricks videos。 Please go back
+    and watch those before you watch this one， it'll make a lot more sense。 But let's
+    get started now with 3D formulas in Excel。 In my previous two videos in this series。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个简短的视频教程中，我们将探讨一个高级Excel技巧。那就是如何生成3D公式。如果你还没有观看我的Excel初学者指南或中级技巧视频，请先回去观看那些，这样你看这个视频时会更有意义。但现在让我们开始在Excel中使用3D公式。在这一系列的前两段视频中。
+- en: I created an inventory of the movies that I own。 And to be honest， this is hypothetical。
+    and I put in the titles I put in the date purchased and the value。 Some of you
+    took issue with the values I placed here。 These were randomly put in。 But basically。
+    I put in the genres and the location in the house， the rating and things like
+    that。 Now。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我创建了我拥有的电影的库存。说实话，这是假设的。我输入了标题、购买日期和价值。有些人对我在这里放入的价值提出了异议。这些都是随机放入的。但基本上，我输入了类型、房子的地点、评级等信息。现在。
+- en: in those previous tutorials， I also put in the grand total value of all the
+    DVDs。 And it was calculated and placed here。 in this tutorial， I've changed。😊。![](img/c18c440e729b03f2cd0cd192ae3454a3_2.png)
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在之前的教程中，我还放入了所有DVD的总价值。它已被计算并放置在这里。在这个教程中，我进行了更改。😊。![](img/c18c440e729b03f2cd0cd192ae3454a3_2.png)
+- en: The arrangement of this spreadsheet。 and I've moved the total here to the upper
+    right。 And you can probably guess why。 at this point， I have maybe this many DVDvs。
+    but in the future。 I may buy more， and I need to be able to have space to put
+    those records in here to put the DVDs listed here with the data that goes with
+    those DVDs。 And then I want the total to be generated here。 So I need to put in
+    that formula again。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这个电子表格的排列方式，我已将总值移到右上角。你可能猜到了原因。在这一点上，我可能有这么多DVD，但将来我可能会买更多，我需要有空间将那些记录放在这里，列出这些DVD及其相关数据。然后我希望在这里生成总值。所以我需要再次输入那个公式。
+- en: So I'll just type in equals some left parentheesis。 and then I just go up here
+    and select what I want to be added。 Now， of course。 eventually I'll have more
+    DVDvs than this。 So I'm just going to go ahead and change that to D。 let's say
+    2000 hit enter。 So now it's gonna add up the value of all the DVDvs up to 2000。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我只需输入等号，然后选择我想添加的内容。现在，当然，最终我会有比这更多的DVD。所以我将其改为D，假设2000，按回车键。那么现在它会将所有DVD的价值加到2000。
+- en: and I could make that 10000 if I wanted to。 But there's the total value of the
+    DVDs that I have listed in the spreadsheet here。 Another change that I've made
+    in this workbook is I've created a second sheet。 You can see here in the lower
+    left corner。You can simply just click add to add a new sheet。 Well I've done that。
+    and on the second sheet I created a very similar spreadsheet。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我想的话，我可以做到10000。但这里是我在电子表格中列出的DVD的总价值。我在这个工作簿中做的另一个更改是创建了一个第二个工作表。你可以在左下角看到。你只需点击添加即可添加一个新工作表。好吧，我已经这么做了，在第二个工作表上我创建了一个非常相似的电子表格。
+- en: You can see it's arranged very similarly。 but this one is my music inventory。
+    and I've listed here some actual Cds that I do own in this case。 I collect amazing
+    music from a genre that I love called synth pop。 and this includes classic synth
+    pop like Dupeche mode Alphaville Od groups like that as well as modern synth pop。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以看到它的排列非常相似，但这是我的音乐库存。我在这里列出了一些我确实拥有的实际CD。在这种情况下，我收集了我喜欢的一个流派的精彩音乐，叫做合成流行音乐。这包括像杜尔佩什·模式、阿尔法维尔和类似的现代合成流行音乐。
+- en: including some underground synth pop like Bom code 64 B machine。 This is amazing
+    stuff that very few people have heard about but incredibly good music if you like
+    classic synth pop or new wave and I also collect new wave Cds。 So this is a partial
+    list of real music that I do own the date I purchased it。 the rating I give for
+    it， the current value of these items based on what collectors are willing to pay
+    for them and where they're stored Now because I followed the same pattern as my。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 包括一些地下合成流行音乐，如Bom code 64 B机。这些是非常少有人听过的惊人音乐，但如果你喜欢经典合成流行或新浪潮音乐，这些都是非常好的音乐。我还收集新浪潮CD。所以这是我拥有的真实音乐的部分列表，购买日期，我给它的评分，基于收藏家愿意为其支付的当前价值，以及它们的存储位置。现在因为我遵循了与我的相同的模式。
+- en: First sheet， I have the ability to create a 3D formula and to emphasize how
+    similar these two sheets are。 I'm going to go to view and I'm gonna zoom to 125%。
+    just so that you can really see the similarities here。 Yes， I've changed some
+    of the columns。 This one says star rating instead of content rating and so forth。
+    But for the most part。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在第一张表格中，我能够创建一个三维公式，并强调这两张表格是多么相似。我将进入视图并将缩放到125%。这样你可以真正看到它们的相似之处。是的，我更改了一些列。这一个说的是星级评分，而不是内容评分，等等。但在大多数情况下。
+- en: this is the same sheet。 The total value of the Cds in this case is in the same
+    cell cell I2 as the total value of the DVDds is in in sheet 1。 So we have I2 and
+    we have I2。 So because of that， I can go back to sheet 1 and do a 3D formula。
+    And this is the reason you might want to do a 3D formula。 Let's say in addition
+    to my inventory of movies， I want an inventory of music。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是同一张表格。在这种情况下，CD的总价值和DVD的总价值都在同一个单元格I2中。因此，我们有I2，也有I2。正因为如此，我可以返回到表格1并做一个三维公式。这就是你可能想做三维公式的原因。假设除了我的电影库存，我还想要音乐库存。
+- en: and then maybe an inventory of books。 and you know， other kinds of media as
+    well。 So I could create several different sheets。And then I would want maybe to
+    have a grand total value of media or of all of my collections。 The way to do that
+    is I can click here in this empty cell type equals sum left parenthesis And then
+    I simply click on the cell that I would like to add。 So I want to add the total
+    value of DVDs。 but not just that I want to add the total value of Cds。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后可能有一本书的库存，当然还有其他类型的媒体。所以我可以创建几张不同的表格。我希望能够得到所有媒体或我的所有收藏的总价值。做到这一点的方法是，我可以点击这个空单元格，输入等于sum左括号，然后简单地点击我想要添加的单元格。所以我想要添加DVD的总价值，但不仅如此，我还想添加CD的总价值。
+- en: And let's say books and so on。 So the way I do that with the correct cell selected。
+    I just go down here to the list of sheets， I hold shift on the keyboard and then
+    click to encompass all of the sheets on which I want cell I 2 to be summed to
+    be added up。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设还有书籍等等。所以我选择正确的单元格的方式是，我下到表格列表，按住键盘上的Shift键，然后点击以包含我希望汇总的所有表格的单元格I2。
+- en: So let's say I just want sheet 1 and sheet 2。 while holding shift。 I would click
+    on sheet 2 Now they're both selected。 If I want all three of these。 I would click
+    in this case on sheet 5。 It's calling it sheet 5。 but it's really the third sheet。
+    Now all three of those are selected。 and look at my formula here Its。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设我只想要表格1和表格2。在按住Shift键的同时，我会点击表格2，现在它们都被选中。如果我想要这三张表格，我会在这种情况下点击表格5。它叫做表格5，但实际上是第三张表格。现在这三张都被选中，看看我的公式。
+- en: corporating all three of those sheets。 if I change my mind。 I click back and
+    you can see the formula is changing。 So this is what they call a 3D formula。 It's
+    because it's not just dealing with columns and rows。 but rather columns and rows
+    and sheets。 It's a third dimension。 It's not just the x dimension， the Y dimension，
+    but it's a z dimension。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 合并这三张表格。如果我改变主意，我点击返回，你会看到公式在变化。所以这就是他们所称的三维公式。因为它不仅涉及列和行，而是列、行和表格，这是第三个维度。不仅是x维度，y维度，还有z维度。
+- en: It goes into other sheets。 So I'm going to select all three of these sheets。
+    And again。 I'm holding the shift key。 Now I release the shift key。 and I simply
+    hit enter on the keyboard。 And look， it generates a grand total value of all of
+    my media。 And of course。 I can go up here to home。 And I can select that this
+    is money。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它进入其他表格。所以我将选择这三张表格。我再次按住Shift键。现在我释放Shift键，然后简单地在键盘上按回车。看，它生成了我所有媒体的总价值。当然，我可以到这里的主页，选择这就是钱。
+- en: And I could put this in bold if I want to。 But that is basically how you do
+    a 3D formula in Excel。 You click on a cell that you would like the 3D formula
+    to appear in。 you tap equals。 and then put in the function that you want to use。
+    whether it's sum or average or max or min。 whatever you want to use。 In my case，
+    sum。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我想的话，可以将其加粗。但这基本上就是如何在Excel中创建3D公式。您点击希望显示3D公式的单元格，输入等号，然后输入您想使用的函数，无论是求和、平均值、最大值还是最小值，随您所需。在我看来，是求和。
+- en: '![](img/c18c440e729b03f2cd0cd192ae3454a3_4.png)'
+  id: totrans-18
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/c18c440e729b03f2cd0cd192ae3454a3_4.png)'
+- en: Put in that left parentheesis。 click on the cell in question。 Now it has to
+    be the same cell on sheet 2， sheet 3， and so on。 right。 the data that you want
+    has to be in the same location。 But anyway。 you click on that particular cell，
+    hold shift and then use the mouse to click and select the different sheets that
+    you would like to be incorporated in that 3D formula。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 输入左括号。点击相关单元格。现在必须是工作表2、工作表3等中的同一个单元格。对了，您想要的数据必须在同一位置。但无论如何，您点击该特定单元格，按住shift，然后用鼠标点击选择您想要在该3D公式中包含的不同工作表。
+- en: Then just hit enter。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后只需按回车键。

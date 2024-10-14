@@ -1,0 +1,81 @@
+- en: 【双语字幕+资料下载】更简单的绘图工具包 Seaborn，一行代码做到 Python 可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ -
+    P2：L2- 设置 - ShowMeAI - BV1wZ4y1S7Jc
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】更简单的绘图工具包Seaborn，一行代码做到Python可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ - P2：L2-
+    设置 - ShowMeAI - BV1wZ4y1S7Jc
+- en: Cious。Now this is Jupiter notebooks， which is that way I'm going to do everything
+    you can see everything that I am going to cover in this tutorial right here and
+    also underneath the video you're going to find a table of contents that you can
+    use to jump to whatever specifically you might be interested in Now while in Mattplotlibb
+    you often had to write multiple lines of code to create a plot as you're going
+    to see Seaborn makes assumptions on what you want which is often going to translate
+    into getting the same exact plot with just one line of code so it's really cool
+    and you install it either by using the Anaconda environment tab which you may
+    or may not have if you're using Jupyter notebooks or you can enter any of these
+    into the terminal could either say Pipin Cborn or you could sayconda install Cborn
+    so either one of those is going get everything going now what I'm going to do。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在这是Jupiter notebooks，在这里我会完成所有的内容，你可以看到我将在这个教程中涵盖的所有内容，视频下方也会有一个目录，供你跳转到任何你可能感兴趣的部分。现在，在Mattplotlib中，你通常需要写多行代码来创建一个图表，但正如你将看到的，Seaborn会根据你的需求做出假设，这通常会使你用一行代码获得完全相同的图表，因此它真的很酷。你可以通过使用Anaconda环境标签来安装它，或者在终端中输入这些命令，既可以说`pip
+    install seaborn`，也可以说`conda install seaborn`，所以这两种方式都会让一切正常运行。接下来我会做什么。
+- en: '![](img/1f5782138b1dd6d829937e1517a2eda6_1.png)'
+  id: totrans-2
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/1f5782138b1dd6d829937e1517a2eda6_1.png)'
+- en: '![](img/1f5782138b1dd6d829937e1517a2eda6_2.png)'
+  id: totrans-3
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/1f5782138b1dd6d829937e1517a2eda6_2.png)'
+- en: '![](img/1f5782138b1dd6d829937e1517a2eda6_3.png)'
+  id: totrans-4
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/1f5782138b1dd6d829937e1517a2eda6_3.png)'
+- en: First， just to set up everything is to import nuy， I'm also going to import
+    pandas and Im going to import Madplotlib and of course。 I am going to import seaborn
+    kind of hard to do a seaborn tutorial if you don't do that going to do a couple
+    other things here。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 首先，设置一切需要导入nuy，我还会导入pandas和Madplotlib，当然还要导入seaborn。如果不这样做，做seaborn教程会很困难，我还会做其他一些事情。
+- en: I'm going to set it up so that my plots are going to show up directly inside
+    of my Jupiter notebook like this。 and then I'm going to add a couple other commands
+    for auto reloading。![](img/1f5782138b1dd6d829937e1517a2eda6_5.png)
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将设置我的图表直接显示在Jupiter notebook中，然后添加其他命令以实现自动重载。![](img/1f5782138b1dd6d829937e1517a2eda6_5.png)
+- en: '![](img/1f5782138b1dd6d829937e1517a2eda6_6.png)'
+  id: totrans-7
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/1f5782138b1dd6d829937e1517a2eda6_6.png)'
+- en: '![](img/1f5782138b1dd6d829937e1517a2eda6_7.png)'
+  id: totrans-8
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/1f5782138b1dd6d829937e1517a2eda6_7.png)'
+- en: '![](img/1f5782138b1dd6d829937e1517a2eda6_8.png)'
+  id: totrans-9
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/1f5782138b1dd6d829937e1517a2eda6_8.png)'
+- en: And you don't need to do these， but it may help you out All right。 so everything
+    is a set up and then of course I just hit control and return to load everything
+    the way we have there。![](img/1f5782138b1dd6d829937e1517a2eda6_10.png)
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你不需要做这些，但这可能会对你有帮助。好了，一切设置好后，我只需按控制和回车来加载所有内容。![](img/1f5782138b1dd6d829937e1517a2eda6_10.png)
+- en: '![](img/1f5782138b1dd6d829937e1517a2eda6_11.png)'
+  id: totrans-11
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/1f5782138b1dd6d829937e1517a2eda6_11.png)'

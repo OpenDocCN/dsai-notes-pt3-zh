@@ -1,0 +1,71 @@
+- en: 【双语字幕+资料下载】更简单的绘图工具包 Seaborn，一行代码做到 Python 可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ -
+    P13：L13- 箱形图 - ShowMeAI - BV1wZ4y1S7Jc
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】更简单的绘图工具包 Seaborn，一行代码做到 Python 可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ -
+    P13：L13- 箱形图 - ShowMeAI - BV1wZ4y1S7Jc
+- en: Plos now a box plot is going to allow you to compare different variables and
+    what it's going to do is show you the quartiles of the data So I'll just go and
+    print one and then I'll explain exactly what it is showing I kind of really like
+    box plots So let's say day and what we're going to do here is see how men and
+    women change in regards to the total bills over multiple different days So I'm
+    going to say Y is going to be total bill and of course the data is going to come
+    from our tips data frame and this is the first time you're going to see h here
+    and this is going to reference sex。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，箱形图将允许你比较不同的变量，它会显示数据的四分位数。所以我将打印一个，然后解释它所展示的内容。我非常喜欢箱形图。假设天数，我们要在这里查看男性和女性在多个不同天的总账单变化。所以我将说
+    Y 是总账单，当然数据将来自我们的提示数据框，这也是你第一次看到 hue 在这里，它将引用性别。
+- en: '![](img/6ec4f4f3cb70a7a125f988da366a044e_1.png)'
+  id: totrans-2
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/6ec4f4f3cb70a7a125f988da366a044e_1.png)'
+- en: '![](img/6ec4f4f3cb70a7a125f988da366a044e_2.png)'
+  id: totrans-3
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/6ec4f4f3cb70a7a125f988da366a044e_2.png)'
+- en: Male or female and there is our box plot。 Now like I said。 the box is going
+    to show quartiles of our data and you can see here is a legend and so forth。 Now
+    this bar that goes across the middle is the median and the box is going to extend
+    one standard deviation that's what the box represents from our median these guys
+    right here are called whiskers and they're going to extend to all of the other
+    data aside from what is in our standard deviation aside from those points that
+    are considered outliers and these points right here considered to be outliers
+    All right and basically what hue is going to do for us is provide an additional
+    way for us to add in another category So we're looking at the days as well as
+    the total bills but by putting sex in here with hue that is also going to allow
+    us to create。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 男性或女性，这是我们的箱形图。正如我所说，箱子将显示我们数据的四分位数，你可以在这里看到图例等等。现在，这条横跨中间的线是中位数，箱子将延伸一个标准差，这就是箱子所代表的内容。这些点被称为胡须，它们将延伸到所有其他数据，除了我们的标准差范围内的点，另外那些被认为是异常值的点。这些点被认为是异常值。基本上，hue
+    为我们提供了一种额外的方式来添加另一个类别。所以我们在查看天数和总账单时，加入性别这个 hue，也将允许我们创建。
+- en: Multiple box plots for each of the days for the males and a female so that we
+    can compare them and we can see here that men tend to spend more money on Friday
+    versus on Saturday where women spend more money All right and if you want to move
+    this because sometimes these legend gets in the way let's say you would want to
+    move it you can go plot and legend and location this will normally almost always
+    work if you just type in location zero it left it in the same place I'm going
+    to get more into legend here in a couple seconds。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 对于每一天的男性和女性的多个箱形图，这样我们可以进行比较。我们可以看到，男性在星期五的支出往往高于星期六，而女性的支出则相对较高。如果你想移动这个图例，因为有时这些图例会挡住视线，比如说你想移动它，你可以去绘图和图例位置，这通常几乎总是有效的，如果你只输入位置
+    0，它会保持在同一位置。我将在几秒钟后更详细地讲解图例。
+- en: but basically it allows you to reposition the legend so that it isn't over top
+    of your data and I'll get into the specifics of it after I continue on here for
+    a little bit more in regards to our categorical plotting options that are available。![](img/6ec4f4f3cb70a7a125f988da366a044e_4.png)
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但基本上它允许你重新定位图例，以便它不覆盖你的数据，稍后我将更详细地讲解我们的分类绘图选项！[](img/6ec4f4f3cb70a7a125f988da366a044e_4.png)
+- en: '![](img/6ec4f4f3cb70a7a125f988da366a044e_5.png)'
+  id: totrans-7
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/6ec4f4f3cb70a7a125f988da366a044e_5.png)'

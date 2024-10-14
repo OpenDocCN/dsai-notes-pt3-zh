@@ -1,0 +1,279 @@
+- en: 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P16：16）新的 IFS 函数 - ShowMeAI - BV1sQ4y1B71N
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P16：16）新的 IFS 函数 - ShowMeAI - BV1sQ4y1B71N
+- en: '![](img/f7994a9b842409afa7c092c9437a0179_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/f7994a9b842409afa7c092c9437a0179_0.png)'
+- en: In this tutorial， we're going to take a look at the exciting new ifs function
+    in Excel。 This is a new feature， a new function that was brand new in Excel 2019。
+    And that also includes Office 365。 So before we dive in to this new ifs function。
+    let's take a look at the regular if function that's been in Excel for many， many
+    years。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在本教程中，我们将看看 Excel 中令人兴奋的新 IFS 函数。这是一个新特性，一个在 Excel 2019 中全新推出的函数。它也包括 Office
+    365。所以在我们深入探讨这个新的 IFS 函数之前，先来看一下已经存在很多年的常规 if 函数。
+- en: here we have a spreadsheet with a list of student numbers， student names and
+    their test scores。 Let's say this is a college class。 They've taken a test， and
+    these are their scores。 Well。 I could use the if function to do some basic automatic
+    grading。 So let's look at how to do that with the traditional if function that
+    we've had for quite some time。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这里我们有一个电子表格，列出了学生编号、学生姓名和他们的考试成绩。假设这是一个大学班级。他们参加了考试，这就是他们的成绩。那么，我可以使用 if 函数来进行一些基本的自动评分。让我们看看如何使用我们已经有一段时间的传统
+    if 函数。
+- en: Step 1 would be to click on a cell tap equals if left parenthesis。 And we get
+    a pop up with some help。 It says if logical test value if true comma value if
+    faults。 So I need a logical test。Let's say if D2 is greater than 59 then and I'll
+    put a comma to represent then if you look at the help text that we're getting
+    here。 it says now value if true so here I'm supposed to put what is displayed
+    if D2 is indeed greater than 59 Well I want it to print on the screen the word
+    pass the quotes signify print on the screen now I put a comma and here this is
+    like saying if not。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 第一步是点击一个单元格，输入等于 if 左括号。然后我们会弹出一些帮助信息。它说如果逻辑测试，值如果为真，逗号，值如果为假。所以我需要一个逻辑测试。假设如果
+    D2 大于 59，则我会放一个逗号来表示接下来要做的。如果你查看我们得到的帮助文本，它说现在是值如果为真，所以我应该在这里输入如果 D2 确实大于 59 时显示的内容。好吧，我想在屏幕上输出单词
+    pass，双引号表示在屏幕上输出。现在我放一个逗号，这就像说如果不是。
+- en: so let's back up if D2 is greater than 59， then print pass If not。 then print
+    fail and then I'll put in the parenthesis and tap enter on the keyboard and notice
+    what it does Excel tests to see if D2 is greater than 59 if it is pass and that's
+    what happened pass so now I can just use the autofill handle by clicking on E2
+    where my formula is and going to the autofill handle I can click and hold and
+    drag down for the entire list of students。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以让我们回顾一下，如果 D2 大于 59，则输出 pass，如果不是，则输出 fail，然后我会加上括号，按下键盘上的 Enter 键，注意 Excel
+    是如何测试 D2 是否大于 59 的，如果是的话，输出 pass，这正是发生的事情，pass。因此现在我可以通过点击 E2 这个公式所在的单元格，使用自动填充手柄，然后点击并按住，向下拖动到整个学生列表。
+- en: And we can calculate whether they passed or failed。 Now， there's an even faster
+    way to do that。 I could just double click on the autofill handle， and that will
+    automatically deploy it all the way down the column。 So this is great， right，
+    Well， yes， it is。 But what if I want to do more than pass fail。 What if I want
+    to say if it's greater than 92， then it's an a。 Well。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们可以计算他们是否通过或未通过。现在，还有一种更快速的方法。我可以双击自动填充手柄，这样会自动将其应用到整列。这很好，对吧？嗯，是的。但如果我想做的不仅仅是通过或未通过呢？如果我想说如果大于
+    92，那么就是 A。好吧。
+- en: I could go in and say equals if left parentheesis。 D2 is greater than 92 then
+    print a。 And I don't have to put and if not， or if false， I don't have to， I could
+    just stop it there。 or I could continue and say if it's not greater than 92。 then
+    what would I say pass or fail or B or C， I need more here。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以输入等于 if 左括号。D2 大于 92，则输出 A。我不需要再加上 if not 或 if false，我可以在这里停止，或者我可以继续说如果它不大于
+    92，那么我该说什么呢，是通过、未通过、B 还是 C，我需要更多的内容。
+- en: I need to be able to create a formula that calculates more than just whether
+    one statement is true。 You can see the results I'm getting here。 They're all either
+    falses or a。 That's all that it's capable of doing。 So traditionally。The solution
+    to this problem was to create a formula with what's called a nested if。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我需要能够创建一个公式，计算的不仅仅是一个陈述是否为真。你可以看到我在这里得到的结果，它们都是 false 或 A。仅此而已，它的能力就到此为止。因此，传统上，解决这个问题的方法是创建一个所谓的嵌套
+    if 的公式。
+- en: but nested ifs can be pretty confusing and pretty hard at first。 And so in Excel
+    2019。 and also if you have Office 365。 Now we have a new solution。 We have a new
+    function called ifs。 And it really does solve this issue that I just explained
+    to you。 I'll just click and drag down and erase the results that were generated
+    with the formula that I created。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但嵌套的 if 开始时可能会相当令人困惑和困难。所以在 Excel 2019 中，若你有 Office 365。现在我们有了一个新解决方案。我们有一个新函数叫做
+    ifs。它确实解决了我刚才给你解释的问题。我将点击并向下拖动，擦掉我创建的公式生成的结果。
+- en: So back up to the top here， let's do a similar thing but use ifs。 So I clicked
+    on cell E2 equals ifs left parenthesis。 and you can see again， I get some help
+    text。 It wants a logical test and then comma value if true， comma， etc ce。 So
+    let's take a look at how this could work。 First， I'll start by clicking on D2。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以回到顶部，我们做类似的事情，但使用 ifs。我点击 E2 单元格等于 ifs 左括号。你可以看到我再次得到了帮助文本。它需要一个逻辑测试，然后是逗号，值如果为真，逗号，等等。所以让我们看看这如何运作。首先，我将开始点击
+    D2。
+- en: just like I did before。 So ifs D2 is greater than 92， then print a。And then
+    I'll put another comma。 What if it's not greater than 92。 If it's not， then maybe
+    this next logical test is true。 Maybe D2 is greater than 89。 and then comm， if
+    that's the case， then I want to print a minus。 Let me scoot over a little bit
+    so you can see this a little better， What if that's not true。 Well。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 就像我之前做的那样。如果 D2 大于 92，就打印 a。然后我再放一个逗号。如果不大于 92 呢？如果不是，那么下一个逻辑测试可能是真的。也许 D2 大于
+    89。然后逗号，如果是这种情况，我想打印 a 减去。让我稍微挪动一下，这样你能更好地看到。如果这不成立呢？好吧。
+- en: then maybe D2 is greater than 84， and if it is， then print B plus I put the
+    close Well。 what if that's not true。 What if none of these are true， then， let's
+    see if D2 is greater than 79。 if it is， then print B。 So hopefully you're seeing
+    the pattern here， I'm creating a series of tests。 If the first test is true， then
+    the logic stops there， Excel will just put an a in cell E2。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那么也许 D2 大于 84，如果是的话，就打印 B 加。我把括号关掉。那么如果这不成立呢？如果这些都不成立，那么，看看 D2 是否大于 79。如果是，就打印
+    B。所以希望你能看到这里的模式，我正在创建一系列测试。如果第一个测试成立，逻辑就停止，Excel 会在 E2 单元格中放一个 a。
+- en: But if that test comes up falses， then it will look for the next test and see
+    if the results of this test are true。 if they are a minus。 And so it just keeps。Looking
+    for something that is true。 give me a minute to finish this pattern， and then
+    I'll resume the video。 Okay。 so I've finished my formula。 Let me just quickly
+    show it to you。 As you can see。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但如果那个测试结果为假，那么它会寻找下一个测试，看看这个测试的结果是否为真。如果是的话，给一个减号。所以它会不断寻找真的东西。给我一点时间完成这个模式，然后我将继续视频。好的，我已经完成了我的公式。让我快速给你展示一下。正如你所见。
+- en: I've established different score ranges for each of the letter grades。 And notice
+    that after D minus， I say if D2 is less than 58。 Then it's an F。 Okay。 so now
+    that I've got my formula with many， many ifs in it。 That's why the function is
+    called ifs。 All I have to do is tap enter on the keyboard。 and it calculates the
+    grade for this first person in my list for Gina。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我为每个字母成绩建立了不同的分数范围。注意在 D- 之后，我说如果 D2 小于 58。那么就是 F。好的。现在我有了包含许多 if 的公式。这就是为什么这个函数叫做
+    ifs。我要做的就是按下键盘上的 Enter，它就会计算出我列表中第一个人的成绩，吉娜。
+- en: Now I can just double click on the autofill handle。 and it should calculate
+    the grades all the way down for all of the students。 You can see the range of
+    scores and letter grades。 This example。 I think demonstrates why ifs is so important。
+    and it's such a great addition to Excel。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我可以双击自动填充手柄。它应该会计算所有学生的成绩。你可以看到分数范围和字母成绩。这个例子。我认为说明了为什么 ifs 是如此重要。它是对 Excel
+    的一个很好的补充。
+- en: It's so much easier than a nested if。 Now， watch what happens， What if let's
+    say。New student comes in to the class。 Good old John White， and we extend the
+    formula down。 noticeice that it gives John an F。 Well， John hasn't really taken
+    the test。 So let's say I have not applicable in here or something similar。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这比嵌套 if 简单多了。现在，看看会发生什么，如果说，新学生进了班级。老好的约翰·怀特，我们将公式向下扩展。注意，它给约翰打了个 F。那么，约翰并没有真正参加测试。假设我在这里有“不适用”或类似的内容。
+- en: The formula is getting messed up a little bit。 So let's look at something that
+    we can do to perhaps fix this。 It doesn't always need to happen。 but sometimes
+    when you use ifs to create a formula。 you might need to put in one final logical
+    test at the end of your formula。 What if none of these logical tests result in
+    a true。 Well。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 公式有些混乱。让我们看看可以做些什么来修复这个。并不总是需要发生这种情况，但有时当你使用ifs创建公式时，你可能需要在公式的最后放入一个最终的逻辑测试。如果这些逻辑测试没有任何结果为真。那么。
+- en: what you can do is you can force there to be a true to do that， just put another
+    comma in。 type the word true， put a comma and then in quotes what you want to
+    have appear。 if none of these other logical tests are true。 So I'm forcing this
+    to be true as a last resort。 And what I'll put is test not taken。 I'll put that
+    in quotes， tap enter on the keyboard and let's。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以强制使其为真，只需再加一个逗号。输入单词true，再加一个逗号，然后在引号中输入你希望出现的内容。如果这些其他逻辑测试都不为真。所以我强迫这个作为最后的手段。我要输入的是“测试未进行”。我会把它放在引号中，按下键盘上的回车键，然后让我们。
+- en: Auttofi that down。 But notice it still didn't quite work。 The reason why。 for
+    some reason the formula is interpreting this as being greater than 92。 In Excel。
+    letters can sometimes be interpreted to have a numerical value。 And so that may
+    be why this is showing up as an A。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 自动填充下来。但注意它仍然没有完全成功。原因是，公式将其解释为大于92。在Excel中，字母有时会被解释为具有数值。因此，这可能是它显示为A的原因。
+- en: So even though it didn't really help us in this case。 It is important to know
+    about this true logical test at the end of the formula。 Let's look at a second
+    example of when the ifs function might be helpful here on my second spreadsheet。
+    It's an employee list。 So I've got my employees here。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以即使在这种情况下它并没有真正帮助我们。了解公式最后这个真实的逻辑测试是很重要的。让我们看看在我的第二个电子表格中，当ifs函数可能有用的第二个示例。这是一个员工列表。所以我这里有我的员工。
+- en: I've got the department that they're part of here。 And I would like Excel to
+    automatically calculate and display who their supervisor is。 Yes。 I could do this
+    manually。 but in the future， new employees will be added。 I'll put in their department
+    and the supervisor will be automatically calculated and printed on the screen。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我已经有他们所属的部门了。我希望Excel能够自动计算并显示他们的主管是谁。是的，我可以手动完成这个，但将来会添加新员工。我会输入他们的部门，主管将自动计算并打印在屏幕上。
+- en: So how to do that。 Well， just like before， I'll start by clicking， typing equals。Left
+    parenthesis B2 is equal to custodial。 Now， because I'm dealing with a word here。
+    I'm dealing with text， not a number。 I have to put it in quotes， and it's easy
+    to forget that。 but you've got to do it So if B2 is equal to custodial in quote
+    then print Tiffany as the supervisor。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那么怎么做呢？就像之前一样，我会先点击，输入等于号。左括号B2是否等于保洁。现在，因为我在处理一个单词。我在处理文本，而不是数字。我必须把它放在引号中，这很容易被忽视。但你必须这样做。所以如果B2等于保洁，则打印蒂凡尼作为主管。
+- en: Now if that logical test is not true， then test to see if B is equal to marketing。
+    If it is then print at。 If that logical test fails。 then test to see if B2 is
+    equal to customer service。 Give me a minute to complete this formula and then
+    I'll resume the video。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在如果那个逻辑测试不为真，那么测试B是否等于市场营销。如果是，那么打印出来。如果那个逻辑测试失败，那么测试B2是否等于客户服务。给我一点时间来完成这个公式，然后我会继续视频。
+- en: so I've finished my formula at least for now， and you can see what it looks
+    like。 this is a pretty complicated if's formula， and it's just going work from
+    left to right。 it's going check to see if this is true if it is it'll print Tiffany。
+    if it's not true it'll move on to the next one。 It's looking for something that's
+    true。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我至少暂时完成了我的公式，你可以看到它的样子。这是一个相当复杂的ifs公式，它将从左到右进行工作。它会检查这是否为真，如果是，它会打印蒂凡尼。如果不是真的，它将转到下一个。它在寻找一个为真的东西。
+- en: Now you can see I didn't put in every single。So let's see what happens when
+    I tap enter on the keyboard to make that formula effective。 It found that Alan's
+    supervisor in the custodial department is Tiffany。 Well。 let's autofill this down，
+    double clicking on the autofill handle。 Let's see how it works。 you can see it
+    looks like it's working pretty well。 but look。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在你可以看到我没有输入每一个。所以让我们看看当我按下键盘上的回车键使公式生效时会发生什么。它找到了阿兰在保洁部门的主管是蒂凡尼。那么。让我们通过双击自动填充句柄将其自动填充。看看它是怎么工作的。你可以看到它看起来运作得相当不错。但看看。
+- en: I didn't put in anything in the formula for human resources。 And so Excel sees
+    that as an error。 and it puts in an N error message not applicable。 And there's
+    other examples of that here， too。 And that looks kind of ugly。 It doesn't look
+    great。 So this is a good example of when it can be important to force a true at
+    the end of your formula。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我在公式中没有输入任何关于人力资源的内容。所以 Excel 将其视为错误，并显示 N 错误信息，不适用。在这里还有其他类似的例子。这看起来有点丑，不太好。因此，这是一个很好的例子，说明在公式末尾强制一个真实值是多么重要。
+- en: So let's do that。 And in order to see this better， I'm gonna to have to zoom
+    out a little bit。 but I'll just double click on the formula。 And so you can see
+    here at the end。 I'll just put in a comma， and then force a true statement。 So
+    true comma。 and then I'll type in not applicable。 Now you'll notice true is not
+    in quotes。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们来这样做。为了更好地查看这个，我得稍微缩小一点。但我会双击公式。你可以看到在末尾，我会输入一个逗号，然后强制一个真实的语句。所以是真逗号。然后我会输入不适用。现在你会注意到“真”没有加引号。
+- en: because it's not really。Text， it's a function。 Basically。 All right。 I'm gonna
+    tap enter on the keyboard。 Let's autofill that down and you can see what happens。
+    Now there are no error messages。 It just says not applicable。 Now， of course，
+    later。 I might decide to change that and say something like reports to CEO。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因为这实际上不是文本，而是一个函数。基本上。好吧，我要在键盘上按下回车键。让我们向下自动填充，你可以看到会发生什么。现在没有错误信息了。它只显示不适用。当然，稍后我可能会决定更改它，并说诸如“向
+    CEO 汇报”之类的内容。
+- en: So there's no supervisor just reports directly to the top。 Lucy people。 So I
+    can autofill that down。 and it changes it all the way down。 Let's say a person
+    switches departments。 Todd switches to legal their supervisor changes。 So I hope
+    you can see the great potential in the ifs function and using it in your formulas。
+    You can do something like  a hundred and 50 some odd logical tests in one formula
+    using the if's function。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以没有主管，直接向最高层汇报。露西的人。所以我可以向下自动填充，它会一直改变。假设一个人调换部门，托德调到法律部，他们的主管就会改变。因此，我希望你能看到
+    IF 函数的巨大潜力，并将其应用到你的公式中。你可以在一个公式中使用 IF 函数进行大约一百五十个逻辑测试。
+- en: '![](img/f7994a9b842409afa7c092c9437a0179_2.png)'
+  id: totrans-30
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/f7994a9b842409afa7c092c9437a0179_2.png)'

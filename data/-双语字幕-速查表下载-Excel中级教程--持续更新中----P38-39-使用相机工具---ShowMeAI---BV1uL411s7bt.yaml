@@ -1,0 +1,168 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P38：39）使用相机工具 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P38：39）使用相机工具 - ShowMeAI - BV1uL411s7bt
+- en: '![](img/5ec5103a1cf499f8dd83c32f399cce33_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/5ec5103a1cf499f8dd83c32f399cce33_0.png)'
+- en: In this video， we're gonna to look at how to use the handy camera tool in Excel。
+    Step 1 is you need to add the camera icon to the toolbar。 And probably the best
+    way to do that is to come up here to the top of the screen and here we have what's
+    called the quick access toolbar and there's a button at the right edge of the
+    quick access toolbar and the button represents customize So customize Quick access
+    toolbar So I'll just click that。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个视频中，我们将学习如何使用Excel中的便捷相机工具。第一步是将相机图标添加到工具栏。最佳方法是在屏幕顶部找到所谓的快速访问工具栏，那里有一个按钮位于快速访问工具栏的右边，代表自定义。所以自定义快速访问工具栏，我将点击它。
+- en: and I want to customize it in more ways than are listed here。 So I'll go to
+    more commands。 It opens up a menu with dozens and dozens of additional tools that
+    we can add to this quick access toolbar。 right now it's showing me just popular
+    commands that I can add to the bar。 but I want to see all of them。 So I click
+    on all commands。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我希望以更多的方式自定义它，而不是这里列出的方式。因此，我将去更多命令。它会打开一个菜单，里面有很多我们可以添加到这个快速访问工具栏的额外工具。目前它只显示我可以添加到工具栏的常用命令，但我想查看所有命令。所以我点击所有命令。
+- en: there's this giant list Well if I browse down a ways one of the commands is
+    called camera There it is。 So I click on it and then I'll click the add button
+    to add it to my quick access toolbar。 Now I can click。And it appears here at the
+    top。 All right。 Now why would I even want this camera command on my quick Access
+    toolbar。 Well。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这里有一个巨大的列表。如果我往下浏览，命令之一叫做相机，就在这里。所以我点击它，然后点击添加按钮，将其添加到我的快速访问工具栏。现在我可以点击，它出现在这里的顶部。那么，我为什么要在快速访问工具栏上放这个相机命令呢？
+- en: one of the things it can do is it enables you to take pictures of different
+    parts of your spreadsheet and then you can combine them together。 So you can see
+    here I have a game sales chart。 Let's imagine that this is for a small business
+    that sells board games and card games。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它能做的事情之一是让你能够拍摄电子表格不同部分的照片，然后将它们组合在一起。所以你可以看到，我这里有一个游戏销售图表。假设这是一个销售桌游和卡牌游戏的小企业。
+- en: and let's say I have a meeting coming up and I need to be able to show how our
+    sales did in October。 November December。 but I also want to show how the year
+    started out。 So I want to include maybe January February March。 and I want to
+    include October。 November December and then also maybe the yearly totals。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设我有一个即将到来的会议，我需要展示我们在十月的销售情况、十一月、十二月。但我也想展示一下这一年的开始情况。所以我想包含一月份、二月份、三月份，同时也想包括十月、十一月、十二月，还有可能是年度总额。
+- en: So that can be kind of hard to do without recreating the chart or printing the
+    whole thing but then I'll have data that I don't necessarily want。 So watch what
+    I can do using the camera tool Now that we have the camera on the quick access
+    toolbar。 The next step is to click on the range that you。To take a picture of。
+    Now， maybe it's just one cell。 but in most cases， it's a range of cells。 So I
+    want the product name all the way down。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这可能有点困难，不能重建图表或打印整个内容，但这样我就会有一些我不一定想要的数据。所以看看我可以如何使用相机工具。现在我们已经将相机放在快速访问工具栏上。下一步是点击你想拍照的区域。现在，也许只是一个单元格，但在大多数情况下，它是一个单元格范围。所以我想要产品名称一直到最底部。
+- en: all the products that are being sold with that selected。 I just go up here and
+    click the camera button。 and it took a screenshot。 At least that's what it seems
+    like。 a screenshot。 I'm going show you that it's more than a screenshot。 But anyway，
+    now that that's taken。 You can see this dashed line around the data。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所有被选中的产品我只需在这里点击相机按钮，它就截图了。至少看起来像是截图。我将向你展示这不仅仅是截图。但无论如何，既然已经拍好了，你可以看到数据周围有这个虚线。
+- en: So now I'm going go to a new sheet。 I'll just click this plus sign to open up
+    a new sheet。 It doesn't really matter what it calls it。 I can rename that anything。
+    I'll just call this to print。 And then click on the cell where you want the screenshot
+    of the information to appear。 I would like it to appear here in the upper left。
+    So I click， and it didn't work。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我要去一个新表格。我将点击这个加号打开一个新表格。名称并不重要，我可以将其重命名为任何名字。我将其称为“打印”。然后点击你想让信息截图显示的单元格。我希望它显示在左上角。所以我点击，但没有成功。
+- en: So let's try it again。 I'll go back。 It's already selected。 I click on the camera
+    button。 and then I'm gonna go to my twoprint spreadsheet and click where I want
+    it to appear。 And there it is。 Here's my screenshot。 I'll just click and drag
+    and put it exactly where I want it to be。 And let's see what else do I want to
+    be included in this print out that I'm going do。 Well。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那么我们再试一次。我回去，它已经被选中。我点击相机按钮，然后去我的两个打印电子表格，点击我想要它出现的位置。就在这里。这是我的截图。我只需点击并拖动，将其放在我想要的位置。让我看看我还想在这个打印输出中包含什么内容。好吧。
+- en: like I said， I want January February March。 I select that range。 go up and click
+    the camera icon。 go to to print。 click and the data appears。 and I can put it
+    exactly where I want it to be。 jumping back to my other spreadsheet。 I can go
+    over and get October， November。 December and the yearly total sales。 get all of
+    that。 Take a snapshot and then go to to print。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 就像我说的，我想要一月、二月和三月。我选择了这个范围。点击相机图标，进入打印。点击后，数据就出现了。我可以将其放在我想要的位置。返回到我的另一个电子表格，我可以获取十月、十一月、十二月以及年度总销售额，获取所有这些内容。拍个快照，然后再去打印。
+- en: click where I want it to appear。 And so this is a really nice way to collect
+    information to collect data from your spreadsheet onto one page so that you can
+    now print it a little bit easier。 So now to print it。 Of course， we could go to
+    file and select。😊。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 点击我想要它出现的位置。这是一个很好的方式，将电子表格中的信息收集到一页上，这样你就可以更轻松地打印出来。所以现在打印它，当然，我们可以去文件中选择。😊
+- en: Pnt or you can just hold the control key and tap P。 and it opens up the print
+    options。 And you can see my data just about fits on the paper。 I can fix that
+    in a number of ways。 In fact。 I have a whole other video on printing tips and
+    tricks。 you should definitely watch that if you haven't already。 But in this case。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Pnt，或者你可以按住控制键并点击P，这样就会打开打印选项。你可以看到我的数据几乎适合纸张。我可以用多种方式来修正这一点。实际上，我还有一整部关于打印技巧和窍门的视频，如果你还没看过，绝对应该去看。但在这种情况下。
+- en: I'm just gonna switch it from portrait orientation to landscape。 and now my
+    data fits really well in the print out。 and I can just click print。 I could also
+    print to file。 and you can see what that will do。 It will print it not to a printer。
+    but it will turn it into a Pdf。 A digital representation of this that I can then
+    email to people。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我只是将其从纵向方向切换到横向方向，现在我的数据在打印输出中非常合适。我只需点击打印。我也可以打印到文件中，你可以看到这样做会有什么效果。它不会打印到打印机，而是会将其转化为PDF，成为这个的数字表示，我可以随后将其通过电子邮件发送给人们。
+- en: So those are both good options。 Now， there's one more thing about this that
+    you really need to see。 And that is if I go back to the source data。 Let's say
+    I notice an error。 Maybe skipkbo does not really cost $677， but actually cost
+    5。 And maybe we only sold two of them in January instead of 7 or 8。 Well I can。Change
+    the data here。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这两者都是不错的选择。现在，还有一件事你真的需要看到。如果我回到源数据，让我们假设我注意到一个错误。也许skipkbo并不是真的花费677美元，而是实际上花费5美元。并且可能我们在一月份只售出了两个，而不是7或8个。那么我可以在这里更改数据。
+- en: And then when I go to my two print spreadsheet。 look skip2 that number updated。
+    This screenshot isn't really a screenshot。 It is pulling the data from my other
+    sheet and displaying it in that screenshot。 So that's why I kind of hesitate to
+    call it a screenshot， It's not really a screenshot。 Let's say that we're not selling
+    the generic code names game， but code namess Harry Potter。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后当我去我的两个打印电子表格时，看看那个数字是如何更新的。这张截图其实不是真正的截图。它是从我的另一个表格中提取数据并显示在那张截图中的。所以这就是我有点犹豫称之为截图的原因，实际上它并不是真正的截图。假设我们不是在销售普通的代号游戏，而是“代号：哈利·波特”。
+- en: which is a fun version of code names。 I changed the data here。 Let's look at
+    the two print。 it changed it there as well。 So now in addition to printing this
+    spreadsheet。 I could just move this to the front。 And when I save this file， this
+    report will open up。 and this will be what people see when they open up the spreadsheet
+    first。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是一个有趣的代号版本。我在这里更改了数据。让我们看看两个打印，它那边也进行了更改。因此，现在除了打印这个电子表格，我还可以把它移动到前面。当我保存这个文件时，这个报告将会打开，这将是人们第一次打开电子表格时所看到的内容。
+- en: if that's what you want to do。 But anyway， this camera tool is a great way to
+    pull data even from multiple sheet。 I could bring in additional information from
+    a completely different sheet。 Let's say this growth forecast。Click the camera
+    icon go to toprint。 It doesn't really make sense here， but I can pull in information
+    from multiple sheets onto one page and then print it or save it as a PDF and email
+    it to people So please check out the camera tool Thanks for watching I hope you
+    found this tutorial to be helpful。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果那是你想做的。不过，无论如何，这个相机工具是从多个表中提取数据的好方法。我可以从一个完全不同的表中引入额外的信息。假设这是增长预测。点击相机图标进入打印。这里其实没什么意义，但我可以将多个表中的信息整合到一页，然后打印出来或保存为PDF并发送给其他人。所以请查看这个相机工具。谢谢观看，我希望你觉得这个教程有帮助。
+- en: '![](img/5ec5103a1cf499f8dd83c32f399cce33_2.png)'
+  id: totrans-19
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/5ec5103a1cf499f8dd83c32f399cce33_2.png)'

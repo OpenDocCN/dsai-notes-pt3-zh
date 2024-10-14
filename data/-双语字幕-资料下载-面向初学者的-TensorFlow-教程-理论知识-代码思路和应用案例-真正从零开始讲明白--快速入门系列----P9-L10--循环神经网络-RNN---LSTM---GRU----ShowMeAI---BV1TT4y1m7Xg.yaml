@@ -1,0 +1,199 @@
+- en: 【双语字幕+资料下载】面向初学者的 TensorFlow 教程，理论知识、代码思路和应用案例，真正从零开始讲明白！＜快速入门系列＞ - P9：L10-
+    循环神经网络(RNN & LSTM & GRU) - ShowMeAI - BV1TT4y1m7Xg
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】面向初学者的TensorFlow教程，理论知识、代码思路和应用案例，真正从零开始讲明白！＜快速入门系列＞ - P9：L10- 循环神经网络(RNN
+    & LSTM & GRU) - ShowMeAI - BV1TT4y1m7Xg
+- en: Hey， guys， welcomee to another Tensorflow tutorial。 Today。 we'll be learning
+    about recurrent neural nets or short R and Ns。 Rn Ns are a class of neural networks
+    that allow previous outputs to be used as inputs while having hidden states。 So
+    this means that we are working with a sequence here。 And this is super powerful。
+    And with this。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 嗨，大家好，欢迎来到另一个TensorFlow教程。今天我们将学习循环神经网络，简称RNN。RNN是一类神经网络，允许将以前的输出用作输入，同时具有隐藏状态。这意味着我们在这里处理的是一个序列。这是非常强大的。借此。
+- en: we can use R and Ns for many different applications like text generation text
+    translation。 sentiment classification and many more。 So I already have a in depth
+    tutorial about Rn Ns。 where I explain these slides here in more detail。 So if
+    you want to learn a little bit more about the theory。 Then check out at least
+    the first five minutes of this video。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们可以将RNN用于许多不同的应用，比如文本生成、文本翻译、情感分类等等。我已经有一个深入的RNN教程，在那里我更详细地解释了这些幻灯片。如果你想多了解一点理论，那就看看这个视频的前五分钟。
+- en: because now I want to focus on the implementation with Tensorflow。 So let's
+    jump directly to the code。😊，🎼。![](img/19e2da4a4c0b9bf65583ec48e044da69_1.png)
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因为我现在想专注于TensorFlow的实现，所以让我们直接进入代码。😊，🎼。![](img/19e2da4a4c0b9bf65583ec48e044da69_1.png)
+- en: So here I already have some code， and this is the exact same code as in tutorial
+    number3。 where used the Ms data set， and then we defined a simple neural nets
+    and then we defined a loss and a optimizer and compile our model and then we train
+    it and evaluate it。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这里我已经有一些代码，这与教程第3部分中的代码完全相同，使用了Ms数据集，然后我们定义了一个简单的神经网络，接着定义了一个损失函数和一个优化器，编译了模型，然后训练和评估它。
+- en: So we did digit classification with this data set。 and now the only thing we
+    want to change here is to change the model and now use an R andN model。 So this
+    is not the typical application for an RN。 A lot of times it's used when we deal
+    with text classification or text generation。 but this example should demonstrate
+    that RnNs can indeed be used for an image classification task。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们使用这个数据集进行了数字分类，现在我们唯一想要改变的是模型，改用RNN模型。这不是RNN的典型应用。很多时候它用于文本分类或文本生成，但这个例子应该演示RNN确实可以用于图像分类任务。
+- en: and you will see how easily we can create our R andN model with the Kaas API。
+    So as I said when we deal with R andNs then we deal with a sequence here。And in
+    our case。 we have images， but we don't have to change our data set。 We simply
+    have to treat our images as a sequence now。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你将看到我们如何使用Keras API轻松创建我们的RNN模型。正如我所说，当我们处理RNN时，我们在这里处理的是一个序列。在我们的案例中，我们有图像，但我们不需要更改数据集。我们只需将图像视为一个序列。
+- en: So right now our images have to shape 28 by 28， so 28 times 28 pixels。 and now
+    we treat it as a sequence。 So this means that we say one times step is one row
+    in our image。 And then we also have 28 columns。 So this means that our input size
+    is 28 and our sequence length is also 28。So again， this means we have 28 time
+    stepss in our sequence and in each time step。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们的图像必须是28乘28，所以是28乘28个像素。现在我们将其视为一个序列。这意味着我们说一个时间步是图像中的一行。然后我们还有28列。这意味着我们的输入大小是28，序列长度也是28。因此，这意味着我们的序列中有28个时间步，在每个时间步中。
+- en: we have 28 features。 And now when we treat it like this。 and we can simply use
+    an R and N now So now let's go ahead and define our model。 So first let's define
+    a empty sequence model。 and the first thing I want to do is to add a input。 So
+    I say model dot at and then careas and then input。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们有28个特征。现在当我们这样处理时，我们可以简单地使用一个RNN。所以现在让我们继续定义我们的模型。首先，我们定义一个空的序列模型。我要做的第一件事是添加一个输入。因此我说model.add，然后是keras，然后是input。
+- en: and then here specify the shape and this is 28 by 28。 So again。 the first the
+    first number here is the sequence length and the second number here is the input
+    size。 and now we can add the R and N model。 So there are different ones available
+    and we start with。The simple R and N layer。 So later I also show you two other
+    famous ones。 So for now。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后在这里指定形状，即28乘28。所以这里的第一个数字是序列长度，第二个数字是输入大小。现在我们可以添加RNN模型。有不同的可用模型，我们从简单的RNN层开始。稍后我还会展示另外两个著名的模型。所以现在。
+- en: let's say model dot at。 And then we can get this in Caras dot layers。 So we
+    already imported this here and then we can say layers dot。 and now we want a simple
+    R and N model。 And now the only thing we have to specify is the number of units。
+    So the number of output units。And this is also the size of the hidden cell。So
+    there are， of course。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设model.at。然后我们可以在keras.layers中获取这个。所以我们已经在这里导入了这个，然后我们可以说layers.。现在我们想要一个简单的R和N模型。我们唯一需要指定的是单位的数量。也就是输出单元的数量。这也是隐藏单元的大小。所以当然有很多。
+- en: a lot of more parameters。 So I recommend that you check out the documentation
+    for yourselves。 So one thing that you should notice that by default。 the activation
+    function in an R and N is the ton H function。 So let's in our case。 let's try
+    out the relu function。And now this is all that we need for the R and N model。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 更多的参数。因此我建议你自己查看文档。有一点你应该注意，默认情况下，R和N中的激活函数是tanh函数。那么在我们的例子中，试试relu函数。这就是我们所需的全部内容，用于R和N模型。
+- en: So now we have that。 And now， as we want to do classifications。 we have 10 different
+    classes in the M this data set。 So then we also， like in the other tutorial。 we
+    add a dense layer at the end。 So we say layers dot。Dense， and then we want 10
+    outputs。 And this is all we need。 So we don't use an activation function here
+    at the end。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以现在我们有这个。现在，既然我们要进行分类，我们在这个数据集中有10个不同的类别。那么像在其他教程中一样，我们在最后添加一个全连接层。因此我们说layers.Dense，然后我们想要10个输出。这就是我们所需的全部。所以在最后我们不使用激活函数。
+- en: But then we must be careful， and we must specify from logict equals true in
+    our loss function。And now this is all that we need for now。 So this is the whole
+    sequential model that we need for a simple R and N。 So first， let's import cis
+    and say cis dot exit so that it runs only until here。 So let's run the code until
+    here and print the summary。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但我们必须小心，必须在我们的损失函数中指定从logit等于true。而现在这就是我们目前所需的全部。这是我们需要的简单R和N的整个顺序模型。所以首先，让我们导入cis，并说cis.exit，这样它只会运行到这里。让我们运行到这里的代码并打印摘要。
+- en: So let's say Python and then the name of this file。 So this one。Oh。 and here
+    I missed the equal sign， of course。 So shape equals 28 by 28。 So again， let's
+    write。 And then here we see our simple R and N has this output shape。 And I explain
+    this in a second。 And then we have the dense layer with 10 outputs。So let's have
+    another look at the R and Ns。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们说Python，然后是这个文件的名称。所以这个。哦，这里我漏掉了等号，当然了。所以shape等于28乘28。那么我们再写一次。然后在这里我们看到我们的简单R和N有这个输出形状。我稍后会解释这个。然后我们有一个具有10个输出的全连接层。让我们再看看R和N。
+- en: So the output shape is n。 So the number of samples that we have。 and then 128。
+    like we specified here。 And what this includes is this is a single vector for
+    each sample。 And the output that we get is the output of the only of the。Last
+    cell， the last time step。 But this includes all the information about the previous
+    time step。 So this is all that we need。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以输出的形状是n。这是我们拥有的样本数量。然后是128，就像我们在这里指定的那样。它包含的是每个样本的一个单一向量。我们得到的输出是最后一个单元，最后一个时间步的输出。但这包括了关于前一个时间步的所有信息。所以这就是我们所需要的全部。
+- en: So we only need this last cell here。 So this is why our output is in this shape。
+    But you can also get an output of the shape， the number of batches times the number
+    of sequences。 the number of time steps or the sequence length。 And then the number
+    of units。 And we get this when we specify and there's an additional parameter。
+    and this is called return。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们只需要这里的最后一个单元。这就是为什么我们的输出是这个形状。但你也可以得到一个形状为批次数量乘以序列数量、时间步数量或序列长度的输出。然后是单位数量。当我们指定一个额外的参数时，我们可以得到这个，称为return。
+- en: Return sequences equals true。 So if we use this by default， it's false。 And
+    if we use this。 then our output is in this shape。 And this is， for example。 useful
+    when we want to stack multiple R and Ns together。 So， for example， we can use
+    the first one。 which will return all the time steps。 And then we use a second
+    one where we say this is。Falls。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: return sequences等于true。如果我们使用这个，默认情况下是false。如果我们使用这个，那么我们的输出就是这个形状。例如，当我们想将多个R和N堆叠在一起时，这很有用。因此，我们可以使用第一个，它将返回所有时间步。然后我们使用第二个，我们说这是false。
+- en: And then here we get this output shape。 So again， let's have a look if that's
+    correct。 So let's clear this and run this again。And yeah， what I told you was
+    correct。 So the first R and N has this output shape because we said return sequences
+    equals true。 And the other one has only this output shape。 And then again， we
+    have our dense layer。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们得到了这个输出形状。所以让我们再次检查一下这是否正确。清除这个并再次运行。没错，我告诉你的确是正确的。第一个 R 和 N 有这个输出形状，因为我们设置了返回序列为真。另一个则只有这个输出形状。然后，我们又有了我们的全连接层。
+- en: So this might improve the performance of your model。 So again。 you can play
+    around with stacking of multiple R and Ns。 So let's for now， let's just use one。
+    and then let's remove this。 and then train it and see if it performs well for
+    this classification task。 So again， let's clear this and run this。Alright， so
+    we see that our accuracy at the end is 97%。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这可能会提高你的模型性能。所以再次，你可以尝试堆叠多个 R 和 N。目前，我们就使用一个，然后去掉这个，训练它，看看它在这个分类任务中的表现如何。再次清除并运行。好的，我们看到最后的准确率是
+    97%。
+- en: So our RnN indeed works well here for this image classification task。 And now
+    you know how you can set up your R andN with this simple R andN layer and you
+    should know how you can treat your input as a sequence。 And now I also want to
+    show you two other famous RnNs。 So this is only the simple RnN layer。 but there's
+    also， for example， the LSTM or the G R U。 So both are two popular RnNs as well。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因此我们的 RnN 确实在这个图像分类任务中表现良好。现在你知道如何使用这个简单的 RnN 层来设置你的 R 和 N，并且你应该知道如何将输入视为序列。我还想给你展示另外两个著名的
+    RnN。这只是一个简单的 RnN 层，但还有，比如 LSTM 或 GRU。这两个也是很受欢迎的 RnN。
+- en: they both typically perform a little bit better than the simple RnN and I think
+    you don't have to change anything else。 So the parameters are mostly the same
+    and also the structure of the outputs is the same。 So yeah play。Around with this
+    as well and try out the GRU or the LSTM。And yeah。 I think that's it for now。 And
+    in the next tutorial。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它们的表现通常比简单的 RnN 略好，我认为你不需要更改其他任何内容。所以参数大多数是相同的，输出的结构也是相同的。所以是的，也可以尝试 GRU 或 LSTM。好的，我想现在就到这里。在下一个教程中再见。
+- en: we learn how we apply this for a text classification task。 So I hope to see
+    you in the next video then。 And if you enjoyed this tutorial。 please hit the like
+    button and consider subscribing to the channel and see you next time bye。😊。![](img/19e2da4a4c0b9bf65583ec48e044da69_3.png)
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们学习如何将其应用于文本分类任务。所以我希望在下一个视频中见到你。如果你喜欢这个教程，请点击喜欢按钮并考虑订阅频道，我们下次再见，拜拜。😊。![](img/19e2da4a4c0b9bf65583ec48e044da69_3.png)

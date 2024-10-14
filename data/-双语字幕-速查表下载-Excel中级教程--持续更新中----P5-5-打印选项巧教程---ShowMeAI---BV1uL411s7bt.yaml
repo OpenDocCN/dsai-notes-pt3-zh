@@ -1,0 +1,466 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P5：5）打印选项巧教程 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P5：5）打印选项巧教程 - ShowMeAI - BV1uL411s7bt
+- en: In this advanced Excel tutorial， I'm going to be showing you some of the print
+    options that you have in Excel。 And to be honest with you， I hope that you don't
+    have to print in Excel very often。 in today's world， you should be able to share
+    your Excel files digitally。 especially with tools like Dropbox and tools like
+    Microsoft Office online Hopefully you won't have to print often。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个高级Excel教程中，我将向你展示Excel中的一些打印选项。老实说，我希望你不需要经常在Excel中打印。在当今世界，你应该能够以数字方式共享Excel文件，尤其是使用Dropbox和Microsoft
+    Office在线等工具。希望你不需要频繁打印。
+- en: But if you do need to print this tutorial， we'll show you some of the keys。
+    Some of the tips and tricks that you'll need to be able to print effectively。
+    And think of printing as a process， not a single step， not a single event， it's
+    a process。 And you'll see what I mean as you watch this tutorial。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但是如果你确实需要打印这个教程，我们将向你展示一些关键的技巧和窍门，以便你能有效地打印。把打印看作一个过程，而不是单一的步骤或事件。这是一个过程。你在观看这个教程时会明白我的意思。
+- en: The tools that we're going use when we print can be found in various places。
+    One place where you'll find some print tools and options is here in file when
+    you click the file tab。 it changes the view and you get to the backstage view。
+    and you can click print and this gives you a print。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们在打印时使用的工具可以在不同的地方找到。一个你会找到一些打印工具和选项的地方是点击文件选项卡时。它会改变视图，你会进入后台视图。然后你可以点击打印，这会给你一个打印选项。
+- en: '![](img/b60c2ee556dcdee0fcd161b14469ab37_1.png)'
+  id: totrans-4
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/b60c2ee556dcdee0fcd161b14469ab37_1.png)'
+- en: So you get a sense of what your documents gonna look like once it's printed。
+    you also get all sorts of options here。 And some of these options you'll also
+    see and find in other places in Excel。 So there might be some duplication in what
+    I show you。 But there's some options here。 And there's some pretty important ones。
+    you'll notice also this link to page setup。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以你可以感受到打印后文档的样子。这里有各种选项。你在Excel的其他地方也会看到一些这些选项。可能我展示的内容会有重复。但这里有一些选项，而且有些相当重要。你还会注意到这个页面设置的链接。
+- en: That's fairly important。 Now before we exit the print preview。 I want you to
+    notice how many pages this document is going take。 It's gonna be 30 pages if I
+    print it now。 And I can click on this arrow to look through the pages and see
+    their nature。 I can also use this slider here at the right。 So you can see those
+    look pretty good。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这相当重要。在我们退出打印预览之前，我希望你注意到这个文档将需要多少页。如果现在打印，将会是30页。我可以点击这个箭头查看各页及其性质。我也可以使用右侧的滑块。所以你可以看到这些看起来不错。
+- en: but as I go down the page。 notice it's also gonna be printing some columns in
+    kind of a funny way。 It seems like not all the data is together the way it should
+    be。 It's not organized correctly。 So that's something to watch out for。 plus 30
+    pages， there's got to be a way to fix that。So keep watching， and I'll show you
+    some tips and tricks。 So I want to exit this print preview。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但是当我向下翻页时，注意到一些列也会以有点奇怪的方式打印。似乎并不是所有的数据都整齐地放在一起。它没有正确组织。所以这是一点需要注意的。而且30页，一定有办法解决这个问题。所以继续观看，我会向你展示一些技巧和窍门。我想退出这个打印预览。
+- en: I could do that by clicking this arrow here， or just by tapping the escape key
+    on the keyboard。 and I'm out of print preview。 So that's one place to look for
+    print options。 A second place to look is here in page layout。 you'll find some
+    good options there。 And then believe it or not， down in the lower right corner，
+    these three buttons。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以通过点击这里的箭头，或者直接按键盘上的Esc键来实现。我已经退出打印预览。这是查找打印选项的一个地方。另一个地方是在页面布局中。你会在那里找到一些不错的选项。信不信由你，在右下角有这三个按钮。
+- en: And also to some extent， this view zoom， these tools in the lower right are
+    gonna to be helpful as we try to get the printing set up the way we want it to
+    be。 So let's see if we can get this from 30 pages down to a more manageable amount。
+    So let's start here on the page layout tab and we'll look at some of the options
+    we have。 If you remember with the print preview。 And I want to tell you a shortcut
+    to the print preview。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在某种程度上，这个视图缩放，右下角的这些工具在我们尝试设置打印时会很有帮助。所以让我们看看能否将30页减少到更易管理的数量。让我们从页面布局选项卡开始，看看我们有哪些选项。如果你记得打印预览。我想告诉你一个打印预览的快捷方式。
+- en: you don't always have to click here on file。 The shortcut is control F2。So here
+    at any point。 I can just hold control and tap F2 and it will take me to the print
+    preview。 Okay。 so if you remember there's 30 pages， let's get that down and one
+    way to do that is notice that this page this print preview page is in portrait
+    mode it's taller than it is wide and if you look at my data there's a lot of data
+    vertically。 but if you look horizontally there are quite a few columns there。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你不一定要在文件中点击这里。快捷键是控制F2。因此在任何时候，我只需按住控制键并轻点F2，它就会带我到打印预览。好的，如果你记得有30页，让我们减少到这个数量，一种方法是注意这个打印预览页面是纵向的，纵向比横向高，如果你看我的数据，纵向有很多数据，但横向有不少列。
+- en: So it might be advantageous to change the orientation of the document and I
+    can do that here in the page layout tab and ribbon in the page setup group。 So
+    I'll click on orientation and I'll change it from portrait to landscape now let's
+    do control F2 and you can see that didn't really do much。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以改变文档的方向可能是有利的，我可以在页面布局选项卡和页面设置组中做到这一点。因此我将点击方向，将其从纵向改为横向。现在让我们按控制F2，你会发现这并没有改变太多。
+- en: In fact， now I have 39 pages。 but in many， many cases that will solve a lot
+    of your issues and a lot of your problems。 so what else can we do。To get this
+    data to fit so that it doesn't take up a separate page for the last two columns。
+    Basically， Well， I'm gonna to escape out of the print preview。 and I can see right
+    away one of the things I could change。 you'll notice that my column widths。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 事实上，现在我有39页。但在许多情况下，这会解决很多问题。所以我们还能做什么，以便让这些数据适应，不让最后两列占用单独的页面。基本上，我将退出打印预览。我能立刻看到我可以改变的事情，你会注意到我的列宽。
+- en: Some of them may be unnecessarily wide。 I don't need all of that space that
+    you can see there for the names of these family card games and board games。 So
+    I could resize each of these columns。 Now， of course。 the easiest and quickest
+    way to do that is to click and drag to select all of the columns and then to double
+    click between any two columns that you've selected。 So it could be between P and
+    Q or between S and T or any others。 I'll go with T and U。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 其中一些列可能过宽。我不需要看到这些家庭纸牌游戏和棋盘游戏名称的所有空间。因此我可以调整每一列的大小。当然，最简单、最快的方法是点击并拖动选择所有列，然后在你选择的任意两列之间双击。所以可以在P和Q之间，或在S和T之间，或者其他任何地方。我选择T和U。
+- en: and I'll double click that and it resized all of the columns down so that the
+    data just perfectly fits within the space provided。 So now if I do control F2
+    to get to the print preview。 Look， now I only have 26 pages。To deal with。 So that
+    has helped tremendously as I browse down and look at these other pages。 It's still
+    not perfect。 I wish this data that these columns fit on the other page。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将双击该列，它会将所有列的大小调整得刚好适合提供的空间。因此现在如果我按控制F2进入打印预览。看，现在我只有26页要处理。这确实大大帮助了我浏览这些其他页面。它仍然不是完美的。我希望这些列的数据能适合在另一页上。
+- en: but at least I'm getting fewer than 30 pages。 We're making some progress here。
+    going back to the spreadsheet。 Another thing you can try。 is。 let's say you don't
+    really need all of this information。 Maybe I only need to print a few months of
+    data。 If that's the case。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但至少我得到了少于30页。我们在这里取得了一些进展。回到电子表格。你可以尝试的另一件事是，假设你并不需要所有这些信息。也许我只需要打印几个月的数据。如果是这种情况。
+- en: I could just click and drag to select just the columns and just the data that
+    I need to print。 And then I just go here to the page layout tab， click print area，
+    set print area。 And so that's telling Excel。 I only want to print this part of
+    the spreadsheet。 Let's try it now。 if I go to file print。 and it looks like I
+    have to click show print preview。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以只点击并拖动选择我需要打印的列和数据。然后我只需转到页面布局选项卡，点击打印区域，设置打印区域。因此，这告诉Excel，我只想打印电子表格的这一部分。现在试试，如果我转到文件打印，似乎我得点击显示打印预览。
+- en: and that may have helped a little bit。 but you'll notice it still is 26 pages。That
+    it takes up。 But just know that set print area can be pretty helpful。 I'm going
+    to clear print area because I want to say that I just want to print all of this
+    data。 not just part of it。 a few other things I could try include I could shorten
+    the names of the months。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这可能稍微有帮助，但你会注意到它仍然是26页。它占用了这些空间。但请知道设置打印区域可能非常有用。我将清除打印区域，因为我想打印所有这些数据，而不仅仅是其中的一部分。还有其他一些可以尝试的事情，包括我可以缩短月份的名称。
+- en: if I abbreviated December and January and February。 that would enable me to
+    make these columns less wide， so that's something I could try。 I could also tilt
+    these words so that they are diagonal。 That is an option to do that。 I could just
+    click to select the entire row， and then I could go to the home tab and in the
+    alignment group。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我缩写十二月、一月和二月，那将使这些列变得更窄，所以这是我可以尝试的。 我也可以将这些文字倾斜，使其呈对角线。 这是一个选择。我可以单击以选择整行，然后我可以去主页标签，在对齐组中。
+- en: here's an option to change the orientation of the text and I could angle counterclockwise
+    or even go completely vertical。 and that might enable me to shrink these columns
+    down even more。 but let's say you don't want to do that。 What else could you try
+    in order to get all of your data so that it prints in fewer pages and so that
+    there aren't pages。With just two columns from the far right， a couple other things
+    you could try is you could hide data that is not necessary。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这里有一个选项可以改变文本的方向，我可以逆时针倾斜，甚至完全垂直。 这可能使我能够进一步缩小这些列。 但假设你不想这样做。 你还能尝试什么，以便让所有数据在更少的页面上打印，从而避免仅从最右边的两列出现页面。你可以尝试隐藏不必要的数据。
+- en: So instead of simply selecting the area you want to print and going to page
+    layout， print area。 set print area。 Instead of doing it that way。 you could just
+    say， you know。 I don't really need the data from months and months ago。 So I could
+    click and drag on the column letters， let's say B through G。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以，与其简单地选择你想打印的区域并转到页面布局，打印区域，设置打印区域。 不如说，我不真的需要几个月前的数据。 所以我可以单击并拖动列字母，比如B到G。
+- en: And then I could right click on any one of the column letters and choose hide。
+    And that hides those columns。 Now let's try it again。 I'm going go to file。 print
+    or else control F2。 And now look， it does not include January through June that
+    I hid。 So that's something else you could try。 But look， I still have 26 pages。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我可以右键单击任意一列字母并选择隐藏。 这会隐藏这些列。 现在让我们再试一次。我将去文件，打印或按控制F2。 现在看，它不包括我隐藏的一月到六月。
+    所以这也是你可以尝试的。 但是看，我仍然有26页。
+- en: So all of these steps that I'm showing you。 They do help。 but you may need to
+    do more than one of them。 you may need to keep trying。 And just keep going back
+    to print preview and。And back to your spreadsheet over and over until you get
+    that print preview the way you want it to look so that you can proceed with printing。Now，
+    let's look in the lower right corner and see what these three buttons can offer
+    us Right now。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我向你展示的所有这些步骤，它们确实有帮助。 但你可能需要做不止一个步骤。 你可能需要不断尝试。 并且不断返回打印预览和你的电子表格，直到你获得你想要的打印预览效果，以便继续打印。现在，让我们看看右下角这三个按钮能为我们提供什么。
+- en: it's in normal view。 So that's what that button's for。 normal view。 But let's
+    look now at page layout。 When you click page layout。 It shows you how your spreadsheet
+    would work on a page。 So you can see that this is where the page ends。 And that's
+    why we're having some problems。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它是在普通视图中。 所以这就是那个按钮的用途。普通视图。 但现在让我们看看页面布局。 当你点击页面布局时，它会显示你的电子表格在页面上的效果。 所以你可以看到这是页面结束的地方。
+    这就是我们遇到一些问题的原因。
+- en: We're having some trouble because these last two columns just don't fit on the
+    page。 And so I end up having to print， basically double， most likely， double the
+    number of pages。 because of these two little columns that' are off too far to
+    the right。 So that page layout button is pretty helpful。 And you'll see that name，
+    page layout。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们遇到了一些麻烦，因为这最后两列根本不适合页面。 所以我最终不得不打印，基本上是双倍，很可能是双倍的页数。 因为这两小列偏得太远到右边。 所以页面布局按钮非常有用。
+    你会看到那个名字，页面布局。
+- en: you'll see that in other parts of Excel。 like right here， page layout。 But this
+    is the page layout tab。 and that's different than this page layout button。 This
+    is more of a page layout view button。 right， You've got your normal view。 your
+    page layout view。 And then there's another one that we'll look at in just a minute。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你会在Excel的其他部分看到这一点。 就在这里，页面布局。 但这是页面布局标签。 这与这个页面布局按钮不同。 这更像是页面布局视图按钮。对，你有你的普通视图，你的页面布局视图。
+    然后还有另一个我们一会儿再看看。
+- en: But here in page layout view。It allows me to do some changes to this header。
+    So right now。 I have a header that's pretty much blank。 right， the very top of
+    the page above the data。 right now。 there's nothing really there。 but I could
+    type something in there。 maybe I could put the name of my hypothetical small business
+    that sells these amazing games。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但是在页面布局视图中，它允许我对这个页眉进行一些更改。所以现在，我的页眉几乎是空白的，对吧？页面最顶部的数据上方，目前那里实际上什么都没有。但是我可以在那输入一些内容，也许我可以写上我假设的小商店的名字，出售这些神奇的游戏。
+- en: I'll call this amazingly fun gamesp。 Okay， beautiful name。 I like it。 Now， while
+    I'm here。 I want to take a break from trying to reduce the number of pages that
+    we're gonna print。 just so that you can see some pretty cool options that you
+    have here in the header。 In addition to putting some header text like a title
+    or something like that here at the top。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我会称这个为“惊人的有趣游戏”。好的，漂亮的名字。我喜欢它。现在，既然我在这里，我想暂时停止尝试减少我们要打印的页数，只是为了让你看到在页眉中你有一些很酷的选项。除了在顶部放一些像标题这样的页眉文本之外。
+- en: You can also put in some things like the current date and the current time。
+    And you notice I put a space between them。 you don't have to do that。 You could
+    put a comma。 you could put whatever you want between those or nothing between
+    them。 But now that I've got date。 I'm going to put in current time。 And those
+    should automatically。😊。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你还可以放入一些东西，比如当前日期和当前时间。你会注意到我在它们之间留了一个空格。你不必这样做。你可以放一个逗号，或者在它们之间放任何你想要的东西，或者什么都不放。但是现在我有了日期，我要放入当前时间。这些应该会自动更新。😊
+- en: Be updated by Excel every time I look at the spreadsheet。 So that way， when
+    I print。 I always know when I printed it on the right side， I could put something
+    like number of pages。 Now。 all of these options I'm getting here on the design
+    tab。 and pretty much only because I'm here in the header。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 每次查看电子表格时都会由Excel更新。所以这样，当我打印时，我总是知道我在右侧打印的内容，我可以写上页数之类的。现在，所有这些选项都是在设计选项卡中获得的，几乎仅仅因为我在页眉中。
+- en: and I got to the header if you remember by clicking this page layout button。
+    Okay so here in the upper right corner of the page I want to click。 and I want
+    to set it up so that it says the page number。 So let's look at that page number
+    one。 And if I want to after that， I could say page number one of the total number
+    of pages。
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你记得的话，我是通过点击这个页面布局按钮来到页眉的。好的，所以在页面的右上角我想点击。我想设置一下，让它显示页码。我们来看一下第一页的页码。如果我想的话，我可以说这是总页数中的第一页。
+- en: And that's a little confusing。 It's page one of 26。 maybe I need to put between
+    those two something like of and maybe at the beginning。 I could type the word
+    page So page one of and then the total number of pages。 and maybe at the end。
+    I'll type the word pages again。 let's try that and see what it looks like。 page
+    one of 26 pages。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这有点令人困惑。现在是第1页，共26页。也许我需要在这两个之间放一些像“共”的东西，也许在开头我可以输入“第”这个词。所以“第1页，共”，然后是总页数。最后，我可能会再输入一次“页”。让我们试试，看看它看起来如何。“第1页，共26页”。
+- en: Pretty good。 And maybe that last word pages isn't necessary。 but still。 these
+    are some nice options that you get because you click here on page layout。 But
+    again。 page layout also tells us where the edge of the page is。 Okay， let's go
+    back to print preview。 Let's see what it looks like。 it's looking pretty good。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 相当不错。也许最后那个“页”这个词不是必要的。但是，这些是你点击页面布局后得到的一些不错的选项。但同样，页面布局还告诉我们页面的边缘在哪里。好的，让我们回到打印预览，看看它的样子。看起来相当不错。
+- en: notice that I've got my header showing up now， if I go to page 2 page 3 page
+    4。 look at that。 we still have the header at the top。 but one thing that is missing
+    is the explanation of what this data is。 as I go to page 10 or 20， I might lose
+    track of these column titles。 right， July August。 September all of that。 So to
+    help with that。 let's go back into the spreadsheet。
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 注意到我的页眉现在显示出来了，如果我去第2页、第3页、第4页，看看那。我们仍然在顶部有页眉。但是缺少的一件事是对这些数据的解释。当我翻到第10页或第20页时，我可能会失去这些列标题的跟踪，对吧，七月、八月、九月，所有这些。所以为了帮助解决这个问题，我们回到电子表格中去。
+- en: And I'm going go to the page layout tab。 I should have done this earlier， probably。
+    But here in the page layout tab。 Look there's an option to print titles。 and here
+    it says row to repeat at top。 And then I can just select。Rose to repeat。 Maybe
+    I don't need this one that says game cells。 I'll just go with just row number
+    two。
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将前往页面布局选项卡。 我可能应该早点做这个。 但在页面布局选项卡中，看，这里有一个打印标题的选项。 这里说的是顶部重复的行。 然后我可以选择要重复的行。
+    也许我不需要这行说游戏单元格的。 我就选择第2行。
+- en: I'll click okay。 Now， when we print preview， let's see what it looks like。 as
+    I go to the 10th page to the 12th page。 it' still keeps that row across the top。
+    So I know what the data means。 at this point， you're probably understanding why
+    I said that printing as a process。 it's not just one quick event， you're gonna
+    be going to that print preview quite a bit。
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我点击确定。 现在，当我们打印预览时，看看它的样子。 当我从第10页到第12页时，顶部的那一行仍然保持不变。 所以我知道这些数据的含义。 此时，你可能理解我为什么说打印是一个过程。
+    这不仅仅是一个快速的事件，你会频繁进入打印预览。
+- en: and then coming back to the spreadsheet。 Let's look at a few other changes we
+    could make。 And many of these changes， you'll find here in the page layout tab
+    page setup group。 And you might find some of those same options here in file print
+    with the print preview。 So here you can see I could have changed the orientation
+    this way。 but instead， I did it on the tab。
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后再回到电子表格。 让我们看看我们可以做的一些其他更改。 这些更改的许多选项，你可以在页面布局选项卡的页面设置组中找到。 在文件打印与打印预览中，你可能也能找到一些相同的选项。
+    所以在这里你可以看到，我本可以这样更改方向，但我选择在选项卡上做。
+- en: But that's all right。 Some other things I could change include the margins。
+    and I could change those here or on the tab in the page setup group。 And so you
+    can see there's a lot of duplication。 I usually prefer to make a lot of the changes
+    here。Just on the tab in the page setup group。 But sometimes it does make sense
+    to make those changes here in the print preview so that you can see the results
+    immediately。
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但没关系。我可以更改的其他一些内容包括边距。 我可以在这里或在页面设置组的选项卡中更改这些内容。 所以你可以看到有很多重复。 我通常更喜欢在页面设置组的选项卡上做很多更改。
+    但有时在打印预览中进行这些更改是有意义的，这样你可以立即看到结果。
+- en: So let's try that。 I'm going go here to normal margins。 And so this is talking
+    about the margins here at the left and the top。 the right and the bottom part
+    of the page。 So if I go from normal to narrow。 let's see what that does。 Okay，
+    that helped everything is helping a little。
+  id: totrans-38
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那么让我们尝试一下。 我会选择正常边距。 这涉及到页面左侧和顶部，右侧和底部的边距。 如果我从正常改为窄边距，看看会怎样。 好吧，这有所帮助，一切都有所帮助。
+- en: but if you notice we still have 26 total pages。 but I still think that's an
+    improvement。 And look。 we're down to just one column that's not fitting。 Each
+    time we make a change。 we're getting a little closer to what we want to do。 which
+    is to reduce the number of pages and get all of our data to fit onto just one
+    set of pages。
+  id: totrans-39
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 不过如果你注意到，我们仍然有26页。 我仍然认为这是一种改进。 看吧。 我们只剩下一列不合适。 每次我们进行更改时，离我们想要的目标又近了一点。 我们的目标是减少页面数量，并将所有数据放在一组页面上。
+- en: For this next change I want to try to make。 I'm going click this back arrow
+    again to get back into my spreadsheet。 And this time I'm going to go to the lower
+    right corner again and change the view。 instead of page layout。 I want to see
+    the page break。Preview。 So if I click on that。 it shows me another view that's
+    similar in some ways to the page layout view。
+  id: totrans-40
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 对于下一个我想尝试的更改，我会再次点击这个向后箭头，回到我的电子表格。 这次我会再次去右下角，改变视图。 我想看到页面分隔预览，而不是页面布局。 所以如果我点击这个，它会显示另一种在某些方面类似于页面布局视图的视图。
+- en: But this time I get some dashed lines and some solid blue lines。 I'm going zoom
+    in on this using this slider in the lower right so you can see that a little bit
+    better。 And so now you can see clearly page 1 is here underneath that at the point
+    of this dashed line。 this is page2。 and then it continues down to page 3 etc ce。
+    So notice over here。
+  id: totrans-41
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 不过这次我看到了一些虚线和一些实线的蓝色线条。 我将使用右下角的滑块放大一下，这样你就能更清楚地看到。 现在你可以清楚地看到，第一页在这个虚线下面。 这是第二页。
+    然后继续到第三页等。 所以请注意这里。
+- en: this column can't fit here as we know。 And so it's being printed as page 14。
+    Well。 that's really unacceptable。 And so there's a couple of options I have。 And
+    these options you'll find only if you're here on the page break preview for the
+    most part。 The first option is I could just decide， you know what， December， I
+    don't need that。
+  id: totrans-42
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这一列在这里无法适应。正如我们所知道的，它被打印为第14页。这显然是不可接受的。所以我有几个选项。这些选项大多数只有在页面分隔预览中才能找到。第一个选项是我可以决定，知道吗，12月，我不需要它。
+- en: So I'm going click on this solid blue line on the right。 and I could drag to
+    the left and it's just gonna to omit that column。 Now when I do the print preview。Look
+    what I get instead of 26 pages， I get 13。 So this is really what I'm looking for。
+    This is what I'd like。
+  id: totrans-43
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我会点击右侧的这条实心蓝线，然后向左拖动，这样就会省略那一列。现在当我进行打印预览时，看看我得到了什么，原本的26页，现在变成了13页。所以这正是我想要的。这正是我想要的效果。
+- en: Just a solid bunch of Excel information that I can print。 But what if December
+    is truly important。 And I don't want to just leave that out。 There's another option
+    I have。 I can click this dashed line and drag it to the right。 And what that is
+    doing。 is it saying no matter what make this data fit on the page。 The downside
+    to this。
+  id: totrans-44
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 只是我可以打印的一堆Excel信息。但如果12月真的很重要，我不想就这样忽略它。我还有另一个选项。我可以点击这条虚线并向右拖动。这是在说无论如何都要让这些数据适应页面。这样做的缺点是。
+- en: is it sometimes shrinks the data so much that the spreadsheet becomes almost
+    unreadable。 So let's take a look at it and see how it looks。 I'll click the print
+    preview and look。 I think we've got it， I think we've finally got it everything
+    is fitting on just one page across and 13 pages down and that looks really good
+    and December is included。 Now， if you remember， I did hide January through June。
+    And if I go back and unhide that。
+  id: totrans-45
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 有时它会将数据缩小得几乎不可读。所以我们来看看效果。我会点击打印预览，看看。我认为我们成功了，所有内容都适合在一页宽、13页高，效果很好，12月的数据也包括在内。现在，如果你记得，我确实隐藏了1月到6月。如果我回去取消隐藏它。
+- en: the way you would unhide is by click。and dragging to select the part that is
+    hidden。 And then I could right click and choose unhide。 And that brings everything
+    back。 So now， of course。 I'm back in the same problem I had before。 but I could
+    try it again。 I could click and drag that dashed line and try to include all the
+    data。
+  id: totrans-46
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 显示隐藏内容的方法是点击并拖动以选择被隐藏的部分。然后我可以右键点击选择取消隐藏。这会将所有内容恢复回来。所以现在，当然，我又回到了之前的问题，但我可以再试一次。我可以点击并拖动那条虚线，试着包含所有数据。
+- en: Let's look at it this time and see if it looks acceptable。 You know， even that
+    is probably readable。 So I think we're in good shape and we're down to 10 total
+    pages。 Even more data was able to fit on one particular page。 At this point。 I'm
+    ready to click print and print out my spreadsheet。 unless I miss having grid lines。
+  id: totrans-47
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这次我们看看效果是否可接受。你知道，即便如此也是可以阅读的。所以我认为我们状况良好，总页数降至10页。甚至有更多数据能够放在一页上。在这一点上，我准备点击打印，打印我的电子表格，除非我错过了网格线。
+- en: So you'll notice with my print previews。 there are no grid lines。 And in Excel。
+    I'm used to having these grid lines。 these vertical and horizontal lines that
+    show where the cells begin and end。 if I want to have those in the print。 I just
+    go here to page layout to the sheet options group and make sure that I have grid
+    lines。😊。
+  id: totrans-48
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以你会注意到我的打印预览中没有网格线。在Excel中，我习惯有这些网格线，这些显示单元格开始和结束的垂直和水平线。如果我想在打印中保留这些，我只需转到页面布局的工作表选项组，确保我有网格线。😊
+- en: '![](img/b60c2ee556dcdee0fcd161b14469ab37_3.png)'
+  id: totrans-49
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/b60c2ee556dcdee0fcd161b14469ab37_3.png)'
+- en: Print not just view， but print and headings。 That would be the a through Y。
+    if you want that to show up， you could print that as well。 but notice what that
+    did。 That changed the equation and now I've lost this column again。 So I'm gonna
+    undo that one。 And let's do a print preview our last print preview look at that。
+  id: totrans-50
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 打印的不仅仅是查看，还有标题。那就是从A到Y。如果你想让它显示出来，你也可以打印。但注意，这改变了情况，现在我又失去了这一列。所以我要撤销那个。让我们进行最后一次打印预览，看看那是什么样的。
+- en: it looks like a pretty good spreadsheet， probably still readable。 And it's because
+    of a lot of our changes like going to narrow margins and using this page break
+    preview button。 I can go back now to normal， by the way， But all of those little
+    changes that we made made it possible so that I could print and have my data show
+    up in a way that makes sense that looks like Excel and is actually readable。 So
+    thanks for watching this tutorial。 I hope you found it to be useful。 If you did。
+  id: totrans-51
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 看起来这是一个相当不错的电子表格，可能仍然可以阅读。这得益于我们进行的许多更改，比如使用窄边距和这个分页预览按钮。顺便说一下，我现在可以恢复到正常模式，但是我们所做的所有小更改使得我能够打印并以一种有意义的方式展示我的数据，看起来像Excel且实际上可读。感谢您观看这个教程。希望您觉得它有用。如果您觉得。
+- en: please click the like button below。
+  id: totrans-52
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 请点击下面的点赞按钮。

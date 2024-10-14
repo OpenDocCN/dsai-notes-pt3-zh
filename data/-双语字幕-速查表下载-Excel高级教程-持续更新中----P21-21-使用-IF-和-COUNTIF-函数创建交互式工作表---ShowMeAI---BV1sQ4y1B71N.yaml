@@ -1,0 +1,199 @@
+- en: 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P21：21）使用 IF 和 COUNTIF 函数创建交互式工作表 - ShowMeAI
+    - BV1sQ4y1B71N
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P21：21）使用 IF 和 COUNTIF 函数创建交互式工作表 - ShowMeAI
+    - BV1sQ4y1B71N
+- en: '![](img/62ed1b58741ca3588da1eb98b48fe392_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/62ed1b58741ca3588da1eb98b48fe392_0.png)'
+- en: In this video， I will show you how to create interactive worksheets in Microsoft
+    Excel and not only are they interactive。 but they're also self grading。 You might
+    also think of these as being selfgrading practice quizzes that the students can
+    take to prepare for a test and you can see I've created the beginnings of a spreadsheet
+    here。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个视频中，我将向你展示如何在 Microsoft Excel 中创建交互式工作表，这些工作表不仅是交互式的，而且还可以自我评分。你也可以将这些视为学生在考试前准备的自我评分练习测验，你可以看到我在这里创建了一个电子表格的开端。
+- en: And you can get a copy of this in the description below the video。 But what
+    I have here is a series of icons of different animals。 And I got these in the
+    spreadsheet simply by going to insert illustrations， icons。 and then searching
+    for the different animals， and then I just selected the animal that I wanted。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以在视频下方的描述中获得这个的副本。但是我这里有一系列不同动物的图标。我在电子表格中得到这些图标，方法是插入插图，图标，然后搜索不同的动物，最后选择我想要的动物。
+- en: click insert， shrunk it down and put it where I wanted it to be。 And let's say
+    I'm a Spanish teacher and I would like my students to practice their Spanish animal
+    words。 In this example I've chosen to make the questions simply be images or icons
+    But of course。 if you prefer you could use text in your own interactive worksheets
+    or quizzes So the way。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 点击插入，将其缩小并放置到我希望的位置。假设我是西班牙语老师，我希望我的学生练习他们的西班牙语动物单词。在这个例子中，我选择让问题简单地变为图像或图标。但当然，如果你愿意，你可以在自己的交互式工作表或测验中使用文本。
+- en: I would like this to work is I want my students to be able to click here and
+    type in the answers to each question and then I want Excel to basically grade
+    their answer to say whether it's correct or incorrect so how would I do this the
+    answer is I need to use the if function let me demonstrate so I'm going to click
+    on C2 tap equals if you can see that Excel explains what the if function typically
+    does and then I'll put in the left parenthesis Excel is now looking for a logical
+    test so if I'm going to click here on B2 so if B2 is equal to and inside of quotes
+    because we're dealing with text I'm going type L Oso close I put a comma and the
+    comma represents the word then so if B2 is equal to L Oso then again I need to
+    put quotation marks I'll type the word right with an exclamation point and then
+    close and then if I want to I can。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我希望这能正常工作，我希望我的学生能够在这里点击并输入每个问题的答案，然后我希望 Excel 基本上能够评分，告诉他们答案是正确还是错误。那么我该怎么做呢？答案是我需要使用
+    if 函数，让我演示一下。所以我将点击 C2，按等于，你可以看到 Excel 解释了 if 函数通常的作用，然后我输入左括号。Excel 现在在寻找一个逻辑测试，所以我将点击
+    B2，所以如果 B2 等于，并且在引号中，因为我们处理的是文本，我将输入 L Oso，关闭引号，输入逗号，逗号表示“然后”，所以如果 B2 等于 L Oso，那么我再次需要输入引号，输入“正确”这个词并加上感叹号，然后关闭引号，如果我想的话，我可以。
+- en: another comma， this second comma represents if not or else。 So if B2 is equal
+    to L Oso。 then print the word right if not or else print the word wrong close
+    and right parenthesis If I tap enter on the keyboard now you can see that Excel
+    evaluates the contents of cell B2 and Excel finds that L Oso does meet the criteria
+    that I established and so it prints the word right here in C2。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 另一个逗号，这第二个逗号表示“如果不”或“否则”。所以如果 B2 等于 L Oso，那么打印“正确”这个词，如果不等于，则打印“错误”，关闭右括号。如果我现在在键盘上按下回车键，你可以看到
+    Excel 评估了单元格 B2 的内容，发现 L Oso 符合我设定的标准，因此在 C2 中打印了“正确”这个词。
+- en: Now of course I want my students to put that in so I'm going to click on B2
+    tap delete to get rid of it and you'll notice that the result changes to the word
+    wrong。 Okay so now I need to do the same thing with C3 right I need to tap equals
+    if left parentes Well。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 当然，我希望我的学生输入内容，所以我将点击 B2，按删除键来去掉它，你会注意到结果变成了“错误”这个词。好的，现在我需要在 C3 进行同样的操作，对吧？我需要点击等于，如果左括号。
+- en: yes， that's a good idea to do but let me show you a shortcut。 There's a big
+    time saver that I like to do。 I clicked on C2。 and I'm going to go here to the
+    lower right corner。That little green square is the fill handle or autofill handle。
+    I'll put my mouse on it until the mouse pointer turns into a black plus sign。
+    And then I'll just click and drag and pull that down。 And you can see what happened。
+    The autofill handle copied the contents of cell C2 and copied it exactly into
+    cell C 3。 Sometimes the autofill handle continues a pattern or extends a pattern。
+    But in this case。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 是的，这个做法很好，但让我给你展示一个快捷方式。我喜欢使用一个省时的办法。我点击了C2，然后去到右下角。那个小绿方块是填充柄或自动填充柄。我把鼠标放上去，直到鼠标指针变成黑色的加号。然后我只需点击并拖动，把它向下拉。你可以看到发生了什么。自动填充柄将C2单元格的内容准确复制到了C3单元格。有时，自动填充柄会继续一个模式或扩展一个模式，但在这种情况下。
+- en: it simply copy pasted。 If you want to learn more about the autofill handle。
+    please watch my other video on that topic。 Now， I said that it copy pasted the
+    contents of cell C2 into C3。 C4， C5， etc cea。 And it did。 but it is important
+    to notice that Excel automatically changed B2 to B3 and B4。 So it adjusted the
+    row in question。 So that will be very helpful later。 Now。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这只是简单地复制粘贴。如果你想了解更多关于自动填充柄的内容，请观看我关于这个主题的其他视频。现在，我提到它将C2单元格的内容复制到了C3、C4、C5等单元格。确实如此，但需要注意的是，Excel自动将B2更改为B3和B4。因此，它调整了相关行。这在后面会非常有帮助。现在。
+- en: you probably noticed the problem。 right， The word for cat in Spanish is not
+    L Oso L Oso means bare。 So I need to adjust this and change。To sayelgato or the
+    cat I can do that here in cell C3。 but in a lot of cases， it's easier， safer and
+    just better to go up here to the formula bar。 Yes。 I still have to click on C3
+    but then I go up here to the formula bar and I can change it from El Oso to Elgato
+    tap enter it still says it's wrong。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可能注意到了这个问题，对吧？西班牙语中“猫”的单词不是“El Oso”，“El Oso”是“熊”的意思。因此，我需要调整并更改为“el gato”或“猫”。我可以在C3单元格中做到这一点，但在很多情况下，去这里的公式栏会更简单、更安全，并且效果更好。是的，我仍然需要点击C3，但我可以到公式栏中，将“El
+    Oso”更改为“El gato”，然后按回车，仍然显示错误。
+- en: but now if I put in the correct answer here in cell B3 it changes to right So
+    I need to do the same thing with the dog and the elephant give me a minute to
+    change the rest of these formulas in these cells and then I'll resume the video。
+    I've finished updating the formulas。 So now as the correct answers are typed in
+    the text changes to say right now at this point if I want to spice this up a little
+    bit I could select olive column C and I could use some conditional formatting
+    to provide additional feedback to the student So here on the home tab home ribbon
+    here in the Sts group you should find condition。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但是现在如果我在B3单元格中输入正确答案，它会变成“right”。所以我需要对狗和大象做同样的事情，给我一点时间来更改这些单元格中的其余公式，然后我会继续视频。我已经完成了公式的更新。因此，现在当正确答案输入时，文本会变成“right”。现在，如果我想让这个看起来更有趣一些，我可以选择整个C列，并使用一些条件格式来为学生提供额外反馈。所以在首页选项卡的“条件格式”组中，你应该能找到条件格式。
+- en: ForingI want to highlight the cells rules based on text that's in the cells。
+    So I'm going go down here to text that contains I'll type in the word right with
+    an exclamation point and if the student gets the answer right I don't want it
+    to turn red。 I would like it to turn green fill with dark green text I click and
+    that conditional formatting has been applied to the entire column next if I want
+    to I can click on C again do another conditional formatting。 highlight cells rule
+    again， it'll be text that contains but this time I'm going type the word wrong
+    and I want it to be formattted light red fill with dark red text Now of course
+    you can adjust all of this and if you want to learn more about conditional formatting。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想根据单元格中的文本突出显示单元格规则。所以我要到这里选择“包含文本”，我会输入“right”这个词，并加上感叹号。如果学生回答正确，我希望它不变成红色，而是变成绿色，填充深绿色文字。我点击，这个条件格式已应用于整列。接下来，如果我想的话，我可以再次点击C，进行另一个条件格式，再次突出显示单元格规则，仍然是“包含文本”，但这次我要输入“wrong”这个词，我希望它被格式化为浅红色填充和深红色文字。当然，你可以调整所有这些，如果你想了解更多关于条件格式的内容。
+- en: I have a couple of videos on that topic that you really should watch but I'm
+    gonna just leave it red with dark red click and that's a nice extra way to provide
+    feedback to the students as they answer the questions either correctly or incorrectly
+    the color really does help。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我有几个关于这个主题的视频，你真的应该观看，但我会将其标记为深红色点击，这是一种很好的方式，能为学生在回答问题时提供反馈，无论是正确还是错误，颜色确实会有所帮助。
+- en: To provide some feedback next， I would like to add one finishing touch。 and
+    that is I want Excel to total up the right answers and give the students a total
+    score。 I can do that here in cell C 9。 and to make this work I'm going use the
+    count if function So I'll tap equals type in count if count if counts the number
+    of cells within a range that meet the given condition。 So count if left parenthesis
+    I'm going select the range that includes all of the feedback right or wrong。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 接下来提供一些反馈，我想增加一个收尾工作，那就是我希望 Excel 能够统计正确答案的总数，并给学生一个总分。我可以在单元格 C9 中做到这一点。为了实现这一点，我将使用计数如果函数。所以我会输入等号，输入
+    count if，count if 计算满足给定条件的范围内单元格的数量。因此，输入 count if 左括号，我将选择包括所有反馈的范围，无论是正确还是错误。
+- en: So that's my range C2 through C8。 Then I put in a comma and you can see what
+    Excel is expecting here。 it's looking for my criteria。 So what is it that Excel
+    is looking for to decide whether or not to count that cell。 because I'm dealing
+    with text I need to put this in quotation marks。 I want Excel to look for the
+    word right with an exclamation point I put in my close and right parenthesis tap
+    enter on the keyboard and according to Excel I got6。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我的范围是 C2 到 C8。然后我输入一个逗号，你可以看到 Excel 在这里期待什么。它在寻找我的条件。那么，Excel 在寻找什么来决定是否计数该单元格呢？因为我在处理文本，所以我需要将其放在引号中。我希望
+    Excel 查找带感叹号的单词 right。我输入关闭引号和右括号，然后按下键盘上的回车键，Excel 认为我得到了 6。
+- en: Out of seven questions right If you want to take this one step further。 you
+    could make it so that the students can type in variations on the correct answer
+    and still get the question right。 So for example， with the word L t gray。 What
+    if the students just wrote T gray technically that could be considered correct
+    without the word L in front of it and yet Excel marks it as wrong how could we
+    fix that Well。 I'll click on cell C8 and this is an advanced technique don't feel
+    bad if you're not ready to try this yourself。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 七道题中答对了多少。如果你想进一步提高，可以让学生输入正确答案的变体，依然能回答正确。例如，单词 L t gray。如果学生只写了 T gray，技术上来说，这可以被视为正确答案，而不需要前面的字母
+    L，但 Excel 却将其标记为错误。我们该如何解决呢？好吧，我会点击单元格 C8，这是一项高级技巧，如果你还没有准备好尝试，不要感到沮丧。
+- en: but with cell C8 selected。 I'm going go up here to the formula bar and write
+    in front of B8 I'm going type the word or and then put in a left parenthesis and
+    then I'll leave B8 equals L t gray and then I'll put in a comma and then B8 equals
+    in I'll just put t gray without the word L in front of it close now I need to
+    put in a right parenthsesis you'll notice that I have two sets of parentheses
+    One that begins here。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但选中单元格 C8 时，我会到公式栏上，在 B8 前面输入单词 or，然后放入一个左括号，然后我将输入 B8 等于 L t gray，接着放一个逗号，然后
+    B8 等于，我只需输入 t gray，而不需要前面的字母 L，最后关闭。现在我需要放入一个右括号。你会注意到我有两组括号，一组从这里开始。
+- en: And ends here and one that begins here and ends here Now I can tap enter on
+    the keyboard and look Excel considers the word tgra to be correct and also L Tgra。
+    but not Ltegra since that's another a word So if you'd like to do that。 you can
+    use formulas that are a little bit more complicated using this or function to
+    create multiple possible correct answers for each question。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 并在这里结束，另一组从这里开始并在这里结束。现在我可以按下键盘上的回车键，看看 Excel 将单词 tgra 视为正确答案，同时也将 L Tgra 视为正确，但不包括
+    Ltegra，因为那是另一个单词。如果你想这样做，可以使用稍微复杂一点的公式，利用这个 or 函数为每个问题创建多个可能的正确答案。
+- en: '![](img/62ed1b58741ca3588da1eb98b48fe392_2.png)'
+  id: totrans-19
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/62ed1b58741ca3588da1eb98b48fe392_2.png)'

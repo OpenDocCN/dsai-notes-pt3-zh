@@ -1,0 +1,418 @@
+- en: 【双语字幕+资料下载】用 Python 和 Numpy 实现最热门的12个机器学习算法，彻底搞清楚它们的工作原理！＜实战教程系列＞ - P9：L9- 决策树第
+    1 部分 - ShowMeAI - BV1wS4y1f7z1
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】用 Python 和 Numpy 实现最热门的12个机器学习算法，彻底搞清楚它们的工作原理！＜实战教程系列＞ - P9：L9- 决策树第
+    1 部分 - ShowMeAI - BV1wS4y1f7z1
+- en: Hi， everybody。 Welcome to a new machine learning from Sc tutorial。 Today。 we
+    are going to implement a decision tree using only built in Python modules and
+    nuy。 A decision tree is a very simple but powerful concept。 The idea is to build
+    a tree that splits our data such that we have the best separation of our classes。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 大家好，欢迎来到新的机器学习教程。今天，我们将仅使用内置的Python模块和Numpy实现一个决策树。决策树是一个非常简单但强大的概念。其核心思想是构建一棵树来分割数据，以实现类别之间的最佳分离。
+- en: A decision tree is also the basis for the very popular random forest model。
+    which we will implement in the next tutorial。 So I hope you will stick with me。😊，And
+    as always。 we will start with the theory first。 So let's look at an example to
+    understand the concept and the math behind the decision tree。 Let's say we want
+    to predict if a person is walking or taking the bus to go to work。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 决策树也是非常流行的随机森林模型的基础，我们将在下一个教程中实现。因此，我希望你们能跟着我。😊，和往常一样，我们首先从理论开始。所以让我们看一个例子，以理解决策树背后的概念和数学原理。假设我们想预测一个人是走路还是乘公交车去上班。
+- en: and we have 10 observations or 10 samples with two different features。So we
+    have the feature if it is raining and then we have the feature， how much time
+    do they have？
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们有10个观察值或10个样本，具有两个不同的特征。所以我们有一个特征，即是否在下雨，然后我们有另一个特征，他们有多长时间？
+- en: And then we have the prediction or the class label， yes or no。![](img/e1b43f93535591fc8a4dc158e9ae735d_1.png)
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们得出预测或类别标签，是或否。![](img/e1b43f93535591fc8a4dc158e9ae735d_1.png)
+- en: And now we want to build our tree that splits our data。 so we put all the samples
+    in the root node and then we apply a question so we ask if it is raining and if
+    the answer is yes。 then we go to the right and we put all the samples where the
+    answer is yes。 so these three into the right note and if the answer is no。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们想构建一个将数据分割的树。所以我们把所有样本放在根节点，然后我们提出一个问题，我们问是否在下雨，如果答案是“是”。然后我们向右移动，把所有答案为“是”的样本放进去。所以这三个放在右节点，如果答案是否。
+- en: then we go to the left and put all the other samples in the left node。![](img/e1b43f93535591fc8a4dc158e9ae735d_3.png)
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们向左移动，把所有其他样本放入左节点。![](img/e1b43f93535591fc8a4dc158e9ae735d_3.png)
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_4.png)'
+  id: totrans-7
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_4.png)'
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_5.png)'
+  id: totrans-8
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_5.png)'
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_6.png)'
+  id: totrans-9
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_6.png)'
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_7.png)'
+  id: totrans-10
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_7.png)'
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_8.png)'
+  id: totrans-11
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_8.png)'
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_9.png)'
+  id: totrans-12
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_9.png)'
+- en: And here on the right， we can immediately say that the answer is no， They don't
+    walk。 So we put the。![](img/e1b43f93535591fc8a4dc158e9ae735d_11.png)
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这里在右侧，我们可以立即说答案是否，他们不走路。所以我们把。![](img/e1b43f93535591fc8a4dc158e9ae735d_11.png)
+- en: Or return the class label 0。 And here on the left， we can further split the
+    data and grow our tree。 So we ask the next question。 So do they have more than
+    10 minutes and again。 if the answer is yes and we go to the right and put all
+    of the。![](img/e1b43f93535591fc8a4dc158e9ae735d_13.png)
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 或返回类别标签0。这里在左侧，我们可以进一步分割数据并扩展我们的树。所以我们问下一个问题。那就是他们是否有超过10分钟，如果答案是“是”，我们就向右移动，把所有的。![](img/e1b43f93535591fc8a4dc158e9ae735d_13.png)
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_14.png)'
+  id: totrans-15
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_14.png)'
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_15.png)'
+  id: totrans-16
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_15.png)'
+- en: Samples where where they have more than 10 minutes in the right note and all
+    the other ones in the left note and then again here we can say that the answer
+    is yes or the class label is1 and here the class label is 0。![](img/e1b43f93535591fc8a4dc158e9ae735d_17.png)
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 样本如果有超过10分钟的时间就放在右节点，所有其他样本放在左节点，然后在这里我们可以说答案是“是”或类别标签是1，而这里的类别标签是0。![](img/e1b43f93535591fc8a4dc158e9ae735d_17.png)
+- en: And we could also stop with the growing here and return the most common class
+    label。 So here we can say that it's more likely that they will walk。m but we could
+    also further split our data and but we don't want to grow our data too much because
+    we don't want to overfit our data。 but we also want to have a good prediction。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们也可以在这里停止生长并返回最常见的类别标签。所以我们可以说，他们更有可能走路。但我们也可以进一步分割数据，但我们不想让数据过度生长，因为我们不想过拟合数据。但我们也希望有一个好的预测。
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_19.png)'
+  id: totrans-19
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_19.png)'
+- en: So this is the concept of how the decision tree works and now the only thing
+    that we have to find out is at what at which node we want to apply which question
+    so why do we ask for rain at first and not for the time and why do we ask for
+    the time is greater than 10 and why don't we ask for if it's greater than 5 or
+    greater than 20。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这是决策树工作的概念，现在我们唯一需要找出的就是在什么节点上应用哪个问题，为什么我们一开始问雨而不是天气，为什么我们问时间是否大于10，为什么不问是否大于5或大于20。
+- en: so this is the best the so-called best。![](img/e1b43f93535591fc8a4dc158e9ae735d_21.png)
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这就是所谓的最佳。![](img/e1b43f93535591fc8a4dc158e9ae735d_21.png)
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_22.png)'
+  id: totrans-22
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_22.png)'
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_23.png)'
+  id: totrans-23
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_23.png)'
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_24.png)'
+  id: totrans-24
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_24.png)'
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_25.png)'
+  id: totrans-25
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_25.png)'
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_26.png)'
+  id: totrans-26
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_26.png)'
+- en: Split feature and best split value or split threshold that we want to find out。![](img/e1b43f93535591fc8a4dc158e9ae735d_28.png)
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 划分特征和我们想要找出的最佳划分值或划分阈值。![](img/e1b43f93535591fc8a4dc158e9ae735d_28.png)
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_29.png)'
+  id: totrans-28
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_29.png)'
+- en: So， the concept is to。At each note， we want to find the best split value and
+    the best split threshold and store them。And this is our training phase and later
+    when we want to predict a new test sample。 then we start at the top and then we
+    traverse our tree and apply the questions or the features that we start and go
+    to the left or to the right until we reach a leaf node so a leaf node the node
+    at the bottom。 and then we apply the most common label that we stored based on
+    our test samples。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以，概念是。在每个节点，我们想找到最佳的划分值和最佳的划分阈值并存储它们。这是我们的训练阶段，后来当我们想预测一个新的测试样本时，我们从顶部开始，遍历我们的树，应用开始的问题或特征，然后向左或向右移动，直到到达叶子节点，叶子节点是底部的节点。然后我们应用基于测试样本存储的最常见标签。
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_31.png)'
+  id: totrans-30
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_31.png)'
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_32.png)'
+  id: totrans-31
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_32.png)'
+- en: So this is the concept。 And now how do we find out the best split。 So for this，
+    we need some math。 So we calculate the entropy and the entropy is also is the
+    a measure for uncertainty。 So the formula is minus， and then we have the sum of
+    p of x times lock of p of x and p of x is the number of occurrences over the total
+    number of samples。 So in our example we have 110 samples and five times the answer
+    is or the label is 0 and five times the answer is。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这是这个概念。那么我们如何找到最佳划分呢？为此，我们需要一些数学。我们计算熵，熵也是不确定性的衡量标准。公式是负号，然后我们有p(x)乘以p(x)的对数的总和，而p(x)是发生次数除以样本总数。在我们的例子中，我们有110个样本，其中五次答案是0，五次答案是。
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_34.png)'
+  id: totrans-33
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_34.png)'
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_35.png)'
+  id: totrans-34
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_35.png)'
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_36.png)'
+  id: totrans-35
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_36.png)'
+- en: 1。And then we have its， our entropy is minus5 over 10 times lock of 5 over 10
+    minus。 And then we look at the next。Label， so one again， we have five labels。
+    so minus5 over 10 times lock of 5 over 10。 And if you calculate this， then this
+    is one。 So this is the worst possible case here in our in the first note we cannot
+    make a prediction which are if it is one or0。
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 1。然后我们得出，熵是-5除以10乘以5除以10的对数减去。然后我们看下一个标签，所以再次，五个标签。因此是-5除以10乘以5除以10。如果你计算这个，那么结果是1。所以这是最糟糕的情况，在第一个节点我们无法预测是1还是0。
+- en: because we have an equal amount of both。![](img/e1b43f93535591fc8a4dc158e9ae735d_38.png)
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因为我们有相等数量的两者。![](img/e1b43f93535591fc8a4dc158e9ae735d_38.png)
+- en: Samples or both classes here。So one is the worst possible case and like here
+    the entropy here would be0。 so this is the best case here we are very certain
+    that we have the class0。![](img/e1b43f93535591fc8a4dc158e9ae735d_40.png)
+  id: totrans-38
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这里的样本或两类。所以一个是最糟糕的情况，这里的熵为0。这是最好的情况，我们非常确定我们有类0。![](img/e1b43f93535591fc8a4dc158e9ae735d_40.png)
+- en: And now so we calculate the entropy and then we split our data and calculate
+    the entropy for our childs。And then we calculate how much information we gain
+    through this split and this measure is actually really called information gain。
+    And this is calculated by the entropy of the parent minus weighted average of
+    all the child entroies。 So like in our example， we have the root note with our
+    10 observations。
+  id: totrans-39
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们计算熵，然后对数据进行分割，并计算子节点的熵。接着我们计算通过这次分割获得的信息量，这个度量实际上称为信息增益。它是通过父节点的熵减去所有子节点熵的加权平均值来计算的。因此在我们的示例中，我们有根节点和10个观察值。
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_42.png)'
+  id: totrans-40
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_42.png)'
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_43.png)'
+  id: totrans-41
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_43.png)'
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_44.png)'
+  id: totrans-42
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_44.png)'
+- en: And then on the left side， we have 7 observations with here，2 zeros。And5 one。
+    And on the right side。 we have three zeros。 So our entropy is the entropy of the
+    parent-7 over 10 times the entropy on the left side plus 3 over 10 times the entropy
+    of the right side。
+  id: totrans-43
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后在左侧，我们有7个观察值，其中2个为零，5个为1。在右侧，我们有3个零。因此我们的熵是父节点的熵减去7/10乘以左侧的熵加上3/10乘以右侧的熵。
+- en: So this is the information gain。![](img/e1b43f93535591fc8a4dc158e9ae735d_46.png)
+  id: totrans-44
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是信息增益。![](img/e1b43f93535591fc8a4dc158e9ae735d_46.png)
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_47.png)'
+  id: totrans-45
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_47.png)'
+- en: And now we do a greedy search， so we go over all the possible features and over
+    all the possible feature values or thresholds。 so for rain we check if it's yes
+    or no or it means one or zero and if the answer and for the time feature。 we check
+    for5， 10， 15， 20， 25 and 30 so we do a greedy search。
+  id: totrans-46
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们进行贪婪搜索，因此我们检查所有可能的特征和所有可能的特征值或阈值。对于降雨，我们检查它是“是”还是“否”，意味着1或0，对于时间特征，我们检查5、10、15、20、25和30，因此我们进行贪婪搜索。
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_49.png)'
+  id: totrans-47
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_49.png)'
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_50.png)'
+  id: totrans-48
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_50.png)'
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_51.png)'
+  id: totrans-49
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_51.png)'
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_52.png)'
+  id: totrans-50
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_52.png)'
+- en: And then， we store。Or select and store the best feature and the best threshold。
+    So this is the。![](img/e1b43f93535591fc8a4dc158e9ae735d_54.png)
+  id: totrans-51
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后，我们存储或选择并存储最佳特征和最佳阈值。所以这是。![](img/e1b43f93535591fc8a4dc158e9ae735d_54.png)
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_55.png)'
+  id: totrans-52
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_55.png)'
+- en: Concept， so let's look at the approach a little bit more in detail。 So first。
+    we have the training phase where we want to build our tree。 So we start at a top
+    node。 and at each node， we select the best split based on the best information
+    game。![](img/e1b43f93535591fc8a4dc158e9ae735d_57.png)
+  id: totrans-53
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 概念，让我们更详细地看看这种方法。因此首先，我们有训练阶段，在此阶段我们想要构建我们的树。我们从顶节点开始，在每个节点，我们根据最佳信息增益选择最佳分割。![](img/e1b43f93535591fc8a4dc158e9ae735d_57.png)
+- en: And we do a greedy search， so we loop over all features and over all thresholds。Then
+    we saved the best split feature and split threshold at each node and we built
+    the tree recursively。![](img/e1b43f93535591fc8a4dc158e9ae735d_59.png)
+  id: totrans-54
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们进行贪婪搜索，因此我们遍历所有特征和所有阈值。然后我们在每个节点保存最佳分割特征和分割阈值，并递归地构建树。![](img/e1b43f93535591fc8a4dc158e9ae735d_59.png)
+- en: And we also have to apply some stopping criteria to stop growing。 And in our
+    example。 we will use a maximum depth。![](img/e1b43f93535591fc8a4dc158e9ae735d_61.png)
+  id: totrans-55
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们还必须应用一些停止准则来停止生长。在我们的示例中，我们将使用最大深度。![](img/e1b43f93535591fc8a4dc158e9ae735d_61.png)
+- en: So for example， we say if the depth three is5， then we would stop。![](img/e1b43f93535591fc8a4dc158e9ae735d_63.png)
+  id: totrans-56
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 例如，我们说如果深度是3且为5，那么我们将停止。![](img/e1b43f93535591fc8a4dc158e9ae735d_63.png)
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_64.png)'
+  id: totrans-57
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_64.png)'
+- en: And we use a minimum samples at a node。 So， for example。 we could say if we
+    have less than five samples in a node then we don't split any further。![](img/e1b43f93535591fc8a4dc158e9ae735d_66.png)
+  id: totrans-58
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们在节点使用最小样本数。因此，例如，我们可以说如果一个节点中的样本少于五个，那么我们就不再进一步分割。![](img/e1b43f93535591fc8a4dc158e9ae735d_66.png)
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_67.png)'
+  id: totrans-59
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_67.png)'
+- en: And if we have no more class distribution in a node like here。 then we can no
+    longer split because we only have class 0 labels here。 So these are our stopping
+    criteria that we need。 And then when we have a leaf node。 then we store the most
+    common class label of this node。 So here we store 0，1 and 0。
+  id: totrans-60
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果在一个节点中没有更多的类别分布，就像这里那样。我们就无法再进行分裂，因为这里只有类别 0 的标签。所以这些是我们需要的停止标准。当我们有一个叶节点时，我们会存储该节点中最常见的类别标签。所以这里我们存储
+    0、1 和 0。
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_69.png)'
+  id: totrans-61
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_69.png)'
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_70.png)'
+  id: totrans-62
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_70.png)'
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_71.png)'
+  id: totrans-63
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_71.png)'
+- en: '![](img/e1b43f93535591fc8a4dc158e9ae735d_72.png)'
+  id: totrans-64
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e1b43f93535591fc8a4dc158e9ae735d_72.png)'
+- en: So this is our training phase and then later when we do the testing with new
+    samples。 then we traverse the tree and we also do this recursively。 so we implement
+    a function that calls itself。And at each note。 we look at the best split feature
+    of the test feature vector and go left or right， depending on if。
+  id: totrans-65
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是我们的训练阶段，随后在测试新样本时，我们遍历树，并且也是递归进行。因此我们实现一个调用自身的函数。在每个节点，我们查看测试特征向量的最佳分裂特征，然后根据情况向左或向右走。
+- en: The value of this feature。Is smaller or equal than our threshold that we stored？
+  id: totrans-66
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这个特征的值是否小于或等于我们存储的阈值？
+- en: And then when we reach the leaf node or the bottom， we return the stored most
+    common class label。 So this is the concept of the。![](img/e1b43f93535591fc8a4dc158e9ae735d_74.png)
+  id: totrans-67
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 当我们到达叶节点或底部时，我们返回存储的最常见类别标签。这就是这个概念。![](img/e1b43f93535591fc8a4dc158e9ae735d_74.png)
+- en: Decis 3。 And now I think I will stop this video here。 and we will continue in
+    the next part or in the second part with the implementation。 So see you then。![](img/e1b43f93535591fc8a4dc158e9ae735d_76.png)
+  id: totrans-68
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 决策 3。现在我想在这里停止这个视频，我们将在下一部分或第二部分继续实现。所以到时见。![](img/e1b43f93535591fc8a4dc158e9ae735d_76.png)

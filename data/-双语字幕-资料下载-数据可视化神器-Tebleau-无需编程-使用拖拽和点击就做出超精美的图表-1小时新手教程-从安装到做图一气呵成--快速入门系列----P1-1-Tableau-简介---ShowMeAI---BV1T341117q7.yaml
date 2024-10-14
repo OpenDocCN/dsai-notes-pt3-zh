@@ -1,0 +1,86 @@
+- en: 【双语字幕+资料下载】数据可视化神器 Tebleau！无需编程，使用拖拽和点击就做出超精美的图表。1小时新手教程，从安装到做图一气呵成~＜快速入门系列＞
+    - P1：1）Tableau 简介 - ShowMeAI - BV1T341117q7
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】数据可视化神器Tableau！无需编程，使用拖拽和点击就能做出超精美的图表。1小时新手教程，从安装到做图一气呵成~＜快速入门系列＞
+    - P1：1）Tableau简介 - ShowMeAI - BV1T341117q7
+- en: Subscribe。And click the bell icon to turn on notifications。We've made the accompanying
+    exercise files for this tutorial available for free。 Just click the link below
+    in the video details to get these。![](img/3b657b1be778fedd8766bd485966796f_1.png)
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 订阅。并点击铃铛图标以开启通知。我们为本教程提供的练习文件可以免费获取。只需点击视频详情中的链接即可下载这些文件。![](img/3b657b1be778fedd8766bd485966796f_1.png)
+- en: Many leading industries use Tableau to apply modern business intelligence to
+    their systems。 Tableau is a visual analytics platform founded in 2003 as a result
+    of a computer science project at Stanmford that aim to improve the flow of analysis
+    and make data more accessible to people through visualization。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 许多领先行业使用Tableau将现代商业智能应用于他们的系统。Tableau是一个视觉分析平台，成立于2003年，源于斯坦福大学的一个计算机科学项目，旨在改善分析流程，并通过可视化使数据对人们更易于获取。
+- en: '![](img/3b657b1be778fedd8766bd485966796f_3.png)'
+  id: totrans-3
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/3b657b1be778fedd8766bd485966796f_3.png)'
+- en: '![](img/3b657b1be778fedd8766bd485966796f_4.png)'
+  id: totrans-4
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/3b657b1be778fedd8766bd485966796f_4.png)'
+- en: It is currently one of the fastest growing data visualization tools， and it
+    is powerful。 easy to use and can be easily integrated。Tableau has been recognized
+    as a leader by Gartner for nine consecutive years in its magic quadrant for analytics
+    and BI intelligence platforms。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它目前是增长最快的数据可视化工具之一，功能强大、易于使用，并且可以轻松集成。Tableau已连续九年被Gartner评选为分析和商业智能平台的领导者。
+- en: '![](img/3b657b1be778fedd8766bd485966796f_6.png)'
+  id: totrans-6
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/3b657b1be778fedd8766bd485966796f_6.png)'
+- en: Tableau has a flexible front end and an intuitive interface that visually expresses
+    data by translating drag and drop actions into data queries。The software can connect，
+    blend and extract data from various sources such as flat files like Excel。 It
+    can also connect to different types of databases or live connections and even
+    get data from the web。 Tableau separates the data layer from the presentation
+    layer and makes updating a spreadsheet data source a trivial append to the bottom
+    of your source spreadsheet。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Tableau拥有灵活的前端和直观的界面，通过将拖放操作转化为数据查询来可视化数据。该软件可以连接、融合和提取来自各种来源的数据，例如Excel等平面文件。它还可以连接不同类型的数据库或实时连接，甚至从网络获取数据。Tableau将数据层与展示层分开，并使更新电子表格数据源成为向源电子表格底部简单附加的操作。
+- en: Tableau helps simplify raw data to an easily understandable format。 In a few
+    clicks。 you can create charts and views that are both interactive and shareable。
+    It is easy to learn such that any Excel user and non technical personnel can grasp
+    it。 but it is still powerful enough to handle complex analytical processes and
+    advanced visualization。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Tableau帮助将原始数据简化为易于理解的格式。只需几次点击，你就可以创建既互动又可分享的图表和视图。它易于学习，任何Excel用户和非技术人员都能掌握，但它仍然强大到足以处理复杂的分析过程和高级可视化。
+- en: '![](img/3b657b1be778fedd8766bd485966796f_8.png)'
+  id: totrans-9
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/3b657b1be778fedd8766bd485966796f_8.png)'
+- en: It can also handle copious amounts of data without compromising the performance
+    of the dashboards。 its dashboards also have a responsive design which lets you
+    view and operate from several handheld devices such as mobile phones and tablets。Tableau
+    can help expand the frequency depth and variety of data used in your organization。Most
+    importantly， Tableau's visual analytic capabilities do not need programming skills。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它还可以处理大量数据，而不会影响仪表板的性能。它的仪表板具有响应式设计，可以让你在多种手持设备上查看和操作，例如手机和平板电脑。Tableau可以帮助扩展你组织中使用的数据的频率、深度和多样性。最重要的是，Tableau的可视化分析能力不需要编程技能。
+- en: and they present large and granular data sets more effectively than legacy reporting
+    tools and spreadsheet reports。![](img/3b657b1be778fedd8766bd485966796f_10.png)
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 而且它们比传统的报告工具和电子表格报告更有效地展示大规模和细粒度的数据集。![](img/3b657b1be778fedd8766bd485966796f_10.png)

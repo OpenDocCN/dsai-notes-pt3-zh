@@ -1,0 +1,155 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P49：50）将数据插入 Microsoft Word - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P49：50）将数据插入 Microsoft Word - ShowMeAI - BV1uL411s7bt
+- en: '![](img/8772423eae323c491c259246fc223492_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8772423eae323c491c259246fc223492_0.png)'
+- en: In this Excel tutorial， we're going to look at how to take data from Excel and
+    insert it into Microsoft Word。 Let's say I just want to copy this data here and
+    paste it into Microsoft Word。 Is that going to work， Let's try it out。 If I click
+    and drag with the mouse and select the data I want to copy。 I can then use a control
+    C keyboard shortcut to copy that range。 And then in Microsoft Word。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个Excel教程中，我们将探讨如何将数据从Excel插入到Microsoft Word。假设我只想复制这里的数据并粘贴到Microsoft Word中。这能行吗？让我们试试看。如果我点击并拖动鼠标选择想要复制的数据，我可以使用控制键+C的快捷键复制那个范围。然后在Microsoft
+    Word中。
+- en: I can hold control and tap V for paste。 And the data paste it in pretty well。
+    And as you can see。 the data is editable。 I can change this amount。 Let's see
+    what that does。 It did change the amount。 but the total did not adjust。 And so
+    it's treating this basically as simply text。 Let's see if there's a better way
+    to insert the data into Microsoft Word。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以按住控制键，点击V进行粘贴。数据粘贴得相当好。如你所见，这些数据是可编辑的。我可以更改这个金额。看看这会怎样。它确实改变了金额，但总计没有调整。因此，它基本上把这当作简单的文本。让我们看看有没有更好的方式将数据插入Microsoft
+    Word。
+- en: We could try converting this range into a table by clicking insert and clicking
+    on tables and just choosing a regular table。Click O。 It's now turned this into
+    a table。 Now， if I click and drag to select the data。 copy it and go into word
+    and paste。 the results seem to be a little better。 But even so。 if I change numbers。
+    Look， changing that number did not update the total below。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们可以尝试通过点击插入，然后点击表格，选择一个普通表格，将这个范围转换成表格。点击O。现在，它已经将其转换为一个表格。现在，如果我点击并拖动选择数据，复制它，然后进入Word并粘贴，结果似乎好一些。但即便如此，如果我更改数字，看看，改变那个数字并没有更新下面的总计。
+- en: there's got to be a better way。 In my opinion， the best method for inserting
+    this data into word is to first copy the range and then go into Microsoft word。
+    and instead of simply pasting， go up here to the home tab in the clipboard group。
+    if you click on the paste button， but the bottom half of the paste button。 it
+    brings up some options。 And one of them is paste special。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 一定有更好的方法。在我看来，将数据插入Word的最佳方法是首先复制范围，然后进入Microsoft Word，而不是简单地粘贴，去剪贴板组的主页标签。如果你点击粘贴按钮，但粘贴按钮的下半部分，会弹出一些选项。其中一个是特殊粘贴。
+- en: and that gives me all sorts of special ways that I can paste this data。 But
+    the one at the very top is the1 I'm looking for。 Microsoft Excel worksheet object。
+    I select it。 click O， and it's gonna paste my data in as an Excel object。 Now
+    you can see my chart here off to the right， but that's okay。Now， this time。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这给了我各种特殊的粘贴方式。但最上面的那个是我想要的。Microsoft Excel工作表对象。我选择它，点击O，它会将我的数据作为Excel对象粘贴。现在你可以看到我的图表在右侧，但这没关系。这次。
+- en: because I've inserted this data as an Excel object。 let's look at how it behaves。
+    Can I change the numbers， Yes， I can。 If I double click on it， I'm still in Microsoft
+    Word。 but I'm seeing some of the Microsoft Excel options。 And let's say I get
+    as。 I tap enter on the keyboard， and it adjusts the total。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因为我将这些数据作为Excel对象插入。让我们看看它的行为。我可以更改数字吗？是的，我可以。如果我双击它，我仍然在Microsoft Word中，但我看到一些Microsoft
+    Excel的选项。假设我按下键盘上的回车键，它会调整总计。
+- en: It's treating this like what it is an Excel object。 Also。 notice I can access
+    Excel filters and change some of those to filter out some of the data。 And so
+    in many ways， this is Excel from within Microsoft Word。 You can even see the green
+    Excel color scheme appearing here at the top。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它把这当作它实际是的Excel对象。同样，注意我可以访问Excel过滤器并更改其中一些，以过滤掉部分数据。因此在很多方面，这就是从Microsoft Word内访问的Excel。你甚至可以在顶部看到绿色的Excel配色方案。
+- en: even though I am in Microsoft Word。 When I'm ready to continue composing my
+    word document。 I can just click away from the Excel object。 and now it's clear
+    that I'm back in Microsoft Word。 But my changes are still in effect。 So this is
+    great。 but it's important for you to know that this is a link and embed。😊。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 即使我在Microsoft Word中。当我准备继续撰写我的Word文档时，我可以点击Excel对象外的地方，现在很明显我回到了Microsoft Word。但我的更改仍然有效。所以这很不错，但你需要知道这是一种链接和嵌入。😊
+- en: So the data in this word document is linked to my Microsoft Excel document。
+    Now let's look at the chart。 Is it possible for me to copy paste this chart into
+    Microsoft Word Well。 I'll start by selecting it and using the control C keyboard
+    shortcut。 and then in Microsoft word I'm gonna tap enter a couple of times to
+    move my cursor down the page a little bit。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这个Word文档中的数据是链接到我的Microsoft Excel文档的。现在我们来看这个图表。我能否将这个图表复制粘贴到Microsoft Word中呢？我将先选择它，使用控制C键盘快捷键，然后在Microsoft
+    Word中，我会按几次回车键，将光标向下移动一点。
+- en: and I'm going go here to paste and I'll click at the bottom half just like I
+    did before。 go to paste special and I'll paste this as a Microsoft Excel chart
+    object。 I click and there's my chart。 It came in a little big。 so I can click
+    and drag on the corner to shrink that down a bit I can also click on the side
+    here and squeeze it that way as well。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我会去粘贴，点击下半部分，就像我之前做的那样，转到特殊粘贴，我将其粘贴为Microsoft Excel图表对象。我点击，这就是我的图表。它稍微有点大，所以我可以点击并拖动角落来缩小它，我也可以点击旁边来这样挤压它。
+- en: and with my pie chart selected notice what it says double click to edit Microsoft
+    Excel worksheet。 So if I double click that similar to what I showed above it basically
+    tries to open up Excel from within word and I can make some。I can then double
+    click just like I can from within Excel to select a portion of the pie chart。
+    and then I can click and drag to explode it out。 I can right click on a slice
+    of the pie or on the chart itself to make some changes just like I can from within
+    Excel。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 选中我的饼图时，注意它说双击以编辑Microsoft Excel工作表。所以如果我双击它，类似于我上面展示的，它基本上会尝试在Word中打开Excel，我可以进行一些操作。然后我可以双击，就像在Excel中一样，选择饼图的一部分，然后我可以点击并拖动将其炸开。我可以右键点击饼图的一片或图表本身进行一些更改，就像在Excel中那样。
+- en: So this can be a great method for bringing your Excel content into word。 Now。
+    there are cases when you wouldn't want the data or the chart to be editable like
+    they are in this case。 What if I'm gonna be sending this word document to someone
+    else。 and I don't want them to be able to edit the Excel data or the pie chart。
+    In that case。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这可以是将你的Excel内容带入Word的一个好方法。现在，有些情况下你可能不想让数据或图表像在这种情况下那样可编辑。如果我将这个Word文档发送给其他人，我不想让他们编辑Excel数据或饼图。在这种情况下。
+- en: from within Excel。 What I would do is I would select the data。 And then go here
+    to the clipboard group。 and I would choose not the main button copy but the arrow
+    next to it。 If you click the arrow。 it says copy as picture。 and I can choose
+    to copy it as it would look when printed on paper or as it is on the screen。 And
+    the format can be either as a picture or a bitm。 So those are good。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在Excel中，我会选择数据，然后转到剪贴板组。我会选择不是主按钮复制，而是旁边的箭头。如果你点击箭头，它会显示复制为图片。我可以选择以打印时的样子复制，或者以屏幕上的样子复制。格式可以是图片或位图。所以这些方法都很好。
+- en: To play around with In my case， I'm gonna go with as shown on screen and picture。
+    But before I do。 I think I'll cancel that and I'll move this chart just out of
+    the way a little bit and try it again。 I'll select it， go into copy as picture
+    click O So now that that data is copied as a picture。 I'll go into word on this
+    new page and I will go to paste And this time I can just click on the top half
+    of paste I'm just pasting this as an image。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 为了进行调整，我选择屏幕上显示的图片。但在此之前，我想我会取消这个，然后把图表稍微移开一点再试一次。我将选择它，进入复制为图片，点击O。现在数据已作为图片复制。我会进入Word的新页面，然后去粘贴，这次我可以直接点击粘贴的上半部分，我只是将其作为图像粘贴。
+- en: I don't need this text to be editable。 So now when I double click on it。 I don't
+    have the option to edit the data。 and of course I could do the same exact thing
+    with my pie chart。 select it， go to the arrow button next to copy， choose copy
+    as picture， click O and then in Word。 I can do control V to paste or I can just
+    go to the home tab and click the paste button。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我不需要这个文本是可编辑的。所以现在当我双击它时，我没有选项来编辑数据，当然我也可以对我的饼图做同样的事情，选择它，点击复制旁边的箭头按钮，选择复制为图片，点击O，然后在Word中，我可以按控制V粘贴，或者我可以直接去主页标签点击粘贴按钮。
+- en: and of course I could drag those to put them in the right order。 So those are
+    two ways to bring Excel data into your word documents。![](img/8772423eae323c491c259246fc223492_2.png)
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 当然，我可以拖动它们以放置在正确的顺序。所以这两种方式都可以将Excel数据带入你的Word文档中。![](img/8772423eae323c491c259246fc223492_2.png)

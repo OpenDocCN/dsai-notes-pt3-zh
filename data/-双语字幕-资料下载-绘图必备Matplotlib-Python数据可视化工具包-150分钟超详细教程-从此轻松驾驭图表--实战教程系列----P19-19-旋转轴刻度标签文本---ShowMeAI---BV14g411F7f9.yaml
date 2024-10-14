@@ -1,0 +1,63 @@
+- en: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P19：19）旋转轴刻度标签文本
+    - ShowMeAI - BV14g411F7f9
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P19：19）旋转轴刻度标签文本
+    - ShowMeAI - BV14g411F7f9
+- en: Okay， next question rolling right along here。 So this is a very common one。![](img/b5c80dad07160454805cc2db46a4e1ab_1.png)
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，下一个问题继续进行。这是一个非常常见的问题。![](img/b5c80dad07160454805cc2db46a4e1ab_1.png)
+- en: '![](img/b5c80dad07160454805cc2db46a4e1ab_2.png)'
+  id: totrans-2
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/b5c80dad07160454805cc2db46a4e1ab_2.png)'
+- en: How do you rotate access text？And this isn't something that we've had to use，
+    really。 because our access text has looked fine。 but a lot of the time。![](img/b5c80dad07160454805cc2db46a4e1ab_4.png)
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如何旋转轴文本？这并不是我们真正需要用到的，因为我们的轴文本看起来很好，但很多时候。![](img/b5c80dad07160454805cc2db46a4e1ab_4.png)
+- en: You might have very long labels here and they all run into each other and you
+    can't read anything and so you're like。 well， I need to rotate these so I can
+    see them。![](img/b5c80dad07160454805cc2db46a4e1ab_6.png)
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可能有非常长的标签，它们都相互重叠，导致你无法看清任何内容，因此你会想，嗯，我需要旋转这些标签，这样我才能看到它们。![](img/b5c80dad07160454805cc2db46a4e1ab_6.png)
+- en: So I'll show you how to rotate your。Accs your axis。Tick labels。 And we're going
+    go back to our friend the tick parametersms method。 So A X dot plot， X， Y。 PL
+    T dot show。![](img/b5c80dad07160454805cc2db46a4e1ab_8.png)
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我会给你展示如何旋转你的 X 轴刻度标签。我们将回到我们的朋友 tick parameters 方法。所以 A X dot plot，X，Y。PL
+    T dot show。![](img/b5c80dad07160454805cc2db46a4e1ab_8.png)
+- en: '![](img/b5c80dad07160454805cc2db46a4e1ab_9.png)'
+  id: totrans-6
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/b5c80dad07160454805cc2db46a4e1ab_9.png)'
+- en: All right， let's rotate these X axis labels。So we're going to go back to Ax
+    do tick parameterss。 And if you look at the documentation， or if you remember。
+    you can remember that we can pass in which axis we want to do it to。 and then
+    we can pass in any parameters that we can apply to these these labels here。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，让我们旋转这些 X 轴标签。我们将回到 Ax 的 tick parameters。如果你查看文档，或者你记得，你可以记得我们可以传入想要操作的轴，然后我们可以传入任何可以应用于这些标签的参数。
+- en: So I'm going to pass in the parameter rotation equals， let's try 45。![](img/b5c80dad07160454805cc2db46a4e1ab_11.png)
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我要传入参数 rotation 等于，让我们试试 45。![](img/b5c80dad07160454805cc2db46a4e1ab_11.png)
+- en: And there you go。 Now they're nice and rotated。 and if these labels were very
+    long。 they would not run into each other。![](img/b5c80dad07160454805cc2db46a4e1ab_13.png)
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好了，现在它们已经很好地旋转了。如果这些标签非常长，它们就不会相互重叠。![](img/b5c80dad07160454805cc2db46a4e1ab_13.png)

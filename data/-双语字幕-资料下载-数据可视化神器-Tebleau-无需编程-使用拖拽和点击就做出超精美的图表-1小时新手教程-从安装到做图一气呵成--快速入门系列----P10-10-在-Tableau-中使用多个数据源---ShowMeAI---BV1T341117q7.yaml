@@ -1,0 +1,475 @@
+- en: 【双语字幕+资料下载】数据可视化神器 Tebleau！无需编程，使用拖拽和点击就做出超精美的图表。1小时新手教程，从安装到做图一气呵成~＜快速入门系列＞
+    - P10：10）在 Tableau 中使用多个数据源 - ShowMeAI - BV1T341117q7
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】数据可视化神器Tebleau！无需编程，使用拖拽和点击就做出超精美的图表。1小时新手教程，从安装到做图一气呵成~＜快速入门系列＞
+    - P10：10）在Tableau中使用多个数据源 - ShowMeAI - BV1T341117q7
+- en: In an earlier lesson， we identified how the method of joins and relationships
+    differ。Both methods are applied when combining multiple data connections from
+    one data source。But what if we need data from different data sources？
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在早期的课程中，我们已经识别了连接和关系方法的不同。这两种方法在组合来自一个数据源的多个数据连接时应用。但是，如果我们需要来自不同数据源的数据呢？
+- en: '![](img/82ec46f314140fddcdb39fa056d676e2_1.png)'
+  id: totrans-2
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/82ec46f314140fddcdb39fa056d676e2_1.png)'
+- en: Blens， unlike relationships or joins， never truly combine the data。 Instead。
+    blends query each data source independently。The results are aggregated to the
+    appropriate level。 Then the results are presented visually together in the view。Because
+    of this。 lenss can handle different levels of detail， and they work with published
+    data sources。For example。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Blens与关系或连接不同，数据从未真正结合。相反，blends独立查询每个数据源，结果被聚合到适当的级别。然后，结果在视图中以视觉方式呈现。因此，lenses可以处理不同的细节级别，并且它们与发布的数据源协同工作。例如。
+- en: in this workbook we have two data sources。First is the customer data source。
+    which has the customer information。And second is the transactionsions data source。
+    which has the transactions information。Both data sources have the field customer
+    ID。 but in different levels of detail。Transactions data source can have multiple
+    customer IDs in it if they bought from the store multiple times。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个工作簿中，我们有两个数据源。第一个是客户数据源，包含客户信息。第二个是交易数据源，包含交易信息。这两个数据源都有客户ID字段，但细节级别不同。如果顾客多次在商店购买，交易数据源中可以包含多个客户ID。
+- en: While the customer data source contains unique customer ID。![](img/82ec46f314140fddcdb39fa056d676e2_3.png)
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 虽然客户数据源包含唯一的客户ID。![](img/82ec46f314140fddcdb39fa056d676e2_3.png)
+- en: When data blending， your data sources will be identified as either a primary
+    or a secondary data source。 This is done on a sheet by sheet basis， meaning a
+    new sheet can have a different primary and secondary data source。![](img/82ec46f314140fddcdb39fa056d676e2_5.png)
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在数据混合时，您的数据源将被识别为主要或次要数据源。这是按每个工作表进行的，意味着新工作表可以有不同的主要和次要数据源。![](img/82ec46f314140fddcdb39fa056d676e2_5.png)
+- en: The primary will always be the first data source used in the view。 For example，
+    in this view。 we have used the customer ID as the first field in the rows shelf。
+    and so customer data source has been marked as a primary for sheet1。A primary
+    data source is marked with a check mark on its name in the date of pane。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 主要数据源将始终是视图中使用的第一个数据源。例如，在这个视图中，我们将客户ID作为行架上的第一个字段，因此客户数据源被标记为sheet1的主要数据源。在数据窗格中，主要数据源的名称上会有一个对勾。
+- en: Let's supply the blend in this view。 Click on the transactions data source。
+    then select the total amount measure field and set it as the text value in the
+    view。Upon doing so。 this creates the blend and marks the transactions data source
+    as a secondary source。A secondary source will have an orange check indicator in
+    its name in the data pane。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们在这个视图中提供blend。点击交易数据源，然后选择总金额度量字段，将其设置为视图中的文本值。这样一来，就创建了blend，并将交易数据源标记为次要数据源。次要数据源的名称在数据窗格中会有一个橙色对勾指示器。
+- en: Notice that there is a red chain icon in the customer field ID of the transactions
+    data source。This means that Tableau automatically made the customer ID as the
+    linking field of the primary and secondary data source。If a field has the exact
+    same name for both data sources。 it is automatically set as a linking field to
+    make the blend work。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 请注意，在交易数据源的客户ID字段中有一个红色链条图标。这意味着Tableau自动将客户ID作为主要和次要数据源的连接字段。如果字段在两个数据源中具有完全相同的名称，它将自动设置为连接字段，以使blend工作。
+- en: the linking field values must have the same values or members。 You can edit
+    the linking field by navigating to the data menu and clicking on edit blend relationships。The
+    new menu lets you specify which data source will be set as the primary and the
+    field that will be used as a link。The linking field is marked with a red chain
+    if its active， meaning it is currently used in the view。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 连接字段的值必须具有相同的值或成员。您可以通过导航到数据菜单并点击编辑blend关系来编辑连接字段。新菜单让您指定哪个数据源将被设置为主要源，以及将用作链接的字段。如果连接字段处于活动状态，它将以红色链条标记，表示它当前在视图中使用。
+- en: This will be replaced by a gray broken chain icon if the field is not in use。
+    observe at what happens if we remove the customer I D and place it with date of
+    birth。 Upon doing so， the customer I D field in the data pane now has the gray
+    chain icon。It also removed the link between the data source， and so the values
+    on the table changed to a single value。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果字段未被使用，将被替换为灰色断链图标。观察如果我们移除客户ID并将其替换为出生日期会发生什么。在这样做后，数据面板中的客户ID字段现在显示为灰色链条图标。它还移除了数据源之间的链接，因此表格中的值变为单一值。
+- en: which is the aggregated amount。The graycha icon also serves as a marker that
+    the field can be potentially used as a linking field。Let's click the icon to establish
+    the linking field。Once activated。 the correct values will now be shown in the
+    table。When lending data。 the primary data source defines how the view will be
+    aggregated in this tabular view that we have created。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是汇总金额。灰色链条图标也作为标记，表明该字段可以作为链接字段使用。让我们点击该图标以建立链接字段。一旦激活，正确的值将显示在表格中。在借用数据时，主数据源定义了我们创建的此表格视图的汇总方式。
+- en: the total amount， which was originally aggregated per order or transaction。
+    is now aggregated into the customer level， showing the total amount paid by each
+    customer ID。The secondary data source will be limited to only the values that
+    have corresponding matches to that of the primary data source。 so customers that
+    have no customer ID recorded on the customer data source will not be included
+    in the view。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 总金额，最初是按订单或交易汇总的，现在已汇总到客户级别，显示每个客户ID支付的总金额。次要数据源将仅限于那些与主数据源有对应匹配的值，因此在客户数据源中没有记录客户ID的客户将不会包含在视图中。
+- en: This process is similar to that of a traditional left join。 but the main difference
+    between the two is when aggregation is applied。 A join combines the data first
+    before applying an aggregation。 while a blend will aggregate data first before
+    combining the data。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这个过程类似于传统的左连接，但两者之间的主要区别在于应用汇总的时机。连接是在应用汇总之前先组合数据，而混合则是在组合数据之前先进行汇总。
+- en: '![](img/82ec46f314140fddcdb39fa056d676e2_7.png)'
+  id: totrans-15
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/82ec46f314140fddcdb39fa056d676e2_7.png)'
+- en: '![](img/82ec46f314140fddcdb39fa056d676e2_8.png)'
+  id: totrans-16
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/82ec46f314140fddcdb39fa056d676e2_8.png)'
+- en: Blens are established individually on every sheet and can never be published
+    because there is no true blended data source。 simply blended results from multiple
+    data sources in a visualization Instead you need to publish data sources separately。
+    then blend the published data source afterwards。Data blending is particularly
+    useful when the blend relationship linking fields need to vary on a sheet by sheet
+    basis or when combining published data sources。Although data blending has been
+    the only means of using data from different sources。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 每个工作表上的混合是单独建立的，无法发布，因为没有真正的混合数据源，仅仅是来自多个数据源在可视化中的混合结果。相反，你需要分别发布数据源，然后在之后混合已发布的数据源。数据混合特别有用，当混合关系链接字段需要在工作表之间变化，或者在组合已发布的数据源时。尽管数据混合一直是使用不同来源数据的唯一方式。
+- en: In Tableau version 2020，01 and earlier。A more efficient way of combining data
+    using relationships has been applied。 Relationships are the recommended way of
+    combining data whenever possible。 and blend should only be used when the former
+    is unavailable。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在 Tableau 版本 2020.01 及更早版本中，采用了一种更高效的方式来使用关系组合数据。关系是推荐的组合数据方式，尽可能使用，并且只有在前者不可用时才应使用混合。
+- en: '![](img/82ec46f314140fddcdb39fa056d676e2_10.png)'
+  id: totrans-19
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/82ec46f314140fddcdb39fa056d676e2_10.png)'
+- en: Earlier， we mentioned that blend is similar to that of a left join。As a review。
+    join is applied on the physical layer of the canvas in the data source page。You
+    need to establish a specific field to use for the join and the specific join type。
+    Let's look at the different types of join that we can apply in tableau。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 之前，我们提到混合类似于左连接。作为复习，连接是在数据源页面的物理层面上应用的。你需要建立一个特定字段用于连接和特定的连接类型。让我们看一下可以在 Tableau
+    中应用的不同类型的连接。
+- en: An inner join table will contain the records that matched in both left and right
+    tables。 If any row from either left or right does not match。 it is removed entirely。![](img/82ec46f314140fddcdb39fa056d676e2_12.png)
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 内连接表将包含在左表和右表中都匹配的记录。如果左侧或右侧的任何行不匹配，它将被完全移除。![](img/82ec46f314140fddcdb39fa056d676e2_12.png)
+- en: '![](img/82ec46f314140fddcdb39fa056d676e2_13.png)'
+  id: totrans-22
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/82ec46f314140fddcdb39fa056d676e2_13.png)'
+- en: Let's look at how the inner join is applied in this movie data source。This data
+    connection has two sheets in it。 First is the movie title。 which has six records
+    and contains the movie information and genre。 The second sheet is the director
+    and the vote sheet。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们看看内连接在这个电影数据源中的应用。该数据连接有两个表。第一个是电影标题，包含六条记录，并包含电影信息和类型。第二个表是导演和投票表。
+- en: which has six records and contains the director name， average votes and total
+    number of votes。 Both sheets have the title I D field， which we will use on applying
+    a join to apply a join。 open the physical layer and drag the second sheet into
+    the layer here。 Tableau automatically applies an inner join between the two records
+    because it recognizes the similar field of title I D The resulting output of the
+    inner join only contains five records from Title I to Title 5。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 其中有六条记录，包含导演姓名、平均投票和总投票数。两个表都有标题ID字段，我们将在应用连接时使用。打开物理层，将第二个表拖入此层。Tableau会自动在这两个记录之间应用内连接，因为它识别出标题ID的相似字段。内连接的结果仅包含从标题1到标题5的五条记录。
+- en: 1 record was dropped from both the left and right table。 The drop records were
+    t 0，0，0，7。 Snow White from the left table and t 0，0，0，8， which was directed by
+    John Ford。Both records were dropped because they did not have a matching record
+    on the other table。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 从左表和右表中各删除了1条记录。删除的记录是t 0，0，0，7，来自左表的《白雪公主》，和t 0，0，0，8，由约翰·福特导演。这两条记录被删除，因为它们在另一张表中没有匹配记录。
+- en: '![](img/82ec46f314140fddcdb39fa056d676e2_15.png)'
+  id: totrans-26
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/82ec46f314140fddcdb39fa056d676e2_15.png)'
+- en: Next is the left join。When you use a left join to combine tables。 the result
+    is a table that contains all values from the left table and corresponding matches
+    from the right table。When a value in the left table doesn't have a corresponding
+    match in the right table。 you see a null value in the data grid。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 接下来是左连接。当你使用左连接来组合表格时，结果是一个包含左表所有值及其在右表中对应匹配的表格。当左表中的某个值在右表中没有对应匹配时，你将在数据网格中看到一个空值。
+- en: '![](img/82ec46f314140fddcdb39fa056d676e2_17.png)'
+  id: totrans-28
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/82ec46f314140fddcdb39fa056d676e2_17.png)'
+- en: In the sample tableau data source， let's change the join into a left join and
+    observe which fields are included in the output to change the join type。 click
+    the join icon and set the join type in the join window。Select left join and retain
+    the join clauses used。 The output has six records。 The same titles of  one to
+    5 that has a matching record on both left and right table。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在示例Tableau数据源中，让我们将连接更改为左连接，并观察输出中包含哪些字段以更改连接类型。点击连接图标，在连接窗口中设置连接类型。选择左连接，并保留使用的连接子句。输出有六条记录。相同的标题1到5在左右表中都有匹配记录。
+- en: And a record with IDT 0007， which is unique for the left table。You can see that
+    the record is unique to that of the left table because it has null values in the
+    right table fields。 votes， director and average votes。 Since it is a left join。
+    all records of the left table are included。 Even the records that have no matching
+    value to that of the right。
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 还有一条ID为T 0007的记录，这是左表中的唯一记录。你可以看到该记录在左表中是唯一的，因为在右表的字段中有空值，包括投票、导演和平均投票。由于这是左连接，因此包括左表的所有记录，即使是那些与右表没有匹配值的记录。
+- en: '![](img/82ec46f314140fddcdb39fa056d676e2_19.png)'
+  id: totrans-31
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/82ec46f314140fddcdb39fa056d676e2_19.png)'
+- en: The result of a right join contains all values from the right table and corresponding
+    matches from the left table。 When a value in the right table doesn't have a corresponding
+    match in the left table。 you will see a null value in the data grid。![](img/82ec46f314140fddcdb39fa056d676e2_21.png)
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 右连接的结果包含右表中的所有值和左表中对应匹配的值。当右表中的某个值在左表中没有对应匹配时，你将在数据网格中看到一个空值。![](img/82ec46f314140fddcdb39fa056d676e2_21.png)
+- en: Let's change the type of join in this data source to a right join。 The result
+    of the right join is the five records with matching title I D values and a unique
+    record of t 0。0，0，8 from the right table。 Notice that same as the left join。 This
+    record has no matching value from the left table。
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们将此数据源中的连接类型更改为右连接。右连接的结果是五条与标题ID值匹配的记录，以及来自右表的唯一记录t 0，0，0，8。请注意，与左连接相同，该记录在左表中没有匹配值。
+- en: So the year title genre and data published was null。 The right join will include
+    all records from the right table。![](img/82ec46f314140fddcdb39fa056d676e2_23.png)
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以，年份、标题、类型和发布日期为null。右连接将包括右表中的所有记录。![](img/82ec46f314140fddcdb39fa056d676e2_23.png)
+- en: '![](img/82ec46f314140fddcdb39fa056d676e2_24.png)'
+  id: totrans-35
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/82ec46f314140fddcdb39fa056d676e2_24.png)'
+- en: The final join type is the full outer join。 When you see a full outer join to
+    combine tables。 the result is a table that contains all values from both tables。When
+    a value from either table doesn't have a match with the other table。 you'll see
+    a null value in the data grid。 Let's change the join type to a full outer join
+    and observe the output。
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 最终的连接类型是全外连接。当你看到全外连接合并表时，结果是一个包含两个表所有值的表。当任何一个表的值与另一个表没有匹配时，你将在数据网格中看到空值。让我们将连接类型更改为全外连接并观察输出。
+- en: The result has all of the records included in both tables， even those that have
+    no matching value。 noticeice that the unique records from both tables still have
+    null values since they have no matches on the other。![](img/82ec46f314140fddcdb39fa056d676e2_26.png)
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 结果包含两个表中的所有记录，甚至那些没有匹配值的记录。注意，两个表中的唯一记录仍然有空值，因为它们在另一表中没有匹配。![](img/82ec46f314140fddcdb39fa056d676e2_26.png)
+- en: '![](img/82ec46f314140fddcdb39fa056d676e2_27.png)'
+  id: totrans-38
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/82ec46f314140fddcdb39fa056d676e2_27.png)'
+- en: Aside from blends， relationships and joins， there is also another way of combining
+    data from multiple sources。 Union combines tables in a way that it depends the
+    values of one table to another compared to the other methods。 union apps or combines
+    values vertically rather than horizontally。 in order to apply a union in a tableau
+    data source。
+  id: totrans-39
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 除了混合、关系和连接，还有另一种将多个来源的数据结合起来的方法。联合以一种依赖于一个表的值到另一个表的方式合并表，与其他方法相比，联合应用或垂直组合值，而不是水平组合。为了在Tableau数据源中应用联合。
+- en: The tables or sheets used must be in the same data connection。 Let's create
+    a union on this movie list。 data source。![](img/82ec46f314140fddcdb39fa056d676e2_29.png)
+  id: totrans-40
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 使用的表或工作表必须在相同的数据连接中。让我们在这个电影列表上创建一个联合。数据源。![](img/82ec46f314140fddcdb39fa056d676e2_29.png)
+- en: We have two sheets， Mo list 1 and movie list 2， which has the same fields and
+    data types。 It is recommended to use a union in tables that have the same structure。
+    They should have the same number of fields have matching field names and data
+    types to create the union double click the button new union on the sheets or tables
+    section。 This opens a new window where you can specify sheets manually or automatically。
+  id: totrans-41
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们有两个工作表，电影列表1和电影列表2，它们具有相同的字段和数据类型。建议在结构相同的表中使用联合。它们应具有相同数量的字段，具有匹配的字段名称和数据类型，以创建联合，双击工作表或表部分的新联合按钮。这会打开一个新窗口，你可以在其中手动或自动指定工作表。
+- en: Let's try using the manual method first， drag the movie list1 from the sheet
+    section into the Union window。 then drag the movie list2 from the same section
+    and place it below Mo list1 in the Union window once done。 hit apply。The data
+    pane now shows all records from both sheets。 The union was seamless because they
+    have the same exact structure。
+  id: totrans-42
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 首先尝试使用手动方法，将电影列表1从工作表部分拖到联合窗口。然后将电影列表2从相同部分拖到联合窗口中，放置在电影列表1的下方，完成后点击应用。数据面板现在显示来自两个工作表的所有记录。联合是无缝的，因为它们具有完全相同的结构。
+- en: Notice that the end of the table has additional fields called sheet and table
+    name。 The new fields provide information about where the original values in the
+    union came from。 including the sheet and table names。 These fields are useful
+    when unique information that is critical to your analysis is embedded in the sheet
+    or table name。Let's remove the union we created before trying the automatic method。
+  id: totrans-43
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 注意表的末尾有额外的字段，称为工作表和表名。这些新字段提供有关联合中原始值来源的信息，包括工作表和表名。当关键的独特信息嵌入在工作表或表名中时，这些字段非常有用。让我们在尝试自动方法之前，移除之前创建的联合。
+- en: Click the drop down of the union and select remove。 Once the canvas is cleared。
+    double click the new union to go back to the union window。 Select the tab Wild
+    card automatic in this window。 you can set up a criterion to include multiple
+    files in your union。This way。
+  id: totrans-44
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 点击联合的下拉菜单并选择移除。一旦画布被清除，双击新联合以返回联合窗口。在此窗口中选择通配符自动选项卡。你可以设置一个标准，以在联合中包含多个文件。这样。
+- en: you don't have to drag all files into the union window By default。 this will
+    search the files available in the path that we haven't indicated for the first
+    data connection we created。You can enable the two check boxeses below to expand
+    search to subfolds and expand search to parent folder to capture more files。The
+    criterion you can set is limited to setting a wild card or an exact value to the
+    sheets or work book that it will find from this data source。
+  id: totrans-45
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 默认情况下，你不必将所有文件拖入联合窗口。这将搜索我们没有为第一次创建的数据连接指明的路径中的可用文件。你可以启用下面的两个复选框，以扩展搜索到子文件夹和父文件夹，以捕获更多文件。你可以设置的标准仅限于设置通配符或要从该数据源找到的表格或工作簿的确切值。
+- en: we will set the criteria of sheets to include movie list。 asterisks where asterisks
+    suggest that there is a combination of alphanumeric characters after the name
+    movie list。In the sheet name。If you wish to exclude the sheets with this type
+    of name。 you can set exclude in the drop down。For the workbook criteria。
+  id: totrans-46
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们将设置表格的标准以包含电影列表，星号表示电影列表名称后有字母数字字符的组合。在表名中。如果你希望排除带有这种名称的表格，可以在下拉菜单中设置排除。对于工作簿标准。
+- en: we have set it to include movie list dot X L S X。 Since we have the exact workbook
+    name that we need。 you can indicate a wild card in the workbook name。 If you are
+    going to include multiple files。 Hi apply once done。 same as the manual union
+    output It also included all9 rows from both sheets that was found according to
+    the criteria with set。 Notice that two fields included were path and sheet。 path
+    was used instead of table name this time。
+  id: totrans-47
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们已将其设置为包含 movie list.dot XLSX。由于我们有确切的工作簿名称，你可以在工作簿名称中指明通配符。如果你要包含多个文件，完成后一次应用。与手动联合输出相同，它还包括根据设置的标准从两个表中找到的所有9行。请注意，包含的两个字段是路径和表。此次使用路径而不是表名。
+- en: because we are searching the whole folder for the file。 This is done to exclude
+    the exact path of where each file was taken， including the workbook name。![](img/82ec46f314140fddcdb39fa056d676e2_31.png)
+  id: totrans-48
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因为我们正在搜索整个文件夹以找到文件。这是为了排除每个文件的确切路径，包括工作簿名称。![](img/82ec46f314140fddcdb39fa056d676e2_31.png)
+- en: '![](img/82ec46f314140fddcdb39fa056d676e2_32.png)'
+  id: totrans-49
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/82ec46f314140fddcdb39fa056d676e2_32.png)'
+- en: '![](img/82ec46f314140fddcdb39fa056d676e2_33.png)'
+  id: totrans-50
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/82ec46f314140fddcdb39fa056d676e2_33.png)'
+- en: Blens， unlike relationships or joins， never truly combine the data。 Instead。
+    blends query each data source independently。The results are aggregated to the
+    appropriate level。 Then the results are presented visually together in the view。In
+    this view。 we have used the customer I D as the first field in the row shelf。
+  id: totrans-51
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 与关系或连接不同，混合从未真正结合数据。相反，混合独立查询每个数据源。结果会聚合到适当的级别。然后，结果在视图中一起以可视化形式呈现。在这个视图中，我们使用客户ID作为行货架中的第一个字段。
+- en: and so customer data source has been marked as a primary for sheet 1。A primary
+    data source is marked with a check mark on its name in the date of pane。 Let's
+    supply the blend in this view。 Click on the transactions data source。 then select
+    the total amount measure field and set it as the text value in the view。Upon doing
+    so。
+  id: totrans-52
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因此，客户数据源已被标记为表1的主数据源。主数据源在数据面板的名称中标记有勾选标记。让我们在此视图中提供混合。单击交易数据源，然后选择总金额度量字段，并将其设置为视图中的文本值。这样做后。
+- en: this creates the blend and marks the transactions data source as a secondary
+    source。A secondary source will have an orange check indicator in its name in the
+    data pane。Notice that there is a red chain icon in the customer field I D of the
+    transactions data source。 This means that Tableau automatically made the customer
+    I D as the linking field of the primary and secondary data source。
+  id: totrans-53
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这创建了混合，并将交易数据源标记为次要数据源。次要数据源在数据面板的名称中会有一个橙色勾选指示器。请注意，在交易数据源的客户ID字段中有一个红色链图标。这意味着
+    Tableau 自动将客户ID设为主数据源和次要数据源的连接字段。
+- en: If a field has the exact same name for both data sources。 it is automatically
+    set as a linking field to make the blend work。 The linking field values must have
+    the same values or members。![](img/82ec46f314140fddcdb39fa056d676e2_35.png)
+  id: totrans-54
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果两个数据源的字段名称完全相同，它会自动设为链接字段，以使混合工作。链接字段值必须具有相同的值或成员。![](img/82ec46f314140fddcdb39fa056d676e2_35.png)
+- en: A join combines the data first before applying an aggregation union appends
+    or combines values vertically。 rather than horizontally。 Let's create a union
+    on this movie list data source。 We have two sheets。 Mo list 1 and movie list 2，
+    which has the same fields and data types。 It is recommended to use a union in
+    tables that have the same structure。
+  id: totrans-55
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 连接在应用聚合之前先合并数据，联合则是垂直地附加或组合值，而不是水平地。我们来创建一个关于这部电影列表的数据源的联合。我们有两个工作表，电影列表1和电影列表2，它们具有相同的字段和数据类型。建议在结构相同的表中使用联合。
+- en: They should have the same number of fields have matching field names and data
+    types。 to create the union double click the button new union on the sheets or
+    tables section。 This opens a new window where you can specify sheets manually
+    or automatically。
+  id: totrans-56
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它们应该具有相同数量的字段，匹配的字段名称和数据类型。要创建联合，请在工作表或表部分双击“新联合”按钮。这会打开一个新窗口，你可以手动或自动指定工作表。
+- en: '![](img/82ec46f314140fddcdb39fa056d676e2_37.png)'
+  id: totrans-57
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/82ec46f314140fddcdb39fa056d676e2_37.png)'
+- en: Let's try using the manual method first， drag the movie list1 from the sheets
+    section into the Union window。 then drag the movie list2 from the same section
+    and place it below Mo list1 in the Union window once done。 hit apply。The data
+    pane now shows all records from both sheets。 The union was seamless because they
+    have the same exact structure。
+  id: totrans-58
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们先尝试使用手动方法，将电影列表1从工作表部分拖入联合窗口，然后再将电影列表2从同一部分拖到联合窗口中电影列表1的下方，完成后点击应用。数据面板现在显示来自两个工作表的所有记录。由于它们具有完全相同的结构，联合过程非常顺利。
+- en: Notice that the end of the table has additional fields called sheet and table
+    name。 The new fields provide information about where the original values in the
+    union came from。 including the sheet and table names。 These fields are useful
+    when unique information that is critical to your analysis is embedded in the sheet
+    or table name。
+  id: totrans-59
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 注意到表的末尾有额外的字段，称为工作表和表名。这些新字段提供有关联合中原始值来源的信息，包括工作表和表名。当分析中嵌入了对你至关重要的唯一信息时，这些字段非常有用。
+- en: '![](img/82ec46f314140fddcdb39fa056d676e2_39.png)'
+  id: totrans-60
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/82ec46f314140fddcdb39fa056d676e2_39.png)'
+- en: For the next section， you'll want to download the course exercise files。 Click
+    the link below in the video description to get these。You can also scroll through
+    the details to find timestamps for each section in this course。If you're enjoying
+    this training， please leave us a comment。
+  id: totrans-61
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在下一个部分，你需要下载课程练习文件。点击视频描述中的链接获取这些文件。你也可以滚动查看详细信息，以找到本课程每个部分的时间戳。如果你喜欢这次培训，请给我们留言。
+- en: '![](img/82ec46f314140fddcdb39fa056d676e2_41.png)'
+  id: totrans-62
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/82ec46f314140fddcdb39fa056d676e2_41.png)'

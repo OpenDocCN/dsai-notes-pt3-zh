@@ -1,0 +1,219 @@
+- en: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P2：2）快速简单的图表教程 - ShowMeAI - BV1Jg411F7cS
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P2：2）快速简单的图表教程 - ShowMeAI - BV1Jg411F7cS
+- en: '![](img/020a88a309cd82ddf59ca89bc0986277_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/020a88a309cd82ddf59ca89bc0986277_0.png)'
+- en: In this short beginners level tutorial， I want to show you a simple and quick
+    way to add charts to your Excel spreadsheets。 And as you can see， the spreadsheet
+    that I'm using for this tutorial is a spreadsheet of board games and card games。
+    these happen to be some of my favorite board games and card games。 But for this
+    tutorial。 I'm pretending that I own a small business where I sell board games
+    and card games。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个简短的初学者教程中，我想向你展示一种简单快捷的方法，将图表添加到你的 Excel 电子表格中。而正如你所看到的，我用于这个教程的电子表格是一个关于桌游和纸牌游戏的电子表格。这些恰好是我最喜欢的一些桌游和纸牌游戏。但为了这个教程，我假装自己拥有一家小企业，专门出售桌游和纸牌游戏。
+- en: And you can see here at the left， I've got the list of games。 and then I have
+    the first six months of the year。 And how many copies of each game have sold at
+    the bottom。 I have total sales。 So 252 total games were sold in the month of January。
+    and so forth。 So let's say I would like to create a chart that shows off this
+    data。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以在左边看到，我有游戏的列表。然后我有一年的前六个月。每个游戏的销售数量在底部。我有总销售额。所以在一月份总共售出了 252 个游戏，以此类推。那么假设我想创建一个显示这些数据的图表。
+- en: And does it visually in a way that people can see and understand。 There are
+    a couple of different ways I could do this。 But in this tutorial。 I want to show
+    you the easiest method that I'm aware of。The first thing you're gonna want to
+    do in most cases is click and drag to highlight the data that you want to turn
+    into a chart Now the reason you want to do that is that it gives you the opportunity
+    to exclude certain data that you do not want to include So for example in this
+    case I really do not want to include the total number of items sold why because
+    in this particular spreadsheet and in the chart I would like to create I want
+    to be able to see visually what the best sellers are which one stand out and in
+    which month did they stand out so that's kind of the information I'm looking for
+    I don't really need grand total number of total game sold so I just click and
+    drag to include everything else but to exclude that extra information now that
+    I've done that I can simply hold the alt key and tap F1 the F1 key and that automatically
+    generates for me a simple quick chart and it just puts it on。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 并且以一种人们可以看见和理解的方式展示。有几种不同的方法可以做到这一点。但在这个教程中，我想向你展示我知道的最简单的方法。大多数情况下，你需要做的第一件事就是点击并拖动以突出显示你想转化为图表的数据。这样做的原因是，它给你机会排除你不想包括的某些数据。例如，在这种情况下，我真的不想包括销售的总项目数，为什么呢？因为在这个特定的电子表格和我想创建的图表中，我希望能够直观地看到哪些是畅销商品，哪些是突出的，以及它们在哪个月突出。所以这就是我想要的信息。我并不需要总游戏销量的总数，所以我只需点击并拖动以包括其他所有内容，而排除那额外的信息。现在我完成了这个，可以简单地按住
+    Alt 键并按 F1 键，这样就会自动生成一个简单快捷的图表，并将其放置在上面。
+- en: On top of my data。 Now， if I want to， I could move that。 And the best way to
+    move that is to just put your mouse kind of close to one of the edges of the chart。
+    If you're clicking here， you might have some problems。 So instead stay close to
+    one of the edges of the chart and just click and drag and you can put it where
+    you want to put it。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在我的数据上方。如果我想，我可以移动它。移动的最佳方法是把鼠标放在图表的边缘附近。如果你在这里点击，可能会有一些问题。所以最好是靠近图表的边缘点击并拖动，这样你就可以把它放在想要的位置。
+- en: In my case， I want to change the view。 I'm going to zoom out to 100 percent。
+    that gives me enough space to let's say put the chart underneath the data。 and
+    now I can zoom in again maybe to 1 hundred50%。 So you can see that a little bit
+    better。 So now I have my data above， and I've got my chart underneath。 Now you
+    could put this on the right。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在我的情况下，我想改变视图。我将缩小到 100%。这给我足够的空间来放置图表在数据下面。现在我可以再缩放，可能缩放到 150%。这样你就能更清楚地看到。所以现在我在上面有我的数据，而图表在下面。现在你也可以把它放在右侧。
+- en: you could put it on a different tab if you want to。 there are all sorts of options
+    about where you put this chart。 So now let's look at the data that I got。 noticeice
+    it says boggle。 and then it's got six bars code names6 bars Exploding kittens，6
+    bars。 each of these。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你愿意，也可以把它放在不同的标签上。关于图表放置的位置有各种各样的选择。那么现在让我们看看我获得的数据。注意，它写着“拼字游戏”，然后有六个条形图，代码名是六个条形图“爆炸小猫”，六个条形图。每一个都是这样的。
+- en: Games that I recommend has six different bars。 Now， what do the bars represent。
+    Well。 the first bars is January then February all the way through June。 Now that
+    might be exactly what I want to see， right， That tells me that boggle is most
+    popular。 at least in this past year in February。 and that code names was particularly
+    popular in January and so forth。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我推荐的游戏有六个不同的条形图。现在，这些条形图代表什么呢？第一个条形图是一月，接着是二月，一直到六月。现在，这可能正是我想看到的，对吧？这告诉我，**Boggle**在过去的一年中，至少在二月份是最受欢迎的，而**Codenames**在一月份特别受欢迎，等等。
+- en: It also gives me some sense about what the most popular games are， right， looks
+    like code names。 maggab ticket to ride。 Those seem to be the most consistently
+    popular games。 According to this hypothetical data that I have here。 So this really
+    might be what I want。 But I want you to know that you're not stuck just with the
+    chart that's automatically generated up here at the top when you create a chart。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它还让我对最受欢迎的游戏有了一些了解，对吧，看来是**Codenames**、**Mad Gab**和**Ticket to Ride**。这些似乎是根据我这里的假设数据，最稳定受欢迎的游戏。所以这可能正是我想要的。但我想让你知道，当你创建图表时，你并不是只被限制在自动生成的顶部图表上。
+- en: you can go to the design tab and the format tab。 and these will appear if you've
+    clicked on the chart that you've created。 And one of the options in design is
+    to switch row and column。 So I can click that。And instantly。 my chart is transformed。
+    Now， I'm looking month by month across the bottom。 It says January。 And what do
+    the bars represent， Well， blue is boggle oranges code names。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以进入设计选项卡和格式选项卡。这些会在你点击所创建的图表时出现。在设计中的一个选项是切换行和列。所以我可以点击这个。然后立刻，我的图表就变了。现在，我是按月查看底部。它显示一月。条形图代表什么呢？嗯，蓝色是**Boggle**，橙色是**Codenames**。
+- en: green is teles and so forth。 And then I can look at February in March， et cetera。
+    So this is a little bit different information。 This tells me in January。 the hottest
+    game seems to be code names。 But in March， the hottest game seems to be ticket
+    to ride。 And you'll notice that there is a key here across the bottom。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 绿色是**Teles**，等等。我可以查看二月和三月等信息。这是一些不同的信息。这告诉我在一月，最热的游戏似乎是**Codenames**。但在三月，最热的游戏似乎是**Ticket
+    to Ride**。你会注意到底部有一个图例。
+- en: So I can just glance at that instead of doing what I showed earlier of just
+    putting my mouse on the bar to have it pop up with an explanation。 I could have
+    just look down here and seen， oh yeah， madgab is yellow。 Okay。 a few other things
+    that you might want to adjust after you've created your quick， simple chart。 You'll
+    notice up here in the design tab， the design ribbon， there's a chart styles group。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我可以只看看这个，而不是像我之前展示的那样，把鼠标放在条形图上弹出解释。我可以看看这里，哦，**Mad Gab**是黄色的。好的，还有一些你可能想在创建快速、简单的图表后进行调整的内容。你会注意到在设计选项卡上，设计功能区有一个图表样式组。
+- en: And with this， you can just click or even just put your mouse over the chart。
+    to see the various chart types that you can。Choose from。 And there are some really
+    nice attractive looking charts。 I kind of like this gray one。 If you don't like
+    any of those that are shown here。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 而且在这里，你可以点击，或者甚至只需将鼠标悬停在图表上，查看你可以选择的各种图表类型。有一些看起来非常漂亮的图表。我挺喜欢这个灰色的。如果你不喜欢这里展示的任何一个。
+- en: you can go to this button on the right click on it and you get even more。 In
+    my case。 I really like this one。 I'm going to just click on that and select it。
+    another option that you might want to be aware of that's on the design ribbon
+    is this quick layout。 So with quick layout， you can go down and choose a different
+    layout and you'll notice what happened。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以点击右侧的这个按钮，然后你会获得更多选项。在我的情况下，我真的很喜欢这个选项。我会点击它并选择。另一个你可能想了解的选项是在设计功能区上的快速布局。所以通过快速布局，你可以向下选择不同的布局，你会注意到发生了什么。
+- en: it gave me these access title access title labels here。 It also moved my key
+    or legend over here on the right。 so I can see that in a list。 So that's one of
+    the options。 that's just one of these 11 different quick layouts that I can choose。
+    And there's various ones that you would have to look through to decide which one
+    you want。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它给了我这些访问标题和标题标签。它还将我的图例移动到右侧，所以我可以看到列表。这是我可以选择的11种不同快速布局中的一种。你会需要浏览各种选项，以决定你想要哪个。
+- en: And I guess I'll go with this one here。 when I click on that it makes that change
+    official And I really like how that looks。 but there still are。Coup of things
+    off just a little bit here。 One of them is chart title。 I don't want it just to
+    say chart title。 So， of course， I could highlight that。 and I could type in game
+    sales January through June 2018。 So that's how you can fix that label。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想我会选择这个。当我点击时，它使这个更改生效，我真的很喜欢这个样子。但是还有一些地方稍微有点不对劲。其中之一是图表标题。我不想让它仅仅显示“图表标题”。所以，当然，我可以高亮它，输入“游戏销售2018年1月至6月”。这就是你可以修复那个标签的方法。
+- en: Just click on it and type。 Now there is another way to do that。 if you want。
+    you can just click。 type the equals sign and notice where it put the equal sign。
+    it put it up here in this formula bar and then just click on what you want to
+    be there。 if the words exist somewhere in your spreadsheet。 So in this case， game
+    sales。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 只需点击并输入。现在，如果你愿意，还有另一种方法。你可以直接点击，输入等号，然后注意等号放在哪里。它放在了公式栏上，然后点击你想要的内容，如果这个词在你的电子表格中存在的话。在这种情况下，是“游戏销售”。
+- en: and then tap enter on the keyboard and it makes this label in my chart， match
+    this cell。 Now I could do the same things with these axis titles。 or I could simply
+    type。 and I'm just gonna type in this case。 I'll put in months。 So these are the
+    months。 and then this label is for units sold。 So there we have， I think a really
+    good looking chart。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后按键盘上的回车键，这样我的图表中的标签就与这个单元格匹配了。现在，我可以对这些轴标题做同样的事情，或者我可以简单地输入。我这次会输入“月份”。所以这些是月份，而这个标签是“销售单位”。所以我们有一个看起来非常不错的图表。
+- en: and it was simple and quick to create。I did have to make a few adjustments。
+    and you may have noticed that a panel opened up at the right。 The reason that
+    happened is because I double clicked on the chart and it just opened up this panel
+    on the right where I can adjust the fill color。 I can also adjust the gradient
+    and do a pattern fill all sorts of fun interesting options you can also change
+    the borders and there's even more that you can explore if you'd like to a couple
+    of final notes that I want you to know about。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 创建是简单快捷的。我确实做了一些调整。你可能注意到右侧打开了一个面板。发生这种情况的原因是我双击了图表，它就在右侧打开了这个面板，我可以调整填充颜色。我还可以调整渐变，进行模式填充，还有各种有趣的选项，你还可以更改边框，如果你愿意，还有更多内容可以探索。我想让你知道的最后几点。
+- en: let's say you want to make this chart even more visual and attractive looking。
+    What you could do is instead of having words here to explain what the bar colors
+    represent。 I could insert pictures from my computer and these are images that
+    I collected before starting this tutorial。 but I would like to insert one of these
+    pictures and notice that I can resize that image and I could put it either on
+    top of or next to the name of the game。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设你想让这个图表更具视觉效果和吸引力。你可以在这里插入从计算机中获取的图片，而这些是我在开始这个教程之前收集的图像。我想插入其中一张图片，注意我可以调整图像的大小，并且可以将其放在游戏名称的上方或旁边。
+- en: Now that's kind of small， but at least you get。Sense of what the game it looks
+    like。 So that's one thing I wanted you to see。 And notice， because I inserted
+    that image onto the chart。 When I move the chart， the image moves with it。 It's
+    part of the chart。 the other thing I wanted you to see is now that my chart is
+    pretty much done。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在这有点小，但至少你可以感受到游戏的样子。这是我想让你看到的一点。请注意，因为我将那张图片插入到图表中。当我移动图表时，图像也会随之移动。它是图表的一部分。我还想让你看到的是，现在我的图表基本完成了。
+- en: I can right click on the chart copypy and I can open up PowerPoint or word and
+    even publisher。 And let's see what I can do with that chart。 So here in PowerPoint。
+    I can go to a new slide and I could paste and look that chart comes right in and
+    the data is all there being pulled from Excel。 same with Microsoft Word and same
+    with Microsoft publisherlish。 So thanks for watching。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以右击图表进行复制，然后打开PowerPoint、Word，甚至Publisher。让我们看看我能对这个图表做什么。在PowerPoint中，我可以创建一个新幻灯片，然后粘贴，看看，这个图表直接进来了，所有数据都是从Excel中提取的。Microsoft
+    Word和Microsoft Publisher也是如此。感谢观看。
+- en: I hope you found this tutorial to be helpful。 If you did， please click the like
+    button below。![](img/020a88a309cd82ddf59ca89bc0986277_2.png)
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我希望你觉得这个教程对你有帮助。如果你觉得有用，请点击下面的点赞按钮。![](img/020a88a309cd82ddf59ca89bc0986277_2.png)

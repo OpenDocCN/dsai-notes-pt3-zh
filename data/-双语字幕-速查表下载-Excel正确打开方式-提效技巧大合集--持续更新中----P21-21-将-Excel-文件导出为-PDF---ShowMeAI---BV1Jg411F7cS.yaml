@@ -1,0 +1,103 @@
+- en: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P21：21）将 Excel 文件导出为 PDF - ShowMeAI
+    - BV1Jg411F7cS
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P21：21）将 Excel 文件导出为 PDF - ShowMeAI
+    - BV1Jg411F7cS
+- en: '![](img/96f47a8334bc78a7caaf36c2b4ea9d54_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/96f47a8334bc78a7caaf36c2b4ea9d54_0.png)'
+- en: In this short Excel tutorial， I'm going to show you how to easily export Excel
+    files into P Df format。 And here's an example of why that's important。 here I
+    have a health tracker。 let's say I'm a personal trainer and I'm working with Jason
+    Smith and he's made some good progress。 as I've been working with him， he's lost
+    some weight。 But after 17 weeks， our time is up。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个简短的 Excel 教程中，我将向你展示如何轻松将 Excel 文件导出为 PDF 格式。这里有一个例子说明了为什么这很重要。我有一个健康追踪器。假设我是个人教练，正在与
+    Jason Smith 合作，他取得了一些不错的进展。在与他合作的过程中，他减掉了一些体重。但在 17 周后，我们的时间到了。
+- en: And I would like to be able to send him a report of his progress and how he
+    did。 The problem is。 Jason doesn't have Excel。 And maybe he doesn't understand
+    how to use things like Google sheetets or open office。 And so it's going to be
+    pretty hard for Jason to really benefit from this spreadsheet。 I could print it
+    for him and mail it to him。 But if I wanted to send him a digital version of this
+    spreadsheet。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我希望能给他发送一份关于他进展的报告。问题是，Jason 没有 Excel。也许他不懂得如何使用 Google 表格或 Open Office。因此，Jason
+    很难真正从这个电子表格中受益。我可以为他打印并邮寄给他。但如果我想发送这个电子表格的数字版本。
+- en: knowing that he doesn't have Excel。 Probably the best way to do that is to turn
+    it into a P D F file。 pretty much everyone can access and look at P D F files
+    to do。This I simply go to file and that takes you to this screen here and then
+    go down to export。 So I click on export and look， there's an option for create
+    Pdf document。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 知道他没有 Excel。将其转换为 PDF 文件可能是最好的方法。几乎每个人都可以访问和查看 PDF 文件。首先，我只需点击文件，这会带你到这个界面，然后向下选择导出。所以我点击导出，看到有一个创建
+    PDF 文档的选项。
+- en: And I can just click this button。 I'm going keep all of the defaults that are
+    here。 and I could change where it's going save to。 For example。 I'll save it to
+    the desktop So I click on desktop and publish。 And once it's done publishing。
+    it opens up the Pdf that I've created so I can review it。 Now。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我只需点击这个按钮。我将保留这里的所有默认设置，也可以更改保存的位置。例如，我将其保存到桌面。所以我点击桌面并发布。发布完成后，它会打开我创建的 PDF，以便我查看。现在。
+- en: what that did is it exported the entire spreadsheet as a Pdf。 and notice it
+    got data that I don't really need。 Jason has dropped out after 17 weeks。 He doesn't
+    need all of this other data。 So I'm going close out of that and show you a couple
+    of other options。 For one thing， I could have selected just the data that I want
+    to export and then gone to the file tab down to export and then clicked options。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这样做会将整个电子表格导出为 PDF。请注意，它包含了一些我并不需要的数据。Jason 在 17 周后已经退出。他不需要这些其他数据。所以我要关闭它，给你展示其他几个选项。首先，我可以选择只导出我想要的数据，然后转到文件选项，选择导出，然后点击选项。
+- en: And at this point， I could have picked。Seelection。 so now it's just going to
+    turn the selection into a Pdf。 So I'm going to choose that and then choose publish。
+    Here's my new Pdf。 And now it's nice and short。 Now there are other ways to export。
+    You can go to the file tab。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个时候，我可以选择选择。现在它将只把选择的部分转换为 PDF。所以我选择这个，然后点击发布。这是我的新 PDF，现在简洁明了。还有其他导出方式。你可以去文件选项卡。
+- en: and then do save as And then here there's a drop down arrow。 I can click on
+    that。 and I can switch it from Excel workbook to Pdf。 So that's another way to
+    do the same kind of thing。 It's just a little bit harder to find that option。
+    And then one other tip。 before you do this。 you may want to go to the page layout
+    tab。 And look in the scale to fit group。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后选择另存为，这里有一个下拉箭头。我可以点击它，切换从 Excel 工作簿到 PDF。所以这也是做同样事情的另一种方法。只是找到这个选项有点困难。还有一个小贴士。在你这样做之前，可能想去页面布局选项卡，查看缩放适合组。
+- en: And then you could set the width and the height to be one page。 And now let's
+    try it again。 I'll click on file export， create Pf。 and I'm going to go to the
+    options and make sure it's dealing just with the selection。 I click okay。 let's
+    publish。 Now you'll notice there's a warning It's。I already have a Pdf with that
+    exact name。 But that's okay。 I'll just replace it。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后你可以设置宽度和高度为一页。现在我们再试一次。我会点击文件导出，创建 PDF，然后进入选项，确保它只处理选择。我点击确定，发布。现在你会注意到有一个警告：我已经有一个同名的
+    PDF。但没关系，我就替换它。
+- en: And let's look at the results。 It didn't change much。 It looks very similar。
+    That's okay。 But in some cases， that page layout scale to fit and setting the
+    width and the height to one page or two pages or whatever you need。 That may be
+    important because it'll help shrink the data so that you can fit more onto a particular
+    sheet。 Thanks for watching， I hope you found this tutorial to be helpful。 If you
+    did。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: '让我们看看结果。它变化不大。看起来非常相似。没关系。但在某些情况下，页面布局会缩放以适应并设置宽度和高度为一页、两页或其他你需要的格式。这可能很重要，因为它有助于缩小数据，从而让你在特定的纸张上放入更多内容。感谢观看，希望你觉得这个教程有帮助。如果你觉得有帮助，  '
+- en: please click the like button below。![](img/96f47a8334bc78a7caaf36c2b4ea9d54_2.png)
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 请点击下面的点赞按钮。![](img/96f47a8334bc78a7caaf36c2b4ea9d54_2.png)

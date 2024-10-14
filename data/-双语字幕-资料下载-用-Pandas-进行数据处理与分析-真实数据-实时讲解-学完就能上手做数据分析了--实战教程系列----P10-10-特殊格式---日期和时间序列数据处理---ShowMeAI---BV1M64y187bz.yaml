@@ -1,0 +1,813 @@
+- en: 【双语字幕+资料下载】用 Pandas 进行数据处理与分析！真实数据&实时讲解，学完就能上手做数据分析了！＜实战教程系列＞ - P10：10）特殊格式
+    - 日期和时间序列数据处理 - ShowMeAI - BV1M64y187bz
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】用 Pandas 进行数据处理与分析！真实数据&实时讲解，学完就能上手做数据分析了！＜实战教程系列＞ - P10：10）特殊格式
+    - 日期和时间序列数据处理 - ShowMeAI - BV1M64y187bz
+- en: Hey there。 how's it going， everybody。 In this video。 we're gonna be learning
+    how to work with date and time series data within pandas。 Now。 there's a ton of
+    interesting stuff that we can do with datetime data。 and we'll be learning about
+    that here。 So we'll learn how to properly read in our data so that we can use
+    date time functionality。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 大家好，最近怎么样？在这个视频中，我们将学习如何在 Pandas 中处理日期和时间序列数据。现在，我们可以用日期时间数据做很多有趣的事情，我们将在这里学习这些内容。所以我们将学习如何正确读取数据，以便能够使用日期时间功能。
+- en: We'll also see how to filter by date times how to group dates by resampling
+    the time frames and we'll also take a look at doing some simple plotting with
+    our time series data as well。 Now， I'd like to mention that we do have a sponsor
+    for the series of videos。 And that is brilliant。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们还将看到如何按日期时间进行筛选，如何通过重新采样时间框架对日期进行分组，我们还会看看如何使用我们的时间序列数据进行一些简单的绘图。现在，我想提到的是，我们确实有一个赞助商为这个系列视频提供支持，那就是**Brilliant**。
+- en: So I really want to thank brilliant for sponsoring this series。 and it would
+    be great if you all can check them out using the link in the description section
+    below and support the sponsors。 And I'll talk more about their services in just
+    a bit。 So at that said。 let's go ahead and get started。 Okay， so first of all。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我真的想感谢 **Brilliant** 赞助这个系列。如果你们能通过下面描述部分的链接查看他们的内容并支持赞助商，那将是太好了。我会在稍后谈到他们的服务。所以说完这些，让我们开始吧。好的，首先。
+- en: I've been using the stack overflow survey data for this entire series so far。
+    But that data set doesn't actually have any date or time series data。 So I had
+    to choose a different data set for this video。 I downloaded some historical。😊。Cryptocurrency
+    data that we can analyze for this video。 and as usual。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 到目前为止，我一直在使用 Stack Overflow 调查数据。但那个数据集实际上没有任何日期或时间序列数据。所以我不得不为这个视频选择一个不同的数据集。我下载了一些历史的加密货币数据，我们可以在这个视频中进行分析，和往常一样。
+- en: I'm gonna have links to download the data and the notebooks that I'm using in
+    the description section below。 So I've got my notebook opened up here where I'm
+    reading in this CV file of data and let's go ahead and take a look at what this
+    looks like。 So we can see here that I'm loading in this cV file and I called this
+    ETH underscore1 H and that's because this is historical data for Ethereum which
+    is a cryptocurrency and and this data is broken down on one hour segments。 So
+    if we look down here at the head of this data。 we can see that we have some columns
+    here。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将在下面的描述部分提供下载数据和我正在使用的笔记本的链接。所以我已经打开了我的笔记本，正在读取这个 CV 文件的数据，我们来看看这是什么样子的。我们可以看到，我正在加载这个
+    CV 文件，我将其命名为 ETH_1H，因为这是以小时为单位的以太坊历史数据，这是一种加密货币。这些数据被分解为每小时的段落。所以如果我们查看这个数据的头部，我们可以看到有一些列在这里。
+- en: the first one is a date column and these are broken down by the hour we also
+    have some other information here like the symbols the open and closing values
+    for these hours。 the highs and lows and also the volume we so all of this here
+    is for let's see March 13 and this is for 8 PMm7 PM。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 第一个是日期列，这些数据按小时分解，我们还有一些其他信息，比如符号、这些小时的开盘和收盘值、最高和最低值，以及交易量。因此，这里所有数据都是关于3月13日的，时间是晚上8点、7点。
+- en: 6 PMm and so on。 Now， remember， if you want to see more information about your
+    data frame。 So。 for example， how many rows and columns there are， I can run Df
+    do shape。 and we can see that there are 23000 rows here almost 24000 So a good
+    bit of data for us to work with。 so now let's actually get into working with datetime
+    data。 So we have this date column here。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 6点等等。现在，记住，如果你想查看更多关于你的数据框的信息，比如有多少行和列，我可以运行 `df.shape`。我们可以看到这里有23000行，差不多24000，所以我们有相当多的数据可以处理。现在我们就开始处理日期时间数据吧。所以我们这里有这个日期列。
+- en: and it looks like this is just giving us every hour of the day。 but right now
+    this isn't actually a datetime object。 I can kind of tell this just because it's
+    not in a format that date times usually display as but if you want to be sure
+    you can always try running ada data pandas datetime method on this to see if it
+    works。 So let me just grab the first row of this data frame and I'll grab that
+    date value。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这看起来只是给我们每个小时的数据，但现在这实际上并不是一个日期时间对象。我之所以能这样判断，是因为它的格式并不是日期时间通常显示的格式，但如果你想确认，可以尝试在这个数据上运行
+    ada 数据 pandas 日期时间方法，看看是否有效。所以让我先获取这个数据框的第一行，并抓取那个日期值。
+- en: So and then I'll go ahead and try to run a datetime method。 So to grab that
+    first value。 I'm just gonna say Df Lo and we can see here that the。X is just zero
+    over here。 so I'm just going to pass in a0。 and I want to grab that date column
+    there。 so if I run what we have now， then we can see that I've plucked out that
+    first date。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我将继续尝试运行一个日期时间方法。为了获取第一个值，我只需说`Df Lo`，我们可以看到这里的`.X`只是零，因此我将传入`a0`，并想要抓取那个日期列。因此，如果我运行现在的内容，我们可以看到我已经提取出了第一个日期。
+- en: So now let's just try to run a datetime method on this So there's one method
+    called day name that will give us the weekday that this date fell on but if I
+    run this now and I say okay dot day name for this value here。 if I run this then
+    we can see that we get an error and it says that a string object has no attribute
+    day name and that's because we are reading this in as a string currently So how
+    do we convert this to a date time。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以现在我们就试着在这个上运行一个日期时间方法。有一个叫`day_name`的方法可以告诉我们这个日期是星期几，但如果我现在运行这个，并说`ok.day_name`对这个值，如果我运行它，我们可以看到出现了一个错误，提示字符串对象没有属性`day_name`，因为我们当前将其作为字符串读取。那么我们如何将其转换为日期时间呢？
+- en: So there's a few different ways that we can do this and we'll go over some of
+    those here。 Now if you want to convert a column like we have here to a date time
+    then we can use the pandas to underscore datetime method So to do this I can simply
+    say we'll access that date column。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们可以用几种不同的方式来做到这一点，我们将在这里讨论其中一些。如果你想像我们这里的那样将一列转换为日期时间，那么我们可以使用`pandas`的`to_datetime`方法。为了做到这一点，我可以简单地说我们将访问那个日期列。
+- en: We'll set this date column equal to。 and then we'll just say PD for what we
+    imported pandas as to underscore date time。 And now I want to pass in that same
+    column to convert that to a date time。 Now。 I'm not going to run this right now，
+    because if I run this as is then pandas would do its best to figure out the formatting
+    of the date time and convert it accordingly。 but the date time that I have here
+    is in a pretty different format。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们将这个日期列设置为，然后我们只需说`pd`，这是我们导入的`pandas`的`to_datetime`。现在我想传入那个相同的列以将其转换为日期时间。现在，我不会立即运行这个，因为如果我这样运行，pandas将尽力弄清楚日期时间的格式并相应地转换，但我这里的日期时间格式相当不同。
+- en: So I doubt that this is going work。 but let's go ahead and try it out anyway。
+    Okay。 so I expected to get an error。 if we scroll down and look at the error here。
+    we can see that it says unknown string format。 So it did not know how to parse
+    this date。 But like I said before， depending on how your dates are formatted。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我怀疑这行不通，但我们还是试试看吧。好吧，我预期会出现一个错误。如果我们向下滚动查看错误，可以看到它提示未知字符串格式。因此，它不知道如何解析这个日期。但正如我之前所说，取决于你的日期格式。
+- en: then that might actually work for you。 this just so happens to be format it
+    in a way that pandas can't convert this automatically。 without us telling it how
+    our date is formatted。 So what we need to do here is pass in a format string。ifying
+    how dates are formatted so that it can parse this correctly。 Now I went ahead
+    and I created the correct string format ahead of time for this specific date。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那么这实际上可能适合你。恰好是以一种格式显示，pandas无法自动转换，除非我们告诉它我们的日期是如何格式化的。因此，我们需要在这里传入一个格式字符串，说明日期是如何格式化的，以便它能够正确解析。现在我提前为这个特定日期创建了正确的字符串格式。
+- en: But just to be clear， I never really remember these formatting codes off the
+    top of my head。 I always need to go and find these codes within the Python documentation
+    So I have that page open here。 And I will leave a link to this in the description
+    section as well。 but however your date is formatted here。 So ours started with
+    the year。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 不过要明确的是，我从来没有真的记住这些格式化代码。 我总是需要去Python文档中查找这些代码。所以我这里打开了那个页面。我会在描述部分留下这个链接。不管你的日期是如何格式化的，我们的日期是以年份开头的。
+- en: so we can see that that is a percent Y and then we have the month day so we
+    can find that in here。 another one is that we have like 8 pm and things like that。
+    so we can see here that these eyes here。 this I is for a 12 hour clock which is
+    what ours is doing。 and then this percent sign P is for the local equivalent of
+    a or pm。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们可以看到那是`%Y`，然后我们有月日，因此我们可以在这里找到。另一个例子是像`8 PM`这样的格式。所以我们可以看到这里的这些`I`，这个`I`是指12小时制，这是我们所用的。然后这个`%p`是指当地的上午或下午的表示。
+- en: So those are going to be in our format string but I'll leave a link to this。Just
+    in case your date formatting is different and you need to create your own So the
+    format string that I need to pass in here and again。 this is basically just telling
+    pandas how to parse our date we're going to say that first we're going to see
+    the year and then a dash and then the month。And then the day with a dash in between
+    that and then a space and then percent I was that 12 hour clock。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这些将会在我们的格式字符串中，但我会留一个链接以防万一你的日期格式不同，需要你自己创建。因此我需要传入的格式字符串基本上是在告诉 pandas 如何解析我们的日期，我们将先看到年份，然后是一个破折号，然后是月份，再然后是日期，中间有破折号，然后是一个空格，接着是百分比，我记得是12小时制。
+- en: And then there is a dash。 and then it is percent P。 So let me go ahead and run
+    this。 And if I put this in correctly then this should work。 Okay， so we didn't
+    get any errors there。 But let's go ahead and make sure。 So I'm going to go ahead
+    and look at the date column here。 And we can see that now these look more like
+    datetime objects that we might be used to seeing in programming。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后是一个破折号，然后是百分比 P。所以让我来运行这个。如果我把它正确地输入，那么这个应该会工作。好的，所以我们没有得到任何错误。但让我们确保一下。因此我将查看这里的日期列。我们可以看到这些现在看起来更像是我们在编程中习惯看到的
+    datetime 对象。
+- en: So it converted 11 pm to 23。 well， I'm sorry， I thought 11 pm was the first
+    one。 No， it's 8 p。 Okay。 so it converted 8 pm to 20 and 7 pm to 19 and so on。
+    And now that this is converted to a datetime。 we should be able to run these datetime
+    methods that gave us an error before。 So up here where we got this error where
+    we tried to grab the day name for these。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以它将晚上11点转换为23。抱歉，我以为晚上11点是第一个。不，它是晚上8点。好的。所以它将晚上8点转换为20，晚上7点转换为19，以此类推。现在这已转换为
+    datetime，我们应该能够运行这些之前给我们带来错误的 datetime 方法。所以在这里我们得到了这个错误，当时我们尝试抓取这些的日期名称。
+- en: I'm just going to copy that and paste that in down here and now let's try to
+    rerun this and we can see that now it's saying that that first date in our series
+    here。 this March 13 was a Friday so that's nice So it looked like it works。 Now
+    the way that we did this here is that we converted this to a date after we loaded
+    in our data with this line right here but if we wanted to convert this to a date
+    as we're loading in our data。 then we can also do that as well。 So if I go up
+    here to the top where we loaded this in at this read CSsv line here。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将复制这个并粘贴到这里，现在让我们尝试重新运行这个，我们可以看到现在它表示我们系列中的第一个日期，这个 3 月 13 日是一个星期五，所以这很好，看起来它工作了。现在我们这样做的方式是，在用这一行加载数据后将其转换为日期，但如果我们希望在加载数据时就将其转换为日期，那么我们也可以这样做。所以如果我回到顶部，在这里加载的这行读取
+    CSV。
+- en: then I can actually pass in some arguments to read CSv so that it loads in certain
+    columns as date times and then we can pass in our formatting string as well so
+    that it parses those as the data is read in so to do this we need to pass in this
+    parse dates argument here and now I'm just going pass in a list of the columns。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我可以实际上传入一些参数来读取 CSV，以便它将某些列加载为日期时间，然后我们可以传入我们的格式字符串，以便在读取数据时解析它们。因此为此我们需要在这里传入这个解析日期参数，现在我只是要传入一个列的列表。
+- en: arere going to be dates。 We only have one here， so it's just going to be a list
+    of one item oops。 and I meant to put date， not dates and。Now， just like with before。
+    if your dates are already formatted in a way that pandas can parse them。 then
+    you don't need to add anything else here。 but we already saw before that we need
+    to pass in a specific format。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 将会有日期。我们这里只有一个，所以这将只是一个包含一个项目的列表。抱歉，我本来想写日期，而不是日期们。现在，就像之前一样，如果你的日期已经以 pandas
+    能解析的方式格式化，那么你这里不需要添加其他内容。但我们之前已经看到需要传入特定的格式。
+- en: So to do this here， we can't just pass in a format string We instead need to
+    pass in a function that converts each string to a datetime object。 So first， let's
+    create that function。 And we've seen lambda functions in this series before。 but
+    just in case you're unfamiliar with those。 you can simply create a normal function
+    instead if you are more comfortable with those。 but this is just a shorter way。
+    So to create this lambda function。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因此在这里我们不能仅仅传入格式字符串，我们需要传入一个将每个字符串转换为 datetime 对象的函数。所以首先，让我们创建那个函数。在这个系列中我们见过
+    lambda 函数，但以防你不熟悉，你也可以简单地创建一个普通函数，如果你更习惯这样，但这只是一种更简短的方式。所以要创建这个 lambda 函数。
+- en: I'm just going call this D underscore parser， I'm going to set this equal to
+    a lambda function。 And I'll just use x as the variable here。 and now what do we
+    want to return。 So when we used P do2 date time down here。 we actually pass in
+    an entire series to PD2 date。TimeBut now this is actually just going to be each
+    individual string and it's going to send each individual string through this function。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我会把这个叫做 D underscore parser，我将把它设置为一个 lambda 函数。我会把 x 用作这里的变量。那么我们想要返回什么呢？所以当我们在这里使用
+    P do2 date time 时，我们实际上是将整个序列传递给 PD2 date。Time，但现在这实际上只是将每个单独的字符串通过这个函数。
+- en: So in order to convert this， we can use a function called PDd dot date time
+    dot SP time。 That's how we convert a string to time。 and then we can just pass
+    in。Our string that we went converted to a date time and then the format and already
+    had the format down here。 So I'll just go ahead and copy that and paste that in
+    here。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因此，为了进行转换，我们可以使用一个名为 PDd dot date time dot SP time 的函数。这就是我们将字符串转换为时间的方式。然后我们只需传入。我们将字符串转换为日期时间，然后格式也已经在这里了。所以我会直接复制并粘贴到这里。
+- en: And that's all we need for that date parser function。 So now the argument for
+    the date parser is date underscore parser。 and I'm going to set that equal to
+    that D pars variable there that is set to our lambda function。 Okay， so now if
+    I run this cell here。 Then we can see that we didn't get any errors。 So that's
+    good。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这就是我们所需的日期解析函数。因此，日期解析器的参数是 date underscore parser。我将把它设置为那个 D pars 变量，该变量设置为我们的
+    lambda 函数。好的，现在如果我运行这个单元格。然后我们可以看到没有出现错误。所以这很好。
+- en: And now if I run this D F dot head here。😊，Then we can see that now our data
+    frame was already loaded in as a date time。 So we didn't have to do any conversions
+    later on。 It just did it as it was reading in that CSv file。 Okay， so now let's
+    look at some more useful things that we can do with date times。 So first I'm going
+    to delete the sales that we have below here so that we are not converting these
+    columns again since they're already loaded in as dates。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在如果我运行这个 D F dot head，这里。😊，那么我们可以看到现在我们的数据框已经以日期时间的形式加载。因此，我们不必在后续进行任何转换。它在读取
+    CSV 文件时就已经完成了。好的，现在让我们看看一些我们可以对日期时间做的更有用的事情。因此，我将删除下面的销售数据，以便不再转换这些列，因为它们已经作为日期加载进来了。
+- en: So I'll delete that one， I will delete that one since that was what was converting
+    it earlier I'll delete that as well。 and I'll keep this one here just for reference
+    since I will have these up on my Github afterwards Okay。 so before actually right
+    here， we saw how to run a datetime method on a single value when we use this day
+    name method but what if we want to run that method on our entire series So let's
+    say that we wanted to view the day name of this entire date column here。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我会删除那个，因为之前是用来进行转换的，我也会删除那个。我会保留这个供参考，因为我之后会把这些放到我的 GitHub 上。好的。在这里之前，我们看到如何对单个值运行
+    datetime 方法，当我们使用这个 day name 方法时，但如果我们想对整个序列运行该方法呢？假设我们想查看这一整列日期的日期名称。
+- en: So to do this we can access the Dt。Class on the series object and access the
+    datetime methods that way。 so to do this。We can just say we can first grab that
+    series so that date column is going to return a series。 If I run that， we can
+    see that we get all those values。 And now if we wanted to access the Dt class
+    on the series object then we can just say dot Dt。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 为此，我们可以访问序列对象上的 Dt 类，并以这种方式访问 datetime 方法。所以这样做。我们可以首先获取那个序列，所以日期列将返回一个序列。如果我运行它，我们可以看到得到所有那些值。现在，如果我们想要在序列对象上访问
+    Dt 类，我们可以直接说 .Dt。
+- en: And now the date time method that we want to use。 So if I want to get the day
+    name of all these values then I can just do day name there。 And if I run that，
+    then we can see that we get the day of the week for each of the dates in this
+    series。 So using the Dt class on the series object is very similar to how we access
+    the string class or the STR class for the string methods on an entire series。
+    and we saw that in previous videos。 So this can definitely be pretty useful。
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们想使用的日期时间方法。如果我想获取所有这些值的日期名称，我可以直接用 day name。然后如果我运行它，我们可以看到得到这个序列中每个日期的星期几。因此，在序列对象上使用
+    Dt 类非常类似于我们如何在整个序列上访问字符串类或 STR 类的字符串方法。我们在之前的视频中看到了这一点。所以这肯定是非常有用的。
+- en: So let's say that we wanted to you know create another column so that we could
+    quickly reference what day all of these trades took place。 So to do that we could
+    just grab what we have here。 and I could simply create a new column。😊。By simply
+    like I'm accessing a column。 so I could call this column day of week and set this
+    equal to and paste in that date time method there。 If I run this。 and then we
+    look at our data frame。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设我们想创建另一列，以便快速参考所有这些交易发生的日期。为了做到这一点，我们可以直接提取我们这里的内容，然后我可以简单地创建一个新列。😊。通过简单地像访问一列那样，所以我可以称这个列为星期几，并将其设置为并粘贴该日期时间方法。如果我运行这个，然后我们查看我们的数据框。
+- en: then we can see that now we can quickly see over here on the right that okay
+    the 13th was a Friday and then we have these dates down here towards the end。
+    this was a Saturday， so it's nice to see about be able to see what days these
+    trades actually took place。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们可以看到，现在我们可以快速看到右侧，好的，13号是星期五，然后在底部有这些日期，这是一周六，所以能看到这些交易实际上发生在哪些日期真是不错。
+- en: So now let's look at how we can explore our data a bit。 So we can see by looking
+    at the indexes here on the far left。 that there are over 20000 rows in this data
+    set。 So let's see how we can view the earliest and latest dates in this data So
+    to do this。 we can use the min and max methods So to see the earliest date I could
+    simply access。😊。
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在让我们看看如何探索我们的数据。通过查看最左侧的索引，我们可以看到这个数据集有超过20000行。那么让我们看看如何查看这个数据集中最早和最新的日期。为此，我们可以使用最小和最大方法。所以为了查看最早的日期，我可以简单地访问。😊。
+- en: This date series here。 and I could just run the min method on this。 And I run
+    that。 then we can see that the earliest date that it gives us is 2017，0，7，0，1。
+    Now if I wanted to see So what is that。 That's July 1 of 2017。 So to view the
+    most recent date that I have。 And it should be the date that I downloaded this
+    data。
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这个日期序列。然后我可以直接对其运行最小方法。如果我运行这个，那么我们可以看到给出的最早日期是2017，0，7，0，1。现在如果我想看看那是什么。那是2017年7月1日。为了查看我拥有的最近日期，它应该是我下载这个数据的日期。
+- en: then I can just look at the max value here。 And if I run this。 then we can see
+    that this is March 13，2020， which actually was the day that I downloaded this
+    data。 And one really cool thing with date times is that we can actually subtract
+    dates in order to view the time between those two dates。 And this is called a
+    time delta。 So to get the amount of time that spans between these two dates here。
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我可以看看这里的最大值。如果我运行这个，然后我们可以看到这是2020年3月13日，实际上是我下载这个数据的那一天。日期时间的一个非常酷的地方是我们实际上可以减去日期，以查看这两个日期之间的时间。这被称为时间差。所以为了获取这两个日期之间的时间跨度。
+- en: then I could simply say take the max value。 and then subtract the min value。😊，And
+    if I run this。 then we can see that we get this time delta that says that there
+    are almost 1000 days between the earliest date in our data set in the most recent。
+    So we have 986 days in this entire data set of cryptocurrency data almost 1000。
+    So that would definitely be a lot of days to look through if we want to find some
+    specific ranges。
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那么我可以简单地说取最大值，然后减去最小值。😊，如果我运行这个。然后我们可以看到这个时间差，它表明在我们数据集中最早的日期和最近的日期之间几乎有1000天。所以在这整个加密货币数据集中，我们有986天，差不多1000天。如果我们想找到一些特定的范围，这确实会是很多天需要查看。
+- en: So what if we wanted to do some filters by date。 So for example。 let's say that
+    we just wanted to view the data for 2020 Now that we have these converted to date
+    times。 we can create filters just like we have in previous videos。 and we should
+    be able to use strings that are formatted like date times or we can use actual
+    datetime objects。
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那么如果我们想通过日期做一些过滤呢。比如说，假设我们只是想查看2020年的数据。现在我们已经将这些转换为日期时间，我们可以像在之前的视频中那样创建过滤器，并且我们应该能够使用格式像日期时间的字符串，或者可以使用实际的日期时间对象。
+- en: We'll take a look at both。 So let's see an example of this and some code so
+    that it makes some more sense。 So first， I'm going create a filter in a separate
+    variable like I've done in previous videos。 But you can also do this in line if
+    you prefer to do it that way。 I just think that。Our filters separate as a little
+    bit easier to read。 So let's say that I want our。Date series。
+  id: totrans-38
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们将查看这两者。所以让我们看看这个例子和一些代码，这样它就更有意义了。首先，我将创建一个在单独变量中的过滤器，就像我在之前的视频中所做的那样。但如果你更喜欢这样做，也可以在行内进行。我只是觉得将过滤器分开会稍微容易阅读一些。所以假设我想要我们的日期序列。
+- en: I want the objects or the rows that are greater than。 And then I'm just gonna
+    pass in a string here for now。 And I can just pass in a 2020 there。 And pandas
+    will know that I'm talking about the year 2020。 let's actually do a greater than
+    or equal to here。 Okay， so now that I have that filter。
+  id: totrans-39
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想要大于某个值的对象或行。然后我现在只会传入一个字符串。这里我可以传入2020年。Pandas会知道我在说2020年。让我们实际进行一个大于或等于的操作。好的，现在我有了这个筛选。
+- en: let's just do a Df do Lo。 again， we've seen this in previous videos。 And then
+    I'll pass in that filter。 So if I run this。 then my bottom row here should be
+    January 1 of 2020。 And it is。 And we can see that we have 17000 hours here of
+    2020 data。 or I'm sorry that's 1700 hours of 2020 data。 Okay。 so the reason that
+    this doesn't go above 2020 is simply because you know， our latest data runs out。
+    So we're not getting 2021 since 2021 hasn't happened yet。 But what if we wanted
+    data for 2019。😊。Well， in order to do that， we'd also have to put in an upper bound
+    as well。 So to do that。
+  id: totrans-40
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们再做一次Df do Lo。我们在之前的视频中见过这个。然后我会传入那个筛选。所以如果我运行这个，那么我的底部行应该是2020年1月1日。确实是。我们可以看到这里有17000小时的2020年数据，或者抱歉，是1700小时的2020年数据。好的。这不超过2020年的原因很简单，因为我们的最新数据已经没有了。因此，我们没有2021年的数据，因为2021年还没有发生。但如果我们想要2019年的数据呢😊？那么为了做到这一点，我们还需要设置一个上限。
+- en: I'm going to say， okay， we want。Our data to be greater than or equal to 2019
+    and。And we just want to do an amperign there。 I'll go ahead and copy this here
+    and then just replace this with a less than and we'll say less than 2020。 if I
+    run this then we can see that our bottom row here we have January 1 of 2019 at
+    midnight and then our top row here is December 31 at 11 pm of 2019。 So that gives
+    us all the rows of data that we have for 2019。
+  id: totrans-41
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将说，好吧，我们希望我们的数据大于或等于2019年。我们只是想在这里进行一个筛选。我会把这个复制过来，然后将其替换为小于，并且我们会说小于2020年。如果我运行这个，我们可以看到底部行是2019年1月1日的午夜，顶部行是2019年12月31日晚上11点。所以这给了我们2019年的所有数据行。
+- en: And right now we're just using strings up here for these comparisons but we
+    can use actual date times as well。 So to do that we could actually say I could
+    just say PDd datetime and then let me go ahead and pass in the month and day here
+    as well。 So I'll say that I want this to be greater than 2019 January 1 and then
+    I'll just grab this here and replace this 2020 and then I'll。But I want this to
+    be less than 2020s January 1 So now if I run this whoops and I got an error here
+    it says you know integer is required。
+  id: totrans-42
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们只是使用字符串进行这些比较，但我们也可以使用实际的日期时间。为了做到这一点，我可以说我只需说PDd datetime，然后让我传入月份和日期。所以我会说我想要的日期大于2019年1月1日，然后我会抓取这个并替换2020年。并且我希望这个日期小于2020年1月1日。所以现在如果我运行这个，哎呀，我得到了一个错误，说需要整数。
+- en: got a string that might not make sense what I did here is I don't want PD date
+    time that was my mistake I want to do the same thing that we did before and do
+    two date time so that it converts this string here to a date time So let's do
+    PD。2 datetime for both of those and run this and now we can see that we get those
+    same results as before for all of the rows in 2019 Now one nice feature about
+    dates is that if we set our index so that it uses the date which would actually
+    be a good idea for this data set since all of these date or timestamps are unique
+    then we can actually do this same thing by using slicing instead So let's see
+    what this looks like so that it makes more sense。
+  id: totrans-43
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 得到一个字符串可能不太合理，我在这里所做的是我不想使用PD datetime，这是我的错误，我想做我们之前所做的事情，转换为日期时间，以便将这个字符串转换为日期时间。所以我们来对这两个都使用PD。2
+    datetime并运行它，现在我们可以看到，我们得到了与之前相同的结果，2019年的所有行。关于日期的一个好功能是，如果我们设置索引以使用日期，这对这个数据集实际上是个好主意，因为所有的日期或时间戳都是唯一的，那么我们实际上可以通过使用切片来做到这一点。所以让我们看看这看起来是什么样子，以便更易理解。
+- en: So first let's set our index so that it's using。This date column here。 So here
+    at the bottom。 I'm going say Df set underscore index and then I'm going to pass
+    in that we want to set the index to date and if I run this then that looks good
+    we have set it our index to use date here and now that that looks good。
+  id: totrans-44
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以首先让我们设置索引，以便它使用这个日期列。所以在底部，我会说Df set underscore index，然后我将传入我们希望将索引设置为日期。如果我运行这个，那么看起来很好，我们已经将索引设置为使用日期，现在看起来不错。
+- en: it actually didn't make that change， I want to say in place is equal to true
+    to make that change permanent so I'll run that and if we look at our data frame
+    again。 then now we have that date as our index and now with that date index we
+    can actually filter our dates just by passing them into our brackets so if we
+    wanted the data for 2019 then I could literally just say that I want the data
+    here for 2019 pass that into my brackets if I run that then we can see that we
+    get the same thing here we get this value for January 1 and the top value。
+  id: totrans-45
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它实际上并没有进行那项更改，我想说将`in place`设置为`true`以使更改永久化，所以我会运行它，如果我们再次查看我们的数据框，那么现在我们将该日期作为索引，现在通过该日期索引，我们实际上可以通过将日期传递到我们的括号中来过滤日期，所以如果我们想要2019年的数据，我可以直接说我想要2019年的数据，将其传递到我的括号中，如果我运行它，那么我们可以看到我们得到相同的结果，这里我们获得了1月1日的值和顶部值。
+- en: Here is for December 31 so it's a bit easier to you know just access these within
+    brackets when these are our indexes rather than creating a filter now if you want
+    to grab dates for a specific range then you can use a slice so let's say that
+    we wanted all of the data for January and February of 2020 so to do that using
+    this slicing here then I could say okay I want from 202001 which would be January
+    and then I could just do a slice here using that colon and then say okay well
+    I want to go up to February of 2020 so if I run this the second value here is
+    inclusive so we can see that we have January 1 of 2020 down here at the bottom
+    that slices all the way up to February 29 since this was a leap here now this
+    can be really useful。
+  id: totrans-46
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是12月31日，所以当这些是我们的索引时，直接在括号中访问会更简单，而不是创建过滤器。如果你想抓取特定范围的日期，那么可以使用切片。假设我们想要2020年1月和2月的所有数据，那么使用这个切片，我可以说好的，我想要从202001开始，也就是1月，然后我可以使用冒号做一个切片，然后说好的，我想要到2020年2月，所以如果我运行这个，第二个值是包含在内的，所以我们可以看到2020年1月1日在底部，这个切片一直到2月29日，因为这是一个闰年，现在这非常有用。
+- en: For analyzing our data， because let's say that we wanted to get the average
+    closing price for Ethereum for all of our rows of these dates to do that。 we could
+    simply grab this close column here。 and then grab that average or grab that mean。
+    So to do that， we can just say， let me copy this part here。 first。 let me just
+    access that close series there， that column if I run that。
+  id: totrans-47
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 为了分析我们的数据，因为假设我们想要获取以太坊在这些日期的所有行的平均收盘价，做法很简单。我们可以直接抓取这个收盘列，然后计算平均值或均值。为了做到这一点，我们可以说，让我先复制这一部分。让我访问那个收盘序列，如果我运行它。
+- en: then we can see that we get all of those closing values on each of those hours
+    for all of those days。 and now to get the mean of that， I can just say。Dot mean。
+    And that gives us the average closing price for all of those rows within that
+    time frame。 And remember， each of those days is reporting by the hour。
+  id: totrans-48
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们可以看到我们获取到所有这些天每个小时的收盘值。现在为了得到均值，我可以直接说`Dot mean`。这给了我们在该时间范围内所有行的平均收盘价。并且要记住，每一天都是按小时报告的。
+- en: But what if we wanted to see this data in a different way。 What if we instead
+    wanted to look at this data on a daily basis instead of on an hourly basis。 Well。
+    first， we need to think about what would make sense to view on a daily basis。
+    So for example。 let's say that we wanted to， you know， view the highs for each
+    day。 So right now。
+  id: totrans-49
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但是如果我们想以不同的方式查看这些数据呢？如果我们想要按天而不是按小时查看这些数据呢？首先，我们需要考虑什么样的视图适合按天查看。例如，假设我们想查看每天的高点。那么现在。
+- en: we have all of these highs broken down by hour， let me actually look at the
+    first。 let me grab this date range here， And let's look at the first 24 of these
+    so that we can get 24 hours here。 So we can see that for February 29。 We have
+    all these different hours here and each hour has a different high value。 But what
+    if we were like， okay， well， we see all these different high values。
+  id: totrans-50
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们将这些高点按小时划分，实际上让我查看一下第一个。让我抓取这个日期范围，然后我们看一下前24个，这样我们可以获取24小时的数据。所以我们可以看到在2月29日，我们有这些不同的小时，每个小时都有不同的高值。但是如果我们说，好吧，我们看到所有这些不同的高值。
+- en: But what was the highest value of the day So actually。 let me just grab a single
+    day here and then we will look at the high values for that So instead of doing
+    all of these dates here I'm just going grab January 1 of 2020 and then we will
+    look at the high values for that day So again。
+  id: totrans-51
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但那天的最高值是什么呢？所以实际上，让我抓取一天的高值，然后我们看看那天的高值。所以我们不查看所有这些日期，只抓取2020年1月1日，然后我们将查看那一天的高值。所以再次。
+- en: we don't really care what the highs are for each hour of each day we just want
+    to know the high for the entire day So to do this all we need to do is grab the
+    max value for this series and we saw how to do this it's just like running mean
+    right here all we have to do is say dot max and if I run that then we can see
+    that the high value for that day was 132。
+  id: totrans-52
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们并不关心每一天每小时的高值，我们只想知道整天的高值。为此，我们只需获取该系列的最大值，我们已经看到如何做到这一点，方法就像在这里运行mean一样，我们只需说.dot
+    max，如果我运行这个，我们可以看到那天的高值是132。
+- en: 68 so let's remember this value here right now， this 132。68 because we're going
+    to see how we can resample our data so that we can get the high。Ts for each day
+    of our data。 And then we'll use this one here to compare for January 1 of 2020。
+    So again， right now， our data is broken down on an hourly basis。
+  id: totrans-53
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 68 所以现在让我们记住这个值132.68，因为我们将看到如何对数据进行重采样，以便获得我们数据中每一天的高值。然后我们将使用这个值来与2020年1月1日进行比较。所以，现在我们的数据是按小时划分的。
+- en: So if we want to redo this so that it's instead broken down by day or week or
+    month。 then we'll do this by doing something called resampling。 So let's see what
+    this looks like。 So if I want to resample this and see the high value by day。
+    Then I can simply。Access this high column here。 And then on that series， I can
+    say， okay， I want to resample this。
+  id: totrans-54
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我们想重新处理，使其按天、周或月划分，那么我们可以通过重采样来实现这一点。所以让我们看看这是什么样子。如果我想重采样并查看按天的高值。那么我可以简单地访问这个高列。在那个系列上，我可以说，好的，我想对这个进行重采样。
+- en: and now we have to tell resample how we want to resample this data right now。
+    it's hourly if I put in a D， then it resamples it to days。 and I can do 1 d or
+    2 d。 you can do whatever there。 you can do a w for week。 there's all kinds of
+    different codes here。 Now just like with these date time formats。 I hardly ever
+    remember these。
+  id: totrans-55
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们必须告诉重采样我们想如何重采样这些数据，现在是按小时的。如果我输入一个D，那么它会重采样为按天。如果我输入1 d或2 d，你可以随意选择。你可以用w表示周，这里有各种不同的代码。就像这些日期时间格式一样，我几乎从不记得这些。
+- en: So I always need to look them up in the documentation。 So I've got this pulled
+    up in the pandas documentation here for these date offsets。 and I will leave a
+    link to this page in the description section below as well。 if you all would like
+    to try out some of these。 but we can see we have hour minute second milliseconds。
+  id: totrans-56
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我总是需要在文档中查找它们。所以我在这里拉取了pandas文档中的这些日期偏移量，并且我将在下面的描述部分中留下这个页面的链接，如果你们想尝试其中的一些。但我们可以看到，我们有小时、分钟、秒、毫秒。
+- en: microseconds， all kinds of things。 If you're doing finances。 you can do quarterly
+    and things like that so。I want to do this on a daily basis。 So I'm going to put
+    a D there。 And now we have to tell it， okay， well。 what do we want to do with
+    these resamplings if I'm looking at entire days here。
+  id: totrans-57
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 微秒，各种各样的事情。如果你在做财务，你可以按季度等进行处理。所以我想每天做一次。因此，我将在这里放一个D。现在我们必须告诉它，好的，那么我们想对这些重采样做什么，如果我查看的是整天的数据。
+- en: So if I take this entire day of the first， what do I want to do with this high
+    value。 And we're just saying， well， we want the max value for each of those days。
+    So if I run this。 then we can see that that gives us a series with all of the
+    high values for each day。 So now let's save this series here as a new variable
+    and look up these specific date that we used before。
+  id: totrans-58
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我取这个整天的第一天，我想对这个高值做什么。我们只是说，我们想要每一天的最大值。所以如果我运行这个，我们可以看到这给我们提供了一个系列，包含每一天的高值。那么现在我们将这个系列保存为一个新变量，并查看之前使用的特定日期。
+- en: So I'm going to save this as a variable and call that highs。 And then。Let's
+    access that specific date of 20200101 for the highs。 Now。 what we should get here
+    since we're using the same date that we did here。 we should get this value of
+    132。68。 So if I run that。
+  id: totrans-59
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将把这个保存为一个变量，称之为highs。接下来，让我们访问20200101这一天的高值。现在，由于我们使用的是相同的日期，我们应该得到132.68这个值。所以如果我运行这个。
+- en: then we can see that the high for that day was， in fact， equal to what we did
+    here， So that works。 But now instead of just getting one day at a time like we
+    did here。 now that we've resampled this now we have those high values for every
+    single day in our data。 Okay。 so why would something like this be useful？ I mean。
+  id: totrans-60
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们可以看到那天的高值实际上等于我们在这里做的值，所以这有效。但现在，不像之前一次只获取一天的数据，现在我们重采样后，我们有了数据中每一天的高值。好吧，那为什么这种做法有用呢？我的意思是。
+- en: you know that might be useful just because it's interesting。 but there are other
+    things that we can do as well。 So let's say that maybe we wanted to plot this
+    out。 But instead of you know viewing a plot that had these prices broken down
+    hour by hour。 now we can just do a plot for the total price broken down by day。
+    So within Jupyter。Notbooks。 it's extremely easy to plot out information。 I'm actually
+    going to do an entire series on plotting with pandas。 so I'm not going to go into
+    a ton of details in this video。 but we will see how we can do a very simple line
+    plot here So to do this we first need to use this special line within Jupyter
+    notebooks that allows our plots to display within the browser So all we have to
+    do is say this is a percent sign here then we can say mappl lib in line now one
+    thing that I do want to mention here is that I did have to go and install mapplot
+    lib in the virtual environment that I'm using so if you've only installed pandas
+    or and that's it then you might want to go back and install mapplotlib or else
+    you'll get an import error here。
+  id: totrans-61
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你知道，这可能很有用，因为它很有趣。但我们也可以做其他事情。假设我们想要绘制这个图。但不是逐小时查看这些价格的图，现在我们可以做一个按天划分的总价格图。在Jupyter
+    Notebook中，绘制信息非常简单。我实际上会做一个关于使用pandas绘图的整个系列，所以我不会在这个视频中详细讲解，但我们将看到如何在这里做一个非常简单的折线图。首先，我们需要在Jupyter
+    Notebook中使用这个特殊行，允许我们的图表在浏览器中显示。所以我们所要做的就是在这里加一个百分号，然后可以说matplotlib inline。我想提到的一件事是，我确实必须在我使用的虚拟环境中安装matplotlib，所以如果你只安装了pandas，那就要回去安装matplotlib，否则你会在这里遇到导入错误。
+- en: but I went and install that in my virtual environment so we can see that that
+    worked there and with that one line of code there now we。Can display plots directly
+    within our Jupiter notebook。 So I can simply run the plot method on this data
+    frame variable that was resampled and get a plot of that。 So I'm just going to
+    say， okay， I want highs。Plootted out。 So highs dot plot。 I'll run that。
+  id: totrans-62
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但我在我的虚拟环境中安装了这个，以便我们可以看到它在那里工作，现在用这一行代码，我们可以直接在我们的Jupyter笔记本中显示图表。所以我可以简单地对这个重采样的数据框变量运行绘图方法，获得图表。所以我只是说，好吧，我想要高值的图表。所以高值.dot图表。我会运行这个。
+- en: And we can see that we get a nice mattepllib plot here。 Okay， so that's， you
+    know， pretty nice for。 you know， just a few lines of code there。 Now one thing
+    that you might be wondering is if it's possible to resample multiple columns at
+    once。 And we can do that by running the reample method on our entire data frame
+    instead of one a single series。 So for example， what do I mean by this。 Okay，
+    so whenever I say， you know。
+  id: totrans-63
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们可以看到这里有一个不错的matplotlib图。好吧，所以这对于，知道吗，只是几行代码来说，挺不错的。现在你可能会想知道是否可以一次重采样多个列。我们可以通过在整个数据框上运行重采样方法来做到这一点，而不是在单个系列上。那么，举个例子，我这是什么意思。好吧，每当我说，知道吗。
+- en: resample multiple columns at once。 I mean that what if we wanted to resample
+    this by day。 But so far， we've only seen， okay， how we got the high value， But
+    what if we said， okay。 well I want to reample this by day。 But I also want， you
+    know。 the average closing cost of that entire day。 I want the sum of all of these
+    volumes for that entire day。
+  id: totrans-64
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 一次重采样多个列。我是说如果我们想按天重采样。到目前为止，我们只看到如何获得高值，但如果我们说，好吧，我想按天重采样。但是我还想要，知道吗。整天的平均收盘价。我想要那整天所有交易量的总和。
+- en: And then I want the you know。😊，The max high value。 And I want the min low value。
+    So the way that we've done that down here where we just access that single column
+    we wouldn't be able to do it using this method that we did here。 So in order to
+    resample and use multiple columns like that。 here's how we can do this。 So we
+    can do this by running the resample method on our entire data frame。
+  id: totrans-65
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我想要知道😊，最大高值。我想要最小低值。我们在这里通过访问单列的方式来做这件事，而用这种方法我们无法做到。所以为了重采样并使用多个列，方法如下。我们可以通过在整个数据框上运行重采样方法来实现。
+- en: So if you want to use the same aggregation method on all of your columns。 So
+    for example。 let's say Df do resample。 So now we're resampling our entire data
+    frame object here。 And now we're gonna to pass in what we want to reample on。
+    instead of day let's change it up and do weak。 Now we'll reample by each week。
+  id: totrans-66
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以如果你想在所有列上使用相同的聚合方法。举个例子。假设Df进行重采样。现在我们在这里重采样整个数据框对象。现在我们要传入我们想要重采样的内容。我们把“天”换成“周”。现在我们将按每周进行重采样。
+- en: So if you want to use the same aggregation method on everything。 then you can
+    just put in that aggregation method there。 So if I run this。 then this is gonna
+    give me the mean values for。each of our columns on a weekly basis Now this is
+    cool that we can do this and sometimes you might want to do something like this。
+    but in this instance， it doesn't really make sense to use mean to get the average
+    of all of our columns So for example。
+  id: totrans-67
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以如果你想对所有内容使用相同的聚合方法，你只需在那里放入该聚合方法。如果我运行这个，那么这将给我每个列的周均值。现在这很酷，我们可以这样做，有时你可能想这样做，但在这种情况下，使用均值来获取所有列的平均值并不合理。所以例如。
+- en: there's no real reason to get the average volume per hour or something like
+    that。 you've probably want to get the sum for the entire time period or for our
+    high and low values here。 these are giving us the average highs and the average
+    lows but the point of a high and low value is to know the high for that time period
+    and the low for that time period。 So we probably don't want mean here either。
+    So how can we resample this to where we can you know resample and use multiple
+    columns but also use multiple aggregation methods。
+  id: totrans-68
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 实际上没有必要每小时获取平均交易量之类的东西。你可能希望对整个时间段进行求和，或者对于我们的高低值，这些给出了平均高和平均低，但高低值的意义在于了解该时间段的最高和最低值。所以我们可能也不想在这里使用均值。那么，我们如何重采样以便可以重采样并使用多个列，同时也使用多个聚合方法呢。
+- en: Now we've actually seen this in previous videos and use this method But what
+    we want to use here is the A G the ag method and the ag method also accepts a
+    map。Of columns and the aggregation functions that we want to run on that column。
+    So， for example。
+  id: totrans-69
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们实际上在之前的视频中已经看到过这个方法。但是我们这里想用的是AG方法，ag方法还接受我们希望在该列上运行的列和聚合函数的映射。例如。
+- en: let's do this with the values for， let's see。 We'll do the closing column。 We'll
+    do the high and low columns， and then we'll also do the volume here。 So I'm going
+    to grab this from up here。And then we'll do D F dot resample。 and we'll pass in
+    a W for a weekly basis。 And now， instead of passing in dot mean。
+  id: totrans-70
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，让我们用这些值来做，看看。我们将处理收盘列，高列和低列，然后我们也将处理交易量。所以我要从上面获取这些。然后我们将进行D F.dot.resample，并传入W以进行按周计算。现在，代替传入dot.mean。
+- en: like we did up here， I'm going to pass in dot A G G。 And now I can pass in a
+    dictionary of the columns and or the column names。 And then the values will be
+    the aggregation function that we want to use on that column。 So。 for example，
+    let's say that for the closing value。 I do want to grab the mean of that。
+  id: totrans-71
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 就像我们在这里所做的，我将传入dot.AGG。现在我可以传入列名的字典，然后值将是我们希望在该列上使用的聚合函数。所以。例如，假设对于收盘值，我确实想获取其均值。
+- en: And then I'll say for the high column。 I want to use the max。Aggregation function
+    for that。 Since we want the max value for the low column， I want to get the min。And
+    for volume。 I'll go ahead and just sum up。All of the volume for that entire time
+    period。 Okay， so again。 the keys here for the dictionary that we passed into ag，
+    the ag method。
+  id: totrans-72
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我会说高列。我想为此使用最大值聚合函数。因为我们想要低列的最大值，所以我想获取最小值。对于交易量，我将直接对整个时间段的交易量进行求和。好的，所以再次强调，我们传递给ag的方法中的字典的键。
+- en: this is the column name here。 then this is the aggregation function。 So we're
+    taking the mean of clothes。 We're taking the max for this entire weekly period
+    here。 for the highs the min for the low and then sum for volume。 So if we run
+    this。 then it gives us this nice weekly overview of the you know the weekly highs
+    and the weekly lows here。
+  id: totrans-73
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是列名，这里是聚合函数。所以我们正在计算收盘价的均值。我们在整个周期间计算高价的最大值，低价的最小值，然后对交易量求和。所以如果我们运行这个，它将给我们提供每周的高低概述。
+- en: and also the average closing costs here。 And we also have the summation of the
+    volume of trades。 So。 you know， this really touches on what we can do with date
+    times and time series data in pandas。 like I said a little bit ago。 I do plan
+    on doing a full series on pandas plotting where we'll cover more advanced topics
+    you know。 such as plotting plotting things out and having rolling。Averages for
+    data and things like that。 Now。
+  id: totrans-74
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 还有收盘成本的平均值。同时我们也有交易量的总和。所以，你知道，这真的涉及到我们在pandas中可以对日期时间和时间序列数据做的事情。就像我刚才说的，我确实计划做一个关于pandas绘图的完整系列，我们将涵盖更高级的话题，比如绘图和滚动平均等。
+- en: before we do end here， I do want to thank the sponsor of this video， and that
+    is brilliant。 and I really enjoy the tutorials that brilliant provides and would
+    definitely recommend checking them out。 So in this series， we've been learning
+    about pandas and how to analyze data in Python。 And brilliant would be an excellent
+    way to supplement what you learn here with their handson courses。
+  id: totrans-75
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在结束之前，我想感谢本视频的赞助商，那就是Brilliant。我非常喜欢Brilliant提供的教程，并且绝对推荐你们去看看。在这个系列中，我们学习了Pandas以及如何在Python中分析数据。Brilliant将是一个很好的补充，帮助你通过他们的实践课程来扩展在这里学到的知识。
+- en: They have some excellent courses and lessons that do a deep dive on how to think
+    about and analyze data correctly。 for data analysis fundamentals， I would really
+    recommend checking out their statistics course。 which shows you how to analyze
+    graphs and determine significance in the data。 And I would also recommend their
+    machine learning course。
+  id: totrans-76
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 他们有一些优秀的课程和课件，深入探讨如何正确思考和分析数据。对于数据分析基础，我强烈推荐他们的统计学课程，它教你如何分析图表并确定数据的显著性。我也推荐他们的机器学习课程。
+- en: which takes data analysis to a new level where you' learn about the techniques
+    being used that allow machines to make decisions where there's just too many variables
+    for a human to consider。 So to support my channel and learn more about brilliant。
+    You can go to brilliant org forgelash cs to sign up for free。 And also the first
+    200 people they go to that link will get 20% off the annual。😊。
+  id: totrans-77
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这将数据分析提升到一个新的水平，你将学习被用来让机器做出决策的技术，而这些决策涉及的变量对于人类来说实在是太多了。因此，支持我的频道并了解更多关于Brilliant的信息，你可以访问brilliant.org/forgelash/cs，注册免费账户。此外，前200位访问该链接的人将获得20%的年费折扣。😊。
+- en: '![](img/cfdbb346186d8f4761ed57fbc05d2db1_1.png)'
+  id: totrans-78
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/cfdbb346186d8f4761ed57fbc05d2db1_1.png)'
+- en: '![](img/cfdbb346186d8f4761ed57fbc05d2db1_2.png)'
+  id: totrans-79
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/cfdbb346186d8f4761ed57fbc05d2db1_2.png)'
+- en: '![](img/cfdbb346186d8f4761ed57fbc05d2db1_3.png)'
+  id: totrans-80
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/cfdbb346186d8f4761ed57fbc05d2db1_3.png)'
+- en: '![](img/cfdbb346186d8f4761ed57fbc05d2db1_4.png)'
+  id: totrans-81
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/cfdbb346186d8f4761ed57fbc05d2db1_4.png)'
+- en: '![](img/cfdbb346186d8f4761ed57fbc05d2db1_5.png)'
+  id: totrans-82
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/cfdbb346186d8f4761ed57fbc05d2db1_5.png)'
+- en: '![](img/cfdbb346186d8f4761ed57fbc05d2db1_6.png)'
+  id: totrans-83
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/cfdbb346186d8f4761ed57fbc05d2db1_6.png)'
+- en: Premium subscription。 And you can find that link in the description section
+    below。 again。 that's brilliantt org Forlash C。 Okay so I think that's gonna do
+    it for this pandas video。 I hope you feel like you got a good idea for how to
+    work with date and time series data within pandas。 And like I said， there's a
+    lot more that we can cover with datetime data。
+  id: totrans-84
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 高级订阅。你可以在下面的描述部分找到那个链接。再次强调，那是brilliant.org/flashC。好的，我想这就是本期Pandas视频的内容。我希望你能对如何在Pandas中处理日期和时间序列数据有个很好的理解。正如我所说，我们还有很多内容可以覆盖与日期时间数据相关的知识。
+- en: But I feel like what we did here should definitely provide you with the basics
+    of being able to convert analyze and resample your data so that you can do the
+    exact analysis that you need。 Now in the next video。 we're gonna be learning how
+    to read data in pandas from different sources。
+  id: totrans-85
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我觉得我们所做的应该为你提供能够转换、分析和重采样数据的基础，以便你能够进行所需的精确分析。在下一个视频中，我们将学习如何从不同来源读取Pandas中的数据。
+- en: So far in this series we've only coveredv files， but we're gonna learn how to
+    read in data from Excel websites SQl databases and a few more。 So be sure to stick
+    around for that。 But if anyone has any questions about what be covered in this
+    video feel free to ask in the comment section below。
+  id: totrans-86
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 到目前为止，在这个系列中我们只涵盖了文件，但我们将学习如何从Excel、网站、SQL数据库和其他一些来源读取数据。请务必关注这一内容。如果有人对本视频中所涉及的内容有任何疑问，请随时在下面的评论区提问。
+- en: And I'll do my best to answer those。 And if you enjoy these tutorials。😊，Like
+    to support them。 Then there are some ways you can do that。 The easiest ways to
+    simply like the video and give it a thumbs up。 And also， it's a huge help to share
+    these videos with anyone who you think would find them useful。 And if you have
+    the means， you can contribute to Patreon。
+  id: totrans-87
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我会尽力回答这些问题。如果你喜欢这些教程。😊，也可以通过点赞来支持它们。还有一些其他方式可以做到这一点。最简单的方式就是给视频点个赞，并且分享这些视频给你认为会觉得有用的人。如果你有条件的话，可以支持我的Patreon。
+- en: And there's a link to that page in the description section below。 Be sure to
+    subscribe for future videos。 And thank you all for watching。😊。![](img/cfdbb346186d8f4761ed57fbc05d2db1_8.png)
+  id: totrans-88
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在下面的描述部分有一个链接。请务必订阅以获取未来的视频。感谢大家的观看。😊。![](img/cfdbb346186d8f4761ed57fbc05d2db1_8.png)

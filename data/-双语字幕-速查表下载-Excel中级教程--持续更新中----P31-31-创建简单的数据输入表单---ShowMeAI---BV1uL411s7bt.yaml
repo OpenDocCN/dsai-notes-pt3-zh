@@ -1,0 +1,236 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P31：31）创建简单的数据输入表单 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P31：31）创建简单的数据输入表单 - ShowMeAI - BV1uL411s7bt
+- en: '![](img/a18b75534e26759034413ca73cb283ed_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/a18b75534e26759034413ca73cb283ed_0.png)'
+- en: In this tutorial， I will show you an easy way to create data entry forms in
+    Excel。 and these forms make it so much easier to enter records or data into Excel。
+    You can see here on the screen。 I have a pretty simple spreadsheet。 This is an
+    employee list with names， higher dates， employee numbers and departments。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在本教程中，我将向你展示一种在Excel中创建数据输入表单的简单方法。这些表单使得在Excel中输入记录或数据变得容易得多。你可以在屏幕上看到，我有一个相当简单的电子表格。这是一个包含姓名、入职日期、员工编号和部门的员工名单。
+- en: Let's say that a business has decided that they want to have an employee sheet。
+    and this is just the beginning of setting up that employee list。 Now。 imagine
+    how time consuming and painful it would be to enter all of this data for let's
+    say 200 employees。 Yes， you can do it。 you can just click on the appropriate sale。
+    you can type tab over type。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设一个企业决定要有一个员工表。这只是设置员工名单的开始。现在，想象一下为200名员工输入所有这些数据会多么耗时且痛苦。是的，你可以做到。你只需点击相应的单元格，输入并按Tab键继续输入。
+- en: But doing it this way can lead to more mistakes。 And so let's look at how to
+    set up an easy data entry form in Excel。 The first step that I'm gonna to have
+    to take is to go up here to the quick access bar。 This is a handybar where you
+    can add additional tools and features that you want to be able。access easily and
+    quickly。 That's why it's called the quick access toolbar。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但是以这种方式操作可能会导致更多错误。因此，让我们看看如何在Excel中设置一个简单的数据输入表单。我需要采取的第一步是上去点击快速访问工具栏。这是一个方便的工具栏，你可以在这里添加想要轻松快速访问的其他工具和功能。这就是为什么它叫快速访问工具栏。
+- en: And if you haven't already watched my previous tutorial on how to customize
+    the quick access toolbar。 please do so。 But for the purposes of this video I'm
+    just gonna click here on this button this is the customized quick access toolbar
+    button When you click that it gives you a list of some of the items that you can
+    add to the quick access toolbar or take off the quick access toolbar but if you
+    look toward the bottom of this popup menu。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你还没有观看我之前关于如何自定义快速访问工具栏的教程，请务必观看。但在本视频中，我只会点击这个按钮，这是自定义快速访问工具栏的按钮。点击后，它会给你提供一些可以添加或移除到快速访问工具栏的项目列表，但如果你查看这个弹出菜单的底部。
+- en: there's an option for more commands。 and I'm gonna to click that it takes me
+    to a list of popular Excel commands。 but in this case， what we're looking for
+    is not necessarily popular So I'm going go down to either all commands or commands
+    not in ribbon I'll just pick commands not in ribbon and what I'm looking for is
+    form。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 有一个更多命令的选项。我将点击它，这将带我到一个流行Excel命令的列表中。但在这种情况下，我们寻找的并不一定是流行的，所以我将下滑到“所有命令”或“未在功能区中的命令”。我会选择“未在功能区中的命令”，我寻找的是表单。
+- en: That's what I'm trying to create a quick easy data entry form So I'm gonna browse
+    down look for form there it is I click on it and if you'll notice here on the
+    right side there are some items already。In this list， compareare those to what's
+    up above here on my quick access toolbar。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这就是我想要创建的快速简单数据输入表单。所以我将向下浏览，寻找表单。找到了，我点击它，如果你注意到右侧已经有一些项目。在这个列表中，比较一下这些与我快速访问工具栏上方的内容。
+- en: It's the same things。 The same features are listed here as are here on the upper
+    left。 So I want to add form to that list。 Having selected form， I just click add。
+    it's now added to this list。 And when I click on okay。 it will now be added to
+    my quick access toolbar。 So there it is now that I have that button readily accessible
+    to me。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这些都是相同的内容。这里列出的功能与左上角的相同。所以我想把表单添加到那个列表中。选中表单后，我只需点击添加。它现在已添加到此列表中。当我点击确认时，它将被添加到我的快速访问工具栏中。现在我可以轻松访问这个按钮了。
+- en: I will be able to easily create a data entry form for my Excel spreadsheet。
+    All right。 the next thing we need to do is take this data that I have here in
+    my spreadsheet and turn it into a table。 For some reason， that's a prerequisite
+    of using these quick forms。 So how to turn this into a table。 All I have to do
+    is click somewhere inside the data How about here。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将能够轻松地为我的Excel电子表格创建一个数据输入表单。好的，接下来我们需要做的是将我在电子表格中的数据转换成一个表格。出于某种原因，这是使用这些快速表单的先决条件。那么如何将其转换为表格呢？我只需在数据中点击某个地方，比如这里。
+- en: And then here on the home tab home ribbon in the styles group。 there's a button
+    that says format as table。 Now， there is a faster way to do it。 Once you've clicked
+    anywhere in the data。 you can just。The control key and tap T for table and that
+    will bring up this pop up and here Excel has tried to guess what my data consists
+    of and in 99% of the cases it does it correctly you'll notice that there's a dashed
+    line that's kind of moving across the top here and on the left and on the right
+    that is outlining the shape of the table and in most cases it gets it perfectly
+    correct If not you may need to change some of the numbers here。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后在“主页”选项卡的样式组中，有一个按钮显示为“格式化为表格”。现在，有更快的方法来做到这一点。一旦你在数据的任何地方点击过，你可以按住控制键并点击“T”键来创建表格，这样会弹出一个窗口。在这里，Excel试图猜测我的数据是什么，在99%的情况下，它都是正确的。你会注意到，这里顶部、左侧和右侧都有一条虚线，轮廓勾勒出表格的形状，在大多数情况下，它的识别都是完全正确的。如果没有，你可能需要更改一些数字。
+- en: you may need to click this and then outline what you want to be included or
+    you might need to check or uncheck my table has headers I'm just gonna to click
+    OK let's see if it works。 it looks like it did I can tell that Excel has identified
+    these items here as headers so I think that worked just fine and now let's move
+    on to the next step At this point I just want to have clicked somewhere in the
+    table so I'll just make sure that I've done that I click and now I go up here
+    to the quick access toolbar and click the form button。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可能需要点击这个，然后勾勒出你想要包含的内容，或者你可能需要勾选或取消勾选“我的表有标题”。我就点击“确定”，看看它是否有效。看起来是有效的，我可以告诉Excel已经将这些项目识别为标题，所以我想这很好，现在让我们进入下一步。在此时，我只想确保在表格中点击过某个地方，所以我会确保我这样做了。然后我点击这里的快速访问工具栏，点击表单按钮。
+- en: Now， notice what it did。 It has identified 22 records or rows in this table。
+    It doesn't count the header row。 It just skips it。 but you'll notice that record
+    number one is Gina pullen here at the left。 But all of the data and information
+    related to Gina Puen is listed vertically in this case instead of horizontally。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，注意它所做的。它在这个表中识别出了22条记录或行。它不计算标题行，而是跳过它。但你会注意到，记录编号一是Gina Pullen，位于左侧。但与Gina
+    Pullen相关的所有数据和信息在这种情况下是垂直列出的，而不是水平的。
+- en: Now， there are a couple of reasons why this is helpful。 One of them is。 let's
+    say you have a spreadsheet with like 14 columns or 15 columns。 you wouldn't want
+    to have to click this bar and drag to the right and type in the data or to tab
+    over up to 14 times in order to enter in your data。 It's kind of cumbersome to
+    do it that way。 And so that's why you might want to do what I'm showing here by
+    creating an easy data entry form。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，有几个原因说明这很有帮助。其中之一是，比如说你有一个有14列或15列的电子表格。你不想每次都点击这个条并拖动到右边，或者为了输入数据而按14次Tab键。这种方式有点繁琐。因此，你可能想通过创建一个简单的数据输入表单来解决这个问题。
+- en: Now， if I click find next。 Look what it does。 It goes to the next record， Marcelinina
+    Restrpo。 click find next again。 Regia Loftus and so forth。 And it's numbering
+    those records here at the。T right so I can click through those Now let's say it's
+    time to resume entering data for the employees of this company。 I can click new。
+    notice it says new record。 I just click and next name。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，如果我点击“查找下一个”。看看它怎么做。它转到下一个记录，Marcelinina Restrepo。再次点击“查找下一个”。Regia Loftus，等等。它在这里编号这些记录，所以我可以浏览它们。现在假设是时候继续为这家公司的员工输入数据了。我可以点击“新建”。注意它说新记录。我只需点击并输入下一个名字。
+- en: I'll type the next employee's name if I tap tab it does move to the next data
+    entry cell higher date Now you can just type that in the way you typically would
+    maybe with the day than the month in the year or you can hold the control key
+    and tap semicolon and that puts today's date into the form In this case。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将输入下一个员工的名字，如果我按Tab键，它会移动到下一个数据输入单元格。你可以像通常那样输入日期，可能是先输入日期再输入月份和年份，或者你可以按住控制键并点击分号，这样可以将今天的日期填入表单中。
+- en: Gary Larson was not hired today so I will go ahead and change that to a different
+    date put in the employee number and I can either click to the next cell in this
+    entry form or I can tab just like I did before put in the department and at this
+    point I can tap enter on the keyboard it inserts the record into my spreadsheet
+    and gives me a new blank form if I close and browse down the page you can see
+    there's Gary Larson higher date employee number and。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Gary Larson 今天没有被雇佣，所以我会把日期改为其他日期，输入员工编号，然后我可以在这个录入表单中点击下一个单元格，或者像之前一样按 Tab，输入部门，此时我可以在键盘上按
+    Enter，它将记录插入到我的电子表格中，并给我一个新的空白表单。如果我关闭并向下浏览页面，你可以看到有关于 Gary Larson 的雇佣日期和员工编号。
+- en: Department jumping back into the form is super easy。 I just go up here on the
+    quick access toolbar。 click form。 I'm right back in there。 I want to enter a new
+    employee， and I simply resume。 So if you do a lot of data entry， you're gonna
+    to find yourself really preferring these easy data entry forms that you can create
+    and use in Excel。 and it's really easy to do。 while we're here in this form tool。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在表单中跳转到部门是非常简单的。我只需在快速访问工具栏上点击表单，就能回到那里。我想输入一个新员工，只需继续输入。所以如果你经常进行数据录入，你会发现自己真的很喜欢这些可以在
+    Excel 中创建和使用的简单数据录入表单，而这也确实很容易做到。
+- en: I want to point out some of the other features and buttons that we have。 So
+    we've looked already at new。 notice that there's also delete。 So this is a mistake。
+    Obviously。 I don't know how I made that one。 but I can just click delete displayed
+    record will be permanently deleted。 That's exactly what I want。 So I click okay。
+    and it's gone。 We also have a find previous button。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想指出我们的一些其他功能和按钮。我们已经查看了新建。请注意，还有删除。这显然是一个错误。我不知道我是怎么犯这个错误的，但我可以点击删除，显示的记录将被永久删除。这正是我想要的。所以我点击确定，它就消失了。我们还有一个查找以前的按钮。
+- en: So that goes from number 25 to number 24 to record number 23， etc ce。 You can
+    also find next。 that advances to higher numbers。 and then we have a criteria button
+    and a restore button。 let's look at the restore button。 So I'm gonna click。Find
+    previous a few times here we have a person named Eileen Osterberg and let's say
+    that the company is considering changing her department from sales to customer
+    service。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这从第25条记录跳到第24条记录，然后是第23条记录，依此类推。你也可以找到下一个，这会推进到更高的数字。然后我们有一个标准按钮和一个恢复按钮。让我们看看恢复按钮。我将点击几次“查找以前”，我们有一个名为
+    Eileen Osterberg 的人，假设公司正在考虑将她的部门从销售改为客户服务。
+- en: so I can just type that in。 but what if I realize that that was a mistake I
+    can just click restorestore and it goes right back to the way it was before I
+    started changing the data in this form。 So as long as you don't click close or
+    tap enter on the keyboard。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我可以直接输入。但如果我意识到这是一个错误，我可以直接点击恢复，它会立刻回到我开始更改此表单数据之前的状态。所以只要你不点击关闭或在键盘上按 Enter。
+- en: everything that you type here is easy to undo just by clicking the restorestore
+    button。 one button left to look at besides close and that is criteria。 the way
+    criteria works is you click it and then you enter criteria into this form and
+    then Excel will see if it can find one or more of the records here in the spreadsheet
+    that match the criteria。 So for example， I would really like to find someone who
+    has a name that includes the word Bob and the higher date doesn't really matter。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这里输入的任何内容都可以通过点击恢复按钮轻松撤销。除了关闭按钮外，另一个按钮是标准。标准的工作方式是你点击它，然后在这个表单中输入标准，然后 Excel
+    会查看是否能找到一个或多个与标准匹配的记录。例如，我真的很想找到一个名字中包含“Bob”的人，而较高的日期其实并不重要。
+- en: the employee number doesn't really matter。The department should be communications。
+    All right。 so I have bo and communications。 At this point， all I have to do is
+    tap enter on the keyboard and look。 it found Bob in communications。 There he is。
+    Now you may at first think that this number here in the upper right indicates
+    that there are 25 or 18 Bob's in communication。 but if you click next， you'll
+    notice that's really all there is just one bob in communications。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 员工编号并不重要。部门应该是通信。好的，所以我有“bo”和“通信”。此时，我所要做的就是在键盘上按下 Enter，看，它在通信中找到了 Bob。他就在这里。你可能一开始会认为右上角的这个数字表示通信中有
+    25 或 18 个 Bob，但如果你点击“下一个”，你会发现其实只有一个 Bob 在通信中。
+- en: So what if I want to see everyone in communications。 not just Bob to do that。
+    I'm gonna to close the form。 open it back up and go to criteria。 put in communications。
+    tap enter on the keyboard。 and now look， it found Regia Loftus。 if I click next
+    Palma Newmeister。 and there is good old Bob again。 So I hope that you see how
+    useful an Excel data entry form can be。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那么，如果我想查看所有通信人员，而不仅仅是鲍勃，该怎么办呢？我将关闭表单，重新打开并进入条件，输入通信，然后按下键盘上的回车键。现在看看，它找到了Regia
+    Loftus。如果我点击下一步Palma Newmeister，老朋友鲍勃又出现了。所以我希望你能看到Excel数据输入表单有多有用。
+- en: It can take your data entry task that might be two horizontal and it can make
+    it vertical and notice that you can scroll。 so it could be 10。520 different bits
+    of data that you're entering in， and it makes them vertical。 not horizontal， and
+    it gives you these tools at the right to also help you to search within the table
+    that you've created。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它可以将你的数据输入任务从横向转换为纵向，并注意到你可以滚动。因此，可能会有10,520个不同的数据位需要输入，它将它们变为纵向，而不是横向，并在右侧提供这些工具，帮助你在创建的表格中进行搜索。
+- en: '![](img/a18b75534e26759034413ca73cb283ed_2.png)'
+  id: totrans-25
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/a18b75534e26759034413ca73cb283ed_2.png)'

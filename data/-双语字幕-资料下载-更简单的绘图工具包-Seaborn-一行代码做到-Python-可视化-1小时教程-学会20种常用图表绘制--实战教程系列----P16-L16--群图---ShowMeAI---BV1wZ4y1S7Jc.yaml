@@ -1,0 +1,56 @@
+- en: 【双语字幕+资料下载】更简单的绘图工具包 Seaborn，一行代码做到 Python 可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ -
+    P16：L16- 群图 - ShowMeAI - BV1wZ4y1S7Jc
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】更简单的绘图工具包 Seaborn，一行代码做到 Python 可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ -
+    P16：L16- 群图 - ShowMeAI - BV1wZ4y1S7Jc
+- en: Swarm plot okay， so what I want to do here is I'm going to create a violin plot
+    and then I'm going to stack a swarm plot on top of it。 So I'm going to say x is
+    equal to day Y is equal to total bill and again data is going to be from our tips
+    data frame and like I said a swarm plot is kind of like a strip plot but points
+    are going to be adjusted so that they don't overlap and it sort of looks like
+    a combination between a violin and a strip plot whenever I create it and I'm just
+    going to copy all of this data out of here and run it and you can see it because
+    it's using exactly the same colors for all of these different dots inside of here
+    but you can easily fix that just by coming in the same color is equal to white
+    like that and now you can see all those different plots inside of there Allright。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 群集图，好的，我想在这里做的是创建一个小提琴图，然后在它上面叠加一个群集图。所以我会说 x 等于 day，y 等于 total bill，数据将来自我们的
+    tips 数据框。正如我所说，群集图有点像条形图，但点会被调整，以便它们不会重叠，创建时看起来就像小提琴图和条形图的结合。我将把所有这些数据从这里复制出来并运行，你可以看到，因为它对这里所有不同点使用了完全相同的颜色，但你可以轻松修复，只需将相同颜色设置为白色，现在你可以看到里面所有不同的图形，好的。
+- en: so kind of neat stop。![](img/368d2134cab2e2fe697a0eca9d913361_1.png)
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以有点酷，停。![](img/368d2134cab2e2fe697a0eca9d913361_1.png)
+- en: '![](img/368d2134cab2e2fe697a0eca9d913361_2.png)'
+  id: totrans-3
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/368d2134cab2e2fe697a0eca9d913361_2.png)'
+- en: '![](img/368d2134cab2e2fe697a0eca9d913361_3.png)'
+  id: totrans-4
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/368d2134cab2e2fe697a0eca9d913361_3.png)'
+- en: '![](img/368d2134cab2e2fe697a0eca9d913361_4.png)'
+  id: totrans-5
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/368d2134cab2e2fe697a0eca9d913361_4.png)'
+- en: And if you just want to see it on its own like this。 well obviously you can't
+    have the color be white and there you can see exactly what it looks like All right。
+    so tons and tons and tons of different plotting options available to you and now
+    what I want to do is to talk about palettes。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你只想像这样单独查看它。 显然你不能让颜色是白色，你可以清楚地看到它的样子。 好的，所以有很多很多不同的绘图选项可供选择。 现在我想谈谈调色板。
+- en: '![](img/368d2134cab2e2fe697a0eca9d913361_6.png)'
+  id: totrans-7
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/368d2134cab2e2fe697a0eca9d913361_6.png)'

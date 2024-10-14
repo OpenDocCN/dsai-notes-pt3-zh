@@ -1,0 +1,500 @@
+- en: 【双语字幕+资料下载】用 Python 和 Numpy 实现最热门的12个机器学习算法，彻底搞清楚它们的工作原理！＜实战教程系列＞ - P10：L10-
+    决策树第 2 部分 - ShowMeAI - BV1wS4y1f7z1
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】用 Python 和 Numpy 实现最热门的12个机器学习算法，彻底搞清楚它们的工作原理！＜实战教程系列＞ - P10：L10-
+    决策树第 2 部分 - ShowMeAI - BV1wS4y1f7z1
+- en: Hi， everybody。 Welcome to the second part of the decision tree tutorial。 If
+    you haven't watched the first part， then please do so， because there， I will explain
+    the theory。 So here we continue with the implementation， and we can start right
+    away。 So we say import numpy S and P。 and then。Before we implement the decision
+    tree class， we will first。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 嗨，大家好。欢迎来到决策树教程的第二部分。如果你还没有观看第一部分，请务必观看，因为在那里我会解释理论。所以在这里我们继续实现，我们可以立即开始。所以我们说导入numpy
+    S和P。然后，在实现决策树类之前，我们首先。
+- en: Create our entropy method to calculate the entropy。 and we implement this as
+    global functions。 So we say define entropy。 and this will get a vector y of all
+    our class labels。![](img/84741cb53cd03bf1f8d55692e7a39444_1.png)
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 创建我们的熵方法来计算熵。我们将其实现为全局函数。所以我们说定义熵。它将获取一个包含所有类别标签的向量y。![](img/84741cb53cd03bf1f8d55692e7a39444_1.png)
+- en: And let's have a look at the formula。 So we have to calculate the number of
+    occurrences， and we can。![](img/84741cb53cd03bf1f8d55692e7a39444_3.png)
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们看看这个公式。所以我们必须计算出现次数，我们可以。![](img/84741cb53cd03bf1f8d55692e7a39444_3.png)
+- en: Do this with a function。 And we call this hist or histogram。 And we can use
+    nuy bin count。Of y。 So this will calculate the number of occurrences of all class
+    labels。 and then we divide them by the number of total samples。 So we say P equals
+    hist divided by length of y。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 用一个函数来完成这项工作。我们称之为hist或直方图。我们可以使用nuy bin count。对y进行计数。所以这将计算所有类别标签的出现次数。然后我们将它们除以总样本数。所以我们说P等于hist除以y的长度。
+- en: '![](img/84741cb53cd03bf1f8d55692e7a39444_5.png)'
+  id: totrans-5
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/84741cb53cd03bf1f8d55692e7a39444_5.png)'
+- en: And then we apply the actual formula。 So we say minus the sum of p of x times
+    the log of p of x。 So we can do this in one line and say return minus nu pi sum。
+    And here we use less comprehension。 So we can say P times nupy log2 of P for all
+    P in P P and we also have to use a condition if P is greater than 0 because the
+    lock is not defined for negative numbers。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们应用实际的公式。所以我们说减去p的x乘以log的p的x的总和。所以我们可以在一行中完成这个并说返回减去nu pi的总和。在这里我们使用列表推导。所以我们可以说P乘以nupy
+    log2的P，适用于P中的所有P，并且我们还必须使用一个条件，如果P大于0，因为对负数不定义对数。
+- en: '![](img/84741cb53cd03bf1f8d55692e7a39444_7.png)'
+  id: totrans-7
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/84741cb53cd03bf1f8d55692e7a39444_7.png)'
+- en: So this is the entropy。And now we also implement a helper class and call this
+    note。 So here we will store the information for our note。 So this will get an
+    in it。Which gets self。 And then let's have a look at this， so。![](img/84741cb53cd03bf1f8d55692e7a39444_9.png)
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这是熵。现在我们还实现一个辅助类，称之为note。在这里我们将存储我们的note的信息。所以这将获取一个初始化。它将获取自我。然后我们来看看这个，。
+- en: If we are in the middle， then we want to store the best split feature and the
+    best split threshold。And we also want to store the left and the right child trees，
+    because we need them later and。If we and now， if we are at a leaf note， then we
+    also want to store the actual value here。 So the most common class label。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我们处于中间状态，那么我们想存储最佳分裂特征和最佳分裂阈值。我们还想存储左右子树，因为我们稍后需要它们。如果我们现在处于叶节点，我们还想在这里存储实际值。所以最常见的类别标签。
+- en: '![](img/84741cb53cd03bf1f8d55692e7a39444_11.png)'
+  id: totrans-10
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/84741cb53cd03bf1f8d55692e7a39444_11.png)'
+- en: So， we say， feature。Equals none。Threshold equals none left equals none right
+    equals none。 And then we use a little trickier。 So we use an asterisk and a comma。
+    and then we say value equals none。 So now if we want to use this value parameter。
+    we have to use it as a。Key word only parameter。 So later when we create our leaf
+    node。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以，我们说特征等于无。阈值等于无，左等于无，右等于无。然后我们用一个小技巧。所以我们使用一个星号和一个逗号。然后我们说值等于无。所以现在如果我们想使用这个值参数，我们必须将其作为关键字参数使用。所以稍后当我们创建叶节点时。
+- en: which only gets the value， then we also have to write value equals something。
+    So then it's clearer that this is a leaf node。 And here we simply store them。
+    So we say self feature equals feature self threshold equals threshold。Self left
+    equals left。Self。 right equals right。And self value equals value。 And now we also
+    create a little help a function to determine if we are at a leaf node。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这只获取值，然后我们还需要写值等于某个东西。所以这样更清楚这是一个叶节点。在这里我们简单地存储它们。所以我们说自我特征等于特征，自我阈值等于阈值。自我左等于左。自我右等于右。自我值等于值。现在我们还创建一个小辅助函数来确定我们是否处于叶节点。
+- en: So define fine is leaf node。Which gets self。 And here we simply say if， if we
+    are。 if we have a value， then we are at a leaf node and otherwise not。![](img/84741cb53cd03bf1f8d55692e7a39444_13.png)
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 定义判断是否为叶节点。它获取自点。在这里我们简单地说，如果，如果我们有一个值，那么我们处于叶节点，否则不在！[](img/84741cb53cd03bf1f8d55692e7a39444_13.png)
+- en: '![](img/84741cb53cd03bf1f8d55692e7a39444_14.png)'
+  id: totrans-14
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/84741cb53cd03bf1f8d55692e7a39444_14.png)'
+- en: So we return self that value is not none。So if we have a value， then we return
+    true。And this is our helper class for the notes。 And now we can start with the
+    actual decision3 class。 So this also gets an in it。Which gets self。 And then it
+    will get some stopping criteria。 So we call this min samples split。 And by default，
+    let's say this is2。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们返回自点，该值不为None。如果我们有一个值，那么我们返回true。这是我们为注释准备的辅助类。现在我们可以开始实际的decision3类。因此这也获取一个init。它获取自点。然后它会获取一些停止标准。因此我们称之为最小样本分割。默认情况下，假设这是2。
+- en: So the minimum samples required to further split our  tree， Then the max depth。
+    And by default。 this is 100。And then also， it gets a parameter that we call the
+    number of features or n Fes。 And this is none。 So we don't need this， but we can
+    specify it。 So as I said。 we do a greedy search over all the features， but we
+    can also only loop over a subset of number of features。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以进一步分割我们树所需的最小样本数，然后是最大深度。默认情况下，这是100。然后它还获取一个参数，我们称之为特征数量或nFes。这是None。所以我们不需要这个，但我们可以指定它。正如我所说，我们对所有特征进行贪婪搜索，但我们也可以仅循环遍历特征子集。
+- en: And then we randomly select this subset， So this is one of the random factors。And
+    that's also one of the reasons why it's called random forest。 If we extend our
+    decision trees to a random forest。 So this is one random factor。And now we simply
+    store them。 So we say self dot min samples split equals min samples。Sorry。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们随机选择这个子集。这是随机因素之一。这也是为什么它被称为随机森林的原因之一。如果我们将决策树扩展为随机森林。那么这就是一个随机因素。现在我们简单地存储它们。因此我们说自点最小样本分割等于最小样本。抱歉。
+- en: min sample split self dot max step equals max。Deep。Self dot n features equals
+    and features。 And we also create a root。 And by in the beginning， this is none。
+    So we later need to know our root so that we know where we should start traversing
+    our tree。And now we implement the fit method。Which gets the training data and
+    training labels。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: min样本分割自点最大步长等于最大。深度。自点n特征等于和特征。我们还创建一个根节点。最开始时，这个值为None。因此我们后来需要知道我们的根节点，以便知道从哪里开始遍历我们的树。现在我们实现fit方法。该方法获取训练数据和训练标签。
+- en: So here we want to grow our tree。And then it gets the predict method。With the
+    test labels。 So here we want to traverse our tree。So let's start with growing
+    our tree。 So we say self dot root equals。 And now we call and create a help a
+    function self dot grow3。 which gets X and y。And we also apply a safety check。
+    So we say self dot and features fits equals。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这里我们希望生长我们的树。然后它获取预测方法。带有测试标签。因此在这里我们想遍历我们的树。让我们开始生长我们的树。我们说自点根节点等于。现在我们调用并创建一个辅助函数自点grow3。它获取X和y。我们还应用一个安全检查。因此我们说自点和特征拟合等于。
+- en: X dot shape。off。1， so this is a nuy and DRA。 And the second dimension is the
+    number of features。If not self dot and feed。 So if this is not specified， if this
+    is none。 then we simply take the maximum number of features。And otherwise， we
+    take the minimum of self。And feets and X dot shape 1。So this just makes sure that
+    it can never be greater than the actual number of features。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: X.dot.shape。of。1，所以这是nuy和DRA。第二个维度是特征数量。如果不是自点和喂养。如果没有指定，如果为None。那么我们简单地取最大特征数量。否则，我们取自点和特征与X.dot.shape
+    1的最小值。这只是确保它永远不会大于实际特征数量。
+- en: And now we implement the。Grow tree。Method， which gets self。 and then it gets
+    X and y。 And also also a depth。 And this is 0 in the beginning。 So we need to
+    keep track of the depth。And now let's do this。 So first， let's get the number
+    of samples and the number of features。 This is x dot shape。And then we also want
+    to get the number of different labels。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们实现。生长树。方法，该方法获取自点，然后获取X和y。同时还有一个深度。最开始时为0。因此我们需要跟踪深度。现在让我们开始吧。首先，获取样本数量和特征数量。这是x.dot.shape。然后我们还想获取不同标签的数量。
+- en: So this is the length of nuy。Unique。Of y。 So all the different labels。And now，
+    first。What we do here is first， we apply our stopping criteria。Tia。So we say if。
+    and now let's again have a look what we said。 So we want to check for the maximum
+    depth。![](img/84741cb53cd03bf1f8d55692e7a39444_16.png)
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是 nuy 的长度。y 的唯一值。所以所有不同的标签。现在，首先我们在这里做的是，首先应用我们的停止标准 Tia。所以我们说如果。现在再看看我们所说的内容。我们想检查最大深度。![](img/84741cb53cd03bf1f8d55692e7a39444_16.png)
+- en: Then the minimum samples required and if we have no more class distribution，
+    so we say if。![](img/84741cb53cd03bf1f8d55692e7a39444_18.png)
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后是所需的最小样本数，如果我们没有更多的类别分布，我们说如果。![](img/84741cb53cd03bf1f8d55692e7a39444_18.png)
+- en: And we say depth is greater or equal than self max depth。Or。If。The number of
+    different labels。Equals one。 So if we have only one class at this node， or if
+    we have number of samples。Is smaller than the minimum samples required。So。If this
+    is true， then we are at the leaf node。 So we says let leaf value equals self dot
+    most。Common label。Of this y。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们说深度大于或等于自身的最大深度。或者，如果不同标签的数量等于一。所以如果我们在这个节点只有一个类别，或者样本数量小于所需的最小样本数。那么，如果这一切都成立，那么我们就在叶子节点。因此我们说让叶子值等于自身的最常见标签。
+- en: And now we create and return our leaf node。 So we say return node。 And then
+    we have to say value equals leaf value。 And now it gets clear why I use just ask
+    the risk。 So here I have to use the value as keyword。 And now it's clear that
+    this is a leaf node。And now we also need this help a function to say to get the
+    most common label。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们创建并返回我们的叶子节点。因此我们说返回节点。然后我们必须说值等于叶子值。现在可以清楚为什么我只用问风险。在这里我必须使用值作为关键字。现在很清楚这是一个叶子节点。我们还需要一个帮助函数来获取最常见的标签。
+- en: So let's write this down here。 So define most common label， which gets self。And
+    then it gets a vector of the glass labels。 And for this， we use a Python module。
+    the counter module。 So we say from collections import counter。 So I talked about
+    this in previous videos already。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们把这个写下来。所以定义最常见标签，它获取自身。然后获取一个类别标签的向量。为此，我们使用一个 Python 模块，计数器模块。所以我们说从 collections
+    导入计数器。我在之前的视频中已经谈到过这个。
+- en: please check that out if you're not familiar with the counter module。So here
+    we can create a counter object。 Count equals counter of y。 So this will。嗯。Calculate
+    all the the number of occurrences for all the ys， similar to the nu pin count。
+    and then we have a most common function。 So we say most common equals counter
+    dot most common of one。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你对计数器模块不熟悉，请查看一下。因此在这里我们可以创建一个计数器对象。计数等于 y 的计数器。这将。嗯。计算所有 y 的出现次数，类似于 nu pin
+    计数。然后我们有一个最常见的函数。因此我们说最常见等于计数器的最常见值。
+- en: So we only need the very most common label。 and this will return a lists of
+    tus。 So we want to have the first element of the list。 So this is the very most
+    common tuple。 and in the tuple， there is the value stored and also the number
+    of occurrences。 So we only need the value。 So we again say index 0。 So please
+    double check it for yourself。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们只需要最常见的标签。这将返回一个列表。因此我们想要列表的第一个元素。这是最常见的元组。在元组中，存储了值和出现次数。所以我们只需要值。因此我们再次说索引
+    0。所以请自己再确认一下。
+- en: and then we return this。This will determine the most common label。 So now we
+    have the tier and。Now。 if we didn't meet the stopping criteria， then we continue。
+    So first， we select the feature indices。 So feature indices equals nuy random
+    choice。And this will get the number of features。 So it will select random numbers
+    from between 0 and the number of features。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们返回这个。这将确定最常见的标签。所以现在我们有了层级。如果我们没有满足停止标准，那么我们继续。所以首先，我们选择特征索引。因此特征索引等于 nuy
+    随机选择。这将获取特征的数量。因此它会在 0 和特征数量之间选择随机数。
+- en: And the array should be of size， self dot and fes that we specified。 And we
+    also say replace equals false because we don't have。 don't want to have the same
+    indices multiple times。And now， we do our greedy search。So， we say。 best thresh。And
+    best， all let's do it the other way around。
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 数组的大小应该是我们指定的自身的和 fes。我们还说替换等于假，因为我们不想多次出现相同的索引。现在，我们进行贪心搜索。所以，我们说最佳阈值。还有最佳，让我们反过来做。
+- en: best feature and best thrash equals self dot。Best criteria。 And this will get
+    X and y and all the feature indices。 So this is another helper method。 So let's
+    define it here。 define itself best。Criiteterria。 which gets self and X and y and
+    the feature。Inice sees。So， here。We do our greedy search。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 最佳特征和最佳阈值等于 self.dot。最佳标准。这将获取 X 和 y 以及所有特征索引。所以这是另一个辅助方法。现在让我们在这里定义它。定义 self.best。标准。它获取
+    self 和 X 以及 y 和特征。索引。所以，在这里。我们进行贪婪搜索。
+- en: So we say best gain equals -1。 So we want to go over all the features and all
+    the feature values and calculate the information gain。So。Now， let's say split
+    index and。🎼Split threshold equals none。 So both of them are none。 And then we
+    have our first loop。 So4 feature。Index in。Feature indices。 And now we only want
+    to select。The column vector of this x。 So we say x。X column equals。X of。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们说最佳增益等于 -1。我们想要遍历所有特征和所有特征值，并计算信息增益。所以。现在，假设拆分索引和。🎼拆分阈值等于无。所以它们都是无的。然后我们有我们的第一个循环。对于特征。索引在。特征索引中。现在我们只想选择。这个
+    x 的列向量。所以我们说 x。X 列等于。X 的。
+- en: And we want to have all samples。 but only at this index。And then we want to
+    go over all the possible thresholds， So we say。Thresholds equals Ny， unique。Of。嗯。X
+    column。 So we don't want to check the same value twice。 So like in this example
+    here。 we would check for 30，15，5，10。
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们想要所有样本。 但仅在这个索引上。然后我们想要遍历所有可能的阈值，所以我们说。阈值等于 Ny，唯一。的。嗯。X 列。所以我们不想检查相同的值两次。就像在这个例子中。我们会检查
+    30，15，5，10。
+- en: '![](img/84741cb53cd03bf1f8d55692e7a39444_20.png)'
+  id: totrans-34
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/84741cb53cd03bf1f8d55692e7a39444_20.png)'
+- en: '![](img/84741cb53cd03bf1f8d55692e7a39444_21.png)'
+  id: totrans-35
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/84741cb53cd03bf1f8d55692e7a39444_21.png)'
+- en: 20 and 25。And now we go over all the possible thresholds。 So we say for th。Old
+    in thresholds。And now we calculate the information gain， we say gain equals self
+    dot。In formation gain。Which gets y and the column vector， and also the current
+    thresholds。And then we say if gain is greater than our best gain， then our new
+    best gain is the current gain。
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 20 和 25。现在我们遍历所有可能的阈值。所以我们说对于 th。旧在阈值中。现在我们计算信息增益，我们说增益等于 self.dot。信息增益。它获取
+    y 和列向量，以及当前阈值。然后我们说如果增益大于我们最佳增益，那么我们的新最佳增益就是当前增益。
+- en: And our best split index is the current feature index。And our best split threshold
+    is the current threshold。And at the end， we want to return them。 So we return
+    the split。Index， first。And then the split threshold。So this is the greedy search。
+    And now we need another helper function to calculate the information gain。
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们的最佳拆分索引是当前特征索引。我们的最佳拆分阈值是当前阈值。最后，我们想要返回它们。所以我们先返回拆分。索引，然后是拆分阈值。所以这是贪婪搜索。现在我们需要另一个辅助函数来计算信息增益。
+- en: So let's say define information gain with cell。And then it gets y and an X column
+    and the threshold。 So let's call a split thrash。And now。Let's say。Let's have a
+    look at the formula， again。So。Sorry。 so we want to calculate the entropy of the
+    parent and then a weighted average of the children。
+  id: totrans-38
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以假设用单元格定义信息增益。然后它获取 y 和一个 X 列及阈值。所以我们称之为拆分阈值。现在。让我们再看看公式。所以。抱歉。我们想要计算父节点的熵，然后是子节点的加权平均。
+- en: '![](img/84741cb53cd03bf1f8d55692e7a39444_23.png)'
+  id: totrans-39
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/84741cb53cd03bf1f8d55692e7a39444_23.png)'
+- en: '![](img/84741cb53cd03bf1f8d55692e7a39444_24.png)'
+  id: totrans-40
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/84741cb53cd03bf1f8d55692e7a39444_24.png)'
+- en: So。We calculate the parent entropy。Then， we generate。A split。Then we calculate
+    the weighted average of the child entropiece。 and then we return the information
+    gain。So the parent entropy， we can simply say parent。Entropy equals entropy because
+    we already have this function。 So parent entropy of what entropy of y。
+  id: totrans-41
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以。我们计算父节点熵。然后，我们生成。一个拆分。然后我们计算子节点熵的加权平均。然后我们返回信息增益。所以父节点熵，我们可以简单地说父节点。熵等于熵，因为我们已经有这个函数。所以父节点熵即
+    y 的熵。
+- en: Then we generate our split。So we say left indices and right。Indices equals self
+    dot split。And we split based on this X column， and a split threshold。So。We need
+    another help of function， so。I hope you can still follow me。 I hope I try to explain
+    everything as clear as possible。 but the code is a little bit more complex than
+    usual。 But yeah， let's continue。 So let's say。
+  id: totrans-42
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们生成我们的拆分。所以我们说左索引和右。索引等于 self.dot.split。我们根据这个 X 列和一个拆分阈值进行拆分。所以。我们需要另一个辅助函数，所以。希望你能继续跟上我。我尽量解释得尽可能清楚。但代码比通常的要复杂一些。不过是的，让我们继续。所以假设。
+- en: define split self。And then it gets x column and our split threshold。And here
+    we can say left indices。 So here we apply our question and we can use a function
+    that is called nuy arc where and here we ask if the value of x column is smaller
+    or equal than our split threshold。
+  id: totrans-43
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 定义 split self。然后它获取 x 列和我们的分裂阈值。在这里我们可以说左索引。所以在这里我们应用我们的条件，我们可以使用一个叫做 nuy arc
+    的函数，在这里我们问 x 列的值是否小于或等于我们的分裂阈值。
+- en: So this will return an array where with all where all the these conditions are
+    true for all the values in our x column and we want to Latin this array because
+    we only want a 1 d vector please check it for yourself。 and we do the same for
+    the right indices， so we say nuy。Arc， where。
+  id: totrans-44
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这将返回一个数组，其中所有条件对我们 x 列中的所有值都为真，我们想要拉丁这个数组，因为我们只想要一个一维向量，请自己检查一下。我们对右索引做同样的操作，所以我们说
+    nuy。Arc，哪里。
+- en: And here we check if X column is greater than our split threshold。 And then
+    we flatten this。And then we return the left indices and the right indices。So now
+    we have the split function。And now。 if we have the。嗯。With this function， we generate
+    the split here。 And first， we check if。Leng。Of the left indices。Is 0 or the length
+    of the。Right in the C is 0。
+  id: totrans-45
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这里我们检查 X 列是否大于我们的分裂阈值。然后我们扁平化它。然后我们返回左索引和右索引。现在我们有了分裂函数。现在。如果我们有。嗯。通过这个函数，我们在这里生成分裂。首先，我们检查左索引的长度。是否为
+    0 或右边的长度是否为 0。
+- en: Then we can immediately return 0 as information gain。 And otherwise， we continue。
+    So we calculate the weighted average。 So we need the number of total occurrences
+    of or the the the number of。嗯。Of our samples。So， this is length of。Y， and then
+    the number of our left samples and the number of our right samples equals Lng
+    left indices and Lng right indices。 Then we calculate the entropy。 So we say E，
+    L and E R equals entropy。Of y。
+  id: totrans-46
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们可以立即返回 0 作为信息增益。否则，我们继续。所以我们计算加权平均数。我们需要样本的总出现次数。所以，这是 Y 的长度，然后左样本的数量和右样本的数量等于
+    Lng 左索引和 Lng 右索引。然后我们计算熵。所以我们说 E，L 和 E R 等于 y 的熵。
+- en: of all the left indices and entropy of y of all the right indices。And now， our
+    child。Entropy equals the weighted average。 So we say N L divided by N times。The
+    left entropy plus。And now N R divided by n times the right entropy。 So this is
+    the child entropy。 And now let's calculate the information gain。 This is just
+    the parent entropy minus the child entropy。
+  id: totrans-47
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所有左索引的熵和所有右索引的熵。现在，我们的子熵等于加权平均数。所以我们说 N L 除以 N 乘以左熵加上。现在 N R 除以 n 乘以右熵。所以这是子熵。现在让我们计算信息增益。这只是父熵减去子熵。
+- en: and now we return it。 So return the information gain。So now we have this so
+    now this function is complete。And now we can have to continue with the growing。So。Now，
+    after we have selected the best criteria。 we want to split our tree with this
+    best feature and best threshold。
+  id: totrans-48
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们返回它。所以返回信息增益。现在我们有了这个，现在这个函数完成了。现在我们可以继续生长。所以。现在，在我们选择了最佳标准之后。我们想用这个最佳特征和最佳阈值来分裂我们的树。
+- en: So we say left indices and right indices equals self dot split。 So again。 here
+    we can use our split function。 So we say X。Off。And now we have to be careful。
+    So now we want to have all samples。嗯。But only the best。Feature index。So， this
+    is a column。And here we put in the best threshold。And。Now， with our left and right
+    indices。
+  id: totrans-49
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们说左索引和右索引等于自身的 dot split。再说一次。这里我们可以使用我们的 split 函数。所以我们说 X。Off。现在我们必须小心。所以现在我们想要所有样本。嗯。但只有最好的。特征索引。所以，这是一列。我们在这里放入最佳阈值。现在，有了我们的左索引和右索引。
+- en: we can continue growing。 So we go to the left and say left。Equals。And we call
+    this function here in itself recursively。 So we say self dot。Grow tree。And here
+    we say X。And then we only want the left indices， but we want all。The features。So
+    and S Y。 we want only want the left indices。And then we also say depth plus one。
+  id: totrans-50
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们可以继续生长。所以我们去左边并说左边。等于。我们在这里递归地调用这个函数。所以我们说 self dot。Grow tree。在这里我们说 X。然后我们只想要左索引，但我们想要所有特征。所以
+    S Y。我们只想要左索引。然后我们也说深度加一。
+- en: So now our depth is increased by one。And now we do the same thing for the right
+    side。 So we say right。Equals scroll3 with the right indices。And now we return
+    a new note in the middle。 So this will get the best。Feature。The best threshold。And
+    the left， and the right。Childs。 but no value here。So this is the growing method。
+    And now the only thing left is to implement the predict method。
+  id: totrans-51
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以现在我们的深度增加了一。现在我们对右侧做同样的事情。所以我们说 right 等于 scroll3 的右索引。现在我们在中间返回一个新的节点。所以这将获得最佳。功能。最佳阈值。左子节点和右子节点。但这里没有值。这是生长方法。现在唯一剩下的就是实现预测方法。
+- en: And I promise this will be fairly easy。 So we only need one helper function。
+    So we say return。嗯。Numpy array。 And here again， we use list comprehension。 So
+    we traverse our tree。 So self dot traverse3， where we put in one sample for all
+    the samples in capital X。So this is our predict method。 And now let's implement
+    the。Traverse3 method as last thing。
+  id: totrans-52
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我保证这会很简单。所以我们只需要一个辅助函数。所以我们说返回。嗯。Numpy 数组。在这里我们再次使用列表推导。所以我们遍历我们的树。所以 self.dot.traverse3，在哪里我们为大写
+    X 中的所有样本放入一个样本。这是我们的预测方法。现在让我们实现。Traverse3 方法作为最后一件事。
+- en: So this will get self and one sample。 And it also gets a note where we start。
+    So we have to put in self dot root in the beginning because we start at the top
+    and here。We also do this recursively。 so first， we can check for the stopping
+    criteria so we check if we have reached a leaf node so we can say if node is leaf
+    node。 So that's why we implemented this helper function。
+  id: totrans-53
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这将获得 self 和一个样本。它还获取我们开始的节点。所以我们必须在开始时放入 self.dot.root，因为我们从顶部开始。在这里，我们也这样递归进行。首先，我们可以检查停止标准，所以我们检查是否已经到达叶节点，所以我们可以说如果节点是叶节点。这就是我们实现这个辅助函数的原因。
+- en: then we return node dot value because if we are at a leaf。 we also have a value
+    and otherwise we apply our question so we go to the left or the right。So。 we say
+    if。X of this note。The feature index that we stored。Is smaller or equal than the
+    threshold that we start at this note。 Then we return。Self dot Traverse3。
+  id: totrans-54
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们返回节点的值，因为如果我们在叶子上。我们也有一个值，否则我们应用我们的问题，所以我们去左边或右边。所以。我们说如果。这节点的 X。我们存储的功能索引。是否小于或等于我们在这个节点开始的阈值。那么我们返回。Self.dot.Traverse3。
+- en: So we go to the left side of， and we put in X and note left。 So that's why we
+    start the left and the right notes at the notes。And otherwise， we return。Self
+    dot traverses3 of x and no dot right。So， yeah， this is the whole Traverse implementation。
+    And now we are finally done。 This is the whole implementation that we need for
+    a decision tree。
+  id: totrans-55
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们去左侧，把 X 和节点左放入。所以这就是为什么我们在节点处开始左和右节点。否则，我们返回。Self.dot.traverses3 的 x 和 no.dot.right。所以，是的，这就是整个
+    Traverse 实现。现在我们终于完成了。这就是我们需要的整个决策树实现。
+- en: And let's check this。 So I've little little I've written a little help a script。A
+    test script。Where I implement this decision tree class and I use the data set。
+    the breast cancer data set from the psychic learn module。And I will split our
+    data in training labels and training samples and test labels and test samples。
+  id: totrans-56
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们检查一下。所以我写了一点小帮助脚本。一个测试脚本。在这里我实现这个决策树类，并使用数据集。来自 psychic learn 模块的乳腺癌数据集。我将把我们的数据拆分为训练标签和训练样本，以及测试标签和测试样本。
+- en: Then I will create our decision tree and fit the data。 then predict the test
+    data and calculate the accuracy。 So let's check。 let's run the script and check
+    if everything's working。Needs a little time to。嗯。Sorry。 as traverse3 missing one
+    positional argument note。嗯。Self do traverse 3 X。 Oh。
+  id: totrans-57
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我将创建我们的决策树并拟合数据。然后预测测试数据并计算准确性。所以让我们检查。让我们运行脚本，检查一切是否正常运作。需要一点时间去。嗯。对不起。作为
+    traverse3 缺少一个位置参数节点。嗯。Self do traverse 3 X。哦。
+- en: self do root must be here， not here。So let's clear this and give this another
+    try。And fingers crosseds。Note object， test no attribute feature index。So this
+    is， how did we call it？
+  id: totrans-58
+  prefs: []
+  type: TYPE_NORMAL
+  zh: self do root 必须在这里，而不是这里。所以让我们清除这个，再试一次。祝我们好运。注意对象，测试没有属性功能索引。所以这是，我们怎么称呼它？
+- en: Just feature， sorry。If note that。Feature。Threhold。The threshold， threshold yo。So，
+    one more time。I hope I have no more typos。So yeah， now we have the accuracy and
+    everything's working。 And yeah。 I hope you enjoyed this tutorial。 If you liked
+    it， please subscribe to the channel。 And in the next tutorial， we will continue
+    by extending this decision tree to the random forest model。
+  id: totrans-59
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 只是功能，对不起。如果注意到。功能。阈值。阈值，阈值你。所以，再一次。我希望我没有更多的错字。所以是的，现在我们有了准确性，一切都在正常运作。而且是的。我希望你喜欢这个教程。如果你喜欢，请订阅频道。在下一个教程中，我们将继续将这个决策树扩展到随机森林模型。
+- en: So yeah， see you then bye。😊。![](img/84741cb53cd03bf1f8d55692e7a39444_26.png)
+  id: totrans-60
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以，好的，待会见，再见。😊。![](img/84741cb53cd03bf1f8d55692e7a39444_26.png)

@@ -1,0 +1,91 @@
+- en: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P15：15）更改
+    x 轴上的刻度频率 - ShowMeAI - BV14g411F7f9
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P15：15）更改
+    x 轴上的刻度频率 - ShowMeAI - BV14g411F7f9
+- en: '![](img/2c77c1e593fb989487c1f3b73491cf29_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/2c77c1e593fb989487c1f3b73491cf29_0.png)'
+- en: Another common question is。This one， how do I change the tick frequency， the
+    tick frequency。On the X or Y axis。![](img/2c77c1e593fb989487c1f3b73491cf29_2.png)
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 另一个常见问题是。这一项，我该如何更改刻度频率，刻度频率。在 X 或 Y 轴上。![](img/2c77c1e593fb989487c1f3b73491cf29_2.png)
+- en: Alright， so let's go back to our normal way of doing things， subplots。Subplots
+    will do A X dot plot X and Y， and then we'll do PL T dot show。![](img/2c77c1e593fb989487c1f3b73491cf29_4.png)
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，让我们回到我们正常的做法，子图。子图将绘制 A X 点图 X 和 Y，然后我们将使用 PL T dot show。![](img/2c77c1e593fb989487c1f3b73491cf29_4.png)
+- en: '![](img/2c77c1e593fb989487c1f3b73491cf29_5.png)'
+  id: totrans-4
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/2c77c1e593fb989487c1f3b73491cf29_5.png)'
+- en: So you'll see here that the current X ticks are basically just where Maplotlibb
+    thinks that they should go。 And sometimes this will work and sometimes we'll want
+    to change that。 So if we go up here to AX dot。 I'll hit tab， take a look at what
+    we got here， and then I'll start typing in set。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以你会看到当前的 X 刻度基本上只是 Maplotlibb 认为应该去的地方。有时候这样会有效，有时候我们想要改变它。所以如果我们上到这里去 AX dot。我会按
+    Tab，看看我们得到了什么，然后我开始输入 set。
+- en: '![](img/2c77c1e593fb989487c1f3b73491cf29_7.png)'
+  id: totrans-6
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/2c77c1e593fb989487c1f3b73491cf29_7.png)'
+- en: And you can see all the things that we can set and let's scroll down and you'll
+    see set X ticks。 This is the one we want to go for。![](img/2c77c1e593fb989487c1f3b73491cf29_9.png)
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以看到我们可以设置的所有内容，向下滚动，你会看到设置 X 刻度。这是我们想要的。![](img/2c77c1e593fb989487c1f3b73491cf29_9.png)
+- en: We can look at the documentation if you want。 So we basically just pass in ticks。
+    and we just pass in a list of X， tick X axis， tick locations。 So let's try that，
+    let's say。![](img/2c77c1e593fb989487c1f3b73491cf29_11.png)
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你想的话，我们可以查看文档。所以我们基本上只是传入刻度。然后我们只需传入一个 X 轴的刻度位置列表。让我们试试，假设。![](img/2c77c1e593fb989487c1f3b73491cf29_11.png)
+- en: Let's say， we want。![](img/2c77c1e593fb989487c1f3b73491cf29_13.png)
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设我们想要。![](img/2c77c1e593fb989487c1f3b73491cf29_13.png)
+- en: Take locations at。Let's say negative， let's change this from even numbers to。
+    let's say negative 5。 negative 3， negative 1。 we'll add 0 as well。 and then 1，3，5。
+    Let's see what happens。And there you go。We have now changed the X ticks from even
+    numbers to odd numbers， including 0。 and we can just leave out some of these tick
+    labels if we want， you know， let's take out 3。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 取负值位置。假设我们将这个从偶数改为。假设负 5，负 3，负 1。我们还会加上 0，然后是 1，3，5。让我们看看会发生什么。就这样。我们已经将 X 刻度从偶数改为奇数，包括
+    0。如果我们想的话，可以省略一些刻度标签，你知道的，去掉 3。
+- en: And there you go， like， maybe this is how you want to present it for some reason。
+    And you can even do stuff like， let's add in negative 10 for some reason。![](img/2c77c1e593fb989487c1f3b73491cf29_15.png)
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 就这样，也许这就是你出于某种原因想要呈现的方式。你甚至可以做一些，比如说，加上负 10 出于某种原因。![](img/2c77c1e593fb989487c1f3b73491cf29_15.png)
+- en: '![](img/2c77c1e593fb989487c1f3b73491cf29_16.png)'
+  id: totrans-12
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/2c77c1e593fb989487c1f3b73491cf29_16.png)'
+- en: And， you know， there you go。 So you've now kind of expanded the graph to the
+    left and added an X tick label there。So it's just that easy。And you can， you know，
+    you could do all kinds of different patterns and stuff with this if you want。
+    But that's how you。![](img/2c77c1e593fb989487c1f3b73491cf29_18.png)
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后，你知道，便是如此。因此，你现在扩展了图表的左侧，并在那添加了一个 X 刻度标签。这就是如此简单。如果你想的话，你可以用这个做各种不同的模式和东西。但这就是你。![](img/2c77c1e593fb989487c1f3b73491cf29_18.png)

@@ -1,0 +1,414 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P11：11）深入了解条件格式 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P11：11）深入了解条件格式 - ShowMeAI - BV1uL411s7bt
+- en: '![](img/aa57daba8643600b024f75ea545f3bfa_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/aa57daba8643600b024f75ea545f3bfa_0.png)'
+- en: In this tutorial， we're going to take a close look at conditional formatting
+    in Microsoft Excel。 And for this video， we're going to use two different spreadsheets。
+    This is the movie inventory spreadsheet that I used in some of my previous videos。
+    including the beginner's guide to Microsoft Excel。 If you haven't watched that。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在本教程中，我们将仔细研究Microsoft Excel中的条件格式。为了这个视频，我们将使用两个不同的电子表格。这是我在一些之前的视频中使用的电影库存电子表格，包括Microsoft
+    Excel初学者指南。如果你还没有观看过。
+- en: you definitely should。 But this is just an inventory of movies that I own and
+    some information about them。 I will also be using this spreadsheet。 This is a
+    spreadsheet of a lot of financial data。 And it's a good example of the kinds of
+    huge spreadsheets with lots and lots of data that a lot of times businesses have
+    and use。 So let's jump right in to conditional formatting。 What it is and how
+    to use it。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你绝对应该。但这只是我拥有的一些电影的库存和相关信息。我还会使用这个电子表格。这是一个包含大量财务数据的电子表格，是许多企业常用的包含大量数据的巨大电子表格的一个很好的例子。那么，让我们直接进入条件格式，了解它是什么以及如何使用它。
+- en: So in my beginner's guide to Microsoft Excel。 I gave a little bit of a sneak
+    peek into conditional formatting。 Let's talk about what it is。 Conal formatting
+    is a tool that gives us the opportunity to。😊。Change how data looks in the spreadsheet。
+    It formats the data in the spreadsheet based upon certain conditions。 That's why
+    it's called conditional formatting， and you'll find conditional formatting on
+    the home tab。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在我的Microsoft Excel初学者指南中，我对条件格式做了简要介绍。我们来聊聊它是什么。条件格式是一个工具，它让我们有机会😊。更改电子表格中数据的外观。它根据某些条件格式化电子表格中的数据。这就是为什么它叫条件格式，你可以在主页选项卡上找到条件格式。
+- en: Home ribbon in the Styles group。So let's look at some of the things it's capable
+    of doing for us。Let's say I would like a visual representation of the DVDs that
+    are worth the most right now。 So I can look here at the value column column D。
+    And I can just eyeball this and see which ones are more valuable right now。 Now，
+    of course， I could also apply a filter。 that would filter out the cheaper， less
+    valuable DVDs。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 样式组中的主页选项卡。让我们看看它能为我们做些什么。假设我想要一个可视化的表示，显示当前价值最高的DVD。因此我可以查看D列的值。我可以直观地看到哪些DVD现在更有价值。当然，我也可以应用过滤器，从而筛选出便宜、价值较低的DVD。
+- en: But that would hide data。 And let's say I'd like to be able to see all of the
+    data。 but be able to at a glance， see which ones are more valuable。 So the way
+    to do that is to select column D。 in this case。 and go to the home tab home ribbon
+    Sts group and click conditional formatting。 Now。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但这会隐藏数据。如果我想能够看到所有的数据，但又能一眼看出哪些更有价值，该怎么做呢？方法就是选择D列。在这种情况下，前往“主页”选项卡，点击条件格式。
+- en: there are several different options that appear。 And this is what we're going
+    look at in this video。 What do all of these options do for us。 So let's start
+    first with the top option。 highlight cells rules。 So I would like to highlight
+    cells that have numbers that are greater than a certain number。 And I'm going
+    to put as the number 9。9。😊，9 so greater than 9，99。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 会出现几种不同的选项。这就是我们在这个视频中要讨论的内容。这些选项都能为我们做些什么？让我们首先从顶部选项开始，突出显示单元格规则。所以我想突出显示数字大于某个数字的单元格。我将数字设为9。9。😊，9，所以大于9，99。
+- en: And I just typed that right in this box here。 Now， next to that。 it says with
+    light red fill with dark red text。 So format cells that are greater than 999 with
+    red。 basically。 Well， I would like to change that in general。 I think green represents
+    money in a lot of cases。 And so I would like to say green fill with dark green
+    text。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我刚刚在这个框中输入了内容。接下来，它显示的是“浅红色填充，深红色文本”。因此，格式化大于999的单元格为红色，基本上。我想一般来说改变这个。我认为绿色在很多情况下代表金钱。所以我想说绿色填充，深绿色文本。
+- en: I click there。 And I get a sneak preview of what it will look like， and if I
+    like it， I click O。 if I don't， I can click cancel。 But I'll click O。 So you can
+    see what that did。 It automatically changed the format of these particular cells。
+    because 14 is greater than 9。99。 So is 15， so is 10。 So those are all highlighted
+    in green。 Now。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我点击那里。我可以预览它的外观，如果我喜欢，我点击“确定”。如果我不喜欢，我可以点击“取消”。但我会点击“确定”。所以你可以看到这有什么效果。它自动改变了这些特定单元格的格式，因为14大于9.99，15也是，10也是。所以这些都被高亮为绿色。
+- en: notice what else is highlighted in green。 The word value。 Some the word value
+    is greater than 9。99。 And this is not really what I wanted。 I don't want the word
+    value in green。So how can I fix that？
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 注意还有什么被高亮为绿色。“值”这个词。一些“值”大于9.99。这不是我想要的。我不想让“值”这个词变成绿色。那么我该如何修复呢？
+- en: Well， what I would do is I would just click on the word value。 go to conditional
+    formatting and clear rules from selected cells。 I could clear them from the entire
+    sheet， but then I would lose the formatting that I do want this down here。 So
+    I'm just going to clear rules from selected cells。 And now that's exactly what
+    I wanted to do。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 嗯，我要做的是点击“值”这个词，去条件格式，然后从选定单元格清除规则。我可以从整个表格中清除它们，但那样我就会失去我希望保留的格式。所以我只会从选定单元格中清除规则。现在这正是我想要做的。
+- en: Now， some of you might be wondering， why didn't I just click and drag and not
+    include the word value in the spreadsheet range that I applied conditional formatting
+    to。 Well， the reason I didn't do that is because if I put in new data。 Not that
+    it's automatically formattted correctly。 but that would not be the case if I had
+    just clicked and dragged to select a range。 That's why it's better in most cases
+    to click an entire column。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，有些人可能会想，为什么我不直接点击并拖动，而不在我应用条件格式的电子表格范围中包含“值”这个词。嗯，我不这样做的原因是，如果我输入新的数据，并不是说它会自动正确格式化，但如果我只是点击并拖动选择一个范围，那就不成立。这就是为什么在大多数情况下，点击整个列更好的原因。
+- en: or if you want even a row and apply the conditional formatting to all of the
+    information。 And then just click and clear the rules from the selected cells。
+    So hopefully that makes sense。 Now。 in a spreadsheet。This small， you can see that
+    it is pretty useful。 It does highlight those more valuable items for me， but imagine
+    a spreadsheet that was much。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 或者如果你想应用条件格式到整行的信息。然后只需点击并清除选定单元格中的规则。希望这有意义。现在，在一个如此小的电子表格中，你可以看到这非常有用。它确实为我高亮了那些更有价值的项目，但想象一下一个更大的电子表格。
+- en: much bigger。 Conditional formatting can be even more useful in these cases。
+    I think Let's try a second example of how we can use conditional formatting。 I'm
+    going go here to units sold and click the entire column E。 and I'll go to conditional
+    formatting。 And I just want to quickly show you that in addition to greater than
+    you can also do less than so I can highlight cells that have data that's less
+    than this number。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 更大得多。在这些情况下，条件格式可以更有用。我认为我们可以尝试第二个使用条件格式的示例。我会去销售单位，点击整个E列，然后去条件格式。我想快速向你展示，除了大于，你还可以做小于，所以我可以突出显示数据少于这个数字的单元格。
+- en: and I can change that number。 I can also highlight data that is between two
+    numbers。 that's equal to a specific number。 I can also highlight text that contains
+    certain information。 So for example， let's jump back to my movie inventory。 and
+    I will select column A。 chooseose conditional formatting， highlight cells rules，
+    and I want to highlight text that contains。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 而我可以更改那个数字。我还可以突出显示介于两个数字之间的数据。它等于一个特定的数字。我还可以突出显示包含某些信息的文本。所以例如，让我们回到我的电影库存。我会选择A列，选择条件格式，突出显示单元格规则，我想突出显示包含文本的单元格。
+- en: The word star。 And I want to highlight it in green。 And you can see how that
+    works。 Now。 while I'm at it， I want to show you that you can also set up your
+    own custom formats。 So if you're not happy with the built in options for formats，
+    you can just create your own。 So。 for example， I can go to fill， and I can say
+    I would like it to be filled in orange。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这个词是“星”。我想把它高亮为绿色。你可以看到它是如何工作的。现在，趁此机会，我想告诉你，你还可以设置自己的自定义格式。所以如果你对内置的格式选项不满意，你可以自己创建一个。例如，我可以去填充，然后我可以说我希望它填充为橙色。
+- en: The pattern color I would like it to be a little bit lighter orange， what pattern
+    style。 how about this。And I'll put in a border。 What about the font。 I would like
+    it to be bold and the color of the font。 I would like it to not be automatic。
+    Maybe I'd like it to be dark green。 and then just click O。 So as you can see。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我希望模式颜色稍微浅一些的橙色，模式样式。这个怎么样？我会加上一个边框。字体呢？我希望它是粗体，字体颜色我希望不要是自动的。也许我希望它是深绿色。然后就点击
+    O。如你所见。
+- en: you can design your own personal custom formats that change how the data looks
+    on the screen。 In most cases， though， I typically just use yellow， green and red
+    the defaults that are here。 Okay。 notice that you can also use highlight cells
+    rules to find an occurring date and also to find duplicate values。 So in this
+    case， it's finding every number that is repeated somewhere else in this column。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以设计自己的个人自定义格式来改变屏幕上数据的显示方式。但在大多数情况下，我通常只使用这里的默认黄色、绿色和红色。好的。注意你也可以使用高亮单元格规则来查找发生的日期以及查找重复值。所以在这种情况下，它正在查找在这一列中其他地方重复的每个数字。
+- en: It is possible to also do a similar thing， but look not for duplicates， but
+    for unique values。 So as you can see here， I just went to highlight cells rules，
+    more rules。 And here it says。 format only unique or duplicate values。 And then。You
+    change it from duplicate to unique。 You can set up the format that you want it
+    to do。 and then click， okay。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你也可以做类似的事情，但不是查找重复项，而是查找唯一值。如你所见，我刚刚去高亮单元格规则，更多规则。这里显示的是仅格式化唯一或重复值。然后，你将其从重复更改为唯一。你可以设置你希望的格式，然后点击确定。
+- en: So this is showing cells that have unique information in this column。 Okay。
+    so this conditional formatting highlight cells rules category has lots of great
+    options for us to help us format data the way we want it to look。 Next， let's
+    look at top bottom rules。 And for this， I do want to switch to the other spreadsheet。
+    And I do want to focus in here on column E in this spreadsheet。 So I select column
+    E。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这显示了在这一列中具有唯一信息的单元格。好的，所以这个条件格式高亮单元格规则类别有很多很好的选项，可以帮助我们按照想要的方式格式化数据。接下来，让我们看一下顶部底部规则。对此，我想切换到另一个电子表格。我想在这个电子表格中关注
+    E 列。所以我选择了 E 列。
+- en: I'm going go to conditional formatting。 And this time。 instead of looking for
+    data that's higher or lower or between certain numbers。 I just want Excel to show
+    me the top and the bottom in this list。 How about the top 10 items。 So I click
+    on that。 The top 10 values in this range of cells will be formatted right now
+    with light red。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将转到条件格式。这次，我不想寻找高于、低于或在某些数字之间的数据。我只想让 Excel 显示这个列表中的顶部和底部。比如前 10 个项目。所以我点击它。这个单元格范围内的前
+    10 个值现在会用浅红色格式化。
+- en: let's change that to green。 Let's say I click。![](img/aa57daba8643600b024f75ea545f3bfa_2.png)
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们把颜色改成绿色。假设我点击。![](img/aa57daba8643600b024f75ea545f3bfa_2.png)
+- en: Okay， and it's not obvious right off the bat。 What changed。 But as I browse
+    down the page。 I do see some highlights。 So those are top 10 values。 Now。 what
+    if I want to change that up a little bit。 instead of top 10。 Maybe I want the
+    top 20 or the top 50。 So I can select column E again。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，最开始并不明显有什么变化。但当我浏览页面时，我确实看到了一些高亮。所以那些是前 10 个值。现在，如果我想稍微改动一下，而不是前 10 条，可能我想要前
+    20 条或前 50 条。那么我可以再次选择 E 列。
+- en: go to conditional formatting top bottom rules。 and I could apply another top
+    10 rule。 But if you remember， I already have a rule。 So I'm going to go down and
+    choose manage rules。 it pops up with the rule that I've selected and create already。
+    I can click on it and click edit rule。 and then I could change it from top 10
+    to maybe top 60。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 转到条件格式设置的顶部底部规则。我可以应用另一个前 10 条规则。但如果你还记得，我已经有一个规则了。所以我将向下选择管理规则。它会弹出我已选择并创建的规则。我可以点击它，然后点击编辑规则。然后我可以把它从前
+    10 条改成前 60 条。
+- en: or if you prefer， you could have it show the top percentage of the selected
+    range。 So maybe the top 10%。 I'm just going leave it with the top 60 values。 I
+    click O。 click apply and okay， And now it should show even more。Dells highlighted
+    in green， and it does。 I'm going to select column E again。 go back to conditional
+    formatting。 And in this case。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 或者如果你愿意，你可以让它显示所选范围的顶部百分比。所以可能是前 10%。我就将其保留为前 60 个值。我点击 O，点击应用，确定。现在它应该显示更多的单元格高亮显示为绿色，确实如此。我将再次选择
+    E 列，返回条件格式。
+- en: I'm going to clear the rules from the entire sheet。 Let's look at another option
+    that we have。 In addition to top 10 items you could do top 10%。 bottomom 10 items，
+    bottom 10%。 You could have it show the values that are above average or the values
+    that are below average。 So those are great options。 So's look now at data bars。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我要从整个表格中清除规则。让我们看看我们还有哪些其他选项。除了前10个项目，你还可以做前10%。底部10个项目，底部10%。你可以显示高于平均值的值或低于平均值的值。这些都是很好的选项。现在我们来看看数据条。
+- en: Data bars are an excellent visual way and kind of fun way to show data。 So I'm
+    going to jump to column H gross sales。 So I want to highlight here the products
+    that have the highest gross sales。 So I select column H。 and I go to the conditional
+    formatting button。 And I'm going to go to data bars。 And here you can just mouse
+    over the top of these different options that you have。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 数据条是一种优秀的视觉方式，同时也是展示数据的一种有趣方式。所以我将跳到H列的总销售额。我想在这里突出显示销售额最高的产品。所以我选择H列，点击条件格式按钮。我将选择数据条。在这里，你只需将鼠标悬停在不同选项的顶部。
+- en: But basically， what we're doing is we're representing the numbers。😊，In the cells。
+    with a visual symbol。 In this case， a data bar。 So the bigger the number。 the
+    bigger the bar looks inside of the cell。 And the choices that we have here are
+    basically color and style options。 So we have a gradient fill， where it's solid
+    green at the left and it starts to get lighter green on the right。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 基本上，我们所做的就是用视觉符号来表示数字。😊，在单元格中。在这种情况下，是数据条。所以数字越大，条形在单元格内看起来就越大。我们这里的选择基本上是颜色和样式选项。所以我们有渐变填充，左侧是实心绿色，右侧开始变成浅绿色。
+- en: We also have solid fill， where it's just solidly green on the entire bar。 So
+    I like this option here。 And I'm going to go with orange and yellow。 just to mix
+    it up a little bit。 So I click there And now just at a glance。 I can see how much
+    more this product is doing especially in Germany。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们还有实心填充，整个条形都是实心绿色。我喜欢这个选项。我将选择橙色和黄色，只是为了稍微变化一下。所以我点击那里，现在只需一眼，我就能看到这款产品在德国的销售情况如何。
+- en: And I can know that just by glancing at this spreadsheet。 as I browse down the
+    page again。 I can see other standouts。 So data bars really are a wonderful way
+    to format your data so that it's easier to read and easier to understand。 before
+    I leave data bars。 I want to go down and click on more rules just to show you
+    that。There are some great options here。 There are some advanced options that you
+    can click through here。
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我只需浏览这个电子表格，就可以知道这一点。当我再次向下浏览页面时，我可以看到其他突出表现的部分。所以数据条确实是格式化数据的一个很好的方式，使其更易读、更易理解。在我离开数据条之前，我想向下点击更多规则，向你展示这里有一些很好的选项。有一些高级选项，你可以在这里浏览。
+- en: and I would encourage you to explore those and see what you can do with them。
+    But here I want you to know that there's kind of a fun option here where you can
+    show bar only。 So let's say that the numbers themselves don't matter so much。
+    Maybe you're showing this as a presentation。 and you don't necessarily want people
+    to see the total amount of dollars in gross sales。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我鼓励你去探索这些选项，看看你能用它们做些什么。但在这里我想让你知道，有一个有趣的选项可以只显示条形图。所以假设数字本身并不是那么重要，也许你是作为演示来展示这个内容，而你并不一定想让人们看到总的销售额。
+- en: but you just want them to be able to see how much better one product is selling
+    over another。 You could just go here and choose show bar only。 and then click
+    O。 And I made a mistake there。 I failed to select the entire column。 So I'm going
+    to click on column H。 And I'm going to try that again。 So conditional formatting
+    data bars more rules。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但你只希望他们能看到一个产品的销售情况比另一个产品好多少。你可以直接去这里选择只显示条形图，然后点击O。我在这里犯了一个错误。我没有选择整个列。所以我将点击H列，重新尝试。条件格式数据条更多规则。
+- en: And this time show bar only。 I click O。 And at the same time， you probably noticed。
+    I changed the bar color to blue。 So I have to watch out for that。 If that's not
+    what I wanted to do。 I need to go in。😊，change it。 But you can see the results。
+    Now。 the numbers are hidden。 and all we have is a bar that indicates how these
+    numbers compare to each other。 Now。
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这次只显示条形图。我点击了O。与此同时，你可能注意到了，我把条形颜色改成了蓝色。所以我得注意这一点。如果这不是我想要的，我需要进去。😊，进行更改。但你可以看到结果。现在，数字被隐藏了，我们只有一条指示这些数字彼此比较的条形图。现在。
+- en: if you do click on a cell， the number that still is in the cell shows up here
+    in the formula bar。 So the number still there。 It's just hidden temporarily from
+    us。 We can bring that back by selecting column H in this case， going to conditional
+    formatting。 data bars more rules。 and I can just make sure show bar only is unchecked。
+    if I want to。
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你点击一个单元格，单元格中的数字会在公式栏中显示。因此，数字仍在，只是暂时对我们隐藏。我们可以通过选择H列，进入条件格式，数据条更多规则，确保“仅显示条”未被勾选来恢复它。
+- en: this is my chance to change the color back to orange。 and then I can click O。
+    you can see that now the numbers and the data bars appear。 All right。 let's jump
+    over here not to gross sales but to sales。 I will select column J。 And this time。
+    let's go to conditional formatting and color scales。 Now。
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是我将颜色改回橙色的机会。然后我可以点击O。你可以看到现在数字和数据条出现了。好吧，让我们跳到这里，不是总销售额，而是销售。我将选择J列。这次，我们去条件格式和颜色刻度。
+- en: color scales are in some ways similar to data bars。 You can see that there's
+    a scale here from dark red on the bottom to dark green on the top。 This。scale
+    is different。 This is dark green at the bottom。 Dark red at the top。 This one
+    goes from dark red at the bottom to white at the top。 And then this one is all
+    green。
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 颜色刻度在某种程度上与数据条相似。你可以看到这里有一个从底部的深红色到顶部的深绿色的刻度。这一刻度是不同的。底部是深绿色，顶部是深红色。这一个从底部的深红色到顶部的白色。然后这个则全是绿色。
+- en: This one's all green。 Also with the dark green on the bottom this time。 this
+    one dark greens on the top。 So this is an opportunity for me to pick the right
+    color scheme based on how I want my data to look。 And I guess what I would like
+    is the lower numbers in red。 and the higher numbers in dark green。 So I can just
+    glance at this now， and the most profitable items are in dark， dark green。
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这个全是绿色的。底部是深绿色。这次，深绿色在顶部。所以这是我根据想要的数据外观选择合适的颜色方案的机会。我想要的是低数字为红色，而高数字为深绿色。现在我只需一眼看过去，最有利可图的项目都是深绿色的。
+- en: And then they go lighter green as they get lower and lower。 Then they turn to
+    yellow。 and then the lowest numbers are in dark red。 What a wonderful visual way
+    to format your data and help people to be able to read that data and understand
+    it better。 Next， I'm going jump over to profit。 and I will select column L。 Let's
+    look at conditional formatting icon sets this time。 and。
+  id: totrans-38
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后它们的颜色随着数字的降低而变为浅绿色。接着变成黄色。最低的数字则是深红色。这是格式化数据的绝妙可视化方式，帮助人们更好地阅读和理解数据。接下来，我会跳到利润部分，选择L列。这次我们来看条件格式图标集。
+- en: Conscepts are similar to color scales and data bars。 Basically。 I'm saying I
+    want an icon to appear in each cell， depending on the value of the data in the
+    cell。 And what I'm choosing here is the symbol type。 So I have directional symbols，
+    shapes， indicators。 ratings。 and you can go into more to explore other options
+    too。
+  id: totrans-39
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 概念与颜色刻度和数据条类似。基本上，我是说我希望每个单元格中出现一个图标，取决于单元格中数据的值。我在这里选择的是符号类型。所以我有方向符号、形状、指示器、评级，你也可以进一步探索其他选项。
+- en: And then I also have to choose the number of icons to deal with。 So this one
+    has three。 This one has four。 This one has five。 This one has four。 This one has
+    three。 the number of icons that you select is important。 because the data that
+    you have in a particular column or row is going to be divided up in this case
+    into thirds in this case into fourths in this case into fifths。 And so you need
+    to decide how many ways you want to divide up your data。
+  id: totrans-40
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我还需要选择要处理的图标数量。所以这个有三个。这个有四个。这个有五个。这个有四个。这个有三个。你选择的图标数量很重要。因为你在特定列或行中的数据将会被划分，例如三等分、四等分、五等分。因此，你需要决定想要如何划分数据。
+- en: I'm going to pick these three arrows。 So I click on it。 and you can see what
+    it did。 first of all。 in order to fit。That icon in the column Excel had to turn
+    some of the numbers into pound signs。 so I can fix that just by double clicking
+    on the line between column L and column M。 So I'll just double click that provides
+    just the right amount of width so that the icon and the data can both fit and
+    you can see the result。
+  id: totrans-41
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我会选择这三个箭头。所以我点击它。你可以看到它的效果。首先，为了适应。该图标在列中，Excel不得不把一些数字转成井号。因此我可以通过双击列L和列M之间的线来修复这个问题。双击后会提供适当的宽度，以便图标和数据都能适配，你可以看到结果。
+- en: I can just glance at this and see that these are in the bottom third of numbers。
+    This one here is in the middle third and then the top third is here。 Okay， so
+    this icon set。 I think is wonderful。 I think it works great。 but you can also
+    try other icon sets。 You can try traffic lights。 You can also do flags。 You can
+    do indicators like a checkmark stars。
+  id: totrans-42
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以稍微看一下，看到这些数字在底部的三分之一。这一个在中间的三分之一，而顶部的三分之一在这里。好的，所以这个图标集，我觉得非常棒。我认为它运作得很好，但你也可以尝试其他图标集。你可以尝试交通信号灯，也可以使用旗帜，或者用勾号、星星这样的指示器。
+- en: data bars and even more。 if you do go into more rules。 you can customize this
+    even more if you would like to。 For example。 notice that you can change the cutoff
+    here。 So the way it is set up automatically。 this green stop light will appear
+    if the value is at。
+  id: totrans-43
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 数据条，还有更多。如果你进一步深入规则，你可以根据需要自定义更多。例如，注意你可以在这里更改截止值。所以按照自动设置，如果值达到，绿色的交通灯就会出现。
+- en: 67% or higher of the total amounts that are shown yellow。 if it's less than
+    67 and more or equal to 33。 So if I want to， I can adjust this and say 85% here。
+    and maybe 20% here and then click O。 If you don't want it to be percent。 you can
+    change it to the specific value。 the number or to a formula。
+  id: totrans-44
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 总金额中67%或更高的部分显示为黄色。如果少于67且大于或等于33。因此，如果我想的话，我可以调整为85%在这里，可能20%在这里，然后点击O。如果你不想用百分比，可以更改为具体值、数字或公式。
+- en: there's just all of these different options that you have。 I'm going to change
+    it to。 like I said 85 and 20， I'll click O。 And you probably noticed some of these
+    colors changed based on the decisions that I made there in the advanced options。
+    So this has been a pretty indepth look at conditional formatting in Excel。 I hope
+    that you've enjoyed watching this video， and that it's been helpful to you。 If
+    it has。
+  id: totrans-45
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你拥有各种不同的选项。我将把它改为，如我所说的，85和20，我会点击O。你可能注意到，这些颜色根据我在高级选项中所做的决定而改变。所以这对Excel中的条件格式进行了相当深入的讲解。我希望你喜欢观看这个视频，并且它对你有所帮助。如果是的话。
+- en: please click the like button below。
+  id: totrans-46
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 请点击下面的点赞按钮。

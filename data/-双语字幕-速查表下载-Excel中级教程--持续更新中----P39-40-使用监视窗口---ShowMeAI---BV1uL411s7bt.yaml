@@ -1,0 +1,145 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P39：40）使用监视窗口 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P39：40）使用监视窗口 - ShowMeAI - BV1uL411s7bt
+- en: '![](img/0af7264208b4978c505ea4dd2835d8d5_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/0af7264208b4978c505ea4dd2835d8d5_0.png)'
+- en: In this tutorial， we're going to look at how to set up a watch window in Excel。
+    and you'll see how it works and how useful it can be in your Excel spreadsheets。
+    So here I have a simple spreadsheet with some game sales from a hypothetical board
+    game and card game store。 and you can see the data extends over here to the right
+    quite a ways at the far right。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在本教程中，我们将看看如何在Excel中设置监视窗口。你将看到它是如何工作的，以及它在你的Excel电子表格中有多么有用。所以这里我有一个简单的电子表格，包含一个假想的桌游和卡牌游戏商店的游戏销售数据，你可以看到数据延伸到右边相当远的地方。
+- en: I have yearly total sales that are calculated by adding up the sales from all
+    of these months and then multiplying the number of sales by the price of the board
+    game in this case。 So this spreadsheet is working out just fine for me。 but let's
+    say I want to run some scenarios。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我的年度总销售额是通过将这些月份的销售额相加，然后将销售数量乘以桌游的价格来计算的。所以这个电子表格对我来说工作得很好。但假设我想运行一些场景。
+- en: Maybe I'd like to know what if we would have charged $16 for boggle instead
+    of 15。 if we had somehow had the exact same number of sales。 How would that have
+    changed our yearly total sales。 Well， it did adjust it。 The number went up。 but
+    I wasn't able to see it as it moved up。 So it's kind of hard for me to know how
+    much that increased by。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 或许我想知道，如果我们对Boggle收取16美元，而不是15美元，如果我们以某种方式有相同数量的销售，这将如何改变我们的年度总销售额。好吧，它确实进行了调整。数字上升了，但我没能看到它上升的过程。因此，我很难知道它增加了多少。
+- en: go。Back and change it back to 15。 So watch what I do next。 I'm going to set
+    up a watch window to track the yearly total sales。 And that way。 while I'm changing
+    these numbers here at the left， I'll be able to see at the same time。 how that
+    affects the yearly total sales here at the right。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 回去，把它改回15。所以注意我接下来要做的。我将设置一个监视窗口来跟踪年度总销售额。这样，当我在左边更改这些数字时，我可以同时看到它如何影响右边的年度总销售额。
+- en: step 1 to set up a watch window is to click on a cell or in this case。 a range
+    of cells that you would like to watch。 So I just clicked here and held the click
+    and then drag down to select the entire range I would like to watch。 Now I can
+    release the mouse button。 And I'll go here on the formulas tab formulas ribbon
+    here is watch window。 Now， watch window should be in most modern versions of Excel
+    with the exception， I believe of Mac。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 设置监视窗口的第一步是点击一个单元格，或者在这种情况下，点击你想要监视的单元格范围。所以我刚刚点击这里，按住点击，然后向下拖动以选择我想监视的整个范围。现在我可以松开鼠标按钮。接下来我将在公式选项卡的公式功能区中找到监视窗口。现在，监视窗口应该在大多数现代版本的Excel中都有，除了我认为的Mac版本。
+- en: if you have Excel for Mac， I do not think watch window is included。 Okay， so
+    again。 with this range selected， I'm going to go up and click watch window。 And
+    it takes me to this screen。 this window， but it's empty。Typically， it will pop
+    up at about this size。 especially the first time that you use it。 But what you'll
+    need to do is click add watch。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你有Excel for Mac，我认为监视窗口不包括在内。好的，再次强调，选择这个范围后，我将上去点击监视窗口。它将我带到这个屏幕，这个窗口，但它是空的。通常，它第一次弹出时大约是这个大小。但你需要做的是点击添加监视。
+- en: And because I already selected this range Excel is smart and figures out that
+    that's probably what I want to watch。 I could double check it to make sure but
+    it is correct。 and then I'll just click add and now I've set up a watch window。
+    Now let's look at the data that it's watching。 notice that it's listing the book。
+    In other words。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 由于我已经选择了这个范围，Excel很聪明，明白这可能是我想要监视的内容。我可以再确认一下，但它是正确的。然后我只需点击添加，现在我已设置好监视窗口。现在让我们看看它正在监视的数据。注意它列出了书名。换句话说。
+- en: the workbook that this data is from。 It's also noting the sheet。 So this is
+    the 2021 spreadsheet。 It lists the name of the range or the cell。 in this case，
+    these are not named cells。 and it's got a list of each cell that it's watching
+    and the value and the formula that produces the value。 So this is kind of an interesting
+    watch window。 it gives me some pretty interesting data。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这个数据来自的工作簿。它还指出了工作表。这是2021年的电子表格。它列出了范围或单元格的名称，在这种情况下，这些不是命名单元格。它列出了每个正在监视的单元格及其值和产生该值的公式。所以这是一个有趣的监视窗口，它给了我一些相当有趣的数据。
+- en: Now if I use the scroll bar to scroll to the left。 Look the watch window stays
+    focused on what I told it to watch。So now I can go back into the data and run
+    some numbers。 Let's say we charged $17 for boggle。 here in the watch window， I
+    could see that it moved up quite a bit。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在如果我使用滚动条向左滚动，监视窗口会专注于我告诉它监视的内容。所以现在我可以回到数据中进行一些计算。假设我们为**Boggle**收取17美元。在监视窗口中，我可以看到它上升了不少。
+- en: The yearly total sales for boggle。 So keep your eyes here on the total4 code
+    names。 It's this 9000 number， let's see what if we had charged only $27 and sold
+    the same amount。 It drops the yearly total sales。 So these watch windows that
+    you can set up on the formulas tab。 formulas ribbon here in the formula auditing
+    group。 there it is watch window。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: '**Boggle**的年度总销售额。所以请关注这里的总额4代码名称。这是这个9000的数字，看看如果我们只收取27美元并售出相同数量会怎样。年度总销售额下降了。因此，你可以在公式选项卡中设置的这些监视窗口，公式功能区的这里，就是监视窗口。'
+- en: they can really help you to see data that's otherwise hard to see。 And it's
+    especially useful if you have a giant spreadsheet or a workbook made up of multiple
+    sheets。 If you want to see data that's far apart。 but you want to see it together
+    with other data。 Watch window can really help you out with that。 Let's take it
+    to another level by going to another spreadsheet or even workbook。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它们可以真正帮助你看到那些否则很难看到的数据。如果你有一个巨大的电子表格或者由多个工作表组成的工作簿，这尤其有用。如果你想查看相距较远的数据，但又想将其与其他数据一起查看，**监视窗口**可以很好地帮助你。让我们通过转到另一个电子表格或甚至工作簿来提升一下这个层次。
+- en: In this case， I'll just go to the 2021 monthly totals spreadsheet。This won't
+    make a ton of sense。 but I'll click here on growthrow forecast， and I'll click
+    and drag down to select that at least as far down as the full data set goes with
+    that selected。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这种情况下，我将转到2021年每月总额的电子表格。这可能没有太大意义，但我会点击这里的**增长预测**，然后点击并拖动选择，至少选择到完整数据集的底部。
+- en: I can click watch window but watch window is really already activated。 So there's
+    no need to click watch windowow this time。 Instead I can just click add watch
+    Excel wants me to verify the range that it's gonna watch that looks good So I
+    click add And now my watch window is longer。 it's bigger， but hopefully you can
+    see that it's now tracking two different sources of information。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以点击监视窗口，但监视窗口实际上已经激活了。所以这次不需要点击监视窗口。相反，我可以直接点击**添加监视**，Excel让我确认它将要监视的范围，这看起来不错，所以我点击**添加**。现在我的监视窗口更长了，更大了，但希望你能看到它现在正在跟踪两种不同的信息来源。
+- en: two different ranges of information。 So with this add watch。 you can watch data
+    on two separate spreadsheets or two different parts of the same spreadsheet or
+    even different workbooks。 When you're finished with your watch window if you don't
+    need it anymore。 just go ahead and X out of it and continue using Excel as you
+    normally would if you want the watch window back you can just click it again and
+    it should remember the watch windows that you've added in the past。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 两个不同范围的信息。因此，通过这个添加监视，你可以在两个不同的电子表格或同一电子表格的两个不同部分，甚至不同的工作簿中监视数据。当你完成监视窗口的使用后，如果不再需要，直接关闭它，继续像往常一样使用Excel。如果你想重新打开监视窗口，只需再次点击，它应该会记住你之前添加的监视窗口。
+- en: '![](img/0af7264208b4978c505ea4dd2835d8d5_2.png)'
+  id: totrans-16
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/0af7264208b4978c505ea4dd2835d8d5_2.png)'
+- en: した？
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: した？

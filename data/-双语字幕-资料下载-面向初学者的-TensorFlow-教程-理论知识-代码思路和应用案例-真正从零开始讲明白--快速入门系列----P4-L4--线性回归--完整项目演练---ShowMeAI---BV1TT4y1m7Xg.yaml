@@ -1,0 +1,477 @@
+- en: 【双语字幕+资料下载】面向初学者的 TensorFlow 教程，理论知识、代码思路和应用案例，真正从零开始讲明白！＜快速入门系列＞ - P4：L4- 线性回归  完整项目演练
+    - ShowMeAI - BV1TT4y1m7Xg
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】面向初学者的 TensorFlow 教程，理论知识、代码思路和应用案例，真正从零开始讲明白！＜快速入门系列＞ - P4：L4- 线性回归  完整项目演练
+    - ShowMeAI - BV1TT4y1m7Xg
+- en: '![](img/938d327f6471f60f92b4ed5bae0092f3_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/938d327f6471f60f92b4ed5bae0092f3_0.png)'
+- en: 🎼，Hey， guys， welcome to the next Tensorlow tutorial。 In the last video。 we learned
+    how to create a neural network and then train and evaluate the model and make
+    predictions。😊，Now in this tutorial， we implement our first real world project。
+    so we deal with a regression problem， and we learn how we load the data。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 🎼，大家好，欢迎来到下一个 TensorFlow 教程。在上一个视频中，我们学习了如何创建神经网络，然后训练和评估模型并进行预测。😊，在本教程中，我们实现我们的第一个真实世界项目，因此我们处理回归问题，学习如何加载数据。
+- en: analyze the data and apply some pre processing。And yeah， as I said last time。
+    we already used a deep neural network。 and here we first take a step back and
+    apply only a linear regression model。 So only one layer。 But at the end， we extend
+    this to again， a deep neural network。 And with this。 you should get a better understanding
+    of the Keerra stance layer。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 分析数据并进行一些预处理。是的，正如我上次所说，我们已经使用了深度神经网络。这里我们先退一步，仅应用线性回归模型。所以只有一层。但最后，我们再次将其扩展为深度神经网络。通过这个，你应该能更好地理解
+    Keras 层。
+- en: and also of activationctuaation functions。 So here I am in a twopyter notebook。
+    And you don't need to worry about this， this just makes life a little bit easier
+    for me to explain the code to you and show you the different steps。 But you can
+    code all of this in a normal python file。 So let's start and first。 we import
+    the things we need。 So again， here， I silence some warnings。 Then we import mappllip
+    nuy。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 还有激活函数。因此我在一个 Jupyter 笔记本中。你不需要担心这个，这只是让我在向你解释代码和展示不同步骤时生活更容易一点。但是你可以在普通的 Python
+    文件中编写所有这些代码。那么让我们开始，首先导入我们需要的东西。这里，我再次关闭了一些警告。然后我们导入 matplotlib。
+- en: and then this is new。 So now we use pandas。 and you can install this with Pip
+    install pandas。😊。So this makes it very easy to work with data sets and analyze
+    them and modify them。And then here I set some print options to make the outputs
+    a little bit nicer。And then we import the things from Tenofflow。 So again， we
+    import Tensofflow STf。 Then we import Kas。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这也是新的。因此现在我们使用 pandas。你可以通过 pip install pandas 来安装它。😊。这使得处理数据集、分析它们和修改它们变得非常简单。然后在这里我设置了一些打印选项，让输出看起来更好一些。接着我们从
+    TensorFlow 导入相关内容。所以再次导入 TensorFlow 的 tf，然后导入 Keras。
+- en: So the last time I told you about the Kaas API and we already use the ks layers。
+    And now this is new。 So we also import from Tenorflowlow ks layers do experimental。
+    we import preprocessing to apply a preprocessing layer to our data。 So these are
+    the imports we need。 And now for the data set。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 上次我告诉你关于 Kaas API 的事情，我们已经使用了 ks 层。现在这是新的。因此我们还从 TensorFlow 的 ks.layers 导入实验模块，导入
+    preprocessing 来对数据应用预处理层。这是我们需要的导入。现在开始处理数据集。
+- en: So we are going to use this autompg data set。So this is a data set from the
+    year 1983。 and here we have different features and with this we predict thempg
+    for a car。 So how many miles a car can travel using one gallon of fuel and so
+    here this is a very popular website where you find a lot of machine learning data
+    sets。 And now if you click on the data folder then here you get the link to the
+    actual data。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们将使用这个 autompg 数据集。这个数据集来自1983年，这里有不同的特征，使用这些特征来预测汽车的 mpg。因此，汽车使用一加仑燃料能行驶多少英里，这里是一个非常流行的网站，你可以在上面找到很多机器学习数据集。如果你点击数据文件夹，下面你会找到实际数据的链接。
+- en: So now here in the twopiter notebook， this is the exact same URL。 and I already
+    wrote the different column names up here and then with pandas we can say pandas
+    do read CSv So the ending here is not do csv but it's still in the CSv form。So
+    we can use this and you can also use this method if you have a Csv file on your
+    disk。 So this works as well。 So now let's load our data and then we can call data
+    dot tail So this prints the last five columns So here we see thempg value that
+    we want to predict and the different features。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在在这个 Jupyter 笔记本中，这是完全相同的 URL。我已经在上面写好了不同的列名，然后使用 pandas，我们可以说 pandas 能读取 CSV。因此这里的结尾不是
+    do csv，但它仍然是 CSV 格式的。所以我们可以使用这个方法，如果你在磁盘上有 CSV 文件，也可以使用这个方法。所以这也可以工作。现在让我们加载数据，然后可以调用
+    data.tail，这将打印最后五列。我们在这里看到想要预测的 mpg 值和不同的特征。
+- en: So for example， we have the number of cylinders， the displacement， the horsepower。
+    the weight acceleration model year and or written。 So yeah。 this is our data sets
+    and now we clean our data set。 So in here we have some missing numbers and we
+    can very simply exclude them by saying data dot drop and a and then we also change
+    this last column here because。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 例如，我们有气缸数量、排量、马力、重量、加速度、车型年份等。因此，是的，这是我们的数据集，现在我们清理我们的数据集。在这里我们有一些缺失值，我们可以很简单地通过调用`data.drop`来排除它们，然后我们也会改变最后一列，因为。
+- en: This is actually a categorical value， and all of the other ones are numerical
+    values。 So this might confuse our model。 So we want to change this in a one hot
+    encoded data。 so we can call data set dot pop or written to remove this。And here
+    in the origin。 we have the different countries， USA， Europe and Japan。 So we can
+    add them like this。So now， again。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这实际上是一个分类值，其他的都是数值型值。所以这可能会让我们的模型感到困惑。因此我们想将其转换为独热编码数据。我们可以调用数据集的`pop`方法或直接删除它。在原始数据中，我们有不同的国家，如美国、欧洲和日本。我们可以这样添加它们。现在，再次进行操作。
+- en: if we have a look at our tail， then we see we removed the origin value and instead
+    included one hot labels。 So here for label 1。 our it's the USA for label 2， it's
+    Europe。 Then again， label 1。 So again。 USA has the one and so on。 So now we have
+    this。And now we want to split our data into training and test sets。 and we can
+    do this by calling dot sample and then use a fraction here。 So use 80% for training。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我们查看尾部数据，那么我们会看到我们移除了原始值，而是包含了独热编码标签。因此，对于标签1，代表美国；对于标签2，代表欧洲。然后，标签1又是这样。所以现在我们有了这个。现在我们想将数据分为训练集和测试集。我们可以通过调用`sample`方法，并在这里使用一个比例来实现。因此，使用80%作为训练集。
+- en: And we again， drop the samples。 So all of the samples。 all of that we specify
+    here are not included in the test set。And then yeah。 let's print print the shape
+    and let's also describe our dataset set so we can very easily do this with pandas
+    as well by calling the dot describe function。 And then here we see we have our
+    whole data set has 392 samples and then 10 different columns for now。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们再次删除样本。因此，所有我们在这里指定的样本都不包括在测试集中。然后，是的，让我们打印形状，并描述我们的数据集，因此我们也可以通过调用`describe`函数很容易地做到这一点。然后在这里我们看到我们的整个数据集有392个样本，目前有10个不同的列。
+- en: And then our test data， our training data is 80% so 314 and the rest is for
+    testing。And now if we call the describe function， then it analyze some statistics
+    like the number of samples。 the mean， the standard deviation， the min and max。So
+    this might be useful to analyze it。 And first of all， now what we want to do is
+    we want to split the features from the labels。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们的测试数据，训练数据占80%，即314，剩下的是用于测试的。现在如果我们调用描述函数，它会分析一些统计信息，如样本数量、均值、标准差、最小值和最大值。这可能有助于分析。首先，我们想要做的是将特征和标签分开。
+- en: So we want to this is our label that we predict MP。 So first we make a copy。
+    So we say these are our training features and our test features。 And then we simply
+    pop the MP G column from the training and testing data。 And when we pop this。
+    then this also returns the data。 So this is now our training and testing labels。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们想要的是我们的标签，以预测MP。首先我们做一个副本。因此，我们说这些是我们的训练特征和测试特征。然后我们简单地从训练和测试数据中删除MPG列。当我们这样做时，它也会返回数据。所以这就是我们现在的训练和测试标签。
+- en: So now we have this。Then here's a simple function to plot the data with mappl
+    lip。 and now let's simply plot one feature。 So let's plot the horsepower feature。
+    And we plot this against thempg value。 So we see the more horsepower our car has
+    also the less is the value of MPg。 and this makes sense because the more power
+    our gas has the more fuel it needs。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们有了这个。然后这是一个简单的函数，用于用`matplotlib`绘制数据。现在让我们简单地绘制一个特征。因此，让我们绘制马力特征。我们将其与MPg值进行对比。所以我们看到，汽车的马力越大，MPg值越低。这是有道理的，因为我们的汽车功率越大，所需的燃料也就越多。
+- en: So the less is the MPg。 And so then we also let's plot the weight feature。 and
+    this should have a similar distribution。 So again， the higher the weight of a
+    car。 the more fuel uses it， and the less is the number of the MPg value。So， yeah。So
+    this is how our data looks like。 And now if we go back to the describe function
+    and have a look at the different mean values。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以MPg值越低。而且我们也可以绘制重量特征，这应该有类似的分布。因此，汽车的重量越大，消耗的燃料就越多，而MPg值则越低。所以，是的，这就是我们的数据呈现的样子。现在如果我们回到描述函数，查看不同的均值。
+- en: then we see these all have different ranges and this is again。 a very important
+    issue that we have to consider。 So this these different ranges if if we leave
+    it like this。 then it might confuse our model。 So it's recommend to normalize
+    the data first and to normalize。 So let's print again， let's describe our training
+    data set and only the but let's print only the mean and the standard deviation。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们看到这些都有不同的范围，这再次是一个非常重要的问题，我们必须考虑。因此，如果我们这样保持这些不同的范围，可能会使我们的模型感到困惑。因此，建议先对数据进行标准化。让我们再次打印，描述我们的训练数据集，但只打印均值和标准差。
+- en: So if we run this again then here we see the different means。And now to normalize
+    it。 we used this normalization layer from the pre processingces module。 So this
+    one here that we imported。So let's code this。 So here we create a normalization
+    layer。 So we say normalizer equals pre processing dot。Normalization。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我们再次运行这个，那么这里我们会看到不同的均值。现在为了标准化，我们使用了预处理模块中的这个标准化层。因此这里是我们导入的这个。让我们编码这个。因此我们创建一个标准化层。因此我们说normalizer等于pre.processing.dot.Normalization。
+- en: so this is a kas layer for the sequential API。 And to call this。 we have to
+    adapt it to our to the data。 So here we say， normalizer dot adapt。 And then we
+    want to adapt it to the training features。 And right now。 this is a panda data
+    set so we can convert this to a nuy array。 and then call the train fee。Cers。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是一个适用于顺序API的kas层。要调用这个，我们必须将其适应我们的数据。因此这里我们说，normalizer.dot.adapt。然后我们想要将其适应训练特征。目前，这是一个pandas数据集，所以我们可以将其转换为nuy数组，然后调用训练特征。
+- en: So what this is doing for now， this simply store calculates the mean and the
+    variance of this training features and then stores them in the layers。 So now，
+    for example， we can say print and then normalr dot mean dot nuy。 and then if we
+    run this。Then we see here this。 These are our mean values， and these are the exact
+    same numbers as we see here if we go this first column down。So this simply stores
+    it。 And now whenever we apply this layer to our data。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以现在这个功能的作用是，简单地计算训练特征的均值和方差，然后将其存储在层中。因此，现在，例如，我们可以打印，然后使用normalr.dot.mean.dot.nuy。如果我们运行这个，就可以看到这里。这些是我们的均值，这些数字与我们在第一列看到的完全相同。因此这只是将其存储下来。现在每当我们将这个层应用于我们的数据时。
+- en: then it normalizes the features such that it computes this this formula。 So
+    it subtracts the mean and then divides by the standard deviation。 and this means
+    that our output has a zero mean and unit variance。 So here let's get some example。
+    So the first data from the training features。Then， let's print this one。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它会对特征进行标准化，以计算这个公式。因此，它减去均值，然后除以标准差。这意味着我们的输出具有零均值和单位方差。这里我们来一些示例。因此，第一个数据来自训练特征。然后，让我们打印这个。
+- en: So this is the first data unized。 And then we also want to print the normalized
+    one。 So。 let's print nor。Maized。 And then here we have to call this layer normalr
+    with our data。 So first。 and then convert it to numpy。 So this is how we convert
+    from a tensor flow tensor to a nuy array。 So let's run this。 And then we see we
+    have the。The first layer with different scales and ranges。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这是第一个数据标准化。然后我们还想打印标准化后的数据。因此，让我们打印nor.Maized。然后这里我们需要用我们的数据调用这个normalr层。所以首先。然后将其转换为numpy。这是我们如何将TensorFlow张量转换为nuy数组。让我们运行这个。然后我们看到我们有第一层具有不同的尺度和范围。
+- en: and now our normalized data。 So they are all somewhere around0 with a unit standard
+    deviation。 So this is how we apply a normalizer preprocessing layer。 And now let's
+    tackle our regression problem。 So in regression。 So we somewhere we have this
+    distribution that we know from the training data。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们的标准化数据。因此它们都在0附近，具有单位标准差。这就是我们如何应用标准化预处理层。现在让我们处理我们的回归问题。在回归中。我们在某处有这个从训练数据得知的分布。
+- en: and now when we get a new data， we want to so for example。 here we get a new
+    weight sample and then we want to predict how muchmpT we have for this car。 and
+    for this， we fit a function So a linear function with this formula so we can approximate
+    it withmp times x plus B。 So this is a。Basically a line equation and we use this
+    with the layers with the dense layer。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在当我们获得新数据时，我们想要，例如。这里我们获得一个新的权重样本，然后我们想预测这辆车的多少mpT。为此，我们拟合一个函数，即用这个公式拟合一个线性函数，这样我们可以用mp乘以x加上B来近似。因此，这基本上是一个线性方程，我们使用这个与密集层一起。
+- en: Sos better understand this。 Now， first， let's not use all of the different training
+    features that we have。 So all of these so let's just use one so that we can stay
+    in the 2D case so in this case。 for example， its let's use the horsepower So here
+    let's define our feature and this should be the horse power label so I will implement
+    it like this so then you can just change the feature here and then you can try
+    out different features so we can also for example。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 为了更好地理解这一点。现在，首先，让我们不要使用所有不同的训练特征。所以这些，让我们只使用一个，以便保持在二维情况下。在这种情况下，例如，使用马力。所以在这里让我们定义我们的特征，这应该是马力标签。我将这样实现，这样您就可以在这里更改特征，然后尝试不同的特征。
+- en: use weight here so all of these names you can use here as a feature and now
+    let's get the single feature or the single data so let's。Call this single feature
+    equals Ny array。 And then from our training features。 and then we can access it
+    with the feature。 This will only return the horsepower feature。So let's print
+    this。 Let's print single fee。Feature dot shape。 And let's print train。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这里使用权重，所以所有这些名称都可以作为特征使用。现在让我们获取单特征或单数据，称之为单特征等于Ny数组。从我们的训练特征中，然后我们可以通过特征访问它。这将只返回马力特征。所以让我们打印这个。打印单特征
+    dot shape。打印训练特征 dot shape。
+- en: features dot shape。So now， if we run this。嗯。Here I have a typo array。Let's run
+    it again。 Then we see our single feature only has one feature。 And in the whole
+    training data。 we have 9 different features。 So then up here we。Created this preproces
+    or normalization layer and then adapted it to all of the features。 So basically
+    we have to do the same thing， but now adapt it only to the horse power feature。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以现在，如果我们运行这个。嗯。这里我有一个拼写错误的数组。让我们再运行一次。然后我们看到我们的单特征只有一个特征。而在整个训练数据中，我们有9个不同的特征。然后在这里，我们创建了这个预处理或归一化层，并将其适应于所有特征。所以基本上我们必须做同样的事情，但现在仅适应马力特征。
+- en: So let's call this single feature normalizer then again， our single feature
+    normalizer。 we call the adapt data and adapt it to the single feature single underscore
+    feature。 So now we have this and can run this code and here I have one parentheses
+    too much。 So again。 So now we have this single feature。 and now we create our
+    sequential model as the last time。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们再次称之为单特征归一化器，我们调用适应数据并适应单特征单下划线特征。所以现在我们有这个，可以运行这段代码，这里我有一个多余的括号。所以再次修正。所以现在我们有这个单特征。现在我们创建我们的顺序模型，就像上次一样。
+- en: So this is very easy with the Kaas API。嗯。So， we say， our single。Feature。Model
+    equals。 And then we say， Kas dot。Models dot sequential。 And then here we use a
+    list with all the different layers。 So we use this as a first layer。 So the single
+    feature normalizer。 And then we only use one layer。 So one dense layer。 and the
+    output or also called units number of units is only one。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以使用Kaas API非常简单。嗯。所以，我们说，我们的单特征模型等于。然后我们说，Kas dot Models dot sequential。在这里我们使用一个包含所有不同层的列表。所以我们将这个作为第一层。单特征归一化器。然后我们只使用一层。所以一个密集层，输出或称为单位数的单位只有一个。
+- en: So this is all that we need to build a linear regression model。 So this is a
+    linear regression or linear。Model that applies exactly this formula。 So it has
+    some weights and multiplies it with our input。 And it also has a bias。So this
+    is all that we are doing here。 So let's run this。 and let's print the model summary。
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这就是我们构建线性回归模型所需的全部。这是一个线性回归或线性模型，完全应用这个公式。它有一些权重，并将其与我们的输入相乘。它还有一个偏置。所以这就是我们在这里所做的一切。让我们运行这个，并打印模型摘要。
+- en: And then we see we have our normalization layer and our dense layer and only
+    five parameterss。5 parameters。 So it's very simple。 And now as a next step。 the
+    same as last time we define a loss and a optr。 So for the loss， we use ks dot
+    losses。 And in the case of a linear regression， we can use the mean absolutearrow。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们看到有归一化层和密集层，只有五个参数。5个参数。所以这非常简单。接下来，和上次一样，我们定义一个损失和一个优化器。所以对于损失，我们使用ks dot
+    losses。在线性回归的情况下，我们可以使用平均绝对误差。
+- en: So this is one possibility， we could also use the mean squaredarrow。 So you
+    can try out both。😊。And so this is simply this one is doing the so the prediction
+    y prediction minus the actual y。 and then the absolute value and then sum it up
+    over all samples and calculate the mean value and the mean square error is the
+    same。 except that it's using the square here and not the absolute value。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这是一种可能性，我们也可以使用均方误差。所以你可以尝试两者。😊。所以这实际上是预测值y减去实际值y，然后取绝对值，最后对所有样本求和，计算均值，均方误差是相同的，只不过这里使用的是平方而不是绝对值。
+- en: So yeah try that out for yourself。And now the optimizer equals。 So the same
+    as last time Kaas dot optimizers dot。 Let's use the Adamom optimizer。 and we have
+    to give it a learning rate。 Let's try out point1。And then after we have this。
+    then we compile our model。 So single feature model dot compile， compile。And here
+    we give it。
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以试试看吧。现在优化器等于。所以和上次一样Kaas.dot.optimizers.dot。让我们使用Adam优化器。我们需要给它一个学习率。让我们试试0.1。然后在我们有了这个之后，我们编译我们的模型。所以单特征模型.dot.compile，compile。在这里我们给它。
+- en: The optr equals the optimizer and。Optim and the loss equals the loss。 And yeah。
+    last time we also gave it the metrics that we want to track So the accuracy。 but
+    the accuracy doesn't make sense here for the regression。 So we leave it away。
+    And then we simply see the loss later。 So let's run this。And now to train the
+    model。
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 优化器等于优化器和。损失等于损失。是的。上次我们也给了它要跟踪的指标，所以准确率。但在回归中准确率没有意义，所以我们不考虑。然后我们可以稍后看到损失。让我们运行这个。现在来训练模型。
+- en: we simply have to call model dot fit like the last time with our training features
+    and here we only want the single feature that we define so the horse power in
+    this case。 but we still include all the training labels then we define the epochs
+    then here I set verbose to one to see some logging and we can also define a validation
+    split so this automatically takes 20% of the training data and then uses it for
+    the validation data to tweak the hyperparameter。
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们只需像上次那样调用model.dot.fit，使用我们的训练特征，这里我们只希望定义的单个特征，所以在这种情况下是马力。但我们仍然包括所有训练标签，然后定义周期，在这里我将verbose设置为1以查看一些日志，我们还可以定义验证分割，这样自动将20%的训练数据用于验证数据，以调整超参数。
+- en: So let's train our model。And now， training is done。 And now we see that the
+    loss decreased。 and we also see the validation loss decreasing。And at the end，
+    we have a training loss of 3。8 and a validation loss of slightly more 4。1。 So
+    it's not very bad。 and by the way。 if we call model fit， then this returns the
+    history， where it stores both of these losses。
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以让我们训练我们的模型。现在，训练完成了。现在我们看到损失减少了，我们也看到验证损失在减少。最后，我们的训练损失是3.8，验证损失稍微超过4.1。所以并不算太差。顺便说一句，如果我们调用model.fit，那么它将返回历史记录，其中存储了这两个损失。
+- en: So we can assign it to a variable， which I call history here。 and then I simply
+    plot the history。 So then we can access these two losses by calling history dot
+    history and then access the loss and the validation loss。So let's plot this and
+    then we see that our losses decreased， so it's， it looks very good here。And then
+    to evaluate our model， we simply， like last time。
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们可以将其分配给一个变量，我在这里称之为history。然后我简单地绘制历史记录。接着，我们可以通过调用history.dot.history来访问这两个损失，然后访问损失和验证损失。让我们绘制这个，然后我们可以看到损失减少了，看起来非常不错。然后要评估我们的模型，我们就像上次一样简单进行。
+- en: call model dot evaluate with our test features only with horsepower and the
+    test labels。So let's run this。 And this was very fast。 So here we see。 we have
+    a final loss for the test data of 3。6。 So not very bad。 And now let's predict
+    some samples。 So in this case， I simply create。Test data。 So all the values between。
+  id: totrans-38
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 调用model.dot.evaluate，只用我们的测试特征，即马力和测试标签。让我们运行这个。这非常快。所以在这里我们看到。测试数据的最终损失为3.6。所以并不算太差。现在让我们预测一些样本。因此在这种情况下，我简单创建了测试数据。所有值在。
+- en: The min value and the max value and increase the range a little bit。 You could
+    also just use a hard coded number here， like from0 to 250。 But I want to be it
+    like a little bit more suited for the used feature。 So we use this。 And then to
+    predict， we call model dot predict。 And then our new test data that we want to
+    predict。
+  id: totrans-39
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 最小值和最大值之间，并增加范围一点。你也可以在这里直接使用一个硬编码的数字，比如从0到250。但我想让它更适合使用的特征。所以我们使用这个。然后要进行预测，我们调用model.dot.predict。然后是我们想要预测的新测试数据。
+- en: And then we plot it with our function from the beginning。And this is the same
+    plot as in the beginning。 So we plot the horsepower against the MP7 value。 And
+    then these are our new x values that we predict。 and we see that our prediction。
+    So here we plot a line。 and this is a linear line since we use a linear regression
+    model。
+  id: totrans-40
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们用一开始的函数绘制它。这与一开始的图相同。因此我们绘制马力与MP7值的关系。这些是我们预测的新x值。我们看到我们的预测。因此在这里我们绘制一条线。这是一条线性线，因为我们使用的是线性回归模型。
+- en: And we see that it's not too bad。 So we see the same trend。 So the more horsepower
+    our car has the lower the MP is。 but for example， here in this area。 it's staying
+    the same except that our horsepower is further increasing。 So yeah。 in this area
+    and also maybe in this area area， it's not perfect。 So but in the rest。
+  id: totrans-41
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们看到情况还不错。因此，我们看到相同的趋势。我们的汽车马力越大，MP越低。但是，例如，在这个区域，除非我们的马力进一步增加，否则它保持不变。所以是的，在这个区域，也许在这个区域，它并不完美。但是在其余部分。
+- en: it looks it looks okay。So， yeah， so this is how we apply a linear model。 and
+    again。 we only need the one dense layer with one output unit。 and we also apply
+    this normal normalization layer。 So this is all we need to use linear regression。
+    And now let's extend this to a deep neural network。 So as I said， with only one
+    dense layer。
+  id: totrans-42
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 看起来还不错。所以，是的，这就是我们如何应用线性模型。再一次，我们只需要一个带有一个输出单元的密集层。我们还应用这个归一化层。因此，这就是我们进行线性回归所需的一切。现在让我们将其扩展为深度神经网络。正如我所说，只有一个密集层。
+- en: we can only use a or only get a linear linear function here like this， which
+    is not perfect。 So to further improve this， we can introduce more layers here
+    and convert this to a fully feet forward neural net。So we simply， we still use
+    the normalization layer and the dense layer at the end。 But in the middle。 we
+    use some more dense layers。 So let's say， layers dot dense。
+  id: totrans-43
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们这里只能使用一个线性函数，这并不完美。因此，为了进一步改善，我们可以在这里引入更多层，将其转换为一个完全前馈的神经网络。所以我们简单地，仍然在最后使用归一化层和密集层。但是在中间，我们使用更多的密集层。假设，layers.dot.dense。
+- en: And then here you can try out different values for the hidden size。 And as I
+    said in the last time。 we also apply activation functions for these layers in
+    the middle。😊，So let's yeah。 let's use the relu again， like last time。 And then
+    let's use the same one again。And yeah。 and then at the end， we use our dense layer
+    with one output。 And now this is all we need。
+  id: totrans-44
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后在这里你可以尝试不同的隐藏层大小。正如我上次所说，我们还对中间这些层应用激活函数。😊，所以我们是的，让我们像上次一样再用一次relu。然后我们再使用同样的。是的，然后在最后，我们用一个输出的密集层。现在这就是我们所需要的全部。
+- en: And now we converted our linear regression model to a deep neural network model。
+    So let's use this。 And then again， we compile it with the loss and again。 a atom
+    optimizer and call the summary to see the different layers again。 And then we
+    see there is a lot more parameters that we have to train now。 So now again。
+  id: totrans-45
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们将我们的线性回归模型转换为深度神经网络模型。所以让我们使用这个。然后再次，我们用损失和一个adam优化器进行编译，并调用摘要以再次查看不同的层。然后我们看到现在有很多参数需要训练。因此现在再次。
+- en: let's call model fit with our horsepower feature and start the training。😊，And
+    training is done。 And we see the final model or final loss is slightly better
+    now。 so slightly lower than before。 So let's evaluate our model。 And now it's
+    below three。 So it's definitely better。 And now again。 let's make some predictions
+    and plot this。 And now we see a new plot。
+  id: totrans-46
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们用我们的马力特征调用模型拟合并开始训练。😊，训练完成。我们看到最终模型或最终损失现在略微改善，所以比之前略低。让我们评估一下我们的模型。现在它低于三。因此它肯定更好。现在我们再做一些预测并绘制图表。现在我们看到一个新图。
+- en: And now we see that our function is no longer only linear。 But here we also
+    have some nonlinear areas。😊，And this is the effects of the activation functions
+    that we used。 And that's why this is such an important thing in neural networks
+    to apply activation functions。 So here again， we have this only our linear regression
+    model with one dense layer。
+  id: totrans-47
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们看到我们的函数不再只是线性。但在这里我们也有一些非线性区域。😊，这是我们所使用的激活函数的效果。这就是为什么在神经网络中应用激活函数如此重要。因此在这里，我们再次只有一个带有一个密集层的线性回归模型。
+- en: So here we can only predict a linear function。 And now with a deep neural network。
+    we can get a non nonlinearar function as prediction。 So yeah。 I think that's all
+    and now so we only used one feature for now so that we can stay in this 2D case。
+    but of course， we can include all of the features and we do it the same。
+  id: totrans-48
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这里我们只能预测线性函数。而现在通过深度神经网络，我们可以获得非线性函数作为预测。所以是的。我想这就是全部，现在我们只使用一个特征，以便保持在这个二维案例中，但当然，我们可以包括所有特征，方式相同。
+- en: So we don't have to change anything actually。 So we use this normalizer that
+    we adapt it to all the。Maining features。 And here we have only our single dense
+    layer。 Then we compile this。And then we fit it here to the all of the training
+    features and train it and。And now。 training is done。 And we see that the loss
+    is also below 3。 So training on all features makes it。
+  id: totrans-49
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以实际上我们不需要更改任何东西。我们使用这个标准化器，将其调整到所有的主要特征。在这里，我们只有一个密集层。然后我们编译它。接着我们将其拟合到所有训练特征上进行训练。现在，训练完成。我们看到损失也低于3。因此，使用所有特征进行训练效果很好。
+- en: Further， better。 And now let's evaluate it as this last thing。 And then we see
+    we get the final loss。So yeah， so you see you don't the code is actually the same。
+    We just use all of the training features here and also for the normalizer。 we
+    adapted it to all of the training features。 So yeah。
+  id: totrans-50
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 此外，更好。现在让我们将其评估为最后一件事情。然后我们看到最终的损失。所以是的，你会看到代码实际上是相同的。我们只是在这里使用所有的训练特征，以及标准化器。我们将其调整到所有训练特征。因此，是的。
+- en: I think now you learned a lot in this tutorial how we can download and load
+    CSv data and how we analyze it and preprocess it with the pandas framework and
+    then how we use the normalization layer to normalize our data and then how we
+    set up a a single linear regression model with this dense layer。
+  id: totrans-51
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想你现在在这个教程中学到了很多，关于如何下载和加载CSV数据，如何用pandas框架分析和预处理它，然后如何使用标准化层来标准化我们的数据，接着如何用这个密集层设置一个线性回归模型。
+- en: And then again， training and evaluation is the same like last time。 And yeah，
+    and we also。 you learned about the effect of the activation functions in a deep
+    neural network。And yeah。 that's it for today。 I hope you enjoyed this tutorial。
+    And if you liked it。 then please hit the like button and consider subscribing
+    to the channel。
+  id: totrans-52
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后再次，训练和评估与上次相同。是的，我们也。你了解了激活函数在深度神经网络中的作用。就这样，今天到此为止。希望你喜欢这个教程。如果你喜欢，请点击赞按钮，并考虑订阅频道。
+- en: And I hope to see you in the next video， bye。😊。![](img/938d327f6471f60f92b4ed5bae0092f3_2.png)
+  id: totrans-53
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 希望在下一个视频见到你，再见。😊！[](img/938d327f6471f60f92b4ed5bae0092f3_2.png)

@@ -1,0 +1,96 @@
+- en: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P21：21）更改散点图的大小和颜色
+    - ShowMeAI - BV14g411F7f9
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P21：21）更改散点图的大小和颜色
+    - ShowMeAI - BV14g411F7f9
+- en: And let's actually show you that really quickly。 This will be our next question。
+    How do you color and size every individual point。![](img/d86e49401e66c8069ae22741c8abda23_1.png)
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们实际上快速展示一下。这将是我们下一个问题。如何为每个点着色和调整大小。![](img/d86e49401e66c8069ae22741c8abda23_1.png)
+- en: Well， you just pass in arrays。 You just pass in arrays here。 So let's take this。
+    We'll take it back down here。 Let's get our X。You know， we'll do like， we'll do
+    X plus。0。01 or 0。1 to avoid that whole error that it encountered。 and we'll multi，
+    multiply that by 10。 And then we've also got this C parameter。Got the C parameters。
+    So let's try passing that in。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好吧，你只需传入数组。你在这里只需传入数组。所以让我们取这个。我们将它放回这里。让我们得到我们的X。你知道的，我们将做X加上0.01或0.1，以避免遇到的整个错误。然后我们将其乘以10。然后我们也有这个C参数。得到了C参数。那么让我们试着传入这个。
+- en: Let's try passing Y in for that。![](img/d86e49401e66c8069ae22741c8abda23_3.png)
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们试着把Y传入这个参数。![](img/d86e49401e66c8069ae22741c8abda23_3.png)
+- en: And you'll see that we get some kind of interesting thing going on here。 Let's
+    I'm going pass in a C map value。 This is a color map。 This is a way that you let
+    map plot Lib know。 hey， I want to use a particular。A particular group of colors。So
+    we got some cool， warm going on。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你会看到这里发生了一些有趣的事情。让我传入一个C映射值。这是一个颜色映射。这是让map plot Lib知道的一种方式。嘿，我想使用一个特定的颜色组。所以我们有一些冷、暖色调。
+- en: '![](img/d86e49401e66c8069ae22741c8abda23_5.png)'
+  id: totrans-5
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/d86e49401e66c8069ae22741c8abda23_5.png)'
+- en: And this actually is not doing what I would expect it to do。 I would expect
+    the values to change with the Y here。 Let's take a look at A x dots scatter。![](img/d86e49401e66c8069ae22741c8abda23_7.png)
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 实际上这并没有做我预期的事情。我原本期望这些值会随着Y的变化而变化。我们来看一下A x点的散点图。![](img/d86e49401e66c8069ae22741c8abda23_7.png)
+- en: '![](img/d86e49401e66c8069ae22741c8abda23_8.png)'
+  id: totrans-7
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/d86e49401e66c8069ae22741c8abda23_8.png)'
+- en: So you can pass in size， you can pass in C。C is a color， a sequence or a sequence
+    of color。![](img/d86e49401e66c8069ae22741c8abda23_10.png)
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以你可以传入size，可以传入C。C是一个颜色、一个序列或一个颜色序列。![](img/d86e49401e66c8069ae22741c8abda23_10.png)
+- en: '![](img/d86e49401e66c8069ae22741c8abda23_11.png)'
+  id: totrans-9
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/d86e49401e66c8069ae22741c8abda23_11.png)'
+- en: There we go。 Alright， it looks like it looks like was able to fix it by some
+    of these x values。 If you look at x here。 So we're going down to negative5。![](img/d86e49401e66c8069ae22741c8abda23_13.png)
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好吧，看起来通过这些x值我能够修复它。如果你看看这里的x。我们降到负5。![](img/d86e49401e66c8069ae22741c8abda23_13.png)
+- en: '![](img/d86e49401e66c8069ae22741c8abda23_14.png)'
+  id: totrans-11
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/d86e49401e66c8069ae22741c8abda23_14.png)'
+- en: And so if we add 10 to our x so that we make sure all of our sizes are positive。
+    then it looks like things work as we would expect them to。Okay， figured that out。
+    So this is coloring by every point and also doing the size by every point。 And
+    this might not be very helpful for this specific graph。 But let's say that you've
+    got， you know。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我们把10加到x上，以确保所有的size都是正数，那么它看起来就像我们预期的那样工作。好吧，搞定了。所以这是每个点的着色，同时也根据每个点的大小进行处理。这可能对这个特定的图表没有太大帮助。但是假设你有，你知道的。
+- en: 100 different points on a scatter plot。 and you want to color them by one thing。
+    and you want to size them by another。This is how you would do that。 And as we
+    just learned。 make sure that all of your sizes are positive because you can't
+    have a negative size。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在散点图上有100个不同的点。你想根据一个属性为它们着色，并根据另一个属性调整它们的大小。这就是你会如何做的。正如我们刚刚学到的，确保你的所有大小都是正数，因为你不能有负的大小。
+- en: '![](img/d86e49401e66c8069ae22741c8abda23_16.png)'
+  id: totrans-14
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/d86e49401e66c8069ae22741c8abda23_16.png)'

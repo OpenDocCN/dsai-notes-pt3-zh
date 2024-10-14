@@ -1,0 +1,149 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P47：48）获取和转换／Power Query 2 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P47：48）获取和转换／Power Query 2 - ShowMeAI - BV1uL411s7bt
+- en: '![](img/c2aeb140e9824836fd55cd14e85f46f5_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/c2aeb140e9824836fd55cd14e85f46f5_0.png)'
+- en: In this intermediate guide to Excel's get and transform tool。 I'll show you
+    how to get data from the web and transform it in Excel。 You can see here on sheet
+    number 3， I have a couple of website URLs。 And you should have access to the same
+    document that I'm using。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这本关于Excel获取和转换工具的中级指南中，我将向你展示如何从网络获取数据并在Excel中进行转换。你可以在第3个工作表上看到我有几个网站URL，而你应该可以访问我使用的相同文档。
+- en: If you look in the description below the video。 There's a link for it。 And the
+    links take you to these two Wikipedia pages。 And both of these Wikipedia articles
+    have tables in them that I would like to bring in to my Excel workbook to do that。
+    All I have to do is click on the URL to highlight it and then hold control and
+    tap C to copy the URL。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你查看视频下方的描述，会有一个链接。链接会带你到这两个维基百科页面。这两个维基百科文章中都有我想要导入到Excel工作簿中的表格。要做到这一点，我只需点击URL以高亮显示，然后按住控制键并点击C来复制URL。
+- en: and then I'll jump back into Excel， and I'll go to the data tab and I'll look
+    here in the get and transform data group。 and I'll just click from Web。 It opens
+    up this new window and I can simply paste in the URL that I copied from Wikipedia。
+    I can click O and a window opens up。 This is the navigator。And the navigator will
+    help me to choose what part of that Wikipedia page I would like to get and then
+    transform in my Excel workbook。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我会跳回Excel，进入数据选项卡，在获取和转换数据组中查看。我会点击“从网页”。这会打开一个新窗口，我可以简单地粘贴我从维基百科复制的URL。我点击“O”，一个窗口会打开。这就是导航器。导航器将帮助我选择维基百科页面的哪一部分我想获取并转换到我的Excel工作簿中。
+- en: So look at what it gives me。 It says accolades， it says critical response document
+    episodes。 And then it's got a whole bunch of tables below that。 Now， where did
+    it get this information。 Well。 it got it from the URL that I provided。 if I go
+    back to Wikipedia， I can see this better。 if I go down to episodes， for example，
+    there's a list of each season of Marvel's agents of shield。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以看看它给我的内容。它说有荣誉，评论文档剧集。然后下面有一堆表格。那么，它是从哪里获得这些信息的呢？它是从我提供的URL获取的。如果我回到维基百科，就能更好地看到。如果我下滑到剧集，比如，有一份关于《神盾局特工》每个季节的列表。
+- en: the number of episodes when it aired and the viewership。 So let's say that's
+    exactly the data I would like to import。 I just need to take note of the label
+    for that section episodes。 go back into Excel and look for it。 there it is， I
+    can click on it， and if it's perfect the way it looks here。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 播出的剧集数量和收视率。因此，假设这是我想导入的数据。我只需注意该部分剧集的标签，返回到Excel中查找。找到了，我可以点击它，如果它的样子完美无缺。
+- en: I can just click load and it will be added to my workbook。 But I want to make
+    some changes to the data。 So instead of。Clicking load。 I'm going to click transform
+    data。 That takes me to the power query editor window。 and let's take a look at
+    the data。 The data looks pretty good to me。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以点击加载，它将被添加到我的工作簿中。但是我想对数据做一些更改。所以我不会点击加载，而是点击转换数据。这会带我进入Power Query编辑器窗口。让我们看看数据。对我来说，数据看起来很好。
+- en: but there are some things that are confusing about it。 For example。 this originally
+    aired and then episodes is repeated and seasons repeated。 If I look back at the
+    Wikipedia article。 It becomes more clear。 This originally aired sell is confusing
+    things and is making it so that season gets repeated。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但是，有些事情让人感到困惑。例如，这个节目最初播出后，剧集和季节都会重复。如果我回头查看维基百科的文章，就会变得更加清晰。这个最初播出的单元让人困惑，使得季节重复。
+- en: episode gets repeated。 rank probably gets repeated。 So let's look at how to
+    fix that。 So I don't really need that first row of data。 It's repetitious。 I don't
+    really need this originally aired sell and everything else is really repeated。
+    So I'm going to click on row 1 at the bottom of the window it lists out everything
+    that's included in row 1。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 剧集可能会重复，排名也可能会重复。那么，让我们看看如何修复它。我实际上不需要第一行数据，因为它是重复的。我不需要这个最初播出的单元，其他内容也确实重复。因此，我将在窗口底部的行1上点击，它列出了所有包含在行1中的内容。
+- en: and then I'll just go up here on the home tab and I'll just click remove rows。
+    There's an option to remove top rows， bottom rows or alternate。rows and some other
+    options below。 I'm going go with remove top rows。 Now I need to specify how many
+    rows。 just the one top row。 If I were to put two， it would remove the top two
+    rows。 I'll just click okay。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我只需在首页选项卡上点击删除行。这里有删除顶部行、底部行或交替行的选项，以及一些其他选项。我将选择删除顶部行。现在我需要指定多少行。就一个顶部行。如果我输入二，它将删除前两行。我只需点击确定。
+- en: rowow number one is now gone。 Now let's remove column 1。 That's also unnecessary
+    data。 So I'll make sure that I've selected column 1 and click remove columns。
+    And look。 here's another unnecessary column。 Now， this is pretty common。 whenever
+    you're pulling data from the Internet or from other sources that are not natively
+    from Excel。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 第一行现在已被删除。现在让我们删除第一列。这也是不必要的数据。因此，我会确保选择了第一列，然后点击删除列。看看，这里还有另一列不必要的列。这是非常常见的，特别是在你从互联网上或其他非原生
+    Excel 来源提取数据时。
+- en: It's common to have unnecessary data or repetitious data or other unnecessary
+    artifacts come from that original data into Excel。 And so that's what we're doing
+    here as we're trying to clean it up。 So this is totally unnecessary。 It's just
+    a repetition of column 2。 So again， remove columns。 It's gone。 let's look at the
+    rest of the data。 Everything else looks pretty good。 Now。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在 Excel 中，从原始数据中引入不必要的数据、重复的数据或其他多余的内容是很常见的。因此，我们正在努力清理这些数据。这是完全不必要的，它只是第二列的重复。因此，再次，删除这些列。它已经消失。让我们看看其余的数据。其他一切看起来都不错。现在。
+- en: just like I showed in my。Beginner's guide to Excel， get and transform over here
+    on the right。 I have a list of all of the applied steps that I've made as I've
+    tried to clean up this data。 If I regret any of them， I can just click the red
+    X to the left of that step。 and it will undo that step In the previous video I
+    also showed how you can transform data by going to the transform tab and using
+    tools like format to change the format of whatever you have selected in these
+    ways。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 就像我在我的《Excel 初学者指南》中展示的那样，在右侧获取和转换数据。我有一份我在尝试清理数据时所做的所有应用步骤的列表。如果我对其中任何一步感到后悔，我只需点击该步骤左侧的红色
+    X，它就会撤消该步骤。在之前的视频中，我还展示了如何通过转到转换选项卡并使用格式等工具，以这些方式改变你所选内容的格式。
+- en: or you can also use replace values to help clean up your data。 Now。 there's
+    one more change I want to make before I add this data to my workbook。 and that
+    is this。 look， the headers don't quite match what I want。 I would like the first
+    row to actually act as the header。 So to do that here on the home tab home ribbon。
+    I can just go here and click use first row as headers。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 或者你也可以使用替换值来帮助清理数据。现在，在我将这些数据添加到工作簿之前，我还有一个更改要进行，那就是这个。看，标题与我想要的并不完全匹配。我希望第一行实际上作为标题。因此，在首页选项卡的主页功能区中，我只需点击使用第一行作为标题。
+- en: Now， the data looks just how I want it to look。 and I'm ready to add it to my
+    workbook。 The way you do that is。By going to the Home tab and clicking this close
+    and load button Now。 clicking the top part of that button will almost instantly
+    add this data that's from Wikipedia into my workbook。 If I click the bottom part
+    of that button it gives me an option to close and load the data into other places
+    or in other ways for now though I'll just click close and load and the table that
+    was in Wikipedia has been transformed and then loaded into my workbook and it
+    was added as a new sheet sheet 6 I can now right click on that and rename it I
+    could name it something like episodes of agents of Shield Tap enter and this data
+    is ready to be used in Excel。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，数据看起来正是我想要的样子，我准备将其添加到我的工作簿中。你可以通过转到首页选项卡并点击这个关闭并加载按钮来做到这一点。现在，点击该按钮的上半部分将几乎立即将来自维基百科的数据添加到我的工作簿中。如果我点击该按钮的下半部分，它会给我一个选项，关闭并以其他方式加载数据。不过现在我只需点击关闭并加载，维基百科中的表格已被转换并加载到我的工作簿中，并作为新的工作表
+    6 添加。我现在可以右键点击并重命名，可以命名为《神盾局特工的剧集》，按下回车键，这些数据就可以在 Excel 中使用了。
+- en: '![](img/c2aeb140e9824836fd55cd14e85f46f5_2.png)'
+  id: totrans-16
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/c2aeb140e9824836fd55cd14e85f46f5_2.png)'

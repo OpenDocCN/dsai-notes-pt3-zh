@@ -1,0 +1,141 @@
+- en: 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P17：17）3D 公式 - ShowMeAI - BV1sQ4y1B71N
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P17：17）3D 公式 - ShowMeAI - BV1sQ4y1B71N
+- en: '![](img/86c318e0b155ef4664689bfe7f5ec6ee_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/86c318e0b155ef4664689bfe7f5ec6ee_0.png)'
+- en: In this video， we will look at how to create what are called 3D formulas in
+    Excel。 And the reason these are called 3D formulas is because they help you pull
+    information that is not on the X axis or the Y axis。 but is actually on the Z
+    axis going deeper into a workbook。 So hopefully that makes sense。 And as you can
+    see here， I have a workbook made up of several spreadsheets。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个视频中，我们将看看如何在Excel中创建所谓的3D公式。这些被称为3D公式的原因是它们帮助你提取不在X轴或Y轴上的信息，而实际上是在Z轴上，更深入地进入工作簿。所以希望这能说得通。正如你在这里看到的，我有一个由多个工作表组成的工作簿。
+- en: and each of these spreadsheets tracks game sales for a hypothetical board game
+    and card game store。 You can see that it goes back to 2018。 and each of these
+    sheets tracks the sales for each month of that particular year。 And each year's
+    sales figures are totaled here in green。 Now。 it's important to notice this that
+    each of these spreadsheets is set up exactly the same way。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 每个工作表跟踪一个假设的桌游和卡牌游戏商店的游戏销售。你可以看到它追溯到2018年。每个工作表记录该特定年份每个月的销售情况。每年的销售数据在这里以绿色总计。现在，重要的是要注意这些工作表的设置完全相同。
+- en: The data is different。 but the layout and where the information is stored is
+    in the same place。 That's a huge advantage when you're trying to do。3D formulas
+    in Excel。 So let's say I manage the books and the numbers for this small business。
+    and maybe my supervisor or my boss asks for alltime totals。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 数据不同，但信息存储的位置是相同的。这在你尝试在Excel中做3D公式时是一个巨大的优势。所以假设我管理这家小公司的账目和数字，也许我的主管或老板要求所有时间的总计。
+- en: What is the total amount of revenue brought in by this company since it began
+    in 2018。 and also what are the total number of items sold alltime by this company。
+    So there are a couple of different ways we could do this。 let's look at a way
+    that just links the data from these other spreadsheets to this cover sheet。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 自2018年开始，这家公司总共带来了多少收入？同时，这家公司总共售出了多少商品？所以我们有几种不同的方法来做到这一点。让我们看看一种将这些其他工作表的数据链接到这个封面工作表的方法。
+- en: Okay， so the first method would be to click on the cell where you want to display
+    In this case。 the total sales revenue and then you would type equals and you could
+    just type the function sum left parenthesis and then with the parenthesis open
+    with just the left parenthesis typed in you can click on the next spreadsheet
+    down here by clicking on the tab and you can see the formula is still active here
+    at the top in the formula bar and then I could click on。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，第一种方法是在你想显示的单元格中点击。在这种情况下，是总销售收入，然后你输入等于号，可以直接输入函数sum左括号，然后在只输入左括号的情况下，你可以通过点击下面的工作表标签来打开括号，你会看到公式仍然在公式栏的顶部处于活动状态，然后我可以点击。
+- en: Grand totalal sales for the year，2021 in this case。 you'll notice it changed
+    the formula。 And then here in the formula bar， I'm just going to click and then
+    type a plus sign。 and then I'll go to 2020 and select the cell with the grand
+    total sales。 and then go back up here to the formula bar。 tapap a plus sign。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 2021年的总销售额。在这种情况下，你会注意到公式发生了变化。然后在公式栏中，我将点击并输入一个加号。接着，我会去2020年，选择包含总销售额的单元格。然后回到公式栏，输入一个加号。
+- en: I could go to 2019 and do the same thing and then type a plus sign and 2018。
+    click on the grand total sales for 2018。 and then I can simply go up here to the
+    formula bar。 put in a right parenthesis and tap enter on the keyboard and that
+    formula returns the grand total alltime sales revenue so that I can see that。
+    So that's one way to do this。 Just link the data from each of these other spreadsheets
+    to the front cover sheet。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以去2019年做同样的事情，然后输入一个加号和2018年。点击2018年的总销售额。然后我可以简单地回到公式栏，输入一个右括号，然后按下键盘上的回车，这个公式返回了所有时间的总销售收入，所以我可以看到。这是做到这一点的一种方法。只需将每个其他工作表的数据链接到封面工作表。
+- en: But that was kind of a pane。 Let's look at how to do it a much easier way。 And
+    let's see if we get the same results。 This time I'm going to use a 3D formula。
+    So I'll delete the number that was there。 tap enter。 Okay。Once again。 I'll click
+    on the cell where I want to display the alltime total sales revenue， and again。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但这有点麻烦。我们来看看如何更简单地做这件事。让我们看看是否能得到相同的结果。这次我将使用3D公式。所以我会删除之前的数字，按下回车。好的，再次。我会点击我想显示所有时间总销售收入的单元格，然后再来一次。
+- en: I'll type equals， and I'll type sum left parentheesis， and again， I'll click
+    on 2021。 and I'll click on the cell where the total sales for 2021 are listed。
+    So that's B16。 Now。 the trick to make this a 3D formula is you just hold the shift
+    key on the keyboard and go down here。 and because I want to add up all four of
+    the grand total sales for each of these years。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我会输入等于，然后输入sum左括号，再次，我会点击2021年。然后我会点击2021年总销售额列出的单元格。所以是B16。现在，使其成为3D公式的诀窍是你只需按住键盘上的Shift键，然后向下滚动，因为我想把这几年每年的总销售额加起来。
+- en: holding the shift key， I just click on 2018 and look。 it highlighted all four
+    of those tabs all four of those spreadsheets basically。 and now I'll tap enter
+    on the keyboard and look， it produced the same result， but much easier。 much quicker。
+    Now， keep in mind the only reason that worked is because all of these spreadsheets
+    follow the same format。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 按住Shift键，我只点击2018年，看看。它高亮显示了所有四个标签，基本上所有四个电子表格。现在我会在键盘上按下回车，看看，它产生了相同的结果，但更简单，更快。现在，请记住，之所以能这样做，是因为所有这些电子表格遵循相同的格式。
+- en: the same layout。 The information in B。16， in each case deals with grand total
+    sales for that particular year。 Let's try it again。 But this time with just the
+    total items sold all time。 I've clicked on the cell where I want to display the
+    data。 I type equals sum left parentheesis。 Now。 in my example， I want to add up
+    things。 So I'm using some a lot。 But keep in mind。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 相同的布局。在每种情况下，B.16中的信息处理的是该特定年份的总销售额。让我们再试一次。但这次只统计所有时间的总销售单位。我点击了我想显示数据的单元格。我输入等于sum左括号。现在，在我的例子中，我想要把东西加起来。所以我使用很多sum。但请记住。
+- en: you can do the same kind of 3D formula with max min large， small average。 Just
+    about any function just about any formula。 you can turn into a 3D formula。 Okay。
+    so what do I want to some。 Well， I'll start with 2021。 total items sold in a year。
+    And of course。 that shouldn't have a dollar sign。 That's a mistake on my part。
+    It should just be total units sold。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以用最大值、最小值、大、中、小平均值来做同样类型的3D公式。几乎任何函数、几乎任何公式都可以转换为3D公式。好的。那么我想要做什么呢？我将从2021年开始，全年销售的总项数。当然，这里不应该有美元符号。这是我的错误。应该只是总销售单位。
+- en: I'll click there on the cell。 And then going down to the tabs for each of the
+    spreadsheets。 I hold the shift key。 And notice if I were to stop at 2019。 it only
+    highlights 2021，2020，2019。But I want to go all the way to 2018。 so I'll click
+    on that as well。 Now I can release the shift key and tap enter on the keyboard
+    totalal items sold 10。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我会在单元格上点击，然后转到每个电子表格的标签。我按住Shift键。如果我只停在2019年，它只会高亮显示2021、2020和2019。但我想一直到2018年，所以我也会点击那个。现在我可以释放Shift键，并在键盘上按下回车，总销售单位10。
+- en: 545 Now like I said， those aren't really dollars so I'm going to change this
+    just to general and I'll add in a comma there and I can get rid of the decimals
+    using this button here and I will fix this in the practice sheet so that you won't
+    have to make these changes yourself so hopefully you can see the advantages of
+    using 3D formulas to pull in data from more than one sheet and bring it together
+    onto one sheet。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 545。正如我所说，那并不是真正的美元，所以我会把它改为常规格式，并在这里添加逗号，我可以用这个按钮去掉小数点，我会在练习表中修复这个，所以你不需要自己做这些更改。希望你能看到使用3D公式从多个工作表提取数据并将其汇总到一个工作表上的优势。
+- en: '![](img/86c318e0b155ef4664689bfe7f5ec6ee_2.png)'
+  id: totrans-16
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/86c318e0b155ef4664689bfe7f5ec6ee_2.png)'

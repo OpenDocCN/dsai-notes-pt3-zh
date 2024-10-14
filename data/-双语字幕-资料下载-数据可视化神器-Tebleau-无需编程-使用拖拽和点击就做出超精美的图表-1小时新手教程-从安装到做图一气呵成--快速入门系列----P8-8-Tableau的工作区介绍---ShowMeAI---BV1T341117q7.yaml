@@ -1,0 +1,377 @@
+- en: 【双语字幕+资料下载】数据可视化神器 Tebleau！无需编程，使用拖拽和点击就做出超精美的图表。1小时新手教程，从安装到做图一气呵成~＜快速入门系列＞
+    - P8：8）Tableau的工作区介绍 - ShowMeAI - BV1T341117q7
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】数据可视化神器Tebleau！无需编程，使用拖拽和点击就能制作出超精美的图表。1小时新手教程，从安装到做图一气呵成~＜快速入门系列＞
+    - P8：8）Tableau的工作区介绍 - ShowMeAI - BV1T341117q7
+- en: The Tableau workspace will be our main interface when creating visualizations
+    and analysis。As we discussed in the earlier lesson about the tableableau workspace。
+    it is composed of several cards， shelves and panes where we can drag and drop
+    fields in order to form the charts。 First， let's look at the data pane。 which
+    holds our data fields， sets and parameters。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Tableau工作区将是我们创建可视化和分析的主要界面。如我们在早期课程中讨论的Tableau工作区，它由多个卡片、架子和窗格组成，我们可以拖放字段以形成图表。首先，让我们看一下数据窗格，它保存我们的数据字段、集和参数。
+- en: The top of the pane contains the data source name。You can use this view to switch
+    between data sources if you have created multiple ones。 each data source will
+    have a separate list of data fields on the data plane。 you can also right click
+    on the data source name to show other functions such as extracting data。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 窗格的顶部包含数据源名称。如果您创建了多个数据源，可以使用此视图在数据源之间切换，每个数据源将在数据窗格上有单独的数据字段列表。您还可以右键点击数据源名称以显示其他功能，例如提取数据。
+- en: editing aliases， and filters and publishing the data source。To view the data
+    without going back to the data source page。 you can click on the View data icon
+    in the right side of the search box and filter should show the data window。The
+    top right number on this window limits the number of rows in the view。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 编辑别名、过滤器和发布数据源。要查看数据而不返回数据源页面，您可以点击搜索框右侧的查看数据图标，过滤器应显示数据窗口。此窗口右上角的数字限制了视图中的行数。
+- en: You can edit the indicated value to increase or decrease the rows shown。 The
+    maximum value for the row limit is 10000。Besidesside the row limit。 you can hide
+    or show the aliases by using the check box of the show alias's function。 Since
+    we are using three sheets， which are linked using data relationships。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 您可以编辑指示的值以增加或减少显示的行数。行数限制的最大值为10000。除了行数限制外，您还可以通过使用显示别名功能的复选框来隐藏或显示别名。由于我们使用了三个通过数据关系链接的表。
+- en: Three tabs are visible in the bottom of the window。Each tab represents each
+    individual table or sheet。 which you can toggle around by clicking the tab for
+    the data shown。 you can move the columns by dragging the column name to the right
+    or left。You can also sort the data by clicking on the column name if you wish
+    to copy or export a selection of rows or all of the data on the preview。 you can
+    select the row or column and click on the copy or export all button found in the
+    upper right。Now， let's look at the available fields。 You can group the fields
+    based on their data source or by folder through the drop down button beside the
+    view data icon。 grouping by data source will list the fields based on their respective
+    sheets or tables while grouping by folder will list all of the fields available
+    in the data source by default。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 窗口底部可见三个标签。每个标签代表一个单独的表或工作表，您可以通过点击显示的数据的标签来切换。您可以通过拖动列名将列移动到左侧或右侧。如果您希望复制或导出选定的行或预览中的所有数据，可以通过点击列名对数据进行排序。您可以选择行或列，并点击右上方的复制或导出所有按钮。现在，让我们看一下可用字段。您可以通过查看数据图标旁的下拉按钮，基于数据源或文件夹对字段进行分组。按数据源分组将根据各自的表或表单列出字段，而按文件夹分组将默认列出数据源中所有可用字段。
+- en: You can create your own folder to group fields by right clicking on one field
+    and navigating two folders。Create folder。In both group by views， the dimensions
+    are listed first before measures。 wherein a gray line separates the two。![](img/fc522b36b151dfc3b8d23921bc9b0ab2_1.png)
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 您可以通过右键点击一个字段并导航至文件夹来创建自己的文件夹以分组字段。创建文件夹。在这两种按视图分组中，维度在度量之前列出，其中用灰线分隔这两者。![](img/fc522b36b151dfc3b8d23921bc9b0ab2_1.png)
+- en: You can create hierarchies using the data pane Hierarchies create logical levels
+    for the data fields。![](img/fc522b36b151dfc3b8d23921bc9b0ab2_3.png)
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 您可以使用数据窗格创建层级，层级为数据字段创建逻辑级别。![](img/fc522b36b151dfc3b8d23921bc9b0ab2_3.png)
+- en: For example， you can create a geographic hierarchy of country， state。 city or
+    a date hierarchy of year month week by using a hierarchy。 you can easily drill
+    down to different levels of data in the visualization。 Let's try creating a two
+    levell hierarchy for this data set to create a hierarchy。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 例如，您可以通过使用层级创建国家、州、城市的地理层级，或按年份、月份、周的日期层级，您可以轻松深入到可视化中的不同数据级别。让我们尝试为此数据集创建一个两级层级。
+- en: drag one field on top of the other here， we are going to use the bikeshop do
+    city and the bikeshop dot state drag the bike shop do city into the bike shop
+    dot state。![](img/fc522b36b151dfc3b8d23921bc9b0ab2_5.png)
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这里将一个字段拖到另一个字段上，我们将使用“自行车商店城市”和“自行车商店州”。将“自行车商店城市”拖入“自行车商店州”。![](img/fc522b36b151dfc3b8d23921bc9b0ab2_5.png)
+- en: This creates a hierarchy which you can name in the window that pops up。Let's
+    name this new hierarchy as bike shop location。Upon typing the name。 it will show
+    the hierarchy in the data pane。The fields that are listed first will be the higher
+    level。 So our first level is set to state， which can then drill down into city。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这创建了一个层级，你可以在弹出的窗口中命名。我们将这个新层级命名为“自行车商店位置”。输入名称后，它将在数据窗格中显示。首先列出的字段将是更高的层级。因此，我们的第一层设置为“州”，然后可以向下钻取到“城市”。
+- en: You can drag the field up or down within the hierarchy to change their level。To
+    delete the created hierarchy， right click on the hierarchy name and click remove
+    Hierarchy。![](img/fc522b36b151dfc3b8d23921bc9b0ab2_7.png)
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以在层级中上下拖动字段以改变它们的层级。要删除创建的层级，右键点击层级名称并点击“移除层级”。![](img/fc522b36b151dfc3b8d23921bc9b0ab2_7.png)
+- en: Next， let's try creating a new calculated field。 Cal fields allow you to create
+    new data from data that already exists in your data source。 When you create a
+    calculated field， you are essentially creating a new field or column in your data
+    source。![](img/fc522b36b151dfc3b8d23921bc9b0ab2_9.png)
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 接下来，让我们尝试创建一个新的计算字段。计算字段允许你从数据源中已有的数据创建新数据。当你创建计算字段时，实际上是在数据源中创建一个新字段或列。![](img/fc522b36b151dfc3b8d23921bc9b0ab2_9.png)
+- en: The values are members of which are determined by a calculation that you control。![](img/fc522b36b151dfc3b8d23921bc9b0ab2_11.png)
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这些值是由你控制的计算确定的成员。![](img/fc522b36b151dfc3b8d23921bc9b0ab2_11.png)
+- en: For example， we do not have a field available in the dataset which states how
+    much we have invoiced the customer upon a bike purchase。 but we do have the fields
+    price， which is the price of the bike and quantity which is the number of bikes
+    ordered by the customer to create a calculated field。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 例如，我们在数据集中没有可用字段来说明我们在自行车购买时向客户开具了多少发票。但我们有字段“价格”，即自行车的价格，以及“数量”，即客户订购的自行车数量，以创建一个计算字段。
+- en: click on the drop down of the data pane and select createre calculated field
+    This opens a new window where you can indicate the calculated field name and its
+    expression。 Let's type in invoiced amount as the name。 Then type in the calculation，
+    price asterisk quantity。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 点击数据窗格的下拉菜单，选择“创建计算字段”。这将打开一个新窗口，你可以在其中指明计算字段名称及其表达式。我们输入“开票金额”作为名称。然后输入计算，价格乘以数量。
+- en: to multiply the two fields。Upon completing the calculation。 make sure that the
+    message on the lower left indicates the calculation is valid。 Then hit apply or
+    O K。 The new calculated field is now inserted onto the data panes list of measures。When
+    a field name has been updated or removed in the original data source and it is
+    needed for the chart。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 将这两个字段相乘。完成计算后，请确保左下角的消息指示计算有效。然后点击“应用”或“确定”。新的计算字段现在已插入到数据窗格的度量列表中。当原始数据源中的字段名称已更新或移除，并且在图表中需要该字段时。
+- en: a red exclamation point will be seen parallel to the field in the data pane。To
+    map the corrected field， click write and select replace reference。 This will open
+    a new window。 which has a list of all the fields in the data source。 Select the
+    correct field and hit O。 This will map the correct field to the shelves and properties
+    that use it。 Now。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 数据窗格中将看到一个红色的感叹号，与字段平行。要映射修正后的字段，请点击“写入”并选择“替换引用”。这将打开一个新窗口，其中列出了数据源中的所有字段。选择正确的字段并点击
+    O。这将把正确的字段映射到使用它的架构和属性上。现在。
+- en: let's try creating a chart from the calculated field and the hierarchy that
+    we have created。In the data pane， select the hierarchy bike shop location。 then
+    hold the control button on your keyboard and select the calculated field invoiced
+    amount。 Once both of them have been selected， drag the fields into the canvas。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们尝试从计算字段和我们创建的层级中创建图表。在数据窗格中，选择层级“自行车商店位置”。然后按住键盘上的控制键并选择计算字段“开票金额”。一旦选择了这两个字段，将它们拖入画布。
+- en: This will automatically create a symbols map that indicates the amount of sales
+    per bike shop per state in the US。As you can observe， Tableau automatically generated
+    a latitude and longitude from the state and city fields of our data set and sets
+    it as the rows and columns to mark the X and Y axis on the map。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这将自动创建一个符号地图，指示美国每个自行车商店每个州的销售额。正如你所观察到的，Tableau自动从我们的数据集中州和城市字段生成了经度和纬度，并将其设置为行和列，以标记地图上的X和Y轴。
+- en: You can also see on the Mars card as to how the hierarchy and the invoiced amount
+    has affected the visualization。 The state is currently set as the detail to where
+    the circles are located。 While the invoiced amount is set as a label on the map。Let's
+    convert this to a heat map。 Navigate to the show me button and select the maps
+    on the list。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你还可以在火星卡上看到层次结构和开票金额如何影响可视化。当前状态被设置为细节，指示圆圈的位置。而开票金额则作为地图上的标签。让我们将其转换为热图。导航到“显示我”按钮并从列表中选择地图。
+- en: Notice that this has changed how the fields were applied on the mark's card。The
+    state is still on the details， but the invoiced amount is now set to the colors's
+    card。This has converted the map from a symbol to a heat map。 since the invoiced
+    amount now dictates the saturation of color per state。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 请注意，这改变了字段在标记卡上的应用方式。状态仍然在细节上，但开票金额现在设置在颜色卡上。这将地图从符号转换为热图，因为开票金额现在决定了每个状态的颜色饱和度。
+- en: If you wish to format the marks， for example， you wanted to change the gradient
+    color the invoiced amount to a shade of green。 Click on the color card。 This opens
+    a new window where you can set other properties to change the look of the mark。Here，
+    we can change the palette of the color used as well as change the colors's opacity
+    and add additional effects such as borders and halos。Each option available in
+    the window will depend on the type of card。 So size。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你希望格式化标记，例如，你想将开票金额的渐变颜色更改为绿色阴影。点击颜色卡。这将打开一个新窗口，你可以设置其他属性以更改标记的外观。在这里，我们可以更改所用颜色的调色板，以及改变颜色的透明度，并添加边框和光环等额外效果。窗口中提供的每个选项将取决于卡片类型。因此大小。
+- en: label and tool tip have their own unique settings or properties to customize。
+    We are going to learn more about the different mark cards as we create different
+    charts later in the course。 Let's indicate a title to this chart by double clicking
+    the default sheet one title above the map。 This opens the edit title window where
+    we can type in the new one。 Se it to sales by state。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 标签和工具提示有自己独特的设置或属性进行自定义。我们将通过在课程后面创建不同图表来深入了解不同的标记卡。让我们通过双击地图上方的默认工作表标题来为此图表指明一个标题。这将打开编辑标题窗口，我们可以在其中输入新标题。将其设置为按状态销售。
+- en: from this window， we can also apply text formatting to the title。 We can change
+    the font size。 make the text bold， italic or underlined as well as change the
+    font color and its alignment。 You can also insert fields value to make the title
+    dynamic using the drop down of the insert button。 Click apply an O to show the
+    changes to the canvas。For additional formatting options。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 从此窗口，我们还可以对标题应用文本格式。我们可以更改字体大小，使文本加粗、斜体或下划线，并更改字体颜色及其对齐方式。你还可以插入字段值，以使用插入按钮的下拉菜单使标题动态。点击应用以在画布上显示更改。获取额外的格式选项。
+- en: right click on the title and click on format title。 This will show a format
+    title in caption pane where you can set the shading in border for both the titles
+    and captions。 Aside from the title， you can also format most of the things visible
+    in the visualization。Just click on the pill of the field or a certain point of
+    the chart。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 右键单击标题并点击格式标题。这将在标题面板中显示格式标题，你可以为标题和说明设置阴影和边框。除了标题，你还可以格式化可视化中大多数可见的内容。只需点击字段的药丸或图表的某个点。
+- en: Then right click and select format。 This opens the format pane where you can
+    set font properties。 alignment， shading and borders to the whole sheet or for
+    a specific field only。If you wish to hide some of the shells and panes in the
+    workspace。 you can use the drop down in the upper right of each shelf and choose
+    hide card。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后右键单击并选择格式。这将打开格式面板，你可以设置整个工作表或仅特定字段的字体属性、对齐方式、阴影和边框。如果你希望隐藏工作区中的某些架子和面板，可以使用每个架子右上角的下拉菜单选择隐藏卡片。
+- en: This is available on the filter， marks， pages or columns， rows and legend shelf。If
+    you wish to unhide the card， navigate to the worksheet menu， show cards。 and select
+    the cards that you wish to put back in the workspace。The pain for data and analytics
+    cannot be hidden， but instead will be minimized if you click the arrow on the
+    right。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这可在过滤器、标记、页面或列、行和图例架上使用。如果您希望取消隐藏卡片，请导航到工作表菜单，显示卡片，并选择您希望放回工作区的卡片。数据和分析的窗格不能被隐藏，但如果您单击右侧的箭头，它将被最小化。
+- en: Aside from removing it from the workspace， you can also change the placement
+    of the cards in the interface to move a card。 Tra and drop the card into the new
+    location。![](img/fc522b36b151dfc3b8d23921bc9b0ab2_13.png)
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 除了将其从工作区移除外，您还可以更改界面中卡片的放置位置以移动卡片。拖放卡片到新位置。![](img/fc522b36b151dfc3b8d23921bc9b0ab2_13.png)
+- en: Finally， let's look at the different elements that compose a view。 It is important
+    to determine the names of each part of a view to easily format and differentiate
+    them as you create and customize your own charts。 First， let's look at the elements
+    of this table。 The model and order date。 values are called the headers。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 最后，让我们看看构成视图的不同元素。确定视图每个部分的名称以便在创建和自定义自己的图表时容易格式化和区分它们非常重要。首先，让我们看看这个表的元素。模型和订单日期值被称为标题。
+- en: '![](img/fc522b36b151dfc3b8d23921bc9b0ab2_15.png)'
+  id: totrans-30
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/fc522b36b151dfc3b8d23921bc9b0ab2_15.png)'
+- en: Heads are created when you place a dimension or discrete field in the row shelf
+    or the columns。 shelves。The headers show the member names of each field in the
+    shelves。Since we are showing each member or values of the model and order date。
+    they are both classified as headers。 The field names。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 标题是在您将维度或离散字段放入行架或列架时创建的。标题显示每个字段在架上的成员名称。由于我们显示的是模型和订单日期的每个成员或值，它们都被分类为标题。字段名称。
+- en: model and order dot date are called the field labels of the header。 You can
+    hide the header by right clicking on its pill on the shelf and unchecking these
+    show header in its menu for the field labels。 You can hide it by right clicking
+    on the header or the field labels and selecting hide field labels for rows or
+    columns in the menu。Next， we have the cells。 Cll are the basic components of any
+    table you can create in tableableau。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 模型和订单日期被称为标题的字段标签。您可以通过右键单击其在架上的图标并在字段标签菜单中取消选中“显示标题”来隐藏标题。您还可以通过右键单击标题或字段标签，并在菜单中选择“隐藏行或列的字段标签”来隐藏它。接下来，我们有单元格。单元格是您可以在
+    Tableau 中创建的任何表的基本组件。
+- en: They are defined by the intersection of a row and a column。 The 26，60 value
+    is inside one cell。 A set of cells across or down is called a pane。 The title
+    is also one of the elements of a view。 By default， It is set as the sheet name，
+    but you can always edit it to give more context about the view like what we have
+    done on the map earlier。If you wish to explain the view further， you can add a
+    caption。
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它们由行和列的交点定义。26,60的值位于一个单元格内。一组单元格横向或纵向排列称为窗格。标题也是视图的元素之一。默认情况下，它设置为工作表名称，但您始终可以编辑它，以提供有关视图的更多上下文，就像我们之前在地图上所做的。如果您希望进一步解释视图，可以添加一个标题。
+- en: All views can have a caption that is either automatically generated or manually
+    created。To show the automatically generated caption， right click on a blank space
+    on the canvas and select the caption on the menu。 This will show the caption card
+    below the view。 You can double click on the caption card to edit the formatting
+    and text of the caption。Next， we have the axes。 axes are created when you place
+    a measure or continuous field in the rows or column shelves。
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所有视图都可以有一个标题，该标题可以是自动生成的或手动创建的。要显示自动生成的标题，请在画布的空白处右键单击并在菜单中选择标题。这将显示标题卡片在视图下方。您可以双击标题卡片以编辑标题的格式和文本。接下来，我们有坐标轴。当您将度量或连续字段放入行或列架上时，将创建坐标轴。
+- en: In this line chart， we have a horizontal and vertical access because we have
+    two fields that are both continuous measures。Hoovering over the marks or values
+    show the tool tip。 they contain additional data details of the view When you select
+    one or more points or marks。 tool tips also include options to filter marks， exclude
+    or keep only。
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在此折线图中，我们有一个水平和一个垂直坐标轴，因为我们有两个都是连续度量的字段。悬停在标记或数值上会显示工具提示。它们包含视图的附加数据详细信息。当您选择一个或多个点或标记时，工具提示还包括过滤标记、排除或仅保留的选项。
+- en: Display marks that have the same values， create groups， create sets， or display
+    the underlying data。The last element of a view is the legend In the map we created
+    earlier。 A legend is automatically created to show the value of each color on
+    the map。 which ranges from 1 hundred and38320 to 34 million sales in the state。
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 显示具有相同值的标记，创建组，创建集合，或显示基础数据。视图的最后一个元素是我们之前创建的地图上的图例。图例会自动创建，以显示地图上每种颜色的值，范围从100到38320，再到3400万的州销售额。
+- en: The legend indicates how the view is encoded with relation to your data。 A from
+    color。 it can also use symbols， size and shape as the legend。The tableableau workspace
+    will be our main interface when creating visualizations and analysis。 First， let's
+    look at the data pane， which holds our data fields， sets and parameters。
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 图例指示视图如何与数据编码。它可以使用颜色，也可以使用符号、大小和形状作为图例。Tableau工作区将是我们创建可视化和分析的主要界面。首先，让我们看一下数据窗格，其中包含我们的数据字段、集合和参数。
+- en: The top of the pane contains the data source name。You can use this view to switch
+    between data sources if you have created multiple ones。 Each data source will
+    have a separate list of data fields on the data plane。 You can also right click
+    on the data source name to show other functions such as extracting data。
+  id: totrans-38
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 窗格顶部包含数据源名称。如果你创建了多个数据源，可以使用此视图在数据源之间切换。每个数据源将在数据平面上有一个单独的数据字段列表。你还可以右键单击数据源名称以显示其他功能，例如提取数据。
+- en: editing aliases and filters and publishing the data source。 Now。 let's try creating
+    a chart from the calculated field and the hierarchy that we have created。In the
+    data pane， select the hierarchy bike shop location。 then hold the control button
+    on your keyboard and select the calculated field invoiced amount。
+  id: totrans-39
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 编辑别名和过滤器并发布数据源。现在，让我们尝试从已创建的计算字段和层级创建一个图表。在数据窗格中，选择层级“自行车商店位置”。然后按住键盘上的控制键并选择计算字段“开票金额”。
+- en: Once both of them have been selected， drag the fields into the canvas。 This
+    will automatically create a symbols map that indicates the amount of sales per
+    bike shop per state in the US。As you can observe， Tableau automatically generated
+    a latitude and longitude from the state and city fields of our data set and sets
+    it as the rows and columns to mark the X and Y axis on the map。You can also see
+    on the Mars card as to how the hierarchy and the invoiced amount has affected
+    the visualization。
+  id: totrans-40
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 一旦选择了这两个字段，将它们拖到画布上。这将自动创建一个符号图，指示美国各州每个自行车商店的销售额。正如你所观察到的，Tableau自动从数据集中州和城市字段生成了经纬度，并将其设置为行和列，以标记地图上的X和Y轴。你还可以在Mars卡上看到层级和开票金额如何影响可视化。
+- en: The state is currently set as the detail to where the circles are located。 While
+    the invoiced amount is set as a label on the map。Let's convert this to a heat
+    map。 Navigate to the show me button and select the maps on the list。Notice that
+    this has changed how the fields were applied on the mark's card。
+  id: totrans-41
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 状态目前设置为圆圈所在的细节，而开票金额设置为地图上的标签。让我们将其转换为热图。导航到“显示我”按钮并在列表中选择地图。注意，这改变了字段在标记卡上的应用方式。
+- en: The state is still on the details， but the invoiced amount is now set to the
+    color's card。This has converted the map from assembled symbol to a heat map。 since
+    the invoiced amount now dictates the saturation of color per state。If you wish
+    to format the marks， for example， you wanted to change the gradient color of the
+    invoiced amount to a shade of green。
+  id: totrans-42
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 状态仍然处于详细信息中，但开票金额现在设置为颜色卡。这将地图从组装符号转换为热图，因为开票金额现在决定了每个州的颜色饱和度。如果你想格式化标记，例如，想将开票金额的渐变颜色更改为绿色的色调。
+- en: click on the color card。 This opens a new window where you can set other properties
+    to change the look of the mark here。 we can change the palette of the color used，
+    as well as change the colorss。 opacity and add additional effects such as borders
+    and halos。Each option available in the window will depend on the type of card，
+    so size。
+  id: totrans-43
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 点击颜色卡。这会打开一个新窗口，你可以设置其他属性以更改标记的外观。我们可以更改所使用的颜色调色板，并且可以改变颜色、不透明度，添加边框和光晕等额外效果。窗口中可用的每个选项将取决于卡片的类型和大小。
+- en: label and tool tip have their own unique settings or properties to customize。![](img/fc522b36b151dfc3b8d23921bc9b0ab2_17.png)
+  id: totrans-44
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 标签和工具提示有各自独特的设置或属性可供自定义。![](img/fc522b36b151dfc3b8d23921bc9b0ab2_17.png)

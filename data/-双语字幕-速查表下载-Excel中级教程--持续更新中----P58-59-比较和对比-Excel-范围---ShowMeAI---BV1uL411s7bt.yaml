@@ -1,0 +1,100 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P58：59）比较和对比 Excel 范围 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P58：59）比较和对比 Excel 范围 - ShowMeAI - BV1uL411s7bt
+- en: '![](img/32b7e432c5e95387eb37a48f69c64570_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/32b7e432c5e95387eb37a48f69c64570_0.png)'
+- en: In this short Excel tutorial， I want to show you how to compare Excel ranges
+    and show the differences。 And the example file I have for this， which you can
+    find in the description below this video has some simple annual budgets。 And you
+    can see each budget from 2018 through 2021。 Each one has its own tab。 But also。
+    I have a comparison tab where all four are viewable on the same spreadsheet。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个简短的 Excel 教程中，我想向你展示如何比较 Excel 范围并显示差异。我有一个示例文件，你可以在本视频下方的描述中找到，里面有一些简单的年度预算。你可以看到2018年至2021年的每个预算，每个预算都有自己的标签。此外，我还有一个比较标签，可以在同一电子表格中查看所有四个。
+- en: And what if I would like to compare and contrast these budgets to identify what
+    has changed from 2020 to 2021。 what has been adjusted。 Well， I could look one
+    by one at each of these budget items and the number of employees maybe something's
+    changed along those lines。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我想比较这些预算以确定从2020年到2021年发生了什么变化，哪些地方进行了调整。我可以逐一查看这些预算项目和员工人数，也许这些方面有所变化。
+- en: and I could just eyeball it and figure out the differences。 But there's a much
+    faster way in Excel。 What I would do is click and drag to highlight the whole
+    range of one of the ranges I want to compare。 In this case， I want to compare
+    the current year with the previous year。Once I've highlighted the first range，
+    the next step is to hold the control key on the keyboard and then click and drag
+    to highlight the second range that I want to compare。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以凭直觉判断差异。但在 Excel 中有一种更快的方法。我会点击并拖动，突出显示我想要比较的一个范围。在这种情况下，我想将当前年份与前一年进行比较。突出显示第一个范围后，下一步是按住键盘上的控制键，然后点击并拖动以突出显示我想要比较的第二个范围。
+- en: So with both of those selected， now I can just go to the home tab home ribbon
+    in the Sts group I'm going to click on conditional formatting。 and a whole bunch
+    of options appear if you're not familiar with conditional formatting you really
+    need to watch my previous tutorials showing you how to use conditional formatting。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以在选择了这两个后，我现在可以去“主页”选项卡中的“条件格式”组，点击条件格式，出现了许多选项。如果你对条件格式不熟悉，真的需要观看我之前的教程，向你展示如何使用条件格式。
+- en: there are lots of powerful exciting options here in conditional formatting。
+    but for the purposes of this video， I'm just going hold my mouse over highlight
+    cells rules。 and I'm going to go all the way down to duplicate values。 So this
+    is highlighting all of the cells that are duplicated and that's one way to accomplish
+    a comparison right if it shows all the duplicates。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在条件格式中有许多强大而令人兴奋的选项。但就本视频而言，我只需将鼠标悬停在“突出显示单元格规则”上，然后一直向下到“重复值”。这样就突出了所有重复的单元格，这是实现比较的一种方式，毕竟它显示了所有的重复项。
+- en: it also shows all of the unique items as well。 but to make it even more readable。
+    I'm just going to switch it from duplicate to unique click and now in red in this
+    case。Is highlighting the differences from 2020 to 2021 I can click away now from
+    those highlighted ranges and you can see yeah。 the title has changed from 2020
+    to 2021， the budgets for accounting and maintenance have changed and so has the
+    budget for research and development and the warehouse this also highlights some
+    other differences。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它还显示所有独特的项目。但为了使其更具可读性，我将其从重复切换为唯一，点击，现在在这种情况下，以红色突出显示2020年至2021年的差异。我现在可以点击那些突出显示的范围，你可以看到，是的，标题从2020年变更为2021年，财务和维护的预算发生了变化，研发和仓库的预算也有所不同，这也突出显示了一些其他差异。
+- en: the number of employees is different in a couple of cases。 Now to make this
+    a little bit easier to read and to identify the changes I'm going to hold control
+    in T Z to undo my conditional formatting and this time I'm going to focus in just
+    on what's most important。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在某些情况下，员工人数不同。为了让这更容易阅读并识别变化，我将按住控制键，撤消我的条件格式，这次我将专注于最重要的内容。
+- en: Obviously I know that the date changed and maybe it doesn't matter the number
+    of employees。 what if I'm only interested in the budget changes Well。 then just
+    click and drag to highlight budget， hold control and then click and drag to highlight
+    the budget range from 2020 and again。 conditional formatting， highlight sales
+    rules duplicate value。Switch from duplicate to unique。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 显然，我知道日期已经改变，也许员工人数并不重要。如果我只对预算变化感兴趣呢？那么，只需点击并拖动以突出显示预算，按住控制键，然后再次点击并拖动以突出显示2020年的预算范围。同样，条件格式化，突出显示销售规则重复值。从重复切换到唯一。
+- en: This time， though， I'm going to switch instead of light red fill with dark red
+    text。 I just want you to see that there are other options you can do yellow fill
+    to kind of highlight the differences in a typical yellow highlighter color。 however
+    you want to do it。 I'll click O。 And now this is a little easier to read。 I think
+    it just identifies the key information。 and what is different。 what is changed。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 不过这次，我将把浅红色填充改为深红色文本。我只是想让你看到还有其他选项，你可以使用黄色填充来突出显示典型的黄色高亮颜色中的差异。不管你想怎么做。我会点击
+    O。现在这样读起来更容易。我觉得它只识别了关键信息，以及不同的地方，变化的地方。
+- en: I can undo that。 And I could do another comparison if I want， comparing 2021
+    to 2018 or 2019。 So I would encourage you to download this practice file and try
+    that out。![](img/32b7e432c5e95387eb37a48f69c64570_2.png)
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以撤销这个。如果我想的话，还可以进行另一个比较，将2021年与2018年或2019年进行比较。因此，我鼓励你下载这个练习文件并试试看。![](img/32b7e432c5e95387eb37a48f69c64570_2.png)

@@ -1,0 +1,187 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P6：6）排序 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P6：6）排序 - ShowMeAI - BV1uL411s7bt
+- en: In this Excel tutorial， I'm going to take a closer look at how the sorting features
+    work in Excel。 And you can see the spreadsheet I'm using for this。 It's a list
+    of synth pop new wave。 electronic music。 and a list of albums that have been released。
+    These are all more recent examples of synth pop new wave， et cetera。 But anyway。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个 Excel 教程中，我将更仔细地看看 Excel 中排序功能的工作原理。你可以看到我用于此的电子表格。这是一个合成流行音乐新潮、电子音乐的列表，以及已发行专辑的列表。这些都是合成流行新潮的最新示例等等。无论如何。
+- en: this spreadsheet is for a hypothetical synth pop store that would sell music
+    like this in Cd format。 I know everybody says Cds are no longer relevant。 but
+    I beg to differ。 And so this hypothetical company wants to track their inventory。
+    their sales and the price of each item。 And the data here， you'll notice is in
+    table format。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这个电子表格是为一个假设的合成流行音乐商店准备的，该商店会以 CD 格式销售这样的音乐。我知道每个人都说 CD 已经不再相关，但我不同意。因此，这个假设的公司想要跟踪他们的库存、销售和每个项目的价格。你会注意到，这里的数据是以表格格式呈现的。
+- en: It's been put into a table。 And that is kind of helpful when you're doing sorting。
+    It's not necessary。 It's not required。 but it does save you at times。 some headaches。
+    So you may want to from time to time use insert table。 And you can watch some
+    of my other videos to learn about。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 数据已被放入一个表格中。当你进行排序时，这种方式是有帮助的。这不是必要的，也不是必须的，但有时确实能让你省去一些麻烦。所以你可能会不时使用插入表格功能。你可以观看我其他的一些视频来了解相关内容。
+- en: '![](img/72d133b0415333e48ab10289a25b8d58_1.png)'
+  id: totrans-4
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/72d133b0415333e48ab10289a25b8d58_1.png)'
+- en: Tables in Excel。 But whether or not you're using a table。 If you want to sort。
+    let's say by album title， there's a couple of ways you could do that。 A lot of
+    people click here on the column letter B in this case。 And then they go here to
+    the right。 and they click on sort and filter。 But notice that's not an option
+    for me。 It's grayed out。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Excel 中的表格。但不管你是否使用表格，如果你想要排序，比如按专辑标题，有几种方法可以做到。很多人会在 B 列的字母上点击，然后去右边，点击排序和筛选。但注意，这对我来说并不是一个选项，它是灰色的。
+- en: And I think the reason why is because my data is in a table if it wasn't in
+    a table。 It would allow me to do that。 But you know what， that's a mistake anyway。
+    because it would at least attempt to sort just this column And I don't want just
+    this column sorting。 I want all of the data to stay together。 In other words。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我认为原因是我的数据在一个表格中，如果不在表格中，它就会允许我这样做。但你知道吗，这无论如何都是一个错误，因为它至少会尝试仅对这一列进行排序，而我并不想仅对这一列进行排序。我希望所有数据能够保持在一起。换句话说。
+- en: I don't want this text moving down while the text to the left and the right
+    of it Stay where they are。 Okay， so I'm going recommend that you not sort this
+    way by clicking on the column title。 instead。 what you should do is click anywhere
+    in the column anywhere except the column heading。 So album in this case。 I don't
+    want to select that anywhere else， though。 I'll just click here。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我不希望这段文本在左侧和右侧文本的同时向下移动。好的，所以我建议你不要通过点击列标题来进行排序。相反，你应该在该列的任意位置点击，除了列标题之外。因此，在这个例子中，我不想选择其他任何地方的专辑，我只需在这里点击。
+- en: Blinding dark， which is one of the more recent albums by covenant。 Now that
+    I've selected that。 I can just click on sort and filter， sort A to Z。 And look
+    what happened。 All of the data got reed based on the album title and in alphabetical
+    order。 And yet。 the column heading album stayed where it was。 And the reason why
+    is because I did not select the entire column。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 《Blinding Dark》，这是 Covenant 最近发行的专辑之一。现在我选择了它。我可以直接点击排序和筛选，然后选择从 A 到 Z 排序。看，发生了什么？所有数据都根据专辑标题进行了重新排序，并且是按字母顺序排列的。尽管如此，专辑的列标题仍然保持在原位。原因是我没有选择整列。
+- en: I just click somewhere in the column。 Let's try it again this time here in band。
+    If I want to alphabetize by band， I just click anywhere in column A except not
+    a one。 and then I click sort and filter a to Z， and it worked。 Now。 let's say
+    I have two albums by Brandon F that are for sale。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我在列中点击某个地方。让我们再试一次，这次在乐队列中。如果我想按乐队字母排序，我只需在 A 列的任何位置点击，不包括 A1，然后点击从 A 到 Z 排序，它成功了。现在，假设我有两张由
+    Brandon F 出售的专辑。
+- en: So I need to right click here on4 and click insert。 It gave me a new row。 and
+    I'll just copy Brandon flowers down， and I'll put in the name of another album
+    from him called flamingo。 And I'll just put in the rest of this data here。 So
+    now。Watch what I can do。 I could sort by album if I click sort and filter A to
+    Z。 and then I could sort by band。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我需要在4上右击并点击插入。它给我添加了一行。我将把布兰登·弗拉瓦斯的名字复制下来，并输入他另一张专辑的名字《火烈鸟》。接下来我会把剩下的数据填在这里。那么，现在，看看我能做什么。我可以通过专辑进行排序，如果我点击排序和筛选A到Z，然后我可以按乐队排序。
+- en: sort by band， A to Z。 And now look what it did。 Yes。 it alphabetized and sorted
+    my data from A to Z based on the band。 But notice that it flipped the order of
+    these two brandon flower albums。 Now。 fllamingo is on the top and desired effect
+    is underneath。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 按乐队排序，A到Z。现在看看它做了什么。是的，它按照乐队的字母顺序对我的数据进行了排序。但请注意，它颠倒了这两张布兰登·弗拉瓦斯专辑的顺序。现在，《火烈鸟》在顶部，《期望效果》在下面。
+- en: The reason why is because Excel remembers that I sorted first by album。 and
+    then I sorted by band。 Whatever your most recent sort is， that's the one that
+    takes priority。 And so the priority here is to alphabetized by band。 But there
+    is a secondary priority。 a secondary sort， which was Excel remembered that I sorted
+    by album name 2。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 原因是因为Excel记住了我首先按专辑排序，然后按乐队排序。无论你最近一次的排序是什么，那就是优先排序。因此，这里的优先排序是按乐队的字母顺序排列。但还有一个次要优先级，Excel记住了我也按专辑名称进行了排序。
+- en: And so you can get some pretty interesting sorts going。 For example， I could
+    sort again。 this time based on the genre。 So I click sort A to Z。 and， of course，
+    in。In addition to using this home tab home ribbon editing group， instead of using
+    that if you want。 you can go to data and click sort A to Z and I'll do it that
+    way this time。 So I'll sort a to Z。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以你可以得到一些非常有趣的排序。例如，我可以再进行一次排序，这次按流派排序。所以我点击排序A到Z。当然，除了使用这个主页选项卡的编辑组外，如果你愿意，也可以去数据并点击排序A到Z，这次我就这样做。所以我要按A到Z排序。
+- en: and now it's sorting by genre so I can see those all listed there。 but then
+    I could sort by band and so you get a combination of the two sorts in this case
+    it didn't make that much difference but with a larger spreadsheet it certainly
+    would Now before we end this tutorial there is another feature that you should
+    know about。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在它按流派排序，这样我可以看到所有列在那里的内容。但我也可以按乐队排序，所以在这种情况下，你可以得到这两种排序的组合，这一次并没有太大的区别，但在更大的电子表格中肯定会有所不同。在结束本教程之前，还有一个你应该知道的功能。
+- en: and that is here on the data tab data ribbon sort and filter group you can see
+    that there is a sort button。 and if you click on that it gives you some additional
+    options。 Before I click on it though。 I want to select all of my data。 So I'm
+    going to hold the control key on the keyboard and tap a So that selects all of
+    my data if you want to make sure it got all of your data。 you can hold control
+    and tap the period button So I tap it once it shows me the upper left。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这在数据选项卡的数据功能区的排序和筛选组中，你可以看到有一个排序按钮。如果你点击它，它会给你一些额外的选项。在我点击之前，我想选择我所有的数据。所以我要按住键盘上的控制键并按下A，这样就选择了我所有的数据。如果你想确认选择了所有数据，可以按住控制键并按下句号键。所以我按一下，它会显示左上角。
+- en: it shows me the upper right if I tap it again if I do control period again。The
+    lower right， again。 the lower left。 So it's a way to see everything。 And to make
+    sure， okay， that's all of my data。 Everything is where it should be。 it's all
+    selected。 now that I've got that。 I'm going to click here on this larger sort
+    button。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我再次按它，它会显示右上角。如果我再按控制加句号，显示右下角，再次显示左下角。这是一种查看所有内容的方法。并且确认，好的，那就是我所有的数据。一切都在正确的位置，都是选中的。现在我已经准备好了，我将点击这里的更大排序按钮。
+- en: and it gives me a bunch of ways that I can sort my data。 I want to first sort
+    by band。 And I want to sort it on the values， In other words， in this case。 the
+    letters and how alphabetically a to Z， I could do z to a if I want。 you can also
+    sort not by the values， but by the cell color， I don't necessarily recommend that。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它给我提供了一些排序数据的方法。我想先按乐队排序。我想按值排序，换句话说，在这种情况下，就是字母按字母顺序A到Z，如果我想的话，也可以Z到A。你也可以按单元格颜色排序，但我不一定推荐这样做。
+- en: but you could， and there are some other ways that you could sort as well。 All
+    right。 so now that I've got that set up， I can add a second level of sort。 So
+    first。 I want to sort by band。 then by genre。 And again， values A to Z。 And then
+    maybe a third level of sort。 and maybe that's by the number of copies sold from
+    largest to smallest。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但你也可以，还有一些其他方式可以排序。好的。现在我已经设置好了，可以添加第二级排序。首先，我想按乐队排序，然后按类型排序。再次，值从A到Z。然后可能还有第三级排序，或许是按销量从大到小。
+- en: '![](img/72d133b0415333e48ab10289a25b8d58_3.png)'
+  id: totrans-19
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/72d133b0415333e48ab10289a25b8d58_3.png)'
+- en: So you click O。 and it puts it all into effect。 And in this case， again。 it
+    didn't make huge changes for me。 But in the case of a tie like this， Brandon flowers。
+    for example， that's a tie。 It sorted them alphabetically， and it's a tie。 It breaks
+    the tie by looking at the genre in this case。 They're both the same。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以你点击O，它就会生效。在这种情况下，它对我没有产生重大变化。但在像这种平局的情况下，比如Brandon Flowers，这就是一个平局。它按字母顺序排序，并且是平局。在这种情况下，它通过查看类型来打破平局。它们是相同的。
+- en: And then if those are a tie， it breaks the tie again， this time with。 I think
+    I said copies sold from large to smallest。 So if you really want to get fancy
+    with sorts。 That's how you do it。 You select all your data。 And then you go here
+    to the sort button and set up a multilevel sort。 Thanks for watching this video。
+    I hope that you found it to be useful。 If you did。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果这些数据相等，它会再次打破平局，这次是通过。我想我说的是从大到小的销量。所以如果你真的想让排序更复杂，这就是方法。你选择所有数据，然后点击排序按钮，设置多级排序。感谢观看这个视频。我希望你觉得它有用。如果你觉得。
+- en: please click the like button below。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 请点击下面的点赞按钮。

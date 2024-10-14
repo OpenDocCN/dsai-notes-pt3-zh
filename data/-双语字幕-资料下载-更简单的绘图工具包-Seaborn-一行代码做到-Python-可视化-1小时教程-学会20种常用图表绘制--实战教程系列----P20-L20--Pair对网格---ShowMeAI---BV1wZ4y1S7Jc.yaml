@@ -1,0 +1,205 @@
+- en: 【双语字幕+资料下载】更简单的绘图工具包 Seaborn，一行代码做到 Python 可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ -
+    P20：L20- Pair对网格 - ShowMeAI - BV1wZ4y1S7Jc
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】更简单的绘图工具包Seaborn，一行代码做到Python可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ - P20：L20-
+    Pair对网格 - ShowMeAI - BV1wZ4y1S7Jc
+- en: Okay， so what do we want to do here Well， basically I had previously talked
+    about pair plots up here and basically the way that the pair plot works out is
+    you plug in the data and it gives you a whole bunch of different plots but what
+    happens whenever you want to get really specific control over what plots and what
+    data shows up where well that's where pair grids come in Okay。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，我们在这里想做什么？基本上我之前在这里提到过成对图，成对图的工作方式是你插入数据，它会给你一堆不同的图，但当你想要更具体地控制图和数据的显示位置时，那就是成对网格的用武之地。
+- en: so what I want to do here is I first I'm going to use Iis again and what I want
+    to do is I want to create an empty grid system based off of this iris data and
+    I say pair grid and Iis。![](img/fac7241cd51289d163c52ef517203e4f_1.png)
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我想在这里做的是，首先我将再次使用Iis，我想基于这个鸢尾花数据创建一个空的网格系统，我说成对网格和Iis。
+- en: '![](img/fac7241cd51289d163c52ef517203e4f_2.png)'
+  id: totrans-3
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/fac7241cd51289d163c52ef517203e4f_2.png)'
+- en: '![](img/fac7241cd51289d163c52ef517203e4f_3.png)'
+  id: totrans-4
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/fac7241cd51289d163c52ef517203e4f_3.png)'
+- en: h is going to be equal to species， so we're going to colorize based off of the
+    species that are inside of the different or iris data frame and then what I want
+    to do is I want to put a scatter plot across the upper lower and the diagonal
+    So how I do that is I go Iis G map。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: h将等于物种，因此我们将根据不同的鸢尾花数据框中的物种进行上色，然后我想在上、下和对角线上放置一个散点图。那么我该怎么做呢？我使用Iis G map。
+- en: and then I call plot and scatter like this and I had to go load our iris data
+    in here as well and I also typed in app instead of map okay so this is what a
+    pair grid looks like and you can see it's just scatter plots everywhere and you
+    can also see that everything is going to line up in rows and columns and how that
+    data is going to interact and correlate is going to be basically laid out for
+    us in our plot but what would happen if we decided that we would like to put a
+    scatter plot across well different。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我像这样调用绘图和散点图，我还必须加载我们的鸢尾花数据，并且我输入的是app而不是map，好的，所以这就是成对网格的样子，你可以看到到处都是散点图，你也可以看到所有的数据会在行和列中对齐，这些数据的交互和相关性将在我们的图中基本呈现出来，但如果我们决定想要在不同的地方放置散点图，会发生什么呢？
+- en: '![](img/fac7241cd51289d163c52ef517203e4f_5.png)'
+  id: totrans-7
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/fac7241cd51289d163c52ef517203e4f_5.png)'
+- en: '![](img/fac7241cd51289d163c52ef517203e4f_6.png)'
+  id: totrans-8
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/fac7241cd51289d163c52ef517203e4f_6.png)'
+- en: '![](img/fac7241cd51289d163c52ef517203e4f_7.png)'
+  id: totrans-9
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/fac7241cd51289d163c52ef517203e4f_7.png)'
+- en: '![](img/fac7241cd51289d163c52ef517203e4f_8.png)'
+  id: totrans-10
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/fac7241cd51289d163c52ef517203e4f_8.png)'
+- en: '![](img/fac7241cd51289d163c52ef517203e4f_9.png)'
+  id: totrans-11
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/fac7241cd51289d163c52ef517203e4f_9.png)'
+- en: Ploots in the upper and lower as well as on the diagonal I'm going to say I
+    G map plots scatter and let's say I want to put a histogram across the diagonal
+    I can say I G map and diagonal and plot histogram and now you can see we have
+    a histogram but we also have these other scatter plot still showing up here so
+    let's go and get rid of the scatter plot and let's say that we want to have scatter
+    plots show off of the diagonal in the upper and the lower part well we say I G
+    and map off diagonal and there we want to plot our scatter plot and now we get
+    our histogram that's not obstructed with the scatter plot and we get a scatter
+    plot in the upper as well as the lower part of our pair grid。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在上、下以及对角线上绘制图，我将说I G map绘制散点图，假设我想在对角线上放置一个直方图，我可以说I G map和对角线和绘制直方图，现在你可以看到我们有一个直方图，但我们也有其他的散点图仍然显示在这里，所以让我们去掉散点图，假设我们想让散点图在对角线的上部和下部显示。那么我们说I
+    G和map在对角线外部绘制我们的散点图，现在我们得到了不被散点图遮挡的直方图，并且我们在成对网格的上部和下部得到了散点图。
+- en: but let's let's say we want to go and put different。![](img/fac7241cd51289d163c52ef517203e4f_11.png)
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但是我们想说我们要去放置不同的散点图。
+- en: '![](img/fac7241cd51289d163c52ef517203e4f_12.png)'
+  id: totrans-14
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/fac7241cd51289d163c52ef517203e4f_12.png)'
+- en: '![](img/fac7241cd51289d163c52ef517203e4f_13.png)'
+  id: totrans-15
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/fac7241cd51289d163c52ef517203e4f_13.png)'
+- en: '![](img/fac7241cd51289d163c52ef517203e4f_14.png)'
+  id: totrans-16
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/fac7241cd51289d163c52ef517203e4f_14.png)'
+- en: '![](img/fac7241cd51289d163c52ef517203e4f_15.png)'
+  id: totrans-17
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/fac7241cd51289d163c52ef517203e4f_15.png)'
+- en: Stuff on the upper part and another different plot on the lower part Well， we
+    can just come in。 let's just go and copy this。 I don't have to type it again。
+    so I'm going to say that in the upper part I want to use。![](img/fac7241cd51289d163c52ef517203e4f_17.png)
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 上面的东西和下面的另一种不同的图。好吧，我们可以直接过来。让我们复制这个，我不需要再打一次。所以我想说在上面我想使用。![](img/fac7241cd51289d163c52ef517203e4f_17.png)
+- en: '![](img/fac7241cd51289d163c52ef517203e4f_18.png)'
+  id: totrans-19
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/fac7241cd51289d163c52ef517203e4f_18.png)'
+- en: A scatter plot and in the lower part just by typing in lower， I want to put
+    in a Kde plot。 which is actually part of seaborn。 So this is Kde plot and you
+    can see that it did exactly that for us。 And if you want to see the different
+    options that are available to you。 of course， shift and tab。 press the plus button
+    right here。 and you can look at all of the different options that are available
+    in regards to that function。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是一个散点图，下面我想输入一个Kde图。实际上这是seaborn的一部分。所以这是Kde图，你可以看到它正好为我们完成了这个。如果你想查看可用的不同选项，当然可以按Shift和Tab。按这个加号按钮，你可以查看与该函数相关的所有不同选项。
+- en: Allright， so neat stuff。 you can make really， really custom awesome looking
+    plots。 The other thing we can do is we can come in here and define variables for
+    the X and Y for our custom grid by going Iis。![](img/fac7241cd51289d163c52ef517203e4f_20.png)
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 太好了，这真是很酷的东西。你可以制作非常，非常自定义且看起来很棒的图表。我们可以在这里定义X和Y的变量，用于我们的自定义网格，方法是输入Iris。![](img/fac7241cd51289d163c52ef517203e4f_20.png)
+- en: '![](img/fac7241cd51289d163c52ef517203e4f_21.png)'
+  id: totrans-22
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/fac7241cd51289d163c52ef517203e4f_21.png)'
+- en: '![](img/fac7241cd51289d163c52ef517203e4f_22.png)'
+  id: totrans-23
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/fac7241cd51289d163c52ef517203e4f_22.png)'
+- en: '![](img/fac7241cd51289d163c52ef517203e4f_23.png)'
+  id: totrans-24
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/fac7241cd51289d163c52ef517203e4f_23.png)'
+- en: And G is equal to SN S。Para grid。Iris？I'm going to say the hue is going to be
+    based off of species and then X variables is going to be based off of sepal length。
+    which I think that's how you pronounce it， I don't know that much about flowers
+    So I apologize I'm saying that wrong and the sel width and then the Y variables
+    going to be equal to and let's just go and copy this and then let's change this
+    to pal and change this to pal and then we can say that we want to plot a scatterpl
+    and let's go and get rid of this part and then we can also come in and throw a
+    legend inside of here with add legend and you can see we were able to create our
+    custom plot Allright。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: G等于SN S。Para grid。Iris？我将说色调将基于物种，然后X变量将基于萼片长度。我想我发音正确，但我对花朵不太了解，所以如果我说错了，请原谅。然后是萼片宽度，Y变量将等于……让我们复制这个，然后把它改为pal，再把它改为pal，然后我们可以说我们想绘制一个散点图，接下来去掉这一部分，然后我们也可以在这里添加一个图例，你可以看到我们能够创建我们的自定义图表，太好了。
+- en: so pretty neat stuff Alright and up next I want to talk about another grid which
+    is。![](img/fac7241cd51289d163c52ef517203e4f_25.png)
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这真是非常酷的东西。接下来我想谈谈另一个网格。![](img/fac7241cd51289d163c52ef517203e4f_25.png)
+- en: '![](img/fac7241cd51289d163c52ef517203e4f_26.png)'
+  id: totrans-27
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/fac7241cd51289d163c52ef517203e4f_26.png)'
+- en: '![](img/fac7241cd51289d163c52ef517203e4f_27.png)'
+  id: totrans-28
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/fac7241cd51289d163c52ef517203e4f_27.png)'
+- en: '![](img/fac7241cd51289d163c52ef517203e4f_28.png)'
+  id: totrans-29
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/fac7241cd51289d163c52ef517203e4f_28.png)'
+- en: '![](img/fac7241cd51289d163c52ef517203e4f_29.png)'
+  id: totrans-30
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/fac7241cd51289d163c52ef517203e4f_29.png)'
+- en: '![](img/fac7241cd51289d163c52ef517203e4f_30.png)'
+  id: totrans-31
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/fac7241cd51289d163c52ef517203e4f_30.png)'

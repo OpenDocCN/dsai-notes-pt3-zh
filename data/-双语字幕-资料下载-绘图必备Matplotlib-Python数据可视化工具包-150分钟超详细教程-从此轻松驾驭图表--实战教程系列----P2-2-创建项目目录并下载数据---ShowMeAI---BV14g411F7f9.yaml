@@ -1,0 +1,132 @@
+- en: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P2：2）创建项目目录并下载数据
+    - ShowMeAI - BV14g411F7f9
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P2：2）创建项目目录并下载数据
+    - ShowMeAI - BV14g411F7f9
+- en: Started。![](img/7d77afa5bca5410549c41cf4ebbe259f_1.png)
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 开始。![](img/7d77afa5bca5410549c41cf4ebbe259f_1.png)
+- en: First things first， I'm going to open up a terminal， and I'm gonna create a
+    I'm gonna create a new。Let me drag this terminal over here。 I'm going create a
+    new directory for us to work in for this project。 So this is how I like to start
+    new projects。 Let's let me do a little Ls here。 Take a look at my home directory。
+    you'll see that I have this folder project data science。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 首先，我要打开一个终端，我要创建一个新的。让我把这个终端拖到这里。我将创建一个新的目录供我们在这个项目中使用。这就是我喜欢开始新项目的方式。让我在这里执行一下LS，看看我的主目录。你会看到我有一个名为项目数据科学的文件夹。
+- en: I'm gonna go ahead and change in here， If I do Ls。 you'll see。 These are the
+    directories for the other courses and the other videos that we have recorded here
+    that are online。 I'm going to make a new directory。 Let's call this mat plot Lib。😊。We'll
+    call this mappl Lib tutorial。 Let's just call it that。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将继续在这里更改，如果我执行LS。你会看到。这是我们在网上录制的其他课程和其他视频的目录。我将创建一个新的目录。我们称之为mat plot Lib。😊。我们称之为mappl
+    Lib教程。就叫这个吧。
+- en: So I will C change directory into Maplot Lib tutorial if I do an LS。 you'll
+    see that there is nothing in here and that's because we haven't created anything
+    in here。 we just created this directory。So， that's looking good。Now。 we're going
+    to be using some data that we create in this tutorial。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我会进入Maplot Lib教程目录。如果我执行LS，你会看到这里什么都没有，因为我们还没有在这里创建任何内容。我们只是创建了这个目录。所以，看起来不错。现在，我们将使用在这个教程中创建的一些数据。
+- en: but we're also going to be using a little bit of data on heart disease。 a little
+    bit of data from kle here。 So I'm going to open up a new chromrome window。 let
+    me drag this Chrome window over here。 And if you go to kggle heart disease。 Let's
+    see。 we have the heart disease data set。 We've got predicting heart disease。 Let's
+    go here， predicting。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但我们还将使用一点关于心脏病的数据。从kle这里取一点数据。所以我将打开一个新的Chrome窗口。让我把这个Chrome窗口拖到这里。如果你去kggle心脏病。让我们看看。我们有心脏病数据集。我们有预测心脏病。让我们去这里，预测。
+- en: Heart disease。 And actually， if we click this heart disease UI link right there。
+    This is the one that we're going to want。 So Caggle dot com slash Rony TF R O
+    N I TF。 and then heart disease U I。 I'll make sure to post this link so that you
+    have it。 But this is where we're going to be downloading our data from。This is
+    a data on heart disease。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 心脏病。实际上，如果我们点击这个心脏病UI链接。这是我们想要的。所以Caggle.com/RonyTF R O N I TF，然后是heart disease
+    U I。我会确保发布这个链接，以便你能获取到它。但这是我们将下载数据的地方。这是关于心脏病的数据。
+- en: We can take a look at the description here。 The database contains 76 attributes。
+    but the published experiments for this data only use 14 of them。 and those are
+    the 14 that we're going to have in this data set。In particular。 the Cleveland
+    database is the only one that's been used by machine learning researchers to this
+    date。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们可以看看这里的描述。这个数据库包含76个属性，但这个数据的已发布实验仅使用了14个属性，而这14个就是我们将在这个数据集中使用的。特别是，克利夫兰数据库是迄今为止唯一被机器学习研究人员使用的。
+- en: etc cetera， et cetera。 So this data set originally comes from UCI。 So the UCI
+    machine learning repository。 So if you come here。You'll see that these are some
+    very popular machine learning data sets。 So we're going to be using this heart
+    disease one here， but we're just going to get it from Cagle。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 等等，这个数据集最初来自UCI。UCI机器学习库。如果你来这里。你会看到这些是一些非常受欢迎的机器学习数据集。我们将使用这个心脏病的数据集，但我们将从Cagle获取它。
+- en: So， let's。Go up here。 click this download button。 if you don't have a Caagle
+    account。 you'll probably need to create  one。 I will click on this zip file that
+    gets downloaded。 It opens up this heart dot CSV。 I'm going to rename this really
+    quickly just to what the zip file was named。 actually， which was heart disease
+    U C I。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以，让我们。上去这里。点击这个下载按钮。如果你没有Cagle账户，你可能需要创建一个。我将点击这个下载的zip文件。它打开了这个heart.dot CSV。我会迅速重命名它，正好是这个zip文件的名字，实际上是heart
+    disease U C I。
+- en: '![](img/7d77afa5bca5410549c41cf4ebbe259f_3.png)'
+  id: totrans-10
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/7d77afa5bca5410549c41cf4ebbe259f_3.png)'
+- en: And now， just to show you。How to do this in the terminal。 I'm going to come
+    back over here to our directory， our MapllootlibB tutorial。 which if we go to
+    project Data science and Maplotlib tutorial you'll see that this is right here。
+    and I'm going to move Mv from our downloads heart diseasease UCci。csv。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，为了向你展示如何在终端中做到这一点。我将回到我们的目录，我们的MaplotlibB教程。如果我们去项目数据科学和Maplotlib教程，你会看到就在这里。我将从我们的下载中移动heart
+    diseasease UCci.csv。
+- en: and I'm going to move that to just period， which means this directory so I move
+    that do a little Ls to show that we have our heartdisease UCci。csv file in here。O。So
+    now， if I。If I go and I double check that our CSV file really is there。 I'll go
+    ahead and double click this。 We can pull it up in Excel， really quickly。Just to
+    take a look at what it looks like。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将把这一点移到目录，也就是说这个目录，所以我稍微做一下`ls`，以显示我们在这里有我们的heartdisease UCci.csv文件。O。所以现在，如果我再检查一下我们的CSV文件确实在这里。我会双击这个。我们可以在Excel中快速打开它，只是看看它的样子。
+- en: '![](img/7d77afa5bca5410549c41cf4ebbe259f_5.png)'
+  id: totrans-13
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/7d77afa5bca5410549c41cf4ebbe259f_5.png)'
+- en: Allright， Just a bunch of numbers。 See a bunch of numbers here。 and we have
+    our column headers across the top。 So we have the age of the person。 the sex of
+    the person。 These are ones and zeros and the original or the Caal data set over
+    here gives us the mapping。 So one equals male，0 equals female。 And then we've
+    got these other numeric columns as well。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好吧，这里是一堆数字。看到这里有一堆数字，我们的列标题在顶部。所以我们有这个人的年龄，性别。这些是0和1，原始的Caal数据集在这里给出了映射。所以1代表男性，0代表女性。然后我们还有其他一些数值列。
+- en: And this is what we're going to be plotting for some of the tutorial。![](img/7d77afa5bca5410549c41cf4ebbe259f_7.png)
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这就是我们将在一些教程中绘制的内容。![](img/7d77afa5bca5410549c41cf4ebbe259f_7.png)
+- en: So coming back over here， let's go ahead and close this and go ahead and close。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以回来这里，让我们关闭这个，然后继续关闭。

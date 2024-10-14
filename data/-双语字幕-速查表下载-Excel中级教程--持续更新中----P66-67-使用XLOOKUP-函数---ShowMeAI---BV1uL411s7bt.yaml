@@ -1,0 +1,269 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P66：67）使用XLOOKUP 函数 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P66：67）使用XLOOKUP 函数 - ShowMeAI - BV1uL411s7bt
+- en: '![](img/797f4cc0ad75088c1560e826b4d80aeb_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/797f4cc0ad75088c1560e826b4d80aeb_0.png)'
+- en: In this video， you're going to learn how to use the Xlookup function in Microsoft
+    Excel for years and years。 one of the most commonly used functions in Excel was
+    the V lookup function。 and there's also an H lookup and these are two very powerful
+    functions。 but the fairly new Xlookup function blows both of them away and for
+    many of you you'll never again need to use V lookup or H lookup So what is the
+    purpose of X lookup It basically enables you to take information that you have
+    and use that information to look up related information So you can see here I
+    have an employee list for a fictional business。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个视频中，你将学习如何在微软Excel中使用Xlookup函数，多年来，Excel中最常用的函数之一是Vlookup函数，还有Hlookup，这两个函数都非常强大，但相对较新的Xlookup函数超越了这两者，许多用户将不再需要使用Vlookup或Hlookup。那么Xlookup的目的是什么？它基本上使你能够利用已有的信息查找相关信息，所以你可以看到这里我有一个虚构企业的员工列表。
+- en: We have employee names at the left we have their employee number， department
+    salary etc。 And let's say that I need to look up an employee based on their employee
+    number maybe every time they log into a website or fill out a form。 they put their
+    employee number I could then use X lookup to search this document for their employee
+    number and then I could。their name and in this case I also want it to produce
+    the department that they're part of and their salary so I'm going to click here
+    on H2 and I'm going to write my formula that uses the Xlookup function I'll type
+    equals Xlookup and as I type you can see Excel recommends that I use the Xlookup
+    function I could just click on that to select it or I could keep typing Next I'll
+    put the left parenthesis and as always at this point。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们左侧有员工姓名，员工编号、部门、薪资等。假设我需要根据员工编号查找员工，可能每次他们登录网站或填写表单时，输入他们的员工编号，我可以使用Xlookup在这个文档中搜索他们的员工编号，然后我可以获取他们的姓名，并且在这种情况下，我也希望能得到他们所属的部门和薪资，所以我将在H2单元格点击，写出使用Xlookup函数的公式，我会输入等于Xlookup，正如我输入时，你可以看到Excel推荐我使用Xlookup函数，我可以直接点击选择，或者继续输入。接下来，我会输入左括号，像往常一样，此时。
+- en: Microsoft Excel is giving me some tips to help me successfully write the rest
+    of this formula Excel is now looking for the lookup value In other words。 what
+    is the information that I know Well in this case I know the employee number right
+    in my example I said the employee numbers are recorded maybe when they use the
+    Internet or when they fill out a form so that's what we know we know their number
+    but we don't know their name department and salary so I could type in a specific
+    employee number perhaps this one here so I could type that out。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 微软Excel正在给我一些提示，以帮助我成功编写剩下的公式，Excel现在在寻找查找值，换句话说，我知道的信息是什么？在这种情况下，我知道员工编号，正如我在例子中所说的，员工编号在他们上网或填写表单时记录，所以这是我们知道的，我们知道他们的编号，但不知道他们的姓名、部门和薪资，因此我可以输入一个特定的员工编号，也许就是这个。
+- en: In the formula if I want to， but it's more powerful in many cases to instead
+    of typing it。 just click on a cell where you will eventually type the number or
+    the item that you want X lookup to look for。 In my case， I've already written
+    the number It's here at the left in cell G2 So I'll click on G2 and of course。
+    I can change this number later。 but the formula is always gonna be looking at
+    whatever is in G2。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在公式中，如果我愿意，可以直接输入，但在许多情况下，更强大的是点击一个单元格，最终输入你希望Xlookup查找的编号或项目。在我的例子中，我已经写好了这个编号，它在左侧的G2单元格中，所以我会点击G2，当然，我可以稍后更改这个编号，但公式总是会查看G2中的内容。
+- en: and that's the lookup value that it will search for。 Next， I put in a comma。
+    You can see Excel is now looking for the lookup array。 Where do I want Excel to
+    search for whatever is in G2。 Do I want it to search in column A No。 it's not
+    gonna find this number in column A。 Well， what about column B。 No， not there either。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这就是它将要搜索的查找值。接下来，我输入一个逗号。你可以看到Excel现在在寻找查找数组。我希望Excel在G2中搜索的内容在哪里？我希望它在A列中搜索吗？不，不会在A列中找到这个编号。那B列呢？也不在那里。
+- en: I need to select C。 because that's where employee numbers are stored in this
+    spreadsheet。 You can see what Excel did。 It put in C colon C。 In other words，
+    all of column C。 I'll put in a comma Next Excel is looking for。What's called the
+    return array。 In other words。 I know the lookup value。 I've specified where to
+    look for that lookup value column C。 Now。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我需要选择C列，因为员工编号存储在这个电子表格中。你可以看到Excel做了什么，它填入了C：C。换句话说，就是整列C。我会放一个逗号。接下来，Excel正在寻找所谓的返回数组。换句话说，我知道查找值。我已指定在C列查找这个查找值。
+- en: what is it that I want to be returned。 What is it that I want to see。 Well，
+    in this case。 I want it to return the name of the employee。 So that's easy。 I'll
+    just click on column a just right here on the a， it selects the entire column。
+    or again。 I could type a colon a， I'll put in a comma Now， what if it's not found。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想要返回的是什么？我想要看到的是什么？那么，在这种情况下，我希望它返回员工的名字。所以这很简单。我只需点击A列，就在这里选择整个列。或者，我也可以输入A：A，接下来加上一个逗号。那么，如果找不到呢？
+- en: What if Excel searches all of these employee numbers does not find this number。
+    So it can't return a name， So what do I want it to return。 Well， I could just
+    skip this。 I could delete that comma， put in my right parenthesis。 You don't even
+    have to put the parenthesis in at the right if you don't want to tap enter。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果Excel搜索所有员工编号但找不到这个数字呢？那么它无法返回名字，我希望它返回什么呢？我可以直接跳过这一步，删除那个逗号，输入右括号。如果你不想的话，甚至可以不放括号，然后按回车。
+- en: and you can see it worked。 So it works without putting in anything for if not
+    found。 But in this case， I think I do want to put something in there。 I'll put
+    in a quotation mark and I'll just type the word none， and then another quotation
+    mark。 and then I could put。Com in and at this point， all I need to do is tell
+    Excel what kind of a match am I looking for？
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以看到它有效。所以在没有填写“如果找不到”时它也能工作。但在这种情况下，我认为我确实想填写一些内容。我会放一个引号，输入单词none，然后再放一个引号。然后我可以放入.Com，现在我只需告诉Excel我想要什么样的匹配？
+- en: Am I going to require Excel to find an exact match to this employee number In
+    my case， yes。 because with employee numbers close doesn't mean that much It's
+    pretty much got to be exact and notice that that is the default So if you just
+    skip this step。 it will default to exact match which is great and that's a little
+    bit of a change from Vlookup If you don't want exact match。 you can see the other
+    options here， these are some really great options to have。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我是否要求Excel找到这个员工编号的精确匹配？在我的情况下，是的，因为员工编号相近并不意味着太多，必须是完全一致的，注意这就是默认值。所以如果你跳过这一步，它会默认设置为精确匹配，这很好，这与Vlookup有一点不同。如果你不想要精确匹配，可以看到这里有其他选项，这些都是很好的选择。
+- en: I'll just put a zero， So it'll be exact match and again。 I could have just left
+    that blank I put in a comma And the very last step is what kind of a search do
+    I want it to do Do I want to search from the top to the bottom first to last or
+    do I want to search from last to first starting at the bottom There's binary search
+    sorted ascending binary search sorted descending These ultimately don't matter
+    that much So I'm just going stop there at exact match。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我只需放一个零，这样就会是精确匹配了。我也可以不填写那个空白，放上一个逗号，最后一步是我想要什么样的搜索？我想从上到下搜索，还是从下到上？有升序的二分搜索和降序的二分搜索，这些最终并不是那么重要，所以我就停在精确匹配这里。
+- en: Put in my right parenthesis。 And again， I could have left off the0。 I could
+    have left off the none in quotes。 I could have just stopped here。 Instead。 I'll
+    stop here after the0 tap enter on the keyboard。 And you can see Excel has used
+    that X lookup formula to search column C for this number。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 输入右括号。同样，我可以省略掉0，或者省略掉引号中的none，我本可以在这里停下来。但我会在0后停下来，按下键盘上的回车键。你可以看到，Excel使用了X查找公式来在C列中搜索这个数字。
+- en: It found it。 let's find out where it found it。 Okay， there it is。 And it corresponds
+    to Nick Robinson who's in the communications department。 Okay。 so let's go back
+    up to the top。 Nick Robinson。 So it did work， it did find the right employee。
+    Now。 for those of you that have watched my other Excel tutorials。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 找到了。让我们看看它找到哪里。好的，就在那里。对应的是在通讯部门的Nick Robinson。好的，我们回到顶部。Nick Robinson。所以它确实有效，找到了正确的员工。对于那些看过我其他Excel教程的人来说。
+- en: you know that I don't have to repeat those same steps for the next employee
+    number。 I don't have to start the formula all over again。 All I would have to
+    do is click on Nick Robinson。 And if you think about it， it looks like I'm clicking
+    on Nick Robinson， but I'm actually not。 this cell doesn't really contain Nick
+    Robinson。 It contains this formula。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你知道我不需要为下一个员工编号重复那些步骤。我不需要从头开始公式。我只需点击尼克·罗宾逊。如果你仔细想想，表面上看我在点击尼克·罗宾逊，但实际上我并没有。这个单元格并不真正包含尼克·罗宾逊。它包含这个公式。
+- en: which produces in this case。 Nick Robinson。 So if I click here in the lower
+    right corner。The cell on the autofill handle， that little green square I can click
+    and hold and pull down and it will copy and extend the contents of H2 down the
+    spreadsheet。 So let's go down and I'm not going to stop here with row 6 I'm gonna
+    go one more to row 7 and you'll see why by using the autofill handle。 notice what
+    happened with my formula it did copy the formula and paste it。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这个公式在这种情况下会生成尼克·罗宾逊。所以如果我点击右下角的单元格，即自动填充手柄，那小绿色方块，我可以点击并拖动，它会复制并扩展H2的内容到电子表格下方。我们继续往下，我不会在第6行停下，我会继续到第7行，你将看到使用自动填充手柄发生了什么。注意我的公式复制并粘贴了。
+- en: but it also extended the numbers， it adjusted the row number basically in H2
+    you can see the row number is G2 and in H3 you can see that the number is G3 So
+    it extended that number it adjusted it up same with the rest of these So pretty
+    quickly I'm able to look up employee numbers and return employee names Now this
+    one here returned a0 Why well it's because G7 in this case is blank Now what if
+    I just put in some random employee number that's not going be in my list here
+    if I try that notice that it says。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但它也扩展了数字，基本上在H2中你可以看到行号是G2，而在H3中你可以看到行号是G3。所以它扩展了这个数字，进行了调整，其他的也是如此。因此，我能够很快查找员工编号并返回员工姓名。现在这个返回了a0，为什么？因为G7在这种情况下是空的。现在，如果我随便输入一个不在我的列表中的员工编号，如果我尝试这样，注意它显示。
+- en: None， And it does that because I included that in my formula。 But if it's just
+    completely blank。 instead of none， it just says0。 Now， what I just demonstrated
+    of using X lookup to take an employee number and look to the left to find out
+    the employee name。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: None，它会这样做是因为我在公式中包含了它。但如果完全为空，它只会显示0。现在，我刚刚演示了使用XLOOKUP来获取员工编号并向左查找员工姓名。
+- en: That was not possible to do using the old V lookup V lookup is not capable of
+    looking left to get its information。 It has to look to the right。 And so that's
+    one of the nice things about X lookup。 It doesn't matter if it's left， right up
+    down， it can look that direction and find the information。 So let's try the same
+    thing again。 but this time with department。 I'll type equals X lookup。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 使用旧的VLOOKUP无法做到这一点，VLOOKUP无法向左获取信息。它必须向右查找。因此，XLOOKUP的一个优点就是不管是左、右、上、下，它都可以朝那个方向查找并找到信息。让我们再试一次，但这次用部门。我会输入等于XLOOKUP。
+- en: I could base this one off of the employee name or off the employee number。 It
+    doesn't really matter。 I'll go with the employee number again And once again，
+    I need to put in the lookup array。 In other words， what column or what range should
+    Excel look in to try to find the employee number。 Well， it's column C。 So I click
+    on C to select the entire column what's the。Return array。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以基于员工姓名或员工编号来设置这个。其实没有关系。我再用员工编号一次，再次，我需要输入查找数组。换句话说，Excel应该查找哪个列或范围来寻找员工编号。好吧，是C列。所以我点击C以选择整列，返回数组是什么。
+- en: What's the information I care about that I want to learn about and see in this
+    case it's department。 So I'll click on column D。 I'll put in a comma in quotes。
+    I'll put the word none in case the number typed in。 but it doesn't match any of
+    the employee numbers。 and then in this case I'm going skip the match mode and
+    the search mode they don't really matter much in this example And if you recall
+    xlookup default to an exact match。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我关心的信息是什么，我想了解和查看的，在这种情况下是部门。所以我会点击D列。我会输入一个逗号和引号。我会输入单词none，以防输入的数字与任何员工编号不匹配。在这种情况下，我将跳过匹配模式和搜索模式，因为在这个例子中它们并没有太大关系。如果你记得，XLOOKUP默认是精确匹配。
+- en: So it's going to try to find an exact match of this number and that's exactly
+    what I want。 So I'll just put in my right parenthesis tap enter on the keyboard
+    and Nick Robinson works in the communications department。 I can use the autofill
+    handle and I can just double click on it to extend it down the page so I don't
+    have to click and drag you can see it found the department of each of these employees
+    and we can do the same thing with salary X lookup the lookup value again could
+    be the employee number but I want to show you that it doesn't have to be So I'm
+    going select the employee name this time comm lookup array where they going find
+    the。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以它会尝试找到这个数字的精确匹配，这正是我想要的。因此，我将输入右括号，按下键盘上的回车，尼克·罗宾逊在通讯部工作。我可以使用自动填充手柄，双击它将其扩展到整列，这样我就不需要点击和拖动，你可以看到它找到了这些员工的部门，我们可以用同样的方法处理工资，X
+    lookup 的查找值可以是员工编号，但我想向你展示它并不一定非得如此。所以这次我将选择员工姓名作为查找数组。
+- en: Employee names here in column A this time comm What's the return array。 What's
+    the information I'm looking for that I want to see It's salary。 So that's column
+    E。 At this point， I should put in the right parentheesis。 but I'm just going tap
+    enter to demonstrate that you don't really have to and it produces the salary
+    I can just double click on the autofill handle to fill that down the page and
+    we're good to go。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这次员工姓名在 A 列。返回数组是什么？我想查看的信息是他们的工资。所以这是 E 列。此时，我应该输入右括号，但我只是敲击回车，以演示其实你并不真的需要输入，它就能产生工资。我只需双击自动填充手柄将其填充到整列，之后就可以了。
+- en: I'm just going copy paste another employee number there just so you can see
+    it is working in all of the cells here。 At this point if I want to I can select
+    J and on the home tab home ribbon in the number group。 I can change that number
+    to be currency so you can tell it's a salary。 and I might also want to select
+    this range and kind of set it apart from the rest of the spreadsheet by putting
+    in a background color。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我只是再复制粘贴一个员工编号，以便你可以看到它在所有单元格中都能正常工作。此时，如果我想，我可以选择 J 列，在“主页”选项卡的数字组中。我可以将该数字更改为货币格式，这样你就能知道这是工资。我可能还想选择这个范围，并通过设置背景颜色将其与电子表格的其他部分区分开来。
+- en: So now I could use this part of the spreadsheet as a form that I could use to
+    look up an employee number or a series of numbers all at once。 So I'll just clear
+    out the contents of those cells and I'll just take a few of these numbers。paste
+    them in and you can see the names are looked up。 the department and the salary
+    and they're all produced so that I can see them。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我可以使用这个电子表格的部分作为一个表单，来查找一个员工编号或一系列数字。因此，我将清除这些单元格的内容，并且我会选择其中一些数字，将它们粘贴进来，你可以看到姓名、部门和工资都被查找出来，方便我查看。
+- en: So I hope you can see some of the potential value in using Xlookup。 It's so
+    much easier。 more straightforward and powerful to use than the old Vlookup and
+    it also replaces H lookup as well I love the fact that it can look either left
+    or right。 and then I also like that it defaults to an exact match。 Now as Microsoft
+    often does with its newer functions。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我希望你能看到使用 Xlookup 的一些潜在价值。它比旧的 Vlookup 更加简单、直接和强大，同时也替代了 H lookup。我喜欢它可以向左或向右查找，而且它默认精确匹配。现在，正如微软在其较新功能中常做的那样。
+- en: they're rolling it out gradually it's available right now in Microsoft 365 versions
+    of Excel and also these other versions。 Eventually I would expect it to show up
+    in all modern versions of Microsoft Excel。 If you don't have Xlookup in your version
+    of Excel。 you should definitely check out my tutorial on vlookup and then of course
+    please do check back and watch this video once you do have access to Xlookup。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它正在逐步推出，目前在 Microsoft 365 版本的 Excel 和其他这些版本中可用。最终，我预计它会出现在所有现代版本的 Microsoft
+    Excel 中。如果你的 Excel 版本中没有 Xlookup，你一定要查看我的 vlookup 教程，然后当然请在你获得 Xlookup 的访问权限后，回来观看这个视频。
+- en: '![](img/797f4cc0ad75088c1560e826b4d80aeb_2.png)'
+  id: totrans-28
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/797f4cc0ad75088c1560e826b4d80aeb_2.png)'

@@ -1,0 +1,225 @@
+- en: 【双语字幕+资料下载】用 Python 和 Numpy 实现最热门的12个机器学习算法，彻底搞清楚它们的工作原理！＜实战教程系列＞ - P11：L11-
+    随机森林 - ShowMeAI - BV1wS4y1f7z1
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】用 Python 和 Numpy 实现最热门的12个机器学习算法，彻底搞清楚它们的工作原理！＜实战教程系列＞ - P11：L11-
+    随机森林 - ShowMeAI - BV1wS4y1f7z1
+- en: Hi， everybody。 Welcome to your new machine learning from Sct tutorial。 Today。
+    we are going to implement a random forest using only built in Python modules and
+    Ny。 The random forest algorithm is one of the most powerful and most popular algorithm。
+    So I'm very excited that we can finally implement it in this tutorial in the last
+    tutorial。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 大家好，欢迎来到你的新机器学习Sct教程。今天我们将使用仅内置的Python模块和Ny来实现随机森林。随机森林算法是最强大且最受欢迎的算法之一。所以我很兴奋我们终于能在这个教程中实现它，在上一个教程中。
+- en: I explained how a single decision tree works。 So if you haven't watched the
+    previous tutorial yet。 then please do so。 because our random forest model and
+    also the implementation is based on the decision tree model from the last time。😊，So
+    if you have understood the decision trees， then the approach of the random forest
+    is very easy to understand。If we have a look at this image here， then this shows
+    the whole idea。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我解释了单棵决策树是如何工作的。如果你还没有观看之前的教程，那么请去观看，因为我们的随机森林模型以及实现是基于上次的决策树模型。😊如果你理解了决策树，那么随机森林的方式就非常容易理解。如果我们看看这里的图像，它展示了整个想法。
+- en: So the idea is to combine multiple trees into a forest。 so we train multiple
+    trees and each tree gets a random subset of the training data。 thus the word random。
+    We then make a prediction with each of the trees at the end。And we make a maturity
+    vote then to get the final prediction。So this is the whole idea。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这个想法是将多棵树组合成一片森林。因此我们训练多棵树，每棵树获取训练数据的随机子集，因此称为随机。最后，我们用每棵树进行预测。然后我们进行成熟投票以获得最终预测。这就是整个思路。
+- en: And the random forest has some advantages compared to only one tree， for example。
+    by building more trees， we have more chances to get the correct prediction and
+    we also reduce the chance of overfitting with a single tree so typically the accuracy
+    of a random forest is higher than with a single tree and that's why it's so powerful。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 随机森林相比单棵树有一些优势，例如。通过构建更多的树，我们有更多机会获得正确的预测，同时我们也减少了单棵树过拟合的可能性，因此随机森林的准确性通常高于单棵树，这就是它如此强大的原因。
+- en: So， yeah， now we can jump right to the implementation。 So， of course， we import。![](img/657eaccf75713176fcbe8f6ff6eea819_1.png)
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以，是的，现在我们可以直接跳到实现部分。当然，我们导入。![](img/657eaccf75713176fcbe8f6ff6eea819_1.png)
+- en: Nampy， S， and P。And then we also import the decision tree class from the last
+    time。 so we say from decision tree， import decision tree。And now we can start。
+    We create our class decision3。And or sorry， now， now we have the random forest。
+    So now we create our random forest class。And this will。Get an in it。So。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Nampy、S和P。然后我们还从上次导入决策树类。因此我们说从决策树中导入决策树。现在我们可以开始了。我们创建我们的类decision3。抱歉，现在我们有了随机森林。所以现在我们创建我们的随机森林类。这将进行初始化。
+- en: and this will get the number of trees we want to have in our forest。 So let's
+    say a number of trees equals 100 by default。And then it also gets all the parameters
+    from our decision tree initializeza。 So it gets the minimum samples required for
+    a split。 It gets the maximum depth。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这将获取我们想要在森林中拥有的树的数量。因此，默认情况下树的数量等于100。然后它还获取我们决策树初始化器的所有参数。所以它获取分裂所需的最小样本数，获取最大深度。
+- en: And it gets an optional number of features for some more randomness。So let's
+    just copy and paste this here。 and then we store all of them。 So we say self dot
+    number。Of trees equals and trees， self dot min sample split equals min sample
+    split self dot max depth equals max depth and self dot N。Fats equals， and feats。And
+    then we implement our predict and our fit methods， so。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它获取一些更多随机性的可选特征数量。所以我们就复制粘贴在这里。然后我们存储所有这些。因此我们说self.dot number of trees等于树，self.dot
+    min sample split等于min sample split，self.dot max depth等于max depth，self.dot N fats等于，和feats。然后我们实现我们的预测和拟合方法。
+- en: The predict method has the。Test data。 And we start with the fit method。 So we
+    say fit。Self。 and this will have the training data and the training labels。And
+    one more thing that we want to have， and I can put it here first so we want to
+    have an empty array of trees where we want to store each single tree that we now
+    are going to create。 So we say self dot trees equals and this will be an empty
+    list。And then in the fit method。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 预测方法有测试数据。我们从拟合方法开始。所以我们说拟合自己，这将包含训练数据和训练标签。还有一件事，我们想要有一个空的树数组，用于存储我们现在要创建的每一棵树。因此，我们说
+    self.dot trees 等于一个空列表。然后在拟合方法中。
+- en: we want to make sure that the list is empty again。And now， we start。Training
+    our tree。 So we say four underscore because we don't need this in range self dot
+    number of trees。 And now we create our tree。 So we say3 equals decision  tree。And
+    this will get all the parameters。 So it gets min sample split equals self dot
+    min sample split。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们想确保列表再次为空。现在，我们开始训练我们的树。因此我们说 for underscore，因为我们在范围 self.dot number of trees
+    中不需要这个。然后我们创建我们的树。因此我们说 3 等于决策树。这将获取所有参数。因此它获取最小样本拆分等于 self.dot min sample split。
+- en: Then it will have the max depth equal self dot， max depth and the number of
+    features equal self dot。Number of features。And。Now， what we want to do is we want
+    to give our tree a random subset。 So let's define a global function here。 Let's
+    call this。 This is also called bootstping。 So let's call this。Boott sample， which
+    will get X and y。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后它将具有最大深度等于 self dot，最大深度，特征数量等于 self dot。特征数量。现在，我们想要做的是给我们的树一个随机子集。因此我们在这里定义一个全局函数。我们称之为。这也称为引导。因此我们称之为
+    Boott 样本，它将获取 X 和 y。
+- en: And now we just or first look at how many different number of samples we have。
+    So n samples equals x dot shape。So as always， this is a Ny and D where the first
+    dimension is the number of samples and the second dimension and number of features。And
+    now we make a random choice。 So we say indices equals numpy random choice。And
+    here we put in the number of samples as integer。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们先看看我们有多少不同数量的样本。因此 n 样本等于 x.dot shape。和往常一样，这是一个 Ny 和 D，其中第一维是样本数量，第二维是特征数量。现在我们进行随机选择。因此我们说索引等于
+    numpy random choice。在这里我们输入样本数量作为整数。
+- en: This means that it will make a random choice between 0 and the number of samples。
+    So our indices lie in this rate range， and the size will be of size number of
+    samples， too。But we also say replace equals true。 So this means that some of the
+    indices can be there multiple times。 and others get dropped。 So we randomly drop
+    some of the samples and use only a subset。And then。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这意味着它将在 0 和样本数量之间随机选择。因此我们的索引在这个范围内，大小也将是样本数量。但我们还说替换等于真。这意味着一些索引可以多次出现，而其他的会被丢弃。因此我们随机丢弃一些样本，仅使用一个子集。然后。
+- en: we return。The x。哦。These indices。And also， the why of these indices。So now we
+    only have these selected samples。🎼And now we can train our tree with this。 So
+    first。 we say x sample and y sample equals bootstrap sample with X and y。 And
+    then we say tree dot fit。X sample， and y。Sample。And then we simply append this
+    to our tree list。 So we say self dot。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们返回。这些 x。哦。这些索引。同时，也返回这些索引的 y。因此现在我们只有这些选择的样本。🎼现在我们可以用这些来训练我们的树。因此首先，我们说 x
+    样本和 y 样本等于 bootstrap 样本与 X 和 y。然后我们说树 dot fit，X 样本和 y 样本。然后我们简单地将其添加到我们的树列表中。因此我们说
+    self dot。
+- en: T st a pent。3。And now we are done with the training phase。 And now when we predict
+    it。 So we make a prediction with each of our trees。 So we say tree pres or tree
+    predictions equals。And here I will use a list comprehension and then convert this
+    to a nuier array。 So here I say tree dot predict。X 43 in self dot trees。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: T st a pent。3。现在我们完成了训练阶段。现在，当我们进行预测时。我们对每棵树进行预测。因此我们说树预测或树预测等于。在这里我将使用列表推导，然后将其转换为一个
+    numpy 数组。因此在这里我说树 dot predict，X 43 在 self.dot trees 中。
+- en: So for each trees now we make what we call the tree predict method。 And now
+    we want to do the maturity vote。 But now we have to be careful because what we
+    get here is。Let's say， for example， we have three trees and four samples。And then
+    let's say our first tree for simplicity just does once as predictions。 So for
+    each sample。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因此对于每棵树，我们现在制作我们所称的树预测方法。现在我们想进行成熟投票。但现在我们必须小心，因为我们得到的是。假设，例如，我们有三棵树和四个样本。然后假设我们的第一棵树为了简单起见仅进行一次预测。因此对于每个样本。
+- en: it will have a one here。 and the second tree just makes zeros。 So we have zeros。
+    and then the third tree also just predicts one。So， and then again， this would
+    be。An array。 This would be an array， and this would be an array in this array
+    then。 But。 and now we want to do the maturity vote。 So now what we。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它这里会有一个一。第二棵树只会生成零。所以我们有零。然后第三棵树也只预测一个。所以，然后再一次，这将是。一个数组。这将是一个数组，而这个数组将是这个数组中的一个数组。但。现在我们想进行成熟度投票。那么现在我们。
+- en: Actually one is we want a arrays that look like this， so we want to have 10，1，10，1，101
+    and 101。So。 this one。This one from all of the trees。We want to have the corresponding
+    predictions。 So we convert it to this structure。 And there's a very nice function
+    from Nmpy that is doing exactly this。 So we say tree pres equals Nmpy swap。As。嗯。With
+    this three predictions。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 实际上，我们想要一个看起来像这样的数组，所以我们想要有 10，1，10，1，101 和 101。所以。这个。从所有树中。我们想要有对应的预测。所以我们将其转换为这个结构。并且
+    Nmpy 中有一个非常好的函数正好做到这一点。所以我们说 tree pres 等于 Nmpy swap。作为。嗯。用这三个预测。
+- en: and then we swap axis0 and axis 1。 So this is doing exactly this。And now we
+    can do the maturity vote。 So we say why prediction equals。 And now we predict
+    the most common label for each of these three predictions， so。Now， if we have
+    or。1，0，1，1，0，1，1，0，1。 So now we go over them。And make a maturity vote then over
+    them and then over them。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们交换 axis0 和 axis 1。所以这正是我们所做的。现在我们可以进行成熟度投票。所以我们说预测等于。现在我们为这三次预测中的每一个预测预测最常见的标签，所以。现在，如果我们有或。1，0，1，1，0，1，1，0，1。那么现在我们逐一查看它们。然后进行成熟度投票，再对它们进行投票。
+- en: So we use less comprehension again。 And we say， most common label。Of a tree
+    prediction for each tree prediction in tree predictions。And then we convert this
+    to a nuy。Array and return it。And now the only thing left that we need is the most
+    common label function。 And we also needed this in the decision tree class。 So
+    here we have the most common label function。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们再次使用列表推导。我们说，树预测中每个树预测的最常见标签。然后我们将其转换为 nuy。数组并返回它。现在我们唯一需要的是最常见标签函数。我们在决策树类中也需要这个。因此这里我们有最常见标签函数。
+- en: As a class function。 So here， as you see， we need this a lot of time。 So it
+    might be better to do this as a global function。So we put this here and you might
+    even put it in another file and call this from a helpback class or something。
+    but we just put it here， so。I will not explain this again if you don't know how
+    this works。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 作为一个类函数。所以在这里，正如你所看到的，我们需要这个很多次。因此，把它作为一个全局函数可能更好。所以我们把它放在这里，你甚至可以把它放在另一个文件中，并从一个帮助类或其他地方调用它。但我们只是把它放在这里，所以。如果你不知道这个是如何工作的，我就不再解释了。
+- en: then please watch the last tutorial so we don't need self anymore。And we also
+    need to import from collections。Import the counter module。And now we can do the
+    maturity vote and now we are done。 so I have a little test script here to test
+    our class。 so I will import the breast cancer data set from the Ecal learn module。
+    Then I will generate some training and test labels， Then I will create our random
+    forest instance。And here I just use three trees because training might take some
+    time。 and we didn't optimize our code， so。In our video， I just use three now。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那么请观看最后一个教程，这样我们就不需要 self 了。我们还需要从 collections 中导入。导入 counter 模块。现在我们可以进行成熟度投票，现在我们完成了。所以我这里有一个小测试脚本来测试我们的类。我将从
+    Ecal learn 模块导入乳腺癌数据集。然后我会生成一些训练和测试标签，然后创建我们的随机森林实例。在这里，我只使用三棵树，因为训练可能需要一些时间。我们并没有优化我们的代码，所以。在我们的视频中，我现在只使用三棵。
+- en: Then I will fit the data and I will predict the test data and then calculate
+    the accuracy。 So let's run this and hope that everything is working。And。We made
+    a mistake， so we say self。Oh。 we want to append it to our trees， of course。 And
+    now one more try。Fingers crosseds。And now we have the accuracy。 So now we see
+    that our model is working。 And yeah。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我将拟合数据，并预测测试数据，然后计算准确性。让我们运行这个，希望一切正常。然后。我们犯了一个错误，所以我们说 self。哦。我们想把它添加到我们的树中，当然。现在再试一次。希望一切顺利。现在我们得到了准确性。所以现在我们看到我们的模型正在工作。是的。
+- en: I hope you understood everything。 And if you liked it。 please subscribe to the
+    channel and see you next time， bye。![](img/657eaccf75713176fcbe8f6ff6eea819_3.png)
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我希望你能理解一切。如果你喜欢，请订阅频道，下次见，拜拜。![](img/657eaccf75713176fcbe8f6ff6eea819_3.png)

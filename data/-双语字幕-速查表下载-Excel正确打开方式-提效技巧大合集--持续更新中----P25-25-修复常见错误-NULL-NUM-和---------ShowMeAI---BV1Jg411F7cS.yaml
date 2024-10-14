@@ -1,0 +1,231 @@
+- en: '【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P25：25）修复常见错误：NULL、NUM 和 ##### -
+    ShowMeAI - BV1Jg411F7cS'
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: '【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P25：25）修复常见错误：NULL、NUM 和 ##### -
+    ShowMeAI - BV1Jg411F7cS'
+- en: '![](img/f281ca6b5e382dc30865e6776ee9bd66_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/f281ca6b5e382dc30865e6776ee9bd66_0.png)'
+- en: This video is fixing common Excel problems。 Part 2。 It's the second in a three
+    part series on some strategies to try in order to fix common Excel error。 And
+    I have a spreadsheet here to go along with this video。 I hope that you'll download
+    it by looking in the description below the video。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这个视频是修复常见Excel问题的。第二部分。这是一个三部分系列的第二个视频，介绍一些修复常见Excel错误的策略。我这里有一个电子表格与这个视频配合。我希望你通过查看视频下方的描述来下载它。
+- en: And this workbook should look pretty familiar。 if you watched part 1。 you can
+    see that it has still the div0 error message。 If you want to learn how to fix
+    the div 0 error message， please watch part 1 here in part 2。 we're gonna look
+    at some strategies for fixing the null error。 the nu error。 and the hashtag error。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这个工作簿应该看起来很熟悉。如果你看过第一部分，你会看到它仍然有div0错误消息。如果你想了解如何修复div 0错误消息，请在这里观看第一部分。在第二部分，我们将看一些修复空值错误、nu错误和井号错误的策略。
+- en: Let's start first with null。 The main reason why you will see the null error
+    is if you use a space in your formula when you actually should use a comma or
+    some other symbol。 So let's do an example。 Let's say I would like to add up the
+    total cost of the first。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 首先从空值开始。你会看到空值错误的主要原因是如果在公式中使用了空格，而实际上应该使用逗号或其他符号。所以让我们做一个例子。假设我想计算前面的总成本。
+- en: '![](img/f281ca6b5e382dc30865e6776ee9bd66_2.png)'
+  id: totrans-5
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/f281ca6b5e382dc30865e6776ee9bd66_2.png)'
+- en: items in this list and the last five or six items so I want to leave out some
+    of the things here in the middle like shipping envelopes。 I don't want to include
+    those So to do this， I'm going to go here off to the right let's just say G4 it
+    doesn't have to be there though and I'll type equals So this cell equals the sum
+    of what well I'll put in a left parenthesis and then I'm going to click and drag
+    I could type the cell references here but I'll just click and drag to get the
+    first8 or so items in this list so I want to add that but I also want it to add
+    let's say erasers on down So let's say here in the formula I put a space and then
+    I go down to erasers and I click and drag and get the remaining items So back
+    up here on my formula you can see what it looks like I'll tap enter or return
+    on the keyboard but it gives me a null error Now the reason for that is because
+    of this space。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这个列表中的项目以及最后五到六个项目，我想在中间的部分省略一些东西，比如运送信封。我不想包括那些。所以为了做到这一点，我会到右边去，假设是G4，虽然不一定非得在那，我会输入等于。所以这个单元格等于什么呢？我会放一个左括号，然后点击并拖动。我可以在这里输入单元格引用，但我会直接点击并拖动，获取列表中前8个项目。我想加上这个，但我还想加上，比如橡皮擦。于是我在公式中留一个空格，然后往下到橡皮擦那儿点击并拖动，获取剩下的项目。所以回到我的公式，你可以看到它的样子。我会在键盘上按回车，但它给了我一个空值错误。原因是这个空格。
+- en: Here， I should not have put a space there。 whenever you put a space in that
+    situation or similar situations。 What it does is it tries to identify an intersection
+    of two ranges。 It's looking for where two ranges intersect。 Well， guess what。
+    This range that I selected does not intersect with this range。 there is no intersection。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这里，我不应该放一个空格。每当你在这种情况或类似情况中放一个空格，它会试图识别两个范围的交集。它在寻找两个范围的交集。好吧，猜猜看。我选择的这个范围与这个范围没有交集。没有交集。
+- en: And that's why it produces an error message。 No， there is no intersection between
+    those two ranges。 So instead of a space， what I really meant to do and should
+    have done was put a comma。 Now。 if I tap enter on the keyboard， It's adding up
+    this range and it's adding up that range and putting them together。 and it gives
+    me 1757。 So if you do see this null error， double check your formula。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这就是为什么它会产生错误消息的原因。不，两个范围之间没有交集。因此我真正想做的，应该做的，是放一个逗号。现在，如果我在键盘上按回车，它正在累加这个范围并将它们加在一起，给我1757。所以如果你看到这个空值错误，请仔细检查你的公式。
+- en: make sure you're using the proper symbols and don't have extra spaces。 Many
+    times that will solve the error。Next， let's look at the nu error。 And for this
+    one。 I'm gonna to switch to the health tracker spreadsheet in my workbook。 And
+    as you can see。 this health tracker is a way to track the health of Jason Smith，
+    he's trying to lose weight。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 确保你使用的是正确的符号，并且没有多余的空格。很多时候，这将解决错误。接下来，我们来看**无效**错误。对于这一点，我要切换到我的工作簿中的健康追踪电子表格。如你所见，这个健康追踪器是用来跟踪杰森·史密斯的健康，他正在尝试减肥。
+- en: and you can see here his weight and the change from the previous week and that's
+    being tracked with a formula you can see the formula there。 It's pretty easy，
+    pretty simple。 Who knows why， but let's just say that I've got to know the square
+    root of how many pounds Jason lost from week to week。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以在这里看到他的体重和与前一周的变化，这通过一个公式进行了跟踪，你可以看到那个公式。很简单，挺容易的。不知道为什么，但就说我需要知道杰森每周减掉多少磅的平方根。
+- en: Well， I could do that， I could type in equals S Q Rt notice it says returns
+    the square root of a number and what's the number。 it's this right here。 So I
+    click there。 and then I'll put in the left parenthesis。 and I need to now put
+    in the number。 So I'll click here on the number0 in this case。 but it's actually
+    clicking not on the number， but on the cell reference C7。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 嗯，我可以这么做，我可以输入等于SQRT，注意它说返回一个数字的平方根，那个数字是什么？就是这里的这个。所以我点击那里，然后放入左括号。现在我需要放入这个数字。所以我在这个情况下点击数字0，但实际上点击的不是数字，而是单元格引用C7。
+- en: and then I'll tap enter on the keyboard and there you've got the results。 square
+    root of 0。Is0。 Now。 I'm going to use the autofill handle This little green square
+    in the lower right corner of the cell。 I'll just click on that and hold the click
+    and then drag down the page。 and it copied that formula down and it worked beautifully
+    except for a couple of numb errors？ Now。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我会在键盘上按下回车，这样你就得到了结果。0的平方根是0。现在，我要使用自动填充手柄，这个小绿方块在单元格的右下角。我会点击并按住，然后向下拖动页面，这样就复制了那个公式，并且效果很好，只是出现了几个**无效**错误。现在。
+- en: why am I getting these numb errors。 Basically， you'll see numb errors when you
+    have a formula that try to produce an invalid number。 So if you tell Excel to
+    do an impossible calculation。 It's not going to be able to do it。 It's impossible。
+    So it may give you this numb error。 So why is this impossible？ Well。 I told Excel
+    to give me the square root of negative 4。 And if you know how square root works。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我为什么会得到这些**无效**错误呢？基本上，当你有一个试图产生无效数字的公式时，你会看到**无效**错误。所以如果你告诉Excel进行一个不可能的计算，它是无法做到的。这是不可能的。因此，它可能会给你这个**无效**错误。那么为什么这是不可能的呢？好吧，我告诉Excel给我-4的平方根。如果你知道平方根是如何运作的。
+- en: there's just no possible way to get the square root of -4， Because it's a negative
+    number。 Sam thing with negative 3， It's just not possible to get the square root
+    of it？
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 得到-4的平方根是不可能的，因为它是一个负数。对于-3也是同样的道理，得到它的平方根是不可能的。
+- en: So any time you see this numb error， double check your formula。Check your data
+    and make sure that you're not asking the impossible of Excel。 A way to fix that
+    would be to simply change negative numbers to0。 But in this case。 that would not
+    reflect reality。 And so instead you may want to do an if error formula。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以每次你看到这个**无效**错误时，仔细检查你的公式。检查你的数据，确保你没有对Excel提出不可能的要求。解决方法是简单地将负数改为0。但在这种情况下，这并不能反映现实。因此，你可能想要使用一个**如果错误**公式。
+- en: hopefully you can see how I'm doing this。 So equals if error left parenthesis。
+    and then the formula that I was using before。 and then I'll put in a comma and
+    then quotation marks and quotation marks。 So basically that will print on the
+    screen a blank space。 Nothing。 And then I can put the right parenthesis and tap
+    enter on the keyboard。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 希望你能看到我是怎么做到的。所以等于如果错误左括号，然后是我之前使用的公式，然后我会放一个逗号，再放上引号和引号。因此，这基本上会在屏幕上打印一个空白。什么都没有。然后我可以放上右括号并按回车键。
+- en: So now if I copy that formula down， you'll notice what it does。 if there is
+    a numb error。 it wipes it out and pretends like there is not an error。 if there
+    are no errors then it performs the formula just as I had created it up here with
+    a square root。 Now there are other cases when you'。See the numb error。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在如果我把那个公式写下来，你会注意到它的作用。如果出现了一个**无效**错误，它会将其清除，假装没有错误。如果没有错误，那么它就会按照我在这里创建的带有平方根的公式进行计算。现在还有其他情况你会看到**无效**错误。
+- en: It's technically possible for the numb error to appear when a number is too
+    big for Excel or too small for Excel。 This rarely happens， I bet you'll never
+    have this happen。 But the biggest number that Excel can display。 is a number one
+    with 308 zeros after it。 And if you try to go higher than that。 it's going produce
+    a numb error。 So to demonstrate this。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 从技术上讲，当数字对Excel来说太大或太小时，“numb”错误有可能出现。这种情况很少发生，我敢打赌你从未遇到过。但Excel能显示的最大数字是1后面有308个零。如果你尝试更高的数字，它会产生“numb”错误。为了演示这一点。
+- en: I'm going to type equals in this cell。 So this cell equals。 let's say 2000 raised
+    to the power of and the way you show that is with this little carrot symbol for
+    me。 it's shift 6 on the keyboard。 And then I'll just type in， let's say 7676。
+    So I'm going to raise 20 to the power of 7676。 let's try that。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将在这个单元格中输入等于号。所以这个单元格等于。假设2000的幂，而表示这个的方式是用这个小的插入符号，对我来说是键盘上的Shift 6。然后我输入，假设7676。所以我要将20提升到7676的幂。我们来试试这个。
+- en: I tap enter on the keyboard that gives me an error message because my formula
+    produced a number so big。 It was bigger than。The number one with 308 zeros after
+    it。 And so Excel just cannot display it。 Now。 that's also true of negative numbers。
+    If I try to type in or calculate a number that is smaller than-1 with 308 zeros
+    behind that。 that's also going produce a numb error， because the number is too
+    small for Excel to display。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我在键盘上按下回车，结果出现了一个错误信息，因为我的公式产生了一个太大的数字。这个数字超过了1后面有308个零。因此，Excel无法显示它。现在，这对于负数也是如此。如果我尝试输入或计算一个小于-1后面有308个零的数字，这也会产生“numb”错误，因为这个数字对Excel来说太小，无法显示。
+- en: there are some other reasons why you might see the numb error they're pretty
+    rare。 but watch out for those two examples that I've shared。 the third error message
+    that we're gonna look at in this video is pretty simple。 pretty easy and very
+    common。 and I'm going to use this third spreadsheet。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可能会看到“numb”错误的其他原因，这些情况相对少见。但是要注意我分享的那两个例子。我们将在这个视频中查看的第三个错误信息非常简单，容易且非常常见。我将使用这个第三个电子表格。
+- en: the movie inventory spreadsheet。 So here I have a list of movies and the cost
+    that was paid to buy these movies in DVD format。 So I'm going to go down here
+    to the bottom underneath them。 and I would like to get a grand total。 So I'll
+    just go up here and use this autos button here on the home tab home ribbon in
+    the editing group。 I can just click。That and it will auto sum everything in that
+    column。 I tap enter on the keyboard。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 电影库存电子表格。这里我有一份电影清单，以及购买这些电影（DVD格式）所支付的费用。因此，我将往下移到底部，想要获得一个总计。我只需上移，使用主页选项卡中编辑组的自动求和按钮。我只需点击一下，它会自动求和该列中的所有内容。我在键盘上按下回车。
+- en: but look， I get this terrible， ugly looking hashtag error。 Now。 the reason for
+    this is very simple and the fix is very simple。 What this symbol means is simply
+    that Excel cannot fit the contents of this cell in the space provided。 And you'll
+    notice if I go up here to the column letter D。 I'm going go to the line between
+    D and E。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但是看看，我得到了这个可怕、丑陋的井号错误。原因非常简单，解决办法也很简单。这个符号的意思是Excel无法在提供的空间内适应该单元格的内容。你会注意到，如果我往上看列字母D，我将移动到D和E之间的线。
+- en: I can click and drag， and I can make that even more narrow if I want。 And if
+    I do that notice that the text that was there before turns into hashtags。 So that
+    shows that it's really just about space。 It's about being able to display the
+    contents of the cell。 The solution for this is super easy。 all you have to do
+    is click and drag to provide more space for that column。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以点击并拖动，如果我愿意，可以把它调得更窄。如果我这样做，你会注意到之前的文本变成了井号。这表明这实际上只是关于空间的问题。它是关于能够显示单元格内容的问题。解决这个问题非常简单。你只需点击并拖动以为该列提供更多空间。
+- en: And that way the contents of all of these cells show up and can fit in the space
+    provided。 there is an even easier way to do this。 All you would have。To do is
+    double click on the line between D and E in this case。 so just double click and
+    that automatically resizes the column to the perfect width so that everything
+    can be displayed。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这样所有这些单元格的内容就会显示出来，并能够适应提供的空间。还有一种更简单的方法。你只需在此情况下双击D和E之间的线。只需双击，这样会自动调整列的宽度，使其完美适合以便显示所有内容。
+- en: So we've looked at three common error messages， null， nu and the hashtag error。
+    and I've shown you some of the best techniques for resolving those errors。 Watch
+    for part 3 in this series where I'll cover the ref error and the value error。![](img/f281ca6b5e382dc30865e6776ee9bd66_4.png)
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们已经看过三种常见的错误信息，null、nu 和 hashtag 错误。我向你展示了一些解决这些错误的最佳技巧。请关注这个系列的第 3 部分，在那里我将讲解
+    ref 错误和 value 错误。![](img/f281ca6b5e382dc30865e6776ee9bd66_4.png)

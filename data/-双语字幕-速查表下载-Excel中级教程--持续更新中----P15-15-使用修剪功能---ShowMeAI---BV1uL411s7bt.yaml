@@ -1,0 +1,109 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P15：15）使用修剪功能 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P15：15）使用修剪功能 - ShowMeAI - BV1uL411s7bt
+- en: '![](img/f1c0d687520ce7e4db352b23c24fc96e_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/f1c0d687520ce7e4db352b23c24fc96e_0.png)'
+- en: In this short tutorial， I want to show you an Excel function that is a little
+    known function。 but I find it to be pretty useful。 and it is the trim function。
+    So here we have in this spreadsheet。 a list of movies。 We have the title of the
+    movie category rating and the year it came out。 But this spreadsheet was sent
+    to me by someone else。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个简短的教程中，我想向你展示一个不太为人所知的Excel函数，但我发现它非常有用，那就是修剪函数。这里我们在这个电子表格中有一个电影列表。我们有电影的标题、类别、评级和发行年份。但这个电子表格是别人发给我的。
+- en: and any time you're sharing spreadsheets with someone when you're receiving
+    someone else's spreadsheet。 there's always a risk that when you get their spreadsheet
+    that there will be some mistakes and some errors。 And you can see here for some
+    reason， this spreadsheet comes with way too many spaces。 I have blank spaces at
+    the beginning of some of these entries。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 每当你与他人共享电子表格，或者接收别人的电子表格时，总是有风险，因为你可能会发现他们的电子表格中有一些错误和失误。你可以看到，这个电子表格有太多的空格。我在某些条目的开头有空白空间。
+- en: I have extra spaces in the middle of some of these entries。 and also at the
+    end of some of these entries， there are some extra spaces。 you can see here the
+    movie elf， it looks like has four extra spaces at the end。 And so I would like
+    to clean up the data。In this spreadsheet but I don't want to have to click in
+    each cell and hit the backspace button to fix those mistakes that's gonna to be
+    a lot of work So instead what I'm going to do is simply insert a new column so
+    I'm going to right click on column B and then click insert and that gives me a
+    brand new column and it pushes the data that was there to the right and I'll just
+    create a formula so I'll click in cell B2 and I'll start my formula the way I
+    always do with an equal sign and then the function trim left parenthesis and then
+    I'm just going simply click on cell A2 now of course I could have just typed a2
+    in the cell so either way either type it or click on the cell I'm supposed to
+    put a right parenthesis there but I don't have to so I'm not going to in this
+    case I'll tap enter on the keyboard and look what it did it cleaned up this record
+    that had extra spaces at the beginning of the entry and。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这些条目的中间和末尾我都有多余的空格。你可以看到电影《精灵》似乎在末尾有四个多余的空格。所以我想清理这个电子表格中的数据，但我不想在每个单元格中点击并按回退键来修正这些错误，那样会非常麻烦。因此，我打算简单地插入一个新列，我将右键点击B列，然后点击插入，这样就给我一个全新的列，并将原来的数据推到右边。我会在B2单元格中创建一个公式，我总是以等号开始我的公式，然后是函数修剪左括号，然后我会简单地点击A2单元格。当然，我可以直接在单元格中输入A2，所以无论是哪种方式，输入或点击单元格，我应该在这里放一个右括号，但我不需要，所以在这种情况下我就不放了。我在键盘上按下回车，看看它做了什么，它清理了这个在条目开头有多余空格的记录。
+- en: Also， in between these two words， it's trimmed out those extra spaces。 and it
+    looks just the way I want it to look。 So now I need to go to B3 and do the same
+    thing again。 right？ Actually， no， I don't have to do the same thing again and
+    again and again。 All I have to do is click on cell B2， go to the lower right hand
+    corner of that cell。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 此外，在这两个单词之间，它去掉了多余的空格，效果正是我想要的。所以现在我需要去B3单元格，再做一次，没错？其实不，我不需要一次又一次地做同样的事情。我只需点击B2单元格，去到该单元格的右下角。
+- en: And as you can see there in the lower right corner， we have a little green square。
+    That's called the autofill handle。 And I'm going to put my mouse on the autofill
+    handle until the mouse pointer turns into a black plus sign。 And then I'll just
+    click and drag and pull that down all the way to the bottom of my data。 And then
+    look what happens。 It cleaned up all of the data。 all the way up and down column
+    A。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 正如你在右下角看到的，我们有一个小绿方块。这被称为自动填充手柄。我将鼠标放在自动填充手柄上，直到鼠标指针变成黑色的加号。然后我只需点击并拖动，将其拉到我的数据底部。看看会发生什么。它清理了所有的数据，整个A列都是如此。
+- en: This is exactly how I want the data to look。 No extra spaces。 Now I have a problem，
+    though。 of having duplicate data。 I have column A。 and I have column B。And when
+    you do this。 you might be tempted to just delete column A。 but watch what happens
+    if I right click on column A and delete everything that's there。 It ruins what
+    was column B。 You can see it moved it to the left。 and it ruin the data。 Why，
+    Well。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这正是我希望数据的样子。没有多余的空格。不过现在我有个问题，关于重复数据。我有A列，还有B列。当你这样做时，你可能会想直接删除A列。但看看我右键点击A列并删除所有内容后会发生什么。这破坏了原本的B列数据。你可以看到它移到左边了，这破坏了数据。为什么呢？因为。
+- en: because this data relies on this data。 cell B2 is a formula。 And you can see
+    that formula。 If you double click on it or look here on the formula bar。 And so
+    this cell relies on cell A 2。 when I delete the contents of cell A2。 It ruins
+    the formula。 So I seem to have a problem here。 Well。 there is a solution。 I can
+    right click on column B and simply copy。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因为这个数据依赖于那个数据。B2单元格是一个公式。你可以看到那个公式。如果你双击它或者查看公式栏。这一单元格依赖于A2单元格。当我删除A2单元格的内容时，它破坏了公式。所以我似乎在这里遇到问题。好吧，有解决办法。我可以右键点击B列并简单复制。
+- en: and then I'll right click on column A and paste special。 when you click on paste
+    special。 it gives you some options。 I want to paste it。 not as all not as formulas
+    but as values。 So I select that， click O， And now I have a pasted version of this
+    data。 but。If you double click on it， you can see that the data now in column A
+    is not part of a formula。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我会右键点击A列并选择特殊粘贴。当你点击特殊粘贴时，会给你一些选项。我想粘贴，不是所有的，不是公式，而是数值。所以我选择那个，点击确定，现在我有了这个数据的粘贴版本。但如果你双击它，你会发现A列中的数据现在不是公式的一部分。
+- en: It doesn't depend on any other cell or column。 So at this point， I can right
+    click on column B。 deletelete it and my data is fine。 So the trim function is
+    a great way to clean up data。 But as you can see there are some steps involved。
+    knowing how to use this trim function has helped me several times。 And I hope
+    that you've found this tutorial to be helpful。 If you have。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它不依赖于任何其他单元格或列。所以在这一点上，我可以右键点击B列，删除它，数据就没问题了。使用修剪函数是清理数据的好方法。但如你所见，涉及到一些步骤。知道如何使用这个修剪函数帮助了我好几次。希望你觉得这个教程有帮助。如果你有。
+- en: please click the like button below。![](img/f1c0d687520ce7e4db352b23c24fc96e_2.png)
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 请点击下面的喜欢按钮。![](img/f1c0d687520ce7e4db352b23c24fc96e_2.png)

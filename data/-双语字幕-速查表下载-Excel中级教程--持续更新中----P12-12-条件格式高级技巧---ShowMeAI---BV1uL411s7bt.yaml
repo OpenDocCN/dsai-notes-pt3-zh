@@ -1,0 +1,134 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P12：12）条件格式高级技巧 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P12：12）条件格式高级技巧 - ShowMeAI - BV1uL411s7bt
+- en: In this short Excel tutorial， I want to show you an advanced technique of how
+    to do conditional formatting。 And if you haven't already watched my Excel conditional
+    formatting in depth tutorial。 you should probably watch that in addition to this
+    one in that in depth tutorial。 I showed many of the options that we have when
+    we're using conditional formatting。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个简短的Excel教程中，我想向你展示如何进行条件格式化的高级技巧。如果你还没有看过我的Excel条件格式化深入教程，你可能应该在看完这个教程后再看那个深入教程。在那个深入教程中，我展示了使用条件格式化时的许多选项。
+- en: I went through all of these。 but there's one advanced technique that I'd like
+    to share in this short tutorial。 And that is instead of applying conditional formatting
+    just to one column like I've done in these cases。 right， this column is formattted
+    based on the higher the number， the more green the cell is。 the cells in this
+    column are formatted in a different way。 the higher the number。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: '我看过所有这些，但我想在这个简短的教程中分享一个高级技巧。那就是，不仅仅对一列应用条件格式化，就像我在这些案例中所做的那样，对吧，这一列是根据数字越高，单元格越绿来格式化的。这一列中的单元格以不同的方式格式化，数字越高。  '
+- en: the bigger this bar is。 And then I have these stoplight symbols here in column
+    L。 But instead of just dealing with one column， what if you want an entire row
+    to be highlighted based upon a certain number。 So， for example， in this spreadsheet，
+    I would。![](img/95bf71e8e35f8024fe96f9b9303399cb_1.png)
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这个条越大。而且我在L列有这些红绿灯符号。但如果你想基于某个数字突出显示整个行呢？例如，在这个电子表格中，我会。![](img/95bf71e8e35f8024fe96f9b9303399cb_1.png)
+- en: Like to highlight the rows of the products， etc ce that sold the most units。
+    And so it deals with column E。 But because I want to highlight the entire row。
+    I'm going have to select all of my data in this spreadsheet。 So I'm going to click
+    here in the upper left on column a。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想突出显示销售最多单位的产品的行等。因此这涉及到E列。但因为我想突出显示整行，所以我需要选择这个电子表格中的所有数据。所以我将点击左上角的A列。
+- en: and I'm holding the click and then I'm dragging across to highlight all of the
+    data。 There we go。 a through Q。 and now I'm going browse back over here to the
+    left。 My data is still selected。 but I just use this bar to move back to the left
+    side of my spreadsheet。 Now I'm going to go into conditional formatting and I'm
+    looking for an option that highlights not cells but rows。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我按住鼠标点击，然后拖动以突出显示所有数据。好了，从A到Q。现在我回到左侧。我的数据仍然被选中，但我只是使用这个条将其移回到电子表格的左侧。现在我要进入条件格式化，我在寻找一个突出显示整行而不是单元格的选项。
+- en: and the place that you're going to have to go for this is actually down here。
+    and it's in new rule。 So I click there on new rule。 and there's a bunch of advanced
+    options here that you can choose from。 but I just want to create a formula to
+    determine which cells to。Format now， the question is。 what is my formula formatmat
+    values where this formula is true。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你需要去的地方实际上是在这里，新的规则。因此，我点击“新规则”。这里有很多高级选项可以选择，但我只想创建一个公式来确定哪些单元格。现在问题是，我的公式是什么？格式化值的条件是真。
+- en: So I'm going to click in this box to type a formula。 And this is going to be
+    an absolute formula。 And this is kind of confusing。 but that's all you need to
+    know is that it's an absolute formula。 Therefore， you're going have to use a dollar
+    sign。 So I just typed in that box and equals sign。 So equals。 And then here comes
+    dollar sign to make it an absolute formula。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我要点击这个框来输入公式。这将是一个绝对公式。这有点令人困惑，但你只需要知道这是一个绝对公式。因此，你需要使用美元符号。所以我在框中输入了等号。所以等于，然后美元符号来了，使其成为一个绝对公式。
+- en: And then I need to select a column。 And this is a little bit tricky。 Which column
+    do I pick。 Well。 it's the one that I'm gonna base the formatting on。 And that's
+    column E。 Remember。 I want to base it on which products are sold the most。 So
+    I type in E。 Now what about the row。 So E is the column。 The row。 and this is
+    kind of tricky。 I don't know what I should pick here。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我需要选择一列。这有点棘手。我该选哪一列呢？嗯，就是我将基于其进行格式化的那一列。这就是E列。记住，我想基于销售最多的产品进行格式化。所以我输入E。那么行呢？E是列，行，这有点棘手。我不知道该选什么。
+- en: Would it be E2。 that certainly could work。 But there's a downside。Doing it that
+    way。 Instead。 I'm gonna go with whatever is here in the upper left。 This is the
+    active cell right now。 A1 is the active cell。 And so that one is what I'm going
+    to put here in my formula。 So E1 if E1 is greater than。 So I type in the greater
+    than symbol。 1000。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那会是E2吗？这当然可以。但这样做有一个缺点。相反，我将使用左上角的内容。这是当前活动单元格。A1是活动单元格。所以我将在我的公式中放入这个。所以E1，如果E1大于。所以我输入大于符号。1000。
+- en: then I want some formatting to happen。 And just as an example， I'll click here
+    on format。 and I'll pick a border style， How about an outline， I can also click
+    a fill color， maybe dark green。 There's also more colors I could pick here。 and
+    there are some fill effects。 And you can see what some of those different options
+    are。 I'm just going to leave it as is click O。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我想让一些格式化发生。作为示例，我会点击格式。我会选择一个边框样式，怎么样，外框，我也可以选择填充颜色，也许是深绿色。这里还有更多颜色可以选择。还有一些填充效果。你可以看到这些不同选项的一些情况。我将保持原样，点击O。
+- en: And then if I click O here， take a look at what happens。 I clicked O。 and Excel
+    has analyzed the entire column E， and it's found the values that are higher than
+    1000。 And if they are。thanhan 100。 It's highlighted the entire column。 So the
+    nice thing about this。 it just makes it easier to hone in on all of the data that
+    meets certain criteria。 It can be easy。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后如果我点击O，看看会发生什么。我点击了O，Excel分析了整个E列，找到了高于1000的值。如果它们大于100。这整列都被高亮显示了。这样做的好处是，它可以更容易地聚焦于所有符合特定标准的数据。这可以很简单。
+- en: though， to forget which column it's based on。 if you do forget。 you can go here
+    to conditional formatting manage rules and look， there's the rule。 And I can click
+    on it， I can delete the rule if I don't want it anymore more。 I can edit the rule。
+    and there is something I would like to edit about it。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 虽然，忘记了它基于哪一列。如果你忘记了，可以去这里进行条件格式管理规则，看看，那里有规则。我可以点击它，如果我不再需要这个规则，我可以删除它。我可以编辑这个规则，而我想要编辑一些内容。
+- en: notice that right now it's set for values that are greater than 1000。 And so
+    what about the number 1000 itself。 Of course， that would not be included。 so I
+    should put greater than or equal to 1000 or just as good and maybe better because
+    it's more concise would be to say greater than 999。 So that would include 1000
+    and up。 and then I can just click okay and apply and then okay and that's now
+    changed。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 注意，现在它被设置为大于1000的值。那么1000本身呢？当然，这不会被包括在内。所以我应该把它改为大于或等于1000，或者更好，更简洁的说法是大于999。这样就会包括1000及以上。然后我可以点击确定，然后应用，然后确定，现在已经改变了。
+- en: It was a。![](img/95bf71e8e35f8024fe96f9b9303399cb_3.png)
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是一。![](img/95bf71e8e35f8024fe96f9b9303399cb_3.png)
+- en: And it probably didn't really affect my conditional formatting in a real way，
+    but that might come up。 So that is something to watch Thanks for this this advancedal
+    formatt。 I hope that you found this tutorial to be helpful。 If you did， please
+    click the。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这可能并没有真正影响我的条件格式，但这可能会出现。所以这是需要注意的。感谢这个高级格式。我希望你觉得这个教程有帮助。如果你觉得有帮助，请点击这个。

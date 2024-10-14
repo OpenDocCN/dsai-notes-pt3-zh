@@ -1,0 +1,100 @@
+- en: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P22：22）将列转换为行 - ShowMeAI - BV1Jg411F7cS
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P22：22）将列转换为行 - ShowMeAI - BV1Jg411F7cS
+- en: '![](img/ac67ec9ee734b3e0b08520c1a658258e_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ac67ec9ee734b3e0b08520c1a658258e_0.png)'
+- en: In this short Excel tutorial， I'm going to show you how to transpose columns
+    into rows in Excel。 So here we have a spreadsheet of someone's personal movie
+    collection。 And you see the titles here and some information about those titles
+    over here on the side。 Now。 let's say I'm building this spreadsheet。 And then
+    I decide I did it wrong。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个简短的Excel教程中，我将向你展示如何在Excel中将列转置为行。所以这里有一个人的个人电影收藏的电子表格。你可以在这里看到标题，以及旁边一些关于这些标题的信息。现在，假设我在构建这个电子表格，然后我决定我做错了。
+- en: Instead of having column titles here across the top。 I really would like them
+    to be row titles and to have them listed here vertically。 Sometimes your purpose
+    for the spreadsheet changes。 And therefore， the design has to change。 And so when
+    that happens to you， this is how you can transpose columns into rows。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我希望这里的列标题实际上能变成行标题，并在这里垂直列出。有时候你使用电子表格的目的会改变，因此设计也必须改变。所以当这种情况发生时，这就是你如何将列转置为行的方法。
+- en: Step 1 is to click in the upper left corner of the range of the data。 So my
+    data is really right here。 That's the heart of my data of my spreadsheet。 So I'm
+    just going to click in the upper left corner and drag to the lower right corner。
+    Now。 perhaps you're really looking to transpose the entire。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 第一步是在数据范围的左上角点击。所以我的数据就在这里。这是我的电子表格中数据的核心。现在我只需在左上角点击并拖动到右下角。现在，或许你真的想转置整个数据。
+- en: SpreadheetIt is possible to select the whole spreadsheet。 You can click this
+    button here in the upper left and it should select all of the data。 but in my
+    case， really all I want to transpose is that information there。 So now that it's
+    selected。 copy that range。 and I did that by holding control and tapping C。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在电子表格中，可以选择整个电子表格。你可以点击左上角的这个按钮，应该会选择所有的数据。但在我的情况下，我真正想要转置的只是那里的信息。现在选好了，复制那个范围。我是通过按住控制键并点击C来做到的。
+- en: but there's other ways to copy of course。 next， in order to transpose this in
+    a clean way。 I'm going recommend going to a second sheet。 So I've been working
+    on sheet 1。 but I can click on this button here to add a second sheet， it called
+    it sheet 3。 but I'm going rename that and call it sheet 2。 And now I'm just going
+    go to sell a1。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 当然，还有其他方法可以复制。接下来，为了以干净的方式转置这个数据，我建议去第二张表。所以我一直在第一张表上工作，但我可以点击这个按钮来添加第二张表，叫它第三张表。但我将重命名为第二张表。现在我只需去单元格A1。
+- en: And now I need to paste in the data。 but not a regular paste。 Instead。 I need
+    to go here to paste special。 And when you click on paste special it gives you
+    a list of some special ways to paste as you would guess one of those is to paste
+    while transposing。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我需要粘贴数据，但不是普通粘贴。相反，我需要去这里进行特殊粘贴。当你点击特殊粘贴时，它会给你一个列表，列出一些特殊的粘贴方式，正如你所猜测的那样，其中之一是转置粘贴。
+- en: So click that and then click O and look now。My data in that spreadsheet has
+    been transposed。 Colns have become rows and rows have become columns。 Now I can
+    clean up this data pretty easily。 You can see a lot of it doesn't fit in the provided
+    space。 but if I click and drag and highlight all of the column letters。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以点击那个，然后点击O，现在看看。我的数据在那个电子表格中已经被转置。列变成了行，行变成了列。现在我可以很容易地清理这些数据。你可以看到很多数据不适合提供的空间。但如果我点击并拖动，突出显示所有的列字母。
+- en: I can then double click between any two of the column letters right on the line
+    between them。 and that should automatically resize all of the columns so that
+    the data inside them can fit perfectly。 if it's not about making everything fit
+    perfectly， but you just want them all the same width。 you could click and drag
+    and make them identical in width。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我可以在任意两个列字母之间的线之间双击，这样应该会自动调整所有列的大小，以便数据能够完美适配。如果不是要让所有内容完美适配，而是想要它们都宽度相同，你可以点击并拖动，使它们的宽度相同。
+- en: So I have successfully transposed columns into rows。 And now I can delete sheet1。
+    I'll just right click on that and delete it if I'm sure I don't need it。 And then
+    of course。 maybe I change my mind in which I hadn't deleted it。 Well， that's okay。
+    it's the same exact process to transpose back。 highlight the data that's important。
+    copy。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我成功地将列转置为行。现在我可以删除sheet1。如果我确定不需要它，就右键点击删除。然后，当然，可能我改变主意，如果没有删除它，那也没关系。转置回去的过程是完全相同的。突出显示重要的数据，复制。
+- en: create another sheet。 find a。Space in the sheet。 It's all blank for me。 I'll
+    go to a1。 right click paste special transpose。 And now we're back to my original
+    layout。 Again。 I could adjust those column widths to make it so that everything
+    fits。 Thanks for watching this tutorial。 I hope you enjoyed it。 If you did。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 创建另一个工作表。找到一个。在工作表中有空白。对我来说都是空白。我会去A1。右键单击，选择粘贴特殊转置。现在我们回到了我最初的布局。再次。我可以调整那些列宽，以便让所有内容都适合。感谢观看这个教程。我希望你喜欢它。如果你喜欢的话。
+- en: please click the like button below。😊。![](img/ac67ec9ee734b3e0b08520c1a658258e_2.png)
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 请点击下面的点赞按钮。😊。![](img/ac67ec9ee734b3e0b08520c1a658258e_2.png)

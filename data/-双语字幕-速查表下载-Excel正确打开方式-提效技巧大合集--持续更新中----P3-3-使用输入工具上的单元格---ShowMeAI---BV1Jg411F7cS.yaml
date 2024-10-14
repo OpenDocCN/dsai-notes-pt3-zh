@@ -1,0 +1,96 @@
+- en: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P3：3）使用输入工具上的单元格 - ShowMeAI - BV1Jg411F7cS
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P3：3）使用输入工具上的单元格 - ShowMeAI - BV1Jg411F7cS
+- en: '![](img/b5fe42f0b88cc861c29c8d5c6910724a_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/b5fe42f0b88cc861c29c8d5c6910724a_0.png)'
+- en: In this short Excel tutorial， I want to show you a wonderful but little known
+    feature in Microsoft Excel。 And it's one that I think many of you will find very，
+    very helpful。 And it's called speak cells on enter。 And I want to start by talking
+    about why you might want to use speak cells on enter。 This feature is perfect
+    for people who enter a lot of data。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个简短的Excel教程中，我想向你展示一个令人惊叹但鲜为人知的功能。这个功能我认为对很多人会非常有帮助，名为“按回车键朗读单元格”。我想先谈谈为什么你可能想使用这个功能。这个功能非常适合输入大量数据的人。
+- en: Let's say that your boss or your manager or someone gives you a bunch of data
+    that you're supposed to enter into Excel。 You're probably going be looking at
+    a piece of paper or some other source of that data。 Maybe it's another screen
+    or another application。 but you're going to be looking at the source。 and then
+    typing that data into your Excel spreadsheet。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设你的老板或经理给你一堆数据，你需要将其输入到Excel中。你可能会看着一张纸或其他数据来源，也许是另一个屏幕或另一个应用程序。但你会看着源头，然后将数据输入到你的Excel电子表格中。
+- en: So unless you're very confident in your typing skills。 you're going to be looking
+    back and forth from the source of the information。 let's say the piece of paper。
+    and switching from that and then you're going to move your attention to your Excel
+    spreadsheet to make sure that you typed the number or。😊，Data correctly and then
+    your eyes are going go back to the paper and then back to Excel back to the paper
+    back to Excel This is gonna be very time consuming and it might drive you crazy
+    so let's look at how we can use speakak cells onent to help us with that situation
+    Basically I can just go up here to what's called the quick access toolbar and
+    you can see right now I've added a couple of extra tools if you want to learn
+    more about this please watch my video that covers the quick access toolbar but
+    I'm going click this button here to customize the quick access toolbar I'm going
+    go down to more commands and it's gonna to give me a list of some of the popular
+    commands that you can easily add to the quick access toolbar so that they appear
+    here but I'm going to click where it says popular commands and I'm going switch
+    to either all commands or just commands not in the ribbon and if I click on that
+    I should be able to browse down and find speakak cells on enter there it is I'm
+    going click on it click add and it adds。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以，除非你对自己的打字技能非常自信，否则你将不断地从信息来源，比如纸张，来回切换，注意力会转到Excel电子表格上，以确保你输入的数字或😊数据正确，然后你的视线会再次回到纸张，再回到Excel，反复如此。这将非常耗时，可能会让你感到烦躁。因此，让我们看看如何使用Spak单元格功能来帮助解决这个问题。基本上，我可以去快速访问工具栏，你可以看到我现在添加了一些额外的工具。如果你想了解更多关于这个的内容，请观看我关于快速访问工具栏的视频。我将点击这个按钮自定义快速访问工具栏，向下移动到更多命令，它将给我一个可以轻松添加到快速访问工具栏的一些常用命令的列表。我将点击“常用命令”，然后切换到“所有命令”或“未在功能区中的命令”，如果我点击那个，我应该能够向下浏览，找到Spak单元格功能。看到了，我将点击它，点击添加，它就添加上了。
+- en: to this list of tools that I want to be here on the quick access toolbar。 Now。
+    if I don't like the order， I could click on it and then click this button to move
+    it up or down to put it in the right spot。 Now I simply click okay and there it
+    is。 I have a button for Spak cells on En and it's right there on my quick access
+    toolbar。 So let's say with this spreadsheet here， which is a list of games that
+    I would sell in a hypothetical board game and card game store。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想把这个工具列表放在快速访问工具栏上。现在，如果我不喜欢这个顺序，我可以点击它，然后点击这个按钮将其上移或下移到合适的位置。现在我只需点击确定，它就在那里。我在快速访问工具栏上有一个针对En的Spak单元格的按钮。假设在这个电子表格中，这是我在一个假设的桌游和卡牌游戏商店中要销售的游戏列表。
+- en: And let's say we add some more games to the inventory。 let's say a classic game
+    like Strtigo。 it's a lot of fun。 I type in Strtigo。 I hit enter and nothing happened。
+    Why the reason nothing happened is because up here on the quick access toolbar
+    even though I added speak cells on En to the toolbar it's not activated yet。 So
+    I have to click on it will now be spoken on enter。 And it's ready to go。 So let's
+    try that again。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设我们向库存中添加更多游戏。比如说一个经典游戏，如Strtigo。这非常有趣。我输入Strtigo，按下回车，但什么也没发生。没有发生的原因是，尽管我已将“按回车说话单元格”添加到工具栏，但它尚未激活。所以我必须点击它，现在它将被朗读。准备好了。让我们再试一次。
+- en: Strtigo。 I type it in， hit enter and it tried to pronounce it。Did OK and now
+    I'll go down and I want to add settlers of Katon tap enterrs pretty good。 but
+    that at least tells me that it recognized what I typed and that now I can move
+    on to the next data to enter。Settlers of Caton， the last one I'm going to add
+    is Uno madness。Who know madness。Now。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Strtigo。我输入它，按下回车，它试着发音。做得不错，现在我想继续添加Katon的开拓者，输入的内容相当好。但这至少告诉我它识别了我输入的内容，现在我可以继续输入下一个数据。Katon的开拓者，最后我要添加的是Uno疯狂。谁知道疯狂。现在。
+- en: this is especially useful in many cases with numbers。 so I can put in the sales
+    for Strtigo5 for settlers of Katon 65 and Uno madness32 So I hope you can see
+    the potential benefit here with speak cells on enter。 It really can help you to
+    check your work as you enter it into the spreadsheet。 If you ever get sick of
+    speak cells on enter 9 Then go up here to the quick access toolbar。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在许多情况下，这对数字特别有用。因此，我可以输入Katon的开拓者65的销售额和Uno疯狂32。因此，我希望你能看到使用“按回车说话单元格”的潜在好处。它确实可以帮助你在将数据输入电子表格时检查你的工作。如果你厌倦了“按回车说话单元格”，那么请上到快速访问工具栏。
+- en: Just click button speak on enter。 And this is a toggle button so you can toggle
+    it on cells will now be spoken on enter。 and you can toggle it off turned off，
+    speak on enter。 I hope you've enjoyed watching this tutorial。 If you did， please
+    click the like button below。![](img/b5fe42f0b88cc861c29c8d5c6910724a_2.png)
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 只需点击“按回车说话”按钮。这是一个切换按钮，因此你可以切换它，单元格将在按回车时被朗读。你也可以将其切换关闭，关闭“按回车说话”。希望你喜欢观看这个教程。如果你喜欢，请点击下面的喜欢按钮。![](img/b5fe42f0b88cc861c29c8d5c6910724a_2.png)

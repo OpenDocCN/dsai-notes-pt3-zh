@@ -1,0 +1,256 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P41：42）使用旋转按钮 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P41：42）使用旋转按钮 - ShowMeAI - BV1uL411s7bt
+- en: '![](img/2917b3bbdcbc9ca5e7b5aa9181bf40de_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/2917b3bbdcbc9ca5e7b5aa9181bf40de_0.png)'
+- en: In this video， I want to show you another of the Excel form controls。 In a previous
+    video。 I showed you how to insert check boxes into your spreadsheets using this
+    developer tab in the controls group clicking insert and checkbox。 And you should
+    definitely watch that checkbox' video。 But in this video。 we're gonna look at
+    this form control here called spin button in some versions of Excel。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个视频中，我想向你展示另一个Excel表单控件。在之前的视频中，我向你展示了如何使用开发者选项卡在控件组中插入复选框，并点击插入和复选框。你绝对应该观看那个复选框的视频。但在这个视频中，我们要看看这个名为旋转按钮的表单控件在某些版本的Excel中的表现。
+- en: it's also called a spinner。 So in this video we will look at what it is what
+    it does and how to set it up。 Step 1 is to make sure that you have the developer
+    tab enabled in your version of Excel。 And the way you do that is by going here
+    to file and going down to options I can click And one of the options that appears
+    is to customize the ribbon。 When I click on that， it gives me a list of popular
+    commands that I can add to the ribbon。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它也被称为旋转器。所以在这个视频中，我们将探讨它是什么、它的功能以及如何设置。第一步是确保你在Excel的版本中启用了开发者选项卡。你可以通过转到文件，然后下拉到选项来实现。我可以点击，出现的选项之一是自定义功能区。当我点击它时，它给我一个可以添加到功能区的常用命令列表。
+- en: But over here on the right， there are main tabs and developer might not。😊，Be
+    checked。 You might have that unselected。 and I highly recommend that you do check
+    the box to get the developer tab to appear for you on the ribbon。 So I'll click
+    O。 There's my developer tab。 Once you have the developer tab。 you can go here
+    to the controls group。 click insert and choose spin button。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 不过在右边，有主要的选项卡，开发者可能不需要。😊，请检查。你可能没有选择它。我强烈建议你勾选这个框，以便在功能区显示开发者选项卡。所以我会点击 O。那是我的开发者选项卡。一旦你有了开发者选项卡，你可以去控件组，在这里点击插入并选择旋转按钮。
+- en: When you click on spin button。 notice that your mouse pointer changes to a plus
+    sign。 you can then click and drag to draw out a spin button。 I want the button
+    to more or less fit in the cell。 So maybe about that size。 and then I can click
+    on it to drag it where I want it to be。 If I need to adjust the size。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 当你点击旋转按钮时，请注意你的鼠标指针变成了一个加号。然后你可以点击并拖动来绘制旋转按钮。我希望按钮大致适合单元格。大约这个大小。然后我可以点击它，把它拖到我想要的位置。如果需要调整大小。
+- en: I can use the handles in the corners to click and drag to make the button bigger
+    or smaller。 But I'm pretty happy with the size of that button。 If you want a little
+    more control as you size the button。 It is possible to hold the control key while
+    clicking and dragging and see what it does。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以使用角落的控制柄点击并拖动来使按钮变大或变小。但我对这个按钮的大小很满意。如果你想在调整按钮大小时有更多的控制，可以在点击和拖动时按住控制键，看看会发生什么。
+- en: it makes the button grow equally above below left and。😊。RightAnd so that can
+    be a nice option to have as you're resizing your spin buttons。 Now that I've got
+    the spin button。 If I want to click on one of the buttons。 notice that nothing
+    is happening in order for these buttons to become clickable。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它使按钮在上下左右等比例增长。😊。因此，当你调整旋转按钮的大小时，这可能是一个不错的选择。现在我有了旋转按钮。如果我想点击其中一个按钮，请注意没有任何反应。为了使这些按钮可点击。
+- en: I have to first click away from the spin button。 And now clicking back on it
+    noticeice that I can click on the top button or the bottom button。 However， now
+    that I've done that， look， I can't click and drag to move the spin button。 If
+    you want to get back into moving mode， just right click on the spin button。 And
+    now you can left click on it to drag it。 So right clicking on it will re enableable
+    this moving mode。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我必须先点击旋转按钮外的地方。现在再次点击它时，请注意我可以点击上面的按钮或下面的按钮。然而，现在我已经这样做了，看看，我无法点击并拖动来移动旋转按钮。如果你想重新进入移动模式，只需右键单击旋转按钮。现在你可以左键单击它并拖动。所以右键单击会重新启用这个移动模式。
+- en: Okay， so let's look at how this spin button can help me with this spreadsheet。
+    I have here。 the beginnings of a yearly salary estimator。 just a very simple spreadsheet
+    with some simple formulas to help someone estimate the salary that they might
+    earn in the coming year。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，让我们看看这个旋转按钮如何帮助我处理这个电子表格。我在这里有一个年度薪资估算器的初步内容。只是一个非常简单的电子表格，带有一些简单的公式，帮助人们估算他们在未来一年可能赚到的薪水。
+- en: And， of course， they could click here to type in a number。 Let's say 500 a month。
+    I tap enter。And I've set up a simple formula here in this cell cell B4。 If I double
+    click there。 you can see the formula。 And all it does is it multiplies B2 by the
+    number 12 for 12 months。 And then it adds that to the contents of B3。 Let's say
+    there's additional extra monthly earnings。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 当然，他们也可以点击这里输入一个数字。假设是每月500。我按下回车。我在这个单元格B4中设置了一个简单的公式。如果我双击那里，你可以看到公式。它的作用是将B2乘以12，代表12个月。然后将其与B3的内容相加。假设有额外的每月收入。
+- en: maybe from yard sales or from doing extra work on the side or whatever it might
+    be。 And that's multiplied by 12。 And then I put both of those in parentheses。
+    The parentheses are not necessary， I just included them to look a little more
+    understandable。 I'll tap enter on the keyboard。 You can see if I put in， let's
+    say $10 extra a month。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 可能来自庭院销售，或做额外的工作，或者其他任何来源。这一部分乘以12。我把这两个放在括号里。括号不是必需的，我只是为了让它看起来更易懂而加上的。我在键盘上按下回车。你可以看到，如果我输入，比如说每月额外10美元。
+- en: It updates the total estimated earnings。 So this is great。 But what if I don't
+    want the person using the spreadsheet to have to type at all。 It would be nice
+    if all they had to do was click on a button。 And the button would adjust the numbers
+    for them。 The way you can set that up is by right clicking on the spin button
+    form control。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它更新了总估计收入。所以这很好。但如果我不想让使用电子表格的人输入任何内容，那该多好呢。只需点击一个按钮就可以了。这个按钮会为他们调整数字。设置这个的方法是右键点击旋转按钮表单控制。
+- en: and then just go down to format。😊，Contro when you do that。 you get a pop up
+    with some important options。 There are several tabs worth of options。 but the
+    one that we're gonna to look at exclusively in this video is the control tab。
+    That's the important one， First off， it wants to know what the current value is
+    Well。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后下拉到格式。当你这样做时，会弹出一些重要选项。有几个选项卡，但我们在这个视频中将专注于控制选项卡。这是重要的。首先，它想知道当前值是什么。
+- en: I would like the current value of this cell to be 0。 So I'll just put 0 in there。
+    The minimum value is 0。 I don't want them to be able to make negative salary。
+    Now。 what is the maximum value for this cell， Well， we could say something like。
+    maybe 25000 could be the maximum value？ Next， what about the incremental change。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我希望这个单元格的当前值为0。所以我就直接在这里输入0。最小值是0。我不希望他们能输入负数工资。现在，这个单元格的最大值是什么呢？我们可以说，最大值可能是25000？接下来，增量变化呢？
+- en: Every time someone clicks this up arrow。 How much do I want the number to go
+    up from from 0 to what do I want it to go from 0 to 100。0 to 1000，0 to 10000。
+    What's the incremental change。 Well， I would like to change it to be 100。 So it'll
+    go up by 10。at a time。 Now， the final setting that I need to adjust here is the
+    cell link。 And the easiest way to do this is just to click this button。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 每次有人点击这个向上箭头。我希望数字从0增加到多少？从0到100，0到1000，0到10000。增量变化是多少呢？我希望将其改为100。这样每次增加10。现在，我需要调整的最后一个设置是单元格链接。最简单的方法就是点击这个按钮。
+- en: And what I'm doing here is I'm linking this form control spin button to a cell。
+    Which cell。 Well。 this is the one。 So I click on it。 And then to get back into
+    the options。 All I have to do is click this button here。 and it takes me back
+    in。 and it has identified the exact cell that is linked to this form control。
+    Now I can click O。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我在这里做的是将这个表单控制的旋转按钮链接到一个单元格。哪个单元格呢？就是这个。所以我点击它。然后要回到选项，我只需点击这里的按钮，它就会带我回去，并且它已经识别出了与这个表单控制链接的确切单元格。现在我可以点击O。
+- en: and let's try it out。 just like before， in order for me to click to make this
+    work。 I have to first click away from it。 Those little handles disappear from
+    off the form control。 and now I can click the up arrow and notice that the monthly
+    salary goes up by 100。 click again goes up by 200。 If I click down， it goes down
+    by 100。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们试试。就像之前一样，为了让我点击使其工作，我必须先点击其他地方。那些小把手就会从表单控制上消失。现在我可以点击向上箭头，注意到月薪增加了100，再点击一次就增加了200。如果我点击向下，它会减少100。
+- en: Now watch what happens if I click and hold the button。 It just goes up very
+    rapidly。 Now。 I could set up another form control for the estimated additional
+    monthly earnings。 And if I don't want to go through。Same process of inserting
+    and resizing and all of that。 I could simply right click on the existing form
+    control， copy it and right click paste。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在看看当我点击并按住按钮时会发生什么。它快速上升。现在。我可以为预计的额外月收入设置另一个表单控制。如果我不想经历插入和调整大小的过程，我可以简单地右击现有表单控制，复制它，然后右击粘贴。
+- en: and then right click on the new form control and go down to format control。
+    I'll need to change the cell that it's linked to。 I'll change it to this one here。
+    click this button here。 and I need to think about any possible adjustments to
+    these settings。 For example， when it comes to additional monthly earnings。 It
+    may not be in the hundreds of dollars。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后右击新的表单控制，选择格式控制。我需要更改链接的单元格。将其改为这个。点击这里，我需要考虑对这些设置的任何可能调整。例如，对于额外的月收入，它可能不会是几百美元。
+- en: it may be more like tens of dollars。 So I'm changing that incremental change。
+    And I should also change the current value down to0。 click okay and after I click
+    away from the spin button Now I can click back on it to add $10 a month $20 a
+    month 30。 I can also subtract just like you would expect。 and it calculates it
+    out。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 实际上可能更像是几十美元。所以我在改变增量变化。我还应该将当前值改为0。点击确定，然后我点击增量按钮，能增加每月$10、$20、$30。我也可以像预期那样减去，它会自动计算。
+- en: So everything seems to be working great， but there is a hidden problem that
+    you need to be aware。Look what happens if I click and hold on the monthly salary
+    spin box and that monthly salary is going up and up。 looking pretty good。 But
+    look what happens when it hits 25000。 It stops。 Now。 if only we all have this
+    problem of making too much money for the spreadsheet。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 一切似乎运转良好，但有一个隐藏的问题需要注意。看看当我点击并按住月薪增量框时，月薪不断上涨，效果不错。但当它达到25000时，停止了。现在，如果我们都有这个赚太多钱的问题，那该多好。
+- en: But the spin button here has come up against a limit， You may or may not have
+    noticed this。 But I set a limit on the high end for this number。 If I right click
+    on the spin button and go down to format control。 you can see what the limit is
+    maximum value 25000。 Now， what if I set that to be 30000， click O。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但是这里的增量按钮遇到了一个限制，你可能注意到了，也可能没有。我为这个数字设置了上限。如果我右击增量按钮并选择格式控制，你可以看到上限是最大值25000。现在，如果我将其设置为30000，点击确定。
+- en: Great， if I click away and then back on the button， it should go up to 30000。
+    and we're good。 But what if I want to go even higher than that。 How about 40000。
+    Look what happens if I try to make 40000 the maximum value。 Excel says the scroll
+    value must be between 0 and 30000。 Now。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 很好，如果我点击其他地方再返回按钮，它应该会涨到30000。这样就好了。但如果我想要更高，40000呢？看看当我尝试将40000设为最大值时发生了什么。Excel提示滚动值必须在0到30000之间。现在。
+- en: even if you don't foresee that being a problem in。particular case。 there are
+    cases when the number that you'll need will be much higher than 30000。 So how
+    do you handle that？ Well， this is a trick that you can do。 You can right click
+    on the format control。 the spin button in this case。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 即使你不预见这在特定情况下会成为问题，仍然有些情况你需要的数字会远高于30000。那么你该如何处理？这是一个小技巧。你可以右击格式控制，这里是增量按钮。
+- en: And I'm going set the current value back to 0。 And this time I'm going say instead
+    of 100 being the incremental change。 I'm going say one is the incremental change。
+    Now， the trick here is to think of this one not as being the number one。 but as
+    being 1000。 So again， this represents 1000。 And then the other part of the trick
+    is I need to make this linked not directly to this cell。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将当前值重新设为0。这次我将增量变化设为1，而不是100。现在，关键是把这个1视为1000。所以这实际上代表1000。另一个技巧是我需要将其链接到这个单元格，而不是直接链接。
+- en: but to another cell maybe D2。 So I'll click this button。 link it to D2 click
+    this button to go back and click O So now when I click away from the button and
+    then back on it。 clicking on the top half。 It increases by one at a time， decreases
+    by one at a time。 if I click below。 So if the number。3 represents 1000， or I could
+    have made it 100 either way。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但到另一个单元格，可能是 D2。所以我会点击这个按钮。将其链接到 D2，然后点击这个按钮返回，再点击 O。现在，当我点击远离按钮再返回时，点击上半部分，每次增加
+    1，每次减少 1。如果我点击下面。所以如果这个数字 3 代表 1000，或者我可以将其设为 100，反正都是这样。
+- en: All I have to do now is click here on B2 and create a formula。 I'll type the
+    equal sign。 So this cell is equal to D3， whatever is in D3 multiplied by 1000
+    and tap enter。 So now that I've done that I can very easily go above 30000。 See
+    how that works。 but this is a simple trick for how to make it so that a spin button
+    can make a number go above 30000。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我需要做的就是点击 B2 并创建一个公式。我会输入等号。所以这个单元格等于 D3，无论 D3 中是什么，乘以 1000，然后按回车。现在我完成了这个操作，我可以很容易地超过
+    30000。看看这个是怎么运作的。这是一个简单的技巧，用于使旋钮按钮可以让数字超过 30000。
+- en: It looks like there's an error code here。 but all I have to do is double click
+    between B and C and it stretches out so that the full number can fit in the space
+    provided。 If I don't want this number here to be confusing。 I can right click
+    on the D and choose hide。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 看起来这里有一个错误代码。但我需要做的只是双击 B 和 C 之间，它会拉伸以使整个数字可以适应提供的空间。如果我不想让这个数字在这里让人困惑，我可以右键点击
+    D 并选择隐藏。
+- en: And now I have a wonderful form control that I can use to quickly estimate my
+    yearly salary。 And it's just too bad that this isn't true。![](img/2917b3bbdcbc9ca5e7b5aa9181bf40de_2.png)
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我有一个很棒的表单控件，可以用来快速估算我的年薪。真可惜这不是事实。![](img/2917b3bbdcbc9ca5e7b5aa9181bf40de_2.png)

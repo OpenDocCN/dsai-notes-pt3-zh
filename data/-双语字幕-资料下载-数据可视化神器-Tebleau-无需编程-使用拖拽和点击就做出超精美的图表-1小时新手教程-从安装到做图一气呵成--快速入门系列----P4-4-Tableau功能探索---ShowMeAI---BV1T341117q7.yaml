@@ -1,0 +1,387 @@
+- en: 【双语字幕+资料下载】数据可视化神器 Tebleau！无需编程，使用拖拽和点击就做出超精美的图表。1小时新手教程，从安装到做图一气呵成~＜快速入门系列＞
+    - P4：4）Tableau功能探索 - ShowMeAI - BV1T341117q7
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】数据可视化神器 Tableau！无需编程，使用拖拽和点击就能制作出超精美的图表。1小时新手教程，从安装到做图一气呵成~＜快速入门系列＞
+    - P4：4）Tableau功能探索 - ShowMeAI - BV1T341117q7
+- en: A simple and user friendly interface lets an analyst efficiently work with data。For
+    this lesson。 we're going to explore the intuitive interface of Tableau。As well
+    as learn each section's function and explain the key terminologies that you will
+    encounter using this platform。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 简单易用的界面让分析师能够高效地处理数据。为了这节课，我们将探索 Tableau 的直观界面，并学习每个部分的功能，解释你在使用该平台时会遇到的关键术语。
+- en: '![](img/5d3494cd1cecc82c7a938686e657824d_1.png)'
+  id: totrans-2
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/5d3494cd1cecc82c7a938686e657824d_1.png)'
+- en: Upon opening Tableau public。We agreed by the start page from this window。 we
+    can open recently created workbooks， create a new one by connecting to a data
+    source or explore tableau content from the community。The page is consisted of
+    three different panes。Connect， open and discover。The rightmost part is the discover
+    pane Through this pane。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 打开 Tableau Public 后，我们同意从这个窗口的起始页面开始。我们可以打开最近创建的工作簿，通过连接到数据源创建一个新工作簿，或探索来自社区的
+    Tableau 内容。该页面由三个不同的窗格组成：连接、打开和发现。最右侧是发现窗格，通过这个窗格。
+- en: you can find links to popular views in Tableau Public。 hone your Tableau skills
+    by watching training videos and be informed from blogs and news in the resources
+    section。The central part of the page is the open pane。 This contains the recently
+    created workbook thumbnails。 and clicking on one will open the workbook。 A work
+    book is a collection of files which can contain sheets。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以在 Tableau Public 中找到热门视图的链接，通过观看培训视频来提升你的 Tableau 技能，并在资源部分获取博客和新闻的最新信息。页面的中央部分是打开的窗格，这里包含最近创建的工作簿缩略图，点击其中一个将打开该工作簿。工作簿是一个包含多个表的文件集合。
+- en: dashboards and stories。![](img/5d3494cd1cecc82c7a938686e657824d_3.png)
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 仪表板和故事。![](img/5d3494cd1cecc82c7a938686e657824d_3.png)
+- en: '![](img/5d3494cd1cecc82c7a938686e657824d_4.png)'
+  id: totrans-6
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/5d3494cd1cecc82c7a938686e657824d_4.png)'
+- en: You can pin workbooks in the start page by clicking the pin icon in the top
+    left corner of the thumbnail。Pinned workbooks will always appear on your start
+    page。 which is useful if you are constantly using a specific workbook to remove
+    them from the start page。 click the X button on the thumbnail。The last part of
+    the start page is the connect pane。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以通过点击缩略图左上角的固定图标在起始页面上固定工作簿。固定的工作簿将始终出现在你的起始页面，这在你经常使用特定工作簿时非常有用。要将其从起始页面中移除，请点击缩略图上的
+    X 按钮。起始页面的最后部分是连接窗格。
+- en: You can use this to connect to flat files or to a new data connection。 You can
+    select one of the flat files from the list to open a file browse window or drag
+    a file directly into the page to create a new file connection。![](img/5d3494cd1cecc82c7a938686e657824d_6.png)
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以使用此功能连接平面文件或创建新的数据连接。你可以从列表中选择一个平面文件来打开文件浏览窗口，或者将文件直接拖入页面以创建新的文件连接。![](img/5d3494cd1cecc82c7a938686e657824d_6.png)
+- en: Upon inserting a file， it will lead us to the data source page。The data source
+    page allows users to establish the data connection， to blend the data。 to filter
+    the data， and apply basic adjustments to the fields or columns。The page consists
+    of four main areas， left pane， canvas， data grid and metadata grid。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 插入文件后，它将引导我们进入数据源页面。数据源页面允许用户建立数据连接、混合数据、过滤数据，并对字段或列进行基本调整。该页面由四个主要区域组成：左侧窗格、画布、数据网格和元数据网格。
+- en: The left pane shows the connected data source and other details about the data
+    under the data connection section is the file name of the flat file for database
+    connections。 the database or schema will be the one listed。By using the drop down。
+    you can edit the current connection， remove or rename it below the connection
+    is the list of available sheets。 Here we have orders， returns and users， which
+    are the sheets contained in the Excel file we inserted earlier。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 左侧窗格显示已连接的数据源及其详细信息，数据连接部分下方是平面文件的文件名，适用于数据库连接。所列出的将是数据库或模式。通过下拉菜单，你可以编辑当前连接、删除或重命名。连接下方是可用工作表的列表。这里有订单、退货和用户，这些是我们之前插入的
+    Excel 文件中包含的工作表。
+- en: On the left part of the left pane are the action buttons。Undo， redo and save
+    the tableau logo。 which will show the start page and the refresh button。 will
+    refresh the data source on the upper right of the data source page is the canvas。
+    which has two layers。 But first， let's drag in the order sheets and return sheets
+    to the canvas and apply their data relationship。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 左侧窗格的左边是操作按钮。撤销、重做和保存Tableau徽标，显示启动页面，刷新按钮将在数据源页面右上方刷新数据源，画布有两个层。但首先，让我们将订单工作表和返回工作表拖入画布并应用它们的数据关系。
+- en: This is the logical layer of the canvas。 It is where you can create relationships
+    between logical tables。To show the other layer of the canvas， double click on
+    one of the tables or sheets。 This shows a new window， which is the physical layer
+    of the canvas。It is where we can add joins and unions between tables。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是画布的逻辑层。在这里，你可以创建逻辑表之间的关系。要显示画布的另一层，双击其中一个表或工作表。这将显示一个新窗口，即画布的物理层。在这里，我们可以在表之间添加连接和并集。
+- en: We will learn more about this as we discuss how to use multiple data sources。Below
+    the canvas is the data grid。It shows the first 1000 rows of data from the connection
+    or file that we indicated。We can use this to apply general modifications to the
+    data source， such as sorting and hiding fields。 renaming， changing data type，
+    and creating new calculated fields。Next。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 当我们讨论如何使用多个数据源时，我们将了解更多。画布下方是数据网格。它显示了我们指示的连接或文件中的前1000行数据。我们可以用它对数据源进行一般修改，例如排序和隐藏字段、重命名、改变数据类型以及创建新的计算字段。接下来。
+- en: click on the list icon in the upper left part of the data grid to view the metadata
+    grid。 This pane shows all of the fields in the selected table， their table name。
+    and their remote field name。Next， let's navigate to the tableableau workspace
+    by clicking sheet 1 on the tab beneath the page。 The tableableau workspace is
+    where we will mostly reside when we create a chart。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 点击数据网格左上角的列表图标以查看元数据网格。此窗格显示所选表中的所有字段，它们的表名和远程字段名。接下来，点击页面下方选项卡上的工作表1以导航到tableau工作区。tableau工作区是我们创建图表时主要待的地方。
+- en: A single sheet is called a worksheet， which contains a single view of data。
+    A view is the visual representation of data or the chart itself， which is inside
+    the worksheet。![](img/5d3494cd1cecc82c7a938686e657824d_8.png)
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 单个工作表称为工作表，包含单个数据视图。视图是数据的可视化表示或图表本身，它位于工作表中。![](img/5d3494cd1cecc82c7a938686e657824d_8.png)
+- en: '![](img/5d3494cd1cecc82c7a938686e657824d_9.png)'
+  id: totrans-16
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/5d3494cd1cecc82c7a938686e657824d_9.png)'
+- en: The Tableau Workspace consists of menus， a toolbar， the data pane， cards and
+    shelves。The top ribbon has the list of tabs for different functions。 The file
+    tab lets you save files。 open workbooks， and exit the application。Data tab has
+    functions related to the data source here you can create a new connection。 replace
+    and modify the current source， and edit the data relationships。Next。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Tableau工作区由菜单、工具栏、数据窗格、卡片和货架组成。顶部的功能区列出了不同功能的选项卡。文件选项卡让你保存文件、打开工作簿和退出应用程序。数据选项卡具有与数据源相关的功能，在这里你可以创建新的连接、替换和修改当前源，以及编辑数据关系。接下来。
+- en: we have the worksheet tab in this tab， you can create a new worksheet。 show
+    or hide parts of the worksheet and view its properties。 Besides the worksheet
+    tab is the dashboard tab and the story tab。 which has basic dashboard and story
+    functions。Most of its functions are not available since we are currently editing
+    a view instead of a dashboard or story。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个选项卡中，我们有工作表选项卡，你可以创建一个新的工作表。显示或隐藏工作表的部分，并查看其属性。工作表选项卡旁边是仪表板选项卡和故事选项卡，它们具有基本的仪表板和故事功能。由于我们当前正在编辑视图而不是仪表板或故事，因此大多数功能不可用。
+- en: Next， we have the analysis tab。 It has additional functions in terms of performing
+    analysis on the view。 such as configuring the marks and labels。Calculating percentage。
+    showing trend lines and applying forecasts next to it is the map tab。The map tab
+    sets the options for geographic visualizations in tableableau。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 接下来，我们有分析选项卡。它在执行视图分析方面具有额外功能，例如配置标记和标签。计算百分比，显示趋势线，并在其旁边应用预测，接下来是地图选项卡。地图选项卡设置地理可视化的选项。
+- en: after the map tab is the format tab， This tab helps users adjust or personalize
+    how the visualization or view looks from this tab。 we can edit the font， alignment，
+    shading， lines and other visual properties。 The Windows tab next to it， lets users
+    show or hide a part of the workspace like the toolbar。 status bar and sidebar，
+    as well as enlarge the view for presentation mode。Finally。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 地图选项卡之后是格式选项卡，该选项卡帮助用户调整或个性化可视化或视图的外观。我们可以编辑字体、对齐、阴影、线条和其他视觉属性。旁边的窗口选项卡让用户显示或隐藏工作区的某些部分，如工具栏、状态栏和侧边栏，同时可以放大视图以进行演示模式。
+- en: we have the help tab， which has links to the community in Tableau support and
+    settings for the language and application performance。Below the ribbon is a toolbar，
+    the buttons available are contextual to what is on the sheet。 meaning some buttons
+    will be grayed out if it's not applicable on the current sheet。 same as the data
+    source page It first few buttons are the following the link to the start page。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们有帮助选项卡，包含指向Tableau支持社区的链接，以及语言和应用程序性能的设置。在功能区下方是工具栏，按钮根据当前工作表的内容而定，某些按钮在当前工作表不适用时会被禁用。与数据源页面相同，前几个按钮是链接到起始页面。
+- en: undo and redo button and the save button next to the save button is the new
+    data source button where you can insert a new data connection。Beside it are three
+    sheet buttons， the first one is for creating either a new sheet story or dashboard。
+    next to it is the duplicate button。 and the third one is the clear button。 which
+    removes everything placed on the current sheet。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 撤销和重做按钮，保存按钮旁边是新数据源按钮，您可以在此插入新的数据连接。旁边有三个工作表按钮，第一个用于创建新的工作表、故事或仪表板。其次是重复按钮，第三个是清除按钮，用于移除当前工作表上的所有内容。
+- en: After the sheet buttons are the swap and sort button。 The swap button swaps
+    the rows and columns。 And next to it is the button to sort by ascending order
+    and the sort by descending order。 After it。 we have the highlight button， which
+    enables highlighting in the sheet。 group member buttons for creating groups。😊，And
+    the show or hide marks labels button。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 工作表按钮之后是交换和排序按钮。交换按钮用于交换行和列。旁边是按升序和降序排序的按钮。之后是高亮按钮，可在工作表中启用高亮显示。创建组的组成员按钮😊，以及显示或隐藏标记标签的按钮。
+- en: the pin button beside it is for fixing the axes of the chart to either a specific
+    or dynamic range。 The drop down next to it is for the fit of the view。 Next is
+    a drop down for showing or hiding cards on the page。 The last button is the switch
+    to presentation mode。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 旁边的固定按钮用于将图表的坐标轴固定在特定或动态范围内。旁边的下拉菜单用于适应视图。接下来是一个用于在页面上显示或隐藏卡片的下拉菜单。最后一个按钮是切换到演示模式。
+- en: The left part of the tableau workspace has the side bar。 It contains the data
+    pane。 and the analytics pane。The data pane includes all of the fields， sets and
+    parameters。 you can use the search bar to search the whole list or sort it either
+    by name or data source order。The analytics plane lets users apply advanced analysis
+    to the view such as constant lines。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Tableau工作区的左侧有侧边栏，包含数据窗格和分析窗格。数据窗格包括所有字段、集合和参数。您可以使用搜索栏搜索整个列表或按名称或数据源顺序排序。分析窗格允许用户对视图应用高级分析，例如常量线。
+- en: forecasts and reference lines。 The center canvas is the work area。 This is where
+    our visualization is presented。The cards and shelves surrounding the work area
+    are used to indicate how the view will be placed and shown。 The columns and rows
+    shelves create the structure of the chart。 The fields are placed in these shelves
+    to indicate whether it will be the value on the header or on the axes。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 预测和参考线。中心画布是工作区域，展示我们的可视化。环绕工作区域的卡片和架子用于指示视图的放置和显示方式。列和行架构成图表的结构。字段被放置在这些架子上，以指示它是在标题上还是在坐标轴上。
+- en: The filter shelf allows you to specify which data to include an exclude。![](img/5d3494cd1cecc82c7a938686e657824d_11.png)
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 过滤器架允许您指定要包含和排除哪些数据。![](img/5d3494cd1cecc82c7a938686e657824d_11.png)
+- en: A filter is a control on a view that limits the data shown。![](img/5d3494cd1cecc82c7a938686e657824d_13.png)
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 过滤器是在视图中限制显示数据的控件。![](img/5d3494cd1cecc82c7a938686e657824d_13.png)
+- en: Below the filter shelf is the Marx card。This is a key element for visual analysis
+    in tableau。 because you can add context and detail by dragging fields into the
+    different visual properties of the marks card。 Let's try creating a view as an
+    example。 Dr the customer segment into the rows shelf。 This creates four rows of
+    customer segment values in a table view。 Next。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 筛选器架下是马克斯卡片。这是表格中视觉分析的关键元素。因为你可以通过将字段拖动到标记卡的不同视觉属性中来添加上下文和细节。让我们尝试创建一个视图作为示例。将客户细分拖入行架。这会在表格视图中创建四行客户细分值。接下来。
+- en: drag the profit field from the data pane and place it after the customer segment
+    on the row shelf。This will automatically create a bar chart of the sum of profit
+    by customer segment。 Now。 add an order date to the column shelf。 It turns the
+    bar chart into a line chart because we have added a continuous field as our column。
+    Finally， drag a region field into the marks card and place it on color。
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 从数据面板中拖动利润字段，并将其放在行架中的客户细分后面。这将自动创建按客户细分计算利润总和的柱状图。现在，添加一个订单日期到列架。它将柱状图转换为折线图，因为我们添加了一个连续字段作为列。最后，将一个区域字段拖入标记卡并放在颜色上。
+- en: This sets a regional granularity to each line chart by segment where each region
+    is separated by a different line and color。 The page shelf lets you break a view
+    into a series of pages so you can better analyze how a specific field affects
+    the rest of the data in a view。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这将为每条线图设置区域粒度，每个区域由不同的线条和颜色分隔。页面架允许你将视图分解为一系列页面，以便更好地分析特定字段如何影响视图中的其余数据。
+- en: For example， let's drag the order date from the column shelf and place it on
+    the page。 This separates the view by year of order date where we can flip through
+    each year by using the controls on the right panel。 The show me button on the
+    upper right。 lets users select a chart or view type by highlighting the possible
+    charts that the view。😊，Can be converted into the chart with orange outlines is
+    selected to be the best match for the indicated data。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 例如，让我们将订单日期从列架拖动并放到页面上。这会按订单日期的年份分隔视图，我们可以通过右侧面板上的控件翻阅每一年。右上角的“显示我”按钮允许用户通过突出显示可能的图表选择图表或视图类型。😊，带橙色轮廓的图表是为所示数据选择的最佳匹配。
+- en: '![](img/5d3494cd1cecc82c7a938686e657824d_15.png)'
+  id: totrans-33
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/5d3494cd1cecc82c7a938686e657824d_15.png)'
+- en: The bottom of the workspace has the status bar。 It shows the description of
+    menu items and information about the current view。 such as the marks and its current
+    number of rows and columns。To organize and navigate between sheets， you can use
+    the button for sheets tab。 film strips and sheet sorter， which is located on the
+    bottom right of the workspace。
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 工作区的底部有状态栏。它显示菜单项的描述以及有关当前视图的信息，如标记及其当前的行和列数。要在工作表之间组织和导航，你可以使用位于工作区右下角的工作表标签、胶卷条和工作表排序器的按钮。
+- en: The first button is the sheet sorter， which shows all the sheets in a workbook
+    as thumbnail images on a single page。 You can drag and drop thumbnails in this
+    view to reorder the sheets。 Next is the film strip。 The film strip displays along
+    the bottom of the workbook and shows a thumbnail of the sheets。 The last button
+    is the sheet tab。 Each sheet will be represented as a tab in the bottom of the
+    workflow。
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 第一个按钮是工作表排序器，它以缩略图的形式在单个页面上显示工作簿中的所有工作表。你可以在此视图中拖放缩略图以重新排序工作表。接下来是胶卷条。胶卷条在工作簿底部显示，展示工作表的缩略图。最后一个按钮是工作表标签。每个工作表将在工作流底部表示为一个标签。
+- en: '![](img/5d3494cd1cecc82c7a938686e657824d_17.png)'
+  id: totrans-36
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/5d3494cd1cecc82c7a938686e657824d_17.png)'
+- en: '![](img/5d3494cd1cecc82c7a938686e657824d_18.png)'
+  id: totrans-37
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/5d3494cd1cecc82c7a938686e657824d_18.png)'
+- en: Now， let's navigate to the dashboard page。 Click on the new dashboard button
+    to create one。 A dashboard is a collection of several views， letting you compare
+    a variety of data simultaneously。 The center canvas with the default white background
+    will represent how your dashboard will look。
+  id: totrans-38
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，让我们导航到仪表板页面。点击新建仪表板按钮来创建一个。仪表板是多个视图的集合，让你可以同时比较多种数据。中心画布的默认白色背景将代表你的仪表板的外观。
+- en: '![](img/5d3494cd1cecc82c7a938686e657824d_20.png)'
+  id: totrans-39
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/5d3494cd1cecc82c7a938686e657824d_20.png)'
+- en: '![](img/5d3494cd1cecc82c7a938686e657824d_21.png)'
+  id: totrans-40
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/5d3494cd1cecc82c7a938686e657824d_21.png)'
+- en: There are several functions for customizing your dashboard in the dashboard
+    pane located on the left。The first option lets you set the size of the dashboard
+    and shows or hides a device preview。 which can toggle to see how your dashboard
+    will look on a different screen resolutions below the button。 you can specify
+    a range。 automatic or fixed size of the dashboard。 Next is the sheets section。
+  id: totrans-41
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在位于左侧的仪表板窗格中，有几个自定义仪表板的功能。第一个选项允许你设置仪表板的大小并显示或隐藏设备预览，可以切换以查看仪表板在不同屏幕分辨率下的外观。在按钮下方，你可以指定仪表板的范围、自动或固定大小。接下来是表单部分。
+- en: you can drag and drop the available sheet to the canvas to include it in the
+    dashboard。 Aside from the sheets， you can also insert additional objects from
+    the objects section such as images。 containers and static text。![](img/5d3494cd1cecc82c7a938686e657824d_23.png)
+  id: totrans-42
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以将可用的表单拖放到画布上以将其包含在仪表板中。除了表单外，你还可以从对象部分插入其他对象，如图像、容器和静态文本。![](img/5d3494cd1cecc82c7a938686e657824d_23.png)
+- en: Next to the dashboard pane is the layout。 This pane lets you adjust each sheet
+    and an object's layout position。As well as its size and padding from this pane，
+    you can also configure the dashboard border and background color below the layout
+    tab is the item hierarchy。
+  id: totrans-43
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 仪表板窗格旁边是布局。此窗格让你调整每个表单和对象的布局位置。以及其大小和填充。在这个窗格中，你还可以配置仪表板的边框和背景颜色，布局选项卡下是项目层次结构。
+- en: It lists the relationship between the sheets and objects currently placed in
+    the dashboard。![](img/5d3494cd1cecc82c7a938686e657824d_25.png)
+  id: totrans-44
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它列出了当前放置在仪表板中的表单和对象之间的关系。![](img/5d3494cd1cecc82c7a938686e657824d_25.png)
+- en: Finally， let's go to the story page， click on new story buttons on the bottom
+    to create one。The center canvas will show how the story will look。Additional configurations
+    can be set in the story pane on the left。On the first part of the story pane is
+    the options for adding a new story point。
+  id: totrans-45
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 最后，让我们去故事页面，点击底部的新故事按钮以创建一个。中心画布将显示故事的外观。可以在左侧的故事窗格中设置其他配置。在故事窗格的第一部分是添加新故事点的选项。
+- en: You can choose to create a new blank story or duplicate the current one。Below
+    it is the list of sheets and dashboards that you can insert into the story。 drag
+    a sheet into the canvas to add it to the story To add a caption。 We can double
+    click on the default text box on top to edit its content。
+  id: totrans-46
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以选择创建一个新的空白故事或复制当前故事。下面是可以插入到故事中的表单和仪表板列表。将一个表单拖入画布以将其添加到故事中，添加标题。我们可以双击顶部的默认文本框以编辑其内容。
+- en: If you want additional text boxes on the story， drag the text object from the
+    story pane and place it into the desired position in the story。 The story title
+    is located in the upper right of the story canvas。 You can edit it by double clicking
+    the title。 But if you choose to hide it。 you can uncheck the show title option
+    in the story pane。To edit the size of the story。
+  id: totrans-47
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你想在故事中添加额外的文本框，请从故事窗格拖动文本对象并放置到故事中的所需位置。故事标题位于故事画布的右上角。你可以通过双击标题进行编辑。如果选择隐藏它，你可以在故事窗格中取消选中显示标题选项。要编辑故事的大小，
+- en: click the drop down on the size section of the story pane。 you can choose to
+    either set a fixed size， automatic size， or a range。The layout tab next to the
+    story's pane lets you set a navigator's style。 A navigator allows you to edit
+    and organize your story points。
+  id: totrans-48
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 点击故事窗格的大小部分下拉菜单。你可以选择设置固定大小、自动大小或范围。故事窗格旁边的布局选项卡允许你设置导航器的样式。导航器使你能够编辑和组织你的故事点。
+- en: This is only visible when you have more than one story point。![](img/5d3494cd1cecc82c7a938686e657824d_27.png)
+  id: totrans-49
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这只有在你有超过一个故事点时可见。![](img/5d3494cd1cecc82c7a938686e657824d_27.png)

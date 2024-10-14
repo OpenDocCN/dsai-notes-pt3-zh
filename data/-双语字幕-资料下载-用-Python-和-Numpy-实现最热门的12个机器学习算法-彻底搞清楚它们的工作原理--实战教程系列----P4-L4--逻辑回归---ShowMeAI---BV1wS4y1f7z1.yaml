@@ -1,0 +1,222 @@
+- en: 【双语字幕+资料下载】用 Python 和 Numpy 实现最热门的12个机器学习算法，彻底搞清楚它们的工作原理！＜实战教程系列＞ - P4：L4- 逻辑回归
+    - ShowMeAI - BV1wS4y1f7z1
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】用Python和Numpy实现最热门的12个机器学习算法，彻底搞清楚它们的工作原理！＜实战教程系列＞ - P4：L4- 逻辑回归
+    - ShowMeAI - BV1wS4y1f7z1
+- en: istic regression。 So， of course， we use nump again。 So let's import Nmpy S N
+    P。And then we create a class called Lo regression。And this will have an in it
+    method。 So we have an in it。And in it looks exactly the same as for linear regression。
+    So I will put some learning rate in here that will get a default value。 So 0。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 逻辑回归。当然，我们再次使用nump。让我们导入Nmpy S N P。然后我们创建一个名为Lo regression的类。这将有一个初始化方法。所以我们有一个初始化。初始化与线性回归完全相同。我会在这里放入一些学习率，它将得到一个默认值。因此是0。
+- en: 001 usually the learning rate is very small， and it will also get a number of
+    iterations。 So an its and with a default of 1000。So this will determine how many
+    iterations we use for our gradient descent。 and then I will store them。 So I will
+    say self L R equals L R and self。And its equals， and its。And then， I will simply
+    create some。Weights， but set them to none at first。 So our weights are none。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 001通常学习率非常小，并且还会得到一个迭代次数。因此its和默认值为1000。这将决定我们用于梯度下降的迭代次数。然后我将存储它们。因此我会说self
+    L R等于L R和self。然后its等于its。然后，我将简单地创建一些权重，但一开始将它们设置为none。因此我们的权重是none。
+- en: and our bias is none， simply that we， we know now we need to come up with them。And
+    then we define a fit method。 So here we follow the conventions of the psychic
+    Learn Library again。 So this will take some training samples and the values， the
+    training labels。So this will involve the training step and the gradient descent。And
+    then we have a predict method。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 而我们的偏差是none，简单地说我们现在需要想出它们。然后我们定义一个拟合方法。因此这里我们再次遵循心理学习库的约定。这将需要一些训练样本和标签。因此这将涉及训练步骤和梯度下降。然后我们有一个预测方法。
+- en: And here we get new test samples that we want to predict。 So these are the methods
+    we want to implement。And our input inputs here。 So x is a nuy N D vector of size
+    M times n， where M is the number of samples and n is the number of features for
+    each sample。And why。Why is a10 vector or also of size M。 So for each training
+    sample， we have one vector。So。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这里我们获得新的测试样本，想要预测这些是我们想要实现的方法。我们的输入在这里。因此x是一个大小为M乘n的nuy N D向量，其中M是样本数量，n是每个样本的特征数量。而y是一个大小为M的10向量。因此，对于每个训练样本，我们有一个向量。所以。
+- en: Now we can go on。 So first of all， we have to in it initialize our weights。
+    So let's say we want to in it the parameters。And for this， we get the number of
+    samples。And the number of features。So， this is x。Shape， so this will unpeick the
+    shape the first dimension into the number of samples and the second dimension
+    into the number of features。And then， we in it our。嗯。Waits。Just with0。 So we create
+    a vector only with zeros of size。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们可以继续。所以首先，我们必须初始化我们的权重。让我们假设我们想要初始化参数。为此，我们获得样本数量和特征数量。所以这是x的形状，这将把第一个维度展开为样本数量，第二个维度为特征数量。然后，我们初始化我们的。嗯。权重。只用0。因此，我们创建一个仅包含大小为0的零向量。
+- en: number of features。 And we set our bias to 0 at first。You can also， for example。
+    use random numbers for the initialization， but 0 is just fine。And after that。
+    we used the gradient descent that I talked about。 So we iteratively update our
+    weights。 we use a four loop。 So let's say4 I。 And actually， we don't need this。
+    So for underscore in range。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 特征数量。我们一开始将偏差设置为0。例如，你也可以使用随机数进行初始化，但0就很好。在此之后。我们使用我之前提到的梯度下降。因此我们迭代地更新我们的权重。我们使用一个for循环。因此假设4
+    I。实际上，我们不需要这个。因此对于下划线在范围内。
+- en: and then self dot and its。 So this is the number of iterations we want to have。And
+    now let's have a look at the formula again。![](img/3f1d65b66ad21ed37aeb062cde34291d_1.png)
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后是self dot和its。因此，这是我们想要的迭代次数。现在让我们再看一下公式。![](img/3f1d65b66ad21ed37aeb062cde34291d_1.png)
+- en: So first of all， we approximate our y with this function。 So first。 let's apply
+    this linear model and then apply the sigmoid function。![](img/3f1d65b66ad21ed37aeb062cde34291d_3.png)
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以首先，我们用这个函数近似我们的y。因此首先。让我们应用这个线性模型，然后应用sigmoid函数。![](img/3f1d65b66ad21ed37aeb062cde34291d_3.png)
+- en: So， let's say。来啊。Model equals This is w times x plus B。 so we can use the nuy
+    dot function to multiply our vector。 So multiply x and self dot weights。Plus。
+    self dot bias。And then。We apply the sigmoid function， So let's create some help
+    or method。 some private method， sigmoid。That gets some X。嗯。So， and here。This is
+    chest。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以，假设。模型等于这是w乘以x加上B。因此我们可以使用nuy dot函数来乘以我们的向量。将x与self dot weights相乘，加上self dot
+    bias。然后，我们应用sigmoid函数，所以让我们创建一些帮助或方法，一些私有方法，sigmoid。获取一些X。嗯。所以，在这里。这是胸部。
+- en: '![](img/3f1d65b66ad21ed37aeb062cde34291d_5.png)'
+  id: totrans-10
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/3f1d65b66ad21ed37aeb062cde34291d_5.png)'
+- en: If you have a look at the formula 1 over1 plus the exponential function of minus
+    x。![](img/3f1d65b66ad21ed37aeb062cde34291d_7.png)
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你看看公式1除以1加上负x的指数函数。![](img/3f1d65b66ad21ed37aeb062cde34291d_7.png)
+- en: So we can write this in one line， one， return one over1 plus N P dot。 or let's
+    make parenthesesis around this，1 plus N P dot X。And then， off minus x。And then。This
+    is all we need。So now we apply the sigmoid function here。 So we say why predict
+    it equals self dot。Sek might off。And then our linear model。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因此，我们可以将其写成一行，返回1除以1加上N P点积。或者我们给它加上括号，1加上N P点积X。然后，减去x。这就是我们所需的全部。现在我们在这里应用sigmoid函数。因此，我们说预测的y等于self.dot。Sek可能减去。然后我们的线性模型。
+- en: So this is our approximation of y。 And then we need to update our weights。![](img/3f1d65b66ad21ed37aeb062cde34291d_9.png)
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这就是我们对y的近似。然后我们需要更新我们的权重。![](img/3f1d65b66ad21ed37aeb062cde34291d_9.png)
+- en: So。We have a look at the update rules。 We first calculate the derivatives。Of
+    with these two formulas。 So let's say。![](img/3f1d65b66ad21ed37aeb062cde34291d_11.png)
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以，我们看看更新规则。我们首先计算这两个公式的导数。假设。![](img/3f1d65b66ad21ed37aeb062cde34291d_11.png)
+- en: DW equals， And this is one over n。 And then the sum。![](img/3f1d65b66ad21ed37aeb062cde34291d_13.png)
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: DW等于，且这是1除以n。然后求和。![](img/3f1d65b66ad21ed37aeb062cde34291d_13.png)
+- en: Of two times x times the difference of the predicted y minus the actual y。![](img/3f1d65b66ad21ed37aeb062cde34291d_15.png)
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 两倍于x乘以预测的y减去实际y的差。![](img/3f1d65b66ad21ed37aeb062cde34291d_15.png)
+- en: So we you have。1。Over the number of samples。That we already got up here。And
+    then times。 And then we have the。Product， and then thes sum over this product。
+    And this is nothing else。 but also the dot product of vectors。 So we have to can
+    use numpy dot dot。But now we have to be careful。 now we。Want to do this along
+    the other dimensions。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因此，我们有1。除以我们已经在这里得到的样本数量。然后乘以。接着我们有了。产品，然后对这个产品进行求和。这没有别的，还是向量的点积。因此，我们可以使用numpy.dot。但现在我们必须小心。现在我们想要沿着其他维度进行操作。
+- en: So we have to use X dot transposed。And then the duck product of this and y predicted
+    minus the actual y。So please check the dot product for yourself。So this is the
+    derivative with respect to W and the derivative with respect to the bias is the
+    same。![](img/3f1d65b66ad21ed37aeb062cde34291d_17.png)
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们必须使用X的转置。然后将其与预测的y和实际的y进行点积。所以请自己检查点积。因此，这就是相对于W的导数，而相对于偏差的导数是相同的。![](img/3f1d65b66ad21ed37aeb062cde34291d_17.png)
+- en: But only without the X。 So this is just a sum。 And by the way。 I left the two
+    out because this is just a scaling factor that we can omit。 So this is one over
+    n。 And then the sum of this difference。![](img/3f1d65b66ad21ed37aeb062cde34291d_19.png)
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但没有X。因此这只是一个和。顺便说一下。我省略了2，因为这只是一个可以省略的缩放因子。因此，这是1除以n。然后这个差值的和。![](img/3f1d65b66ad21ed37aeb062cde34291d_19.png)
+- en: So， we say。D B equals one over number of samples。And then times N P dot sum。
+    And then here we simply have y predicted minus the actual y， so。These are our
+    derivatives。 and then we update our well way our parameters。 So we say self dot
+    weights minus equals self dot learning rate。Times the derivative and the same
+    for our bias。So minus equals self dot learning rate times the derivative。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以，我们说D B等于样本数量的倒数。然后乘以N P点积和。然后这里我们简单地有预测的y减去实际的y，所以。这就是我们的导数。然后我们更新我们的参数。因此，我们说self.dot.weights减去等于self.dot.learning
+    rate乘以导数，对于偏差也是如此。所以减去等于self.dot.learning rate乘以导数。
+- en: And this is all for our fit method。 This is the gradient descent。And now let's
+    implement the predict method。 So here we do the same thing that we did here， so。We
+    first approximate our data with a linear model and then apply the sigmoid function
+    to get a probability。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这就是我们的拟合方法的全部。这是梯度下降。现在让我们实现预测方法。因此，这里我们做了与这里相同的事情。因此。我们首先用线性模型来近似我们的数据，然后应用sigmoid函数来获得概率。
+- en: '![](img/3f1d65b66ad21ed37aeb062cde34291d_21.png)'
+  id: totrans-22
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/3f1d65b66ad21ed37aeb062cde34291d_21.png)'
+- en: And now。What we want is we want to say， if it's either class。1 or class 0。 So
+    we look at this function。And we say if it's larger than 05， then it's class 1。
+    And if it's lower than it's class 0。![](img/3f1d65b66ad21ed37aeb062cde34291d_23.png)
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，我们想要的就是判断，如果是类别1或类别0。因此，我们查看这个函数。如果它大于0.5，那么就是类别1。如果它小于，就属于类别0。![](img/3f1d65b66ad21ed37aeb062cde34291d_23.png)
+- en: So， let's say， our。Why predicted。Class or classes。 This is for multiple samples
+    equals。 And then we use list comprehension， and we say it's one， if。Our I is larger
+    than 05。And otherwise。 it's or else， it's 0。And then we do this for each y， for
+    each probability in in our y predicted。So now we have0 or ones， and then we。Just
+    return this。 So return the predicted classes。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 比如说，我们预测的类别。这是对于多个样本的等式。然后我们使用列表推导，如果我们的值大于0.5，则结果为1，否则为0。然后我们对每个概率进行此操作。现在我们得到了0和1，然后我们就返回这个。也就是返回预测的类别。
+- en: And this is the whole implementation that we need。 And now we can test it。 So
+    I already wrote a little test script where I used the psychic learn modules to
+    to load some。Some test data。 So this is the breast cancer set。 You can Google
+    that。 So this is a popular two class problem。And then I will split the data into
+    training samples and test samples。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这就是我们需要的完整实现。现在我们可以测试它了。因此，我已经写了一个小的测试脚本，使用心理学习模块加载一些测试数据。这是乳腺癌数据集。你可以在网上搜索一下。这是一个流行的二分类问题。然后我会将数据分为训练样本和测试样本。
+- en: Then I will create some logistic regression model with our from our file that
+    we and our class that we just implemented here。 and then I will fit the data，
+    our training data and the training labels。 and then I will predict this。And predict
+    the labels for the test data。And then I calculate the accuracy。 So how many of
+    the labels are correctly。Assigned。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我将创建一些逻辑回归模型，从我们刚刚在这里实现的类中提取，并拟合我们的训练数据和训练标签。然后我将进行预测，并预测测试数据的标签。接着我计算准确率。看有多少标签被正确分配。
+- en: So if you've watched the video about the K and N algorithm， then you already
+    have seen this。And now。 let's run this。So， here。Got an unexpected keyword argument
+    learning rate。嗯。Oh， sorry。I just call this L R。And this is the number of iterations。So，
+    let's run this again。And then we see our accuracy is 092。 So or almost 93% of
+    our test data is correctly assigned。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你看过关于K和N算法的视频，那么你已经见过这个。现在让我们运行它。所以，在这里。出现了意外的关键字参数学习率。嗯。哦，抱歉。我将其称为L R。这是迭代次数。让我们再次运行它。然后我们看到我们的准确率是0.92，或者几乎93%的测试数据被正确分配。
+- en: So we see that it works。 and I hope you enjoyed this tutorial and see you in
+    the next tutorial bye。![](img/3f1d65b66ad21ed37aeb062cde34291d_25.png)
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们看到它运行得很好。希望你喜欢这个教程，下次见，再见！![](img/3f1d65b66ad21ed37aeb062cde34291d_25.png)

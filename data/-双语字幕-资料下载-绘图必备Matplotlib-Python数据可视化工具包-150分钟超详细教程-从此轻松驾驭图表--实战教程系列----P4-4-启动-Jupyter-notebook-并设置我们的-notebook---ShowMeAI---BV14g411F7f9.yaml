@@ -1,0 +1,82 @@
+- en: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P4：4）启动
+    Jupyter notebook 并设置我们的 notebook - ShowMeAI - BV14g411F7f9
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】绘图必备 Matplotlib，Python 数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P4：4）启动
+    Jupyter notebook 并设置我们的 notebook - ShowMeAI - BV14g411F7f9
+- en: So what I'm going to do now is I'm in my Maplot Lib tutorial folder。 I'm going
+    to run Jupiter notebook， and， and we're going to do the rest of this Maplotlib
+    tutorial。![](img/892da33aad000f8edbbf075405535965_1.png)
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我将要做的是，我在我的 Maplot Lib 教程文件夹中。我要运行 Jupyter notebook，然后，我们将继续进行其余的 Maplotlib
+    教程。![](img/892da33aad000f8edbbf075405535965_1.png)
+- en: Inside of our Jupiter notebook here。 So let's go ahead and close out of this
+    other Chrome window。![](img/892da33aad000f8edbbf075405535965_3.png)
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在我们的 Jupyter notebook 中。那么让我们关闭这个其他的 Chrome 窗口吧。![](img/892da33aad000f8edbbf075405535965_3.png)
+- en: '![](img/892da33aad000f8edbbf075405535965_4.png)'
+  id: totrans-3
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/892da33aad000f8edbbf075405535965_4.png)'
+- en: So this is our Jupyter notebook interface。 I'm going to， to open up a new Python
+    3。Newebook。Let's name it Maplot Lib tutorial up here。And we are good to go。 The
+    first thing we're going to do here is I'm going to create a mark down cell by
+    typing the letter M。 And I'm going get into here and make a header1。 And I'm going
+    to say， set up notebook。😊。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是我们的 Jupyter notebook 界面。我将打开一个新的 Python 3 笔记本。我们在这里命名为 Maplot Lib 教程。这样就可以开始了。我们要做的第一件事是创建一个
+    markdown 单元，通过输入字母 M。然后我将进入这里，创建一个标题 1，并说，设置笔记本。😊
+- en: So the first thing that I like to do in a notebook。 whenever I'm doing data
+    visualization using Mapl Lib is you do this。Percent sign， mappl Lib。Inline。So。We
+    don't have to spend too much time on this right here。 but essentially there are
+    different ways that you can run data visualization in Maplotlib。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在笔记本中，当我使用 Maplot Lib 进行数据可视化时，我喜欢做的第一件事就是这样。百分号，mapplot Lib。内联。所以。我们在这里不需要花太多时间，但本质上，你可以用不同的方式在
+    Maplotlib 中运行数据可视化。
+- en: and in Jupiter notebooks， Mapllootlib in line is going to be one of your most
+    popular。 most common choices。 I would just set this up， put it as one of the first
+    cells in the notebook and then kind of forget about it。So let's， let's let's get
+    closer to diving into some actual data visualization here because the thing about
+    mapplot Lib。That you will very quickly learn。There is so much power that it can
+    be overwhelming and there are so many options that it can be extremely overwhelming。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在 Jupyter notebooks 中，Maplotlib 的内联将是你最受欢迎、最常用的选择之一。我会把它设置为笔记本中的第一个单元，然后基本上忘掉它。让我们更深入地探讨一些实际的数据可视化，因为关于
+    Mapplot Lib，你会很快发现，有这么多强大的功能，可能会让人感到不知所措，并且有这么多选项，也会让人感到非常困惑。
+- en: I'm going to try to start you off with some of the simplest stuff that we can
+    do。 And then we're going to add on complexity there， but I definitely want you
+    to。Limit the number of things you're thinking about originally。 So let's go ahead
+    and get started。 So import matpllib do Pipl。 And this is the main plotting submodule
+    here that we're going to use。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将尝试为你提供一些我们可以做的最简单的内容。然后我们会逐步增加复杂性，但我确实希望你限制一开始要考虑的内容。因此，让我们开始吧。导入 Matplotlib。我们将使用的主要绘图子模块是
+    Pyplot。
+- en: Matpl Lib has various other submods， which you can see by typing tab by hitting
+    the tab key。 And then you can see all of these different submods that Matpllib
+    has。 there's a ton of stuff here。 But anyways， Pi plot。And then we import it as
+    PLT。And this is going to be the way that you're pretty much always going to import
+    mat plot Lib here。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Matplotlib 还有各种其他子模块，你可以通过按下 tab 键查看所有这些不同的子模块。这里有很多东西。但无论如何，我们使用 Pyplot，并将其导入为
+    PLT。这将是你几乎总是导入 Matplotlib 的方式。
+- en: So let's go ahead and。![](img/892da33aad000f8edbbf075405535965_6.png)
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那么让我们继续吧。![](img/892da33aad000f8edbbf075405535965_6.png)

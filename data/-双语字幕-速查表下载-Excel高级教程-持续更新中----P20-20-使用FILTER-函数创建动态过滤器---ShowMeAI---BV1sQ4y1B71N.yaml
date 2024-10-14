@@ -1,0 +1,208 @@
+- en: 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P20：20）使用FILTER 函数创建动态过滤器 - ShowMeAI - BV1sQ4y1B71N
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P20：20）使用FILTER函数创建动态过滤器 - ShowMeAI - BV1sQ4y1B71N
+- en: '![](img/1038e6b4de2b2640d751ead9caf1bace_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/1038e6b4de2b2640d751ead9caf1bace_0.png)'
+- en: In this video， I will show you how to use the Excel filter function to create
+    dynamic filters in your spreadsheets。 And you can see the spreadsheet that I'm
+    working with is a list of movies。 The categories that those movies would fall
+    into and some other information about the movies。 You can get a copy of this spreadsheet
+    in the description below this video if you want to follow along。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个视频中，我将向你展示如何使用Excel过滤器函数在电子表格中创建动态过滤器。你可以看到我正在使用的电子表格是一个电影列表。这些电影所归属的类别以及关于电影的一些其他信息。如果你想跟着一起操作，可以在这个视频的描述中获取这个电子表格的副本。
+- en: Now， I would like to set it up so that I can type in this box。 the genre or
+    category of movie that I would like to watch。 And then I would like a dynamic
+    list to be produced of the movies that I could choose from。 Now。 there are some
+    ways to do this without using the Excel filter function。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，我想设置它，以便我可以在这个框中输入我想观看的电影的类型或类别。然后我想生成一个动态列表，以便我可以从中选择电影。现在，有一些方法可以做到这一点，而不使用Excel过滤器函数。
+- en: I could click and drag to highlight the column headings。 And on the home tab
+    home ribbon。 I could go to sort and filter， and I could create a filter。 and then
+    I could filter out only the specific movie category or genre that I'm looking
+    for。 But that's gonna be a little bit more work in the end。 Then just using the
+    Excel filter function。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以点击并拖动以突出显示列标题。在主页选项卡的主页功能区上，我可以去排序和过滤，然后创建一个过滤器。然后我可以过滤出我正在寻找的特定电影类别或类型。但这最终会稍微麻烦一点，而不是简单使用Excel过滤器函数。
+- en: So I held control and tap Z to undo that。😊，And I'm just gonna go over here underneath
+    where I've typed genre to watch or category to watch。 and I'll click and type
+    equals filter。 You can see that Excel identifies the filter function。 and this
+    is a fairly new function in Excel。 If you have Microsoft 365。 you should have
+    access to it After typing in filter。 I'll just put in a left parenthesis。 Next。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我按住控制键并按Z撤销了那个。😊，我将转到我在这里输入的“要观看的类型或类别”下方，然后我将点击并输入“=FILTER”。你可以看到Excel识别了过滤器函数，这是Excel中一个相对较新的功能。如果你有Microsoft
+    365，你应该可以使用它。输入FILTER后，我只需放一个左括号。接下来。
+- en: Excel is looking for an array。 So what is the range or array that's important
+    to me in the spreadsheet。 Well， it's this。 it's the data。 So I don't need to get
+    the column headings。 but everything else I'm just going click and drag to highlight
+    all of it all the way down to row 43。 Now I could have simply typed in the cell
+    references。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Excel正在寻找一个数组。那么在电子表格中，哪个范围或数组对我来说很重要呢？是这个。它就是数据。所以我不需要获取列标题，但其他所有的我只需点击并拖动以突出显示，从第一行到第43行。现在我本可以简单地输入单元格引用。
+- en: A2 colon D43 A2 through D43 But sometimes clicking and dragging is a little
+    easier。 Next。 I put in a comma。 Now， Excel is looking for the information to include
+    And what this means here is what range do。I want Excel to examine to see if a
+    particular word in this case。 a particular genre or category is listed。 so I'm
+    going to click and drag on the data in column B。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: A2到D43，从A2到D43，但有时候点击和拖动会简单一点。接下来，我输入一个逗号。现在，Excel正在寻找要包含的信息，这里意味着我希望Excel检查哪个范围，以查看是否列出了特定的单词，在这种情况下，是特定的类型或类别，因此我将点击并拖动B列的数据。
+- en: So from B2 down all the way to B43 Now I'll browse back up just using the scroll
+    wheel on the mouse or you could use this scroll bar if you want to So now it's
+    going include B2 through B43 and now I can put in a logical test I can say are
+    any of those category equal to and I should put this in quotes let's say family
+    So family movies。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 从B2一直到B43，现在我将通过鼠标的滚轮向上滚动，或者你也可以使用这个滚动条，如果你愿意。现在它将包括B2到B43，然后我可以输入一个逻辑测试，我可以说这些类别中是否有任何一个等于，我应该把这个放在引号中，假设是家庭，所以家庭电影。
+- en: and then I could put another quotation mark， and then I need to put in a comma
+    next Excel is expecting me to put something in here in case the results come up
+    empty。 What if none of these movies have a category of family Well then I want
+    to print so I'll put in quotation marks the word none close and then my right
+    parenthesis tap enter。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我可以再放一个引号，然后我需要输入一个逗号，Excel希望我在这里放入一些内容，以防结果为空。如果这些电影中没有一个类别是家庭，那么我想打印，所以我会在引号中放入“none”这个词，然后按右括号，按回车。
+- en: It identified all of the family movies in that range or in that array。 At this
+    point。 I'm going hold control and tap Z to undo that。 because I want you to see
+    that I could have handle this a little differently。 I could have said equals filter
+    left parenthesis selected the array that I want to examine。 So all of this data
+    here going back up I'll put in a comma next is include。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它识别了该范围内或该数组中的所有家庭电影。此时，我将按住控制键并点击Z进行撤销，因为我想让你看到我可以稍微以不同的方式处理这个。我本可以说等于过滤左括号选择我想检查的数组。因此，所有这些数据回溯到这里，我将放入一个逗号，下一个是包含。
+- en: So this is what's going to be examined to see if I have a movie of a particular
+    genre。 And now the test equals。 Now here， instead of putting in the word family。
+    I could just click on a cell like G5 H3， or I could even just type it in。 in this
+    case。 I'll just type in G1。 And what this means is that Excel will look and see
+    if anything in this list is equal to whatever is in G1。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这将被检查，以查看我是否有特定类型的电影。现在，测试等于。现在这里，我可以点击像G5 H3这样的单元格，或者我甚至可以直接输入。在这种情况下，我将直接输入G1。这意味着Excel会查看并查看此列表中的任何内容是否等于G1中的内容。
+- en: Now， I put another comma in。 Now， Excel is expecting me to put something in
+    case。There are no results produced。 So I'll put in the word none。 close quote，
+    write parenthesis。 tap enter。 Now， there's nothing in G1。 So Excel returns the
+    word none。 Now。 I can see I accidentally changed my spreadsheet data。 I'm gonna
+    change it back。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，我又放入了一个逗号。现在，Excel希望我输入内容，以防没有产生结果。因此，我将输入单词none，闭合引号，右括号，按下回车。现在，G1中没有内容，所以Excel返回单词none。现在，我可以看到我不小心更改了我的电子表格数据。我将把它改回去。
+- en: So now watch what happens when I type something in G1。 Let's say I type drama。
+    I tap enter it lists all the dramas in my movie list。 What if I click and change
+    that to scifi。 My dynamic filter changes and shows me different results。 This
+    is one of the things that makes it dynamic。 I can type in horror comedy， whatever
+    I want。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，看看当我在G1中输入内容时会发生什么。假设我输入剧情，我按下回车，它列出我电影列表中的所有剧情片。如果我点击并将其更改为科幻，我的动态过滤器会改变，并向我展示不同的结果。这就是它动态的原因之一。我可以输入恐怖喜剧，随心所欲。
+- en: it gives me a nice list of the movies that fit that category or genre。 Now，
+    if I really wanted to。 I could， instead of just having people type in the genre
+    that they're looking for。 I could click here where it says comedy。 I could go
+    to data here on the data tab in the data tools group。 There's a symbol here。 a
+    button。That represents data validation So I can click there here in the settings
+    for data validation。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这给了我一个符合该类别或类型的电影的漂亮列表。现在，如果我真的想要，我可以，而不是让人们输入他们正在寻找的类型。我可以点击这里，看到喜剧。我可以去数据选项卡上的数据工具组中的数据。这里有一个符号，一个按钮。它代表数据验证，所以我可以在数据验证的设置中点击。
+- en: I can change it from any value to list。 Where's the source of my list。 Well。
+    I click the button with the arrow。 and I can show it here the source of my list。
+    I click this button again to get back。 click O。 So now look what we have。 I have
+    a button with a drop down list and then I can change the word that's in cell G1。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以将其更改为从任何值到列表。我的列表来源在哪里。嗯，我点击带箭头的按钮。我可以在这里显示我的列表来源。我再次点击此按钮以返回，点击O。现在看看我们有什么。我有一个带下拉列表的按钮，然后我可以更改G1单元格中的词。
+- en: and whatever I pick， it will list the movies that meet that criteria。 Now。 let's
+    see if we can add one more component to this dynamic filter。 First。 I'm going
+    to right click on K to insert another column。 And I'm just going click on rating。
+    I didn't put that in the right place。 I'm going to scoot it over here。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 无论我选择什么，它都会列出符合该标准的电影。现在，让我们看看能否为这个动态过滤器添加一个组件。首先，我将右键单击K以插入另一列。我将单击评级。我没有放在正确的位置。我将把它移到这里。
+- en: and I moved it just by putting my mouse right on the edge of the cell and then
+    dragging。 that's an easy， quick way to move text or other data from one cell to
+    the next。 Would it be possible for me to use the filter function。To create a dynamic
+    filter that not only filters for， let's say romance。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我只需将鼠标放在单元格的边缘，然后拖动，就可以轻松快速地将文本或其他数据从一个单元格移动到下一个单元格。我是否可以使用过滤功能创建一个动态过滤器，不仅过滤，比如说浪漫类型。
+- en: fantasy horror or other genres， but also filters based on rating。 Let's see
+    if we can do that。 So if you recall， I typed in my filter formula here in cell
+    F2 And when I click on F2 that becomes apparent here in the formula bar。 So here's
+    my formula。 And what I'd like to do here is say that I want to filter that same
+    range based on what's in this range B2 through B43。 making sure that that's equal
+    to G1， which is romance in this case。 So I want to do that。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 幻想、恐怖或其他类型，但也可以根据评级进行筛选。我们来看看是否能做到这一点。所以如果你还记得，我在F2单元格中输入了我的筛选公式。当我点击F2时，它在公式栏中变得明显。这是我的公式。我想在这里说，我希望根据B2到B43这个范围中的内容来筛选相同的范围，确保它等于G1，在这种情况下是浪漫。所以我想这样做。
+- en: and at the same time， I want to filter based on rating。 in order to do this
+    correctly I need to put my first include in parentheses。 So I've done that Now
+    how do I say and I want to search this to make sure it's equal to what's in G1
+    and I want to search this to see if it's equal to whatever is in K1。I write and
+    well， it doesn't make a lot of sense at first。 But the answer is you put in an
+    asterisk。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 同时，我还想根据评级进行筛选。为了正确做到这一点，我需要把我的第一个包含项放在括号内。我已经这样做了。那么我该如何说，我想搜索这个以确保它等于G1中的内容，并且我想搜索这个以查看它是否等于K1中的任何内容呢？我写下“and”，好吧，一开始这并没有太多意义。但答案是你要输入一个星号。
+- en: So now I can put in another left parenthesis。 What am I trying to include this
+    time。 Excelels giving me hints still， you can see that include is in bold。 Well。
+    I want to include C2 through C 43。 So that now has been added to my formula in
+    the formula bar。 And I want to test to see if the data in column C， basically
+    is equal to whatever is in K1。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我可以再输入一个左括号。这次我想包括什么？Excel仍然给我提示，你可以看到“include”是**粗体**的。好吧，我想包括C2到C43。所以现在它已经被添加到我的公式栏中。我想测试一下C列中的数据基本上是否等于K1中的内容。
+- en: I put in my right parenthesis tapap enter， and my formula produces none。 but
+    that's because I have nothing typed in K1。 Let's type Pg and see what happens。
+    All right。 that produced two movies that are both romance movies and rated P G。
+    What about horror that's rated P G 13。 I tap enter。 It did not produce any。 What
+    about R。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我输入右括号后按回车，我的公式返回了“无”。但这是因为我在K1中没有输入任何内容。我们输入Pg，看看会发生什么。好的，这返回了两部都是浪漫电影并且评级为P
+    G的电影。那么评级为P G 13的恐怖片呢？我按回车。没有产生任何结果。那么R呢？
+- en: I tap enter and it does produce results。 Next， let's try comedy that's rated
+    P。GI tap enter。 and I get results。 So this is a dynamic filter that I've created
+    using the Excel filter function。 Now， of course， if I wanted to， I could click
+    here and create a drop down list similar to this one so that the user doesn't
+    have to type in P G dash 13 or whatever it might be。 But I hope you can see some
+    of the power of the Excel filter function。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我按下回车，它确实产生了结果。接下来，让我们试试评级为P的喜剧。我再按一次回车，得到了结果。所以这是我使用Excel筛选功能创建的动态筛选器。当然，如果我想，我可以在这里点击并创建一个下拉列表，类似于这个，这样用户就不必输入P
+    G-13或其他任何内容。但我希望你能看到Excel筛选功能的一些强大之处。
+- en: There's so much that you can do with it。![](img/1038e6b4de2b2640d751ead9caf1bace_2.png)
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以做的事情太多了！[](img/1038e6b4de2b2640d751ead9caf1bace_2.png)

@@ -1,0 +1,244 @@
+- en: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P8：8）添加和更改文本
+    - ShowMeAI - BV14g411F7f9
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P8：8）添加和更改文本
+    - ShowMeAI - BV14g411F7f9
+- en: Let's move on to our next section now。 So this next section。![](img/9fb8d9dd04796c9d352a78350c807c17_1.png)
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们继续进入下一个部分。所以这个下一个部分。![](img/9fb8d9dd04796c9d352a78350c807c17_1.png)
+- en: You'll notice that we haven't added any titles。 We haven't added any labels。
+    We haven't messed with any of the text。 We've just been doing the graphing with
+    the exception of our our legend here。 which which gets placed automatically。 So
+    let's have a section now in what section is going to be。 I think， number 4。 right，
+    Are we on section， section 4。 yep， Section number 4， moving right along。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你会注意到我们还没有添加任何标题。我们还没有添加任何标签。我们没有处理任何文本。除了我们的图例外，我们只是进行了图形绘制，图例会自动放置。那么现在我们进入下一个部分，我想，第四部分，对吧？我们在第四部分，对，第四部分，继续前进。
+- en: '![](img/9fb8d9dd04796c9d352a78350c807c17_3.png)'
+  id: totrans-3
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/9fb8d9dd04796c9d352a78350c807c17_3.png)'
+- en: '![](img/9fb8d9dd04796c9d352a78350c807c17_4.png)'
+  id: totrans-4
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/9fb8d9dd04796c9d352a78350c807c17_4.png)'
+- en: '![](img/9fb8d9dd04796c9d352a78350c807c17_5.png)'
+  id: totrans-5
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/9fb8d9dd04796c9d352a78350c807c17_5.png)'
+- en: Section number 4， adding and altering text。 Allright。![](img/9fb8d9dd04796c9d352a78350c807c17_7.png)
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 第四部分，添加和更改文本。好的。![](img/9fb8d9dd04796c9d352a78350c807c17_7.png)
+- en: So adding and altering text， this is a very important part of graphing because
+    you want to give people information about what they're looking at。 you know you
+    want to label your X axis， like what is 50， what is this number even stand for。
+    You want to label your Y axis， know what are we looking at and then you want to
+    give the graph some title。 some helpful title so that people are able to understand
+    the context of the data and what you're trying to communicate。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以添加和更改文本，这是绘图中非常重要的一部分，因为你想给人们提供关于他们所看到内容的信息。你知道的，你想标记你的 X 轴，比如 50 是什么，这个数字到底代表什么。你想标记你的
+    Y 轴，知道我们在看什么，然后你想给图表一些标题，一些有用的标题，以便人们能够理解数据的上下文以及你试图传达的内容。
+- en: So I'm going to before we do text， before we dive into it。 I want to show you
+    a very helpful mat plot Lib。![](img/9fb8d9dd04796c9d352a78350c807c17_9.png)
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在我们进行文本之前，我想给你展示一个非常有用的matplotlib。![](img/9fb8d9dd04796c9d352a78350c807c17_9.png)
+- en: Resource of do Maplotlibb。ATex。![](img/9fb8d9dd04796c9d352a78350c807c17_11.png)
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 资源的做法是 Maplotlibb。ATex。![](img/9fb8d9dd04796c9d352a78350c807c17_11.png)
+- en: a i here。😔，Let's take a look at this。![](img/9fb8d9dd04796c9d352a78350c807c17_13.png)
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我在这里。😔，让我们来看看这个。![](img/9fb8d9dd04796c9d352a78350c807c17_13.png)
+- en: So there's one specific thing that I want to show you。 Actually。 and I'll just
+    go ahead and copy in this URL it's。![](img/9fb8d9dd04796c9d352a78350c807c17_15.png)
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想给你展示一件特别的事情。其实，我会直接复制这个网址。![](img/9fb8d9dd04796c9d352a78350c807c17_15.png)
+- en: Down here on the page， here we go。Class mapplotlib do text dot text， so。![](img/9fb8d9dd04796c9d352a78350c807c17_17.png)
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在页面下方，我们开始吧。Class mapplotlib do text dot text，所以。![](img/9fb8d9dd04796c9d352a78350c807c17_17.png)
+- en: The reason why I'm showing this to you is because the mappl Lib the API， the
+    documentation。![](img/9fb8d9dd04796c9d352a78350c807c17_19.png)
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我给你展示这个的原因是因为这个地图绘图库的 API，以及文档。![](img/9fb8d9dd04796c9d352a78350c807c17_19.png)
+- en: '![](img/9fb8d9dd04796c9d352a78350c807c17_20.png)'
+  id: totrans-14
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/9fb8d9dd04796c9d352a78350c807c17_20.png)'
+- en: Is very good for looking at all of the different properties that you can use
+    when you're using something like a text object。![](img/9fb8d9dd04796c9d352a78350c807c17_22.png)
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这对于查看使用文本对象时可以使用的所有不同属性非常有用。![](img/9fb8d9dd04796c9d352a78350c807c17_22.png)
+- en: '![](img/9fb8d9dd04796c9d352a78350c807c17_23.png)'
+  id: totrans-16
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/9fb8d9dd04796c9d352a78350c807c17_23.png)'
+- en: So our titles are text， our labels are text， etc。![](img/9fb8d9dd04796c9d352a78350c807c17_25.png)
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们的标题是文本，我们的标签是文本，等等。![](img/9fb8d9dd04796c9d352a78350c807c17_25.png)
+- en: These are some of the things that you can change about the text。 So you'll notice
+    you can change the font family so you can change the type of font。 You can change
+    the font size。 One of the ones that we're going to use is you can change the rotation
+    of the text。 So you've got all of these different。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是你可以更改的文本的一些内容。所以你会注意到你可以更改字体系列，因此你可以更改字体的类型。你可以更改字体大小。我们要使用的其中一个是可以更改文本的旋转。所以你有所有这些不同的选择。
+- en: '![](img/9fb8d9dd04796c9d352a78350c807c17_27.png)'
+  id: totrans-19
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/9fb8d9dd04796c9d352a78350c807c17_27.png)'
+- en: Options for manipulating the text。 So this is a very helpful link。 I'll make
+    sure that you have this。 And whenever you need to do something special with your
+    text， you can come here and reference this。 So I'll actually， yeah， I was gonna
+    paste this into the。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: '操作文本的选项。因此，这是一个非常有用的链接。我会确保你有这个。当你需要对文本做一些特别的事情时，可以来这里参考。所以我实际上，嗯，我会把这个粘贴到。 '
+- en: '![](img/9fb8d9dd04796c9d352a78350c807c17_29.png)'
+  id: totrans-21
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/9fb8d9dd04796c9d352a78350c807c17_29.png)'
+- en: Jupiter notebook here。Okay， so first， let's look at axis labels。 and this is
+    axis with an I。 as opposed to a Cs with an E like that so。![](img/9fb8d9dd04796c9d352a78350c807c17_31.png)
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是Jupiter Notebook。好的，首先，让我们看一下坐标轴标签。这是带有“I”的轴，而不是像这样带有“E”的“Cs”。![](img/9fb8d9dd04796c9d352a78350c807c17_31.png)
+- en: Let's get some graph to work with that we'll work with for this text section
+    here。So。![](img/9fb8d9dd04796c9d352a78350c807c17_33.png)
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们获得一些图表，以便在这里使用这个文本部分。所以。![](img/9fb8d9dd04796c9d352a78350c807c17_33.png)
+- en: Let's see here maybe what we want to do。Is we want to look at this bar graph。Of
+    cholesterol。 Well。 we want to look at a bar graph of cholesterol by age。 So I'll
+    copy this plot down here。![](img/9fb8d9dd04796c9d352a78350c807c17_35.png)
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们看看，我们想做的事情是查看这个胆固醇的条形图。好吧，我们要查看一个按年龄划分的胆固醇条形图。所以我将在这里复制这个图。![](img/9fb8d9dd04796c9d352a78350c807c17_35.png)
+- en: Let's change this to a bar graph of age versus cholesterol。I'll get rid of the
+    color， and the label。![](img/9fb8d9dd04796c9d352a78350c807c17_37.png)
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们将其更改为“年龄与胆固醇的条形图”。我会去掉颜色和标签。![](img/9fb8d9dd04796c9d352a78350c807c17_37.png)
+- en: So first things first， our audience has no idea what the axis。 the x axis and
+    the y axis are supposed to mean here。So the way that we do that is I'll actually
+    show you on the object first。 So A X。 I'll hit dot hit tab。 Let's look at all
+    of our different methods here。 So it's the set。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 首先，我们的观众对X轴和Y轴应该代表什么毫无头绪。因此，我们的做法是，我会先在对象上展示给你看。所以AX。我会点一下，按一下Tab。让我们看看所有不同的方法。所以是set。
+- en: So you'll start seeing all the different things that you can set。 come up here
+    as I type in set set underscore。X， so you can set the bounds， the limit。 We're
+    going to set the X label。 So we're going to set the X label here。 And what is
+    our x。 Well。 that is the， that's the age。 So let's go ahead and copy this up here。And
+    there you go。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以，当我输入set set underscore X时，你会开始看到可以设置的所有不同内容。因此，你可以设置边界、限制。我们将设置X标签。所以我们将在这里设置X标签。那么我们的X是什么？嗯，那就是年龄。所以让我们把这个复制到上面。你看。
+- en: you see the word age printed down here now as our X axis label。If we want to
+    do the same thing for the y axis， well， we just change this to set y label。 and
+    what is this， is going to be average。Cholesterol。Average cholesterol there。And
+    there is our Y axis label。So now what if we want to give this plot a handy dandy
+    title。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你现在可以看到“年龄”这个词在下面作为我们的X轴标签。如果我们想对Y轴做同样的事情，嗯，我们只需将其更改为设置Y标签。那么这将是平均胆固醇。我们的Y轴标签就是这样。那么如果我们想给这个图表一个方便的标题呢？
+- en: So I will go ahead and copy this down。 Let's create a new section header here
+    called。![](img/9fb8d9dd04796c9d352a78350c807c17_39.png)
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我会继续把这个复制下来。让我们在这里创建一个新的部分标题。![](img/9fb8d9dd04796c9d352a78350c807c17_39.png)
+- en: '![](img/9fb8d9dd04796c9d352a78350c807c17_40.png)'
+  id: totrans-30
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/9fb8d9dd04796c9d352a78350c807c17_40.png)'
+- en: Pot。Tido。![](img/9fb8d9dd04796c9d352a78350c807c17_42.png)
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Pot。Tido。![](img/9fb8d9dd04796c9d352a78350c807c17_42.png)
+- en: And the way that you do this。Is let's go back to Ax do set。And let's just see
+    if there's a set title set there is right there。 Look at that。 I already knew
+    that， but you didn't know that， so。It was still a surprise for one of us AX dot
+    set title。And let's look at let's。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: '你要做的方式是，先回到Ax，看看是否有设置标题。就在这里。看看这个。我已经知道了，但你不知道，所以对我们其中一个人来说，这仍然是一个惊喜。AX点设置标题。让我们看看。 '
+- en: let's say average cholesterol by age。![](img/9fb8d9dd04796c9d352a78350c807c17_44.png)
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设我们要查看不同年龄的平均胆固醇水平。![](img/9fb8d9dd04796c9d352a78350c807c17_44.png)
+- en: And there you go。Average cholesterol by age now， as the title。OfAnd we're doing
+    this on the AX object。 So this is the title。Of this axes， the title of this axes。
+    and this will actually come into play in just a second here。![](img/9fb8d9dd04796c9d352a78350c807c17_46.png)
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 而且你看。现在平均胆固醇按年龄显示为标题。我们正在这个AX对象上做这个。所以这是这个坐标轴的标题，这个坐标轴的标题。稍后这会派上用场。![](img/9fb8d9dd04796c9d352a78350c807c17_46.png)
+- en: So。These are two of the main things you're really going to want to know for
+    adding and altering text。 and we're going to do some more with text later in the
+    common questions section。 but for now for now let's go ahead and just leave it
+    as the access labels and the plot title since these are going to be some of the
+    main things that you will use。
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以。这是你在添加和修改文本时真正想要了解的两件主要事项。我们将在常见问题部分进一步讨论文本，但现在就先保留访问标签和图表标题，因为这些将是你将要使用的主要内容。
+- en: '![](img/9fb8d9dd04796c9d352a78350c807c17_48.png)'
+  id: totrans-36
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/9fb8d9dd04796c9d352a78350c807c17_48.png)'
+- en: '![](img/9fb8d9dd04796c9d352a78350c807c17_49.png)'
+  id: totrans-37
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/9fb8d9dd04796c9d352a78350c807c17_49.png)'
+- en: '![](img/9fb8d9dd04796c9d352a78350c807c17_50.png)'
+  id: totrans-38
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/9fb8d9dd04796c9d352a78350c807c17_50.png)'

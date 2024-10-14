@@ -1,0 +1,74 @@
+- en: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P5：5）删除重复项工具 - ShowMeAI - BV1Jg411F7cS
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P5：5）删除重复项工具 - ShowMeAI - BV1Jg411F7cS
+- en: '![](img/f955fa113e72b809ef9ef19a670ec0e3_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/f955fa113e72b809ef9ef19a670ec0e3_0.png)'
+- en: In this Excel tutorial， we're going to focus on duplicates。 So you can see here
+    I have a spreadsheet of synth pop bands and albums。 and this spreadsheet belongs
+    to a hypothetical synth pop C D store。 And you can see there's a list here of
+    some of the classic synth pop bands and their latest releases。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个Excel教程中，我们将专注于重复项。所以你可以看到我有一个合成流行乐队和专辑的电子表格。这个电子表格属于一个假想的合成流行CD商店。你可以看到这里有一些经典合成流行乐队及其最新发行的列表。
+- en: But I'm also including here， some more recent synth pop bands and ones that
+    you may not have heard of before。 Now， the problem with this spreadsheet， though，
+    I when I initially created it。 I was focusing on the different quarters of the
+    year， quarter 1， quarter 2， quarter 3。 And so the result is that I end up with
+    several different records for each band。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但我在这里也包括了一些更近的合成流行乐队和一些你可能没有听说过的乐队。然而，这个电子表格的问题是，当我最初创建它时，我关注的是每年的不同季度，第一季度、第二季度、第三季度。因此，我的结果是每个乐队最终都有几个不同的记录。
+- en: And that's what I wanted in this spreadsheet to begin with。 But let's say I
+    decide， you what。 I just want to create a list of all of the bands whose music
+    I sell。 Or maybe I want to create a list just of all of the albums that I'm selling。
+    Let's look at how we could do that。 What I have to do is just go to data。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这就是我最初想要在这个电子表格中的内容。但是假设我决定，我只想创建一个我销售的所有乐队的列表。或者也许我想创建一个我正在销售的所有专辑的列表。让我们看看如何做到这一点。我所要做的就是去数据。
+- en: And look on the data ribbon in the data tools group。 you'll notice that there's
+    an option to remove duplicates。 When you click that by default。 it's probably
+    going to check all of your columns。 So it's going look for duplicates throughout
+    the entire spreadsheet at this point。 And that may not be what I want。 if I just
+    want to see a list of the unique band titles in my spreadsheet。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 请查看数据工具组中的数据功能区。你会注意到有一个选项可以删除重复项。当你点击时，默认情况下，它可能会检查你所有的列。所以此时它会在整个电子表格中查找重复项。这可能不是我想要的，如果我只是想查看电子表格中独特乐队名称的列表。
+- en: All I have to do is unselect all and then choose band。 So it's going to look
+    for duplicates only in the list of bands。 I click O It found 33 duplicates and
+    remove them 15 unique values remain。 So I click okay and look at that。 It now
+    is a list just of the bands whose Cds I hypothetically sell。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我所要做的就是取消选择所有，然后选择乐队。所以它只会在乐队列表中查找重复项。我点击了，它找到了33个重复项，并删除了它们，剩下15个独特值。所以我点击确定，看看。现在它仅仅是我假设销售的CD中的乐队列表。
+- en: So that's how you can remove duplicates and how you can pull out just the unique
+    data in your spreadsheet。 So now， of course， I could go up and choose file save
+    as and I could save this as a different。![](img/f955fa113e72b809ef9ef19a670ec0e3_2.png)
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这就是你如何删除重复项以及如何从你的电子表格中提取独特数据的方法。所以现在，当然，我可以选择文件另存为，我可以把它另存为一个不同的电子表格。![](img/f955fa113e72b809ef9ef19a670ec0e3_2.png)
+- en: Separate spreadsheet that's just a list of all the bands。 And then here in my
+    original spreadsheet。 if I wanted to keep the list the way it was， I could just
+    exit out and not save over the original。 and I should be able to have both copies
+    of the spreadsheet。So I think remove duplicates is a very useful tool。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 另一个单独的电子表格，只是列出所有的乐队。而在我原来的电子表格中，如果我想保持列表的原样，我可以直接退出而不覆盖原始文件，这样我应该能够保留两个电子表格的副本。所以我认为删除重复项是一个非常有用的工具。
+- en: I hope that you found the tutorial to be helpful if you did， please click the
+    like button below。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我希望你觉得这个教程有帮助，如果有的话，请点击下面的点赞按钮。

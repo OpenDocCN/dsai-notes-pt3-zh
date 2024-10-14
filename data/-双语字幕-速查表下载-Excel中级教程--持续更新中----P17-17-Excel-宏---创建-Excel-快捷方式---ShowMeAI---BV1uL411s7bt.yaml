@@ -1,0 +1,368 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P17：17）Excel 宏 - 创建 Excel 快捷方式 - ShowMeAI -
+    BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P17：17）Excel 宏 - 创建 Excel 快捷方式 - ShowMeAI -
+    BV1uL411s7bt
+- en: '![](img/2bdad9b27f9903642b3c2b937f9c8ab5_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/2bdad9b27f9903642b3c2b937f9c8ab5_0.png)'
+- en: This is the beginner's guide to Excel macros。 How to use macros to create shortcuts
+    for the tasks that you need to do in Excel。 And the spreadsheet that I'm going
+    to use for this example is an employee list You can see there's a list of several
+    employees here for a hypothetical small business。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是Excel宏的初学者指南。如何使用宏为你在Excel中需要完成的任务创建快捷方式。我要用于这个例子的电子表格是一个员工列表。你可以看到这里有几个员工的列表，适用于一个假设的小型企业。
+- en: It's got some information about them like the date they were hired their employee
+    I D and the team that they're part of。 And on this projects tab， I have a list
+    of some projects that I would like to assign these employees to。 so they can work
+    on them。 So I will be switching back and forth from the first tab to the second
+    tab。 And， of course， I could certainly do that here just by clicking on the tabs。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它包含了一些关于他们的信息，比如他们被雇佣的日期、员工ID以及他们所在的团队。在这个项目标签上，我有一个我希望将这些员工分配给的一些项目列表。这样他们就可以开始工作。因此我将在第一个标签和第二个标签之间来回切换。当然，我可以通过点击标签轻松做到这一点。
+- en: But let's create a macro to make this a little bit easier a little bit more
+    convenient。 What I want to end up with is a button may be right here that when
+    I click that button。 it takes me to the second tab。 The second sheet， really in
+    this work book。 So how would I do that。 I would simply go here to the。Developer
+    tab。And if you don't see the developer tab。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但是让我们创建一个宏，使这个过程变得稍微简单一些，更方便一些。我想要的是一个按钮，可能就在这里，当我点击那个按钮时，它将我带到第二个标签。其实是这个工作簿中的第二个工作表。那么我该如何做到呢？我只需去开发者标签。如果你没有看到开发者标签。
+- en: you might need to right click here on the ribbon and choose customize the ribbon
+    and make sure that developer is included here。 But anyway， I'm just going go to
+    the developer tab and click on it。 and the ribbon changes to match that。 And here
+    at the left。 there are some options related to macros。 In this beginner's guide。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可能需要在功能区上右键点击，选择自定义功能区，并确保开发者选项包含在内。但无论如何，我只会去开发者标签并点击它。然后功能区会更改以匹配它。在左侧，有一些与宏相关的选项。在这本初学者指南中。
+- en: we're going stick basically with record macro and also this macros button。 So
+    in this case。 I'm going to click record macro。 And it opens up a little wizard
+    here that I can use to create this macro。 By default， it's calling this one macro
+    5。 because in the past。 I created some other macros in this spreadsheet。 So I'm
+    going rename that。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们基本上将坚持使用录制宏和这个宏按钮。所以在这种情况下，我将点击录制宏。它会打开一个小向导，我可以用来创建这个宏。默认情况下，它将这个宏命名为宏5，因为在过去，我在这个电子表格中创建了一些其他的宏。所以我要重新命名它。
+- en: and I'll call this button to projects tab。 Next， I have to establish a shortcut
+    key for this macro。 a keyboard shortcut。 Now， if you think about this， you know，
+    you have to be careful here。 because they're already R。Keyboard shortcuts。 We
+    have control X， control Z， control C。 Those are all already keyboard shortcuts。
+    And so I don't want to put control C here。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我会把这个按钮命名为项目标签。接下来，我需要为这个宏建立一个快捷键，一个键盘快捷方式。现在，如果你考虑一下，你知道你在这里需要小心。因为它们已经有R。键盘快捷方式。我们有控制X、控制Z、控制C。这些都是已经存在的键盘快捷方式。所以我不想在这里放控制C。
+- en: That would be a mistake because control C already does copy。 So it's a good
+    idea to actually put two keys in this box。 So I'm going hold shift and tap a。
+    So control shift A now is the keyboard shortcut that I'm reserving for this macro
+    that I'm about to create。 Where's it going to store this macro in this workbook。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这样做是个错误，因为控制C已经可以复制了。所以实际上在这个框中放入两个键是个好主意。所以我将按住Shift并点击A。因此控制Shift A现在是我为即将创建的宏保留的键盘快捷方式。这个宏将存储在哪里呢？在这个工作簿中。
+- en: So that means the collection of the spreadsheets that I have here。 right now。
+    there's just two spreadsheets， but I could add another sheet and another and another。
+    They're all part of the same workbook。 and I want to store this macro in this
+    workbook。 There are other options， but let's stick to just this。 Next。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这意味着我这里的电子表格集合。现在这里只有两个电子表格，但我可以添加另一个工作表、另一个、再另一个。它们都属于同一个工作簿。我想在这个工作簿中存储这个宏。还有其他选项，但我们就坚持这一点。接下来。
+- en: I could describe this macro if I wanted to。 And I guess I will。 So give me a
+    minute to type a description， and then I'll resume the video。There's my very descriptive
+    description and I click OK。And I got an error message。 I wanted you to see that
+    so that， you know that you cannot have spaces in your macro titles。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我想的话，我可以描述这个宏。我想我会这样做。所以请给我一分钟来输入描述，然后我会恢复视频。这是我非常详细的描述，我点击确定。然后我得到了一个错误信息。我希望你能看到这一点，以便你知道宏标题中不能有空格。
+- en: So now when I click O， it should accept it。And it did Now， notice here on the
+    upper left。 it now says stop recording。 It doesn't say record macro。 So it is
+    currently recording what I do in Excel。 but it's important to realize it's not
+    recording the passage of time。 So I could sit here thinking about what am I going
+    to do with this macro。 I'm recording。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，当我点击O时，它应该接受。它确实如此。现在，请注意左上角。现在显示的是停止录制，而不是录制宏。所以它目前正在记录我在Excel中的操作，但重要的是要意识到它并没有记录时间的流逝。我可以坐在这里思考我将如何使用这个宏。我在录制。
+- en: And I can think about it for 10 minutes for an hour for 10 days， whatever I
+    want to do。 It won't matter because it's not recording time。 It's also not recording
+    the location of my mouse pointer。 I can move the mouse wherever I want to。 None
+    of that is getting recorded。 What gets recorded is where I click and the options
+    and settings and things that I change in Excel。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以思考10分钟、一个小时或10天，随我所愿。没关系，因为它并没有记录时间。它也没有记录我鼠标指针的位置。我可以随意移动鼠标。那些都不会被记录。被记录的是我点击的地方，以及我在Excel中更改的选项和设置。
+- en: Okay， so what do I want it to record。 I want it to record me going from the
+    employees spreadsheet to the projects spreadsheet So I'll just click on projects。
+    And that's really all I want it to record。 So I'll click stop recording。 And that
+    macro has been successfully recorded。Now。 I'm going to jump back to the employees
+    spreadsheet。 And let's look at the macro that I've created。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，我想让它记录什么呢。我想让它记录我从员工电子表格切换到项目电子表格。所以我只需点击项目。那就是我想让它记录的所有内容。所以我点击停止录制。这个宏已经成功录制。现在，我要跳回员工电子表格。让我们看看我创建的宏。
+- en: If I click here on macros， it should list all of the macros that exist in this
+    workbook。 And there it is button to projects tab。 while I'm here。 I want you to
+    notice that in that macros option that I just selected。 It does let you delete
+    macros that you don't want to use。 And there are some other options as well。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我点击这里的宏，它应该列出这个工作簿中存在的所有宏。那里就是按钮到项目标签。趁我在这里，我想让你注意到我刚刚选择的宏选项中。它确实允许你删除不想使用的宏，还有其他一些选项。
+- en: All right， I'm just going to cancel this。 And it's time now for me to create
+    a button and link it to that macro。 So here again， on the developer tab， I'm going
+    to go down to insert， and I'll click。 And that brings up some form controls。 in
+    a previous tutorial。 I showed you how to create a scroll bar and use it in Excel。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好吧，我只是想取消这个。现在是我创建一个按钮并将其链接到那个宏的时候了。所以在开发者选项卡中，我要下滑到插入，然后点击。这将弹出一些表单控件。在之前的教程中，我向你展示了如何创建一个滚动条并在Excel中使用它。
+- en: And I hope you'll go back and watch that video if you haven't seen it。 in this
+    tutorial。 we're going to use another form control。 and that is a button。 So I'll
+    click on the button option。 And notice what happened to my mouse pointer。😊，It's
+    become crosshairs has become a plus sign。 basically。 And that's a sign that I
+    can draw something on the screen。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你还没有看过，我希望你回去看看那个视频。在这个教程中，我们将使用另一个表单控件，那就是按钮。所以我会点击按钮选项。请注意我的鼠标指针发生了什么。😊它变成了十字线，基本上变成了一个加号。这是我可以在屏幕上绘制某些东西的标志。
+- en: so I will click and drag to draw out a button， and I can make it as big as I
+    want pretty much or as small as I want and the dimensions and all of that's up
+    to me。 I think I'll go with about that size there。 As soon as I let go of the
+    mouse button。 it popped up with this window for me to choose which macro to link
+    to this button that I've created。 And right now， there's really only one option。
+    So I click on button to projects tab click O。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我会点击并拖动绘制一个按钮，我可以让它尽可能大或者尽可能小，尺寸和一切都由我决定。我想我会选择那个大小。当我松开鼠标按钮时，它弹出了这个窗口让我选择要链接到我创建的按钮的宏。目前只有一个选项。所以我点击按钮到项目标签点击O。
+- en: And my button is created。 If I double click on the text for the button。 Sometimes
+    it works just a single click。 I can change the text on the button。 So I'll type
+    in projects。 All right， now I'll click off the button and to test it out。 I'll
+    left click right on the button。 and look what it did。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我的按钮已创建。如果我双击按钮文本，有时单击一下也有效。我可以更改按钮上的文本。所以我输入“项目”。好吧，现在我点击按钮外的地方来测试一下。我左键点击按钮，看看它做了什么。
+- en: It instantly executed that macro that I created using record macro。 and it's
+    stored here in the list of macros。😊，When I click the button， it took me here。
+    So now that I'm here， I can add somebody to a project。 How about my good friend
+    Marcellina Resrepo。 I'll put her on project a。 Now I highly recommend if you're
+    gonna create buttons like this that take you from one spreadsheet to another。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它立即执行了我使用记录宏创建的宏，并且它在宏列表中存储着。😊当我点击按钮时，它把我带到了这里。现在我在这里，我可以为一个项目添加某个人。比如说我的好朋友
+    Marcellina Resrepo。我会把她放到项目 A。现在我强烈推荐，如果你要创建像这样的按钮，让你从一个电子表格切换到另一个。
+- en: It is a good idea to create a button on the second spreadsheet to take you back
+    to the first one。 So really quick， I'm going do that， I'll just click developer
+    record macro。 I'll call it return to employee sheet。 I'll give it a shortcut key。
+    And this time I'm gonna skip the description。 I click O。 and the macro now has
+    been named。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在第二个电子表格上创建一个按钮，以便返回第一个电子表格是个好主意。所以我很快就会做到这一点，我只需点击开发者记录宏。我会将其命名为返回员工表。我会给它一个快捷键。这次我将跳过描述。我点击了
+    O，现在宏已经命名。
+- en: and it's ready to record。 So this time I'll click on employees。 I'm done recording。
+    I click stop。 and I go back to the project sheet to create my form control button。😊，Then
+    in this pop up。 I need to make sure I pick the right one， return to employee sheet，
+    click O。 and maybe click and drag to highlight button 1。 And I'll just call this
+    return。Now。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在可以开始录制了。这次我点击员工。我完成录制。点击停止。然后我返回项目表以创建我的表单控件按钮。😊在这个弹出窗口中，我需要确保选择正确的，返回员工表，点击
+    O。也许点击并拖动突出按钮 1。我就将其命名为返回。现在。
+- en: when you're working with buttons， if you click away from a button， the next
+    time you click on it。 it's going to work。 It's going to do what it's supposed
+    to do。 So how would I ever edit this button。 What if I regret the shape that it
+    is or the location。 I can't click and drag。 So the trick there is to right click
+    on the button。 If you right click on it， it selects it。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 当你使用按钮时，如果你点击了按钮之外的地方，下次你点击它时，它会正常工作。它会执行它应该执行的操作。那么我该如何编辑这个按钮呢？如果我后悔它的形状或位置怎么办？我不能点击和拖动。所以诀窍是右键点击按钮。如果你右键点击它，它就会被选中。
+- en: And then you can click away， and then click back on the button to move the button
+    to resize it And if you want to。 you can cut it or do these other things。 So at
+    this point， I've got the two buttons。 one that takes me to my list of projects，
+    and one that returns me back to the employee list。 Now。 that's just one kind of
+    macro。 If you think about it。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后你可以点击其他地方，再次点击按钮来移动按钮，调整其大小。如果你想的话，你可以剪切它或做其他操作。所以到目前为止，我有两个按钮，一个带我去我的项目列表，另一个让我返回员工列表。现在。这只是一个宏。如果你仔细想想。
+- en: I could have recorded several other steps as well。 you can create macros with
+    multiple actions that happen when you execute the macro。 But I chose to start
+    with these simple buttons that just switch from one sheet to the next。 Let's look
+    at one more example in this beginning。VideoLet's say I'm the owner of this company。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我还可以录制其他几个步骤。你可以创建包含多个操作的宏，这些操作在执行宏时会发生。但我选择从这些简单的按钮开始，它们只是从一个工作表切换到下一个。让我们在这个开始的地方看一个更多的例子。视频假设我是这家公司的所有者。
+- en: and it's time for me to have performance reviews with all of my employees。 And
+    maybe I want to track who I've already had the review with and who's up next to
+    be reviewed。 One way to show that in a sheet is to use color。 So let's say good
+    old M Rerepo and I have our review。 I could click and drag to highlight the whole
+    row， or if I prefer， maybe just her name。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在是我与所有员工进行绩效评估的时候了。也许我想跟踪我已经与哪些员工进行了评估，以及接下来要评估的是谁。展示这一点的一种方法是在表格中使用颜色。假设我和
+    M Rerepo 进行了评估。我可以点击并拖动以突出显示整行，或者如果我更喜欢，也可以只突出她的名字。
+- en: And then on the home tab， I could either change the color of the text or maybe
+    put a background color in。 And maybe I'll say that the color blue means that we've
+    had the review。 So that's one way to do it。 But now let me show you how to do
+    that as a macro。 So that I could just click on a person's name。 click a button
+    and automatically apply the right color to that person's name。 to do this。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后在主页选项卡中，我可以更改文本颜色，或者也许添加一个背景颜色。也许我会说蓝色意味着我们进行了审核。这是其中一种方法。但现在让我向你展示如何将其作为宏来实现。这样我就可以点击一个人的名字，点击一个按钮，自动将正确的颜色应用到那个人的名字上。为此。
+- en: I would create a macro。 The first thing I want to do is to click away just click
+    on a blank part of the spreadsheet。 And then I'll go here to the developer。And
+    click record macro。 And I'm going to name this。 mark as reviewed。 the shortcut
+    key。 I'm going to do control shift C。 and I click， O。 it's now recording。 Now，
+    you would think I would want to click here to select Gina pullulin or Regia loftus
+    or one of these other fine people。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将创建一个宏。我想做的第一件事是点击一下，只需点击电子表格的空白部分。然后我将去开发者选项卡，点击录制宏。我将给它命名为“标记为已审核”。快捷键，我将使用控制键加
+    Shift 加 C。我点击，O。现在正在录制。现在，你可能认为我想点击这里选择 Gina Pullulin 或 Regia Loftus 或其他这些优秀的人。
+- en: But instead， I'm purposefully going leave this cell selected。 and I'm simply
+    going to go to the home tab， home ribbon， and I'll choose this blue background
+    color。 and it just colored that cell。 Now I'll go back to the developer tab and
+    I'll click stop recording。 Now， why did I leave this cell selected。 The reason
+    why is because if I had clicked to select Gina pullulin or Regia loftus or any
+    of these other people。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但相反，我故意让这个单元格保持选中状态。我将简单地去主页选项卡，主页功能区，选择这个蓝色背景颜色。它只给那个单元格上了色。现在我将返回开发者选项卡并点击停止录制。现在，为什么我让这个单元格保持选中状态？原因是，如果我点击选择
+    Gina Pullulin 或 Regia Loftus 或其他任何人。
+- en: Then every time I executed the macro。 That particular cell。 let's say cell a
+    6 in this case。 would have been turned blue， but only this cell。 And the reason
+    why is。Because I would have clicked on it after starting the recording of the
+    macro。 But the way I actually did it。 I clicked here first， then I recorded the
+    macro。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那么每次我执行宏时，那个特定的单元格，假设在这种情况下是单元格 A6，将变成蓝色，但只有这个单元格。原因是因为我在开始录制宏后点击了它。但我实际的操作是，我先点击了这里，然后录制了宏。
+- en: and I did not click on anything else。 And so the way Excel interprets that is
+    it says O。 he didn't click on anything。 So whatever is selected will be turned
+    blue。 not any specific cell。 Now， sometimes you will want it to be a specific
+    cell。 In that case， after you click record macro。 click on what you want to turn
+    blue or whatever the macro does。 O。
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我没有点击其他任何东西。因此，Excel 的解释是，它表示 O。他没有点击任何东西。所以所选的内容将变成蓝色，而不是任何特定的单元格。现在，有时你会希望它是一个特定的单元格。在这种情况下，点击录制宏后，点击你想变成蓝色的内容或宏要执行的任何操作。O。
+- en: let's create a button and see if it worked。 So I'm going to go here to the developer
+    tab insert a form control button and I'll just click and drag to draw it on the
+    screen。 And I just need to click mark as reviewed， click O， there's my button。
+    And before I forget what it means， I better change the name here on the button
+    itself。 and I'll just click away from the button。 So let's say Jimmy Kinslow and
+    I have a great review。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们创建一个按钮，看看它是否有效。所以我将去开发者选项卡，插入一个表单控件按钮，我只需单击并拖动以在屏幕上绘制它。我只需要点击“标记为已审核”，点击
+    O，那里就是我的按钮。在我忘记它的意思之前，我最好在按钮本身上更改名称。我将单击按钮外的地方。假设 Jimmy Kinslow 和我有一个很棒的审核。
+- en: I can click on。name click reviewed， and it instantly highlighted his name in
+    just the exact color of blue that I wanted to use。 So I don't have to guess and
+    try to remember which of these was it。 I can just simply click to select and then
+    click reviewed and it changes the color。 Now。 if I want the whole row to be colored
+    in blue。 Like， let's say for salw cordew here。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以点击。名称点击已审核，它立即以我想要的确切蓝色高亮显示他的名字。因此，我不必猜测并试图记住其中的哪个。我可以简单地点击选择，然后点击已审核，它就会改变颜色。现在，如果我想让整行都变成蓝色，比如说对于
+    Salw Cordew。
+- en: I could click and drag to highlight the whole row， and then click reviewed。
+    And now the whole thing is turned blue。 Now， of course， at this point。 I could
+    create yet another macro that turns these names or whatever is selected yellow
+    if it's their turn to be reviewed next。 So I hope that these examples give you
+    some ideas for ways that you could use macros。
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以点击并拖动以高亮整行，然后点击已审阅。 现在，整行变成了蓝色。 当然，在这一点上，我可以创建另一个宏，如果这些名字或者选中的内容轮到审阅时，就将它们变成黄色。
+    希望这些例子能给你一些使用宏的想法。
+- en: You can make macros for many， many different things。 and then just create a
+    form control button linked to the macro。 and it really can save you a lot of time
+    and energy。 it'll help you easily and quickly jump from sheet to sheet。 Now， of
+    course。 in this particular workbook， there's only two sheets，Imagine what if I
+    had 10 or 20 sheets here。 it would be kind of hard to click on exactly the right
+    tab that I need to go to。 And so to have a button to take you to a particularly
+    important tab or sheet。 that really could be a beneficial time saver for you。
+    So let's say that at this point。
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以为很多不同的事情制作宏，然后创建一个链接到宏的表单控制按钮，这确实可以为你节省很多时间和精力。 它会帮助你快速从一个工作表跳转到另一个工作表。 当然，在这个特定的工作簿中，只有两个工作表，想象一下如果我这里有10或20个工作表，那确实很难准确点击到我需要的选项卡。因此，拥有一个按钮可以带你到特别重要的选项卡或工作表，确实能为你节省时间。
+    所以假设在这一点上。
+- en: I'm finished creating macros in this Excel spreadsheet。 there's one more important
+    step that you have to take whenever you're building macros into a spreadsheet。
+    And that is you go here to file in the upper left corner。 click and go to save
+    as because this spreadsheet has macros in it。
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我已经完成了在这个Excel电子表格中创建宏的工作。 当你在电子表格中构建宏时，还有一个重要的步骤就是要去左上角的文件，点击并选择另存为，因为这个电子表格中包含宏。
+- en: It's very important that I go here and click on this dropdown arrow。 and change
+    it from just Excel workbook to Excel macro enabledd workbook。 If you don't do
+    that。 It's not going to work in the future。 So I'll click save。 So now let's try
+    it out and see if it works。 Let's say to morrow。
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我必须去这里点击这个下拉箭头，把它从普通的Excel工作簿更改为启用宏的Excel工作簿。 如果你不这样做，未来就无法正常工作。 所以我会点击保存。 现在我们来试试看它是否有效。
+    假设是明天。
+- en: I need to work on that spreadsheet again， I can just open up。![](img/2bdad9b27f9903642b3c2b937f9c8ab5_2.png)
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我需要再次处理那个电子表格，我可以直接打开。![](img/2bdad9b27f9903642b3c2b937f9c8ab5_2.png)
+- en: '![](img/2bdad9b27f9903642b3c2b937f9c8ab5_3.png)'
+  id: totrans-38
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/2bdad9b27f9903642b3c2b937f9c8ab5_3.png)'
+- en: And look in my list of recently used spreadsheets， there it is。 And notice that
+    the suffix has an M at the end。 Typically in Microsoft Excel。 the suffix ends
+    in an S or an X。 But in this case， it's X， L S M for macro enabled。 Now。 watch
+    what happens when I double click to open it up because this spreadsheet has macros
+    in it。
+  id: totrans-39
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 看看我最近使用的电子表格列表，那里有。 注意后缀末尾有一个M。 通常在Microsoft Excel中，后缀以S或X结尾。 但在这种情况下，它是XLSM，表示启用宏。
+    现在，看看当我双击打开它时会发生什么，因为这个电子表格中包含宏。
+- en: At least the first time that you open it up， you'll probably get a security
+    warning。 macros have been disabled。 And so in order to use them， I have to click
+    enable content。 Now。 my macro should work。 and it does。![](img/2bdad9b27f9903642b3c2b937f9c8ab5_5.png)
+  id: totrans-40
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 至少在你第一次打开它时，你可能会看到一个安全警告，宏已被禁用。 所以为了使用它们，我必须点击启用内容。 现在，我的宏应该可以工作了。 而且确实可以！[](img/2bdad9b27f9903642b3c2b937f9c8ab5_5.png)
+- en: So thanks for watching。 I hope you found this tutorial to be helpful。 If you
+    did。 please click the like button below。
+  id: totrans-41
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 谢谢观看。 希望你觉得这个教程有帮助。 如果有，请点击下面的点赞按钮。

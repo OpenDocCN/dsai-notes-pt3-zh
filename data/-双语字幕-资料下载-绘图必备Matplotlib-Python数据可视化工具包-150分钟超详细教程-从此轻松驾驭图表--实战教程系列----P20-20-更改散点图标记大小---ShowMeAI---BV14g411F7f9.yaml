@@ -1,0 +1,117 @@
+- en: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P20：20）更改散点图标记大小
+    - ShowMeAI - BV14g411F7f9
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P20：20）更改散点图标记大小
+    - ShowMeAI - BV14g411F7f9
+- en: Okay， we're getting closer to the end here。 We've got a few more questions to
+    go through， though。 So let's keep rolling scatter plot marker size。 Or let's，
+    let's change this into a question。 How do you change the scatter plot。![](img/c145b6b0fe7ae6747470f17786d9ae72_1.png)
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好吧，我们越来越接近结尾了。不过还有几个问题要处理。所以让我们继续进行散点图标记大小。或者让我们把这个变成一个问题。你如何改变散点图。![](img/c145b6b0fe7ae6747470f17786d9ae72_1.png)
+- en: Marker size。 So let's get our graph here。 In this case， we are going to need
+    to change this to。![](img/c145b6b0fe7ae6747470f17786d9ae72_3.png)
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 标记大小。所以让我们看看我们的图表。在这种情况下，我们需要将其更改为。![](img/c145b6b0fe7ae6747470f17786d9ae72_3.png)
+- en: Scatter。Look at that。 So remember that we had like 1 thousand points here that
+    we're plotting。So that's why you see so many different points here。![](img/c145b6b0fe7ae6747470f17786d9ae72_5.png)
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 散点图。看看这个。所以记住我们在这里绘制了大约 1000 个点。这就是你为什么看到这么多不同的点。![](img/c145b6b0fe7ae6747470f17786d9ae72_5.png)
+- en: So， for the size。Well， let's just look at A X dot Sc。 This is a great habit
+    to get into， by the way。 Just look at the documentation。 Check out what the parameters
+    are。 This will help you a ton， a ton。 Okay， so we're gonna be going for this S
+    parameter here。😊。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以，关于大小。好吧，我们就看看 A X dot Sc。这是一个很好的习惯，顺便说一下。只需查看文档。检查一下参数。这会对你有很大帮助，真的很大帮助。好的，我们将关注这个
+    S 参数。😊
+- en: '![](img/c145b6b0fe7ae6747470f17786d9ae72_7.png)'
+  id: totrans-5
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/c145b6b0fe7ae6747470f17786d9ae72_7.png)'
+- en: '![](img/c145b6b0fe7ae6747470f17786d9ae72_8.png)'
+  id: totrans-6
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/c145b6b0fe7ae6747470f17786d9ae72_8.png)'
+- en: And if you look down here under parameters， S the marker size in points squared。
+    Okay， cool。 let's just tinker with it。And see what happens。 You can also pass
+    in an array like so you can pass in a shape for every。![](img/c145b6b0fe7ae6747470f17786d9ae72_10.png)
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你查看下面的参数，S 是点的标记大小（平方）。好的，酷。让我们来 tink。看看会发生什么。你还可以传递一个数组，这样你就可以为每个传递一个形状。![](img/c145b6b0fe7ae6747470f17786d9ae72_10.png)
+- en: Every or sorry， a size for every point。 But let's just start by passing an S
+    equals。 Let's try 10。 Whats 10 do10 makes it smaller。 So if we can go down to
+    5。Even go down to one。 look at that。 And then we get these kind of really tiny
+    little points here。 So we can change the size that way。What if we wanted the size
+    to vary。With the X。The X axis here。 So as our points have larger x values。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 每个点都有一个大小。但我们先通过传递 S 来开始。让我们试试 10。10 会怎样？10 让它变小。所以如果我们降低到 5。甚至降低到 1。看看这个。然后我们得到了这些非常小的小点。所以我们可以这样改变大小。如果我们想让大小随
+    X 变化呢？这里的 X 轴。随着我们的点有更大的 x 值。
+- en: maybe they get bigger。 Let's try that。![](img/c145b6b0fe7ae6747470f17786d9ae72_12.png)
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 也许它们会变大。我们试试看。![](img/c145b6b0fe7ae6747470f17786d9ae72_12.png)
+- en: Hey， look at that。 So they start off really small。 And actually。 I think we
+    do have a point of 0 in here， which is probably why this is yeah invalid value
+    encountered in the square root。 so。嗯。We might be， let's try adding a very small
+    value to this like 0。1。 There we go。 That fixes it。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 嘿，看看这个。所以它们一开始真的很小。实际上，我想我们这里有一个 0 的点，这可能是为什么这是不合法的值，导致平方根遇到问题。所以，嗯。我们可以试着给这个加一个非常小的值，比如
+    0.1。好了。这解决了。
+- en: '![](img/c145b6b0fe7ae6747470f17786d9ae72_14.png)'
+  id: totrans-11
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/c145b6b0fe7ae6747470f17786d9ae72_14.png)'
+- en: So you can see here that our sizes start out very small， and then they get bigger
+    as we go along。 And so this can lead you to do some kind of， you know， cool effects。
+    I don't know if they'd be useful for what you're trying to plot， but they can
+    look pretty cool。 at least。 You know， let's do。 Let's even do X。😊，Plus 。1， let's
+    multiply by 10 or something。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以你可以看到我们的大小一开始非常小，然后随着进展变得更大。所以这可以让你实现某种酷炫的效果。我不知道它们是否对你想要绘制的内容有用，但至少看起来挺酷。你知道，我们来做一下。让我们甚至做一下
+    X。😊，加上 1，我们乘以 10 或其他数字。
+- en: So we get really a bigger effect。 There we go， or we could pass in。We could
+    pass in y， for example。 and， it looks like because we can't have negative sizes。Now。
+    we're only showing the points for the positive Y。 So maybe we make this absolute
+    value of y。So that looks pretty funky。Or we could do。What does this go down to
+    like negative 100 So we could do y。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们得到一个更大的效果。好了，或者我们可以传递 y，例如。看起来因为我们不能有负的大小。现在。我们只显示正 Y 的点。所以也许我们让这个 y 的绝对值。看起来很奇特。或者我们可以做。这个下降到大约负
+    100。所以我们可以做 y。
+- en: Plus。Hundred and5。There you go。 And this is kind of big。 So， you know。 we're
+    just tinkering around at this point。 This doesn't necessarily。Y。So there you go。
+    You got your size option。 And by the way， this is going to be how you would do
+    this across kind of a lot of different graphs。 and， and actually， in fact， some
+    other。Some other plotting libraries in Python as well。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 加上。百和5。好了。这有点大。所以，你知道。我们现在只是在尝试。这并不一定。好吧。所以你看，你有了你的大小选项。顺便说一下，这将是你在许多不同图表中进行操作的方式。而且，实际上，Python中还有一些其他的绘图库。
+- en: So that's why I wanted to show you this that you can pass an array here for
+    the size。 And you can also， you can also do the same thing for color。![](img/c145b6b0fe7ae6747470f17786d9ae72_16.png)
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这就是我想展示给你的原因，你可以在这里传递一个数组作为大小。而且你也可以，颜色也可以做同样的事情。![](img/c145b6b0fe7ae6747470f17786d9ae72_16.png)

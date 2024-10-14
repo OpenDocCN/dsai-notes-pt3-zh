@@ -1,0 +1,171 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P51：52）使用数据类型工具 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P51：52）使用数据类型工具 - ShowMeAI - BV1uL411s7bt
+- en: '![](img/3423fb3330066a5b6f2412a63d529627_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/3423fb3330066a5b6f2412a63d529627_0.png)'
+- en: In this video， I'm going to show you how to use the Excel data types tools。
+    As you can see。 I have three spreadsheets in this workbook， one with a list of
+    US states。 one with a list of countries and a third with a list of just a few
+    companies jumping back to the US states spreadsheet。 I want to point out that
+    in Microsoft 365 versions of Excel。 and that includes Windows。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个视频中，我将向你展示如何使用 Excel 数据类型工具。正如你所看到的，我在这个工作簿中有三个电子表格，一个是美国州的列表，一个是国家的列表，第三个是只有少数几家公司，跳回美国州的电子表格。我想指出的是，在
+    Microsoft 365 版本的 Excel 中，包括 Windows。
+- en: Mac online and perhaps some other versions of Excel。 also。 if you go to the
+    data tab and look in the data types group， you should see stocks and geography。
+    If you've seen those and wondered what they are， what they're for this video is
+    for you。 But basically， what these buttons do is they enable you to easily and
+    quickly pull in information about stocks and also about geography。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Mac 在线版和其他一些 Excel 版本也是如此。如果你去数据标签并查看数据类型组，你应该能看到股票和地理信息。如果你见过这些并想知道它们是什么，用途是什么，这个视频就是为你准备的。但基本上，这些按钮的作用是让你轻松快速地获取关于股票和地理的信息。
+- en: Now， if you don't see the data types group on the data ribbon， something to
+    check is go to file。And go down to account and make sure that you're signed in
+    here at the left that you're signed in to Onedrive and that you have that connection。
+    It's not enough just that you've activated Microsoft 365。 You have to be signed
+    in to your online Onedrive。 Once you've done that。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，如果你在数据功能区上看不到数据类型组，可以检查一下，去文件，向下滚动到账户，确保你在左侧登录到了 OneDrive，并且有这个连接。仅仅激活 Microsoft
+    365 是不够的。你必须登录到你的在线 OneDrive。一旦你完成了这些。
+- en: you should see stocks and geography in the data types group on the data ribbon。
+    Okay。 let's take a look at how this works。 I'm going to click a to select the
+    entire column a。 the whole list of US states。 and then I'll just go over here
+    and click geography。 And what happens is I get this interesting little card that
+    appears here at the left of each of the states。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你应该在数据功能区的数据类型组中看到股票和地理信息。好的，让我们看看这怎么运作。我将点击 A 选择整个 A 列，即所有美国州的列表。然后我只需在这里点击地理信息。结果是在每个州的左侧出现了这个有趣的小卡片。
+- en: Now， if I click on a state， I get a little button that pops up that lets me
+    insert data about Alabama in this case。 Maybe I'm interested in the median household
+    income。 So I click it。 and there it is。 I can do the same for Alaska。 Just click
+    on the cell that has the card。 click the pop up button。Medn household income。
+    There we go。 Now， in most cases， This isn't going to be good enough。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，如果我点击一个州，会弹出一个小按钮，让我插入关于阿拉巴马州的数据。也许我对中位家庭收入感兴趣。所以我点击它。数据就在那里。我对阿拉斯加也可以这样做。只需点击带有卡片的单元格，点击弹出按钮。中位家庭收入。就是这样。现在，在大多数情况下，这还不够好。
+- en: You're not going to want to just pull in information about one or two of the
+    items in the list。 Instead， typically， you'll want information on all of them。
+    So I'm going to undo to take away the cards that were placed there。 And now I'm
+    going to select column a insert table。 click O， And now that this is a table。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你不会只想获取列表中一两个项目的信息。相反，通常你会想要获取所有项目的信息。所以我要撤销以去掉放置在那里的卡片。现在我将选择列 A 插入表格。点击 O，现在这就是一个表格。
+- en: Watch what happens when I again， select a go to data。 select geography。 Now，
+    yes。 I get the cards again。 I get the button。 but now this button works for all
+    of the items in the table。 So I'll click the button。 I'm interested in median
+    household income。 I get a warning that it may take some time。 That's okay。 I just
+    clicked O。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 看我再次选择后，转到数据，选择地理信息时会发生什么。现在，是的。我又得到了卡片。我得到了按钮，但现在这个按钮适用于表格中的所有项目。所以我会点击这个按钮。我对中位家庭收入感兴趣。我收到一个警告，可能需要一些时间。这没关系。我刚点击了
+    O。
+- en: And it's now pulling in information on household income about each of the 50
+    states。 in the United States。 And this is being pulled from the Internet。 It's
+    current information now。I get another pop up button here so I can click that and
+    choose something else that I'm interested in。 Okay， maybe the largest city。 again，
+    I'm getting the warning。 I'm gonna check this box。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在它正在拉取关于美国50个州的家庭收入信息。这些信息来自互联网。现在是最新的信息。我这里又得到一个弹出按钮，所以我可以点击它并选择我感兴趣的其他内容。好吧，也许是最大的城市。同样，我收到了警告。我将勾选这个框。
+- en: Don't show this message again。 I understand it's gonna take a little time。 And
+    there we have the largest city As always in Excel。 if the information doesn't
+    fit inside the column， I can just double click between the column letters。 So
+    between C and D， I double clicked and it's now the perfect width。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 不再显示此消息。我明白这会花一点时间。然后我们得到了最大的城市。像往常一样在Excel中，如果信息不适合列中，我可以在列字母之间双击。因此，在C和D之间，我双击了，现在正好合适。
+- en: and the pop up button appears again。 How about persons per household that sounds
+    interesting to me。 So I select it And now that information is gonna be added to
+    this spreadsheet。 So this is a great way to build a spreadsheet quickly。 Anytime
+    your spreadsheet has anything to do with geography。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 弹出按钮又出现了。每个家庭的人数听起来很有趣。所以我选择了它，现在这些信息将被添加到这个电子表格中。这是快速构建电子表格的好方法。每当你的电子表格与地理有关时。
+- en: It can be for cities for states for countries and so on。 Now。 another thing
+    you can do with this is you can click on the actual card symbol here at the left
+    and look what it does。 It gives you basically an overview of in this case。😊，The
+    state of Arizona。 I get the flag。 I get the capital city， the current leadership
+    of the state and on and on and on all sorts of information。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 对于城市、州、国家等，这都是可以的。现在，你可以在左侧实际点击这个卡片符号，看看它做了什么。它基本上提供了在这种情况下的概述。😊，亚利桑那州。我得到了国旗、首府、当前的州领导等各种信息。
+- en: The data comes from Wikipedia。 the US census and perhaps other sources as well。
+    All right。 let's try the same kind of thing。 But with countries。 I'll click column
+    a。 I'll go to insert to turn this into a table， click O， I'll go to data and click
+    geography。 It looks like it worked。 It's added cards next to all of the countries
+    that it recognized。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 数据来自维基百科、美国人口普查，或许还有其他来源。好的，让我们尝试同样的事情。但对于国家。我会点击A列，去插入把它变成表格，点击O，进入数据并点击地理。看起来它成功了。它在所有识别的国家旁边添加了卡片。
+- en: it looks like I have some mistakes in my list of countries。 And so some of these。
+    it couldn't understand， and it put a question mark next to them。 but just like
+    with the states。 I can click on the card here at the left to see an overview of
+    the country。 and then I can click this button that popped up to select the information
+    that I want to display in the spreadsheet。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 看起来我在我的国家列表中有一些错误。所以其中一些。它无法理解，并在旁边加了一个问号。但是就像各州一样。我可以点击左侧的卡片查看该国的概况。然后我可以点击弹出按钮，选择我想在电子表格中显示的信息。
+- en: I'll just pick one more How about birth rate。And it pulls in that information。
+    Now。 let's move on to the third spreadsheet in the workbook。 stocks stocks work
+    similarly。 insert a table， click O， go to the data tab But this time， I'll click
+    the stocks button。 Excel searches for and tries to identify the companies in my
+    list。 Now， in the case of ebay。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我再选一个，出生率怎么样。它拉取了该信息。现在，让我们继续到工作簿中的第三个电子表格。股票，股票的操作类似。插入表格，点击O，进入数据选项卡。但这次，我会点击股票按钮。Excel会搜索并尝试识别我列表中的公司。现在，对于eBay来说。
+- en: it's having some trouble。 over here in the data selector panel。 They have some
+    suggested results to choose from。 And a lot of these look good。 I'll just click
+    this one here。 And now it has fixed the error that was there。 I'm going double
+    click between A and B to make sure the information fits in the column And then
+    I can click this symbol here。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它遇到了一些问题。在数据选择面板中，他们有一些建议的结果可供选择。这些看起来都不错。我就点击这个。现在它修复了之前的错误。我会在A和B之间双击，以确保信息适合列中，然后我可以点击这个符号。
+- en: the add column pop up button， and then I can go down and choose the information
+    I would like to display。 How about the number of employees in the company。 And
+    I'll pick one more。 I'll go to the current price of their stock。 And there we
+    go。 Now， especially in this case。It might have been better instead of me selecting
+    the entire column A。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 添加列弹出按钮，然后我可以向下选择我想要显示的信息。关于公司的员工人数呢？我再选一个。我将查看他们股票的当前价格。好了，现在，特别是在这种情况下，可能更好的是我没有选择整个A列。
+- en: I probably should have just clicked and dragged to select the six companies
+    that are listed here。 The reason why is because it's trying to fill in this information
+    all the way down as far as my table exists。 and that is overwhelming Excel a little
+    bit。 But hopefully you can see the potential in using the stocks and geography
+    buttons in Microsoft Excel in the future。 hopefully more data types will be added
+    into Excel。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可能应该只是点击并拖动来选择这里列出的六家公司。原因是它试图填充所有信息，直到我的表格结束，这让Excel有点不知所措。但希望你能看到在未来使用Microsoft
+    Excel中的股票和地理按钮的潜力，希望Excel能添加更多的数据类型。
+- en: '![](img/3423fb3330066a5b6f2412a63d529627_2.png)'
+  id: totrans-19
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/3423fb3330066a5b6f2412a63d529627_2.png)'

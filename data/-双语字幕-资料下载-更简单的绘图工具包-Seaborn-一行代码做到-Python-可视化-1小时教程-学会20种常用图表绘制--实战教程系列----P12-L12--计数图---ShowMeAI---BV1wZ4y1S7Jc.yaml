@@ -1,0 +1,63 @@
+- en: 【双语字幕+资料下载】更简单的绘图工具包 Seaborn，一行代码做到 Python 可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ -
+    P12：L12- 计数图 - ShowMeAI - BV1wZ4y1S7Jc
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】更简单的绘图工具包Seaborn，一行代码做到Python可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ - P12：L12-计数图
+    - ShowMeAI - BV1wZ4y1S7Jc
+- en: And now I want to talk about count plots now a count plot is kind of like a
+    bar plot。 but the estimator is just simply going to count the number of occurrences
+    and how you call it is we say count plot and X let's say we want to find out the
+    number of males and females from our data frame that we're working with and there
+    you can see the total number of males versus the total number of females and like
+    I said。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我想谈谈计数图，计数图有点像条形图，但估算器只是简单地计算出现的次数。我们可以称之为计数图，并在X轴上，比如说我们想找出数据框中男性和女性的数量，你可以看到男性总数与女性总数的比较，正如我所说的那样。
+- en: you can come right after this function and click on shift and tab to see all
+    of the additional options。 there's Hue which we've already talked about can change
+    the order could change the color we're working with and pallets and saturation
+    and I'm going talk about Dodge and all of these other different options as we
+    continue down below and you can also read about all of the different things that
+    are available and the more specifics on all of the different parameters。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以在这个函数后点击Shift和Tab查看所有额外选项。这里有Hue，我们之前已经讨论过，可以改变顺序，改变我们正在使用的颜色、调色板和饱和度，我将谈论Dodge以及其他不同选项，随着下面内容的深入，你还可以阅读所有不同可用的内容和所有不同参数的更多细节。
+- en: '![](img/1e01839902a44c247e317b96b48ed9df_1.png)'
+  id: totrans-3
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/1e01839902a44c247e317b96b48ed9df_1.png)'
+- en: '![](img/1e01839902a44c247e317b96b48ed9df_2.png)'
+  id: totrans-4
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/1e01839902a44c247e317b96b48ed9df_2.png)'
+- en: '![](img/1e01839902a44c247e317b96b48ed9df_3.png)'
+  id: totrans-5
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/1e01839902a44c247e317b96b48ed9df_3.png)'
+- en: '![](img/1e01839902a44c247e317b96b48ed9df_4.png)'
+  id: totrans-6
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/1e01839902a44c247e317b96b48ed9df_4.png)'
+- en: '![](img/1e01839902a44c247e317b96b48ed9df_5.png)'
+  id: totrans-7
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/1e01839902a44c247e317b96b48ed9df_5.png)'
+- en: '![](img/1e01839902a44c247e317b96b48ed9df_6.png)'
+  id: totrans-8
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/1e01839902a44c247e317b96b48ed9df_6.png)'
+- en: As well Okay， so that's the count plot。 And now I want to talk about box。![](img/1e01839902a44c247e317b96b48ed9df_8.png)
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，这就是计数图。现在我想谈谈箱形图。![](img/1e01839902a44c247e317b96b48ed9df_8.png)

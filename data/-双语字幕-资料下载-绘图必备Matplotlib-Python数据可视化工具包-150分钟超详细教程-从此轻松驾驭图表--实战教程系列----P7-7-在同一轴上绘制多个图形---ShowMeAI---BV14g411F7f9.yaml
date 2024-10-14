@@ -1,0 +1,591 @@
+- en: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P7：7）在同一轴上绘制多个图形
+    - ShowMeAI - BV14g411F7f9
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P7：7）在同一轴上绘制多个图形
+    - ShowMeAI - BV14g411F7f9
+- en: So let's create a new section right now。 Let's call it section number 3， section
+    number 3。 And so for this section， we're going to look at plotting multiple graphs
+    on the same axes。 So the same axes。 So remember。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_1.png)
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在让我们创建一个新部分。我们称之为第 3 部分，第 3 部分。所以在这一部分，我们将看看在同一坐标轴上绘制多个图形。因此同一坐标轴。所以记得。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_1.png)
+- en: Fig A X equals Pl T dot subplots。 and then PL T dot show。 This is gonna give
+    us one figure。 So one image， you know， and one axes。 So A X E S there。 So one
+    place where we're gonna plot something。 So for this one。 we're gonna look at multiple
+    graphs on the same axes。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 图 A X 等于 PL T 点子图，然后 PL T 点显示。这将给我们一个图形。所以一幅图像，你知道，还有一个坐标轴。所以 A X E S 在那里。所以我们将绘制的一个地方。对于这个，我们将查看同一坐标轴上的多个图形。
+- en: So we're not going be looking we're not going to be looking at multiple axes
+    like this。 we're going be plotting on the same axes。 okay。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_3.png)
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们不会像这样查看多个坐标轴。我们将在同一坐标轴上绘制。好的。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_3.png)
+- en: So， let's try。A simple plot， first。Let's go back to our simple mathematical
+    equations that we were using earlier。 So we'll do Ax dot plot。And let's take a
+    look at our x。 So our x is still there。Our why is still there。Let's take a look
+    at x and Y here。 What is this， This is a parabola。 Allright。 beautiful。Now， if
+    we want to plot another thing on here， let's do A X dot plot。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，让我们试试。首先是一个简单的图形。让我们回到之前使用的简单数学方程。所以我们将进行 Ax 点图。现在让我们看看我们的 x。我们的 x 仍然在那里。我们的
+    y 也还在。让我们看看这里的 x 和 Y。这是什么？这是一个抛物线。很好。现在，如果我们想在这里绘制另一个图形，我们来做 A X 点图。
+- en: Let's go back to our damped。Let's see why damped oscillation， remember。And there
+    you go。 So our parabola got very squished here。 You can see because our， our y
+    axis suddenly got very big。 So what if instead of， instead of a parabola here，
+    what if we do like x。😊，Cubed， let's try that。 Alright， so that looks a little
+    bit better， little bit better there， but。Either way。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们回到我们的阻尼。让我们看看为什么是阻尼振荡，记住。看吧。我们的抛物线在这里变得非常扁平。你可以看到，因为我们的 y 轴突然变得非常大。那么，如果这里不是一个抛物线，而是
+    x 的立方呢？😊让我们试试。好的，那看起来稍微好一点，但不管怎样。
+- en: you can now see that we have two graphs on the same axes， we have y equals x
+    cubed。 and then we have our damped oscillation graph here。And mat plotot Li went
+    ahead and plotted these in two separate colors for us。 Now。 whenever you start
+    plotting things on the same axes， you very often want to add labels。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在你可以看到我们在同一坐标轴上有两个图形，y 等于 x 的立方，然后我们有我们的阻尼振荡图。Matplotlib 自动为我们绘制了这两种不同颜色的图形。现在，每当你开始在同一坐标轴上绘制东西时，你通常会想添加标签。
+- en: And this is very easy。 You just add a label parameter inside of your graph here。
+    And so we can say。 you know， for this one， maybe this is just x cubed。And maybe
+    the label for this one is damped oscillation。So we add labels， but if we run this。
+    nothing else happens。 So this is where our handy dandy Ax dot legend method comes
+    in。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这很简单。你只需在图形中添加标签参数。所以我们可以说，你知道，对于这个，也许就是 x 的立方。而这个的标签是阻尼振荡。所以我们添加了标签，但如果我们运行这个，其他的没有发生。这就是我们方便的
+    Ax 图例方法派上用场的地方。
+- en: So this is something that you'll probably use all the time。 Anytime you add
+    labels to your graphs。 And then you want to show those labels in the graphs。 Just
+    add this A X dot legend。 We run this mapplotlib automatically puts a legend down
+    here for us with the color。😊。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这是你可能会一直使用的东西。每次你给图形添加标签时。然后你想在图形中显示这些标签。只需添加这个 A X 图例。我们运行这个，matplotlib 会自动在这里为我们放置一个图例，带有颜色。😊
+- en: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_5.png)'
+  id: totrans-9
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_5.png)'
+- en: And。It'll put the style of the graph， too。 So， you know， if this was a scatter
+    plot。 these would be little dots rather than lines。 And we see that our blue plot
+    here is X cubed。 and our orange plot is the damped oscillation。 So that's a simple
+    overview of how you use the same axes object。To call the plot method multiple
+    times， you call it multiple times with different data。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 而且。这也会设置图形的样式。所以，如果这是一个散点图，这些将是小点而不是线。我们看到这里的蓝色图形是 x 的立方，而我们的橙色图形是阻尼振荡。所以这是如何使用同一坐标轴对象的简单概述。要多次调用绘图方法，你要用不同的数据多次调用它。
+- en: and that plots your data on the same axes here。Now， let's go back to our heart
+    disease data。 And let's say that we want to have a scatter plot。 We want to go
+    back to a scatter plot of plotting one numeric variable against another to look
+    for a relationship。 but we also。Want to color。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这会将你的数据绘制在相同的坐标轴上。现在，让我们回到心脏病数据。假设我们想要一个散点图。我们想回到绘制一个数值变量与另一个数值变量的散点图，以寻找关系。但我们还想着色。
+- en: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_7.png)'
+  id: totrans-12
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_7.png)'
+- en: By labels， we want to color by labels。 So why might we want to do this， Well。
+    let's say that we want to look at the relationship。Of let's go back。 Let's go
+    back to our data frame。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_9.png)
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 按标签，我们想根据标签着色。那我们为什么想这样做呢？好吧。假设我们想看看关系。让我们回去。让我们回到我们的数据框。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_9.png)
+- en: Let's。Say we want to look at the relationship between T rest， BPS。 which if
+    we go back to our cagggle data here， back to our Cale data。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_11.png)
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设我们想看看静息血压和胆固醇之间的关系。如果我们回到我们的`cagggle`数据，这里，回到我们的`Cale`数据。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_11.png)
+- en: T rest， B P， this is the resting blood pressure。 So this is the resting blood
+    pressure。 and then cholesterol。 This is the serum cholesterol in was this milligrams
+    per decilier or something like that。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_13.png)
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: '`T rest， B P`，这是静息血压。所以这是静息血压。然后是胆固醇。这是血清胆固醇，单位是每分升多少毫克。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_13.png)'
+- en: So let's say that we want to look at the relationship between the resting blood
+    pressure。And the cholesterol。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_15.png)
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以假设我们想看看静息血压与胆固醇之间的关系。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_15.png)
+- en: And we want to see if there's any difference in the that relationship。 as far
+    as people who have heart disease and people who don't。 So we want to color by
+    people who have heart disease。 Let's。 let's take a look at kind of what we mean
+    here and how we might do that。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们想看看在有心脏病和没有心脏病的人之间，这种关系是否有任何不同。因此我们想根据是否有心脏病来着色。让我们看看我们在这里的意思，以及我们可能怎么做。
+- en: So we'll start with our basic formula。So we've got our subplots here， we're
+    creating our figure。 creating our axes at the very end， we call Plt。 show to show
+    that plot。And now if we just wanted to do this normal scatter plot。If we just
+    wanted to do a normal scatter plot， we might say， you know。Df。T rest BPS。 values。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们将从基本公式开始。我们在这里有子图，正在创建图形。最后创建坐标轴，调用 `plt.show` 来显示该图。现在如果我们只想做一个普通的散点图。如果我们只是想做一个普通的散点图，我们可能会说，你知道的。`df.T.rest
+    BPS.values`。
+- en: And we want to plot that against cholesterol dot values。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_17.png)
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们想要将其绘制与胆固醇的值。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_17.png)
+- en: And here is our plot。 We've got that resting blood pressure。On the X axis。 we
+    have our cholesterol and the y axis。But we want to color this。 We want to color
+    this by if the person has heart disease or not。 So looking at our original data
+    here。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_19.png)
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是我们的图。我们在X轴上有静息血压。我们在Y轴上有胆固醇。但是我们想要为此着色。我们想根据这个人是否有心脏病来着色。所以看看我们原始的数据。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_19.png)
+- en: You can see target。So target of1， and let's just go back to our data to verify。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_21.png)
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以看到目标。所以目标是1，让我们回到数据中验证一下。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_21.png)
+- en: A target。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_23.png)
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 一个目标。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_23.png)
+- en: da da da， let's see。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_25.png)
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 嘀嘀嘀，让我们看看。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_25.png)
+- en: All right， experiments with the Cleveland database。So values 1，2，3。4 all indicate
+    heart disease and a value of 0 indicates no heart disease， I think in our data
+    here。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_27.png)
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好吧，实验与克利夫兰数据库。值1、2、3、4都表示心脏病，值0表示没有心脏病，我想在我们的数据中。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_27.png)
+- en: We just have。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_29.png)
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们只有。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_29.png)
+- en: Ope， sorry， value。Counts。Yeah， we just have ones and zeros in our data here。
+    So one indicates presence of heart disease。0 indicates absence of heart disease。
+    So we want to color。By this column， we want to color each point by whether it's
+    heart disease or not。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 哦，抱歉，值。计数。是的，我们在这里的数据只有1和0。所以1表示心脏病的存在。0表示心脏病的缺失。所以我们想要着色。根据这一列，我们想为每个点着色，看它是否有心脏病。
+- en: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_31.png)'
+  id: totrans-27
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_31.png)'
+- en: So using this， we can use the same principle of plotting multiple graphs on
+    the same axes。 So in this case。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_33.png)
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以使用这个，我们可以用同样的原则在同一坐标轴上绘制多个图形。因此在这种情况下。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_33.png)
+- en: Let's say， let's， let's take a look。At our targets。Let's say we want to get
+    only the rows。Where this equals 0。So we set this equal to  zero， that creates
+    a Boolean mask here。 so essentially you know it does this row equals 0 and it
+    says false or true。We pass this Boolean mask back into our data frame in order
+    to index down to just these rows here。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设，让我们看看。我们的目标。假设我们只想获取等于0的行。所以我们将其设为零，这创建了一个布尔掩码。因此，基本上你知道这行是否等于0，它会显示为false或true。我们将这个布尔掩码传回到我们的数据框中，以便索引到这些行。
+- en: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_35.png)'
+  id: totrans-30
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_35.png)'
+- en: And then we could call this， you know， we could call this like our DF subset
+    or something like that。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_37.png)
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们可以称之为，我们可以称之为我们的DF子集或类似的东西。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_37.png)
+- en: So， let's。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_39.png)
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以，让我们。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_39.png)
+- en: Let's try to go through this whole thing up here。 So D F subset。Equals this。
+    And now。 rather than passing in the whole Df， maybe we just want to pass it in
+    this subset。 So these are just going to be the rows。Where the person does not
+    have heart disease。
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们试着逐步进行上面的内容。DF子集。等于这个。现在。与其传入整个DF，不如我们只传入这个子集。所以这些只会是没有心脏病的人的行。
+- en: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_41.png)'
+  id: totrans-34
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_41.png)'
+- en: So let's say first plot the data where the individual does not have heart disease。So
+    let's do this scatter plot first。 And there there you go。 You see that the scatter
+    plot thinned out pretty nicely there。 So we're only plotting about half of our
+    points now。
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以假设先绘制没有心脏病的个体的数据。先做这个散点图。这样可以。你看到散点图变得相当不错。因此我们现在只绘制了大约一半的点。
+- en: We're only plotting about half of our data points。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_43.png)
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们只绘制了大约一半的数据点。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_43.png)
+- en: So let's copy this whole thing。Let's copy this whole thing and go down。 and
+    now maybe we set DF subset equal to where the person does have heart disease。And
+    then。 we can plot。Again， so second。Second， plot the data where the individual
+    does have heart disease。
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以让我们复制整个内容。让我们复制整个内容并向下移动。现在也许我们设置DF子集等于有心脏病的人的数据。然后。我们可以再绘制。第二。第二，绘制个体有心脏病的数据。
+- en: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_45.png)'
+  id: totrans-38
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_45.png)'
+- en: And look at that matplot Lib。Already colors these points differently based on
+    whether or not the person has heart disease or not。 And now all we have to do
+    is like we did before。 let's add a label。 So let's say label equals。 we'll call
+    this maybe healthy。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_47.png)
+  id: totrans-39
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 看那条matplot Lib。已经根据是否有心脏病将这些点着上不同的颜色。现在我们要做的就像之前一样。我们添加一个标签。假设标签等于。我们叫这个也许是健康的。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_47.png)
+- en: And this label will say， heart disease。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_49.png)
+  id: totrans-40
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这个标签将显示，心脏病。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_49.png)
+- en: And remember that we need to add our handy dandy AX do legend down here。And
+    there you go。So essentially， what we've done here is we've plotted two different
+    scatter plots on the same axes。 the first one。These are the X values， and these
+    are the Y values of the healthy patients。 The second one， these are the X values，
+    and these are the y values of the patients with heart disease。
+  id: totrans-41
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 记住我们需要在这里添加我们方便的AX do图例。就这样。因此，基本上我们在同一坐标轴上绘制了两个不同的散点图。第一个。这些是健康患者的X值，这些是Y值。第二个，这些是有心脏病患者的X值，这些是Y值。
+- en: matpllib automatically does the coloring for us， and we add a label， and we
+    add a legend。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_51.png)
+  id: totrans-42
+  prefs: []
+  type: TYPE_NORMAL
+  zh: matpllib自动为我们上色，我们添加一个标签，并且添加一个图例。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_51.png)
+- en: And there you go。 We now have a scatter plot where we're coloring by labels。
+    That's pretty cool。😊。Now， let's say that we had a lot of values here。 and we。
+    we wanted to do this same kind of coloring scatter plot for a lot of different
+    values。 Well。 this is a lot of redundant code here。 And it is very clear because
+    we're explicitly spelling out。
+  id: totrans-43
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 就这样。我们现在有一个通过标签上色的散点图。这很酷。😊现在，假设我们这里有很多值。我们想为很多不同的值做同样的上色散点图。那么。这是很多冗余代码。而且因为我们明确列出了，显而易见。
+- en: hey， you know， plot this first and then plot this second。 but there is another
+    way that we could do it。 And I want to show you that really quick。 So I'm going
+    to copy this down to the second cell。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_53.png)
+  id: totrans-44
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 嘿，你知道，先绘制这个，然后再绘制第二个。但我们还有另一种方式可以做到这一点。我想快速给你展示。所以我要把这个复制到第二个单元。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_53.png)
+- en: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_54.png)'
+  id: totrans-45
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_54.png)'
+- en: So in this case， we're going to loop through our different values。 so basically
+    the only thing that changes in this code other than the label that we set。Is the
+    way that we filter our data down based on the value of target here。 So if we look
+    at Df target again。
+  id: totrans-46
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以在这种情况下，我们将循环遍历不同的值。基本上，这段代码中唯一变化的内容除了我们设置的标签外，就是我们根据这里的目标值来过滤数据的方式。所以如果我们再次查看DF目标。
+- en: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_56.png)'
+  id: totrans-47
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_56.png)'
+- en: DF target， if we want to get the unique values in this series， then we just
+    do dot unique。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_58.png)
+  id: totrans-48
+  prefs: []
+  type: TYPE_NORMAL
+  zh: DF目标，如果我们想要获取这个系列中的唯一值，那么我们只需点唯一值。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_58.png)
+- en: And this shows us that we only have two unique values，0 and 1， and then we can
+    iterate through these。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_60.png)
+  id: totrans-49
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这向我们展示了我们只有两个唯一值，0和1，然后我们可以遍历这些值。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_60.png)
+- en: What does that look like， Well we can say4。Target value。In Df target dot unique。So
+    we're going to loop， DF target dot， there we go。Dot unique。 so we're going to
+    loop through each target value through 0 and1。Let's go ahead and indent this。And
+    now， rather than setting this equal to 0 explicitly。
+  id: totrans-50
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那看起来怎么样呢？我们可以说4，目标值，在DF目标的唯一值中。所以我们将循环，DF目标，来了。点唯一值。我们将循环遍历每个目标值，0和1。让我们继续缩进这一部分。现在，不再明确地将其设置为0。
+- en: we're going to set this equal to the target value that we're iterating through。
+    and I'll delete this comment。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_62.png)
+  id: totrans-51
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们将这个值设为我们正在迭代的目标值。然后我会删除这个注释。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_62.png)
+- en: And while we're at it， I'm going to remove this label for right now。And we can
+    delete this second plot here。So let's and then maybe maybe actually I will pass
+    in。 I'll pass in label equals。Target。Target value， and then we'll keep the legend
+    here。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_64.png)
+  id: totrans-52
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 而且趁此机会，我现在要删除这个标签。我们可以删除这里的第二个图表。所以让我们，或者也许我实际上会传入。传入标签等于目标，目标值，然后我们将保留图例。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_64.png)
+- en: And there you go。 So we just did the exact same plot。 except you'll see that
+    now map plot lib because of this DF target dot unique。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_66.png)
+  id: totrans-53
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 就这样。所以我们刚刚做了完全相同的图表。你会看到现在映射绘图的lib因为这个DF目标的唯一值。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_66.png)
+- en: It has switched the order that we're plotting， which means that the colors are
+    flipped here。 so0。 you know or healthy is now orange and heart disease is now
+    one just because of the ordering that these values come out of DF target do unique。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_68.png)
+  id: totrans-54
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它切换了我们绘制的顺序，这意味着颜色被翻转了。所以，你知道，健康现在是橙色，而心脏病现在是1，仅仅因为这些值在DF目标中的输出顺序。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_68.png)
+- en: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_69.png)'
+  id: totrans-55
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_69.png)'
+- en: And our label is now just this target value。So if we wanted to have a more descriptive
+    label here。 this is where you could start doing something like this。 So maybe
+    we have a dictionary。 maybe we have a dictionary called label mapping or something
+    like that。 And we want to map a label value or a target value of 0。Too healthy。
+  id: totrans-56
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 而我们的标签现在仅仅是这个目标值。如果我们想在这里有一个更具描述性的标签，这就是你可以开始做类似的事情的地方。所以也许我们有一个字典，可能我们有一个叫做标签映射的字典，或者类似的东西。我们想要映射一个标签值或目标值为0，健康。
+- en: And we want to map a target value of one。Qiu。heart disease。And now。 rather than
+    our label equaling the target value， we'll have our label equal label mapping。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_71.png)
+  id: totrans-57
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们想要映射目标值为1，Qiu，心脏病。而现在，我们的标签不再等于目标值，而是让我们的标签等于标签映射。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_71.png)
+- en: Of the target value。 So I run this cell so that we get our dictionary。And now
+    if I run this again。 you'll see that we're passing in our label， which is mapped
+    from this dictionary。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_73.png)
+  id: totrans-58
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 目标值。所以我运行这个单元，以便获取我们的字典。现在如果我再次运行这个，你会看到我们传入了我们的标签，这是从这个字典中映射过来的。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_73.png)
+- en: And this is a kind of trick that you can use in a lot of different situations。
+    could we could have a we could have a color mapping dictionary here where maybe。
+    you know if the label is 0， we want that to be blue。And if the label is one。 we
+    want that to be red or something like that。 So you can do all different kinds
+    of mapping tricks with dictionaries like that like this。
+  id: totrans-59
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是一种可以在许多不同情况下使用的技巧。我们可以在这里有一个颜色映射字典，也许。如果标签是 0，我们希望它是蓝色。如果标签是 1，我们希望它是红色或其他什么。因此，你可以使用这样的字典进行各种不同类型的映射技巧。
+- en: But this is an example of how you could take two explicit calls if you wanted
+    and turn them into one。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_75.png)
+  id: totrans-60
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但这是一个示例，说明如果你想的话，如何将两个明确的调用合并为一个。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_75.png)
+- en: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_76.png)'
+  id: totrans-61
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_76.png)'
+- en: For loop call that iterates all over all of the unique values。 Now， while we're
+    on this scatter plot。 let's say that we have one specific point that we want to
+    call out somewhere in this scatter plot。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_78.png)
+  id: totrans-62
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 循环调用遍历所有唯一值。现在，当我们在这个散点图上时，假设我们有一个特定的点想要突出显示在这个散点图的某个地方。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_78.png)
+- en: This is something you might want to do for various reasons。 maybe you want to
+    call out a single bar in a bar chart or you want to call out a single point in
+    a scatter plot。This is a pretty common thing to want to do。 So let's talk about
+    how to do it with this scatter plot。 So I will say。Scatter plot。Calling out a
+    single point。 In this case。
+  id: totrans-63
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这可能是你出于各种原因想要做的事情。也许你想在柱状图中突出一个单一的条，或者在散点图中突出一个单一的点。这是一个非常常见的需求。因此，让我们讨论一下如何在这个散点图中做到这一点。我要说的是：散点图，突出一个单一的点。在这种情况下。
+- en: the way that we're going to call it out is using color。 So if we do A X。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_80.png)
+  id: totrans-64
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们将突出显示的方式是使用颜色。所以如果我们做 A X。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_80.png)
+- en: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_81.png)'
+  id: totrans-65
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_81.png)'
+- en: Dot scatter question mark。 Let's see what options we have here。 So in addition
+    to passing in X and Y。 which we've been doing， we have an S parameter， A C parameter。
+    We got a bunch of other parameters here。嗯。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_83.png)
+  id: totrans-66
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 点散布问号。让我们看看我们有什么选项。因此，除了传入 X 和 Y，正如我们一直在做的，我们还有一个 S 参数，A C 参数。我们这里有一堆其他参数。嗯。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_83.png)
+- en: So S is going to be the size。The marker size here and C is going to be the marker
+    color。 So we're going to take advantage of that marker color in just a second。
+    So let's start with our normal。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_85.png)
+  id: totrans-67
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以 S 将代表大小。这里的标记大小和 C 将代表标记颜色。我们将在稍后利用这个标记颜色。现在让我们从正常开始。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_85.png)
+- en: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_86.png)'
+  id: totrans-68
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_86.png)'
+- en: Start with our normal。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_88.png)
+  id: totrans-69
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 从我们的正常开始。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_88.png)
+- en: Template here， Plt。splots。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_90.png)
+  id: totrans-70
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这里的模板，Plt.splots。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_90.png)
+- en: Let's do A X dot scatter。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_92.png)
+  id: totrans-71
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们做 A X 点散布。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_92.png)
+- en: And da da。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_94.png)
+  id: totrans-72
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 嘟嘟。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_94.png)
+- en: Let's do。A dot scatter。And we're going to do all of the points here。 So let's
+    do D F。T S， B，PS。 DF cholesterol。 Let's take a look at this。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_96.png)
+  id: totrans-73
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们来做一个点散布。我们将做所有的点。所以让我们做 D F。T S，B，PS。DF 胆固醇。让我们看看这个。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_96.png)
+- en: Alright， now， let's say that we want to call out a single value。 So first off，
+    let's。 let's put all these other values as kind of a light gray。 So I'm going
+    to use the C parameter。 C equals light。Gi。So c equals like ray。 So we just turned
+    all of these points like ray。 now we want to call out a single point here and
+    maybe maybe the point that we want to call out is just the first patient in this
+    data。
+  id: totrans-74
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，现在假设我们想突出一个单一的值。首先，让我们把所有其他值设为浅灰色。所以我将使用 C 参数。C 等于浅色。G i。所以 c 等于像灰色。现在我们将所有这些点变成灰色。现在我们想要突出一个点，可能我们想要突出的点就是这个数据中的第一个患者。
+- en: So what we can do。Is we can just have a scatter plot。Of， and actually。 I'm just
+    gonna copy this whole line down。Let's have a scatter plot of just the zeroth index
+    person。So just the first just the first point in our data here。And now let's change
+    the color to red。And there you go。You see now that we plot all of our points in
+    a light gray color。
+  id: totrans-75
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们可以做的是。我们可以有一个散点图。实际上。我只是将整行复制下来。我们只针对零索引的人绘制一个散点图。所以只取我们的数据中的第一个点。现在让我们将颜色改为红色。你看，现在我们将所有点绘制为浅灰色。
+- en: and then we just take the first point。 We just take that first point， the zeroth
+    index here。And we plot that specific point in red。 So this is a very nice way。
+    And you can do this with bar graphs。 You can do this with other types of graphs。This
+    is a very nice way to call out specific points in a graph is you just， you know。
+  id: totrans-76
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们只需取第一个点。我们只取那个第一个点，即零索引。我们将那个特定的点用红色绘制出来。这是一个很好的方法。你可以用柱状图做到这一点。你可以用其他类型的图表做到这一点。这是一个很好的方法来突出图表中的特定点，你只需，知道。
+- en: just plot another scatter plot right on top of it。 Do it in a different color。
+    whatever color you want。Okay， so our last example in this section is going to
+    be。Let's do a。 Let's do a bar chart。With a。Line graph。And maybe a。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_98.png)
+  id: totrans-77
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 只需在其上绘制另一个散点图。用不同的颜色来做。随便选择你想要的颜色。好的，我们本节的最后一个例子将是。我们来做一个。我们来做一个柱状图。还有一个。折线图。也许还有一个。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_98.png)
+- en: Horizontal line as well。 So we'll start off with our same template， PL T dot
+    subplots。And PLt。 show down here。So what data do we want to plot， Well， maybe
+    I want to plot。Let's see。 Maybe I want to plot a line graph of let's go back to
+    our group by age。Our group by H。 so let's plot age along the X axis， and maybe。Once
+    plot are cholesterol levels。
+  id: totrans-78
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 画一条水平线。所以我们将从同一模板开始，PLT.dot subplots。然后在这里显示 PLT。我们想绘制什么数据，好吧，也许我想绘制。让我们看看。也许我想绘制一个折线图，回到我们的按年龄分组。我们的按年龄分组。所以让我们在
+    X 轴上绘制年龄，也许。绘制胆固醇水平。
+- en: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_100.png)'
+  id: totrans-79
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ba4f2bfdbb4eb6c9346c88ace128100c_100.png)'
+- en: Along the Y axis。So here's a nice line graph showing your age and your average
+    cholesterol per age group。So now， maybe I want to add a bar graph。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_102.png)
+  id: totrans-80
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 沿着 Y 轴。这是一个很好的折线图，显示了你的年龄和每个年龄组的平均胆固醇。所以现在，也许我想添加一个柱状图。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_102.png)
+- en: On this axes here， and I want to show the TR Bps， the resting blood pressure。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_104.png)
+  id: totrans-81
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个坐标轴上，我想显示 TR Bps，静息血压。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_104.png)
+- en: So now let's do A X。Dot bar。 And once again， you know， just to kind of reiterate。
+    we're using the same A X object here。 So we're taking the same object。 calling
+    different methods on it here so that we are plotting different plots on the same
+    graph。 the same axes。 So we'll also use。The age as our x axis。And now let's do
+    the T rest B。
+  id: totrans-82
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在让我们做 AX.dot bar。再次重申。我们在这里使用的是同一个 AX 对象。所以我们使用同一个对象，调用不同的方法来在同一个图表上绘制不同的图，使用相同的坐标轴。因此，我们也将使用年龄作为
+    X 轴。现在让我们进行 T rest B。
+- en: P as our values。And there you go， look at that。We now have this bar graph。 which
+    represents one value and the cholesterol， which represents another value。So that's
+    not explicitly called out here。 so we could change the color。Of these different
+    graphs here。 So maybe I'll pass in a C equals。 Let's try orange。And we'll。
+  id: totrans-83
+  prefs: []
+  type: TYPE_NORMAL
+  zh: P 作为我们的值。你看，我们现在有这个柱状图。它代表一个值，胆固醇则代表另一个值。所以这里并没有明确指出。所以我们可以改变这些不同图表的颜色。所以也许我会传入一个
+    C 等于。让我们试试橙色。我们还会。
+- en: we can leave。This color， the same。 Let's pass in a label and see what that does。
+    So this will be。Coholesterol。And this label will be T rest。Bps。And remember that
+    we need to call AX dot legend in order to get that legend to show up。And so there
+    you go。 This is what I was talking about earlier。 as far as the。 the graphs will
+    show up as different。They'll show up as different shapes to indicate what you're
+    looking at here。
+  id: totrans-84
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们可以保持。这个颜色，保持不变。让我们传入一个标签，看看会有什么效果。所以这将是。胆固醇。这个标签将是 T rest。Bps。并记住，我们需要调用 AX.dot
+    legend 以便显示图例。所以你看，这就是我之前提到的。图表将以不同的形状显示，以指示你在这里查看的内容。
+- en: So this is a bar graph。 that's telling us this is the resting blood pressure。
+    And the orange line is this line graph， And that's the cholesterol that we're
+    looking at here。 Allright， that's looking pretty good。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_106.png)
+  id: totrans-85
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是一张柱状图。它告诉我们这是静息血压。而橙色线是这条线图，这是我们在这里查看的胆固醇。好的，这看起来不错。![](img/ba4f2bfdbb4eb6c9346c88ace128100c_106.png)

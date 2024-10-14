@@ -1,0 +1,435 @@
+- en: 【双语字幕+资料下载】用 Python 和 Numpy 实现最热门的12个机器学习算法，彻底搞清楚它们的工作原理！＜实战教程系列＞ - P2：L2- 神经网络
+    - ShowMeAI - BV1wS4y1f7z1
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】用 Python 和 Numpy 实现最热门的12个机器学习算法，彻底搞清楚它们的工作原理！＜实战教程系列＞ - P2：L2- 神经网络
+    - ShowMeAI - BV1wS4y1f7z1
+- en: Hi， everybody。 Welcome to a new tutorial。 This is the first video of a new series
+    called machine learning from scratch。 In this series， we are going to implement
+    popular machine learning algorithms using only built in Python modules and Ny。
+    So today， we will start with the key nearest neighbor algorithm or short K and
+    N algorithm。😊。The concept of K And N is fairly easy。 A sample is classified by
+    a popularity vote of its nearest neighbors。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 嗨，大家好。欢迎来到一个新的教程。这是一个名为“从零开始学习机器学习”的新系列的第一期视频。在这个系列中，我们将仅使用内置的 Python 模块和 Numpy
+    实现流行的机器学习算法。所以今天，我们将从关键的最近邻算法开始，简称 K-N 算法。😊 K-N 的概念非常简单。一个样本通过其最近邻的投票来进行分类。
+- en: So let's consider an example with two classes and a two dimensional feature
+    vector。![](img/46ae3dd4f47308ef10799ea81647c68c_1.png)
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们来考虑一个包含两个类别和一个二维特征向量的例子。![](img/46ae3dd4f47308ef10799ea81647c68c_1.png)
+- en: So let's have a look at this figure。 So here we have two classes。 the blue class
+    and the orange class， and we have feature vectors with two dimensions。 So we have
+    x1 on this axis and x 2 on this axis。And what we do here is we have some training
+    samples。And then for each new sample that we want to classify。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以让我们看看这个图。这里我们有两个类别，蓝色类别和橙色类别，我们有两个维度的特征向量。所以在这个轴上是 x1，在这个轴上是 x2。我们这里有一些训练样本。然后对于每个我们想要分类的新样本。
+- en: we calculate the distance of this sample to each of the training samples。 And
+    then we have a look at the nearest neighbors。 So in this case。 we have a look
+    at the three nearest neighbors。 So these ones。 And then we choose or predict the
+    label based on the most common。Class labels here。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们计算这个样本到每个训练样本的距离。然后我们查看最近的邻居。在这个例子中，我们查看三个最近的邻居。就是这些。然后我们根据最常见的类别标签来选择或预测标签。
+- en: So we have two blue glasses and one orange glass。 So this then will be a blue
+    class。And this is the whole concept of the K and N。And what we also have to know
+    is in order to calculate the distances。We used the Euclidean distance。![](img/46ae3dd4f47308ef10799ea81647c68c_3.png)
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们有两个蓝色的类别和一个橙色的类别。所以这将是一个蓝色类别。这就是 K-N 的整个概念。我们还需要知道的是，为了计算距离，我们使用了欧几里得距离。![](img/46ae3dd4f47308ef10799ea81647c68c_3.png)
+- en: So in a 2D example， the Euclidean distance of two points is defined as the square
+    root over。 and then we have for each。🤢，Feature vector component。 we have the squared。Difference。
+    so we have x 2 minus x1 squared plus y2 minus y1 squared。 So this is the Euclidean
+    distance in a 2D case。 and in a more general case， the formula。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在二维示例中，两个点的欧几里得距离定义为平方根，然后我们对每个特征向量组件计算平方差。所以我们有 x2 减去 x1 的平方加上 y2 减去 y1 的平方。所以这是二维情况下的欧几里得距离，而在更一般的情况下，公式是。
+- en: '![](img/46ae3dd4f47308ef10799ea81647c68c_5.png)'
+  id: totrans-7
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/46ae3dd4f47308ef10799ea81647c68c_5.png)'
+- en: '![](img/46ae3dd4f47308ef10799ea81647c68c_6.png)'
+  id: totrans-8
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/46ae3dd4f47308ef10799ea81647c68c_6.png)'
+- en: Is defined as。This， so it's the square root over the sum from I equals 0 to
+    n。 where n is the number of dimensions。 And then we have the sum over。Each。Component。
+    and for each component， we calculate the squared distance or the square difference。So
+    this is the Euclidean distance， and this is all we have to know in order to implement
+    the K and N。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 定义为。这个，所以它是从 I 等于 0 到 n 的总和的平方根，其中 n 是维度的数量。然后我们对每个组件进行求和，对于每个组件，我们计算平方距离或平方差。所以这是欧几里得距离，这就是我们在实现
+    K-N 时需要知道的一切。
+- en: So let's start。 And first， let's define a class called K and N。![](img/46ae3dd4f47308ef10799ea81647c68c_8.png)
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以让我们开始。首先，我们定义一个名为 K-N 的类。![](img/46ae3dd4f47308ef10799ea81647c68c_8.png)
+- en: And this has， of course， an innate method。So in itself， and this will get a
+    K。 So this is the number of nearest neighbors we want to consider。 And this will
+    also get a default value。 So the default is 3。And in the in it。Oh， sorry。We define
+    the in it。 So in the in， we simply want to store the K。 So we say self dot K equals
+    k。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 当然，这有一个初始化方法。所以我们会得到一个 K。这是我们想要考虑的最近邻的数量。并且这还会有一个默认值。所以默认是 3。在初始化中。哦，抱歉。我们定义初始化。所以在初始化中，我们只是想存储
+    K。所以我们说 self.dot K 等于 k。
+- en: And then what we want to implement here。 And here we want to follow the conventions
+    of other machine learning libraries。 For example， the psychic Learn library。 So
+    we have a。嗯。Fit method。So this。 this will fit the traininging samples and some。Training
+    labels。 And this will usually involve a the training step。 So we want to implement
+    this one。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们想在这里实现的就是遵循其他机器学习库的约定。例如，心理学习库。因此我们有一个。嗯。拟合方法。这将拟合训练样本和一些训练标签。通常这将涉及到训练步骤。所以我们想要实现这个。
+- en: And then we also want to implement a predict method。Sorry， this also has self。And
+    the predict method。 So here we want to predict new samples。So these are the methods
+    we want to implement。And now， before we go on， first of all。 let's have a look
+    at how our data looks。 So what is this X and this Y， And for this。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们还想实现一个预测方法。抱歉，这里也有self。以及预测方法。因此，我们想要预测新样本。这是我们想要实现的方法。在继续之前，首先让我们看看我们的数据的样子。这X和Y是什么？
+- en: I wrote some test script。 So here I used the famous irris data sets。 So you
+    might have heard about this already。 So I can get this from the ps could learn
+    module。 And then I will generate some training samples and some test samples。
+    and the associated training labels and test labels。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我写了一些测试脚本。在这里我使用了著名的鸢尾花数据集。你可能听说过这个。所以我可以从心理学习模块中获取这个数据。然后我将生成一些训练样本和一些测试样本，以及相关的训练标签和测试标签。
+- en: '![](img/46ae3dd4f47308ef10799ea81647c68c_10.png)'
+  id: totrans-15
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/46ae3dd4f47308ef10799ea81647c68c_10.png)'
+- en: '![](img/46ae3dd4f47308ef10799ea81647c68c_11.png)'
+  id: totrans-16
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/46ae3dd4f47308ef10799ea81647c68c_11.png)'
+- en: So let's first have a look at how this。Training samples。 look。 so we want to
+    print the shape of this one。So this is an an nuy N D array of shape，120 by 4。
+    So 120 is the number of samples。 and four is the number of features for each sample。
+    So for example。 let's print the first sample。So this is four features in it。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 首先让我们看看这些训练样本的样子。我们想打印一下它的形状。这是一个形状为120 x 4的n维数组。所以120是样本的数量，而4是每个样本的特征数量。例如，让我们打印第一个样本。它包含四个特征。
+- en: So this is how our training samples look。 And now let's have a look at our training
+    labels。So。This is a 1 D row vector， also of size 120。 So for each of our training
+    samples， we have the。The label for it。So if we print this， then we see this will
+    be a 1 D vector with only one row。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这就是我们的训练样本的样子。现在让我们看看我们的训练标签。这是一个一维行向量，大小也是120。因此，对于每个训练样本，我们都有对应的标签。如果我们打印出来，我们会看到这是一个只有一行的一维向量。
+- en: '![](img/46ae3dd4f47308ef10799ea81647c68c_13.png)'
+  id: totrans-19
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/46ae3dd4f47308ef10799ea81647c68c_13.png)'
+- en: And now let's what we see here is we have label 0，1 and 2。 So this is a three
+    class problem。 So let's also plot this。嗯。And now， for example， what I plot here
+    is I only plot the first two。Feature us so that we have a 2D case。So this is how
+    our data looks。 So we have three classes， red。 green and blue and。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们看到的标签有0、1和2。这是一个三分类问题。我们也来绘制一下。嗯。比如说，我这里绘制的是前两个特征，以便我们有一个二维的情况。这就是我们的数据的样子。我们有三个类别，红色、绿色和蓝色。
+- en: '![](img/46ae3dd4f47308ef10799ea81647c68c_15.png)'
+  id: totrans-21
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/46ae3dd4f47308ef10799ea81647c68c_15.png)'
+- en: '![](img/46ae3dd4f47308ef10799ea81647c68c_16.png)'
+  id: totrans-22
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/46ae3dd4f47308ef10799ea81647c68c_16.png)'
+- en: Yeah。So this is how our data looks。 And now we can continue by implementing
+    this。 So in our fit method。So in the K and N algorithm， this doesn't involve a
+    training step。 So what we do here is we simply want to store our training samples
+    and then we can use them later。 so we can say， let's store them。 So let's say
+    self。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 是的。这就是我们的数据的样子。现在我们可以通过实现这一点继续。所以在我们的拟合方法中。在K和N算法中，这并不涉及训练步骤。因此，我们在这里所做的就是简单地存储我们的训练样本，然后我们可以稍后使用它们。所以我们可以说，存储它们。因此我们可以说self。
+- en: and then we call this X train equals X and self Y train。Equals y。So this is
+    all for our fit method。And now， for our predict method。So， this will get。Can get
+    multiple samples here， So we。嗯。Can see this， because we， we use a capital x for
+    this。So this can have multiple samples。 so we can write a little helper method。
+    So we want to do this for each of the samples。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们将X train设为X，而self Y train设为y。这就是我们的拟合方法的全部。现在，对于我们的预测方法，这将获取多个样本。因此，我们可以看到，因为我们使用了大写的X。这样可以有多个样本，因此我们可以写一个小的辅助方法。我们想对每个样本执行这个。
+- en: We want to say we want to get the predicted。Labels。Equals， and then。We use。Or
+    we write a helper method that we call underscore predict。 And this will only get
+    one sample。So here we use list comprehension。 So what we want to do then is we
+    want to call this self。Predict。With one sample X。 And then we want to do this
+    for all of our samples。In our。Tests samples here。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: '我们想说我们想要获取预测的标签。等于，然后。我们使用。或者我们写一个帮助方法，称之为下划线预测。这个方法只会处理一个样本。所以在这里我们使用列表推导。然后我们想做的是调用这个
+    self。预测。使用一个样本 X。然后我们想对我们所有的样本进行这个操作。在我们的测试样本中。 '
+- en: So for small x in capital x。And then this will be a list。 So let's convert this
+    to a nuy array， and。Then。This is our predict method。 And， of course， we have to
+    import Nmpy。 So we say import Ny S and P。And now， how does our underscore predict
+    method look like， So now again。Let's have a look。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以对于大写的 x 中的小 x。然后这将是一个列表。让我们把它转换为一个 nuy 数组，然后。这是我们的预测方法。当然，我们需要导入 Nmpy。所以我们说导入
+    Ny S 和 P。现在，我们的下划线预测方法看起来如何？再来看看。
+- en: '![](img/46ae3dd4f47308ef10799ea81647c68c_18.png)'
+  id: totrans-27
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/46ae3dd4f47308ef10799ea81647c68c_18.png)'
+- en: At the figure here。 So what we do is。We want to calculate all the distances。And
+    then we have a look at the nearest neighbours and the labels of the nearest neighbors。
+    And then we do a maturity vote and choose the most common class label。 So let's
+    write some comments here。 So， first of all， we want to compute the distances。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这里的图中。所以我们要做的是。我们想计算所有的距离。然后查看最近邻居和最近邻居的标签。然后我们进行投票，选择最常见的类标签。让我们在这里写一些注释。首先，我们想计算距离。
+- en: '![](img/46ae3dd4f47308ef10799ea81647c68c_20.png)'
+  id: totrans-29
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/46ae3dd4f47308ef10799ea81647c68c_20.png)'
+- en: Then， we want to。Get the can nearest neighbors， So get Ca。Nearest samples， and。We
+    want to get the。Also， want to get the labels。 And then we do a maturity mode。So
+    we want to get the most。Come on class label。So。Let's do this。 So let's say， distances
+    equals。And now， as I said。 we use the Euclidean distance here。 So let's define
+    this。
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后，我们想要获取最近的邻居，所以获取 Ca。最近的样本，并且。我们也想要获取标签。然后我们进行投票。因此，我们想要得到最多的。来自类标签。所以。让我们这样做。让我们说，距离等于。正如我所说。我们在这里使用欧几里得距离。让我们定义一下。
+- en: and we want to define this as a global function。 So you might want to write
+    this in a separate file or call this in some utility class。 So here I will simply
+    do it in the same file。 So I say。要。Kiyian。This tense。Of two feature vectors。 So
+    let's say x1 and x 2。 And now again， let's have a look at the formula。 So this
+    is the square root。 and then the sum over each square distance。 So we have the
+    square root。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们希望将其定义为一个全局函数。因此，你可能想把它写在一个单独的文件中，或者在某个工具类中调用它。因此在这里我将简单地在同一个文件中做。所以我说。要。Kiyian。这两个特征向量的距离。我们说
+    x1 和 x2。现在再来看看公式。这是平方根。然后是每个平方距离的总和。所以我们得到平方根。
+- en: So we can say。![](img/46ae3dd4f47308ef10799ea81647c68c_22.png)
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们可以说。![](img/46ae3dd4f47308ef10799ea81647c68c_22.png)
+- en: '![](img/46ae3dd4f47308ef10799ea81647c68c_23.png)'
+  id: totrans-33
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/46ae3dd4f47308ef10799ea81647c68c_23.png)'
+- en: Nampai dot S， Q， R T。![](img/46ae3dd4f47308ef10799ea81647c68c_25.png)
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Nampai 的 dot S，Q，R T。![](img/46ae3dd4f47308ef10799ea81647c68c_25.png)
+- en: And then we have the sum。 so we can use numpy dot sum。 So this will calculate
+    the sum for over each。![](img/46ae3dd4f47308ef10799ea81647c68c_27.png)
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们有了总和。所以我们可以使用 numpy 的 dot sum。这样就可以计算每个的总和。![](img/46ae3dd4f47308ef10799ea81647c68c_27.png)
+- en: Feature vector component。 And here we have the。Squared difference。 So we can
+    say x 1 minus x2 to the power of 2。![](img/46ae3dd4f47308ef10799ea81647c68c_29.png)
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 特征向量组件。在这里我们有平方差。所以我们可以说 x1 减去 x2 的平方。![](img/46ae3dd4f47308ef10799ea81647c68c_29.png)
+- en: So this is all we need。 And we want to return this， of course。![](img/46ae3dd4f47308ef10799ea81647c68c_31.png)
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这就是我们需要的全部。我们当然想返回这个。![](img/46ae3dd4f47308ef10799ea81647c68c_31.png)
+- en: And now in our predict methods。What we want to do is。We want to calculate the
+    distances of this one new sample to all the training samples。 So we also use list
+    comprehensions here， and we call this Euclidean distance with our new test sample。So，
+    and then to each of the training samples。 So we say small x train。
+  id: totrans-38
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在在我们的预测方法中。我们要做的是。我们想计算这个新样本与所有训练样本的距离。因此，我们在这里也使用列表推导，并将这个新的测试样本与我们计算的欧几里得距离结合起来。因此，然后对每个训练样本进行计算。所以我们说小
+    x train。
+- en: And then we want to calculate this for。Extrain in capital， or in self dot。X
+    train。So now we have all the distances。And now we want to get the key nearest
+    samples and the labels。So what we do here is we sort our distances and。We can
+    do this。 So let's call this decay。Indices。And this。 And here we use nuumpy dot。Ark
+    sort。So this will sort the distances and。
+  id: totrans-39
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们想为此计算。在 capital 中，或在 self.dot。X train。所以现在我们有了所有的距离。现在我们想获取最近的样本和标签。所以我们在这里做的是排序我们的距离。我们可以这样做。所以让我们称之为
+    decay。Indices。然后这里我们使用 nuumpy.dot。Ark sort。所以这将排序距离。
+- en: Will return the indices。Of how this is sorted。 So here we call。Distances。And
+    this will be an array。 And we also want， we only want to have the K closest samples。
+    So let's use slicing here。 And let's start at the beginning。 So 0。 or we can omit
+    this。 And this is goes only until self dot K。 So this will be the。Indices of the
+    K nearest samples。 And now let's get the labels。 So we get the。
+  id: totrans-40
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 将返回排序的索引。所以这里我们调用。Distances。这将是一个数组。我们只想要 K 个最接近的样本。所以让我们在这里使用切片。并从开始处开始。所以
+    0。或者我们可以省略这个。这仅适用于 self.dot K。所以这将是 K 最近样本的索引。现在让我们获取标签。所以我们得到。
+- en: Kay。Nearest。Labels equals。 And here we can。 we also use list comprehensions。
+    and then we get the label of each training and labels。With this in the index，
+    So the index I。 and then for I in K indcs。So now we have the labels of our nearest
+    neighbors。 and then we use a maturity vote and get the most common class label。
+  id: totrans-41
+  prefs: []
+  type: TYPE_NORMAL
+  zh: K。最近。标签等于。在这里我们可以。我们也使用列表推导式。然后我们获取每个训练标签的标签。用这个索引。所以索引 I。然后对于 I 在 K indcs 中。所以现在我们有了最近邻的标签。然后我们使用投票机制，得到最常见的类别标签。
+- en: So let's call this most common equals。 And for this， we use another Python module。
+    So we use the counter module。 So we say from collections import。Counter。And then。Weii。![](img/46ae3dd4f47308ef10799ea81647c68c_33.png)
+  id: totrans-42
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以让我们称之为最常见的等于。为此，我们使用另一个 Python 模块。所以我们使用 counter 模块。所以我们说从 collections 导入。Counter。然后。我们ii。![](img/46ae3dd4f47308ef10799ea81647c68c_33.png)
+- en: Get there。Or we get a counter of the， nearest labels。![](img/46ae3dd4f47308ef10799ea81647c68c_35.png)
+  id: totrans-43
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 到达那里。或者我们获得最近标签的计数器。![](img/46ae3dd4f47308ef10799ea81647c68c_35.png)
+- en: And then this is a method called most common。 And we only want to have the first
+    or the very most common。嗯。And now let's have a look how this looks， so。If I comment
+    this out and let's write a short example what the collections or the counter module
+    will do。
+  id: totrans-44
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后这是一个叫做最常见的的方法。我们只想要第一个或最常见的项目。嗯。现在让我们看看这是什么样子，所以。如果我注释掉这个，让我们写一个短示例，collections
+    或 counter 模块将会做什么。
+- en: So let's say we have a list A equals， and this is some values in it。 So 1，1，1，2，2。
+    and then some error。Labels， as though also from collections import。Counter。And
+    now we get the most common equals， so。We create a counter of this list， and then
+    one most common。
+  id: totrans-45
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设我们有一个列表 A，它等于一些值。所以 1，1，1，2，2。然后有一些错误。标签，就好像也从 collections 导入了。Counter。现在我们得到最常见的元素。所以我们创建这个列表的计数器，然后取出一个最常见的元素。
+- en: '![](img/46ae3dd4f47308ef10799ea81647c68c_37.png)'
+  id: totrans-46
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/46ae3dd4f47308ef10799ea81647c68c_37.png)'
+- en: So。Let's print this。![](img/46ae3dd4f47308ef10799ea81647c68c_39.png)
+  id: totrans-47
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以。让我们打印这个。![](img/46ae3dd4f47308ef10799ea81647c68c_39.png)
+- en: So。I have to。Close this first。 So let's run this again。嗯。So this will be a list。
+    and then we have a tuple of the most common item。 So， for example， if we， in this
+    case。 we only have， we want to have one， the one most common item。 and this is
+    a tuple。 and the first item here is the most common item。 So this is one。 and
+    the second item is the。
+  id: totrans-48
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以。我必须。先关闭这个。所以让我们再次运行这个。嗯。所以这将是一个列表。然后我们有一个最常见项目的元组。所以，例如，如果我们在这种情况下。我们只想要一个，最常见的项目。这个是一个元组。这里的第一个项目是最常见的项目。所以这是
+    1。第二个项目是。
+- en: Number of times， this is in our list。 So it three times  one。 So， for example，
+    if you use two。 then it will also put in the second most common items。 In this
+    case， it is2。 and we have two times 2。 So we only want。One most common。So as I
+    said， this is a list。 So in order to get the first item， we use the index 0。
+  id: totrans-49
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这个元素在我们的列表中出现的次数。所以它出现了三次 1。例如，如果你使用 2。那么它也会放入第二个最常见的项目。在这种情况下，是 2。我们有两个 2。所以我们只想要一个最常见的。所以正如我所说，这是一个列表。为了获得第一个项目，我们使用索引
+    0。
+- en: So now we have the tuple and now to get the actual items again， we use the first
+    index。 and then we have one。So here we have to do the same thing， and we want
+    to return this。 So let's return most common of index 0 of index 0。And this is
+    all our implementation of the K and N algorithm。So， let's try this out， so。Let's。
+  id: totrans-50
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们有了元组，接下来要再次获取实际的项目，我们使用第一个索引。然后我们有 1。所以这里我们也要做同样的事情，我们想返回这个。所以让我们返回索引 0
+    的最常见的索引 0。这就是我们 K 和 N 算法的实现。让我们试一下这个，所以。让我们。
+- en: in our test example， we already have our test file。 We already have our training
+    and test samples。 So let's use our。Our。K and N class， So we can say from K And
+    N import。K and N。 and then create a classifier。 So C， F equals。![](img/46ae3dd4f47308ef10799ea81647c68c_41.png)
+  id: totrans-51
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在我们的测试示例中，我们已经有了测试文件。我们已经有了训练和测试样本。所以让我们使用我们的。K和N类。所以我们可以说从K和N导入。K和N。然后创建一个分类器。所以C，F等于。![](img/46ae3dd4f47308ef10799ea81647c68c_41.png)
+- en: K and N。And so， let's use。![](img/46ae3dd4f47308ef10799ea81647c68c_43.png)
+  id: totrans-52
+  prefs: []
+  type: TYPE_NORMAL
+  zh: K和N。所以，让我们使用。![](img/46ae3dd4f47308ef10799ea81647c68c_43.png)
+- en: K equals 3。And then we want to call the fit method first。 So we want to fit
+    our X train。And the。Why train。And then we get the predictions。 And this is。By
+    we do this by calling CF dot predict。 And then we want to predict。Our。Test sample
+    samples。 So x test。And now let's calculate the accuracy。 So accuracy。 So this
+    is defined by how many of our predictions。Are correctly classified。
+  id: totrans-53
+  prefs: []
+  type: TYPE_NORMAL
+  zh: K等于3。然后我们想先调用fit方法。所以我们想拟合我们的X训练。和。为什么训练。然后我们得到预测。这是。通过调用CF.dot.predict来实现。然后我们想预测。我们的。测试样本。所以x
+    test。现在让我们计算准确率。所以准确率。这是由我们有多少预测。被正确分类来定义的。
+- en: So this is the。 So here we use the sum。嗯。![](img/46ae3dd4f47308ef10799ea81647c68c_45.png)
+  id: totrans-54
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这是。这里我们使用总和。嗯。![](img/46ae3dd4f47308ef10799ea81647c68c_45.png)
+- en: The sum。And here， we write。Predictions equals， equals。![](img/46ae3dd4f47308ef10799ea81647c68c_47.png)
+  id: totrans-55
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 总和。在这里，我们写。预测等于，等于。![](img/46ae3dd4f47308ef10799ea81647c68c_47.png)
+- en: Why test。So for each prediction， that is。The right。Or the same as the correct
+    label， it。Es1。And then we divide this by the number of test samples。 So we divide
+    this by Lng， y。![](img/46ae3dd4f47308ef10799ea81647c68c_49.png)
+  id: totrans-56
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 为什么测试。所以每个预测，就是。正确的。或者和正确标签相同，它。Es1。然后我们将其除以测试样本的数量。所以我们将其除以Lng，y。![](img/46ae3dd4f47308ef10799ea81647c68c_49.png)
+- en: Test。And let's print our accuracy。![](img/46ae3dd4f47308ef10799ea81647c68c_51.png)
+  id: totrans-57
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 测试。让我们打印我们的准确率。![](img/46ae3dd4f47308ef10799ea81647c68c_51.png)
+- en: And see if this works。So， yeah， in this case， it's 1。0。 So all of our predictions
+    are。Correct。 so let's use another。Number of neighbors。 So K equals 5。 So usually
+    you want you want to use an odd number here。 So let's run this。Oh， sorry。 So in
+    this case， it's 096， so。Not as good as with three neighbours， but also very good。
+    And yeah。
+  id: totrans-58
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 看看这个是否有效。所以，在这种情况下，它是1。0。所以我们所有的预测都是。正确的。所以我们使用另一个。邻居数量。所以K等于5。通常你会想在这里使用一个奇数。所以让我们运行这个。哦，抱歉。在这种情况下，它是096，所以。没有三个邻居那么好，但也非常不错。嗯。
+- en: we see that this is working。 And this is our whole implementation of the K And
+    M。 And yeah。 I hope you enjoyed this tutorial and see you in the next tutorial，
+    bye。😊。![](img/46ae3dd4f47308ef10799ea81647c68c_53.png)
+  id: totrans-59
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们看到这在工作。这是我们整个K和M的实现。嗯。我希望你喜欢这个教程，下个教程见，拜拜。😊。![](img/46ae3dd4f47308ef10799ea81647c68c_53.png)

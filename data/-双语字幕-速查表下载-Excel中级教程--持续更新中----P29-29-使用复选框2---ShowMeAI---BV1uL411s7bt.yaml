@@ -1,0 +1,170 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P29：29）使用复选框2 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P29：29）使用复选框2 - ShowMeAI - BV1uL411s7bt
+- en: '![](img/49542df26869d3fdf5ed234f9bec424a_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/49542df26869d3fdf5ed234f9bec424a_0.png)'
+- en: This tutorial is a follow up to a previous tutorial called using check boxes
+    in Excel。 So in the previous video， which I hope you'll watch if you haven't already
+    done so。 I created two kinds of check boxes。 This is a simple checkbox that you
+    can just click to mark something as being done or not done。 in this case， it just
+    means that the contact information has been updated。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这个教程是之前一个名为在Excel中使用复选框的教程的后续。所以在之前的视频中，我希望你能观看，如果你还没有的话。我创建了两种类型的复选框。这是一个简单的复选框，你可以点击标记某事是否完成。在这种情况下，它仅意味着联系信息已更新。
+- en: And then I showed how to set up a checkbox a little bit differently here in
+    the driver's safety training area。 I've set it up so that when you click the checkbox，
+    yes， a check appears in the box。 but also。 this cell is linked to the checkbox。
+    And so if it's checked。 it says true， if it's not checked。 it says false。 So in
+    this follow up video， I want to do a couple of interesting things with this true
+    faults。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我展示了如何在驾驶员安全培训区以稍微不同的方式设置复选框。我设置它的方式是，当你点击复选框时，确实，框中会出现一个勾。并且，这个单元格与复选框相连。所以如果它被勾选，就显示为真；如果没有被勾选，就显示为假。在这个后续视频中，我想做一些有趣的事情与这些真假。
+- en: The first thing I'd like to do。 instead of it saying true。 I would like a more
+    customized message to appear。 instead of just true or false。 to do this。 I'm going
+    to use the if function。 So I'm going to click here。On H2， and I'll just type equals。
+    So this cell equals。 and then you put in the if function。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想做的第一件事是，想要更定制的消息出现，而不是仅仅显示真或假。为此，我将使用if函数。所以我会在这里点击。在H2中，我会输入等于。所以这个单元格等于，然后你放入if函数。
+- en: You follow that up with a left parenthesis。 and Excel gives me a little helper
+    message that appears here。 if logical test， value of true value of faults。 So
+    that should help me。 it's like a cheat sheet。 So equals if left parenthesis。 Now
+    I'm gonna to click on the cell that I want to test。 So I want to test to see if
+    G2 is equal to falses。 So I'll click on G2 is equal to faults。 Now。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你接着跟上一个左括号。Excel会给我一个小助手信息，出现在这里。如果逻辑测试，真值，假值。所以这应该会对我有所帮助，就像一个备忘单。所以等于如果左括号。现在我要点击我想测试的单元格。我想测试G2是否等于假值。所以我会点击G2等于假值。现在。
+- en: sometimes I'm tempted to put that word faults in quotation marks。 But you don't
+    need to do it。 in this case。 So don't now I'll put in a comma， and the comma basically
+    represents then。 So if G2 is equal to falses， then do something。 Now。 if you want
+    to learn more about the if then statements in Excel in more detail。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 有时我想把那个假值放在引号中。但在这种情况下你不需要这么做。所以现在我会放入一个逗号，而逗号基本上表示然后。所以如果G2等于假值，那么做某事。现在，如果你想更详细地了解Excel中的if
+    then语句。
+- en: watch my video tutorial that shows that in depth。But for now。 I'm just going
+    to put in the comma for then。 and I'll put in a space and then quotation marks。
+    And then here I'm going type the word delinquent。 and follow that up with a closed
+    quote。 So let's review what this says。 if G2 is equal to falses。 then the quotation
+    marks means print。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 查看我的视频教程，深入展示这一点。但现在，我只是放入逗号，然后放一个空格，再加上引号。然后在这里我将输入单词拖欠，并跟随一个闭合引号。所以让我们回顾一下这句话。如果G2等于假值，那么引号意味着打印。
+- en: So then print the word delinquent in H2。 Now， how do you say if not。 notice
+    that there's a comma here in the helper text that I'm given。 So I'll put another
+    comma。 So if not， and I'll put a space， but I don't think you have to then print
+    done。 and then close quote。 Now， I suppose I could have done this in the opposite
+    order。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后在H2中打印单词拖欠。现在，怎么说如果不是。注意，在我得到的助手文本中有一个逗号。所以我会再放一个逗号。如果不是，我会放一个空格，但我认为你不必那么做，然后打印完成，然后闭合引号。现在，我想我本可以反过来做这件事。
+- en: I could have said if it is equal to true， then print done， If not， then print
+    delinquent。 It doesn't really matter one way or the other。 Now， at this point。
+    I should put in the closed parenthesis and then tap enter on the keyboard。 But
+    you don't really have to。 So I'll just leave it blank and tap enter on the keyboard。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我本可以说如果等于真，那么打印完成。如果不是，那么打印拖欠。无论如何都无所谓。现在，此时，我应该放入闭括号，然后在键盘上按回车。但是你不必这么做。所以我就留空并在键盘上按回车。
+- en: And notice that now。It's generated the word done to let me know that employee
+    number one Gina Puen。 her driver safety training is completed。 Now， at this point。
+    I hope I don't have to do that same formula again for row 3。 Fortunately， I don't
+    have to。 All I have to do is click here on done and use the autofill handle here
+    at the lower right click and drag down and it will copy the formula that I've
+    set up Here's the formula and it copies it all the way down but changes G2 to
+    G3 to G4 etc ce。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 请注意，现在它生成了“done”这个词，让我知道员工编号1的Gina Puen的驾驶安全培训已完成。现在，我希望我不必为第3行再做相同的公式。幸运的是，我不必。我要做的就是点击“done”，然后使用右下角的自动填充手柄，点击并向下拖动，它会复制我设置的公式。这里是公式，它会一直复制到下面，但将G2更改为G3、G4等。
+- en: So now I've got a nice understandable text here that tells me whether they're
+    done or not done。 And notice when you check a box。 it changes both column G and
+    column H Now。 So that's kind of nice。 Now there's a couple of things I could do
+    to make this look a little better。1 would be。 I could click and drag on F1 through
+    H1。 and then I could go here to merge and center。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我有了一个易于理解的文本，告诉我他们是否完成。请注意，当你勾选一个框时，它会同时更改G列和H列。这很好。现在有几件事我可以做，使其看起来更好。我可以点击并拖动F1到H1，然后我可以去这里合并和居中。
+- en: This is the merge center button。 I click on it。 And now it's centered over all
+    three columns。I think that just makes it look a little better。 It makes a little
+    bit more sense。 The other thing I could do is hide column G just by right clicking
+    on G。 I can go down and choose hide。 and even though it's hidden the formula still
+    works。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是合并中心按钮。我点击它。现在它在所有三个列上居中。我觉得这样看起来好一点，更有意义。我还可以通过右键点击G列来隐藏它。我可以选择隐藏。即使它被隐藏，公式仍然有效。
+- en: If I really wanted to I could make column F more narrow and again we're just
+    making things look a little nicer I think that looks great actually the next technique
+    I want to show you of how to change the look and feel of your data and of your
+    spreadsheet based on check boxes is I want to show you how to use conditional
+    formatting So here on the home tab home ribbon you should see in the Sts group
+    conditional formatting and this is so useful if you haven't watched my tutorial
+    on conditional formatting。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我真的想的话，我可以让F列更窄，再次我们只是让事情看起来更好，我觉得这看起来不错。接下来我想展示的技巧是如何根据复选框更改数据和电子表格的外观。我想向你展示如何使用条件格式。所以在主页标签的主页功能区中，你应该能在样式组中看到条件格式，如果你还没有看过我关于条件格式的教程。
+- en: you've got to do that I actually have a couple of different tutorials on it
+    but I'm just going click here on column H and I'll go to conditional formatting
+    highlight cells rules and I'll go down to text that contains So this is going
+    to test to see if。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你得这样做，我实际上有几个不同的教程，但我只需点击H列，然后转到条件格式，突出显示单元格规则，然后选择包含文本的选项。这将测试是否符合条件。
+- en: Any of the cells in column H have text that contains the word delinquent。 Now。
+    if I hadn't hidden column G， I could have done this with column G。 And I could
+    have said if a cell contains the word faults， then format it。 But that's okay。
+    I've hidden it。 So I'll just do the same thing with done and delinquent。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果H列中的任何单元格包含“delinquent”这个词。如果我没有隐藏G列，我可以用G列来做这件事。我可以说，如果一个单元格包含“faults”这个词，那么格式化它。但没关系，我已经隐藏了它。所以我将对“done”和“delinquent”做同样的事情。
+- en: So I'll just say format cells that contain the text delinquent with light red
+    fill with dark red text。 I think that makes total sense。 These are people that
+    need to get in and do their driver's safety training。 If you want， though， you
+    can change it and have red border or you could have green fill， green text。 you
+    can also do some custom formats where you set it yourself。 the colors， the fonts。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我只需将包含文本“delinquent”的单元格格式设置为浅红色填充和深红色文本。我觉得这很有道理。这些人需要进来进行他们的驾驶安全培训。如果你想的话，你可以更改为红色边框，或者使用绿色填充和绿色文本。你还可以进行一些自定义格式，自己设置颜色和字体。
+- en: all of that kind of stuff。 But I'm going stick with light red fill with dark
+    red text。 click O Now I could click the same column again。 and do another highlight
+    cells rule。 text that contains。 and this time， the word done。 if it contains the
+    word done。 I'll highlight it in。enClick O， and there we go。 So now I have a very
+    visual cu telling me whether they've done the driver safety training or not。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这些所有的东西。但我会坚持使用浅红色填充和深红色文本。点击 O，现在我可以再次点击同一列，并设置另一个高亮单元格规则，包含文本。这次是单词 done。如果它包含单词
+    done，我会将其高亮显示。点击 O，然后就完成了。所以现在我有一个非常直观的提示，告诉我他们是否完成了驾驶员安全培训。
+- en: Now， it is possible if you want for the entire row to be highlighted based on
+    whether their safety training is done or not done。 In this case， I don't think
+    it makes sense。 But if you want to learn how to do that。 you should watch my conditional
+    formatting advanced technique tutorial that shows you how to do it。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，如果你希望根据安全培训是否完成来高亮整行，这是可能的。在这种情况下，我觉得这样做没有意义。但如果你想学习如何做到这一点，你应该观看我的条件格式高级技巧教程，它会告诉你如何实现。
+- en: '![](img/49542df26869d3fdf5ed234f9bec424a_2.png)'
+  id: totrans-19
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/49542df26869d3fdf5ed234f9bec424a_2.png)'

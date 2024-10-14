@@ -1,0 +1,118 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P19：19）使用 Excel Today 函数设置目标日期 - ShowMeAI -
+    BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P19：19）使用 Excel Today 函数设置目标日期 - ShowMeAI -
+    BV1uL411s7bt
+- en: '![](img/e92d5aca9a44d6cfbabd7746a6ec019f_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e92d5aca9a44d6cfbabd7746a6ec019f_0.png)'
+- en: In this tutorial， I'm going to show you an Excel function。 and that function
+    is the today function。 Let's look at how it works。 I've got a spreadsheet here
+    that we'll be using in just a minute。 but for now， I'm just going to go down in
+    the lower right corner and zoom in a little bit。 I'd like to get to about 1070%。
+    and I'll just click in a cell。 let's say cell B3。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个教程中，我将向你展示一个Excel函数。这个函数是今天函数。让我们看看它是如何工作的。我这里有一个电子表格，我们稍后将使用它，但现在，我只是要去右下角，稍微放大一点。我希望放大到大约1070%。我会点击一个单元格，假设是单元格B3。
+- en: and I'll just type equals So this cell equals today。 and then all you have to
+    do is type a left parenthesis and a right parenthesis。 and then tap enter or return
+    on your keyboard。 and it gives you today's date。 So thinking about this， how could
+    this be useful。 Well， maybe you'll be printing your spreadsheet。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我会输入等号，所以这个单元格等于今天。然后你只需输入左括号和右括号。然后按下键盘上的回车键，它会给你今天的日期。考虑到这一点，这怎么会有用呢？也许你正在打印电子表格。
+- en: And every time you print， you want to know what day it was when you printed
+    it。 You want a record of that。 You could just make a cell that has this function
+    and formula in it and then go ahead and print and the date will always be printed
+    there。 So that's just one example。 There are many situations。In which using the
+    today function would be useful。 But just for fun， I've put in some holidays here。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 每次打印时，你想知道打印时是哪个日期。你想要有记录。你可以创建一个包含这个函数和公式的单元格，然后继续打印，日期总会打印在那。因此，这只是一个例子。有很多情况下，使用今天函数会很有用。但为了好玩，我在这里放入了一些假期。
+- en: and I'd like it to automatically generate how many days until those holidays。
+    Now。 I hope that you'll see that you could also use this for other things。 maybe
+    there's a target date coming up。 an event that's approaching that your team is
+    looking forward to or working toward you could do the same kind of thing。 So the
+    first thing I'm gonna do is delete this。 We don't need that sitting there。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我希望它能自动生成离这些假期还有多少天。现在，我希望你能看到你也可以把这个用于其他事情，也许有个即将到来的目标日期，一个团队期待或努力实现的事件，你也可以做同样的事情。所以我首先要做的是删除这个。我们不需要它。
+- en: And let's say this spreadsheet has all sorts of other data already on it。 I
+    wouldn't want to interfere with the data that's already there。 So what I'm gonna
+    do is I'm gonna go down here to the lower left corner。 click the plus sign to
+    get sheet number two。 And again， I'll zoom in a bit。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设这个电子表格上已经有各种其他数据。我不想干扰已经存在的数据。所以我将去左下角，点击加号以获取第二个工作表。然后，我会稍微放大一点。
+- en: and I'll just put in my formula here equals today left and right parentheses。
+    hit enter or return。 So that's always going generate today's date every time I
+    open the spreadsheet。 And then I'll click here on B and I'll type in the date
+    for Halloween。 So there it is And now all I have to do is go back to。Sheheet1
+    and click here in cell E2。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我会在这里输入我的公式等于今天左括号和右括号。按下回车键。所以这总是会在我打开电子表格时生成今天的日期。然后我会在B列中点击，输入万圣节的日期。就这样，现在我所要做的就是回到Sheet1，点击单元格E2。
+- en: and I'll type equals。 So this cell equals， and then I'll just click here on
+    sheet2 in the lower left。 it equals this date and notice what is entered here
+    on the formula bar。 It's just put the cell reference from sheet 2。 So this cell。
+    and then I'll just click up there and type minus this cell。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我会输入等号。所以这个单元格等于，然后我会点击左下角的sheet2。这等于这个日期，注意这里在公式栏中输入的内容。它只是引用了sheet 2的单元格。所以这个单元格。然后我会点击上面，输入减去这个单元格。
+- en: and then I'll tap enter or return on the keyboard。 there are 26 days until Halloween。
+    Now I can easily do the same thing for Thanksgiving Christmas and New Year's Day。
+    As far as my formula up here is concerned。 all I have to do is click on it and
+    then click on the lower right corner and use the autofill handle to click and
+    drag and copy this formula down all the way to4。 But now I need to enter the dates
+    for these three additional holidays。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我会按下键盘上的回车键。离万圣节还有26天。现在我可以很容易地为感恩节、圣诞节和新年做同样的事情。至于我上面的公式，我只需点击它，然后点击右下角，使用自动填充手柄向下拖动，复制这个公式到4。但是现在我需要输入这三个额外假期的日期。
+- en: So give me a minute to do so and then I'll resume the video。 Allright。 you can
+    see that I've entered all of those dates for the upcoming holidays。 Now I can
+    just go to sheet。1， and repeat the process that I did up here for Halloween。 Just
+    click type equals， and then go to sheet2。 It equals Thanksgiving Day minus today's
+    date。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 请给我一点时间来完成这个，然后我会继续视频。好的。你可以看到我已经输入了所有即将到来的假期的日期。现在我可以回到 sheet1，重复我在这里为万圣节所做的过程。只需点击输入等于，然后转到
+    sheet2。它等于感恩节减去今天的日期。
+- en: tap enter， Sam for Christmas。 This cell is equal to sheet2 Christmas day。 And
+    then I go up here to the formula bar minus today's date， enter and New Year's
+    Day。 This cell is equal to sheet 2， New Year's Day， minus today's date。 tap enter。
+    And now I have a built in tracker， letting me know how many days until certain
+    exciting target dates。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 按下回车，圣诞节的日期也是如此。这个单元格等于 sheet2 的圣诞节日期。然后我到公式栏这里减去今天的日期，输入，元旦也是如此。这个单元格等于 sheet2
+    的元旦，减去今天的日期。按下回车。现在我有了一个内置的追踪器，告诉我距离某些激动人心的目标日期还有多少天。
+- en: And the way I've set this up these target dates are set in sheet2。 And that
+    way it's separate away from the data that I'll be using on a day to day basis
+    here in this spreadsheet。 So I hope that you'll identify ways that you can use
+    this。 maybe add it to your spreadsheets。 letting you know when something is due。Maybe
+    it could be a reminder for when certain data needs to be posted or certain goals
+    need to be accomplished。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我设置的这些目标日期在 sheet2 中。这样，它与我在这个电子表格中日常使用的数据是分开的。所以我希望你能找到可以利用这个的方法，也许可以将其添加到你的电子表格中，提醒你某些事项的截止日期。也许它可以作为提醒，告知何时需要发布某些数据或完成某些目标。
+- en: Thanks for watching。 I hope you found this tutorial to be helpful。![](img/e92d5aca9a44d6cfbabd7746a6ec019f_2.png)
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 感谢观看。我希望你觉得这个教程有帮助。![](img/e92d5aca9a44d6cfbabd7746a6ec019f_2.png)

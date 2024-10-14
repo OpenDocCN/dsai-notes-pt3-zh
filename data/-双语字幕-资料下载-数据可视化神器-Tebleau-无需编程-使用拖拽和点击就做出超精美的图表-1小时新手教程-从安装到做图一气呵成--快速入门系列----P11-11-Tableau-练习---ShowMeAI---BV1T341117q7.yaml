@@ -1,0 +1,77 @@
+- en: 【双语字幕+资料下载】数据可视化神器 Tebleau！无需编程，使用拖拽和点击就做出超精美的图表。1小时新手教程，从安装到做图一气呵成~＜快速入门系列＞
+    - P11：11）Tableau 练习 - ShowMeAI - BV1T341117q7
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】数据可视化神器 Tableau！无需编程，使用拖拽和点击就能做出超精美的图表。1小时新手教程，从安装到做图一气呵成~＜快速入门系列＞
+    - P11：11）Tableau 练习 - ShowMeAI - BV1T341117q7
+- en: With this exercise， you will be loading the Food L file into Tableau and applying
+    data relationships to the two sheets using Food ID。You will then create two views
+    using the Showmi method。Sheheet 1 contains the course and prep times。While sheet2
+    contains flavor profile and food ID， which will be converted to a measure。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个练习中，你将把食品 L 文件加载到 Tableau 中，并使用食品 ID 为两个工作表应用数据关系。然后你将使用 Showmi 方法创建两个视图。工作表
+    1 包含课程和准备时间，而工作表 2 包含风味资料和食品 ID，这将被转换为度量。
+- en: '![](img/d6b26a649e97baa1e7335158a38e9d13_1.png)'
+  id: totrans-2
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/d6b26a649e97baa1e7335158a38e9d13_1.png)'
+- en: Let's start off by loading the dataset。Drop the Excel file food list into the
+    start page。Upon loading the data， this will lead you to the data source page where
+    you can drag the sheets into the canvas。Drag the category sheet into the canvasva，
+    then connect the food time sheet to create a relationship。Set the field to Food
+    ID。Once the fields have been set for the relationship。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们开始加载数据集。将 Excel 文件食品清单拖入开始页面。加载数据后，这将引导你进入数据源页面，在那里你可以将工作表拖入画布。将类别工作表拖入画布，然后连接食品时间工作表以创建关系。将字段设置为食品
+    ID。一旦设置了关系字段。
+- en: We can now close the editit relationship window and then open a new worksheet。Since
+    we're going to use the Showmi method。We need to select the proper fields to be
+    used in the chart。 click on course， then hold control on your keyboard and click
+    Prep time。Once the fields are selected， click on the Showhow me button in the
+    upper right。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们可以关闭编辑关系窗口，然后打开一个新的工作表。因为我们将使用 Showmi 方法。我们需要选择适合在图表中使用的字段。点击课程，然后按住键盘上的控制键，点击准备时间。一旦选择了字段，点击右上角的
+    Showhow me 按钮。
+- en: Then select the horizontal bar chart from the selection。This generates the horizontal
+    bar chart from the fields that we selected。Adjust the size of the bars by dragging
+    one of the fields on the course axis。 This completes our first view。Click on the
+    Add sheet button to create another one。First。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后从选择中选择横条形图。这将从我们选择的字段生成横条形图。通过拖动课程轴上的一个字段来调整条形的大小。这完成了我们的第一个视图。点击添加工作表按钮以创建另一个工作表。首先。
+- en: we need to convert the food ID into a measure。Right click on the Food ID field。
+    then click on convertt the measure。This changes the food ID field into green。
+    which means it has been converted into a measure Next， click on the Food ID。 then
+    hold the control key and select For profile。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们需要将食品 ID 转换为度量。右键单击食品 ID 字段，然后点击转换为度量。这会将食品 ID 字段变为绿色，这意味着它已被转换为度量。接下来，点击食品
+    ID，然后按住控制键选择“个人资料”。
+- en: '![](img/d6b26a649e97baa1e7335158a38e9d13_3.png)'
+  id: totrans-7
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/d6b26a649e97baa1e7335158a38e9d13_3.png)'
+- en: Then navigate to the Show me button and select the tree map。This generates the
+    tree map from the two fields that we have selected。You can further adjust the
+    size of the label or the field indicated per the box in the tree map。Go into the
+    label card， select the font size， then hit apply to change it。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后导航到“显示我”按钮并选择树图。这将从我们选择的两个字段生成树图。你可以进一步根据树图中的框调整标签或字段的大小。进入标签卡，选择字体大小，然后点击应用进行更改。
+- en: This completes the second view and our first exercise。![](img/d6b26a649e97baa1e7335158a38e9d13_5.png)
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这完成了第二个视图和我们的第一次练习。![](img/d6b26a649e97baa1e7335158a38e9d13_5.png)

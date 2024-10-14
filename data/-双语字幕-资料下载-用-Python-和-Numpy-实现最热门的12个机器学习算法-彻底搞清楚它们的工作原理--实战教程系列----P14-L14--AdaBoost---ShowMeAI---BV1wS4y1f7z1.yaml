@@ -1,0 +1,538 @@
+- en: 【双语字幕+资料下载】用 Python 和 Numpy 实现最热门的12个机器学习算法，彻底搞清楚它们的工作原理！＜实战教程系列＞ - P14：L14-
+    AdaBoost - ShowMeAI - BV1wS4y1f7z1
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】用 Python 和 Numpy 实现最热门的 12 个机器学习算法，彻底搞清楚它们的工作原理！＜实战教程系列＞ - P14：L14-
+    AdaBoost - ShowMeAI - BV1wS4y1f7z1
+- en: Hey， guys， welcome to another machine learning from Sc tutorial。 Today。 we are
+    going to implement the addda boost algorithm using only Nmpy and built in Python
+    modules。😊。A a boost uses the boosting approach， which follows the simple idea
+    to combine multiple weak classifier into one strong classifier。 And this approach
+    works really well in practice。 So let's start with a theory before we jump to
+    the code。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 嘿，大家好，欢迎来到另一个机器学习的 Sc 教程。今天，我们将仅使用 Numpy 和内置的 Python 模块实现 AdaBoost 算法。😊 AdaBoost
+    使用提升方法，这个简单的想法是将多个弱分类器组合成一个强分类器。这个方法在实践中效果非常好。所以在我们跳到代码之前，让我们先从理论开始。
+- en: So let's have a look at this 2 D example here to understand the concept。 So
+    here we have our samples with only two different features on the X axis and on
+    the Y axis。 And now the first classifier makes a split based on the Y axis in
+    this example。 So it draws a horizontal decision line at some threshold。 So the
+    dashed line that we can see here。😊。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们看看这个二维示例，以理解这个概念。这里我们的样本只有两个不同的特征，分别在 X 轴和 Y 轴上。现在，第一个分类器根据 Y 轴进行划分。在这个例子中，它在某个阈值处绘制了一条水平决策线。我们在这里看到的虚线就是。😊
+- en: And we can see that some predictions are correct， but we also have misclassifications。
+    And now with these misclassifications， we can then calculate a performance measure。
+    So the accuracy for this classifier。 And with this measure。 we calculate and update
+    weights for all training samples。 And now the second classifier comes in。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们可以看到一些预测是正确的，但也有误分类。现在，利用这些误分类，我们可以计算性能指标。也就是这个分类器的准确度。通过这个指标，我们计算并更新所有训练样本的权重。然后第二个分类器就会出现。
+- en: and it uses these weights and finds a different and possibly better decision
+    boundary。 So the second classifier in this example here chooses a feature on the
+    x axis and draws a vertical line。 And then again， we calculate the performance
+    and update the weights。 And then we repeat the step for as many classifiers as
+    we want。😊，And then here at the very end。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它利用这些权重，寻找一个不同的、可能更好的决策边界。在这个示例中，第二个分类器选择了 X 轴上的一个特征并绘制了一条垂直线。然后再次计算性能并更新权重。接着我们重复这个步骤，直到达到我们想要的分类器数量。😊
+    然后在最后。
+- en: we have all the different decision lines， and we also have all the different
+    classifier performances。 and then we combine all our classifiers so we can make
+    a weighted sum with the calculated performances。 And this allows us to draw the
+    perfect decision line that we can see here。 which can be more complex than a simple
+    linear decision line。😊。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们有所有不同的决策线，以及所有不同的分类器性能。然后我们将所有分类器结合起来，可以用计算得出的性能进行加权求和。这使我们能够绘制出我们在这里看到的完美决策线，这可能比简单的线性决策线更复杂。😊
+- en: And the idea with the way that some here he at the end means that the better
+    the classifier is the more impact it has for the final outcome。 So this is basically
+    the concept。 And now let's look at all the different steps and also the math behind
+    this in detail。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这里的想法是，分类器越好，对最终结果的影响就越大。这基本上就是这个概念。现在让我们详细看看所有不同的步骤以及背后的数学。
+- en: So the first thing that we need is a weak classifier。 and this is also called
+    weak learner。So a weak learner is always a very simple classifier。 And in the
+    case of the addda boost。 we use a so called decision stamp for this。 So a decision
+    stamp is basically a decision tree with only one split。 So what we can see here。
+    So we look at only one feature of our samples and only at one threshold。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们需要的第一件事是一个弱分类器，这也被称为弱学习器。弱学习器总是一个非常简单的分类器。在 AdaBoost 的情况下，我们使用一个所谓的决策树桩。决策树桩基本上是一个只有一个划分的决策树。所以我们在这里看到的内容是，我们只关注样本的一个特征和一个阈值。
+- en: And then based on if our feature value is greater or smaller than the threshold。
+    We say that it is class -1 or class plus one。😊，So this is the decision stump。
+    And then we need the formula for the error。 So the first time。 the very first
+    time during our iteration， the error is calculated as the number of misclassifications
+    divided by the total number of samples。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后根据我们的特征值是否大于或小于阈值，我们可以说它是类别 -1 或类别 +1。😊 所以这就是决策树桩。然后我们需要计算误差的公式。所以第一次，在我们迭代的第一次，误差是通过误分类的数量除以样本总数来计算的。
+- en: And this is the natural approach for the error。 So if we have a look at our
+    example again。 Then we can see that we have 10 samples in this case。 and in the
+    first in the first classifier。 we have three misclassifications。 So this means
+    that our error rate is 0。3 or 30%。So this is the first time。 But the next time
+    we also want to take into account the weights。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是处理误差的自然方法。如果我们再次查看我们的例子，我们可以看到在这种情况下我们有10个样本。在第一个分类器中，我们有三次误分类。这意味着我们的误差率是0.3或30%。这是第一次。但下次我们也想考虑权重。
+- en: So if a sample was mis misclassified， we give it a higher weight for the next
+    iteration。 And this means that our formula is then calculated。As the sum over
+    the weights for all misclassifications。 And if our error is greater than 05。 we
+    simply flip the error。 So we flip all decision， all decisions， and we also flip
+    our error。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果一个样本被误分类，我们将在下一次迭代中给予它更高的权重。这意味着我们的公式将计算为所有误分类权重的总和。如果我们的误差大于0.5，我们就简单地翻转误差。我们翻转所有决策，也翻转我们的误差。
+- en: So it is then1 minus the error。So this is the error。 and now we need the weights。
+    So the weights are initially set to one over n for each sample。 And this also
+    matches the error calculation in the first step。 So if we say we calculate the
+    error as the sum over all misclassified weights。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这就是1减去误差。这就是误差。现在我们需要权重。每个样本的权重最初设置为1/n。这也与第一步的误差计算相匹配。如果我们说计算误差为所有误分类权重的总和。
+- en: and we also say that each weight is one over n in the beginning。 then it is
+    equal to the number of misclassifications divided by the number of samples like
+    here。So。 yeah， that's why the initial weights are one over n for each sample。And
+    then we also need the update rule that is defined here。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们还说每个权重一开始是1/n。因此它等于误分类数量除以样本数量。是的，这就是为什么初始权重是每个样本1/n。然后我们还需要这里定义的更新规则。
+- en: So we have the old weight times the exponential function of minus alpha times
+    the actual y times h of x。 where h of x is our prediction。And alpha is the accuracy
+    of the classifier。 So if this is-1。 we have a misclassification。 and if this is
+    plus one here， then we have a correct classification。 and this whole formula basically
+    makes sure that misclassified samples have a higher impact for the next classifier。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们有旧权重乘以负阿尔法乘以实际y乘以h(x)，其中h(x)是我们的预测。阿尔法是分类器的准确性。如果这是-1，我们有一个误分类。如果这是+1，那么我们有一个正确分类。这个公式确保了被误分类的样本对下一个分类器有更大的影响。
+- en: So yeah， this is what you should remember from the weights。And now the performance。
+    So we need to calculate the performance or alpha for each classifier， and we can
+    do this。 and we need this for the final prediction then， and the formula for the
+    performance is calculated as this。 So it's 0。5 times the lock of one minus the
+    error divided by the error。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 是的，这就是你应该记住的权重。现在是性能。因此，我们需要为每个分类器计算性能或阿尔法，我们可以做到这一点。这是最终预测所需的，性能的公式计算如下。所以是0.5乘以1减去误差的对数除以误差。
+- en: So let me make this a little bit larger for you。So this is the performance。And
+    our error is always between 0 and1。 So I plotted alpha for different errors in
+    this range here。 And we can see that it is equally distributed somewhere between
+    a positive value here and a negative value here。So with a low error， we have a
+    high positive value， and with a high error here close to one。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以让我把这个放大一点。这就是性能。我们的误差始终在0和1之间。所以我在这个范围内绘制了不同误差下的阿尔法。我们可以看到它在一个正值和一个负值之间均匀分布。误差低时，我们有一个高的正值，而当误差接近1时，情况则相反。
+- en: we have a high negative value。 So since we are flipping the decision then this
+    will then be correct classifications again with a high contribution to the negative
+    side。 So the side here， where the class is  -1。 So this is the concept of the
+    alpha。 And now we need the prediction So now if if we have understood all of this。
+    then the final prediction is very easy to understand。 So we just choose the sign
+    here。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们有一个很高的负值。因此，由于我们正在翻转决策，这将再次产生对负面贡献较高的正确分类。所以这里的类别是-1。这就是阿尔法的概念。现在我们需要预测。如果我们理解了这一切，那么最终的预测就很容易理解。我们只需选择这里的符号。
+- en: the sign of the sum over all predictions where we weigh each prediction with
+    the performance of the classifier。 So alpha times the prediction here。So the better
+    our classifier。 the more impact it has for the final prediction。And the better
+    the classifier。 the more it points into the negative or positive side。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所有预测总和的符号，我们用分类器的性能来加权每个预测。因此，这里是`alpha`乘以预测。我们的分类器越好，对最终预测的影响就越大。分类器越好，它的指向就越倾向于负侧或正侧。
+- en: And then we take the better side as prediction for our class。 So， yeah。 that's
+    the concept of the prediction。And it can be a bit confusing with the different
+    formulas and the side flipping。 but the basic concept is not so difficult。 And
+    let's summarize all the different training steps that we must do in the code。
+    So， first of all， we initialize， initialize over weights for each sample and set
+    the value to one over N。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们将更好的侧作为我们类别的预测。因此，是的。这就是预测的概念。对于不同的公式和侧翻可能会有点困惑，但基本概念并不难。现在让我们总结一下在代码中必须执行的不同训练步骤。因此，首先，我们初始化每个样本的权重，并将值设置为1/N。
+- en: Then we choose the number of weak learners we want。 And then we iterate over
+    this。 And then we train each decision stampump。 So we do a greedy search to find
+    the best split feature and the best split threshold。Then we calculate the error
+    for this decision stump。 So this is with the formula。 the sum over the misclassified
+    weights。 Then we also flip the error and the decision if it is greater than 05。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们选择想要的弱学习者数量。接着我们进行迭代。然后我们训练每个决策树桩。因此，我们进行贪婪搜索，以找到最佳的分裂特征和最佳的分裂阈值。然后我们计算这个决策树桩的错误。因此，这是用公式表示的，错误是分类错误权重的总和。然后如果错误大于0.5，我们还要翻转错误和决策。
+- en: Then we calculate the alpha with the formula。And then we need the predictions。
+    And then with the predictions and the alpha， we can then calculate。 We can then
+    update the weights。So this is what we must do in the code now。 And yeah。 I promise
+    you that since now that we have all the formulas and all the training steps here。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们用公式计算`alpha`。接着我们需要预测。然后利用预测和`alpha`，我们可以计算。我们可以更新权重。因此，这就是我们现在必须在代码中做的事情。是的。我向你保证，从现在开始我们有了所有的公式和所有的训练步骤。
+- en: the implementation is pretty straightforward and should not be so hard。 So let's
+    jump to the code。![](img/736cbfb71e784efea36f6f12e912a093_1.png)
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 实现是相当直接的，应该不难。所以让我们跳到代码。![](img/736cbfb71e784efea36f6f12e912a093_1.png)
+- en: So the first thing we do is import Ny。 So import Ny S and P。 And this is the
+    only module that we're gonna to need。And now we create a class for the decision
+    stampump。 So class decision stampump。And this gets an in it。 So define an in it。
+    And this only has self。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们做的第一件事是导入`Ny`。所以导入`Ny S`和`P`。这是我们将需要的唯一模块。然后我们为决策树桩创建一个类。所以`class decision
+    stampump`。然后进行初始化。所以定义一个初始化，这里只需要`self`。
+- en: And here we want to store a couple of things。 So the first thing that we want
+    to store is the so called polarity。 So self dot polarity equals one。 And this
+    tells us if the sample should be classified or as-1 or plus one for the given
+    threshold。 So if we want to look at the right or the left side。 And this is needed
+    because if we want to flip the error， then we also must flip the polarity。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这里，我们想要存储几个东西。首先，我们要存储所谓的极性。所以`self.dot polarity`等于1。这告诉我们样本应该被分类为-1还是+1，取决于给定的阈值。所以如果我们想查看左侧或右侧。这是必要的，因为如果我们想翻转错误，那么我们也必须翻转极性。
+- en: So this gets clearer in a second。And now the second thing that we want to store
+    here is the feature index。 So self dot feature index equals none in the beginning。
+    And we also want to store the threshold。 So the split threshold self dot threshold
+    equals none in the beginning。 And we also want to store the variable for the performance。
+    So the alpha。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这会在一秒钟内变得更清晰。现在我们要在这里存储的第二件事是特征索引。所以`self.dot feature index`在开始时等于None。我们还想存储阈值。因此，分裂阈值`self.dot
+    threshold`在开始时等于None。我们还想存储性能变量。所以`alpha`。
+- en: So we say self dot alpha equals none。 So this is the things that we want to
+    store。 And then we also define a predict method for the decision stampump。 So
+    we say define predict and it gets self and it gets x。 So the samples that it should
+    predict。 And now what we want to do here is， simply look at only one feature of
+    this sample and then compare it with the threshold and say if it's smaller than
+    it's  minus-1 and otherwise it's plus one。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们说self.dot alpha等于none。这是我们想要存储的内容。然后我们还定义一个预测方法用于决策树桩。所以我们说定义预测，它接受self和x。所以它应该预测的样本。现在我们想在这里做的事情是，只查看这个样本的一个特征，然后将其与阈值进行比较，看看如果它小于阈值，则为-1，否则为+1。
+- en: So that's the whole concept of the decision stampump。 So let's do this。 So let's
+    say the number of samples equals X dot shape0。 and then let's get only this feature。
+    So let's say x column equals x。![](img/736cbfb71e784efea36f6f12e912a093_3.png)
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这就是决策树桩的整个概念。所以让我们这样做。我们可以说样本的数量等于X的形状0。然后我们只获取这个特征。所以我们可以说x column等于x。![](img/736cbfb71e784efea36f6f12e912a093_3.png)
+- en: '![](img/736cbfb71e784efea36f6f12e912a093_4.png)'
+  id: totrans-27
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/736cbfb71e784efea36f6f12e912a093_4.png)'
+- en: And then we can use a colon。 so we still want all the samples。 but only this
+    feature index that we calculate later during the training。 So self dot feature
+    index。 and now we make our predictions。 So we say predictions equals。 and by default，
+    we say this is one。 So let's say nuy ones with the size of the number of samples。
+    And then we must check the polarity。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们可以使用冒号。所以我们仍然希望所有的样本，但只有这个特征索引，我们稍后在训练期间计算。所以self.dot feature index。现在我们做出预测。所以我们说predictions等于。默认情况下，我们说这是1。所以我们可以说nuy
+    ones的大小等于样本数量。然后我们必须检查极性。
+- en: So we say if self dot polarity equals equals one。 So this is the default case。
+    then we say that all the predictions that are smaller where the feature vector
+    is smaller than the threshold than it's minus-1。So， let's say， predictions。And
+    then at these indexes。 where x column is smaller than self dot threshold Then
+    these predictions are -1。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们说如果self.dot polarity等于1。这是默认情况。那么我们说所有预测中，特征向量小于阈值的就是-1。所以，我们可以说，预测。在这些索引处，x
+    column小于self.dot threshold。那么这些预测就是-1。
+- en: And in the other case， else。 So if our polarity is -1。 then we want to do it
+    exactly the other way around。 So let me copy this。 But we want to say if the x
+    value is greater than our threshold。 then these are the -1 predictions。So， yeah，
+    this is the all that our the decision stump is doing。
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在另一种情况下，else。所以如果我们的极性是-1。那么我们想要完全反过来做。所以让我复制这个。但我们想说如果x值大于我们的阈值。那么这些就是-1的预测。所以，是的，这就是我们的决策树桩所做的所有事情。
+- en: and then we can return the predictions。So this is the class for the decision
+    decision stamp。 And now we need a class for the actual add boost algorithm。 So
+    let's say class add boost。And let's make this a small letter。 And now we need
+    a in it first。 So define a in it。 And this gets self。 and the only parameter it
+    gets is the number of classifiers that we want。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们可以返回预测结果。所以这是决策树桩的类。现在我们需要一个实际的加法增强算法的类。我们可以说class add boost。我们把这个名字的小写处理。现在我们需要一个初始化函数。所以定义一个初始化函数。它接受self，而唯一的参数是我们想要的分类器数量。
+- en: So let's say N C， L F equals5 by default。 And then in the in it， we store this
+    number。 So we say self dot N C， L F equals the number of classifier。 And then
+    as always。 we want to implement the fit and the predict method。 So let's start
+    with the fit method。 So let's say define fit。 and it has self and it has X and
+    y。 So the training samples and the labels。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们可以说N C，L F默认为5。然后在初始化时，我们存储这个数字。所以我们说self.dot N C，L F等于分类器的数量。然后像往常一样，我们想要实现fit和predict方法。我们先从fit方法开始。我们可以说定义fit，它接受self、X和y。所以训练样本和标签。
+- en: And now， the first thing we do is to get the shape of this vector。 So the number
+    of samples and also the number of features。Features equals x dot shape。And then
+    we want to in， initialize our weights。 So in it the weights。 And as I said。 all
+    the weights for each sample is set to one over n in the beginning。 So let's say
+    w equals nuy。
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，我们首先要做的是获取这个向量的形状。所以样本的数量以及特征的数量。特征等于x的形状。然后我们要初始化我们的权重。因此，初始化权重。正如我所说，每个样本的权重在开始时都设置为1/n。所以我们可以说w等于nuy。
+- en: And then we can use a a method from numpy that is called full。 So nuumpy full。
+    and it gets the size number of samples。 And then it gets an initial value。 And
+    here we say one。Over the number of samples。 So this sets each value to this calculated
+    value。And then。 this is our initialization。 And now let's iterate through all
+    the classifiers and do the training。
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们可以使用一个来自numpy的方法，叫做full。所以numpy full。它获取样本的大小数字。然后它获取一个初始值。在这里我们说是1。除以样本数。这将每个值设置为这个计算值。然后，这是我们的初始化。现在让我们遍历所有分类器并进行训练。
+- en: So first， we create a list where we want to store all the classifiers。 So let's
+    say self dot C。 L F's。😊，诶。And this is an empty list in the beginning。 And now
+    let's do the iteration。 So let's say4 underscore in range。 And here we have the
+    number of classifiers that we specify。 So self dot N， C， L， F。And now what we
+    want to do here is we want to do the greedy search。
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 首先，我们创建一个列表来存储所有分类器。假设self.dot.C.LF's。😊，这是一个空列表。一开始。现在让我们进行迭代。假设4_在范围内。在这里我们有指定的分类器数量。所以self.dot.N.C.L.F。现在我们想要做的是贪婪搜索。
+- en: So we want to iterate over all the features and all the threshold。 So this is
+    similar to the decision tree implementation that I did in another tutorial。 And
+    I recommend that you check that out， too。 So we want to do a similar thing here。
+    So。First。 we create our classifier。 So let's say C LF equals decision stump。
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们想遍历所有特征和所有阈值。这与我在另一个教程中实现的决策树类似。我建议你也查看一下。所以我们想在这里做类似的事情。首先，我们创建我们的分类器。假设C.LF等于decision
+    stump。
+- en: And now let's define a min error in the beginning。 So we want to find the best
+    feature value。 the split feature and the split threshold where this error then
+    is minimum。 So in the beginning。 we just say this is float。In， so this is a very
+    high number。 And now let's iterate over all the features。 So let's say for feature。For
+    feature。
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在让我们一开始定义一个最小误差。我们想找到最佳特征值、分割特征和分割阈值，使得这个误差最小。所以一开始，我们只是说这是float。在这里，这是一个非常高的数字。现在让我们遍历所有特征。假设对于特征。对于特征。
+- en: I in the range of。And here we have the number of features that we got in the
+    beginning。And then we want to get only this feature。 So let's say X column。 So
+    this is similar to what we did here。So we can do the same thing and say x column。Equals
+    this。 So all the samples， but only this feature index。 So I call it feature I，
+    in this case。
+  id: totrans-38
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我在范围内。在这里我们有一开始获取的特征数量。然后我们只想获取这个特征。假设X列。这与我们在这里所做的相似。所以我们可以做同样的事情，设定x列等于这个。所以所有样本，但仅仅是这个特征索引。在这种情况下我称之为特征i。
+- en: And then we get one to get only the unique values。 And these are our thresholds。
+    So let's say thresholds equals Nai dot unique。And here， the unique values of our
+    column。 So x column。 And now we iterate over all the thresholds。 So let's say
+    for threshold in。Thresholds。And now what we want to do is we want to predict with
+    the polarity 1 first and then calculate the error with the formulas that I showed
+    you in the beginning。
+  id: totrans-39
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们获取唯一值。它们就是我们的阈值。假设阈值等于Nai.dot.unique。在这里，我们的列的唯一值。所以x列。现在我们遍历所有阈值。假设对于阈值在阈值中。现在我们想做的是先用极性1进行预测，然后用我在开始时展示的公式计算误差。
+- en: So let's say our polarity equals  one。 And then let's do the predictions。 So
+    predictions equals。 And this is similar to what we did here。 So in the beginning，
+    just， it's just one。And then we use this formula here。 So since our polarity is  one。
+    we have to compare it by saying if it's smaller than our threshold。
+  id: totrans-40
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设我们的极性等于1。然后让我们进行预测。所以预测等于。这与我们在这里所做的相似。所以一开始，它只是1。然后我们使用这个公式。因此，由于我们的极性是1，我们必须通过比较它是否小于阈值来进行比较。
+- en: So predictions where our column value， our feature value is smaller than our
+    threshold than there our predictions are -1。So now we predicted all the samples
+    and now we want to calculate the error and as I said。 the error is the sum over
+    the weights of the misclassified samples。 So let's get the misclassified weight。
+    So let's say misclassified equals W and the w where our y our training labels
+    is not equal to the predictions that we just did。
+  id: totrans-41
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以预测结果是我们的列值，我们的特征值小于阈值时，预测结果为-1。现在我们预测了所有样本，接下来我们想计算误差，正如我所说，误差是错误分类样本权重的总和。让我们获取错误分类的权重。假设错误分类等于W，且w是我们的y，训练标签不等于我们刚才的预测。
+- en: So these are the misclassified weights。 And now we want to simply calculate
+    this sum over these weights。 So arrow。Eror equals the sum over this misclassified
+    weight。 So this is the error。 And now we also want to flip our error If it is
+    greater than 05。 So we say if error is greater than 05。 We simply say that our
+    new error equals 1 the error and then we also flip the polarity。
+  id: totrans-42
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这些是被错误分类的权重。现在我们想要简单地计算这些权重的总和。所以 arrow.Eror 等于这些被错误分类权重的总和。这是误差。现在如果误差大于 0.5，我们也要翻转我们的误差。所以我们说如果误差大于
+    0.5，我们简单地说我们的新误差等于 1 减去误差，然后我们也翻转极性。
+- en: So we say P equals-1。So now we have our error and now we check if our error
+    is smaller than the min error。 So let's say if error is smaller than the min error。Then
+    this is our new min era。 So we say min error equals error。 And now this is the
+    best current fit for our decision stamp。 So we want to store this。 So we say CF
+    dot polarity equals P and sorry， only P。
+  id: totrans-43
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们说 P 等于 -1。现在我们有了误差，接下来检查我们的误差是否小于最小误差。如果误差小于最小误差，那么这是我们的新最小误差。所以我们说最小误差等于误差。这是我们当前的最佳拟合。因此，我们要保存这个结果。我们说
+    CF.dot.polarity 等于 P，对不起，只有 P。
+- en: and we also want to store the threshold and the feature。 So CF dot threshold
+    equals the current threshold and C F dot feature index equals feature I。And yeah，
+    so this is the whole training loop for a classifier。And now when we are done with
+    post four loops， what we want to do here is have to check if I'm on the right
+    indent。
+  id: totrans-44
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们还想保存阈值和特征。因此，CF.dot.threshold 等于当前阈值，CF.dot.feature index 等于特征 I。是的，这就是分类器的整个训练循环。当我们完成后四个循环时，我们要检查我是否在正确的缩进上。
+- en: So now what we have to do is to calculate the performance。 so calculate alpha。
+    So we say and CF dot alpha equals。 and then we need this formula here。![](img/736cbfb71e784efea36f6f12e912a093_6.png)
+  id: totrans-45
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们需要计算性能。计算 alpha。因此我们说 CF.dot.alpha 等于。然后我们需要这个公式。![](img/736cbfb71e784efea36f6f12e912a093_6.png)
+- en: So 05 times the lock of1 minus the error divided by the error。![](img/736cbfb71e784efea36f6f12e912a093_8.png)
+  id: totrans-46
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以 0.5 乘以 1 减去误差，再除以误差。![](img/736cbfb71e784efea36f6f12e912a093_8.png)
+- en: And we also use a little epsilon so that we don't divide by 0。 So let's say
+    Es equals this small value。嗯。And this is our epsilon。 And now let's use the formula。
+    So 05 times and nuy dot the lock。And here we have one minus the error。And then
+    divide by here。 let's say error plus our epsilon。 And let's wrap this in another
+    parenthses。 So this one。
+  id: totrans-47
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们还使用一个小的 epsilon，以避免除以 0。所以我们假设 Es 等于这个小值。嗯。这是我们的 epsilon。现在让我们使用这个公式。所以 0.5
+    乘以 nuy.dot.log。这里有 1 减去误差。然后在这里除以，假设误差加上我们的 epsilon。并将其包裹在另一个括号中。所以这个。
+- en: And let me check if this is correct。 So let's do another one around this one
+    here。And then。 this should be fine。So this is our alpha。 And now we want to update
+    the weights。 And for this。 we also need the prediction。 So let's check the formula
+    formula again。 So this is the old weight times the exponential function of minus
+    the alpha that we just calculated times the actual predictions or the actual labels
+    times the predictions。
+  id: totrans-48
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我检查一下这是否正确。因此让我们在这个周围再做一个检查。这应该没问题。所以这是我们的 alpha。现在我们想更新权重。为此，我们还需要预测值。因此让我们再次检查公式。所以这是旧权重乘以刚刚计算的
+    alpha 的指数函数，乘以实际预测值或实际标签乘以预测值。
+- en: And then we normalize it。 So this is the formula that we need。 So let's write
+    this here。 And let's first get the predictions。 So we can say predictions equals。
+    and we already implemented this so we can simply say CF dot prediction。![](img/736cbfb71e784efea36f6f12e912a093_10.png)
+  id: totrans-49
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们进行归一化。这是我们需要的公式。让我们在这里写下这个公式。首先获取预测值。所以我们可以说 predictions 等于。我们已经实现了这一点，所以我们可以简单地说
+    CF.dot.prediction。![](img/736cbfb71e784efea36f6f12e912a093_10.png)
+- en: '![](img/736cbfb71e784efea36f6f12e912a093_11.png)'
+  id: totrans-50
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/736cbfb71e784efea36f6f12e912a093_11.png)'
+- en: X。X， yeah。 So we get the column up here。 so we can put the whole x here。 And
+    now we have the predictions， and now we can use them and update the weights。 So
+    we say our weights is multiplied equals。 And then we say nuy X。 So the exponential
+    function。 And then minus C F dot alpha。Times， and here the actual labels。 and
+    then times the predictions。
+  id: totrans-51
+  prefs: []
+  type: TYPE_NORMAL
+  zh: X。X，没错。所以我们在这里获取列。因此我们可以把整个 x 放在这里。现在我们有了预测，现在我们可以使用它们并更新权重。因此我们说我们的权重乘以等于。然后我们说
+    nuy X。即指数函数。然后减去 CF.dot.alpha。乘以，和这里的实际标签。再乘以预测值。
+- en: The times， predictions。So， and then we want to normalize it。 So we divide it
+    by the sum over this weight。 So we say w divided equals。 And then here we say
+    nuy dot sum W。And now we are done。 So we updated our weights。 and then we want
+    to store this classifier。 So we want to save it。 So we say self dot C， L。
+  id: totrans-52
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 次数，预测。所以，我们想要进行归一化。我们将其除以这个权重的总和。所以我们说w除以等于。然后这里我们说nuy的sum W。现在我们完成了。我们更新了权重，然后我们想要存储这个分类器。我们想要保存它。所以我们说self的C，L。
+- en: F dot append the current classifier。 So we append C， L F。And now we are done
+    with the fit method。 So this is the whole training of our add boost classifier。And。Now，
+    what we also need is， of course。 we want to have the predict method。 So let's
+    implement this down here。 So let's say define， predict。 and here it gets self
+    and it also gets X。 And now this is the formula that I showed you here。
+  id: totrans-53
+  prefs: []
+  type: TYPE_NORMAL
+  zh: F点追加当前分类器。所以我们追加C，L F。现在我们完成了fit方法。这是我们add boost分类器的整个训练过程。现在，我们当然也需要predict方法。让我们在这里实现它。假设定义predict，这里得到self，也得到X。这是我之前给你展示的公式。
+- en: So we look at the s of the sum。 And here we multiply each alpha with the with
+    the prediction。 Yeah。 So let's do this。![](img/736cbfb71e784efea36f6f12e912a093_13.png)
+  id: totrans-54
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们查看总和的s。在这里我们将每个alpha与预测相乘。是的。那么我们来做这个。![](img/736cbfb71e784efea36f6f12e912a093_13.png)
+- en: '![](img/736cbfb71e784efea36f6f12e912a093_14.png)'
+  id: totrans-55
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/736cbfb71e784efea36f6f12e912a093_14.png)'
+- en: So let's say C， L F dot Prats equals。 And here we use list comprehension。 And
+    then we do this for each of the classifiers。 So we say C， L F dot alpha times。
+    And here we use the predictions C， L F dot predict。 And here we want to predict
+    X。 And we want to do this for each of the start classifiers。 So we say for C，
+    L F in self dot C， L Fs。
+  id: totrans-56
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设C，L F的Prats等于。在这里我们使用列表推导式。然后我们对每个分类器进行此操作。我们说C，L F的alpha乘以。在这里我们使用预测C，L F的predict。我们想要对X进行预测。我们要对每个初始分类器这样做。所以我们说对于C，L
+    F在self的C，L Fs中。
+- en: So these are all the predictions in the sum。 And now we need to calculate the
+    sum。 So we say y pre equals and then nuy dot sum。 And here we say C， L F pres
+    and along the axis 0。 So now we have the sum。 And now the very last thing that
+    we need to do is to look at the s。 So we say y pret equals nuy dot s sign of this，
+    Y pret。And this is our final prediction。
+  id: totrans-57
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这些都是预测的总和。现在我们需要计算总和。我们说y pre等于nuy的sum。这里我们说C，L F pres，并沿着axis 0。现在我们得到了总和。最后我们需要查看s。所以我们说y
+    pret等于nuy的sign of this，Y pret。这是我们的最终预测。
+- en: And then we can return this。 So let's return why pret。And now we should be done。
+    So now we have the fit method and the predict method。And now here I've already
+    written a little test script。 So here I import this class that we just created。
+    So from addda boost to import adddabu。
+  id: totrans-58
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们可以返回这个。我们说返回y pret。现在我们应该完成了。现在我们有了fit方法和predict方法。这里我已经写了一个小的测试脚本。所以我从addda
+    boost中导入我们刚刚创建的类。
+- en: Then I also have a accuracy measure here。 And then in this example。 we load
+    the breast concert data set from the SQ learnide assets。 and then the important
+    thing that we must do here is to set all the labels that are 0 at the moment to-1
+    because add boost needs the labels as-1 and plus1。 and then we do a train test
+    split as always， And then here we create a add boost classifier。
+  id: totrans-59
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我这里还有一个准确率测量。在这个例子中，我们从SQ learnide assets加载乳腺癌数据集。重要的是我们必须将目前所有标签为0的设置为-1，因为add
+    boost需要标签为-1和+1。然后我们像往常一样进行训练测试分割，然后在这里创建一个add boost分类器。
+- en: and in this case， I put in five classifier。 Then we call the fit method。 and
+    then we call the predict method and then we calculate the accuracy。So this is
+    the test script。 So let's run this and hope that everything's working。 So let's
+    say Python a boost test。 it's called and hit enter， and it's running， and it's
+    calculating。And I hope that it's working。
+  id: totrans-60
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这种情况下，我放入了五个分类器。然后我们调用fit方法。接着我们调用predict方法，然后计算准确率。所以这是测试脚本。让我们运行这个，希望一切正常。假设我们用Python来进行boost测试，调用它并按下回车，它正在运行，并在计算。我希望它能正常工作。
+- en: And now we are done。 So， yeah， so here we have a accuracy accuracy。 and it's
+    pretty good in this example。 So we have 094。 So we see that it's working。And yeah。
+    I hope you enjoyed the tutorial and see you next time， bye。![](img/736cbfb71e784efea36f6f12e912a093_16.png)
+  id: totrans-61
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们完成了。所以，是的，这里我们有一个准确率，而且在这个例子中表现相当不错。所以我们有094。我们看到它在工作。希望你喜欢这个教程，下次见，拜！![](img/736cbfb71e784efea36f6f12e912a093_16.png)

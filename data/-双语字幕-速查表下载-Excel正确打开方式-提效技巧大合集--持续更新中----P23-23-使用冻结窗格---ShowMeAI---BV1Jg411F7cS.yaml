@@ -1,0 +1,82 @@
+- en: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P23：23）使用冻结窗格 - ShowMeAI - BV1Jg411F7cS
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P23：23）使用冻结窗格 - ShowMeAI - BV1Jg411F7cS
+- en: In this short Microsoft Excel tutorial， I want to show you a tool called freezeze
+    panes。 And I want to illustrate for you how it's useful。 And to do so， I have
+    a simple spreadsheet here。 It's basically just a list of synth pop bands and their
+    recent albums。 And there's some other information here as well。 But notice as
+    I browse down the page。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个简短的Microsoft Excel教程中，我想给你展示一个名为冻结窗格的工具。我想向你说明它是如何有用的。为此，我这里有一个简单的电子表格。基本上只是合成流行乐队及其近期专辑的列表，还有一些其他信息。但请注意，当我向下浏览页面时。
+- en: It's easy for me to lose track of what each of these columns represent。 Because
+    my column titles。 band album genre price sales。 that all gets lost as I browse
+    down the page。 Now。 this is just a list of 30 records or so。 But imagine what
+    if I had a spreadsheet with thousands of records。 Thouands of rows， or even just
+    hundreds of rows。 It would be very easy to get confused about what does this number
+    one represent。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我很容易忘记这些列各自代表什么。因为我的列标题是专辑、乐队、流派、价格和销售。当我向下浏览页面时，这些信息都被遗忘了。现在，这只是大约30个记录的列表。但想象一下，如果我有一个包含数千个记录的电子表格，成千上万的行，甚至只是几百行，那么会很容易混淆这个数字代表什么。
+- en: What does 20 represent， What does it mean， And that's where the freeze panes
+    tool comes in very handy。 Basically， what it allows me to do is it makes it so
+    that I can freeze row number one， for example。 So that it's。![](img/87107e87b7b80ae6ddb25cdf5bd1cae1_1.png)
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 20代表什么，它意味着什么，这就是冻结窗格工具非常有用的地方。基本上，它让我能够冻结第一行，例如。这样就很方便。![](img/87107e87b7b80ae6ddb25cdf5bd1cae1_1.png)
+- en: Stays there at the top of the screen and doesn't disappear and go away。 So as
+    I browse down the page。 I would always be able to see row number one。 Let's look
+    at how to activate freeze panes。 There are basically two different ways you can
+    do it。 the classic oldfashioned way to do it would be to click on the row underneath
+    the row that you want to freeze So I clicked on row number two It highlighted
+    the entire row and now I can go up to the view tab and notice there's freeze panes。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它保持在屏幕顶部，不会消失。因此，当我向下浏览页面时，我始终能够看到第一行。让我们看看如何激活冻结窗格。基本上，有两种不同的方法可以做到这一点。经典的旧式方法是点击你想冻结的行下面的行。所以我点击了第二行，它高亮显示了整行，现在我可以上到视图选项卡，注意到有冻结窗格。
+- en: I just click on that and choose freeze panes。 It doesn't look like anything
+    happened。 but now watch as I browse down the page row number one stays at the
+    top。 So I always know what the numbers mean and what the text means。 So that's
+    the classic way to activate freeze panes and it doesn't have to always be this
+    top row。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我只需点击这个并选择冻结窗格。看似没有发生任何变化，但现在请注意，当我向下浏览页面时，第一行保持在顶部。所以我始终知道这些数字和文本的意义。这就是激活冻结窗格的经典方法，它不一定要是顶部的那一行。
+- en: I'm going to unfreeze panes。 and I could choose if I wanted to to freeze rows1
+    through 17。 In order to do that， I just click on row 18。 go up to freeze panes
+    freeze panes now。The first 17 rows are all frozen Okay so like I said。 that's
+    the classic oldfashioned way of doing freeze panes。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我要取消冻结窗格。我可以选择冻结第1到第17行。如果要这样做，我只需点击第18行，向上选择冻结窗格，立即冻结窗格。前17行都被冻结。就像我说的那样，这是经典的旧式冻结窗格方法。
+- en: The newer method is simply to not worry about what column you're in about what
+    row you're in or what cell is selected but simply to go up here to freeze panes
+    and choose freeze top row So this way you don't even have to worry about which
+    row should I select or anything like that。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 较新的方法是根本不必担心你在什么列、什么行或哪个单元格被选中，而是直接上到冻结窗格并选择冻结顶部行。这样你就不需要担心应该选择哪一行或其他任何事情。
+- en: you simply go up to freeze panes and choose freeze top row and it has the exact
+    same effect as if you had done at the oldfashed way noticeice that there is also
+    an option to freeze the first column if you choose that。 then the column at the
+    far left stays visible no matter how far to the right you go So I hope you find
+    freeze panes to be helpful and I hope that you found this video to be helpful
+    If you have please click the like button below。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你只需上到冻结窗格并选择冻结顶部行，它的效果与旧式方法完全相同。注意，还有一个选项是冻结第一列，如果你选择它，那么最左边的列无论你向右滚动多远都会保持可见。所以我希望你觉得冻结窗格有帮助，也希望你觉得这个视频有帮助。如果有，请点击下面的点赞按钮。
+- en: '![](img/87107e87b7b80ae6ddb25cdf5bd1cae1_3.png)'
+  id: totrans-9
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/87107e87b7b80ae6ddb25cdf5bd1cae1_3.png)'

@@ -1,0 +1,270 @@
+- en: 【双语字幕+资料下载】更简单的绘图工具包 Seaborn，一行代码做到 Python 可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ -
+    P21：L21- Facet网格 - ShowMeAI - BV1wZ4y1S7Jc
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】更简单的绘图工具包 Seaborn，一行代码做到 Python 可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ -
+    P21：L21- Facet网格 - ShowMeAI - BV1wZ4y1S7Jc
+- en: The facet grid Okay， so with the facet grid， you're going to be able to print
+    multiple plots in a grid in which you are going to be able to define your columns
+    and your rows So let's say I wanted to get a histogram for smokers and nonsmokerrs
+    with total bill for lunch and dinner I'm going to use the tips data frame for
+    this。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Facet网格。那么，使用facet grid，你将能够在一个网格中打印多个图，其中你可以定义列和行。假设我想要获取吸烟者和非吸烟者的直方图，基于午餐和晚餐的总账单，我将使用tips数据框来完成这个。
+- en: '![](img/8d5951280297357bd612b9daf49c99c3_1.png)'
+  id: totrans-2
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8d5951280297357bd612b9daf49c99c3_1.png)'
+- en: And I put Fg in there for facet grid。And then you call SN S。Facet。Grid。And I'm
+    going to use the tips data frame， of course。Column is going to be represented
+    with time and row is going to be represented with smokers。![](img/8d5951280297357bd612b9daf49c99c3_3.png)
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我在这里放入FG以表示facet grid。然后调用sns.FacetGrid。我将使用tips数据框，当然，列将由时间表示，行将由吸烟者表示。![](img/8d5951280297357bd612b9daf49c99c3_3.png)
+- en: And you can see we went and created our grid like system here。 and what I want
+    to do now is I want to pass in attributes for my histogram。 so I'm going to say
+    tips， FG， map， and plot a histogram。And。Based off of total bill。 and I'm going
+    to say that I want to put this in buckets or bins of eight。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以看到我们在这里创建了一个类似网格的系统。我现在想做的是为我的直方图传入属性。所以我将说使用tips、FG、map，并绘制一个直方图。基于总账单。我将把它放在八个桶或箱中。
+- en: '![](img/8d5951280297357bd612b9daf49c99c3_5.png)'
+  id: totrans-5
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8d5951280297357bd612b9daf49c99c3_5.png)'
+- en: You can see it went automatically generated those histograms for us of pretty
+    neat stuff you're also going to be able to come in and let's say you wanted to
+    create a scatter plot and that's going to be total bill and let's try tips。![](img/8d5951280297357bd612b9daf49c99c3_7.png)
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以看到它自动为我们生成了这些直方图，真是不错的东西。你也可以进来，比如说你想创建一个散点图，那将是总账单，我们来试试tips。![](img/8d5951280297357bd612b9daf49c99c3_7.png)
+- en: '![](img/8d5951280297357bd612b9daf49c99c3_8.png)'
+  id: totrans-7
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8d5951280297357bd612b9daf49c99c3_8.png)'
+- en: Compare both of those as well this is tip not tips al right and there you can
+    see we created a scatter plot Another thing we're going to be able to do is let's
+    go let's get rid of this and let's say that we would like to assign variables
+    to different colors could do this so let's have this still be the tips data frame
+    I'm going have column B time I'm going however change h to smoker and you can
+    also go and change the height and then you can let's change the height to4 and
+    then you can change something called the aspect which is going to be the width
+    based off the height so I'm going make that be1 so they're going to be equal to
+    each other let's make it a little bit bigger let's say 1。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 比较这两个图，这个是小费，不是小费，好的，你可以看到我们创建了一个散点图。我们还能够做的另一件事是，去掉这个，并说我们想为不同的颜色分配变量，可以这样做。所以我们仍然使用tips数据框，我将设置列B为时间，但我将把h改为吸烟者，你还可以改变高度，然后我们将高度改为4，并且可以改变一个叫做aspect的东西，这将基于高度来决定宽度，所以我将把它设为1，让它们相等，让我们把它稍微放大一点，设为1。
+- en: 3 then we can come down and we could say tips FG。![](img/8d5951280297357bd612b9daf49c99c3_10.png)
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们可以下来，看看tips FG。![](img/8d5951280297357bd612b9daf49c99c3_10.png)
+- en: '![](img/8d5951280297357bd612b9daf49c99c3_11.png)'
+  id: totrans-10
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8d5951280297357bd612b9daf49c99c3_11.png)'
+- en: Let's try map and let's just stick with a scatter plot here because that makes
+    most sense for doing some crazy stuff。 So I'm going to have this be total bill
+    and tip。![](img/8d5951280297357bd612b9daf49c99c3_13.png)
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们尝试map，这里我们就用散点图，因为这样做一些疯狂的事情最有意义。所以我将把它设置为总账单和小费。![](img/8d5951280297357bd612b9daf49c99c3_13.png)
+- en: And you can see there is our our two scatter plots。 Let's go and add some different
+    options like let's say I wanted dinner to come before lunch for some unknown reason。
+    I can do that。 So I'm going to say a column order is equal to dinner。![](img/8d5951280297357bd612b9daf49c99c3_15.png)
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以看到我们的两个散点图。我们可以添加一些不同的选项，比如说我想让晚餐在午餐之前，出于某种未知原因。我可以这样做。所以我将说列顺序等于晚餐。![](img/8d5951280297357bd612b9daf49c99c3_15.png)
+- en: And lunch， and let's go and change our palette as well。 So we'll say palette
+    is equal to。 and I'm going to use one called set one。 and I'm also going to change。The
+    edge color for our dots in our scatter plot to be equal to white。 And there you
+    can see with the changes that we made there。 Alright， so pretty neat stuff。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 还有午餐，让我们去更改我们的调色板。所以我们将说调色板等于。我将使用一个叫set one的调色板。我还将更改我们散点图中点的边缘颜色为白色。你可以看到我们所做的更改。好吧，真是不错的东西。
+- en: Now let's go and show you some other options because this guy has a ton of options。
+    Let's say that we would like to go and change sizes and line widths and assign
+    different colors to markers and different use different markers。 These dots right
+    here called markers。 I can change all that stuff。 What I want to do is I am going
+    to create a dictionary。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在让我们展示一些其他选项，因为这个家伙有很多选项。假设我们想更改大小和线宽，并为标记分配不同的颜色，使用不同的标记。这些点称为标记。我可以更改所有这些。我要做的是创建一个字典。
+- en: This is going to represent the size of our markers。 And then I'm going to define
+    the line width to be equal to 05 and the edge color to be equal to white。 then
+    I'm gonna come in。![](img/8d5951280297357bd612b9daf49c99c3_17.png)
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这将代表我们标记的大小。然后我将把线宽定义为0.5，边缘颜色定义为白色。接着我会来。![](img/8d5951280297357bd612b9daf49c99c3_17.png)
+- en: '![](img/8d5951280297357bd612b9daf49c99c3_18.png)'
+  id: totrans-16
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8d5951280297357bd612b9daf49c99c3_18.png)'
+- en: '![](img/8d5951280297357bd612b9daf49c99c3_19.png)'
+  id: totrans-17
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8d5951280297357bd612b9daf49c99c3_19.png)'
+- en: facet grid is going to be equal to SN S facet grid tip stat frame。 let's have
+    our column be equal to sex and our Hue changes are going to be based off of whether
+    the person is a smoker or not。And。Let's define the height for each of these to
+    be4 in the aspect ratio。 which we end up in the width， is going to be 1。3 again。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: facet grid将等于SN S facet grid tip stat frame。让我们的列等于性别，我们的Hue变化将基于这个人是否吸烟。让我们将每个的高度定义为4，宽高比为1.3。
+- en: And let's keep just adding all kinds of different crazy stuff。 Let's say we
+    want to change our H order。 have this be yes， and then no for smoker。 Okay。 that's
+    what that references。 And then we can also change our markers by saying h KWs
+    is equal to dictionary。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们继续添加各种疯狂的东西。假设我们想更改我们的H顺序，让吸烟者是“是”，非吸烟者是“否”。好的，这就是它所指的。然后我们还可以通过说h KWs等于字典来更改我们的标记。
+- en: '![](img/8d5951280297357bd612b9daf49c99c3_21.png)'
+  id: totrans-20
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8d5951280297357bd612b9daf49c99c3_21.png)'
+- en: '![](img/8d5951280297357bd612b9daf49c99c3_22.png)'
+  id: totrans-21
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8d5951280297357bd612b9daf49c99c3_22.png)'
+- en: We'll define our marker symbols to be let's do like a upwards facing triangle
+    with this carrot symbol like this。 and then let's do a downward facing triangle
+    by putting a V inside of there like this All right I'm trying to figure out all
+    the use all the different parameters and then we're going to assign this dictionary
+    worth of data in regards to the markers as well。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们将定义我们的标记符号，像这样用这个尖头符号做一个向上的三角形。然后我们用一个V放在里面，做一个向下的三角形。好的，我在试图弄清楚所有不同的参数，然后我们将为标记分配一个字典形式的数据。
+- en: So I'm going to say tips facet grid。![](img/8d5951280297357bd612b9daf49c99c3_24.png)
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我要说tips facet grid。![](img/8d5951280297357bd612b9daf49c99c3_24.png)
+- en: '![](img/8d5951280297357bd612b9daf49c99c3_25.png)'
+  id: totrans-24
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8d5951280297357bd612b9daf49c99c3_25.png)'
+- en: Map and。Go and create our scatter plot based off of。The total bill。The tip amount
+    and then pass in the other data that we made in regards to the markers and there
+    you can see all the crazy stuff we just did with both of those all right。 so that's
+    if you wanted to see just about every option imaginal and then the last thing
+    I want to do with a facet grid is show you something kind of neat I'm going to
+    go and get different data again。 so I'm going to go this is attendance data so
+    SS dot load。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 映射，并根据总账单、提示金额来创建我们的散点图，然后传入我们在标记方面制作的其他数据，你可以看到我们刚才做的所有疯狂的事情。好的，如果你想看到几乎每一个可想象的选项，最后我想在facet
+    grid上展示一些有趣的东西，我将去获取不同的数据。这是出席数据，所以SS dot load。
+- en: '![](img/8d5951280297357bd612b9daf49c99c3_27.png)'
+  id: totrans-26
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8d5951280297357bd612b9daf49c99c3_27.png)'
+- en: '![](img/8d5951280297357bd612b9daf49c99c3_28.png)'
+  id: totrans-27
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8d5951280297357bd612b9daf49c99c3_28.png)'
+- en: '![](img/8d5951280297357bd612b9daf49c99c3_29.png)'
+  id: totrans-28
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8d5951280297357bd612b9daf49c99c3_29.png)'
+- en: '![](img/8d5951280297357bd612b9daf49c99c3_30.png)'
+  id: totrans-29
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8d5951280297357bd612b9daf49c99c3_30.png)'
+- en: Data set。And attention And what this is is this is data frame is going to provide
+    like scores that were taken for different students based off of the level of attention
+    they were able to provide during the testing phase that's these kind of weird
+    sort of stuff and I'm going to go S and S I'm going to create a facet grid here
+    again and what I want to do here is I want to put each person in their own plot
+    with。
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 数据集。以及注意力。这是数据框，将提供不同学生在测试阶段能够提供的注意力水平下所获得的分数，这些有点奇怪的东西。我将去S和S，我将再次创建一个面格网，我想在这里做的是把每个人放在他们自己的图中。
+- en: 5 per line and plot each of their scores depending upon how much attention they
+    were able to pay during the testing phase。 Okay， so it's kind of just neat weight
+    of playing around with data。 So the column is going to be the subject。 I'm going
+    to say that I only want five subjects per line So column wraps 5 and I'll define
+    the height to be 1。5。 and then what I'm going to do is to do a regular traditional
+    plot So I'm going to say Tt FG map and just do a regular plot plot。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 每行5个主题，并根据他们在测试阶段能够集中注意力的程度绘制每个主题的分数。好吧，这有点像是玩弄数据的乐趣。所以列将是主题。我将说我每行只想要五个主题，所以列换行5，我将定义高度为1.5。然后我将做一个常规的传统绘图。所以我将说Tt
+    FG图，并做一个常规绘图。
+- en: '![](img/8d5951280297357bd612b9daf49c99c3_32.png)'
+  id: totrans-32
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8d5951280297357bd612b9daf49c99c3_32.png)'
+- en: いや。🤢，We'll have solutions。And。Scores and then for we can also define custom
+    markers So we'll say our custom marker in this situation is going be a very simple
+    dot Oh and I type in column wraps instead of column wrap and scores。 this should
+    be score and run it and there you can see all the individual subjects or students
+    that were being tested。
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 不。🤢，我们会有解决方案。然后是分数，我们还可以定义自定义标记。因此，我们会说在这种情况下我们的自定义标记是一个非常简单的点。哦，我在列换行而不是列包裹和分数中输入了。这应该是分数，运行它，你可以看到所有正在测试的个别主题或学生。
+- en: their scores and how their scores change depending upon how much detention they
+    could pay Allright so just so many different ways to look at and play with data
+    and to finish off this tutorial I want to talk about something you're going to
+    use all the time which are。
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 他们的分数以及他们的分数如何根据他们能集中多少注意力而变化。好吧，有这么多不同的方式来看待和玩弄数据。为了结束这个教程，我想谈谈你将一直使用的东西，那就是。
+- en: '![](img/8d5951280297357bd612b9daf49c99c3_34.png)'
+  id: totrans-35
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8d5951280297357bd612b9daf49c99c3_34.png)'
+- en: '![](img/8d5951280297357bd612b9daf49c99c3_35.png)'
+  id: totrans-36
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8d5951280297357bd612b9daf49c99c3_35.png)'
+- en: '![](img/8d5951280297357bd612b9daf49c99c3_36.png)'
+  id: totrans-37
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8d5951280297357bd612b9daf49c99c3_36.png)'
+- en: '![](img/8d5951280297357bd612b9daf49c99c3_37.png)'
+  id: totrans-38
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8d5951280297357bd612b9daf49c99c3_37.png)'
+- en: '![](img/8d5951280297357bd612b9daf49c99c3_38.png)'
+  id: totrans-39
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8d5951280297357bd612b9daf49c99c3_38.png)'

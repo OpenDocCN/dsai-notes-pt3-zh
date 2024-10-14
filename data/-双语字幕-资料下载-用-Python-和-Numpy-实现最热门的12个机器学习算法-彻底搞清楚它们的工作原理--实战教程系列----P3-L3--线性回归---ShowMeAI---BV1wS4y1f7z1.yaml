@@ -1,0 +1,461 @@
+- en: 【双语字幕+资料下载】用 Python 和 Numpy 实现最热门的12个机器学习算法，彻底搞清楚它们的工作原理！＜实战教程系列＞ - P3：L3- 线性回归
+    - ShowMeAI - BV1wS4y1f7z1
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】用 Python 和 Numpy 实现最热门的12个机器学习算法，彻底搞清楚它们的工作原理！＜实战教程系列＞ - P3：L3- 线性回归
+    - ShowMeAI - BV1wS4y1f7z1
+- en: Hi， everybody。 Welcome to a new tutorial。 This is the second video of the machine
+    learning from Sc tutorial series。 In this series， we are going to implement popular
+    machine learning algorithms using only built and Python modules and nuy。 Today，
+    we are going to implement the linear regression algorithm。 So let's talk about
+    the concept of linear regression first。 So in regression。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 大家好，欢迎来到新的教程。这是机器学习系列教程的第二个视频。在这个系列中，我们将仅使用内置和Python模块以及Numpy实现流行的机器学习算法。今天，我们将实现线性回归算法。所以让我们首先谈谈线性回归的概念。在回归中。
+- en: we want to predict continuous values， whereas in classification。 we want to
+    predict a discrete value like a class label 0 or one。 So if we have a look at
+    this example plot。 Then we have our data， the blue dots。 and we want to approximate
+    this data with a linear function。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们想要预测连续值，而在分类中，我们想要预测一个离散值，比如类标签0或1。因此，如果我们看看这个示例图，我们有我们的数据，蓝点。我们想用一个线性函数来逼近这些数据。
+- en: that's why it's called linear regression。 So we use a linear function to predict
+    the values。😊。So we can define the approximation as y hat equals w times x plus
+    B。 So this is the line equation where W or our weights is the slope and B is the
+    bias or just the shift along the Y x's in the2 D case。So this is the approximation。
+    And now we have to come up with this W and the B。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这就是为什么它叫做线性回归。我们使用线性函数来预测值。😊。所以我们可以将逼近定义为y帽等于w乘以x加B。这是直线方程，其中W或我们的权重是斜率，B是偏差或仅是2D情况下沿Y轴的平移。因此，这是逼近。现在我们需要得出这个W和B。
+- en: And how do we find this。So for this， we define a cost function。 And in linear
+    regression。 this is the mean squared error。 So this is the。Diffence。Between the
+    actual value and the approximated value。 So the actual value for this。 we need
+    training samples。And then we square this difference and sum over all the samples
+    and then divide by the number of samples。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们如何找到这个呢？为此，我们定义一个成本函数。在线性回归中，这就是均方误差。这是实际值与逼近值之间的差异。因此，我们需要训练样本来获取这个实际值。然后我们平方这个差异，对所有样本求和，然后除以样本数量。
+- en: So this way， we get the mean error。This is the cost function of the， so this
+    is the error。 And。 of course， we want to have the error as small as possible。
+    So we have to find the minimum of this function。 And how do we find the minimum。
+    So for this。 we need to calculate the derivative or the gradient。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 通过这种方式，我们得到了平均误差。这是成本函数，所以这是误差。当然，我们希望误差尽可能小。因此，我们必须找到这个函数的最小值。那么我们如何找到最小值呢？为此，我们需要计算导数或梯度。
+- en: So we calculate the gradient of our cost function with respect to W and with
+    respect to B。So this is the formula of the gradient。 Please check this for yourself。
+    and I will also put some links in the description with some further readings。
+    but I will not go into detail now。And now with this gradient。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因此，我们计算我们的成本函数关于W和B的梯度。这是梯度的公式。请自行检查，我也会在描述中放一些链接以供进一步阅读，但我现在不打算详细讲解。现在有了这个梯度。
+- en: we use a technique that is called gradient descent。 So this is an iterative
+    method to get to the minimum。 So if we have our object or our cost function here，
+    then we start somewhere。 So we have some initialization of the weights and the
+    bias。And then we want to go into the direction of the steepest descent。And the
+    steepest de is also the gradient。 So we want to go into the direction of the。
+    into the negative direction of the gradient。And we do this iteratively until we
+    finally reach the minimum。And with each iteration， we have a update rule for the
+    new weights and new bias。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们使用一种叫做梯度下降的技术。这是一种迭代方法，用于达到最小值。因此，如果我们在这里有我们的目标或成本函数，我们就从某个地方开始。我们初始化权重和偏差，然后我们想朝着最陡的下降方向前进。而最陡的下降也是梯度。因此，我们想沿着梯度的负方向前进。我们会迭代这个过程，直到最终达到最小值。每次迭代时，我们都有更新规则来计算新的权重和新的偏差。
+- en: So the new W is the old W minus alpha times the derivative。😊。So minus because
+    we want to go into the negative direction。And then this alpha is the so-called
+    learning rate。 And this is an important parameter for our model。 So the learning
+    rate defines how far we go how far we go into this direction with each iteration
+    step。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以新的W是旧的W减去alpha乘以导数。😊。所以减去是因为我们想进入负方向。然后这个alpha是所谓的学习率。这是我们模型的一个重要参数。因此，学习率定义了我们每次迭代步长中前进的距离。
+- en: So， for example， if we use a small learning rate， then it may take longer。 but
+    it can finally reach the minimum， And if we reach or if we use a big learning
+    rate。 then it might be faster， but it might also jump around like this and never
+    find the minimum。 So this is an important parameter that we have to specify。 and
+    please keep that in mind。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 例如，如果我们使用较小的学习率，那么可能需要更长的时间。但它最终可以达到最小值。如果我们达到，或者如果我们使用较大的学习率。那么可能会更快，但也可能会像这样四处跳动，永远找不到最小值。因此，这是一个重要的参数，我们必须指定。请记住这一点。
+- en: So now that we know our update rules， I've written the formulas for the derivatives
+    again here and。Then simplify them a little bit。 Please check that for yourself。
+    So these are the formulas for the update rules and the derivatives。 And this is
+    all we need to know。 So now we can get started。 So now let's define a class called
+    linear regression。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们知道了更新规则，我在这里再次写下了导数的公式。然后稍微简化了一下。请你自己检查一下。这些是更新规则和导数的公式。这就是我们需要知道的一切。现在我们可以开始了。现在让我们定义一个名为线性回归的类。
+- en: '![](img/ce4667748848c4687cace578f8ebabf6_1.png)'
+  id: totrans-11
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ce4667748848c4687cace578f8ebabf6_1.png)'
+- en: And this will， of course， has an in it method。Or double underscore score in
+    it。And then it has self。 and it gets the learning rate。 And I will give this a
+    default value。 So usually this is a very small value。 So I will give it0001。 And
+    then I will give it a number of iterations。 So how many iterations we use in our
+    gradient decent method。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 当然，这里面会有一个方法。或者双下划线分数在其中。然后它有self，并且获取学习率。我将给这个一个默认值。所以通常这是一个非常小的值。因此我将其设为`0001`。然后我将给它一个迭代次数。所以我们在梯度下降法中使用多少次迭代。
+- en: and I will also give this a default value。 So I will say this is 1000。 And then
+    I will simply store them here。 So I will say self L R equals L R and self。And。Itders
+    equals and its。 And then later， we have to come up with the weights。 But here
+    at the beginning， I will simply say self weights equals none and self dot bias
+    equals none。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我还会给这个一个默认值。我会说这是`1000`。然后我会简单地将它们存储在这里。因此我会说self L R等于L R和self。Itders等于它的。然后稍后，我们必须得出权重。但是在这里一开始，我会简单地说self
+    weights等于none，self dot bias等于none。
+- en: And then we have to define two functions， and we will follow the conventions
+    of other machine learning libraries here。 So we will define a fit method， which
+    takes the training samples and the labels for them。 So this will involve the training
+    step and the gradient descent。And then we will define a predict method。So then
+    when it gets new。Test samples。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们必须定义两个函数，并且我们将在这里遵循其他机器学习库的惯例。因此我们将定义一个fit方法，该方法接收训练样本及其标签。这将涉及训练步骤和梯度下降。然后我们将定义一个predict方法。因此，当它获取新的测试样本时。
+- en: then it can approximate the value and return the value。 So these are the functions
+    we have to implement。 And before we go on。 let's have a quick look at the data
+    X and Y。 So how does this look。And for this。 I've written a little example script，
+    and I used the psychic learn module to generate some example data。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后它可以近似这个值并返回该值。这就是我们需要实现的函数。在我们继续之前，让我们快速看看数据X和Y。这看起来如何。为此，我写了一个小示例脚本，并使用了psychic
+    learn模块生成了一些示例数据。
+- en: and I will split the data into training and test samples and also training and
+    test labels。 So first of all， let's have a look at how this data looks。![](img/ce4667748848c4687cace578f8ebabf6_3.png)
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我会将数据分成训练样本和测试样本，以及训练标签和测试标签。因此首先，让我们看看这些数据的样子。![](img/ce4667748848c4687cace578f8ebabf6_3.png)
+- en: So here is the plot。 So this is how our data looks。 And now we want to find
+    a function somewhere here that approximates the value。![](img/ce4667748848c4687cace578f8ebabf6_5.png)
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这里是图表。这就是我们的数据看起来的样子。现在我们想在这里找到一个函数来近似这个值。![](img/ce4667748848c4687cace578f8ebabf6_5.png)
+- en: And let's have a look at the。Shape of our x and y。 So let's run this。 And I
+    don't want this plot here anymore。嗯。So if we see that our x is a N D array of
+    size 80 by1。 And this is because I put in here， I want to have 100 samples。And
+    one feature for each sample。 And then I will split this。 So our training samples
+    only has 80 samples in it。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们看看我们 x 和 y 的形状。所以让我们运行这个。我不想再看到这个图了。嗯。如果我们看到我们的 x 是一个大小为 80×1 的 N D 数组。这是因为我在这里输入，我想要
+    100 个样本。每个样本一个特征。然后我会拆分这个。所以我们的训练样本只有 80 个样本。
+- en: So this is a ND array of size 80 by one and our training labels is just a 1
+    D vector of also of size 80。 So for each training sample， we have one value。So
+    this is how our data looks。 And now let's continue。 So let's implement the fit
+    method。 So， as I said。 we need to implement the gradient decentcent method here。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是一个大小为 80×1 的 N D 数组，而我们的训练标签只是一个大小为 80 的 1 D 向量。所以对于每个训练样本，我们有一个值。这就是我们的数据的样子。现在让我们继续。所以让我们实现
+    fit 方法。正如我所说。我们需要在这里实现梯度下降法。
+- en: and the gradient decent always needs to start somewhere。 So we need to have
+    some initialization。![](img/ce4667748848c4687cace578f8ebabf6_7.png)
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 梯度下降总是需要从某处开始。所以我们需要一些初始化。![](img/ce4667748848c4687cace578f8ebabf6_7.png)
+- en: '![](img/ce4667748848c4687cace578f8ebabf6_8.png)'
+  id: totrans-21
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ce4667748848c4687cace578f8ebabf6_8.png)'
+- en: So。Let's do。 let's in it our parameters。 And for this first。 let's get the number
+    of samples and the number of features。 We can get this by saying this is x dot
+    shape。And then we simply initialize all the weights with0。 So we can say self
+    weights equals nuy0s。Of size and feature。And features。 So for each component。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以。让我们来做。让我们初始化我们的参数。对于这一部分。让我们得到样本的数量和特征的数量。我们可以通过说这是 x.dot.shape 来获取。然后我们简单地将所有权重初始化为
+    0。所以我们可以说 self.weights 等于 nuy0s。大小和特征。对于每个分量。
+- en: we put in a0 and self du bias equals 0。 This is just a value。 So you can also
+    use random values here， but 0 is just fine。So let's use 0 here。 and then we use
+    the gradient descent。 So this is an iterative process。 So we use a fall loop。
+    So for I， oh actually， we don't need this。 So for underscore in range and then
+    self dot and its。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们输入 a0 和 self.du.bias 等于 0。这只是一个值。所以你也可以在这里使用随机值，但 0 就很好。所以我们在这里使用 0。然后我们使用梯度下降。这是一个迭代过程。所以我们使用一个循环。所以对于
+    I，哦，实际上，我们不需要这个。所以对于下划线在范围内，然后 self.dot 和它的。
+- en: And now， what we need。We first have to approximate。Or let's have a look at the
+    formula again。![](img/ce4667748848c4687cace578f8ebabf6_10.png)
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，我们需要的是什么。我们首先必须进行近似。或者让我们再看一下公式。![](img/ce4667748848c4687cace578f8ebabf6_10.png)
+- en: So， the formula for our。And new weights is the old weight minus the learning
+    rate times the derivative。And the derivative with respect to W is one over n。And
+    then we have the sum and the sum over two times X I。Times， and then。The difference
+    here of this approximated and the actual values。 So let's first。First。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以，我们的公式。新的权重是旧的权重减去学习率乘以导数。关于 W 的导数是 1 over n。然后我们有总和，和总和为两个 X I 的乘积。然后，这个近似值和实际值之间的差异。所以让我们先。首先。
+- en: calculate this approximation。 So we have this formula here。The approximation
+    is。The weights times our x plus the bias。![](img/ce4667748848c4687cace578f8ebabf6_12.png)
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 计算这个近似值。所以我们有这个公式。近似值是。权重乘以我们的 x 加上偏置。![](img/ce4667748848c4687cace578f8ebabf6_12.png)
+- en: So let's do this。 Let's say， and let's call this why。Predic it equals。 And then
+    we can use N dot dot。And then x and self dot weights。Plus。Bs， so this will multiply
+    the x with the weights。And now that we have the approximation， we can calculate
+    the derivative with respect to W。 And this is。 let's again， have a look at this
+    formula。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以让我们这样做。假设我们叫它 y。预测等于。然后我们可以使用 N 点点。然后 x 和 self 点权重。加上 Bs，这将把 x 与权重相乘。现在我们有了近似值，可以计算关于
+    W 的导数。这是。让我们再看看这个公式。
+- en: '![](img/ce4667748848c4687cace578f8ebabf6_14.png)'
+  id: totrans-28
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ce4667748848c4687cace578f8ebabf6_14.png)'
+- en: 1 over n。And then。The sum。 and then inside the sum， we have the product of x
+    times this。So， we say。![](img/ce4667748848c4687cace578f8ebabf6_16.png)
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 1 over n。然后。总和。然后在总和内部，我们有 x 乘以这个的乘积。所以，我们说。![](img/ce4667748848c4687cace578f8ebabf6_16.png)
+- en: 1 over。And samples。 So we already got the number of samples here。And then times。
+    And then we have the sum product。 So this is nothing else， but also the dot product。
+    So N P dot dot。 But now we have to be careful。 So what we did here。嗯。Here we multiply
+    each weight component with the feature vector component and sum it up。
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 1 over。样本。我们已经得到了样本的数量。然后乘以。然后我们有了总乘积。所以这没别的，也就是点积。所以 N P 点点。但现在我们得小心。所以我们在这里做了什么。嗯。在这里，我们将每个权重分量与特征向量分量相乘并求和。
+- en: And we do this for all samples and then get one value for each sample。And here
+    we want to get one value for each feature vector component。 So we multiply each
+    sample with a predicted value and sum it up。So。 and then we do this for each feature
+    vector component and get one value for each component。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们对所有样本进行这个操作，然后为每个样本得到一个值。在这里，我们希望为每个特征向量组件得到一个值。所以我们将每个样本与预测值相乘并求和。所以。然后我们对每个特征向量组件这样做，并为每个组件得到一个值。
+- en: So this is the other way round。 So this is along the other axis。 And we can。
+    So we have to use x dot transposed here， x dot T。And this is the dot product of
+    the transposed X。 And then we have y predicted minus the actual y。 So please check
+    the nuy dot function for yourself。So， this is the。The of the W and the derivative
+    of the bias is also one。 Or again。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这就是相反的方向。沿着另一个轴。因此，我们必须在这里使用x的转置，x dot T。这是转置X的点积。然后我们有预测的y减去实际的y。所以请自己检查nuy
+    dot函数。因此，这就是W的和偏差的导数也是1。或者再次。
+- en: let's have a look at the formula。 So this is the same。 except that we don't
+    have the x here。 So this is one over n。 and then just the sum。![](img/ce4667748848c4687cace578f8ebabf6_18.png)
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们看看这个公式。所以这就是相同的。只是这里没有x。所以这是1/n，然后就是求和。![](img/ce4667748848c4687cace578f8ebabf6_18.png)
+- en: Of this difference。 And by the way， I。I left the two out。 So this is just a
+    scaling factor that we can omit。So here one over n and then the sum over the difference。![](img/ce4667748848c4687cace578f8ebabf6_20.png)
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这个差异。顺便说一下，我。我把两个省略掉了。所以这只是一个可以忽略的缩放因子。所以这里1/n，然后是差异的和。![](img/ce4667748848c4687cace578f8ebabf6_20.png)
+- en: So again， one over number of samples。 And then we can say nuy dot sum and the
+    sum of y predicted minus actual y。So this are， these are our derivatives。 And
+    now we update our weights。 So we say self weights minus equals self dot learning
+    rate times this。Divative。And self。 the bias equals self。Minus equals self dot
+    learning rate times。The derivative。And。Yeah。
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以再一次，样本的倒数。然后我们可以说nuy dot sum和预测的y减去实际的y的和。所以这些是我们的导数。现在我们更新我们的权重。所以我们说self
+    weights减去等于self dot学习率乘以这个导数。并且self的偏差等于self。减去等于self dot学习率乘以导数。还有。是的。
+- en: so this is the gradient descent。And now we need the predict method。 So， again，
+    we approximate。![](img/ce4667748848c4687cace578f8ebabf6_22.png)
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这是梯度下降。现在我们需要预测方法。所以，再一次，我们近似。![](img/ce4667748848c4687cace578f8ebabf6_22.png)
+- en: We approximate the values with this formula， so。![](img/ce4667748848c4687cace578f8ebabf6_24.png)
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们用这个公式近似值，所以。![](img/ce4667748848c4687cace578f8ebabf6_24.png)
+- en: We already have this here。 So this is。The dot product of x and the weights，
+    plus the buyers。And then。 we simply returned this。So this is the whole implementation
+    that we need， and。I forgot to import Ny。 of course。 So I say， let's say， import
+    Ny S and P so that we can use this。And now， let's test this。So。嗯。Let's import
+    this class。 So let's say， from。Linear regression。Import linear regression。
+  id: totrans-38
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们已经有了这个。所以这是。x和权重的点积，加上偏差。然后。我们简单地返回这个。所以这是我们需要的整个实现，我忘记导入Ny了。当然。所以我说，假设，导入Ny
+    S和P，以便我们可以使用它。现在，让我们测试一下。所以。嗯。让我们导入这个类。所以假设，从。线性回归。导入线性回归。
+- en: And then create some regresso equals。Linear regression。And then we say regressor
+    dot fit。 and we want to fit the training samples and the training labels。And then
+    we can say we can get predicted values equals。Regress or。Dot predict。 And now
+    we want to predict the。Test。嗯。Samples。And now。
+  id: totrans-39
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后创建一些回归等于。线性回归。然后我们说回归器dot fit。我们想要拟合训练样本和训练标签。然后我们可以说我们可以得到预测值等于。回归器。点预测。现在我们想预测。测试。嗯。样本。现在。
+- en: in order to calculate the or to see how our model performs。 now we can't。 we
+    can't use the accuracy measure。 But here we use the mean squared error。 So as
+    I said。 this is our cost function， the mean square error that tells us how big。![](img/ce4667748848c4687cace578f8ebabf6_26.png)
+  id: totrans-40
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 为了计算或查看我们的模型表现。现在我们不能使用准确性度量。但在这里我们使用均方误差。所以如我所说。这是我们的成本函数，均方误差告诉我们有多大。![](img/ce4667748848c4687cace578f8ebabf6_26.png)
+- en: The difference between the actual value and the approximated value is。 so let's
+    define the mean squared arrow。 Let's say theef M， E， and this will get。![](img/ce4667748848c4687cace578f8ebabf6_28.png)
+  id: totrans-41
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 实际值与近似值之间的差异。所以让我们定义均方误差。假设M，E，这将得到。![](img/ce4667748848c4687cace578f8ebabf6_28.png)
+- en: The actual values， and the predicted values。And this is。The numpy here， we can
+    use Nampy mean。And then， simply， the difference。To the power of two。 So why true。Mus
+    y predicted to the power of2。And then we want to return this。So， let's see。 let's
+    say。M S E value equals ME。Off。W。Test。And the predicted。Values， and let's print
+    this。So now if we run this。嗯。See， it's not running。
+  id: totrans-42
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 实际值和预测值。这就是。这里的numpy，我们可以使用Numpy均值。然后，简单地，差值。平方。因此，为什么真实值。是我的预测值的平方。然后我们想返回这个。让我们看看。假设。MSE值等于ME。Off。W。测试。和预测值，让我们打印这个。所以现在如果我们运行这个。嗯。看看，它没有运行。
+- en: Bias is not defined。 So let's say what we。What did we miss here， dot biasas。And
+    let's run this again。So。L，27。Oh， sorry。 I copied this and forgot this year， too。
+    So next try。Now。 we see that our。Performance， so the mean squaredarrow is 783。
+    So this is pretty high。 So let's use another learning rate here。 So let's say
+    L R equals。t0，1。And let's run this。
+  id: totrans-43
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 偏差未定义。那么我们说我们。我们在这里遗漏了什么，点偏差。让我们再次运行这个。所以。L，27。哦，对不起。我复制了这个并忘记了这一年。所以下一次尝试。现在。我们看到我们的。性能，因此均方误差为783。这相当高。所以我们在这里使用另一个学习率。假设LR等于。t0，1。然后让我们运行这个。
+- en: And now we see that our arrow is smaller。 And let's actually plot this。So。Let's
+    plot。First。 with the original learning rate， let's see our。How the plot looks。So，
+    now。Our plot looks like this。 So it's。![](img/ce4667748848c4687cace578f8ebabf6_30.png)
+  id: totrans-44
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们看到我们的误差更小了。让我们实际绘制这个。所以。首先绘制。用原始学习率，看看我们的。图看起来如何。现在。我们的图看起来像这样。所以是。![](img/ce4667748848c4687cace578f8ebabf6_30.png)
+- en: Almost like the right slope， but not exactly。 And now let's have the other learning
+    rate。 So let's use this learning rate。 and let's run this。![](img/ce4667748848c4687cace578f8ebabf6_32.png)
+  id: totrans-45
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 几乎像正确的斜率，但不完全。现在让我们使用另一个学习率。所以让我们使用这个学习率。并运行这个。![](img/ce4667748848c4687cace578f8ebabf6_32.png)
+- en: '![](img/ce4667748848c4687cace578f8ebabf6_33.png)'
+  id: totrans-46
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ce4667748848c4687cace578f8ebabf6_33.png)'
+- en: And now our plot looks like this。 and this looks pretty good， actually。 So this
+    is a pretty good。Fit a pretty good approximation of this data with a linear function。
+    So we see that our implementation is working。 and I hope you enjoyed this tutorial
+    and see you in the next tutorial。😊。
+  id: totrans-47
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们的图看起来像这样。实际上这看起来相当不错。所以这是一个相当不错的。用线性函数对这个数据的良好拟合。所以我们看到我们的实现是有效的。希望你喜欢这个教程，下次见。😊
+- en: '![](img/ce4667748848c4687cace578f8ebabf6_35.png)'
+  id: totrans-48
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ce4667748848c4687cace578f8ebabf6_35.png)'
+- en: '![](img/ce4667748848c4687cace578f8ebabf6_36.png)'
+  id: totrans-49
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ce4667748848c4687cace578f8ebabf6_36.png)'
+- en: Bye。Hi， everybody。 Welcome to a new machine learning from scratch tutorial。
+    Today。 we are going to implement logistic regression using only built and Python
+    modules and Nmpy。 If you haven't watched my previous video about linear regression。
+    I will highly recommend to watch it first。 Since I explain some of the concepts
+    a little bit more in detail there。
+  id: totrans-50
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 嗨，大家好。欢迎来到新的机器学习基础教程。今天。我们将仅使用构建的Python模块和Numpy来实现逻辑回归。如果你还没有观看我关于线性回归的前一个视频。我强烈建议你先观看，因为我在那里对一些概念进行了更详细的解释。
+- en: But I will try to cover all the important concepts again in this video。 So let's
+    talk about the concepts of logistic regression。😊，So。As you remember， in linear
+    regression。 we model our data with a linear function W times x plus B。So this
+    will output continuous values。And now， in logistic regression， we don't want continuous
+    values， but we want a probability。
+  id: totrans-51
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但我会在这个视频中再次涵盖所有重要概念。所以让我们谈谈逻辑回归的概念。😊所以。如你所记得，在线性回归中。我们用线性函数W乘以x加B来建模我们的数据。这将输出连续值。而在逻辑回归中，我们不想要连续值，而是想要概率。
+- en: And in order to model this probability， we apply the sigmite function to our
+    linear model。So the sigmoid function is one over one plus the exponential function
+    of minus x。So this is the soid function and Min and x。 in our case， is then our
+    our linear model。So。 and this is， this will output a probability between 0 and1。
+    So if we plot the sigmoid function。
+  id: totrans-52
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 为了对这种概率建模，我们将sigmoid函数应用于我们的线性模型。sigmoid函数是1除以1加上负x的指数函数。所以这是sigmoid函数，Min和x。在我们的案例中，就是我们的线性模型。所以。这将输出0到1之间的概率。所以如果我们绘制sigmoid函数。
+- en: Then you can see this is between 0 and one。So with this function。 we can model
+    a probability of our data。And now， with this。Approximate it。Output， and we can
+    then。We must then come up with the parameters W。 So our weight and our bias。And
+    how do we do that。 So again， I already explained this in the previous video。
+  id: totrans-53
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以看到这是在0和1之间。所以通过这个函数。我们可以对我们的数据建模概率。现在，通过这个。近似输出，我们必须得出参数W。因此我们的权重和偏差。我们怎么做到这一点。所以再次，我在之前的视频中已经解释过这个。
+- en: So we apply a method that is called gradient descent。 So first of all， we need
+    a cost function。 And here we don't have the mean squared arrow any。 but we use
+    a function that is called the cross entropy。 So this is the formula。I will not
+    go into detail about this， but I will put some further readings in the description。So。
+  id: totrans-54
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们应用一种叫做梯度下降的方法。首先，我们需要一个成本函数。在这里，我们不再使用均方误差，而是使用一个叫做交叉熵的函数。这就是公式。我不会详细讨论这个，但我会在描述中放一些进一步阅读的材料。
+- en: with this formula。What we do， we want to optimize this with respect to our parameters，
+    W and B。So we use gradient descent。 and this means we start at some point and
+    then iteratively update our parameters。 So we have to calculate the derivative。And
+    then go into the direction of this derivative until we finally reach the minimum。So，
+    and then we also need to define a so called learning rate。
+  id: totrans-55
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 使用这个公式。我们想要优化我们的参数W和B。因此，我们使用梯度下降。这意味着我们从某个点开始，然后迭代地更新我们的参数。因此，我们必须计算导数。然后沿着这个导数的方向前进，直到最终达到最小值。所以，我们还需要定义一个所谓的学习率。
+- en: So the learning rate determines how far we go into this direction with each
+    step。 So this is an important parameter。 It shouldn't be too high since then it
+    might jump around and never find the minimum。 but it also shouldn't be too low。Sorry。And
+    now with this gradient descent。What we have is we have our update rules。 So our。Our
+    weight is our new weight is the old weight minus。
+  id: totrans-56
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以学习率决定了我们在每一步中向这个方向走多远。这是一个重要的参数。它不应该太高，否则可能会跳来跳去，永远找不到最小值，但也不应该太低。抱歉。现在，利用这个梯度下降。我们有我们的更新规则。因此，我们的新权重是旧权重减去。
+- en: because we want to go into the negative direction， minus our learning rate times
+    the derivative。And the same is for our bias。And then here are the formulas that
+    we need for our derivatives。 So these are the formulas， and they are actually
+    the same derivatives， like in。Lar regression。 so you can check the math behind
+    it yourself。 I will also put some links in the description。
+  id: totrans-57
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因为我们想要朝负方向走，减去我们的学习率乘以导数。偏置也是一样。这里是我们所需的导数公式。这些公式实际上和线性回归中的导数是一样的，所以你可以自己检查背后的数学。我也会在描述中放一些链接。
+- en: And this is all we need now to get started， and now we can implement our。![](img/ce4667748848c4687cace578f8ebabf6_38.png)
+  id: totrans-58
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这就是我们现在需要的全部，接下来我们可以开始实现我们的。![](img/ce4667748848c4687cace578f8ebabf6_38.png)

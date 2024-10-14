@@ -1,0 +1,206 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P68：69）使用链接数据类型 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P68：69）使用链接数据类型 - ShowMeAI - BV1uL411s7bt
+- en: '![](img/4d97d79ffce11a7a38a994122ad517dd_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/4d97d79ffce11a7a38a994122ad517dd_0.png)'
+- en: In this video I'm going show you how to work with the new linked data types
+    that you can find in Excel。 Now this is for Microsoft 365 versions of Excel， but
+    this also works with Excel for the web So even if you don't have Microsoft 365
+    you can still give this a try So let's take a look at my workbook you can see
+    that I have three different worksheets the first one has a list of movies just
+    some random movies and let's say I'd like to add some information about those
+    movies。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个视频中，我将向你展示如何使用Excel中的新链接数据类型。这是针对Microsoft 365版本的Excel，但也适用于Excel网页版。所以即使你没有Microsoft
+    365，仍然可以尝试一下。让我们看看我的工作簿，你可以看到我有三个不同的工作表，第一个包含一些随机电影的列表，假设我想添加关于这些电影的一些信息。
+- en: maybe the year that they came out maybe how much money each movie made while
+    it was in theaters。 maybe who directed each movie and I can certainly look this
+    information up I can open up Wikipedia or IMDb or some other website and gather
+    that information and put it into this spreadsheet and in the past that's exactly
+    what I would have done but now with a recent Microsoft 365 update look what you
+    can do in Excel。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 也许是它们上映的年份，或者每部电影在影院期间赚了多少钱，也许是每部电影的导演。我当然可以查找这些信息，打开维基百科或IMDb或其他网站，收集这些信息并放入这个电子表格，过去我确实是这样做的，但现在随着最近的Microsoft
+    365更新，看看你在Excel中可以做什么。
+- en: I can highlight the range of data and as long as。I'm signedign into my account
+    look what I get on the data tab in the data types group there's a button here
+    for stocks one for currencies and if I click on this button I get even more or
+    this button pops open with the full list of linked data types that I have access
+    to in Excel So basically what this means is that Excel can automatically identify
+    some terms or some of the items that fall into these categories so things related
+    to chemistry things related to plants or animals space so stars planets。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以高亮选择数据范围，只要我登录了我的账户，看看我在数据选项卡的数据类型组中能得到什么，这里有一个股票按钮，一个货币按钮，如果我点击这个按钮，会弹出一个包含我在Excel中可以访问的所有链接数据类型的完整列表。所以基本上，这意味着Excel可以自动识别一些术语或属于这些类别的项目，比如与化学、植物或动物、太空相关的内容，比如星星和行星。
+- en: things like that information related to cities locations and even yoga So let's
+    try it out with our list of movies I'm going to click on movies and at this point
+    it seems like Excel has frozen it doesn't look like much is going on but if you
+    look at the bottom of the screen there is a message saying that it is converting
+    the data into data that's linked it simply means that there is information being
+    linked from the internet into Microsoft。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 诸如此类的信息涉及城市、位置，甚至瑜伽。那么让我们用我们的电影列表来尝试一下。我将点击电影，此时Excel似乎冻结了，看起来没有什么进展，但如果你查看屏幕底部，会有一条消息说它正在将数据转换为链接数据，这意味着正在从互联网链接信息到Microsoft。
+- en: Excel and much of that information comes from Wolfram。 which is a website that
+    you can go to and this information is updated on a regular basis So when new movies
+    come out。 that information will be added statistics from the cities and information
+    about population and things like that will be updated on a regular basis as well
+    So let's take a look at the results us linked data types in this spreadsheet so
+    you'll notice in my list any movie that has this camera icon next is recognized
+    by Microsoft Excel's one to the future that Excel is not what to do with there's
+    multiple movies with that name the future so this is the one I'm talking about
+    so I click on it click select and now that movie has the movie icon next it what
+    about Gremlins that's the one I'm talking about with Js So this is mostly happening
+    with movies that have sequels Excel is not which of the movies I'm really talking
+    about in。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Excel中的许多信息来自Wolfram，这是一个你可以访问的网站，这些信息会定期更新。所以当新电影上映时，这些信息会被添加，城市的统计数据和人口等信息也会定期更新。那么让我们看看这个电子表格中的链接数据类型的结果，你会注意到在我的列表中，任何带有相机图标的电影都被Microsoft
+    Excel识别为“未来”的多部电影中，Excel不知道该如何处理，所以我在说的就是这个，所以我点击它，选择，现在那部电影旁边有了电影图标。至于《小精灵》，我在说的就是这个。所以这主要发生在有续集的电影上，Excel不确定我到底在说哪部电影。
+- en: Of this particular movie， the Sparks Brothers。 This recently came out and it's
+    kind of a smaller movie。 So it's not yet part of the linked data。 And so that
+    one's just not going to work for us。 That's okay。 I'll move on to the birds and
+    in some cases you may need to change the titles。 So I just changed it to birds
+    and then it did recognize it。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 关于这部特别的电影，斯帕克斯兄弟。这部电影最近上映，是一部较小的电影，所以它还没有成为关联数据的一部分。因此，这一部分对我们来说不适用。没关系，我会继续处理鸟类，有时候你可能需要更改标题。所以我只需将其更改为鸟类，然后它被识别了。
+- en: So now all of the movies except for one I recognized by Excel。 Now that that's
+    the case。 check out what I can do。 I can click and drag to highlight the range
+    and then go to this little icon that pops up where it says insert data and I can
+    click and look at all this information that's linked to the text that I've typed
+    into Excel and it's been recognized and linked to this online data。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在除了一个，所有的电影都被Excel识别了。既然如此，看看我能做什么。我可以点击并拖动以高亮范围，然后去那个弹出的插入数据的小图标，我可以点击查看所有与我在Excel中输入的文本相关的信息，它们已被识别并链接到这个在线数据。
+- en: So I want to know the genre of each of these movies。 I click genre and it fills
+    it in for me except for Sparks brothers unfortunately at this point I probably
+    should expand column B so I'll just double click between B and C and it expands
+    out let's try this again I'll just highlight the range go back up。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我想知道这些电影的类型。我点击类型，它为我填写了，除了斯帕克斯兄弟。不幸的是，在这一点上，我可能应该扩展B列，所以我只需双击B和C之间，它就扩展了。让我们再试一次，我将高亮范围，然后回到上面。
+- en: That icon click I would like an image of each of the movies Take a look at that
+    and let's try it again I'd like to know the release date and I'd like to know
+    the director and I'd like to know the international box office total receipts
+    so how much total money did this movie make across the world and so very very
+    quickly thanks to the linked data types I've been able to create a spreadsheet
+    full of information about those movies and very quickly I can format the column
+    headings just the way I want them to be now as you can see there are some parts
+    of this spreadsheet that it didn't work for obviously the Spars Brothers but also
+    there's not information about the box office totals for some of these movies so
+    I can just delete those out and either add in information from another source
+    or just keep it blank Okay let's try it again but this time with a different spreadsheet
+    this one is a list of states in the United States So I'll click and drag to get
+    the range and this time I'm gonna include a1 so I'll go down。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想要每部电影的图标点击一下，看看这个，然后再试一次。我想知道上映日期，想知道导演，想知道国际票房总收入，那么这部电影在全球赚了多少钱？得益于关联数据类型，我能够迅速创建一个包含这些电影信息的电子表格，并且我可以迅速按我想要的方式格式化列标题。现在你可以看到，这个电子表格中有些部分显然没有效果，比如斯帕克斯兄弟的部分，但还有一些电影的票房总数也没有信息，所以我可以直接删除这些，或者从其他来源添加信息，或者就保持空白。好吧，我们再试一次，这次用一个不同的电子表格，这个是美国各州的列表。所以我会点击并拖动以获取范围，这次我要包括A1，所以我会往下拖。
+- en: to a21 and let's go back to the data tab there in the data types group we'll
+    go here and choose geography。 Once again， Excel kind of freezes for a second and
+    that can take longer than you would expect especially if you have a lot of data
+    in your spreadsheet so this time all of the states in my spreadsheet a recognized
+    I can tell because there's a little map icon next to each state Excel didn't know
+    what to do with the word states it's the column heading and so it just puts a
+    question mark there that's fine Now I want you to see what if instead of selecting
+    the entire range what if you just pick one of the states and then click this button
+    it brings up a bunch of linked information but this is only going to add this
+    additional information in this case for the state of Alabama so if you want all
+    of it to be brought in you need to select the entire range and then go up and
+    click this icon I would like to know the leaders of those states the largest cities
+    the number of people per household and the housing。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 到a21，我们回到数据选项卡，在数据类型组中，我们选择地理。再一次，Excel卡顿了一秒钟，这可能比你预期的要长，特别是如果你的电子表格中有很多数据。这次我电子表格中的所有州都被识别了，我能知道，因为每个州旁边都有一个小地图图标。Excel不知道如何处理“州”这个词，因为它是列标题，所以它只是放了一个问号，没关系。现在我想让你看看，如果不选择整个范围，而是只选择一个州，然后点击这个按钮，会出现一堆链接的信息，但这只会为阿拉巴马州添加这些额外信息。如果你想把所有的信息都引入，你需要选择整个范围，然后上去点击这个图标，我想知道那些州的领导人、最大的城市、每户的人口和住房情况。
+- en: In that state and once again， all of this data is regularly updated。 so this
+    is the information for today， but in six months， some of this information may
+    change。 It's all kept fairly up tod one last example I'm going to go to this foods
+    spreadsheet and let's try it again Now in this case I don't have a list of just
+    10 or 20 foods I actually have looks like 118 different foods listed here So instead
+    of clicking and dragging I'm just going to go here to the upper left area in the
+    name box and I'll just click and type a2 because I don't really need the headings
+    selected through and you can indicate through with a colon a118 I tap enter and
+    it selects just the range that I want selected。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这种情况下，再次强调，这些数据是定期更新的。因此这是今天的信息，但在六个月后，一些信息可能会改变。所有数据都保持相当更新。最后一个例子，我要去这个食品电子表格，再试一次。现在在这种情况下，我没有仅仅10或20种食物的列表，我实际上有118种不同的食物列在这里。所以我不想点击和拖动，我会去左上角的名称框，点击输入a2，因为我并不需要选择标题，通过冒号指明a118，我按回车，它只选择了我想要的范围。
+- en: I'll go here to the data tab data types group and I'll click to identify this
+    range as foods there I get a little bit of a delay but when Excel is done thinking
+    about this information I will again have linked to data that I'll be able to pull
+    in。To this spreadsheet directly from the Internet。 It looks like it's finished。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我会去数据选项卡的数据类型组，点击将这个范围标识为食物。那里我会有一点延迟，但当Excel完成处理这些信息时，我将再次链接到可以直接从互联网导入的这些数据。这看起来已经完成了。
+- en: how many of these foods were recognized。 It looks like almost all of them， which
+    is amazing。 It looks like potato chips that was not recognized。 So if I click
+    there I might have to pick a specific kind of potato chip。 I'll just go with this
+    one here， click select and now it's recognized。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这些食物中有多少被识别了？看起来几乎所有的都被识别了，这真令人惊讶。看起来土豆片没有被识别。如果我点击那里，我可能需要选择一种特定的土豆片。我就选这个，点击选择，现在它被识别了。
+- en: Now if you looked closely some of these foods that I had in the spreadsheet。
+    they were named a little differently than what Excel was expecting。 but Excel
+    was able to identify them， and it changed the wording to match the linked data。
+    I'll go here to the name box I'll type in a2 through a118 tap enter it selects
+    the data。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在如果你仔细观察我在电子表格中有的一些食物，它们的命名与Excel的预期略有不同。但Excel能够识别它们，并将其文字更改为与链接数据相匹配。我会在名称框中输入a2到a118，然后按回车，它将选择这些数据。
+- en: and then I can use this button here to click I would like to know the total
+    calories of each of these foods I also want to know the cholesterol the total
+    protein。 I'd like to have an image of each that would be good。 and I'd like to
+    know how much vitamin C each of these foods has。 So this information looks like
+    it came in beautiful。😊。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我可以点击这个按钮，我想知道这些食物的总卡路里，我还想知道胆固醇和总蛋白质。我希望每种食物都有一张图片，这样很好。我还想知道这些食物中每种的维生素C含量。所以这些信息看起来很美好。😊
+- en: With the exception of image it looks like Excel is having some trouble getting
+    images for most of the foods but I am very excited about this feature in Microsoft
+    365 versions of Excel and also Excel for the web this will help me tremendously
+    to be able to add in information quickly from the internet and be able to use
+    it right away in my spreadsheets Now because this is all linked data to the internet
+    what if the information changes online and I open my spreadsheet would it have
+    the new information well not necessarily if you want to make sure you have the
+    most recent up-todate information What you would want to do is select the data
+    and then go to the data tab on the data ribbon here in the queries and connections
+    group you can go to refresh all and if you click on the bottom part of that button
+    you have some options refresh what's selected or refresh all either way so I'll
+    just click refresh and this will take some time now to refresh the data but it'll
+    be the most recent information that's available online and itll be。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 除了图像之外，看起来Excel在获取大多数食物的图像时遇到了一些问题，但我对Microsoft 365版本的Excel以及Excel网页版中的这个功能非常兴奋，这将极大地帮助我能够快速从互联网添加信息，并能够立即在我的电子表格中使用。现在，因为这些都是链接到互联网的数据，如果信息在网上发生变化而我打开电子表格，会不会有新信息呢？其实不一定。如果你想确保拥有最新的信息，你需要选择数据，然后去数据功能区的“数据”选项卡，在查询和连接组中，你可以点击“全部刷新”，如果你点击该按钮的下半部分，你会有一些选项，包括刷新所选数据或刷新全部数据，无论哪种方式。我只需点击刷新，这将需要一些时间来刷新数据，但这将是在线可用的最新信息。
+- en: '![](img/4d97d79ffce11a7a38a994122ad517dd_2.png)'
+  id: totrans-18
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/4d97d79ffce11a7a38a994122ad517dd_2.png)'
+- en: Pulled into my spreadsheet。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 被拉入我的电子表格。

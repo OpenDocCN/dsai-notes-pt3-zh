@@ -1,0 +1,221 @@
+- en: 【双语字幕+资料下载】数据可视化神器 Tebleau！无需编程，使用拖拽和点击就做出超精美的图表。1小时新手教程，从安装到做图一气呵成~＜快速入门系列＞
+    - P6：6）连接到 Tableau 中的数据源 - ShowMeAI - BV1T341117q7
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】数据可视化神器Tebleau！无需编程，使用拖拽和点击就能做出超精美的图表。1小时新手教程，从安装到做图一气呵成~＜快速入门系列＞
+    - P6：6）连接到Tableau中的数据源 - ShowMeAI - BV1T341117q7
+- en: 嗯。Now that we've learned how to structure and prepare data sets for Tableau。
+    let's try connecting the tool to different types of data sources。A working data
+    connection is needed in order to create visualizations on the platform。![](img/97e6e8f64423b5b8e56fa742937d953f_1.png)
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 嗯。既然我们已经学习了如何为Tableau构建和准备数据集，让我们尝试将工具连接到不同类型的数据源。创建可视化需要有效的数据连接！[](img/97e6e8f64423b5b8e56fa742937d953f_1.png)
+- en: The Tableau Data source is the link between your source data and Tableau。It
+    is essentially the sum of your data， the connection information。 the names of
+    tables or sheets containing the data。 and the customizations that you will make
+    on top of data to work with in Tableau。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Tableau数据源是源数据与Tableau之间的链接。它本质上是你的数据总和、连接信息、包含数据的表或工作表名称，以及你将在数据上进行的定制。
+- en: A tableableau data source may contain multiple data connections to different
+    databases or files。Connection information includes where the data is located。
+    such as a file name and a path or a network location。 and details on how to connect
+    to your data such as database Ser and server sign in information。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Tableau数据源可能包含多个对不同数据库或文件的数据连接。连接信息包括数据的位置，例如文件名和路径或网络位置，以及如何连接到数据的详细信息，例如数据库服务器和服务器登录信息。
+- en: '![](img/97e6e8f64423b5b8e56fa742937d953f_3.png)'
+  id: totrans-4
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/97e6e8f64423b5b8e56fa742937d953f_3.png)'
+- en: There are several things to consider before connecting to a Tableau data source。
+    First is the location and access。 Will your users have access to the data。Is user
+    filtering and row level security needed？Next is the shape and cleanliness。Is the
+    source well structured for Tableau。Is any of the data unnecessary or missing。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 连接到Tableau数据源之前需要考虑几个因素。首先是位置和访问。你的用户能否访问数据？是否需要用户过滤和行级安全？接下来是形状和整洁度。源数据是否为Tableau良好结构？是否有多余或缺失的数据？
+- en: What calculations or manipulations would be best done natively in Tableau？
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在Tableau中，哪些计算或操作最适合原生执行？
+- en: Third is the data model and combining the data。Is the data spread across multiple
+    systems？
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 第三是数据模型和数据组合。数据是否分散在多个系统中？
+- en: What is the best way to combine each table of data？
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 结合每个数据表的最佳方式是什么？
+- en: You should also think about metadata and customization。 Are the tables and field
+    names understandable， Does it need calculations。Fifth is the scalability。 security
+    and discoverability。 Should the data source stay embedded in the workbook。How
+    big will the source be。 And finally， look at the performance and freshness。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你还应该考虑元数据和定制化。表格和字段名称是否易于理解？是否需要计算？第五是可扩展性、安全性和可发现性。数据源是否应该嵌入工作簿中？源数据会有多大？最后，查看性能和新鲜度。
+- en: Will the data connection be live or an extract。What will the schedule of data
+    refresh be？
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 数据连接是实时的还是提取的？数据刷新计划是什么？
+- en: When you take these things into consideration， you can officially create quality
+    data sources for your visualization。![](img/97e6e8f64423b5b8e56fa742937d953f_5.png)
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 考虑这些因素后，你可以正式创建用于可视化的高质量数据源！[](img/97e6e8f64423b5b8e56fa742937d953f_5.png)
+- en: Tableau supports many types of data stored in different places， but the catch
+    is。 this will depend on the type of tableableau product that you have installed。![](img/97e6e8f64423b5b8e56fa742937d953f_7.png)
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Tableau支持存储在不同位置的多种类型数据，但这将取决于你安装的Tableau产品类型！[](img/97e6e8f64423b5b8e56fa742937d953f_7.png)
+- en: Tableau Destop Professional has the complete data source connections。Which includes
+    a native connection to server hosted data sources。 It has several options of relational，
+    multidimensional and cloud based databases and repositories。Tableau desktopstop
+    personal， and public， on the other hand， can only connect to flat files。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Tableau Desktop Professional具有完整的数据源连接，包括对服务器托管数据源的原生连接。它提供多种关系型、多维和基于云的数据库和存储库选项。而Tableau
+    Desktop Personal和Public只能连接到平面文件。
+- en: Google Sheets， O data， and web data connectors。As mentioned earlier。 Tableau
+    can use data from databases， flat files and web data connectors。 Datas are great
+    to use。 as they already have a defined structure where data types are already
+    defined and data that has wrong format for their data types are automatically
+    held back。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Google Sheets、O数据和Web数据连接器。如前所述，Tableau可以使用来自数据库、平面文件和Web数据连接器的数据。数据非常好用，因为它们已经具有定义的结构，数据类型已经定义，而格式错误的数据会被自动阻止。
+- en: '![](img/97e6e8f64423b5b8e56fa742937d953f_9.png)'
+  id: totrans-15
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/97e6e8f64423b5b8e56fa742937d953f_9.png)'
+- en: This makes it possible for Tableau to understand precisely how to use the data
+    in each field。However。 at times， flat files are provided as data source。Flat files
+    can be prone to wrong data formats。 and it sensitive to change in column names。Make
+    sure to follow the data structure tips that we mentioned in the last session to
+    load the data properly into Tableau。But aside from that， flat files are great
+    for their flexibility。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这使 Tableau 能够准确理解如何使用每个字段中的数据。然而，有时平面文件被用作数据源。平面文件可能容易出现数据格式错误，并且对列名的变化敏感。确保遵循我们在上节课中提到的数据结构提示，以正确将数据加载到
+    Tableau 中。但除此之外，平面文件因其灵活性而非常优秀。
+- en: You can easily adjust the columns and insert rows into the files。Always be aware
+    that consistency in formatting is needed if you decide to use flat files for your
+    regularly updated dashboards。 Finally， we have the web data connector。 a web data
+    connector is an HTML file that includes jascript code。 You can use a web data
+    connector to connect to data that is accessible over HTP and that doesn't already
+    have a connector It allows developers to create their own data source connectivity
+    to source data from web pages that were not included out of the box in Tau。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 您可以轻松调整列并向文件中插入行。如果您决定使用平面文件来更新仪表板，请始终注意格式的一致性。最后，我们有网络数据连接器。网络数据连接器是一个包含 JavaScript
+    代码的 HTML 文件。您可以使用网络数据连接器连接到可以通过 HTTP 访问且没有现成连接器的数据。它允许开发人员创建自己的数据源连接，以从在 Tableau
+    中未包含的网页中获取数据。
+- en: for this lesson we will demonstrate how to connect to flat files and databases。![](img/97e6e8f64423b5b8e56fa742937d953f_11.png)
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在本课中，我们将演示如何连接到平面文件和数据库。![](img/97e6e8f64423b5b8e56fa742937d953f_11.png)
+- en: There are two ways to connect to flat files in Tableau。 The first one is to
+    simply drag the file from your file Explorer into the start page of the platform。
+    It will show a small progress window when loading and will lead you to the data
+    source page once done。The second way of inserting a flat file is by selecting
+    the file type of your data set from the connect pane of the start page。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在 Tableau 中连接平面文件有两种方法。第一种方法是直接将文件从文件资源管理器拖到平台的起始页面。当加载完成时，会显示一个小进度窗口，并引导您进入数据源页面。第二种方法是通过从起始页面的连接窗格中选择您的数据集的文件类型来插入平面文件。
+- en: This will open a new file browse window where you can navigate into the file
+    path of your data source。Once you have found the file， select it and click open。
+    this will load the data and lead you to the data source page。Once in the data
+    source page。 you can now add further formats to the data if needed。If your flat
+    file only has one sheet。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这将打开一个新的文件浏览窗口，您可以在其中导航到数据源的文件路径。一旦找到文件，选择它并点击打开。这将加载数据，并引导您进入数据源页面。一旦进入数据源页面，您现在可以根据需要为数据添加更多格式。如果您的平面文件只有一个工作表。
+- en: it should automatically be available in the logical layer of the canvas。 but
+    if it has multiple sheets， you still need to indicate which one you'll use from
+    the sheet's pane by dragging the sheet name or table name from the pane and placing
+    it in the canvas。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它应该在画布的逻辑层中自动可用，但如果它有多个工作表，您仍然需要通过从工作表窗格中拖动工作表名称或表名称到画布中来指明您将使用哪个。
+- en: If you need to use multiple sheets or tables， you are required to either use
+    a join or a data relationship to use in the platform we will further discuss these
+    functions in a later session。![](img/97e6e8f64423b5b8e56fa742937d953f_13.png)
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果您需要使用多个工作表或表格，您需要在平台中使用连接或数据关系。我们将在以后的课程中进一步讨论这些功能。![](img/97e6e8f64423b5b8e56fa742937d953f_13.png)
+- en: To connect to a database， select the type under the connect pane of the start
+    page。This opens a new dialog box where you can input the necessary connection
+    credentials such as the server name。 port， database name， username and password，
+    you can also specify an initial SQL command in the second tab that will run when
+    a connection is made to the database。You can use this command to set up temporary
+    tables to access during the session or set up a custom data environment Once done
+    click on the sign in button to connect to the database。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 要连接到数据库，请在起始页面的连接窗格中选择类型。这将打开一个新的对话框，您可以在其中输入必要的连接凭证，例如服务器名称、端口、数据库名称、用户名和密码。您还可以在第二个选项卡中指定一个将在连接到数据库时运行的初始
+    SQL 命令。您可以使用此命令设置会话期间可访问的临时表或设置自定义数据环境。完成后点击登录按钮以连接到数据库。
+- en: Once a successful connection to the database or server has been created。 it
+    will lead you to the data source page。 Select the table that you will use for
+    your visualization from the tables section and drag it into the canvas to view
+    the data from the selected table。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 一旦成功连接到数据库或服务器，它将引导你到数据源页面。从表格部分选择你将用于可视化的表，并将其拖入画布以查看所选表的数据。
+- en: click on the update Now button in the data preview below。![](img/97e6e8f64423b5b8e56fa742937d953f_15.png)
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 点击数据预览下方的“立即更新”按钮。![](img/97e6e8f64423b5b8e56fa742937d953f_15.png)
+- en: If you need to use a different database， you can choose the new one from the
+    database section of the left panel。 an additional function for SQL database connections
+    is the ability to create customSQL queries using custom SQL queries can be useful
+    when you know exactly the information you need and understand how to write SQL
+    queries to create one just click on the new custom SQL button below the table
+    section。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你需要使用不同的数据库，可以从左侧面板的数据库部分选择新的数据库。对于 SQL 数据库连接的额外功能是能够创建自定义 SQL 查询。当你确切知道所需的信息并理解如何编写
+    SQL 查询时，使用自定义 SQL 查询非常有用。只需点击表格部分下方的新建自定义 SQL 按钮。
+- en: You can use custom SQL queries to combine data vertically， apply across database
+    join。 reduce or restructure your data， and many other things。Upon creating your
+    data connection and selecting the table or sheet you will use。You can now head
+    on to the Tableau worksheet window to begin your visualization。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以使用自定义 SQL 查询来垂直合并数据，应用于数据库连接，减少或重构你的数据，以及其他许多操作。在创建数据连接并选择要使用的表或工作表后，你现在可以前往
+    Tableau 工作表窗口开始可视化。
+- en: '![](img/97e6e8f64423b5b8e56fa742937d953f_17.png)'
+  id: totrans-28
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/97e6e8f64423b5b8e56fa742937d953f_17.png)'

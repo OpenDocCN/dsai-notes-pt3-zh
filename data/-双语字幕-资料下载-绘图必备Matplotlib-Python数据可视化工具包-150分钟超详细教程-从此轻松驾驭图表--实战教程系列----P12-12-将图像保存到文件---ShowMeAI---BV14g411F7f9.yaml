@@ -1,0 +1,80 @@
+- en: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P12：12）将图像保存到文件
+    - ShowMeAI - BV14g411F7f9
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P12：12）将图像保存到文件
+    - ShowMeAI - BV14g411F7f9
+- en: So moving on to our next question。How do we save our image to a file？
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 继续我们的下一个问题。我们如何将图像保存到文件中？
+- en: How do we save our image to a file well。You could just right click here in Jupyter
+    Notes and say save image as that's a very easy way to do it if it's just a one
+    off thing。 but if you want to save it to a file using Maplotlib。Let's get our
+    basic plot down here again。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们如何将图像保存到文件中呢？你可以在 Jupyter Notes 中右键单击这里，然后选择“另存为图像”，如果只是偶尔做一次，这是一种非常简单的方法。但是，如果你想使用
+    Matplotlib 将其保存到文件中。我们再来画一个基本图。
+- en: I'll remove figure size。So。Rather than calling PL T do show here at the end，
+    let's do PL T dot。 I'm going to hit tab and see what all of our options are here。
+    And I I'm going to start tapping in save Fig。 There we go。So let's actually look
+    at the documentation for that。Using our handy dandy question mark。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将移除图形大小。所以，不是要在最后调用 plt.show，而是让我们使用 plt。我要点击 Tab 键，看看这里所有的选项。我将开始输入 save fig。好了。那我们实际上来看看文档。使用我们方便的问号。
+- en: Question marks sendtax in Jupyter Notes。So we can save the fig， and then it
+    just has as and quarks。 So， you know， arguments， keyword arguments。 So basically
+    we can pass in anything to this。 Okay。 here's the call signature。 So F name， So
+    file name， we can pass in the D PI if we want。 we can pass in the orientation
+    bunch of different stuff。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Jupyter Notes 中的问号语法。所以我们可以保存图形，然后它只需要作为和关键字参数。因此，你知道，参数，关键字参数。基本上我们可以传入任何内容。好的，这是调用签名。所以文件名，我们可以传入
+    DPI，如果我们想的话。我们可以传入方向等各种不同的内容。
+- en: But the main thing that we're gonna want to look at here is the file name。So。If
+    format is not set。 then the output format is inferred from the extension of F
+    name。 So in this case。 let's say we want to save this as a P G， we can say my
+    plot PG and it will save it as a PNG because mapplotlib sees the extension here
+    and knows to save the file as a P andG file。 So let's go ahead and run this and
+    you'll see that it actually it pops up here as well。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但我们主要想看的内容是文件名。所以，如果格式未设置，则输出格式从文件名的扩展名推断出来。所以在这种情况下，假设我们想将其保存为 PG，我们可以说 my_plot.PG，它将保存为
+    PNG，因为 Matplotlib 看到扩展名并知道将文件保存为 PNG 文件。让我们继续运行这个，你会看到它实际上也会弹出来。
+- en: but let's go back over to our terminal。![](img/2056f31602b26fc416661c899219e914_1.png)
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但让我们回到终端。![](img/2056f31602b26fc416661c899219e914_1.png)
+- en: Let's do a little LS。And there we go， my plot dot PN G， let's open my plot dot
+    PN G。![](img/2056f31602b26fc416661c899219e914_3.png)
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们做一个小的 LS。看，这就是我的 plot.png，让我们打开我的 plot.png。![](img/2056f31602b26fc416661c899219e914_3.png)
+- en: And here is that image right there。 Look at that。And so if we， if you blow it
+    up really big。 you can see it does get a little fuzzy。 That's where the DPI argument
+    can come in handy。 But we just saved out our image to a file。 So there we go。![](img/2056f31602b26fc416661c899219e914_5.png)
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这里就是那个图像。看看。然后如果我们，把它放大，你可以看到它确实会变得有点模糊。这就是 DPI 参数可以派上用场的地方。但我们已经将图像保存到文件中了。就这样。![](img/2056f31602b26fc416661c899219e914_5.png)
+- en: '![](img/2056f31602b26fc416661c899219e914_6.png)'
+  id: totrans-9
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/2056f31602b26fc416661c899219e914_6.png)'
+- en: I'm going to save this notebook really quickly， make sure to save as you're
+    going along so you don't lose your work。![](img/2056f31602b26fc416661c899219e914_8.png)
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将快速保存这个笔记本，确保在进行过程中保存，以免丢失你的工作。![](img/2056f31602b26fc416661c899219e914_8.png)

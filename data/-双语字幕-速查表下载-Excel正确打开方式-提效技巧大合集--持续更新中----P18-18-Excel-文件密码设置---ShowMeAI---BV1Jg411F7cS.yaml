@@ -1,0 +1,109 @@
+- en: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P18：18）Excel 文件密码设置 - ShowMeAI - BV1Jg411F7cS
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P18：18）Excel 文件密码设置 - ShowMeAI - BV1Jg411F7cS
+- en: '![](img/08734fd415898baf9f3b1e82ceae4dfb_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/08734fd415898baf9f3b1e82ceae4dfb_0.png)'
+- en: In this Excel tutorial， we're going to look at a couple of different ways that
+    you can password protectect your Excel files。 As you see here， I have an Excel
+    spreadsheet with some very sensitive employee information。 Fortunatelyly， these
+    are fictional people。 But you can see there's a list of names。 their higher dates，
+    their employee numbers and whether they've done certain things。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个 Excel 教程中，我们将探讨几种不同的方法来给你的 Excel 文件设置密码保护。如你所见，我有一个包含一些非常敏感员工信息的 Excel 表格。幸运的是，这些都是虚构的人物。但你可以看到有一份姓名列表、他们的入职日期、员工编号以及他们是否完成了某些事情。
+- en: And so I want to make sure that this stays confidential。 There's a couple of
+    things we can do to protect this information。 First of all。 and then there's a
+    way to password protect it so that people who shouldn't see this won't be able
+    to。 The first method for protecting a spreadsheet is to just go here to the review
+    tab on the review ribbon in the Pro group。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想确保这些信息保持机密。我们可以做几件事情来保护这些信息。首先，还有一种方法可以设置密码保护，这样那些不该看到这些信息的人就无法查看。保护电子表格的第一种方法是去“审阅”选项卡，在“保护”组中找到。
+- en: you can see that there is an option to protect the sheet or the whole workbook
+    So let's look at how Pro sheet works here on this spreadsheet sheet number one。
+    I'm just going to click Pro sheet。 and you'll notice that there's all sorts of
+    options。Here and one of the options we have is to add a password that is required
+    if someone wants to unprotect the sheet。 For now， I'll just leave that blank。
+    I'll click O。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以看到有一个选项可以保护工作表或整个工作簿。让我们看看在这个工作表一上，保护工作表是如何工作的。我将点击保护工作表。你会注意到这里有各种选项。其中一个选项是添加一个密码，如果有人想要取消保护工作表，必须输入这个密码。现在我就先留空。然后点击确认。
+- en: So now watch what happens if someone looks at this spreadsheet and wants to
+    change something。 they click， they type but Excel won't let them type over that
+    existing data。 So this doesn't prevent people from seeing the data。 but it protects
+    the data so it doesn't get accidentally or purposefully changed inappropriately。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在看看，如果有人查看这个电子表格并想更改某些内容会发生什么。他们点击，输入，但 Excel 不允许他们覆盖现有数据。因此，这并不能防止人们看到数据，但它保护数据，以免不小心或故意不适当地被更改。
+- en: The problem with this is look， Someone that knows how to use Excel pretty well
+    can just go up here to review unprotect sheet。 and now they can change that number。
+    So that's why it may be a good idea to click protect sheet and password protect
+    it。 So I'll just put in a password。 click okay。 I have to confirm that password
+    and notice this warning here。 If you lose or forget the password。 It can't be
+    recovered。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这个方法的问题在于，看看，熟悉 Excel 的人可以直接点击“审阅”中的“取消保护工作表”，现在他们可以更改那个数字。所以，这就是为什么点击保护工作表并进行密码保护可能是个好主意。我将输入一个密码，点击确定。我必须确认这个密码，并注意到这个警告。如果你丢失或忘记密码，就无法恢复。
+- en: So this is pretty important that you remember the passwords that you use。 Now。
+    this is completely protect。From changes， people can still see the data， but they
+    can't change it。 if they try to unprotect it asks for the password。 And as long
+    as I can remember the password。 I'm able to unprotect the sheet。 So that's one
+    option for password protecting an Excel file。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 记住你使用的密码是非常重要的。现在，这是完全保护的。人们仍然可以看到数据，但无法更改。如果他们尝试取消保护，就会要求输入密码。只要我记得密码，我就可以取消保护工作表。这是为
+    Excel 文件设置密码保护的一种选择。
+- en: but it doesn't fully protect it from view right， People can still see the data。
+    Let's look at a couple of the options we have for fully protect this spreadsheet
+    and workbook。 so that no one can even see it。 So in many cases， a better way to
+    protect your spreadsheet to more fully protect the information is to go to file。
+    And then click on info。 and that takes you to the info page and look， Pro workbook。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但是这并不能完全防止查看，对吧？人们仍然可以看到数据。让我们看看我们可以用来完全保护这个电子表格和工作簿的一些选项，以便任何人都无法看到它。因此，在许多情况下，更好的保护电子表格和信息的方式是去“文件”。然后点击“信息”，这将带你到信息页面，看看，保护工作簿。
+- en: Now I just click on that button and go down to encrypt with password。 So this
+    is a great option here。 put in that same password。 I get the same warning about
+    not forgetting。 click O reenter it just to make sure I didn't accidentally type
+    it wrong。 And now a password is required to open this workbook。I'm going to now
+    close out of this spreadsheet。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我只需点击那个按钮，然后选择用密码加密。这是一个很好的选项。输入相同的密码。我得到了同样的警告，提醒我不要忘记。点击“重新输入”，以确保我没有错误输入。现在打开这个工作簿需要密码。我现在要关闭这个电子表格。
+- en: this workbook completely。 But before I do， I need to make sure I save my changes。
+    including that password。 So I click save。 This should now be a completely protected
+    spreadsheet。 I'm gonna drag that file onto the desktop。 Give me a minute to do
+    so。 and then I'll resume the video。 So there is the file that I've password protected。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这个工作簿完全。但是在我这样做之前，我需要确保保存我的更改，包括那个密码。所以我点击保存。现在这应该是一个完全受保护的电子表格。我将把那个文件拖到桌面上。给我一分钟来做这件事，然后我会继续视频。所以这是我已加密的文件。
+- en: I'm gonna double click on it to open it up。 Let's see if it'll let me access
+    it。 No， it blocks it。 it's encrypted。 It's protected。 And unless the user knows
+    the password。 They're not gonna be able to get in。 I just entered a guess， it
+    wasn't right。 So I have no access to that file。 Let's try it again。 This time
+    I'll put in the correct password。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我会双击它以打开它。让我们看看它是否会让我访问。不好，它被阻止了。它是加密的。它受到了保护。除非用户知道密码，否则他们将无法进入。我刚刚输入了一个猜测，但不对。所以我无法访问那个文件。我们再试一次。这次我会输入正确的密码。
+- en: tap enter。 And I'm in， I can use it fully。 Now。 Thanks for watching。 I hope
+    you found this tutorial to be helpful。 If you did， please click the like button
+    below。![](img/08734fd415898baf9f3b1e82ceae4dfb_2.png)
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 按下回车键。我进来了，我可以完全使用它。现在。感谢观看。我希望你觉得这个教程有帮助。如果觉得有用，请点击下面的点赞按钮。![](img/08734fd415898baf9f3b1e82ceae4dfb_2.png)

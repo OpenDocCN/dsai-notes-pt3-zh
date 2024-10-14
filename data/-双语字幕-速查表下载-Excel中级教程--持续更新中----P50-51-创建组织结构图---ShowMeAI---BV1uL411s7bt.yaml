@@ -1,0 +1,233 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P50：51）创建组织结构图 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P50：51）创建组织结构图 - ShowMeAI - BV1uL411s7bt
+- en: '![](img/8f8d476dd62ea299d1014314cd96b760_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8f8d476dd62ea299d1014314cd96b760_0.png)'
+- en: In this video， we will look at how to easily create an organization chart or
+    org chart in Microsoft Excel。 And you can see here at the left， I have a list
+    of names of people that work in an organization and I would like to organize them
+    into a hierarchy and org chart on sheet2。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个视频中，我们将学习如何在Microsoft Excel中轻松创建组织结构图或组织图。您可以看到左边有一个工作在某个组织中的人员名单，我想将他们组织成一个层级和组织图，在sheet2上展示。
+- en: you'll notice that I have a sample USDA organization chart。 And let's say that
+    I work for the USDA。 And I've been asked to follow this pattern and create an
+    org chart for the organization。 By the way。 you have access to this practice file
+    if you look in the description below the video。 So how would I go about creating
+    this org chart in Microsoft Excel。 Well。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 您会注意到我有一个示例的USDA组织结构图。假设我在USDA工作，并被要求遵循这个模式为组织创建一个组织图。顺便说一下，如果您查看视频下方的描述，您可以访问这个练习文件。那么，我该如何在Microsoft
+    Excel中创建这个组织图呢？好吧。
+- en: one of the best ways to create an org chart in Excel is by clicking here on
+    insert and using the smart art option。 If I click on smartar， you'll see that
+    a huge number of smart art shapes are available There are processes there are
+    cycles that you can use。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在Excel中创建组织结构图的最佳方法之一是点击这里的插入，然后使用智能艺术选项。如果我点击智能艺术，您会看到有大量的智能艺术形状可供选择，包括过程和循环，您可以使用它们。
+- en: And these smart art objects are easily customizable and changeable and they're
+    useful in many different ways。 you can see that there are matrices that you can
+    add。 there are pyramids different types of pictures graphic organizers just a
+    wealth of smart art shapes and visuals that you can use I'm going to go down to
+    hierarchy and you can see that each one of these hierarchies could be used as
+    an org chart you can put the CEO here at the top the vice president here or however
+    you want to organize the org chart for your organization So select the org chart
+    that matches what you want the best。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这些智能艺术对象易于自定义和修改，并且在许多不同的方式中都很有用。您可以看到可以添加矩阵、金字塔、不同类型的图形组织者，智能艺术形状和视觉效果的丰富资源。我将下移到层级，您可以看到这些层级中的每一个都可以用作组织图，您可以将CEO放在顶部，副总裁放在这里，或者按照您想要的方式组织您的组织图。所以选择最符合您需求的组织图。
+- en: I'm going to simply select the default org chart you can see there's some details
+    here about it and then just click and I have an org chart that's added right on
+    top of my Excel spreadsheet and it really is on top of it you can see that I can
+    click and drag to move。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将简单选择默认的组织图，您可以看到这里有一些关于它的细节，然后点击一下，我就在我的Excel电子表格上方添加了一个组织图，确实是在它的上方，您可以看到我可以点击并拖动来移动。
+- en: The org chart。 and it just floats on top of the spreadsheet cells。 If I want
+    the org chart to be bigger， I could click and drag at the corners to resize the
+    org chart。 It's probably premature to do that， though， as you'll see in just a
+    minute。 Okay。 so now let's begin adding people to this org chart。 If I switch
+    back to sheet 2。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 组织图。它就浮在电子表格单元格的上方。如果我想让组织图变大，可以在角落点击并拖动来调整大小。不过现在这样做可能还为时已早，稍后您会明白。好的，现在让我们开始向这个组织图中添加人员。如果我切换回sheet
+    2。
+- en: I can see that the secretary goes here at the top。 So I'll switch back to sheet
+    1。 let's say that Charles Love belongs there。 I could click here on text and type
+    in Charles love。 Not that the text resizes in order to match the space that's
+    provided。 you can also click and drag to change the space itself。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以看到秘书在顶部。所以我将切换回sheet 1。假设查尔斯·洛夫在这里。我可以点击文本并输入查尔斯·洛夫。请注意，文本会调整大小以匹配提供的空间。您还可以点击并拖动来更改空间本身。
+- en: So going back if I had started by resizing the space that I have in that box。
+    Notice that the text would have been handled a little differently。 I actually
+    like how Excel handles this， And so I could just click here to type in the text
+    and it will adjust。To exactly the width and size that it needs to be。 But I want
+    to show you that sometimes it's better to type in the names or other text here
+    at the left using this panel。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以回到之前，如果我一开始就调整了我在那个框中的空间。请注意，文本的处理会有所不同。我实际上很喜欢Excel处理这个的方式，所以我可以点击这里输入文本，它会调整为所需的宽度和大小。但我想向您展示，有时在左侧的面板中输入名字或其他文本会更好。
+- en: instead of clicking and typing in the box itself， simply click over here and
+    type the names。 If I wanted to， I could also type in titles， So deputy secretary
+    Charles love。 But for brevity。 I'm just going to leave the names themselves。 at
+    this point。 I could just click here to add the next person in the org chart。 But
+    if you recall， here on sheet 2。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 与其直接在框中点击和输入，不如点击这里并输入名称。如果我想的话，我还可以输入职称，比如副秘书Charles Love。但为了简洁起见，我只会保留名称。在这一点上，我可以点击这里添加组织结构图中的下一个人。但如果你还记得，在第二张表上。
+- en: the way this org chart is set up is different than the hierarchy I was given
+    in Excel。 How can I duplicate this。 How can I match it。 so that these other people
+    are considered almost siblings not children but siblings of the deputy secretary。
+    Well， back on sheet1。 the way I could do that is by right clicking on the Charles
+    love box。 And then I could go here where it says add shape and。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这个组织结构图的设置方式与我在Excel中得到的层级不同。我该如何复制它？我该如何匹配它，以便这些其他人被视为副秘书的兄弟姐妹，而不是子女？好吧，回到第一张表。我可以通过右键点击Charles
+    Love框来做到这一点。
+- en: I could simply choose to add the shape after the Charles Love shape。 So if I
+    click that。 it adds a shape to the right of Charles Love。 Now， this is an unusual
+    situation。Normally the links are automatically provided when you add a new shape。
+    But in this case。 for a very good reason it didn't do that。 And so I may need
+    to go in and insert a line that shows that relationship。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我可以选择在Charles Love形状之后添加形状。所以如果我点击它，就会在Charles Love的右侧添加一个形状。现在，这是一个不寻常的情况。通常在添加新形状时会自动提供链接。但在这种情况下，由于某种很好的原因，它没有这样做。因此，我可能需要插入一条显示这种关系的线。
+- en: Now， I can click on the box or simply go here and click on the panel and I could
+    type in Tyler Fraser。 Now， one nice advantage to having the text right here in
+    the same spreadsheet or on another sheet is that you can click and copy with control
+    C and then click either on the box or here on the panel and then paste in the
+    text。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，我可以点击这个框，或者直接点击面板，输入Tyler Fraser。现在，有一个很好的优势是将文本直接放在同一个电子表格或另一张表上，这样你可以使用控制C点击复制，然后点击框或面板，然后粘贴文本。
+- en: So that is an advantage in some cases， it might be a little faster to do it
+    that way。 And at this point， I just want to start working on this part of the
+    org chart。Going back to sheet1。 you'll notice that I probably don't need this
+    particular box。 I can just click on it to select it and then tap delete on the
+    keyboard， and it's now been removed。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以在某些情况下，这是一种优势，这样做可能会更快。在这一点上，我只想开始处理组织结构图的这一部分。回到第一张表，你会注意到我可能不需要这个特定的框。我可以点击它选择，然后按下键盘上的删除，它现在已经被移除。
+- en: And so I could just continue to click on and copy the various names and then
+    paste them here。 Now let's try copy pasting more than one name at a time。 How
+    will that go if I click and paste it here， noticeice that it put both names in
+    automatically。 Now， what if I decide that I need to add a new sibling to Ignatio
+    Fowler or a new child to Charles Love。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我可以继续点击并复制各种名称，然后粘贴到这里。现在我们试试一次复制粘贴多个名称。如果我点击并粘贴到这里，会发现它自动将两个名称放在一起。现在，如果我决定需要为Ignatio
+    Fowler添加一个新兄弟姐妹或为Charles Love添加一个新孩子怎么办？
+- en: Well， I could select  Ignatio Fowler， right click and choose add shape， add
+    shape before。 let's say I want the new person to be listed here。 Watch what happens
+    when I add the shape before。 Now I have a new shape and it's before Ignatio Fowler。
+    So that's gonna be Dana Strickland and I'll just paste her name right in there。
+    So from here。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 嗯，我可以选择Ignatio Fowler，右键点击选择添加形状，选择在之前添加形状。假设我想让新的人列在这里。当我在之前添加形状时，看看会发生什么。现在我有了一个新形状，它在Ignatio
+    Fowler之前。所以这将是Dana Strickland，我会把她的名字直接粘贴进去。接下来我可以继续添加更多名称。
+- en: I can just continue to add more。And more names and more organization to this
+    org chart。 Let's say that Juana Mills is a team leader。 I could right click on
+    Juana Mills。 and I could add another shape。 This is going to be a shape below
+    And I want to list out her team each team member with their own box。 Now， because
+    I just created this new box to add another box。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以继续添加更多名称和组织到这个组织结构图中。假设Juana Mills是团队负责人。我可以右键点击Juana Mills，添加另一个形状。这将是一个下面的形状，我想列出她的团队，每个团队成员都有自己的框。现在，因为我刚创建了这个新框来添加另一个框。
+- en: all I have to do is click back on Juana Mills and tap the F4 button。 and that
+    will add another child， let's say to Juana Mills。 So I could pretty quickly add
+    a whole team underneath Juana Mills。 and I could copy paste their names right
+    here into the panel。 and delete any unneeded shapes。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我所要做的就是再次点击胡安娜·米尔斯，然后按 F4 键，这将为胡安娜·米尔斯添加另一个子项。所以我可以很快在胡安娜·米尔斯的下面添加一个完整的团队。我可以将他们的名字直接复制粘贴到面板中，并删除任何不需要的形状。
+- en: Just like with most objects that you add in Excel。 the smart art org charts
+    that you make can be clicked on， and when they're selected。 you get additional
+    tabs here at the top。 So there is a smart art tab and it has some pretty exciting
+    options。Here you could have kind of a 3D effect to your org chart。 you could have
+    it be kind of bevellled。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 就像在 Excel 中添加的大多数对象一样，制作的智能艺术组织图可以被点击，当它们被选中时，顶部会出现额外的选项卡。所以有一个智能艺术选项卡，里面有一些相当激动人心的选项。在这里，你可以为组织图添加一种3D效果，或者让它看起来有点倒角。
+- en: You could choose some of these other styles or options that you can look through。
+    You can even change the color so I could adjust it to a varied color or I could
+    go to all orange there's lots of different options here for the colors of your
+    org chart if you want to you can click reset graphic to reset it back to the way
+    it was you can also change the type of hierarchy of your org chart if you remember
+    back at the very beginning when I added the smart art。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以选择一些其他样式或选项进行浏览。你甚至可以改变颜色，所以我可以将其调整为不同的颜色，或者选择全橙色，如果你想的话，这里有许多不同的颜色选项。如果需要，你可以点击“重置图形”将其恢复到原来的样子。如果你还记得一开始我添加智能艺术时，你也可以改变组织图的层级类型。
+- en: I chose the basic hierarchy but if you want to you can switch it to something
+    else you can even just put your mouse on top of these other layouts to get a preview
+    of what it would look like and if you think it's better than the original go ahead
+    and switch it I'm going to stick with this original layout。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我选择了基本层级，但如果你想的话，可以切换到其他样式，只需将鼠标悬停在这些其他布局上，即可预览效果。如果你认为这比原来的布局更好，那就继续切换吧。我会坚持使用这个原始布局。
+- en: I also have a format tab here at the top I can change how the text displays。
+    I don't particularly like that look but if。W to。 I could switch to that。 I can
+    also change the shape fill。 So the background of my org chart。 I can even use
+    gradients by going down here。 I can use textures So you can make these org charts
+    pretty fancy if you would like to。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我在顶部还有一个格式选项卡，可以改变文本的显示方式。我并不特别喜欢那种样式，但如果需要，我可以切换到那种。我还可以改变形状的填充，所以我的组织图的背景。我甚至可以通过这里使用渐变。我还可以使用纹理，因此如果你愿意，可以让这些组织图变得相当花哨。
+- en: I'm going to undo a few times just to take us back to the way it was I like
+    this look pretty well。 Now， you may have noticed that my solution for Tyler Fraser
+    and connecting him to Charles love using this line is kind of annoying。 Every
+    time the chart adjusts this line seems to be out of place。 So let's look for another
+    better option for connecting Tyler Fraser to this org chart。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我打算撤销几次，以便让我们回到之前的样子。我对这个样子挺满意的。现在，你可能注意到，我用这条线将泰勒·弗雷泽和查尔斯·洛夫连接起来的解决方案有点麻烦。每当图表调整时，这条线似乎都不在合适的位置。所以让我们寻找一种更好的方法来连接泰勒·弗雷泽和这个组织图。
+- en: One option would be to simply add another shape， but instead of choosing add
+    shape after I can choose add assistant。 And then I can click and drag that assistant
+    to the place I want the assistant to be。 So I'm going to delete Tyler Fraser，
+    and I'll pull the assistant up here and off to the side and。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 一种选择是简单地添加另一个形状，但我可以选择“添加助手”而不是“添加形状”。然后我可以点击并拖动这个助手到我想要的位置。所以我打算删除泰勒·弗雷泽，并将助手拉到这里的侧面。
+- en: '![](img/8f8d476dd62ea299d1014314cd96b760_2.png)'
+  id: totrans-25
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8f8d476dd62ea299d1014314cd96b760_2.png)'
+- en: I'll copy paste Tyler Frazer here as an assistant to Charles Love so even though
+    you can certainly add your own shapes and lines and things to the org chart。 it's
+    often better to simply use the built in hierarchy tools here as you add shapes。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我会在这里复制泰勒·弗雷泽，作为查尔斯·洛夫的助手，所以尽管你当然可以在组织图中添加自己的形状、线条等，但通常直接使用内置的层级工具会更好，特别是在添加形状时。

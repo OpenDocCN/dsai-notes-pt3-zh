@@ -1,0 +1,337 @@
+- en: 【双语字幕+资料下载】数据可视化神器 Tebleau！无需编程，使用拖拽和点击就做出超精美的图表。1小时新手教程，从安装到做图一气呵成~＜快速入门系列＞
+    - P5：5）Tableau 数据概念 - ShowMeAI - BV1T341117q7
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】数据可视化神器 Tableau！无需编程，使用拖拽和点击就能制作超精美的图表。1小时新手教程，从安装到制作图表一气呵成~＜快速入门系列＞
+    - P5：5）Tableau 数据概念 - ShowMeAI - BV1T341117q7
+- en: Understanding the data concepts and the proper structure is essential to efficiently
+    working with the Tableau platform。Working with data that you are extremely familiar
+    with。 let you visualize it correctly and highlights your analysis。Let's start
+    with learning what type of data structure should be used with the tool。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 理解数据概念和正确的结构对高效使用 Tableau 平台至关重要。与您非常熟悉的数据一起工作，可以让您正确可视化并突出您的分析。让我们开始学习应该使用哪种数据结构。
+- en: Tableau works best with data that is in tables formatted like a spreadsheet。
+    That is data that has a vertical format where the field names are located in the
+    header of the columns。 and the data values are placed in the rows。Knowing this，
+    beginners in data analysis might ask。 how can I differentiate whether it's a row
+    or a column， A row or record contains the data value。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Tableau 最适合格式化为表格的数据，类似于电子表格。即数据采用垂直格式，字段名称位于列的标题中，而数据值则放置在行中。知道这一点后，数据分析的初学者可能会问，如何区分是行还是列？一行或记录包含数据值。
+- en: '![](img/7469064317016182ccb9ea1524fc6835_1.png)'
+  id: totrans-3
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/7469064317016182ccb9ea1524fc6835_1.png)'
+- en: 1 record of data means one horizontal row in the table。 For example。 in this
+    Excel file of superstore sales， each line of data in the rows pertains to individual
+    records。 columns， on the other hand， are the individual fields or the vertical
+    group within a table。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 1条数据记录意味着表格中的一行水平行。例如，在这个超市销售的 Excel 文件中，行中的每条数据对应单独的记录。而列则是表格中的单个字段或垂直组。
+- en: '![](img/7469064317016182ccb9ea1524fc6835_3.png)'
+  id: totrans-5
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/7469064317016182ccb9ea1524fc6835_3.png)'
+- en: In this sheet， we have the customer name column and city。 The headers or the
+    labels of each column are called the field names to avoid confusion。 Just remember
+    that columns are vertical and rows are horizontal。Some data sources might be in
+    a wide format， such as this refugee count data set。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个表中，我们有客户名称列和城市。每列的标题或标签称为字段名称，以避免混淆。只需记住，列是垂直的，行是水平的。有些数据源可能采用宽格式，例如这个难民统计数据集。
+- en: It might be easier for a person to read and understand it in this format。 but
+    when bringing in this data to Tableau， it will read each year as a separate column。As
+    a result。 we will have separate fields for 2001，2002，2003 and 2004。This will make
+    it hard for us to create an analysis across time since each data is stored in
+    different fields。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这种格式可能更容易让人阅读和理解，但在将这些数据导入 Tableau 时，每一年将被视为单独的列。因此，我们将有2001、2002、2003和2004的独立字段。这使我们很难进行跨时间的分析，因为每个数据存储在不同的字段中。
+- en: Another problem is that the value does not have its own field name or context。Since
+    the data is in a wide format where each row has a different country and the column
+    shows the year value。 we do not have any indicator as to what the numbers 76。26
+    and 2001 in Albania pertains to in order to fix this。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 另一个问题是值没有自己的字段名称或上下文。由于数据采用宽格式，每行代表不同的国家，列显示年份值，因此我们没有任何指示来说明阿尔巴尼亚的数字76、26和2001所对应的内容，以解决此问题。
+- en: we may need to reshape the data into a tall format before bringing it into tableableau。In
+    this format， we now have the country name， year and refugee count as the field
+    names for each row。 It is much easier to create an analysis using this data set
+    because each field now represents a unique quality about the data。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们可能需要在将数据导入 Tableau 之前将其重新塑造成高格式。在这种格式下，我们现在有国家名称、年份和难民数量作为每行的字段名称。使用这个数据集进行分析要容易得多，因为每个字段现在代表数据的独特特性。
+- en: '![](img/7469064317016182ccb9ea1524fc6835_5.png)'
+  id: totrans-10
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/7469064317016182ccb9ea1524fc6835_5.png)'
+- en: '![](img/7469064317016182ccb9ea1524fc6835_6.png)'
+  id: totrans-11
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/7469064317016182ccb9ea1524fc6835_6.png)'
+- en: Here are some additional things to check when reshaping your dataset set。Make
+    sure that there are no extra headers on top。The first two rows are critical for
+    tableableau to interpret the data source。 so it is better to remove the titles
+    and heading inserted above the correct field names。Remove Tos on dataset。Tableau
+    can automatically compute totals for you。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 重新塑造数据集时，有一些额外的检查项。确保顶部没有多余的标题。前两行对 Tableau 理解数据源至关重要，因此最好删除插入在正确字段名称上方的标题和标题。删除数据集中的“总计”。Tableau
+    可以自动为您计算总数。
+- en: so keeping these total columns are unnecessary and might lead to double counting。It
+    is also better to include date fields in a traditional format rather than ones
+    converted in years。 months or other date aggregations。 Tableau can automatically
+    aggregate dates。 so it is more efficient to use the traditional format in order
+    to unlock the full functionality of date fields。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因此，保留这些总列是没有必要的，可能会导致重复计算。最好使用传统格式的日期字段，而不是转换为年份、月份或其他日期聚合的格式。Tableau可以自动聚合日期，因此使用传统格式可以更有效地解锁日期字段的全部功能。
+- en: '![](img/7469064317016182ccb9ea1524fc6835_8.png)'
+  id: totrans-14
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/7469064317016182ccb9ea1524fc6835_8.png)'
+- en: Now， let's look at how Tableau reads and categorizes the fields。You might notice
+    that upon connecting tableau to a new data source。 a symbol can be seen on top
+    of each field name。 These represent the data type of each column。 Data types classify
+    the data in a given field and provide information about how the data should be
+    formatted。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，让我们看看Tableau如何读取和分类字段。你可能会注意到，在将Tableau连接到新数据源时，每个字段名称上方会出现一个符号。这些符号表示每一列的数据类型。数据类型对给定字段中的数据进行分类，并提供有关数据应如何格式化的信息。
+- en: interpreted and what operations can be done to that data。 For example。 numeric
+    fields can have mathematical operations applied to them。 and geographic fields
+    can be mapped。 The ABC icon are for text or string fields such as customer name
+    and product type。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 解释以及可以对这些数据执行哪些操作。例如，数值字段可以进行数学运算，而地理字段可以进行地图映射。ABC图标用于文本或字符串字段，如客户名称和产品类型。
+- en: '![](img/7469064317016182ccb9ea1524fc6835_10.png)'
+  id: totrans-17
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/7469064317016182ccb9ea1524fc6835_10.png)'
+- en: '![](img/7469064317016182ccb9ea1524fc6835_11.png)'
+  id: totrans-18
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/7469064317016182ccb9ea1524fc6835_11.png)'
+- en: '![](img/7469064317016182ccb9ea1524fc6835_12.png)'
+  id: totrans-19
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/7469064317016182ccb9ea1524fc6835_12.png)'
+- en: The calendar icon refers to the date fields such as invoice date and ship date。
+    While the calendar with clock icon refers to date and time fields， such as last
+    system refresh。The hashtag icon refers to numerical fields such as profit and
+    order I D。 The T F icon shows Boolean values。Which only contain relational values，
+    or either true or false。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 日历图标指的是日期字段，如发票日期和发货日期。而带时钟的日历图标指的是日期和时间字段，如上次系统刷新。井号图标指的是数值字段，如利润和订单ID。TF图标显示布尔值，仅包含关系值，或真或假。
+- en: Finally， we have the Gbe icon， which refers to geographic fields such as zip
+    code and country。All of these fields where their respective data type icon are
+    also listed in the data pane when you create a new view。 these fields will then
+    be categorized by Tau into roles of either dimensions and measures。 Dimenions
+    have a blue data type icon and a blue pill。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 最后，我们有Gbe图标，它指的是地理字段，如邮政编码和国家。当你创建新视图时，所有这些字段及其相应的数据类型图标也会列在数据窗格中。这些字段随后会被Tableau分类为维度或度量。维度有蓝色数据类型图标和蓝色胶囊。
+- en: which is visible when you hover over the field name。 Measures have a green data
+    type icon and a green pill。![](img/7469064317016182ccb9ea1524fc6835_14.png)
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 当你悬停在字段名称上时，会显示该图标。度量有绿色数据类型图标和绿色胶囊。![](img/7469064317016182ccb9ea1524fc6835_14.png)
+- en: Dimenssions contain qualitative values， meaning they can't be measured， but
+    are instead described。 Dimenions are often things like city or country， eye color，
+    category， team name， et cetera。 You can use dimensions to categorize segment and
+    reveal the details in your data。 Also。 dimensions affect the level of detail in
+    the view。Measures contain numeric。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 维度包含定性值，意味着它们无法测量，而是被描述。维度通常是城市或国家、眼睛颜色、类别、团队名称等。你可以使用维度对数据进行分类、分段并揭示细节。此外，维度会影响视图中的详细程度。度量包含数值。
+- en: quantitative values that you can measure and record using numbers。 Measures
+    can be aggregated。![](img/7469064317016182ccb9ea1524fc6835_16.png)
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 定量值可以用数字进行测量和记录。度量可以进行聚合。![](img/7469064317016182ccb9ea1524fc6835_16.png)
+- en: In the data plane， dimensions are listed first by default。 followed by the measures
+    which are separated by a line。To show how dimension and measures differ。 we will
+    create a bar graph that shows the sales per product category in this sheet。Drag
+    the sales field into the rose shelf。 Since sales have numeric value， it is considered
+    a measure。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在数据平面中，维度默认首先列出，后面是通过一条线分隔的度量。为了显示维度和度量之间的区别，我们将在此表中创建一个显示每个产品类别销售情况的条形图。将销售字段拖入行架上。由于销售具有数值，因此被视为度量。
+- en: As we can see， Tableau automatically aggregated it using the default aggregation
+    measure of sum。To aggregate is to gather the value into a group in order to visualize
+    it as a whole instead of using each individual value。 Since the aggregation method
+    is set to sum， we can now see the bar marked up to the total sales。 which is almost
+    15 million We will learn more about different aggregation methods as we go further
+    along this course。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 正如我们所见，Tableau自动使用默认聚合度量（求和）对其进行了聚合。聚合是将值聚集成一组，以便将其作为整体进行可视化，而不是使用每个单独的值。由于聚合方法设置为求和，我们现在可以看到柱状图标记为总销售额，接近1500万。我们将在本课程的后续学习中了解更多不同的聚合方法。
+- en: Next， let's look at how a dimension will affect this visualization。 We will
+    add the product category field into the columns shelf。Since the field product
+    category is a dimension， it has segmented the data into three product categories。
+    You can also move the product category pill into the colors marked card to segment
+    the bar by color。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 接下来，我们来看看维度如何影响这个可视化。我们将产品类别字段添加到列架上。由于产品类别字段是一个维度，它将数据分为三个产品类别。你还可以将产品类别小药丸移动到颜色标记卡中，以按颜色对柱状图进行分段。
+- en: '![](img/7469064317016182ccb9ea1524fc6835_18.png)'
+  id: totrans-28
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/7469064317016182ccb9ea1524fc6835_18.png)'
+- en: Tableau represents the data differently， depending on whether the dimension
+    and measure are discrete or continuous。 Discreet values are individually separate
+    and distinct。 such that it can only contain certain values， which are accountable。
+    For example。Different types of products are discrete。 Sales of each product is
+    also considered as discrete。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Tableau根据维度和度量是离散还是连续来以不同方式表示数据。离散值是单独分开的，彼此不同，因此只能包含某些可计量的值。例如，不同类型的产品是离散的。每个产品的销售也被视为离散的。
+- en: '![](img/7469064317016182ccb9ea1524fc6835_20.png)'
+  id: totrans-30
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/7469064317016182ccb9ea1524fc6835_20.png)'
+- en: '![](img/7469064317016182ccb9ea1524fc6835_21.png)'
+  id: totrans-31
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/7469064317016182ccb9ea1524fc6835_21.png)'
+- en: Continuous values can be infinite。 It can take any value within a specific range，
+    Time or interval。 A person's age is considered continuous。The time and a race
+    and temperature of a freezer are also continuous values。![](img/7469064317016182ccb9ea1524fc6835_23.png)
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 连续值可以是无限的。它可以在特定范围内取任何值，包括时间或间隔。一个人的年龄被视为连续的。比赛时间和冰箱的温度也是连续值。![](img/7469064317016182ccb9ea1524fc6835_23.png)
+- en: In this bar chart， we have a continuous measure of profit and a discrete dimension
+    of year of order date。 As you can see， the graph has no X axis line since the
+    year of order date is set as discrete or distinct year value。The year is treated
+    as a header or label for each bar。 Now， let's compare it to this second chart。
+    which uses the same data。In this line chart， we still use a continuous measure
+    of sum of profit。
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个柱状图中，我们有一个利润的连续度量和一个订单日期的离散维度。正如你所见，图表没有X轴线，因为订单日期的年份被设置为离散或独特的年份值。年份被视为每个柱子的标题或标签。现在，让我们将其与这个使用相同数据的第二个图表进行比较。在这个折线图中，我们仍然使用利润的连续度量。
+- en: but the quarter of order date is set as continuous， as implied by its green
+    pill。 Notice that an x axis line is now visible。 This order date is not sortable
+    because it follows a chronological order from oldest date on the left to most
+    recent date on the right。
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但订单日期的季度被设置为连续，如其绿色小药丸所示。请注意，现在X轴线是可见的。这个订单日期不可排序，因为它遵循从左到右的时间顺序，从最早的日期到最近的日期。
+- en: If you wanted to create a chart which shows trend over time。 you might opt for
+    the continuous type of value， but if you need a chart that can be sorted。 you
+    will have to use a discrete value。 Dimensions are usually discrete and measures
+    are usually continuous。 However， this is not always the case。 You can always change
+    a pill into either discrete or continuous by right clicking on the pill to show
+    its menu and selecting either the discrete or continuous option。
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你想创建一个显示趋势随时间变化的图表，你可能会选择连续类型的值，但如果你需要一个可以排序的图表，你就必须使用离散值。维度通常是离散的，而度量通常是连续的。然而，这并不总是如此。你可以通过右键点击小药丸显示其菜单，选择离散或连续选项来更改小药丸为离散或连续。
+- en: '![](img/7469064317016182ccb9ea1524fc6835_25.png)'
+  id: totrans-36
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/7469064317016182ccb9ea1524fc6835_25.png)'
+- en: When using multiple data sources in tableableau， you might encounter the term
+    relationships and join。 Both of them combine data from multiple tables， but they
+    are not the same function。 data relationshipss are a dynamic， flexible way to
+    combine data。 Think of it as a contract between tables。 Tableau brings in data
+    from these tables using that contract to build a query with the appropriate joins。
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在使用多个数据源时，您可能会遇到术语“关系”和“连接”。这两者都将来自多个表的数据结合在一起，但功能并不相同。数据关系是一种动态、灵活的数据结合方式。可以把它想象成表之间的一个合同。Tableau使用该合同从这些表中提取数据，以构建包含适当连接的查询。
+- en: Reships have no upfront joins。 You only need to set the matching fields to define
+    a relationship。 The relationship is visible in the logical layer of the data source
+    canvas wherein a flexible line connects or shows the relationship between the
+    tables。
+  id: totrans-38
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 关系没有前期的连接。您只需设置匹配字段来定义关系。该关系在数据源画布的逻辑层中可见，其中一条灵活的线连接或显示表之间的关系。
+- en: '![](img/7469064317016182ccb9ea1524fc6835_27.png)'
+  id: totrans-39
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/7469064317016182ccb9ea1524fc6835_27.png)'
+- en: It is automatic in context aware Tableau automatically selects join types based
+    on the fields being used in the visualization。 During analysis， Tableau adjusts
+    join types intelligently and preserves the native level of detail in your data。You
+    can see aggregations at the level of detail of the fields in your viz。 rather
+    than having to think about the underlying joins。
+  id: totrans-40
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在上下文感知的Tableau中，它会自动选择基于可视化中使用的字段的连接类型。在分析过程中，Tableau智能地调整连接类型，并保留数据的原生细节级别。您可以看到可视化中字段的细节级别的聚合，而无需考虑底层连接。
+- en: '![](img/7469064317016182ccb9ea1524fc6835_29.png)'
+  id: totrans-41
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/7469064317016182ccb9ea1524fc6835_29.png)'
+- en: Joins are a more static way to combine data。 Joins must be defined between physical
+    tables up front before analysis and can be changed without impacting all sheets
+    using that data source。 Join tables are always merged into a single table。 They
+    are displayed in the physical layer of the data source canvas using Venn diagram
+    icons to show the join type。It also requires you to set the join type and the
+    clauses。
+  id: totrans-42
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 连接是一种更静态的数据结合方式。连接必须在分析前在物理表之间定义，并且可以更改而不影响使用该数据源的所有工作表。连接表总是合并为一个单一表。它们在数据源画布的物理层中以维恩图标识连接类型。它还要求您设置连接类型和相关条款。
+- en: Tableau recommends using relationships as your first approach to combining your
+    data because it makes data preparation and analysis easier and more intuitive。
+    You can use joins when you absolutely need to， such as when explicitly using a
+    specific join type or when using data models that support shared dimensions。
+  id: totrans-43
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Tableau建议将关系作为结合数据的首选方法，因为这使数据准备和分析变得更简单、更直观。当您绝对需要时可以使用连接，例如在明确使用特定连接类型或使用支持共享维度的数据模型时。
+- en: '![](img/7469064317016182ccb9ea1524fc6835_31.png)'
+  id: totrans-44
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/7469064317016182ccb9ea1524fc6835_31.png)'
+- en: '![](img/7469064317016182ccb9ea1524fc6835_32.png)'
+  id: totrans-45
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/7469064317016182ccb9ea1524fc6835_32.png)'

@@ -1,0 +1,312 @@
+- en: 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P3：3）VLOOKUP 基础 - ShowMeAI - BV1sQ4y1B71N
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P3：3）VLOOKUP 基础 - ShowMeAI - BV1sQ4y1B71N
+- en: In this advanced Excel tutorial， I'm going to show you the basics of using the
+    Vlookup function and Vlookup can really be quite a powerful tool for you in Excel。
+    It can do several different things that can be useful。 but in this tutorial， like
+    I said。 we're going to look just at the basics of how to use it。 And in this tutorial。
+    I'm using one of the spreadsheets that I made in past tutorials。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在本高级 Excel 教程中，我将向你展示使用 Vlookup 函数的基础知识，Vlookup 实际上可以成为你在 Excel 中非常强大的工具。它可以做几件有用的事情，但在本教程中，正如我所说的，我们将仅关注如何使用它的基础知识。在本教程中，我使用的是我在过去教程中制作的一个电子表格。
+- en: if you haven't seen my Excel basics tutorial， my intermediate Excel tutorial。
+    And also the series of advanced Excel tutorials， you really should go back and
+    watch those。 But in those tutorials， I created this spreadsheet that's a movie
+    inventory of movies that I have。 and it's quite a short list。 But for the sake
+    of this tutorial。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你还没有看过我的 Excel 基础教程、中级 Excel 教程，以及一系列高级 Excel 教程，你真的应该回去看看。在那些教程中，我创建了一个电影库存的电子表格，里面有我拥有的电影，名单相当短。但为了本教程的方便。
+- en: let's imagine that there are 1000 or 2000 or 5000 records here in this spreadsheet。
+    instead of just 20 or 30 movies， let's pretend that there's 2000 movies。 and I'm
+    also going to have you pretend that instead of just six or 7 columns of data。
+    imagine that there's 20 different columns。 You know one of the columns lists the
+    duration。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们假设这个电子表格里有 1000 或 2000 或 5000 条记录，而不仅仅是 20 或 30 部电影，假设有 2000 部电影。而且我也希望你假装，不仅仅有
+    6 或 7 列数据，想象有 20 列不同的数据。你知道，其中一列列出了时长。
+- en: '![](img/4b01434b9f1b483c8ebf701d667e6295_1.png)'
+  id: totrans-4
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/4b01434b9f1b483c8ebf701d667e6295_1.png)'
+- en: Of the movies。 another one lists the star of the movie。 Imagine just a pretty
+    big spreadsheet with lots of columns and lots of records， lots of rows。 One of
+    the challenges that we have when you get a huge spreadsheet like that is how do
+    I pull out the data that I want to see and that I want to think about from a spreadsheet。
+    and I'm going to show you how to use Vlookup to do that。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 电影的名称。另一个列出电影的明星。想象一下，那里有一个很大的电子表格，有很多列和很多记录，很多行。当你得到这样一个巨大的电子表格时，我们面临的一个挑战是，如何从电子表格中提取出我想要查看和思考的数据。我将向你展示如何使用
+    Vlookup 来做到这一点。
+- en: So one of the best ways to think about Vlookup is to think of it as being similar
+    to looking in the index of a book to find out what is in the book or looking through
+    a catalog to look up something that you might want to buy and you can find the
+    part number and you can find the cost and things like that。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 思考 Vlookup 的最佳方式之一是将其视为类似于在书籍索引中查找内容，或者在目录中查找你可能想买的东西，你可以找到零件编号和成本等信息。
+- en: Another comparison would be that it's similar to looking up someone in a phone
+    book you look up their name and you find their address or their phone number So
+    in this spreadsheet again。 imagining that it's much bigger than it actually is
+    let's say that because it's so big。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 另一个比较是，它类似于在电话簿中查找某人，你查找他们的名字，找到他们的地址或电话号码。所以在这个电子表格中，再次想象它比实际情况要大得多，假设它确实很大。
+- en: I find it hard to know。What the rating is of a particular movie and I would
+    like to be able to type in the name of a movie and find out exactly what the rating
+    is for that movie to do that I'm going to need two cells and so I'm going to use
+    these two cells here and I'm going to go to this cell and I'll type in equals
+    V lookup and notice as soon as I do that I get a pop up that is going hopefully
+    help me to do this formula correctly now I'll put in the left parenthesis and
+    it gives me some more details it says that I need to now put in a lookup value。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我发现很难知道特定电影的评分，我希望能够输入电影的名称并确切找到该电影的评分。为此，我需要两个单元格，所以我将使用这两个单元格，在这个单元格中输入等于
+    V lookup，注意我一这么做就弹出一个提示，希望能帮助我正确填写这个公式。现在我输入左括号，它给了我更多细节，说明我需要输入一个查找值。
+- en: a table array， a column index number and a range lookup and each of those notice
+    is separated from the rest with a comma so lookup value comma table array comma
+    column index number comma range lookup Now the official name for each of these
+    four different sections of this formula is argument each of these is an argument
+    so this is argument number1。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 一个表格数组，一个列索引号和一个范围查找，每个都用逗号与其余部分分隔，所以查找值，逗号，表格数组，逗号，列索引号，逗号，范围查找。 现在这个公式中这四个不同部分的官方名称是参数，每个都是一个参数，所以这是参数
+    1。
+- en: 23 and4 so let's look at argument1 first。For the lookup value So basically。
+    what is it that I know What is it that I'm gonna look up information about。 but
+    it's something that I already know。 So again， think of going to a library。 you
+    know the name of the book that you want Let's say it's the book a wrinkle in time
+    which is an awesome book written for young adults。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 23 和 4，所以我们先看参数 1。 对于查找值，基本上。 我知道的是什么？ 我将查找关于什么的信息。 但这是我已经知道的东西。 所以再次，想想去图书馆。
+    你知道你想要的书的名字。 假设是书《时间的皱折》，这是一本为年轻人写的很棒的书。
+- en: but I think it's great for anyone。 and I hear Disney is soon to make it into
+    a movie。 But anyway。 let's say at the library you would like to look up where
+    to find that book。 what you know is the name of the book in that case。 it's a
+    wrinkle in time。 So that's the lookup value。 Now in this case， I would like the
+    lookup value to be changeable。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但我觉得这对任何人来说都很棒。 我听说迪士尼很快会把它拍成电影。 不管怎样。 假设在图书馆你想查找那本书的位置。 你知道的是书的名字，在这种情况下是《时间的皱折》。
+    所以这是查找值。 现在在这个情况下，我希望查找值是可以改变的。
+- en: I would like to be able to type in let's say the Princess Bride and have it
+    tell me Pg or the Martian and have it tell me Pg13 And so because I want it to
+    be changeable。 I'm just going click on sell H8 I'll click there。 So basically
+    whatever I type in sell H8 that will become the lookup value。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我希望能够输入，比如说《公主新娘》，并让它告诉我 Pg，或者《火星人》，并让它告诉我 Pg13。 所以因为我希望它是可变的。 我就点击 H8 单元格，点击那里。
+    基本上我在 H8 单元格中输入的内容将成为查找值。
+- en: All I'll put。In there next， it wants the table array And if you've watched my
+    Excel basics tutorial。 you know the term range and that's basically what this
+    table array is。 It's a range of your spreadsheet that you want Excel to look at
+    and to be careful。 I really want to include all of the columns that I have here
+    Now you may not want to when you do this yourself。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将把它放进去。 接下来，它想要表格数组。如果你看过我的 Excel 基础教程。 你知道这个术语范围，基本上这就是表格数组。 这是你想让 Excel 查看的一组电子表格，且要小心。
+    我真的想包括我在这里的所有列。 现在你可能不想在自己做这件事时这样做。
+- en: but I want to go in and choose a3 through F22 so that'll be all of the actual
+    data from my spreadsheet it's not going to include some of this other stuff that
+    I put in later So to put that range in to the formula。 All I have to do is click
+    on it and drag to select that range that I want it to look through Now that's
+    really easy when it's such a small spreadsheet but imagine a giant spreadsheet
+    like I asked you to pretend that this is in that case。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但我想进入并选择 A3 到 F22，所以这将是我电子表格中的所有实际数据，它不会包含我后来输入的一些其他东西。 所以要将范围放入公式中。 我所要做的就是点击并拖动选择我想让它查看的范围。
+    现在在这样的小电子表格中真的很简单，但想象一下一个巨大的电子表格，就像我让你假装这是的那样。
+- en: it wouldn't be practical to click and drag so that's okay you could just go
+    in and type a3 through and that's indicated by a colon F。22， Okay， great。 So I've
+    done the first argument and the second argument。 Now on the third argument。 The
+    third argument is it wants to know a column index number。 So what this is asking
+    for。 It's asking for you to pick one of the columns。 Now it's not looking for
+    column A， column B。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 点击和拖动是不切实际的，所以没关系，你可以直接输入 A3，通过的范围是 F22，好的，很棒。 所以我完成了第一个参数和第二个参数。 现在是第三个参数。
+    第三个参数是它想知道一个列索引号。 所以这在问什么。 它是在要求你选择其中一列。 现在它不在寻找列 A，列 B。
+- en: column C。 No， in this case， it's not。 What it's looking for。 is whatever the
+    table array is that you selected， whatever that first column in the array is。
+    that's number one， then number2， number 3， number 4， number 5， number 6。 Now。
+    what if I hadn't included column A in the table array that I selected。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 列 C。 不，在这种情况下，不是。 它要寻找的。 是你选择的表格数组中的第一列。 这是第一，接下来是第二，第三，第四，第五，第六。 现在。如果我没有在我选择的表格数组中包含列
+    A 呢。
+- en: What if I had started here in B3， instead of a 3。 Well， then this would be column
+    1。 This would be column 2。 So it doesn't have to correlate to the A B，C， D E F。
+    it can just be whatever it is that you selected for the table array or you clicked
+    and drag to highlight the far left column is column 1。 then column 2， then column
+    3， then column 4， then column 5。 So now I'm going to do that。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我从 B3 开始，而不是 A3，会怎样？那么这就是第一列。这就是第二列。所以它不需要与 A、B、C、D、E、F 对应。它可以是你为表格数组选择的任何内容，或者你点击并拖动以突出显示的最左边的列是第一列，然后是第二列，然后是第三列，依此类推。那么现在我将这样做。
+- en: argument I'll put in a comma to separate the second argument and the third argument
+    And how do I know which column to select Well。 the column I select is the column
+    that has the information that I want to draw out。 So if you remember my example
+    I want to be able to type in the name of a movie and find out what its rating
+    is So that means I want column C but remember I've got to put it as a number。
+    So I go to the array， the table array that I highlighted。 and I say okay this
+    is the first column。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我会在第二个参数和第三个参数之间放一个逗号以分隔它们。那么我怎么知道选择哪个列呢？我选择的列是包含我想提取的信息的列。所以如果你记得我的例子，我想能够输入电影名称并找出它的评分。这意味着我想要
+    C 列，但记住我必须把它作为一个数字。所以我去到我突出显示的数组，表格数组，告诉自己这是第一列。
+- en: this is the second。 So I want the third column。 So I type in three comm next
+    it wants a range lookup。 and this is kind of tricky and a little confusing for
+    me as well as for many people。 Basically what this is asking is is there a requirement
+    that H8 be an exact match to what's in the spreadsheet and this is mostly useful
+    I think with numbers So for example。 let's say instead of typing in names of movies
+    what if we type in the date that the movie was purchased if I were to type in。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是第二个。所以我想要第三列。因此我输入三，接下来它想要一个范围查找。这对我以及许多人来说都有点棘手和困惑。基本上，这个问题是 H8 是否需要与电子表格中的内容完全匹配，我认为这在数字上最有用。例如，假设我们不是输入电影名称，而是输入电影购买的日期，如果我输入。
+- en: it would produce a PG。 But what if I typed in 2006。 And what if there is no
+    2006 entry here Well。 if I in this fourth argument in the range lookup， if I have
+    it set to be true。 then it will look for an approximate match。 It'll find basically
+    whatever is the closest。 If I type in the word fault。 then it's going require
+    an exact match。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这会生成一个 PG。但如果我输入 2006 呢？如果这里没有 2006 的条目，那怎么办？好吧，如果我在范围查找的第四个参数中将其设置为真，那么它将寻找一个近似匹配。它基本上会找到最接近的那个。如果我输入“fault”这个词，它就需要一个精确匹配。
+- en: if you don't type in the exact match， it's not going to produce the result that
+    you're looking for in this case。 I'm going to leave it as false。 So I'm going
+    require the exact match。 and then you're supposed to put in the right parenthesis，
+    but you don't really have to。 So I'll just type enter。 and look， it's giving me
+    a message saying the value is not available。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你不输入精确匹配，它不会生成你所期望的结果。在这种情况下，我将其保持为假。因此我将要求精确匹配。然后你应该输入右括号，但其实你并不需要。因此我只需按回车。看看，它给我一个消息，显示值不可用。
+- en: So this is an error。 Now the reason it's showing me an error code is because
+    there is nothing typed in this cell here。 So let's test it out。 I'm going type
+    in I am legend。 Let's see what happens。 Look it says Pg13。 So that seemed to work
+    pretty well。 let's try it again。 I'll type in Grohog day。 So I type in。Hog day
+    hit enter and it's PG Now， once you have done this。 If you've set up a V lookup
+    like this。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这就是一个错误。现在显示错误代码的原因是这个单元格里什么都没输入。所以我们来测试一下。我将输入“我是传奇”。看看会发生什么。看，它显示 PG13。所以这似乎效果很好。我们再试一次。我输入“土拨鼠日”。我输入“土拨鼠日”，按回车，它显示
+    PG。现在，一旦你像这样设置了 V 查找。
+- en: if you regret how you've laid it out on the screen like I do a little bit。 let's
+    see what we can do to make it so that you type the word here and it tells you
+    on the right whether it's Pg I think that would look a little better。 So to do
+    that I'm just going double click here and I can see up here in the formula bar
+    that's the formula I'll just copy that and then I'll paste it here and notice
+    that it gives me an error again so I need to double click on it and look at my
+    formula and see where it messed up because I copied it from one column to the
+    next it shifted everything to the right a little and also down because I move
+    down one so I can repair this formula just by clicking on the first argument clicking
+    and dragging to highlight it you can also do this up here in the formula bar and
+    then I'll click on H8 next we go on to the second argument which is the table
+    array the table array was changed quite a bit I'm just going click and drag but
+    remember with a larger spreadsheet you would need to just type in the。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你像我一样对屏幕上布局感到后悔，我们来看看怎么做，输入一个词后右边就能告诉你是否是Pg，我觉得这样看起来会好一些。为了做到这一点，我双击这里，可以在公式栏上看到公式，我会复制它，然后粘贴到这里，注意再次出现错误，所以我需要双击它，检查我的公式，看哪里出错了，因为我从一列复制到另一列，所有内容都稍微向右移动了一些，并且向下也移动了一格，因此我可以通过点击第一个参数并拖动来高亮显示它来修复这个公式，你也可以在公式栏上做到这一点，然后我会点击H8，接下来是第二个参数，即表数组，表数组已经发生了很大变化，我会点击并拖动，但记得在较大的电子表格中，你需要直接输入。
+- en: Dell namess that would be much faster。 And the column index number is still
+    valid 3。 and the range look up faults。 So now I can hit return or enter on the
+    keyboard。 and I can actually delete the one that's above。 So now I have a space
+    to type in the movie name and it tells me the rating off to the right。 let's do
+    another example just to test it out。 I'll type in the giver。 and it changes to
+    Pg 13。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这样会快得多。而列索引号仍然有效为3，范围查找故障。所以现在我可以在键盘上按回车或输入，我实际上可以删除上面的那个。现在我有一个空间可以输入电影名称，它会在右边告诉我评分。让我们再做一个例子来测试一下。我会输入《赋予者》，它会变成Pg
+    13。
+- en: So I hope that you found this tutorial to be helpful。 This is just the beginning
+    of what the lookup can do for you。 But to be honest。 this is how I use it most
+    often just as a way to create kind of like a form that I just fill out。 I type
+    in the name of something or the part number of something。 And then it tells me
+    other data。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我希望你觉得这个教程对你有帮助。这仅仅是查找功能能为你提供的开始。但是老实说，我最常用的方式就是创建一个表单，然后填写。我输入某个东西的名称或部件号，然后它会告诉我其他数据。
+- en: So like I said at the beginning， it's kind of like looking up a book at the
+    library and finding information about the book or looking up somebody's name in
+    the phone book and getting their address or getting their phone number or the
+    city that they live in。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 就像我在开头说的，这有点像在图书馆查找一本书并找到有关这本书的信息，或者在电话簿中查找某个人的名字并获取他们的地址或电话号码，或者他们居住的城市。
+- en: Now if I wanted to， of course，I highlight these， and I could change them to
+    be bold and centered and things like that and kind of create a nice little space
+    here that it's a tool basically that I can click and type in to get the information
+    that I'm looking for。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在如果我想，我可以高亮这些，并将它们改为粗体并居中等等，创造一个漂亮的小空间，基本上这是一个工具，我可以点击并输入以获取我所寻找的信息。
+- en: Now， there are a couple of rules you need to know if you're going to use Vlookup。Probably
+    the first rule is that you need to have your data in vertical columns。 So I have
+    column titles here and the lists of items go vertically right information about
+    those items in the list go horizontally。 but the actual different records go vertically
+    in columns It has to be that way。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，如果你要使用Vlookup，有几个规则需要知道。第一个规则是你需要将数据放在垂直列中。所以我这里有列标题，项目列表垂直排列，关于这些项目的信息则水平排列，但不同的记录必须垂直放置在列中，必须这样。
+- en: And the reason why is because V lookup the V and Vlookup means vertical。 So
+    if you have your spreadsheet set up the other way， it wouldn't work。 There is
+    such a thing as H lookup for horizontal， but anyway that's rule number one that
+    you need to have your data arranged vertically in the spreadsheet in columns。
+    The second rule is that the information that you know that you're going to be
+    typing in the box basically has to be to the left of the data that you want to
+    find。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 之所以这样，是因为V查找中的V代表垂直。因此，如果你的电子表格设置成其他方式，它就无法正常工作。确实存在H查找用于水平查找，但无论如何，这是你需要遵循的第一条规则，即你的数据必须在电子表格中垂直排列在列中。第二条规则是，你知道将要输入到框中的信息必须位于你想要查找的数据的左侧。
+- en: So the data that I know in this case is the names of the movies right that's
+    what I'm going to be able to remember and produce and type in this box。 So that
+    in my spreadsheet that needs to be to the left。![](img/4b01434b9f1b483c8ebf701d667e6295_3.png)
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个案例中，我知道的数据是电影的名称，这就是我能够记住并在这个框中输入的内容。因此，在我的电子表格中，这些名称需要位于左侧。![](img/4b01434b9f1b483c8ebf701d667e6295_3.png)
+- en: Of the information I want to look up and find in this case， the ratings。 If
+    your spreadsheet is not set up that way， you need to move the column that has
+    the information that you're going to be able to type in the box。 You want to move
+    that to the left。 because that is a requirement。 So if you keep those two rules
+    in mind， you should be able to start using V lookup successfully。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我要查找和获取的信息是评分。如果你的电子表格没有这样设置，你需要将可以输入框中的信息所在的列移动到左侧。这是一个要求。因此，如果你记住这两条规则，你应该能够成功使用V查找。
+- en: So I hope that you found this video to be helpful。 if you did， I'd appreciate
+    it。 if you'd please click the like button below this video。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 希望你觉得这个视频对你有帮助。如果你觉得有帮助，我会很感激你点击下面这个视频的喜欢按钮。

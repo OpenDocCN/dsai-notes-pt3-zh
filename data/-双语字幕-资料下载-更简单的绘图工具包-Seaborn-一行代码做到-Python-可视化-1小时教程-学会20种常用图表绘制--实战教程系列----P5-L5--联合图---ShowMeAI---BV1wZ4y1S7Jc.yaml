@@ -1,0 +1,65 @@
+- en: 【双语字幕+资料下载】更简单的绘图工具包 Seaborn，一行代码做到 Python 可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ -
+    P5：L5- 联合图 - ShowMeAI - BV1wZ4y1S7Jc
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】更简单的绘图工具包 Seaborn，一行代码做到 Python 可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ -
+    P5：L5- 联合图 - ShowMeAI - BV1wZ4y1S7Jc
+- en: Now we also also in the realm of distribution plots。 we have things called joint
+    plots and a joint plot is going to be used to compare to distribution and plots
+    a scatter plot by default so we can come in and go joint plot and let's say that
+    I would like to receive data on the X axis that is in regards to whether the person
+    was speeding or not。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们也进入了分布图的领域。我们有叫做联合图的东西，联合图将用于比较两个分布，默认绘制散点图，所以我们可以使用联合图，假设我想在 X 轴上接收与人员是否超速相关的数据。
+- en: and on the Y axis in regards to whether the person was inebriated or was drunk
+    driving。![](img/282d6cd4f3216bcb6ed4714dc449dabd_1.png)
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 并且在 Y 轴上与人员是否醉酒或酒后驾驶相关。![](img/282d6cd4f3216bcb6ed4714dc449dabd_1.png)
+- en: You can say data is equal to， and we're using the crash data frame and let's
+    say that we would like to generate a regression line。We can go kind is equal to
+    regression and boom， and then you can see that it went and plotted all of this
+    crazy stuff all over this place here。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以说数据是相等的，我们正在使用碰撞数据框，假设我们想生成一条回归线。我们可以设置类型为回归，然后你会看到它在这个地方绘制了所有这些疯狂的东西。
+- en: you could also come in and create one of those KdeE plots just by coming into
+    the kind area and saying KdeE and see kind of all kinds of cool types of plots
+    we can make inside of here and KdeE again refers to kernel density estimation
+    and like I said before。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你还可以通过进入类型区域并设置 KdeE 来创建这样的 KdeE 图，看看我们可以在这里制作的各种酷炫图表，KdeE 再次指的是核密度估计，正如我之前所说的。
+- en: just estimates the distribution of data and you could also come in and create
+    a hexagon。![](img/282d6cd4f3216bcb6ed4714dc449dabd_3.png)
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 只是估计数据的分布，你也可以创建一个六边形图。![](img/282d6cd4f3216bcb6ed4714dc449dabd_3.png)
+- en: '![](img/282d6cd4f3216bcb6ed4714dc449dabd_4.png)'
+  id: totrans-6
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/282d6cd4f3216bcb6ed4714dc449dabd_4.png)'
+- en: '![](img/282d6cd4f3216bcb6ed4714dc449dabd_5.png)'
+  id: totrans-7
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/282d6cd4f3216bcb6ed4714dc449dabd_5.png)'
+- en: '![](img/282d6cd4f3216bcb6ed4714dc449dabd_6.png)'
+  id: totrans-8
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/282d6cd4f3216bcb6ed4714dc449dabd_6.png)'
+- en: '![](img/282d6cd4f3216bcb6ed4714dc449dabd_7.png)'
+  id: totrans-9
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/282d6cd4f3216bcb6ed4714dc449dabd_7.png)'

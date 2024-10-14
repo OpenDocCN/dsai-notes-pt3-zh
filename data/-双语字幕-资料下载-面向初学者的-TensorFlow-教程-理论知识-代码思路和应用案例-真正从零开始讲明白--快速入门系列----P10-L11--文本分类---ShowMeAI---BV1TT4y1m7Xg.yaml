@@ -1,0 +1,425 @@
+- en: 【双语字幕+资料下载】面向初学者的 TensorFlow 教程，理论知识、代码思路和应用案例，真正从零开始讲明白！＜快速入门系列＞ - P10：L11-
+    文本分类 - ShowMeAI - BV1TT4y1m7Xg
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】面向初学者的 TensorFlow 教程，理论知识、代码思路和应用案例，真正从零开始讲明白！＜快速入门系列＞ - P10：L11-
+    文本分类 - ShowMeAI - BV1TT4y1m7Xg
+- en: '![](img/cf77d9b01a43fab5f293c40eb502060f_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/cf77d9b01a43fab5f293c40eb502060f_0.png)'
+- en: 🎼，Hey， guys， and welcome to another Tensorflow tutorial。 In this video。 we will
+    learn how to use an R and N for text classification。 So last time I gave you a
+    quick overview and showed you how we treat our input as a sequence。 and then create
+    an R and N model。 And now we apply this to a very interesting task。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 🎼，大家好，欢迎来到另一个 Tensorflow 教程。在这个视频中，我们将学习如何使用 R 和 N 进行文本分类。上次我给你们快速概述了一下，并展示了我们如何将输入视为一个序列，然后创建
+    R 和 N 模型。现在我们将把它应用到一个非常有趣的任务上。
+- en: which is text classification from real worldor data。 So we analyze Twitter tweets
+    and want to predict if the text is about a disaster event or not。 So here I'm
+    in a two pointer notebook。 and I already imported the things we need。 And then
+    the data set we are going to use， is available on kgggle。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是来自真实世界数据的文本分类。我们分析 Twitter 的 tweets，并想预测文本是否与灾难事件有关。在这里，我在一个 Jupyter Notebook
+    中，已经导入了我们需要的内容。我们要使用的数据集在 Kaggle 上可以找到。
+- en: So I put the link in the description， of course。 And this is called the disaster
+    tweets。 So we want to predict which tweets are about real disasters and which
+    are not。😊。And there are two files available。 so the training and testing CSsv。
+    but the testing CSsv doesn't include the labels。 So this is for the submission
+    if you want to participate in this competition。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我当然把链接放在描述中。这叫做灾难 tweets。我们想预测哪些 tweets 是关于真实灾难的，哪些不是。😊而且有两个文件可用，训练和测试 CSV，但测试
+    CSV 不包括标签。这是用于提交的，如果你想参与这个比赛的话。
+- en: So I only downloaded this train do CSsv and then put it in my folder already
+    and then we use pans to load the data so we can call panndas read CSsv and then
+    the name of the file。 And now we if we have a look at the shape， then we see we
+    have 7630 samples and then five columns。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我只下载了这个训练数据 CSV，然后已经放入我的文件夹中。接着我们使用 pandas 加载数据，可以调用 pandas 的 read_csv，然后文件名。现在如果我们查看数据的形状，我们看到有
+    7630 个样本和五列。
+- en: So now let's have a look at the first five rows。 So here we see we get some
+    additional information like the I。 the keyword and the location which we don't
+    need now。 and then we have the text。 So this is the actual tweet。And then the
+    target label。 So zero for no disaster and one for this is a disaster tweet。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们来看前五行。在这里我们看到了一些额外的信息，比如 ID、关键词和位置，这些我们现在不需要。然后是文本，这就是实际的 tweet。目标标签是零表示没有灾难，1
+    表示这是一个灾难 tweet。
+- en: So let's also analyze how many of both classes we have。So we have this many。
+    which are about an actual disaster and this many， which are not about a disaster。
+    So I guess it's pretty much balanced here。 I think that's that's okay。 And yeah。
+    So now we can go ahead and want to to preproces this text a little bit before
+    we can use an R and N later。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们也来分析一下这两类各有多少。我们有这样多关于实际灾难的 tweets，还有这样多不是关于灾难的 tweets。我想这里大致是平衡的，我觉得这没问题。好的，现在我们可以继续，想在稍后使用
+    R 和 N 之前先对这些文本进行一些预处理。
+- en: So the first thing I want to do is to clean this data a little bit。 And I want
+    to remove URL。 because it doesn't give us any information。 And I also want to
+    remove punctuation。So for this。 I already implemented these helper functions。
+    So this one is using regular expressions。 And if you want to learn more about
+    this， then I also have a full guide on my channel that you can check out。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我想做的第一件事是稍微清理一下数据。我想去除 URL，因为它没有提供任何信息。我还想去掉标点符号。为此，我已经实现了这些辅助函数。这一个使用了正则表达式。如果你想了解更多，我在我的频道上也有一个完整的指南可以查看。
+- en: And yeah， so now let's define these two functions。 And here， for example。 these
+    are all the punctuation characters that we want to remove。So now if we have a
+    look at this example， then here it finds one tweet with a URL。 and if we remove
+    this， then it has only this format。So now with these two functions。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，现在我们来定义这两个函数。在这里，例如，这些都是我们想要去除的标点符号字符。现在如果我们查看这个例子，它找到了一条带有 URL 的 tweet。如果我们去掉这个，它就只有这种格式。所以现在有了这两个函数。
+- en: we can simply for our data frames or penda this data frame。 we can call this
+    map function and only for this。Text column。 So we say data frame dot text dot
+    map。 And then these two functions。 And then again， we assign it to the text column。
+    So now this means we remove all the URLs and all the punctuation characters。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 对于我们的数据框或 Pandas 数据框，我们可以调用这个 map 函数，只针对文本列。因此我们说 data frame.dot text.dot map，然后是这两个函数。接着，我们将其赋值给文本列。这意味着我们移除了所有的
+    URL 和标点符号。
+- en: So this is the first prepro I want to do。 and then I also want to remove stop
+    words。 And for this。 we are going to use the famous N LTK libraries。 So this is
+    a very popular library and Python for natural language processing。 and then you
+    also probably have to say N LT K dot download。 And by the way。 you can simply
+    install it with Pip。And then here I want to get all the stop words and then remove
+    them。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是我想做的第一个预处理步骤。我还想去除停用词。为此，我们将使用著名的 NLTK 库。这是一个非常流行的用于自然语言处理的 Python 库。您可能还需要执行
+    NLTK.dot download。顺便说一下，您可以通过 Pip 简单安装它。在这里，我想获取所有停用词并将其移除。
+- en: So by definition here， a stop word is commonly is a commonly used words。 such
+    as D A N in that a search engine has been programmed to ignore。 So we want to
+    ignore these stop words。 So we get all the stop words from N L T K。 And then we
+    remove it again with a little helper function。 And let's here print the stop words。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 根据定义，停用词通常是一些常用词，例如 D、A、N，搜索引擎被编程为忽略它们。因此，我们想要忽略这些停用词。我们从 NLTK 获取所有的停用词，然后通过一个小助手函数将其移除。让我们在这里打印出停用词。
+- en: So here you see all the different stop wordss。And then again。 we call this map
+    function with this function。 and on the text column。 So this removes all the stop
+    words。 And now let's have a look at some example text。 So this is the text column。And
+    now we want to prepare this text so that we can use it for a R and N。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这里，您可以看到所有不同的停用词。然后我们再次使用这个函数调用 map 函数，作用于文本列。这将移除所有停用词。现在让我们看看一些示例文本。这就是文本列。现在我们想要准备这些文本，以便可以用于
+    RNN。
+- en: So we， we cannot use it like this with all the strings。 So we somehow have to
+    transform this to a representation that our model understands。And for this。 the
+    first thing we want to do is count all the different words。 And here we want to
+    make use of a very nice object， the counter object。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们不能像这样使用所有字符串。因此，我们必须将其转换为模型理解的表示。为此，第一步是计算所有不同的单词。在这里，我们要利用一个非常不错的对象，即计数器对象。
+- en: which is available in the collections module in Python。 and then we count all
+    the unique words。 So we iterate over over the text column， and then we say for
+    each text。 So basically for each line in this text column， we say we iterate over
+    each line。 and then for each line， we split it。 So we get an array of all the
+    different words。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它在 Python 的 collections 模块中可用，然后我们计算所有唯一的单词。因此，我们遍历文本列，然后说对每个文本进行操作。基本上，对于文本列中的每一行，我们说遍历每一行，然后对每一行进行分割。这样我们就得到了一个包含所有不同单词的数组。
+- en: And then we iterate over all the words and put it in our counter。 And then each
+    time this word appears， we increase the counter by one。 So now if we do this and
+    then return the counter and apply this function for the data frame text column。
+    then we get the counter and we get the length of the counter。 So this is the number
+    of unique words。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们遍历所有的单词并将其放入我们的计数器中。每当这个单词出现时，我们就将计数器增加一。因此，如果我们这样做，然后返回计数器并将这个函数应用于数据框的文本列，我们就得到了计数器及其长度。这就是唯一单词的数量。
+- en: So we see that we have almost 18000 different words in all these tweets。So let's
+    also have a look at the counter itself。 So this is basically looks like a dictionary。
+    So here the keys are the different words。 and then we have the count of this word
+    here as a value。 So this is how the counter looks。 And what's also very nice with
+    this counter object。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们发现这些推文中几乎有 18000 个不同的单词。那么我们也来看看计数器本身。基本上，它看起来像一个字典，这里的键是不同的单词，值是每个单词的计数。这就是计数器的样子，计数器对象还有一个很好的特性。
+- en: We can call this most common function。 So here we can have a look at the five，
+    most common words。 So we see that the word like is the most common one and appears
+    345 times。😊，And yeah， then again。 let's assign this length of the counter to the
+    to a variable and call this nu unique words。 So we need this later。 And now I
+    want to split the data set into training and validation set。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们可以调用这个最常见的函数。这里我们可以看看五个最常见的单词。因此我们看到“like”这个词是最常见的，出现了345次。😊 然后再一次。让我们将计数器的长度分配给一个变量，并称之为
+    nu unique words。我们稍后会需要这个。现在我想将数据集拆分为训练集和验证集。
+- en: and for this， I define an integer of。This should be 80% of our whole data we
+    want to use as training。 and then the rest of this。 So 20% for validation。 and
+    then we can use the slicing on the data frame。 and then the first 80% of the samples
+    is used for training and the rest for validation。 So now we get that。 And then
+    we also So right now we still have the whole data frame。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因此，我定义一个整数。这应该是我们想要用作训练的全部数据的80%。然后其余的部分。因此，20%用于验证。接着我们可以对数据框进行切片。然后前80%的样本用于训练，其余部分用于验证。现在我们得到了这个。同时，我们现在仍然拥有整个数据框。
+- en: So now we want to split the text and the labels and we can simply do this by
+    assessing the different columns。 So we say train data frame dot text dots to nuy
+    and the same for data frame dot target。 So we say these are our training sentences
+    and our training labels。 And then again。 we do the same for the validation set。So
+    if we have a look at both the training sentences shape and the validation sentences
+    shape。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们想要拆分文本和标签，我们可以简单地通过访问不同的列来做到这一点。所以我们说 train data frame.dot text dots to
+    nuy，同样适用于 data frame.dot target。因此我们说这些是我们的训练句子和训练标签。然后再次，我们对验证集做同样的事情。如果我们查看训练句子形状和验证句子形状。
+- en: then we see that we clearly have more in our training set。 and now the next
+    thing we want to do is to apply a tokenizer。 So with tokenization we vectorize
+    a text corpus by turning each text into a sequence of integers。 So you will see
+    an example in a second which makes this more clearer。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们可以清楚地看到训练集中有更多的数据。接下来我们要做的是应用分词器。通过分词，我们将文本语料库向量化，将每个文本转化为整数序列。所以你很快就会看到一个示例，使这一点更加清晰。
+- en: But for now we want to import this tokenizer from Tensorflowcars dot preprocessing
+    dot text。 and then we create a tokenizer object。 And for this we need to give
+    it the number of unique words。 So that's why we calculate this earlier。 And then
+    we have to call tokenizer dot fit on texts and then。the training sentences。 So
+    only the training data here。 And now when we did this。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但现在我们要从 Tensorflowcars.dot preprocessing.dot text 导入这个分词器。然后我们创建一个分词器对象。为此，我们需要提供唯一单词的数量。这就是为什么我们之前要计算这个。然后我们必须调用
+    tokenizer.dot fit 在文本和训练句子上。因此这里只使用训练数据。当我们完成这个步骤时。
+- en: we can get this word index。 So here each word has a unique index。 So let's say
+    word index equals tokenizer dot word index and then have a look at this word index。And
+    then we see each of these words has a unique index。 So this is what this tokenizer
+    does。And then we can convert these text to a sequence， so we can call tokenizer
+    dot texts to sequences and then give it the sentences。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们可以得到这个单词索引。所以这里每个单词都有一个唯一的索引。假设 word index 等于 tokenizer.dot word index，然后看看这个单词索引。然后我们看到这些单词的每个都有一个唯一的索引。这就是这个分词器的作用。然后我们可以将这些文本转换为序列，因此我们可以调用
+    tokenizer.dot texts to sequences，然后给出句子。
+- en: So don't get confused by this。 we have the sentences。 then。 So this is the original
+    text。 And then we get a sequence。 So this has the same size。 But now it has these
+    unique indices。 So now we do this for the training set and the validation set。
+    And now here， for example。 I compare five samples of the training sentences and
+    the corresponding sequences。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以不要对此感到困惑。我们有句子。然后。这是原始文本。然后我们得到一个序列。因此它的大小相同。但现在它有这些唯一的索引。所以我们为训练集和验证集做这个。例如，我比较训练句子的五个样本和相应的序列。
+- en: So let's print this。And this is how it looks like。 So now it maybe gets a little
+    bit clearer。 So the sentence is the normal text。 And then after we applied the
+    tokenization。 we get this sequence。 So now we have the same length of this array
+    as the text。 But now we have an index for each word。So now now we have that。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以让我们打印一下。这就是它的样子。所以现在可能会更清楚一些。句子是正常文本。然后在应用了分词之后。我们得到这个序列。因此我们现在这个数组的长度与文本相同。但现在我们为每个单词都有一个索引。所以现在我们有了这个。
+- en: And now we want to do one more thing because right now the sequences can have
+    a different length。 So that's what you can see here。 but we want to have the same
+    length for every sequence。 And for this we apply padding。 So again， we import
+    this we import Pat sequences from tensofflowcars do preprocessing do sequence。
+    and then we have to specify a maximum length。 So in this case we say it's 20 but
+    you can play around with more or other ones here or maybe a tweet might be even
+    longer than 20 different words。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们想做一件事，因为现在序列可以有不同的长度。这就是你在这里看到的。但我们希望每个序列都有相同的长度。为此，我们应用填充。因此，我们再次导入，从tensorflow导入填充序列进行预处理，然后我们必须指定一个最大长度。因此在这种情况下，我们说是20，但你可以在这里玩更多或其他的，或者也许一个推文可能甚至超过20个不同的单词。
+- en: So you might increase this a little bit。 but then also your training might be
+    longer。 So now when we specify this， we can call this function pad sequences and
+    we call this with the。Rining sequences and our specified max length。And here we
+    say padding and truncating equals posts。 So this means it just uses zeros。 So
+    then we do this for the training and validation sequence。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以你可以稍微增加一下，但这也可能使你的训练时间更长。因此现在当我们指定这个时，我们可以调用这个函数填充序列，并用训练序列和我们指定的最大长度调用它。在这里我们说填充和截断等于后填充。这意味着它只使用零。因此我们对训练和验证序列执行此操作。
+- en: And then if we have a look at the shape here， then we see that they all have
+    the shape 20 in the second dimension。 because this is the max length。And now if
+    we print one padded sequence。 we see that it's used zero padding here。 So now
+    again。 let's print one sample of our training sentences， one sample of our training
+    sequences and one sample of the padded sequence so that you see the difference。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后如果我们查看这里的形状，我们会看到它们在第二维度上都有形状20，因为这是最大长度。现在如果我们打印一个填充序列，我们看到这里使用了零填充。因此现在再一次。让我们打印一个训练句子样本，一个训练序列样本和一个填充序列样本，以便你看到区别。
+- en: And then again， here you see for the sentence， we have all the words for the
+    sequence。 we have these indices， and then for the padded sequence， we use0 padding。So
+    now we can check if we。 if this is actually correct。 So if we can reverse this。
+    So for this。 we create a dictionary where we flip around the keys and the values
+    in this word index。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后再次看到，对于这个句子，我们有序列中的所有单词。我们有这些索引，然后对于填充序列，我们使用0填充。因此现在我们可以检查一下，如果这是正确的。如果我们能反转这个。因此，我们创建一个字典，将这个单词索引中的键和值翻转。
+- en: So if we have a look against this is how this word index looks as key。 we have
+    the word and as value， we have this index。 and now we want to store this in another
+    dictionary and do it the other way around。 So now we say the key is the index
+    and the word is the value。So this is our reverse dictionary。
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我们看一下，这是这个单词索引的键。我们有单词，值为这个索引。现在我们想将其存储在另一个字典中，并反向操作。因此现在我们说，键是索引，值是单词。这就是我们的反向字典。
+- en: So let's have a look at that。 And then we see all these indices are our keys。
+    and all these words are the values。 And now we can define this decocode function。
+    which gets a sequence。 And then we simply。😊，Call the get function with for each
+    index in the sequence。 So this returns the corresponding value。 And if it's not
+    available。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以让我们看看这个。然后我们看到所有这些索引都是我们的键，所有这些单词都是值。现在我们可以定义这个解码函数，它获取一个序列。然后我们简单地😊，对序列中的每个索引调用get函数。这将返回相应的值。如果不可用。
+- en: then it should return a question mark。 but so this is if we get new indices。
+    but if we stay in the same training data set then it should find a corresponding
+    word for each index。 So this is the decocode function。 and then let's try it out。
+    So we call the deco function for one sample of the training sequences。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后它应该返回一个问号。但如果我们获得新的索引，则如此。但是如果我们保持在同一个训练数据集中，那么它应该为每个索引找到相应的单词。这就是解码函数。然后让我们试一下。因此，我们对一个训练序列样本调用解码函数。
+- en: So this one and then I print the original sequence and the decoded text。 and
+    here we see we have this sequence and this decoded sequence and I think so we
+    say we have three people。Dight heat way far。 So if we have a look at where did
+    I already print it。 So here I printed the samples from 10 to 15。 So that's the
+    original sentence。
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这个，然后我打印原始序列和解码文本。在这里我们看到这个序列和这个解码序列，我认为我们说我们有三个人。Dight热量远。所以如果我们查看我已经打印在哪里。所以这里我打印了从10到15的样本。因此那是原始句子。
+- en: So we see that our decoding is correct。So now that we have that。 we can come
+    to the actual implementation of the model。 So last time I showed you that we can
+    very easily create an simple R N model or a LSTM model or a GR U model。 So in
+    this case， we use an LSTM。 So for this we create a first a sequential model。
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们看到我们的解码是正确的。现在我们有了这个，我们可以进行模型的实际实现。上次我给你展示过，我们可以非常轻松地创建一个简单的R N模型、LSTM模型或GR
+    U模型。在这种情况下，我们使用LSTM。所以为此我们首先创建一个顺序模型。
+- en: And now since we use text data， we also use this embedding layer。 So word embeddings。
+    give us a way to use an efficient dense representation in which similar words
+    have a similar encoding。 So if you want to learn more about this， I can recommend
+    this official guide in the on the Tensorflow website。 So here you see that another
+    representation might be one hot encoding。 and。
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在由于我们使用文本数据，我们也使用这个嵌入层。因此，单词嵌入为我们提供了一种有效的稠密表示方法，其中相似的单词具有相似的编码。如果你想了解更多，我可以推荐Tensorflow网站上的这个官方指南。在这里你会看到另一种表示可能是独热编码。
+- en: Here we simply use a0 or a1。 but then there's also this embedding representation。
+    So with this embedding layer， we get this representation。 So a dense vector of
+    floating point values。 So right now we still have this padded sequence with all
+    the word indices。 And now this embedding layer turns this indices into a dense
+    vector of fixed size。
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这里我们简单地使用a0或a1。但是还有这个嵌入表示。通过这个嵌入层，我们获得了这个表示。因此，得到一个浮点值的稠密向量。目前我们仍然有这个填充序列，包含所有的单词索引。现在这个嵌入层将这些索引转换为固定大小的稠密向量。
+- en: So that's why we needed this tokenization first。 and now we can use this embedding
+    layer。 So this gets the number of unique words。 And then a size that you specify
+    and then also the maximum length。 and that we specified。 So this is the input
+    length。And now after we define this。 then we can apply our LSTM or R and N layer，
+    like the last time where we only specify the number of output units。
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这就是为什么我们首先需要这个标记化。现在我们可以使用这个嵌入层。这样可以得到唯一单词的数量。然后是你指定的大小，还有最大长度。就是我们所指定的。这是输入长度。现在在定义之后，我们可以应用我们的LSTM或R
+    N层，就像上次一样，我们只需指定输出单元的数量。
+- en: And here I also said dropout equals 10%。And then since we want to classify this。
+    So a0 or one classification， we use a dense layer with only one output at the
+    end。 And then we also apply the sigmoid function。 So let's do this and print the
+    model summary。 So we see after our embedding。 we get the output shape of this。
+    So the number of batches。
+  id: totrans-38
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这里我也说了dropout等于10%。然后由于我们想进行分类，所以a0或1分类，我们使用只有一个输出的稠密层。然后我们还应用sigmoid函数。让我们这样做并打印模型摘要。所以我们看到在嵌入之后，我们得到了这个输出形状。因此，批次的数量。
+- en: And then the 20 is the maximum length and the 32 is just the size that we specified
+    here as output size。Then our LSTM has this output shape because we specified 64
+    output units。 and then we have our dense layer。And now since we use binary classification。
+    we use this binary cross entropy loss and here we say from Loit equals falses
+    because we already used the activation function here and then again we use a optimizer
+    and define the metrics that we want to track and compile the model and then we
+    simply train it so we fit it and here we want to use the padded sequence and then
+    the corresponding labels and then the epochs and now this is also new。
+  id: totrans-39
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后20是最大长度，32只是我们在这里指定的输出大小。然后我们的LSTM具有这个输出形状，因为我们指定了64个输出单元。接着我们有我们的稠密层。现在由于我们使用二元分类，我们使用这个二元交叉熵损失，这里我们说from
+    Loit等于false，因为我们在这里已经使用了激活函数，然后再次使用优化器并定义我们想要跟踪的指标，编译模型，然后我们简单地训练它，因此我们进行拟合，在这里我们想使用填充序列和对应的标签，然后是epochs，现在这也是新的。
+- en: I think I didn't use this before so you can in this fit method you can use the
+    validation data parameter and this is a tuple and here we use the validation padded
+    sequence and the validation label and now if we do this。 then it automatically
+    during training uses a validation。Data set to do the fine tuning。
+  id: totrans-40
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想我之前没有使用过这个，因此在这个fit方法中你可以使用验证数据参数，这是一对元组，在这里我们使用验证填充序列和验证标签。现在如果我们这样做，那么它在训练过程中会自动使用验证数据集进行微调。
+- en: So this is a nice tip to keep in mind that you can already automatically do
+    this validation if you specify the validation data here。So now let's train this。Al
+    right， and training is done。 And as you can see。 the final accuracy on the training
+    data is 98%。 so pretty good。 But for the validation accuracy。 and we only have
+    73%。 So this might be a sign of overfitting。
+  id: totrans-41
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因此，记住这一点是个好主意，如果你在这里指定验证数据，你可以自动进行此验证。那么现在让我们训练这个模型。好吧，训练完成了。正如你所看到的，训练数据的最终准确率为
+    98%。相当不错。但验证准确率只有 73%。这可能是过拟合的迹象。
+- en: So this might be a homework for you that you can further improve or tweak。 the
+    model a little bit so that this one also gets higher。 But as we can see our。 we
+    did the correct preprocesing with our text data。 and we set up a nice LSTM model
+    and then get a very nice accuracy here。 So let's do some prediction。
+  id: totrans-42
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这可能是你的一项作业，你可以进一步改进或稍微调整模型，以使其表现更好。但正如我们所看到的，我们对文本数据进行了正确的预处理，并建立了一个不错的 LSTM
+    模型，因此这里得到了很好的准确率。所以让我们进行一些预测。
+- en: So we simply call model predict on the。😊，Training padded sequence in this case。
+    And as I said。 we used the sigmoid function at the end。 So we still have to convert
+    this to a label 0 or1。 So we simply say if our predicted output probability is
+    higher than 0。5。 then it's one and otherwise 0。 And now let's print some original
+    training sentences。
+  id: totrans-43
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因此，我们简单地在这里调用模型的预测。😊，在这种情况下是训练的填充序列。正如我所说，我们在最后使用了 sigmoid 函数。因此，我们仍然需要将其转换为标签
+    0 或 1。所以我们简单地说，如果我们的预测输出概率高于 0.5，那么就是 1，否则就是 0。现在让我们打印一些原始的训练句子。
+- en: and the corresponding labels and the predictions。So here， yeah。 so we see five
+    of these are classified as a as a disaster and the other one are no disasters
+    and all of our corrections are correct in this case。 So we say for so we see，
+    for example here we we have three people died， blah， blah， blah。 So this is a
+    disaster。 And here Ta getting flooded， also a disaster。 And here at the end。
+  id: totrans-44
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 以及相应的标签和预测结果。在这里，是的，我们看到五个被分类为灾难，另一个则不是灾难，在这种情况下，我们的所有修正都是正确的。因此我们可以说，例如，这里有三个人死亡，等等。所以这是一个灾难。而这里，水灾也是一个灾难。最后这里。
+- en: we have some a lovely， no disaster。 So yeah， it looks good。 And yeah。 I think
+    we learned a lot in this tutorial。 Now you know how to apply some basic and natural
+    language processing techniques and then use an LSTM for text classification。And
+    I hope you enjoyed this tutorial。 If you liked it。 then please hit the like button
+    and consider subscribing to the channel。
+  id: totrans-45
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们有一些可爱的，没有灾难的。所以是的，看起来不错。而且是的，我认为我们在本教程中学到了很多东西。现在你知道如何应用一些基本的自然语言处理技术，然后使用
+    LSTM 进行文本分类。希望你喜欢这个教程。如果你喜欢，请点击点赞按钮，并考虑订阅频道。
+- en: And then I hope to see you in the next video， bye。😊。![](img/cf77d9b01a43fab5f293c40eb502060f_2.png)
+  id: totrans-46
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我希望在下一个视频中见到你，再见。😊。![](img/cf77d9b01a43fab5f293c40eb502060f_2.png)

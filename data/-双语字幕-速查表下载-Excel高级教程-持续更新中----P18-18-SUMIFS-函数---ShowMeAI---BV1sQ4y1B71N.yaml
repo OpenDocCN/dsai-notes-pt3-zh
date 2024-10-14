@@ -1,0 +1,142 @@
+- en: 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P18：18）SUMIFS 函数 - ShowMeAI - BV1sQ4y1B71N
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel高级教程（持续更新中） - P18：18）SUMIFS 函数 - ShowMeAI - BV1sQ4y1B71N
+- en: '![](img/9bb51af1ad9d2198ed4aa56c15791de5_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/9bb51af1ad9d2198ed4aa56c15791de5_0.png)'
+- en: In this video， I'm going to show you how to use the sum ifs Excel function。
+    This function is just a fantastic function。 Very useful， very helpful。 You can
+    see I have a simple spreadsheet here that serves as a movie inventory for my DVD
+    and blueray collection。 And let's say I would like to figure out how much money
+    I've spent over the years on DVDs on blue rays or maybe on different genres of
+    movies。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个视频中，我将向你展示如何使用SUMIFS Excel函数。这个函数真是一个了不起的函数，非常有用，非常实用。你可以看到我这里有一个简单的电子表格，用作我的DVD和蓝光收藏的电影库存。假设我想计算我这些年来在DVD、蓝光或不同类型电影上花了多少钱。
+- en: So this calls for a sum function。 And I could do a typical sum function here
+    or use autosum。 but that would give me the total of everything。 So what if I just
+    want a list of all the blue rays and the total cost for them。 Well， I could filter
+    the data I could deselect DVDs and just show blue rays and things like that and
+    then do a sum function just of the blue rays。 But that can get time consuming。
+    And what if there's not just two options。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这需要一个SUM函数。我可以在这里做一个典型的SUM函数或使用自动求和，但那样会给我所有东西的总和。那么如果我只想要所有蓝光的列表和它们的总成本呢？我可以过滤数据，取消选择DVD，只显示蓝光等等，然后只对蓝光进行求和。但这可能会耗时。而如果不止两个选项呢？
+- en: What if there's five or 6， like in the case of genres。 So what we can do is
+    use a sum ifs function。😊，Let me demonstrate here in i3， I'm just gonna type in
+    cost of bluerays。 and then I'll tap into a couple of times and type in cost of
+    DVDs。 so right here I would like the total cost of my blueray collection to appear
+    I would start by typing equals and then use my function some ifs left parenthesis
+    and Excel shows us what it's looking for。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果有五个或六个，比如在类型的情况下，我们可以使用SUMIFS函数。😊让我在i3演示一下，我会输入“蓝光成本”，然后再输入几次“DVD成本”。在这里，我希望看到我的蓝光收藏的总成本，所以我会先输入等号，然后使用我的函数SUMIFS左括号，Excel会告诉我们它在找什么。
+- en: it wants the sum range So what is it that we want it to add up。 Well。 we want
+    it to add up the cost paid。 So I'll click and drag to get the whole sum range
+    Now if I only have 20 or 30 rows or records to select that's a good way to do
+    it。 But what if I had1 thousand records and I wanted Excel to examine all of them
+    to see what to add up clicking and dragging is not going be a great option So
+    instead what you do is you click on the topmost record that you care about hold
+    control shift and tap the down arrow on the keyboard that will automatically highlight
+    the information from the point that you selected all the way。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它想要的是求和范围。那么我们希望它加起来什么呢？我们希望它加上支付的成本。所以我会点击并拖动以获取整个求和范围。如果我只有20或30行记录，这样做是个好方法。但如果我有1000条记录，想让Excel检查所有记录以决定加什么，点击和拖动就不是一个好选择。所以你可以点击你关心的最上面记录，按住Ctrl和Shift，然后按下键盘上的向下箭头，这样会自动高亮你选定点到下面的信息。
+- en: okay， so I've got the sum range。 now I'll put in a comma。 and now I need to
+    find the criteria range。 So I want the criteria range to be this format column
+    So I'll click here on blue ray control shift down。 So it looks through all of
+    those searching for what Well。 that's what I put in next what am I searching for。
+    what is the criteria。 Well， it's bluerays。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，我得到了求和范围。现在我输入一个逗号。现在我需要找到标准范围。所以我希望标准范围是这个格式的列。我会点击蓝光，按下Ctrl+Shift+下箭头。这样它会在所有这些中搜索什么呢？好吧，这就是我接下来输入的，我在找什么，标准是什么？好吧，是蓝光。
+- en: So I could either type out blue ray in or I could simply click here on B2 to
+    show Excel what I'm looking for。 I'm looking for the word blue ray。 Let's just
+    leave it in quote I'll put in the right parenthesis and then tap enter on the
+    keyboard and you see what it did Excel searched column B looking for the word
+    blue ray and when it found it。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我可以输入“蓝光”或简单地点击B2来告诉Excel我在找什么。我在找“蓝光”这个词。让我们把它放在引号里，我会输入右括号，然后按下键盘上的回车键，你会看到Excel在列B中搜索“蓝光”这个词，当它找到时。
+- en: It added the cost paid or the amount paid for that blue ray to all of the other
+    costs of blue rays from this entire sheet。 This is a very powerful time savingaving
+    function that we have here。 Let's do。Same thing now。 but with DVDs， I'll type
+    equals sum ifs left parenthesis the sum range。 What do I want it to add up。 I
+    want it to add up at least some of these numbers。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它将为所有其他蓝光的费用添加支付的费用或金额。这是我们在这里拥有的一个非常强大的节省时间的功能。现在做同样的事情，但用DVD，我会输入等于一些条件，左括号，求和范围。我想加总的是什么？我想至少加总这些数字中的一些。
+- en: Now I can go back up here to continue my formula or sometimes it's easier just
+    to go up here to the formula bar what's my criteria range That's here。 I select
+    the topmost record that I want it to search control shift down it selects everything
+    And then up here in the formula bar what do I want it to find Well。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我可以回到这里继续我的公式，或者有时候更简单的做法就是去公式栏，问我的条件范围是什么？就在这里。我选择我想要搜索的最上面的记录，控制+Shift+向下，它选择了所有内容。然后在公式栏上，我想要找什么呢？
+- en: in this case I want it to find DVDs。 Now， this time。 instead of putting the
+    word DVD inside of quotation marks。 I just want to click on it just to show you
+    that that is another option So I can click there。 put in the right parenthesis
+    tap enter71 Now I could format this to look like dollars and there we have it。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这种情况下，我希望它找到DVD。现在，这次我不想把DVD这个词放在引号中。我只是想点击它，向你展示这也是另一个选项。因此，我可以点击那里，输入右括号，按下回车。现在我可以把它格式化成美元的样子，结果就是这样。
+- en: It's summing up the cost paid if the format is blue ray or in this case， DVD
+    Now。 because the second example is based。On this cell B5， Watch what happens if
+    I type in blueray there。 It updates the amount because it's not based on something
+    in quotes This one is based on whatever is in B5。 I'll change that back to DVD
+    and it changes the results again Now there is a reason it's called some ifs and
+    not just some if and that's because you can do more than one some if at a time。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是在汇总如果格式是蓝光或在这种情况下是DVD所支付的费用。因为第二个示例是基于这个单元格B5，观察如果我在这里输入蓝光会发生什么。它会更新金额，因为它不是基于引号中的内容，而是基于B5中的内容。我会把它改回DVD，它又会改变结果。现在它叫做一些条件的原因而不仅仅是一个条件，因为你可以同时做多个条件。
+- en: So let's look at how to do that What if I want to know the total amount spent。
+    not just on DVDvds。 but specifically mystery DVDvs。 How would I do that Well equals
+    some ifs left parenthesis。 I want to add up the cost paid control shift down。
+    I'll go up here to the formula bar comma the criteria range it's right here I
+    want it to search B2 all the way through the bottom So control shift down and
+    then I put a comma in the formula bar。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以让我们看看如何做到这一点。如果我想知道花费的总额，不仅仅是DVD，而是具体的神秘DVD，我该怎么做呢？好吧，等于一些条件，左括号。我想加总支付的费用，控制+Shift+向下。我会去公式栏，逗号，条件范围就在这里，我希望它从B2搜索到底部。所以控制+Shift+向下，然后我在公式栏中放一个逗号。
+- en: I'm searching for DVDvs。 I'll just click here on this B7 in this case where
+    the word DVD is and then。Put a comma in。 so that's my first if。 but look because
+    I put a comma Excel is now expecting another criteria range criteria range2。 In
+    addition to DVD， I'm looking for mysteries， So I'll go up here。 click on F2 in
+    this case control shift down to get the whole column and then back up in the formula
+    bar comma and what is the actual criteria。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我在寻找DVDvs。我会点击这个B7，那里有DVD这个词，然后。放一个逗号。所以这是我的第一个条件。但请注意，因为我放了逗号，Excel现在期待另一个条件范围条件范围2。除了DVD，我还在寻找神秘类。所以我会上去，点击F2，在这种情况下控制+Shift+向下以获取整列，然后在公式栏中返回逗号，实际的条件是什么。
+- en: What is it that we're looking for We're looking for mysteries。 So as you can
+    see。 this gets fairly complicated。 if you have more than one criteria in your
+    sum ifs formula。 So this is all lit up in different colors。 but let's see if it
+    worked。 I'll put a close parenthesis tap enter。 and I've only spent $24 on mystery
+    DVDvs in my collection。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们在寻找什么呢？我们在寻找神秘类。所以如你所见，如果在你的条件公式中有多个条件，这会变得相当复杂。所以这在不同颜色中都亮起来了，但让我们看看它是否有效。我会输入一个右括号，按下回车，结果是我在我的收藏中只花了$24在神秘DVD上。
+- en: and you can see that that's true just by browsing down $15 mystery DVD plus
+    a $ nine mystery DVD。 So this is just one example of how to use some ifs。 there
+    are lots of very powerful uses of some ifs。![](img/9bb51af1ad9d2198ed4aa56c15791de5_2.png)
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以通过浏览看到这是正确的，只要是$15的神秘DVD加上$9的神秘DVD。所以这只是如何使用一些条件的一个例子。有很多非常强大的使用场景！[](img/9bb51af1ad9d2198ed4aa56c15791de5_2.png)

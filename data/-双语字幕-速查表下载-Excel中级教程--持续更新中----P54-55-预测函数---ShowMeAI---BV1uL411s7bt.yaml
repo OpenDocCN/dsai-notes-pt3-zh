@@ -1,0 +1,132 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P54：55）预测函数 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P54：55）预测函数 - ShowMeAI - BV1uL411s7bt
+- en: '![](img/a2ad3745a2dc705187880115549de781_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/a2ad3745a2dc705187880115549de781_0.png)'
+- en: In this tutorial， I will show you how to use the Excel forecast function。 And
+    this is just one way you can use it。 But I think it'll help you get a sense of
+    what it's for。 And you can see the workbook that I have here。 It consists of two
+    spreadsheets。 one on a home appraised value and the other is savings。 It's like
+    the savings account in a bank。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在本教程中，我将向你展示如何使用Excel预测函数。这只是你可以使用它的一种方式。但我认为这将帮助你了解它的用途。你可以看到我这里的工作簿。它由两个电子表格组成，一个是房屋评估价值，另一个是储蓄。这就像银行中的储蓄账户。
+- en: Those will be our two examples。 So here on the home appraised value spreadsheet。
+    You can see I have a list of years。 Let's say I bought a house in 2001。 And this
+    is what it was worth at the time。 And then maybe every year or two or three。 the
+    house got appraised。 but each of these years has a different home value for the
+    home。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这将是我们的两个示例。所以在房屋评估价值的电子表格中，你可以看到我有一系列的年份。假设我在2001年买了一栋房子。当时它的价值是多少。然后也许每年或两年或三年，房子会被评估，但每一年都有不同的房屋价值。
+- en: And these years are all in the past。 Of course， But what about the future。 Is
+    there a way to kind of forecast， what the value of this home will be in 2035。
+    Now。 before I show you how to do this in Excel， Just know that this is limited。
+    Obviously。 Excel doesn't know that much about home values that doesn't know。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 而这些年份都是过去的。当然，但未来呢？有没有办法预测这栋房子在2035年的价值呢？在我向你展示如何在Excel中做到这一点之前，请知道这是有限的。显然，Excel对房屋价值并不了解。
+- en: How real estate appreciates and it doesn't know the neighborhood that I live
+    in or things like that。 there's all sorts of variables。 but using the information
+    that we do know Excel can make an educated guess about the future。 So here in
+    this blank cell， I'm just going click and then type the equal sign and I'll type
+    in the function forecast Now you'll notice there are six different forecast functions。
+    they're all pretty similar， but if you know that what you're looking at is a linear
+    model。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它不知道房地产是如何增值的，也不知道我住的社区或其他因素。有很多变量，但利用我们确实知道的信息，Excel可以对未来做出有根据的猜测。因此在这个空白单元格中，我将点击，然后输入等号，并输入预测函数。你会注意到有六种不同的预测函数，它们都很相似，但如果你知道你正在查看的是线性模型。
+- en: you could choose forecast linear。 If you know that what you're looking at is
+    an exponential model。 you could use forecast do ETS。 and there's all of these
+    other slightly different versions of the forecast function。 If you're not sure
+    which one to use， just stick with basic forecast。 So that's what I'm going to
+    do After typing in forecast。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以选择预测线性。如果你知道你正在查看的是指数模型，你可以使用预测进行ETS，还有其他略微不同的预测函数版本。如果你不确定用哪个，就坚持使用基本的预测。这就是我输入预测后的操作。
+- en: I'll just put a left parenthesis and you can see what Excel is looking for。
+    It's looking for an X number and then comma and a known。Y comma and then a known
+    X。 So this can be really confusing at first。 But basically， the forecast。 I want
+    it to be based on the year 2035。 So I'm going to click on 2035。 that will become
+    the X。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我只需输入一个左括号，你可以看到Excel在寻找什么。它在寻找一个X值，然后是逗号和已知的Y，再加一个已知的X。所以这开始时可能会让人困惑。但基本上，我希望预测是基于2035年。因此我将点击2035，它将成为X。
+- en: So I click on 2035。 Now， I didn't really click on the number。 I actually clicked
+    on the cell cell B 13。 So anything that I type in B 13， that will become the X。
+    now I type comma and the known y。 Okay， so since this is X。 the y must be this
+    information here and it is。 So this is the information that we know。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我点击2035。现在，我并不是点击数字，而是点击了单元格B13。所以我在B13中输入的任何内容，将成为X。现在我输入逗号和已知的Y。好的，由于这是X，Y必须是这里的信息，没错。这就是我们已知的信息。
+- en: We know what the past appraisal values have been。 So I just clicked and dragged
+    to select all of the past appraisal amounts。 And now I'll put a comma in。 And
+    now it wants the known X's。 So this is X。 What are the known X's。 Well， all of
+    these years。 these past years。 So I click and drag to highlight all of the past
+    year。And then I should put in a right parenthesis and tap enter on the keyboard。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们知道过去的评估值是多少。因此我只是点击并拖动以选择所有过去的评估金额。现在我会输入一个逗号。现在它需要已知的X。那么这就是X。已知的X是什么呢？就是所有这些年份，过去的这些年份。因此，我点击并拖动以突出显示所有过去的年份。然后我应该输入右括号并在键盘上按下回车。
+- en: and it calculates what Excel thinks my home will be worth in 2035 based on past
+    results。 Okay。 let's try that again。 This time I'm going to go to the savings
+    spreadsheet。 And this again is limited， and there's going to be some flaws in
+    this。 Excel doesn't know my saving habits and things like that。 But let's say
+    in 1995。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它根据过去的结果计算出Excel认为我家在2035年的价值。好的，咱们再试一次。这次我会去储蓄电子表格。这同样是有限的，会有一些缺陷。Excel并不知道我的储蓄习惯等等。但假设在1995年。
+- en: I had $10 in the bank in 2005， I had $3000。 I would follow the same pattern
+    as before。 I would go here to this cell and click and type equals forecast left
+    parenthesis。 What's the X。 What is this forecast based on。 Well， it's based on
+    the year 2030。 So I click on that cell B 11 type the comma。 What's the known y
+    of this data。 If this is X。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我在银行里有10美元，而在2005年我有3000美元。我会遵循之前的模式。我会去这个单元格，点击并输入等于预测左括号。这个X是什么？这个预测是基于什么的？好吧，它是基于2030年。因此，我点击那个单元格B11，输入逗号。这个数据的已知Y是什么？如果这是X。
+- en: then this is Y。 So I'll click here to select all of the Y comma。 And now the
+    known。Well。 here are the known X's。 So I click and drag to select those。 put in
+    the right parenthesis。 tapap enter。 And apparently that's what I would have in
+    2030。 That's not a lot of savings for 10 years。 And like I said， this forecast
+    ability is pretty limited。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后这是Y。所以我会点击这里选择所有的Y逗号。现在已知的。好吧，这里是已知的X。所以我点击并拖动来选择这些，加上右括号，按下回车。显然，这就是我在2030年会有的。这对于10年来说并不算很多储蓄。正如我所说，这个预测能力是相当有限的。
+- en: But Excel is doing its best to figure out， okay， given these numbers and their
+    relationship to these numbers。 This is what Excel expects for 2030。 Now， notice
+    that you can go in here and change from 2030。 I could put 2055 tap enter。 and
+    the model updates， the forecast updates。 and this is now the expected amount。
+    I can do the same thing with home appraised value。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但Excel正在尽力计算，好的，考虑到这些数字及其与这些数字的关系，这就是Excel对2030年的预期。现在，请注意，你可以在这里更改为2030。我可以输入2055，按下回车，模型更新，预测更新。这现在是预期的金额。我可以对房屋评估价值做同样的事情。
+- en: so I could change this from 2035。 What about 2055。 I'll tap enter。 and I can
+    see， oh。 that is now the expected amount that my home will be worth in 2055。 So
+    even though forecast is limited， It is kind of fun and it's a way to quickly get
+    an estimate。![](img/a2ad3745a2dc705187880115549de781_2.png)
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我可以将这个改为2035。2055怎么样？我按下回车键，然后我可以看到，哦，这就是我家在2055年的预期价值。因此，尽管预测有限，这其实很有趣，而且是一种快速获得估算的方法。![](img/a2ad3745a2dc705187880115549de781_2.png)
+- en: Based on past results。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 基于过去的结果。

@@ -1,0 +1,63 @@
+- en: 【双语字幕+资料下载】更简单的绘图工具包 Seaborn，一行代码做到 Python 可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ -
+    P11：L11- 条形图 - ShowMeAI - BV1wZ4y1S7Jc
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】更简单的绘图工具包Seaborn，一行代码做到Python可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ - P11：L11-
+    条形图 - ShowMeAI - BV1wZ4y1S7Jc
+- en: About categorical plotting Now with categorical plots。 we're going to focus
+    on distributions using categorical data in reference to one of the pieces of numerical
+    data and the first one I'm going to talk about here our bar plots So I'm going
+    to say SNS and bar plot and let's say let's go and let's analyze some information
+    in regards to tipping for the different males and females so we'll say x is equal
+    to sex and versus the total bill so total bill and of course we have to say where
+    we're going to be getting our data which is going to be from that tips data frame
+    and there you can see is the differences versus the sexes in regards to the total
+    bill from our tips data and this little bar right here is referencing。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 关于分类绘图 现在有了分类图。我们将重点关注使用分类数据的分布，并参考其中的一些数值数据，首先我要谈论的是我们的条形图。因此，我将使用SNS和条形图，假设我们要分析有关不同男性和女性的小费信息，所以我们会说x等于性别，而y等于总账单，所以总账单，当然我们还要说明我们将从哪里获取数据，这将来自小费数据框，在这里你可以看到与我们的小费数据中的总账单相关的性别差异，而这里的小条形图正是对此的引用。
+- en: '![](img/a061d5edff4ad08bf4f5732b742b97fe_1.png)'
+  id: totrans-2
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/a061d5edff4ad08bf4f5732b742b97fe_1.png)'
+- en: '![](img/a061d5edff4ad08bf4f5732b742b97fe_2.png)'
+  id: totrans-3
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/a061d5edff4ad08bf4f5732b742b97fe_2.png)'
+- en: Varariance between the mails and the total bill amounts and so forth and by
+    default。This data is going to be aggregated based off of the mean， but you can
+    come in and change that。 so estimator is how you're going to change it and you
+    could base it off of the median instead and you're going to be able to use all
+    sorts of nupy formula。 So this is your data based off of the median you're also
+    going to be able to base it off of standard deviation。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 男性与总账单金额之间的方差等，默认情况下。这些数据将基于均值进行聚合，但你可以修改它。因此，估算器是你将如何更改它，你也可以基于中位数进行计算，并且能够使用各种numpy公式。因此，这些数据是基于中位数的，你也将能够基于标准差进行计算。
+- en: '![](img/a061d5edff4ad08bf4f5732b742b97fe_4.png)'
+  id: totrans-5
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/a061d5edff4ad08bf4f5732b742b97fe_4.png)'
+- en: '![](img/a061d5edff4ad08bf4f5732b742b97fe_5.png)'
+  id: totrans-6
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/a061d5edff4ad08bf4f5732b742b97fe_5.png)'
+- en: AndVance。And also covariance with COV， and you could also make your own functions
+    and just plug them into the estimator to change exactly how this data is going
+    to be aggregated。 and that is a rough estimate of bar plots。![](img/a061d5edff4ad08bf4f5732b742b97fe_7.png)
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 以及协方差与COV。你也可以创建自己的函数并将其插入估算器，以精确更改数据的聚合方式。这是条形图的粗略估计。![](img/a061d5edff4ad08bf4f5732b742b97fe_7.png)
+- en: '![](img/a061d5edff4ad08bf4f5732b742b97fe_8.png)'
+  id: totrans-8
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/a061d5edff4ad08bf4f5732b742b97fe_8.png)'

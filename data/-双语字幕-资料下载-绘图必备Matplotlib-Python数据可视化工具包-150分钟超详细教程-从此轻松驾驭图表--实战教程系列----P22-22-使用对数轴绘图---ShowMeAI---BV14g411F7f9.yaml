@@ -1,0 +1,109 @@
+- en: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P22：22）使用对数轴绘图
+    - ShowMeAI - BV14g411F7f9
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P22：22）使用对数轴绘图
+    - ShowMeAI - BV14g411F7f9
+- en: Yes。![](img/ea03c7029a4134c6033975faebbb4891_1.png)
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 是的。![](img/ea03c7029a4134c6033975faebbb4891_1.png)
+- en: Allright， here's one that comes in handy for some data science problems， and
+    this is。 how do you plot using amic axis？
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好吧，这是一个在某些数据科学问题中很有用的例子，这就是。你如何使用对数轴绘制？
+- en: '![](img/ea03c7029a4134c6033975faebbb4891_3.png)'
+  id: totrans-3
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ea03c7029a4134c6033975faebbb4891_3.png)'
+- en: So， essentially。Sometimes you might have values that grow very large， very quickly。
+    that grow exponentially。 You might have a histogram where everything is clustered
+    over on one side。 So these are a couple of the different use cases where。You might
+    be interested in using a logarithmic access。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以，基本上，有时你可能会有一些值快速增长到非常大的数。这些值是指数增长的。你可能会有一个直方图，其中所有数据都聚集在一侧。所以这是几种不同的使用案例，你可能会对使用对数轴感兴趣。
+- en: So I'm going to just copy over some code that I have over here， so。![](img/ea03c7029a4134c6033975faebbb4891_5.png)
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我将把我这边的一些代码复制过来，所以。![](img/ea03c7029a4134c6033975faebbb4891_5.png)
+- en: Our X exponential is just going to be an x range from 1 to 10 with a step size
+    of 0。1。 And then our y values。 So we're going do the exponential function。 So
+    E to the。X times 30。 So E to the x times 30。Now， if you plot this， you'll see
+    a graph that looks like this。 Now。 this is not particularly helpful， right， We
+    are down here。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们的 X 指数将从 1 到 10，步长为 0.1。而我们的 y 值。所以我们将进行指数函数。所以 E 的 X 乘以 30。所以 E 的 X 乘以 30。现在，如果你绘制这个，你会看到一个像这样的图表。现在，这并不是特别有帮助，对吧，我们在这里。
+- en: '![](img/ea03c7029a4134c6033975faebbb4891_7.png)'
+  id: totrans-7
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ea03c7029a4134c6033975faebbb4891_7.png)'
+- en: It looks like very close to 0。 And then suddenly it just shoots up。 And but
+    you'll see that our scale of our access here， our axis， our y axis is actually。
+    what is this like 10 to the 129。 So this is， this is a monstrously large number。😊。It's
+    just the fact that our y values are growing。 they grow so large towards the right
+    side of the graph here that none of this is really on the plot。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它看起来非常接近 0，然后突然就飞速上升。但是你会看到我们这里的轴的刻度，我们的 y 轴实际上是什么，大约是 10 的 129 次方。所以这是一个巨大的数字。😊。事实是我们的
+    y 值在增长，它们在图表右侧增长得非常大，以至于这些值几乎无法在图上显示。
+- en: So this is not particularly helpful。So how might we change the Y axis？To be
+    a logarithmic axis。 So this is a kind of a classic example of when you might want
+    to use a logarithmic access is whenever you have some of your values that are
+    in wildly different ranges than other of your values。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这并不是特别有帮助。那么我们怎么可能改变 Y 轴呢？让它成为对数轴。这是一个经典的例子，当你的某些值在与其他值有极大差异的范围时，你可能想使用对数轴。
+- en: So in this case。We come down here to our where our axis is our axes a or apologies
+    A X dot。 in this case， we're going to use this set Y scale。![](img/ea03c7029a4134c6033975faebbb4891_9.png)
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以在这种情况下，我们来到这里，我们的轴是 A X 点。在这个案例中，我们将使用这个 Y 轴刻度。![](img/ea03c7029a4134c6033975faebbb4891_9.png)
+- en: And we just pass in log。![](img/ea03c7029a4134c6033975faebbb4891_11.png)
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们只需传入 log。![](img/ea03c7029a4134c6033975faebbb4891_11.png)
+- en: And there is a beautiful， straight line。That shows the linear relationship。Between
+    x and log of y。So this is a nice thing to do for graphs like， let me copy this
+    up here just so you can have a reference。![](img/ea03c7029a4134c6033975faebbb4891_13.png)
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 而且有一条美丽的直线，显示了 x 和 y 的对数之间的线性关系。所以对于这样的图表来说，这是一个不错的选择，让我把这个复制到这里，以便你可以参考。![](img/ea03c7029a4134c6033975faebbb4891_13.png)
+- en: '![](img/ea03c7029a4134c6033975faebbb4891_14.png)'
+  id: totrans-13
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ea03c7029a4134c6033975faebbb4891_14.png)'
+- en: It's a nice thing to do for graphs like this， as I said before。 it also is nice
+    for histograms where you have a lot of values kind of clustered on one side。![](img/ea03c7029a4134c6033975faebbb4891_16.png)
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 对于这样的图表来说，这是一个不错的选择，正如我之前所说的。这对于你有很多值聚集在一侧的直方图也很有帮助。![](img/ea03c7029a4134c6033975faebbb4891_16.png)
+- en: '![](img/ea03c7029a4134c6033975faebbb4891_17.png)'
+  id: totrans-15
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ea03c7029a4134c6033975faebbb4891_17.png)'
+- en: SoAnd this is a pretty common thing that comes up in data science as you're
+    looking at different types of data。![](img/ea03c7029a4134c6033975faebbb4891_19.png)
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以，这是在数据科学中经常遇到的一种情况，因为你在查看不同类型的数据。![](img/ea03c7029a4134c6033975faebbb4891_19.png)

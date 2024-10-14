@@ -1,0 +1,195 @@
+- en: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P25：25）在
+    Matplotlib 中显示图像 - ShowMeAI - BV14g411F7f9
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】绘图必备 Matplotlib，Python 数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P25：25）在
+    Matplotlib 中显示图像 - ShowMeAI - BV14g411F7f9
+- en: Different colors there。Okay， two questions left。 And I I saved two of the cool
+    ones for the end。 So we're gonna talk about images and we're gonna talk about
+    colors。 So how do I。Display an image。Using mat plot Lib， How do I display an image。
+    So this is something。 this is pretty common。 You might want to do this， especially
+    with neural networks， with deep learning。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 还有不同的颜色。好的，剩下两个问题。我把两个很酷的留到最后。所以我们要讨论图像，也要讨论颜色。那么我如何在 Matplotlib 中显示一张图像呢？这是一个很常见的需求，特别是在神经网络和深度学习中。
+- en: If you're dealing with image data， you might want to look at some samples of
+    your data in a Jupyter notebook。So let's go to an image which I like， I think，
+    is very beautiful。So I'm going to get an image from unsplash。Unsplash has a lot
+    of really nice photos on there。 can you can download them。 They've got the art
+    the photographer who took the photo。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你正在处理图像数据，可能想在 Jupyter Notebook 中查看一些数据样本。所以让我们找一张我喜欢的，我觉得很美的图像。我将从 Unsplash
+    获取一张图。Unsplash 上有很多漂亮的照片，你可以下载。它们都有摄影师的署名。
+- en: So you can go to this photo if you want， which has this URL here， this funky
+    looking URL。 or you can find your own photo on Unsplash。 That's totally fine。And
+    let's go ahead and download for free。 Thank you to what is this Yuri M LC N on
+    Unsplash for sharing your work with us。 We're just going to use it for a minute。All
+    right。 So let's go。Close this out。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你想的话，可以访问这张照片，它的 URL 在这里，这个看起来很奇怪的 URL。或者你也可以在 Unsplash 上找到你自己的照片。这都没问题。让我们继续免费下载。感谢
+    Unsplash 上的 Yuri M LC N 与我们分享你的作品。我们只会用它一会儿。好吧，继续吧。关闭这个。
+- en: '![](img/8d79548ca219a16a461c1ec8be168e9c_1.png)'
+  id: totrans-4
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8d79548ca219a16a461c1ec8be168e9c_1.png)'
+- en: Let's go back over here。 Let's actually go to our terminal。 And we're going
+    to need to move our。Let's see downloads our image file from downloads。 So if I
+    do LS。Tilda for home and then downloads for our downloads folder here。 You'll
+    see that here is our Jpeg that we just downloaded。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们回到这里。实际上，让我们去我们的终端。我们需要移动我们的文件。让我们看看从下载文件夹下载的图像文件。所以如果我输入 `ls`，在家目录后面加上 `~`，然后再输入
+    `downloads`，你会看到我们刚刚下载的 Jpeg 文件。
+- en: So let's move M V from the downloads Uri into the current folder where I'm at。
+    If I do a little Ls。 you'll see that I just moved that image here， perfect。😊。![](img/8d79548ca219a16a461c1ec8be168e9c_3.png)
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以让我们将从下载文件夹中的 M V 移动到我当前所在的文件夹。如果我再输入一下 `ls`，你会看到我刚刚把那个图像移动过来了，完美。😊。![](img/8d79548ca219a16a461c1ec8be168e9c_3.png)
+- en: So how do you display an image in mat plot Lib well。If you look， this is gonna
+    use the P L。T the the pipe plot module here。 So PL T dot。I am for image。Read，
+    I am read。So if we read in the image， so we have an image， it's a Jpeg。 Let's
+    read in our image here。 and we'll just call it， let's just call it image。Oop。😔，Alright。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那么如何在 Matplotlib 中显示图像呢？如果你看看，这将使用 P L T 模块。PL T.dot。I am for image。read，I am
+    read。所以如果我们读取图像，我们有一张图像，它是一个 Jpeg。让我们在这里读取我们的图像，我们就叫它，嗯，就叫它 image。哦。😔，好吧。
+- en: so it looks like we can only use P And G files without pillow installed。 But
+    if we install pillow here， then we can handle more images。 So let's just hop over
+    to。 And actually， I'll show you how to do this in Jupyter notebooks。 You don't
+    even need to leave Jupyter notebooks necessarily。 So let's say which P。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以看起来没有安装 Pillow 的话，我们只能使用 P 和 G 文件。但如果我们在这里安装 Pillow，那么我们可以处理更多的图像。所以让我们去。实际上，我会向你展示如何在
+    Jupyter Notebook 中做到这一点。你甚至不需要离开 Jupyter Notebook。假设我们要使用 P。
+- en: '![](img/8d79548ca219a16a461c1ec8be168e9c_5.png)'
+  id: totrans-9
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8d79548ca219a16a461c1ec8be168e9c_5.png)'
+- en: '![](img/8d79548ca219a16a461c1ec8be168e9c_6.png)'
+  id: totrans-10
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8d79548ca219a16a461c1ec8be168e9c_6.png)'
+- en: And our Pip is going to be the one from our visual environment。 So let's do。Pip
+    install pillow。Let's try that out。There we go。 Is that easy。 Very quick， too。
+    So I'm going to go ahead and delete this cell。 Let's try reading it in again。
+    And there we go。 We read it in successfully this time now that we have pillow
+    installed。So what's the type of this。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们的 Pip 将来自我们的可视环境。让我们执行 `pip install pillow`。试试看。这样简单吗？非常快。所以我会删除这个单元格。再试着读取一次。好吧，这次我们成功地读取了图像，因为我们已经安装了
+    Pillow。那么这个图像的类型是什么呢？
+- en: Object here。 Well， this is a nuumpy array。 So if you already have a an image
+    file that you want to read in。 you can use Pl T that I am read， and that will
+    convert it into a numpy array。 If you already have a nuy array where your image
+    is stored， then you're good to go。And let's take a look。Let's take a look at our
+    image data here。 Alright。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这里是对象。好吧，这是一个numpy数组。所以如果你已经有一个想要读取的图像文件，你可以使用`plt.imread`，这会将其转换为numpy数组。如果你已经有一个存储图像的numpy数组，那你就可以开始了。让我们看看。让我们看看这里的图像数据。好的。
+- en: you can see that we've got some nesting of these square brackets。 So this is
+    going to be a multidimensional array here。 Let's look at the shape。 Let's look
+    at the shape。So here we go。We have one dimension of our image。 We have another
+    dimension of our image， and you'll see that our third dimension。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以看到我们有一些嵌套的方括号。这将是一个多维数组。让我们看看形状。让我们看看形状。所以这里我们有图像的一个维度。我们还有图像的另一个维度，你会看到我们的第三个维度。
+- en: this is going to be our RGB values。 This is going to be the color of the image，
+    essentially。So let's show you how to plot that。Let's do our our normal template
+    here。Normal formula。 P T dot subpls。And then Plt。 show。And then in this case，
+    we're going to use a special。Method called I am show。And we are going to pass
+    in our image there。And look at that。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这将是我们的RGB值。这基本上就是图像的颜色。所以让我们来展示如何绘制它。我们做一个普通的模板。正常的公式。`plt.subplots`。然后`plt.show`。在这种情况下，我们将使用一个特殊的方法，叫做`plt.imshow`。我们将传入我们的图像。看看这个。
+- en: it's kind of small and it has an aes or it has your x axis and your y axis there。But
+    this is our image。 That's pretty sweet。 I think that's pretty cool， so。😊，I'm going
+    to turn off。I'm going to turn off the axis。And I'm also going to specify a larger
+    fig size。Now， in this case。 I want the same dimensions。As the original image，
+    I'm going to say image dot shape 0。And then。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它有点小，并且有x轴和y轴。但这就是我们的图像。挺不错的，我觉得这很酷，所以😊，我要关闭坐标轴。我还将指定一个更大的图形大小。现在，在这种情况下。我想要与原始图像相同的尺寸，我会说`image.shape[0]`。然后。
+- en: since this is gonna be this large number here， maybe I'll divide this。By。 let's
+    divide it by like 300。Image dot shape 1。Divide that by 300。And there you go。 We
+    have a much bigger image and the axis。 the y axis and the X axis are turned off。
+    So that's how you display an image。 Now， I want to show you a couple of other
+    cool tricks really quickly while we're here。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 由于这个数字很大，也许我会把它除以300。图像的shape为1。将其除以300。好了。我们得到了一个更大的图像，y轴和x轴被关闭了。这就是如何显示图像。现在，我想快速向你展示一些其他很酷的技巧。
+- en: And that's how you can display just one of the RGB channels using Mapllib here。
+    So let's go back up here。Copy this， come down。 So now instead of plotting the
+    whole image。Let's plot all of the。Rs of pixels， all of the columns of pixels。
+    But let's only plot the first of the RGB channel。 So I think this。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这就是如何使用`matplotlib`仅显示一个RGB通道。所以让我们回到这里。复制这个，下来。所以现在不绘制整个图像。让我们绘制所有像素的R通道，所有列的像素。但我们只绘制第一个RGB通道。我觉得这。
+- en: this will probably be the R channel， the red channel。And let's take a look at
+    what that gives us。Wow， look at that。So this adds a color map to it。 So this is
+    going to add a color map by default。 These are actually just。These are just single
+    valued pixels。 so you can think of it as kind of a black and white image here。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这可能是R通道，红色通道。让我们看看这会给我们带来什么。哇，看看这个。所以这会默认添加一个颜色映射。这实际上只是单值像素，所以你可以把它看作是一种黑白图像。
+- en: but then Matplot Libb chooses to add a color map to it the default color map
+    here。So what if we actually wanted to see this？As a gray scale image。 Well。 that's
+    where this nice C map parameter comes in again。 We say C map equals gray。And now
+    we have that nice gray scale image。 And this is， remember。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然而`matplotlib`选择为它添加默认的颜色映射。那么，如果我们实际上想把它看作灰度图像呢？好吧，这就是这个很棒的C map参数再次派上用场。我们说`cmap='gray'`。现在我们有了这个不错的灰度图像。记住。
+- en: this is just using the single channel， the red channel， I believe。 So let's
+    try another channel。 And this is where you can get into some， some really cool
+    image analysis stuff。😊。So this is a different channel of the image。And you can
+    see that you can see a。 you can see a lot of different detail based on what the
+    original color was。 So in particular。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这只是使用单通道，我相信是红色通道。所以让我们试试另一个通道。在这里，你可以进入一些，非常酷的图像分析内容。😊这是图像的不同通道。你可以看到，基于原始颜色，你可以看到很多不同的细节。因此，特别是。
+- en: notice。Notice up here。How this is very dark up here on the top left。 And then
+    up here， you've。 you've definitely got a lot more lights， a lot more light going
+    on。 And in this first image。 the land here is much brighter than it is in the
+    second image here。😊。So that's how you can start doing some cool image analysis
+    using Mapllib。 And you can， you know。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 注意。注意这里。左上角非常黑暗。然后在这里，你肯定有更多的灯光，更多的光线。而在这第一张图片中，这里的土地比第二张图片亮得多。😊所以，这就是你如何开始使用
+    Mapllib 进行一些酷炫的图像分析。你可以，嗯。
+- en: this is just a nuy array。😊，You can go in there and you can edit this however
+    you want。 You could feed this through a convolutional neural network。You know，
+    do some。 do some machine learning， do some deep learning on that。And plot your
+    results using map。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这只是一个 nuy 数组。😊你可以随意编辑它。你可以将其输入卷积神经网络。你知道，做一些。做一些机器学习，进行一些深度学习。并使用地图绘制你的结果。
+- en: '![](img/8d79548ca219a16a461c1ec8be168e9c_8.png)'
+  id: totrans-23
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/8d79548ca219a16a461c1ec8be168e9c_8.png)'

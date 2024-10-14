@@ -1,0 +1,56 @@
+- en: 【双语字幕+资料下载】更简单的绘图工具包 Seaborn，一行代码做到 Python 可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ -
+    P14：L14- 小提琴图 - ShowMeAI - BV1wZ4y1S7Jc
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】更简单的绘图工具包Seaborn，一行代码即可实现Python可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ - P14：L14-
+    小提琴图 - ShowMeAI - BV1wZ4y1S7Jc
+- en: to us Now another plot that is very similar to a box plot is what is called
+    a violin plot and you can create one by going violin plot and basically it is
+    a combination of a box plot as well as a KdeE plot So let's say we want information
+    pretty much exactly the same we're going to get day information and total build
+    information and we're going to be pulling that from our tips data frame and let's
+    also use H as well so that we can get data on men and women and this is what a
+    violin plot looks like Now while a box plot is going to correspond to data points
+    a violin plot uses the KdeE estimation of our data points to create these plots
+    and another thing we can do here is you can come up and throw another option in
+    called split and set it to true。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 对我们来说，另一个与箱线图非常相似的图是所谓的“小提琴图”，你可以通过搜索小提琴图来创建一个，基本上它是箱线图和KdeE图的结合。假设我们想要的信息几乎完全相同，我们将获取日期信息和总构建信息，并从我们的提示数据框中提取这些数据，同时也使用H，以便我们可以获得男性和女性的数据，这就是小提琴图的样子。箱线图对应数据点，而小提琴图使用数据点的KdeE估计来创建这些图形。我们还可以在这里添加一个名为split的选项并将其设置为true。
+- en: '![](img/3291c1f26707fc060f6722a60954d1f7_1.png)'
+  id: totrans-2
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/3291c1f26707fc060f6722a60954d1f7_1.png)'
+- en: '![](img/3291c1f26707fc060f6722a60954d1f7_2.png)'
+  id: totrans-3
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/3291c1f26707fc060f6722a60954d1f7_2.png)'
+- en: '![](img/3291c1f26707fc060f6722a60954d1f7_3.png)'
+  id: totrans-4
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/3291c1f26707fc060f6722a60954d1f7_3.png)'
+- en: Like this and splits going to allow you to compare how the categories compare
+    to each other。 So kind of useful。 And like I said， it's just going to depend on
+    your type of data to for you to find which plot is going to work best for you。
+    And next， I want to talk about a strip plots。 And then I'm going to get more into
+    some styling options with。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 像这样，分割将允许你比较不同类别之间的关系。因此非常有用。正如我所说，这取决于你的数据类型，以帮助你找到最适合你的图表。接下来，我想谈谈条形图。然后我将更深入地讨论一些样式选项。
+- en: '![](img/3291c1f26707fc060f6722a60954d1f7_5.png)'
+  id: totrans-6
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/3291c1f26707fc060f6722a60954d1f7_5.png)'
+- en: Different palettes that are available to you， but first we're going to。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 有不同的调色板可供选择，但首先我们要。

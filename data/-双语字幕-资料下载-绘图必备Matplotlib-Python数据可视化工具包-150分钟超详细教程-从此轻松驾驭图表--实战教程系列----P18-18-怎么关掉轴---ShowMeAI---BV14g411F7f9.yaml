@@ -1,0 +1,60 @@
+- en: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P18：18）怎么关掉轴
+    - ShowMeAI - BV14g411F7f9
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P18：18）怎么关掉轴
+    - ShowMeAI - BV14g411F7f9
+- en: There you go， so related to this。How do you remove。The access lines， grids，
+    etc cetera。![](img/86d3860596dd41fe317927a3fd2b3234_1.png)
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 看，关于这个。你如何移除轴线、网格等。![](img/86d3860596dd41fe317927a3fd2b3234_1.png)
+- en: So let's say that we want to remove these lines around the edge。 Well。 let's
+    get our normal plot up here。Delete be。And if you come in here to AX do set。![](img/86d3860596dd41fe317927a3fd2b3234_3.png)
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设我们想要移除这些边缘的线条。那么，先展示一下我们正常的图形。删除。然后如果你进到AX去设置。![](img/86d3860596dd41fe317927a3fd2b3234_3.png)
+- en: And then set axis， set axis， set axis is off Ta。 So let's try that。 see what
+    happens， set。![](img/86d3860596dd41fe317927a3fd2b3234_5.png)
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后设置轴，设置轴，设置轴为关闭状态。我们来试一下，看看会发生什么，设置。![](img/86d3860596dd41fe317927a3fd2b3234_5.png)
+- en: '![](img/86d3860596dd41fe317927a3fd2b3234_6.png)'
+  id: totrans-4
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/86d3860596dd41fe317927a3fd2b3234_6.png)'
+- en: Access off。And there you go， No axis lines around that。![](img/86d3860596dd41fe317927a3fd2b3234_8.png)
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 关闭轴。看，周围没有轴线。![](img/86d3860596dd41fe317927a3fd2b3234_8.png)
+- en: Now， by the way， we didn't have any grid lines here， but if we did。 this would
+    affect the grid lines as well。 So let's let's actually show that really quickly
+    if we do AX do grid and then pass in trueu here。![](img/86d3860596dd41fe317927a3fd2b3234_10.png)
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 顺便说一下，我们这里没有任何网格线，但如果有的话，这也会影响网格线。所以我们实际上快速展示一下，如果我们对AX调用网格并传入true。![](img/86d3860596dd41fe317927a3fd2b3234_10.png)
+- en: '![](img/86d3860596dd41fe317927a3fd2b3234_11.png)'
+  id: totrans-7
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/86d3860596dd41fe317927a3fd2b3234_11.png)'
+- en: We get this nice grid at the tick marks。 And now if we do set access off。 So
+    this not only turns off the align around the graph， but it also turns off those
+    grid marks。![](img/86d3860596dd41fe317927a3fd2b3234_13.png)
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们在刻度标记处得到了这个漂亮的网格。现在如果我们设置轴为关闭。这不仅关闭了图形周围的对齐，还关闭了那些网格标记。![](img/86d3860596dd41fe317927a3fd2b3234_13.png)
+- en: '![](img/86d3860596dd41fe317927a3fd2b3234_14.png)'
+  id: totrans-9
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/86d3860596dd41fe317927a3fd2b3234_14.png)'

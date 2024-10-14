@@ -1,0 +1,248 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P28：28）使用复选框1 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P28：28）使用复选框1 - ShowMeAI - BV1uL411s7bt
+- en: '![](img/2441a26a79ae27fdf3f186e170b77f3b_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/2441a26a79ae27fdf3f186e170b77f3b_0.png)'
+- en: In this tutorial， I'm going to show you one way to add check boxes into your
+    Excel spreadsheets and we'll look at how that can be useful to you In a previous
+    video。 I showed you how to use a form control here on the developer tab in the
+    controls group。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个教程中，我将向你展示一种将复选框添加到Excel电子表格中的方法，我们将看看这对你有何帮助。在之前的视频中，我向你展示了如何在开发者选项卡的控件组中使用表单控件。
+- en: You can insert form controls。 And I showed you an example of one of those。 There
+    was a lot of interest in that video。 And so I promised to make another form control
+    video and here it is。 So you can see in this spreadsheet， I have an employee list
+    with some basic information about the employees in a hypothetical company。 And
+    I would like to create a couple of columns with check boxes。 So， for example。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以插入表单控件。我给你展示了其中一个示例。那段视频引起了很多兴趣。所以我承诺制作另一个表单控件视频，这里就是。所以你可以看到在这个电子表格中，我有一个员工列表，包含关于假想公司员工的一些基本信息。我想创建几列带有复选框。所以，例如。
+- en: have they updated their contact information for the year 2020。 and have they
+    completed the driver's safety training。 And there really are two or three different
+    ways to add check boxes and to think about them。 I'd like to show you the easiest
+    example first。 So here in cell E2， I would like to create。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 他们是否更新了2020年的联系信息？他们是否完成了驾驶安全培训？实际上有两三种不同的方法来添加复选框并考虑它们。我想先给你展示最简单的例子。所以在单元格E2，我想创建。
+- en: Checkbox Now， the absolute first step that you need to do is to make sure that
+    you have the developer tab。 It's not there by default。 So for many of you， you
+    won't see that the way you get the developer tab。 there's a couple of ways you
+    could click on here。 but probably the easiest way is to right click on the ribbon。
+    So I'll just right click here。 customize the ribbon。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 复选框现在，第一步是确保你有开发者选项卡。默认情况下是没有的。因此对于很多人来说，你可能看不到获取开发者选项卡的方法。你可以在这里点击几下，但最简单的方法是右键点击功能区。所以我就在这里右键点击，自定义功能区。
+- en: it brings up some options that I can use to change the way the ribbon looks
+    and what options appear there。 and I'm just gonna go here to the right side where
+    it says main tabs。 and you'll notice that I have developer checked。 if you don't。
+    you need to check that if you want to add checkbox like I'm about to show So I'll
+    click okay I have the developer tab。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它带出一些我可以用来更改功能区外观和选项的选项。我会去右侧，那里有主选项卡。你会注意到我已经勾选了开发者选项卡。如果没有，你需要勾选它，如果你想添加像我即将展示的复选框。所以我点击确定，我有开发者选项卡了。
+- en: So I would like to add a checkbox right here。 all I need to do is make sure
+    I'm on the developer tab in the controls group。 and I click on insert， here are
+    all the form controls。 Now there's two sets of form controls。 There's active x
+    controls。 those are a little bit harder but more powerful。 But in this case。 I
+    don't。Need anything that powerful。 I'll just go with regular form controls。 These
+    are easier。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我想在这里添加一个复选框。我需要做的就是确保我在控件组的开发者选项卡上，然后点击插入，这里是所有的表单控件。现在有两套表单控件。有Active X控件，那些稍微难一点，但功能更强大。但在这种情况下，我不需要那么强大的东西。我会选择常规表单控件。这些更简单。
+- en: and they'll do the job in this case。 So here it is checkbox form control。 I'll
+    just click and then I need to click on the screen where I want that checkbox to
+    appear。 So I'll click right there。 Now， it didn't quite go in where I want it
+    to be。 And if I click away。 you can see that。 And if I click back on it， look
+    what happened it just check the box。 Well。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 他们在这种情况下会完成工作。所以这里是复选框表单控件。我只需点击，然后需要点击屏幕上我希望复选框出现的位置。所以我就在这里点击。现在，它并没有完全放在我想要的位置。如果我点击其他地方，你可以看到。而如果我再点击它，看看发生了什么，它只是勾选了框。好吧。
+- en: I want to move it up a little bit。 and line it up correctly with Gina Puen。
+    So the way to do this。 you can't left click and drag you have to right click and
+    drag。 So not your typical process for moving something。 but just because of the
+    nature of form controls。 you do have to use right click drag in order to move
+    these form controls in many cases。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想把它稍微上移一点，并与Gina Puen对齐。所以做到这一点的方法是，你不能左键点击并拖动，你必须右键点击并拖动。这不是移动东西的典型过程，但由于表单控件的性质，你在很多情况下确实需要使用右键拖动来移动这些表单控件。
+- en: So I'll click move here。 and that's a lot better。 Now you'll notice the checkbox
+    comes in with some text。 Sometimes you want that text。 sometimes you don't in
+    this case。I do want to use the text。 but I want to change what the text says。
+    So I'm gonna right click on it。 click edit text and I get a cursor now that I
+    can use to erase。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我会点击移动到这里。这好得多。现在你会注意到复选框带有一些文本。有时你需要这些文本，有时不需要。在这种情况下，我确实想使用这些文本，但我想更改文本内容。因此，我将右键单击它，点击编辑文本，然后我会得到一个可以用来擦除的光标。
+- en: So I just tapped the right arrow key and I'm going use the delete key on the
+    keyboard to delete what's there and I'll just type in updated。 So if this checkbox
+    is checked， I know that this person has updated their contact information recently
+    I'll uncheck that for now So now I need to do all of that all over again right
+    for Marcelinina Rerepo for Regia Lofts and for all of these other wonderful people。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我只需点击右箭头键，然后使用键盘上的删除键删除里面的内容，我将输入更新的内容。如果这个复选框被选中，我知道这个人最近更新了他们的联系信息，现在我会取消选中。现在我需要为Marcelinina
+    Rerepo、Regia Lofts和所有这些其他可爱的人再做一遍。
+- en: Well， the good news is that you can click on in this case E2 and you can use
+    the autofill handle。 this little square in the lower right corner of the cell
+    that's selected you can click and drag and pull that down and look what it does
+    it just copies the contents of that cell all the way down。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好消息是，你可以在这种情况下点击E2，然后使用自动填充手柄。选定单元格右下角的小方块，你可以点击并拖动，将其拉下来，看看它做了什么，它只是将该单元格的内容复制到下面。
+- en: and in this case the cell had。In it， a form control。 So that's a big relief
+    that you can just click and drag to add these check boxes all the way down the
+    spreadsheet。 So that really is pretty easy， pretty doable， right， to add simple
+    check boxes。 Well。 I want to show you a little bit harder example。 But I think
+    it'll be rewarding for you to watch this。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这种情况下，单元格中有一个表单控件。因此，能够简单地点击并拖动将这些复选框添加到整个电子表格的过程令人宽慰。所以，添加简单的复选框确实是非常容易的。好吧，我想给你展示一个稍微复杂一点的例子，但我认为观看这个会很有收获。
+- en: It is possible to use these check boxes for more than just a visual cu that
+    something has been completed or that some characteristic can be applied to this
+    person or thing。 So I'm gonna click here on F to in this case。 again， on the developer
+    tab in the controls group。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这些复选框不仅可以用作视觉提示，以表示某个任务已完成或某个特征可以应用于这个人或事物。所以我会在开发者选项卡的控件组中点击F。
+- en: I will click insert checkbox and do the same steps， right。 click and drag to
+    put it in the proper place。 In this case。 I'm going right click on it and just
+    delete the text just so that you can see that you do have both options。 So the
+    checkbox now， just simply means that yes， they did complete the driver' safety
+    training。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我会点击插入复选框，并执行相同的步骤，右键单击并拖动将其放在合适的位置。在这种情况下，我将右键单击它并删除文本，这样你就能看到你确实有两个选项。所以现在的复选框，仅仅意味着他们完成了司机安全培训。
+- en: But next， I'm going to right click on the。😊，Checkbox and I'm gonna go down to
+    format control。 And this brings up some options for that checkbox。 What's the
+    default value of that checkbox unchecked or checked or mixed mixed is basically
+    grayed out。 I'm going go with unchecked。 That's the default。 next， there's an
+    option for a cell link。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但是接下来，我要右键单击复选框，然后向下选择格式控制。这会为该复选框提供一些选项。这个复选框的默认值是未选中、已选中还是混合？混合基本上是灰色的。我将选择未选中。这是默认值。接下来，有一个单元格链接的选项。
+- en: So I can link this checkbox to a cell。 And the results of this checkbox can
+    go to that other cell。 So I'm gonna click here on this arrow。 It's a button。 So
+    I click there。 And now it hides the rest of the options。 And now I can just click
+    on the cell that I want to be linked to this checkbox。 So I'm gonna click here
+    on G2 and then I can go back and click that arrow again。 That's great。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我可以将这个复选框链接到一个单元格。这个复选框的结果可以传递到那个单元格。所以我会在这个箭头上点击。这是一个按钮。所以我点击那里。现在它隐藏了其他选项。现在我可以点击我想链接到这个复选框的单元格。因此，我会点击G2，然后我可以回去再次点击那个箭头。太好了。
+- en: if I want to， I can add some 3D shading to the checkbox。 let's see what that
+    looks like。 So now I click okay And you can see my checkbox now does have some
+    3D shading。 That's kind of cool。 Now， look what happens when I check the box。Because
+    I linked cell G2 to the check box。 It's telling me whether it's true or not that
+    the box is checked。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我想的话，我可以给复选框添加一些3D阴影。让我们看看效果如何。现在我点击确定，你可以看到我的复选框现在确实有一些3D阴影。这有点酷。现在，看看当我勾选复选框时发生了什么。因为我将单元格G2链接到复选框。它告诉我复选框是否被勾选。
+- en: And it's also saying it's true that they have had the driver safety training。
+    right。 that's all linked up。 So this is great。 I like this a lot。 So now let's
+    try the same thing that we did before。 Let's try the autofill handle to copy this
+    down the page。 Now it's a little tricky here。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它还在说他们接受了驾驶安全培训是正确的。所有这些都链接好了。所以这很棒。我非常喜欢这个。那么现在让我们尝试一下我们之前做过的同样的事情。让我们尝试使用自动填充句柄将其复制到页面下方。这里有点棘手。
+- en: sometimes if you click， you might be clicking on the checkbox。 So just be careful。
+    you might need to right click in order to select the cell。 But just get that same
+    autofill handle and you can copy it down。 Now， let's see if it works。 Notice when
+    I check one checkbox， they all get checked。 And they're all working off of G2。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 有时如果你点击，你可能会点击到复选框。所以要小心。你可能需要右键单击以选择单元格。但只需获取相同的自动填充句柄，你就可以向下复制。现在，让我们看看它是否有效。当我勾选一个复选框时，请注意它们都被勾选。它们都依赖于G2。
+- en: And so that's a problem。 I need to right click on my second checkbox and go
+    to form control。 and I need to update this to be G3。 and then I'll go back， click
+    O。And I'll click away。 Let's try it now。 Okay， so now it's working independently
+    from the other ones。 And so this is one of the downsides to the way the checkbox
+    form control works in Excel。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这就是一个问题。我需要右键单击我的第二个复选框并进入表单控制。我需要将其更新为G3。然后我会回去，点击O。然后我会点击其他地方。现在我们试试。好的，现在它独立于其他复选框工作。这是Excel中复选框表单控制工作方式的一个缺点。
+- en: I am gonna have to update each of these。 Now， learning the pattern， I can just
+    go in and type。 I can just type4 for G4。 And it works。 So I'll be honest that
+    this is a little bit of a hassle。 especially if you have a giant spreadsheet。
+    That's why I think in this case。 the example of a list of employees for a small
+    business or a midsized business。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我需要更新每一个复选框。现在，了解这个模式后，我可以直接输入。我可以输入4到G4。这有效。所以我必须诚实地说，这有点麻烦。尤其是如果你有一个巨大的电子表格。这就是我认为在这种情况下，小型企业或中型企业员工列表的例子的原因。
+- en: I think that's a good example of when I would do this more difficult。 more complicated
+    kind of checkbox。 because this way it's not an outrageous amount of work。 If I
+    had a spreadsheet with1 thousand records。 I don't think this would be a wise way
+    to create checkboxes。 And there are other ways that you can get to something similar
+    to this。 In my opinion。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我认为这很好地展示了我在更困难、更复杂的复选框类型时会这样做的情况。因为这样工作量并不会过于庞大。如果我有一个包含1000条记录的电子表格，我认为这并不是创建复选框的明智方法。而且还有其他方法可以得到类似的效果，这是我的观点。
+- en: these are the best methods for adding checkbox。But this is the downside what
+    I just showed that you have to update the cell reference。 If you want to use the
+    data the way I'm about to show。 So give me a minute to fix the rest of these form
+    control cell links。 and then I'll resume the video。 so I've finished updating
+    these and now you can see that I can very easily mark whether or not each employee
+    has completed their driver safety training。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这些是添加复选框的最佳方法。但我刚刚展示的缺点是你需要更新单元格引用。如果你想按照我即将展示的方式使用数据。所以请给我一点时间来修复其余的表单控制单元格链接，然后我将继续视频。我已经完成了这些更新，现在你可以看到我可以非常轻松地标记每位员工是否完成了他们的驾驶安全培训。
+- en: Now the nice thing about having this report false or true is that then you could
+    set up a formula basically an if statement you could click here so this cell is
+    equal to if and then you could basically say if this cell says true。 then do something
+    you could also use conditional formatting as well。 So for example。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，拥有这个报告为真或假的好处是，你可以基本上设置一个公式，一个if语句，你可以点击这里，这个单元格等于if，然后你可以基本上说如果这个单元格显示为真。那么就做某事，你也可以使用条件格式化。例如。
+- en: I could have the employees who have not completed the driver safety training
+    highlight in red。 So there's a visual cu saying that they need to get this completed。
+    And then of course。 if I wanted to I could even hide this column just by。![](img/2441a26a79ae27fdf3f186e170b77f3b_2.png)
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以将尚未完成驾驶安全培训的员工高亮为红色。这是一种视觉提示，表明他们需要完成这个任务。当然，如果我想的话，我甚至可以通过隐藏这一列来实现。！[](img/2441a26a79ae27fdf3f186e170b77f3b_2.png)
+- en: Right clicking on the column letter。 I could go down to hide。 And that true
+    fault， true fault。 It still exists is still in the spreadsheet， but it's hidden
+    from the view of the people that look at the spreadsheet。 So now it's just about
+    the text boxes， at least visually。 If you're interested in seeing how I could
+    make the records light up in red or green or any other color by using the conditional
+    formatting and also the ways I could use if functions to do some things with this
+    spreadsheet。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 右键单击列字母。我可以选择隐藏。这种真实的错误仍然存在于电子表格中，但对查看电子表格的人隐藏了。所以现在只是关于文本框，至少在视觉上。如果你有兴趣了解如何通过条件格式化使记录在红色、绿色或其他任何颜色中高亮，以及如何使用
+    if 函数对这个电子表格进行一些操作。
+- en: Leave me a message in the comments below。 And I'll consider making a follow
+    up video。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在下面的评论中给我留言。我会考虑制作后续视频。

@@ -1,0 +1,95 @@
+- en: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P23：23）在同一张图上绘制两个直方图
+    - ShowMeAI - BV14g411F7f9
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P23：23）在同一张图上绘制两个直方图
+    - ShowMeAI - BV14g411F7f9
+- en: Yeah。![](img/b18704c93c2971127f9f44ea97e70b2f_1.png)
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 是的。![](img/b18704c93c2971127f9f44ea97e70b2f_1.png)
+- en: Okay， rolling right along here。How do you plot two histograms on the same chart
+    is a pretty common question。 This is something you should know how to do。 How
+    do you plot to histograms on the same chart。![](img/b18704c93c2971127f9f44ea97e70b2f_3.png)
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，继续前进。如何在同一图表上绘制两个直方图是一个非常常见的问题。这是你应该掌握的技能。如何在同一图表上绘制两个直方图。![](img/b18704c93c2971127f9f44ea97e70b2f_3.png)
+- en: This is something you should know how to do because it is a classic example。Of
+    plotting two graphs on the same axes。 So let's。Let's see。![](img/b18704c93c2971127f9f44ea97e70b2f_5.png)
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是你应该掌握的技能，因为这是在同一坐标系上绘制两个图的经典例子。所以，让我们看看。![](img/b18704c93c2971127f9f44ea97e70b2f_5.png)
+- en: So if we just plot our X and Y here。 So we're going need some data that we can，
+    that we can。![](img/b18704c93c2971127f9f44ea97e70b2f_7.png)
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以如果我们在这里绘制 X 和 Y。我们需要一些可以用的数据。![](img/b18704c93c2971127f9f44ea97e70b2f_7.png)
+- en: Ploot in a histogram。And I went ahead and created a couple of normal distributions。Let's
+    go ahead and throw those in here。So I'm just creating normal distributions。 they
+    have a certain mean， they have a certain standard deviation。 and I'm creating
+    1 thousand0 different data points。If we do Ax dot hist of disk 1。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在直方图中绘图。我继续创建了几个正态分布。让我们把它们放进去。所以我正在创建正态分布。它们有特定的均值，特定的标准差。我正在创建1000个不同的数据点。如果我们对
+    disk 1 使用 Ax 点 hist。
+- en: Let's create these outside here。 So we're dealing with the same data because
+    this will create a new data set every single time。![](img/b18704c93c2971127f9f44ea97e70b2f_9.png)
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们在这里创建这些。所以我们处理的是相同的数据，因为这将每次创建一个新的数据集。![](img/b18704c93c2971127f9f44ea97e70b2f_9.png)
+- en: '![](img/b18704c93c2971127f9f44ea97e70b2f_10.png)'
+  id: totrans-7
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/b18704c93c2971127f9f44ea97e70b2f_10.png)'
+- en: And here's our first histogram。![](img/b18704c93c2971127f9f44ea97e70b2f_12.png)
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是我们的第一个直方图。![](img/b18704c93c2971127f9f44ea97e70b2f_12.png)
+- en: And now。You just do another histogram on that same axes。 So ta， there you go。
+    two histograms in the same chart， Sam axes， it's as easy as that。 Now。 whenever
+    we've got something like this going on， I'll show you another one of my favorite
+    tricks here。 which is using this alpha parameter。 And alpha basically controls
+    the transparency。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在。你只需在同一坐标系上再绘制一个直方图。所以，这就好了。在同一图表中绘制两个直方图，使用相同的坐标系，就是这么简单。现在。每当我们遇到这样的情况，我会给你展示我另一个喜欢的技巧，就是使用这个
+    alpha 参数。Alpha 基本上控制透明度。
+- en: So let's actually do alpha on the second graph first。 And let's， let's take
+    this down to。😊，Like 0。7。And if we take the alpha down to 0。7， you can now see
+    that we can see through the orange graph to the blue graph。 And if we do an alpha
+    on both of them。Then we get this pretty nice coloring effect here where both of
+    them are a little bit muted。 and we can see the distribution of both of the graphs。
+    Now。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们先在第二个图上实际使用 alpha。让我们把这个降到。😊，比如 0.7。如果我们把 alpha 降到 0.7，你现在可以看到我们可以透过橙色图看到蓝色图。如果我们对它们都使用
+    alpha。那我们得到的效果很不错，两者的颜色都有点柔和，我们可以看到两个图的分布。现在。
+- en: just because I think that this is helpful， I'm also going to throw labels on
+    here。 So dis1。Dis 2。 And then remember， if we run this。![](img/b18704c93c2971127f9f44ea97e70b2f_14.png)
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因为我觉得这很有帮助，我还会在这里添加标签。所以 dis1。Dis 2。然后记住，如果我们运行这个。![](img/b18704c93c2971127f9f44ea97e70b2f_14.png)
+- en: This doesn't do anything， until。Wei。![](img/b18704c93c2971127f9f44ea97e70b2f_16.png)
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这没有任何作用，直到。Wei。![](img/b18704c93c2971127f9f44ea97e70b2f_16.png)
+- en: Call A X dot legend。And there you go， that's how you do two histograms on the
+    same chart。![](img/b18704c93c2971127f9f44ea97e70b2f_18.png)
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 调用 A X 点 legend。这样，你就可以在同一图表上绘制两个直方图了。![](img/b18704c93c2971127f9f44ea97e70b2f_18.png)

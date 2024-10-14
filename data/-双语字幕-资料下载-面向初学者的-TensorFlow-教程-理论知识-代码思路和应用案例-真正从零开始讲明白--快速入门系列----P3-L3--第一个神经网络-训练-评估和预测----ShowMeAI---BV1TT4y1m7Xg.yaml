@@ -1,0 +1,528 @@
+- en: 【双语字幕+资料下载】面向初学者的 TensorFlow 教程，理论知识、代码思路和应用案例，真正从零开始讲明白！＜快速入门系列＞ - P3：L3- 第一个神经网络(训练、评估和预测)
+    - ShowMeAI - BV1TT4y1m7Xg
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】面向初学者的 TensorFlow 教程，理论知识、代码思路和应用案例，真正从零开始讲明白！＜快速入门系列＞ - P3：L3- 第一个神经网络(训练、评估和预测)
+    - ShowMeAI - BV1TT4y1m7Xg
+- en: '![](img/3f9d346b7c507e285fe99bf4d69f54ed_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/3f9d346b7c507e285fe99bf4d69f54ed_0.png)'
+- en: 🎼，Hey， guys， welcomee to the third Tens offlow tutorial。 Today。 we're going
+    to build our first neural network。 I will not explain the theory here and instead
+    focus on the implementation。 but I will provide some links in the description。
+    If you want to learn more about this。 And I will also provide the slides， as well
+    as the code in my Github reportpo。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 🎼，嘿，大家，欢迎来到第三个 Tensorflow 教程。今天，我们将构建我们的第一个神经网络。我不会在这里解释理论，而是专注于实现，但我会在描述中提供一些链接，如果你想了解更多内容。我也会提供幻灯片以及我的
+    GitHub 项目中的代码。
+- en: So we implement a neural network that will look like this。 Our neural network
+    has multiple layers。 and it gets an input image， and then it processes this image，
+    and at the end。 it produces a probability for each class。😊，So we have a multi
+    class classification problem here。 And this means that at the end， we use a soft
+    max layer to get the probabilities。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们实现的神经网络看起来是这样的。我们的神经网络有多个层，它接收一个输入图像，然后处理这个图像，最后产生每个类别的概率。😊，所以我们这里有一个多类分类问题。这意味着最后我们使用
+    soft max 层来获取概率。
+- en: So this is what we are going to code。 And I promise that the final code will
+    look relatively easy because Tensorflow takes care of a lot of things for us。
+    So even beginners should be able to build a neural network like this。 and Tensorflow
+    provides two different kind of APIs， the Kaas sequential API and the subclassing
+    API。 The Kaas API abstracts away a lot of things and makes implementing the algorithms
+    much easier。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这就是我们要编码的内容。我保证最终的代码看起来相对简单，因为 Tensorflow 为我们处理了很多事情。因此即使是初学者也应该能够构建这样的神经网络。Tensorflow
+    提供两种不同类型的 API，Kaas 顺序 API 和子类化 API。Kaas API 抽象了很多东西，使实现算法变得更加容易。
+- en: So they say here that this one is for beginners and the other one is for experts。
+    So I don't think that this is a good description， because I think that Kaas is
+    good not just for beginners。 but it's also a good fit for experience programmers。
+    So this is a great API here and you can implement a lot of things。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以他们说这个适合初学者，而另一个适合专家。我认为这不是一个好的描述，因为我认为 Kaas 不仅适合初学者，也同样适合有经验的程序员。因此这是一个很棒的
+    API，你可以实现很多东西。
+- en: And then only when you need more flexibility you can or should switch over to
+    the subclassing API。😊。![](img/3f9d346b7c507e285fe99bf4d69f54ed_2.png)
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 只有在你需要更多灵活性时，你才可以或应该切换到子类化 API。😊。![](img/3f9d346b7c507e285fe99bf4d69f54ed_2.png)
+- en: So in this beginner course， we concentrate on the Kaa sequential API。 but I
+    will also cover the subclassing API in later episodes。 So for now let's use the
+    sequential API and let's jump to the code。 So I already imported Tenofflow and
+    I silenced some warnings like in the last episode so you don't need to worry about
+    this。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个初学者课程中，我们集中在 Kaa 顺序 API，但我会在后面的剧集中涵盖子类化 API。所以现在让我们使用顺序 API，跳转到代码。我已经导入了
+    Tenofflow，并像上一个剧集那样屏蔽了一些警告，所以你不用担心。
+- en: '![](img/3f9d346b7c507e285fe99bf4d69f54ed_4.png)'
+  id: totrans-8
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/3f9d346b7c507e285fe99bf4d69f54ed_4.png)'
+- en: And now let's start implementing our network with the Kaas API。 So we also say
+    from Tensflow。 we want to import Kaas。 And since Tensorflowlow 2， this is included。
+    So before it was a separate API。 But now it is fully integrated。So then we also
+    import nuy S N P and we import matplot Li do pi plot S PLT because I want to show
+    you a plot。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在让我们开始使用 Kaas API 实现我们的网络。因此，我们也从 Tensorflow 导入 Kaas。由于 Tensorflow 2，已经包含这个内容。因此在此之前，它是一个单独的
+    API。但现在它已完全集成。所以我们还导入 nuy S N P，另外导入 matplot Li do pi plot S PLT，因为我想给你展示一个图。
+- en: And now let's get our data set first。 And in this tutorial， we use the Mnis
+    data set。 So the famous data set for handwritten diit classification。 And this
+    is included in Kas do data sets do Mni。 And then we get training and testing sets
+    by saying x train and Y train。 and then comma and then another tuple and then
+    x test and y test。 And this is Mist dot load data。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们先获取数据集。在这个教程中，我们使用的是 Mnis 数据集，这是一个著名的手写数字分类数据集。这个数据集包含在 Kas do 数据集中。接着我们通过声明
+    x train 和 Y train 获取训练和测试集，然后是逗号，再是另一个元组，然后是 x test 和 y test。这是 Mist.dot.load
+    data。
+- en: So we have to use two tuples here because this is what the load data returns。And
+    then， for example。 let's print X train dot shape。And let's also print Y train
+    dot shape。 So now let's open our terminal。 And here I' am already inside the virtual
+    environment with Tensorflow installed。 So let's run this file。So this is this
+    file here。 And let's have a look at the shape。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们必须在这里使用两个元组，因为这是load data返回的内容。然后，例如，让我们打印X train.shape。还让我们打印Y train.shape。现在让我们打开终端。我已经在安装了Tensorflow的虚拟环境中。所以让我们运行这个文件。这是这个文件。让我们看看形状。
+- en: So we see our xtrain has this shape， so we have 60000 training images。 and each
+    image has the size 28 by 28， and then we have 60000 labels corresponding to the
+    data here and by the way。 this is a nuy and D right now， so this is not a tens
+    of load tensor。 but we can still use it for our model then。 So the first thing
+    I want to do is I want to normalize the data because right now。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们看到我们的x训练有这个形状，因此我们有60000个训练图像。每个图像的大小为28×28，然后我们有60000个与数据对应的标签。顺便说一下，这现在是NumPy数组，因此这不是一个张量，但我们仍然可以将其用于我们的模型。所以我想做的第一件事是归一化数据，因为现在。
+- en: the images have values between0 and 20055。 and we want to normalize this so
+    that the values are between 0 and1。 So we say x strain and x test equals and then
+    we say x strain divided by 255 as float。And the second one X tests divided by
+    255。 So we can do this in one line for both data sets。And now let me copy and
+    paste some code in here。 So I want to plot the data。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 图像的值在0到20055之间。我们想要将其归一化，使值在0到1之间。因此我们说x训练和x测试等于，然后我们说x训练除以255作为浮点数。第二个是x测试除以255。这样我们可以在一行中处理这两个数据集。现在让我在这里复制粘贴一些代码。我想绘制数据。
+- en: So we just say P T I to plot6 different images。 So the first six digits。 So
+    let's run this and have a look at the plot。 Allright， so this is what the plot
+    looks like。 So here we see the handwritten diits。 So very simple。 And this is
+    what we are going to classify。 So let's remove this。 and let's build our model。
+    So let's build our model。 And as I said。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们只说PTI来绘制6个不同的图像。前六个数字。让我们运行这个，看看图的样子。好的，这就是图的样子。这里我们看到手写数字，非常简单。这就是我们要分类的内容。让我们去掉这个，构建我们的模型。让我们构建我们的模型。正如我所说的。
+- en: we are using the sequential API。 So we set model equals。 And this is a ks dot
+    model dot sequential。 And here we pass in a list with all the different layers。
+    So similar like here。 we want to have different fully connected layers。![](img/3f9d346b7c507e285fe99bf4d69f54ed_6.png)
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们使用顺序API。所以我们设置model等于。这是ks.model.sequential。在这里我们传入一个包含所有不同层的列表。与这里类似，我们希望有不同的全连接层。![](img/3f9d346b7c507e285fe99bf4d69f54ed_6.png)
+- en: '![](img/3f9d346b7c507e285fe99bf4d69f54ed_7.png)'
+  id: totrans-16
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/3f9d346b7c507e285fe99bf4d69f54ed_7.png)'
+- en: So let's start with ks dot layers dot flatten。 So this just flattens our image
+    to be to reduce one dimension of this 28 times 28。And then we are going to use
+    our first real fully connected layer。 So we say ks dot layers dot dense。 So the
+    dense layer is the fully connected layer in the Kaas API。 And here we have to
+    specify the output。 So this is a hidden size that we can specify。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们从ks.layers.flatten开始。这将我们的图像展平，以减少这一维度，从28×28变为1维。然后我们将使用我们的第一个真正的全连接层。所以我们说ks.layers.dense。这个稠密层是在Keras
+    API中的全连接层。在这里我们必须指定输出，这是一个我们可以指定的隐藏大小。
+- en: So I am going to use 128， but you can use a different one here。😊。And then we
+    also say activation equals reus。 So we're going to use the reou activation function。
+    So if you have a look again， at this plot， then usually all these layers are followed
+    by activation functions。 So I have a full tutorial about activation functions
+    in the pytorch beginner course。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我将使用128，但你可以在这里使用不同的值。😊。然后我们还说activation等于relu。所以我们将使用relu激活函数。如果你再看一下这个图，通常这些层后面都有激活函数。我有一个关于激活函数的完整教程在PyTorch初学者课程中。
+- en: but the same concept applies here too。 So I will put the link in the description。
+    and you can check it out。 But basically what you should know is that it introduces
+    nonlineity。 and it improves the training。 So it makes our model better。 So we
+    should use a activation function after each of these layers。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但是相同的概念也适用于这里。所以我会在描述中放入链接，你可以查看。但基本上你应该知道的是，它引入了非线性，并改善了训练。它使我们的模型更好。因此，我们应该在每一层后使用激活函数。
+- en: and then so let's use just one in the middle。 and then let's use our final layers。
+    So this is again。 a dense layer。😊。![](img/3f9d346b7c507e285fe99bf4d69f54ed_9.png)
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们就用一个在中间。然后使用我们的最终层。这又是一个稠密层。😊。![](img/3f9d346b7c507e285fe99bf4d69f54ed_9.png)
+- en: '![](img/3f9d346b7c507e285fe99bf4d69f54ed_10.png)'
+  id: totrans-21
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/3f9d346b7c507e285fe99bf4d69f54ed_10.png)'
+- en: And now we need to specify 10 outputs。 So we want to have。 so we do have 10
+    different classes。 And for each class， we need one output。 So So in this simple
+    example。 we only have two different classes doc and cat。 And that's why we only
+    need two output layers。 but in our example， we have 10 classes。 So that's why
+    this must be 10。 So this has to be 10。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们需要指定10个输出。所以我们希望有。我们确实有10个不同的类别。每个类别我们需要一个输出。在这个简单的例子中，我们只有两种不同的类别：狗和猫。这就是为什么我们只需要两个输出层。但在我们的例子中，我们有10个类别。所以这必须是10。这必须是10。
+- en: but you can play around with this size。 And then as I said， we want to get the
+    probabilities。 So that's why we need a soft marks layer。 So we could。 we could
+    include this here by saying ks dot layers dot soft marks。 But actually in the
+    tens of load docs， they say that this is not recommend it。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但你可以调整这个大小。正如我所说，我们想要得到概率。这就是为什么我们需要一个soft marks层。所以我们可以通过说ks dot layers dot
+    soft marks来包含它。但实际上在文档中，他们说这不推荐。
+- en: but instead you should。![](img/3f9d346b7c507e285fe99bf4d69f54ed_12.png)
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但相反你应该。![](img/3f9d346b7c507e285fe99bf4d69f54ed_12.png)
+- en: '![](img/3f9d346b7c507e285fe99bf4d69f54ed_13.png)'
+  id: totrans-25
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/3f9d346b7c507e285fe99bf4d69f54ed_13.png)'
+- en: '![](img/3f9d346b7c507e285fe99bf4d69f54ed_14.png)'
+  id: totrans-26
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/3f9d346b7c507e285fe99bf4d69f54ed_14.png)'
+- en: '![](img/3f9d346b7c507e285fe99bf4d69f54ed_15.png)'
+  id: totrans-27
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/3f9d346b7c507e285fe99bf4d69f54ed_15.png)'
+- en: Included in your loss function later。 So we leave this out for now。 So now this
+    is all that we need for our model and our model can automatically determine the
+    correct input sizes。 we only need to specify the output sizes。 but let's say after
+    we create this。 we want to call model dot summary and we want to print this。 So
+    right now this doesn't work。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在你的损失函数中稍后包含。因此我们暂时不考虑这一点。现在这就是我们模型所需的一切，我们的模型可以自动确定正确的输入大小。我们只需指定输出大小。但假设在创建后，我们想调用model
+    dot summary并打印出来。目前这不起作用。
+- en: But if we specify the first input size。 So here we can say input shape equals
+    and then 28 by 28。Then this works。 But you don't have to do this。 You can also。
+    it can also figure this out when you fit it to the training data later。 but then
+    you can only print this after you compile your model。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但是如果我们指定第一个输入大小。在这里我们可以说input shape等于28乘28。那么这样就有效。但你不必这样做。你也可以在后面将其适配到训练数据时让它自动计算，但那样你只能在编译模型后打印。
+- en: So it's a good practice to include this here。 So now let's save this and run
+    this again。 and then we will print the model summary。 And here I forgot to include
+    an S。 So it's called Kara dot model dot sequential。Alright， so here this is the
+    printed summaries。 So it prints all the different layers。 So here we see our first
+    flattening layer。
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以在这里包含这一点是一个好习惯。现在我们保存并再次运行，然后我们将打印模型摘要。在这里我忘了加一个S。所以它叫Kara dot model dot sequential。好的，这里是打印的摘要。所以它打印出所有不同的层。在这里我们看到第一个展平层。
+- en: and this is the shape 784。 So this is 28 times 28。 It reduces it to one dimension。
+    And this is not an actual layer that we have to train。 So it doesn't have parameters。
+    And we have our first dense layer with 128 output shape。 And this is the number
+    of parameters。 and then our second dense layer with 10 outputs。 And here， the
+    first one is just none。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是形状784。所以这是28乘28。它将其减少到一维。这不是我们需要训练的实际层。所以它没有参数。我们有第一个输出形状为128的稠密层。然后是第二个输出10的稠密层。在这里，第一个只是none。
+- en: So this is the number of samples that we don't know yet。😊。And then we also see
+    the total parameterss and the trainable parameterss。So， yeah。 so now we already
+    have our model。 And by the way， so I think you can already see how simple it is
+    with this sequential API。 And there's also a second way to do it with the sequential
+    API so you can set up your model like this。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这是我们还不知道的样本数量。😊。然后我们也看到了总参数和可训练参数。所以，是的。现在我们已经有了模型。顺便说一下，我想你可以看到使用这个顺序API是多么简单。此外，还有第二种使用顺序API的方法，可以像这样设置你的模型。
+- en: And then at each layer separately。 So you can call model dot at。 And then you
+    use this layer。 and then you see， say， model dot at。 And then you use this layer。😊。Model
+    dot at and the second layer and then model dot at。 and the last layer。 So this
+    is doing the same thing。 But this is the advantage that now you could print model
+    summary after each operation and figure out how your training looks。
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后在每一层分别进行。所以你可以调用 model dot at。然后使用这一层。然后你看到，比如说，model dot at。然后你使用这一层。😊。Model
+    dot at 第二层，然后 model dot at。最后一层。所以这在做同样的事情。但这就是现在的优势，你可以在每个操作后打印模型摘要，弄清楚你的训练情况。
+- en: So， yeah， keep that in mind that you can do it like this as well。 So we're just
+    going to use the first one。And comment this out again。 So now we have our model
+    and now the next thing we need is we need the loss and optimizer。 So in a multiclass
+    classification problem。 typicallyy we use the categorical cross entropy。
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以，嗯，请记住你也可以这样做。所以我们只会使用第一个。然后再次注释掉这个。所以现在我们有了我们的模型，接下来我们需要的是损失和优化器。在多类分类问题中，通常我们使用类别交叉熵。
+- en: So we say loss equals and then we say ks dot losses。 And then here this is actually
+    called sparse categorical cross entropy。 And this is because our y is an integer
+    class label。 So it's 0，1，2，3 or something like that。 And that's why we use this
+    sometimes the label is also encoded as one hot。
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们说损失等于，然后我们说 ks dot losses。然后这里实际上叫做稀疏类别交叉熵。这是因为我们的 y 是一个整数类标签。所以是 0、1、2、3
+    或类似的。因此我们使用这个，有时标签也编码为 one hot。
+- en: So a one for the class 0 and then90s for the。Other classes。 So in this case。
+    we just use the categorical cross entropy， but in our case， we use this one。 And
+    we also say from logics equals true。 And this is because here at the end。 we didn't
+    include the soft marks。 So we still have the raw numbers， the raw las。
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以对于类 0 是 1，然后对于其他类是 90s。所以在这种情况下，我们只是使用类别交叉熵，但在我们的案例中，我们使用这个。而且我们也说 from logics
+    等于 true。这是因为在最后，我们没有包含 soft marks。所以我们仍然有原始数字，原始 las。
+- en: So we have to use this， Otherwise it won't train very well。And then we need
+    to create an optimizer。 So we say Kas dot optimizers。 And then here， let's use
+    the Adamom optimizer。 a very popular optimizer。 and we need to give it a learning
+    rate。 So we say this is 0001。 So this is the one of the most important socalled
+    hyperpar that you should tweak in the beginning to get a good result。
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们必须使用这个，否则训练效果不会很好。然后我们需要创建一个优化器。所以我们说 Kas dot optimizers。然后这里，让我们使用 Adamom
+    优化器，这是一个非常流行的优化器。我们需要给它一个学习率。所以我们说这是 0.0001。这是你在开始时应该调整以获得好结果的最重要的超参数之一。
+- en: So play around with this。 And then we also define some metrics that we want
+    to track。 So in this case， and this should be a list。 And here we only want to
+    track the accuracy metric。So when we have this， then we call model dot compile。
+    So this is what we do with the Tensorflow framework。 And then we say our loss
+    equals the loss。
+  id: totrans-38
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以随意尝试一下。然后我们也定义了一些我们想要跟踪的指标。在这种情况下，这应该是一个列表。我们这里只想跟踪准确度指标。因此当我们有这个时，我们调用 model
+    dot compile。这是我们在 Tensorflow 框架中所做的。然后我们说我们的损失等于损失。
+- en: our optimizer equals the optimizer and the metrics equals the metrics。 So this
+    will configure the model for training and after that we can start the training。
+    So let's define the batch size and set this to 64 and set the number of epochs
+    for our training。 So here I only use5 epochs and then we can simply call model
+    dot fit and we want to fit the x train and the Y train。
+  id: totrans-39
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们的优化器等于优化器，指标等于指标。所以这将为训练配置模型，之后我们可以开始训练。所以让我们定义批量大小并将其设置为 64，设置我们训练的 epochs
+    数量。所以这里我只使用 5 个 epochs，然后我们可以简单地调用 model dot fit，我们想要拟合 x train 和 y train。
+- en: So our training data and we specify the batch size equal。The batch size。And
+    the epoch equals the epoch。And then we said shuffle equals true。 So this is the
+    default。 but I want to stress this that you should always do this during training。
+    And then let's set ver equals 2。 So this is just for logging0 means no output
+    1 means a progress bar and two means normal logging。
+  id: totrans-40
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们的训练数据，我们指定批量大小等于。批量大小。然后 epoch 等于 epoch。然后我们说 shuffle 等于 true。这是默认值。但我想强调的是，在训练期间你应该始终这样做。然后让我们将
+    ver 设置为 2。这只是用于日志记录，0 表示没有输出，1 表示进度条，2 表示正常日志记录。
+- en: So this is all that we have to do to train our model。 So again。 we build our
+    model with the sequential API。 Then we define the loss and the optr and optional
+    sum metrics。 So we don't have to use this here。 but we can。 And then start the
+    training with model dot fit。 And now we can already start training this。So， let's
+    run this。
+  id: totrans-41
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这就是我们训练模型所需做的一切。再说一次，我们使用顺序 API 来构建模型。然后定义损失函数、优化器和可选的汇总指标。所以这里不一定需要使用它，但我们可以。然后开始训练，使用
+    `model.fit`。现在我们可以开始训练了。让我们运行这个。
+- en: So now we see that it's starting the training and after each epoch， it prints
+    the somesymmetric。 so it prints the loss and the accuracy because we specified
+    this。And we see that after five epochs。 we already have a very low loss。 So this
+    decreased and our accuracy is 98 per cent。 So our simple neural network is already
+    very good for this task。So， now。That we trained it。
+  id: totrans-42
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们看到它开始训练，并且在每个纪元之后，它打印出一些信息。因此，它打印出损失和准确率，因为我们指定了这些。我们看到，在五个纪元之后，我们已经得到了一个很低的损失。因此，它降低了，我们的准确率是
+    98%。所以我们的简单神经网络对于这个任务已经非常好了。现在，我们已经训练好了它。
+- en: What we want to do then is want to evaluate our model。 and we can also very
+    simply do this with by saying model equal model dot evaluate and then we use our
+    test data。 So we use X test and y test。 And again， here we use the or can use
+    the batch size and set this to our batch size。 and I also set ver both equals
+    true equals2 for some logging。 So this is how we evaluate it。
+  id: totrans-43
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 接下来我们想要评估我们的模型。我们也可以非常简单地通过说 `model = model.evaluate` 来做到这一点，然后使用我们的测试数据。所以我们使用
+    `X_test` 和 `y_test`。在这里，我们可以使用批大小并将其设置为我们的批大小。我还设置了 `verbose = 2` 用于一些日志记录。这就是我们评估的方式。
+- en: and so the batch size means that it takes some batches and performs the computations
+    on the batches。 So this can make the training and evaluation faster and even and
+    also improve the training。 So let's。Let's run this again。 So for now， I didn't
+    save the model。 So now I have to train it again and then evaluate it。 So let's
+    run it。 And in later episodes。
+  id: totrans-44
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 批大小意味着它处理一些批次并在这些批次上进行计算。这可以加快训练和评估的速度，甚至改善训练。所以让我们再运行一次。现在我没有保存模型，所以我需要再次训练它，然后进行评估。让我们运行它。在以后的章节中。
+- en: we learn how we save our model after the training。 Alright， so training a done
+    So again。 we see the five different epochs。 and then we have one print statement
+    for the evaluation。 So we see that it's。Slightly lowered the accuracy for the
+    test set， but it's still very good。 So now we already have a very good training
+    to classify the amnes digits。
+  id: totrans-45
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们学习了如何在训练后保存我们的模型。好的，训练完成了。再说一次，我们看到了五个不同的纪元，然后我们有一个用于评估的打印语句。我们看到，测试集的准确率稍微降低了，但仍然非常好。所以现在我们已经有了一个很好的训练模型来分类手写数字。
+- en: And now let's see how we can do some predictions with our model。 So there we
+    have several different options。 and again。![](img/3f9d346b7c507e285fe99bf4d69f54ed_17.png)
+  id: totrans-46
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在让我们看看如何用我们的模型进行一些预测。我们有几个不同的选项。再一次！[](img/3f9d346b7c507e285fe99bf4d69f54ed_17.png)
+- en: For the predictions， we need the soft max layer to call the probabilities。 So
+    we didn't。![](img/3f9d346b7c507e285fe99bf4d69f54ed_19.png)
+  id: totrans-47
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 对于预测，我们需要软最大层来调用概率。所以我们没有！[](img/3f9d346b7c507e285fe99bf4d69f54ed_19.png)
+- en: Put this in here as the last layer， but it was automatically included here during
+    the training。 but now we need it。 So our first option is to create a new new model。
+    So let's call this probability model。 And this is also a Kaas dot model dot C
+    sequential model。 And here this is one new thing that I want to show you。 we can
+    pass a whole model into this。
+  id: totrans-48
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 将其放在这里作为最后一层，但它在训练过程中已自动包含在内。不过现在我们需要它。所以我们的第一个选择是创建一个新的模型。我们将其称为概率模型。这也是一个
+    `keras.models.Sequential` 模型。在这里，我想给你展示一件新事物，我们可以将整个模型传入其中。
+- en: So we can put in our original model。 So now it has all of the layers of this
+    model。 And now we use the kra dot layers dot softms layer。 And now we that we
+    have this we can call this probability model。 So we say predictions equals probability
+    model and then pass。In the X test data， so。
+  id: totrans-49
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们可以使用我们原来的模型。现在它拥有这个模型的所有层。现在我们使用 `kra.layers.softmax` 层。既然我们有了这个，我们可以调用这个概率模型。所以我们说
+    `predictions = probability_model`，然后传入测试数据 `X_test`。
+- en: Now we have this。 we can， for example， get the first prediction by saying this
+    is the predictions index0。 And let's print this here。 So print prediction 0。 And
+    then this is the probability。 So now we want to choose the class with the highest
+    probability。 So we can do this by calling the arc max function。 So we say label
+    0 equals nuy dot arc max。
+  id: totrans-50
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们有这个。例如，我们可以通过说这是预测索引0来获取第一个预测。让我们在这里打印这个。所以打印预测0。这是概率。因此现在我们想选择概率最高的类别。我们可以通过调用arc
+    max函数来实现这一点。因此我们说标签0等于nuy.dot arc max。
+- en: and then of this prediction pre 0 and then print the label 0。 So now let's save
+    this。 And now I run the training and evaluation again and then print this for
+    you。 Allright， so it's done。 And here it it prints the prediction 0。 So for。![](img/3f9d346b7c507e285fe99bf4d69f54ed_21.png)
+  id: totrans-51
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后是这个预测pre 0，然后打印标签0。所以现在让我们保存这个。现在我再次运行训练和评估，然后为你打印这个。好吧，完成了。在这里它打印出预测0。所以对于。![](img/3f9d346b7c507e285fe99bf4d69f54ed_21.png)
+- en: '![](img/3f9d346b7c507e285fe99bf4d69f54ed_22.png)'
+  id: totrans-52
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/3f9d346b7c507e285fe99bf4d69f54ed_22.png)'
+- en: Each class， it has a probability。 and then we take the label or the index with
+    the highest probabilities。 This is index 7 in this case。 So I think it's。This
+    one。 So 9。49。 This is the highest one。 So yeah。 this works。 So this is the first
+    way to do it。 The second way is to use our original model plus the soft marks
+    separately。 So we can say the same as we are doing here predictions equals。
+  id: totrans-53
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 每个类别都有一个概率。然后我们获取具有最高概率的标签或索引。在这种情况下，这是索引7。所以我认为是这个。9.49。这是最高的。因此，是的，这可以工作。这是实现它的第一种方法。第二种方法是分别使用我们的原始模型加上soft
+    marks。因此我们可以说和我们在这里做的一样，预测等于。
+- en: And then we call the original model and pass an x test。 And then we apply the
+    soft marks for ourselves。 So we say predictions equals Tens offlow dot N N dot
+    soft maxs。 And then here we put in the predictions。 And now we have the same as
+    we have here。 So let's print this one。😊，And then when we run this and print this。
+  id: totrans-54
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们调用原始模型并传入x测试。接着我们为自己应用soft marks。因此我们说预测等于Tens offlow.dot N N.dot soft maxs。在这里我们放入预测。现在我们得到了和这里相同的结果。让我们打印这个。😊，然后当我们运行这个并打印时。
+- en: then we should see the exact exact same numbers。Oh， sorry， I stopped this for
+    now。 So here I forgot to get the prediction 0 so that we see this is the same
+    here。So let's clear this and run it again。 Alright， so again， our training is
+    done。 And here you can see that it prints the exact same numbers and the same
+    class label。
+  id: totrans-55
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那么我们应该看到完全相同的数字。哦，抱歉，我暂时停止了这个。因此我在这里忘记获取预测0，这样我们就可以看到这里是相同的。让我们清除这个并再运行一次。好吧，所以我们的训练完成了。在这里你可以看到它打印出完全相同的数字和相同的类别标签。
+- en: So you can do it like this。 And then as a third option instead of calling model
+    and model like this。 you can also call model dot predict。 and then the data。 And
+    here you can also specify the batch size equals the batch size。 then it computes
+    it for each each batch。 So this is also what you can do。 and again。
+  id: totrans-56
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以这样做。然后作为第三种选择，而不是像这样调用模型和模型。你也可以调用model.dot predict。然后是数据。在这里你也可以指定批大小等于批大小。然后它会为每个批次计算。这也是你可以做的。再一次。
+- en: the numbers should be the same。And now let's not only get one single prediction。
+    So let's say we have two or five different predictions。 So let's call the 0，5s。
+    And then we get this by saying predictions and use slicing from index 0 to index
+    5。And now let's print the pre0，5 dot shape first for you。 And now if we call the
+    arc max for this。
+  id: totrans-57
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 数字应该是相同的。现在我们不仅仅要得到一个预测。假设我们有两个或五个不同的预测。我们称之为0，5s。然后我们通过预测并使用从索引0到索引5的切片来得到这个结果。现在我们先为你打印pre0，5的形状。现在如果我们对这个调用arc
+    max。
+- en: So now let's say our label 0，5s equals， and then if we get the predictions。
+    if we call the nuy dot arc max， with this5 predictions。 then we also have to specify
+    the x。 and in this case， we want to compute it along xs 1。And now we should get
+    five different labels。 So print label 50s。And now let's clear this and run it
+    one more time and hope that this works。
+  id: totrans-58
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在假设我们的标签0，5s等于，然后如果我们获取预测。如果我们调用nuy.dot arc max，并使用这5个预测。然后我们还必须指定x。在这种情况下，我们想沿着xs
+    1进行计算。现在我们应该得到五个不同的标签。打印标签50s。现在让我们清除这个，再运行一次，希望这能成功。
+- en: Alright， so again， this is done。 we see that again， with this model predict。
+    We get the same numbers。 And then this is our shape。 So 5 by 10 So  five different
+    samples and or predictions。 and for each prediction10 different probabilities
+    like here。 And if we call the arcms along X 1。
+  id: totrans-59
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好吧，所以这就完成了。我们看到，再次通过这个模型预测，我们得到了相同的数字。然后这是我们的形状。所以是5乘10，即五个不同的样本和预测。对于每个预测，有10种不同的概率，如这里所示。如果我们沿X
+    1调用arcms。
+- en: then we get five different labels。 So again， the first label is label 7 like
+    here。 And these are the next predictions。 Yeah， so this is how you can predict
+    it。 And I think this is all you should know to build your first neural network。
+    So again。 you build your sequential model， then you set up loss and optimizer，
+    Then you compile the model。
+  id: totrans-60
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们得到了五个不同的标签。因此，第一次标签是这里的标签7。这些是接下来的预测。是的，这就是你如何进行预测。我认为这就是你需要知道的，以构建你的第一个神经网络。因此，再次强调，你构建你的顺序模型，然后设置损失和优化器，然后编译模型。
+- en: Then you call model fit and model evaluate。 And then when you want to predict。
+    you can call model predict。 But yeah， don't forget to call the soft marks if you
+    want the actual probabilities。 And yeah， I think that's all for now。 And I hope
+    you enjoyed this tutorial。 Please hit the like button and consider subscribing
+    to the channel。
+  id: totrans-61
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后你调用模型拟合和模型评估。然后当你想进行预测时，可以调用模型预测。不过，别忘了如果你想要实际的概率，记得调用软标记。是的，我想目前就这些。我希望你喜欢这个教程。请点击喜欢按钮，并考虑订阅频道。
+- en: And I hope to see you in the next video by。😊。![](img/3f9d346b7c507e285fe99bf4d69f54ed_24.png)
+  id: totrans-62
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我希望在下一个视频中见到你。😊。![](img/3f9d346b7c507e285fe99bf4d69f54ed_24.png)

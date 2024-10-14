@@ -1,0 +1,167 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P10：10）隐藏数据 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P10：10）隐藏数据 - ShowMeAI - BV1uL411s7bt
+- en: In this tutorial， I'm going to show you how to hide data in Excel。 and we'll
+    also talk about why it might be a good thing to do sometimes。 So here you can
+    see I have a large financial data spreadsheet。 that is just hypothetical。 but
+    it has manufacturing costs in here。 It has sale prices， gross sales， total profit。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个教程中，我将向你展示如何在Excel中隐藏数据，我们还将讨论为什么有时这样做是一个好主意。所以在这里你可以看到我有一个大型财务数据电子表格，这是假设的，但里面有制造成本、销售价格、毛销售额和总利润。
+- en: all of this data in this pretty big spreadsheet。 and it's also got the months
+    and the years associated with those numbers。![](img/aa0d1b3e7cf808922fb33f2150bf5906_1.png)
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所有这些数据都在这个相当大的电子表格中，并且它还与这些数字相关联的月份和年份。![](img/aa0d1b3e7cf808922fb33f2150bf5906_1.png)
+- en: I also have a second sheet here at the bottom that's called customer list。 And
+    this has people's names， phone numbers， credit card numbers and the type of credit
+    card。 But anyway， let's say that a partner of mine or an associated business that
+    I work with needs to get some of the information in this spreadsheet。 But maybe
+    I don't want them to have all of my customerss personal information。 And also。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我这里还有一个名为客户名单的第二个工作表。里面有人的姓名、电话号码、信用卡号码和信用卡类型。但是，假设我的一个合作伙伴或我合作的相关业务需要获取此电子表格中的一些信息。但也许我不希望他们获取我所有客户的个人信息。
+- en: I might not want them to know。 for example， the profit that I'm earning from
+    all of these sales。 So how could I send the spreadsheet without showing off the
+    information that I don't want other people to see。 Well， the easiest way to do
+    that， is to hide data。 you can hide rows。 you can hide columns。 and you can hide
+    sheets。 So let's look at how to do each of those things。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可能不希望他们知道，例如，我从所有这些销售中获得的利润。那么，我如何发送电子表格而不显示我不希望其他人看到的信息呢？那么，最简单的方法就是隐藏数据。你可以隐藏行、隐藏列和隐藏工作表。让我们来看一下如何做这些事情。
+- en: Let's say I would like to hide the data that's listed here about the product
+    called Montana。 So I would like to hide all of these rows。 All I have to do is。Click
+    and hold the click here at the left on the row number。 So row number 8。 I click
+    and hold the mouse click and then drag down until I get all of the records that
+    have Montana there in column C。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设我想隐藏关于名为Montana的产品的这些数据。所以我想隐藏所有这些行。我所要做的就是在左侧点击并按住行号。因此，行号8。我点击并按住鼠标，然后向下拖动，直到我得到所有在C列中有Montana的记录。
+- en: And then I can release the mouse button And now to hide those rows。 all I have
+    to do is right click on any one of the row numbers and choose hide。 So it looks
+    like I've deleted row numbers 8 through 17。 but that's just not possible in Excel。
+    You cannot delete row numbers。 You can delete rows of data but the row numbers
+    themselves never go away。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我可以释放鼠标按钮。要隐藏那些行，我所要做的就是右键单击任意一个行号并选择“隐藏”。看起来我删除了第8行到第17行的行号，但在Excel中这根本不可能。你不能删除行号。你可以删除数据行，但行号本身永远不会消失。
+- en: So that means that they're hidden。 And I'm going to zoom in a little bit so
+    you can see this just a little bit better。 in recent versions of Microsoft Excel。
+    It's become a little bit easier to see where there is hidden data。 So if you look
+    really closely right here at the line dividing row 7 from row 18。 Theres a line
+    that's just a little bit thicker than normal that indicate。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这意味着它们被隐藏了。我会稍微放大一点，这样你可以更好地看到。在最近版本的Microsoft Excel中，查看隐藏数据变得稍微容易一些。所以如果你仔细看看这里，第7行和第18行之间的线，有一条比正常稍微厚一点的线，表示。
+- en: ates to me that there is hidden data。 Now， to unhide it， there's a couple of
+    ways I could do that。 I could click and drag over the top of the hidden rows and
+    then right click and choose unhide and everything is restored。 Now， the exact
+    same thing works with columns。 As you would kind of expect。 So I'm going go over
+    here to profit。 let's say I don't want the companies that I work with to know
+    the profit that our company is making。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我注意到这里有隐藏的数据。现在，要显示它，有几种方法可以做到。我可以点击并拖动隐藏行的顶部，然后右键单击选择“取消隐藏”，一切都恢复正常。同样的操作也适用于列。正如你所期待的那样。因此，我要去利润部分。假设我不希望我合作的公司知道我们公司的利润。
+- en: All I have to do is click to select the column that I want to hide。 Now。 if
+    I wanted to hide more than one column， I would click and hold and drag。 but in
+    this case。 it's just the one column。 Now that it's selected， I right click and
+    choose hide。 Also。 the customer list， this is important。 This is personal information
+    from customers。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我所要做的就是点击选择我想隐藏的列。现在，如果我想隐藏多于一列，我会点击并按住拖动。但在这种情况下，只有一列。现在选中后，我右键点击并选择隐藏。此外，客户名单，这很重要。这是客户的个人信息。
+- en: I don't want people to see this。 So watch what I can do。 I can simply right
+    click on the sheet name and choose hide。 And that sheet is hidden。 Now。 how would
+    I unhide that sheet。 with rows and columns。 We know how to。with this column。 I
+    could click and drag over the top of the hidden column and then choose unhide。
+    Well。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我不想让人们看到这个。所以看看我能做什么。我可以简单地右键点击工作表名称并选择隐藏。那张工作表就被隐藏了。现在，我该如何取消隐藏那张工作表呢？通过行和列，我们知道怎么做。通过这一列，我可以点击并拖动到隐藏列的顶部，然后选择取消隐藏。好吧。
+- en: what about sheets， You don't click and drag instead， just right click on one
+    of the sheet names。 and then choose unhide。 And then you have to select the sheet。
+    you would like to unhide。 In this case， I only have one hidden sheet。 But in some
+    cases。 you'll have two or5 or 10 hidden sheets and you have to unhide them one
+    at a time。 So in this case。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 关于工作表，你不需要点击和拖动，而是直接右键点击其中一个工作表名称，然后选择取消隐藏。接着你需要选择你想取消隐藏的工作表。在这种情况下，我只有一张隐藏的工作表。但在某些情况下，你可能有两张、五张或十张隐藏的工作表，你需要一次取消隐藏一张。所以在这种情况下。
+- en: there's only one， I select it， I click okay。 and now it's no longer hidden。
+    I'm going hide it again。 because let's say I really do want to send the spreadsheet。
+    I want that to be hidden。 So now I can save this spreadsheet。 and I could send
+    it off。 and that important information is safely hidden。 right， Well。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 只有一个，我选择它，点击确定。现在它不再隐藏。我会再隐藏一次，因为假设我确实想发送这个电子表格，我希望它保持隐藏。所以现在我可以保存这个电子表格，并可以发送出去，重要信息就安全隐藏了，对吧？好吧。
+- en: some of you are thinking not really couldn't the person I send this spreadsheet
+    to notice that there's hidden data and just click and drag to unhide it or right
+    click to unhide hidden sheets。 Yes， they could。So that's a problem。 The solution
+    to that， though， is here on the review tab。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 有些人可能会想，我发送这个电子表格给的人难道不会注意到隐藏的数据并点击拖动以取消隐藏，或者右键点击以取消隐藏隐藏的工作表吗？是的，他们可以。所以这是个问题。不过，解决方案在于审阅选项卡。
+- en: you can click here on Pro workbook， put in a password and click O。 It wants
+    me to confirm the password。So now that I've protected the workbook。 if I go down
+    and right click on the sheet name and try to unhide， look， it doesn't let me do
+    that。 And so that's a way to protect data。 Now， unfortunately， look， that's not
+    true here。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以在Pro工作簿上点击，输入密码并点击确认。它让我确认密码。因此，现在我已经保护了工作簿。如果我向下滚动并右键点击工作表名称尝试取消隐藏，看看，它不让我这么做。这是一种保护数据的方法。现在，不幸的是，这里并不适用。
+- en: if I click and drag across K and M and then right click， I am able to unhide
+    the hidden column。 So just be aware of that。 there might be some people that are
+    savvy enough to unhide a particular column。 And they can do that even in a protected
+    workbook。 but they cannot unhide hidden sheets。 So what would I do in this case，
+    where I don't want them to see the total profit。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我点击并拖动跨越K和M列，然后右键点击，我就能够取消隐藏隐藏的列。所以请注意，可能会有一些人足够聪明去取消隐藏特定列。他们即使在受保护的工作簿中也能做到这一点，但他们无法取消隐藏隐藏的工作表。那么在这种情况下，我该怎么做呢？我不想让他们看到总利润。
+- en: What I would do is I would just print。 So I would go into print And I could
+    even save this as a P Df if I wanted to。 and then email this to the company that
+    wants to look at it。 I wanted to show you one last trick。 In some cases， you may
+    not want to hide an entire column or row or a range of rows and columns。 but maybe
+    just one particular。Sell， what if I just want to hide this cell。 Well。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我会这样做：我会直接打印。因此，我会进入打印，如果我想的话，我甚至可以将其保存为PDF，然后将其发送给想查看的公司。我想给你展示最后一个技巧。在某些情况下，你可能不想隐藏整个列或行或一系列的行和列，而只是隐藏某个特定单元格。那么，如果我只想隐藏这个单元格呢？好吧。
+- en: there's kind of a tricky way to do that。 If you go to the home tab。 home ribbon
+    here in the font group you can change the font color and change it to white。 And
+    you can see it's not really hiding the cell。 but it does hide the numbers。 If
+    someone clicks on the cell， then the numbers do show up here in the formula bar。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 有一种稍微复杂的方法来做到这一点。如果你去主页标签，这里在字体组中可以更改字体颜色并将其改为白色。你会看到这并没有真正隐藏单元格，但确实隐藏了数字。如果有人点击单元格，数字会在公式栏中显示出来。
+- en: So just be careful about that。 But that's a way to hide information that's in
+    a cell or in a range without hiding everything in the entire column or row。 And
+    now if I print this spreadsheet， it'll look like those are just completely blank
+    cells。 Thanks for watching this tutorial， I hope you found it to be useful。 If
+    you did。 please click the like button below。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以对此要小心。但这是一种隐藏单元格或范围内信息的方法，而不必隐藏整个列或行的所有内容。如果我打印这个电子表格，它看起来就像那些单元格是完全空白的。感谢观看这个教程，希望你觉得有用。如果觉得有用，请点击下面的点赞按钮。
+- en: '![](img/aa0d1b3e7cf808922fb33f2150bf5906_3.png)'
+  id: totrans-19
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/aa0d1b3e7cf808922fb33f2150bf5906_3.png)'

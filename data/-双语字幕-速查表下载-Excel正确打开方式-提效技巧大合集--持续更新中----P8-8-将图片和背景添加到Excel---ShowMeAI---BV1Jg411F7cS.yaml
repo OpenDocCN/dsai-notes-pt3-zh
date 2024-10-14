@@ -1,0 +1,199 @@
+- en: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P8：8）将图片和背景添加到Excel - ShowMeAI - BV1Jg411F7cS
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P8：8）将图片和背景添加到Excel - ShowMeAI - BV1Jg411F7cS
+- en: '![](img/e554f8159d767499386bbce64f73d9d1_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/e554f8159d767499386bbce64f73d9d1_0.png)'
+- en: In this short Excel tutorial， I want to show you how to add some images into
+    your Excel spreadsheets。 And this is mostly for presentation purposes。 Let's say
+    you want to show a spreadsheet to an audience。 you want to spice it up a little
+    bit。 make it look a little bit more visual and attractive。 These are a couple
+    of tips that you could use。 So the first option is to add a background。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个简短的Excel教程中，我想展示如何将一些图片添加到Excel电子表格中。这主要是为了展示目的。假设你想向观众展示一个电子表格，你想让它看起来更生动、更吸引人。这是一些你可以使用的小技巧。所以第一个选项是添加背景。
+- en: And you can do that here on the page layout tab， page layout ribbon。 And here
+    in the page setup group right there， it says background。 So I can add a background。
+    So I'll click background。 And at this point， I can browse my computer for an image。
+    I'll just double click on one of these， select this cool nature picture， click
+    insert。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以在页面布局选项卡的页面布局功能区进行设置。在页面设置组中，就在那里，有一个背景选项。所以我可以添加一个背景。我点击背景。在这一点上，我可以浏览我的电脑寻找图片。我只需双击其中一张，选择这张酷炫的自然图片，点击插入。
+- en: And now I have this beautiful background behind my data。 And you can see what
+    happens as I browse down the page or as I move to the right。 You can see that
+    the picture is just repeating itself over and over in the background。 So there
+    are some upsides to doing this。And also some downsides。 The upside is。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我的数据后面有了这幅美丽的背景。当我向下滚动页面或向右移动时，你可以看到图片在背景中不断重复。因此，做这件事有一些好处，也有一些缺点。好处是。
+- en: obviously it added a lot of color， a lot of beauty to my spreadsheet。 The downside
+    is that the background image is obscuring some of the text。 It's hard to read
+    what's in this cell。 It's hard to read what's in this cell。 And these here as
+    well。 So just be very careful about adding backgrounds。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 显然，这为我的电子表格增加了很多色彩和美感。缺点是背景图片遮挡了一些文本。这一单元格里的内容很难阅读。这个单元格里的内容也很难阅读。这些也是如此。因此，在添加背景时要非常小心。
+- en: the other downside is this。 notice what happens if I zoom out。 So I'm zooming
+    out。 my data gets smaller。 but for the most part， the image is staying the same
+    size。 If I increase the zoom zoom in quite a bit。 it does look like the image
+    is changing a little bit。 but for the most part， the image stays pretty static
+    in the background while the text gets much smaller or much bigger。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 另一个缺点是这个。注意当我缩小时会发生什么。我正在缩小。我的数据变得更小。但大部分情况下，图片的大小保持不变。如果我大幅放大，它确实看起来图片有一点变化。但在大多数情况下，图片在背景中保持静态，而文本变得更小或更大。
+- en: And so the background image does not follow the data。 it doesn't stay proportional
+    to the data itself。 So just be aware of that。 Now。 another option that I have
+    in page layout。Now that I have a background。 I can delete the background and I
+    can add a new one and notice that there is an option for a being image search。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以背景图片不会跟随数据。它与数据本身不成比例。所以请注意这一点。现在，在页面布局中我有另一个选项。现在我有了一个背景。我可以删除背景，并可以添加一个新的，并注意到有一个进行图片搜索的选项。
+- en: and this is better in a lot of cases， better than uploading from your computer
+    because a lot of times you won't have that perfect image already on your computer。
+    You can also pull from Onerive if you use Onedrive。 And if you're not familiar
+    with Oneeddrive。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在很多情况下，这样做比从你的电脑上传更好，因为很多时候你可能并没有那张完美的图片在电脑上。 如果你使用OneDrive，还可以从OneDrive中提取图片。如果你不熟悉OneDrive。
+- en: please watch my video tutorial about it。 But here in being image search I'm
+    just going to click and do a search for DVDs。 This spreadsheet that I'm using
+    as an example is a DVD inventory。 And so I'm going to do a search for images of
+    DVDs by default。 it's looking only for creative commons images。 So these are images
+    that were uploaded to the Internet in order to be shared。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 请观看我的视频教程。但是在这里进行图片搜索时，我只需点击并搜索DVD。这张我用作示例的电子表格是DVD库存。因此，我将默认搜索DVD的图片。它只会查找创意共享的图片。这些图片是为了共享而上传到互联网的。
+- en: if you want more than that， you can uncheck that and it will give you many more
+    results。 There's also a filter button here that you can click to say I only want
+    large images I only want clip。t or line drawings。 Now， the benefit of line drawings
+    is because that they're black and white。 if you add them， sometimes they don't
+    obscure the text quite as much。 I'm going to undo that。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你想要更多，你可以取消选中该选项，它会给你更多结果。这里还有一个过滤按钮，你可以点击，表示我只想要大图像，我只想要剪贴画或线条图。线条图的好处是因为它们是黑白的，如果你添加它们，有时不会遮挡文本太多。我将撤销该操作。
+- en: though， and go back to background and again， search for DVDs。 I will stick to
+    creative commons in this case。 These are images that were uploaded to be shared。
+    And I'll just click on this particular image and insert。 Again， that really affects
+    the readability。 And so I might need to go in and format my text so that it's
+    a different color so that I can actually read it。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 不过，回到背景，再次搜索 DVD。在这种情况下，我将坚持使用创意共享的内容。这些是被上传以供分享的图像。我将点击这个特定的图像并插入。同样，这确实会影响可读性。因此，我可能需要调整文本格式，使其颜色不同，以便我能实际阅读它。
+- en: And even that is tough to read。 I'm going to jump back to page layout and delete
+    the background。 So backgrounds can be really nice， but you do really have to be
+    careful that they don't obscure your text and make it unreadable。 The other thing
+    to know about backgrounds。 When you add a background into your spreadsheets。 If
+    you then go to print or even print preview。 noticeice that the background images。Do
+    not print。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 即使如此，阅读起来也很困难。我将回到页面布局并删除背景。因此，背景可以非常好，但你确实需要小心，确保它们不会遮挡文本，使其无法阅读。关于背景的另一件事是，当你在电子表格中添加背景时，如果你去打印或甚至是打印预览，要注意背景图像不会被打印。
+- en: and they don't show in the print preview。 So the only real purpose of background
+    images in Excel is for when you're doing a presentation when you're showing your
+    data to someone else。 And you want to grab their attention。 Now， let's look at
+    a second option that you have。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它们不会在打印预览中显示。因此，Excel 中背景图像的唯一真正用途是当你在做演示时，当你向其他人展示数据时，并想吸引他们的注意。现在，让我们看看你还有第二个选项。
+- en: Instead of adding a background。 in many cases， it's better just to click insert。
+    And here on the insert ribbon， go to illustrations and choose pictures。 Now。 this
+    may look a little bit different in your version of Excel。 I'm using a very small
+    screen to create this tutorial。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在很多情况下，添加背景不如直接点击插入更好。在插入功能区中，进入插图并选择图片。现在，你的 Excel 版本可能看起来稍微不同。我正在使用一个非常小的屏幕来制作这个教程。
+- en: And so it couldn't fit these icons here in the space provided。 So for you。 it
+    might look a little bit different。 But generally， it's found here on the insert
+    tab。 insert ribbon in the illustrations group。 Look for pictures。 So I can upload
+    that same image or just for variety， I'm going to pick a different image。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以它无法在提供的空间内放置这些图标。对你来说，可能看起来稍微不同。但通常，它在插入选项卡的插图组中找到。寻找图片。因此，我可以上传相同的图像，或者为了多样性，我将选择一个不同的图像。
+- en: But this time， it's not a background image。 This is actually。Picture that's
+    floating on top of the spreadsheet on top of the data。 And if I increase the zoom。
+    the picture gets bigger， if I decrease the zoom， the picture gets smaller。 And
+    so this works fundamentally differently than background images。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但这次它不是背景图像。这实际上是漂浮在电子表格顶部的数据上的图片。如果我增加缩放，图片会变大；如果我减少缩放，图片会变小。因此，这与背景图像的工作原理根本不同。
+- en: So I can shrink that to whatever size I want it to be。 and then I can put it
+    next to or on top of the data that I want it to go with。 So I know that that is
+    not really a match to the title of the DVD。 but it works。 I can also try clicking
+    insert illustrations online pictures。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以将其缩小到任何我想要的大小，然后将其放在我想要的数据旁边或上面。因此，我知道这与 DVD 的标题并不匹配，但它可以工作。我还可以尝试点击插入插图在线图片。
+- en: and this is similar to what I showed when we were looking at backgrounds。 but
+    in this case。 I have categories of images that I can pull up and use， I can browse
+    through these。 and I can also do searches。 So I'm going to search for the Princess
+    bridede。 and it's finding creative commons only， which in this case that's perfect。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这与我在查看背景时展示的类似，但在这种情况下，我有可以提取和使用的图像类别，我可以浏览这些图像，也可以进行搜索。所以我将搜索“公主新娘”，它只找到创意共享的内容，这在这种情况下非常完美。
+- en: and I can select an image， click insert， and it came in way too big。But again。
+    I can shrink that down。 and then I can put it with the data that it goes with。
+    I might even consider in my spreadsheet inserting a new column。 That's a blank
+    column。 And there in the column， I can put these images that go with the different
+    DVDs。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以选择一张图片，点击插入，然后它的大小太大了。但同样，我可以把它缩小。然后我可以把它放在相关的数据旁边。我甚至可能会考虑在我的电子表格中插入一个新的空列。在这一列中，我可以放置与不同DVD相关的这些图片。
+- en: And I can really make that small if I wanted to and fit it in the cell。 Now
+    it's not really in the cell， it's actually hovering over the cell。 but it appears
+    to be in the cell。 Now， one of the advantages of inserting pictures instead of
+    using a background image。 is that once you've inserted the picture， you can click
+    on it and you get a format tab and you can click on the format tab and look at
+    all the formatting options that you have。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我想的话，我可以真的把它缩小，并放入单元格中。现在它并不真正位于单元格内，实际上是在单元格上方悬浮，但它看起来像是在单元格中。现在，插入图片而不是使用背景图像的一个优点是，一旦插入图片，你可以点击它，会出现一个格式选项卡，你可以点击格式选项卡，查看所有可用的格式选项。
+- en: I can put a frame around this image。 I can make it curved at the edges， turn
+    it into an oval shape。 I can give it a 3D effect or a bevellled look。 There's
+    all of these picture styles。 I can also change the transparency。And this could
+    be particularly useful in a spreadsheet。 So at this point， even though this is
+    not a background image。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以给这张图片加一个边框。我可以让边缘变得圆滑，变成椭圆形。我可以给它一个3D效果或斜面效果。所有这些图片样式都可以选择。我还可以改变透明度。这在电子表格中尤其有用。因此，在这一点上，尽管这不是背景图像。
+- en: it's almost behaving like a background image。 And the nice thing about these
+    formatting options。 I was able to use this transparency tool to make this image
+    transparent so that it can sit behind the data。 and yet， I can still read the
+    data。 So this may be the better way to put a background image into your spreadsheets。
+    Even though it's not truly a background image。 So these are two ways to add images
+    into your Excel spreadsheets。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它几乎表现得像是背景图像。而这些格式选项的好处在于，我能够使用这个透明度工具让这张图片变得透明，这样它就可以放在数据后面，同时我仍然可以读取数据。因此，这可能是将背景图像添加到电子表格中的更好方法。尽管它并不真正是背景图像。所以这两种方式都可以将图片添加到你的Excel电子表格中。
+- en: Thanks for watching， I hope you found this tutorial to be helpful。 If you did。
+    please click the like button below。![](img/e554f8159d767499386bbce64f73d9d1_2.png)
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 感谢观看，希望你觉得这个教程对你有帮助。如果你觉得有用，请点击下面的点赞按钮。![](img/e554f8159d767499386bbce64f73d9d1_2.png)

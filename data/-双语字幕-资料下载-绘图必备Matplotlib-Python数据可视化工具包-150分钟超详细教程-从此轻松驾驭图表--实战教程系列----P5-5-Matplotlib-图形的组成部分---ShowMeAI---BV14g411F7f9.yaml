@@ -1,0 +1,503 @@
+- en: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P5：5）Matplotlib
+    图形的组成部分 - ShowMeAI - BV14g411F7f9
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】绘图必备 Matplotlib，Python 数据可视化工具包！150 分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P5：5）Matplotlib
+    图形的组成部分 - ShowMeAI - BV14g411F7f9
+- en: Run this。 Now， I'm going to create a new markdown cell here with a new heading
+    1。 and I'm going to say section number one。Pieces of a matte plot lib。Graph。To
+    start off with。 I want to be nice and explicit here that we， so that we see exactly
+    what we're plotting。 So I'm going to say x， let's just create some data to plot。
+    So I'm going to say x equals。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 运行这个。现在，我将在这里创建一个新的 Markdown 单元，添加一个新的一级标题，我将标注为第一部分。Matplotlib 的组成部分。为了开始，我想在这里明确一点，这样我们可以准确看到我们在绘制的内容。所以我将说
+    x，让我们创建一些数据来绘制。因此我将说 x 等于。
+- en: and I'm going to create a list here。 negative 3， negative 2， negative 1，0，1，2，3。
+    We could also do this with a range function in Python。 That's totally fine。 And
+    I'm going to import。😊，Numpy as in P while we're at it， because matpl Lib usually
+    expects a nuy array and a nuy array。 if you haven't worked with nuumpy much before。Is，
+    you know。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将在这里创建一个列表：-3，-2，-1，0，1，2，3。我们也可以用 Python 的 range 函数来做到这一点，这完全没问题。并且我将导入 Numpy，作为
+    np，因为 Matplotlib 通常期望一个 numpy 数组，如果你之前没有太多使用 numpy，那么你会知道。
+- en: you can basically think about it like a list or a matrix。 So you can have a
+    one dimensional array。 which is just a list， or you can have a two dimensional
+    array。 which is more like a matrix with rows and columns。 and you can have three
+    dimensional arrays and things like that so。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以基本上把它想象成一个列表或一个矩阵。因此，你可以有一个一维数组，这只是一个列表，或者你可以有一个二维数组，更像是一个有行和列的矩阵，你还可以有三维数组等等。
+- en: I'm going to create x equals in P dot array， negative 3 up to positive 3。And
+    now， let's， for our why。Let's create x squared。 So we're just going to do a simple。X
+    and y squared thing here。 So if we look at x， we have our array， negative 3 up
+    to positive 3。 And if we look at y， well。 we just squared every single number
+    here。 So 9，4，1，0，1，4，9， etc ceter。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将创建 x 等于 np.array，从 -3 到 3。现在，让我们为 y 创建 x 的平方。因此，我们只是在这里做一个简单的 x 和 y 的平方。查看
+    x，我们有我们的数组，从 -3 到 3。如果查看 y，我们只是将每个数字平方。因此，9，4，1，0，1，4，9，等等。
+- en: '![](img/77d641e47cdae93cdad4881dd7e907b0_1.png)'
+  id: totrans-5
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/77d641e47cdae93cdad4881dd7e907b0_1.png)'
+- en: So to create a plot in Mapllootlib。This is the basic formula that I am going
+    to recommend。 You always use when your when you're starting out， there are other
+    ways to do it。 but we're not going to talk about those right now。 We're just going
+    to give you。 I'm going to give you a formula。That you can use to plot。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 要在 Matplotlib 中创建一个图，这是我推荐的基本公式。你在刚开始时总是使用这个，虽然还有其他方法，但我们现在不谈那些。我们只是给你一个可以用于绘图的公式。
+- en: And I recommend that you always do it this way for now。 So to start off with。You're
+    going to say fig and x equals PLT。 subplots。And then you're going to do all of
+    your plotting code here。 So do your plotting code here。You know dot dot dot， so
+    this is where you're actually going to say what you want to plot。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我建议你现在总是这样做。因此，首先你要说 fig 和 x 等于 PLT。subplots。然后你将在这里写下所有的绘图代码。所以在这里写下你的绘图代码。你知道，点点点，这就是你实际想要绘制的内容。
+- en: And at the very end， do PLT dot show。![](img/77d641e47cdae93cdad4881dd7e907b0_3.png)
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 最后，执行 PLT.show。![](img/77d641e47cdae93cdad4881dd7e907b0_3.png)
+- en: So this is the formula。 This is your your plotting formula here。 So I'm to even
+    create a little section 3 header down here and say your。Plodding formula。![](img/77d641e47cdae93cdad4881dd7e907b0_5.png)
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是公式。这是你的绘图公式。因此，我在这里创建一个小的三级标题，标注为你的绘图公式。![](img/77d641e47cdae93cdad4881dd7e907b0_5.png)
+- en: All right。So what we're going to do is we're going to say fig x， and this stands
+    for figure and as。 aes， not ais， but aes。 this is kind of a confusing thing we'll
+    talk about in just a minute。 Fig x equals PLT subplots。We'll do PlT。how and now
+    our plotting。A code that we're going to do first is just x dot plot， X and y。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好吧。所以我们要做的是我们将说 fig x，这代表图形，而 aes，不是 ais，而是 aes。这有点令人困惑，我们稍后会讨论。fig x 等于 PLT.subplots。我们将做
+    PLT。how，现在我们要绘制的代码是 x.plot，x 和 y。
+- en: '![](img/77d641e47cdae93cdad4881dd7e907b0_7.png)'
+  id: totrans-11
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/77d641e47cdae93cdad4881dd7e907b0_7.png)'
+- en: And here we go。 Our first mapte plot Lib graph。 beautifuliful， isn't it。 It's
+    actually kind of a little choppy。 It's actually， you know， kind of ugly。 But with
+    this just a little bit of code here， we're able to produce graphs。 And this is
+    pretty cool。 And from here， we're going to add on complexity layer by layer。😊。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，来吧。我们的第一个mapte plot Lib图表。美丽吧，真的。实际上有点颠簸，实际上有点丑。但只需这些小代码，我们就能生成图表。这很酷。从这里开始，我们将逐层添加复杂性。😊。
+- en: But this is the foundation of plotting and mapplotlib。 You always instantiate
+    your figure and your axes。 You always want to end it with Plt。 show unless you're
+    saving out saving out a file rather than displaying it here。 And then in the middle，
+    this is where you're gonna to do all your plotting。 And you can have。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但这是绘图和mapplotlib的基础。你总是要实例化你的图形和轴。除非你要保存文件，而不是在这里显示它，否则你总是要以Ptl.show结束。然后在中间，这就是你要进行所有绘图的地方。你可以有。
+- en: you know， you could have one line here to plot this or you you could have 100
+    lines to do all kinds of crazy formatting。So this is a good place to tell you，
+    what do these terms actually mean， And to do that。 we're going to go to the handy
+    dandy， Matt plot Lib。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你知道，你可以在这里绘制一条线，或者你可以绘制100条线进行各种疯狂的格式化。所以这是告诉你这些术语实际上意味着什么的好地方。为此，我们将去便捷的Matt
+    plot Lib。
+- en: '![](img/77d641e47cdae93cdad4881dd7e907b0_9.png)'
+  id: totrans-15
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/77d641e47cdae93cdad4881dd7e907b0_9.png)'
+- en: Parts of a figure。Anatomy of a figure。 Let's see。 Here we go。 This is exactly
+    what I wanted to look at。![](img/77d641e47cdae93cdad4881dd7e907b0_11.png)
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 图形的部分。图形的解剖结构。让我们看看。来吧。这正是我想要查看的。![](img/77d641e47cdae93cdad4881dd7e907b0_11.png)
+- en: '![](img/77d641e47cdae93cdad4881dd7e907b0_12.png)'
+  id: totrans-17
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/77d641e47cdae93cdad4881dd7e907b0_12.png)'
+- en: So this is what a matte plot lib。Graph is or a map plotlib figure。 And if you
+    understand what it is。 this is going to help you with plotting。So let's talk about
+    the main pieces here。The figure。 the figure。 So you know， it this circle here
+    pointing to just what looks like a blank patch of nothingness。That's because the
+    figure， the maplalib figure is this whole graph。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这就是matte plot lib图表或map plotlib图形。如果你理解这是什么，这将帮助你进行绘图。让我们谈谈这里的主要部分。图形，图形。所以你知道，这个圆圈指向看起来像空白的地方。这是因为图形，maplalib图形就是整个图表。
+- en: So it doesn't matter how complex your graph is。 It doesn't matter how many different
+    lines you have in here and how many different points。 And you can have， you can
+    actually have lots of little different graphs in here as well。 The whole thing
+    is called the figure。Now， within a figure， you'll notice right beside it here，
+    aes。 A X， E， aes。This is。What we might think of as being the graph itself。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以你的图表多复杂都无所谓。无论这里有多少条不同的线和不同的点，你甚至可以在这里有很多不同的小图表。整体称为图形。现在，在图形旁边，你会注意到aes。A
+    X，E，aes。这就是我们可能认为的图表本身。
+- en: So the figure is where you're going to put all of your graphs。And then the a
+    Cs。Is going to be kind of the plot itself with an X axis and a y axis and some
+    lines and some points and all this kind of stuff。![](img/77d641e47cdae93cdad4881dd7e907b0_14.png)
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以图形是你将放置所有图表的地方。然后a Cs将成为图本身，带有x轴和y轴，以及一些线和点和所有这些东西。![](img/77d641e47cdae93cdad4881dd7e907b0_14.png)
+- en: To make this a little bit more clear。Let's come back over here。And I'm going
+    to show you now。What it looks like to have a single figure。A single figure with
+    two axes。 So subpls。And in this case。 I am going to do one row。Of two columns
+    of axes。And I'll explain this in just a second。But。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 为了让这个更清楚一点。我们再过来看看。我现在要给你展示一个单一图形的样子。一个带有两个轴的单一图形。所以subpls。在这种情况下，我将做一行两个列的轴。我稍后会解释这一点。
+- en: '![](img/77d641e47cdae93cdad4881dd7e907b0_16.png)'
+  id: totrans-22
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/77d641e47cdae93cdad4881dd7e907b0_16.png)'
+- en: Here we go。So， now。We have a single figure。 Now， a figure being just like this
+    image here。 You see how I can kind of click and drag that image。 So this is like
+    a single image file that you could download here。 That whole thing is your figure。Now，
+    your axes， A X， E， S。This is going to be this plot。 So this plot right here is
+    one axes。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好吧。所以，现在我们有一个单一的图形。图形就像这里的这个图像。你看我怎么点击并拖动这个图像。这个就像一个你可以在这里下载的单一图像文件。整个就是你的图形。现在，你的轴，A
+    X，E，S。这将是这个图表。所以这个图表就是一个轴。
+- en: This plot over here is another axes。 So we have two axes。 and this is what I
+    created here。 I created one， which is the number of rows of axes that I wanted。And
+    two。 which is the number of columns of axes that I wanted。And then I took each
+    one of those axes。 and I plotted on it。And this is why， up here。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这里的图是另一个坐标轴。因此我们有两个坐标轴。这就是我在这里创建的。我创建了一个，这是我想要的坐标轴的行数。还有两个，这是我想要的坐标轴的列数。然后我对每一个坐标轴进行了绘图。这就是上面的原因。
+- en: '![](img/77d641e47cdae93cdad4881dd7e907b0_18.png)'
+  id: totrans-25
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/77d641e47cdae93cdad4881dd7e907b0_18.png)'
+- en: We had one axes。And we plotted on that single axes。X and y。 So x versus y， negative
+    3， negative 2。 negative 1。 That's your x。 and then 0。![](img/77d641e47cdae93cdad4881dd7e907b0_20.png)
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们有一个坐标轴。我们在这个单一的坐标轴上绘制了X和Y。因此，x与y，负3，负2，负1。这就是你的x，然后是0。![](img/77d641e47cdae93cdad4881dd7e907b0_20.png)
+- en: Up to0，1，4，9， et cetera。 that's your y。![](img/77d641e47cdae93cdad4881dd7e907b0_22.png)
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 到0，1，4，9等等。这就是你的y。![](img/77d641e47cdae93cdad4881dd7e907b0_22.png)
+- en: So down here， we have a single figure still， but now we have two axes。All right。Now。
+    within each a Cs with an ES， and this is very confusing。 they probably could have
+    done a better job naming things here。![](img/77d641e47cdae93cdad4881dd7e907b0_24.png)
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以下面，我们仍然有一个单一的图形，但现在有两个坐标轴。好的。现在，在每个坐标轴中，这是非常令人困惑的。它们可能可以在命名上做得更好。![](img/77d641e47cdae93cdad4881dd7e907b0_24.png)
+- en: You have your ex axis。And your y axis。 So this might be what we typically think
+    of as an axis。And then for each access there， you can have an access label。 you
+    have access tick marks。You have grid lines on that axis。And then same thing for
+    your Y axis up here。 And then you have your actual plots so you can have a line
+    plot。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你有你的x轴和y轴。这可能是我们通常认为的一个轴。然后对于每个坐标轴，你可以有一个坐标轴标签，有坐标刻度标记，坐标轴上有网格线。然后上面的y轴也是如此。然后你有实际的绘图，所以你可以有一个线图。
+- en: You can have markers for like a scatter plot。So in our case， over here。![](img/77d641e47cdae93cdad4881dd7e907b0_26.png)
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以为散点图设置标记。在我们的例子中，在这里。![](img/77d641e47cdae93cdad4881dd7e907b0_26.png)
+- en: We have。X ses1， which has its own X axis and its own y axis。 And maybe to make
+    this clear。 let's plot x cubed on the second one here。So x cubed is now going
+    to be in this axes over here。So you see that each one has its own x axis， x axis
+    and its own y axis。Each one has its own lines。 its own line objects in here。And
+    this is all wrapped up in a single figure。 Alright。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们有X ses1，它有自己的X轴和Y轴。也许为了更清楚，让我们在第二个上绘制x的三次方。所以x的三次方现在将在这个坐标轴上。因此你会看到每个都有自己的x轴，x轴和自己的y轴。每个都有自己的线，自己的线对象在这里。这一切都被封装在一个单一的图形中。好的。
+- en: so I hope that that's helpful。 We create。 first off， we create the figure。And
+    we create the axes。 and then we plot things on the axes themselves， and then finally，
+    whenever we're done。 getting all of our stuff to plot， we show it， we show the
+    graph。Okay， so hopefully。 this is somewhat clear for you， at least I think that
+    people honestly use Matplotlib for years without ever looking at this figure here
+    and seeing what all the different pieces are。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我希望这对你有所帮助。我们首先创建图形，然后创建坐标轴，接着在坐标轴上绘图，最后，无论何时完成所有的绘图，我们展示它，展示图表。好的，希望这对你来说有点清楚，至少我认为人们诚实地使用Matplotlib多年而从未查看过这里的图形，看看所有不同的部分。
+- en: So remember that the graph， the whole thing is called a figure within each figure。
+    you can have multiple axes which are where you actually do the graphing。![](img/77d641e47cdae93cdad4881dd7e907b0_28.png)
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以请记住，这个图表，整个图形被称为一个图，在每个图中，你可以有多个坐标轴，这就是你实际进行绘图的地方。![](img/77d641e47cdae93cdad4881dd7e907b0_28.png)
+- en: Each one of those axes has an x axis and a y axis， and then that's where you're
+    going to do your line plots。 your scatter plots with your markers， etc and just
+    to really， really drive this home。![](img/77d641e47cdae93cdad4881dd7e907b0_30.png)
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 每个坐标轴都有一个x轴和一个y轴，然后这就是你进行线图和散点图的地方，等等。为了真正强调这一点。![](img/77d641e47cdae93cdad4881dd7e907b0_30.png)
+- en: So。I'm going to copy this down here， and instead of making a one by two grid
+    of subplots。I'm going to make a two by two grid of subplots。 And let's just plot
+    this。 Let's show this before we do any plotting on the axes themselves。 So I'm
+    going to create a comment here and just see say， create a figure。With four axes。嗯。2。
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以，我要在这里复制这个，而不是制作一个一行两列的子图。我将制作一个两行两列的子图。让我们先绘制这个。在我们对坐标轴本身进行任何绘图之前，先展示一下。所以我要在这里创建一个注释，创建一个图，包含四个坐标轴。嗯，2。
+- en: Let's see。 Two rows of two graphs。On each。Ro。![](img/77d641e47cdae93cdad4881dd7e907b0_32.png)
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们看看。两行两列的图表。在每个。行。![](img/77d641e47cdae93cdad4881dd7e907b0_32.png)
+- en: And here we go。 You'll see that we have a single figure。 So if I want to drag
+    this， you know。 you see that that's kind of just like a single image there。And
+    we have four different axes。 We have a two by two grid of axes。 Each one of those
+    axes has its own x axis and its own y axis。 and we can plot whatever we want。On
+    these axes。 and this object。
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好了，我们来了。你会看到我们有一个单独的图形。所以如果我想拖动这个，你知道的。你会发现这看起来就像一个单独的图像。我们有四个不同的坐标轴。我们有一个两行两列的坐标轴网格。每一个坐标轴都有它自己的
+    x 轴和 y 轴。我们可以在这些坐标轴上绘制任何我们想要的东西。
+- en: the AX S that it returns in this case， since we have a two by2 grid is actually
+    also going to be a2 by2 nuy array for us to plot on So to plots。 I'm going to
+    use kind of two dimensional indexing in here。 to show you how we。![](img/77d641e47cdae93cdad4881dd7e907b0_34.png)
+  id: totrans-38
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这种情况下返回的坐标轴，由于我们有一个两行两列的网格，实际上也是一个二维数组，用于绘图。所以为了绘图。我会在这里使用二维索引，向你展示我们该如何做。![](img/77d641e47cdae93cdad4881dd7e907b0_34.png)
+- en: '![](img/77d641e47cdae93cdad4881dd7e907b0_35.png)'
+  id: totrans-39
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/77d641e47cdae93cdad4881dd7e907b0_35.png)'
+- en: Can plot things on these graphs。 So I'm plotting things on the the zeroth row，
+    the zeroth column。 So this one， and then the first row and the first column， this
+    one over here。We could also plot things on。0，1。And。1，0。 And I'm doing all of this，
+    by the way。So let's。 let's maybe do an x to the fourth。 And what do you think
+    like a。
+  id: totrans-40
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 可以在这些图形上绘制东西。所以我在零行、零列上绘制东西。所以这个，然后第一行和第一列，这个在这里。我们也可以在。0，1 和 1，0 上绘制东西。顺便说一下，我做的所有这些。让我们。也许做一个
+    x 的四次方。你觉得像是。
+- en: like a log of x or something like that。 Let's， let's try this。 Okay， we。 we
+    got to divide by 0 in the log。![](img/77d641e47cdae93cdad4881dd7e907b0_37.png)
+  id: totrans-41
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 像是 x 的对数或者类似的东西。让我们，试试这个。好的，我们。我们必须在对数中除以 0。![](img/77d641e47cdae93cdad4881dd7e907b0_37.png)
+- en: Let's do it。 Let's do an exponential。 Maybe here we go。![](img/77d641e47cdae93cdad4881dd7e907b0_39.png)
+  id: totrans-42
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们来做。让我们做一个指数函数。也许可以这样。![](img/77d641e47cdae93cdad4881dd7e907b0_39.png)
+- en: So you see， we've got four different graphs now。In four different axes。 and
+    they're all inside of a single figure。So。Everything inside of a single。Figure。Alright。
+    so the reason why I'm really， I'm really trying to drive this home right now is
+    because everything else。 everything else that you do in Mattpl Lib。Is going to
+    rely on you understanding these axes objects and the fact that you're plotting
+    on these axes objects。
+  id: totrans-43
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以你看，我们现在有四个不同的图形。在四个不同的坐标轴上。它们都在一个单独的图形内。所以。所有东西都在一个单独的。图形内。好吧。我真的想强调这一点，因为你在
+    Matplotlib 中做的其他一切。将依赖于你理解这些坐标轴对象以及你在这些坐标轴对象上绘图的事实。
+- en: '![](img/77d641e47cdae93cdad4881dd7e907b0_41.png)'
+  id: totrans-44
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/77d641e47cdae93cdad4881dd7e907b0_41.png)'
+- en: If you want to plot。Some， you know， two images side by side。Well。 you now understand
+    that these are two different axes on a single figure。If you want to plot two different
+    graphs。On the same axes， well， now， you know。 even though we haven't done this
+    yet， you might be thinking to yourself， okay。
+  id: totrans-45
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你想绘制。某些，你知道的，两个图像并排。好吧。你现在明白这些是在一个单一图形上的两个不同坐标轴。如果你想在相同的坐标轴上绘制两个不同的图形，嗯，现在，你知道。即使我们还没有这样做，你可能会在想，好的。
+- en: I know I'm going to use that same axes to do that plotting。 And this is something
+    that we're actually going to get to in just a minute。So before we move on。 I want
+    to show you one last thing while we're here。 And that's。 that's the fact that
+    you might notice that these graphs are pretty choppy， right， You're like， oh。
+  id: totrans-46
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我知道我会使用相同的坐标轴来进行绘图。这其实是我们马上要进行的内容。所以在我们继续之前。我想在这里给你展示最后一件事。那就是。你可能会注意到这些图形相当不平滑，对吧，你在想，哦。
+- en: well， this doesn't look like a very pretty parabola。 It's kind of choppy or
+    all the graphs going to be this ugly。 And the answer is， no。 the answer is that
+    the graphs are choppy because these are the only points we gave to plot to matpl
+    lib。To， to plot。So to make this to make this very clear。
+  id: totrans-47
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 嗯，这看起来不是一个很美的抛物线。它有点不平滑，所有图形都会这么丑吗？答案是，不。答案是这些图形之所以不平滑，是因为我们给 Matplotlib 绘图的只是这些点。所以，为了让这一点变得非常清晰。
+- en: I'm going to introduce something that we haven't looked at yet。And that is the
+    scatter plot。 That's the scatter plot。So with the scatter plot， you can really
+    see it now that we have only defined x and y points。 Remember， we've only defined
+    x and y points x。And y 4，7 data points total。 So we've got3 in the negative。 We
+    have 0， and then we have  three in the positive。
+  id: totrans-48
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将介绍一些我们尚未查看的东西。这就是散点图。这就是散点图。因此，使用散点图，你现在可以真正看到，因为我们只定义了x和y点。记住，我们只定义了x和y点x。和y总共4,7个数据点。因此我们在负值中有3个。我们有0，然后在正值中有3个。
+- en: '![](img/77d641e47cdae93cdad4881dd7e907b0_43.png)'
+  id: totrans-49
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/77d641e47cdae93cdad4881dd7e907b0_43.png)'
+- en: So that's why we have so few data points。 And then when you connect these points
+    with a line。![](img/77d641e47cdae93cdad4881dd7e907b0_45.png)
+  id: totrans-50
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这就是为什么我们有这么少的数据点。然后当你用一条线连接这些点时。![](img/77d641e47cdae93cdad4881dd7e907b0_45.png)
+- en: Well， then you end up getting a kind of choppy looking graph here。 So to show
+    that。 let's see what it would take to create a smooth line and to create a smooth
+    line。 I'm going to use the nuy。![](img/77d641e47cdae93cdad4881dd7e907b0_47.png)
+  id: totrans-51
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好吧，那么你最终得到的是一种看起来有点碎的图。因此，为了展示这一点。让我们看看需要什么来创建一条平滑的线，而要创建一条平滑的线。我将使用nuy。![](img/77d641e47cdae93cdad4881dd7e907b0_47.png)
+- en: The nuy method or the the object here， a range。 and if you've never used a range。
+    you can use one of my favorite Python tricks， the question mark here to get the
+    documentation。![](img/77d641e47cdae93cdad4881dd7e907b0_49.png)
+  id: totrans-52
+  prefs: []
+  type: TYPE_NORMAL
+  zh: nuy方法或者对象，这里是一个范围。如果你从未使用过范围，你可以用我最喜欢的Python技巧之一，这里是问号来获取文档。![](img/77d641e47cdae93cdad4881dd7e907b0_49.png)
+- en: So N P dot a range， here's the do， here's the dock string。 You give it a start，
+    You give it a stop。 and you give it a step， and then it returns。![](img/77d641e47cdae93cdad4881dd7e907b0_51.png)
+  id: totrans-53
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以N P点a范围，这里是操作，这里是文档字符串。你给它一个开始，你给它一个停止，然后你给它一个步长，然后它返回。![](img/77d641e47cdae93cdad4881dd7e907b0_51.png)
+- en: Evenly spaced values within a given interval。![](img/77d641e47cdae93cdad4881dd7e907b0_53.png)
+  id: totrans-54
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在给定区间内均匀分布的值。![](img/77d641e47cdae93cdad4881dd7e907b0_53.png)
+- en: So the start number， the stop number。And then the spacing between values。 So
+    let's， for example。Create a range from negative 5 to 5。 And let's space them out
+    by 0。01。 And if I run this。 you will see boom， wow， tons of values。 That is a
+    lot of values。 How many values is that。
+  id: totrans-55
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以开始数字，停止数字，以及数值之间的间隔。因此，比如说。创建一个从负5到5的范围。并让它们之间的间隔为0.01。如果我运行这个。你会看到，哇，很多值。这真是很多值。这是多少值呢？
+- en: '![](img/77d641e47cdae93cdad4881dd7e907b0_55.png)'
+  id: totrans-56
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/77d641e47cdae93cdad4881dd7e907b0_55.png)'
+- en: '![](img/77d641e47cdae93cdad4881dd7e907b0_56.png)'
+  id: totrans-57
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/77d641e47cdae93cdad4881dd7e907b0_56.png)'
+- en: Well， that is 1000 values。 perfect。 So let's create this as our X instead。And
+    now let's do the same thing that we did before。 Y equals x squared。![](img/77d641e47cdae93cdad4881dd7e907b0_58.png)
+  id: totrans-58
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好吧，那是1000个值。完美。因此让我们把这个作为我们的X。现在让我们做和之前一样的事情。Y等于x平方。![](img/77d641e47cdae93cdad4881dd7e907b0_58.png)
+- en: Now。If we plot。![](img/77d641e47cdae93cdad4881dd7e907b0_60.png)
+  id: totrans-59
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在。如果我们绘制。![](img/77d641e47cdae93cdad4881dd7e907b0_60.png)
+- en: X versus y， like we did before。Now， you see， we have a very smooth graph。 And
+    why is that， Well。 that's because。![](img/77d641e47cdae93cdad4881dd7e907b0_62.png)
+  id: totrans-60
+  prefs: []
+  type: TYPE_NORMAL
+  zh: x与y，就像我们之前做的那样。现在，你看，我们有一张非常平滑的图。那是为什么呢？好吧。那是因为。![](img/77d641e47cdae93cdad4881dd7e907b0_62.png)
+- en: That is because， if we plot。![](img/77d641e47cdae93cdad4881dd7e907b0_64.png)
+  id: totrans-61
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是因为，如果我们绘制。![](img/77d641e47cdae93cdad4881dd7e907b0_64.png)
+- en: The scatter plot， again of x versus Y。 you see each one of these is a point。
+    So we now have 1000 data points here defining this graph rather than a measly7。![](img/77d641e47cdae93cdad4881dd7e907b0_66.png)
+  id: totrans-62
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 散点图，再次是x与Y。你看，每一个都是一个点。因此，我们现在有1000个数据点在这里定义这张图，而不是可怜的7个。![](img/77d641e47cdae93cdad4881dd7e907b0_66.png)
+- en: This can be something that confuses people whenever they first start using Mat
+    plot Lib。 You know。 they're like， hey， why does my graph look the way that it
+    does。 And well， it's because of this。 It's because of how many points。You passed
+    a map plotlib asking it to plot。 So in this case。 we're only passing 7 points。
+    In this case， we're passing 1000 points。
+  id: totrans-63
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这可能是让人困惑的事情，尤其是当人们第一次开始使用Matplotlib时。你知道的，他们会想，嘿，为什么我的图看起来是这样的。好吧，那是因为这个。那是因为你传递了多少点。你传递给matplotlib要求它绘制的点。因此在这个例子中。我们只传递了7个点。在这个例子中，我们传递了1000个点。
+- en: And we get this really beautiful graph here。 Actually， I'll show you。😊。![](img/77d641e47cdae93cdad4881dd7e907b0_68.png)
+  id: totrans-64
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们得到这张非常美丽的图。其实，我来给你展示一下。😊。![](img/77d641e47cdae93cdad4881dd7e907b0_68.png)
+- en: Let me show you。Let's create a why。Let's create a Y damped。Damped ocillation，
+    I spell oscillation。 I think that is ocill。Leicn。You always forget your spelling
+    and things like this。 dampamped oscillation。 So I'm just doing this because it's
+    fun and it's pretty。 So I'm going to show you really quickly what a nice。😊，Pretty
+    graph looks like。
+  id: totrans-65
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我给你展示一下。让我们创建一个原因。让我们创建一个 Y 阻尼。阻尼振荡，我拼写为 oscillation。我认为那是 ocill。Leicn。你总是忘记你的拼写和这样的事情。阻尼振荡。所以我只是因为这很有趣而这样做，而且它很美丽。所以我将快速向你展示一个好看的。😊，美丽的图形是怎样的。
+- en: So we do the E to the negative x times cosine of the N dot pi， whatever。 You
+    don't have to know any of this。 By the way， this is just for fun。So we greater
+    our y。 Now let's do fig Ax equals Pl T dot subplots。Let's do AX dot Plate。X versus
+    Y， damped oscillation。PL D dot show。And look at that， Isn't that pretty， Isn't
+    that nice。
+  id: totrans-66
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们做 E 的负 x 次方乘以 N 点 pi，随便吧。你不必了解这些。顺便说一句，这只是为了好玩。所以我们增加我们的 y。现在让我们做 fig Ax
+    等于 Pl T 点子图。让我们做 AX 点 Plate。X 对 Y，阻尼振荡。PL D 点 show。看看这个，难道不是很美吗，难道不是很好吗。
+- en: And we have 1000 data points here that are helping to show this graph。 which
+    is why it looks so nice and smooth。😊。![](img/77d641e47cdae93cdad4881dd7e907b0_70.png)
+  id: totrans-67
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们这里有 1000 个数据点，帮助展示这个图形。这就是为什么它看起来如此美丽和平滑。😊。![](img/77d641e47cdae93cdad4881dd7e907b0_70.png)
+- en: All right。 that's enough of the introduction。 I think。 I hope that you have
+    gotten a better sense of the pieces of a map plot Lib graph。 I'm going to copy
+    this under the section header。![](img/77d641e47cdae93cdad4881dd7e907b0_72.png)
+  id: totrans-68
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好吧。介绍够了。我希望你对 map plot Lib 图形的组成部分有了更好的了解。我将把这个复制到章节标题下。![](img/77d641e47cdae93cdad4881dd7e907b0_72.png)
+- en: '![](img/77d641e47cdae93cdad4881dd7e907b0_73.png)'
+  id: totrans-69
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/77d641e47cdae93cdad4881dd7e907b0_73.png)'
+- en: Just as a nice little reference， let's save our Jupiter notebook， and let's
+    move on。![](img/77d641e47cdae93cdad4881dd7e907b0_75.png)
+  id: totrans-70
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 就作为一个小参考，让我们保存我们的 Jupiter 笔记本，然后继续。![](img/77d641e47cdae93cdad4881dd7e907b0_75.png)

@@ -1,0 +1,157 @@
+- en: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P44：44）溢出结果和修复SPILL! 错误 - ShowMeAI
+    - BV1Jg411F7cS
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel 正确打开方式！提效技巧大合集！(持续更新中) - P44：44）溢出结果和修复 SPILL! 错误 - ShowMeAI
+    - BV1Jg411F7cS
+- en: '![](img/3d53142b9c93da9b51542a11434fa926_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/3d53142b9c93da9b51542a11434fa926_0.png)'
+- en: In this video， I'm going show you some examples of how you can spill the results
+    of a formula in Microsoft Excel and we'll also look at the spill error that you
+    may get sometimes and we'll look at how to fix that。 Now the ability to spill
+    is available in Microsoft 365 versions of Excel and it may be in also some other
+    versions but not all older versions of Excel are going to have this capability
+    So you can see here I have a spreadsheet with a list of bands。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个视频中，我将向你展示如何在 Microsoft Excel 中溢出公式结果的一些例子，我们还将看看你可能会遇到的溢出错误，以及如何修复它。现在，溢出的能力在
+    Microsoft 365 版本的 Excel 中可用，可能也在其他一些版本中，但并非所有旧版本的 Excel 都具备此功能。因此，你可以看到这里我有一个包含乐队列表的电子表格。
+- en: their albums and some other information about those albums。 Let's say I would
+    like to duplicate the data in column C D and E。 and I want to put that duplicated
+    information over here on the right。 Of course I could highlight it， copy paste
+    etc but take a look at what you can now do in Excel you can simply click on a
+    cell type equals and then either select the range or you could type in the cell
+    references and then tap enter Let's look at both ways So I'll click here on cell
+    C1 and I'll hold。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 他们的专辑及一些关于这些专辑的信息。假设我想复制 C、D 和 E 列中的数据。我想把这些重复的信息放到右侧。当然，我可以高亮显示，复制粘贴等，但看看你现在在
+    Excel 中可以做的，你可以简单地点击一个单元格，输入等于号，然后选择范围，或者输入单元格引用，然后按回车。我们来看这两种方法。因此，我会在 C1 单元格上点击并按住。
+- en: The click， and I'll drag it over to column E， and I'll pull it down all the
+    way to the bottom of the data。 And now I've released the mouse click。 And now
+    if I go back up to the top。 you can see what the formula says equals C1 through
+    E45 I tap enter on the keyboard and watch what happens with this formula in cell
+    J1。 I was trying to make that cell equal to this entire range C1 through E45。
+    Well。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我点击并拖动到 E 列，然后一直拉到数据底部。现在我释放了鼠标点击。如果我回到顶部，你可以看到公式显示为等于 C1 到 E45。我在键盘上按回车，看看这个公式在
+    J1 单元格中的变化。我试图使该单元格等于整个范围 C1 到 E45。好吧。
+- en: it's not possible to do that in one cell。 and so Excel spilled the results of
+    that formula。 It' spilled it over into column K column L and all the way down
+    to row 45。 So that's what's meant when you hear about spilled results or spilled
+    arrays or spilled ranges。 This is the spilled range down here。 And if I click
+    on any of the data that was spilled below or to the right of the original cell。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这在一个单元格中是无法做到的。因此，Excel 溢出了该公式的结果。它溢出到了 K 列、L 列，一直延伸到第 45 行。这就是当你听到溢出结果、溢出数组或溢出范围时所指的内容。下面就是这个溢出范围。如果我点击任何溢出到原单元格下方或右侧的数据。
+- en: you can see in the formula bar that the formula。It is grayed out。 Why is that，
+    Well。 because there is no formula in this case in cell K6。 there's no formula
+    in K3 or in J5。 The formula that's producing all of these results is found here
+    in cell J1。 And so in J1。 it's not gray out。 you can see the formula in dark black。
+    Now。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以在公式栏中看到公式。它是灰色的。为什么会这样呢？因为在这种情况下，K6 单元格中没有公式。在 K3 或 J5 中也没有公式。产生这些结果的公式在
+    J1 单元格中。因此在 J1 中，它没有灰色显示，你可以看到公式是深黑色的。现在。
+- en: this is just one example of spilled results in Excel。 fairly recently。 Microsoft
+    Excel added new dynamic array functions。 And in many cases。 those dynamic array
+    functions will produce spilled results。 Watch for future videos that I'll do on
+    the dynamic array functions。 Now， from time to time。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这只是 Excel 中溢出结果的一个例子。最近，Microsoft Excel 添加了新的动态数组函数。在许多情况下，这些动态数组函数会产生溢出结果。请关注我将制作的关于动态数组函数的未来视频。现在，不时地。
+- en: when you try to spill results， you'll end up getting an error。 So I'm going
+    to hold control in tab Z to undo those changes that I made。 And here in cell J
+    7。 I'm going type the word test T enter。 Now let me try the same formula again。
+    So I'll go to J1 equals。This time， instead of just clicking and dragging to get
+    column C D and E。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 当你尝试溢出结果时，你可能会遇到错误。因此，我将按住控制键，然后按 Z 撤消我所做的更改。在 J7 单元格中，我将输入单词 test T 并按回车。现在让我再试一次同样的公式。所以我会去
+    J1 输入等于。这次，我不是仅仅点击和拖动以获取 C、D 和 E 列。
+- en: I'm going to simply click in cell J1。 And after the equal sign， I'll type in
+    C1 colon E45。 So I've just typed in the cell references rather than clicking and
+    dragging Now I can tap enter on the keyboard and it should work right？
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将简单地点击单元格J1。在等号后，我会输入C1到E45。所以我只是输入了单元格引用，而不是点击和拖动。现在我可以在键盘上按回车，应该能正常工作，对吧？
+- en: No， actually it doesn't because when I tap enter Excel tried to spill the results
+    of the formula to the right and also below cell J2。 but it couldn't。 why because
+    I had some data blocking the results。 So generally that's what the spill error
+    is trying to tell you that something is getting in the way of the spilled results
+    to fix this all I have to do is click on test。 tap delete， tap enter and the data
+    is able to spill and it does so immediately。 Now， of course。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 不，其实不是，因为当我按下回车时，Excel试图将公式的结果溢出到右边和单元格J2下方，但它无法做到。为什么呢？因为我有一些数据阻碍了结果。因此，通常这就是溢出错误想告诉你的，某些东西妨碍了溢出结果。要解决这个问题，我只需点击测试，按删除，然后按回车，数据就能溢出，并立即完成。当然。
+- en: the same thing will happen if I click on results that have already spilled and
+    type something doing that produces the spill error also one other common。Mistake
+    that produces the spill error is sometimes people will go to cell， let's say J4
+    type equals。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我点击已经溢出的结果并输入内容，也会发生同样的事情，这会产生溢出错误。还有一个常见的错误是，有时人们会去单元格，比如J4，输入等号。
+- en: And instead of putting in the cell references the range name or clicking and
+    dragging to specify what range they want to pull over and spill。 Instead， sometimes
+    people will say I just want all of column C D and E。 by clicking and dragging
+    to select the column headings。 This should produce the entire column all the way
+    down hundreds and hundreds of records down。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 而不是输入单元格引用、范围名称或点击和拖动来指定他们想要拉取并溢出的范围。有时人们会说我只想要C、D和E列的所有内容，通过点击和拖动选择列标题。这应该会产生整列，向下延伸数百条记录。
+- en: even if they're blank， they should be pulled over here， starting in cell J4。
+    but watch what happens when I tap enter。 I get the spill error。 Why I don't have
+    anything blocking it。 Well， the reason why I get that error is because Excel is
+    trying to put every single cell in column C D and E from row 1 down thousands
+    and thousands of rows。 It' trying to put all of that into the same space except
+    skipping the first three rows。 Well。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 即使它们是空白的，也应该被拉到这里，从单元格J4开始。但当我按下回车时，请注意会发生什么。我得到了溢出错误。为什么呢？我没有任何东西阻挡它。好吧，我得到那个错误的原因是因为Excel试图将第1行到数千行中的C、D和E列中的每个单元格都放在同一个空间里，除了跳过前三行。
+- en: that's not going to be possible。 There's not enough。🎼Room for that data。 So
+    watch what happens now if I click on the cell and I go to the edge of the cell
+    and click and drag and pull it up。 That should move the formula up。 Now there's
+    room。 And now all of my data fits in the spreadsheet。 And so it was able to spill。
+    So this is just the beginning of what you can do with spilled results from formulas。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那是不可能的。没有足够的空间。🎼所以请注意现在如果我点击单元格，去到单元格的边缘，点击并拖动并将其上移。这应该会将公式上移。现在有空间了。我的所有数据都可以适应电子表格。因此，它能够溢出。所以这只是你可以用公式的溢出结果所能做的事情的开始。
+- en: Watch for my future videos on the dynamic array functions and you'll see even
+    more that can be done with spilled results。 Thanks for watching， I hope you found
+    the tutorial to be helpful。 If you did， please like。 follow and。 And when you
+    do click the bell so you'll be notified when I post another video。 If you'd like
+    to support my channel， you can do that through my Patreon account or by buying
+    channel merch。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 请关注我未来关于动态数组函数的视频，你会看到更多溢出结果可以做到的事情。感谢观看，希望你觉得这个教程有帮助。如果有，请点赞、关注。当你这样做时，点击铃铛，这样你就会在我发布另一个视频时收到通知。如果你想支持我的频道，可以通过我的Patreon账户或购买频道周边产品来支持。
+- en: and you'll see links to those opportunities in the description below the video。![](img/3d53142b9c93da9b51542a11434fa926_2.png)
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你会在视频下方的描述中看到那些机会的链接。![](img/3d53142b9c93da9b51542a11434fa926_2.png)
+- en: '![](img/3d53142b9c93da9b51542a11434fa926_3.png)'
+  id: totrans-17
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/3d53142b9c93da9b51542a11434fa926_3.png)'

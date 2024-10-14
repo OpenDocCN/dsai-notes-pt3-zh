@@ -1,0 +1,87 @@
+- en: 【双语字幕+资料下载】更简单的绘图工具包 Seaborn，一行代码做到 Python 可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ -
+    P4：L4- 分布图 - ShowMeAI - BV1wZ4y1S7Jc
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】更简单的绘图工具包 Seaborn，一行代码做到 Python 可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ -
+    P4：L4- 分布图 - ShowMeAI - BV1wZ4y1S7Jc
+- en: On GiHub Allright， so now I want to talk about the different distribution plots
+    that are available to you and the very first plot we're going to look at here
+    is what we call a distribution plot and basically what they're going to provide
+    is a way to look at Univariate distributions and you may say what's our Uniivaria
+    distribution It's just going to provide a distribution for one variable and how
+    you get them is say S and S。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在 GiHub 好的，现在我想谈谈你可以使用的不同分布图，第一个我们要看的图叫做分布图，基本上它们提供了一种查看单变量分布的方法，你可能会问什么是单变量分布？它只是为一个变量提供分布，获取它们的方法是说
+    S 和 S。
+- en: And distribution plot。Distribution plot and of course you can go and find out
+    more information about this specific command by just going shift and tab and it'll
+    show you all of the different information in regards to what is available for
+    you in regards to attributes and such and I'm going to cover some of these things
+    and some of them I am not I'm going try to get in a happy medium of providing
+    what you're going to use a lot versus getting into every single thing and that
+    you're not going to use okay so let's say we were interested in accidents in which
+    the person was not distracted so let's come in here and you can see there's a
+    plot and this line right here is or this is a histogram plot that's what this
+    is called and what this plot is here is what is called a kernel density estimation
+    and。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 分布图，当然你可以通过按 shift 和 tab 找到更多关于这个具体命令的信息，它会向你展示所有关于可用属性的不同信息，我将覆盖其中一些内容，而一些我不会，我会尝试在提供你会经常使用的内容与深入每个你不会用的内容之间找到一个平衡点。好吧，假设我们对没有分心的事故感兴趣，我们可以在这里看到一张图，这条线或者说这是一个直方图图，这就是它的名称，而这个图是所谓的核密度估计。
+- en: '![](img/038ed56b7665de55bd9a707070b413db_1.png)'
+  id: totrans-3
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/038ed56b7665de55bd9a707070b413db_1.png)'
+- en: '![](img/038ed56b7665de55bd9a707070b413db_2.png)'
+  id: totrans-4
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/038ed56b7665de55bd9a707070b413db_2.png)'
+- en: '![](img/038ed56b7665de55bd9a707070b413db_3.png)'
+  id: totrans-5
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/038ed56b7665de55bd9a707070b413db_3.png)'
+- en: '![](img/038ed56b7665de55bd9a707070b413db_4.png)'
+  id: totrans-6
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/038ed56b7665de55bd9a707070b413db_4.png)'
+- en: If you come in here and you don't want that on there。 you can just come in and
+    say KdeE is equal to false and see there it's gone now and basically it's just
+    going to provide an estimation of the total results in your data set all right
+    so pretty simple stuff and what else can we do here。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你进来这里不想要那个，你可以直接说 KdeE 等于 false，看看它现在消失了，基本上它只是提供你数据集总结果的估计，没什么复杂的，还有我们能在这里做些什么呢？
+- en: we can also define bins so we can say bins is equal to $25 see how that changes
+    our data and basically a bins like a bucket that is going to be used to divide
+    the data up into between different intervals so for example。 if you were doing
+    something with profits you could say put all profits between 10 and 20 in a bucket
+    or a bin and it's just going to decide how many of these bars you're going to
+    see across your data and so that's basically a distribution。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们还可以定义区间，所以我们可以说区间等于 $25，看看这如何改变我们的数据，基本上区间就像一个桶，用于将数据分隔成不同的区间。例如，如果你在做利润方面的分析，可以说把10到20之间的所有利润放在一个桶或区间里，这只是决定你在数据中会看到多少条这样的柱状图，基本上这就是分布。
+- en: '![](img/038ed56b7665de55bd9a707070b413db_6.png)'
+  id: totrans-9
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/038ed56b7665de55bd9a707070b413db_6.png)'
+- en: '![](img/038ed56b7665de55bd9a707070b413db_7.png)'
+  id: totrans-10
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/038ed56b7665de55bd9a707070b413db_7.png)'
+- en: '![](img/038ed56b7665de55bd9a707070b413db_8.png)'
+  id: totrans-11
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/038ed56b7665de55bd9a707070b413db_8.png)'

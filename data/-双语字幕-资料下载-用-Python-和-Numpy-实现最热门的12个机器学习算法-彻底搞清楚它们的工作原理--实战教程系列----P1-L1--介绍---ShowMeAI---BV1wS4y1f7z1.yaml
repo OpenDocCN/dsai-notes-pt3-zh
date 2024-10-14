@@ -1,0 +1,44 @@
+- en: 【双语字幕+资料下载】用 Python 和 Numpy 实现最热门的12个机器学习算法，彻底搞清楚它们的工作原理！＜实战教程系列＞ - P1：L1- 介绍
+    - ShowMeAI - BV1wS4y1f7z1
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】用 Python 和 Numpy 实现最热门的12个机器学习算法，彻底搞清楚它们的工作原理！＜实战教程系列＞ - P1：L1- 介绍
+    - ShowMeAI - BV1wS4y1f7z1
+- en: Welcome everybody to hear all in one machine learning from scratch video。 This
+    video takes all 15 parts of my M L from scratch series and combines it into one
+    single video。 In this series， we are going to implement the most popular machine
+    learning algorithms using only pure Python and Ny。 This is perfect。 if you are
+    at a beginner or intermediate skill level and want to get a deeper understanding
+    how all these algorithms work。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 欢迎大家观看这部从零开始的机器学习综合视频。这个视频将我从零开始的机器学习系列的所有15个部分合并成一个视频。在这个系列中，我们将仅使用纯 Python
+    和 Numpy 实现最流行的机器学习算法。这非常完美，如果你是初学者或中级水平，想要更深入地了解这些算法的工作原理。
+- en: All videos also contain a little theory section before we jump to the code。
+    I will leave timetims for each section。 and， of course， all the code is available
+    on Github。 I also created a free Nmpy handbook that covers all the essential functions
+    that you have to know in Numpy。 and it contains useful code examples for all sections。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所有视频在开始代码之前也包含一些理论部分。我会为每个部分留下时间标记，当然，所有代码都可以在 Github 上找到。我还创建了一个免费的 Numpy 手册，涵盖了你必须了解的所有基本函数，并包含所有部分的有用代码示例。
+- en: So you can download this ebook for free on my website。 I will leave the link
+    in the description。 So let's get started。 And if you enjoy this content。 Be sure
+    to leave me alike and consider subscribing to the channel。😊。![](img/b766dc5e34cf2fcc4c0c1571af2fec39_1.png)
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以你可以在我的网站上免费下载这本电子书。我会在描述中留下链接。现在让我们开始吧。如果你喜欢这个内容，请一定给我点赞，并考虑订阅频道。😊 ![](img/b766dc5e34cf2fcc4c0c1571af2fec39_1.png)
+- en: '![](img/b766dc5e34cf2fcc4c0c1571af2fec39_2.png)'
+  id: totrans-4
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/b766dc5e34cf2fcc4c0c1571af2fec39_2.png)'
+- en: '![](img/b766dc5e34cf2fcc4c0c1571af2fec39_3.png)'
+  id: totrans-5
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/b766dc5e34cf2fcc4c0c1571af2fec39_3.png)'

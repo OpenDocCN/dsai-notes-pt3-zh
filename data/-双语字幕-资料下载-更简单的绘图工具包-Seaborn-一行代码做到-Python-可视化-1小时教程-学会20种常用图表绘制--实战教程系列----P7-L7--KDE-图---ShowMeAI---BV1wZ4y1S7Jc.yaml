@@ -1,0 +1,32 @@
+- en: 【双语字幕+资料下载】更简单的绘图工具包 Seaborn，一行代码做到 Python 可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ -
+    P7：L7- KDE 图 - ShowMeAI - BV1wZ4y1S7Jc
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】更简单的绘图工具包Seaborn，一行代码实现Python可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ - P7：L7-KDE图
+    - ShowMeAI - BV1wZ4y1S7Jc
+- en: '![](img/75d8e88ac6587077beed206991430e8d_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/75d8e88ac6587077beed206991430e8d_0.png)'
+- en: Joint plot so I've been talking about KDE plots so if you want to generate one
+    just completely on it your own。 you can do that just by saying KDE plot and crash
+    and a frame and this is going to let's say we wanted to find out about crashes
+    in regards to just alcohol usage you can see there we go and I'll get more into
+    KDE plots because they are involved very often in other plots that you're going。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 联合图，我之前谈到过KDE图，如果你想完全自己生成一个，你可以简单地说KDE图并崩溃一个框架，这样我们就可以看看关于酒精使用的崩溃情况，你可以看到，接下来我会更深入地讲解KDE图，因为它们常常涉及到其他图表。
+- en: '![](img/75d8e88ac6587077beed206991430e8d_2.png)'
+  id: totrans-3
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/75d8e88ac6587077beed206991430e8d_2.png)'
+- en: '![](img/75d8e88ac6587077beed206991430e8d_3.png)'
+  id: totrans-4
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/75d8e88ac6587077beed206991430e8d_3.png)'

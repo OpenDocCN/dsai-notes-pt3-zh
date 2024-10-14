@@ -1,0 +1,184 @@
+- en: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P49：49）创建热图 - ShowMeAI - BV1Jg411F7cS
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P49：49）创建热图 - ShowMeAI - BV1Jg411F7cS
+- en: '![](img/5762d0720cf51cda53a9d888ea062c01_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/5762d0720cf51cda53a9d888ea062c01_0.png)'
+- en: In this video I will show you how to easily and quickly create a beautiful heat
+    map out of your data in Excel。 So here we have a spreadsheet with a list of different
+    foods and some detailed information about those foods。 and I collected this information
+    by using the data tab and the data types group if you want to know how to do that
+    watch my video on the topic but with all of this data in the spreadsheet it's
+    hard to really understand and digest what the data mean。 So to help with that
+    I'd like to use a heat map。 Here are a few examples of other heat maps。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个视频中，我将向你展示如何在Excel中轻松快速地从数据中创建一个美丽的热图。所以这里有一个电子表格，列出了不同食品及其详细信息。我通过使用“数据”选项卡和“数据类型”组收集了这些信息。如果你想知道怎么做，请观看我关于这个主题的视频。但在电子表格中拥有如此多数据时，确实很难理解和消化数据的含义。因此，为了帮助解决这个问题，我想使用热图。这里有几个其他热图的例子。
+- en: heat maps are often used as a way to show the temperature in a geographic location
+    let's take a look at this example。 So this shows temperatures across the United
+    States but heat maps are also used for other things。 maybe to show where population
+    centers are or where there's higher crime or lower crime in a place and they can
+    also be used completely separate from geography to indicate in this case what's
+    critical what's minor etc。 But one of the best things。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 热图通常用于显示某个地理位置的温度。让我们来看看这个例子。这显示了美国各地的温度，但热图也可以用于其他方面。比如显示人口中心的位置或某个地方的高犯罪率或低犯罪率，并且它们也可以完全独立于地理使用，以指示在这种情况下什么是关键的，什么是次要的等等。但最好的事情之一是。
+- en: '![](img/5762d0720cf51cda53a9d888ea062c01_2.png)'
+  id: totrans-4
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/5762d0720cf51cda53a9d888ea062c01_2.png)'
+- en: '![](img/5762d0720cf51cda53a9d888ea062c01_3.png)'
+  id: totrans-5
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/5762d0720cf51cda53a9d888ea062c01_3.png)'
+- en: '![](img/5762d0720cf51cda53a9d888ea062c01_4.png)'
+  id: totrans-6
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/5762d0720cf51cda53a9d888ea062c01_4.png)'
+- en: '![](img/5762d0720cf51cda53a9d888ea062c01_5.png)'
+  id: totrans-7
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/5762d0720cf51cda53a9d888ea062c01_5.png)'
+- en: A heat map is that it can give the viewer an immediate sense of what the data
+    means and what stands out in that data。 So let's look at how easy it is to set
+    up a heat map kind of effect in my spreadsheet So the first thing we need to do
+    is select the data that we'd like to turn into the heat map and unfortunately
+    you can't just click and drag and get all of it at once let me show you why if
+    I get all of that data that I'd like to turn into a heat map and then I go to
+    the home tab in the styles group I can go to conditional formatting and go to
+    color scales and you can see as I put my mouse over the different options I get
+    basically a heat map effect if I choose this option here the lowest numbers will
+    be in red and the highest numbers will be in green if I switch to this option
+    it will reverse that the highest number will be in red the lowest number in green
+    and there's all of these different options and you can look through those and
+    choose the one that best fits the heat map that you want to create I'm going stick
+    with this at least for now。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 热图的好处在于它可以让观众立即理解数据的意义以及哪些内容在数据中脱颖而出。因此，让我们来看看在我的电子表格中设置热图效果是多么简单。首先，我们需要选择想要转换为热图的数据，不幸的是，你不能仅仅通过点击和拖动一次性选中所有数据。让我来给你演示一下，如果我选择了所有想要转换为热图的数据，然后进入“主页”选项卡的“样式”组，我可以进入“条件格式”并选择“颜色刻度”。你可以看到，当我将鼠标移动到不同的选项上时，基本上会得到热图效果。如果我选择这里的这个选项，最低的数字将是红色，最高的数字将是绿色；如果我切换到这个选项，它会反转，最高的数字将是红色，最低的数字将是绿色，并且有很多不同的选项，你可以浏览并选择最适合你想要创建的热图的选项。至少现在我会坚持这个选项。
+- en: But like I said a few seconds ago， this is not the right way to do it for such
+    complex data as what I have in this spreadsheet。 Let's look at why When I selected
+    all of my data and then applied the conditional formatting the lowest numbers
+    no matter where they are in my spreadsheet were colored as red and the highest
+    numbers were colored green that's not exactly what I want I don't care how this
+    number relates to let's say calories or fat or protein I want to know how the
+    amount of vitamin A in carrots relates to the vitamin A in asparagus。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但是正如我几秒钟前所说的，对于我在这个电子表格中拥有的如此复杂的数据，这并不是正确的处理方式。让我们来看看原因。当我选择了所有数据并应用了条件格式时，无论在我的电子表格中，最低的数字都被涂成红色，最高的数字被涂成绿色，这并不是我想要的。我并不关心这个数字与卡路里、脂肪或蛋白质的关系，我想知道胡萝卜中的维生素A与芦笋中的维生素A的关系。
+- en: let's say or in he So I'm going to undo by holding control and tapping Z I'll
+    undo the heat map or the color scale that I applied to this data。 I just wanted
+    you to see why it's important at least in this situation to select only the data
+    that you want to be compared so I want to compare the calories of each of these
+    foods to each other with that selected I go back to the home ribbon。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设或在他这里。所以我将通过按住控制键并点击Z来撤销。我将撤销我应用于这些数据的热图或颜色刻度。我只是想让你看到，在这种情况下，仅选择你希望比较的数据是多么重要，因此我想比较每种食物的卡路里。选定后，我返回到主页功能区。
+- en: the Sts group。Additional formatting， color scales and that same green to yellow
+    to red color scale。 Now it works beautifully。 I can just glance at this。 and I
+    can see right away that the chicken breast has the most calories out of this list
+    of foods Now。 as you can see some of the serving sizes are a little off。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Sts组。附加格式、颜色刻度和那种从绿色到黄色再到红色的颜色刻度。现在效果很好。我只需扫一眼，就能立刻看到鸡胸肉在这份食品清单中卡路里最高。现在，正如你所见，一些份量大小有点偏差。
+- en: but I can see also right away that asparagus is very low in calories。 Now I'm
+    going go ahead and do this for each of these columns of data。 I'll just click
+    and drag to select everything that I want to be compared with each other。 go to
+    conditional formatting color scales and I'll select that same option。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但我也能立刻看到芦笋的卡路里非常低。现在我将为这些数据的每一列执行此操作。我只需点击并拖动选择我希望彼此比较的所有内容，转到条件格式的颜色刻度，然后选择同样的选项。
+- en: Give me a minute to do so and then I'll resume the video。 Okay great。 I've finished
+    applying the color scale to each of the columns。 Now that this is done。 I might
+    want to actually think it through a little bit better。 Maybe I'm trying to highlight
+    what is particularly good or healthy about each of these kinds of foods。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 给我一点时间来完成，然后我会继续录制视频。好的，很好。我已经完成了对每一列的颜色刻度应用。现在完成后，我可能想稍微认真考虑一下。也许我在尝试突出显示这些食物的特别好或健康的地方。
+- en: So， for example， in the case of calories。 it might actually be better to have
+    high calories show up as red showing that maybe that something that you need to
+    be。😊。![](img/5762d0720cf51cda53a9d888ea062c01_7.png)
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以，比如说，在卡路里的情况下，高卡路里可能实际上最好用红色显示，这表明也许这是你需要关注的东西。😊。![](img/5762d0720cf51cda53a9d888ea062c01_7.png)
+- en: '![](img/5762d0720cf51cda53a9d888ea062c01_8.png)'
+  id: totrans-15
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/5762d0720cf51cda53a9d888ea062c01_8.png)'
+- en: Care so I would just highlight the data again， conditional formatting， color
+    scales。 and I can switch it to the opposite option。 So now some of the perhaps
+    healthier options show up in dark green。 and some of the higher calorie items
+    show up in dark red I can do the same thing with the fat column maybe someone's
+    trying to reduce the amount of fat that they eat or carbohydrates or whatever
+    it might be。 I'll just select fat and I'm holding the control key on the keyboard。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 小心。所以我会再次突出显示数据，条件格式，颜色刻度。我可以切换到相反的选项。因此，现在一些可能更健康的选项显示为深绿色，而一些高卡路里的项目显示为深红色。我可以对脂肪列做同样的事情，也许有人想减少他们摄入的脂肪或碳水化合物或其他任何东西。我只需选择脂肪，并按住键盘上的控制键。
+- en: and I'm also selecting cholesterol。 let's say we want to limit the amount of
+    cholesterol。 and then vitamin A vitamin C calcium we'd like to keep those high。
+    so the higher numbers could be better。 and so they're in green。 so I'm going to
+    leave those as is。 but I would just like to change fat and cholesterol to match
+    calories so that the higher numbers will be marked with red and the lower numbers
+    with green So with both of those columns selected。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我还在选择胆固醇。假设我们想限制胆固醇的摄入量，然后维生素A、维生素C、钙，我们希望这些数值保持较高。因此，较高的数值可能更好，所以它们是绿色的。所以我将保持这些不变。但我想把脂肪和胆固醇调整为与卡路里一致，以便较高的数值标记为红色，较低的数值标记为绿色。因此，选定这两列后。
+- en: I'm going go to conditional formatting color scales and we' swap the option
+    again so that in these cases the lower numbers show up as green So there isn't。Really
+    one correct way to do this。 It just depends on the data and the information that
+    you're trying to share。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将转到条件格式颜色刻度，并再次交换选项，这样在这些情况下，较低的数值将显示为绿色。因此，没有一种正确的方法来做这件事。这完全取决于你试图分享的数据和信息。
+- en: The way I have this set up now， it's meant to show what foods are perhaps healthier
+    with maybe fewer calories a little bit less fat and cholesterol and maybe higher
+    amounts of vitamin A。 vitamin C and calcium。 So I hope you can see some of the
+    power of creating heat maps in Excel using conditional formatting and specifically
+    the color scales。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我现在的设置是为了显示哪些食物可能更健康，可能卡路里更少，脂肪和胆固醇稍低，同时可能富含维生素A、维生素C和钙。因此，我希望你能看到使用条件格式在Excel中创建热图的一些强大功能，特别是颜色比例。
+- en: If you'd like to learn how I pulled in this data about the different foods。
+    please watch my tutorial on that topic。 I hope you enjoyed the video if you did，
+    please like。 follow and subscribe。 And when you do click the bell so you'll be
+    notified when I posted another video。 If you'd like to support my channel， consider
+    clicking the thanks button or supporting me through my Patreon account or by buying
+    channel merch。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你想了解我是如何收集这些不同食物的数据的，请观看我关于这个主题的教程。希望你喜欢这个视频，如果喜欢，请点赞、关注和订阅。当你点击铃铛时，你将收到我发布另一个视频的通知。如果你想支持我的频道，可以考虑点击感谢按钮，或通过我的Patreon账户支持我，或者购买频道周边产品。
+- en: and you'll find information about those options in the description below the
+    video。😊。![](img/5762d0720cf51cda53a9d888ea062c01_10.png)
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以在视频下方的描述中找到关于这些选项的信息。😊！![](img/5762d0720cf51cda53a9d888ea062c01_10.png)
+- en: '![](img/5762d0720cf51cda53a9d888ea062c01_11.png)'
+  id: totrans-22
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/5762d0720cf51cda53a9d888ea062c01_11.png)'

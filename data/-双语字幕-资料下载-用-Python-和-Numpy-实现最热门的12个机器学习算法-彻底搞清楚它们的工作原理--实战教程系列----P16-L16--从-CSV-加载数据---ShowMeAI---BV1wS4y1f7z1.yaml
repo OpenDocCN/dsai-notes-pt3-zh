@@ -1,0 +1,324 @@
+- en: 【双语字幕+资料下载】用 Python 和 Numpy 实现最热门的12个机器学习算法，彻底搞清楚它们的工作原理！＜实战教程系列＞ - P16：L16-
+    从 CSV 加载数据 - ShowMeAI - BV1wS4y1f7z1
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】用 Python 和 Numpy 实现最热门的12个机器学习算法，彻底搞清楚它们的工作原理！＜实战教程系列＞ - P16：L16-
+    从 CSV 加载数据 - ShowMeAI - BV1wS4y1f7z1
+- en: '![](img/eaeaf4ad726c9b2e0b9997653405989f_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/eaeaf4ad726c9b2e0b9997653405989f_0.png)'
+- en: Hey， guys， welcome to another machine learning tutorial。 So in all my previous
+    machine learning examples， I used available data directly from the S K learnn
+    data sets module。 And a lot of people have asked me how they should load their
+    data if they have their own data sets。 So today， I want to show you how you load
+    the data from a file。 I will show you four different ways。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 嗨，大家好，欢迎来到另一个机器学习教程。在我之前的所有机器学习示例中，我直接使用来自 S K learn 数据集模块的可用数据。很多人问我如果他们有自己的数据集，应该如何加载数据。因此今天，我想向你展示如何从文件中加载数据。我将展示四种不同的方法。
+- en: one with pure Python 2 with Nmpy and one with the Panndas library。😊。I will also
+    show you what you should do with heatathers missing data and how to get the correct
+    data type。 so please make sure to watch all the way to the end。And now in this
+    tutorial。 I'm going to use the spam based dataset。 So if we Google this。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 一个使用纯 Python，两个使用 Numpy，一个使用 Pandas 库。😊。我还将向你展示如何处理缺失数据以及如何获得正确的数据类型。所以请确保观看到最后。在这个教程中，我将使用基于垃圾邮件的数据集。所以如果我们搜索一下这个。
+- en: then the first entry leads us to this side。 and this is a popular website to
+    get machine learning data sets。 And in this spam based data set。 We want to classify
+    emails as spam or no spam。 So we can then go to the download folder and load the
+    spambased dot data。 And I already did this。 So I have this here。 And this is in
+    Csv format。 So comma separate values。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后第一个条目引导我们到这一侧。这是一个获取机器学习数据集的热门网站。在这个基于垃圾邮件的数据集中，我们想将电子邮件分类为垃圾邮件或非垃圾邮件。因此，我们可以转到下载文件夹并加载
+    spambased.dot 数据。我已经做过了。所以我把这个放在这里。这是 Csv 格式的，即逗号分隔值。
+- en: And usually the ending here would be dot Csv。 but here it's dot data， which
+    is fine， too。 So let's start and let me show you how we can load this。![](img/eaeaf4ad726c9b2e0b9997653405989f_2.png)
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 通常这里的后缀是 .Csv，但这里是 .data，这也没问题。所以让我们开始，看看如何加载这个。![](img/eaeaf4ad726c9b2e0b9997653405989f_2.png)
+- en: '![](img/eaeaf4ad726c9b2e0b9997653405989f_3.png)'
+  id: totrans-6
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/eaeaf4ad726c9b2e0b9997653405989f_3.png)'
+- en: So first， let's load this with pure Python and the C SV modules so we can import
+    C S V。 This is already built in in Python。 Then let's specify our file name equals。
+    So let's have a look at this again。 This is called spam basedase data。So let's
+    call this spam based dot data。 And now we say with open our file name in read
+    mode S F。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以首先，让我们使用纯 Python 和 CSV 模块加载这个文件，因此我们可以导入 CSV。这在 Python 中已经内置了。然后让我们指定我们的文件名等于。所以让我们再看一下。这被称为
+    spam basedase data。所以我们称它为 spam based.dot 数据。现在我们说以读取模式打开我们的文件名 S F。
+- en: And then we say our data equals。 and then we can use the Csv module and call
+    the reader。 And here we have to give it our F and also the the limiter。 So the
+    values that separates all the data。 And in this case， it's a comma。 And this will
+    give us an iterator。 And then we can use the list method to convert this to a
+    list。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们说我们的数据等于。然后我们可以使用 Csv 模块并调用 reader。在这里，我们必须提供我们的 F 和分隔符。因此，分隔所有数据的值。在这种情况下，它是一个逗号。这将给我们一个迭代器。然后我们可以使用列表方法将其转换为列表。
+- en: And now we have the data in a list。 So let's convert this to a Nmpy array。 So
+    let's import Numpy S and P。 And then up down here。 we say our data equals a nuy
+    array from the data。 And then， for example。 we can print the data dot shape。 So
+    let's run this。 And then we see that it worked。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们将数据转换为列表。所以让我们把它转换为 Numpy 数组。让我们导入 Numpy 的 S 和 P。然后在这里，我们说我们的数据等于从数据创建的
+    nuy 数组。然后，例如，我们可以打印 data.dot.shape。让我们运行这个。然后我们看到它成功了。
+- en: '![](img/eaeaf4ad726c9b2e0b9997653405989f_5.png)'
+  id: totrans-10
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/eaeaf4ad726c9b2e0b9997653405989f_5.png)'
+- en: And if we have a look at the website。Then we can see here the number of samples
+    is 4601。 and the number of features is 57。 So here we have 4601 and58。 And this
+    is because our。![](img/eaeaf4ad726c9b2e0b9997653405989f_7.png)
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我们看看这个网站。然后我们可以看到样本数量是 4601，特征数量是 57。因此这里我们有 4601 和 58。这是因为我们的。![](img/eaeaf4ad726c9b2e0b9997653405989f_7.png)
+- en: Data holds both the features and the class label right now。 So now here in this
+    case。 the class label is the very last column。 So the next thing we want to do
+    is to split our。List here into features and class labels。 So for this， let's get
+    the shape。 So let's say number of samples and the number of features equals data
+    dot shape。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 数据当前同时包含特征和类别标签。因此在这种情况下，类别标签是最后一列。所以我们想做的下一件事是将我们的列表分成特征和类别标签。为此，让我们获取形状。所以我们说样本数量和特征数量等于
+    data.dot.shape。
+- en: And then we use list slicing。 So first thing we want to do is to decrease this
+    by one。 So let's say number of features minus equals  one。 because we only have
+    57。And then we use list slicing。 So we say x equals data， and then we say colons。
+    So we want all the rows。 and for the columns， we want to start at column 0 and
+    all the way to the number of features。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们使用列表切片。我们想做的第一件事是将其减少一个。因此假设特征数量减去1，因为我们只有57。然后我们使用列表切片。因此我们说x等于数据，然后我们说冒号。因此我们想要所有行，对于列，我们希望从第0列开始，一直到特征数量。
+- en: and this this last column is excluded。 So this will only hold the features and
+    for the y。 this is data。 and again， we want all the rows。 but only the last column。So
+    now we have split this。 And now， for example， if we print x dot shape and y dot
+    shape。 and if we run this。 then we see that this worked。 And now we have it in
+    the correct format。 for example。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 并且最后一列被排除了。因此这将仅包含特征，y是数据。同样，我们想要所有行，但只有最后一列。现在我们已经拆分了这个。现在，例如，如果我们打印x.dot.shape和y.dot.shape。如果我们运行这个，我们会看到它成功了。现在我们有了正确的格式。例如。
+- en: now we can put it。Or give it to our classifier for the fit method and start
+    our training。So this is the first way that I wanted to show you。 However。 I would
+    not recommend this because this is usually slower and also needs more code than
+    the other methods。 which I'm going to show you now。 But you should still know
+    how to load a file manually。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们可以把它放进去，或者把它给我们的分类器用于fit方法并开始训练。这是我想展示的第一种方法。然而，我不推荐这种方法，因为它通常较慢，并且需要的代码比其他方法更多。我现在要给你展示的其他方法。但你仍然应该知道如何手动加载文件。
+- en: So let's forget this now。 and let's delete this。 And now let me show you how
+    we can do this in Nmpy。 So in Numpy， we can do this with only one line。 so we
+    can say data equals Numpy。 and then we use a method that is called load T X T。
+    and this also needs the file name and the delimiter equals a comma。 And this is
+    all we need。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们现在忘记这一点。并且我们来删除这个。现在让我给你展示如何在Nmpy中做到这一点。我们在Numpy中只需一行代码即可实现。因此我们可以说数据等于Numpy。然后我们使用一个叫做load
+    T X T的方法，这也需要文件名和分隔符等于逗号。这就是我们所需要的一切。
+- en: So now if we run this。Then we see that it worked， too。 And this is much simpler
+    and also faster。So this is the first method that we can use with Nmpy。 However，
+    there is an even better one。 which I would recommend。 So this is data equals nuumpy。
+    and the second method is called Cheen from T X T。 And this also needs the file
+    name and the delimiter equals the comma。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以现在如果我们运行这个。然后我们看到它也成功了。这要简单得多，并且更快。这是我们可以使用Nmpy的第一种方法。然而，还有一种更好的方法，我推荐这种。因此数据等于nuumpy，第二种方法叫做Cheen
+    from T X T。这也需要文件名和分隔符等于逗号。
+- en: And now if you run this， then we see that this work too。 So this is my preferred
+    method with nuumpy。And it basically does the same as this one， but it offers a
+    little bit more options for the parameters。 For example， here， we can deal with
+    missing data， which I want to show you in a second。So， yeah。 so this is the function
+    with numpy。 And now as a last thing。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在如果你运行这个，那么我们也看到它成功了。因此这是我在nuumpy中首选的方法。它基本上与这个一样，但为参数提供了更多选项。例如，在这里，我们可以处理缺失数据，这我想在一秒钟内给你展示。因此，是的，这是使用numpy的函数。现在作为最后一件事。
+- en: I want to show you how we can do this with pandaas。 So if you're already familiar
+    with pandaas and you can use this too。 And here we have a function。That is called
+    read CSV So we say data frame because in pandas we usually deal or call this data
+    frame。 and then we say PDd dot read underscore CSV and again our file name and
+    we could also give it the delimiter equals the comma and。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想向你展示如何用pandaas做到这一点。如果你已经熟悉pandaas，你也可以这样使用。这里有一个函数叫做read CSV。因此我们说数据框，因为在pandas中我们通常处理或称之为数据框。然后我们说PDd.dot.read_
+    CSV，再次给出我们的文件名，我们也可以给它分隔符等于逗号。
+- en: Then we have it as a data frame。 And then what we can do is to convert this
+    to a numpy。 So we can say data equals data frame to nuy to。Num pi。 And then we
+    can do the same as we are doing here。 For example， we can split this into x and
+    y。 And now， if we run this。Then we see that this work two， but here we now have
+    one row to less。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们把它作为数据框。接下来我们可以把它转换为numpy。因此我们可以说数据等于data frame to nuy to Num pi。然后我们可以做与这里相同的事情。例如，我们可以将其拆分为x和y。现在，如果我们运行这个。我们会看到它也成功了，但这里我们少了一行。
+- en: and this is because here we have to be careful because pandas tries to read
+    a header and in this case we don't have a header。 so we have to say header equals
+    none。And then if we load this。Then we see that it is correct again。 So this is
+    how we can use pandas。 Both are fine。 So I would recommend using this if you only
+    want to use numpy。 And if you are familiar with pandas， than I would use this
+    one because this is even more options。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是因为在这里我们必须小心，因为 pandas 尝试读取一个标题，而在这种情况下我们没有标题。所以我们必须指定 header 等于 none。然后如果我们加载这个，就会发现它是正确的。因此，这就是我们如何使用
+    pandas。两者都可以。所以如果你只想使用 numpy，我会推荐使用这个。如果你熟悉 pandas，那么我会使用这个，因为它提供了更多选项。
+- en: and it's also a little bit faster。So， yeah。So that's how you can load this。
+    And now let's talk about the data type， the header and missing data。 So one thing
+    that is good practice is to already specify the data type。 If you know it。 So。
+    for example， here we can give the argument， data type equals， for example， nu
+    load 32 and down here。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 而且这样也稍微快一些。所以，是的。这就是你如何加载这个。现在让我们谈谈数据类型、标题和缺失数据。一件好习惯是，如果你知道的话，提前指定数据类型。所以。例如，在这里我们可以给出参数，data
+    type 等于，例如，nu load 32，下面。
+- en: we can do the same thing for the。For the pandas function。So now if we run this。
+    then we see this word 2。 And， for example， we can print the type of data too。Then，
+    we see。Oh here we see it's only one Nmpy array。 Let's print the type of data。
+    Let's say0，0。 Then we should see that， it is a Ny float 32， and it's good practice
+    to always specify this if you know it。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们也可以对 pandas 函数做同样的事情。所以现在如果我们运行这个，我们会看到这个词 2。例如，我们也可以打印数据类型。那么，我们看到。哦，这里我们看到它只有一个
+    Nmpy 数组。让我们打印一下数据类型。我们说 0，0。然后我们应该看到，它是一个 Ny float 32，最好总是指定这个，如果你知道的话。
+- en: So if you know that data than put it here， because otherwise the function has
+    to figure out the data type for itself。 and this usually takes a little bit more
+    time。 And it can also be wrong。And yeah。 so some algorithms， some classifier expect
+    this as float。 or I think the most of them expect this as float。 So that's what
+    I would recommend to do here。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你知道数据类型，就把它放在这里，因为否则函数必须自己推断数据类型。这通常会花费更多时间。而且可能也会出错。是的，一些算法，一些分类器期望这是 float。我认为大多数都期望这是
+    float。因此这就是我在这里推荐的做法。
+- en: If you don't put it in here and want to convert it later， by the way。 then you
+    can still do this by saying data equals nuy S array。 And then you put in the data。
+    And then as data type data type equals and then here your float 32。Yeah。 so that's
+    what you can do with， with the data type。 And now let's talk about a header。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你不把它放在这里，想稍后转换，顺便说一下。你仍然可以通过说 data 等于 nuy S array 来做到这一点。然后你放入数据。然后作为数据类型，data
+    type 等于，然后这里你的 float 32。是的，这就是你可以用数据类型做的事情。现在让我们谈谈标题。
+- en: So in this case， we don't have a header。 But let's say in our file， we have
+    a header where we。 for example， have the feature descriptions feature  one feature
+    2。And so on。 So during the loading。 we don't want this， of course。 And then what
+    we can do here is。 first of all。 let's run this and see what happens。 And then
+    we get an error because our functions cannot figure out the first row。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这种情况下，我们没有标题。但假设在我们的文件中，我们有一个标题，其中包含特征描述，例如特征 1、特征 2，等等。所以在加载过程中，我们当然不希望这个。我们可以先运行这个，看看会发生什么。然后我们会收到一个错误，因为我们的函数无法识别第一行。
+- en: So what we can do here is we can simply skip this。 So for the ch from text method。
+    we need to say skip header。 And then the number of rows， we want to skip。 So in
+    this case， it's one。 And the same for the pandas function。 But here we have to
+    be careful because here。 the argument is called skip rows equals one。 And now
+    if we run this。Then this worked again。 And we。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这里我们可以简单地跳过这个。因此对于 text 方法中的 ch，我们需要指定 skip header。然后是我们想要跳过的行数。在这种情况下是 1。对于
+    pandas 函数也是一样。但是这里我们必须小心，因为参数叫做 skip rows 等于 1。现在如果我们运行这个，那么这又成功了。我们。
+- en: again， have the correct shape， and it skipped the header。So this is what you
+    should do if you have a header here。 And now as a last thing。 I want to talk about
+    missing values。 So a lot of time， for example， there are missing values。 for example，
+    here， we just have a comma and then no entry。 and。So if you run this， then let's
+    print。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 再次，得到了正确的形状，并且跳过了标题。如果你这里有标题的话，这就是你应该做的。最后，我想谈谈缺失值。很多时候，例如，可能会有缺失值。比如这里，我们只是有一个逗号然后没有条目。所以如果你运行这个，我们来打印一下。
+- en: For example， let's print。X， and then in the first。Row， let's print the feature
+    0 to 5。And down here。 the same。 So now if you run this。 we see we have a N A N。
+    So this stands for not a number。 And these functions can figure this out on their
+    own。 So if it is empty or I think if there is a dash or a N A N。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 例如，让我们打印X，然后在第一行打印特征0到5。这里也是一样。所以现在如果你运行这个。我们看到我们有N A N。这代表不是数字。这些函数可以自己判断出来。所以如果它是空的，或者我认为如果有一个破折号或N
+    A N。
+- en: So then they can automatically see that this is not a number。 but sometimes
+    you also have a string here， which doesn't make sense。And now， if I try to run
+    this。 then this should produce an error because it cannot figure out the string
+    here。 because you said all these should be floats。 So what you can then do here
+    is we can specify additional missing values。
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那么它们可以自动看到这不是一个数字。但有时你这里也有一个字符串，这没有意义。现在，如果我尝试运行这个，那么这应该会产生一个错误，因为它无法判断这里的字符串。因为你说这些应该都是浮点数。所以你可以在这里指定额外的缺失值。
+- en: by saying missing。Values。Equals， and then here you put in a list。 And here we
+    can put in hello and。For the pandas function， the argument is N A values。 And
+    then here you have to put to use a list。 So I recommend to check out the documentation
+    whenever you need the arguments。 you don't have to memorize this。So here we say
+    hello。 and then it knows that it should ignore these。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 通过说missing.Values.等于，然后在这里放入一个列表。在这里我们可以放入hello。对于pandas函数，参数是N A values。然后你必须使用一个列表。因此，我建议在需要参数时查阅文档。你不需要记住这些。因此这里我们说hello，然后它知道应该忽略这些。
+- en: So now if you run this， then this worked again， and it filled these， the hello
+    with not a number。 And you could also specify what it should use instead。 So here
+    we can use the argument filling values equals。 And so you might want to set this
+    to 0。But so in this example， suggest that we can see it， I will set this to 9，9，9，9。
+    and as a float。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以现在如果你运行这个，之前的方法又成功了，它用不是数字填充了这些“hello”。你也可以指定应该用什么来替代。因此这里我们可以使用参数填充值等于。你可能想把这个设置为0。但在这个例子中，建议我们可以看到，我会把这个设置为9，9，9，9，作为浮点数。
+- en: And for the pandas function， what we can then do after loading is to call data
+    frame and then set data frame fill N A。 not the number to 9999。0。 And now， if
+    we run this。Then we see that here it replaced the not a number with 9，9，9，9。 And
+    here I have to say， of course。 data frame equals this new data frame。 And now，
+    if I run this again。
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 对于pandas函数，加载后我们可以调用data frame，然后设置data frame fill N A。不是数字填充为9999。0。现在，如果我们运行这个。我们看到这里用9，9，9，9替换了不是数字。这里我必须说，当然，data
+    frame等于这个新data frame。现在，如果我再次运行这个。
+- en: Then we see that it worked too for the pans method。So this is how we can deal
+    with missing numbers。 So usually you want to say this to 0 and。Then you should
+    be good to go。 because a lot of errors that beginners see is because there are
+    missing numbers。 and then your algorithm crashes because it doesn't know how to
+    deal with this。
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们看到对于pans方法它也有效。这就是我们如何处理缺失的数字。通常你想把这个设置为0，然后你应该就可以开始了。因为许多初学者看到的错误是因为缺失的数字。然后你的算法崩溃，因为它不知道如何处理这个。
+- en: So always make sure that you deal with missing numbers。Then I recommend to specify
+    the data type。 And now you should also know how to deal with headers。And yeah。
+    so these are the preferred two methods that you should know Thempy Chen from text
+    method and the pandas Re CS SV method。 So， yeah， that's all you need。 And I hope
+    you enjoyed this tutorial。 If you like this。
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以一定要确保处理缺失的数字。然后我建议指定数据类型。现在你还应该知道如何处理标题。嗯，这就是你应该知道的两个首选方法：Thempy Chen的文本方法和pandas的Re
+    CS SV方法。所以，是的，这就是你需要的全部。希望你喜欢这个教程。如果你喜欢这个。
+- en: please subscribe to the channel and see you next time， bye。![](img/eaeaf4ad726c9b2e0b9997653405989f_9.png)
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 请订阅频道，下次见，拜拜。![](img/eaeaf4ad726c9b2e0b9997653405989f_9.png)

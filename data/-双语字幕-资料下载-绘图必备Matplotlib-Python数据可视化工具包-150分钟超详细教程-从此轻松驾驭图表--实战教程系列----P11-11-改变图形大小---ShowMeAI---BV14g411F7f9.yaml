@@ -1,0 +1,70 @@
+- en: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P11：11）改变图形大小
+    - ShowMeAI - BV14g411F7f9
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P11：11）改变图形大小
+    - ShowMeAI - BV14g411F7f9
+- en: Howo。Do we change the figure size。![](img/002096b58b392a89dcf3bf4cb6e2468e_1.png)
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们如何改变图形大小。![](img/002096b58b392a89dcf3bf4cb6e2468e_1.png)
+- en: How do we change the figure size？ So this is something。 And we， we're going
+    to go back， by the way。 to our normal， our X data。![](img/002096b58b392a89dcf3bf4cb6e2468e_3.png)
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们如何改变图形大小？这是一个问题。而且，我们会回到我们的正常X数据。![](img/002096b58b392a89dcf3bf4cb6e2468e_3.png)
+- en: And our why。Damped oscillation data here just to have kind of some consistent。
+    and I'm actually going to set y equals to y damped oscillation so that we can
+    just plot X and y for all of these different plots here。![](img/002096b58b392a89dcf3bf4cb6e2468e_5.png)
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是我们的原因。阻尼振荡数据在这里只是为了保持一致性。实际上，我将设置y等于y阻尼振荡，以便我们可以在这里为所有这些不同的图进行X和y的绘图。![](img/002096b58b392a89dcf3bf4cb6e2468e_5.png)
+- en: So this is something that we did up above。 Let's start with our normal。Our normal
+    template here。 PL T dot subpls A X dot plot X and Y， and then we'll do PL T dot
+    show run this。 Okay。 so how do we change the size of this figure。![](img/002096b58b392a89dcf3bf4cb6e2468e_7.png)
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这就是我们之前做的事情。让我们从正常的模板开始。PL T.dot subpls A X.dot plot X和Y，然后我们会做PL T.dot show运行这个。好的。那么我们如何改变这个图的大小。![](img/002096b58b392a89dcf3bf4cb6e2468e_7.png)
+- en: Well， we can do that right here whenever we create the figure and the axes to
+    begin with。 So we just pass in fig size。Fig size。 its as if you're specifying
+    the size of a fig fruit。 but you're not。 It's the size of this figure here。 And
+    then you can pass in whatever you want。 So let's pass in 10。10。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 嗯，我们可以在这里做到这一点，每当我们创建图形和坐标轴时。我们只需传入fig size。fig size。就像是你在指定一种水果的大小，但其实不是。这是这里图形的大小。然后你可以传入你想要的任何值。那么我们传入10，10。
+- en: '![](img/002096b58b392a89dcf3bf4cb6e2468e_9.png)'
+  id: totrans-6
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/002096b58b392a89dcf3bf4cb6e2468e_9.png)'
+- en: There you go， we get a nice big square figure here。If we pass in， let's say，12。And8。So
+    you'll see this first number here controls the width。The width of the image。 And
+    then the second number controls the height of the image。 So that's how you change
+    the figure size there。 And let's make this。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 看吧，我们得到了一个漂亮的大方形图。如果我们传入，比如说，12和8。你会看到第一个数字控制宽度。图像的宽度。然后第二个数字控制图像的高度。这就是你改变图形大小的方法。让我们这样做。
+- en: Let's make this little bit smaller。 We'll go like We'll go 6 and 4。![](img/002096b58b392a89dcf3bf4cb6e2468e_11.png)
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们把这个稍微缩小一点。我们去6和4。![](img/002096b58b392a89dcf3bf4cb6e2468e_11.png)
+- en: '![](img/002096b58b392a89dcf3bf4cb6e2468e_12.png)'
+  id: totrans-9
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/002096b58b392a89dcf3bf4cb6e2468e_12.png)'
+- en: And we're actually pretty close to our original image size。 So let's try 8 and
+    6。 Allright。![](img/002096b58b392a89dcf3bf4cb6e2468e_14.png)
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们实际上非常接近原始图像的大小。那么我们试试8和6。好的。![](img/002096b58b392a89dcf3bf4cb6e2468e_14.png)

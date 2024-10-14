@@ -1,0 +1,188 @@
+- en: 【双语字幕+资料下载】数据可视化神器 Tebleau！无需编程，使用拖拽和点击就做出超精美的图表。1小时新手教程，从安装到做图一气呵成~＜快速入门系列＞
+    - P2：2）Tableau 产品套件介绍 - ShowMeAI - BV1T341117q7
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】数据可视化神器 Tableau！无需编程，使用拖拽和点击就能制作超精美的图表。1小时新手教程，从安装到做图一气呵成~＜快速入门系列＞
+    - P2：2）Tableau 产品套件介绍 - ShowMeAI - BV1T341117q7
+- en: '![](img/ad13eef316705bda2e297b95df2e7067_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ad13eef316705bda2e297b95df2e7067_0.png)'
+- en: The Tableau product suite consists of several pieces of software。 and these
+    can be classified into two sections，  developer tools。 which are used for creating
+    charts or views， as well as generating reports。 connecting or blending data and
+    forming dashboards。 Tableau Prep。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Tableau 产品套件由几款软件组成，可以分为两个部分，开发工具。用于创建图表或视图，以及生成报告，连接或合并数据并形成仪表板。Tableau Prep。
+- en: Tableau desktop and Tableau public， are under this category。 Sha tools。 which
+    is mainly used for sharing or publishing reports that were created using the developer
+    tools。Tableaus Ser， Tableau Online and Tableau Reader are sharing tools。![](img/ad13eef316705bda2e297b95df2e7067_2.png)
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Tableau Desktop 和 Tableau Public 属于这一类别。共享工具，主要用于共享或发布使用开发工具创建的报告。Tableau Server、Tableau
+    Online 和 Tableau Reader 是共享工具。![](img/ad13eef316705bda2e297b95df2e7067_2.png)
+- en: Let's start with the  developer tools。Tableau desktopstop lets users create
+    views s dashboards。 and allows users to customize the reports。It has multiple
+    features which let users further improve their visualization。 and it can also
+    connect and perform simple blending of data。It is mainly used by professionals
+    who currently work in analytics and reporting。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们从开发工具开始。Tableau Desktop 允许用户创建视图和仪表板，并允许用户自定义报告。它有多个功能，允许用户进一步改善他们的可视化，并且还可以连接并执行简单的数据合并。它主要由目前在分析和报告领域工作的专业人士使用。
+- en: Tableau desktopstop has two types based on its connectivity and publishing options。
+    Tableau desktopstop professional has full access to all data sources and data
+    types。 The professional version also lets you share your dashboards online through
+    the Tableau server。 The other version is the Tableau desktop personal。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Tableau Desktop 有两种类型，基于其连接和发布选项。Tableau Desktop 专业版可以完全访问所有数据源和数据类型。专业版还允许你通过
+    Tableau 服务器在线共享你的仪表板。另一种版本是 Tableau Desktop 个人版。
+- en: It is more restricted compared to the professional version。 Tableau desktops
+    personal only connects to flat files such as Excel and CSB。 and its dashboard
+    cannot be published into Tableau's server。 but you can save the workbooks locally
+    or publish it to the Tableau Public website。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 与专业版相比，Tableau Desktop 个人版限制更多。它仅能连接平面文件，例如 Excel 和 CSV，且其仪表板不能发布到 Tableau 的服务器上，但你可以将工作簿保存在本地或发布到
+    Tableau Public 网站。
+- en: '![](img/ad13eef316705bda2e297b95df2e7067_4.png)'
+  id: totrans-7
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ad13eef316705bda2e297b95df2e7067_4.png)'
+- en: Tableau Public is the free version， which still lets you create and customize
+    dashboards。 You can use it to connect to flat files， but not to live database
+    connections。Compared to Tableau Destop personal， it does not let you save the
+    workbooks locally。 but you can publish the dashboards you've created into the
+    Tableau Public website。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Tableau Public 是免费的版本，仍然可以让你创建和自定义仪表板。你可以用它连接平面文件，但无法连接实时数据库。与 Tableau Desktop
+    个人版相比，它不允许你将工作簿保存到本地，但你可以将创建的仪表板发布到 Tableau Public 网站。
+- en: It also has a limit of 1 million rows。 This version is most suitable for beginners
+    who want to try out the product and explore data analytics。 We will utilize Tableau
+    public for the duration of this course。Tableau Prep is a self service data preparation
+    tool， providing a visual and direct way to combine。 shape and clean data。It is
+    comprised of two products。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它也有 100 万行的限制。这个版本最适合想要尝试产品并探索数据分析的初学者。在本课程期间，我们将利用 Tableau Public。Tableau Prep
+    是一个自助数据准备工具，提供了一种直观且直接的方式来组合、整理和清理数据。它由两个产品组成。
+- en: Tableau prep builder and Tableau Prep conductor。 Tableau Prep builder gives
+    you a complete picture of your data for analysis that lets you combine。 shape
+    and clean your data to prep it for visualization。 It comes in three coordinated
+    views to let you see row level data profiles of each field or column and the entire
+    data prep process。Tableau PrepBuilder also lets you connect to data both on premise
+    or in the cloud。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Tableau Prep Builder 和 Tableau Prep Conductor。Tableau Prep Builder 为你的数据分析提供了一个完整的视图，允许你组合、整理和清理数据，以准备可视化。它有三个协调视图，可以让你查看每个字段或列的行级数据概况以及整个数据准备过程。Tableau
+    Prep Builder 还允许你连接到本地或云中的数据。
+- en: Tableau prep conductor， on the other hand， lets you schedule， monitor and administer
+    your data flow。 The data flow can be published into either Tableaus server or
+    Tableau On。 where administrators can schedule when it will run and when the data
+    will be updated as well as monitor the schedule flows。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 另一方面，Tableau prep conductor 让您可以安排、监控和管理数据流。数据流可以发布到 Tableau 服务器或 Tableau On，管理员可以安排何时运行以及何时更新数据，并监控计划的流。
+- en: '![](img/ad13eef316705bda2e297b95df2e7067_6.png)'
+  id: totrans-12
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ad13eef316705bda2e297b95df2e7067_6.png)'
+- en: Now， let's look at the sharing tools which can be utilized after creating a
+    workbook or dashboard from the developer tools。 Tableau readerer is a free desktop
+    application， which allows end users to view the packaged workbooks or dashboards
+    that have extracted data sources。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，让我们来看看在从开发工具创建工作簿或仪表板后可以使用的共享工具。Tableau reader 是一款免费的桌面应用程序，允许最终用户查看打包的工作簿或提取数据源的仪表板。
+- en: The visualizations are still interactive in the app。 but modifications are not
+    available since it is read only。![](img/ad13eef316705bda2e297b95df2e7067_8.png)
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在应用程序中，视觉化仍然是互动的，但由于它是只读的，因此无法进行修改。![](img/ad13eef316705bda2e297b95df2e7067_8.png)
+- en: You can still export views and data using the reader， as well as present the
+    views as a slideshow。 it is not recommended to use this application for sharing
+    company' internal dashboards since there is no security level。![](img/ad13eef316705bda2e297b95df2e7067_10.png)
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 您仍然可以使用阅读器导出视图和数据，并将视图呈现为幻灯片。 不建议使用此应用程序共享公司的内部仪表板，因为没有安全级别。![](img/ad13eef316705bda2e297b95df2e7067_10.png)
+- en: '![](img/ad13eef316705bda2e297b95df2e7067_11.png)'
+  id: totrans-16
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ad13eef316705bda2e297b95df2e7067_11.png)'
+- en: Tableau Ser lets users share dashboards within the organization's on premisemise
+    server or Cloud server。The dashboards will be viewable through a browser where
+    data refresh and extracts can be scheduled。It also supports connections to live
+    data sources。It can be configured for local authenticification。 active directory
+    integration， trusted authentication， or single signon using SML or Kber。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Tableau Ser 允许用户在组织的本地服务器或云服务器内共享仪表板。仪表板可以通过浏览器查看，并且可以安排数据刷新和提取。它还支持连接到实时数据源。可以配置本地身份验证、活动目录集成、受信任的身份验证或使用
+    SML 或 Kber 的单点登录。
+- en: It also provides a core licensing option， which allows guest access。 It allows
+    creating and maintaining multiple sites at no additional cost。 configuring users
+    and permissions。Tableau On is a hosted Saas version of the Tableau server。 The
+    dashboards and data will be saved on the servers provided and maintained by the
+    Tableau group。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它还提供了核心许可选项，允许访客访问。它允许创建和维护多个站点，而无需额外费用。配置用户和权限。Tableau On 是 Tableau 服务器的托管
+    SaaS 版本。仪表板和数据将保存在 Tableau 组提供和维护的服务器上。
+- en: which removes the need for you to manage the servers。 same as a server。 It has
+    features for data management， cloud connections and automatic updates。 you can
+    authenticate users through Tableau I D， email address and password or configure
+    a site for single sign on using S Ml。 But unlike the Tableau server， it has no
+    guest access。 So all viewers must be authenticated。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这消除了您管理服务器的需要。与服务器相同。它具有数据管理、云连接和自动更新的功能。您可以通过 Tableau ID、电子邮件地址和密码来验证用户，或者配置一个站点以使用
+    S Ml 的单点登录。但与 Tableau 服务器不同，它没有访客访问权限。因此，所有观众必须经过身份验证。
+- en: '![](img/ad13eef316705bda2e297b95df2e7067_13.png)'
+  id: totrans-20
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ad13eef316705bda2e297b95df2e7067_13.png)'
+- en: Both Tableau Server and Tableau On works with Tableau Mobile。 Tableau Mobile
+    is a free app available on both ios and Android。 which lets you access and monitor
+    dashboards and Kpis on the go。 It is optimized for fast intuitive access to data。
+    It has interactive previews。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Tableau Server 和 Tableau On 都可以与 Tableau Mobile 一起使用。Tableau Mobile 是一款在 iOS
+    和 Android 上均可用的免费应用程序，可以让您随时随地访问和监控仪表板和 KPI。它经过优化，以便快速直观地访问数据。它具有交互式预览。
+- en: which downloads your favorite workbooks while you are connected to the server。
+    so you can access them later， even when offline。 Since Tableau desktoptop has
+    been improved for mobile layout。 you can view dashboards in a clear and readable
+    format， even on a smaller mobile screen。😊。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这会在您连接到服务器时下载您喜欢的工作簿，以便您可以稍后访问，即使在离线状态下。由于 Tableau desktop 针对移动布局进行了改进，您可以在较小的移动屏幕上以清晰可读的格式查看仪表板。😊。
+- en: '![](img/ad13eef316705bda2e297b95df2e7067_15.png)'
+  id: totrans-23
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/ad13eef316705bda2e297b95df2e7067_15.png)'

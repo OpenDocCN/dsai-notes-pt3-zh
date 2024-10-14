@@ -1,0 +1,263 @@
+- en: 【双语字幕+资料下载】面向初学者的 TensorFlow 教程，理论知识、代码思路和应用案例，真正从零开始讲明白！＜快速入门系列＞ - P5：L5- 卷积神经网络(CNN)
+    - ShowMeAI - BV1TT4y1m7Xg
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】面向初学者的 TensorFlow 教程，理论知识、代码思路和应用案例，真正从零开始讲明白！＜快速入门系列＞ - P5：L5- 卷积神经网络(CNN)
+    - ShowMeAI - BV1TT4y1m7Xg
+- en: '![](img/f02af098f9ad70406fc18680eac4bd94_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/f02af098f9ad70406fc18680eac4bd94_0.png)'
+- en: 🎼，Hey， guys， welcome to another Tensorflow tutorial。 Today。 we are going to
+    implement our first convolutional neural net。 So a convolutional neural net looks
+    similar to our feet forward neural net from lesson number 3。 The main difference
+    now is that we use convolutional filters instead of just dense layers。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 🎼，大家好，欢迎来到另一个 Tensorflow 教程。今天，我们将实现我们的第一个卷积神经网络。所以卷积神经网络看起来类似于第三课中的前馈神经网络。主要区别在于我们使用卷积滤波器，而不仅仅是密集层。
+- en: So here's a typical architecture of a confnet。 We have our input image。 and
+    then we apply different convolutional layers with activationation functions like
+    here， the relo。 And we also apply pooling layers to reduce the size of our image。
+    And then at the end。 we do classification。 And this means that we use a fully
+    connected layer at the end。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这里是一个典型的卷积网络架构。我们有输入图像，然后应用不同的卷积层和激活函数，比如这里的 ReLU。我们还应用池化层来减少图像的大小。最后，我们进行分类。这意味着我们在最后使用一个全连接层。
+- en: Also known as the dense layer。 with an output for each class that we have。 So
+    our convolutional layer uses convolutional filters and the filter slides over
+    the image and then。😊，Calculates a new value and writes it into the output image。
+    so I will not go into detail here。 but I will provide some links if you want to
+    learn more about the theory here。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 也被称为密集层，为我们每个类别提供输出。所以我们的卷积层使用卷积滤波器，滤波器滑动在图像上，然后😊，计算一个新值并将其写入输出图像。我这里不再详细说明，但我会提供一些链接，如果你想了解更多理论。
+- en: So here's another image of a convolutional filter。 So at first we put it at
+    the rat position and then we calculate the convolution and write the output in
+    here and then we slide it to the next position。 So the green one and do the same
+    and then we slide it to the blue position and do the same。 And this is how we
+    calculate the convolutions。 And then we also apply max pooling。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这里是另一个卷积滤波器的图像。一开始我们将其放在鼠标位置，然后计算卷积并将输出写入这里，然后我们滑动到下一个位置。所以在绿色的位置进行相同操作，然后滑动到蓝色位置再做一次。这就是我们如何计算卷积。接着我们还应用最大池化。
+- en: which is also just a filter， for example， here， a two by two filter and we put
+    it at the first position and calculate just the maximum value like here。 the 20
+    and write it to the output。 and then we slide it to the next position and do the
+    same and so on。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这也是一个滤波器，例如，这里是一个 2x2 的滤波器，我们将其放在第一个位置并计算最大值，比如这里的 20，然后写入输出。接着我们滑动到下一个位置并进行相同操作，依此类推。
+- en: So this reduces。The size of our image。 And this is all the concepts that we're
+    going to apply。 So here again is an image of the architecture that we are going
+    to implement。 So we have the input image then we apply convolution plus the reo
+    activationation function plus pooling。 then we do the same thing again。 And at
+    the end we do we flatten the image to squeeze it into one dimension and use a
+    fully connected dense layer with the softmax activationation function and then
+    do the classification。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这将减少我们的图像大小。这些就是我们要应用的所有概念。这是我们将要实现的架构图像。所以我们有输入图像，然后应用卷积加上 ReLU 激活函数再加上池化。然后再重复一次。最后我们将图像展平，压缩成一维，并使用全连接的密集层和
+    Softmax 激活函数，然后进行分类。
+- en: So this step at the end is the exact same that we used in tutorial number3。
+    So I recommend that you watch this one first。 if you haven't already And now we
+    can jump to the code。 So in this example， we are going to use the scipher 10 dataset
+    set。 This is a image data set of 60032 by 32 color images and we have0。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以最后这一步和我们在第三课中使用的完全相同。因此我建议你先观看这一课，如果你还没有的话。现在我们可以进入代码。在这个例子中，我们将使用 CIFAR-10
+    数据集。这个数据集包含 60000 张 32x32 的彩色图像。
+- en: 1 different classes that we see here， for example， airplane， a car， bird cat
+    and so on。 And this is what were going to classify。 So now let's jump to the code。
+    Alright。 so here I've already written some code。 So this is similar to the code
+    and tutorial number 3 So again。 we import the things we need like Tensorflow and
+    ks and layers。 Then I import matpllip。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这里看到的不同类别，比如飞机、汽车、鸟、猫等。这就是我们要分类的内容。那么现在我们来看看代码。好的，我这里已经写了一些代码。这和第三课中的代码类似。所以我们再次导入需要的东西，比如
+    Tensorflow、Keras 和层。然后我导入 matplotlib。
+- en: Then we use the ci for 10 data set， which is integrated in Kara data sets and
+    we can split this into training images and test images。 And now if you print the
+    shape， we see， for example。 that this is the training images has 50000 samples
+    and each image has the site 32 by 32 by 3 because it has three color channels。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们使用ci进行10个数据集，它集成在Kara数据集中，我们可以将其分成训练图像和测试图像。现在如果你打印形状，我们看到，例如，训练图像有50000个样本，每个图像的尺寸是32x32x3，因为它有三个颜色通道。
+- en: '![](img/f02af098f9ad70406fc18680eac4bd94_2.png)'
+  id: totrans-11
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/f02af098f9ad70406fc18680eac4bd94_2.png)'
+- en: Then we normalize our data。 So we want it to be in the range from 0 to 1。 Then
+    here I have the different class names。 and I written I've written a helper function
+    to show you some example images。 So let's run it up until here。 So now if I say
+    Python。 and then the name of this file。 Then we see some example images here。
+    and the images are very blur because our dimensions are very small。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们归一化数据。我们希望它在0到1的范围内。然后这里我有不同的类名。我写了一个帮助函数来展示一些示例图像。所以我们运行到这里。现在如果我说Python，然后这个文件的名称。我们就会看到一些示例图像，这些图像非常模糊，因为我们的维度非常小。
+- en: but that's okay。 So now let's stop this。 and now I can remove this code for
+    plotting。 So we don't need this anymore。![](img/f02af098f9ad70406fc18680eac4bd94_4.png)
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但没关系。现在让我们停止这个。现在我可以删除这个绘图代码。我们不再需要这个了。![](img/f02af098f9ad70406fc18680eac4bd94_4.png)
+- en: '![](img/f02af098f9ad70406fc18680eac4bd94_5.png)'
+  id: totrans-14
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/f02af098f9ad70406fc18680eac4bd94_5.png)'
+- en: And now here we define our Kaa sequential model like the last time。 And now
+    this is what we have to implement。 And then the code after that is exactly the
+    same as in tutorial number 3。 So again， we define our loss and the optimizer。
+    So here we want the sparse categorical cross entropy and say from logics equals
+    true。 So that it applies the softm。 So this is important here。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们定义我们的Kaa顺序模型，就像上次一样。这是我们需要实现的。接下来的代码与教程3中的完全相同。因此，我们再次定义我们的损失和优化器。这里我们想要稀疏分类交叉熵，并且说逻辑等于真。所以它应用softm。这一点很重要。
+- en: Then we define some metrics that we want to track。 And then we have to call
+    model compile。 and after that， we start our training by simply calling model dot
+    fit with our training images and training labels。 And then we can evaluate it
+    by calling model dot evaluate with the test images and the test labels。 So yeah，
+    that's the whole code。 And now the only thing left to do here is to define our
+    model。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们定义一些想要跟踪的指标。然后我们必须调用model.compile，之后通过简单调用model.fit与我们的训练图像和训练标签来开始训练。然后，我们可以通过调用model.evaluate与测试图像和测试标签来评估它。所以，是的，这就是整个代码。现在这里唯一剩下的就是定义我们的模型。
+- en: So now let's have a look again。 So again， we want to apply。![](img/f02af098f9ad70406fc18680eac4bd94_7.png)
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以现在让我们再看看。所以我们再次想应用。![](img/f02af098f9ad70406fc18680eac4bd94_7.png)
+- en: Convolutional layers with an activation function and a pooling layer。 And then
+    the same thing again。 And at the end， we want to flatten it and apply the fully
+    connected layer。 So let's do this。 So first， let's add a convolution layer。 So
+    we can do this by saying model dot at。 And then we use a layer from ks dot layers。
+    And then this is the con2D layer。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 具有激活函数和池化层的卷积层。然后再来一次。最后，我们希望展平并应用全连接层。所以让我们这样做。首先，添加一个卷积层。我们可以通过说model.at来完成。然后我们使用ks.layers中的一个层。这就是con2D层。
+- en: So a 2D convolutional layer。 And now first， we have to specify the filters。
+    So this is the number of output filters after this convolution。 So here we say
+    32。 Then we have to specify the kernel size。 So here let's use a filter kernel
+    of size 3 by3。 Then I also write the strides and。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这是一个二维卷积层。首先，我们需要指定过滤器。这是卷积后的输出过滤器数量。这里我们说是32。然后我们需要指定内核大小。这里我们使用3x3的过滤器内核。接着，我还写了步幅。
+- en: '![](img/f02af098f9ad70406fc18680eac4bd94_9.png)'
+  id: totrans-20
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/f02af098f9ad70406fc18680eac4bd94_9.png)'
+- en: Heading here for you。 So strides equals， let's say 1 and one。 This is just the
+    default。 How much we want to slide， how far we want to slide it over the image。And
+    padding equals valet。 So you have the option to say validale or same。 These are
+    basically two different rules。 How the padding is applied。 So let's say valid
+    here。 And then， as I said。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这里是标题。所以步幅等于1和1。这只是默认值。我们希望滑动多少，以及在图像上滑动多远。填充等于有效。所以你可以选择有效或相同。这基本上是两种不同的规则。填充是如何应用的。我们这里说有效。然后，如我所说。
+- en: we want to use an activationation。 So we say activationation equals Relu。 And
+    for our first layer。 we also specify the input shape。 And this is 32 by 32 by
+    3。And now we have this。 So now， after that。 we want to apply a pooling layer。
+    So we say model dot at。 And then again， layers dot maxs。Poulling 2D。 And then
+    here also we can define the pool size。 So here。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们想要使用激活函数。所以我们设置`activation equals Relu`。对于我们的第一层，我们还指定输入形状。这个是32x32x3。现在我们有这个。然后，在这之后，我们想要应用一个池化层。所以我们说`model.add`。然后再次，`layers.maxPooling2D`。在这里，我们也可以定义池大小。所以在这里。
+- en: let's just use two by two as default。 or I can again write it for you so that
+    it's clearer so we use a two by2 max pooling layer And then we do the same thing
+    again。 So let's copy and paste this。 And here we remove the input shape so we
+    don't need this anymore。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们默认使用2x2，或者我可以再次为你写出来，让它更清晰，所以我们使用一个2x2的最大池化层，然后再做一次。所以我们复制并粘贴这个。这里我们移除输入形状，因此我们不再需要这个。
+- en: And let's also remove this because this is just the default。 And then here I
+    want to show you that you can specify a value for each dimension。 or you can just
+    specify a single integer value。 And then it's using this for each dimension。 So
+    this is the same as this。And then again， a another max pooling layer。And now we
+    want to。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们也去掉这个，因为这只是默认设置。然后在这里我想告诉你，可以为每个维度指定一个值，或者可以只指定一个整数值。这样对于每个维度都是一样的。再来一个最大池化层。现在我们想要。
+- en: let's have a look again。 Now we want to flatten it and then apply the fully
+    connected layer。 So now we add a model dot add and then layers dot flatten。![](img/f02af098f9ad70406fc18680eac4bd94_11.png)
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 再看看。现在我们想要扁平化，然后应用全连接层。所以现在我们添加`model.add`，然后`layers.flatten`。![](img/f02af098f9ad70406fc18680eac4bd94_11.png)
+- en: '![](img/f02af098f9ad70406fc18680eac4bd94_12.png)'
+  id: totrans-26
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/f02af098f9ad70406fc18680eac4bd94_12.png)'
+- en: So we squeeze it into one dimension， and then we say model dot add。 And we want
+    to add a dense layer。 So layers dot。Dense， and then here let's use a hidden size
+    of 64。 and also an activation。 And here again， we use relu。 And then let's do
+    the same thing at the end。 So model dot at a dense layer。 And now we have to specify
+    10 output classes。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们将其挤压成一维，然后说`model.add`。我们想要添加一个密集层。所以`layers.Dense`，在这里我们设置隐藏层大小为64，同时也有一个激活函数。然后在最后我们再做一次。所以`model.add`一个密集层。现在我们必须指定10个输出类。
+- en: And here we don't want an activation function because we say from Los equals
+    true for our loss。And now this is all that we need。 So this is our first convolutional
+    neural network。 And now。 for example， we can call print and then print the model
+    dot summary。 And now。So for now。 let's stop here。 So I say import cis and cis
+    dot exit。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这里我们不想要激活函数，因为我们对损失设置了`loss equals true`。现在这就是我们所需的所有内容。这是我们的第一个卷积神经网络。现在，比如说，我们可以调用打印，然后打印模型的摘要。现在，暂时先停在这里。我说导入`cis`，然后`cis.exit`。
+- en: So it stops here and then don't start the training。 So let's run it again and
+    see if it works。Alright， so now this works。 So here it prints the summary。 And
+    then again。 we can inspect our different layers and the output shapes of each
+    layers and the number of parameters that we have for training。 So yeah， this is
+    basically an overview of our convolutional neural net。 And now we can remove this。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以到这里就停止，不要开始训练。我们再运行一次，看看它是否有效。好吧，现在这个有效。这里打印出摘要。然后，我们可以检查不同层的输出形状以及每层的参数数量。所以，是的，这基本上是我们卷积神经网络的概述。现在我们可以去掉这个。
+- en: And then the same as last time we compile the model and fit it and evaluate
+    it。 So let's run it。 So let's clear this and run the training。 Alright， so training
+    is done。 And we see that the loss decreased and the accuracy improve with with
+    each epoch。 and then we have a final evaluation accuracy。 So it's not perfect
+    yet。 It's only an accuracy of 65%。
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 和上次一样，我们编译模型，拟合它并评估它。让我们运行它。清理一下，然后开始训练。好吧，训练完成。我们看到损失下降，准确性随着每个周期提高。最后，我们有一个最终评估准确性。所以它还不完美，准确率只有65%。
+- en: But we also only train it for 5 epoch。 So I'm sure that this will get better
+    if we train it。Longer。 so， yeah， now you see that our con is working。 and you
+    know how you define and set up your model。 And now you can， for example， play
+    around with the learning rate or play around with different architectures here。
+    And then you can further improve the accuracy。 So， yeah。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但我们只训练了5个周期。所以我相信如果我们训练得更久，这会变得更好。所以，现在你可以看到我们的卷积网络在工作。你知道如何定义和设置你的模型。现在你可以，比如说，调整学习率或尝试不同的架构。然后你可以进一步提高准确性。所以，是的。
+- en: I hope you enjoyed this tutorial and please hit the like button and consider
+    subscribing to the channel。 And I hope to see you in the next video by。![](img/f02af098f9ad70406fc18680eac4bd94_14.png)
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我希望你喜欢这个教程，请点击点赞按钮并考虑订阅频道。希望在下一个视频中见到你！![](img/f02af098f9ad70406fc18680eac4bd94_14.png)

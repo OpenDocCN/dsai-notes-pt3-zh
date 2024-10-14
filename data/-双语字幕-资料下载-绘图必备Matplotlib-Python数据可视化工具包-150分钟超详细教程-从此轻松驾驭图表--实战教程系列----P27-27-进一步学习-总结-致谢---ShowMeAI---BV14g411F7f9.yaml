@@ -1,0 +1,81 @@
+- en: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P27：27）进一步学习，总结，致谢
+    - ShowMeAI - BV14g411F7f9
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P27：27）进一步学习，总结，致谢
+    - ShowMeAI - BV14g411F7f9
+- en: And that's it。 We're done。 What a marathon of a tutorial here。 That was a lot
+    of information。 Don't feel bad if your brain feels like it cannot hold all of
+    it。 I'm gonna leave you with a little bit of homework section number。 Are we up
+    to section number 6。 Is that where we are。 Oh， Does it even matter at this point。Let's
+    go here。 Section 6。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 就这样，我们结束了。这是一场马拉松式的教程，信息量很大。如果你的大脑觉得无法承受所有内容，不要感到难过。我将给你留一点作业，章节编号。我们是不是到了第6节？这点重要吗？那我们就去看第6节吧。
+- en: So we are now at section 7。 actually， Section 7。 Here's some homework for you。
+    If you want to keep learning about mappl Lib， so。Number one， get your own data
+    set。To play around with。You， oh， we got to change this to a markdown cell。 Change
+    that to a markdown cell。 or actually， let's just use the use the one that we got
+    going on right here。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们到了第7节。实际上，第7节。这里有一些作业给你。如果你想继续学习mappl Lib，首先，获取自己的数据集来玩玩。哦，我们得把这个改成markdown单元。把它改成markdown单元。或者，实际上，咱们就用这个正在进行的吧。
+- en: So you learn better whenever you're interested in what you're doing so get your
+    own data set that you're interested in and try plotting some things。 That will
+    be a great way for you to learn。And I'll say here。 kind of a little sub bulletet
+    of this is。With your data， try going back through。All of the things we did。And
+    that will help solidify a lot of this knowledge in your mind。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以，当你对自己正在做的事情感兴趣时，你会学得更好，因此获取你感兴趣的数据集，并尝试绘制一些图。这将是你学习的一个绝佳方式。我在这里想说，关于这一点的小补充是：用你的数据，尝试回顾我们做过的所有事情，这将有助于巩固你心中的许多知识。
+- en: The next thing I would recommend is read through some of the map plot Live documentation。
+    and I'm going to point you to two specific places here。So the first one is the
+    map plot Lib tutorials。 Those are really good。They can help reinforce a lot of
+    the stuff that we just went through。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 接下来我建议你阅读一些map plot Live文档，我将指出这里两个特定的地方。第一个是map plot Lib教程，那些真的很好，可以帮助巩固我们刚刚学习的许多内容。
+- en: And the next one is the examples。So just looking at some examples and the code
+    that generated those examples。And the final thing， which I will recommend。Is reading
+    about the。 or let's just say learning about the P， LT style。Or the state based
+    style of using。Mapplot Lib。 so this is kind of a way of using mapplot Lib that
+    we did not go into。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 接下来是示例。查看一些示例以及生成这些示例的代码。最后，我推荐的事情是阅读关于P，LT风格的内容，或者说学习使用Mapplot Lib的状态基础风格。这是一种我们没有深入探讨的使用Mapplot
+    Lib的方式。
+- en: I don't necessarily even recommend that you use this style。Most of the time。
+    I think that the way that we've been doing things is how I would recommend doing
+    them。 but other people are going to use this and you're going to see code examples
+    that use this。 and so it's good to at least learn a little bit about what it is。And
+    with that。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我不一定推荐你使用这种风格。大多数时候，我认为我们一直以来的做法是我推荐的方式，但其他人会使用这个，你会看到使用这个的代码示例，所以至少了解一下这是什么是好的。就这样。
+- en: I want to say thank you so much for going through this tutorial。 I hope you've
+    learned a ton and。😊。And are able to apply this to your own data science work。
+    and if you need additional data science tutorials。 definitely check out other
+    project data science videos and courses。And leave a comment。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想非常感谢你完成这个教程。我希望你学到了很多东西，并且能够将其应用到自己的数据科学工作中。如果你需要额外的数据科学教程，务必查看其他项目数据科学视频和课程，并留下评论。
+- en: Let us know what you want to learn and we'll help you learn it。 Alright， that
+    is it。 Happy learning project data scientists， and we will see you later， bye。😊。![](img/817ad3dcc88440f4950c40080f45e424_1.png)
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们知道你想学习什么，我们会帮助你学习。好了，就是这样。祝数据科学家们学习愉快，我们下次见，再见。😊。![](img/817ad3dcc88440f4950c40080f45e424_1.png)
+- en: '![](img/817ad3dcc88440f4950c40080f45e424_2.png)'
+  id: totrans-9
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/817ad3dcc88440f4950c40080f45e424_2.png)'

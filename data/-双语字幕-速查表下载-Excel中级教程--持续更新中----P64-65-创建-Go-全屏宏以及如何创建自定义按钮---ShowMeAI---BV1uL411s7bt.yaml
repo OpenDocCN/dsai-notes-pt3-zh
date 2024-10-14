@@ -1,0 +1,154 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P64：65）创建 Go 全屏宏以及如何创建自定义按钮 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P64：65）创建 Go 全屏宏以及如何创建自定义按钮 - ShowMeAI - BV1uL411s7bt
+- en: '![](img/06b57f596685e2ce645285faa53038bd_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/06b57f596685e2ce645285faa53038bd_0.png)'
+- en: In this video， I'm going to show you how to create an Excel macro from scratch。
+    It's a simple one。 but it's a macro that will put you into full screen mode whenever
+    you want it to。 And this video is one in a series on creating Excel macros。 Please
+    check out the other macro videos as well。 So step1 is to go here to the quick
+    access toolbar and click on this button here。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在本视频中，我将向你展示如何从零开始创建一个Excel宏。这是一个简单的宏，但它将使你在需要时进入全屏模式。本视频是创建Excel宏系列中的一个，请务必查看其他宏视频。所以第一步是去快速访问工具栏，点击这里的按钮。
+- en: and I'm going go here to more commands。 and at this point。 I'm actually going
+    to switch to customize the ribbon and there's other ways to get here to customize
+    the ribbon but it's important that you have this option selected developer。 If
+    developer doesn't have a checkmark next to it， you need to do this step。 you need
+    to put that checkmark in And what I'm doing here is I'm customizing the ribbon
+    I'm adding an extra tab to the ribbon you can see there are other optional tabs
+    that I could add but for the purposes of this video developers the one that you
+    must have。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我将去更多命令。在这一点上，我实际上要切换到自定义功能区，还有其他方法可以到达自定义功能区，但重要的是你必须选中“开发者”选项。如果“开发者”旁边没有勾选，你需要完成这一步。你需要打上这个勾。我在这里做的是自定义功能区，添加一个额外的选项卡，你可以看到还有其他可选的选项卡可以添加，但对于本视频来说，开发者是你必须拥有的。
+- en: So I'll click Now that I have the developer tab I can click on it here。 and
+    look on the developer。I have a code group and there's some really exciting things
+    you can do here in the code group。 You can record a macro， which is really fun
+    and pretty easy to do。 I have a video specifically on that that I hope you'll
+    watch or you can create and manage macros from scratch and that's what we're gonna
+    do here I'm going click on visual basic to create a VBA macro and VB is visual
+    basic for applications This is programming but don't let that intimidate you We're
+    going to use a simple program It's basically like a recipe or a magic spell however
+    you want to think about it and I'm going to include the code for this in the description
+    below the video if you want to copy pastte it in you can do that So you'll notice
+    here in this project window in the upper left It says VB project Spanish Animals
+    quiz that's the spreadsheet that I'm using and it's got sheet1 listed and it's
+    also got this workbook listed So where do I want this code to be stored in the
+    workbook itself any sheet in the workbook。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我已经有了开发者选项卡，我可以点击它。在开发者选项卡上，我有一个代码组，这里有一些非常有趣的东西可以做。你可以录制一个宏，这真的很有趣，而且很简单。我有一个专门关于这个的视频，希望你能观看，或者你可以从头创建和管理宏，这就是我们要做的。我将点击Visual
+    Basic来创建一个VBA宏，VB是Visual Basic for Applications。这是编程，但不要让它让你感到畏惧。我们将使用一个简单的程序，它基本上就像一个食谱或魔法咒语，随你怎么理解。视频下方我将包括这个代码，如果你想复制粘贴，可以这样做。你会注意到，在左上角的项目窗口中，显示的是VB项目西班牙动物测验，这是我使用的电子表格，列出了sheet1，也列出了这个工作簿。那么我希望这个代码存储在哪里呢？在工作簿本身的任何工作表中。
+- en: '![](img/06b57f596685e2ce645285faa53038bd_2.png)'
+  id: totrans-5
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/06b57f596685e2ce645285faa53038bd_2.png)'
+- en: In one specific sheet I think I'll just put it in the entire workbook So any
+    additional sheets that I add it should work for。 So I'm going to double click
+    where it says this workbook and it brings up a space for me to type in the code
+    that I'm going to use for this Vba macro I'm going to start by typing in the word
+    sub and here I'm basically naming a subroutine I'll call this go full screen and
+    then I'll put left and right parenthesis I'll tap enter on the keyboard and then
+    I'll type in application dot display and you'll notice as soon as I start typing
+    display I get a pop up with options that I can choose from I'm going to browse
+    down display full screen that's what I want to do so I'll double click on that
+    and then I'll put equals space and then underscore and then I'll tap enter and
+    then I'll type not space application dot display full screen I'll tap enter and
+    you'll see that Microsoft Vba in Excel has automatically put in end sub。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在一个特定的工作表中，我想我会将它放在整个工作簿中，这样我添加的任何额外工作表都应该有效。所以我会双击“这个工作簿”，这会给我一个输入代码的空间，我将用于这个
+    VBA 宏。我将开始输入“sub”这个词，这里我基本上是在命名一个子程序，我将其命名为“go full screen”，然后加上左右括号，按下回车键，然后我将输入“application.dot
+    display”。你会注意到，一旦我开始输入“display”，就会出现一个弹出菜单，提供我可以选择的选项。我将向下浏览，选择“display full screen”，这就是我想要做的。然后我会双击它，接着输入“=
+    空格”，然后是“_”，然后按下回车，接着我会输入“not 空格 application.dot display full screen”，我再按下回车，你会看到
+    Microsoft VBA 在 Excel 中自动填入“end sub”。
+- en: '![](img/06b57f596685e2ce645285faa53038bd_4.png)'
+  id: totrans-7
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/06b57f596685e2ce645285faa53038bd_4.png)'
+- en: So end subroutine at this point， I can X out of it and I'm back in Excel and
+    I can now go to my macros button and there's my macro and we can test it out。
+    So with this macro selected， I'm gonna click run and look it takes me into full
+    screen mode which really might be a helpful thing to do in this case because this
+    is a worksheet or a quiz that my students are going take to help them practice
+    the Spanish animal words。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以在这一点结束子程序，我可以退出它，回到 Excel，现在我可以点击我的宏按钮，那里有我的宏，我们可以测试一下。所以选择这个宏后，我会点击运行，看看它将我带入全屏模式，这在这种情况下可能是个很有帮助的做法，因为这是一个工作表或测验，我的学生将要参加，以帮助他们练习西班牙语动物词汇。
+- en: it's kind of helpful to go into full screen for this。 I think I'm going tap
+    escape on the keyboard to get out of full screen。 because I want you to see that
+    there's a much better way to access that macro。 much better than going here to
+    the macros button。 What we can do is set up our own button that when clicked will
+    activate the macro So I could go here to insert and I could insert a button that
+    way。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 进入全屏对这个来说有点帮助。我想我会按下键盘上的 Esc 键以退出全屏。因为我希望你看到有一个更好的方法来访问那个宏，远比去宏按钮那里好得多。我们可以设置自己的按钮，点击时将激活宏。所以我可以去插入，然后以这种方式插入一个按钮。
+- en: that's a great way to go。 but as you can see those buttons don't always look
+    amazing。 they're kind of plane。 So in this video I want to show you an alternative
+    way to put buttons into your spreadsheets I'm。To insert illustrations shapes and
+    I'm going to draw out a button now you could use any of these shapes。 it could
+    be a star button， a triangle button， whatever but I'm gonna go with this rectangle
+    button with rounded corners so I click on it and I'm going to click and drag on
+    the screen to draw out my button now that it's drawn I can go here to the shape
+    format tab that appeared and I can choose the color scheme that I want to use
+    whatever I think looks good and then I can double click on the shape and I'll
+    type in full screen tap enter my text is pretty big so I'm gonna to have to stretch
+    out my button a little bit and or shrink the text I think that looks pretty good
+    if I want to I can even insert let's say an icon I can go here to insert illustrations
+    icons and I'll do a search for screen let's say this represents full screen I'll
+    click insert so I can add this icon to the button I'll shrink it down to a good
+    size and put it right。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是个不错的方法。但正如你所看到的，那些按钮看起来并不总是很好。它们有点简单。因此，在这个视频中，我想展示一种将按钮放入电子表格的替代方法。我将插入插图形状，现在我将绘制一个按钮。你可以使用这些形状中的任何一种。可以是星形按钮、三角形按钮，随便，但我将选择这个带圆角的矩形按钮。我点击它，然后在屏幕上点击并拖动以绘制我的按钮。现在它已经绘制好，我可以去刚出现的形状格式选项卡，选择我想要使用的配色方案，任何我觉得好看的颜色。然后我可以双击形状，输入“全屏”，按下回车。我的文字比较大，所以我需要稍微拉伸我的按钮，或者缩小文字。我觉得这样看起来不错。如果我想，我甚至可以插入一个图标。我可以去插入插图图标，然后搜索“屏幕”，假设这代表全屏。我会点击插入，这样我就可以将这个图标添加到按钮上，然后将它缩小到合适的大小，放在右边。
+- en: There on my button now to make this an actual button that will execute the macro
+    there's a couple of more steps we have to do One would be I need to group the
+    icon and the button together so I clicked on the button now I'm going to hold
+    the control key and click also on the icon with both selected I can right click
+    and choose group group now that's all considered one thing and at this point I
+    can right click on the button again and this time choose assign sign macro which
+    macro how about this workbook go full screen I click Now if I click away from
+    the button the full screen button is ready to be used so let's say the students
+    are ready to take this practice quiz I of course need to clear out the correct
+    answers but at this point I can click full screen and the spreadsheet goes full
+    screen and the students can begin working with this interactive worksheet or quiz
+    If I click full screen again notice that it toggles out of full screen so that's
+    a nice feature as well。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在要把这个按钮变成一个可以执行宏的实际按钮，我们还需要做几个步骤。首先，我需要将图标和按钮组合在一起，所以我点击了按钮，现在按住控制键同时点击图标，选中后我可以右键点击并选择组合。现在这被视为一个整体，此时我可以再次右键点击按钮，这次选择“分配宏”，选择宏时就选这个工作簿，点击确认。如果我点击按钮外部，完整屏幕按钮就可以使用了。假设学生们准备进行这个练习测验，我当然需要清除正确答案，但此时我可以点击全屏，电子表格就会全屏，学生可以开始使用这个互动工作表或测验。如果我再次点击全屏，请注意它会切换出全屏，这也是一个不错的功能。
+- en: If you recall I created this in this workbook not just sheet1 so let's test
+    that out If I go down here to the lower left and click the plus sign to add a
+    second sheet。 I don't see my button but if I go to macros notice that the macro
+    still does exist all I would need to do is go back to sheet1 right click on my
+    button to copy it and then go to sheet2 right click to paste let's see if it works
+    I click and it goes full screen I click again and it takes me out of full screen
+    so I hope you can see some potential here for using this simple Excel macro to
+    create a full screen button。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你记得我是在这个工作簿中创建的，而不仅仅是sheet1，所以让我们测试一下。如果我到左下角点击加号来添加第二个工作表。我看不到我的按钮，但如果我去宏的选项，会发现宏依然存在。我需要做的就是回到sheet1，右键点击我的按钮复制，然后转到sheet2，右键粘贴。让我们看看是否有效，我点击，它全屏，我再次点击，它就会退出全屏。所以我希望你能看到使用这个简单的Excel宏创建全屏按钮的潜力。
+- en: '![](img/06b57f596685e2ce645285faa53038bd_6.png)'
+  id: totrans-13
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/06b57f596685e2ce645285faa53038bd_6.png)'

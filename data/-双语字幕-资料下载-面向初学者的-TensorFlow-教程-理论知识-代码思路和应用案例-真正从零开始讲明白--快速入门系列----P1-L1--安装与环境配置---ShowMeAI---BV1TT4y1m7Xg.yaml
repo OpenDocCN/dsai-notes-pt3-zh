@@ -1,0 +1,217 @@
+- en: 【双语字幕+资料下载】面向初学者的 TensorFlow 教程，理论知识、代码思路和应用案例，真正从零开始讲明白！＜快速入门系列＞ - P1：L1- 安装与环境配置
+    - ShowMeAI - BV1TT4y1m7Xg
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】面向初学者的TensorFlow教程，理论知识、代码思路和应用案例，真正从零开始讲明白！＜快速入门系列＞ - P1：L1- 安装与环境配置
+    - ShowMeAI - BV1TT4y1m7Xg
+- en: '![](img/bb62afea1f41dc8b70a5ccf587ce444b_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/bb62afea1f41dc8b70a5ccf587ce444b_0.png)'
+- en: 🎼，Hey， guys， and welcome to my Tensorflow beginner course。 In this course。 I
+    teach you all the things you need to get started with this framework。 and we're
+    going to build some nice example projects along the way。 So Tensorflowlow is an
+    end to end open source platform for machine learning and deep learning。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 🎼，嘿，大家，欢迎来到我的Tensorflow初学者课程。在这门课程中，我会教你入门这个框架所需的所有知识，我们会一路上构建一些不错的示例项目。所以Tensorflow是一个端到端的开源机器学习和深度学习平台。
+- en: It's developed by Google。 and it's one of the most popular deep learning frameworks
+    out there。 So in this first episode， I show you how to install Tensorflowlow on
+    your machine。 And by the way。 all the course material will be available on Github。
+    So I created a new Rapo Tensorflowlow course。 and I already uploaded the first
+    installation guide。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它由谷歌开发，是最受欢迎的深度学习框架之一。在这一集里，我会展示如何在你的机器上安装Tensorflow。顺便提一下，所有课程材料都将在Github上提供。我创建了一个新的Tensorflow课程，并且已经上传了第一个安装指南。
+- en: So you can check this out and read the guide here if you want。😊。And now let
+    me show you what you must do to install Tensorflow。 So you go to the official
+    site。 Tensofflow dot org and then click on install。 And here you have the requirements。
+    So you need Python 3。5 or newer。 And I assume that you already have this installed
+    on your machine。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以如果你想，可以查看并阅读这里的指南。😊现在让我告诉你安装Tensorflow需要做什么。你去官方网站Tensofflow.org，然后点击安装。在这里你可以看到要求。你需要Python
+    3.5或更新版本。我假设你已经在你的机器上安装了这个。
+- en: And then it's supported for Mac， Uuntu and Windows。And the installation command
+    is very simple。 So you need Pip version greater than version 19。 And then you
+    just say Pip install Tensorflow。And so I show you how I do that in a couple of
+    minutes。 But first of all。 let me also show you how what you must do to install
+    it on Windows and to get GPU support。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后它支持Mac、Uuntu和Windows。安装命令非常简单。你需要的Pip版本大于19。然后你只需输入“Pip install Tensorflow”。我会在几分钟内演示这个。但首先，让我告诉你在Windows上安装它以及获得GPU支持需要做什么。
+- en: So on Windows， you additionally need to install Vis Studio 2017。 So you get
+    this for free。 So you only need to install the free community edition。 And you
+    also need。The C plus plus redistributable。 so you can click on this link， and
+    this will lead you to this side。 and then you download the version and install
+    this as well。 And if you have this。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以在Windows上，你还需要安装Visual Studio 2017。你可以免费获取这个，只需安装免费社区版。你还需要C++可再发行组件。你可以点击这个链接，这将带你到这个页面，然后下载并安装相应的版本。
+- en: then you can also just say Pip install Tensorflow on Windows， and this works。And
+    now。 if you have GPU support， then I also show you what you must do。 so you can
+    skip this part if you don't have a Nvidia GPU on your machine anyway。 So let's
+    click on this link here and the installation command will be the same later。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后你也可以在Windows上直接输入“Pip install Tensorflow”，这样就可以了。如果你有GPU支持，我会告诉你需要做什么。如果你的机器上没有Nvidia
+    GPU，可以跳过这部分。让我们点击这个链接，安装命令稍后会是一样的。
+- en: But first of all， we need to have some more things。 So。 of course you need to
+    have a Nvidia GPU on your machine and necessary drivers。And if you have this。
+    then you can install or you have to install the Kuda toolkit and the Couddi and
+    N tool SDK。 And it's important to get the right the correct version。 So for Kuda
+    toolkit， you need version 10。1。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但首先，我们需要一些其他东西。当然，你的机器上需要有Nvidia GPU和必要的驱动程序。如果你有这些，就必须安装Kuda工具包和Couddi及N工具SDK。而且获取正确版本是很重要的。Kuda工具包需要10.1版本。
+- en: So let's click on this link。 This will lead you to this site。 And here you have
+    all the archived releases。 And then you select the latest 10。1 toolkit and download
+    it for your operating system。 So for Windows。 and install this。![](img/bb62afea1f41dc8b70a5ccf587ce444b_2.png)
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们点击这个链接。这将带你到这个网站。在这里你可以找到所有的归档版本。然后选择最新的10.1工具包并下载适合你操作系统的版本。所以对于Windows，安装这个。
+- en: '![](img/bb62afea1f41dc8b70a5ccf587ce444b_3.png)'
+  id: totrans-10
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/bb62afea1f41dc8b70a5ccf587ce444b_3.png)'
+- en: And once you have installed this， you also need the CoudD and N SDK。 So this
+    is the Kuda Deep neural network library。 And on this side， you click on download。
+    And again here it's again， important to get the correct version。 So you need version
+    7 because right now I think the latest version is version 8。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 一旦安装完成，你还需要 CoudD 和 N SDK。这是 Kuda 深度神经网络库。在这一侧，你点击下载。同样，这里非常重要的是获取正确的版本。因此，你需要版本
+    7，因为现在我认为最新版本是版本 8。
+- en: So then you click on download。 And for this， you need a account so you can create
+    this for free and then download this。![](img/bb62afea1f41dc8b70a5ccf587ce444b_5.png)
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后你点击下载。为此，你需要一个账户，你可以免费创建这个账户然后下载它。![](img/bb62afea1f41dc8b70a5ccf587ce444b_5.png)
+- en: '![](img/bb62afea1f41dc8b70a5ccf587ce444b_6.png)'
+  id: totrans-13
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/bb62afea1f41dc8b70a5ccf587ce444b_6.png)'
+- en: And now once you downloaded this， I show you what you must do。 So here I made
+    some screenshots from my other machine where I have windows。 So first of all。
+    after the installation of the Kuda toolkit， you probably have the somewhere on
+    C program files and Vdia GPU computing toolkit kuda and then the version 10。1，
+    this is your installation directory and then when you downloaded the codi and
+    N SDK。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 一旦你下载了这个，我会告诉你必须做什么。在这里，我从我另一台有 Windows 的机器上做了一些截图。因此，首先，在安装 Kuda 工具包后，你可能会在
+    C 程序文件和 Vdia GPU 计算工具包 Kuda 中找到它，然后是版本 10.1，这就是你的安装目录。当你下载了 codi 和 N SDK 后。
+- en: then you can go into this downloaded folder and there you have a bin directory
+    and include directory and a lip directory。 For example， in the bin directory we
+    have one DL。 So now you have to grab all of these files and then go back to your
+    Kuda toolkit installation directory and there you also have the bin that include
+    and。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后你可以进入这个下载的文件夹，在那里你会有一个 bin 目录、一个 include 目录和一个 lip 目录。例如，在 bin 目录中我们有一个 DL。因此，现在你需要将所有这些文件抓取出来，然后返回到你的
+    Kuda 工具包安装目录，在那里你也会有 bin 和 include。
+- en: '![](img/bb62afea1f41dc8b70a5ccf587ce444b_8.png)'
+  id: totrans-16
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/bb62afea1f41dc8b70a5ccf587ce444b_8.png)'
+- en: Lip directory。 So you have to copy all of these files in the corresponding files
+    in your Kuda toolkit directory。 And after you've done that， you also have to modify
+    the environment variables。 So one thing you need is you need to create a variable
+    kuda path and then put in the installation path。And then you also have to modify
+    the actual path variables。 So in here。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: lip 目录。因此，你必须将所有这些文件复制到 Kuda 工具包目录中的相应文件中。在完成这些之后，你还需要修改环境变量。所以你需要创建一个变量 kuda
+    path，然后放入安装路径。然后你还需要修改实际的路径变量。所以在这里。
+- en: you have to add these additional paths。 So this is the installation folder with
+    the bin folder and the lip and。VvP folder。 So you need to put these in your path
+    variables on Windows。 And now this is all you need。 So these are all this steps
+    required on Windows。 And now we can go ahead and just install our Tensofflow。
+    So now what we do is first， I recommend to use a virtual environment。 And for
+    this， I'm using Conda。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你需要添加这些额外的路径。这是包含 bin 文件夹和 lip、VvP 文件夹的安装文件夹。因此，你需要将这些添加到 Windows 的路径变量中。现在这就是你所需的一切。这些是在
+    Windows 上所需的所有步骤。现在我们可以继续安装我们的 TensorFlow。所以现在我们首先要做的是，我建议使用虚拟环境。为此，我使用 Conda。
+- en: So I create a new environment with Conda create。 Then minus n and the name。
+    I say T F for Tensorflow。 And I say Python equals 3。8。![](img/bb62afea1f41dc8b70a5ccf587ce444b_10.png)
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我用 `Conda create` 创建了一个新的环境。然后是 minus n 和名称。我说 T F 代表 TensorFlow。我说 Python 等于
+    3.8。![](img/bb62afea1f41dc8b70a5ccf587ce444b_10.png)
+- en: And if you don't know how to use Conda， then I have a whole tutorial that explains
+    this。 so I will put the link in the description as well。 And so by the way， you
+    don't need Connda。 you can also just use the virtual end from Python。 This works
+    as well。Alright。 so now we created this and now I activate it with Conda activate
+    T F。And now for the installation。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你不知道如何使用 Conda，那么我有一个完整的教程来解释这个。所以我会把链接放在描述中。顺便说一下，你并不需要 Conda。你也可以仅仅使用 Python
+    的虚拟环境。这也是可以的。好的。所以现在我们创建了这个，现在我用 `Conda activate T F` 来激活它。接下来是安装。
+- en: we use Pip install Tensorflow。 So there is also a Conda install command available。
+    but I actually do not recommend to use the Conda install command because this
+    is not officially supported and there might be some performance issues。 So let's
+    just use Pip install Tensorflow and hit enter。 And now this might take a few seconds。
+    Alright， so this was successful。 So let's test this and see if the installation
+    was actually successful。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们使用 Pip 安装 Tensorflow。因此也有一个 Conda 安装命令可用，但我实际上不推荐使用 Conda 安装命令，因为这不是官方支持的，可能会有一些性能问题。所以我们就用
+    Pip 安装 Tensorflow，然后按回车。这可能需要几秒钟。好的，所以这成功了。让我们测试一下，看看安装是否真的成功。
+- en: So let's start our Python shell。 And let's import Tensorflow S T F。 And now
+    if everything work correctly， then this should work without errors。 Yeah， so this
+    worked。 we didn't see any errors。 So now we have Tenorflow and for example。 we
+    can print the version Tensorflow underscore。Underre version and we see I have
+    the latest version 2。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以让我们开始我们的 Python shell。让我们导入 Tensorflow S T F。如果一切正常，那么这应该可以正常工作而没有错误。是的，这成功了。我们没有看到任何错误。所以现在我们有
+    Tensorflow，例如，我们可以打印版本 Tensorflow underscore。Underre 版本，我们看到我有最新版本 2。
+- en: 3。1 and then if you have the GPU support installed。 you can also test this by
+    saying physicalical devices equals Tf。 config do list dot physicalical underscore
+    devices and then the GP U string and this was an error sorry。T F dot config dot
+    list， underscore physical devices。 And here in my case。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 3.1 然后如果你安装了 GPU 支持，你也可以通过输入 physicalical devices equals Tf.config do list dot
+    physicalical underscore devices 来测试，然后是 GP U 字符串，这里出现了一个错误，抱歉。T F.dot config.dot
+    list，underscore physical devices。这里在我这边。
+- en: this is just an empty list。 But if you have the cheap your support。 then it
+    should put in your Kuda device in here， so you can test this with this command。
+    And yeah。 so for now， you know how to install Tensorflow。 And I hope you enjoyed
+    this。 And if you like this then please hit the like button and subscribe to the
+    channel。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这只是一个空列表。但是如果你有便宜的支持，那么它应该放在你的 Kuda 设备中，这样你就可以用这个命令进行测试。是的，暂时你知道如何安装 Tensorflow。我希望你喜欢这个。如果你喜欢，请点击喜欢按钮并订阅频道。
+- en: And then I hope to see you in the next video bye。![](img/bb62afea1f41dc8b70a5ccf587ce444b_12.png)
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我希望在下一个视频中见到你，再见！![](img/bb62afea1f41dc8b70a5ccf587ce444b_12.png)

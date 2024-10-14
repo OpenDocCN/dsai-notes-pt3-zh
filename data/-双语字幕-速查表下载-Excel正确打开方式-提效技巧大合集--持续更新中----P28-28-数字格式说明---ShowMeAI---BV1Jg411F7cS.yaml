@@ -1,0 +1,171 @@
+- en: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P28：28）数字格式说明 - ShowMeAI - BV1Jg411F7cS
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P28：28）数字格式说明 - ShowMeAI - BV1Jg411F7cS
+- en: '![](img/016aab5dfb86cf7c4f484606195ab90f_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/016aab5dfb86cf7c4f484606195ab90f_0.png)'
+- en: In this short Excel tutorial， we're going to look at the variety of number formats
+    that we have available to us in Excel。 And for this video， I'm using a customer
+    relationship tracker spreadsheet。 And you can see it's got lots of dates and lots
+    of times and some numbers。 And you'll notice that the dates and times， especially
+    are formatted in a specific way。 Here。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个简短的Excel教程中，我们将查看在Excel中可用的各种数字格式。在这个视频中，我使用的是客户关系跟踪电子表格。你可以看到它有很多日期和时间，还有一些数字。你会注意到，日期和时间尤其以特定方式格式化。在这里。
+- en: we have the first three letters of a month。 Then the date comma and then the
+    year。 But what if you prefer a different format than this for your dates。 Let's
+    look at how to change those up。 The first thing you would do is select the column
+    that you want to change the format for。 So I just left clicked on column B。 And
+    then we just go to the home tab， home ribbon。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们有一个月的前三个字母。然后是日期，逗号，再加上年份。但如果你喜欢不同的日期格式呢？让我们看看如何更改这些。你首先要选择要更改格式的列。所以我左键单击了B列。然后我们去主选项卡，主功能区。
+- en: and here in the number group， we have some formats。 right now， it says that
+    the format is general。 And the reason for that is because I have the entire column
+    selected。 So it includes。Text in these cases and also dates down here。 So it has
+    to say general。 But again。 I'm gonna to click on column B and then go to the number
+    group and change it from general to number。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在数字组中，我们有一些格式。现在，它显示格式为常规。这是因为我选择了整个列。所以它包括文本和下面的日期。因此，它必须显示为常规。但我会点击B列，然后去数字组，将其从常规更改为数字。
+- en: And the first time I did this。 I thought， wow， that's kind of odd。 How did the
+    specific date that was here， transform suddenly into a number。 Well。 the reason
+    that happened is that in Excel dates and times are handled as numbers。 So， for
+    example。 over here on the right， I'm just going to put in the number one。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我第一次这样做时，我想，哇，这有点奇怪。这里的具体日期怎么突然变成了数字。实际上，这是因为在Excel中，日期和时间以数字形式处理。所以，例如，在右边，我只是输入数字1。
+- en: And then I'm going to click on it and go to the number group and switch to short
+    date。 And you see what happened， the number one， if it's formatted as a date will
+    be January 1，1900。 Let's check out the number 55，55 as a date is February 24，1900。
+    So that's a little bit strange and hard to get used to it first。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我要点击它，进入数字组，切换到短日期。你会看到发生了什么，如果格式为日期，数字1将是1900年1月1日。让我们看看数字55，作为日期是1900年2月24日。所以这有点奇怪，起初很难习惯。
+- en: but that's why these dates turned into numbers。 Okay， that's not at all。What
+    I want。 So I select column B again， and then I'll go back here， and let's look
+    at what else we can do。 I can turn these dates into currency。 So that's a number
+    format that I can use。 again。 doesn't make sense in this case。 but in many cases，
+    you will want to format numbers as currency。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但这就是这些日期变成数字的原因。好吧，这并不是我想要的。所以我再次选择B列，然后回到这里，让我们看看还能做些什么。我可以将这些日期转换为货币。所以这是我可以使用的数字格式。再次说，这在这种情况下没有意义，但在许多情况下，你会想将数字格式化为货币。
+- en: underneath currency， we have accounting。 and it's very similar to currency。
+    but instead of having the dollar sign right next to the numbers。 the dollar sign
+    is separated away from the numbers。 and that just makes the number a little bit
+    easier to read。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在货币下方，我们有会计格式。它与货币非常相似。但美元符号与数字分开，而不是紧挨着数字。这使得数字更容易阅读。
+- en: I really like how this looks with accounting format。 We also have short date。
+    and this format has changed my three letter abbreviations of April and so forth。
+    and turn them into just numbers。 I really like that option。 Let's look at long
+    date。 You can see what that did。 Now it includes the day and the date along with
+    the year quite。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我真的很喜欢这种会计格式的外观。我们还有短日期。这种格式改变了四月等的三字母缩写，把它们变成了数字。我真的很喜欢这个选项。让我们看看长日期。你可以看到这做了什么。现在它包括了日期和年份。
+- en: longeronger than it was before takes up more space。 We can also format it to
+    be a time。 And again。 it doesn't make sense in this case。 So I'm going to switch
+    over to the next column where we do have some times。 and I'll click select time。
+    And by doing that， it added AM and PM to each of those times。We have percentages，
+    and this isn't going to make much sense。 But if I select column D。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 比之前更长，占用更多空间。我们还可以将其格式化为时间。再说一次，在这种情况下没有意义。所以我要切换到下一列，我们有一些时间。我会点击选择时间。这样做时，它为每个时间添加了AM和PM。我们有百分比，这并不太有意义。但如果我选择D列。
+- en: let's look at that。 I can format this text to be percentages。 I can format them
+    to be fractions。 which in this case didn't work out so well。 And I can also set
+    these numbers to be formatted as text。 So they're treated similarly to how Excel
+    treats text。 So those are the default number formats that are in Excel。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们看看。我可以将这段文本格式化为百分比。我可以将它们格式化为分数，而在这种情况下效果不是很好。我还可以将这些数字设置为文本格式。因此，它们的处理方式与Excel处理文本类似。这些是Excel中的默认数字格式。
+- en: But what if you're still not happy with the results。 For example， for me。 these
+    dates are a little bit too long。 I would like to shorten them up。 but not all
+    the way to short date。 So in order to get this number format just the way I want
+    it to be。 I need to do one of two things， I can either go to the launch button
+    here in the corner and click or I can be here in the list of number formats and
+    go to the very bottom。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但如果你仍然对结果不满意。例如，对我来说，这些日期有点太长了。我想缩短它们，但不想完全缩短到短日期。所以为了让这个数字格式达到我想要的样子，我需要做两件事之一，我可以去角落里的启动按钮点击，或者我可以在数字格式列表中向下滚动到最底部。
+- en: More number formats and click Either way， it takes you to the same place。All
+    right。 I would like to change this date format。 So I click here on the appropriate
+    category， click on date。 and it lists some options that I have。 and it gives me
+    examples of what those would look like。 All right， and I can just browse through
+    those and pick the 1 I want。 And this is the 1 I want。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 更多数字格式和点击无论如何，它都会带你到同一个地方。好的。我想要改变这个日期格式。所以我在适当的类别上点击这里，点击日期。它列出了一些我可以选择的选项，并给我一些示例。这很好，我可以浏览这些选项并选择我想要的。这是我想要的。
+- en: I want the full name of the month spelled out。 So I double click on that， or
+    you can just click O。 and it makes the change。 So now I can shorten up this column
+    a little bit。 I did it by just double clicking between column B and column C，
+    and it resized to the perfect width。What about times， I can click on column C
+    and do a similar thing。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想要月份的全名拼写出来。所以我双击那个，或者你可以点击O。它就进行了更改。现在我可以稍微缩短这一列。我是通过在B列和C列之间双击来实现的，它调整到了完美的宽度。关于时间，我可以点击C列并做类似的事情。
+- en: I can go into more number formats time。 And let's say instead of using AM PM。
+    I would like to use military time。 I can definitely do that。 I can just go down
+    here and select military time， which I believe is this one here。 I can just double
+    click on it or just click once and then click O。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以进入更多数字格式时间。假设我不想使用AM和PM。我想使用军事时间。我当然可以做到。我可以在这里向下选择军事时间，我相信就是这个。我可以双击它或点击一次然后再点击O。
+- en: and it changed all of those times to military time。 much better。 But notice
+    that it included the seconds in the time， and that may not be important to you。
+    If you don't want the seconds， you can go back into the time formats。More number
+    formats time。 And this one here should also be military time。 So I click O， and
+    it is showing up as military time。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它将所有的时间都改为军事时间。好多了。但请注意，它包含了时间中的秒，这可能对你来说并不重要。如果你不想要秒，可以回到时间格式中。更多数字格式时间。而这里的这个也应该是军事时间。所以我点击O，它显示为军事时间。
+- en: 1400 hours，1600 hours。 but it does not include seconds。 As you can see here
+    in the more number formats window。 There are just dozens and dozens of options
+    that we have。 in the special category。 There's zip codes， Social Security numbers，
+    phone numbers。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 1400小时，1600小时。但它不包括秒。正如你在更多数字格式窗口中所看到的。我们有成百上千的选项。在特殊类别中。有邮政编码，社会安全号码，电话号码。
+- en: So you can format text as these things as phone numbers as zip codes。 And you
+    can also use some custom number formats that you can see here at the right。 So
+    hopefully。 this video will help you with your number formatting in Excel。 And
+    before I end the video。 I'd like to send a shout out to my $5 Patreon supporters，
+    Charman Natooli and Triia Ellis。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这样你可以将文本格式化为电话号码或邮政编码。而且你还可以使用一些自定义的数字格式，可以在右侧看到。希望这个视频能帮助你在Excel中进行数字格式化。在我结束视频之前，我想向我的$5
+    Patreon支持者Charman Natooli和Triia Ellis致敬。
+- en: You're awesome。 Thank you so much for being $5 supporters of mine on Patreon。
+    And of course。 I appreciate all of my Patreon supporters。😊。![](img/016aab5dfb86cf7c4f484606195ab90f_2.png)
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你们真棒！非常感谢你们在Patreon上支持我$5。当然，我也非常感谢所有我的Patreon支持者。😊！[](img/016aab5dfb86cf7c4f484606195ab90f_2.png)
+- en: If you found this tutorial to be helpful， please click the like button。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你觉得这个教程有帮助，请点击点赞按钮。

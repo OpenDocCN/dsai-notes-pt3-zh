@@ -1,0 +1,260 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P62：63）相对与绝对单元格引用 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P62：63）相对与绝对单元格引用 - ShowMeAI - BV1uL411s7bt
+- en: '![](img/9eb64b34fee47627f9376406025aec96_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/9eb64b34fee47627f9376406025aec96_0.png)'
+- en: In this video， I will explain and demonstrate the differences between relative
+    cell references in Excel and absolute cell references in Excel。 And this is a
+    very key important concept to understand when using formulas and functions in
+    Excel。 And you can see the spreadsheet that I'm using for this video is a mileage
+    re sheet。 This tracks each of the employees of a company。 and how many miles they
+    drive in their own personal cars。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个视频中，我将解释并演示Excel中相对单元格引用和绝对单元格引用之间的区别。这是使用Excel中的公式和函数时非常重要的概念。你可以看到我在这个视频中使用的电子表格是一个里程报表。它记录了公司的每位员工以及他们在个人汽车上驾驶的里程。
+- en: but doing company business。 And to be fair to those employees。 the company is
+    going to reimburse their mileage。 you can see it goes from January through June。
+    Okay， first， let's look at relative cell references。 And this really is the most
+    common type of cell references that you'll need。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但用于公司的业务。为了公平对待这些员工，公司将报销他们的里程。你可以看到它从一月到六月。好的，首先，让我们看看相对单元格引用。这确实是你需要的最常见类型的单元格引用。
+- en: So let's say the company reimburses mileage twice a year。 So it's halfway through
+    the year。 And now we need to calculate the total mileage for the first half of
+    the year。 to do that for Kaina。Just click on the cell to the right of her monthly
+    mileage totals。 and then just type equals on the keyboard some left parenthesis。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设公司每年报销两次里程。那么现在正好是年中的时候。我们需要计算上半年总的里程。为了做到这一点，针对Kaina。只需点击她每月里程总数右侧的单元格，然后在键盘上输入等号和一个左括号。
+- en: And then I just need to describe or click and drag to show the range that I
+    would like to add up that I would like to sum I'll just click and drag to highlight
+    that range。 I should put in a right parenthesis， but it's not necessary in this
+    case。 and then I'll tap enter on the keyboard。 and there is the total mileage
+    that Kaina has driven in her own personal vehicles for company business。 If you've
+    watched my other Excel videos。 you know that I don't have to recreate that formula
+    again for epiphonia or Brook or any of these other fine people。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我只需描述或点击并拖动以显示我希望相加的范围。我只需点击并拖动以突出显示该范围。我应该输入一个右括号，但在这种情况下不是必要的。然后我将在键盘上按回车，这就是Kaina为公司业务在她自己的私人车辆上驾驶的总里程。如果你看过我其他的Excel视频，你就会知道我不需要为epiphonia或Brook或其他任何人重新创建那个公式。
+- en: Instead， all I have to do is click on my first formula。 Now it looks like I
+    clicked on the number 721 but that's not true。 This cell does not contain the
+    number 721。 It contains a formula。 and you can see that here in the formula bar。
+    and that formula returns the results7。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 相反，我只需要点击我的第一个公式。现在看起来我点击了数字721，但这并不是真的。这个单元格不包含数字721。它包含一个公式，你可以在公式栏中看到这个公式，并且该公式返回结果7。
+- en: So clicking on that cell H3 in this case， I'm going go to the lower right corner
+    and click and hold the click on the autofill handle。 or sometimes it's called
+    the fill handle。 It's that little square in the lower right corner of the cell。
+    I click and hold the click and then drag down to copy that formula all the way
+    down。 And there you go。 you can see that it automatically adjusted the formula。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因此，在这种情况下，点击单元格H3，我将转到右下角，点击并按住自动填充手柄，有时也叫填充手柄。它是单元格右下角的小方块。我点击并按住，然后向下拖动以复制整个公式。好了，你可以看到它自动调整了公式。
+- en: The autofill handle when I dragged it， it was trying to copy the contents of
+    this cell and it succeeded but again。 this cell doesn't have 721 in it。 It has
+    this formula。 upon copying and pasting that formula all the way down in column
+    H。 Look what exc did。 It automatically adjusted the B3 through G3 part of the
+    formula it changed it to B4 through G4 and here B5 through G5 I can also double
+    click to show you that B6 through G6 So again。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 当我拖动自动填充手柄时，它试图复制这个单元格的内容，并且成功了，但再次强调，这个单元格里没有721。它有这个公式。在列H中复制并粘贴那个公式后，看看Excel做了什么。它自动调整了公式中的B3到G3部分，改成了B4到G4，以及这里的B5到G5。我还可以双击显示B6到G6。所以再一次。
+- en: It adjusted the cell references。 The original formula said B3 through G3。 but
+    it's adjusting and changing it from B3 through G3 to B8 through G8 or B13 through
+    G13 all the way down to B22 through G22 Now that is the default when you use the
+    autofill handle it will automatically make those adjustments for you when you
+    use the autofill handle Now how is it doing that Well。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它调整了单元格引用。原始公式是 B3 到 G3，但它将 B3 到 G3 的引用调整为 B8 到 G8 或 B13 到 G13，一直调整到 B22 到 G22。当你使用自动填充手柄时，这就是默认行为，它会自动为你进行这些调整。那么这是怎么做到的呢？
+- en: it's using relative cell references When I clicked and drag that autofill handle
+    Excel by default said okay this formula is relative The original formula is summing
+    up the six cells to the left of the current cell So 123456 It's adding up all
+    of those to produce the results So when I copied it using the autofill handle
+    because it's a relative cell reference the formula that was pasted in said okay。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它使用了相对单元格引用。当我点击并拖动自动填充手柄时，Excel 默认表示这个公式是相对的。原始公式是对当前单元格左侧的六个单元格求和。所以 1、2、3、4、5、6
+    它将这些值相加得出结果。因此，当我使用自动填充手柄复制时，因为这是一个相对单元格引用，粘贴的公式就会说好。
+- en: I will now sum the six cells to the left of the current cell 1，2，3，4，5，6。 and
+    it added those up and produced a different number from cell H3。 So that's the
+    power and the beauty of relative cell references。 and you don't really have to
+    do anything special to specify that you want relative cell references。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我将对当前单元格左侧的六个单元格进行求和 1，2，3，4，5，6。它将这些数值相加，得出了一个与单元格 H3 不同的数字。这就是相对单元格引用的力量和美妙之处。而且你真的不需要做任何特别的事情来指定你想要相对单元格引用。
+- en: That's the default whenever you use the autofill handle。 So that's exactly what
+    I wanted and it's looking good。 So now let's look at absolute cell references。
+    and how those can be very important。 Let's say we try the same kind of thing but
+    with total amount owed。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 每当你使用自动填充手柄时，这就是默认情况。这正是我想要的，效果很好。现在我们来看一下绝对单元格引用，以及它们是如何非常重要的。假设我们尝试相同的操作，但针对欠款总额。
+- en: So let's say I'm an accountant for this business。 and I need to figure out not
+    just the total mileage that each employee drove but how much the company owes
+    that person and needs to pay them。 So let's first do it the wrong way using relative
+    cell references。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设我是一家公司的会计，我需要计算每位员工驾驶的总里程，以及公司应支付给他们的金额。因此我们首先用相对单元格引用错误地做一下。
+- en: So I'll tap equals to figure out how much the company owes Kaina in this case。
+    I need to multiply7。2 and I'll just click on H3， and then I need to multiply it
+    by the current reimbursement rate for this company。 Let's say they reimburse 58
+    cents for every mile driven。 So I'll put in multiplied by which is just the asterisk
+    symbol and then I'll click here on the reimbursement rate and then tap enter wonderful
+    it calculates the amount owed to Kaina。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我将输入等于号，计算公司应付给 Kaina 的金额。我需要将 7.2 乘以 H3，然后我需要将其乘以公司的当前报销率。假设他们每英里报销 58 美分。那么我将输入乘以，也就是星号符号，然后点击报销率，最后按回车，非常好，它计算出了应付
+    Kaina 的金额。
+- en: She drove $721 miles。 that calculates out to being $418 and18 of mileage reimbursement。
+    Now here comes the catch。 it seems like that went beautifully。 but when I click
+    on the cell that has the formula that I want to copy down to the other employees
+    and I use the autofill handle and I pull that down watch what happens。 I release
+    and I get all sorts of error messages。 Now in addition to the error messages I
+    do get a valid number here。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 她驾驶了 721 英里。这计算出来的里程报销为 418.18 美元。现在问题来了。看起来一切都进行得很顺利，但当我点击包含我想要复制到其他员工的公式的单元格，并使用自动填充手柄向下拖动时，看看会发生什么。我放开后，出现了各种错误信息。除了错误信息，我确实得到了一个有效的数字。
+- en: but I kind of doubt that the company is going to reimburse this person $435000
+    for。Only 1 thousand0 miles。 So what's going on here。 Let's look at the formulas。
+    If I double click on this formula， you can see what happened。 The original formula
+    was multiplying H3 by I1。 and that was correct。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 不过我有点怀疑公司会报销这个人 435000 美元，仅仅是 1000 英里。那么这里发生了什么？我们来看一下公式。如果我双击这个公式，你可以看到发生了什么。原始公式是将
+    H3 乘以 I1，而这个是正确的。
+- en: Now let me tap escape on the keyboard to go down and show you the second formula。
+    H4 that's correct。 multiplied by I2。 Excel is now trying to multiply by the words
+    totalode。 Well。 that doesn't make any sense。 Why did it drop down from the mileage
+    reimbursement amount down to totalode。 Well， the answer is very simple。 When you
+    use the autofill handle。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在让我按下Esc键向下展示第二个公式。H4，没错。乘以I2。Excel现在试图乘以单词“总里程”。这又有什么意义呢？为什么它从里程报销金额降到“总里程”呢？答案非常简单。当你使用自动填充手柄时。
+- en: Excel by default is using relative cell references。 And so just like in my total
+    mileage example。 Excel is adding1 to the previous formula。 So here the formula
+    had I1 So when I clicked and dragged and used the autofill handle。 it shifted
+    I1 to being I2。 and then I3。 And so let's look at this formula。 This is another
+    good example。H5。 that's this cell。 And that's correct。 That's exactly what I want。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: Excel默认使用相对单元格引用。所以就像我总里程的例子一样。Excel在之前的公式上加1。所以这里的公式是I1。当我点击并拖动并使用自动填充手柄时。它将I1移到了I2，然后是I3。让我们看看这个公式。这是另一个好的例子。H5。这就是这个单元格。没错。这正是我想要的。
+- en: multiplied by I 3。 So I 1，2，3 Yikes。 It's multiplying the mileage that this
+    person drove by the totalode to Kaina。 That doesn't make any sense at all。 It's
+    not even close to being incorrect。 I'll tap escape on the keyboard。 And I'll hold
+    control and tap Z a couple of times to undo that mistake。 and I'll tap it one
+    more time to undo my incorrect formula。 Even though it worked for Kaina。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 乘以I3。所以I1、I2、I3。哎呀。它将这个人驾驶的里程乘以总里程，这毫无意义。根本不接近正确。我会在键盘上按下Esc键，并按住Ctrl并按Z几次以撤销那个错误。然后再按一次以撤销我的错误公式。尽管它对Kaina有效。
+- en: It was a failure for all the rest of the employees。 So let's look at the proper
+    way to calculate this。 in this formula。 I want the cell reference for total mileage
+    to be relative。 But I want the cell reference for mileage reimbursement rate to
+    be absolute。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 对所有其他员工来说这是一个失败。那么让我们看看正确的计算方法。在这个公式中。我希望总里程的单元格引用是相对的。但是我希望里程报销率的单元格引用是绝对的。
+- en: I want it to stay there no matter what。 So how would I do that。 click on the
+    cell where I want to put the formula。 So I type equals。 And now I could click
+    here to select H 3。But sometimes it's easier just to type it。 So I'll type H3。
+    multiplied by， which is the asterisk。 And now I'll type I。 And then instead of
+    just typing1。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我希望它无论如何都留在那里。那么我该怎么做呢？点击我要放置公式的单元格。所以我输入等于。现在我可以点击这里选择H3。但是有时直接输入更容易。所以我会输入H3。乘以，就是星号。然后我会输入I。接着不是仅仅输入1。
+- en: I'm going to type I dollar sign1。 If I don't put that dollar sign in there。
+    it will treat this cell reference， I1 as being relative。 And then when I use the
+    autofill handle。 it will move away from the mileage reimbursement rate， and I
+    need it to stay there。 And so whenever you need a cell reference to stay put no
+    matter what to make it absolute What you do is you use an asterisk to tie that
+    part of the cell reference down。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我要输入I美元符号1。如果我不把那个美元符号放进去。它会把这个单元格引用I1当作相对的。然后当我使用自动填充手柄时。它会偏离里程报销率，我需要它保持在那里。因此，每当你需要某个单元格引用无论如何都保持不变，变为绝对引用时，你需要使用星号将单元格引用的那一部分固定下来。
+- en: You're locking it in place。 So I'm locking in place the reference of one。 let's
+    try it now。 I tap enter on the keyboard， it returns the same results。 But now。
+    when I click and drag using the autofill handle to copy and paste the formula
+    for all the rest of the employees。 Look， it worked。 Let's examine the formulas。If
+    I double click， you can see it here。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你将它锁定在位置上。所以我锁定了一个的引用。现在我们试一下。我按下键盘上的回车键，它返回相同的结果。但是现在，当我使用自动填充手柄点击并拖动以复制和粘贴公式到所有其他员工时。看，它成功了。我们来检查一下公式。如果我双击，你可以在这里看到它。
+- en: you can also see it in the formula bar here toward the top。 So there's my original
+    formula that I typed。 Let's look at the next one。 H4 multiplied by I sign 1。 What
+    about this person。 H5 multiplied by I sign1 So the H is changing H6 H7 H11。 but
+    the cell reference in the i column is staying put It's staying at1。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你也可以在顶部的公式栏看到它。所以这是我输入的原始公式。让我们看看下一个。H4乘以I1。那这个人呢？H5乘以I1。所以H在变化，H6、H7、H11。但是I列中的单元格引用保持不变，依然是1。
+- en: Why because I locked it down by using a dollar sign。 Now。 another way to do
+    the same thing is to use a dollar sign for both I and1。 So I'm going to click
+    here on in this case， cell I3。 and I'll go up to the formula bar。 I very well
+    could have put a dollar sign in front of both the I and also sign 1 tap enter
+    and if I copy that down now to the rest of the employees。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 为什么呢？因为我通过使用美元符号将其锁定了。现在，另一种做同样事情的方法是对I和1都使用美元符号。所以我将在这种情况下点击单元格I3，然后上到公式栏。我完全可以在I前面和1前面都加上美元符号，按下回车，如果我现在把它复制到其他员工。
+- en: It doesn't look like it changed anything In reality， it didn't change much。
+    But if you look。At each of these individual formulas， you see that there's a dollar
+    sign in front of both。 So the only difference there is it locked in the cell reference。
+    It locked it in to column I and row number1。 So both are locked in place。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这看起来并没有改变什么，实际上，它并没有改变太多。但是如果你看每一个单独的公式，你会发现前面都有一个美元符号。所以唯一的区别是它锁定了单元格引用。它锁定到了I列和第1行。因此这两个都是固定的。
+- en: It wasn't necessary to do that because I wasn't dragging this number out of
+    I。 right。 I wasn't dragging it over here to J。 or to H。 So there wasn't a need
+    to use the dollar sign to lock the cell reference into column I。 but it still
+    produces good results。 So the bottom line is with this particular formula that
+    I've written。 The H3， that is a relative cell reference。 It changes as I use the
+    autofill handle and copy paste that formula down。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这样做并不是必要的，因为我并不是从I列拖动这个数字。对吧？我并没有把它拖到J列或H列。所以没有必要使用美元符号将单元格引用锁定到I列，但它仍然产生了良好的结果。因此，结论是，对于我写的这个特定公式，H3是一个相对单元格引用。随着我使用自动填充手柄并将该公式向下复制，它会变化。
+- en: That H3 changes H5 H 9 etc ce。 But the I1 part of the cell reference。 That is
+    an absolute cell reference。 And in this case。 I've chosen to lock down both the
+    I and the one。 Those are both going to be riveted to。This cell here I The more
+    you use Excel， the more you'll see examples of when it's useful or necessary to
+    use absolute cell references。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: H3会变化为H5、H9等。但是I1部分的单元格引用是绝对单元格引用。在这种情况下，我选择将I和1都锁定。这两个都将固定在这里的单元格I上。你使用Excel的越多，就越会看到使用绝对单元格引用的有用或必要的例子。
+- en: '![](img/9eb64b34fee47627f9376406025aec96_2.png)'
+  id: totrans-29
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/9eb64b34fee47627f9376406025aec96_2.png)'

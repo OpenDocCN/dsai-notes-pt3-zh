@@ -1,0 +1,346 @@
+- en: 【双语字幕+资料下载】用 Python 和 Numpy 实现最热门的12个机器学习算法，彻底搞清楚它们的工作原理！＜实战教程系列＞ - P8：L8- 支持向量机
+    - ShowMeAI - BV1wS4y1f7z1
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】用 Python 和 Numpy 实现最热门的12个机器学习算法，彻底搞清楚它们的工作原理！＜实战教程系列＞ - P8：L8- 支持向量机
+    - ShowMeAI - BV1wS4y1f7z1
+- en: Hi， everybody。 Welcome to your new machine learning from scratcht tutorial。
+    Today。 we are going to implement the SVM algorithm using only built in Python
+    modules and Ny。😊。The SVM or support vector machine is a very popular algorithm。
+    It follows the idea to use a linear model and to find a linear decision boundary
+    also called a hyperplane that best separates our data。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 大家好，欢迎来到全新的机器学习入门教程。今天，我们将仅使用内置的 Python 模块和 Numpy 来实现 SVM 算法。😊 SVM 或支持向量机是一个非常流行的算法。它的核心思想是使用线性模型，寻找最佳分隔我们数据的线性决策边界，亦即超平面。
+- en: And here， the choice as the best hyperplane is the one that represents the largest
+    separation or the largest march in between the two classes。 So we choose the hyperplane
+    so that the distance from it to the nearest data point on each side is maximized。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这里，最佳超平面的选择是代表两个类别之间最大分隔或最大间隔的那个。因此，我们选择超平面，使其到每侧最近数据点的距离最大化。
+- en: So if we have a look at this image， then we want to find a hyperplane and the
+    hyperplane has to satisfy this equation W times x minus B equals 0。And we want
+    to。Find the hyperplane so that the distance to both the。both classes is maximized。
+    So we used the class plus one here and-1 here。So this， this tense or the margin
+    should be maximized。And first， let's have a look at the math behind it。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我们看看这个图像，那么我们希望找到一个超平面，而这个超平面必须满足这个方程 W 乘以 x 减去 B 等于 0。我们希望找到超平面，使得到两个类别的距离最大化。因此我们在这里使用类别
+    +1，而在这里使用 -1。所以，这个间隔应该被最大化。首先，让我们看看背后的数学。
+- en: so it's a little bit more complex than in my previous tutorials。 but I promise
+    that once you have understood it， the final implementation is fairly simple。So。We
+    use the linear model， W times x minus B。 That should be 0。 And then our。嗯。Our
+    function should also satisfy the condition that W times x minus B should be greater
+    or equal than one。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这比我之前的教程稍微复杂一些。但我保证一旦你理解了，最终的实现相对简单。因此，我们使用线性模型，W 乘以 x 减去 B，应该等于 0。然后我们的函数也应该满足
+    W 乘以 x 减去 B 应该大于等于 1。
+- en: For our class plus one。 So all the samples here must lie on the left side of
+    this equation or this line here。And all。The samples of the class，-1 must lie。On
+    the right side from this equation。 So if we put this mathematically， then we should
+    it must satisfy W times x minus B should be greater or equal than1 for class1。
+    or it should be less or equal than-1 for class -1。So if you put this in only one
+    equation。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 对于我们的类别加一。因此，这里所有的样本必须位于这个方程或这条线的左侧。而类别 -1 的所有样本必须位于这个方程的右侧。所以如果我们用数学表示，那么我们应该满足
+    W 乘以 x 减去 B 必须大于等于 1 对于类别 1，或者对于类别 -1，必须小于等于 -1。所以如果你将这些放入一个方程中。
+- en: then we multiply our。Linear function with the class label。 And this should be
+    greater or equal than one。So this is the condition that we want to satisfy。And
+    now we want to come up with the W and the B。 So our weights and the bias。And for
+    this。 we use the cost function and then apply gradient descent。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们将我们的线性函数与类别标签相乘。这应该大于等于 1。这是我们希望满足的条件。现在我们想要得出 W 和 B，也就是我们的权重和偏置。为此，我们使用成本函数，然后应用梯度下降。
+- en: So if you're not familiar with gradient descent already。 then please watch one
+    of my previous tutorials。 For example。 the one with linear regression there I
+    explain this a little bit more in detail。So now let's。Conue。 So we use the。Use
+    a cost function here。 And in this case， we use the hinge loss。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你对梯度下降还不熟悉，请观看我之前的某个教程。例如，在关于线性回归的教程中，我对此做了更详细的解释。那么现在，让我们继续。我们在这里使用一个成本函数。在这种情况下，我们使用铰链损失。
+- en: and this is defined as the maximum of 0 and。1 minus。 And here we have our condition。
+    Y I times our linear model。 So what this means is if。 if we plot the hinge loss
+    and here the blue line is the hinge loss。 So this is either 0， if。Y times。F is
+    greater or equal than one。 So if they have the the same sign。Then it's 0。 And
+    the， if they。Yeah。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这被定义为 0 和 1 减去的最大值。而这里是我们的条件。Y I 乘以我们的线性模型。那么这意味着，如果我们绘制铰链损失，这里蓝线就是铰链损失。如果 Y
+    乘以 F 大于等于 1，那么这是 0。所以如果它们具有相同的符号，那么结果就是 0。
+- en: if they are correctly classified and are larger than one， then our loss is 0。
+    So this means if we have a look at this image again， if。For the green glass， if
+    its。 if it lies on this side。Then， it's 0。And for the blue class， if it lies on
+    this side。 then it's also 0。And otherwise， then we have a linear function。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果它们被正确分类并且大于1，那么我们的损失为0。这意味着如果我们再看看这个图像，如果。对于绿色的玻璃，如果它在这一侧。那么，它是0。对于蓝色类别，如果它在这一侧。那么也是0。否则，我们将得到一个线性函数。
+- en: So the further we are away from our decision boundary line， the higher is our
+    loss。And so this is one part of our cost function。 and the other part is。As I
+    already said。 we want to maximize the margin here。So between these two classes
+    and the margin is。Defined as2 over the magnitude of w。 So this is dependent from
+    our weight。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以，我们距离决策边界线越远，损失就越高。这是我们成本函数的一部分。另一部分是。正如我之前所说，我们希望在这里最大化间隔。所以在这两个类别之间，间隔被定义为2除以w的大小。因此，这取决于我们的权重。
+- en: dependent on our weight vector。 So we want to maximize this， and therefore。
+    we want to minimize the magnitude。 So we put this or add this to our。Cost functions。
+    So we also put this term。The magnitude of W to the power of two times a lambda
+    parameter。And then here we have our hinge loss。So the lambda parameter tries to
+    find a trade off between these two terms。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 依赖于我们的权重向量。因此我们希望最大化这个，因此。我们希望最小化大小。所以我们将这个或添加到我们的。成本函数中。因此，我们还添加这一项。W的大小的平方乘以一个lambda参数。然后这里是我们的铰链损失。所以lambda参数试图在这两个项之间找到一个折衷。
+- en: So we it says basically says which is more important。 So we want to， of course。
+    we want to have the right classification。 We want to lie on the correct side of
+    our lines。 but we also want to have the the line such that the margin is。Is maximized。嗯。So
+    yeah。 so if we look at the two cases， if our， if we are on the correct side of
+    the line。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以基本上这说明了哪个更重要。所以我们当然希望有正确的分类。我们希望位于线的正确一侧。但我们也希望线的间隔是。最大化的。嗯。所以，如果我们看看这两种情况，如果我们在正确的一侧。
+- en: So if Y I times F on x， F of x is greater or equal than one。Then we simply。
+    we only have this term because this is the hinge loss is 0。 And otherwise。 then
+    our cost function is this year。And now we want to minimize that。 So we want to
+    get the derivatives or the gradients of our cost function。So in the first case。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果Y I乘以F在x上，F的值大于或等于1。那么我们仅仅有这一项，因为铰链损失为0。否则，我们的成本函数就是这一项。现在我们希望最小化这个。因此，我们想要获得成本函数的导数或梯度。在第一种情况下。
+- en: if we are greater or equal than one。Our derivative。Is only is two times lambda
+    times。W， so。 and here we only look at one component of our W。 So we get rid of
+    the magnitude。And the derivative with respect to the B is 0。 So please double
+    check that for yourself here。 I will not explain the derivatives and details。And
+    in the other case。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我们大于或等于1。我们的导数仅为2倍lambda乘以W。因此，我们这里只看W的一个分量。因此，我们去掉大小。对B的导数为0。所以请自行确认。我不会解释导数和细节。在另一种情况下。
+- en: so if if Y I times F on x is not greater or equal than one。Then our derivative
+    with respect to the W is this equation here。 and the derivative with respect to
+    our bias is only Y I。So again。 please double check it for yourself。And then when
+    we have our gradients， we can use the update rule。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果Y I乘以F在x上不大于或等于1。那么我们对W的导数是这里的方程。对我们的偏差的导数仅为Y I。因此，请再次自行确认。当我们有了梯度，我们可以使用更新规则。
+- en: So the new weight is the old weight minus because we use gradient de。 So we
+    go into negative direction minus the learning rate or the step size times the
+    derivative。 So these are our update rules and。Now， I hope youve understood the
+    concept and the math behind this。 And now we can start implementing it。 So this
+    is now straightforward。 So， first of all。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以新的权重是旧的权重减去，因为我们使用梯度下降。所以我们朝负方向前进，减去学习率或步长乘以导数。这是我们的更新规则。现在，我希望你能理解这个概念及其背后的数学。现在我们可以开始实现它了。这现在很简单。所以，首先。
+- en: we import Ny S and P， of course。![](img/0c2f47f3d7d980a73cb14308e5d73802_1.png)
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们当然导入Ny S和P！[](img/0c2f47f3d7d980a73cb14308e5d73802_1.png)
+- en: And then we create our class S we am， which will get an in it。Method。And here
+    I will put in a learning rate， which will get a default value of 0001。 and it
+    will get a lambda parameter， which will also get a default。 And I will say this
+    is 001。 So this is usually also a small value。And then it will get the number
+    of iterations for our optimization。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们创建我们的类S，我们将获得一个init方法。在这里我将放入一个学习率，默认值为0001。它将获得一个lambda参数，默认值也将得到。我会说这是001。所以这通常也是一个小值。然后它将获得我们优化的迭代次数。
+- en: which will get the default of 1000。So then I will simply store them。 So I will
+    say self dot L R equals learning rate。Self do。Lambda Para equals Lambda Para。
+    So note that I cannot use Lambda here because Lada is a keyword and Python for
+    the Lada function。So。 yeah， them self do。And。Its equals and its。 Then I will say
+    self dot W equals none and self dot B equals none。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这将获得默认值1000。所以我将简单地存储它们。我会说self dot L R等于学习率。Self do。Lambda Para等于Lambda Para。请注意，我不能在这里使用Lambda，因为Lada是Python中Lada函数的关键字。所以。是的，self
+    do。然后它等于并且它的。然后我会说self dot W等于none，self dot B等于none。
+- en: So I have to come up with them later。 and then we define our two functions。
+    So as always。 one is the predict function， where we fit the training samples and
+    the training labels。And the。Sorry， this is the fit method。And the other one is
+    the predict method。Where we predict the labels of the test samples。And now let's
+    start with the predict method。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我必须稍后想出它们。然后我们定义我们的两个函数。像往常一样。一个是预测函数，我们拟合训练样本和训练标签。对不起，这是fit方法。另一个是预测方法。我们预测测试样本的标签。现在让我们开始预测方法。
+- en: because this is very short， so。![](img/0c2f47f3d7d980a73cb14308e5d73802_3.png)
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因为这非常简短，所以。![](img/0c2f47f3d7d980a73cb14308e5d73802_3.png)
+- en: We want to， as I said， if we look at the math， we apply this linear model。 and
+    then we look at the sign of this。 So if it's positive， then we say it's class
+    1。 and if it's negative， then we say it's class-1。 So we say linear。![](img/0c2f47f3d7d980a73cb14308e5d73802_5.png)
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们想要，如我所说，如果我们查看数学，我们应用这个线性模型。然后我们查看这个的符号。如果是正数，我们就说它是类1。如果是负数，我们就说它是类-1。所以我们说线性。![](img/0c2f47f3d7d980a73cb14308e5d73802_5.png)
+- en: Output equals Ny dot。Dot， So the dot product。Of X and self dot W， minus self
+    dot。B。 and then we choose the size。 so we can simply say， return。Nampy dot sign
+    of this linear output。So this is the whole predict implementation。 And now let's
+    continue with the fit method， so。First of all。As I said， we used the classes plus
+    1 and-1 here。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 输出等于Ny dot。Dot，所以点积。X和self dot W的结果减去self dot B。然后我们选择大小。因此我们可以简单地说，返回Nampy
+    dot的这个线性输出的符号。所以这是整个预测实现。现在让我们继续fit方法，所以。首先，如我所说，我们在这里使用类+1和-1。
+- en: So we want to make sure that our y has only -1 and plus1。 So oftentimes it has
+    0 and1。 So let's convert this。 So let's say y underscore equals。 And here we can
+    use nuy dot where this will get a condition。 So we say y。 if this is less or equal
+    than 0， then we put in -1， and otherwise we put in plus1。So。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们想确保我们的y只有-1和+1。所以通常它有0和1。让我们转换一下。所以我们说y underscore等于。在这里我们可以使用nuy dot where，这将获得一个条件。所以我们说y。如果小于或等于0，我们就放-1，否则放+1。所以。
+- en: This will convert all the zeros or smaller numbers to -1 and the other numbers
+    to plus 1。And now。 let's get the number of samples and the number of。Features。And
+    this is simply X dot。Shape。 because our input vector X is a nuy and DRA。Where
+    the number of rows is the number of samples and the number of columns is the number
+    of features。Then we want to initialize our W and our B。 And we simply put in zeros
+    in the beginning。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这将把所有的零或更小的数字转换为-1，其他数字转换为+1。现在。让我们获取样本数和特征数。这简单地是X dot Shape。因为我们的输入向量X是nuy和DRA。行数是样本数，列数是特征数。然后我们想要初始化我们的W和B。我们一开始简单地放入零。
+- en: So we say self。Tt W equals Ny zeros of size and features。 So for each。Feature
+    component we put in a0 for our weight component。And then we say self dot B equals
+    0。 And now we can。Start with our gradient descents。 So we say， for underscore。
+    because we don't need this in range self dot and it iter。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们说self。Tt W等于Ny的大小和特征的零。对于每个特征组件，我们将a0放入我们的权重组件中。然后我们说self dot B等于0。现在我们可以开始我们的梯度下降。所以我们说，for
+    underscore。因为我们不需要在范围self dot中，它迭代。
+- en: So the number of iterations we want to do this。And then， we iterate over our。Train
+    samples。 So I say4 index and X， I in enumerate X。So this will give me the current
+    index and also the current sample。And now。![](img/0c2f47f3d7d980a73cb14308e5d73802_7.png)
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们想要进行的迭代次数。然后，我们迭代我们的训练样本。所以我说4索引和X，我在枚举X中。这将给我当前的索引和当前的样本。现在。![](img/0c2f47f3d7d980a73cb14308e5d73802_7.png)
+- en: What I want to do now is let's。Have a look at the。math again。 So I want to。I
+    want to calculate the weight or the derivative of our cost function with respect
+    to the W and with respect to the bias。And here I first， but at first， I look if
+    this condition is satisfied， so I will。Say。 and the condition is Y I times our
+    linear function。 So I say condition equals。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我现在想做的是让我们再看一下数学。所以我想计算权重或我们的成本函数关于W和关于偏差的导数。这里我首先，但首先，我会查看这个条件是否满足，所以我会说。条件是Y
+    I乘以我们的线性函数。所以我说条件等于。
+- en: '![](img/0c2f47f3d7d980a73cb14308e5d73802_9.png)'
+  id: totrans-29
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/0c2f47f3d7d980a73cb14308e5d73802_9.png)'
+- en: Why underscore of the current index。Times， and then the linear function， so。Nampai
+    dot。Of the current sample and our self dot W minus self dot。B。嗯。This should be
+    greater or equal than one。So if this is satisfied and the condition is true and
+    otherwise it's false。 So now I say if。
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 为什么当前索引使用下划线。乘以，然后是线性函数，所以。Nampai.dot。当前样本和我们的self.dot.W减去self.dot.B。嗯。这应该大于或等于1。所以如果满足这个条件并且条件是真的，否则就是假。所以现在我说如果。
+- en: '![](img/0c2f47f3d7d980a73cb14308e5d73802_11.png)'
+  id: totrans-31
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/0c2f47f3d7d980a73cb14308e5d73802_11.png)'
+- en: Condition， so if this is true。Then， our。Divatives look like this。 So the derivative
+    with respect to the B is just 0。 And so we only need this， so。I say。嗯。So it's
+    two times lambda times W。 And then in our update， we go in So we say。The new way
+    is the old weight minus the learning rate times this。 So I write this in one step。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 条件，所以如果这是真的。那么，我们的导数看起来像这样。关于B的导数就是0。所以我们只需要这个，所以。我说。嗯。所以是两倍lambda乘以W。然后在我们的更新中，我们去。所以我们说新的方式是旧的权重减去学习率乘以这个。所以我将其写在一步中。
+- en: So I say self dot W minus equal self dot learning rate times。 And now here。![](img/0c2f47f3d7d980a73cb14308e5d73802_13.png)
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我说self.dot.W减去self.dot.learning rate乘以。现在在这里。![](img/0c2f47f3d7d980a73cb14308e5d73802_13.png)
+- en: We have。Two times self dot Lambda parameter times self dot W。So this is the
+    first update。Or if our condition is satisfied and we only need this update。 And
+    otherwise。 we say self dots W minus equal self times L R the learning rate times。
+    and let's again。 have a look at the equation。 So it's。
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们有两倍self.dot.Lambda参数乘以self.dot.W。所以这是第一次更新。或者如果我们的条件满足，我们只需要这个更新。否则，我们说self.dots.W减去self乘以L
+    R学习率乘以。让我们再看看这个方程。所以是。
+- en: '![](img/0c2f47f3d7d980a73cb14308e5d73802_15.png)'
+  id: totrans-35
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/0c2f47f3d7d980a73cb14308e5d73802_15.png)'
+- en: Two times lambda times w minus Y， I times X， I so。![](img/0c2f47f3d7d980a73cb14308e5d73802_17.png)
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 两倍lambda乘以w减去Y，I乘以X，I，所以。![](img/0c2f47f3d7d980a73cb14308e5d73802_17.png)
+- en: Two times。Our lambda times。W minus nuy dot。 So I want to multiply our vectors，
+    X， I and。Why I so the y underscore of the current index。So this is our update
+    for the W and our self dot。B。Is minus equal self times learning rate times the
+    derivative and the derivative is only。
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 两倍。我们的lambda乘以。W减去nuy.dot。所以我想乘以我们的向量，X，I和Y I，所以当前索引的y下划线。这是我们对W的更新，我们的self.dot.B是减去self乘以学习率乘以导数，而导数只有。
+- en: '![](img/0c2f47f3d7d980a73cb14308e5d73802_19.png)'
+  id: totrans-38
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/0c2f47f3d7d980a73cb14308e5d73802_19.png)'
+- en: Or just Y I， So only。![](img/0c2f47f3d7d980a73cb14308e5d73802_21.png)
+  id: totrans-39
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 或者只是Y I，所以只有。![](img/0c2f47f3d7d980a73cb14308e5d73802_21.png)
+- en: Why underscore of the index。And now we are done。 So this is the whole implementation。And
+    now let's test this。 So I've written a little test script that will。Import this
+    SVM class。 and then it will generate a。Some test samples。 So it will generate
+    two glasses。And then I will create my SVM classifier and fit the data。
+  id: totrans-40
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 为什么索引使用下划线。现在我们完成了。这就是整个实现。现在让我们测试一下。所以我写了一个小测试脚本，它会导入这个SVM类，然后生成一些测试样本。它将生成两个玻璃。然后我会创建我的SVM分类器并拟合数据。
+- en: And then I wrote a little function to visualize this so you can find the code
+    on Gitthub， by the way。 so please check it out for yourself and now if we run
+    this。 so let's say Python as we am underscore Te P。![](img/0c2f47f3d7d980a73cb14308e5d73802_23.png)
+  id: totrans-41
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我写了一个小函数来可视化这个，所以你可以在GitHub上找到代码，顺便说一下。请自己查看一下，如果我们运行这个。所以我们说Python as we
+    am underscore Te P。![](img/0c2f47f3d7d980a73cb14308e5d73802_23.png)
+- en: And now， this should。Calculate the weights and the bias， and it should also
+    plot the decision。![](img/0c2f47f3d7d980a73cb14308e5d73802_25.png)
+  id: totrans-42
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，这应该计算权重和偏差，并且还应该绘制决策。![](img/0c2f47f3d7d980a73cb14308e5d73802_25.png)
+- en: Fun the the yellow line and the two lines on both sides here。And we see that
+    it's working。 So， yeah。That's all about the S VM。 I hope you enjoyed this。 And
+    if you like this。 please subscribe to my channel and see you next time， bye。![](img/0c2f47f3d7d980a73cb14308e5d73802_27.png)
+  id: totrans-43
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 有趣的是这里的黄线和两边的两条线。我们看到它在工作。 所以，是的。这就是关于 S VM 的全部内容。我希望你喜欢这个。如果你喜欢，请订阅我的频道，下次见，拜。![](img/0c2f47f3d7d980a73cb14308e5d73802_27.png)

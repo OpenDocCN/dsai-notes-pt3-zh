@@ -1,0 +1,86 @@
+- en: 【双语字幕+资料下载】更简单的绘图工具包 Seaborn，一行代码做到 Python 可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ -
+    P8：L8- Pair对图 - ShowMeAI - BV1wZ4y1S7Jc
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】更简单的绘图工具包 Seaborn，一行代码做到 Python 可视化！1小时教程，学会20种常用图表绘制~＜实战教程系列＞ -
+    P8：L8- Pair对图 - ShowMeAI - BV1wZ4y1S7Jc
+- en: MakeAnd now I want to talk about pair plots again， still in the distribution
+    area of plots and basically a pair plot is going to plot the relationships across
+    the entire data frames numerical values so let's create one we can say pair plot
+    and。Cash data frame and look at all that information so tons of information and
+    you can see here on the left side we have our totals。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我想再次谈谈配对图，仍然是在分布图区域，基本上配对图将绘制整个数据框数值之间的关系，所以让我们创建一个，可以说配对图和`Cash`数据框，并查看所有信息，所以有很多信息，您可以看到左侧有我们的总数。
+- en: we have speeding data we're also going to have data on alcohol and we're going
+    to be comparing these columns and rows and how all of these different pieces of
+    data are all going to play into each other in regards to generating these both
+    on the diagonal histograms and then scatter plots everywhere else。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们有超速数据，我们还将有关于酒精的数据，我们将比较这些列和行，以及这些不同数据如何相互影响，以生成对角线上的直方图，以及其他地方的散点图。
+- en: but there are tons of things we can change here let's go and load another piece
+    of data。 let's say we want to get our tips data frame and again you're going to
+    load this new data with load。![](img/4a9e49a89e73c905344cc66b813032a6_1.png)
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但我们可以在这里更改很多内容，让我们加载另一部分数据。假设我们想获取提示数据框，再次使用`load`加载这新数据。![](img/4a9e49a89e73c905344cc66b813032a6_1.png)
+- en: '![](img/4a9e49a89e73c905344cc66b813032a6_2.png)'
+  id: totrans-4
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/4a9e49a89e73c905344cc66b813032a6_2.png)'
+- en: '![](img/4a9e49a89e73c905344cc66b813032a6_3.png)'
+  id: totrans-5
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/4a9e49a89e73c905344cc66b813032a6_3.png)'
+- en: '![](img/4a9e49a89e73c905344cc66b813032a6_4.png)'
+  id: totrans-6
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/4a9e49a89e73c905344cc66b813032a6_4.png)'
+- en: '![](img/4a9e49a89e73c905344cc66b813032a6_5.png)'
+  id: totrans-7
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/4a9e49a89e73c905344cc66b813032a6_5.png)'
+- en: Data set and tips and。Just to show you what is in the tips data frame that we
+    have here。 Basically we're gonna to have our total bill， the tip amounts who tips
+    $1。1 I don't know there is whether it's male or female。 whether they smoke or
+    not the day in which this purchase was made and whether it was dinner or lunch
+    and the size of the party I believe that is what that is referring to So just
+    to work with some different data and mix things up here let's create another plot
+    here So let's get rid of this and I'm going say SNS dot pair plot and we're going
+    to be using the tips data frame and with you you can pass in categorical data
+    and the charts will be colorized based off of that categorical data So let's say
+    we want to get data this time in regards to the sex。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 数据集和提示。只是为了向您展示我们这里的提示数据框中有什么。基本上，我们将会有总账单，提示金额，谁给了$1的小费。我不知道是否是男性或女性，是否吸烟，购买发生的日期，以及这是晚餐还是午餐，以及派对的规模，我相信这就是所指的内容。所以，为了处理一些不同的数据，并混合一下，我们来创建另一个图表。所以我将去掉这个，打算使用`SNS.pairplot`，我们将使用提示数据框，并且您可以传入分类数据，图表将根据这些分类数据进行着色。所以假设我们这次想要获取与性别相关的数据。
+- en: You can also come in and I'm gonna get more into styling with pallets and so
+    forth very soon。 but this is a matplot lib palette called blues that I've used
+    in previous tutorials and you can see here now everything's using the blue styling
+    and you can also see that the light color dots are for male and the dark colors
+    are for female and you can see the plots that we're able to make there and basically
+    it's total be tip and size and total bill tip and size is the information that
+    we're pulling up here and I'll just talk about styling here in a second so we
+    can change these font sizes and so forth and whenever we get into grids I'm going
+    show you how to make these plots and then put different graphs on the top and
+    down the diagonal and on the bottom of our grid of plots but now I want to talk
+    about rug。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 您还可以进来，我会很快详细介绍调色板的样式。这是一个名为blues的matplotlib调色板，我在之前的教程中使用过，您现在可以看到所有内容都使用蓝色样式，您还可以看到浅色点代表男性，深色点代表女性，您可以看到我们能够制作的图表，基本上是总账单、提示和规模，总账单、提示和规模是我们在这里提取的信息，我会在稍后讨论样式，所以我们可以更改这些字体大小等等，当我们进入网格时，我会向您展示如何制作这些图表，并在我们的图表网格的顶部、对角线和底部放置不同的图形，但现在我想谈谈rug。
+- en: '![](img/4a9e49a89e73c905344cc66b813032a6_7.png)'
+  id: totrans-10
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/4a9e49a89e73c905344cc66b813032a6_7.png)'

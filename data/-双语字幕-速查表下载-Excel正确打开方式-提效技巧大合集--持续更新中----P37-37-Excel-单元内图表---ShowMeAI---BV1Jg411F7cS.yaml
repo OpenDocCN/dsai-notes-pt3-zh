@@ -1,0 +1,165 @@
+- en: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P37：37）Excel 单元内图表 - ShowMeAI - BV1Jg411F7cS
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P37：37）Excel 单元内图表 - ShowMeAI - BV1Jg411F7cS
+- en: '![](img/980320ca6d0cd93066fb6467f0a2d31d_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/980320ca6d0cd93066fb6467f0a2d31d_0.png)'
+- en: In this Excel video， I want to show you how to create ince charts in Microsoft
+    Excel。 These are amazing， very useful and obviously take up much less space than
+    your typical Excel chart。 There actually are a few different ways to create in
+    cellll charts。 I'll focus on2 if you've watched all my videos， you probably already
+    know about how to use conditional formatting to create some in cell charts charts
+    that can be seen from within a cell instead of floating on top of many cells。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个 Excel 视频中，我想向你展示如何在 Microsoft Excel 中创建单元格内图表。这些图表非常棒，实用，显然占用的空间比典型的 Excel
+    图表少得多。实际上有几种不同的方法可以创建单元格内图表。如果你看过我所有的视频，可能已经知道如何使用条件格式创建一些可以从单元格内看到的单元格内图表，而不是漂浮在多个单元格之上。
+- en: So let's look at how you can do that。 And for this example。 I'm using a spreadsheet
+    that lists the total mileage driven by every employee in a particular company。
+    And you can get a copy of this practice spreadsheet in the description below。
+    So I hope you look at that download it and use it。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以让我们看看你可以如何做到这一点。在这个例子中，我使用的是一个列出了每位员工在特定公司中总里程的电子表格。你可以在下面的描述中获取这个练习电子表格的副本。所以我希望你看看，下载并使用它。
+- en: So to use conditional formatting to create inc charts。 The first thing I need
+    to do is select the column where I want those in cellll charts to appear In this
+    case column I It selects the entire column and now I can go to the home tab。Home
+    ribbon in the Sts group， I can click on conditional formatting。 and there's an
+    option for data bars。 You can see there's gradient fill options。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以要使用条件格式创建单元格内图表。首先，我需要选择要在单元格内图表中显示的列。在这种情况下是列 I。它会选择整个列，现在我可以去“主页”选项卡。在“开始”功能区的“样式”组中，我可以点击条件格式。这里有一个数据条的选项。你可以看到有渐变填充选项。
+- en: And as I put my mouse on the options， you can see previews of what it'll look
+    like in Microsoft Excel。 There's also solid fills。 I'm going go with gradient
+    fill I think that looks good。 and I can just click to apply that。 And now I have
+    basically a bar chart inside of the cells in Excel。 So this is one example of
+    inc charts。 I'm going to undo that by holding control and tapping Z on the keyboard。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 当我将鼠标放在选项上时，你可以看到它在 Microsoft Excel 中的预览效果。还有实心填充。我想选择渐变填充，我觉得那样很好，我只需点击应用即可。现在我基本上在
+    Excel 的单元格内有一个条形图。这是单元格内图表的一个例子。我将通过按住控制键并按 Z 撤销这个操作。
+- en: I just want to point out that in addition to the options I've already shown。
+    you can also go down here to more rules and make some adjustments。 so I could
+    pick a different color if I want to， and I could change the bar direction。 I could
+    go from right to left instead of left to right。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想指出的是，除了我已经展示的选项外，你还可以在这里下拉到“更多规则”并进行一些调整。所以如果我想的话，可以选择不同的颜色，我可以改变条形的方向。我可以选择从右到左，而不是从左到右。
+- en: There's just lots of different options for creating your inll charts this way
+    through conditional formatting。 So that's a wonderful option that we have。 and
+    I love that。OBut in some ways。 this next method of adding insll charts is even
+    better。 Instead of just showing a simple chart that shows the total mileage。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 通过条件格式，这里有很多不同的选项可以创建你的单元格内图表。这是我们拥有的一个很棒的选项，我很喜欢。但是在某种程度上，下一个添加单元格内图表的方法甚至更好。它不仅仅是显示一个简单的图表来展示总里程。
+- en: I would really like to see a chart that shows the trend。 What's the trend for
+    Kaina here。 Is she driving more less over time。 staying basically the same。 What
+    are the trends for these employees。 So let's look at how to do that。 I'll click
+    here in cell H3 in this case。 and I'll go to insert here on the insert ribbon。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我真的想看到一个显示趋势的图表。Kaina 的趋势如何？她的驾驶情况是随着时间的推移增加还是减少？基本上保持不变。这些员工的趋势如何？所以让我们看看如何做到这一点。我将在这种情况下点击单元格
+    H3，然后去插入选项。
+- en: you should find a spark lines group。 Now， Sp lines are available in some of
+    the newer versions of Microsoft Excel。 So if you're using an older version of
+    it， you may not see that。 but if you do have it。 take a look you can go to line
+    and a dialog box or a popup box appears。 And here I can select the data range
+    that I would like this line chart to track。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你应该找到“微型图”组。现在，微型图在一些较新的 Microsoft Excel 版本中可用。因此，如果你使用的是较旧的版本，可能看不到它。但如果你有这个功能，看看你可以去“线”选项，弹出一个对话框。在这里我可以选择我希望这个线图跟踪的数据范围。
+- en: I could type the range here， but the easiest way to do this is just to click
+    this arrow。 and then click and drag to select。lect the range that I want to track
+    the trend for。 Now that it's selected， I can click this arrow again。 The range
+    that I selected is here。 and then just click O， and I get a beautiful spark line
+    incell chart。 It looks great。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以在这里输入范围，但最简单的方法就是点击这个箭头，然后点击并拖动以选择我想要跟踪趋势的范围。现在它已经被选中，我可以再次点击这个箭头。我选择的范围在这里，然后只需点击
+    O，我就得到了一个漂亮的嵌入式图表。看起来不错。
+- en: and I can easily and quickly see the Kaina's use of a personal vehicle is trending
+    down a little bit。 Okay， now I need to gear up for doing those same steps again
+    for epiphonia。 and for everyone else。 that's an employee of the company。 right，
+    Well， actually no。 you don't have to do those steps over and over for each person。
+    instead。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以轻松快速地看到凯纳的个人车辆使用趋势略微下降。好的，现在我需要为艾比芬尼亚和其他公司的员工准备执行相同的步骤。对吧？其实不，你不需要为每个人反复执行这些步骤。相反。
+- en: simply click on the first spark line that's been created。 And I can now go to
+    the lower right corner。 you can see。 hopefully the green square that's there。
+    That's the autofill handle or sometimes called the fill handle。 I'll just put
+    my mouse pointer on that little green square。 click and hold the click。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 只需点击已创建的第一个火花线。然后我可以转到右下角，你可以看到，希望能看到那个绿色的方块。那是自动填充控件，或者有时称为填充控件。我只需将鼠标指针放在那个小绿色方块上，点击并按住。
+- en: and then pull down all the way down as far as I need to go and then release
+    the mouse button。 and I get that same beautiful spark line。Look showing the trend
+    for each of the employees Now that I've added the spark lines。 you'll notice that
+    I have a new tab and a new ribbon that has appeared at the top of Excel。 As long
+    as I have the spark lines selected。 It'll appear。 It's got all sorts of great
+    options。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后一直向下拖动，直到我需要去的地方，然后松开鼠标按钮，我就得到了那个同样漂亮的火花线，展示每个员工的趋势。现在我已经添加了火花线，你会注意到我在 Excel
+    顶部有一个新选项卡和一个新功能区出现。只要我选择了火花线，它就会出现。它有各种不错的选项。
+- en: I can edit the data In this case。 I don't want to do that。 I have the exact
+    data that I want to track。 I could switch from a line chart to a column chart。
+    it still kind of shows the trend， but it's a little harder to understand， in my
+    opinion。 same with wind loss。 it doesn't really convey the information very well。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以编辑数据。在这种情况下，我不想这样做。我有我想要跟踪的确切数据。我可以从折线图切换到柱状图，尽管它仍然显示了趋势，但在我看来，理解起来有点困难。风损的情况也是如此，它并不能很好地传达信息。
+- en: So I'll stick with a line chart。 Next， we have some really neat options。 I can
+    have those spark lines show even more information。 I can show the high point and
+    the low point。 So look closely。 and I'll zoom in a little bit so you can see that
+    better。 So now the high point and low point of each spark line is marked by a
+    dot。 and that will help draw attention to it。 I can also choose to show negative
+    point markers of each change where I can identify the last。Point and the first
+    point。 So each of those options can be very powerful to draw attention to key
+    parts of the incell chart。 Next， we can adjust the style of the spark line or
+    ince chart。 So I can make it black and white。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我将继续使用折线图。接下来，我们有一些非常不错的选项。我可以让那些火花线显示更多的信息。我可以显示最高点和最低点。所以仔细看，我会稍微放大一点，这样你可以更好地看到。现在每条火花线的高点和低点用一个点标记，这将帮助吸引注意力。我还可以选择显示每个变化的负点标记，以便我可以识别最后一点和第一点。因此，这些选项都能非常有效地吸引注意力，突出嵌入式图表的关键部分。接下来，我们可以调整火花线或嵌入式图表的样式。所以我可以把它做成黑白的。
+- en: I can change it to blue。 If I click here。 I get all of the different style options
+    that are available。 Some of these are more colorful than others。 It just depends
+    on what you want and how you want to convey the information。 There are even more
+    sparkline color options here and marker options over to the right。 you can switch
+    the access of the chart。 if it makes sense to do so。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以把它改成蓝色。如果我点击这里，我会得到所有可用的不同样式选项。这些选项有些比其他的更丰富多彩，这取决于你想要什么以及你想如何传达信息。这里还有更多的火花线颜色选项，右侧有标记选项。如果这样做有意义，你可以切换图表的轴。
+- en: You can also clear the spark lines if you want。 I don't want to do that。 And
+    there are some other options as well。 I'm going zoom out so you can get a good
+    look at the two different kinds of inll charts that I've shown you how to make。
+    I think these look great。 Thanks for watching。 I hope you found the tutorial to
+    be helpful。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果需要，你也可以清除火花线。我不想这么做。此外，还有其他一些选项。我将缩小视图，以便你能清楚看到我教你制作的两种不同类型的内联图表。我认为这些看起来很棒。感谢观看。我希望你觉得这个教程对你有所帮助。
+- en: '![](img/980320ca6d0cd93066fb6467f0a2d31d_2.png)'
+  id: totrans-18
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/980320ca6d0cd93066fb6467f0a2d31d_2.png)'

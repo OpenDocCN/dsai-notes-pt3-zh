@@ -1,0 +1,192 @@
+- en: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P3：3）使用
+    conda 虚拟环境（或 Google Colab）设置我们的 Python 环境 - ShowMeAI - BV14g411F7f9
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P3：3）使用
+    conda 虚拟环境（或 Google Colab）设置我们的 Python 环境 - ShowMeAI - BV14g411F7f9
+- en: this。Now we get to the part where we need to set up our Python environment。
+    We need Python。 We need mappl Lib。 In this case， we're going to need pandas to
+    read in the data。And we're going to need Jupiter for our Jupiter notebooks here。So
+    there are two different options。 Number one， I'm going to be creating a Conda
+    virtual environment using the Conda creates。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们进入需要设置Python环境的部分。我们需要Python。我们需要matplotlib。在这种情况下，我们需要pandas来读取数据。我们还需要Jupyter用于我们的Jupyter笔记本。所以有两种不同的选项。第一，我将使用Conda创建一个虚拟环境。
+- en: Command here， if you want to go this route as well。 then I suggest if you don't
+    already have miniconda or Ananaconda installed。Go over here to the mini condoda
+    page。Conda is a virtual environment manager and installer for Python。 so we are
+    going to use Conda to manage our virtual environments and if you don't know what
+    virtual environments are feel free to do a little bit of research there。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这里有个命令，如果你也想走这条路。我建议如果你还没有安装miniconda或Anaconda，去miniconda页面。Conda是一个用于Python的虚拟环境管理器和安装程序。因此我们将使用Conda来管理我们的虚拟环境，如果你不知道什么是虚拟环境，随意做一点研究。
+- en: but essentially it's just it's a best practice for wrapping up our python coding
+    environment into a single directory so that we don't you know screw up our computer
+    and etc cetera。 And so we don't have conflicting packages as well when we try
+    to install things。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但本质上，这只是一种最佳实践，将我们的Python编码环境打包到一个目录中，这样我们就不会搞乱我们的电脑等等。而且当我们尝试安装东西时，我们也不会有冲突的包。
+- en: So if you want to go this route， install mini Conda and we will install everything
+    that we need into a folder and you know it just takes a second here。If you don't
+    have Python on your machine and you don't want to go through this installation
+    process。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以如果你想走这条路，安装mini Conda，我们将把所需的一切安装到一个文件夹中，知道吧，这里只需花上一秒。如果你的机器上没有Python，而你又不想经历这个安装过程。
+- en: which I do recommend if you're interested in data science or data analysis，
+    you know。 having Python on your computer is very helpful so that you can actually
+    run some Python and stuff。![](img/1bb0809fe52c14e8b00816326d3ba37b_1.png)
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我确实推荐，如果你对数据科学或数据分析感兴趣，知道吧。 在你的电脑上安装Python是非常有帮助的，这样你就可以实际运行一些Python代码和其他内容。![](img/1bb0809fe52c14e8b00816326d3ba37b_1.png)
+- en: But。But you can also go to Google coab， coab。 So coab。These are essentially
+    Jupiter notebooks。Run by Google in the cloud here through your browser。 So with
+    these。 you would not have to install anything。 You can just come here to coabab。
+    You can create new notebook。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但是。你也可以去Google Colab，Colab。 所以Colab。这基本上是由Google在云端通过你的浏览器运行的Jupyter笔记本。所以使用这些。你不需要安装任何东西。你可以直接来Colab。你可以创建新的笔记本。
+- en: '![](img/1bb0809fe52c14e8b00816326d3ba37b_3.png)'
+  id: totrans-7
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/1bb0809fe52c14e8b00816326d3ba37b_3.png)'
+- en: This is going to create a notebook for you。 And it's going to have everything
+    that you need installed。 So it's going have。Maapplot Lib。It's going to have。Pandndas，
+    etc cetera。 So if you want a nice。 easy way to get started here， you can just
+    go to coabab and use a notebook in the cloud。 So that's pretty cool。 I'm gonna
+    go ahead and move this to the trashca I'm gonna be doing this on Jupyter notebooks
+    on my computer。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这将为你创建一个笔记本，并且会安装你所需的一切。所以它会有matplotlib。它会有pandas，等等。因此，如果你想轻松开始，你可以直接去Colab，使用云端的笔记本。所以这很酷。我会把这个移动到回收站，我将在我的电脑上使用Jupyter笔记本。
+- en: 😊。![](img/1bb0809fe52c14e8b00816326d3ba37b_5.png)
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 😊。![](img/1bb0809fe52c14e8b00816326d3ba37b_5.png)
+- en: Leave this site。 All right， we got this miniconda here。 So let's come over here
+    to Conda create。 And I'm going to create a new virtual environment。 I'm going
+    to call it Matpl Lib tutorial。😊。![](img/1bb0809fe52c14e8b00816326d3ba37b_7.png)
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 离开这个网站。好的，我们有这个miniconda。那么我们来这里创建Conda。我将创建一个新的虚拟环境。我将把它命名为Matplotlib教程。😊。![](img/1bb0809fe52c14e8b00816326d3ba37b_7.png)
+- en: And so that's this dash in flag here is the name， the name of the virtual environment
+    we're creating。 the Conda virtual environment。And now I'm going to install the
+    Python packages， Jupiter。Matt plot。 let's go and full screen this。 Why don't we。Mat
+    plot， Lib， pandas， numpy。 I think that that should be it。And if we click run here。This
+    is going to spin for just a second。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因此，这个破折号和标志是我们创建的虚拟环境的名称，即 Conda 虚拟环境。现在我将安装 Python 包，Jupiter，Mat plot。让我们全屏显示。Mat
+    plot，Lib，pandas，numpy。我想这应该就足够了。如果我们点击这里运行，这会转动一会儿。
+- en: It's going to look。At it's going to look at all these packages that we're trying
+    to install。 figure out if we can install them。 And then we will hit the letter
+    Y right here。 So this is going to tell us everything that Conda needs to install
+    in order to install the four different packages that we want to install in this
+    virtual environment。 So I type a little Y for yes， hit enter。This is going to
+    download and extract these packages。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它会查看我们尝试安装的所有这些包，弄清楚我们是否可以安装它们。然后我们会按下字母 Y。因此，这将告诉我们 Conda 需要安装的所有内容，以便在这个虚拟环境中安装四个不同的包。所以我输入一个
+    Y 表示是，按回车。这将下载并提取这些包。
+- en: And we will give it just a minute to finish。Perfect。 so we've just created a
+    Conda virtual environment called Matplotlib tutorial。 everything finished installing
+    just fine。 So a one way to see which virtual environment you're using。 or rather
+    which version of Python you're using is if you're in a terminal here on Linux
+    or Mac O。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们将给它一点时间完成。完美。因此，我们刚创建了一个名为 Matplotlib tutorial 的 Conda 虚拟环境。所有安装都顺利完成。因此，查看你正在使用哪个虚拟环境，或者说你正在使用哪个版本的
+    Python，如果你在 Linux 或 Mac O 的终端中。
+- en: this command is gonna to be a little bit different on Windows。 I believe it's
+    called where if you're in CMD， the command command prompt in Powerhell。 it might
+    be a little bit different like where do EX E or something like that。 But so you
+    type which Python。😊，And this is going to show you if I were to run Python right
+    now。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这个命令在 Windows 上会有点不同。我相信在 CMD 中它叫做 where，PowerShell 中的命令可能会有所不同，比如 where do
+    EX E 或类似的命令。但你可以输入 which Python。😊，这将显示如果我现在运行 Python。
+- en: So I run Python。 This is the executable that's getting called when I run Python。
+    So Ananaconda 3。 bin， Python。![](img/1bb0809fe52c14e8b00816326d3ba37b_9.png)
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我运行 Python。这是当我运行 Python 时调用的可执行文件。所以 Anaconda 3。bin，Python。![](img/1bb0809fe52c14e8b00816326d3ba37b_9.png)
+- en: '![](img/1bb0809fe52c14e8b00816326d3ba37b_10.png)'
+  id: totrans-16
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/1bb0809fe52c14e8b00816326d3ba37b_10.png)'
+- en: And you'll notice that this is Python 3。7。3， et cetera， et cetera。I have access
+    to all of the packages that are installed in my base。Python installation through
+    Anaconda。 Now， if I exit out。And iconconda activate。Mat plot Lib tutorial， just
+    like it says to do up here to activate the environment。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你会注意到这是 Python 3。7。3 等等。我可以通过 Anaconda 访问所有安装在基础 Python 中的包。现在，如果我退出。然后输入 conda
+    activate。Mat plot Lib tutorial，就像上面说的那样以激活环境。
+- en: You'll notice that this changes over here on the left to show us that we're
+    in a different environment now。 and your terminal might not have that。 That's
+    okay。 I have the terminal Z， S H Zish。 which does some fancy stuff like this for
+    me。 But that's fine if yours does not。 Now I type which Python。And you'll notice
+    that we point to a different location。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你会注意到左侧会显示变化，表明我们现在在不同的环境中。你的终端可能没有那样的功能。没关系，我使用的是终端 Z，S H Zish，它为我做了一些花哨的事情。但如果你的没有这样，那也没关系。现在我输入
+    which Python。你会注意到我们指向了不同的位置。
+- en: So Anaconda 3 ins mapplotlib tutorial bin Python。 This shows that we are now
+    inside of our wrapped up virtual environment。 and we only have access to the packages
+    that we explicitly said we wanted to install in addition to the standard Python
+    packages。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以 Anaconda 3 的 mapplotlib 教程在 Python 中。这表明我们现在处于封装好的虚拟环境中，并且我们只访问明确表示想要安装的包，以及标准的
+    Python 包。
+- en: So I type Python here， you'll notice that we're actually running a different
+    version of Python in here。 3。8。3， because Conda， whenever you create a new virtual
+    environment。 I think it just pulls the latest version of Python， the latest stable
+    version。So we're actually running a newer version of Python。If I import pandas。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我在这里输入 Python，你会注意到我们实际上在这里运行的是不同版本的 Python，3.8.3，因为 Conda 每次创建新的虚拟环境时，都会拉取最新的
+    Python 版本，即最新的稳定版本。因此我们实际上是在运行更新版本的 Python。如果我导入 pandas。
+- en: we installed that so pandas can import just fine， but we did not install。Cborn。
+    which is another data visualization library。 So Cborn is installed in my base
+    installation。 but it's not installed in my virtual environment because we are
+    using a totally separate Python installation。 We're using totally separate packages
+    here。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们安装了那个，这样pandas就可以正常导入，但我们没有安装Cborn，这是另一个数据可视化库。所以Cborn在我的基础安装中是已安装的，但在我的虚拟环境中没有安装，因为我们使用的是完全独立的Python安装。我们在这里使用的是完全独立的包。
+- en: '![](img/1bb0809fe52c14e8b00816326d3ba37b_12.png)'
+  id: totrans-22
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/1bb0809fe52c14e8b00816326d3ba37b_12.png)'
+- en: Alright。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的。

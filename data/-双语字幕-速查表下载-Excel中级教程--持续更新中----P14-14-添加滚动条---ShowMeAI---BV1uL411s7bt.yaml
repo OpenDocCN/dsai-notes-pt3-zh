@@ -1,0 +1,170 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P14：14）添加滚动条 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P14：14）添加滚动条 - ShowMeAI - BV1uL411s7bt
+- en: In this Excel tutorial， I want to show you how to add a form control that gives
+    you a scroll bar to help you adjust numbers in Excel。 If you're not familiar with
+    form controls， you really should look into them。 And if there's a lot of interest
+    in this particular video。 I will make another video that covers more form controls。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个Excel教程中，我想向你展示如何添加一个表单控件，给你一个滚动条，帮助你调整Excel中的数字。如果你不熟悉表单控件，你真的应该了解一下。如果这个特定视频受到很大关注，我将制作另一个视频，涵盖更多表单控件。
+- en: So let me know if you're interested in that。 As you can see。 this is a simple
+    inventory for a store that sells Cds in the wonderful genre of synth popop。 And
+    this is just hypothetical， But you can see here at the left。 some of the bands
+    whose music this store carries。 including the latest album by muse。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你对此感兴趣，请告诉我。如你所见，这是一个简单的库存，供卖**合成流行**音乐的商店使用。这只是一个假设，但你可以在左侧看到一些这家商店所销售的乐队，包括最新的**Muse**专辑。
+- en: if you're familiar with the band muse simulation theory is a really good synth
+    pop Cd。 So this just tracks the bands， the albums， the genres and some of the
+    other things like price of the C D。 and the quantity of that Cd that's on hand
+    in the store。 Now， what happens if the quantity changes。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你熟悉**Muse**乐队，《模拟理论》是一张非常好的合成流行专辑。这只是跟踪乐队、专辑、流派以及一些其他信息，比如CD的价格和商店中现有的CD数量。现在，如果数量发生变化会怎样。
+- en: '![](img/eb56bb8119a2499455dd0f0f3f8aabc8_1.png)'
+  id: totrans-4
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/eb56bb8119a2499455dd0f0f3f8aabc8_1.png)'
+- en: Sa that a bunch of Cds are sold。 I need to change the quantity。 Maybe the store
+    goes out and purchases some more Cds。 Again， this number needs to change。 And
+    of course， you can just click and type in the new number on top of it。 but let's
+    look at how to add a form control that can help you do that a little bit faster
+    in some cases。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设销售了一堆CD。我需要更改数量。也许商店出去采购一些CD。同样，这个数字需要更改。当然，你可以直接点击并在上面输入新数字，但让我们看看如何添加一个表单控件，可以在某些情况下帮助你更快地做到这一点。
+- en: Now to add a form control you need to make sure you have the developer tab here
+    on the ribbon。 And I don't see it there。 So how do I get that onto the ribbon。
+    Basically all you have to do is right click on one of the tabs。 and choose customize
+    the ribbon。 And that should give you a pop up with a bunch of different options
+    that you can add onto the ribbon。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，要添加一个表单控件，你需要确保在功能区上有开发者选项卡。我没看到它。那么我如何将其放到功能区上呢？基本上，你只需右键点击其中一个选项卡，并选择自定义功能区。这应该会弹出一个窗口，提供一系列你可以添加到功能区的不同选项。
+- en: And there is the developer tab。 So I check that box。 click Now I should have
+    a developer tab here on the ribbon。 It took a second to appear。 but there it is。
+    Now that it's there， I can just click on it。 and look for the controls group。
+    This is where you'll find all sorts of interesting and exciting。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是开发者选项卡。所以我勾选了那个框。点击，现在我应该在功能区上有一个开发者选项卡。它花了一秒钟才出现，但现在它在那里。我可以点击它，寻找控件组。这里是你会找到各种有趣和令人兴奋的东西。
+- en: Controls that you can add to your spreadsheets。 I'm gonna go here to insert，
+    and I'll click。 and here are the form controls。 And the one I'm looking for is
+    scroll bar。 and here it is。 So I'll click there。 Once you've clicked on that little
+    button。 Excelel now gives you the opportunity to basically draw your scroll bar。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以添加到电子表格中的控件。我将去这里插入，并点击。这里是表单控件。我寻找的就是滚动条。这就是它。所以我会点击那里。一旦你点击那个小按钮，Excel现在给你机会基本上绘制你的滚动条。
+- en: So I'm going put my mouse pointer wherever I want that scroll bar to be located。
+    So right here。 and I'll left click and drag to draw out the scroll bar。 I'll just
+    put it right there。 and it appears。 Now this scroll bar is basically floating
+    on top of the data。 So don't worry if it overlaps your data， it's not going to
+    ruin your data at all。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我将把鼠标指针放在我希望滚动条的位置。就在这里。我将左键点击并拖动以绘制滚动条。我会把它放在这里，它就出现了。现在这个滚动条基本上是浮动在数据上方。所以如果它覆盖了你的数据，也不用担心，它不会破坏你的数据。
+- en: And it won't even affect your data until you set it up properly。 And I want
+    this scroll bar to effect this number of the quantity of this C。 So now that it's
+    there。 I can just right click on the scroll bar。 and I need to go down and format
+    the control。 Remember。 this is considered a form。Control。 So I want to format
+    the control。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 直到你正确设置它，它甚至不会影响你的数据。我希望这个滚动条影响这个 C 的数量。因此现在它在那里。我可以右键点击滚动条，我需要往下去格式控制。记住，这被视为一个表单控制。因此，我想格式化这个控制。
+- en: And the most important option here， in my opinion， is this cell link。 I'm going
+    scoot this over to the left。 I need to go down here to sell link and click and
+    put in the cell that it's linked to。 If you prefer， you can just click this button
+    here and then select the cell that you want it connected to。 And then I can just
+    go back up here， click this button to get back into the options。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在我看来，这里最重要的选项是这个单元格链接。我需要将其移到左侧。我需要往下去单元格链接，点击并输入它链接的单元格。如果你愿意，可以点击这里的按钮，然后选择你想要连接的单元格。然后我可以回到这里，点击这个按钮回到选项中。
+- en: Another important option here that you need to be aware of is this。 the minimum
+    value and also the maximum value。 So I'll just put the minimum value as being
+    0。 The maximum value right now， it's set to be 100。 I'm going go up to maybe 200。
+    Let's say that this Cd store doesn't want to carry huge inventories。 Let's just
+    limit it to 200。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这里还有一个重要的选项你需要注意，那就是最小值和最大值。所以我将最小值设置为 0。现在最大值设置为 100。我将把它提高到 200。假设这个 C D 商店不想存放大量库存。我们将其限制在
+    200。
+- en: And then here you can set the incremental change。 So every time I click on this
+    arrow。 this number here will go up by one。 unless you want it to go up by2 or
+    by 5 or whatever。So I'm gonna change it back to one。 Okay， the rest of this， I'm
+    gonna leave as is。 And then I'll just click okay。 Now let's try it out。 So here's
+    my scroll bar。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后在这里你可以设置增量变化。每次我点击这个箭头时，这里的数字会增加一个，除非你希望它增加 2 或 5 或其他什么。因此我将其改回 1。好的，其余的我将保持不变。然后我会点击确定。现在让我们试试。这里是我的滚动条。
+- en: And you can see there's a gray vertical line， and I can click and hold the mouse
+    click and drag that scroll bar to very quickly increase the quantity on hand all
+    the way up to 200 if I want to。 but let's say it's 175。 I can just click and drag
+    to get it to 175。 You can also use these buttons。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以看到有一条灰色的竖线，我可以点击并按住鼠标拖动这个滚动条，非常快速地将手头的数量增加到 200，如果我想的话。但假设它是 175。我可以点击并拖动以将其调整到
+    175。你也可以使用这些按钮。
+- en: I can click this right button to go up a couple of numbers。 And so you have
+    two ways to adjust the numbers。 gradually one by one or using the scroll bar。
+    you can change the number much more dramatically。 So now， of course。 I could insert
+    another scroll bar for each of these C D titles。 Perhaps a faster way to do that。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我可以点击这个右侧按钮向上调高几个数字。因此，你有两种方式来调整数字：逐渐一个一个调整，或者使用滚动条。你可以更戏剧性地改变数字。所以现在，当然，我可以为每一个
+    C D 标题插入另一个滚动条。也许有更快的办法来做到这一点。
+- en: though， would be to simply right click on the scroll bar and notice that that
+    also give you the option to resize the scroll bar and also to move it。 So you
+    need to right click on it to get those options back。 But in this case。I just want
+    to copy it and then paste it。 So I'm just gonna do control V to paste。 So now
+    I have a copy of it。 but remember I connected this scroll bar to this particular
+    cell cell F3。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 不过，可以简单地右键点击滚动条，并注意到这也给你提供了调整滚动条大小和移动它的选项。因此，你需要右键点击它才能获得这些选项。但是在这种情况下，我只想复制它，然后粘贴。所以我将按控制
+    V 粘贴。所以现在我有了一个副本，但记住我将这个滚动条连接到这个特定的单元格 F3。
+- en: So this new copy of it is also going to affect cell F3 And so I need to right
+    click go down to format control and tell this second scroll bar that it's supposed
+    to affect F4。 So now let's test it and to really test these properly。 you really
+    should click on another cell before you try to use them。 So now that I've clicked
+    away。 I can go back and let's use the scroll bar and look it is affecting the
+    correct cell now So I'm just going to copy paste these all the way down onto as
+    many of these cells as I want。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这个新的副本也会影响单元格 F3，因此我需要右键点击，往下去格式控制，告诉这个第二个滚动条它应该影响 F4。现在让我们测试一下，真正地测试这些时，你应该在尝试使用它们之前先点击另一个单元格。所以现在我已经点击了其他地方。我可以回去，使用滚动条，看看它现在确实在影响正确的单元格。我将把这些复制粘贴到我想要的多个单元格中。
+- en: And I know for sure I'm going need a bunch more of these muse and cosmicity
+    Cs。 so I'm going jump right down there to add scroll bars for them so that I can
+    increase their quantities。 But again， I need to make sure I right click format。Control
+    and link it to the right cell。 just like that。 Thanks for watching。 If you're
+    interested in learning about more of the form controls。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我知道我肯定需要更多的这些 muse 和 cosmicity Cs。所以我会直接跳下去为它们添加滚动条，以便增加它们的数量。但我再次需要确保右键点击格式，控制并链接到正确的单元格。就这样。谢谢观看。如果你有兴趣了解更多表单控件。
+- en: just let me know in the description below。 But in the meantime。 I hope you found
+    this tutorial to be helpful。 If you did， please click the like button below。![](img/eb56bb8119a2499455dd0f0f3f8aabc8_3.png)
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 请在下面的描述中告诉我。但与此同时，我希望你觉得这个教程有帮助。如果有，请点击下面的点赞按钮。![](img/eb56bb8119a2499455dd0f0f3f8aabc8_3.png)

@@ -1,0 +1,438 @@
+- en: 【双语字幕+资料下载】用 Pandas 进行数据处理与分析！真实数据&实时讲解，学完就能上手做数据分析了！＜实战教程系列＞ - P7：7）排序 - 数据排序
+    - ShowMeAI - BV1M64y187bz
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】用 Pandas 进行数据处理与分析！真实数据&实时讲解，学完就能上手做数据分析了！＜实战教程系列＞ - P7：7）排序 - 数据排序
+    - ShowMeAI - BV1M64y187bz
+- en: Hey there。 How's it going， everybody。 In this video。 we're gonna be learning
+    about how to sort our data in pandas。 So we'll look at ways to sort our columns，
+    how to sort multiple columns and grabbing the largest and smallest values from
+    different rows。 Now， as usual， we'll look at how to do this on a small dataset
+    first。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 大家好，最近怎么样？在这个视频中，我们将学习如何在 Pandas 中对数据进行排序。所以我们将看看如何对列进行排序，如何对多个列进行排序，以及从不同的行中提取最大和最小值。和往常一样，我们将首先看看如何在小数据集上做到这一点。
+- en: and then we'll see how this applies to a larger dataset。 like our stack overflow
+    survey data that we've been using throughout the series。 Now。 I've been reading
+    your comments and suggestions for the series。 and I'm trying to take your suggestions
+    to heart。 A lot of people have said that they'd like shorter videos。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们将看到这如何应用于更大的数据集，比如我们在整个系列中使用的堆栈溢出调查数据。现在，我一直在阅读你们对这个系列的评论和建议，并努力将这些建议纳入其中。很多人表示希望视频更短。
+- en: So I'm going to do my best to have shorter videos that don't sacrificed on any
+    of the details that I think are important。 Now， I'd also like to mention that
+    we do have a sponsor for the series of videos。 and that is brilliant。 So I really
+    want to thank brilliant for sponsoring the series。 And it would be great if you
+    all can check them out using the link in the description section below and support
+    the sponsors。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我会尽力制作更短的视频，同时不牺牲我认为重要的细节。现在，我还想提到我们有一个赞助商为这个视频系列提供赞助，那就是 Brilliant。因此，我真的想感谢
+    Brilliant 赞助这个系列。如果大家能够通过下面描述部分的链接去了解一下并支持赞助商，那就太好了。
+- en: and I'll talk more about their services in just a bit。 So with that said。 let's
+    go ahead and get started。 Okay， so I have my snippets notebook open that we've
+    seen throughout the series。 Now， again， if anyone would like to follow along than
+    I do have links。😊。This code and the data in the description section below。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我会稍后详细介绍他们的服务。所以话不多说，我们就开始吧。好的，我现在打开的是我们在整个系列中看到的代码片段笔记本。再次提醒，如果有人想要跟着做，我提供了链接。😊这个代码和下面描述部分的数据。
+- en: So let's say that we want to sort this small data frame that we have here。 So
+    first。 let's decide how we want to sort this。 Now， one way that might make sense
+    is to sort this by last name。 So in order to do this， we can use these sort values
+    method。 So in order to sort this by last name I can simply say Df do sort underscore
+    values。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设我们想对这里的小数据框进行排序。首先，让我们决定一下想如何排序。现在，一个合理的方法是按姓氏排序。因此，为了做到这一点，我们可以使用这些排序值的方法。为了按姓氏排序，我只需说
+    `df.sort_values`。
+- en: and then we'll say that we want to sort that by and set the by argument equal
+    to the column name in this case。 it's last。 So if I run this。 then we can see
+    that we get a data frame returned where those last names are sorted alphabetically。
+    and if these were numbers， then those would be sorted smallest to highest。 and
+    we'll see that when we look at our stack overflow data。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们将按姓氏排序，并将 `by` 参数设置为列名，这里是 `last`。所以如果我运行这个，就可以看到返回的数据框中姓氏按字母顺序排序。如果这些是数字，那么它们将从小到大排序，我们在查看堆栈溢出数据时会看到这一点。
+- en: Now if we wanted to sort these in descending order。 then we can pass in an argument
+    and just say that we want the uscending order to be equal to false。So if I run
+    this， now we can see that those are sorted in descending order。 Now。 sometimes
+    your sorts can get a little complicated。 Maybe you want to sort on multiple columns。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，如果我们想按降序排序，我们可以传入一个参数，只需说我们希望 `ascending` 设置为 `false`。所以如果我运行这个，现在我们可以看到这些数据是按降序排序的。现在，有时你的排序可能会有点复杂。也许你想按多个列排序。
+- en: Now you do this when the first value that you sort on has identical values。
+    and then you want to sort on a second value。 So in order to do this。 we can just
+    pass in a list for these columns that we want to sort on。 So let's say that we
+    want the first column that we want to sort on is the last names in ascending order。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 当你排序的第一个值具有相同的值时，你会这样做，然后你想按第二个值进行排序。为了做到这一点，我们可以传入一个我们想排序的列名列表。假设我们希望按姓氏的升序进行排序。
+- en: And then if there are duplicate last names， then we want to sort the first name
+    after that。 So in order to do this， we can just pass in a list of columns to sort
+    by。 So I'm actually going to go to a new line here。 And now instead of just sorting
+    by last。 I can pass in a list here。 So let's say that we want to sort on the last
+    name first。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果有重复的姓氏，我们想在此之后按名字排序。为了做到这一点，我们只需传入一个需要排序的列的列表。所以我实际上要在这里换一行。现在不只是按姓氏排序。我可以在这里传入一个列表。假设我们想先按姓氏排序。
+- en: So then we want to sort on the first name。 So if I run this， then we can see
+    that this is sorted in。Sending order on the last name， just like we saw up here
+    before。 but it's also sorting in the first name in descending order as well。 if
+    there are identical last names so we can see that Jane was first up here。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们想要按名字排序。如果我运行这个，我们可以看到这是按姓氏的升序排序的，正如我们之前看到的那样。但如果有相同的姓氏，名字也会按降序排序。所以我们可以看到简在这里是第一个。
+- en: And now it's John because this is in descending order。 And sometimes you might
+    run into a situation where you want to sort on multiple columns。 So you might
+    want to have one in descending order and another in us sending order。 So let me
+    add one more name to our data frame here。 so that it's more clear whenever I do
+    this。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在是约翰，因为这是按降序排列的。有时你可能会遇到需要按多个列排序的情况。所以你可能想要一个降序，另一个升序。让我再往数据框中添加一个名字，以便在我这样做时更加清晰。
+- en: So I'm going to add one more name here at the top to our dictionary。 So I'm
+    just gonna call this Adam and we'll keep a duplicate last name of Do。 And then
+    I'll just pass in an email of a email do co。 So now let me go ahead and rerun
+    all of these cells。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我会在字典顶部再添加一个名字。就叫这个亚当，并保持重复的姓氏是杜。然后我将传入一个电子邮件，比如email@do.com。现在让我继续重新运行所有这些单元。
+- en: So I'll just say sell run all And now down here at the bottom。 we can see that
+    we have our last names。 And then all of these in descend。Order。 but let's say
+    that we want to sort this data frame by last name in descending order like we
+    have here。 Then we want the first names to be in ascending order。 So to do this。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我就说运行所有单元。现在在底部，我们可以看到我们的姓氏，所有这些都是降序的。但是假设我们想要像这里那样按姓氏降序排序的数据框。那么我们希望名字按升序排列。为了做到这一点。
+- en: we can simply pass in a list of boolean values to the ascending argument。 So
+    let me copy what we have here and show the differences of what this looks like。
+    So instead of just saying ascending is equal to false。 let's instead pass in a
+    list。 and these will correspond to our columns。 So if I say that I want the last
+    name and descendending order。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们可以简单地向升序参数传入一个布尔值列表。所以让我复制一下我们这里的内容，展示一下这看起来有什么不同。所以我们不只说升序等于假，而是传入一个列表，这些将对应我们的列。如果我说我想要姓氏按降序排列。
+- en: then we can keep that as false。 but then if I want the first name to be in ascending
+    order。 then I can just pass in a true for that second value。 So now if I run this。
+    then we can see that our last names are still in descendending order。 but our
+    first names here are now in ascending order with atom coming before these two
+    here。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那么我们可以将其保持为假。但是如果我想让名字按升序排列，我可以为第二个值传入一个真。所以现在如果我运行这个，我们可以看到我们的姓氏仍然是按降序排列的，但我们的名字现在是按升序排列，亚当在这两个名字之前。
+- en: And as we've seen several times throughout the series if we want to save this
+    data frame and make this sort permanent then we can set the inplace value equal
+    to true。So if I do this， I'm just going add an in place equal to true here at
+    the end。 If I run this。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 正如我们在系列中多次看到的，如果我们想保存这个数据框并使这个排序永久生效，那么我们可以将inplace值设为真。所以如果我这样做，我只是会在末尾加一个inplace等于真。如果我运行这个。
+- en: and now I look at our data frame， then now our data frame has been modified
+    in an order where we can see that these values are sorted how we specified。 Now，
+    if you want to set this back to how it was before and have those indexes be sorted
+    then we can do that by sorting the index So to do this instead of using the sort
+    values method。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我查看我们的数据框，发现我们的数据框已被修改为一种可以看到这些值按我们指定的方式排序的顺序。现在，如果你想把它恢复到之前的样子，并让那些索引被排序，那么我们可以通过排序索引来做到这一点，所以这次我们不使用排序值的方法。
+- en: we'll use the sort index method， So I can just say Df do sort underscore index。
+    and run that。 and we can see that now our index is sorted over here on the far
+    left in the order that we added those。 Now I also want to point out that if you're
+    simply wanting to sort a single column。 then we can easily just sort that single
+    series as well。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们将使用 sort index 方法，因此我可以说 Df.do sort _index，然后运行它。现在我们可以看到，索引在最左侧按我们添加的顺序排序。现在我还想指出，如果你只想对单列进行排序，我们也可以很容易地对那个单一系列进行排序。
+- en: series objects also have that sort value method。 So if we want to simply see
+    the sorted last names and not the entire data frame。 then I can simply access
+    that column。By passing in the last name column there in those brackets。 And then
+    I can just say sort， underscore values。 I'm just going to leave all of the arguments
+    as defaults here and run this。 And now we can see that these are sorted in ascending
+    order。 Okay， so that's a brief overview。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: series 对象也有 sort value 方法。因此，如果我们只想查看已排序的姓氏，而不是整个数据框，那么我可以简单地访问那一列。在括号中传入姓氏列，然后我可以说
+    sort，_values。我将所有参数保留为默认值并运行它。现在我们可以看到这些是按升序排序的。好的，这只是一个简要概述。
+- en: So now let's go over to our survey data and see what this looks like on a larger
+    data set。 And we'll also see some simple ways to view the largest and smallest
+    results from our data。 Okay。 so I have our stack overflow developer survey open
+    here that we've seen throughout the series。 And again， if you'd like to download
+    this data to follow along。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们来看看我们的调查数据，看看在更大的数据集上这是什么样子。我们还将看到一些简单的方法来查看我们数据中最大的和最小的结果。好的，我这里打开了我们的
+    Stack Overflow 开发者调查，这是我们整个系列中看到的内容。如果你想下载这些数据以便跟随。
+- en: Then I have links in the description section below。 Okay。 so one way that we
+    might want to sort sort the survey results。 is by country name。 We can see over
+    here that we have a country column where the respondent answered which country
+    they were from。 So maybe you're doing some analysis on information from different
+    countries。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我在下面的描述部分中有链接。好的，有一种方法可以对调查结果进行排序，就是按国家名称。我们可以看到这里有一个国家列，受访者回答了他们来自哪个国家。因此，也许你正在对来自不同国家的信息进行一些分析。
+- en: And it's just easier seeing them all sorted。 So for example。 let's say that
+    we want to look at countries。And salary。 So to sort these survey results by country。
+    then we can simply come down here to the bottom and say Df dot sort， underscore
+    values。 And I want to sort that by and set that equal to。Country。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 看到它们排序后会更容易一些。例如，我们想看看国家和薪资。因此，要按国家对这些调查结果进行排序，我们可以简单地到下面说 Df.dot.sort，_values。然后我想按国家进行排序并将其设置为国家。
+- en: and now I'm also going to make this in place so that it changes our data frame。
+    So now let's take a look at the country column for the first 50 results or so
+    from this data frame。 So I'm going to access that country column of the first。
+    and I'll just get the first 50 of those by using the head method。 So if I run
+    this。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我还将对此进行原地修改，以便它更改我们的数据框。所以现在我们来看看这个数据框前 50 个结果左右的国家列。我将访问那个国家列的前 50 个，并使用
+    head 方法来获取它们。如果我运行这个。
+- en: then we can see that these are in alphabetical order。 So we have results from
+    developers from Afghanistan。 and at the bottom here。 the results go into Albania。
+    Now we only have the top 50 results here。 But if we were to look through all of
+    these， then we'd see that all of these countries are listed in alphabetical order。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们可以看到这些是按字母顺序排列的。因此，我们有来自阿富汗的开发者的结果，而在底部，结果显示阿尔巴尼亚。现在我们这里只有前 50 个结果，但如果我们查看所有这些，我们会看到所有这些国家都是按字母顺序排列的。
+- en: Okay， so now let's look at let's take a look at the salaries reported from these
+    countries。 So let me add that to our output here。 and I'll just do that by accessing
+    the converted comp。Column so that is converted comp。 Now， remember here。 This
+    is a mistake that some people make。 whenever we're accessing multiple columns
+    here， we have to put this inside of a list within our brackets。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，现在我们来看一下这些国家报告的薪资。因此让我把它添加到我们的输出中。我会通过访问 converted comp 列来实现，所以这是 converted
+    comp。现在，请记住，这里有一个错误，一些人在访问多个列时，必须将其放在方括号内的列表中。
+- en: So we're going to have two sets of brackets here。 Okay， so now let's run this。
+    And we're going to have the salaries here for each respondent listed on the right。
+    we can see that we have a lot of not a number objects here。 which just means that
+    they skipped over the question。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们这里将有两组括号。好吧，现在让我们运行这个。每个受访者的薪资将列在右侧，我们可以看到这里有很多非数字对象，这只是意味着他们跳过了这个问题。
+- en: But if we wanted a general idea of the higher salaries， then we can sort these
+    in descending order。 So like we saw in our earlier example。 if we want to sort
+    the countries in a sendinging order and the salaries in descending order。 then
+    we can do that just by going up here。 and passing in multiple columns that we
+    want to sort on。 So we want to sort on country。 And we also want to sort on this
+    converted comp column here and。Also。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但是如果我们想要一个关于更高薪资的一般概念，那么我们可以按降序排列这些薪资。所以就像我们在之前的例子中看到的，如果我们想要将国家按升序排列，而薪资按降序排列，那么我们可以通过在这里传入多个要排序的列来实现。因此，我们希望按国家排序，并且还希望按这个转换的薪资列排序。
+- en: I'm going to pass in an ascending argument here， and I'm going to set this equal
+    to a list。 and this will correspond to our column names， whether we want these
+    in ascending order。 So for the country， I will pass in true that we do want those
+    in ascending order。 but I want to see the highest salaries first， which means
+    that we want this to be false so that the salaries are in descendending order。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将在这里传入一个升序参数，并将其设置为一个列表。这将对应我们的列名，看看我们是否希望这些以升序排列。对于国家，我将传入`true`，因为我们确实希望按升序排列。但我想先看到最高的薪资，这意味着我们希望将其设置为`false`，以便薪资按降序排列。
+- en: So if I run this sort， and then we take a look at this head again。Then we can
+    see that now we have Afghanistan here and all the highest salaries are listed
+    at the top for what people said they made。 and if we scroll down here， we can
+    see that we get to zero and then not a number as the lower salaries。 and then
+    once we get down to Albania， then it restarts with those high salaries from that
+    country。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我运行这个排序，然后我们再看看这个头部。那么我们可以看到现在这里有阿富汗，所有最高薪资都列在了顶部，显示人们所说的收入。如果我们向下滚动，可以看到低薪资为零和非数字的情况，然后一旦我们到达阿尔巴尼亚，就会重新开始该国的高薪资。
+- en: Now， we can see that there are some big outliers here。 This is a lot larger
+    salary than what other people said that they made。 Now。 there are some techniques
+    that we can use in order to account for outlier data。 And we'll focus on that
+    in the next video where we cover aggregating data and grouping data。 Now。
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在，我们可以看到这里有一些大的异常值。这比其他人所说的收入要高得多。现在，有一些技术可以用来处理异常数据。我们将在下一个视频中专注于此，讨论数据聚合和分组。
+- en: before we end， I'd also like to take a look at some other useful methods for
+    seeing the largest and smallest values。 So maybe you're sorting results just so
+    you can grab the largest or smallest values from a specific data frame。 Well，
+    if you're doing that， then there's actually a much simpler way to do this。 So
+    maybe we want to see the 10 highest salaries from our survey。 So in order to do
+    this。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在结束之前，我还想看看一些其他有用的方法，以查看最大和最小值。所以也许你只是为了从特定的数据框中抓取最大或最小值而对结果进行排序。如果你这样做，那么实际上有一个更简单的方法。所以也许我们想要查看调查中10个最高的薪资。为了做到这一点。
+- en: we could simply use the in largest method。 So first， I'm just going to run this
+    on a series。 So let's say that I want to grab that converted comp column， which
+    is the salaries。 And I will grab the in largest。 and I want to grab the 10 largest
+    salary。So if I run this。 then we can see that we get the10 largest salaries reported。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们可以简单地使用`nlargest`方法。所以首先，我将对此进行处理。假设我想获取那个转换的薪资列，也就是薪资。我将获取`nlargest`，并希望获取10个最大薪资。如果我运行这个，那么我们可以看到报告的10个最大薪资。
+- en: So these salaries are all the same here at 2 million。 so I'm assuming that the
+    survey capped their salaries at 2 million for this particular survey So you know
+    I think that's pretty high So I'm curious to see what type of developers。 these
+    people are and if they're in management roles or or not。 And again。 we'll see
+    how to further analyze these results in the next video。
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所有这些薪资都是200万。所以我假设这个调查将他们的薪资上限设置为200万。我觉得这相当高，所以我很好奇这些人是怎样的开发者，他们是否在管理职位上。再一次，我们将在下一个视频中看到如何进一步分析这些结果。
+- en: But you know if any of you all are making $2 million a year as a developer and
+    are hiring then let me know because you know I'm not looking for additional work
+    at the moment。 but I do think I would make an exception here for 2 million bucks
+    a year。 Now you can see here when we grab the 10 largest values from this series
+    here from this column it only gives us the 10 largest values from that column
+    but what if we wanted to see the other survey results from these rows。 Well， in
+    order to do that then we can simply run this method on the entire data frame。
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但你知道，如果你们中有人作为开发者年收入200万美元并正在招聘，请告诉我，因为你知道我目前不在找额外的工作，但我确实认为在年薪200万美元的情况下，我会破例。现在你可以看到，当我们从这一列中提取出10个最大值时，它只给我们那一列的10个最大值，但如果我们想查看这些行的其他调查结果呢？那么，为此我们可以简单地在整个数据框上运行这个方法。
+- en: And pass in the column for which we want the largest results。 So I could say
+    Df dot n largest。 and then I want the 10 largest from the converted comp column。
+    So if I run this。 then these will give me those same rows， but now we have all
+    of their survey results instead of just the salary。 So if I go up here to their
+    index。 So this is 25983， then we can see the first one here is 25983。
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 并传入我们想要获取最大结果的列。因此，我可以说`df.nlargest`，然后我想从`converted comp`列中获取10个最大值。如果我运行这个，那么这些将给我相同的行，但现在我们有他们所有的调查结果，而不仅仅是工资。所以如果我在他们的索引上查看，这里是25983，那么我们可以看到第一个是25983。
+- en: So this is the same result if I scroll over here to converted comp。 we can see
+    that these are all $2 million here。 And if we wanted to see the smallest values
+    instead of the largest then instead of using in largest here。 then we can simply
+    say in smallest。 So if I look at the smallest salaries here。 then this will give
+    us the smallest salary values from our survey Now I'm assuming this is probably
+    just zero for people who。
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以如果我在`converted comp`上向右滚动，我们可以看到这些都是200万美元。如果我们想查看最小值而不是最大值，那么可以简单地使用`nlargest`替换为`nsmallest`。所以如果我查看这里的最小工资，这将给我们调查中的最小工资值。现在我假设这可能只是对那些人来说是零。
+- en: Aren't currently working， and yes， this is a zero here。Okay。 so that's a brief
+    overview of how to sort our data and how to sort on multiple columns and get the
+    largest and smallest values。 Now， before we end here， I would like to mention
+    the sponsor of this video。 and that is brilliant。 Bri is a problemso website that
+    helps you understand underlying concepts by actively working through guided lessons。
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 当前没有工作，没错，这里是零。好的。那么，这就是如何对我们的数据进行排序以及如何在多个列上排序并获取最大和最小值的简要概述。现在，在结束之前，我想提到一下本视频的赞助商，那就是**Brilliant**。Brilliant是一个问题解决网站，帮助你通过积极参与指导课程来理解基本概念。
+- en: and brilliant would be an excellent way to supplement what you learn here with
+    their handson courses。 They have some excellent courses and lessons on data science
+    that do a deep dive on how to think about and analyze data correctly。 So if you're
+    watching my panda series because you're getting into the data science field。 then
+    I would highly recommend also checking out brilliant and seeing what other data
+    science skills you can learn。
+  id: totrans-38
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 而**Brilliant**将是补充你在这里学习内容的绝佳方式，他们提供实操课程。他们在数据科学方面有一些优秀的课程和教程，深入探讨如何正确思考和分析数据。因此，如果你因为进入数据科学领域而观看我的熊猫系列，我强烈推荐你也去看看Brilliant，了解你还能学习哪些其他的数据科学技能。
+- en: They even use Python in their statistics course and will quiz you on how to
+    correctly analyze the data within the language。 Their guided lessons will challenge
+    you， but you also have the ability to get hints or even solutions if you need
+    them。 It's really tailored towards understanding the material。 So to support my
+    channel and learn more about brilliant。 You can go to brilliant org Forge。😊。
+  id: totrans-39
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 他们甚至在统计课程中使用Python，并会考你如何在该语言中正确分析数据。他们的指导课程将对你提出挑战，但如果需要，你也可以获得提示甚至解决方案。这真的很适合理解材料。因此，为了支持我的频道并了解更多关于Brilliant的信息，你可以访问brilliant.org/Forge。😊
+- en: '![](img/a47f317bd08c26ae1893e4491987efd6_1.png)'
+  id: totrans-40
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/a47f317bd08c26ae1893e4491987efd6_1.png)'
+- en: '![](img/a47f317bd08c26ae1893e4491987efd6_2.png)'
+  id: totrans-41
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/a47f317bd08c26ae1893e4491987efd6_2.png)'
+- en: '![](img/a47f317bd08c26ae1893e4491987efd6_3.png)'
+  id: totrans-42
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/a47f317bd08c26ae1893e4491987efd6_3.png)'
+- en: '![](img/a47f317bd08c26ae1893e4491987efd6_4.png)'
+  id: totrans-43
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/a47f317bd08c26ae1893e4491987efd6_4.png)'
+- en: '![](img/a47f317bd08c26ae1893e4491987efd6_5.png)'
+  id: totrans-44
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/a47f317bd08c26ae1893e4491987efd6_5.png)'
+- en: '![](img/a47f317bd08c26ae1893e4491987efd6_6.png)'
+  id: totrans-45
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/a47f317bd08c26ae1893e4491987efd6_6.png)'
+- en: to sign up for free and also the first 200 people to go to that link will get
+    20% off the annual premium subscription and you can find that link in the description
+    section below again that's brilliant。 orgm。Okay， so I think that's going to do
+    it for this pandas video。
+  id: totrans-46
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 注册是免费的，前200个访问该链接的人将享受年度高级订阅20%的折扣，你可以在下面的描述部分找到该链接，这真是太棒了。orgm。好的，我想这就是本期pandas视频的内容了。
+- en: I hope you feel like you get a good overview for how we can sort our data frames。
+    In the next video we'll be learning about aggregating and grouping data。 Now。
+    this will be the video that a lot of people have been waiting for。 because this
+    is what most people think of when they think of data analysis。 So， for example。
+  id: totrans-47
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我希望你能对如何整理我们的数据框有一个良好的概述。在下一个视频中，我们将学习聚合和分组数据。现在，这将是很多人期待的视频，因为这正是大多数人想到数据分析时的想法。例如。
+- en: we'll see how we can group our survey data by country。 and then get the median
+    salaries for each country and things like that。 that also would take care of some
+    of that outlier data that we just solved before。 It's definitely a good skill
+    to know in pandas and will be you know open up a lot of possibilities for exploring
+    your data further。
+  id: totrans-48
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们将看看如何按国家对我们的调查数据进行分组，然后获得每个国家的中位数薪资，以及其他类似的内容。这也将处理之前解决的一些异常数据。掌握这个技能在pandas中绝对是一个好技能，并将为进一步探索你的数据打开许多可能性。
+- en: But if anyone has any questions about will be covered in this video。 then feel
+    free to ask in the comment section below and I'll do my best to answer those。
+    And if you enjoy these tutorials and would like to support them。 then there are
+    several ways you can do that。 The easiest ways to simply like the video and give
+    it a thumbs up。
+  id: totrans-49
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但是如果有人对本视频中将要涵盖的内容有任何疑问，请随时在下面的评论区提问，我会尽力回答。如果你喜欢这些教程并想支持它们，有几种方法可以做到。最简单的方法就是点赞并给视频一个好评。
+- en: And also it's a huge help to share these videos with anyone who you think would
+    find them useful。 And if you have the means you can contribute through Patreon。
+    And there's a link to that page into the description section。😊。Below be sure to
+    subscribe for future videos and thank you all for watching。
+  id: totrans-50
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 而且，把这些视频分享给你认为会觉得有用的任何人也是一个巨大的帮助。如果你有条件，可以通过Patreon进行支持。相关链接在描述部分。😊。请确保订阅以获取未来的视频，谢谢大家的观看。
+- en: '![](img/a47f317bd08c26ae1893e4491987efd6_8.png)'
+  id: totrans-51
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/a47f317bd08c26ae1893e4491987efd6_8.png)'

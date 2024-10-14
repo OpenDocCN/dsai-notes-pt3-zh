@@ -1,0 +1,366 @@
+- en: 【双语字幕+资料下载】面向初学者的 TensorFlow 教程，理论知识、代码思路和应用案例，真正从零开始讲明白！＜快速入门系列＞ - P7：L8- 乐高星球大战小人仔分类任务  完整项目流程
+    - ShowMeAI - BV1TT4y1m7Xg
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】面向初学者的 TensorFlow 教程，理论知识、代码思路和应用案例，真正从零开始讲明白！＜快速入门系列＞ - P7：L8- 乐高星球大战小人仔分类任务
+    完整项目流程 - ShowMeAI - BV1TT4y1m7Xg
+- en: '![](img/7956a7f6b5a10c99728c67c08635cf0e_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/7956a7f6b5a10c99728c67c08635cf0e_0.png)'
+- en: 🎼，Hey， guys， welcome to another Tensorflow tutorial Today， I'll do another full
+    project walkthrough。 And I think this project is going to be real fun because
+    we're going use a real image data set from Kaaggle with Lego Star Wars minifis。
+    And we're trying to classify the characters。 So along the way。 we will learn how
+    we download and organize our data and how we load the images into Tensorflow and
+    preprocessed them。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 🎼，大家好，欢迎来到另一个 Tensorflow 教程。今天，我将进行另一个完整的项目演示。我认为这个项目会很有趣，因为我们将使用来自 Kaaggle
+    的真实图像数据集，包含乐高星球大战小人仔。我们要对角色进行分类。因此，在这个过程中，我们将学习如何下载和组织我们的数据，以及如何将图像加载到 Tensorflow
+    中并进行预处理。
+- en: Then we set up a convolutional neural net， train it and save our model。 And
+    along the way。 I'll also introduce some new concepts like image augmentation and
+    Kara callbes。 So I hope you stay until the end and we'll find out if we can correctly
+    identify Luke Skywalker。 So here is the image data set that's available on Cagel。
+    and I will put the link in a description。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们设置一个卷积神经网络，训练它并保存我们的模型。在这个过程中，我还会介绍一些新概念，比如图像增强和 Keras 回调。所以我希望你能坚持到最后，我们将看看能否正确识别卢克·天行者。这是可在
+    Kaggle 上获取的图像数据集，我会在描述中放上链接。
+- en: and then you can just click on download and download the data。 So I already
+    did this and copied it in。😊，to my project directory。 So here this Lego folder。
+    And we have some different categories like Harry Potter and Jurasic World。 But
+    now I'm only going to use the Star Wars figures to make it simpler and easier
+    to follow for you。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后你可以直接点击下载并下载数据。我已经做过这一步，并将其复制到我的项目目录中。😊，在这个乐高文件夹中，我们有一些不同的类别，比如哈利·波特和侏罗纪世界。但现在我只会使用星球大战的人物，以便于你更容易跟上。
+- en: So let's make a copy of this folder so that we have a backup because we are
+    going to reorganize the data a little bit。 So let's rename this to Star Wars images。
+    And then inside here， we have 10 different classes。 but right now I'm only going
+    to use the first five。 So again， to make it simpler for you。 And now let's have
+    a look at these images。 So now in this Star Wars images folder。 We have。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们来复制这个文件夹，以便我们有一个备份，因为我们将稍微重新组织数据。我们将其重命名为星球大战图像。然后在这里，我们有10个不同的类别，但现在我只会使用前五个。这样做是为了让你更容易理解。现在我们来看看这些图像。所以现在在这个星球大战图像文件夹中。我们有。
+- en: for example， class1。 This is Yoda。![](img/7956a7f6b5a10c99728c67c08635cf0e_2.png)
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 例如，class1。这是尤达。![](img/7956a7f6b5a10c99728c67c08635cf0e_2.png)
+- en: Class two is Luke Skywalker。![](img/7956a7f6b5a10c99728c67c08635cf0e_4.png)
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: class2 是卢克·天行者。![](img/7956a7f6b5a10c99728c67c08635cf0e_4.png)
+- en: Then we also have R2 D2， then we also have Macce window。 and as last character。
+    we use general grievs。 So these are the characters that we want to identify and
+    right now the first thing I want to do is to reorganize this folder structure
+    a little bit。 So you could load it like this and you also have some met data with
+    the information for each directory so can you can load it with this。 So I want
+    to make it a little bit simpler so that we can easily load it with the tens of
+    low image and loader。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们还有 R2-D2，还有麦克斯·温度。最后一个角色是格里夫斯将军。所以这些是我们想要识别的角色，现在我想做的第一件事是稍微重新组织一下这个文件夹结构。这样你就可以像这样加载它，同时你还可以通过每个目录中的元数据进行加载。我想让它简单一点，这样我们就可以轻松加载到
+    Tensorflow 的图像加载器中。
+- en: So I want to separate the data set into training images validation images and
+    test images。 So we create three folders in here and then in。![](img/7956a7f6b5a10c99728c67c08635cf0e_6.png)
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我想将数据集分为训练图像、验证图像和测试图像。我们在这里创建三个文件夹，然后在。![](img/7956a7f6b5a10c99728c67c08635cf0e_6.png)
+- en: Each of the folders， we again create images for each character。 For example。
+    we have a training folder， and then in the subfold， we have a folder for Yoda。
+    Luke Skywalker and so on。 So this is the first thing we are going to do。 So here
+    I'm in a twopyter notebook。 And here we import the things that we need。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在每个文件夹中，我们会为每个角色创建图像。例如，我们有一个训练文件夹，然后在子文件夹中，我们有一个关于尤达的文件夹，卢克·天行者等等。所以这是我们要做的第一件事。在这里，我在一个
+    Jupyter notebook 中，我们导入所需的内容。
+- en: Then here I named the base directory where we have the images and then I hardcoded
+    the names of each character。 So these five and I'm also setting a random seat
+    to make it a little bit more reproducible and now the first thing we want to do
+    is to create our different folders。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后这里我命名了包含图像的基本目录，然后我硬编码了每个角色的名称。这五个角色，我还设置了一个随机种子，使其更具可重复性，现在我们要做的第一件事是创建不同的文件夹。
+- en: So we can of course automate this with Python。 So now if I run this code and
+    we have a look then here in here it created these three new folders and then inside
+    of each it created a folder for each character that we have。 So right now these
+    are empty and now we're going to take the images from in here and then copy them
+    into here and so we。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们当然可以用Python自动化这个。如果我运行这个代码并查看，这里创建了这三个新文件夹，然后在每个文件夹内为我们拥有的每个角色创建了一个文件夹。因此，现在这些都是空的，我们将从这里获取图像，然后复制到这里。
+- en: We have about 12 or 12 to 14 different images for each character。I know this
+    is not a big amount。 especially not for deep learning， but it's enough for this
+    tutorial and I show you at the end that we get a pretty good accuracy。So yeah，
+    now we want to take about 60% for training。 then 25% for validation and the rest
+    for testing and then copy them into these folders。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们每个角色大约有12到14幅不同的图像。我知道这不是很多，特别是对于深度学习，但对于本教程来说足够了，我会在最后向你展示我们得到了相当不错的准确率。所以，是的，我们现在想要将大约60%用于训练，25%用于验证，剩下的用于测试，然后将它们复制到这些文件夹中。
+- en: So if I run this。Then it prints the total number of images in each directory
+    and then the number of training samples。 validation samples and test samples。
+    So now if we go back in here。 then each of these folders here are empty so we
+    can actually delete them so now move to trash and now in the training folder。
+    for example， we should have the images， so we have training images for each one
+    testing images for each one and validation images for each character。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以如果我运行这个。然后它会打印每个目录中图像的总数，以及训练样本、验证样本和测试样本的数量。所以现在如果我们回到这里，这些文件夹都是空的，所以我们实际上可以删除它们，现在移动到垃圾桶，现在在训练文件夹中，例如，我们应该有图像，所以我们为每个角色有训练图像、测试图像和验证图像。
+- en: So again， this is what your structure should look like。 and this makes it very
+    easy for the Tensorflow image data loader。So now we can go ahead and set up our
+    image data generator so we can get this from Kras preprocessing dot image do image
+    data generator and in here you can pass in your own preprocessing function for
+    example。 you can write a function that normalizes the data。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以再一次，这就是你的结构应该是什么样子。这使得Tensorflow图像数据加载器非常简单。因此，现在我们可以继续设置我们的图像数据生成器，以便从Kras预处理图像中获取图像数据生成器，在这里你可以传入自己的预处理函数，例如，你可以编写一个规范化数据的函数。
+- en: but in the special case that we only want to normalize it。 we can also pass
+    in the rescale argument and then here we use one divided by 255 so we want to
+    have our image in the range between0 and1 like we did in the examples before。And
+    then we have to call this with this generator， we call the flow from directory
+    function。 and then in here we pass in the directory for training。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但在特殊情况下，我们只想规范化它。我们还可以传入rescale参数，然后在这里我们使用1除以255，因此我们希望我们的图像范围在0到1之间，就像之前的示例一样。然后我们必须调用这个生成器，调用从目录流的函数。在这里，我们传入训练的目录。
+- en: So this is in Lego Star Wars images and then train and then we can specify the
+    target size。 So right now I think the images have to dimension 512 by 512 and
+    we can specify a target size and Tensorflow automatically does the resizing for
+    us。Then I specify the class mode because I want to have the labels as a single
+    integer value。 So you can also， for example， use one hot encoding here。Then you
+    can use the batch size。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这是乐高星球大战的图像，然后训练，然后我们可以指定目标大小。因此，现在我认为图像的尺寸必须是512乘512，我们可以指定一个目标大小，Tensorflow会自动为我们调整大小。然后我指定类模式，因为我想将标签作为单个整数值。因此，你也可以，例如，在这里使用独热编码。然后你可以使用批量大小。
+- en: Then for our training images， we say shuffle equals true。 Then we specify that
+    we have RGB images。 So again， you can， you can check out the arguments in the
+    documentation。 and then we specify the class names that I hard coded up here。And
+    then we do the same thing for the validation and test。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后对于我们的训练图像，我们说shuffle等于true。然后我们指定我们有RGB图像。因此，你可以在文档中检查参数。然后我们指定我在这里硬编码的类名。对于验证和测试我们也做同样的事情。
+- en: Images and the only difference here is that we use so for training， we use shuffle
+    equals true。 and for validation， we say this is false。 And so here it doesn't
+    really matter。 but especially for testing， you want shuffle equals false。 So now
+    if we run this。 then Tensorflow automatically loads this for us。 So for example，
+    we have let's print the。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 图像的唯一不同之处在于，我们在训练时使用 `shuffle=True`。而在验证时，我们设置为 `false`。所以这里其实没什么关系，但尤其在测试时，你希望
+    `shuffle=False`。所以现在如果我们运行这个，那么 Tensorflow 会自动为我们加载这些。例如，我们来打印一下。
+- en: Shapes of the test batch。 So we said we only have batch size of four。 So this
+    is why we have four different。Labels here。And if we have a look at the very first
+    batch。 then this is four because we have four samples and then each image has
+    the size 256 by 256 by3 because here we specified this image size and we have
+    three color channels so let's for example。 plot some images with Matpllip so here
+    for example it prints the first four images of the test batch so here we have
+    Yoda and Duke Skywalker and here we have we print four images of the training
+    batch So yeah and now one more thing that I want to show you what we can very
+    easily do with this image data generator is to use image augmentation so if we
+    have a look at tens of flow。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 测试批次的形状。所以我们说我们只有四个的批次大小。这就是为什么我们有四个不同的标签。如果我们看看第一个批次，那么这是四，因为我们有四个样本，每个图像的大小是
+    `256 x 256 x 3`，因为我们在这里指定了这个图像大小，并且我们有三个颜色通道。因此，让我们例如用 Matplotlib 绘制一些图像，这里打印了测试批次的前四个图像，这里我们有尤达和杜克·天行者，并且我们打印了训练批次的四个图像。因此，是的，现在我想向你展示的另一件事是，我们可以非常轻松地使用这个图像数据生成器进行图像增强，因此如果我们看看
+    Tensorflow。
+- en: Then data augmentation is a technique to increase the diversity of your training
+    set by applying random transformations such as image rotation or flipping。So this
+    is very useful to have a better generalization of your model。 and we can very
+    easily get this with this data generator。 So the only thing we have to pass in
+    here are some more arguments。 And then if we want to have this。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 数据增强是一种通过应用随机变换（例如图像旋转或翻转）来增加训练集多样性的技术。因此，这对于提高模型的泛化能力非常有用。我们可以通过这个数据生成器非常容易地实现这一点。因此，我们需要传入的唯一内容就是一些额外的参数。如果我们想要这个。
+- en: then we only do this for the training data set。 So here， for example。 we can
+    specify the rotation range。 we can specify a random horizontal flip and we can
+    also specify the a high shift and a width shift and also shearing and zooming。So
+    now if we use this。 So let me apply all these and。Then again。 you only want to
+    do this for your training data and not for these。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那么我们只对训练数据集这样做。例如，我们可以指定旋转范围，指定随机水平翻转，还可以指定高度平移、宽度平移以及剪切和缩放。所以现在如果我们使用这个。那么让我应用所有这些。然后再一次，你只希望对你的训练数据这样做，而不是对这些。
+- en: And there are several different ways。 So， of course。 you can also write your
+    own functions to do this。 But this image data generator makes it very simple。
+    So now let's run this again with an image augmentation。 So let's run this and
+    this。 and this one again。 and yeah， so here we see， for example。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这里有几种不同的方法。所以，当然，你也可以编写自己的函数来实现这个。但这个图像数据生成器使得这一切变得非常简单。那么现在让我们再次运行这个图像增强。因此，让我们运行这个和这个，还有这个，再次运行。是的，这里我们可以看到，例如。
+- en: we have a slight rotation and probably also a different zoom factor and maybe
+    some shearing effects here。 So yeah， let's run it again。 So let's take another
+    random pick from the batches。And again。 let's have a look。And yeah， I think you
+    can definitely see that it's doing something with the images。 So again， this one
+    is rotated here。 So yeah， this is a very nice technique that you can easily apply
+    here。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们有轻微的旋转，可能还有不同的缩放因子，或者这里可能有一些剪切效果。因此，是的，让我们再运行一次。那么让我们从批次中随机选择另一个样本。再一次，让我们看看。是的，我认为你绝对可以看到它正在对图像进行处理。因此，这个图像确实是旋转过的。所以，是的，这是一种你可以很容易应用的好技术。
+- en: So I'm going to remove this again for now， So because we don't have so many
+    images。 And in this case， its it actually might confuse our model and make the
+    accuracy worse。 So in this example， I'm going to leave this out。 but keep in mind
+    that you can easily do this here。 So let's use run this and this and this again，
+    and then we should not see the augmentation anymore。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我现在要暂时移除这个，因为我们没有那么多图像。在这种情况下，它实际上可能会混淆我们的模型并降低准确性。因此在这个示例中，我将把它排除，但请记住，你可以很容易地在这里做到这一点。那么让我们再次运行这个和这个，然后我们就不应该再看到增强效果了。
+- en: So yeah， I think these are the normal images without rotation or any other effects。And
+    now we set up our convolutional model。 So this is the same as in tutorial number
+    5。 a simple convolutional neural net with different convolutional layers and max
+    pooling and activation functions in between。And then at the end， we use a dense
+    layer。 And this very last layer is important。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以，是的，我认为这些是没有旋转或其他效果的正常图像。现在我们设置卷积模型。这与教程5中的内容相同，是一个简单的卷积神经网络，具有不同的卷积层、最大池化和激活函数。最后，我们使用一个全连接层。这个最后一层很重要。
+- en: So here we are only using five outputs because we have five different classes。
+    So let's run this and print the summary of our model。 So here we can inspect the
+    architecture。And now we set up the loss and the optimizer and the metrics and
+    compile our model。 So this is。 again， the same as the last time。 So what's important
+    here is to set from Lo it equals true because we don't use the activation function
+    here as last layer。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这里，我们仅使用五个输出，因为我们有五个不同的类别。所以让我们运行这个并打印出我们模型的摘要。在这里我们可以检查架构。然后我们设置损失、优化器和指标并编译我们的模型。这再次与上次相同。在这里重要的是要设置from_logits等于true，因为我们在最后一层不使用激活函数。
+- en: So let's compile it。And then we can easily call model fit to train our model。
+    And now here I want to show you another new thing。 So I want to。Talk about Karas
+    callbacks。 So with callbacks， a callback is a function that is applied after each
+    training epoch。 So here you can， for example， safe checkpoints or use different
+    things。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以让我们编译它。然后我们可以轻松调用model.fit来训练我们的模型。现在我想给你展示另一个新东西。我想谈谈Keras回调。回调是应用于每个训练epoch之后的函数。所以在这里，你可以，例如，保存检查点或使用其他不同的功能。
+- en: And what I want to do here is to use a early stopping callback。 So we can very
+    easily use this because this one is implemented in Kas dot callbacks。 And then
+    we say early stopping。And we want to monitor the validation loss and have a patience
+    of five。And this means that if the validation laws does not improve for the next
+    five epochs。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我在这里想做的是使用早停回调。这样我们可以很方便地使用它，因为它已经在Keras的回调中实现了。然后我们设置早停。我们希望监控验证损失，并设定耐心为五。这意味着如果验证损失在接下来的五个epoch中没有改善。
+- en: then it will automatically do an early stopping of our training。 So， and then
+    when we have this。 we can specify this argument。 So we can say callbacks equals。
+    And then this is a list because we can pass in more callbacks， if we want。 And
+    then we say early and then stopping。And then we used the rest of the arguments。
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后它将自动进行早停训练。因此，当我们有这个时，我们可以指定这个参数。所以我们可以说回调等于。然后这是一个列表，因为如果需要，我们可以传入更多的回调。然后我们说早停。接着我们使用其余的参数。
+- en: And now let's train this and see what happens。Alright， so training is done。
+    So we actually said we want to have 30 epochs， but then it stopped after epoch
+    10 because our validation loss didn't improve。 So here we have a our lowest value
+    or here， And then it didn't get better in the next 5 epoch。 So that's why it stopped
+    here。 And what we can see here is if we have a look at the accuracy of our training
+    data Then here。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在让我们训练这个并看看会发生什么。好的，训练完成了。我们实际上说我们想要30个epoch，但在第10个epoch后停止了，因为我们的验证损失没有改善。所以这里是我们的最低值，接着在接下来的5个epoch中没有更好。因此它在这里停止了。我们可以看到，如果我们查看训练数据的准确率，那么这里。
+- en: for example， we have 100。 and 97 in the last epoch。 So this is very good。 But
+    now if we have a look at the validation accuracy。 then we see that this one was
+    the best and then it's actually getting worse。 and our validation accuracy is
+    not very good at all。 So this is a。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 例如，我们在最后一个epoch中得到了100和97。这是非常好的。但是现在如果我们看看验证准确率，我们会发现这是最佳的，但实际上却在下降，而我们的验证准确率并不好。所以这是一个。
+- en: Clear indicator that we have an overfitting problem to our training data。 In
+    this case。 it's a little bit due to the problem that we don't have so many images
+    available and especially not very much images for the validation set。 So this
+    can be one problem。But yeah， I think in this case， it's very nice to have this
+    call back。 And then we can stop and try to improve this model。 So I leave this
+    for you as homework。 You can。
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 清晰地表明我们对训练数据存在过拟合问题。在这种情况下，部分原因是我们没有那么多可用的图像，尤其是验证集的图像很少。所以这可能是一个问题。不过，是的，我认为在这种情况下，拥有这个回调非常好。然后我们可以停止并尝试改进这个模型。所以我把这留给你作为作业。你可以。
+- en: for example， try to use the image augmentation that I showed you or play around
+    with the learning rate or per also try to change the architecture of our model
+    a little bit。 So yeah， this is one thing that we can do。😊，And in the next tutorial。
+    I also show you another very powerful technique with which we can achieve a very
+    high validation accuracy。 even on the small data set。 So I hope you also watch
+    the next tutorial。 So for now。
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 例如，尝试使用我向你展示的图像增强，或者调整学习率，或者也尝试稍微改变我们模型的架构。所以是的，这就是我们可以做的一件事。😊在下一个教程中，我还会向你展示另一种非常强大的技术，通过这种技术，我们可以在小数据集上实现非常高的验证准确率。所以我希望你也能观看下一个教程。暂时就这样。
+- en: what I also want to do。 So we can easily save our model， this is one thing I
+    already showed you。 So we can save it like this。 And then if we have a look at
+    this folder， then it should be here。 So yeah， there it is。😊，And then let's plot
+    some data。So here we see the loss。 the training loss decrease trees very nicely，
+    but the validation loss not so much。
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我还想做的事情。所以我们可以轻松保存我们的模型，这是一件我已经向你展示过的事情。所以我们可以像这样保存它。然后如果我们查看这个文件夹，它应该在这里。所以是的，就在那里。😊然后我们来绘制一些数据。所以在这里我们看到损失。训练损失下降得非常好，但验证损失就没那么好了。
+- en: And the same with the training accuracy for the training， it's very good。 but
+    full of validation。 it isn't。 So， again， this can be an indicator that we have
+    overfitting here。 And yeah。 And so now let's evaluate it on the test data。 And
+    again。 here we see that our accuracy is not very good on this test data。
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 训练的准确率也是如此，非常好。但是验证的准确率就不好了。所以，这可能是一个指标，表明我们在这里存在过拟合。所以现在让我们在测试数据上评估它。再次在这里，我们看到我们在这个测试数据上的准确率不是很好。
+- en: And then if we try to do predictions， we call model predict。 then we also have
+    to apply the soft marks here because we didn't use it in our model layers as the
+    last layer。 and then to get the actual labels， we have to call the artrc max along
+    axis 1。 So now if we print the。Actual labels and the predicted labels。 Then we
+    see we have。
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后如果我们尝试进行预测，我们调用模型预测。然后我们还需要在这里应用软标记，因为我们在模型层的最后一层没有使用它。然后为了获取实际标签，我们必须沿着轴1调用arctmax。所以现在如果我们打印实际标签和预测标签。然后我们看到我们有。
+- en: it's only 50% correct in this case。 So now again， let's print some。New images
+    and predictions。 So yeah， so here our prediction is Luke Skywalker again， So Luke
+    Skywalker。 this was not very good。So yeah， but now I think you should know how
+    we can apply a full project with a real world image data set。And we even achieved
+    a high accuracy on the training data set with the techniques that we used。
+  id: totrans-38
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这种情况下，它的正确率只有50%。所以现在再次打印一些新图像和预测。是的，在这里我们的预测再次是卢克·天行者，所以卢克·天行者。这不是很好。所以是的，但现在我想你应该知道我们如何应用一个完整的项目，使用真实的图像数据集。我们甚至在训练数据集上实现了高准确率，使用了我们所用的技术。
+- en: But yeah， we still have to improve it so that it's also good on the validation
+    data set and for new data for the test data set。 So in the next tutorial， were
+    going to learn about transfer learning。 And with this， we。 I think we will achieve
+    a pretty good accuracy。 So I hope to see you in the next video。 and if you enjoyed
+    the tutorial， please hit the like button and consider subscribing to the channel
+    and see you next time。
+  id: totrans-39
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但我们仍然需要改进，使其在验证数据集和新的测试数据集上也表现良好。所以在下一个教程中，我们将学习迁移学习。通过这个，我想我们会实现相当不错的准确率。所以我希望在下一个视频中见到你。如果你喜欢这个教程，请点击喜欢按钮，并考虑订阅频道，下次见。
+- en: bye。😊。![](img/7956a7f6b5a10c99728c67c08635cf0e_8.png)
+  id: totrans-40
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 再见。😊！[](img/7956a7f6b5a10c99728c67c08635cf0e_8.png)

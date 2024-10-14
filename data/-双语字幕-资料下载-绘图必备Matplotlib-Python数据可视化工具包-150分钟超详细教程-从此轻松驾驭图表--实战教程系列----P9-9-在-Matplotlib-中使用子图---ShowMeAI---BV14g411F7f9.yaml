@@ -1,0 +1,376 @@
+- en: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P9：9）在
+    Matplotlib 中使用子图 - ShowMeAI - BV14g411F7f9
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】绘图必备Matplotlib，Python数据可视化工具包！150分钟超详细教程，从此轻松驾驭图表！＜实战教程系列＞ - P9：9）在Matplotlib中使用子图
+    - ShowMeAI - BV14g411F7f9
+- en: Alright， so let's get to our last section here before we get into common questions。
+    and like I said。 we're gonna get back to text here quite a bit in the common questions。
+    So we're going to look at things like changing these ticks and rotating the X
+    axis and y axis labels and changing the font size and all of that good stuff in
+    the common questions。 but let's do one more section first of basic functionality
+    before we get into some of the nitty gritty here。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，让我们进入最后一个部分，然后再回答常见问题。正如我所说，我们将在常见问题中相当多地回到文本。所以我们将看看如何更改这些刻度，旋转X轴和Y轴标签，以及更改字体大小等等，但在进入一些细节之前，我们先做一个基础功能的部分。
+- en: So section number5 using。![](img/558551509e8aea69421f10f8e194eb25_1.png)
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以第5节使用。！[](img/558551509e8aea69421f10f8e194eb25_1.png)
+- en: '![](img/558551509e8aea69421f10f8e194eb25_2.png)'
+  id: totrans-3
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/558551509e8aea69421f10f8e194eb25_2.png)'
+- en: Subpls。![](img/558551509e8aea69421f10f8e194eb25_4.png)
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: '`subplots`。！[](img/558551509e8aea69421f10f8e194eb25_4.png)'
+- en: So I've already showed you this up earlier， earlier in the Jupyter notebook
+    here。 but I want to make it explicit and spend a little bit more time on it。You
+    know how we usually do P l T do subpls。And then we do Plt。s。![](img/558551509e8aea69421f10f8e194eb25_6.png)
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我之前已经在Jupyter Notebook中向你展示过这个，但我想明确一下，并花更多的时间在这上面。你知道我们通常如何使用`plt.subplot`。然后我们做`plt.s`。！[](img/558551509e8aea69421f10f8e194eb25_6.png)
+- en: And that creates a single axes here。That we can plot things on。Well， if we pass
+    in。A number。 so number of rows， number of columns。Then we get multiple graphs
+    here and。Let's go over again。 So let's let's take a look at a two by2。![](img/558551509e8aea69421f10f8e194eb25_8.png)
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这创建了一个单一的坐标轴，我们可以在上面绘制东西。如果我们传入一个数字，比如行数、列数，那么我们在这里就会得到多个图形。让我们再过一遍。我们来看看一个2乘2的！[](img/558551509e8aea69421f10f8e194eb25_8.png)
+- en: '![](img/558551509e8aea69421f10f8e194eb25_9.png)'
+  id: totrans-7
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/558551509e8aea69421f10f8e194eb25_9.png)'
+- en: A2 by two here。And remember that this actually usually usually will change this
+    to AXS if this has multiple axes in it。 and if we look at AXS。![](img/558551509e8aea69421f10f8e194eb25_11.png)
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 一个2乘2的图。而且记住，这通常会把这个改为`axs`，如果它有多个坐标轴。如果我们查看`axs`。！[](img/558551509e8aea69421f10f8e194eb25_11.png)
+- en: This is a two dimensional numpy array。 so notice that here we have a list of
+    two mapplotlib axes。 here we have a list of two mapplotlib axes， and these are
+    both wrapped inside in outer list。 and we can just look at the dot shape here。![](img/558551509e8aea69421f10f8e194eb25_13.png)
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是一个二维的numpy数组。注意这里我们有一个包含两个Matplotlib坐标轴的列表，这两个坐标轴都被包裹在外部列表中。我们可以查看点的形状！[](img/558551509e8aea69421f10f8e194eb25_13.png)
+- en: And see that we have two by two， which matches what we asked for and also matches
+    the graph that we are getting。So then to plot on each one of these。Essentially，
+    what you do is you do AX S。 and then you you can specify the coordinates within
+    this AXS object or the indices， the index。Of where you want to plot。 So let's
+    plot something in the first row， the0 throw and column 1。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你会看到我们有两个乘以两个，这与我们请求的相匹配，也与我们得到的图形相符。那么在每一个图上绘制时，你要做的就是用`axs`，然后你可以指定这个`axs`对象中的坐标或索引，想在何处绘制。所以我们在第一行、第0行和第1列绘制一些东西。
+- en: Let's try that。And maybe we want。To plot here， let's take a look at our our
+    group by age again。 So maybe maybe we'll do all of these as looking at our age。And
+    let's go back to looking at our cholesterol values。And here you go。 you can see
+    that we now have a line graph in the first row， second column。Of。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们试试这个。也许我们想在这里绘图，先看看我们的年龄分组。所以也许我们会把所有这些都作为年龄来看。让我们回到看看我们的胆固醇值。你看，这里我们现在在第一行、第二列有一个折线图。
+- en: Our average cholesterol。By age。Now， what if we want to look at in this first
+    one。 maybe we want to look at the So 0，0 for the0， throw，0th column。Dot。 maybe
+    want to look at a bar graph。Of the average。Resting。What was this resting blood
+    pressure。 right？Let's do a bar graph there。So now youll see that we have a bar
+    graph。In that first plot there。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们按年龄划分的平均胆固醇。现在，如果我们想在第一个图中查看，也许我们想查看第0行、第0列。点。也许想看看平均静息血压的条形图。对吧？我们来做一个条形图。所以现在你会看到我们在那个第一个图中有一个条形图。
+- en: And this is something that's going to come up in the common questions as well。
+    but I'm going to go ahead and make the figure bigger。 So remember that the figure。
+    the figure is this whole image right？ And so now we're trying to plot four different
+    graphs。Inside the same image， whereas before we were only plotting one。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这也是常见问题中会出现的内容。但我会继续把图形做得更大。所以请记住，图形就是整个图像，对吗？所以现在我们尝试在同一张图像中绘制四个不同的图，而之前我们只绘制了一个。
+- en: So that's why this looks pretty small。 So let's change the fig size here。 Let's
+    change the fig size。 and maybe we'll make this。![](img/558551509e8aea69421f10f8e194eb25_15.png)
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这就是为什么看起来比较小的原因。那么我们来改变图的大小吧。让我们来改变图的大小。也许我们会这样做。![](img/558551509e8aea69421f10f8e194eb25_15.png)
+- en: Let's just pass in a 10 by 10。![](img/558551509e8aea69421f10f8e194eb25_17.png)
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们只需传入10乘以10。![](img/558551509e8aea69421f10f8e194eb25_17.png)
+- en: And see what that does。 Or maybe， you know， maybe let's try， let's try 12 by
+    8。![](img/558551509e8aea69421f10f8e194eb25_19.png)
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 看看这会有什么效果。或者，也许，我们试试12乘以8。![](img/558551509e8aea69421f10f8e194eb25_19.png)
+- en: There we go。 It looks a little bit more proportionate。So now you'll notice that
+    the figure here。 this is still just a single image， but the single image is now
+    bigger。 so we have more space for each axes that we're plotting on。I plotting
+    on。Okay， let's take this。 Let's create two more of these。 So we need to plot something。Down
+    there in that second row。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的。看起来更成比例了。所以现在你会注意到这个图形，这仍然只是一个单一的图像，但这个单一的图像现在变大了。我们有更多的空间来绘制每个坐标轴。好的，让我们来做两个这样的图。我们需要在第二行中绘制一些内容。
+- en: first column and something in the second row， second column。 So maybe let's
+    take a look at our group by。 Let's what columns do we have。![](img/558551509e8aea69421f10f8e194eb25_21.png)
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 第一列和第二行、第二列中的某个内容。那么也许我们来看看我们的分组。我们有哪些列。![](img/558551509e8aea69421f10f8e194eb25_21.png)
+- en: Let's take a look。At this one。For our third graph。 And maybe let's take a look
+    at this。For our fourth， we got thalac here in old peak。 What are those。![](img/558551509e8aea69421f10f8e194eb25_23.png)
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们来看看这个。我们的第三个图。也许我们再看看这个。对于我们的第四个图，我们有thalac和老峰值。那是什么呢。![](img/558551509e8aea69421f10f8e194eb25_23.png)
+- en: So this one， Talac， or however you' pronoun， says the maximum heart rate achieved。And
+    old peak is the what is S T depression induced by exercise relative to rest。 I'm
+    not entirely sure what that means， but if you do medicine。 you might know what
+    that means or if you're in healthcare。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这个，Talac，或者你怎么发音的，表示达到的最大心率。而老峰值是运动相对于静息所引起的ST段抑制。我不是完全确定这是什么意思，但如果你学医，可能会知道这意味着什么，或者如果你在医疗保健领域工作。
+- en: '![](img/558551509e8aea69421f10f8e194eb25_25.png)'
+  id: totrans-21
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/558551509e8aea69421f10f8e194eb25_25.png)'
+- en: So let's make this third graph here。A scatter plot。And maybe we'll make the
+    finalr， the final one。 a bar graph again。 So let's try this。![](img/558551509e8aea69421f10f8e194eb25_27.png)
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们把这个第三个图做成一个散点图。也许我们会把最后一个，再做一个条形图。那么我们试试这个。![](img/558551509e8aea69421f10f8e194eb25_27.png)
+- en: And here you go。 So you see that first we're plotting a bar graph and we can
+    do anything that we want。![](img/558551509e8aea69421f10f8e194eb25_29.png)
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，你看，我们首先绘制了一个条形图，我们可以做任何我们想做的事情。![](img/558551509e8aea69421f10f8e194eb25_29.png)
+- en: '![](img/558551509e8aea69421f10f8e194eb25_30.png)'
+  id: totrans-24
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/558551509e8aea69421f10f8e194eb25_30.png)'
+- en: With this axes， just like we。Would with just a single axie so we can set the
+    labels。 we can set the title， we can do all of that stuff。![](img/558551509e8aea69421f10f8e194eb25_32.png)
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 使用这个坐标轴，就像我们对待单个坐标轴一样，所以我们可以设置标签。我们可以设置标题，我们可以做所有这些事情。![](img/558551509e8aea69421f10f8e194eb25_32.png)
+- en: '![](img/558551509e8aea69421f10f8e194eb25_33.png)'
+  id: totrans-26
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/558551509e8aea69421f10f8e194eb25_33.png)'
+- en: The second one， we have a line graph。![](img/558551509e8aea69421f10f8e194eb25_35.png)
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 第二个图是一个折线图。![](img/558551509e8aea69421f10f8e194eb25_35.png)
+- en: We have a scatter plot， and we finish it off with another bar graph here。 So
+    let's actually。 let's take a minute。![](img/558551509e8aea69421f10f8e194eb25_37.png)
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们有一个散点图，然后用另一个条形图结束它。所以让我们花点时间。![](img/558551509e8aea69421f10f8e194eb25_37.png)
+- en: To just show you that you can， indeed。Set the X label and the y label and the
+    title。 just like normal using this access object here。![](img/558551509e8aea69421f10f8e194eb25_39.png)
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 只是想告诉你，你确实可以设置X标签、Y标签和标题。就像正常一样，使用这个坐标对象。![](img/558551509e8aea69421f10f8e194eb25_39.png)
+- en: Let's look at the first graph。And then we'll do the second graph。And。Here's
+    the third graph。And here is the fourth graph。All right。So， and we， we maybe don't
+    need to set everything for all of these。 but。![](img/558551509e8aea69421f10f8e194eb25_41.png)
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们看看第一个图表。然后我们再看第二个图表。然后是第三个图表。这里是第四个图表。好的，我们或许不需要对所有这些都进行设置，但。![](img/558551509e8aea69421f10f8e194eb25_41.png)
+- en: So rather than AX， I'm just changing it to the axes location inside of this
+    Numpy array here。![](img/558551509e8aea69421f10f8e194eb25_43.png)
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以与AX不同，我只是将其更改为这个Numpy数组中的坐标轴位置。![](img/558551509e8aea69421f10f8e194eb25_43.png)
+- en: And the x label， well， this is going to be age。The y label， this is going to
+    be average。![](img/558551509e8aea69421f10f8e194eb25_45.png)
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: X轴标签，这将是年龄。Y轴标签，这将是平均。![](img/558551509e8aea69421f10f8e194eb25_45.png)
+- en: What was this as was your resting。Blood pressure， right， So average。![](img/558551509e8aea69421f10f8e194eb25_47.png)
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是什么？是你的休息。血压，对吧，所以平均。![](img/558551509e8aea69421f10f8e194eb25_47.png)
+- en: Resting。Blood pressure。![](img/558551509e8aea69421f10f8e194eb25_49.png)
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 休息。血压。![](img/558551509e8aea69421f10f8e194eb25_49.png)
+- en: And if we want to set a title here， we can say average。Resting blood pressure。![](img/558551509e8aea69421f10f8e194eb25_51.png)
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我们想在这里设置一个标题，可以说是平均。休息血压。![](img/558551509e8aea69421f10f8e194eb25_51.png)
+- en: By age， let's take a look at this and see how that looks。![](img/558551509e8aea69421f10f8e194eb25_53.png)
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 按年龄来看看这个，看看效果如何。![](img/558551509e8aea69421f10f8e194eb25_53.png)
+- en: All right。So our our graphs are getting kind of tight here。Which， you know。
+    getting your graphs to look exactly the way that you want them to definitely take
+    some time。 depending on what you're trying to do， But notice that we do have an
+    X axis label， a Y axis label。 and a title just for this graph。 So and we did that
+    just by using this same axes object here。
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: '好的，我们的图表变得有点紧凑。你知道，想让图表看起来完全符合你的期望确实需要一些时间，具体取决于你想做什么。但请注意，我们有X轴标签、Y轴标签，还有这个图表的标题。我们只是使用了同一个坐标轴对象。 '
+- en: '![](img/558551509e8aea69421f10f8e194eb25_55.png)'
+  id: totrans-38
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/558551509e8aea69421f10f8e194eb25_55.png)'
+- en: '![](img/558551509e8aea69421f10f8e194eb25_56.png)'
+  id: totrans-39
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/558551509e8aea69421f10f8e194eb25_56.png)'
+- en: '![](img/558551509e8aea69421f10f8e194eb25_57.png)'
+  id: totrans-40
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/558551509e8aea69421f10f8e194eb25_57.png)'
+- en: '![](img/558551509e8aea69421f10f8e194eb25_58.png)'
+  id: totrans-41
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/558551509e8aea69421f10f8e194eb25_58.png)'
+- en: Now let's say that you had taken the time to populate all of these graphs with
+    their appropriate labels。 so I'm going to go through and just change， make sure
+    that this is indexing into the correct axes object here。![](img/558551509e8aea69421f10f8e194eb25_60.png)
+  id: totrans-42
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在假设你花时间为所有这些图表添加了适当的标签。我将逐个检查，确保这是索引到正确的坐标轴对象。![](img/558551509e8aea69421f10f8e194eb25_60.png)
+- en: '![](img/558551509e8aea69421f10f8e194eb25_61.png)'
+  id: totrans-43
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/558551509e8aea69421f10f8e194eb25_61.png)'
+- en: So let's say that， you know， we're just going to leave all these as the same
+    for right now。 but let's say you took the time and went through。![](img/558551509e8aea69421f10f8e194eb25_63.png)
+  id: totrans-44
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设我们现在就把这些都保持不变，但假设你花时间逐一检查。![](img/558551509e8aea69421f10f8e194eb25_63.png)
+- en: And， you know， maybe I'll change cholesterol。![](img/558551509e8aea69421f10f8e194eb25_65.png)
+  id: totrans-45
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你知道，也许我会改变胆固醇。![](img/558551509e8aea69421f10f8e194eb25_65.png)
+- en: And let's see， what was this one again。![](img/558551509e8aea69421f10f8e194eb25_67.png)
+  id: totrans-46
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们看看，这个是什么。![](img/558551509e8aea69421f10f8e194eb25_67.png)
+- en: This one was heart rate achieved average。Maximum heart rate achieved。 And remember。
+    this is the average of all these because we're looking at the。 we're looking at
+    the data grouped by age and then averaged。![](img/558551509e8aea69421f10f8e194eb25_69.png)
+  id: totrans-47
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这个是心率的平均值。最大心率。记住，这是所有数据的平均值，因为我们是按年龄分组并求平均的。![](img/558551509e8aea69421f10f8e194eb25_69.png)
+- en: And then old peak。 Well， this was the ST depression induced by exercise。 So
+    we'll just say average old peak here。![](img/558551509e8aea69421f10f8e194eb25_71.png)
+  id: totrans-48
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 旧的峰值。这是运动引起的ST段抑制。所以我们就称为平均旧峰值。![](img/558551509e8aea69421f10f8e194eb25_71.png)
+- en: '![](img/558551509e8aea69421f10f8e194eb25_72.png)'
+  id: totrans-49
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/558551509e8aea69421f10f8e194eb25_72.png)'
+- en: Alright， so let's say that you took the time to plot all of these。 Well。 just
+    like I was saying a second ago。![](img/558551509e8aea69421f10f8e194eb25_74.png)
+  id: totrans-50
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好吧，假设你花时间绘制了所有这些。就像我刚才说的。![](img/558551509e8aea69421f10f8e194eb25_74.png)
+- en: The age。The age X axis label and the title here。A are too close， they're overlapping。
+    and this doesn't look good and you can't read it and you don't know what that
+    says。 and so we need to fix this somehow。![](img/558551509e8aea69421f10f8e194eb25_76.png)
+  id: totrans-51
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 年龄。这里的年龄 X 轴标签和标题 A 太近，它们重叠了。这看起来不好，你无法阅读，而且你不知道那是什么。所以我们需要想办法修复这个。![](img/558551509e8aea69421f10f8e194eb25_76.png)
+- en: So there are ways of moving the text up and down and moving the graphs up and
+    down。 But there's also this very handy dandy。![](img/558551509e8aea69421f10f8e194eb25_78.png)
+  id: totrans-52
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以有办法上下移动文本和图形。但还有一个非常方便的功能。![](img/558551509e8aea69421f10f8e194eb25_78.png)
+- en: PLT dot tight layout function。And this is not， it's not a magic bullet， you
+    know。 it's not always going to work exactly how you want it to。![](img/558551509e8aea69421f10f8e194eb25_80.png)
+  id: totrans-53
+  prefs: []
+  type: TYPE_NORMAL
+  zh: '`PLT` 的紧凑布局功能。这并不是，它不是一个灵丹妙药，你知道的。它并不总是能完全按照你的要求工作。![](img/558551509e8aea69421f10f8e194eb25_80.png)'
+- en: '![](img/558551509e8aea69421f10f8e194eb25_81.png)'
+  id: totrans-54
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/558551509e8aea69421f10f8e194eb25_81.png)'
+- en: But if you call this tight layout right before PL T dot show。 then Matplotlib
+    tries to do its best to make sure that things are not overlapping。 And so you'll
+    see here that the X axis label and the title of the graph below are now not overlapping。
+    and everything looks pretty good。
+  id: totrans-55
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但是如果你在 `PLT.show` 之前调用这个紧凑布局，那么 Matplotlib 会尽力确保元素不重叠。因此你会看到这里的 X 轴标签和下面图形的标题现在不重叠了，所有内容看起来都不错。
+- en: '![](img/558551509e8aea69421f10f8e194eb25_83.png)'
+  id: totrans-56
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/558551509e8aea69421f10f8e194eb25_83.png)'
+- en: Okay， so I think that that's it for section number5 using subplots。 it really
+    is just this easy。 You create however many subplots you want， and then you do
+    any kind of graphs that you want on each subplot on each axes there。![](img/558551509e8aea69421f10f8e194eb25_85.png)
+  id: totrans-57
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好吧，我想这就是第 5 节关于子图的内容。实际上就是这么简单。你可以创建任意数量的子图，然后在每个子图的每个轴上绘制任何你想要的图形。![](img/558551509e8aea69421f10f8e194eb25_85.png)
+- en: Finally， you call PLt。 showhow and if things are overlapping， try Plt。tight
+    layout。 try this and see if that works， and if not you might need to do some manual
+    tinkering with the positions of things。 but hopefully this works for you。![](img/558551509e8aea69421f10f8e194eb25_87.png)
+  id: totrans-58
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 最后，你调用 `PLt.showhow`，如果元素重叠，尝试 `Plt.tight_layout`。试试这个，看看是否有效，如果不行，你可能需要手动调整元素的位置。但希望这个对你有帮助。![](img/558551509e8aea69421f10f8e194eb25_87.png)
+- en: '![](img/558551509e8aea69421f10f8e194eb25_88.png)'
+  id: totrans-59
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/558551509e8aea69421f10f8e194eb25_88.png)'
+- en: '![](img/558551509e8aea69421f10f8e194eb25_89.png)'
+  id: totrans-60
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/558551509e8aea69421f10f8e194eb25_89.png)'

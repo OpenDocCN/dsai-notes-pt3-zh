@@ -1,0 +1,158 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P57：58）TRANSPOSE 函数 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P57：58）TRANSPOSE 函数 - ShowMeAI - BV1uL411s7bt
+- en: '![](img/4e0c4151899b0846d3c3ed521e07f901_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/4e0c4151899b0846d3c3ed521e07f901_0.png)'
+- en: In this short Excel video， I want to show you how to use the transpose function
+    in Excel。 Here I am in an Excel spreadsheet that I've started using， and I'm regretting
+    a little bit。 how I laid out this information。 I don't know if you've ever had
+    that experience where you start typing in data。 You put in your column headings
+    you put in your rows。 And then you say to yourself， wait a minute。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个简短的Excel视频中，我想向你展示如何使用Excel中的转置函数。我在一个已经开始使用的Excel电子表格中，而我对这个信息的布局有点后悔。我不知道你是否有过这样的经历，当你开始输入数据时，你输入了列标题，输入了行。然后你心里想，等等。
+- en: maybe I should have put in this case， the names vertically in column a instead
+    of horizontally in row 1。 I know that's happened to me a few times。 In other cases，
+    the way I've entered the data is fine。 And it's what I want。 But I might want
+    to have it also displayed in the opposite way。 maybe on a separate spreadsheet。
+    So we're going look at an Excel function called transpose that will help us do
+    that。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 也许在这种情况下，我应该把名字垂直放在A列，而不是水平放在第1行。我知道这种情况对我发生过几次。在其他情况下，我输入数据的方式很好。这是我想要的。但我可能也想以相反的方式显示它，也许在单独的电子表格中。所以我们将看看一个叫转置的Excel函数，它将帮助我们做到这一点。
+- en: And I'm going to begin by clicking on this plus sign to add sheet number 2。
+    And I'll go to the upper left corner of where I want the new data to appear。 And
+    I'll tap the equal sign and type in。Transpose。 you can see that Excel recognizes
+    the function that I'm trying to use。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我将开始点击这个加号以添加sheet 2。我会去我想让新数据出现的左上角。我会点击等号并输入Transpose。你可以看到Excel识别了我想要使用的函数。
+- en: and it gives me a description。 It converts a vertical range of cells to a horizontal
+    range or vice versa。 So now I'll type left parenthesis。 and Excel is now expecting
+    an array。 In other words。 a range of information。 So I'm going to click back on
+    sheet 1 And then I'll simply click and drag to highlight the range of information
+    that I would like to transpose。 I think I got everything。 And now I'll just type
+    the right parenthesis here in the formula bar。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它给了我一个描述。它将垂直范围的单元格转换为水平范围，反之亦然。所以现在我会输入左括号，Excel现在期待一个数组。换句话说，一系列信息。所以我将返回到sheet
+    1，然后简单地点击并拖动以突出显示我想要转置的信息范围。我觉得我全都选中了。现在我将在公式栏中输入右括号。
+- en: You can see that same formula that I started on sheet 2 is still present with
+    me here through the formula bar。 And I put in the right parenthesis。 It usually
+    works fine without the right parenthesis。 but I'm trying to get in the habit of
+    always putting it in there。 So now I'll tap enter on the keyboard。 and I get a
+    little message saying my formula spilled the formula return multiple values。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以看到我在sheet 2上开始的那个公式仍然在我的公式栏中。我输入了右括号。通常没有右括号也能正常工作，但我正在努力养成总是输入它的习惯。所以现在我会在键盘上按下回车，我收到一条小消息，说明我的公式溢出，公式返回多个值。
+- en: So we spilled them into the neighboring blank cells。 Got it。 That sounds fine
+    to me。 So let's see how this worked。Just like I expected。 it took the data on
+    sheet1 that has people's names across the top and phone number。 donation amount
+    and state across the left side of the spreadsheet。 And on sheet 2。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们把它们倒入了邻近的空单元格。明白了。这听起来不错。那么让我们看看这如何运作。正如我所预料的，它提取了sheet1上的数据，顶部是人名，左侧是电话号码、捐赠金额和州。而在sheet
+    2上。
+- en: it flipped all of that。 That's exactly what I wanted。 But to help us see this
+    better。 I'm going to click and drag from A to D here at the top in the column
+    letters。 And then I'll just double click between any two of those columns。 How
+    about here between C And D right on that line。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它翻转了所有这些。这正是我想要的。但为了让我们更好地看到这一点，我将在顶部的列字母A到D之间点击并拖动。然后我会在这两个列之间的任何位置双击。比如说在C和D之间，正好在那条线。
+- en: Just double click that will automatically resize the columns so that the information
+    in the columns fits perfectly。 let's take a look at this data。 So for the most
+    part， it looks like it worked well。 Let's test it out with Katherine Macinturf。
+    If I go back to sheet 1。 I can see that Katherine Macinurf， Her phone number ends
+    in 58。 She donated $58。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 只需双击，就会自动调整列宽，以便列中的信息完美适配。让我们看看这些数据。大多数情况下，似乎运作良好。让我们用Katherine Macinturf测试一下。如果我返回到sheet
+    1，我可以看到Katherine Macinurf，她的电话号码以58结尾。她捐赠了58美元。
+- en: That's a coincidence。 and she's from New Jersey。 Let's test that out。 Catherine
+    Macinturf 58。58 New Jersey So it looks like the information was trans。accurately
+    and safely， Having said that。 it did change the way some of the data is displayed。
+    For example， it added a0 here。 And unfortunately， I can't just delete that。 Now，
+    the reason why is because even though it says0。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这真是巧合，她来自新泽西。让我们测试一下。凯瑟琳·麦金塔夫 58。58 新泽西。所以看起来信息被准确且安全地转置了。话虽如此，它确实改变了某些数据的显示方式。例如，它在这里增加了一个
+    0。不幸的是，我不能直接删除那个。现在，原因是即使它显示为 0。
+- en: There's something other than0 in that cell。 If I select it， you can see it here
+    in the formula bar。 That's where my transpose formula is located。 So if I delete
+    that cell and tap enter。 it erases all of the data off of sheet2。 It's still on
+    sheet1， but not sheet 2。 So I'm going to hold control and tab Z to undo that。
+    So I need to leave that there。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 那个单元格里有其他东西。如果我选择它，你可以在公式栏中看到它。这就是我的转置公式所在的位置。所以如果我删除那个单元格并按回车，它会将所有数据从 sheet2
+    中抹去。数据仍然在 sheet1 中，但不在 sheet2 中。因此，我将按住控制键并点击 Z 进行撤销。所以我需要保留它在那里。
+- en: It looks like my phone numbers got messed up a little bit。 so I can click on
+    B。 go to the home tab and in the number group， I can change the number format
+    by going here to more number formats。 and I can go to special phone number。 Now，
+    those are converted to phone numbers。 I can do the same kind of thing with the
+    dollar amounts。 But for the most part。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 看起来我的电话号码有些混乱，所以我可以点击 B，转到主页选项卡，在数字组中，通过这里更多数字格式来更改数字格式。我可以选择特殊电话号码。现在，这些已经转换为电话号码。我也可以对美元金额做类似的操作。但在大多数情况下。
+- en: this has been a very successful transposition that I've done。 Now it。Important
+    to know that if I change the information in sheet1， like the donation amount for
+    Morgan。 let's say he donates a little more。 Morgan's information will also change
+    on the linked sheet。 when it transpos the links stay intact。 If that's not what
+    you want。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这次的转置非常成功。现在，重要的是要知道，如果我在 sheet1 中更改信息，比如摩根的捐赠金额，假设他多捐了一些，摩根的信息也会在链接的工作表上改变。转置时，链接保持不变。如果这不是你想要的。
+- en: you should probably transpose using copy and paste special。 And if you want
+    to see how to do that。 watch my tutorial on transposing data in Excel。 The other
+    thing you could do is now that you've transpoposed the data。 you can click and
+    drag to highlight all of the data。 and then hold control and tap C to copy the
+    data。 and then you could go to another sheet。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可能应该使用复制和粘贴特殊来转置数据。如果你想知道怎么做，可以观看我的关于在 Excel 中转置数据的教程。你还可以做的另一件事是，现在你已经转置了数据，可以点击并拖动以突出显示所有数据，然后按住控制键并点击
+    C 复制数据，然后可以去另一个工作表。
+- en: let's say or somewhere in the same sheet， click in the upper left corner of
+    where you would like that data to be displayed。 and then go to the home tab home
+    ribbon clipboard group。 And I'm going to click here on the bottom part of the
+    paste button。 And I'll just go here to paste values。 Now， let's try it。 if I delete
+    that0。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设在同一个工作表的某个地方，点击你希望显示数据的左上角，然后转到主页选项卡的剪贴板组。我将点击粘贴按钮的下半部分。然后我将选择粘贴值。现在，让我们试试。如果我删除那个
+    0。
+- en: the data is still there。 Why because when I did paste。Special and pasted the
+    data as values。 It converted the data from information that was created by the
+    transpose function and formula that I wrote。 It changed it from that and converted
+    it to simply values。 So now at this point， if I wanted to。 I could delete sheets
+    1 and 2 and sheet 3 is still intact。 This is now independent data。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 数据仍然存在。为什么呢？因为当我使用粘贴特殊并将数据作为值粘贴时，它将数据从由我编写的转置函数和公式生成的信息转换成了简单的值。因此现在，如果我想，我可以删除
+    sheet1 和 sheet2，而 sheet3 仍然完好。这是现在独立的数据。
+- en: '![](img/4e0c4151899b0846d3c3ed521e07f901_2.png)'
+  id: totrans-17
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/4e0c4151899b0846d3c3ed521e07f901_2.png)'

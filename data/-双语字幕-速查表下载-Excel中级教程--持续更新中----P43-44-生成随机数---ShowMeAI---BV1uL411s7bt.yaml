@@ -1,0 +1,133 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P43：44）生成随机数 - ShowMeAI - BV1uL411s7bt
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P43：44）生成随机数 - ShowMeAI - BV1uL411s7bt
+- en: '![](img/7373d6018b43ea784652d9a0d3f0a1c4_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/7373d6018b43ea784652d9a0d3f0a1c4_0.png)'
+- en: In this tutorial， I will show you how to quickly generate random numbers in
+    Excel。 Every once in a while， you'll find yourself in a situation in Excel。 when
+    you might need to have a random number。 and we're gonna look at how to generate
+    two different kinds of random numbers。 The first example is a random number between0
+    and1 to do this。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这个教程中，我将向你展示如何快速生成Excel中的随机数。偶尔，你会发现自己在Excel中遇到的情况，你可能需要一个随机数。我们将看看如何生成两种不同类型的随机数。第一个例子是介于0和1之间的随机数，为此。
+- en: All you have to do is click on a cell type the equal sign。 and then type in
+    R。 and you can see the pop up here， it tells me what R does。 returns a random
+    number greater than or equal to0 and less than one。 and notice what it says here。
+    changes on recalculation。 I think you'll see what that means in just a minute。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你要做的就是点击一个单元格，输入等号。然后输入R。你可以看到这里弹出的提示，它告诉我R的作用。返回一个大于或等于0且小于1的随机数。请注意它这里说的内容。重新计算时会发生变化。我想你很快就会明白这意味着什么。
+- en: So after typing equals R， all I have to do is put in a left parenthesis and
+    then a right parenthesis。 There's nothing to put between the two。 Then just tap
+    enter on the keyboard。 and you have a random number between 0 and1。 Now， what
+    if I want a series of random numbers。 Well。 all I have to do is use the autofill
+    handle。 If you're not familiar with the autofill。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以在输入等于R后，我要做的就是放入一个左括号，然后一个右括号。中间不需要放任何东西。然后只需按下键盘上的回车键。你就得到了一个介于0和1之间的随机数。现在，如果我想要一系列随机数。好吧，我只需使用自动填充手柄。如果你不熟悉自动填充。
+- en: Watch one of my other tutorials that teaches about the autofi handle。 but it's
+    a wonderful tool that makes just this kind of thing really easy。 So I want a series
+    of random numbers。 This is a random number。 all I have to do is click on the cell
+    that has the random function and the formula。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 观看我其他的教程，其中讲解了自动填充手柄。但这是一个很棒的工具，可以让这种事情变得非常简单。所以我想要一系列随机数。这是一个随机数。我只需点击具有随机函数和公式的单元格。
+- en: So that's this go to the lower right corner where there's a little green square
+    put my mouse on the green square and then click and drag down。 I'll just go down
+    to row number 12。 I'll release and a whole series of random numbers gets generated。
+    Now you may have noticed that my first random number actually changed a little
+    bit。 it gets recalculated whenever you redo it or adjust any of the random numbers。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这就到达右下角，那里有一个小绿色方块，把我的鼠标放在绿色方块上，然后点击并向下拖动。我会一直拖到第12行。我会松开，然后生成一整系列的随机数。现在你可能注意到，我的第一个随机数实际上变了一点。每次你重新计算或调整任何随机数时，它都会被重新计算。
+- en: look they all pretty well changed。 so now that I've got the random number。 What
+    I could do is click on column B to select the entire column and then if I wanted
+    to maybe I could click up here on percentages and that changes the decimals into
+    a percentage79%82%。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 看，他们都变得不错了。所以现在我有了随机数。我可以点击B列来选择整个列，然后如果我想的话，或许可以点击这里的百分比，这样就把小数变成了百分比79%82%。
+- en: That's a little bit more readable and understandable。Now what if you just want
+    a random number between 5 and 5000 or between 1 and 10000。 and you want it to
+    be whole numbers， not decimals Well。 in that case you use a little bit different
+    function and formula In that case you type equals R between and notice what it
+    says returns a random number between the numbers you specify you put in a left
+    parenthesis and then the lowest number that you want it to maybe generate So1
+    in this case comma and let's say 5000 is the highest number and then I put in
+    the right parenthesis and tap enter on the keyboard。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这更易读且更易理解。现在如果你只是想要介于5和5000之间或介于1和10000之间的随机数，并且你想要的是整数，而不是小数。那么在这种情况下，你需要使用稍微不同的函数和公式。在这种情况下，你输入等号R之间，并注意它说的内容，返回你指定的数字之间的随机数。你放入一个左括号，然后是你希望生成的最低数字，比如1，接着逗号，再假设5000是最高数字，然后我放入右括号，按下键盘上的回车键。
+- en: theres my random number between1 and 5000 Now notice even doing that changed
+    my random numbers over here in column B now I can use the autofill handle to pull
+    this down and I'll get a series of random numbers none of these are less than
+    0 and none of them are more than 5000 to test this out to make sure it's really
+    working I could do R between。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是我在1到5000之间的随机数。现在注意，即使这样做也改变了B列中的随机数。现在我可以使用自动填充手柄将其下拉，我会得到一系列随机数，这些数都不小于0，且都不大于5000。为了测试这一点，确保它真的在工作，我可以使用`RANDBETWEEN`。
+- en: esis and let's say5 comma 9。 So this will be a lot easier to see if it's really
+    working。 Every number that's generated should be between 5 and 9。 and that is
+    the case。 Allright。 so now that we've got these random numbers What if I want
+    them to stop recalculating if I'm happy with this random set of numbers I don't
+    want them to keep changing。 So what I could do is select the range of numbers
+    by clicking and dragging and then I could copy that information I just did control
+    C to copy and then I could click in another column just pick a cell。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设我们要说5，9。所以如果真的有效，这将更容易看出。每生成的数字应该在5和9之间，确实如此。好的。那么现在我们有了这些随机数，如果我对这组随机数满意，不想让它们继续重新计算，我该怎么办？我可以通过点击并拖动选择数字范围，然后复制刚才的信息，按`Control
+    C`复制，然后可以点击另一列，随便选一个单元格。
+- en: I'll just pick this cell here and I'll do a paste special So here and paste
+    I'm just going go down to paste special and I'll choose values so it's gonna to
+    paste just the values。 So now if you click on one of the numbers。 these were randomly
+    generated but they were generated here in this column using the ran between function
+    and you can see that here in the formula bar up here but these numbers are just
+    numbers。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我就选这个单元格，然后进行“粘贴特殊”。在这里粘贴，我会下拉到“粘贴特殊”，选择值，所以它将只粘贴值。现在如果你点击其中一个数字，这些是随机生成的，但它们是通过`RANDBETWEEN`函数在这一列中生成的，你可以在上面的公式栏中看到，但这些数字只是数字。
+- en: I copied formulas and pasted them using pastespec as values。 So these numbers
+    will not change in the future， even though these clearly will you saw it change
+    before your eyes just a minute ago so I could do the same thing with these numbers。
+    select the range， control C to copy click here and I want to paste it but remember
+    I need to do a paste special so I go here to the bottom part of the paste button
+    and at the very bottom of that paste special values。 click okay and those exact
+    values got pasted and of course I could change them again to percentages Now these
+    numbers will continue to change because they still are random but these are set
+    in stone。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我复制了公式，并使用“粘贴特殊”作为值进行粘贴。所以这些数字将来不会改变，尽管这些明显会。你刚刚看到它们在你眼前改变，所以我可以对这些数字做同样的事情。选择范围，按`Control
+    C`复制，点击这里，我想粘贴，但记得我需要做“特殊粘贴”，所以我去粘贴按钮的底部，在“粘贴特殊”中选择值。点击确定，这些确切的值被粘贴，当然我可以再次将它们改为百分比。现在这些数字将继续变化，因为它们仍然是随机的，但这些是固定不变的。
+- en: They're just values。 So now with that done， if I wanted to I could just copy
+    paste this column title over delete the column that's randomized because it'll
+    keep changing or actually I could just copy the values and paste them on top of
+    the formulas and then delete this column here。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它们只是值。所以现在完成后，如果我想，我可以直接复制粘贴这一列的标题，删除随机化的列，因为它会不断变化，或者实际上我可以只复制值并将其粘贴到公式上，然后删除这列。
+- en: However you want to do it， but now I have generated random numbers and these
+    are stable ones they won't just keep changing。![](img/7373d6018b43ea784652d9a0d3f0a1c4_2.png)
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 无论你想怎么做，但现在我已经生成了随机数，这些是稳定的，它们不会再不断变化。![](img/7373d6018b43ea784652d9a0d3f0a1c4_2.png)

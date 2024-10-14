@@ -1,0 +1,468 @@
+- en: 【双语字幕+资料下载】用 Python 和 Numpy 实现最热门的12个机器学习算法，彻底搞清楚它们的工作原理！＜实战教程系列＞ - P13：L13-
+    K均值 - ShowMeAI - BV1wS4y1f7z1
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】用 Python 和 Numpy 实现最热门的12个机器学习算法，彻底搞清楚它们的工作原理！＜实战教程系列＞ - P13：L13-
+    K均值 - ShowMeAI - BV1wS4y1f7z1
+- en: Hi everybody and welcome to a new machine learning from Sct tutorial Today。
+    we are going to implement the K means algorithm using only built and Python modules
+    and Nmpy。 The goal of the K means is to cluster a data set into K different clusters
+    and here we have a unlabeled dataset set。 So we are dealing with an unsupervised
+    learning technique and each sample should be assigned to the cluster with the
+    nearest mean So let's have a look at some images to see what this means。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 大家好，欢迎来到新的机器学习教程。今天，我们将仅使用内置和Python模块以及Numpy实现K均值算法。K均值的目标是将数据集聚类为K个不同的聚类，这里我们有一个未标记的数据集。所以我们正在处理一种无监督学习技术，每个样本应该分配给与其最近的均值的聚类。让我们看看一些图像以了解这意味着什么。
+- en: So here we have our unlabeled data and now in this case we want to find three
+    different clusters So should look like this。And then we assign the labels to the
+    closest cluster， so to the center of the closest cluster。So yeah， this is what
+    we want to do and how are we going to achieve this So this is an iterative optimization
+    technique。 so first we initialize our cluster centers so we randomly pick some
+    samples and say these are our first centers and then we do these two steps until
+    we are conversed。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这里是我们的未标记数据，现在在这种情况下我们想找到三个不同的聚类。所以应该看起来像这样。然后我们将标签分配给最近的聚类，即最近聚类的中心。所以这是我们想要做的，我们将如何实现这一点。这是一种迭代优化技术。首先，我们初始化聚类中心，随机选择一些样本并说这些是我们的第一个中心，然后我们执行这两个步骤，直到收敛。
+- en: So first， we update our cluster labels， which means we assign the points to
+    the nearest cluster center。And the cluster sender is also called centroid。And
+    next， we update our centroids。 So now we set the center， the new center to the
+    mean of each cluster。 and we iteratively do this until there's no more change。
+    So let's again。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 首先，我们更新我们的聚类标签，这意味着我们将点分配给最近的聚类中心。聚类中心也称为质心。接下来，我们更新我们的质心。现在我们将新的中心设置为每个聚类的均值，我们重复这个过程，直到没有更多变化。让我们再来一次。
+- en: have a look at the images to see how this is working。 So first， we have our
+    unlabeled data set。And now we randomly pick three centroids。 So here I've drawn
+    them。 So I hope you can see them。 So these are our initial centroids。 And now
+    we assign the labels to the。Of the data to the。 to the label of the closest centroid。
+    So this is our first initialization。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 看一下图像以了解这个是如何工作的。首先，我们有我们的未标记数据集。现在我们随机选择三个质心。这里我画了它们。我希望你能看到它们。这些是我们的初始质心。现在我们将标签分配给数据中与最近质心的标签。这是我们的第一次初始化。
+- en: And now we start optimizing。 So now we update our centroids。 So we calculate
+    the new mean for each cluster。 So I think this centroid will be moved to something
+    like here。 And this will maybe， maybe be here。 And the green centroid will be
+    moved to maybe here。 So let's see what's happening。 Yeah， so this is the new centroids。And
+    now we update our label。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们开始优化。因此，我们更新我们的质心。我们计算每个聚类的新均值。我认为这个质心会移动到这里，而这个可能会在这里。绿色质心可能会移动到这里。让我们看看发生了什么。是的，这是新的质心。现在我们更新我们的标签。
+- en: our labels。 So now we check which is the closest centroid for each label。 so
+    maybe these will become blue and more of these will become orange。So yeah， this
+    is the next step。 And now again， we update our centroid。 So I think this one will
+    further move to to the right。And this one will move up here and this one will
+    maybe stay the same。 So yeah， this is the next step。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们的标签。所以现在我们检查每个标签的最近质心。也许这些会变成蓝色，而更多的会变成橙色。所以这是下一步。现在再次更新我们的质心。我认为这个会进一步向右移动，而这个会向上移动，这个可能会保持不变。所以这是下一步。
+- en: And now again， we update the labels。 So I think these will become orange now。
+    and these will become blue。 and now we are almost done。 So maybe here are some
+    slight shifts。 So again， update the centroids。 then again， the labels then the
+    centroids than the labels And now there's no more change。 So now we are converged。And
+    yeah， so this is the whole approach。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在再次更新标签。我认为这些现在会变成橙色，而这些会变成蓝色。现在我们几乎完成了。也许这里有一些微小的变化。再次更新质心，然后再次更新标签，然后是质心，然后是标签。现在没有更多变化。因此，我们已经收敛了。这就是整个方法。
+- en: And the only math that we need for this is the Euclidean distance。 So I already
+    showed you this in the tutorial about the Can nearest nava。Algorithm。 the Euclidean
+    distance between two vectors is defined as the square root of the sum over the
+    squared distances。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们需要的唯一数学是欧几里得距离。所以我在关于K近邻算法的教程中已经向你展示过这个。两个向量之间的欧几里得距离定义为平方和的平方根。
+- en: '![](img/b78b3a13800e496c831fda09c2e14c17_1.png)'
+  id: totrans-9
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/b78b3a13800e496c831fda09c2e14c17_1.png)'
+- en: So this is all we need。 So now we can start。 So let's import nuy as N P， of
+    course。 And then I will say， I will set a random seat to， let's say 42， you don't
+    need this。 but I want to reproduce my data later。 And since we are using a random
+    initialization。 I want to。 to have the same results， or I want to。To reproduce
+    my results。 So I will set a random seat here。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这就是我们所需的一切。所以现在我们可以开始。让我们导入nuy作为N P，当然。然后我会说，我将设置一个随机种子，假设是42，你不需要这个，但我想稍后重现我的数据。由于我们使用随机初始化，我希望得到相同的结果，或者我想重现我的结果。所以我会在这里设置一个随机种子。
+- en: And now let's define our Euclidean distance function first。 So Euclidean distance
+    of two vectors。 x1 and x2。 So this will be a global function。 And here we have
+    to implement the formula that I just showed you。 and we can do this in one line。
+    So we say return and nuy first， we have the square root off。 And then we have
+    the sum nu pi sum。 And then we have the sum over all the distances。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在让我们先定义我们的欧几里得距离函数。所以两个向量的欧几里得距离。x1和x2。所以这将是一个全局函数。我们必须实现我刚才给你展示的公式，我们可以用一行来完成。所以我们说返回，nuy首先，我们有平方根。然后我们有sum
+    nu pi sum。然后我们对所有距离求和。
+- en: So we can say x1 minus x2 to the power of2。 So the square distances。 So this
+    is the function。 And now we can implement our K means class。 So this will have
+    an in it。Which has self。 And then it will get a K。 So this will be the number
+    of clusters。 And by default， let's say it's 5。 Then it will get a max its。 So
+    this is the maximum number of iterations。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们可以说x1减去x2的平方。所以平方距离。这就是函数。现在我们可以实现我们的K均值类。所以这将有一个init。它有self。然后它会得到一个K。所以这将是聚类的数量。默认情况下，假设是5。然后它会得到一个max
+    its。这是最大迭代次数。
+- en: we want to do for our optimization。 And by default， let's say it's 100。 And
+    then it will also get a Boolean plot steps equals false。 So you don't need this。
+    but I'm going to implement an additional function here to plot the different steps
+    like we've just seen。 So。Yeah， so first， we set them or we store them。 So we say
+    self dot K equals K self dot max iters equals max iters and self dot plot steps
+    equals plot steps。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们要为我们的优化做的事情。默认情况下，假设是100。然后它还会得到一个布尔值plot steps等于false。所以你不需要这个，但我将实现一个附加功能来绘制不同的步骤，就像我们刚刚看到的那样。所以，首先，我们设置它们或存储它们。所以我们说self
+    dot K等于K，self dot max iters等于max iters，self dot plot steps等于plot steps。
+- en: And now we create our empty clusters and centroids。 So self dot。Clus equals。Oops。Equals。
+    and now here we want to be careful because this is important。 So this is a list
+    of lists。 So a list of sample indices。For each cluster。 and in the beginning，
+    each cluster has an empty list。 So we say， and we use list comprehension and then
+    say we say have an empty list for underscore in range self dot K。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们创建空的聚类和中心点。所以self dot。Clus等于。Oops。Equals。现在我们要小心，因为这很重要。所以这是一个列表的列表。每个聚类的样本索引列表。开始时，每个聚类都有一个空列表。所以我们说，我们使用列表推导，然后说我们有一个空列表，underscore在范围self
+    dot K中。
+- en: So for each cluster， we initialize an empty list。And then we say our self dot
+    centroids equals。 and this will also be an empty list。 And here we are going to
+    store the feature vectors or the mean feature vector for each cluster。 So mean
+    feature vector for each cluster。 So here we are having actual samples。 And here
+    we just store the indices。 So this is important。And now we can continue。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 对于每个聚类，我们初始化一个空列表。然后我们说我们的self dot centroids等于。这也将是一个空列表。这里我们将存储每个聚类的特征向量或均值特征向量。所以每个聚类的均值特征向量。这里我们有实际的样本。我们只存储索引。这很重要。现在我们可以继续。
+- en: So now usually we would implement a fit and a predict method。 But since we are
+    having a unsupervised learning technique here， we and we don't have any label
+    data。 we just have to implement the predict method。 So， and we don't need this
+    the fit method。 So let's define our predict method。With self and X。And here， first，
+    let's store our data。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 通常我们会实现fit和predict方法。但由于我们这里使用的是无监督学习技术，并且没有标签数据，我们只需要实现predict方法。所以，我们不需要fit方法。现在让我们定义我们的predict方法。用self和X。这里，首先，让我们存储我们的数据。
+- en: self x equals x。 and then the dimensions。 So self number of samples and self
+    dot number of features equals x dot shape because we need this later。 And as always，
+    this is a nuy and D array。And so， yeah。 So now let's do the steps we just talked
+    about。 So first， we have to。Initialize our。Our centroids。And then we do a optimization。
+    So here we can say four underscore in range self dot max its。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: self x等于x。然后是维度。因此self number of samples和self dot number of features等于x dot
+    shape，因为我们稍后需要这个。和往常一样，这是一个nuy和D数组。因此，是的。现在让我们执行刚才讨论的步骤。首先，我们要初始化我们的。我们的中心点。然后我们进行优化。因此在这里我们可以说四个下划线在范围内self
+    dot max its。
+- en: And now here in our loop first， we update our clusters。So， let's say， update
+    clusters。And then。 we update the cents。And then we check for conversiongs。Check。If
+    converged。And if so， then we break。 And at the end， we want to classify the samples
+    as the index of their clusters。 So here we say return。Return。Cluster labels。 So
+    this is what we have to do。So now let's start。
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在在我们的循环中，首先更新我们的簇。所以，假设我们更新簇。然后，我们更新中心点。接着检查是否收敛。检查。如果收敛了。那我们就跳出循环。最后，我们想要将样本分类为其簇的索引。因此这里我们说返回。返回。簇标签。这就是我们需要做的。现在让我们开始吧。
+- en: So let's say we want to initialize our centroids。 So we want to randomly pick
+    some samples。 So let's say random sample indices equals。 and now we use list comprehension。
+    So or no， sorry。 here I can use nuy dot random dot choice。And this will get self
+    dot number of samples， and self dot。K， and we also have to say replace equals
+    false because we don't want to pick the same indices twice。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 假设我们想要初始化我们的中心点。我们想要随机选择一些样本。因此假设随机样本索引等于。现在我们使用列表推导式。哦不，抱歉。在这里我可以使用nuy dot
+    random dot choice。这将获取self dot number of samples和self dot K，我们还需要说replace等于false，因为我们不想选择相同的索引两次。
+- en: So this will be an array of size self dot K。 And for each entry。 it will pick
+    a random choice between 0 and the number of samples。And now， we assign。The according
+    sample that belongs to this index to our centroids。 So we say self dot centroids
+    equals。 And now here we use list comprehension。 So we say self dot X。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这将是一个大小为self dot K的数组。对于每个条目，它将随机选择0到样本数量之间的一个值。现在，我们分配。与此索引对应的样本给我们的中心点。因此我们说self
+    dot centroids等于。现在这里我们使用列表推导式。所以我们说self dot X。
+- en: Of the current index for index in random samplingdices。So this is the initialization
+    of our centroids。 And now we can do the optimization。 So first。 we say we update
+    our clusters。 So we say self dot clusters equals self dot， create clusters。 and
+    this will get self dot centroids。 So this is a help of function。
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 当前索引为index的随机采样索引。因此这是我们中心点的初始化。现在我们可以进行优化。因此首先。我们说更新我们的簇。因此我们说self dot clusters等于self
+    dot create clusters。这将获取self dot centroids。这是一个帮助函数。
+- en: create clusters that we are going to implement now。 So define create clusters
+    with self and the cents。So here we assign the samples to the closest centroids
+    to create our clusters。 So first we have。An empty list of lists for our clusters。And
+    now we iterate over our data。
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 创建我们现在要实现的簇。因此定义create clusters，参数为self和cents。在这里，我们将样本分配给最接近的中心点以创建我们的簇。首先，我们有一个空的列表列表用于我们的簇。现在我们遍历我们的数据。
+- en: So we say for index and sample in enumerate self dot X。 So this enumerate function
+    will give us the current index and the current sample。 Now we want to get the
+    closest centroid。 And we want to have the index of this。 So we say centroid index
+    equals self dot closest。Centroid。And this will get， get the current sample。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们说对于index和sample在enumerate self dot X中。因此这个enumerate函数将给我们当前索引和当前样本。现在我们想要获取最近的中心点。我们想要获取它的索引。因此我们说centroid
+    index等于self dot closest。Centroid。这将获取当前样本。
+- en: and then it will get the centroid。 So this will be another helper function that
+    we。 we will create in a second。 But now let's continue here。 So when we have the
+    centroid index。 we append。Or we take the current。Cluster， so the clusters of this。Centroid
+    index。 And then we append。The current index。 So we put the current sample index
+    in the closest cluster。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后它将获取中心点。这将是另一个帮助函数，我们会在稍后创建。但现在我们继续。因此，当我们有中心点索引时。我们附加。或者取当前。簇，因此这个。中心点索引的簇。然后我们附加。当前索引。所以我们把当前样本索引放入最近的簇中。
+- en: And then we return our clusters。So this is how we create our clusters。 and now
+    we need the define closest centroid function。 which gets self and a sample and
+    the centroids。And。Here we calculate the distances of the current sample to each
+    centroid。And then， want to get the。
+  id: totrans-25
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们返回我们的簇。这就是我们如何创建我们的簇。现在我们需要定义closest centroid函数，参数为self、样本和中心点。在这里，我们计算当前样本到每个中心点的距离。然后，我们想要获取。
+- en: The centroid or the index of the centroid， which has the， the closest distance。
+    So let's calculate all the distances with list comprehension。 So here we use the
+    Euclidean distance function we already have。 So the Euclidean distance of a sample
+    and of each。Centroid point。 So point4 point in cents。
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 质心或质心的索引，其具有最近的距离。因此，让我们用列表推导计算所有的距离。在这里，我们使用已经有的欧几里得距离函数。因此，样本与每个质心点之间的欧几里得距离。因此，点4点在质心中。
+- en: And then we want we so we have all the distances here。 and now we want to see
+    which is the minimum or the index with the minimum distance。 So we can use Ny
+    arc min here。 So we say closest index equals Ny arc min of this distances。And
+    then。 you simply。Return it。 So return the closest index。 So now we have this。
+  id: totrans-27
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们想要的，我们这里有所有的距离，现在我们想看看哪个是最小的，或者是最小距离的索引。因此，我们可以在这里使用Ny arc min。所以我们说最近的索引等于这些距离的Ny
+    arc min。然后，你只需返回它。因此，返回最近的索引。所以现在我们有这个。
+- en: and now we created our clusters， and now we can continue with our optimization。
+    So here we update our centroids as the next steps。 But before we want to store
+    the centroids。 So let's say centroids alts equals self dot centroids so that we
+    can check for convergence later。 And then we say self dot centroids equals self
+    dot get。Centroids。Of this。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在我们创建了我们的簇，现在我们可以继续优化。因此，在这里我们更新质心作为下一步。但在此之前，我们想要存储质心。所以我们说质心alts等于self dot
+    centroids，这样我们可以稍后检查收敛情况。然后我们说self dot centroids等于self dot get。质心。这。
+- en: And this will get the self clusters。 So this is another function。This will assign
+    the mean value of the clusters to the centroid。 So for each cluster。 we now calculate
+    the mean。 So let's define this， define。Get。可。Notice do I get cents。Which gets
+    self and the clusters。So。Here， we initialize our centroids with zeros in the beginning。
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这样会得到自我簇。所以这是另一个功能。这个将把簇的均值分配给质心。因此，对于每个簇，我们现在计算均值。让我们定义这个，定义。获取。可。注意我是否得到了质心。这个得到自我和簇。因此，在这里，我们在开始时用零初始化我们的质心。
+- en: So let's say centroids。Equals nuai zeros。 And this will be of size self K and。Self
+    dot N。Features。 and here this should be a two pull。 So we have to be careful here。
+    So for each cluster。 we will store the feature Ea。 So that's why it has to have
+    this dimensions。And now we iterate over the clusters。 So we say four cluster index
+    and cluster in enumerate。Cluters。
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们说质心等于nuai零。这样将是self K和self dot N特征的大小。而这里应该是一个二元组。所以我们必须小心这里。因此，对于每个簇，我们将存储特征Ea。这就是为什么它必须具有这个维度。现在我们遍历簇。因此，我们说四个簇索引和簇在enumerate.Cluters中。
+- en: And。Then we calculate the cluster mean。 So cluster mean equals N pi mean of
+    our self dot x of this cluster indices。🤢，And this should be along the first axis。So
+    again， let's have a look at what this means。 So our。 as I said， our clusters is
+    a list of lists。 So if we have just a current cluster。 then this is a list， and
+    this is a list of the indices that are in this cluster。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们计算簇均值。因此，簇均值等于N pi均值我们的自我.x和这个簇的索引。🤢，而且这应该沿着第一轴。因此，再次让我们看看这意味着什么。因此，正如我所说，我们的簇是一个列表的列表。所以如果我们只有一个当前簇，那么这是一个列表，而这是一个在这个簇中的索引列表。
+- en: So if we call self dot X with this indices。Then it will only return the samples
+    that are in the current clusters。In the current cluster。 And then we calculate
+    the mean。 So this is what what what's going to happen here。 And now once we have
+    our mean。 we assign it to the current cluster So to the current centroids。 So
+    we say centroids of the current。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以如果我们用这个索引调用self dot X。它将仅返回在当前簇中的样本。在当前簇中。然后我们计算均值。所以这就是将要发生的事情。现在一旦我们得到了均值，我们将其分配给当前簇的质心。因此，我们说当前的质心等于当前簇的均值。
+- en: Cluster index equals cluster。Mean。And then we are done and can return the centroids。So，
+    yeah。 So now we have our new centroids。 and now we check if we are converged。
+    So we say if self dot。Is converged。Then we will break so we can stop here。And
+    this will get the centroids。Old and the new new ones。 So self do cents。 And this
+    is another helper function。This will simply。
+  id: totrans-33
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们完成了，可以返回质心。所以，是的。现在我们有了新的质心。现在我们检查是否收敛。因此，我们说如果self dot。已收敛。那么我们将中断，所以我们可以在这里停止。这将得到旧的和新的质心。因此，self
+    do cents。这是另一个帮助函数。这个将简单。
+- en: Calculate the distances between each old and new centroids for all the cents。
+    and check if this is0。So， define is converged。Self and cents， old and new centroids。So
+    again。 we calculate the distances with less comprehenion。 This turns as equals。
+    And here we calculate calculate the Eucladan distance of centroids old of I。
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 计算所有质心之间的距离，检查是否为0。所以，定义is converged。self和旧的新质心。所以我们再次计算距离，使用较少的理解。这变成了相等。这里我们计算质心旧的欧几里得距离。
+- en: So the current centroid vector。And the new one， So centroids。I。4 I in range
+    self dot k。🎼So for each cluster， it will look at the old and the new centroid
+    vector and calculate the Euclidean distance and store it in this list。 And then
+    we can return some。Distances。Equals equals 0。 So this is a build in function that
+    will iterate over these entries and calculate or sum it up。
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 当前质心向量和新的质心，self.dot.k范围内的i。对于每个聚类，它将查看旧的和新的质心向量，计算欧几里得距离并将其存储在列表中。然后我们可以返回一些距离，等于0。这是一个内置函数，它会遍历这些条目并进行计算或求和。
+- en: And so if this is0， then there is no more change in our centroids。 So we say
+    it is converged。So。 yeah， so now we have this。 And now we want to return the cluster
+    labels。 So let's say return self dot。Get cluster labels。And this will get self
+    thought。Cluters。So here for each sample， we will get the label of the cluster
+    it was assigned to。
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果这是0，那么我们的质心就没有更多变化。所以我们说它已经收敛了。好吧，现在我们有这个。现在我们想要返回聚类标签。我们可以返回self.dot.get
+    cluster labels。这样就能获取self的聚类标签。对于每个样本，我们将得到它被分配到的聚类的标签。
+- en: So let's create this right here。 So define get cluster labels with and the clusters。And
+    so first。 we say our labels equals a nuy。Ety array。Of size， self dot number of
+    samples。 So for each sample。 we want to return， which is the。The cluster it was
+    assigned to， But be careful here。 because these labels are not the actual labels
+    of our data because we don't know them。
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们在这里创建这个。定义get cluster labels和clusters。首先，我们说我们的标签等于一个大小为self.dot number of
+    samples的空数组。对于每个样本，我们想返回它被分配的聚类。但是这里要小心，因为这些标签并不是我们数据的实际标签，因为我们不知道它们。
+- en: So this is just the index of the cluster it was assigned to。So， yeah。 So now
+    we iterate over the cluster。 So for cluster index。And also， cluster in enumerate。Cluters。And
+    then we iterate over the current cluster。 So for sample index in cluster。So again。
+    this is a list of list， and each cluster has a list has all the the sample indices
+    of the samples that are in this cluster。
+  id: totrans-38
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这只是它被分配到的聚类的索引。好吧，现在我们遍历聚类。对于聚类索引中的聚类和enumerate.cluters中的聚类。然后我们遍历当前聚类。对于聚类中的每个样本索引，这又是一个列表的列表，每个聚类都有一个包含该聚类中所有样本索引的列表。
+- en: So for each sample index in this current cluster， we say labels of the sample
+    index equals。The current cluster index。And then we return our labels。 And now
+    we are done。So one more thing that I want to implement， but you don't need this
+    is to have a plot function。 So define find plot and self。And here we are going
+    to use matpl lab so I can say， import。Much。
+  id: totrans-39
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 对于当前聚类中的每个样本索引，我们说样本索引的标签等于当前聚类索引。然后我们返回我们的标签。现在我们完成了。我还想实现一件事，但你不需要的是绘图函数。定义find
+    plot和self。在这里，我们将使用matplotlib，所以我可以说import。
+- en: Ploot lip dot pi plot S P L T， And I'm not going to explain the details here。
+    but if you want to see more tutorials about my plot lip， then please leave some
+    comments。So let's implement the plot method。 So here， I simply want to。Ploot the。
+    the data and to which cluster it belongs。 And then also the centroids。 So let's
+    create our figure。
+  id: totrans-40
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 使用plt.plot，我不打算在这里解释细节，但如果你想看到更多关于我的plot的教程，请留下评论。让我们实现绘图方法。在这里，我想简单地绘制数据及其所属的聚类，以及质心。让我们创建我们的图形。
+- en: So F a X equals P， L T dot sub。Ploots， and let's give this a fixed size of size。
+    Let's say，12 by 8。 And then we iterate over our clusters。 So for I and index in。Sell
+    in， in nom。Marade self dot clusters。 And now we get the current point。 So point
+    equals self dot X。Of the index。 but we have to transpose it here。And now we scatter
+    the point。 So A X starts scatter。
+  id: totrans-41
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 设置ax等于plt.subplot，并给它一个固定的大小，比如12乘8。然后我们遍历我们的聚类。对于索引中的每个i，在self.dot clusters中。现在我们得到当前的点，point等于self.dot
+    X的索引，但我们必须在这里转置它。现在我们散点图。
+- en: And here I unpack the point。And now， so this will plot all the points。And for
+    each cluster。 it will use a different color。And now we do the， we plot all the
+    centroids。 So for point in self dot cents。A x dot scatter。 And again， we unfold
+    our point。 and then we say marker equals。X， so it has a marker sign， and color
+    equals。
+  id: totrans-42
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这里我解包了这个点。现在，这将绘制所有的点。对于每个聚类，它将使用不同的颜色。现在我们绘制所有的质心。所以对于点在 self.dot cents。A
+    x.dot.scatter。再一次，我们解开我们的点。然后我们说 marker 等于。X，所以它有一个标记符号，color 等于。
+- en: Black and line width equals 2。So， and then we have to say PLT dot show， of course。And。So
+    this is the plot function。 And now， during our optimization， if we set plot steps
+    to true。Then we want to plot after we updated our clusters， so we say。If self
+    dot。Ploot steps。 then self dot plot。And again， we also want to plot after we updated
+    our centroids。
+  id: totrans-43
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 黑色和线宽等于 2。所以，我们必须说 PLT.dot.show，当然。这个是绘图函数。在我们的优化过程中，如果我们将 plot steps 设置为 true。那么我们想在更新聚类后进行绘图，所以我们说。如果
+    self.dot Ploot steps，那么 self.dot plot。再一次，我们还想在更新质心后进行绘图。
+- en: So we put it right here。 and now we are done。 So now let's run this。 and I hope
+    that everything is working。 So let's clear this and run our script。And。Oh。 I missed
+    a comma here， line 37。Update cent， the centroids old equals。The current ones。![](img/b78b3a13800e496c831fda09c2e14c17_3.png)
+  id: totrans-44
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们把它放在这里。现在我们完成了。所以现在让我们运行这个。我希望一切都能正常工作。让我们清理一下并运行我们的脚本。哦。我在这里漏掉了一个逗号，行 37。更新质心，旧的质心等于。当前的！![](img/b78b3a13800e496c831fda09c2e14c17_3.png)
+- en: So again， let's try this。 And now it's working。 So here we have。 I created a
+    data set with four different clusters。 and we can see that it correctly could
+    identify them。![](img/b78b3a13800e496c831fda09c2e14c17_5.png)
+  id: totrans-45
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以再次，让我们试一下。现在它正在工作。这里我创建了一个包含四个不同聚类的数据集。我们可以看到它正确地识别了它们。![](img/b78b3a13800e496c831fda09c2e14c17_5.png)
+- en: So let's set plot steps to true and don't plot it at the end。 And now let's
+    run it again。![](img/b78b3a13800e496c831fda09c2e14c17_7.png)
+  id: totrans-46
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以让我们把 plot steps 设置为 true，并且在最后不绘图。现在让我们再运行一次！![](img/b78b3a13800e496c831fda09c2e14c17_7.png)
+- en: To see the different steps。 So here， this is after our initialization。 So we
+    randomly picked some samples and said these are our first centroids。 So maybe
+    the initialization is not very good here， but。You could find out the clusters
+    correctly later。 So let's see what's happening。
+  id: totrans-47
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 要查看不同的步骤。所以这里，这是我们初始化之后的状态。我们随机选取了一些样本，并表示这些是我们的第一个质心。因此，初始化可能不是很好，但。你可以在后面正确找到聚类。那么我们来看看发生了什么。
+- en: So now we are so then we are starting to optimize。 So now in the next step。
+    we are calculating the new centroids。So I think the centroid of the blue cluster
+    is moving to maybe over here and the orange centroid is moving to down here。 So
+    let's look at the next step。 So yeah， and now we are updating the labels。 So I
+    think these here are no longer orange but red and green。So。Yeah。
+  id: totrans-48
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以现在我们开始优化。现在在下一步中，我们正在计算新的质心。我认为蓝色聚类的质心正在移动到这里，而橙色质心正在移动到下面。让我们看一下下一步。所以是的，现在我们在更新标签。我认为这些不再是橙色，而是红色和绿色。所以。是的。
+- en: and also some of them are now red。 And now we update our centroids again。 So
+    I think this will further move over here。 This will move down here。And these will
+    move a little bit。 So yeah。And now we again update our labels。 So I think more
+    of them will become red and more of them here will become green。So， and now again。
+  id: totrans-49
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 还有一些现在变成了红色。现在我们再次更新我们的质心。我认为这将进一步移动到这里。这个会向下移动。这些会移动一点。所以是的。现在我们再次更新我们的标签。我认为更多的将变成红色，这里更多的将变成绿色。所以，现在再次。
+- en: we update our centroid。 So I think this will further move over here。 The red
+    centroid will move over here。 This is already good。 And the green 1 or moves over
+    here。 I think。So， yep， that's that。 And now again， we update the labels。 now again。
+    the centroids and the labels。 And now I think we are converged。 So， yeah。
+  id: totrans-50
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们更新我们的质心。我认为这将进一步移动到这里。红色质心将移动到这里。这已经很好了。绿色的质心也移动到这里。我认为。是的，就是这样。现在我们再次更新标签。现在再次，质心和标签。现在我认为我们已经收敛了。所以，是的。
+- en: this is how the K meanss works。 And I hope you understood everything。 And if
+    you liked it。 please subscribe to the channel and see you next time by。![](img/b78b3a13800e496c831fda09c2e14c17_9.png)
+  id: totrans-51
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这就是 K 均值如何工作的。我希望你理解了一切。如果你喜欢，请订阅频道，下次再见！![](img/b78b3a13800e496c831fda09c2e14c17_9.png)
+- en: '![](img/b78b3a13800e496c831fda09c2e14c17_10.png)'
+  id: totrans-52
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/b78b3a13800e496c831fda09c2e14c17_10.png)'

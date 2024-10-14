@@ -1,0 +1,167 @@
+- en: 【双语字幕+资料下载】面向初学者的 TensorFlow 教程，理论知识、代码思路和应用案例，真正从零开始讲明白！＜快速入门系列＞ - P6：L6- 保存和加载模型
+    - ShowMeAI - BV1TT4y1m7Xg
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】面向初学者的 TensorFlow 教程，理论知识、代码思路和应用案例，真正从零开始讲明白！＜快速入门系列＞ - P6：L6- 保存和加载模型
+    - ShowMeAI - BV1TT4y1m7Xg
+- en: '![](img/9b9ffc459a3e832c981ed4cc62448cda_0.png)'
+  id: totrans-1
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/9b9ffc459a3e832c981ed4cc62448cda_0.png)'
+- en: 🎼，Hey， guys， welcome to the next Tensorflow tutorial。 In this episode。 I want
+    to show you how we can save and load our model。 This is very simple with the Tensorflow
+    API。 So let's have a look at how we do that。 And here I have the same code as
+    in tutorial number 3。 where we implement a simple feed forward neural nets and
+    use it for the Mnes data set。😊。
+  id: totrans-2
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 🎼，嘿，大家，欢迎来到下一个Tensorflow教程。在这一集中，我想向你展示如何保存和加载我们的模型。使用Tensorflow API这非常简单。所以让我们看看我们是怎么做到的。在这里我有和第3个教程相同的代码，我们实现了一个简单的前馈神经网络，并将其用于Mnes数据集。😊。
+- en: So after we define our model， we compile it and fit it。 so we start the training
+    and then we evaluate it。 and after that we want to save our model and here we
+    have three different options and I want to show you all three so we can save and
+    load a whole model。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以在我们定义模型后，我们编译并拟合它。我们开始训练，然后进行评估。之后，我们想保存我们的模型，这里有三种不同的选项，我想向你展示这三种，因此我们可以保存和加载整个模型。
+- en: we can save only the weights or we can save only the architecture So let's start
+    with the whole model and this is super simple so we can just say model do save
+    and then specify a file name and here we have two different possible formats that
+    we can use so we can use the Tensorflow saved model format or we can use the HDf5
+    format and this depends on the ending that we use So for example。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们可以只保存权重，或者只保存架构。所以让我们从整个模型开始，这非常简单，我们只需说模型保存，然后指定文件名，这里有两种不同的可能格式可供使用，因此我们可以使用Tensorflow保存的模型格式或使用HDf5格式，这取决于我们使用的后缀。例如。
+- en: if we just use NN for neural network。File name without an ending。 then it's
+    using this format。 And if we specify the ending H5， then it's using this format。
+    So both work fine in the Tensorflow docs， they recommend to use this format。 but
+    I think this one works as well。 So you can use both。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果我们仅使用NN表示神经网络，文件名没有后缀，那么它将使用这种格式。如果我们指定后缀H5，那么它将使用这种格式。因此两者在Tensorflow文档中都正常工作，他们建议使用这种格式，但我认为这种格式也可以。因此你可以两者都使用。
+- en: So let's use both formats here to demonstrate you the difference。 So let's use
+    another one neural let's call this neural net without an ending。 And now if we
+    run this， then it starts the training and after the training。 it should save the
+    model with in both formats。 So let's say。Python， and then the name of this file。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以让我们使用这两种格式来向你展示差异。所以让我们使用另一个神经网络，称之为没有后缀的神经网络。现在如果我们运行这个，它将开始训练，训练后，它应该以两种格式保存模型。因此我们说。Python，然后是这个文件的名称。
+- en: So this is tutorial number 6。Alright， so training is done and it's saved our
+    model。 So we see the H 5 file。 And for the other one， where we simply use neural
+    nets。 And then it's using the saved model format。 And for this。 it creates a whole
+    folder with the files in it。 So both work fine。 And then in order to load it。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以这是第6个教程。好了，训练已经完成，并且我们的模型已保存。我们看到了H 5文件。至于另一个，我们只是使用神经网络。然后它使用了保存的模型格式。对此，它会创建一个包含文件的整个文件夹。因此两者都正常工作。然后为了加载它。
+- en: let's use a new model。 And we can load this by saying new model equals Kaas
+    dot model dot load model and then the same file name。 So let's use an N dot H
+    5。 And now we have it and can do the same thing。 So now if I say new model dot
+    evaluate。 then this should produce the exact same results。 So now we could delete
+    all of this。 So I leave this here so that it。😊。
+  id: totrans-8
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 让我们使用一个新模型。我们可以通过说新的模型等于Kaas.dot.model.dot.load_model，然后是相同的文件名来加载它。所以让我们使用N.dot.H
+    5。现在我们有了它，可以做同样的事情。因此现在如果我说新模型.dot.evaluate，那么这应该会产生完全相同的结果。现在我们可以删除所有这些。因此我把它留在这里，以便它。😊。
+- en: the first evaluation and the second one so that we can see that this is the
+    same。 And here I want to mention that so last time for metrics， we just use the
+    name accuracy。 And in the current Tensorflow version 2。3， there is a buck。 So
+    if you use the string。 then after loading with this specific loss。 it will not
+    produce the same results。
+  id: totrans-9
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 第一次评估和第二次评估，这样我们可以看到这是相同的。在这里我想提到，上次对于指标，我们只是使用了名称准确性。在当前的Tensorflow版本2.3中，有一个问题。如果你使用字符串，然后在加载这个特定的损失后，它将不会产生相同的结果。
+- en: So you should use this kas matrix object here。 and then it works fine。 But this
+    will be fixed in the version 2。4。 So let's run it。 And then we should see the
+    exact same evaluation results for our original model and our loaded model。Alright，
+    so here we have it。 So here we have the evaluation of the original model。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以你应该在这里使用这个kas矩阵对象，然后它运行良好。但这将在版本2.4中修复。让我们运行它。然后我们应该看到原始模型和加载模型的完全相同的评估结果。好的，这里我们有它。所以这里是原始模型的评估。
+- en: And then after loading， we have this one。 So this is exactly the same。 and don't
+    worry about this warning。 So this appears if we use the saved model format。 But
+    I think this is also a back and should be fixed in the next version。 So yeah。
+    I think we now we see how we can save and load our model。 So it's that simple。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后在加载之后，我们得到了这个。这是完全一样的，别担心这个警告。如果我们使用保存的模型格式，这个警告会出现。但我认为这也是一个缺陷，应该在下一个版本中修复。所以，是的，我认为现在我们看到了如何保存和加载模型。所以就是这么简单。
+- en: we only use model dot save and then can call Kara models load model again。 And
+    then we have the exact say model。 So this is how we save the whole model。 And
+    now if we want to save only the weights。 we can do it very simple as well。 So
+    we can save model dot save weights and then the let's call this and and dot weights。Start
+    H 5。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们只使用`model dot save`，然后可以再次调用`Kara models load model`。然后我们得到了完全相同的模型。这就是我们如何保存整个模型。现在如果我们只想保存权重，我们也可以非常简单地做到这一点。所以我们可以保存`model
+    dot save weights`，然后叫做`and dot weights dot H 5`。
+- en: And again here we have both options。 So with an file name， ending or without。
+    And then again。 if we want to load the weights。Then。We would have to set up our
+    model like here。 And then without training， we can simply say model dot load weights。
+    And then this file name。 So N。 N dot weights dot H 5。 So here again， here， we
+    would have to in it， initialize our model。And now。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这里我们再次有两个选项。有文件名后缀或者没有。如果我们想加载权重，那么我们需要像这里那样设置我们的模型。然后在不训练的情况下，我们可以简单地说`model
+    dot load weights`，然后是这个文件名。所以`N dot weights dot H 5`。所以在这里，我们需要初始化我们的模型。现在。
+- en: as a last option， if we only want to save the architecture。 we can get the architecture
+    as a cha string by saying our cha string equals。 and then we use model to。Chasson，
+    and this saves the architecture of our model， as Chason string。And then， for example，
+    we can save this so we can say with open and then our file name。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 作为最后一个选项，如果我们只想保存架构，我们可以通过说`our cha string equals`来获取架构的Cha字符串，然后使用`model to
+    Chasson`，这会将我们的模型架构保存为Cha字符串。然后，例如，我们可以保存这个，所以我们可以说`with open`，然后是我们的文件名。
+- en: So N and model， and we want to open it in right mode and then S F。 and then
+    we say F dot right our Cha string and then the same thing when we load it。 So
+    for loading。 we do the same thing， we say with open and then the same name and
+    end dot model and then here in read mode as F。 And then we can say our loaded
+    Cha string equals。 and here we say F dot read so we don't need to import the Cha
+    module here。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以`N and model`，我们想以写模式打开它，然后是`S F`。然后我们说`F dot right our Cha string`，加载时也是一样。因此在加载时，我们做同样的事情，说`with
+    open`，然后是同样的名称和`end dot model`，然后在这里以读模式作为`F`。然后我们可以说`our loaded Cha string equals`，在这里我们说`F
+    dot read`，所以我们不需要在这里导入Cha模块。
+- en: this is already implemented it in the Tensorflow API。 And then when we have
+    our loaded Cha string。 we can set up our。Model by saying new model equals Kas
+    dot model dot model and then underscore from Jason。 And then hear the loaded。Jason
+    string。And now here， then this will only load the architecture。 So if we say print
+    new model dot summary， then it would look look the same。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这已经在TensorFlow API中实现了。当我们加载了Cha字符串时，我们可以通过说`new model equals Kas dot model
+    dot model and then underscore from Jason`来设置我们的模型。然后在这里加载的Jason字符串。现在这里，这将只加载架构。如果我们说`print
+    new model dot summary`，那么它看起来会是一样的。
+- en: But here it does not have the weights yet。 So then we would still have to train
+    it。 But yeah。 now you have all the three different options。 And I think the first
+    one is the simplest one。 But it's also the most expensive ones。 So sometimes you
+    just want to save the weights or only the architecture。 And yeah， so now you know
+    how simples it is with the tens offlow API。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但这里还没有权重。因此我们仍然需要训练它。但没关系，现在你有了三种不同的选择。我认为第一种是最简单的，但也是最贵的。所以有时候你只想保存权重或仅仅是架构。所以，现在你知道使用TensorFlow
+    API是多么简单。
+- en: And then you can start saving and loading your model。 And yeah， that's it for
+    now。 I hope you enjoyed this tutorial。 Please hit the like button and consider
+    subscribing to the channel。 And I hope to see it in the next video by。![](img/9b9ffc459a3e832c981ed4cc62448cda_2.png)
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后你可以开始保存和加载你的模型。没错，这就是现在的内容。希望你喜欢这个教程。请点击点赞按钮并考虑订阅频道。希望在下个视频中见到你。![](img/9b9ffc459a3e832c981ed4cc62448cda_2.png)
