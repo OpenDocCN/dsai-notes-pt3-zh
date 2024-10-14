@@ -1,5 +1,6 @@
 - en: 【双语字幕+资料下载】Hugging Face速成指南！一遍搞定NLP任务中最常用的功能板块＜实战教程系列＞ - P3：L3- 模型和分词器 - ShowMeAI
     - BV1cF411v7kC
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
@@ -7,6 +8,7 @@
     steps manually。 this will give you a little bit more flexibility。 So down here。
     let's first use the tokenizer and see what this does。 So first。 let's call the
     tokenizer dot tokenize function。 So we say。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
 - en: let's call the tokens and then equals tokenizer dot tokenize and then the string
@@ -14,66 +16,85 @@
     then once we get the tokens。 we can use them and get the token Is out of it。 So
     we can say token Is equals。 And then we again use the tokenizer and the function
     convert tokenizer to。😊。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_1.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_2.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_3.png)'
+  id: totrans-5
   prefs: []
   type: TYPE_IMG
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_4.png)'
+  id: totrans-6
   prefs: []
   type: TYPE_IMG
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_5.png)'
+  id: totrans-7
   prefs: []
   type: TYPE_IMG
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_6.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_7.png)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_8.png)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
 - en: Called Is。 And then it meet the tokens。 So this is one way how to do this。 Or
     we can do this directly by saying token I equals。 And then we call this tokenizer
     like a function。 And then again， we give it the same string here。 So now let's
     print all these three variables to see where is the difference。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
 - en: So first we print the tokens， then we print the token Is。 And then here let's
     actually give this a different name。 So let's call this input I。 So now let's
     run this and see how this looks like。 Alright， so here is the result。 So as you
     can see when we call tokenizer dot tokenize， then we get a list of strings。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_10.png)'
+  id: totrans-13
   prefs: []
   type: TYPE_IMG
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_11.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_12.png)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_13.png)'
+  id: totrans-16
   prefs: []
   type: TYPE_IMG
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_14.png)'
+  id: totrans-17
   prefs: []
   type: TYPE_IMG
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_15.png)'
+  id: totrans-18
   prefs: []
   type: TYPE_IMG
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_16.png)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_17.png)'
+  id: totrans-20
   prefs: []
   type: TYPE_IMG
 - en: The list of the words backs so now each word is a sorry each word is a separate
@@ -84,9 +105,11 @@
     the numerical representation that our model then can understand So this is what
     we get after this function and if we call this tokenr directly then we get a dictionary
     back and here we have the key input Is and we also have the attention mask so。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_19.png)'
+  id: totrans-22
   prefs: []
   type: TYPE_IMG
 - en: For now you don't really have to worry about this but let's have a look at the
@@ -98,51 +121,81 @@
     manually so now like before we can also use multiple sentences of course for our
     tokenr so for example usually in your code you have your training data so let's
     say xtrain and in this example let's just。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 目前你不必太担心这个，但我们来看看输入 IDs。如果我们比较 token IDs 和输入 IDs，我们会发现它们的 token ID 顺序完全相同，但我们还有
+    101 和 102 的 token，这只是字符串的开始和结束 token，但基本上是相同的。所以这是这三个函数之间的区别，这些输入 IDs 是我们稍后可以传递给模型以进行手动预测的内容。因此，就像之前一样，我们当然也可以为我们的
+    tokenizer 使用多个句子。例如，通常在你的代码中，你会有训练数据，比如 xtrain，在这个例子中就让我们。
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_21.png)'
+  id: totrans-24
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_21.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_22.png)'
+  id: totrans-25
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_22.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_23.png)'
+  id: totrans-26
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_23.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_24.png)'
+  id: totrans-27
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_24.png)'
 - en: Use these two sentences。 So this is our X train and then we and then we can
     pass this to our tokenizer and let's call this batch。 So this is our batch that
     we put into our model later。 So we say batch equals tokenizer and then we call
     this tokenizer directly with our training data。 and then I also want to show you
     some useful argument。 So we say padding equals true。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用这两个句子。所以这是我们的 X train，然后我们可以将其传递给我们的 tokenizer，称之为批次。这是我们稍后输入模型的批次。所以我们说 batch
+    等于 tokenizer，然后我们直接用训练数据调用这个 tokenizer。我还想向你展示一些有用的参数。因此我们说 padding 等于 true。
 - en: and we also say truncation equals true。 and then we say max length equals 412。
     and we say return tenss equals and then as a string P for pi torch。 So this will
     ensure that all of our samples in our batch have the same length。 So it will apply
     padding and truncation。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还设置了 truncation 为 true，并且设置了 max length 为 412，并且我们设置了 return tensors 为字符串
+    P 代表 pytorch。这将确保我们批次中的所有样本具有相同的长度。因此它将应用填充和截断。
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_26.png)'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_26.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_27.png)'
+  id: totrans-31
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_27.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_28.png)'
+  id: totrans-32
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_28.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_29.png)'
+  id: totrans-33
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_29.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_30.png)'
+  id: totrans-34
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_30.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_31.png)'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_31.png)'
 - en: Necessary and this is also important。 So in this case。 we want to have a pytorch
     tenor returned directly。 So I will show you later what's the difference if you
     don't use this。 But for now let's just use this and then first of all。 let's print
@@ -151,20 +204,34 @@
     two tenzos。 So the first one for the first sentence and the second one for the
     second sentence and the same for the attention mask So two tens。 So yeah as I
     said， these input id are these unique Is that our model can understand。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是必要的，这一点也很重要。所以在这种情况下，我们希望直接返回一个 pytorch tensor。我稍后会向你展示如果不使用这个会有什么不同。但现在让我们先使用这个，首先打印这个批次，看看它的样子。然后我们看到我们得到了一个字典，再次包含了键
+    input 和键 attention mask，这里有两个 tensor。第一个是第一句话，第二个是第二句话，attention mask 也是如此，总共两个
+    tensor。正如我所说，这些输入 ID 是我们模型可以理解的唯一 ID。
 - en: So yeah now we have this batch and now we can pass this to our model。![](img/4e0ddcb38791825272bb7f961349fc05_33.png)
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以现在我们有了这个批次，现在我们可以将其传递给我们的模型。![](img/4e0ddcb38791825272bb7f961349fc05_33.png)
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_34.png)'
+  id: totrans-38
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_34.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_35.png)'
+  id: totrans-39
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_35.png)'
 - en: '![](img/4e0ddcb38791825272bb7f961349fc05_36.png)'
+  id: totrans-40
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/4e0ddcb38791825272bb7f961349fc05_36.png)'
 - en: And。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 并且。

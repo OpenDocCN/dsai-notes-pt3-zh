@@ -4,10 +4,13 @@
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】140分钟入门PyTorch，官方教程手把手教你训练第一个深度学习模型！＜官方教程系列＞ - P7：L7- 使用Captum进行模型理解
+    - ShowMeAI - BV19L4y1t7tu
 - en: '![](img/2fb9bd9df95d3221c8b5a298fc267de0_0.png)'
   id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/2fb9bd9df95d3221c8b5a298fc267de0_0.png)'
 - en: Welcome to the next video in the Pytorrch Tra series。 This video gives an overview
     of Cap Pytorrch's tool set for model interpretability。😊，In this video。 we'll discuss。The
     basic concepts of captain that we'll be covering attributions。 attribution algorithms
@@ -16,12 +19,14 @@
   id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 欢迎来到PyTorch Tra系列的下一个视频。这个视频概述了Captum PyTorch的模型可解释性工具集。😊在这个视频中，我们将讨论Captum的基本概念，包括归因、归因算法和可视化。我们将演示如何为计算机视觉分类器执行和可视化特征归因。
 - en: Will apply layer attribution to the same classifier to examine the activity
     of a model's hidden layers。And finally， we'll look at captive insights and API
     for creating visualization widgets for images。 text and other features。![](img/2fb9bd9df95d3221c8b5a298fc267de0_2.png)
   id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将对同一分类器应用层归因，以检查模型隐藏层的活动。最后，我们将查看Captum的见解和API，以创建用于图像、文本和其他特征的可视化小部件。![](img/2fb9bd9df95d3221c8b5a298fc267de0_2.png)
 - en: Captain provides a deep set of tools for explaining the behavior of your pietorrch
     models。 This video and the accompanying interactive notebook provide only an overview
     of core features。 The website at Captain AI contains more in depth tutorials，
@@ -29,14 +34,17 @@
   id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: Captum提供了一套深层工具，用于解释你的PyTorch模型的行为。这个视频和附带的交互式笔记本仅提供核心功能的概述。Captum AI网站包含更深入的教程、文档和API参考。
 - en: '![](img/2fb9bd9df95d3221c8b5a298fc267de0_4.png)'
   id: totrans-5
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/2fb9bd9df95d3221c8b5a298fc267de0_4.png)'
 - en: '![](img/2fb9bd9df95d3221c8b5a298fc267de0_5.png)'
   id: totrans-6
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/2fb9bd9df95d3221c8b5a298fc267de0_5.png)'
 - en: To run the interactive notebook associated with this video， you'll want to install
     Python version 3。6 or higher。Flaask 1。1 or higher， and the latest versions of
     piey torch， torch visionion and captain。Captain can be easily installed with Pip
@@ -45,6 +53,7 @@
   id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 要运行与此视频相关的交互式笔记本，你需要安装Python 3.6或更高版本，Flask 1.1或更高版本，以及最新版本的PyTorch、TorchVision和Captum。Captum可以通过Pip或指定PyTorch频道的Anaconda轻松安装。首先，我们将使用一个预训练的图像分类器。
 - en: Resnet trained against the imagenet data set， and we're going to use the tools
     within cap to gain insight into how the model responds to a particular input image
     to give its prediction。This first sells a bunch of imports， including attribution
@@ -52,6 +61,7 @@
   id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: ResNet在ImageNet数据集上训练，我们将使用Captum中的工具来深入了解模型如何响应特定输入图像以给出预测。这个部分包含了一系列导入，包括来自Captum的归因方法和可视化工具。
 - en: which we'll examine shortly。Next， we'll get our pretrain model。Then we'll pull
     up an image to work with whereverver you got this video in the interactive notebook
     should also include a folder of images for use in this tutorial。 In our case，
@@ -61,11 +71,13 @@
   id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们稍后将对此进行检查。接下来，我们将获取我们的预训练模型。然后，我们会调出一张图像来进行处理，无论你在交互式笔记本中获得了这个视频的哪一部分，应该也包括用于本教程的图像文件夹。在我们的案例中，它将是一只猫。接下来，我们将定义一些图像转换，以便为模型的处理做好准备，并引入千个ImageNet类别的人类可读标签。现在。
 - en: let's see what the model thinks this is。And thinks our cat is a cat。But why
     does the model think this is a picture of a cat。![](img/2fb9bd9df95d3221c8b5a298fc267de0_7.png)
   id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看看模型认为这是什么。它认为我们的猫是一只猫。但为什么模型认为这是猫的图片呢？![](img/2fb9bd9df95d3221c8b5a298fc267de0_7.png)
 - en: For the answer to that， we can look under the hood of the model of cap。The core
     abstraction in cap is the attribution。 and that is a quantitative method of attributing
     a particular output or activity of a model with its input。The first kind of attribution
@@ -74,6 +86,7 @@
   id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 要回答这个问题，我们可以看看Captum模型的底层实现。Captum的核心抽象是归因（attribution），这是一种定量方法，用于将模型的特定输出或活动与其输入相关联。第一种归因是特征归因。这使我们能够询问输入的哪些部分在确定模型的预测中最为重要。
 - en: It lets us find answers to questions like。Which words in this input question
     were most significant in deciding the answer。Which pixels in this input image
     drove the model's classification of the image。Which features of the input data
@@ -82,6 +95,7 @@
   id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 它让我们找到一些问题的答案，比如：在这个输入问题中，哪些词在决定答案时最重要？在这个输入图像中，哪些像素推动了模型对图像的分类？输入数据的哪些特征对我的回归模型的预测最重要？不过，特征归因仅涵盖输入和输出。
 - en: What if we want to see what's happening inside the model。For that， we have layer
     attribution。This attributes the activity of a hidden layer of a model to the model's
     input。It lets us answer questions， like。Which neurons in this layer were most
@@ -90,6 +104,7 @@
   id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们想看看模型内部发生了什么。为此，我们有层归因。这将模型隐藏层的活动归因于模型的输入。它让我们回答一些问题，比如：在给定输入的情况下，这一层中哪些神经元最活跃？这一层中哪些神经元对输入如何影响特定输出神经元最重要？
 - en: How is the activation map output by this convolutional layer correlated to my
     input image。Finally。 there's neuron attribution。 This is similar to layer attribution。
     but goes down to the level of individual neurons in the model。In this tutorial。
@@ -97,14 +112,17 @@
   id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 卷积层输出的激活图与我的输入图像之间有什么关系？最后，还有神经元归因。这与层归因类似，但深入到模型中单个神经元的层面。在本教程中，我们将研究特征归因和层归因。
 - en: '![](img/2fb9bd9df95d3221c8b5a298fc267de0_9.png)'
   id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/2fb9bd9df95d3221c8b5a298fc267de0_9.png)'
 - en: First， feature attribution。Attributions are realized by an attribution algorithm。![](img/2fb9bd9df95d3221c8b5a298fc267de0_11.png)
   id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，特征归因。归因是通过归因算法实现的。![](img/2fb9bd9df95d3221c8b5a298fc267de0_11.png)
 - en: A particular method of mapping model activity to inputs。The first feature attribution
     algorithm we'll look at is called integrated gradients。This algorithm numerically
     approximates the integral of the gradients of the model's output with respect
@@ -113,6 +131,7 @@
   id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 一种将模型活动映射到输入的特定方法。我们将要查看的第一个特征归因算法称为整合梯度。该算法数值上近似模型输出相对于其输入的梯度积分，实质上是为给定的输入输出对找到通过模型的最重要路径。
 - en: We'll go ahead and create an integrated gradient object， initializing it with
     our model。Then we'll call the attribute method on it。We'll feed it our input。
     our output label and an optional number of steps to run。Note that running the
@@ -120,6 +139,7 @@
   id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将继续创建一个整合梯度对象，并用我们的模型初始化它。然后我们将调用它的归因方法。我们将输入、输出标签以及一个可选的运行步骤数传入。请注意，运行该单元可能需要几分钟。
 - en: The process of integrating the gradients is computationally intensive。Once that
     cell finishes running， we have a sort of numerical importance map of the cat image
     with respect to the cat label generated by the model。For a simple regression model
@@ -128,6 +148,8 @@
   id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 整合梯度的过程计算量很大。一旦该单元完成运行，我们就会生成一个关于猫图像和模型生成的猫标签的数值重要性图。对于一个输出类别较少的简单回归模型，我们可能只需将其打印为表格。但对于一个更复杂的
+    C 模型，输入更大，如图像。
 - en: it would help to be able to relate the importance map to the image visually。Captain's
     got you covered。Visualization module gives you tools for exactly that。Here。 we're
     going to make two calls to visualize image at。The first displays the original
@@ -136,6 +158,8 @@
   id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 视觉上将重要性图与图像关联将会有所帮助。Captain 已经为你准备好了。可视化模块正好提供了这方面的工具。在这里，我们将进行两次调用来可视化图像。第一次显示原始图像。首先，我们需要对图像进行一些调整。我们调用
+    squeeze 来移除图像上的批量维度。
 - en: We make sure we're running on CPU。 We detach the image tensor from computation
     history。 Otherwise。 the image tensor will keep tracking its computation history
     unnecessarily。And finally。 we make it a numpy array and switch the dimensions
@@ -144,6 +168,7 @@
   id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们确保在 CPU 上运行。我们将图像张量从计算历史中分离出来。否则，图像张量会不必要地继续跟踪其计算历史。最后，我们将其转换为 numpy 数组，调整维度，并将颜色通道放在最后。该方法的第一个参数通常是归因。但对于这个调用。
 - en: we're going to make that none。 We're just displaying the original image。The
     second argument is our transformed image。Third argument is a visualization method。
     a string that indicates how you want the visualization to work。Here， we told Captain。
@@ -152,6 +177,7 @@
   id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将把其设置为无。我们只显示原始图像。第二个参数是我们的变换图像。第三个参数是可视化方法，一个指示你希望可视化如何工作的字符串。在这里，我们告诉Captain，我们只想显示原始图像。最后，我们给我们的可视化一个说明性的标题。
 - en: The second call will make a visual mapping of the important regions of our image。The
     first argument is the attributions we got from integrated gradients。 And the second
     is our transformative image。For a method will specify heat nap。Where color intensity
@@ -159,6 +185,7 @@
   id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 第二个调用将对我们图像的重要区域进行可视化映射。第一个参数是我们从积分梯度中获得的归因。第二个是我们的变换图像。对于这种方法，我们将指定热图。颜色强度与图像区域的重要性相对应。
 - en: Capize you to use custom color maps from map plotlib。 And we've made one here
     that will slightly enhance the contrast of our heat map。We specify s as positive。
     We're only looking at positive attributions。Running a cell。 we can see that the
@@ -166,6 +193,7 @@
   id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: Capize你可以使用来自map plotlib的自定义颜色图。我们在这里创建了一个，可以稍微增强热图的对比度。我们将s指定为正面。我们只关注正面归因。运行一个单元。我们可以看到模型关注的是猫的轮廓。
 - en: as well as the region around the centre of the cat's face。Let's try another
     feature attribution algorithm。 Next， we'll try occlusion。Integrated gradients
     was a gradient based attribution algorithm。 Occlusion is different。 It's a perturbation
@@ -174,6 +202,7 @@
   id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 以及猫脸中心周围的区域。让我们尝试另一种特征归因算法。接下来，我们将尝试遮挡。积分梯度是一种基于梯度的归因算法。遮挡则有所不同。它是一种基于扰动的方法，涉及遮蔽图像的部分区域，并查看这如何影响输出。
 - en: As before， we're going to specify our input image and our output labeled to
     the attribution algorithm。For occlusion， we're going to specify a few more items。
     The first are the sliding window and the stride length。 And these are analogous
@@ -181,6 +210,7 @@
   id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 和之前一样，我们将指定我们的输入图像和输出标签给归因算法。对于遮挡，我们将指定几个更多的项目。第一个是滑动窗口和步幅长度。这些类似于卷积神经网络中的类似配置选项。
 - en: We're also going to set our baseline。That is， our representation of an occluded
     image cell， 0。Depending on how your data are normalized， you may wish to specify
     a different baseline。 but for zero centered data， it makes sense to use 0。We'll
@@ -189,6 +219,7 @@
   id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还将设置我们的基线。也就是我们对一个被遮挡的图像单元的表示，设置为0。根据你的数据如何归一化，你可能希望指定一个不同的基线。但对于以零为中心的数据，使用0是有意义的。我们将运行归因调用，给它一点时间。在下一个单元中，我们将进行一些新的操作。
 - en: We're calling visualized image Adder multiple。To show multiple visualizations
     of the occlusion attribution。Besides the original image， we'll show three visualizations。
     The first two are heat maps of both positive and negative attributions。 You can
@@ -197,6 +228,7 @@
   id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们正在调用可视化图像叠加多次。为了显示遮挡归因的多个可视化结果。除了原始图像，我们将展示三个可视化结果。前两个是正面和负面的归因热图。你可以看到我们提供了一个方法列表，其中热图是第二和第三个。
 - en: We're also specifying a sign for each visualization。 And here you can see that
     we've askedtra positive attributions on one heat map and negative on the other。
     These indicate which。For our final visualization， we'll use the mask method。 This
@@ -204,6 +236,7 @@
   id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还为每个可视化指定了一个标志。在这里你可以看到，我们在一个热图上请求了正面归因，而在另一个上请求了负面归因。这些指示了哪一个。对于我们的最终可视化，我们将使用掩膜方法。这使用正面归因来选择性地遮蔽原始图像。
 - en: giving a striking visual representation of the areas of the image the model
     paid most attention to for this input output pair。Running the cell， you can see
     that this maps well to what we learn from integrated gradients。 Most of the activities
@@ -213,6 +246,7 @@
   id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 为该输入输出对提供了图像中模型最关注区域的显著视觉表示。运行单元，你可以看到这与我们从积分梯度中学到的内容很好地对应。大多数活动集中在猫脸中心的轮廓上。模型在后台是如何工作的呢？让我们使用层归因算法检查其中一个隐藏层的活动。
 - en: Gradcam is another gradient based attribution algorithm designed for conves。It
     computes the gradients of the output with respect to the specified model layer。
     averagevers the gradients for each channel and multiplies this average by the
@@ -220,6 +254,7 @@
   id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: GradCAM是另一种基于梯度的归因算法，专为卷积设计。它计算输出相对于指定模型层的梯度，对每个通道的梯度进行平均，并将此平均值与层激活相乘，并将其作为层输出重要性的度量。
 - en: To get started with layer attribution， we'll create a layer gradcam object and
     initialize it with our model and the layer we wish to examine。Then we'll give
     it the input output pair and ask it to do attribution。We can visualize this with
@@ -228,6 +263,7 @@
   id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了开始层归因，我们将创建一个层GradCAM对象，并用我们的模型和我们希望检查的层进行初始化。然后，我们将输入输出对传入，并请求进行归因。我们可以像之前那样用热图可视化。这种方式，你可以直观地检查激活图的哪些区域与输出相关。
 - en: We can do better than this， though。Since the output of a convolutional layer
     is usually spatially correlated to the input。 we can take advantage of that by
     up sampling that activation map and comparing it directly with the input。The layer
@@ -237,6 +273,7 @@
   id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 不过，我们可以做得更好。由于卷积层的输出通常与输入在空间上相关，我们可以利用这一点，通过上采样激活图并直接与输入进行比较。层归因父类有一个方便的方法，可以将低分辨率的卷积激活图上采样到输入大小。我们将在这里使用插值方法。并请求可视化工具生成一个混合热图。
 - en: showing the original image with a heat map superimposed and a masked image。Visualizations
     like this can give you insight into how hidden layers contribute to a particular
     output from your model。Captain comes with an advanced visualization tool called
@@ -245,6 +282,7 @@
   id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 显示原始图像及其叠加的热图和掩模图像。这样的可视化可以让你深入了解隐藏层如何影响模型的特定输出。Captain配备了一个名为Cap Insights的高级可视化工具，它允许你在浏览器中组合多个可视化，配置归因算法及其参数。
 - en: Captain Inights lets you visualize text， image and arbitrary data。We're going
     to try three images now， the cat， a teapot and a trilaite fossil。Again。 these
     images should be available wherever you got the interactive notebook that goes
@@ -253,6 +291,7 @@
   id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: Captain Inights让你可视化文本、图像和任意数据。我们现在将尝试三张图像，分别是猫、一壶茶和三叶虫化石。再次强调，这些图像应该可以在你获取互动笔记本及其视频的地方找到。首先，我们将查询模型，看看它对这些内容的理解如何。似乎效果还不错。
 - en: Now， let's set up cap Ins。We're going to use the attribution visualizer object。
     and we'll configure it with our model。A scoring function for the model's outputs
     here， softm。A list of the classes the model recognizes here I am stripping out
@@ -261,6 +300,7 @@
   id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，让我们设置Cap Insights。我们将使用归因可视化对象，并用我们的模型进行配置。模型输出的评分函数在这里是softm。模型识别的类列表在这里，我将按顺序列出ImageNet的类名。我们会告诉它，我们在查看图像特征。
 - en: Captive Insights also handles text and arbitrary data， as well。And it'll give
     it a data set。 which is just an iterable that returns a batch of images and labels。Note
     that we haven't specified an algorithm or a visualization method。These are things
@@ -268,6 +308,7 @@
   id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: Captive Insights同样处理文本和任意数据，它会给出一个数据集，即一个可迭代对象，返回一批图像和标签。注意，我们尚未指定算法或可视化方法。这些是在浏览器小部件中设置的内容。现在，我们请求可视化工具进行渲染。
 - en: It starts off empty， but we can set up configuration parameters and ask it to
     fetch our visualized attributions with the fetch button。I'm going to leave things
     at the default setting for integrated gradients。 Captain needs a few minutes to
