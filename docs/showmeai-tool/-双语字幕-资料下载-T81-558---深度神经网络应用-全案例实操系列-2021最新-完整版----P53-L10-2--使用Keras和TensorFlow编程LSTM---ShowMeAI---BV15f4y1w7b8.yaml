@@ -1,28 +1,37 @@
 - en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P53：L10.2- 使用Keras和TensorFlow编程LSTM
     - ShowMeAI - BV15f4y1w7b8
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P53：L10.2- 使用Keras和TensorFlow编程LSTM
+    - ShowMeAI - BV15f4y1w7b8
 - en: Hi， this is Jeff Hea and。 Wecome to applications of deep neural networkss with
     Washington University。 In this video， we're going to look at LSTM and GU neural
     networks for time series for the latest on my AI course and projects。 click subscribe
     in the bell next to it to be notified of every new video。 we are looking at recurrent
     neural networks。 Recurrent neural networks。
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗨，我是杰夫·希亚，欢迎来到华盛顿大学的深度神经网络应用。在这个视频中，我们将探讨用于时间序列的LSTM和GRU神经网络。想要获取我AI课程和项目的最新信息，请点击旁边的订阅铃铛，以便接收到每个新视频的通知。我们正在研究递归神经网络。递归神经网络。
 - en: there's a lot of different types of these。 and we'll start by looking at one
     of the most classic types。 mainly because it's relatively easy to understand。
     And then we'll look at the more modern ones。 the LSTms and the Gs。 there are definitely
     some similarities between all of these different types of recurrent neural networks。
     So the recurrent neural networks。 They usually have some concept of a context
     neuron。
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 这有很多不同类型的神经网络，我们将首先看其中一种经典类型，主要是因为它相对容易理解。然后我们将看更现代的类型，如LSTM和GRU。这些不同类型的递归神经网络之间确实存在一些相似之处。因此，递归神经网络通常有一些上下文神经元的概念。
 - en: The context neuron represents a short of short term memory。 It holds a value
     between calls to the neural network。 So when you're trying to predict with the
     neural network。 That is one call to the neural network。😊。![](img/d578a667a9760200144c8f5677c9fef3_1.png)
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 上下文神经元代表一种短期记忆。它在对神经网络的调用之间保持一个值。所以当你试图用神经网络进行预测时，那就是一次对神经网络的调用。😊。![](img/d578a667a9760200144c8f5677c9fef3_1.png)
 - en: Then you call it again and again and again， as you predict row row row。 the
     context neurons start out as zero， but they hold a value as subsequent inputs
     come to the neural network as a sequence is being processed。 So before we saw
@@ -30,325 +39,420 @@
     in。 these context neurons have a zero at the beginning of each sequence and they
     have the gain of value and they keep updating their value as these sequences are
     processed。
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后你会一次又一次地调用它，当你逐行预测时，上下文神经元开始时为零，但它们会随着后续输入到神经网络中而持有一个值，随着序列的处理而变化。因此，在我们看到这些输入神经元每个都有值的序列之前，这些上下文神经元在每个序列开始时为零，并且随着这些序列的处理，它们保持更新其值。
 - en: When you move to the next sequence， this value always goes back to zero。 the
     context always go to zero between sequences， That's a very important characteristic
     of them。 So this is an example of two hidden neurons down here that have a that
     have context。 So instead of simply feeding forward like we have before。We're now
     going to receive some reflux。
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 当你移动到下一个序列时，这个值总是会回到零。上下文在序列之间总是回到零，这是一种非常重要的特性。因此，这是下面两个具有上下文的隐藏神经元的例子。所以我们现在不会像之前那样简单地向前传递。我们将会接收一些反馈。
 - en: some data back from what we're outputting。 So you have the input。 This is input
     1， input 2。 going into Hi 1 and Hi 2。 These neurons are going to output something
     based on the weighted。 sum values that come into them。 and then the activation
     function。 They're going to produce some output。And in classic neural network processing。
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 从我们输出的数据中获取一些反馈。所以你有输入。这是输入1，输入2。进入Hi 1和Hi 2。这些神经元将基于传入的加权和值输出一些结果，然后经过激活函数。它们将产生一些输出。在经典神经网络处理中。
 - en: that output would just go on next to the next layer or out of the neural network
     if this was the final。 but in this case。We're going to take the same value that
     was output from the hidden neuron onward。 and that dotted line means we're going
     to copy it to the context。 So typically you'll have one context neuron per neuron
     on the previous layer。
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 那个输出会直接传到下一层或神经网络的输出端，如果这是最后一层。但在这种情况下，我们将把从隐藏神经元输出的相同值继续传递。那条虚线意味着我们将把它复制到上下文中。因此，通常每个上一层的神经元会有一个上下文神经元。
 - en: and you're simply going to copy the output。 There is no weight。 there is nothing。
     It is simply a copy。 The solid lines have weights。 So what's going to happen is
     the the input to to this first hidden hidden1 is not just going to be what's coming
     from the previous layer。 but it's going to get the output from context1。 and it's
     also going to get the output from context2。
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 你只是简单地复制输出。没有权重，什么都没有。它只是一个复制。实线有权重。所以接下来发生的事情是，输入到这个第一个隐藏层hidden1不仅仅是来自前一层的内容，还会得到来自context1的输出，同时也会得到来自context2的输出。
 - en: at least in this particular case。 The way that this neuron is is set up。 this
     network is set up。 These are both weighted。 So it will learn how to process that
     value， there is no weighting here。 simply whatever was output。To the next layer
     is also copied to here。 So you're constantly keeping the value from the previous
     output from the hidden neuron。
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 至少在这个特定的情况下。这个神经元的设置，这个网络的设置。这两者都是加权的。所以它会学习如何处理这个值，这里没有权重。简单地说，无论输出什么，都将其复制到下一个层。因此，你始终保留来自隐藏神经元的先前输出值。
 - en: And allowing that to stay until the next call， and then you copy it back。 you
     let it form the input back to the hidden one on on the next call。 and it becomes
     just part of the input。 So really， it's like there's three input neurons to hidden
     one。 but two of those are the context layers that are just the outputs from the
     previous one。 Now。
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 并且让它保持直到下一个调用，然后你把它复制回去。你让它形成下一个调用时对隐藏层的输入，并且它就成为输入的一部分。因此，实际上，它就像有三个输入神经元连接到hidden1，但其中两个是上下文层，正好是来自上一个的输出。
 - en: this output really lives on。 It's not like it just affects the next， the next
     one and so on。 Since the value that was copied into this context。 it's fed back
     into here。 it refluxes。 It's almost like butterfly effect。 It has an effect on
     what this is going this neuron' is going to output。 which then gets copied into
     here and here and it keeps going for each subsequent call of of this neural network。
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个输出确实是持续存在的。它并不是仅仅影响下一个、下下一个，等等。由于复制到这个上下文中的值，它会被反馈到这里，反流。几乎就像是蝴蝶效应。它对这个神经元的输出产生影响，这个输出然后又被复制到这里，并且在每次调用这个神经网络时持续进行。
 - en: That is how the context affects the output over time。 and that is what allows
     the neural network to be time series。 and the fact that these solid lines that
     are causing the copy backwards through the neural network。 The fact that they're
     weighted allows the neural network to learn what to do with this data over time
     as it comes into the neural network。
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是上下文如何随着时间的推移影响输出的方式。这也是让神经网络能够处理时间序列的原因。而这些实线导致在神经网络中向后复制的事实，它们有权重，使得神经网络能够随着数据的输入，逐渐学习如何处理这些数据。
 - en: That is a time series neural network。 So LSTM neural networks are a way of having
     that sort of memory。 Now， the really almost layperson a way that I can describe
     this before we go into it really in too much detail would be if we had a scientific
     sort of calculator。
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是时间序列神经网络。所以LSTM神经网络是实现这种记忆的一种方式。现在，我可以用一种几乎是外行的方式来描述这一点，如果我们有一个科学计算器。
 - en: we won't even use any of the fancy features of this calculator。 we care mainly
     about memory plus remember and memory clear。 LSTM neural networks and gated recurrent
     GRU neural networks have gates and these。are the real innovation of this type
     of neural network。
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们甚至不会使用这个计算器的任何高级功能。我们主要关心的是记忆加和记忆清除。LSTM神经网络和门控递归GRU神经网络有门，这些是这种神经网络的真正创新。
 - en: They let it remember things for a long time or a short time。 There are three
     gates that you're dealing with。The input gate。 the forget gate and the recall
     or sometimes the output gate。 you can think of these gates as dealing with the
     memory of the neural network or the context。
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 它们可以让它记住东西，无论是长时间还是短时间。你要处理三个门：输入门、遗忘门和回忆门，有时叫输出门。你可以把这些门视为与神经网络或上下文的记忆有关。
 - en: You can think of as the memory buttons on a calculator。 So say we have the output
     from the neuron is5。 We have these three gates。 And the three gates。 let you know
     what you should do。 Should you remember it。 That would be like memory plus So
     I put it into there。 we have that five now in the context。
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以把它们想象成计算器上的记忆按钮。假设我们神经元的输出是5。我们有这三个门。这三个门会告诉你该怎么做。你应该记住它吗？这就像记忆加，因此我把它放进去。现在我们在上下文中有了这个五。
 - en: when it next works， we might need to decide if we should recall it。 That's the
     MR button。 that's that's the output or the recall gate。 If you do that， your5
     comes back。 And then there's also the forget gate。 The forget gate means something
     happens with the neural network input。 it decides it needs to drop the memory
     and you can now clear it。
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 当它下次工作时，我们可能需要决定是否应该回忆起来。这就是MR按钮。这是输出或回忆门。如果你这样做，你的5就会回来。还有一个遗忘门。遗忘门意味着神经网络输入发生了一些事情。它决定需要丢弃记忆，你现在可以清除它。
 - en: And if you do you can't even do an MR because there is no There is nothing remembered。
     It's important for these recurrent neural networks to be able to forget。 And that
     was a limitation of the。Of the element neural network。 you would just have to
     slowly forget over time The other limitation was you couldn't hold something for
     a long time。
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你这样做，你甚至无法进行MR，因为没有记住任何东西。对于这些递归神经网络来说，能够忘记是很重要的。这是元素神经网络的一个限制。你必须慢慢地随着时间的推移而忘记。另一个限制是你不能长时间保留某些东西。
 - en: so the fact that these new neural networks have the gates。 you can remember
     something and put it into your memory and then forget it later over time It's
     Otoman said as far as human beings。 one of our greatest strengths and weaknesses。Is
     to be able to forget if we remembered everything。 our minds would be simply too
     cluttered and we would not be able to function。
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，这些新神经网络有门的事实，你可以记住某些东西并将其放入记忆中，然后随着时间的推移再忘记。正如奥特曼所说，对于人类而言，我们最大的优点和缺点之一是能够忘记。如果我们记住了一切，我们的头脑将变得过于混乱，无法正常运作。
 - en: The important thing is knowing what to forget and forgetting only things that
     are unimportant。 So let's look at the LSTM neural network。 This is a diagram of
     the LSTM。 you have your output which is essentially Y hat for the current time，
     previous time， next time。 Now this is not three different LSTMs。 This is the same
     LSTM and the LSTM is like a neuron in in the network。
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 重要的是要知道该忘记什么，并且只忘记不重要的东西。那么让我们看看LSTM神经网络。这是LSTM的图示。你有输出，本质上是当前时间、前一时间和下一时间的Y帽。现在，这不是三个不同的LSTM。这是同一个LSTM，而LSTM就像网络中的一个神经元。
 - en: you'll have multiple LSTMs， just like you have multiple hidden neurons And you
     have input。 this is the input over time。 So you just have a single input value
     for the current previous and next。 and over time。 each each the same LSTM over
     time is passing the Y hat to the next one。 So the prediction， but it's also keeping
     a context over time。
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 你将拥有多个LSTM，就像你有多个隐藏神经元一样。你有输入。这是随时间变化的输入。因此，你只需要一个当前、前一和下一的单一输入值。随着时间的推移，每个相同的LSTM都会将Y帽传递给下一个。所以这是预测，但它也在随着时间保持上下文。
 - en: all these networks have some sort of context be。neural networks。 classic Elman
     and Jordan neural networks or be they more modern LSTM and GRU units internally。
     this is what's going on with a LSTM。 you've got these gates forge gate input gate
     output gate and you've got a variety of clamping of thresholdholding functions
     sigmoids and a tan H'll see those in a moment you can look through this diagram
     if you prefer it basically represents the same thing as these equations。
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 所有这些网络都有某种上下文。神经网络。经典的Elman和Jordan神经网络，或更现代的LSTM和GRU单元在内部。这就是LSTM的运作。你有这些门：遗忘门、输入门、输出门，还有各种阈值夹持函数，比如sigmoid和tanh。稍后你会看到这些，如果你愿意，可以查看这个图示，它基本上代表了与这些方程相同的内容。
 - en: I almost like to think think of these in terms of the equations and I'll take
     you through the equations pretty quickly This is essentially looking at a this
     is essentially looking at sort of a linear algebra computation So you've got the
     weights that's the weight F weight F is the forget gate weight I the input gate
     the bias for each of these layers so you have bias neurons and then this vector。
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 我几乎喜欢用方程来思考这些，我会快速带你浏览这些方程。这基本上是在看一种线性代数计算。因此你有权重，那是遗忘门的权重、输入门的权重，每一层的偏差，所以你有偏差神经元和这个向量。
 - en: Of the output from the previous one and the input for the current。 This is a
     vector that you're multiplying that weight over。 So the first thing that you want
     to do with this， and by the way， S means a sigmoid function。10 H means a hyperbolic
     tangent before we talk about sigmoid and 10 H。 let me show you that。
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 上一个输出和当前输入。这是你要乘以的权重向量。因此，你要做的第一件事是，顺便说一下，S表示sigmoid函数，10 H表示双曲正切。在我们谈论sigmoid和10
+    H之前，让我先给你展示一下。
 - en: notice the shapes of these。 This is a sigmoid function。 it goes from0 to1。 and
     it clamps these values。 So if if it's very negative。 it clamps it to0。 It's a
     step function。 It's very positive， it clamps it to one。 hyperbolic tangent。 and
     by the way。 this has nothing to do with triometry。 machine learning research just
     like the shape of these more。
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意这些形状。这是一个sigmoid函数。它的值从0到1，并且会夹住这些值。所以如果非常负，它会夹住到0。如果非常正，它会夹住到1。双曲正切。顺便说一句，这与三角学无关。机器学习研究仅仅是因为这些形状。
 - en: so it's a step function。 just another type of step function。 But notice that
     the that the range is now negative1 to1。 So it's。It's got a bigger， bigger range。
     and sometimes we need these negative values and we'll see when we go through these
     equations that we do need those negative values。 So let's go through the equations。
     The first thing we have to do is calculate the coefficients for the forget gate
     and the input gate and ultimately the output gate。
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以这是一个阶跃函数。另一种类型的阶跃函数。但注意，现在的范围是负1到1。所以，它有一个更大的范围。有时我们需要这些负值，我们会在通过这些方程时看到，我们确实需要这些负值。现在让我们来看看这些方程。我们首先要做的是计算遗忘门、输入门和最终的输出门的系数。
 - en: because these three values， they're going to be largely zero or one because
     see these are where the sigmoids are used。 you want those to be0 or1 because those
     values， you want them on or off。 It's a coefficient So forget if the forget gate
     is calculated to be0。 it's kind of backwards a little bit， but zero means we should
     forget one means we should remember。
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 因为这三个值主要会是零或一，因为这些是sigmoid使用的地方。你希望它们是0或1，因为这些值，你希望它们开启或关闭。这是一个系数。因此，如果遗忘门计算为0，这有点反向，但零意味着我们应该遗忘，一意味着我们应该记住。
 - en: So we calculate the forget gate based on the sigmoid function。 which flips it
     sort of into that 01 range by looking at the weight for forgetting。 So this weight
     for forgetting， that's the training capability。 This value will change as the
     neural network learns。
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以我们根据sigmoid函数计算遗忘门。它通过查看遗忘权重，将其转换为0到1范围。因此，遗忘的权重就是训练能力。随着神经网络的学习，这个值会改变。
 - en: and by multiplying by the previous output and the current input that that vector
     and adding the bias。 which is also a learning parameter。 So by adjusting these
     two， we learn when to forget。 if F becomes a0， we're going to forget。 If I becomes
     one， we're going to remember。 So you have the weights， these are exactly the same
     functions as before these are your two learning parameters。
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过乘以前一个输出和当前输入的向量，并添加偏置，这也是一个学习参数。通过调整这两个，我们学习何时遗忘。如果F变成0，我们就会遗忘。如果I变成1，我们就会记住。所以你有权重，这些与之前的功能完全相同，这些是你的两个学习参数。
 - en: those will be adjusted， that's how it learns when to when to remember or when
     to feed the input in。 C is your context。 C with the little tilde above it just
     means your candidate context Now context。Is the value that it's remembering， The
     value that it's remembering is the output from the neuron。 The output from the
     neuroura can be negative one to one。
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些会被调整，这就是它学习何时记住或何时输入的方式。C是你的上下文。C上方的小波浪号仅表示你的候选上下文。现在的上下文是它正在记住的值，记住的值是来自神经元的输出。神经元的输出可以是从负一到一。
 - en: You can't use a sigmoid for that because negative1 to one， it's going to clip
     off half the values。 anything below 0。 So that's why we use a hyperbolic tangent
     is the hyperbolic tangent can flow between negative one and 1。 So we we've got
     the full， the fuller range of values that we can deal with。But again。 the training
     works just like just like before。 we have a weight for the context。
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 你不能用sigmoid来做，因为负1到1会剪切掉一半的值，任何低于0的值。因此，我们使用双曲正切是因为双曲正切可以在负一和一之间流动。这样我们就拥有了更完整的值范围。但训练的工作方式与之前完全相同。我们有上下文的权重。
 - en: So that's how it's learning what to specifically do with the context。 And we
     have a bias。 This is just the candidate context。 What really becomes the context
     is this。 And now this is a different format because we're not we're not learning，
     these are for learning。 This is just a switch gate。 Notice you have the forget
     and the input。
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是它学习如何具体处理上下文的方式。我们还有一个偏置。这只是候选上下文。真正成为上下文的是这个。现在这是一个不同的格式，因为我们不在学习，这些是用于学习的。这只是一个开关门。注意你有遗忘门和输入门。
 - en: input says what should go into the context， forget means should we remember
     the previous context。 Plus just pipes both of those two together。 So forgetting
     the context。 if this is0 multiplied it's a coefficient， So if it's a0。 if's going
     to wipe out the previous context because0 times anything is 0 input means so this
     kills off the previous context if we're forgetting input。
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 输入表示应该进入上下文的内容，遗忘意味着我们是否应该记住之前的上下文。加号将这两个结合在一起。因此，遗忘上下文。如果这是0乘以一个系数，如果是0的话，那么它将抹去之前的上下文，因为0乘以任何东西都是0，输入意味着如果我们在遗忘输入，这将消灭之前的上下文。
 - en: this is why it's like the memory plus button because this is your。Previous context。
     I'm sorry。 this one's your previous context。 This is the candidate context。 So
     this is what we calculated up here that might be going into the context。 if we
     should put something into So then the final now that you've got the output gate
     created。
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是为什么它像是内存加按钮，因为这是你的前一个上下文。抱歉，这个是你的前一个上下文。这是候选上下文。所以这是我们在这里计算的可能进入上下文的内容。如果我们应该放入某些东西。所以现在你已经创建了输出门。
 - en: your final output is essentially going to is going to come from the previous
     context multiplied by your your output。 that is essentially how the LSTM is calculated。
     There's another type of neural of recurrent neural network that is very similar
     to this。
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 你的最终输出本质上将来自于之前的上下文乘以你的输出。这就是LSTM的计算方式。还有另一种类型的递归神经网络，与此非常相似。
 - en: that is called the GRU。 the gated recurrent unit。 It works really extremely
     similar to this。 me zoom this in a little bit。 This is the academic paper。 This
     is not the academic paper that introduced the GRU。 but it's an empirical evaluation
     gated recurrent。networksworks empirical just means experimental。
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 这称为GRU，门控递归单元。它的工作原理与此非常相似。让我放大一点。这是学术论文。这不是介绍GRU的学术论文，但它是对门控递归网络的实证评估。实证意味着实验性的。
 - en: So they're not doing any sort of mathematical proof for handwaving。 They're
     just literally trying to unt testest data and showing you what a GRU can actually
     accomplish。 in a lot of cases， GRs and LSTMs function really pretty similar and
     do sort of have a similar accuracy none This paper deals with evaluating more
     the processing time is a GRU does not have as many gates。 and that makes it more
     simple。 So you'll notice in the abstract， they're saying that they evaluated。
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以他们并没有做任何数学证明来含糊其辞。他们只是字面上尝试测试数据，并展示GRU实际上能实现什么。在很多情况下，GRU和LSTM的功能非常相似，并且有着相似的准确性。这篇论文更侧重于评估处理时间，GRU没有那么多门，因此更简单。因此你会注意到在摘要中，他们说他们进行了评估。
 - en: Also， we found GRU to be comparable to LSTN and they also evaluate on previous
     nonrecurrent neural networks。 So if we look through the paper the part that I
     want to show you that is particularly interesting。Is you have here the LSTM that
     we just looked at with its gates。 you can see the input gate up at the top， the
     F gate there and the output gate there。
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 此外，我们发现GRU与LSTM相当，并且他们也评估了之前的非递归神经网络。因此如果我们查看论文，我想展示的特别有趣的部分是你在这里有我们刚才看到的LSTM及其门。你可以看到顶部的输入门，F门和输出门。
 - en: so you have three gates in the recurrent or the GRU you just have the you just
     have two gates。 R and Z so' it's a simpler sort of algorithm to that and it does
     not require nearly since there's another gate。 it requires much less computation
     time and they show you how to calculate these gates。But at the very， very end，
     the paper gets to showing the learning and showing really that the LSTM and GRU
     are somewhat equivalent and they show wall clock time。
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以在递归神经网络或GRU中，你只有两个门：R和Z，这使得它的算法更简单，并且几乎不需要另一个门。因此，它所需的计算时间更少，并且他们展示了如何计算这些门。但是在最后，论文展示了学习过程，实际上LSTM和GRU在某种程度上是等价的，并展示了实际的时间。
 - en: Notice here， the GRU is taking much less time to process than the G than the
     LSTM。 So that's that's their advantage。 You can process much more your your training
     impactpos will take epos will take much less。 much less time。 Now we're going
     to look at an actual example of LSTM。 We're going to see two examples。 The first
     example is just really， really simple。
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意这里，GRU的处理时间比LSTM少得多。这就是他们的优势。你可以处理得更多，你的训练影响会消耗更少的时间。现在我们将看一个实际的LSTM例子。我们将看到两个例子。第一个例子非常简单。
 - en: It's meant to show you。What this recurrent type of neural network can do just
     in its most simple state and yet do something that a normal neural network would
     not be able to do。 And then the next example will look like we'll look at an actual
     applications where we look at time series data for sunspots and we'll see how
     this type of recurrent neural network can predict something that is time series
     and be able to at least in a very basic way。
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 这旨在向你展示这种递归类型的神经网络在最简单状态下可以做什么，而这一点是普通神经网络无法做到的。接下来的例子将会看一个实际的应用，我们将查看太阳黑子的时间序列数据，并观察这种递归神经网络如何预测时间序列中的某些东西，至少在一个非常基本的层面上。
 - en: predict predict sunspot activity。 So this is showing you how to build a very
     simple tensorflow through Kiras LSTM neural network。 I'm going to go ahead and
     run this。 It takes it a moment to train， but it's not too bad。 So it's running
     there you can see that from the asterisk。 This is showing the neural network how
     to predict something from time series。
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 预测太阳黑子活动。这展示了如何通过Keras的LSTM神经网络构建一个非常简单的tensorflow。我将继续运行这个程序。它需要一些时间来训练，但还算不错。所以它正在运行，你可以从星号中看到。这向神经网络展示了如何从时间序列中预测某些东西。
 - en: This time series is essentially almost think of it like a camera in front of
     a house like just a pinhole。Camera， it sees a car driving by and it might see
     just a little bit of the paint color as the car is going by。 So the same position
     we're looking straight through。 we're seeing zero。 That means we're seeing nothing。
     but then at the next time slice， we see a car。
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个时间序列基本上可以想象成像是一个在房子前面的相机，就像一个针孔相机，它看到一辆车驶过，可能只看到了一点点车漆的颜色。所以在我们直视的同一位置，我们看到的是零。这意味着我们什么都没看到。但是在下一个时间切片中，我们看到了一辆车。
 - en: then at the next time slice again。 we still see the car because it's it's going
     in front of our pinhole that we're seeing。And now we see zero again for the rest
     of the sequence because basically the car has cleared our pinhole and is moved
     on its way。
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后在下一个时间切片中，我们仍然可以看到这辆车，因为它正好在我们看到的针孔前面。现在在接下来的序列中我们再次看到零，因为基本上这辆车已经从我们的针孔中经过并继续前行。
 - en: So these are sequences here， a different colored car goes by a two colored car。
     whatever two happens to be， maybe that's maybe one's red， two's blue， something
     such as that。 ideally， if we wanted to make this more advanced， we would probably
     have three inputs。 and we would make this some sort of RGB for each and every
     single one of these。 but。
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里是一些序列，一辆不同颜色的车经过，可能是一辆双色车。不管这两个颜色是什么，或许一个是红色，另一个是蓝色，类似这样的。如果我们想让这个更复杂，我们可能会有三个输入。我们会为每一个颜色制作某种RGB表示。但是。
 - en: We're dealing with a very， very simple example。 I have these training set elements。
     and I' am setting the Y up so that the Y in this case， it's saying hey。 one colored
     car went by the second one is a two colored car。 then a three colored car。 Then
     we have an example of a two colored car again。
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们处理的是一个非常非常简单的例子。我有这些训练集元素。我正在设置Y，在这个情况下，它在说，嘿。一辆单色的车经过，第二辆是双色车，然后是一辆三色车。然后我们又有一辆双色车的例子。
 - en: and it's two and another example of three and one。 it's teaching the neural
     network that no matter where at in that sequence it is at you it's still that
     colored car just this one car it barely made it into our time slice because it
     showed up later than these other ones。
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是两个，另外一个例子是三个和一个。它在教神经网络，无论在序列中的哪个位置，它仍然是那辆有颜色的车，只是这辆车刚好进入了我们的时间切片，因为它比其他车晚出现。
 - en: but it's still a one colored car it the same as this car up here that occurred
     very early。 So what we do next is we take all of these elements。 and we're going
     to train it。 Now by the way。 we could represent and there's just one input。 we
     could represent this as。An oldcho neural network we would have one，2，3，4，5，6。
     We would have six inputs。
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 但这仍然是同一辆颜色的车，和上面很早出现的这辆车是一样的。那么接下来我们要做的是把所有这些元素拿出来。顺便说一下，我们可以表示并且只有一个输入。我们可以把它表示为一个旧的神经网络，我们会有1，2，3，4，5，6。我们将会有六个输入。
 - en: but the problem is the one and we would have to get rid of all these we would
     if we wanted to do that we would basically get rid of all these whoops not get
     rid of the number。 but we would get rid of all these square square brackets and
     we would make them all look like that and it would just be classic inputs we don't
     want to do that we're treating these as sequences but even if they were classic
     inputs。
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 但问题是这个一，我们需要去掉所有这些。如果我们想这么做，我们基本上会去掉所有这些方括号，使它们看起来像那样，它将只是经典的输入。我们不想这样做，我们把这些当作序列处理，即使它们是经典的输入。
 - en: these were all these were all this would be input1 input2 input3。 if you move
     something that was on input1 to input3。 that's a whole different pattern recognition
     to the neural network you can't just flexibly move these ones to way over here
     and have it still recognize it in classic neural networks and LSTms you absolutely
     can't So this neural network has trained and we have the output here and you see
     the results from training we trained it for 200 epos that ran for a little while。
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些都是输入1、输入2、输入3。如果你把在输入1上的某个东西移动到输入3，那将是完全不同的模式识别，对于神经网络来说，你不能随意地把这些移动到这里并让它仍然识别出来。在经典神经网络和LSTM中，你绝对不能。所以这个神经网络已经训练好了，我们在这里得到了输出，你可以看到训练的结果，我们训练了200个周期，运行了一段时间。
 - en: Not too bad。 It was running in the background while I was explaining things。
     And there we we have it。 So now for this neural network， I have this code down
     here and I can try examples on it now let me this code is meant that I can just
@@ -361,28 +465,36 @@
     mode anymore So let's go ahead and run that there it does happen to confuse it
     if you get near the beginning so that's two as So if we moved it more over there
     it should still see it as a two if we make it。
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 还不错。在我解释的过程中，它在后台运行。现在我们得到了结果。所以现在对于这个神经网络，我在这里有这个代码，我可以在上面尝试例子。让我说，这段代码的设计是我可以随意修改。所以这是一个实时演示，我不知道它将产生什么，希望它能产生一些看起来很聪明的东西，这就是想法。这是一个两色的车，恰好经过这里，我可以运行它，希望它会识别出来，结果确实如此。如果那辆双色车在这里出现，去掉了我不想要的多余价格，它仍然应该说是二，或者如果我忘记了一个逗号，我的电脑不再处于插入模式。让我们继续运行，这确实会让它混淆，如果你接近开头。所以这是二。如果我们把它移得更远，它仍然应该视为二。
 - en: LThat could mean it's a longer car， or it could mean that it was a slower moving
     car。 It still should say two， if we switch this all over to ones， it should recognize。That
     this is a one colored car， which it does。 If I don't know。 this is a one colored
     car with a little bit of red two color paint in it may be maybe one is blue。
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 这可能意味着它是一辆更长的车，或者可能意味着它是一辆行驶较慢的车。如果我们把所有的改成一，它应该能识别出这是一辆单色车，它确实如此。如果我不知道，这是一辆单色车，可能带有一点红色的涂料，也许一部分是蓝色。
 - en: 2 is red。 See what it does there。 I have no idea what it'll do there。 I recognize
     it as it as a two car， but at least it doesn't recognize it as say a three or
     something such as that。So this is learning sequence。 You can see in just a very，
     very simple。 simple example that it learns to。Recognize these patterns。
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 2是红色。看看它在那里的表现。我不知道它会怎么做。我将它识别为一辆两厢车，但至少它不把它识别为三厢车或其他东西。所以这是学习序列。你可以在一个非常简单的例子中看到它是如何学习识别这些模式的。
 - en: and it can even be very short and it recognizes it。So that's the power of an
     LSTM。 It recognizes these these patterns really sort of over time。 Next we're
     going to look at sunspots example。 Now you can get daily sunspot data files from
     this website I have them loaded onto my instance but you would have to download
     these if you want to run this particular example So let's go ahead and read this
     in。
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 它甚至可以非常短，并且能够识别它。这就是LSTM的强大之处。它能够识别这些模式，确实是随着时间的推移。接下来我们将看看太阳黑子示例。现在你可以从这个网站获取每日太阳黑子数据文件，我已经将它们加载到我的实例中，但如果你想运行这个特定的示例，你需要下载这些文件。让我们继续读取这个数据。
 - en: This shows you basically the year and it goes back pretty far so 1818 first
     month first day it gives you and by the way this value is just a way of encoding
     the date in the year it gives you the sunspot value negative one means that we
@@ -390,15 +502,19 @@
     a bit of missing data near the beginning of the file if we run it and we trim
     the rows that have missing observations we have 11000 and something and we can
     also just take。
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 这基本上显示了年份，而且回溯得相当远，所以1818年第一月第一天，它给你提供了这个值，顺便说一下，这个值只是编码年份日期的一种方式，它给出了太阳黑子值，负一意味着我们没有数据，还有观察数量。如果我们运行它并且去掉缺少观察的数据行，我们会有11000多条记录，我们也可以直接取。
 - en: The what we're going to do is we're going to take the training set of everything
     before the year 2000。 We're going to take the test set that we're going to evaluate
     it on is everything after 2000。 And we create a training set for each of these。
     So we create a set of pandas for the training one for the test for the sunspot
     value。 That's what we're trying to predict the actual sunspot count。
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将做的是取2000年前的训练集。我们要评估的测试集是2000年后的所有数据。我们为每个数据集创建一个训练集。所以我们为训练集和测试集分别创建一个pandas集合，用于太阳黑子的值。这就是我们要预测的实际太阳黑子数量。
 - en: And we print out the number of observations of each that we have。 So the training
     data are definitely bigger。 You have nearly 55。 you have over 55000 test set has
     a little over 6000 values。 Now what we've got to do is convert this into sequences。
@@ -407,50 +523,64 @@
     use to train the LSTM with to do this what we。is we have to use this two sequences
     function。 So this gives you the sequence size and then the observations。 So the
     sequence size is going to be what we define the sequence size to be。
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们打印出每个观察的数量。所以训练数据绝对更大，你几乎有55000个，测试集略多于6000个值。现在我们需要做的是将其转换为序列。这可能是稍微棘手的部分。所以这会将太阳黑子数据转换成一个立方体，用于训练LSTM，为此我们需要使用这个两个序列的函数。这给你序列大小和观察值。所以序列大小将是我们定义的。
 - en: so it's going to be 10 you take the data and you chop out 10 observations then
     you move forward a little bit chop out the next 10。 the next 10 is a sliding window
     across and it builds all those rows of of the cube。 but with the observations
     on back。 So here we have the we have it converted into that sequence。 So we take
     the window by getting the observations from one up to1 plus up to I plus the sequence
     size。
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以序列大小将是10，你取数据并剪掉10个观察值，然后向前移动一点，剪掉下一个10。下一个10是一个滑动窗口，构建出所有的立方体行，但观察值是在后面的。所以在这里，我们将其转换为这个序列。我们通过获取从1到1加上I加上序列大小的观察值来取窗口。
 - en: we're looping over the entire range of observations。 So whatever the length
     of observations is up to minus the sequence size so that we stop while we still
     have enough to build out an entire sequence and we essentially build build this
     up if we looked at what。
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们正在循环整个观察范围。所以不论观察的长度是多少，直到减去序列大小，这样我们就可以在仍有足够数据构建出完整序列时停止。我们基本上会构建这个。
 - en: This really looked like X train， I print out the shape of them up here， the
     shape of them。 so it's got 55，000 rows， it's got。The 10， which is the sequence。
     but it's only got the one column because it's just the value that we're trying
     to predict over time。 The number of sunpots。 we just print out X train。 This is
     kind of what it looks like。
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 这看起来真的像是X训练，我在这里打印出它们的形状，形状有55000行，有10，这是序列。但它只有一列，因为它只是我们试图预测的时间值，即太阳黑子的数量。我们只打印出X训练。这就是它的样子。
 - en: You're seeing the individual sunpot values going across。 It's a three dimensional
     data structure。 So you have the 255，2，55 up to here。 that's one row。 And you have
     all of the sunpot values。 the 10 of them across。 There's not enough to display
     10。 So that's why you've got the the three dots。 Now we are going to try to build
     the model and fit it。
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到个别的太阳黑子值在这里移动。这是一个三维数据结构。所以你有255，2，55到这里。这是一行。你有所有的太阳黑子值，10个在一起。没有足够的展示10个。这就是为什么你有三个点。现在我们将尝试构建模型并拟合它。
 - en: When we run this。 it's going to train it for 1000 epochs。 And that takes a little
     bit of time。 We do have an early stopping going on。 So it's not going to take
     that。It's not really going to take that full amount of time。 this is potentially
     something that a GPU instance would train a lot faster。
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我们运行这个时，它将训练1000个周期。这需要一点时间。我们确实开启了早停机制，因此不会真正花费那么多时间。这可能是一个GPU实例训练会快得多的情况。
 - en: but that we'll see an example of that on the last class use when we do high
     performance computing and we make use of a GPU instance among other things。So
     we've got 6131 samples that we're training on。 we report the validation loss。
     notice it's quickly dropping after we let it go a while， it won't hit the entire
     1000 it will stop。 but I'll let this run on time lapse here real quick。 All right，
     early stopping has kicked in。
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是我们将在最后一节课中看到一个例子，当时我们进行高性能计算，并利用GPU实例等其他工具。因此，我们有6131个样本正在训练。我们报告验证损失。注意，在让它运行一段时间后，损失迅速下降，它不会达到1000个周期的全部时间，会提前停止。不过我会让这个过程在时间快进中运行一下。好的，早停机制已经生效。
 - en: you can see that that kicked in after 16 Ex and we now have the neural network
     trained and ready to go and we can see what the RMSsC。 So it's predicting all
     plus or minus 22 sunspots and can that gives you an idea of the overall accuracy。
@@ -458,12 +588,18 @@
     data going in breaking up into those sequences with with the two sequences function
     that I gave you is definitely the key part of doing that。 Thank you for watching
     this video。 And in next video。
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到在16个Ex之后这一点开始生效，我们现在已经训练好了神经网络并准备就绪，可以看到RMSsC。所以它预测了大约22个太阳黑子，这给了你一个整体准确性的概念。这不是一个特别先进的网络，但它确实展示了如何表示输入数据，将其分解成那两组序列，正是我给你的那两个序列函数是实现这一点的关键部分。感谢你观看这个视频。下一期视频见。
 - en: we're going to look at how we can use LSTMs and CNNNs together。![](img/d578a667a9760200144c8f5677c9fef3_3.png)
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将看看如何将LSTMs和CNNNs结合使用。![](img/d578a667a9760200144c8f5677c9fef3_3.png)
 - en: To caption images this content changes often， so subscribe to the channel to
     stay up to date on this course and other topics in artificial intelligence。
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 要为图像加上说明，这个内容经常变化，所以请订阅频道，以便及时了解这门课程和人工智能的其他主题。
