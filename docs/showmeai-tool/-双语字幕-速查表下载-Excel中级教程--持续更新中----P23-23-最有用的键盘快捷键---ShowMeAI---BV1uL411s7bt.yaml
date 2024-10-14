@@ -1,0 +1,184 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P23：23）最有用的键盘快捷键 - ShowMeAI - BV1uL411s7bt
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '![](img/35bb0b2eec84fa730aa2bffd18c52a22_0.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: This Excel tutorial covers the most useful keyboard shortcuts in Microsoft Excel。
+    And I want to start with two really common keyboard shortcuts。 These are usable
+    in almost every program， but I still think they're important and useful for you
+    to know。 The first is control S。 You hold the control key and tap the letter S。
+    And when you do that。
+  prefs: []
+  type: TYPE_NORMAL
+- en: it saves your spreadsheet。 And so it's the equivalent of going up here and clicking
+    the save button or clicking file and save。 Next， we have control P。 You hold control。
+    you tap P。 That brings up the print options in Microsoft Excel。 And now you can
+    just click the print button and print out your document。 Like I said。
+  prefs: []
+  type: TYPE_NORMAL
+- en: those are pretty commonplace， but I think if you don't know them， you need to
+    know them。 Next。 we have control T。 And what control T does is it turns the selected
+    cells into a table。 You can see that I already have a table here on the screen。
+    This is a list of synth pop and new wave bands and they're most recently released。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Album and also their current price on Amazon com。 And you can see it's a table。
+    You can tell that it's a table because it's formatted in a special way。 The colors
+    alternate and things like that。 You can just tell that this data is meant to go
+    together in this table。 and I can create a table like this， simply by holding
+    control and tapping T。 So for example。
+  prefs: []
+  type: TYPE_NORMAL
+- en: over here on sheet number 3。 I'm gonna click here is the data that I would like
+    to turn into a table。 All I have to do is click and drag to highlight the range
+    that I would like to turn into a table。 I release the mouse。 And now I hold control
+    and tap T Excel asks where's the data。 It seems to already know。 but if it happened
+    to be wrong， I could change that。 My table has headers。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Yes， it does by our amount spent date but if it didn't have headers， I could
+    uncheck that。 and just click okay。 and look what it did。 It automatically turned
+    that data into a table。 So control T。 a really useful tool that I use quite a
+    bit。 Juing back to sheet1。 the rest of the Excel。Keyboard shortcuts that I'm going
+    to show you have to do with getting around in your Excel spreadsheet。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And in many cases， that is one of the hardest， most tedious parts of using Excel。
+    I constantly have to navigate around the data in my spreadsheet。 so I'll need
+    to go up to the top to make changes。 and then I need to go down to the bottom
+    and this is a pretty small spreadsheet to be honest。 but if you had 2000 records，
+    if you had 5000 or 10000 records in your spreadsheet。
+  prefs: []
+  type: TYPE_NORMAL
+- en: imagine having to jump around from the top of your spreadsheet to the bottom
+    and vice versa And then also sometimes it can be hard to click and drag and select
+    the right data。 if I wanted to select this entire row， sometimes that's kind of
+    difficult and I might be inaccurate with how I do it same with a column if I wanted
+    to select this whole column。
+  prefs: []
+  type: TYPE_NORMAL
+- en: sometimes that's hard to do。 So let's take a look at some keyboard shortcuts
+    that can make doing these tasks a lot easier and quicker。 And the first example
+    is whenever you want to go to the top left corner of。Your data in a spreadsheet。
+    simply use the keyboard shortcut control home。 So hold the control key。 tap home
+    and look what it did。 It took me up to the top of my data。
+  prefs: []
+  type: TYPE_NORMAL
+- en: but not only that it actually went to the upper left corner。 So that cell is
+    actually highlighted cell a2 in this case。 because that's where the data begins。
+    So control plus home is very useful。 Let's look at the opposite example。 A lot
+    of times you need to get to the bottom of your data to do that。
+  prefs: []
+  type: TYPE_NORMAL
+- en: you hold control and tap the end key。And notice what that did。 That took me
+    to the lower right corner of my data in the spreadsheet。 Now。 I'm going to tap
+    control home again to show you yet another way to get down to the bottom of the
+    data。 But this one is a little bit different。 And that is hold control and tap
+    the down arrow on your keyboard。
+  prefs: []
+  type: TYPE_NORMAL
+- en: When you do that， it takes you down to the very bottom of your data。 But notice
+    that instead of being at the lower right。 It just took me to the very bottom record。
+    And because I was already in column a， it took me to a 46 in this case。 But let's
+    try it again。 I'm going to go control home to get back up to the top。 Let's say
+    I'm in cell E 2。
+  prefs: []
+  type: TYPE_NORMAL
+- en: and I hold control and tap the down arrow。 Not what it did。 it just took me
+    to the very bottom record。 It didn't move me to the left or to the right。 But
+    rather， I stayed in the same column。 This next keyboard shortcut。 It't have to
+    do with moving around inside the sheet。 But rather from one sheet to another。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So right now， I'm in sheet one， and I have these all out of order That。Okay，
+    but sheet1。 it's actually the third sheet listed。 If I would like to go to sheet
+    3。 all I have to do is click on it。 if I want to go to sheet 2。 I just click on
+    that and back to sheet 1 but really one of the main purposes of keyboard shortcuts
+    is to keep your hands on the keyboard Anytime you have to take your hands off
+    the keyboard to use the mouse or to do anything else for that matter。
+  prefs: []
+  type: TYPE_NORMAL
+- en: you are now less efficient to using Excel。 And so that's why we have keyboard
+    shortcuts to keep our hands on the keyboard so we can do the work we need to do。
+    So instead of using the mouse to click on sheet3 or sheet 2。 all I have to do
+    is hold the control key and tap the page up key and look what happened。 it moved
+    me back to this sheet if I tap it again control page up it moves me back to the
+    previous sheet before that。
+  prefs: []
+  type: TYPE_NORMAL
+- en: What about the opposite case。 If you want to move to the right to the next sheet。
+    you hold control and tap page down and then page down again and I'm back where
+    I started So those last few keyboard shortcuts。 I think you'll find them to be。Useful
+    and pretty helpful in navigating around your spreadsheet and quickly getting to
+    the top or the bottom or to a different sheet。 This next keyboard shortcut is
+    kind of fun to do and kind of interesting。
+  prefs: []
+  type: TYPE_NORMAL
+- en: but I don't use it that often to be honest with you。 But what it is is control
+    D。 And you use control D to copy an item down。 So， for example。 each of these
+    amazing synth pop or new wave bands has more than one Cd listed in this spreadsheet。
+    except for Brandon flowers。 But he has had other releases besides the amazing
+    Cd。
+  prefs: []
+  type: TYPE_NORMAL
+- en: the desired effect that came out a year or two ago。 So if I would like to add
+    more entries for Brandon flowers。 I could click on that cell。 copy and paste it，
+    or I could click on it and use the autofill handle to just fill it in like that。
+    But instead， I'm going use control D。 And to do that， first。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I need to select what I want to copy Brandon flowers in this case。 and then
+    drag down as far as I want it to be copied。 So I want it to go down to。60Then
+    I just hold control T D。 And because I'm in a table， I'm getting this warning。
+    but don't worry about that。 I just click OK and it added Brandon flowers several
+    times to this spreadsheet。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So like I said， control plus D。 It's kind of fun。 I like to use it。 And I find
+    it to be helpful。 but I don't use it that often。 So now let's look at the last
+    three keyboard shortcuts that I'm going recommend that everybody learn。 And the
+    last three， I'll deal with selecting data。 in Excel。 you have to select data often
+    in order to copy and paste in order to change the font or the formatting or the
+    alignment of the data in your spreadsheet。
+  prefs: []
+  type: TYPE_NORMAL
+- en: there's lots of examples and lots of times when you need to select data。 And
+    of course。 you could do that the manual way you could just click and drag to highlight
+    and select the text。 And that's a good way to do it。 And let's look at some shortcuts。
+    If you've clicked on your spreadsheet。 you can hold control and tap a。 and it
+    should select all。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now if you。In a table。 noticeice that it selects everything that's in the table。
+    and it does not include any information that's outside the table。 However。 if
+    I hold control and tap A again， then it does select everything。 So you can see
+    that that's indeed what happened。 However， in this case。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I just want to select the table。 So control A， selects just the table。 I'll
+    use control C， which。 of course， is copy， And then I'll go to， let's say sheet
+    2。 And I'm going to hold control and tap V for paste。 and it paste it in that
+    table。 So control a selects everything， unless you're inside a table。
+  prefs: []
+  type: TYPE_NORMAL
+- en: then it selects everything in the table， but nothing more。 But again。 you could
+    do control A twice to then select everything。 All right， next up， we have control
+    space。 and control space is for selecting an entire column。 Put the cursor wherever
+    you want it to be。 hold control tap space。 The entire column is selected。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/35bb0b2eec84fa730aa2bffd18c52a22_2.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: And then you can copy， paste it as needed， or change its font or alignment or
+    whatever you need to do。 Finally， we have shift plus space。 This is our first
+    time using shift instead of control。 But you hold shift， tap space， and it selects
+    the entire row。 So I hope that you found these keyboard shortcuts to be useful。
+    If you have。
+  prefs: []
+  type: TYPE_NORMAL
+- en: please click the like button below。
+  prefs: []
+  type: TYPE_NORMAL

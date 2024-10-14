@@ -1,0 +1,447 @@
+- en: 【双语字幕+资料下载】使用 Scikit-learn 进行机器学习，4小时实战视角刷新知识框架，初学者进阶必备！＜实战教程系列＞ - P11：11）K均值聚类
+    - ShowMeAI - BV16u41127nr
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Okay。![](img/8fbf50c44e48638bdf2bd3d414bd41f5_1.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: we've been doing a lot of supervised learning lately in particular we've been
+    doing regression and classification now I'm going give an example of unsupervised
+    learning problem which is clustering and in clustering might feel like you it
+    have some similarities to classification in classification sometimes I would show
+    these scatter plots where there's different kinds of points and you those points
+    were labeled right maybe there's some red points and some blue points。
+  prefs: []
+  type: TYPE_NORMAL
+- en: whatever and we were trying to find boundaries or rules to separate the different
+    kinds of data points that we had and we did that based on some predetermined labels
+    that came with the data you know which trying to point as which。In clustering，
+    we might simulate have some sort of scatter of data or the multidimensional equivalent
+    of that。
+  prefs: []
+  type: TYPE_NORMAL
+- en: but the difference is is that there's no preexisting labels on the data。 that's
+    what makes this an unsupervised learning problem。The algorithm itself gets to
+    choose the labels and and so there's you know a million different ways you can
+    choose to apply labels to an existing data set。 but we still have some constraints
+    or maybe I should say like a goal our goal is to choose those labels so that we're
+    kind of grouping similar data together and there's ways to measure that So clustering
+    is this general problem there's lots of different clustering algorithms by far
+    the most famous is k means so that's where I'm going to start。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And so I'm doing some imports here， eventually I'm going to be using the K means
+    that comes an SKL。 but to help you understand how the algorithm works。 I'm actually
+    just going to write the code from scratchch in this video before we actually started
+    using this one。So in SK learn there's this data sets submodule that can make blobs
+    or these blobs are basically clusters。
+  prefs: []
+  type: TYPE_NORMAL
+- en: you tell how many points you want， how many kind of different centers they cluster
+    around and then something about standard deviation and that returns two things
+    it returns acts。 which is actually two columns。An x0 and x1。 and then a y， which
+    is indicating。
+  prefs: []
+  type: TYPE_NORMAL
+- en: What cluster or blob each of these points was part of right and so I don't really
+    care about why I'm just going to throw that away I'm going to throw all those
+    two x values in here and then I have this data frame just like here and so what
+    we're going to be working towards is trying to find are there clusters of different
+    points in here where it's kind of centered around something。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And so let me let me scroll down a little bit before I look at this code and
+    so here's a picture of those points that God generated you can see it's pretty
+    random although they kind of kind of center around three different points I'm
+    just putting a question mark here for now because these are unlabeled right there's
+    no real category I just have these two。
+  prefs: []
+  type: TYPE_NORMAL
+- en: X is0 along the x axis and x1 along the y axis，' for my coordinates。And so ultimately
+    to do this I have know I'm doing a data frame plot scatter like we've done lots
+    of times before。 the reason I'm writing this special function here。 kms scatter
+    KN stands for k means I'll talk a little bit more about why we have that name
+    is that I might not be wanting to show different symbols for different points
+    and there's not an easy way to specify a column that lives the type of symbol
+    right so we have to loop over that and that's going to be determined by this column
+    called label if there is one right not necessarily right and so this is automatically
+    even be plotting well I just have the comment here I'm going to be plotting x0
+    along x axis。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And and so on and so forth， right， so I'm going to be using this as I go forward。All
+    right。 so you can probably already see there's three clusters here and what we
+    actually know that is we randomly generated the data。 but how can we find kind
+    of good indicators for where those are and those indications that are't going
+    to be called centroids。 we're going to ultimately try to say， well here's the
+    center of these three clusters。
+  prefs: []
+  type: TYPE_NORMAL
+- en: That we discovered， how can we do that automatically？
+  prefs: []
+  type: TYPE_NORMAL
+- en: And it' that' a hard problem trying to find the three best points， an easier
+    problem in general。 right than finding the best answer is to just take a bad answer
+    and make it slightly better if you know how to do that and you can repeat it well
+    that often ends up giving us a pretty good answer and then this is a strategy
+    that we use for gradient at thescent is very pervasive in learning and it's the
+    strategy we're going to use now for the K K means right so we' we take a bad answer
+    and the bad answer looks like this。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I'm just going to randomly choose some starting points。And assign the each a
+    different symbol。And for now I'm just trying to assume that I may have three points，
+    three clusters here。 we'll eventually revisit that assumption， and may scatter
+    it down here and so you can see that this is where it thinks those three clusters
+    are and of course that's horrible right that's not where the three clusters are
+    so how can we automatically identify the centers of those three clusters。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And so the strategy that we're going to use is we're going to alternate between
+    doing two things First we're going to do something called assignment。 which is
+    taking each of these points and putting it in the cluster just saying it's going
+    in the cluster with the centroid that's nearest to it right so these three things
+    are centroids。
+  prefs: []
+  type: TYPE_NORMAL
+- en: 哦。Centroid is kind of a twodial mean right so it's the average x0 and average
+    x1 right or the centroids and so the K means that's the name of this algorithm
+    right so in this case K is just a variable and so really we have three means or
+    three centroids right we want to find the best locations of those so it's like
+    I was saying where I assign each of these points to the centroid that's closest
+    to it。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And that's a point assignment and then the other step we're going to do is we're
+    going to update where these centroids are so that they get closer to the values
+    that are assigned to them。 and we keep alternating back and forth between deciding
+    which points go with which centroid and then where the centroids are and eventually
+    it should hopefully converge and try to discover these three points。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And so to do this， I'm going to be building a new class， right。 and I'm just
+    trying to call my class KN。And I'm going to have it inette method。And maybe what
+    I'm going to do is pass in the data frame all my data。 and then people in a lot
+    of these implementations， they would specify something like。
+  prefs: []
+  type: TYPE_NORMAL
+- en: well how many clusters are there for simplicity Ive already created this data
+    frame。Of。 of clusters right here， which if I。I look at that what I have for my
+    clusters。 I already have the data for these three points where I kind of did that
+    and so I'm just going to keep that outside of my class for now just to keep the
+    code a little bit cleaner and so I'm going to grab these things right so I'm going
+    to say that selft clusters equals clusters and I'm going be making a lot of changes
+    to these things and I don't want to change the original data so I'm going to make
+    copies of these data frames。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Just like so and maybe let's just see that we actually have something here。
+    I'm just curious what is in this label right time I say self do labels equals。Solf
+    dot clusters。 and I want to look at that label column。Just like that， and maybe
+    I'll just convert that to a list。Like so， and then me print that soft dot labels。Okay。
+  prefs: []
+  type: TYPE_NORMAL
+- en: so I want to create one of these things that hand。And I need to pass in my data
+    frame of all my points and then my and then my clusters and I do that and。And
+    what am I I doing there as a little silly of me。 I want to save that in that variable
+    and well those are my three clusters I'm just choosing cluster names that happen
+    to be simple right so I can easily plot these typically people just kind of arbitrarily
+    call these clusters one and three remember there's not any label in the original
+    data。
+  prefs: []
+  type: TYPE_NORMAL
+- en: the original data looks like。Looks like this thing right where I have 100 rows。And
+    then my cluster is actually kind of look similar， right。 I have the x x values
+    specify minus the center and then also the label。Okay。 so one of the first things
+    that I want to do is I might want to be able to plot this。
+  prefs: []
+  type: TYPE_NORMAL
+- en: As we go because we're going to be making changes right so I want to grab this
+    code that I had before to just see what's drawing on。Just like so， and I'm going
+    have plot that and。And let me see here。 I guess I can't use data frameraaming
+    clusters because these are attributes now。 and I don't want those versions。 I'm
+    going to say self Df。And it got clusters。And there we go。
+  prefs: []
+  type: TYPE_NORMAL
+- en: right our kind of initial state of the system that we want to make better。And
+    so remember。 there's these two phases that I talked about， we're going to have
+    something where we assign the points。So that's maybe one step we're going to do
+    and what we're doing here is we're really kind of drawing from clusters。Two points
+    right based on where our cluster， maybe I should tell them centroids are where
+    our centroids are。
+  prefs: []
+  type: TYPE_NORMAL
+- en: that's trying to affect well what happens in our points we're going to assign
+    each point to a centroid when I have that。And another thing I may have。Is update。Of
+    the centers。just by alternating calling this and this and this and then this。
+    we're ultimately going to end up with a good solution to this problem。Okay， so
+    first off。
+  prefs: []
+  type: TYPE_NORMAL
+- en: how do I do the centroid assignment， that's maybe the harder one。 this function
+    here is maybe a little bit easier。And so well， what I want to do here。 right is
+    I want for each of these points， I want to assign it。To one of the clusters。 Okay。
+    and and it needs to be the closest one。 So maybe the first thing I'm going to
+    do is here。
+  prefs: []
+  type: TYPE_NORMAL
+- en: let me just do this K and that data frame。 I going add some columns here。 right。
+    This is one of the reasons why I copyied that data frame when I started。 I may
+    add a column for each cluster that specifies how close this point is。To that cluster
+    and then once I've added those three columns it'll add yet another column that
+    says。
+  prefs: []
+  type: TYPE_NORMAL
+- en: well， which one is the closest， which one do I actually want to be in？
+  prefs: []
+  type: TYPE_NORMAL
+- en: Okay I'm going to do something like that this， I'm going to say loop over all
+    the clusters right or I guess the labels。And， and somebody I say for bus and。Well，
+    let me loop over this thing。Like so maybe let me just read this。And the way I
+    want to loop over it is I'm going to do E tus。🤧Excuse me。And this is right give
+    me named tus， so let me do this。Can signed points。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Then may be looping over these name tus。 And so I know where the center of each
+    of these things are。 Okay， and and so now I want to update right I'm updating
+    my points in my data frame。And so what I'm going to do is I'm going to look at
+    these columns， I'm going to say x0。🤧And I want to compute for each row here the
+    distance between that along the x0 axis and that center。
+  prefs: []
+  type: TYPE_NORMAL
+- en: right so I'm going to take that minus x0。And I'm going to say that as x0 to
+    F。And then I'm going to do the same thing。Along other dimension。And and then what
+    I ultimately want to do， let me apologies。 What I ultimately want to do is I want
+    to compute the the distance between between these points in the center of the
+    cluster。
+  prefs: []
+  type: TYPE_NORMAL
+- en: right So I have I have the differences align these two dimensions。 So the distance。It
+    is going to be like this， it's going to be x0 de squared。Plus x1， the。Squared。
+    and then taking the square root of all that ass a Euclidean distance。0。5 to take
+    this square root。And let me think here， so this is an individual number。
+  prefs: []
+  type: TYPE_NORMAL
+- en: RightI'm looping so but for each pass or loop it's an individual number， this
+    is a whole column。 so this is a column， this is a column， really I'm computing
+    all the distances at once。哎。And sometimes I say self D。And let me come back to
+    this。 This is going to be those distance as I'm adding that new column and what
+    I may use for this column name is the cluster that I'm currently in。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Yes， I'm just going to put cluster here。And so now if I run this。I'm not printing
+    anything right now。 You know what， let me just clean up this too。 I don't need
+    that anymore or better yeah just delete it right and let me look at what happens
+    to the data frame after I run that。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Something horrible， which is。Well it's adding these weird things。 which what
+    I really want to you is was to be the cluster name。I do that。And now this is great
+    right I can see that I my x0 my x1 and that's a point right and I can say well
+    how far is that from the all cluster。 how far is it from the plus cluster， how
+    far is it from the x cluster and it's closest to the all cluster so that's ultimately
+    what I want to want this one to be in right so what I'm going to do right is after
+    I've looped and I computed these three columns as I'm going say cell that data
+    frame。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And label。I want it to be one of these three。 You know what。 let me just try
+    poke around down here first to see how I can get to that。嗯。What I really want
+    to look at is I want to look at。I want to look at those three columns there and
+    figure out， well。
+  prefs: []
+  type: TYPE_NORMAL
+- en: which of these columns has the smallest value in each case。 And and it turns
+    out that there is a pans function that does that very easily。 and it's called
+    index。And right， and and normally what that's doing right is it's growing column
+    by column and telling me。 oh， the smallest value in the old column is at position
+    11。
+  prefs: []
+  type: TYPE_NORMAL
+- en: smallest value in the plus column is at position a 78。 that not quite what I
+    want right I wanted to go horizontally right So I want to find out all which you
+    know instead of looking at these index values over here on the right。 I really
+    want to look at the column。Coollumn index here instead and say， well， which of
+    these。 which column gives me the smallest。And so I'm going to paste this back
+    instead of saying access equals 0。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I'm going to say access， know it's vertical， I'm going to say access is equal
+    one which is horizontal。 and then I can get all of these classes so I'm going
+    to put this back up in here。And。 and I may run this again， right so。Look at my
+    data frame。I run that and I can see okay great so I have my original data which
+    never changes by the way right the data never changes then I compute the distance
+    to each of these clusters and then based on that I'm like。
+  prefs: []
+  type: TYPE_NORMAL
+- en: okay well this first one， oh is the smallest number so that's an O cluster same
+    thing for the second one。 the third one， the smallest value of these three is
+    under the x columns that's in the X cluster。I've been able to assign all of these
+    points。And and so let me just show you what's going to happen。 right， let me。Youre
+    on this again， so here are the points if I do the assignment of points。
+  prefs: []
+  type: TYPE_NORMAL
+- en: you may see that I have question marks。It's saying what each of these are right
+    so you see that this circular cluster is really big。 it's actually kind of capturing
+    most of these and then this one kind of has opposite problem we have one actual
+    cluster and it's being shared between the plus points and the X points over here
+    but it is some clustering and now that we've actually kind of started with a bad
+    answer。
+  prefs: []
+  type: TYPE_NORMAL
+- en: we can make it we can make it better and the way I'd like to make it better
+    is that now that I've kind of decided well which points are in the circle cluster。
+    I can kind of find where that circle cluster is right I can see that at this red
+    circle here。
+  prefs: []
+  type: TYPE_NORMAL
+- en: that's not a very good real center because that's way to the right of all the
+    points that it's representing。And so that one's maybe a little bit easier now
+    we're actually going to update these center points。Okay， let me before I do that
+    let me do one other thing sometimes notice I'm calling this one and I'm calling
+    this one and each time I say KN。 KN， KN。WhenWhen people don't have to return anything
+    from their functions， right。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I don't return anything here。What people will often do。 right sometimes they'll
+    see this is they'll just return self。RightAnd and the advantage of that is when
+    I call this， it does some stuff。And then it returns Km。 and because it's returning
+    KM， I can just try to chain this along like that。
+  prefs: []
+  type: TYPE_NORMAL
+- en: that's one reason you often see people just returning self in a method。 and
+    it ultimately we're going to be doing the same thing down here。 but let's actually
+    update these centers。And try to do something。And the easiest way to do this。Is
+    with a group by， right， I want to。If I go back here。系咩。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let me do this and look at that data frame again。Ultimately。 what I want to
+    do is I want to find the new centroids。 which are kind the average of these columns
+    for each label。 And so the way I can do that is I can take group by。为何。That lives
+    me。This weird。
+  prefs: []
+  type: TYPE_NORMAL
+- en: let me just stop plotting for a moment。 That gives me this weird data group
+    by object。But then what I can do is I can compute the means on it。It's like so。
+    so this when I do a group by right， that's when I go to the index。Right over here
+    on the left。 them by getting the mean over all these other columns。 And you know
+    what。
+  prefs: []
+  type: TYPE_NORMAL
+- en: there's too much stuff there， right， because when I'm competing centroids。 I
+    don't really care about the averages of these anymore。 I'm just going to do this。S
+    a。I just want my。My X columns。All right， and then then the last thing that's a
+    little bit weird is you noticed before。 like when I started label was just a regular
+    column， the group by made it not a column。
+  prefs: []
+  type: TYPE_NORMAL
+- en: it made it an index。But I didn't really want that， so I'm just going to do a
+    reset index here。Right so this little line here right this one line is a quick
+    way to compute what I'd like the new clusters to。 you see it has all the same
+    datas before label x0 and x1 right but now instead of you know my data started
+    off randomly right horrible right now I'm actually having some sort of meaning
+    to it right I'm actually saying。 well let's put our clusters at the center or
+    our centroids at the center of the cluster of data that they're representing right
+    so this one' is going to be very simpler the self-like clusters equals that。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And。ItMaybe let me just on。Andm I split this off right so I'm just try to say
+    clusters equals that。And doft dot clusters equals。Right， so the first step is
+    understanding'm just the mean。Or the centers right of each label， and then just
+    try pulling out the columns I want and fixing it up so it's in the original shape。
+    right？Let me do this I haven't told it yet right I just called the one we did
+    before。
+  prefs: []
+  type: TYPE_NORMAL
+- en: that's the one we usually start with， but now I can can do this right after
+    I've assigned those points now I can run the other function and make it better
+    right so maybe let me actually you do this and I just plot it here and not plot。But
+    let me just look at the original。 So the first off， I don't know anything right。
+  prefs: []
+  type: TYPE_NORMAL
+- en: it's just everything's random。And I do an assign points。That's good。 And then
+    after signing the points， then I want to。Do what I want to update the centers。Let
+    me just do a quick experiment， I wonder if I can just even put this together in
+    this one that's going to make my life a little easier great I can see those two
+    things right。so the data started looking like this， I'm going to assign the points
+    to a cluster and then update the cluster centroids right so here I update the
+    points。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And then you can see。Wait a minute。 What happened here。 Let me just try to start。
+    I ran it twice。 I'm sorry。嗯。right so you can see the first thing it did right
+    is it assign the points and then it moved it over。 you can kind of see that， you
+    know this first one' is assigning the points。 the second one's updating the centroids，
+    you can see that a couple things happened right like this this red circle moved
+    to the left to be closer to we're supposed to be and then this plus is kind of
+    encroing and there's no reason for it to be hanging so far out。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And so if I run these two steps again。Like this， that's going get even even
+    better， right。 so I'm going to run that again and now what you see， right is not
+    that much happened。Not much well the red points that move originally， right。 and
+    that much happened over here on the left。But but you see what happened down here，
+    right。
+  prefs: []
+  type: TYPE_NORMAL
+- en: this plus sign。And I grabbed some more points after it moved in。And so since
+    drivinging those points， x is remaining points。I kind of have a great center of
+    gravity more to the left right so when I update again。 I'm kind of bumping that
+    ax a little bit more to the left right and if I keep running this。
+  prefs: []
+  type: TYPE_NORMAL
+- en: It should keep pumping it farther and farther over， right if I keep。Updating
+    this。 it might take a few times。I don't know what I got stuff there There we go
+    And and so you can try to actually see I've hit run into a problem here and and
+    the problem is that I've hit a local minimum right can I can clearly see that
+    it will be better if this red point the red circle bumps up here to the top and
+    then this actx and it grabs the cluster down here but it's not doing that because
+    it basically has to get worse before gets's better right so trying to hit what
+    we might call a local minimum And so while how do I solve that it turns out there's
+    not a bug in my code I got unlucky。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And I was anticipating this it all happen， but it's a nice opportunity to talk
+    about it。 And I got unlucky because of where。Where these starting clusters were
+    right I kind of randomly decided where the starting clusters were and they happen
+    to be a point where it didn' kind of gravitate towards the three actual clusters
+    and it turns out that this is a problem in every implementation if I go to the
+    real one。
+  prefs: []
+  type: TYPE_NORMAL
+- en: It will have this thing here， which is the number of times we should try running
+    the algorithm。And and each time right it's kind of starts off with different starting
+    points and then randomly updates it and the hope that it converges right and so
+    then it'll take the best of those And so I wasn't anticipating that it happening
+    during the demo right because it didn't happen when I practice before。
+  prefs: []
+  type: TYPE_NORMAL
+- en: but I'm going to redo it now so I'm going to leave my data alone and I'm going
+    to see what happens。When I come up， I kind of randomly generate my starting points。Though
+    I may start with these as my three starting points now。 and remember the default
+    right when we're eventually using SK learnn is wherere going to start over 10
+    different times and see what happens each time。
+  prefs: []
+  type: TYPE_NORMAL
+- en: That when I run Ns。Let me。You know what， let me。I don't want to have any old
+    plots that are confusing。 confusing things。I going to do this。 I may say， that's
+    my starting point， I I say can。Sign points plot。That was what it was called， write
+    assign points and then update。Second stop update centers， right so I'm going to
+    do that。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And okay I can see that I assigned the points and then updated the centers and
+    now I can see I got luckier this time and it's not perfect right I can see that
+    at this point there's still some weirdness right that this one is reassigned over
+    here。 but if I keep even just a couple passes it actually quickly finds out where
+    the three clusters are right and usually be somewhere in between there maybe it
+    takes a few times actually converge on the right thing。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/8fbf50c44e48638bdf2bd3d414bd41f5_3.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Okay。![](img/8fbf50c44e48638bdf2bd3d414bd41f5_5.png)
+  prefs: []
+  type: TYPE_NORMAL

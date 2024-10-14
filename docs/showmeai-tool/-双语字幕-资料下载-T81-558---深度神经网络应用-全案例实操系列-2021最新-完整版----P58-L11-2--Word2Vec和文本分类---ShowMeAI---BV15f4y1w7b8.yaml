@@ -1,0 +1,228 @@
+- en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P58：L11.2- Word2Vec和文本分类
+    - ShowMeAI - BV15f4y1w7b8
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Hi， this is Jeffheine， welcome to applications of Deep neural networkss with
+    Washington University。In this video， we're going to look at Word to V， which is
+    a pre trained model。That you can get from Google and other sources that help you
+    with natural language processing for the latest on my AI course and projects。
+    click subscribe and the bell next to it to be notified of every new video。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Word tove is a really interesting technology that looks at the problem really
+    of how do you take words and en them。 The previous encoding that we saw was basically
+    using sort of dummy variables and indexes。 You're taking each word and you're
+    turning into a word number。 That's an effective way for the endtoend neural networks，
+    and it worked well。
+  prefs: []
+  type: TYPE_NORMAL
+- en: but as you get bigger and bigger vocabularies that just does not work as well。
+    Word tove is a way of taking words and transforming them into vectors and vectors
+    and linear algebra you do all sorts of operations between them。 you can do those
+    sorts of operations on word to V and it does some really fascinating things。 Word
+    to V basically puts words in vector space close to each other that are pretty
+    similar。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I saw this。![](img/1d7fb8556422880891e5b74357c6e1fb_1.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Posted on on Twitter I thought it was pretty funny on Word to Vc cappuccino
+    espresso T crissant the lady there is saying espresso。 but I ordered a cappuccino
+    and the little robot says don't worry the cosine distance between them is so small
+    they are almost the same thing So that's where you do have to be a little careful
+    with it but those two words are very similar and they would have a pretty close
+    word to V mapping and I give a link to the original source for that particular
+    cartoon So the suggested software that I have for word to V is the Github news
+    vectors This takes a lot of memory I am using a I'm using the full large Google
+    dictionary with the large encodings This is a technology that I used on a kagle
+    competition where you were given two questions the core challenge and youre supposed
+    to tell if those two sentences were the same I use this technology heavily in
+    that challenge。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And in the end， I was in the top 7%。 so it worked pretty well。 It got me decently
+    decent decently high up in that particular competition。 We're going to use the
+    big Google news vectors if you click on this。 It takes you to the Github mirror
+    for this。 This is a pretty big file we're using that the 300 so that's 300 length
+    vectors for using training from Google news on words。
+  prefs: []
+  type: TYPE_NORMAL
+- en: if you try to download that they won't let you download it directly because
+    it's simply too big it's 1。53 gigys。 So yeah that's how big it is GZped we need
+    to download that and then represent that into RA so I was using I was using a
+    fairly big if your computer is 16 gigabytes of Ram this this will probably work
+    I was using 32 just to be safe there。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let me go ahead and go back into my I am going to go ahead too and show you
+    what this looks like。Mem wiseSo I am going to create a new terminal。 So this is
+    a Linux terminal on my on my instance。 It's just your typical Linux sort of command
+    prop I'm going to run a command called top and if you've never seen top before
+    in Linux it's kind of like process manager I won't get into what everything is
+    going on here but look at in particular the the memory the memory is being shown
+    in kilo you can hold down shift and E and then it'll switch so now we're in gigabs
+    So if you do a lot of high performance computing you tend to use this use top
+    a lot if you're working in and Linux anyway this is the amount of free memory
+    that I have So this is a 30 gigabte machine that I'm using through AWS it's decently
+    large you can get a heck of a lot bigger than that you can go very large on on
+    memory for sure with AWS but 32 gig is enough this is what I like about。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/1d7fb8556422880891e5b74357c6e1fb_3.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Using AWS instances for this。 I don't have to buy a large computer and have
+    it sitting under my desk losing value very。 very quickly till eventually in the
+    future sometime I take it to technology recycling day I don't need a 32 gig computer
+    very often but when I do I can lease it from Amazon for less than a dollar an
+    hour so we're gonna see how that decreases when we start to load this So this
+    command you can run here will download it for you I already had this file download
+    it on my my instance so I did not need to redownload it。
+  prefs: []
+  type: TYPE_NORMAL
+- en: it goes fairly quickly depending on your internet speed。 This part will take
+    a little bit longer though this is where we're importing Jenison which is the
+    word tove handler that I like to use for Python it's a pretty good one I will
+    go ahead and run that and it will load word tove into into the memory and that
+    takes a little bit I'm going to go ahead。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/1d7fb8556422880891e5b74357c6e1fb_5.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](img/1d7fb8556422880891e5b74357c6e1fb_6.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Run that cell and then I'm going to flip back over to here and you'll see my
+    memory start to go down So 30。3 and while that is going down， it is basically
+    loading that if I just had six if I just had eight I know it would run out 32
+    might be a little bit much I could probably get by with this on a 16 gigabyte
+    instance but we'll see how far that goes down I will let that run and probably
+    speed that up just a little bit okay it appears to be done or at least the part
+    of it that eats up the memory is is done We're left with 24 so yeah it I tried
+    this previously on my 8 gigabyte instance and that that didn't work so well so
+    now it's loaded in I will point out this particular warning slow version of this
+    basically means my packages are not all up to date and that's quite true because
+    I am running a older version of not an older older version but I'm running still
+    the version。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/1d7fb8556422880891e5b74357c6e1fb_8.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Of Tensorflow that I used for the class and that stays the same throughout。
+    So due to a dependency on that version of Tensorflowlow and the latest version
+    of Gsum it can't it can't access its data quite as quickly as it would like So
+    that might be why that load took a little bit longer but it won't hurt the examples
+    that we're going through here So first let me show you just what one of these
+    vectors looks like。
+  prefs: []
+  type: TYPE_NORMAL
+- en: we're just using the word hello So model which is what we loaded in that is
+    just a dictionary。 So we're going to show the entry for hello， it's been loaded
+    into W and I'll print the length of it。 it's 300。 So think of this is pretty much
+    you can see why this is so big if I print so when I print out the length of the
+    models each word is 300 300 numbers we can see this here that is what hello looks
+    like so this is a vector with all of these numbers that。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Defins in highdi space So 300 dimension space a point。 and that's where the
+    word hello happens to be nearby or other words that are closely related to hello。
+    And that's why this is gigabytes long this is 300 floating point numbers just
+    for hello and there are I think probably tens of thousands of words in that dictionary
+    all total all built from Google news。 So let me show you how you can do some sort
+    of linear algebra on this。
+  prefs: []
+  type: TYPE_NORMAL
+- en: you have cat and you have dog and if we run this， it looks up those two vectors
+    and I just calculate the distance between them and print that out if I put something
+    like cat and I don't know car the distance is much bigger Now what you have to
+    be careful with lexical and I mean's there's text analysis Cat and car is only
+    different by two letters So sometimes you you will compare two words using the
+    distance between them。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So how。They are。 so like my name， Jeff and Jeffrey is pretty close because JEFF
+    starts the beginning and you just have that REY on the end。 That's a common type
+    of text analysis。 but Cat and car are pretty close in spelling but very different
+    in terms of what what they mean so we can put it back to that and we could try
+    the example from earlier here she went a cappuccino and so they're about the distance
+    between between cat and dog the robot is probably overstaining that a little bit
+    in the comic where he's saying they are practically the practically the same thing
+    I don't know two other drinks that are very similar like Coke and Pepsi not so
+    similar so that's kind of interesting Coke and pop similar So those words might
+    not have appeared all that often in the Google news。
+  prefs: []
+  type: TYPE_NORMAL
+- en: As as being close and similar to the similar to the same thing so you can try
+    different words here。 you can load the code that I've provided you and experiment
+    with that we could do king and queen which gets into my next example again more
+    similar but this is where you can do math on it and this is really interesting
+    this is an often cited example that you can do queen equals king minus man plus
+    female so if you take the concept of a king you subtract man from it it becomes
+    something like monarch but then you add female to it and it becomes it basically
+    becomes king or sorry queen so if we run this and ask for the most similar to
+    this this sort of equation written written here it comes back with queen Also
+    monarch or perhaps princess so that's that's actually pretty pretty cool that
+    it is able to do expressions like that this is very useful for natural language。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Processing because you can take these vectors and put them in for for the words。
+    It still takes a lot of memory so you're dealing with 300 inputs for each word
+    but that's a lot better than maybe I've seen dictionaries with 65000 words and
+    then then having 65000 dummy variables。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So this is another encoding type that you that you can make use of show you
+    some other things that work vet can do that is pretty interesting。 The following
+    code shows you which item does not belong with others so I have breakfast dinner
+    and lunch and cereal while cereal is something you can eat for breakfast。
+  prefs: []
+  type: TYPE_NORMAL
+- en: it is not really like the like the other ones and it can figure that out。 you
+    can put really anything you want to in here car truck man cat and it'll say cat
+    house。Gruage store and dog。 I've never tried any of these。 We'll see we'll see
+    if it works。 Do， good。 okay。 it was making me lose faith on it a little bit up
+    there with Coke and Pepsi。
+  prefs: []
+  type: TYPE_NORMAL
+- en: but I bet that is the nature of since they're different companies。 Google Google
+    news probably mainly has samples of those where they're being referred to more
+    as as their companies and that shows you the similarity between two two words
+    more as a percent。
+  prefs: []
+  type: TYPE_NORMAL
+- en: so we can do that。 there they're more different。 So it's definitely it's definitely
+    thinking of those as as as companies we do colors I don't know what it does if
+    we do things like iPhone and iPhone and Android since they're very different you
+    can tell Google made this I guess And then you can find words that are the most
+    similar between between some of these So dog puppy pooch cat。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Google。tever Rotweiler， all of these。 And then I have some more links that you
+    might want to explore further on LSTM。 This is the unreasonable effectiveness。
+    This is pretty interesting。 it learns to generate so you train an LSTM on works
+    by a particular author and it learns to generate text that sounds surprisingly
+    like what that that author might generate LSTM music generates music some YouTube
+    videos of music that was generated with it。
+  prefs: []
+  type: TYPE_NORMAL
+- en: and then an earlier paper that led into some of the research that I had there
+    where trying to do natural language processing essentially from scratch。 So forget
+    Wordnet forget all these other things that we've created to help natural language
+    processing。
+  prefs: []
+  type: TYPE_NORMAL
+- en: this just shows you essentially how to how to do that from from scratch。 All
+    right。 this is all I have for this module。 Thank you for watching this video and
+    the next video we're going to take these。![](img/1d7fb8556422880891e5b74357c6e1fb_10.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Various packages that we've learned to use。Spy and word to V and use those to
+    work in conjunction with Kis for natural language processing This content changes
+    often so subscribe to the channel to stay up to date on this course and other
+    topics in artificial intelligence。
+  prefs: []
+  type: TYPE_NORMAL

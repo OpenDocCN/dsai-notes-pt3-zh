@@ -1,0 +1,126 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P14：14）添加滚动条 - ShowMeAI - BV1uL411s7bt
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In this Excel tutorial， I want to show you how to add a form control that gives
+    you a scroll bar to help you adjust numbers in Excel。 If you're not familiar with
+    form controls， you really should look into them。 And if there's a lot of interest
+    in this particular video。 I will make another video that covers more form controls。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So let me know if you're interested in that。 As you can see。 this is a simple
+    inventory for a store that sells Cds in the wonderful genre of synth popop。 And
+    this is just hypothetical， But you can see here at the left。 some of the bands
+    whose music this store carries。 including the latest album by muse。
+  prefs: []
+  type: TYPE_NORMAL
+- en: if you're familiar with the band muse simulation theory is a really good synth
+    pop Cd。 So this just tracks the bands， the albums， the genres and some of the
+    other things like price of the C D。 and the quantity of that Cd that's on hand
+    in the store。 Now， what happens if the quantity changes。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/eb56bb8119a2499455dd0f0f3f8aabc8_1.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Sa that a bunch of Cds are sold。 I need to change the quantity。 Maybe the store
+    goes out and purchases some more Cds。 Again， this number needs to change。 And
+    of course， you can just click and type in the new number on top of it。 but let's
+    look at how to add a form control that can help you do that a little bit faster
+    in some cases。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now to add a form control you need to make sure you have the developer tab here
+    on the ribbon。 And I don't see it there。 So how do I get that onto the ribbon。
+    Basically all you have to do is right click on one of the tabs。 and choose customize
+    the ribbon。 And that should give you a pop up with a bunch of different options
+    that you can add onto the ribbon。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And there is the developer tab。 So I check that box。 click Now I should have
+    a developer tab here on the ribbon。 It took a second to appear。 but there it is。
+    Now that it's there， I can just click on it。 and look for the controls group。
+    This is where you'll find all sorts of interesting and exciting。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Controls that you can add to your spreadsheets。 I'm gonna go here to insert，
+    and I'll click。 and here are the form controls。 And the one I'm looking for is
+    scroll bar。 and here it is。 So I'll click there。 Once you've clicked on that little
+    button。 Excelel now gives you the opportunity to basically draw your scroll bar。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So I'm going put my mouse pointer wherever I want that scroll bar to be located。
+    So right here。 and I'll left click and drag to draw out the scroll bar。 I'll just
+    put it right there。 and it appears。 Now this scroll bar is basically floating
+    on top of the data。 So don't worry if it overlaps your data， it's not going to
+    ruin your data at all。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And it won't even affect your data until you set it up properly。 And I want
+    this scroll bar to effect this number of the quantity of this C。 So now that it's
+    there。 I can just right click on the scroll bar。 and I need to go down and format
+    the control。 Remember。 this is considered a form。Control。 So I want to format
+    the control。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And the most important option here， in my opinion， is this cell link。 I'm going
+    scoot this over to the left。 I need to go down here to sell link and click and
+    put in the cell that it's linked to。 If you prefer， you can just click this button
+    here and then select the cell that you want it connected to。 And then I can just
+    go back up here， click this button to get back into the options。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Another important option here that you need to be aware of is this。 the minimum
+    value and also the maximum value。 So I'll just put the minimum value as being
+    0。 The maximum value right now， it's set to be 100。 I'm going go up to maybe 200。
+    Let's say that this Cd store doesn't want to carry huge inventories。 Let's just
+    limit it to 200。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And then here you can set the incremental change。 So every time I click on this
+    arrow。 this number here will go up by one。 unless you want it to go up by2 or
+    by 5 or whatever。So I'm gonna change it back to one。 Okay， the rest of this， I'm
+    gonna leave as is。 And then I'll just click okay。 Now let's try it out。 So here's
+    my scroll bar。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And you can see there's a gray vertical line， and I can click and hold the mouse
+    click and drag that scroll bar to very quickly increase the quantity on hand all
+    the way up to 200 if I want to。 but let's say it's 175。 I can just click and drag
+    to get it to 175。 You can also use these buttons。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I can click this right button to go up a couple of numbers。 And so you have
+    two ways to adjust the numbers。 gradually one by one or using the scroll bar。
+    you can change the number much more dramatically。 So now， of course。 I could insert
+    another scroll bar for each of these C D titles。 Perhaps a faster way to do that。
+  prefs: []
+  type: TYPE_NORMAL
+- en: though， would be to simply right click on the scroll bar and notice that that
+    also give you the option to resize the scroll bar and also to move it。 So you
+    need to right click on it to get those options back。 But in this case。I just want
+    to copy it and then paste it。 So I'm just gonna do control V to paste。 So now
+    I have a copy of it。 but remember I connected this scroll bar to this particular
+    cell cell F3。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So this new copy of it is also going to affect cell F3 And so I need to right
+    click go down to format control and tell this second scroll bar that it's supposed
+    to affect F4。 So now let's test it and to really test these properly。 you really
+    should click on another cell before you try to use them。 So now that I've clicked
+    away。 I can go back and let's use the scroll bar and look it is affecting the
+    correct cell now So I'm just going to copy paste these all the way down onto as
+    many of these cells as I want。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And I know for sure I'm going need a bunch more of these muse and cosmicity
+    Cs。 so I'm going jump right down there to add scroll bars for them so that I can
+    increase their quantities。 But again， I need to make sure I right click format。Control
+    and link it to the right cell。 just like that。 Thanks for watching。 If you're
+    interested in learning about more of the form controls。
+  prefs: []
+  type: TYPE_NORMAL
+- en: just let me know in the description below。 But in the meantime。 I hope you found
+    this tutorial to be helpful。 If you did， please click the like button below。![](img/eb56bb8119a2499455dd0f0f3f8aabc8_3.png)
+  prefs: []
+  type: TYPE_NORMAL

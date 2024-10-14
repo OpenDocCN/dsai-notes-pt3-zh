@@ -1,0 +1,564 @@
+- en: 【双语字幕+资料下载】“当前最好的 TensorFlow 教程！”，看完就能自己动手做项目啦！＜实战教程系列＞ - P13：L13- 数据增强 - ShowMeAI
+    - BV1em4y1U7ib
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】“当前最好的 TensorFlow 教程！”，看完就能自己动手做项目啦！＜实战教程系列＞ - P13：L13- 数据增强 - ShowMeAI
+    - BV1em4y1U7ib
+- en: Alright， guys， welcome back for another video。 and in this video。 we're gonna
+    to take a look at data augmentation。 So what we have here are just some basic
+    imports for Tensorflow and Ks and then Tensorflow data sets as TFDS that we looked
+    at in the previous video。
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，大家，欢迎回来观看另一个视频。在这个视频中，我们将看看数据增强。因此我们这里有一些基本的 Tensorflow 和 Keras 导入，以及我们在之前的视频中查看的
+    Tensorflow 数据集作为 TFDS。
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_1.png)'
+  id: totrans-2
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_1.png)'
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_2.png)'
+  id: totrans-3
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_2.png)'
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_3.png)'
+  id: totrans-4
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_3.png)'
+- en: And so we're just doing pretty much the same thing as in that video。 we're loading
+    the Cypher 10 data set。![](img/007b8363c10bed4060cf86172290b0d8_5.png)
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们基本上做的和那个视频一样。我们正在加载 CIFAR-10 数据集。![](img/007b8363c10bed4060cf86172290b0d8_5.png)
+- en: And then pretty so this is pretty much copied from the previous video we're
+    doing some normalization of the image so we're divided by 255 and so we're mapping
+    every image through this normalized image。 we're doing cache shuffle， batch and
+    then prefetch and then pretty much the same on the test set except we don't have
+    cache and shuffle。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这部分基本上是从之前的视频中复制过来的，我们对图像进行一些归一化处理，因此我们用 255 来除，映射每个图像通过这个归一化的图像。我们进行缓存、洗牌、批处理，然后预取，测试集几乎相同，只是没有缓存和洗牌。
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_7.png)'
+  id: totrans-7
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_7.png)'
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_8.png)'
+  id: totrans-8
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_8.png)'
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_9.png)'
+  id: totrans-9
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_9.png)'
+- en: And then we have some model that is pretty simple。 We take 32 by 32 and three
+    channels as input。 and the first layer is just a。![](img/007b8363c10bed4060cf86172290b0d8_11.png)
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后我们有一个相当简单的模型。我们输入 32x32 和三个通道，第一层就是一个。![](img/007b8363c10bed4060cf86172290b0d8_11.png)
+- en: Yeah， so it's a very， very small model because this is just a focus on the date
+    augmentation part。 but essentially we have two comb layers， max pool， calm。 flat
+    and and then two dense layers at the end。![](img/007b8363c10bed4060cf86172290b0d8_13.png)
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 是的，所以这是一个非常小的模型，因为这只是专注于数据增强部分。但基本上我们有两个组合层、最大池化、卷积、扁平化，然后最后有两个密集层。![](img/007b8363c10bed4060cf86172290b0d8_13.png)
+- en: And then model compile and model fit for5 epochs， and then model and evaluate。![](img/007b8363c10bed4060cf86172290b0d8_15.png)
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后模型编译和模型拟合 5 个周期，然后模型评估。![](img/007b8363c10bed4060cf86172290b0d8_15.png)
+- en: All right， so what I want to show you are two ways to do data augmentation。![](img/007b8363c10bed4060cf86172290b0d8_17.png)
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，我想向你展示两种数据增强的方法。![](img/007b8363c10bed4060cf86172290b0d8_17.png)
+- en: And so the first one of these assumes that you're working with a Tensorflow
+    data set that is going be the case most of the time。 either you're loading through
+    Tensorflow datas or you're doing custom data loading for your custom data。 which
+    we haven't covered yet， but we will in future videos and so what we're going to
+    do here is we're going to define another function。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 首先，这里假设你正在使用一个 Tensorflow 数据集，这在大多数情况下都是如此。要么是通过 Tensorflow 数据加载，要么是为你的自定义数据进行自定义加载，这部分我们还未讨论，但未来的视频中会涉及。因此我们在这里要定义另一个函数。
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_19.png)'
+  id: totrans-15
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_19.png)'
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_20.png)'
+  id: totrans-16
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_20.png)'
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_21.png)'
+  id: totrans-17
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_21.png)'
+- en: OhWe're going to find another function right here， define augment。 and then
+    we're going to send in image and label。![](img/007b8363c10bed4060cf86172290b0d8_23.png)
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 哦，我们将在这里找到另一个函数，定义 augment，然后我们将传入图像和标签。![](img/007b8363c10bed4060cf86172290b0d8_23.png)
+- en: And there are a bunch of different Tensorflow functions that you can use for
+    date augmentation and I and I will link to the documentation that you can go through
+    all of them。 I'm just going to show you sort of the structure of it and some basic
+    ones。 And then， of course。
+  id: totrans-19
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 有许多不同的 Tensorflow 函数可以用于数据增强，我会链接到你可以查看的文档。我将向你展示它的结构以及一些基本的内容。当然。
+- en: you can add more， if you like or remove some of them。 But so let's say， first
+    of all。 we want to sort of resize the image。 That's a common thing。And in this
+    case， you know。 the images are already resized to 32 by 32， but maybe sometimes
+    the image isn't exactly maybe not all of the images are exactly that size。 so
+    we might need to do some resizing。So what we're going to do is we're going to
+    do new height equals new width。
+  id: totrans-20
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你愿意，可以添加更多，或者删除其中一些。但首先，我们想要对图像进行调整大小。这是一个常见的事情。在这种情况下，你知道。这些图像已经调整为32乘32，但也许有时图像不完全，可能不是所有的图像都正好是这个大小。因此我们可能需要进行一些调整。我们要做的是新的高度等于新的宽度。
+- en: And we're going to specify it as 32。 so we're not going to do any resizing because
+    it's already done。 but just how you would do it。![](img/007b8363c10bed4060cf86172290b0d8_25.png)
+  id: totrans-21
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们将其指定为32。所以我们不需要进行任何调整，因为已经完成了。但这只是你应该如何做的。![](img/007b8363c10bed4060cf86172290b0d8_25.png)
+- en: So image is then equal to T F dot image dot resize。 we're going to send in that
+    image。 and then we're going to specify the new height and the new width。![](img/007b8363c10bed4060cf86172290b0d8_27.png)
+  id: totrans-22
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以图像等于T F dot image dot resize。我们将发送该图像。然后我们将指定新的高度和新的宽度。![](img/007b8363c10bed4060cf86172290b0d8_27.png)
+- en: Alright， then let's say that we want to， I don't know。 convert the image to
+    grayscale so the channels now are three channels right。 let's say we want to convert
+    it to grayscale so that our model can do predictions on grayscale images as well
+    as colored images。But perhaps we don't want to do gray scale on all of the images，
+    right。
+  id: totrans-23
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好吧，然后假设我们想要，我不知道。将图像转换为灰度，所以现在通道是三个通道。对吧。假设我们想将其转换为灰度，以便我们的模型能够对灰度图像和彩色图像进行预测。但也许我们不想对所有图像进行灰度处理，对吧。
+- en: we we want to still have some color。 So with some probability， we want to convert
+    it。 Then you could do something like F TF dot random dot uniform。And you could
+    specify the minve。 say zero， the max value 1。Let's say if that is less than 0。1，
+    which will happen in 10% of the cases。 then what we're going to do is we're going
+    to do Tf doim。 RGB to gray scale。
+  id: totrans-24
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们希望仍然保留一些颜色。因此，在某种概率下，我们想要进行转换。然后你可以做一些像F TF dot random dot uniform的事情。你可以指定最小值，例如零，最大值1。假设如果小于0.1，这将在10%的情况下发生。然后我们要做的是进行Tf
+    doim。RGB转灰度。
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_29.png)'
+  id: totrans-25
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_29.png)'
+- en: Of that image。Now one issue here is that since we're converting to grayscale。
+    the out channel is just going to be one， but of course。 our model in this case
+    is going to expect an input channel of three。 So one way to solve this is that。![](img/007b8363c10bed4060cf86172290b0d8_31.png)
+  id: totrans-26
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 关于那张图像。现在一个问题是，由于我们正在转换为灰度，因此输出通道将只有一个，但当然。在这种情况下，我们的模型将期望输入通道为三个。因此，解决这个问题的一种方法是。![](img/007b8363c10bed4060cf86172290b0d8_31.png)
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_32.png)'
+  id: totrans-27
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_32.png)'
+- en: Is that you can copy that one channel across the three so you can copy that
+    one channel to become three channels except that all of those three will be identical。
+    but that's just so that the model will actually work so you could do something
+    like TF tile。
+  id: totrans-28
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以将那一个通道复制到三个通道中，因此你可以复制那个通道，使其变成三个通道，尽管这三个通道都是相同的。但这样做是为了确保模型能够正常工作，因此你可以做一些类似于TF
+    tile的事情。
+- en: And then you could do 1，1，3。 So essentially here we're going to not copy this
+    dimension。 not copy this dimension here we're going to copy it three times。 and
+    this is the channel for the this is the dimension for the number of channels。![](img/007b8363c10bed4060cf86172290b0d8_34.png)
+  id: totrans-29
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 然后你可以做1，1，3。所以在这里，我们将不复制这个维度。这里不复制这个维度，我们将复制三次。这是通道的维度，这是通道数的维度。![](img/007b8363c10bed4060cf86172290b0d8_34.png)
+- en: this might be a little bit tricky。 so if you don't completely understand it，
+    that's okay。 just make sure that you check out what this T of the tile does and
+    and then just。Really。 the point is that you can use if statements and stuff like
+    that and not have a deterministic augmentation of your examples so you can introduce
+    randomness into your data augmentation。I guess one thing that's really important
+    to say here is that I oftentimes see people talk about data augmentation like
+    you're sort of expanding your data set so that if you have 100 images with this
+    data augmentation。
+  id: totrans-30
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这可能有点棘手。所以如果你没有完全理解，也没关系。确保你了解这个瓦片的T是做什么的，然后就是。真的。关键是你可以使用if语句和其他类似的东西，而不需要对你的示例进行确定性的增强，因此你可以在数据增强中引入随机性。我想这里非常重要的一点是，我经常看到人们谈论数据增强，就好像你在扩展你的数据集一样，因此如果你有100张带有这种数据增强的图像。
+- en: you're going to get 300 or something like that。And that's not really how data
+    augmentation is done。 normally how you do it is that you do it on the fly so that
+    this is done sort of on the CPU in parallel while the GPU is training the model。
+    So while it's training the current batch， it's fetching the next batch and it'
+    doing the augmentation in real time on those images。 And so to。So sort of you're
+    effectively making your dataset set larger。
+  id: totrans-31
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你会得到大约 300 个这样的样本。这并不是数据增强的正常做法。通常的做法是实时进行增强，也就是说这在 CPU 上并行完成，而 GPU 正在训练模型。因此，在训练当前批次时，它会获取下一个批次，并且在这些图像上实时进行增强。所以，实际上你是在有效地扩大你的数据集。
+- en: but it's not really so for example， if you just take a look at this one where
+    for each image we're with a 10% probability。 we're making it grayscale， what is
+    the effective like what is the effective data set size。 when we've introduced
+    this data augmentation， it's kind of tricky to say and especially if you introduce
+    more more randomness。 So let's say for example， we do image equals Tf image random。
+  id: totrans-32
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但这并不完全如此，例如，如果你看看这张，对于每个图像我们以 10% 的概率将其转换为灰度，那么引入这种数据增强后的有效数据集大小是什么？这有点棘手，特别是如果你引入更多随机性。假设我们做图像等于
+    TF 图像随机。
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_36.png)'
+  id: totrans-33
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_36.png)'
+- en: Brightness of image and then specifies max delta in that in the range of how
+    much it can change the brightness。So what is the effective data set size after
+    we introduce something like this when we introduce some random brightness to the
+    image？
+  id: totrans-34
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 图像的亮度，然后指定最大变化量，这在其变化范围内。因此，当我们引入这样的随机亮度后，有效的数据集大小是什么？
+- en: Well， I guess。InInfinite'ca it could could change the brightness of the model
+    just slightly， just。 just very， very slightly on a specific pixel。 And it can
+    do this on every image。So I think that way。Talking about the size of data set
+    after documentation is a little bit tricky。 and so just keep that in mind and。And
+    the one more thing is that all of these are going to be done on each image and
+    it's going to be done in sequence。
+  id: totrans-35
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我想，在 Infinite'ca 中，它可能会稍微改变模型的亮度，只有在特定像素上，变化非常微小。而且这可以在每个图像上进行。所以我认为这很重要。谈论数据集的大小在文档之后有点棘手，所以请记住这一点。另外一件事是，这些操作都将在每张图像上顺序完成。
+- en: So first， we're resizing， then we're doing the random RG I guess， yeah， random
+    RGB to grayscale。 Then we're doing the random brightness。 Then we could add more
+    stuff。And again。 I really encourage you to look out the documentation because
+    there are tons of more。 and you can also create your own sort of data augment。
+    In this case。
+  id: totrans-36
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 首先，我们在调整大小，然后进行随机 RG，我想，没错，随机 RGB 转灰度。接着我们会做随机亮度。然后我们可以添加更多内容。再一次，我真的鼓励你查看文档，因为还有很多其他内容，你也可以创建自己的数据增强。在这种情况下。
+- en: we're just using their their functions， which is good enough for most cases。
+    So we're just going to do TF image random contrast。We're going to send in the
+    image。We're going to specify some lower value and then some upper value and what
+    exactly these functions are doing。 I guess you can sort of print them and see
+    what it does， but exactly what they do。
+  id: totrans-37
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们只是使用他们的函数，这在大多数情况下已经足够了。我们将进行 TF 图像随机对比度。我们将输入图像，指定一些下限值和上限值，至于这些函数具体在做什么，我想你可以打印出来看看它们的作用，但具体的效果是什么。
+- en: I would read read what the documentation for these specific functions。 So this。
+    I guess in this video we're learning how to use data augment。 not really to implement
+    it from scratch。![](img/007b8363c10bed4060cf86172290b0d8_38.png)
+  id: totrans-38
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我建议你阅读这些特定函数的文档。因此，我想在这个视频中我们学习如何使用数据增强，而不是从头开始实现它。![](img/007b8363c10bed4060cf86172290b0d8_38.png)
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_39.png)'
+  id: totrans-39
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_39.png)'
+- en: And so one more thing also is that you can a very common augment is you can
+    flip the image vertically or horizontally。Although I， I would be careful sort
+    of。Depending on the dataset set you have so let's say you're using MNist。 you
+    wouldn't want to flip images horizontally， for example， because for example。 if
+    you vertically and horizontally flip a9 that would inherently change the digit
+    of the image so you want to make sure here that the data augmentation you're doing
+    isn't actually destroying the correct label for the image。
+  id: totrans-40
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 还有一件事是，你可以进行非常常见的增强，可以垂直或水平翻转图像。尽管我会小心一点。根据你拥有的数据集，例如使用MNIST，你不想水平翻转图像，因为例如，如果你垂直和水平翻转一个9，那会本质上改变图像的数字，所以你要确保你所做的数据增强并不会破坏图像的正确标签。
+- en: so just be careful with with data augmentation， more data augmentation is not
+    always better and you need to make sure that everything you do just still still
+    maintain the correct label for every image。嗯。But I mean， let's say you have pictures
+    of of dogs or something。
+  id: totrans-41
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以在数据增强上要小心，更多的数据增强并不总是更好，你需要确保你所做的一切仍然能保持每张图像的正确标签。嗯。不过，我的意思是，假设你有狗的图片或其他。
+- en: then if you horizontally flip a dog that that's still a dog。 So or if you vertical
+    vertically flip it， it's still a dog。 So in many cases it makes sense。 just be
+    careful with it。So then we're going to do image is TF that image that random flip
+    left right of image。And this is going to， in 50% of the cases， randomly flip，
+    left and right。 I would wanted to sort of。
+  id: totrans-42
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 如果你水平翻转一只狗，它仍然是一只狗。如果你垂直翻转，它仍然是一只狗。因此在很多情况下，这是有意义的。只需小心一点。那么我们要做的是图像是TF，图像随机翻转左右。在50%的情况下，它将随机翻转左右。我想做一些。
+- en: That you could choose the probability of flipping。I haven't found a function
+    that can do that yet。 I guess it's not too difficult to implement yourself， but
+    it's available through Pythtorch。 I think TensorFlow could do it as well and hopefully
+    they do in the future。And then you could also do image， TF image， random flip。Up
+    down。Of image。
+  id: totrans-43
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你可以选择翻转的概率。我还没有找到可以做到这一点的函数。我想自己实现并不太难，但它可以通过Pytorch获得。我认为TensorFlow也能做到，希望他们未来能实现。而且你还可以进行图像处理，TF图像，随机翻转，上下翻转，图像。
+- en: I'm not going with 50% probability again， I'm not going to use it in this video，
+    though。And then at the end， we're just going return image comma label。 Allright，
+    so now that we have our。 our function here， what we're going to do is we're going
+    map it。 So， for example。 we're going do it after the shuffle here。 we can do the
+    S train。
+  id: totrans-44
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我不打算再次使用50%的概率，这次视频中不会使用。最后，我们只是返回图像和标签。好的，现在我们有了我们的函数，我们要做的是映射它。所以，例如，我们将在这里洗牌后进行。
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_41.png)'
+  id: totrans-45
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_41.png)'
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_42.png)'
+  id: totrans-46
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_42.png)'
+- en: Equals thetrain dot map and then augment。So it's going to first normalize the
+    image and I guess we could also specify non parallel calls since there's nothing
+    inherently for each image this can be done in parallel。 so that's why we do this
+    non parallel calls。And。
+  id: totrans-47
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 等于thetrain dot map，然后进行增强。所以它首先会对图像进行归一化，我想我们也可以指定非并行调用，因为每个图像本身并没有什么可以并行处理的，这就是为什么我们要进行非并行调用。
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_44.png)'
+  id: totrans-48
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_44.png)'
+- en: Yeah， so I think that's it。 That's really all we need to do to add。 So let's
+    just run， first of all。 to make sure that it actually works and so on。![](img/007b8363c10bed4060cf86172290b0d8_46.png)
+  id: totrans-49
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 是的，我想这就是了。这就是我们需要添加的所有内容。所以我们先运行一下，以确保它实际上能工作，等等。![](img/007b8363c10bed4060cf86172290b0d8_46.png)
+- en: Alright， so it does seem to run。 And again， we're not looking for performance。
+    although I would highly encourage you to sort of in previous videos we've trained
+    on Cypher1on。 I think we got， I don't know， like 78% on the test set or something
+    like that and introducing data limitation。 I think you can do a lot better。 And
+    with some model modifications。
+  id: totrans-50
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好吧，所以它似乎可以运行。再说一次，我们并不关注性能。虽然我强烈建议你在之前的视频中，我们在Cypher1on上进行了训练。我想我们在测试集上得到了78%左右，或者类似的结果，并引入数据限制。我认为你可以做得更好，并进行一些模型修改。
+- en: I think you can do at least get it up to 90% so。That's one thing I highly encourage
+    you to do。 just play around with the code add data limitation and see if you can
+    improve the accuracy and do let me know how it goes for you。![](img/007b8363c10bed4060cf86172290b0d8_48.png)
+  id: totrans-51
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我认为你至少可以做到90%，所以这是我强烈建议你做的。玩一下代码，加上数据限制，看看是否能提高准确性，并告诉我你的进展。![](img/007b8363c10bed4060cf86172290b0d8_48.png)
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_49.png)'
+  id: totrans-52
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_49.png)'
+- en: But so this is one way to do data augmentation。 I'm gonna show you one other
+    way。 And sort of this is the way that I think is recommended。 This is highly efficient。
+    and it's done while your modellish training。 But another way that's common is
+    that you could do。
+  id: totrans-53
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但这是进行数据增强的一种方法。我将向你展示另一种方法。我认为这是推荐的方式。这种方式效率很高，并且在模型训练时完成。但另一种常见的方法是你可以这样做。
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_51.png)'
+  id: totrans-54
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_51.png)'
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_52.png)'
+  id: totrans-55
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_52.png)'
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_53.png)'
+  id: totrans-56
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_53.png)'
+- en: And this is for TensorF greater。Or equal to 2。3。0， which is the latest version
+    as of right now。 And so what we can do is we can do data augmentation， and we
+    can do a sequential model。 So essentially here。![](img/007b8363c10bed4060cf86172290b0d8_55.png)
+  id: totrans-57
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这是针对TensorFlow版本大于或等于2.3.0的，当前最新版本。所以我们可以进行数据增强，并可以构建一个顺序模型。因此在这里。![](img/007b8363c10bed4060cf86172290b0d8_55.png)
+- en: We're we're going to add data augmentation as part of our model and I think
+    there are pros and cons of this。 I think it's more simple because it's just part
+    of your model but I'm not entirely sure if that is actually done while the model
+    is training so for example。
+  id: totrans-58
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们将把数据增强作为模型的一部分，我认为这有利有弊。我觉得这更简单，因为它只是模型的一部分，但我不太确定这是否是在模型训练时进行的，例如。
+- en: for the data augmentation we did here， this is done in parallel while the model
+    is still training on the current batch and this is done on the CPU at the same
+    time so to speak。![](img/007b8363c10bed4060cf86172290b0d8_57.png)
+  id: totrans-59
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在这里进行的数据增强，是在模型仍然训练当前批次时并行进行的，同时在CPU上进行。![](img/007b8363c10bed4060cf86172290b0d8_57.png)
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_58.png)'
+  id: totrans-60
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_58.png)'
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_59.png)'
+  id: totrans-61
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_59.png)'
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_60.png)'
+  id: totrans-62
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_60.png)'
+- en: And I think so you lose some performance doing it this way， but I think it's。I
+    guess。 more simple and。Anyways， we're gonna to do layers that experimental thatt
+    pre processingces。 So。 so it's in the experimental branch。 So as you can see it's
+    this is still new。 That's why it's only available in the in the latest model。
+  id: totrans-63
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我认为这样做会损失一些性能，但我觉得这更简单。无论如何，我们将进行实验层的预处理。所以，正如你所看到的，这仍然是新的。这就是为什么它仅在最新模型中可用。
+- en: And so we're gonna do prepro that resizing。 We're gonna specify height and width。And
+    again。 I'm going to link to the documentation of this experimentalal preprocess。
+    there are a lot of different functions here。But you could do layer dot experimental。
+    dot preprocessing， that random flip。And you can specify a mode and you can specify
+    the mode to be horizontal and vertical or just vertical or just horizontal。
+  id: totrans-64
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以我们将进行预处理，调整大小。我们将指定高度和宽度。再一次，我将链接到这个实验性预处理的文档，这里有很多不同的函数。但你可以使用层.实验.预处理，进行随机翻转。你可以指定模式，可以设置为水平、垂直，或者仅垂直或仅水平。
+- en: So to keep the same data augment we did previously， I'm just going to do horizontal
+    flip。Then we can also do something like layers that experimental， dot preproces，
+    dot random contrast。 and then we specify factor， let's say 0。1。And yeah， that's
+    it。 So you can add more， of course。 you can add a lot more and。
+  id: totrans-65
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 为了保持之前的数据增强，我将进行水平翻转。然后我们还可以做一些像层.实验.预处理.随机对比度的操作，然后指定因子，比如0.1。没错，就是这样。当然，你可以添加更多，可以添加很多。
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_62.png)'
+  id: totrans-66
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_62.png)'
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_63.png)'
+  id: totrans-67
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_63.png)'
+- en: But I think that's fine just for now。 And then what we're going do is we're
+    gonna add it at the top here。 So we're gonna data augment right here。 So it's
+    gonna。runun through the data augmentation and then it's gonna be sent through
+    the layers and so let's just run this and make sure that it works as usual。 Well
+    that was a blunder。 I accidentally stopped the recording and I think I spoke for
+    about 10 minutes so I'll just try to remember what I said so I think so what you
+    can see here that we have 41% after just one epoch and if you and again we don't
+    care about the accuracy here。
+  id: totrans-68
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但我认为现在这样就很好。接下来我们要做的是把它加在这里的顶部。我们将在这里进行数据增强。因此，它将通过数据增强处理，然后发送到各层。所以让我们运行这个，确保一切正常。嗯，这真是个失误。我不小心停止了录制，我想我讲了大约10分钟，所以我会尽量回忆我说过的内容。你可以看到，我们在只经过一个epoch后达到了41%，而且我们并不在意准确率。
+- en: but if you would compare it to what we did previously I think we just had 26
+    or 28% after1 to2 epochs and I guess we were're using the same model right the
+    only thing that difference is the data augmentation so previously we used some
+    more data augmentation in that we had this random brightness and we also had this
+    random gray scale and so。
+  id: totrans-69
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 但如果你将其与我们之前的结果进行比较，我认为我们在1到2个epoch后只有26%或28%，而且我想我们使用的是同一个模型，对吧，唯一不同的就是数据增强，所以之前我们使用了一些更多的数据增强，比如随机亮度和随机灰度等。
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_65.png)'
+  id: totrans-70
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_65.png)'
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_66.png)'
+  id: totrans-71
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_66.png)'
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_67.png)'
+  id: totrans-72
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_67.png)'
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_68.png)'
+  id: totrans-73
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_68.png)'
+- en: When we add this when we add more data augmentation。 we're making it more difficult
+    for the model to overfit to the training data because it's seeing such huge variety
+    of images。So in previous videos， we've talked about regularization in terms of
+    L2 and dropout。
+  id: totrans-74
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 当我们添加更多的数据增强时，我们使模型更难过拟合训练数据，因为它看到了如此多样的图像。在之前的视频中，我们谈到了关于L2和dropout的正则化。
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_70.png)'
+  id: totrans-75
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_70.png)'
+- en: One really powerful method is data augmentation So essentially you know overfitting
+    is adapting too much the training data right it's just one sort of interpretation
+    of overfitting is that it essentially just memorize the training data and memorizing
+    doesn't lead to generalized sort of generalized understanding and so sort of one
+    thing you can do is that if you just think about from your own perspective。
+  id: totrans-76
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 一种非常有效的方法是数据增强。因此，过拟合本质上是对训练数据过度适应，对过拟合的一种解释就是它基本上只是记忆训练数据，而记忆并不会导致一种通用的理解，所以你可以从自己的角度思考一下。
+- en: having more stuff to memorize makes it harder right if you have very few things
+    to memorize it's very easy to just memorize them and it's the same thing for the
+    network so if we're adding more stuff if we're adding more images it makes it
+    harder to memorize them which reduces overfitting So in addition to these L2 and
+    drop out highly they encourage you to try out data augmentation not only for expanding
+    the data set so that the model improves sort the performance of the model is going。
+  id: totrans-77
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 拥有更多的记忆内容使其更难，对吧？如果你要记忆的东西非常少，记忆起来就非常容易，网络也是同样的道理，因此如果我们添加更多内容、更多图像，就会使其更难以记忆，这样可以减少过拟合。此外，L2和dropout非常推荐你尝试数据增强，不仅是为了扩展数据集，以提高模型性能。
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_72.png)'
+  id: totrans-78
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_72.png)'
+- en: To improve as well because of having these more images to train on。 but it's
+    also going to reduce overfitting And so yeah。 I think that's it If you have any
+    questions then leave them in the comment section below Thank you so much for watching
+    the video and I hope to see you in the next one。
+  id: totrans-79
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这样做也会因为有更多的图像进行训练而改善模型性能，但这也会减少过拟合。所以，是的，我想就这些。如果你有任何问题，请在评论区留言。非常感谢你观看这个视频，希望下次再见。
+- en: '![](img/007b8363c10bed4060cf86172290b0d8_74.png)'
+  id: totrans-80
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/007b8363c10bed4060cf86172290b0d8_74.png)'

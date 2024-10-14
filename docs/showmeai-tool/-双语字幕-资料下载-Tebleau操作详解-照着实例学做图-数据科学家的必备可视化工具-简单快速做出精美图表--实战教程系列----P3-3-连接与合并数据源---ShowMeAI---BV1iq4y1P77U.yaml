@@ -1,0 +1,118 @@
+- en: 【双语字幕+资料下载】Tebleau操作详解，照着实例学做图！数据科学家的必备可视化工具，简单快速做出精美图表！＜实战教程系列＞ - P3：3）连接与合并数据源
+    - ShowMeAI - BV1iq4y1P77U
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Hi folks welcome to another episode of Tableau in two minutes today we're going
+    to be demonstrating how to union and how to join data sources within the data
+    source window so we're going to create one data source out of multiple tables
+    to do that I've created a furniture data set pretend furniture sales you can see
+    that we have sales for three months September October and November we have a list
+    of regional leaders we have a list of product leaders and we have the cost per
+    unit and to。
+  prefs: []
+  type: TYPE_NORMAL
+- en: 😊。![](img/367e9a861f5d59f02c38cd30a5009b26_1.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create those to combine these into one big data source。 we're going go ahead
+    and jump into Tau here。 You can see I've already created a connection to the furniture
+    sales Excel sheet。 So the first thing we're going to do is we're going drag out
+    September onto our sales or sorry onto our big furniture sales table here。😊。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/367e9a861f5d59f02c38cd30a5009b26_3.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: You can see that that gives us the sales for September Now we want to also combine
+    this with the sales for October and November it would be a pain to have those
+    as different data sources so we're going to go ahead and drag them out and you
+    can see that if you drag them just underneath each other then you can drag them
+    and drop them where it says drag to union and what that's going to do is it's
+    going to stack the two tables one on top of the other so you can see that now
+    we have September sales down here and October sales up at the top here we'll do
+    the same with November just drop that on the bottom and again you can see that
+    we have now September October and November in our data source the first big table
+    you'll notice it's done two things and it's added two fields to our column the
+    first one is the sheet name。
+  prefs: []
+  type: TYPE_NORMAL
+- en: 😊，And the second one is the table name， both of these happen to be their month
+    in this case。😊。So if we didn't have this month label in our data source。 we would
+    actually be creating another label for each sheet so that we could identify which
+    one was which。😊，The next thing we're going to do is we're going to join our regional
+    leaders to our sales table here so we're going to take regionals out。
+  prefs: []
+  type: TYPE_NORMAL
+- en: drag it out onto the left hand side you'll see it gives us this little Venn
+    diagram here this gives us a number of options for our join you can see that when
+    the center of the Venn diagrams colored then we have an inner join when the left
+    circle is covered we have a left join when the right circle is colored we have
+    a right join and when both circles are colored we have a full join this has automatically
+    picked up our join criteria so we have regional leaders in both。
+  prefs: []
+  type: TYPE_NORMAL
+- en: 😊，Columns， because region， the field region exists in both data sources。We also
+    have this setup up as an inner join。 If you were to write this in SQL。 you would
+    write inner join the two tables on region equals region。Now。 if we wanted to join
+    a second table， we could join our product leaders here。
+  prefs: []
+  type: TYPE_NORMAL
+- en: We'll just drag that and drop that but you'll see that we have a red exclamation
+    point because we don't have matching field names in these two so we need to select
+    the field names from this little list it gives us。 so we'll go ahead and select
+    product from the left data source and then if we look at this one you'll see we
+    have product name So because that field is slightly different we have to specify
+    the join criteria once we've done that it gives us the little inner join sign
+    here。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So again this will be the SQL equivalent of inner join product on。😊。A dot product
+    equals B dot product name or something like that。So with those two tables。Joined
+    up。We now have a pretty comprehensive data source rate， so we have all of our
+    sales。 we have our regional leaders joined， and we have our product leaders joined
+    so we can sum these up by different people。
+  prefs: []
+  type: TYPE_NORMAL
+- en: no matter what the region is and everything like that。😊，If we wanted to add
+    the cost。 we can also drag the unit cost over here again。This is going to give
+    us joining by product name that's exactly what we want we can also set this just
+    so it joins off that main sales table we can set that by product then it's going
+    to go ahead and join by product name I like to set up my join so that they're
+    all set up like this when you do these joins the one thing that you have to bear
+    in mind is that both of these fields have to be the same type so you can't join
+    a numeric。
+  prefs: []
+  type: TYPE_NORMAL
+- en: 😊，A numeric column to a string column， even if they have the same information
+    in them。 you have to make sure you convert them to convert them actually。 you
+    can go down here and you can actually change the type of each column and there's
+    a whole bunch of information that you can use down here You can also set this
+    to a list Sometimes I don't want to see the data Sometimes you want to see a list
+    that makes it a little easier to go ahead and change this icon so we could change
+    this from a string to be a number to be true or false。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/367e9a861f5d59f02c38cd30a5009b26_5.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: And sometimes that's a good way to join things， sometimes you need to manipulate
+    those in order to get the joins correct。 so once we go to the worksheet here，
+    you'll see that Tableau organizes our fields nicely so we have all of our dimensions
+    up here。
+  prefs: []
+  type: TYPE_NORMAL
+- en: we have them organized by data table so we have product leaders regionals。 September
+    plus which is our sales table and then the items from the unit cost table。😊。Or
+    combined into one data source you'll see when you look at the blended data sources
+    video that we have a similar setup。 but we have all of the data sources under
+    different tables up at the top under data that about wraps it up for this episode
+    of Tableau in two minutes if you have any questions please leave them in the comments
+    there is a link to the workbook and to the data source in the video description
+    and if you like what you're hear and you'd like more tableableau tips and tricks
+    then please subscribe to our channel for new videos we'll see you next time。
+  prefs: []
+  type: TYPE_NORMAL
+- en: 😊。![](img/367e9a861f5d59f02c38cd30a5009b26_7.png)
+  prefs: []
+  type: TYPE_NORMAL

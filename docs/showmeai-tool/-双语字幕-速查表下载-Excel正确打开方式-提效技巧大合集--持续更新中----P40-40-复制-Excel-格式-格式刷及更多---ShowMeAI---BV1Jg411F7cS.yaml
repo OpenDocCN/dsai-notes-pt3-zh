@@ -1,0 +1,110 @@
+- en: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P40：40）复制 Excel 格式：格式刷及更多 - ShowMeAI
+    - BV1Jg411F7cS
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '![](img/7eb91780962b82ff6148ac5a771f8a72_0.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: In this video， we're going to focus on how to copy Excel formats in Excel using
+    the format painter and also other methods。 So let's take a look at this spreadsheet
+    here。 a spreadsheet of student test results。 Let's say I decide to spruce this
+    up a little bit。 make it look a little better by applying some format。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Maybe I want the background color of the cell to be a dark blue。 maybe I want
+    the text to be white I think that looks pretty good。 So what if I now want to
+    copy that format to other cells in my Excel spreadsheet。 Well。 one way to do that
+    would be to click on the cell that I want to emulate and then hold control and
+    tap C to copy the cell。
+  prefs: []
+  type: TYPE_NORMAL
+- en: and then I could move over where I want to paste the same Excel format let's
+    say here in J1 and then I would go here to the home tab clipboard ribbon and there's
+    an option here for paste。 If I go to the bottom part of that paste button。 there's
+    an arrow。
+  prefs: []
+  type: TYPE_NORMAL
+- en: An option to paste special and now I can choose formats。 I only want to paste
+    the formats。 I don't want to paste the values or the formulas or anything else
+    just the formats I click OK and it still says top scores it doesn't say student
+    name but the same exact format from D1 has been applied to J1 Now instead of using
+    the tab and ribbon I could have simply held the control key held the alt key and
+    tap V Control alt V gives you that same pastspec dialog box that pops up and so
+    I could have selected formats that way and gotten the same results。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Another option we have for copying Excel formats is to use the format painter
+    Here it is it looks like a paintbrush you can find it on the home tab Home ribbon
+    in the clipboard group and the way this works is kind of confusing at first for
+    people but basically you click on the cell or range that has the formatting that
+    you want then you click the format painter and it seems like nothing happened。
+  prefs: []
+  type: TYPE_NORMAL
+- en: But look at my mouse pointer。 It now has a plus sign next to a paintbrush that
+    tells me that I'm in format painter mode and I can click on anything in Excel
+    to apply that same format。 I'm going undo that now let me do the same thing but
+    this time by double clicking on the format painter。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now I can do the same thing but not just once but multiple times。 Anything that
+    I click now will have the same exact format as is in D1。 So that's a nice quick
+    way to apply a format to multiple cells in Excel。 I could even click and drag
+    a whole range to apply that same formatting to the entire range。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I'll undo that。 Now that format painter also works well with copying the formatting
+    of an entire range。 So for example， with this range here， let's say I want to
+    make it so that all the borders are visible and bolded I want first and second
+    and third place to be bolded as well and maybe I want to add a different color。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Here in column I。 So that's my formatting for this range of data here。 But what
+    if I want to apply all of that formatting to this range below。 it seems like that
+    would take multiple steps， even if I'm using the format painter。 I would have
+    to format paint each cell the way I want it to be right？ No。
+  prefs: []
+  type: TYPE_NORMAL
+- en: actually no if I click and drag and select the entire range。 I can then go to
+    the format painter click and then click and drag the range I want to apply that
+    same format to and I release the mouse button and that formatting is copied exactly
+    to the second range。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I could double click between columns J and K so that you can see that a little
+    better。 same thing between I and J。 So this format painter is a very powerful
+    way to copy Excel formats。 whether you're just simply copying one cell or an entire
+    range of formatting。 It works great。 Let's look at another way to copy Excel formats。
+    Let's say I want to set up my own banded rows in this range。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now there are faster， easier ways to do this but just as an example。 let's say
+    I would like this row。To be light blue， this row to be white。 this row to be light
+    blue again。 Well， I've set up cell D3 to be light blue。 If I want to copy the
+    formatting of this cell across to the right。
+  prefs: []
+  type: TYPE_NORMAL
+- en: what I can do is I could right click on the autofill handle many of you know
+    that the autofill handle this little green square in the lower right corner of
+    this cell that I've selected that enables you to click and drag to either copy
+    or extend the contents of a cell。
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this case， it's copying Betty scrubs across to each of those cells that I
+    dragged the autofill handle over I'm going undo that So that's if you left click
+    What if you right click on the autofill handle。 you can click and drag across
+    release and it gives you options to choose how you want to handle that autofill。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I would like to fill formatting only so it did not change the data itself。 but
+    instead it copied the formatting across like I said before there are easier ways
+    to do that。 but now that you know that you can write。Click on the autofi handle
+    to extend formatting I know that you'll see opportunities when that would be a
+    great way to copy Excel formats So those are a few different ways to copy Excel
+    formats from one cell or column or range to another cell column or range Thanks
+    for watching I hope you found this tutorial to be helpful。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/7eb91780962b82ff6148ac5a771f8a72_2.png)'
+  prefs: []
+  type: TYPE_IMG

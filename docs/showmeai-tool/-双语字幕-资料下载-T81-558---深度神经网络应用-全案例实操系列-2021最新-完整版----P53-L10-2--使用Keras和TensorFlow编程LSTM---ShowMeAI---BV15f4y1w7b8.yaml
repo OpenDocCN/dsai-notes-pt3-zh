@@ -1,0 +1,469 @@
+- en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P53：L10.2- 使用Keras和TensorFlow编程LSTM
+    - ShowMeAI - BV15f4y1w7b8
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Hi， this is Jeff Hea and。 Wecome to applications of deep neural networkss with
+    Washington University。 In this video， we're going to look at LSTM and GU neural
+    networks for time series for the latest on my AI course and projects。 click subscribe
+    in the bell next to it to be notified of every new video。 we are looking at recurrent
+    neural networks。 Recurrent neural networks。
+  prefs: []
+  type: TYPE_NORMAL
+- en: there's a lot of different types of these。 and we'll start by looking at one
+    of the most classic types。 mainly because it's relatively easy to understand。
+    And then we'll look at the more modern ones。 the LSTms and the Gs。 there are definitely
+    some similarities between all of these different types of recurrent neural networks。
+    So the recurrent neural networks。 They usually have some concept of a context
+    neuron。
+  prefs: []
+  type: TYPE_NORMAL
+- en: The context neuron represents a short of short term memory。 It holds a value
+    between calls to the neural network。 So when you're trying to predict with the
+    neural network。 That is one call to the neural network。😊。![](img/d578a667a9760200144c8f5677c9fef3_1.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Then you call it again and again and again， as you predict row row row。 the
+    context neurons start out as zero， but they hold a value as subsequent inputs
+    come to the neural network as a sequence is being processed。 So before we saw
+    that we have these sequences that had values for each of the input neurons coming
+    in。 these context neurons have a zero at the beginning of each sequence and they
+    have the gain of value and they keep updating their value as these sequences are
+    processed。
+  prefs: []
+  type: TYPE_NORMAL
+- en: When you move to the next sequence， this value always goes back to zero。 the
+    context always go to zero between sequences， That's a very important characteristic
+    of them。 So this is an example of two hidden neurons down here that have a that
+    have context。 So instead of simply feeding forward like we have before。We're now
+    going to receive some reflux。
+  prefs: []
+  type: TYPE_NORMAL
+- en: some data back from what we're outputting。 So you have the input。 This is input
+    1， input 2。 going into Hi 1 and Hi 2。 These neurons are going to output something
+    based on the weighted。 sum values that come into them。 and then the activation
+    function。 They're going to produce some output。And in classic neural network processing。
+  prefs: []
+  type: TYPE_NORMAL
+- en: that output would just go on next to the next layer or out of the neural network
+    if this was the final。 but in this case。We're going to take the same value that
+    was output from the hidden neuron onward。 and that dotted line means we're going
+    to copy it to the context。 So typically you'll have one context neuron per neuron
+    on the previous layer。
+  prefs: []
+  type: TYPE_NORMAL
+- en: and you're simply going to copy the output。 There is no weight。 there is nothing。
+    It is simply a copy。 The solid lines have weights。 So what's going to happen is
+    the the input to to this first hidden hidden1 is not just going to be what's coming
+    from the previous layer。 but it's going to get the output from context1。 and it's
+    also going to get the output from context2。
+  prefs: []
+  type: TYPE_NORMAL
+- en: at least in this particular case。 The way that this neuron is is set up。 this
+    network is set up。 These are both weighted。 So it will learn how to process that
+    value， there is no weighting here。 simply whatever was output。To the next layer
+    is also copied to here。 So you're constantly keeping the value from the previous
+    output from the hidden neuron。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And allowing that to stay until the next call， and then you copy it back。 you
+    let it form the input back to the hidden one on on the next call。 and it becomes
+    just part of the input。 So really， it's like there's three input neurons to hidden
+    one。 but two of those are the context layers that are just the outputs from the
+    previous one。 Now。
+  prefs: []
+  type: TYPE_NORMAL
+- en: this output really lives on。 It's not like it just affects the next， the next
+    one and so on。 Since the value that was copied into this context。 it's fed back
+    into here。 it refluxes。 It's almost like butterfly effect。 It has an effect on
+    what this is going this neuron' is going to output。 which then gets copied into
+    here and here and it keeps going for each subsequent call of of this neural network。
+  prefs: []
+  type: TYPE_NORMAL
+- en: That is how the context affects the output over time。 and that is what allows
+    the neural network to be time series。 and the fact that these solid lines that
+    are causing the copy backwards through the neural network。 The fact that they're
+    weighted allows the neural network to learn what to do with this data over time
+    as it comes into the neural network。
+  prefs: []
+  type: TYPE_NORMAL
+- en: That is a time series neural network。 So LSTM neural networks are a way of having
+    that sort of memory。 Now， the really almost layperson a way that I can describe
+    this before we go into it really in too much detail would be if we had a scientific
+    sort of calculator。
+  prefs: []
+  type: TYPE_NORMAL
+- en: we won't even use any of the fancy features of this calculator。 we care mainly
+    about memory plus remember and memory clear。 LSTM neural networks and gated recurrent
+    GRU neural networks have gates and these。are the real innovation of this type
+    of neural network。
+  prefs: []
+  type: TYPE_NORMAL
+- en: They let it remember things for a long time or a short time。 There are three
+    gates that you're dealing with。The input gate。 the forget gate and the recall
+    or sometimes the output gate。 you can think of these gates as dealing with the
+    memory of the neural network or the context。
+  prefs: []
+  type: TYPE_NORMAL
+- en: You can think of as the memory buttons on a calculator。 So say we have the output
+    from the neuron is5。 We have these three gates。 And the three gates。 let you know
+    what you should do。 Should you remember it。 That would be like memory plus So
+    I put it into there。 we have that five now in the context。
+  prefs: []
+  type: TYPE_NORMAL
+- en: when it next works， we might need to decide if we should recall it。 That's the
+    MR button。 that's that's the output or the recall gate。 If you do that， your5
+    comes back。 And then there's also the forget gate。 The forget gate means something
+    happens with the neural network input。 it decides it needs to drop the memory
+    and you can now clear it。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And if you do you can't even do an MR because there is no There is nothing remembered。
+    It's important for these recurrent neural networks to be able to forget。 And that
+    was a limitation of the。Of the element neural network。 you would just have to
+    slowly forget over time The other limitation was you couldn't hold something for
+    a long time。
+  prefs: []
+  type: TYPE_NORMAL
+- en: so the fact that these new neural networks have the gates。 you can remember
+    something and put it into your memory and then forget it later over time It's
+    Otoman said as far as human beings。 one of our greatest strengths and weaknesses。Is
+    to be able to forget if we remembered everything。 our minds would be simply too
+    cluttered and we would not be able to function。
+  prefs: []
+  type: TYPE_NORMAL
+- en: The important thing is knowing what to forget and forgetting only things that
+    are unimportant。 So let's look at the LSTM neural network。 This is a diagram of
+    the LSTM。 you have your output which is essentially Y hat for the current time，
+    previous time， next time。 Now this is not three different LSTMs。 This is the same
+    LSTM and the LSTM is like a neuron in in the network。
+  prefs: []
+  type: TYPE_NORMAL
+- en: you'll have multiple LSTMs， just like you have multiple hidden neurons And you
+    have input。 this is the input over time。 So you just have a single input value
+    for the current previous and next。 and over time。 each each the same LSTM over
+    time is passing the Y hat to the next one。 So the prediction， but it's also keeping
+    a context over time。
+  prefs: []
+  type: TYPE_NORMAL
+- en: all these networks have some sort of context be。neural networks。 classic Elman
+    and Jordan neural networks or be they more modern LSTM and GRU units internally。
+    this is what's going on with a LSTM。 you've got these gates forge gate input gate
+    output gate and you've got a variety of clamping of thresholdholding functions
+    sigmoids and a tan H'll see those in a moment you can look through this diagram
+    if you prefer it basically represents the same thing as these equations。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I almost like to think think of these in terms of the equations and I'll take
+    you through the equations pretty quickly This is essentially looking at a this
+    is essentially looking at sort of a linear algebra computation So you've got the
+    weights that's the weight F weight F is the forget gate weight I the input gate
+    the bias for each of these layers so you have bias neurons and then this vector。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Of the output from the previous one and the input for the current。 This is a
+    vector that you're multiplying that weight over。 So the first thing that you want
+    to do with this， and by the way， S means a sigmoid function。10 H means a hyperbolic
+    tangent before we talk about sigmoid and 10 H。 let me show you that。
+  prefs: []
+  type: TYPE_NORMAL
+- en: notice the shapes of these。 This is a sigmoid function。 it goes from0 to1。 and
+    it clamps these values。 So if if it's very negative。 it clamps it to0。 It's a
+    step function。 It's very positive， it clamps it to one。 hyperbolic tangent。 and
+    by the way。 this has nothing to do with triometry。 machine learning research just
+    like the shape of these more。
+  prefs: []
+  type: TYPE_NORMAL
+- en: so it's a step function。 just another type of step function。 But notice that
+    the that the range is now negative1 to1。 So it's。It's got a bigger， bigger range。
+    and sometimes we need these negative values and we'll see when we go through these
+    equations that we do need those negative values。 So let's go through the equations。
+    The first thing we have to do is calculate the coefficients for the forget gate
+    and the input gate and ultimately the output gate。
+  prefs: []
+  type: TYPE_NORMAL
+- en: because these three values， they're going to be largely zero or one because
+    see these are where the sigmoids are used。 you want those to be0 or1 because those
+    values， you want them on or off。 It's a coefficient So forget if the forget gate
+    is calculated to be0。 it's kind of backwards a little bit， but zero means we should
+    forget one means we should remember。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So we calculate the forget gate based on the sigmoid function。 which flips it
+    sort of into that 01 range by looking at the weight for forgetting。 So this weight
+    for forgetting， that's the training capability。 This value will change as the
+    neural network learns。
+  prefs: []
+  type: TYPE_NORMAL
+- en: and by multiplying by the previous output and the current input that that vector
+    and adding the bias。 which is also a learning parameter。 So by adjusting these
+    two， we learn when to forget。 if F becomes a0， we're going to forget。 If I becomes
+    one， we're going to remember。 So you have the weights， these are exactly the same
+    functions as before these are your two learning parameters。
+  prefs: []
+  type: TYPE_NORMAL
+- en: those will be adjusted， that's how it learns when to when to remember or when
+    to feed the input in。 C is your context。 C with the little tilde above it just
+    means your candidate context Now context。Is the value that it's remembering， The
+    value that it's remembering is the output from the neuron。 The output from the
+    neuroura can be negative one to one。
+  prefs: []
+  type: TYPE_NORMAL
+- en: You can't use a sigmoid for that because negative1 to one， it's going to clip
+    off half the values。 anything below 0。 So that's why we use a hyperbolic tangent
+    is the hyperbolic tangent can flow between negative one and 1。 So we we've got
+    the full， the fuller range of values that we can deal with。But again。 the training
+    works just like just like before。 we have a weight for the context。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So that's how it's learning what to specifically do with the context。 And we
+    have a bias。 This is just the candidate context。 What really becomes the context
+    is this。 And now this is a different format because we're not we're not learning，
+    these are for learning。 This is just a switch gate。 Notice you have the forget
+    and the input。
+  prefs: []
+  type: TYPE_NORMAL
+- en: input says what should go into the context， forget means should we remember
+    the previous context。 Plus just pipes both of those two together。 So forgetting
+    the context。 if this is0 multiplied it's a coefficient， So if it's a0。 if's going
+    to wipe out the previous context because0 times anything is 0 input means so this
+    kills off the previous context if we're forgetting input。
+  prefs: []
+  type: TYPE_NORMAL
+- en: this is why it's like the memory plus button because this is your。Previous context。
+    I'm sorry。 this one's your previous context。 This is the candidate context。 So
+    this is what we calculated up here that might be going into the context。 if we
+    should put something into So then the final now that you've got the output gate
+    created。
+  prefs: []
+  type: TYPE_NORMAL
+- en: your final output is essentially going to is going to come from the previous
+    context multiplied by your your output。 that is essentially how the LSTM is calculated。
+    There's another type of neural of recurrent neural network that is very similar
+    to this。
+  prefs: []
+  type: TYPE_NORMAL
+- en: that is called the GRU。 the gated recurrent unit。 It works really extremely
+    similar to this。 me zoom this in a little bit。 This is the academic paper。 This
+    is not the academic paper that introduced the GRU。 but it's an empirical evaluation
+    gated recurrent。networksworks empirical just means experimental。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So they're not doing any sort of mathematical proof for handwaving。 They're
+    just literally trying to unt testest data and showing you what a GRU can actually
+    accomplish。 in a lot of cases， GRs and LSTMs function really pretty similar and
+    do sort of have a similar accuracy none This paper deals with evaluating more
+    the processing time is a GRU does not have as many gates。 and that makes it more
+    simple。 So you'll notice in the abstract， they're saying that they evaluated。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Also， we found GRU to be comparable to LSTN and they also evaluate on previous
+    nonrecurrent neural networks。 So if we look through the paper the part that I
+    want to show you that is particularly interesting。Is you have here the LSTM that
+    we just looked at with its gates。 you can see the input gate up at the top， the
+    F gate there and the output gate there。
+  prefs: []
+  type: TYPE_NORMAL
+- en: so you have three gates in the recurrent or the GRU you just have the you just
+    have two gates。 R and Z so' it's a simpler sort of algorithm to that and it does
+    not require nearly since there's another gate。 it requires much less computation
+    time and they show you how to calculate these gates。But at the very， very end，
+    the paper gets to showing the learning and showing really that the LSTM and GRU
+    are somewhat equivalent and they show wall clock time。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Notice here， the GRU is taking much less time to process than the G than the
+    LSTM。 So that's that's their advantage。 You can process much more your your training
+    impactpos will take epos will take much less。 much less time。 Now we're going
+    to look at an actual example of LSTM。 We're going to see two examples。 The first
+    example is just really， really simple。
+  prefs: []
+  type: TYPE_NORMAL
+- en: It's meant to show you。What this recurrent type of neural network can do just
+    in its most simple state and yet do something that a normal neural network would
+    not be able to do。 And then the next example will look like we'll look at an actual
+    applications where we look at time series data for sunspots and we'll see how
+    this type of recurrent neural network can predict something that is time series
+    and be able to at least in a very basic way。
+  prefs: []
+  type: TYPE_NORMAL
+- en: predict predict sunspot activity。 So this is showing you how to build a very
+    simple tensorflow through Kiras LSTM neural network。 I'm going to go ahead and
+    run this。 It takes it a moment to train， but it's not too bad。 So it's running
+    there you can see that from the asterisk。 This is showing the neural network how
+    to predict something from time series。
+  prefs: []
+  type: TYPE_NORMAL
+- en: This time series is essentially almost think of it like a camera in front of
+    a house like just a pinhole。Camera， it sees a car driving by and it might see
+    just a little bit of the paint color as the car is going by。 So the same position
+    we're looking straight through。 we're seeing zero。 That means we're seeing nothing。
+    but then at the next time slice， we see a car。
+  prefs: []
+  type: TYPE_NORMAL
+- en: then at the next time slice again。 we still see the car because it's it's going
+    in front of our pinhole that we're seeing。And now we see zero again for the rest
+    of the sequence because basically the car has cleared our pinhole and is moved
+    on its way。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So these are sequences here， a different colored car goes by a two colored car。
+    whatever two happens to be， maybe that's maybe one's red， two's blue， something
+    such as that。 ideally， if we wanted to make this more advanced， we would probably
+    have three inputs。 and we would make this some sort of RGB for each and every
+    single one of these。 but。
+  prefs: []
+  type: TYPE_NORMAL
+- en: We're dealing with a very， very simple example。 I have these training set elements。
+    and I' am setting the Y up so that the Y in this case， it's saying hey。 one colored
+    car went by the second one is a two colored car。 then a three colored car。 Then
+    we have an example of a two colored car again。
+  prefs: []
+  type: TYPE_NORMAL
+- en: and it's two and another example of three and one。 it's teaching the neural
+    network that no matter where at in that sequence it is at you it's still that
+    colored car just this one car it barely made it into our time slice because it
+    showed up later than these other ones。
+  prefs: []
+  type: TYPE_NORMAL
+- en: but it's still a one colored car it the same as this car up here that occurred
+    very early。 So what we do next is we take all of these elements。 and we're going
+    to train it。 Now by the way。 we could represent and there's just one input。 we
+    could represent this as。An oldcho neural network we would have one，2，3，4，5，6。
+    We would have six inputs。
+  prefs: []
+  type: TYPE_NORMAL
+- en: but the problem is the one and we would have to get rid of all these we would
+    if we wanted to do that we would basically get rid of all these whoops not get
+    rid of the number。 but we would get rid of all these square square brackets and
+    we would make them all look like that and it would just be classic inputs we don't
+    want to do that we're treating these as sequences but even if they were classic
+    inputs。
+  prefs: []
+  type: TYPE_NORMAL
+- en: these were all these were all this would be input1 input2 input3。 if you move
+    something that was on input1 to input3。 that's a whole different pattern recognition
+    to the neural network you can't just flexibly move these ones to way over here
+    and have it still recognize it in classic neural networks and LSTms you absolutely
+    can't So this neural network has trained and we have the output here and you see
+    the results from training we trained it for 200 epos that ran for a little while。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Not too bad。 It was running in the background while I was explaining things。
+    And there we we have it。 So now for this neural network， I have this code down
+    here and I can try examples on it now let me this code is meant that I can just
+    modify it in any way than I want to So this is a live demo I don't know exactly
+    what it's going to produce I hope it's going to produce something that makes it
+    look smart that's the idea So this is two so this is a twocolored car that happened
+    to be going through here I can run it and I hope it will say which it does if
+    that twocoled car occurred here got rid of an extra price that I didn't want to
+    it should still say two or not if I forgot a comm my computer was not in insert
+    mode anymore So let's go ahead and run that there it does happen to confuse it
+    if you get near the beginning so that's two as So if we moved it more over there
+    it should still see it as a two if we make it。
+  prefs: []
+  type: TYPE_NORMAL
+- en: LThat could mean it's a longer car， or it could mean that it was a slower moving
+    car。 It still should say two， if we switch this all over to ones， it should recognize。That
+    this is a one colored car， which it does。 If I don't know。 this is a one colored
+    car with a little bit of red two color paint in it may be maybe one is blue。
+  prefs: []
+  type: TYPE_NORMAL
+- en: 2 is red。 See what it does there。 I have no idea what it'll do there。 I recognize
+    it as it as a two car， but at least it doesn't recognize it as say a three or
+    something such as that。So this is learning sequence。 You can see in just a very，
+    very simple。 simple example that it learns to。Recognize these patterns。
+  prefs: []
+  type: TYPE_NORMAL
+- en: and it can even be very short and it recognizes it。So that's the power of an
+    LSTM。 It recognizes these these patterns really sort of over time。 Next we're
+    going to look at sunspots example。 Now you can get daily sunspot data files from
+    this website I have them loaded onto my instance but you would have to download
+    these if you want to run this particular example So let's go ahead and read this
+    in。
+  prefs: []
+  type: TYPE_NORMAL
+- en: This shows you basically the year and it goes back pretty far so 1818 first
+    month first day it gives you and by the way this value is just a way of encoding
+    the date in the year it gives you the sunspot value negative one means that we
+    don't have it and the observation number number of observation So there's quite
+    a bit of missing data near the beginning of the file if we run it and we trim
+    the rows that have missing observations we have 11000 and something and we can
+    also just take。
+  prefs: []
+  type: TYPE_NORMAL
+- en: The what we're going to do is we're going to take the training set of everything
+    before the year 2000。 We're going to take the test set that we're going to evaluate
+    it on is everything after 2000。 And we create a training set for each of these。
+    So we create a set of pandas for the training one for the test for the sunspot
+    value。 That's what we're trying to predict the actual sunspot count。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And we print out the number of observations of each that we have。 So the training
+    data are definitely bigger。 You have nearly 55。 you have over 55000 test set has
+    a little over 6000 values。 Now what we've got to do is convert this into sequences。
+    And this is the this is perhaps the somewhat tricky part of this。 So this takes
+    that sunspot data like we had and converts it into a cube like we're going to
+    use to train the LSTM with to do this what we。is we have to use this two sequences
+    function。 So this gives you the sequence size and then the observations。 So the
+    sequence size is going to be what we define the sequence size to be。
+  prefs: []
+  type: TYPE_NORMAL
+- en: so it's going to be 10 you take the data and you chop out 10 observations then
+    you move forward a little bit chop out the next 10。 the next 10 is a sliding window
+    across and it builds all those rows of of the cube。 but with the observations
+    on back。 So here we have the we have it converted into that sequence。 So we take
+    the window by getting the observations from one up to1 plus up to I plus the sequence
+    size。
+  prefs: []
+  type: TYPE_NORMAL
+- en: we're looping over the entire range of observations。 So whatever the length
+    of observations is up to minus the sequence size so that we stop while we still
+    have enough to build out an entire sequence and we essentially build build this
+    up if we looked at what。
+  prefs: []
+  type: TYPE_NORMAL
+- en: This really looked like X train， I print out the shape of them up here， the
+    shape of them。 so it's got 55，000 rows， it's got。The 10， which is the sequence。
+    but it's only got the one column because it's just the value that we're trying
+    to predict over time。 The number of sunpots。 we just print out X train。 This is
+    kind of what it looks like。
+  prefs: []
+  type: TYPE_NORMAL
+- en: You're seeing the individual sunpot values going across。 It's a three dimensional
+    data structure。 So you have the 255，2，55 up to here。 that's one row。 And you have
+    all of the sunpot values。 the 10 of them across。 There's not enough to display
+    10。 So that's why you've got the the three dots。 Now we are going to try to build
+    the model and fit it。
+  prefs: []
+  type: TYPE_NORMAL
+- en: When we run this。 it's going to train it for 1000 epochs。 And that takes a little
+    bit of time。 We do have an early stopping going on。 So it's not going to take
+    that。It's not really going to take that full amount of time。 this is potentially
+    something that a GPU instance would train a lot faster。
+  prefs: []
+  type: TYPE_NORMAL
+- en: but that we'll see an example of that on the last class use when we do high
+    performance computing and we make use of a GPU instance among other things。So
+    we've got 6131 samples that we're training on。 we report the validation loss。
+    notice it's quickly dropping after we let it go a while， it won't hit the entire
+    1000 it will stop。 but I'll let this run on time lapse here real quick。 All right，
+    early stopping has kicked in。
+  prefs: []
+  type: TYPE_NORMAL
+- en: you can see that that kicked in after 16 Ex and we now have the neural network
+    trained and ready to go and we can see what the RMSsC。 So it's predicting all
+    plus or minus 22 sunspots and can that gives you an idea of the overall accuracy。
+    It's not particularly advanced network， but it does show how you represent the
+    data going in breaking up into those sequences with with the two sequences function
+    that I gave you is definitely the key part of doing that。 Thank you for watching
+    this video。 And in next video。
+  prefs: []
+  type: TYPE_NORMAL
+- en: we're going to look at how we can use LSTMs and CNNNs together。![](img/d578a667a9760200144c8f5677c9fef3_3.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: To caption images this content changes often， so subscribe to the channel to
+    stay up to date on this course and other topics in artificial intelligence。
+  prefs: []
+  type: TYPE_NORMAL

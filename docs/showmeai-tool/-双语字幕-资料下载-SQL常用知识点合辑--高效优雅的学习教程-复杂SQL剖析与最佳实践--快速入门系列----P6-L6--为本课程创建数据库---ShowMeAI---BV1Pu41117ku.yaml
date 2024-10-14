@@ -1,0 +1,172 @@
+- en: 【双语字幕+资料下载】SQL常用知识点合辑——高效优雅的学习教程，复杂SQL剖析与最佳实践！＜快速入门系列＞ - P6：L6- 为本课程创建数据库 -
+    ShowMeAI - BV1Pu41117ku
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 哦。![](img/1793955cfc19fec742600c20f89de07b_1.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this tutorial I'm going to show you how to create the databases for this
+    course。 So here I've got my SQl workbench open。 Let me quickly give you an overview
+    of this interface because the first time you open it。 it might appear a little
+    bit intimidating， but actually it's not that difficult。 So here on the top we've
+    got this toolbar with this buttons for creating a new tab for writing SQL code
+    as well as opening a SQL file。
+  prefs: []
+  type: TYPE_NORMAL
+- en: 😊，And next to that we've got a bunch of buttons for creating a database。 creating
+    new tables and so on On the left side we've got the navigator panel with two tabs。
+    administration and schemas we use the administration tab to do administrative
+    work such as starting or stopping or server。 importing or exporting data and so
+    on。😊，The schemos tab shows the databases that we have in the current database
+    server。
+  prefs: []
+  type: TYPE_NORMAL
+- en: so currently we only have one database that existss and this is the database
+    that my SQl uses internally to do its work Now in the middle we've got this query
+    editor window this is where we write our SQL code So we'll be spending most of
+    our time in this course in this window and on the right side we've got another
+    panel with two tabs context help and snippets the chances are this interface might
+    look slightly different on Windows but what I'm showing you here is almost identical
+    with what we have on Windows so don't get hung of if it looks slightly different
+    on your machine it doesn't really matter Now up here we've got these buttons for
+    showing or hiding this panels So to clean this interface I'm going to hide this
+    panel on the right side as well as the panel on the bottom。
+  prefs: []
+  type: TYPE_NORMAL
+- en: That is better now to create the databases for this course。 download the zip
+    file I've attached below this video。😊。![](img/1793955cfc19fec742600c20f89de07b_3.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: When you extract the zip file， you're going to see a bunch of SQL files like
+    this。 So the main one that you will be using in this tutorial is called create
+    databases do SQL。 So this file contains all the SQL code to create all the databases
+    that we need in this course。 Now we also have individual files for creating individual
+    databases。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I just added these files in case you need to recreate one of these databases
+    in the future。 But for now， don't worry about them。😊。![](img/1793955cfc19fec742600c20f89de07b_5.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now， back to My SQL Workbench， let's open the main SQL file that is create databases。So
+    this is an example of SQL code now this may look complex at the beginning， but
+    trust me。 as you go through the course， you're going to understand exactly how
+    everything works here。 you're going to be able to write SQL code like this。😊。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So we want to execute this to create all the databases for this course。😊，To
+    do that。 we click on this icon， this yellow thunder icon that we have on this
+    toolbar here。 This will execute either the selection or the entire code if there
+    is nothing selected。 For example。 if I select this line here and click on this
+    icon， this will execute only this line in this case。
+  prefs: []
+  type: TYPE_NORMAL
+- en: we want to execute the entire code so we shouldn't select anything。 And now
+    let's execute this beautiful。😊，So here down the bottom。 we have this panel called
+    the output window that shows all the operations performed in our database server
+    so we can check to see if all the operations completed successfully or something
+    went wrong。 As we can see， we've got this green ticks next to each operation Beaful。
+  prefs: []
+  type: TYPE_NORMAL
+- en: so I'm going to close this panel。😊，That's better Now on the left side in the
+    Schemos tab。 currently we don't see the new databases。 So we'll have to refresh
+    this view beautiful。 So we've got all these databases that are prefixed with SQl
+    or SQL。 I decided to prefix them with SQL so we know that these are the databases
+    for this course。
+  prefs: []
+  type: TYPE_NORMAL
+- en: they don't accidentally clash with another database with the same name on your
+    database server。 Now at the time of recording this video， there are only four
+    databases here。 But as we go through the course。 I'm going to update the script
+    for creating the databases。 So when you watch this course chances are you're gonna
+    to see more databases here。
+  prefs: []
+  type: TYPE_NORMAL
+- en: don't worry about the difference。😊，Now as an example。 let's explore one of these
+    databases and by the way， we don't need this tab anymore。 so let's close it， that's
+    better。 Let's expand the SQL store database。😊。Now in every database we have these
+    objects， we have tables， this is where we store our data。
+  prefs: []
+  type: TYPE_NORMAL
+- en: We have views which are kind of like virtual tables so we can combine data from
+    multiple tables and put them in a view。 And this is especially powerful for creating
+    reports。 You're going to learn about them in the future。 We also have stored procedures
+    and functions。 and these are little programs that we store inside of our database
+    for querying data。 For example。
+  prefs: []
+  type: TYPE_NORMAL
+- en: we can have a stored procedure for getting all the customers in a given city
+    So we call that procedure and say。 hey， give me all the customers in San Francisco。
+    and this will return all the customers in San Francisco okay now let's expand
+    the tables。😊，So here are the tables in this database， we have customers， we have
+    orders， products， shippers。 and so on。Now， select this customer's table whenever
+    you hover your mouse or this item。
+  prefs: []
+  type: TYPE_NORMAL
+- en: you should see these three icons on the right side。 click on the rightmost icon
+    that looks like a table with a thunder。With this。 we can see all the data in this
+    table。 so this is our customers table。😊。In this table we have these columns like
+    customer ID which we use to uniquely identify customers。
+  prefs: []
+  type: TYPE_NORMAL
+- en: we also have first name， last name， birth date， phone， address， and so on。So
+    these are the columns in this table and every row is called a record。 so every
+    row represents one customer and these are the pieces of information we know about
+    each customer。😊，Now， let's look at another table。 Let's open the orders table。
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this table we have these columns like order ID， customer ID， order date，
+    status and so on。 What is this customer ID here？We use this column to identify
+    who has placed each order。 Now what is interesting here is that you are referring
+    to these customers using their customer I。 which uniquely identifies them。 In
+    other words， if John Smith has placed an order。
+  prefs: []
+  type: TYPE_NORMAL
+- en: we don't store John Smith here， we only store John's customer I。 Why is that。Here
+    is the reason it is possible that John Smith might have placed multiple orders
+    in our system。 that every time John places an order， we need to look up his address
+    and phone to ship his order。 Now， it is possible that some of this information
+    might change in the future。
+  prefs: []
+  type: TYPE_NORMAL
+- en: John might move to a new place or change his phone number， he might even change
+    his name。 If we repeat all that information next to each order。 then we'll have
+    to come back and make changes in multiple places。 In contrast， with this design。
+    we own store， the idea of John here。 So any time we want to change any information
+    about John。
+  prefs: []
+  type: TYPE_NORMAL
+- en: instead of changing that here， we go back to our customer's table。😊。So let's
+    look at the customer with ID 6 that is actually called ElLca。So here are all the
+    information about ElLca， this is her phone number， this is her address。 and by
+    the way this is all dummy data that I created using a tool。
+  prefs: []
+  type: TYPE_NORMAL
+- en: so if any information about ElLca changes in the future。 this is the only place
+    that we need to modify。So this is how these databases work。 We refer to these
+    databases as relational databases。 That basically means in this kind of databases。
+    we have multiple tables that are related to each other using a relationship。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So internally there is a relationship between the customer table and the orders
+    table。 So the customer ID column and the customers table is related or linked
+    or associated with the customer I column in the orders table。😊，Here's the orders
+    table and here we have the customer ID column。So this was a brief introduction
+    to relational databases。 you learn about databases， tables， columns。
+  prefs: []
+  type: TYPE_NORMAL
+- en: rows and relationships In the next section I'm going to show you how to retrieve
+    data from a single table in this database。 but before going any further as an
+    exercise I want you to explore the invoicing database look at all the tables。
+    look at all the data to get an idea of the kind of data we have in this database
+    we're going to use this database a lot in the future。😊，So we'll spent a couple
+    minutes to explore this database。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/1793955cfc19fec742600c20f89de07b_7.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Yeah。![](img/1793955cfc19fec742600c20f89de07b_9.png)
+  prefs: []
+  type: TYPE_NORMAL

@@ -1,0 +1,617 @@
+- en: 【双语字幕+资料下载】用 Pandas 进行数据处理与分析！真实数据&实时讲解，学完就能上手做数据分析了！＜实战教程系列＞ - P10：10）特殊格式
+    - 日期和时间序列数据处理 - ShowMeAI - BV1M64y187bz
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Hey there。 how's it going， everybody。 In this video。 we're gonna be learning
+    how to work with date and time series data within pandas。 Now。 there's a ton of
+    interesting stuff that we can do with datetime data。 and we'll be learning about
+    that here。 So we'll learn how to properly read in our data so that we can use
+    date time functionality。
+  prefs: []
+  type: TYPE_NORMAL
+- en: We'll also see how to filter by date times how to group dates by resampling
+    the time frames and we'll also take a look at doing some simple plotting with
+    our time series data as well。 Now， I'd like to mention that we do have a sponsor
+    for the series of videos。 And that is brilliant。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So I really want to thank brilliant for sponsoring this series。 and it would
+    be great if you all can check them out using the link in the description section
+    below and support the sponsors。 And I'll talk more about their services in just
+    a bit。 So at that said。 let's go ahead and get started。 Okay， so first of all。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I've been using the stack overflow survey data for this entire series so far。
+    But that data set doesn't actually have any date or time series data。 So I had
+    to choose a different data set for this video。 I downloaded some historical。😊。Cryptocurrency
+    data that we can analyze for this video。 and as usual。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I'm gonna have links to download the data and the notebooks that I'm using in
+    the description section below。 So I've got my notebook opened up here where I'm
+    reading in this CV file of data and let's go ahead and take a look at what this
+    looks like。 So we can see here that I'm loading in this cV file and I called this
+    ETH underscore1 H and that's because this is historical data for Ethereum which
+    is a cryptocurrency and and this data is broken down on one hour segments。 So
+    if we look down here at the head of this data。 we can see that we have some columns
+    here。
+  prefs: []
+  type: TYPE_NORMAL
+- en: the first one is a date column and these are broken down by the hour we also
+    have some other information here like the symbols the open and closing values
+    for these hours。 the highs and lows and also the volume we so all of this here
+    is for let's see March 13 and this is for 8 PMm7 PM。
+  prefs: []
+  type: TYPE_NORMAL
+- en: 6 PMm and so on。 Now， remember， if you want to see more information about your
+    data frame。 So。 for example， how many rows and columns there are， I can run Df
+    do shape。 and we can see that there are 23000 rows here almost 24000 So a good
+    bit of data for us to work with。 so now let's actually get into working with datetime
+    data。 So we have this date column here。
+  prefs: []
+  type: TYPE_NORMAL
+- en: and it looks like this is just giving us every hour of the day。 but right now
+    this isn't actually a datetime object。 I can kind of tell this just because it's
+    not in a format that date times usually display as but if you want to be sure
+    you can always try running ada data pandas datetime method on this to see if it
+    works。 So let me just grab the first row of this data frame and I'll grab that
+    date value。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So and then I'll go ahead and try to run a datetime method。 So to grab that
+    first value。 I'm just gonna say Df Lo and we can see here that the。X is just zero
+    over here。 so I'm just going to pass in a0。 and I want to grab that date column
+    there。 so if I run what we have now， then we can see that I've plucked out that
+    first date。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So now let's just try to run a datetime method on this So there's one method
+    called day name that will give us the weekday that this date fell on but if I
+    run this now and I say okay dot day name for this value here。 if I run this then
+    we can see that we get an error and it says that a string object has no attribute
+    day name and that's because we are reading this in as a string currently So how
+    do we convert this to a date time。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So there's a few different ways that we can do this and we'll go over some of
+    those here。 Now if you want to convert a column like we have here to a date time
+    then we can use the pandas to underscore datetime method So to do this I can simply
+    say we'll access that date column。
+  prefs: []
+  type: TYPE_NORMAL
+- en: We'll set this date column equal to。 and then we'll just say PD for what we
+    imported pandas as to underscore date time。 And now I want to pass in that same
+    column to convert that to a date time。 Now。 I'm not going to run this right now，
+    because if I run this as is then pandas would do its best to figure out the formatting
+    of the date time and convert it accordingly。 but the date time that I have here
+    is in a pretty different format。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So I doubt that this is going work。 but let's go ahead and try it out anyway。
+    Okay。 so I expected to get an error。 if we scroll down and look at the error here。
+    we can see that it says unknown string format。 So it did not know how to parse
+    this date。 But like I said before， depending on how your dates are formatted。
+  prefs: []
+  type: TYPE_NORMAL
+- en: then that might actually work for you。 this just so happens to be format it
+    in a way that pandas can't convert this automatically。 without us telling it how
+    our date is formatted。 So what we need to do here is pass in a format string。ifying
+    how dates are formatted so that it can parse this correctly。 Now I went ahead
+    and I created the correct string format ahead of time for this specific date。
+  prefs: []
+  type: TYPE_NORMAL
+- en: But just to be clear， I never really remember these formatting codes off the
+    top of my head。 I always need to go and find these codes within the Python documentation
+    So I have that page open here。 And I will leave a link to this in the description
+    section as well。 but however your date is formatted here。 So ours started with
+    the year。
+  prefs: []
+  type: TYPE_NORMAL
+- en: so we can see that that is a percent Y and then we have the month day so we
+    can find that in here。 another one is that we have like 8 pm and things like that。
+    so we can see here that these eyes here。 this I is for a 12 hour clock which is
+    what ours is doing。 and then this percent sign P is for the local equivalent of
+    a or pm。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So those are going to be in our format string but I'll leave a link to this。Just
+    in case your date formatting is different and you need to create your own So the
+    format string that I need to pass in here and again。 this is basically just telling
+    pandas how to parse our date we're going to say that first we're going to see
+    the year and then a dash and then the month。And then the day with a dash in between
+    that and then a space and then percent I was that 12 hour clock。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And then there is a dash。 and then it is percent P。 So let me go ahead and run
+    this。 And if I put this in correctly then this should work。 Okay， so we didn't
+    get any errors there。 But let's go ahead and make sure。 So I'm going to go ahead
+    and look at the date column here。 And we can see that now these look more like
+    datetime objects that we might be used to seeing in programming。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So it converted 11 pm to 23。 well， I'm sorry， I thought 11 pm was the first
+    one。 No， it's 8 p。 Okay。 so it converted 8 pm to 20 and 7 pm to 19 and so on。
+    And now that this is converted to a datetime。 we should be able to run these datetime
+    methods that gave us an error before。 So up here where we got this error where
+    we tried to grab the day name for these。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I'm just going to copy that and paste that in down here and now let's try to
+    rerun this and we can see that now it's saying that that first date in our series
+    here。 this March 13 was a Friday so that's nice So it looked like it works。 Now
+    the way that we did this here is that we converted this to a date after we loaded
+    in our data with this line right here but if we wanted to convert this to a date
+    as we're loading in our data。 then we can also do that as well。 So if I go up
+    here to the top where we loaded this in at this read CSsv line here。
+  prefs: []
+  type: TYPE_NORMAL
+- en: then I can actually pass in some arguments to read CSv so that it loads in certain
+    columns as date times and then we can pass in our formatting string as well so
+    that it parses those as the data is read in so to do this we need to pass in this
+    parse dates argument here and now I'm just going pass in a list of the columns。
+  prefs: []
+  type: TYPE_NORMAL
+- en: arere going to be dates。 We only have one here， so it's just going to be a list
+    of one item oops。 and I meant to put date， not dates and。Now， just like with before。
+    if your dates are already formatted in a way that pandas can parse them。 then
+    you don't need to add anything else here。 but we already saw before that we need
+    to pass in a specific format。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So to do this here， we can't just pass in a format string We instead need to
+    pass in a function that converts each string to a datetime object。 So first， let's
+    create that function。 And we've seen lambda functions in this series before。 but
+    just in case you're unfamiliar with those。 you can simply create a normal function
+    instead if you are more comfortable with those。 but this is just a shorter way。
+    So to create this lambda function。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I'm just going call this D underscore parser， I'm going to set this equal to
+    a lambda function。 And I'll just use x as the variable here。 and now what do we
+    want to return。 So when we used P do2 date time down here。 we actually pass in
+    an entire series to PD2 date。TimeBut now this is actually just going to be each
+    individual string and it's going to send each individual string through this function。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So in order to convert this， we can use a function called PDd dot date time
+    dot SP time。 That's how we convert a string to time。 and then we can just pass
+    in。Our string that we went converted to a date time and then the format and already
+    had the format down here。 So I'll just go ahead and copy that and paste that in
+    here。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And that's all we need for that date parser function。 So now the argument for
+    the date parser is date underscore parser。 and I'm going to set that equal to
+    that D pars variable there that is set to our lambda function。 Okay， so now if
+    I run this cell here。 Then we can see that we didn't get any errors。 So that's
+    good。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And now if I run this D F dot head here。😊，Then we can see that now our data
+    frame was already loaded in as a date time。 So we didn't have to do any conversions
+    later on。 It just did it as it was reading in that CSv file。 Okay， so now let's
+    look at some more useful things that we can do with date times。 So first I'm going
+    to delete the sales that we have below here so that we are not converting these
+    columns again since they're already loaded in as dates。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So I'll delete that one， I will delete that one since that was what was converting
+    it earlier I'll delete that as well。 and I'll keep this one here just for reference
+    since I will have these up on my Github afterwards Okay。 so before actually right
+    here， we saw how to run a datetime method on a single value when we use this day
+    name method but what if we want to run that method on our entire series So let's
+    say that we wanted to view the day name of this entire date column here。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So to do this we can access the Dt。Class on the series object and access the
+    datetime methods that way。 so to do this。We can just say we can first grab that
+    series so that date column is going to return a series。 If I run that， we can
+    see that we get all those values。 And now if we wanted to access the Dt class
+    on the series object then we can just say dot Dt。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And now the date time method that we want to use。 So if I want to get the day
+    name of all these values then I can just do day name there。 And if I run that，
+    then we can see that we get the day of the week for each of the dates in this
+    series。 So using the Dt class on the series object is very similar to how we access
+    the string class or the STR class for the string methods on an entire series。
+    and we saw that in previous videos。 So this can definitely be pretty useful。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So let's say that we wanted to you know create another column so that we could
+    quickly reference what day all of these trades took place。 So to do that we could
+    just grab what we have here。 and I could simply create a new column。😊。By simply
+    like I'm accessing a column。 so I could call this column day of week and set this
+    equal to and paste in that date time method there。 If I run this。 and then we
+    look at our data frame。
+  prefs: []
+  type: TYPE_NORMAL
+- en: then we can see that now we can quickly see over here on the right that okay
+    the 13th was a Friday and then we have these dates down here towards the end。
+    this was a Saturday， so it's nice to see about be able to see what days these
+    trades actually took place。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So now let's look at how we can explore our data a bit。 So we can see by looking
+    at the indexes here on the far left。 that there are over 20000 rows in this data
+    set。 So let's see how we can view the earliest and latest dates in this data So
+    to do this。 we can use the min and max methods So to see the earliest date I could
+    simply access。😊。
+  prefs: []
+  type: TYPE_NORMAL
+- en: This date series here。 and I could just run the min method on this。 And I run
+    that。 then we can see that the earliest date that it gives us is 2017，0，7，0，1。
+    Now if I wanted to see So what is that。 That's July 1 of 2017。 So to view the
+    most recent date that I have。 And it should be the date that I downloaded this
+    data。
+  prefs: []
+  type: TYPE_NORMAL
+- en: then I can just look at the max value here。 And if I run this。 then we can see
+    that this is March 13，2020， which actually was the day that I downloaded this
+    data。 And one really cool thing with date times is that we can actually subtract
+    dates in order to view the time between those two dates。 And this is called a
+    time delta。 So to get the amount of time that spans between these two dates here。
+  prefs: []
+  type: TYPE_NORMAL
+- en: then I could simply say take the max value。 and then subtract the min value。😊，And
+    if I run this。 then we can see that we get this time delta that says that there
+    are almost 1000 days between the earliest date in our data set in the most recent。
+    So we have 986 days in this entire data set of cryptocurrency data almost 1000。
+    So that would definitely be a lot of days to look through if we want to find some
+    specific ranges。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So what if we wanted to do some filters by date。 So for example。 let's say that
+    we just wanted to view the data for 2020 Now that we have these converted to date
+    times。 we can create filters just like we have in previous videos。 and we should
+    be able to use strings that are formatted like date times or we can use actual
+    datetime objects。
+  prefs: []
+  type: TYPE_NORMAL
+- en: We'll take a look at both。 So let's see an example of this and some code so
+    that it makes some more sense。 So first， I'm going create a filter in a separate
+    variable like I've done in previous videos。 But you can also do this in line if
+    you prefer to do it that way。 I just think that。Our filters separate as a little
+    bit easier to read。 So let's say that I want our。Date series。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I want the objects or the rows that are greater than。 And then I'm just gonna
+    pass in a string here for now。 And I can just pass in a 2020 there。 And pandas
+    will know that I'm talking about the year 2020。 let's actually do a greater than
+    or equal to here。 Okay， so now that I have that filter。
+  prefs: []
+  type: TYPE_NORMAL
+- en: let's just do a Df do Lo。 again， we've seen this in previous videos。 And then
+    I'll pass in that filter。 So if I run this。 then my bottom row here should be
+    January 1 of 2020。 And it is。 And we can see that we have 17000 hours here of
+    2020 data。 or I'm sorry that's 1700 hours of 2020 data。 Okay。 so the reason that
+    this doesn't go above 2020 is simply because you know， our latest data runs out。
+    So we're not getting 2021 since 2021 hasn't happened yet。 But what if we wanted
+    data for 2019。😊。Well， in order to do that， we'd also have to put in an upper bound
+    as well。 So to do that。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I'm going to say， okay， we want。Our data to be greater than or equal to 2019
+    and。And we just want to do an amperign there。 I'll go ahead and copy this here
+    and then just replace this with a less than and we'll say less than 2020。 if I
+    run this then we can see that our bottom row here we have January 1 of 2019 at
+    midnight and then our top row here is December 31 at 11 pm of 2019。 So that gives
+    us all the rows of data that we have for 2019。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And right now we're just using strings up here for these comparisons but we
+    can use actual date times as well。 So to do that we could actually say I could
+    just say PDd datetime and then let me go ahead and pass in the month and day here
+    as well。 So I'll say that I want this to be greater than 2019 January 1 and then
+    I'll just grab this here and replace this 2020 and then I'll。But I want this to
+    be less than 2020s January 1 So now if I run this whoops and I got an error here
+    it says you know integer is required。
+  prefs: []
+  type: TYPE_NORMAL
+- en: got a string that might not make sense what I did here is I don't want PD date
+    time that was my mistake I want to do the same thing that we did before and do
+    two date time so that it converts this string here to a date time So let's do
+    PD。2 datetime for both of those and run this and now we can see that we get those
+    same results as before for all of the rows in 2019 Now one nice feature about
+    dates is that if we set our index so that it uses the date which would actually
+    be a good idea for this data set since all of these date or timestamps are unique
+    then we can actually do this same thing by using slicing instead So let's see
+    what this looks like so that it makes more sense。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So first let's set our index so that it's using。This date column here。 So here
+    at the bottom。 I'm going say Df set underscore index and then I'm going to pass
+    in that we want to set the index to date and if I run this then that looks good
+    we have set it our index to use date here and now that that looks good。
+  prefs: []
+  type: TYPE_NORMAL
+- en: it actually didn't make that change， I want to say in place is equal to true
+    to make that change permanent so I'll run that and if we look at our data frame
+    again。 then now we have that date as our index and now with that date index we
+    can actually filter our dates just by passing them into our brackets so if we
+    wanted the data for 2019 then I could literally just say that I want the data
+    here for 2019 pass that into my brackets if I run that then we can see that we
+    get the same thing here we get this value for January 1 and the top value。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Here is for December 31 so it's a bit easier to you know just access these within
+    brackets when these are our indexes rather than creating a filter now if you want
+    to grab dates for a specific range then you can use a slice so let's say that
+    we wanted all of the data for January and February of 2020 so to do that using
+    this slicing here then I could say okay I want from 202001 which would be January
+    and then I could just do a slice here using that colon and then say okay well
+    I want to go up to February of 2020 so if I run this the second value here is
+    inclusive so we can see that we have January 1 of 2020 down here at the bottom
+    that slices all the way up to February 29 since this was a leap here now this
+    can be really useful。
+  prefs: []
+  type: TYPE_NORMAL
+- en: For analyzing our data， because let's say that we wanted to get the average
+    closing price for Ethereum for all of our rows of these dates to do that。 we could
+    simply grab this close column here。 and then grab that average or grab that mean。
+    So to do that， we can just say， let me copy this part here。 first。 let me just
+    access that close series there， that column if I run that。
+  prefs: []
+  type: TYPE_NORMAL
+- en: then we can see that we get all of those closing values on each of those hours
+    for all of those days。 and now to get the mean of that， I can just say。Dot mean。
+    And that gives us the average closing price for all of those rows within that
+    time frame。 And remember， each of those days is reporting by the hour。
+  prefs: []
+  type: TYPE_NORMAL
+- en: But what if we wanted to see this data in a different way。 What if we instead
+    wanted to look at this data on a daily basis instead of on an hourly basis。 Well。
+    first， we need to think about what would make sense to view on a daily basis。
+    So for example。 let's say that we wanted to， you know， view the highs for each
+    day。 So right now。
+  prefs: []
+  type: TYPE_NORMAL
+- en: we have all of these highs broken down by hour， let me actually look at the
+    first。 let me grab this date range here， And let's look at the first 24 of these
+    so that we can get 24 hours here。 So we can see that for February 29。 We have
+    all these different hours here and each hour has a different high value。 But what
+    if we were like， okay， well， we see all these different high values。
+  prefs: []
+  type: TYPE_NORMAL
+- en: But what was the highest value of the day So actually。 let me just grab a single
+    day here and then we will look at the high values for that So instead of doing
+    all of these dates here I'm just going grab January 1 of 2020 and then we will
+    look at the high values for that day So again。
+  prefs: []
+  type: TYPE_NORMAL
+- en: we don't really care what the highs are for each hour of each day we just want
+    to know the high for the entire day So to do this all we need to do is grab the
+    max value for this series and we saw how to do this it's just like running mean
+    right here all we have to do is say dot max and if I run that then we can see
+    that the high value for that day was 132。
+  prefs: []
+  type: TYPE_NORMAL
+- en: 68 so let's remember this value here right now， this 132。68 because we're going
+    to see how we can resample our data so that we can get the high。Ts for each day
+    of our data。 And then we'll use this one here to compare for January 1 of 2020。
+    So again， right now， our data is broken down on an hourly basis。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So if we want to redo this so that it's instead broken down by day or week or
+    month。 then we'll do this by doing something called resampling。 So let's see what
+    this looks like。 So if I want to resample this and see the high value by day。
+    Then I can simply。Access this high column here。 And then on that series， I can
+    say， okay， I want to resample this。
+  prefs: []
+  type: TYPE_NORMAL
+- en: and now we have to tell resample how we want to resample this data right now。
+    it's hourly if I put in a D， then it resamples it to days。 and I can do 1 d or
+    2 d。 you can do whatever there。 you can do a w for week。 there's all kinds of
+    different codes here。 Now just like with these date time formats。 I hardly ever
+    remember these。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So I always need to look them up in the documentation。 So I've got this pulled
+    up in the pandas documentation here for these date offsets。 and I will leave a
+    link to this page in the description section below as well。 if you all would like
+    to try out some of these。 but we can see we have hour minute second milliseconds。
+  prefs: []
+  type: TYPE_NORMAL
+- en: microseconds， all kinds of things。 If you're doing finances。 you can do quarterly
+    and things like that so。I want to do this on a daily basis。 So I'm going to put
+    a D there。 And now we have to tell it， okay， well。 what do we want to do with
+    these resamplings if I'm looking at entire days here。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So if I take this entire day of the first， what do I want to do with this high
+    value。 And we're just saying， well， we want the max value for each of those days。
+    So if I run this。 then we can see that that gives us a series with all of the
+    high values for each day。 So now let's save this series here as a new variable
+    and look up these specific date that we used before。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So I'm going to save this as a variable and call that highs。 And then。Let's
+    access that specific date of 20200101 for the highs。 Now。 what we should get here
+    since we're using the same date that we did here。 we should get this value of
+    132。68。 So if I run that。
+  prefs: []
+  type: TYPE_NORMAL
+- en: then we can see that the high for that day was， in fact， equal to what we did
+    here， So that works。 But now instead of just getting one day at a time like we
+    did here。 now that we've resampled this now we have those high values for every
+    single day in our data。 Okay。 so why would something like this be useful？ I mean。
+  prefs: []
+  type: TYPE_NORMAL
+- en: you know that might be useful just because it's interesting。 but there are other
+    things that we can do as well。 So let's say that maybe we wanted to plot this
+    out。 But instead of you know viewing a plot that had these prices broken down
+    hour by hour。 now we can just do a plot for the total price broken down by day。
+    So within Jupyter。Notbooks。 it's extremely easy to plot out information。 I'm actually
+    going to do an entire series on plotting with pandas。 so I'm not going to go into
+    a ton of details in this video。 but we will see how we can do a very simple line
+    plot here So to do this we first need to use this special line within Jupyter
+    notebooks that allows our plots to display within the browser So all we have to
+    do is say this is a percent sign here then we can say mappl lib in line now one
+    thing that I do want to mention here is that I did have to go and install mapplot
+    lib in the virtual environment that I'm using so if you've only installed pandas
+    or and that's it then you might want to go back and install mapplotlib or else
+    you'll get an import error here。
+  prefs: []
+  type: TYPE_NORMAL
+- en: but I went and install that in my virtual environment so we can see that that
+    worked there and with that one line of code there now we。Can display plots directly
+    within our Jupiter notebook。 So I can simply run the plot method on this data
+    frame variable that was resampled and get a plot of that。 So I'm just going to
+    say， okay， I want highs。Plootted out。 So highs dot plot。 I'll run that。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And we can see that we get a nice mattepllib plot here。 Okay， so that's， you
+    know， pretty nice for。 you know， just a few lines of code there。 Now one thing
+    that you might be wondering is if it's possible to resample multiple columns at
+    once。 And we can do that by running the reample method on our entire data frame
+    instead of one a single series。 So for example， what do I mean by this。 Okay，
+    so whenever I say， you know。
+  prefs: []
+  type: TYPE_NORMAL
+- en: resample multiple columns at once。 I mean that what if we wanted to resample
+    this by day。 But so far， we've only seen， okay， how we got the high value， But
+    what if we said， okay。 well I want to reample this by day。 But I also want， you
+    know。 the average closing cost of that entire day。 I want the sum of all of these
+    volumes for that entire day。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And then I want the you know。😊，The max high value。 And I want the min low value。
+    So the way that we've done that down here where we just access that single column
+    we wouldn't be able to do it using this method that we did here。 So in order to
+    resample and use multiple columns like that。 here's how we can do this。 So we
+    can do this by running the resample method on our entire data frame。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So if you want to use the same aggregation method on all of your columns。 So
+    for example。 let's say Df do resample。 So now we're resampling our entire data
+    frame object here。 And now we're gonna to pass in what we want to reample on。
+    instead of day let's change it up and do weak。 Now we'll reample by each week。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So if you want to use the same aggregation method on everything。 then you can
+    just put in that aggregation method there。 So if I run this。 then this is gonna
+    give me the mean values for。each of our columns on a weekly basis Now this is
+    cool that we can do this and sometimes you might want to do something like this。
+    but in this instance， it doesn't really make sense to use mean to get the average
+    of all of our columns So for example。
+  prefs: []
+  type: TYPE_NORMAL
+- en: there's no real reason to get the average volume per hour or something like
+    that。 you've probably want to get the sum for the entire time period or for our
+    high and low values here。 these are giving us the average highs and the average
+    lows but the point of a high and low value is to know the high for that time period
+    and the low for that time period。 So we probably don't want mean here either。
+    So how can we resample this to where we can you know resample and use multiple
+    columns but also use multiple aggregation methods。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now we've actually seen this in previous videos and use this method But what
+    we want to use here is the A G the ag method and the ag method also accepts a
+    map。Of columns and the aggregation functions that we want to run on that column。
+    So， for example。
+  prefs: []
+  type: TYPE_NORMAL
+- en: let's do this with the values for， let's see。 We'll do the closing column。 We'll
+    do the high and low columns， and then we'll also do the volume here。 So I'm going
+    to grab this from up here。And then we'll do D F dot resample。 and we'll pass in
+    a W for a weekly basis。 And now， instead of passing in dot mean。
+  prefs: []
+  type: TYPE_NORMAL
+- en: like we did up here， I'm going to pass in dot A G G。 And now I can pass in a
+    dictionary of the columns and or the column names。 And then the values will be
+    the aggregation function that we want to use on that column。 So。 for example，
+    let's say that for the closing value。 I do want to grab the mean of that。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And then I'll say for the high column。 I want to use the max。Aggregation function
+    for that。 Since we want the max value for the low column， I want to get the min。And
+    for volume。 I'll go ahead and just sum up。All of the volume for that entire time
+    period。 Okay， so again。 the keys here for the dictionary that we passed into ag，
+    the ag method。
+  prefs: []
+  type: TYPE_NORMAL
+- en: this is the column name here。 then this is the aggregation function。 So we're
+    taking the mean of clothes。 We're taking the max for this entire weekly period
+    here。 for the highs the min for the low and then sum for volume。 So if we run
+    this。 then it gives us this nice weekly overview of the you know the weekly highs
+    and the weekly lows here。
+  prefs: []
+  type: TYPE_NORMAL
+- en: and also the average closing costs here。 And we also have the summation of the
+    volume of trades。 So。 you know， this really touches on what we can do with date
+    times and time series data in pandas。 like I said a little bit ago。 I do plan
+    on doing a full series on pandas plotting where we'll cover more advanced topics
+    you know。 such as plotting plotting things out and having rolling。Averages for
+    data and things like that。 Now。
+  prefs: []
+  type: TYPE_NORMAL
+- en: before we do end here， I do want to thank the sponsor of this video， and that
+    is brilliant。 and I really enjoy the tutorials that brilliant provides and would
+    definitely recommend checking them out。 So in this series， we've been learning
+    about pandas and how to analyze data in Python。 And brilliant would be an excellent
+    way to supplement what you learn here with their handson courses。
+  prefs: []
+  type: TYPE_NORMAL
+- en: They have some excellent courses and lessons that do a deep dive on how to think
+    about and analyze data correctly。 for data analysis fundamentals， I would really
+    recommend checking out their statistics course。 which shows you how to analyze
+    graphs and determine significance in the data。 And I would also recommend their
+    machine learning course。
+  prefs: []
+  type: TYPE_NORMAL
+- en: which takes data analysis to a new level where you' learn about the techniques
+    being used that allow machines to make decisions where there's just too many variables
+    for a human to consider。 So to support my channel and learn more about brilliant。
+    You can go to brilliant org forgelash cs to sign up for free。 And also the first
+    200 people they go to that link will get 20% off the annual。😊。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/cfdbb346186d8f4761ed57fbc05d2db1_1.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](img/cfdbb346186d8f4761ed57fbc05d2db1_2.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](img/cfdbb346186d8f4761ed57fbc05d2db1_3.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](img/cfdbb346186d8f4761ed57fbc05d2db1_4.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](img/cfdbb346186d8f4761ed57fbc05d2db1_5.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](img/cfdbb346186d8f4761ed57fbc05d2db1_6.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Premium subscription。 And you can find that link in the description section
+    below。 again。 that's brilliantt org Forlash C。 Okay so I think that's gonna do
+    it for this pandas video。 I hope you feel like you got a good idea for how to
+    work with date and time series data within pandas。 And like I said， there's a
+    lot more that we can cover with datetime data。
+  prefs: []
+  type: TYPE_NORMAL
+- en: But I feel like what we did here should definitely provide you with the basics
+    of being able to convert analyze and resample your data so that you can do the
+    exact analysis that you need。 Now in the next video。 we're gonna be learning how
+    to read data in pandas from different sources。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So far in this series we've only coveredv files， but we're gonna learn how to
+    read in data from Excel websites SQl databases and a few more。 So be sure to stick
+    around for that。 But if anyone has any questions about what be covered in this
+    video feel free to ask in the comment section below。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And I'll do my best to answer those。 And if you enjoy these tutorials。😊，Like
+    to support them。 Then there are some ways you can do that。 The easiest ways to
+    simply like the video and give it a thumbs up。 And also， it's a huge help to share
+    these videos with anyone who you think would find them useful。 And if you have
+    the means， you can contribute to Patreon。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And there's a link to that page in the description section below。 Be sure to
+    subscribe for future videos。 And thank you all for watching。😊。![](img/cfdbb346186d8f4761ed57fbc05d2db1_8.png)
+  prefs: []
+  type: TYPE_NORMAL

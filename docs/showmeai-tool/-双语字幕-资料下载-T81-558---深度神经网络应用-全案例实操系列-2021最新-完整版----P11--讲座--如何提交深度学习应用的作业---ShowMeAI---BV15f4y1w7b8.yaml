@@ -1,0 +1,277 @@
+- en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P11：[讲座] 如何提交深度学习应用的作业 -
+    ShowMeAI - BV15f4y1w7b8
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Hi， this is Jeff Hayton， welcome to applications of Deep neuralural Networks
+    with Washington University。 so there are 10 module assignments for my course，
+    and these are short Python assignments that you'll complete just to prove your
+    understanding of what we covered in each of these modules。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now， when you submit them to my API that I have running。 there is a auto checker
+    that runs and lets you know really how well you did on the assignment before I
+    actually go through and grade it for real。 This just gives you a chance to submit
+    it， resubmit it。 make sure that there's no simple errors there。 The final grade
+    going into canvas occurs when I actually。
+  prefs: []
+  type: TYPE_NORMAL
+- en: when the due date passes。 and that's a semi automated process as well。But those。
+    that's the point at which your grade actually goes into Canvas。Now I send out
+    these API keys to Washington University students， if you're enrolled in my class。
+    you should have gotten an API key from me if you did not please contact me and
+    I will be sure to send you one。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Usually I send these all out about a week before class actually starts。If you're
+    not enrolled at Washington University， you just want to make use of the auto checker。
+    then you can click on the Patreon link that is on the About page for my YouTube
+    channel and I offer that at one of the levels。That's the only grading that I offer
+    for anybody outside of Washington University outside of WasU。
+  prefs: []
+  type: TYPE_NORMAL
+- en: you can definitely look at all the videos， see all the assignments。 but I only
+    actually grade the students who are actively enrolled in my course。![](img/bd9c255aeae7a8d8d4919211c00510f2_1.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: To see all my videos about Cale， neural networks and other AI topics。 click
+    the subscribe button and the bell next to it and select al to be notified of every
+    new video。Okay let's start with coab and see how we can submit an assignment using
+    just that There are many different ways to go about this。 but this is just one
+    way that will work and is pretty easy so if you go to the Github repository for
+    the class Jeff Heaton T81 558D learning and if you go into assignments let's actually
+    submit assignment1 assignment1 is very simple you just have to put your API key
+    in this is what identifies you as a student and lets me track who has sent what
+    you should have gotten that an email from me but if you for some reason did not
+    send me an email and let me know so that I can send you now I only send those
+    to Washington University students if you are not a Washington University student
+    would like to use the autograding capability that's built into this class then
+    there's options for that if you look on the Patreon support。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Site that goes along with my YouTube channel。 Now this is assignment1。 It's
+    Python code。 You'll notice that every notebook has this open and coabab link here。
+    We'll go ahead and click that。 this opens it in coab now you can actually run
+    the code but you have to go one step further you have to copy it to your Google
+    Drive It says creating a copy and now it's here now I would say make it your own
+    at this point。 So copy of assignment Jayton put whatever your name is for there
+    I'll leave it as Jayton since that's me I've renamed it if you go to your Google
+    Drive in Google Drive when you use coab you get this coabab notebook if you go
+    into there you should see it looks like it hasn't completely renamed it from what
+    I had to do there let's see save after you do the save now it's renamed Now that's
+    a problem I've seen some students get hung up on is Google Drive does not always
+    immediately up。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So you needed to do the save like I did there。 make sure that you can truly
+    see it in Google Drive with the correct name。 And sometimes after you've saved
+    it， you may have to wait a couple of minutes before you can actually submit your
+    assignment usually you won't immediately download and then five minutes later
+    submit it unless youre really。
+  prefs: []
+  type: TYPE_NORMAL
+- en: really fast at these but this is this is the first assignment。 I list some of
+    the common problems that you can run into and what you might need to do to resolve
+    those this first part here you'll need to run that is going to bring coab online
+    and actually map your Google Drive into coab so that you can get access to it
+    I'm going to go ahead and run this section see here how it says note not using
+    Google Coab this should flip using coab once this comes through okay you've also
+    got to do this This is very important。
+  prefs: []
+  type: TYPE_NORMAL
+- en: This is connecting coab to your G drive。 Unfortunately you're gonna to do this
+    a lot。During the semester， they make you do this and redo it。 believe me I've
+    done this probably 100 times。 click that。 You click allow。 This is your This is
+    not your API key。 Don't be confused with this。 This is not what you're using to
+    submit it。 This is just to connect coab to you G drive。
+  prefs: []
+  type: TYPE_NORMAL
+- en: We'll go back to here'll go we have to go back to that copy one that you may。
+    So yeah it's this one。'll paste that into there press enter and it's authenticating。
+    this takes just a moment and it should show you this note using Google coab and
+    Tensorflow 2。 is active This is a handy command that I give you I only put it
+    in the first assignment。
+  prefs: []
+  type: TYPE_NORMAL
+- en: but you can copy and paste it into the others if you so desire I'm going to
+    run it。 This exclamation point means to run a unx command L is a unx command called
+    list It's kind of like directory and dos And we are basically just listing the
+    contents of my notebooks directory That's doing essentially the same thing as
+    going over into Google coab I'm sorry。
+  prefs: []
+  type: TYPE_NORMAL
+- en: This is essentially doing the same thing as going over into Google Drive and
+    looking and seeing that it's here so we'll go back to here so we can see it。 We
+    will need this name， so I'm gonna go ahead and copy it。 but it's essentially it's
+    the same one up here。 you could copy that as well This is the submit function
+    I just provide this to you。 You don't really need to know how it works。 It's just
+    an API call fundamentally over the web it calls a web address on my main server
+    and that tracks all of these assignment submissions's all over Https So it's all
+    encrypted just run this if you get an error saying can't find submit。
+  prefs: []
+  type: TYPE_NORMAL
+- en: It means you probably forgot to run this here is where you need to put your
+    key This is the API key that I email to you。I am just going to magically move
+    mine into my clipboard。 You would have probably actually gone and copy and pasted
+    it from your email or wherever you wrote it down。 but I'm going to select the
+    one that was there。 by the way， if I do run just the one that's there。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I will get an error。 actually I'll get a couple of errors。 let me use this just
+    to demonstrate。 let's run thiss not going to work well。 No directory users J Heaton
+    projects， blah， bla， b blah。 this is because the file name right here， which is
+    the file name to the what you're trying to submit is not valid。 That's because
+    I'm using the Mac Linux1， but I want to use this one。
+  prefs: []
+  type: TYPE_NORMAL
+- en: This is the Google coab one and you also need to change this so that it's your
+    name All right。 so now it's got my name in there now let's run it。 Now if you
+    get another message back saying can't find it。 look and make sure that you have
+    this exactly like it is。
+  prefs: []
+  type: TYPE_NORMAL
+- en: make sure that this matches what is up here， make sure that you've done file
+    save and maybe use that list。Command that I gave you earlier just to be absolutely
+    shirts there。 failing all of that。 Give it maybe five minutes。 Sometimes Google
+    takes a little bit to synchronize。 Alright。 so that's for Bennon。 let me go ahead
+    and put my API key in here。 So that's the key for me。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Don't use that one either。 It'll get deleted before class starts。 Those are
+    just temporary keys that I use。 And all this is doing is submitting this hardcoded
+    CSv file here。 which is essentially the truth table for exclusive or operator。
+    but that's what this assignment is expecting。 So I'll click this takes it a moment
+    to run。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And what this is doing is basically sending the assignment to me。 You don't
+    get your grade yet。 but it does check it for you。 And it's fairly advanced checker
+    reasonably advanced。 say you change something Like say this column here was named
+    Z instead of a Now it'll get mad right now it's say no warnings on your data。
+    You'll probably。Well， but no guarantee。 The final grade happens in canvas and
+    you don't have a grade in canvas after you submitted this。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I will I will either manually put your grade in there or I have a automated
+    process that runs every morning if it checks your code and it sees nothing in
+    addition to what the auto checker checks it'll just it'll put full points in there
+    for you if you're not late。
+  prefs: []
+  type: TYPE_NORMAL
+- en: you do lose points if you submit these past the due date。 so don't don't do
+    that。 if you submit it more than a week late you'll get a zero on it so also don't
+    do that。 let me go ahead and run it now with that column renamed。 now the auto
+    checker will detect something is wrong War solution headers AB but your headers
+    are B and Z that's not good So you'll you can get warnings from it and feel free
+    to resubmit。
+  prefs: []
+  type: TYPE_NORMAL
+- en: you can submit it until it's perfect。 that is the point of these 10 assignments
+    to get you to try this and don't worry about you can submit this 10 times。 I mean，
+    don't denial of service attached。Me or anything。 but you could submit it 10 times。
+    And if your hundred and1 time is completely correct， you'll get an A on it。 That's
+    just the way this works。 Go ahead and run it as long as that hundred and1 time
+    is not late。
+  prefs: []
+  type: TYPE_NORMAL
+- en: All right and it even tracks it， I've submitted a 13 times bad luck if you want
+    to check this later on you can use this code down here I only put this code on
+    assignment1。 but if you run this with that same API key in there。 well that just
+    defines it。
+  prefs: []
+  type: TYPE_NORMAL
+- en: then you run it here。 put my key in it shows me the progress for me on all these
+    various assignments。 that was me probably testing the submits。 and then if I want
+    to check just one assignment I can click this and that shows me specifically what
+    warning I got on one particular assignment so that is how you use Google coabab
+    to these I assume most of you will probably be doing that。
+  prefs: []
+  type: TYPE_NORMAL
+- en: but if you let's also see how we would do this from a Windows computer just
+    locally it would be pretty similar for Mac as well I won't show Mac individually
+    for this。 So first change into。![](img/bd9c255aeae7a8d8d4919211c00510f2_3.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: The directory that you downloaded the class into and make sure you have your
+    Tensorflow environment activated to activate Tensorflow Jupiter notebook and it
+    launches it go into the assignments folder if you weren't there already。 but this
+    is assignments will go into assignment1 put it into Python 37 Tensorflow rename
+    this so that as you don't open it coab This part here for the coab instructions。
+  prefs: []
+  type: TYPE_NORMAL
+- en: you can run that or you can run it totally up to you。 It won't prompt you for
+    anything like it did when we were doing this in coab。 It'll just say not using
+    Google coab and this command won't work in Windows so don't run that We'll define
+    the submit function。 and now we're ready to submit it so I had magically copyied
+    my key into the clipboard So there's my key make sure you change this so that
+    the file name matches what your file name is called so the path is correct and
+    we'll run that it helps to put this into the right format for。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/bd9c255aeae7a8d8d4919211c00510f2_5.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](img/bd9c255aeae7a8d8d4919211c00510f2_6.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](img/bd9c255aeae7a8d8d4919211c00510f2_7.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: This is Windows， SeQL and users and this machine I'm Jheaton actually not using
+    a project's directory。 So this has to match on your own computer。 that all matches
+    assignment and then Jheton This is actually a good example。 So if you are getting
+    that error go to a command prompt orel in users Jheaton you just check and make
+    sure one by one these parts of it are correct T81 assignments assignment Jheton1
+    IPy and B And if you can do Dr and see your command see your file there then it
+    exists I'm just going to copy and paste I'm going to put this over top of this
+    we have to do these double ses because that is how you properly encode a backf
+    Try not to make any mistakes like I just did there and that worked So there was
+    some minor typo I had in there but that's how I tend to validate pads so that
+    was actually a good example I wish I could say I'd done that on purpose but that
+    was obviously a。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/bd9c255aeae7a8d8d4919211c00510f2_9.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](img/bd9c255aeae7a8d8d4919211c00510f2_10.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: On my part。 So now you have it submitted， says no warnings on your data。 This
+    does check your I'm repeating this sum from the coab。 but just in case you fastfored
+    the coab part。 if I make something wrong with this。 it will now show you okay
+    your headers are wrong or something like that。 This is an auto check。
+  prefs: []
+  type: TYPE_NORMAL
+- en: you'll see your actual grade appear in canvas usually by the next day。 I have
+    a second auto process that runs every morning and checks for submissions。 and
+    if if it detects nothing wrong with your submission， it looks like it's a perfect
+    score。 then it's just going to give you full credit in canvas and go on。
+  prefs: []
+  type: TYPE_NORMAL
+- en: it's something I need to check more specifically than I will go in and into
+    your grade myself。 if you ever want me to look at what you've done in this code
+    if you mess it up。 I will be looking at it because the auto corrector won't be
+    able to figure it out and it'll send it to me。 But if you want me to just if you
+    want any opinions for me on your coding technique or anything like that。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I would be glad to。Look at any of these if the auto corrector has passed it
+    through as as perfect and also once it's about a week past the due date。 which
+    means if you haven't submitted you have a zero I will go through and release my
+    solution file for each of these so you'll see how I actually did and I'll talk
+    about it during the following weekly zoom meeting that we have Thank you for watching
+    this video if you're a student at WasU and you're run into any problem submitting
+    your assignments。
+  prefs: []
+  type: TYPE_NORMAL
+- en: please contact me all grades will be in the canvas system that only WasU students
+    have access to。![](img/bd9c255aeae7a8d8d4919211c00510f2_12.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: And that is it for submitting assignments， Good luck with the semester。 and
+    if you have any questions， definitely let me know if you want to stay up to date
+    with all that I do on this course and other AI projects。Please subscribe to my
+    YouTube channel。 Thank you very much。
+  prefs: []
+  type: TYPE_NORMAL

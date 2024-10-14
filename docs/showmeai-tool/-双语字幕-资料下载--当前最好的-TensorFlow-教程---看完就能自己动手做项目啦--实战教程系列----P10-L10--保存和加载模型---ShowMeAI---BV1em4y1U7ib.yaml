@@ -1,0 +1,179 @@
+- en: 【双语字幕+资料下载】“当前最好的 TensorFlow 教程！”，看完就能自己动手做项目啦！＜实战教程系列＞ - P10：L10- 保存和加载模型 -
+    ShowMeAI - BV1em4y1U7ib
+  id: totrans-0
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+  zh: 【双语字幕+资料下载】“当前最好的 TensorFlow 教程！”，看完就能自己动手做项目啦！＜实战教程系列＞ - P10：L10- 保存和加载模型 -
+    ShowMeAI - BV1em4y1U7ib
+- en: In this video we're going to explore ways to save and load the model weights
+    and then also how to save the entire model and do something that's referred to
+    as serializing a model。![](img/7bff5e62ed405731be5e5da8c2b7bfb9_1.png)
+  id: totrans-1
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 在本视频中，我们将探讨保存和加载模型权重的方法，以及如何保存整个模型，并执行被称为序列化模型的操作。![](img/7bff5e62ed405731be5e5da8c2b7bfb9_1.png)
+- en: '![](img/7bff5e62ed405731be5e5da8c2b7bfb9_2.png)'
+  id: totrans-2
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/7bff5e62ed405731be5e5da8c2b7bfb9_2.png)'
+- en: Alright， so here we have some code that should hopefully feel familiar from
+    previous tutorials。 so we just have some basic imports and then we're loading
+    the Ms data set And then what I've done here is that I've created three different
+    models。 They're all the same model architecture just using the different APIs。
+    So the first model is using the sequential API which is two dense layers with
+    64 nodes and then 10 output node and then similarly model2 is gonna create the
+    same model just using the functional API。
+  id: totrans-3
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，这里有一些代码，希望你能从之前的教程中感到熟悉。我们首先进行一些基本的导入，然后加载 Ms 数据集。接下来我在这里创建了三个不同的模型。它们都是相同的模型架构，只是使用了不同的
+    API。第一个模型使用的是顺序 API，包含两个具有 64 个节点的全连接层和一个具有 10 个输出节点的层；类似地，model2 将使用功能 API 创建相同的模型。
+- en: and then lastly we're doing it using subclassing。 So let's first of all。 just
+    create an outline for what we're gonna do in this video So first of all。 I'm going
+    show you how to save and load model weight And then secondly I'm going show you
+    how to save and load。Entire model， and this is called serializing model。
+  id: totrans-4
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 最后，我们使用子类化的方法。首先，我们来为这个视频创建一个大纲。首先，我将向你展示如何保存和加载模型权重。其次，我将向你展示如何保存和加载整个模型，这被称为序列化模型。
+- en: So when we're saving and loading the entire model it's going to be saved as
+    a data structure and this means that it can be loaded on different TensorFlow
+    frameworks like Tensorflowlow JavaScriptscript。 Tensorflowlow light and so for
+    example you could train a model on your PC and then let's say you want to put
+    it into production and create an app then you could just load that model that
+    you previously trained and you don't have to do any conversion and also additionally
+    so what this will do is it will save the weights it will also save the model architecture
+    so you don't have to actually have the code for the model and then it's also going
+    to save the training configuration so this would be why you send into model model。
+  id: totrans-5
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 因此，当我们保存和加载整个模型时，它将被保存为数据结构，这意味着它可以在不同的 TensorFlow 框架上加载，例如 TensorFlow.js、TensorFlow
+    Lite。举例来说，你可以在你的 PC 上训练一个模型，然后如果你想将其投入生产并创建一个应用程序，你可以直接加载你之前训练的模型，而无需进行任何转换。此外，这样做将保存权重，也会保存模型架构，因此你不必实际拥有模型的代码，同时也会保存训练配置，这就是你传递给模型的原因。
+- en: compile。And then lastly， it's also going to save the optimizer and state。 So
+    for example。 if you're using the item optimizer， it's going to keep track of the
+    exponential weighted averages and that's internal to the optimizer So for example
+    if you're just saving the weight then the optimizer states are going to be reset
+    every time you load from load the weight from the model。
+  id: totrans-6
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 编译。最后，它还会保存优化器和状态。例如，如果你使用的是 Adam 优化器，它将跟踪指数加权平均值，这在优化器内部。所以如果你只是保存权重，那么每次从模型加载权重时，优化器的状态都会被重置。
+- en: All right， so let's start with how to save and load the model weight where you're
+    going to do is after training so let's do it after the model let's evaluate it
+    we're going to do model that save weight and then we're just going to specify
+    folder。 let's do save model and then if we now run this So if we now open up that
+    folder where we're running the script and then inside that one there's gonna to
+    be another folder called save model and then that's where the files are going
+    be that are saving the weight。
+  id: totrans-7
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 好的，让我们先从如何保存和加载模型权重开始。你要做的是在训练后进行保存，所以我们在模型训练后进行评估，然后使用 `model.save_weights`，并指定文件夹。我们来做一个保存模型的操作，如果现在运行它，打开我们运行脚本的文件夹，里面将会有一个名为
+    save_model 的文件夹，所有保存权重的文件都将存放在这个文件夹里。
+- en: '![](img/7bff5e62ed405731be5e5da8c2b7bfb9_4.png)'
+  id: totrans-8
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/7bff5e62ed405731be5e5da8c2b7bfb9_4.png)'
+- en: '![](img/7bff5e62ed405731be5e5da8c2b7bfb9_5.png)'
+  id: totrans-9
+  prefs: []
+  type: TYPE_IMG
+  zh: '![](img/7bff5e62ed405731be5e5da8c2b7bfb9_5.png)'
+- en: And so what you would do now to just load the model is you would do model that
+    load weights and you would specify that folder so save the model and then you
+    would just have to run that and also so after the first epoC previously I think
+    it was about 90% accuracy and so what we can see now that it's after one epoch
+    it's 97。
+  id: totrans-10
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 现在加载模型时，你可以使用`model.load_weights`并指定该文件夹，保存模型后运行。同时，在之前的第一次训练后，准确率大约是90%，而现在经过一个周期后，准确率是97%。
+- en: meaning that it's actually loading the weights from previously So one thing
+    here to keep in mind is that you can't actually swap and load the weights for
+    the different implementations so for example。 if we run this using model too，
+    which is from the functional API then it's going to give an error saying that
+    they aren't compatible so a general rule here is that you need to load the model
+    using these exact same way as you saved it so there might be some work around
+    in that you can still load the weights if you have done a sequential or functional
+    API and if you do know how to do that then please leave a。
+  id: totrans-11
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这意味着它实际上是从之前加载权重。因此，需要记住的一点是，你不能在不同的实现之间交换和加载权重。例如，如果我们使用来自功能API的模型运行，那么会出现错误，说明它们不兼容。因此，这里的一条一般规则是，你需要以保存时的确切方式加载模型。如果你已经使用顺序或功能API进行过操作，并且知道如何做到这一点，请留言。
+- en: And then that might be helpful for some。 but anyways， as a general rule。 you
+    need to load it exactly the way that you saved it。 So if you created the model
+    and save the model using sequential then when you're loading the model it needs
+    to be in that form as it was when you saved it Now there are also some different
+    format that you can use when saving the model So for example I think there's a
+    you could do specify I think it's a save format you could specify different like
+    H5 so there are two different ways format that Tensorflowlow saves it's in the
+    Tensorflow default format and then it's HD HDF5 format and the HDF5 format was
+    what they previously used in Tensorflowlow 1 and then since Tensorflowlow 2 they've
+    used I guess TensorFflow default saving format So yeah you could check out the
+    official documentation for how to save and load using that specific file format
+    I'm just going show you how to do it in。
+  id: totrans-12
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 这对某些人可能会有所帮助。但总的来说，你需要以完全相同的方式加载模型。因此，如果你使用顺序创建并保存了模型，那么在加载模型时也需要保持原来的形式。现在，当保存模型时，你可以使用不同的格式。例如，我认为你可以指定保存格式，比如H5格式。因此，TensorFlow保存的有两种不同的格式：TensorFlow默认格式和HDF5格式，HDF5格式是之前在TensorFlow
+    1中使用的，而自TensorFlow 2以来，他们使用了TensorFlow默认的保存格式。所以，你可以查看官方文档，了解如何使用特定文件格式进行保存和加载。我将展示如何操作。
+- en: In the default one so for the second thing， when we want to actually save and
+    load the entire model and serialize the model。 So what we we're going to do is
+    model dot save and then we're just going to do we're going to do complete saved
+    model or something like that。
+  id: totrans-13
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 默认情况下，当我们想要保存和加载整个模型并序列化模型时，我们将执行`model.save`，然后进行完整保存模型或类似的操作。
+- en: And it's going to save it inside of that folder。And yeah。 so we're gonna get
+    this error this warning and that's from Tensorflow back in。 so there's nothing
+    you can do about this。 if you do get it， then just ignore it。's from my understanding
+    there's nothing that we're doing wrong and this should hopefully be fixed in a
+    future version but anyways you're saving the model here and now what you're going
+    to do is you can actually remove this entirely so you can remove the model do
+    compile and you can specify just model equals ksmod load model and then we're
+    just going to specify that directory complete saved modelright so that's going
+    to save the load the entire architecture。
+  id: totrans-14
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 它会将模型保存到该文件夹中。是的，我们会收到这个错误警告，来自TensorFlow的。对此你无能为力，如果你收到了，就忽略它。从我的理解来看，我们没有做错任何事情，希望在未来的版本中能修复。但无论如何，你现在是在保存模型，而你可以完全移除这一部分，因此可以删除模型编译部分，只需指定`model
+    = ksmod.load_model`，然后指定该目录，完整保存模型，这样就会加载整个架构。
+- en: So what you could also do here is that you could remove so you could remove
+    the code for the model that you're now loading from and that's going to be also
+    done inside of this load model and then it's going to also load the training configuration
+    So the model compile that's why we could remove that part and now。
+  id: totrans-15
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 所以你在这里还可以做的是，可以删除你现在正在加载的模型的代码，这也将在加载模型内部完成，并且它也会加载训练配置，所以模型编译就是我们可以删除那部分的原因，现在。
+- en: We just rerun this。We can see that it's continuing training at that point and
+    then we're getting this error again because it's saving the model and this works
+    regardless of using sequential functional or subclassing and there so previously
+    when you save as default in the HDF55 format。
+  id: totrans-16
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 我们重新运行这个。我们可以看到它在那个点继续训练，然后我们再次遇到这个错误，因为它正在保存模型，无论是使用顺序、功能还是子类化，这都有效。因此，之前你保存的默认格式是
+    HDF55 格式。
+- en: you had to do some I guess some annoying things and you had to create a defined
+    get config function here and you would also need to create one from config file
+    but in the new format。 you don't have to do that。 So if you're using the old format
+    I'm going refer you to the official documentation for how you would do that but
+    this is how you save and load models both the weights and then the serialized
+    model version using Tensorflow from Tensorflow to and up hopefully this video
+    was useful if you have any questions and leave them in the comment below。
+  id: totrans-17
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 你必须做一些我想是令人烦恼的事情，你需要在这里创建一个明确的获取配置函数，同时你也需要从配置文件创建一个新格式的函数。你不必这样做。因此，如果你使用旧格式，我将参考官方文档说明如何操作，但这就是如何使用
+    Tensorflow 保存和加载模型，包括权重和序列化模型版本。希望这个视频对你有帮助，如果你有任何问题，请在下面的评论中留下。
+- en: thank you so much for watching and I hope to see you in the next video。![](img/7bff5e62ed405731be5e5da8c2b7bfb9_7.png)
+  id: totrans-18
+  prefs: []
+  type: TYPE_NORMAL
+  zh: 非常感谢你的观看，期待在下一个视频中见到你！![](img/7bff5e62ed405731be5e5da8c2b7bfb9_7.png)

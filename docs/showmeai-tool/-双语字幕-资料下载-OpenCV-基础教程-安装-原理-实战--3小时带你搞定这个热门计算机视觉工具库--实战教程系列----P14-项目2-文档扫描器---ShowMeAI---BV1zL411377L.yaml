@@ -1,0 +1,455 @@
+- en: 【双语字幕+资料下载】OpenCV 基础教程，安装、原理、实战， 3小时带你搞定这个热门计算机视觉工具库！＜实战教程系列＞ - P14：项目2：文档扫描器
+    - ShowMeAI - BV1zL411377L
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '![](img/04f37d9e927ad86517b1e6fa084d48b2_0.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](img/04f37d9e927ad86517b1e6fa084d48b2_1.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](img/04f37d9e927ad86517b1e6fa084d48b2_2.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: So in this project， we are going to start off with the webcam code。 which we
+    did in the first chapter， so let me go and copy this。And let's change the parameters。
+    We willll do it as one， and this will be 50。So， let's run it。And there we have
+    our webcam。 so we are going to detect this document and then we are going to use
+    Word perspective to get the flat out image of our documents。
+  prefs: []
+  type: TYPE_NORMAL
+- en: which we will scan。Now。Let's move on。 So the first thing we are going to do
+    is。We are going to pre processces our image， so we will apply some what you call
+    preprocessing techniques so we can detect what you call the edges in our image
+    properly。So let's define a function。3e。Processing。And here we are going to input
+    an image。 so we will say image， and then we are going to convert this image。 first
+    of all。
+  prefs: []
+  type: TYPE_NORMAL
+- en: we will resize it so image。Is equals to C2 dot re size。Or let's resize it。Over
+    here。So that the size remains the same for。The holder process， so re sizeize。And
+    we are going to resize our original image。With our width and height， So width。Of
+    our image and height。Of our image。So this， we can declare。On the top。嗯。That's。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a new section here。Clarations。2，6，40。And this one here is48。So let's
+    remove that。This。So that being done。Okay， so， so the first thing we will do is
+    we will convert it into gray scale。 So we will say image gray is equals to。CV2
+    dots， CT color， and then our source， our main image。 and then we want to convert
+    it into grayscale。 So C 2 dots。Color， P G，R to gray。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Next we are going to apply some blur， so image blur is equals to cv2。 was in
+    blur。 and we have our image query to blur and then we will apply we will give
+    the size of the kernel 5 by 5 and then the sigma x。 let's say1。And then， we will。Find
+    our edges using our canny edge detector。 So we will say image canny。Is equals
+    to。CV2 dots。Gny。And our image is blur。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And then we have the threshold。 So we'll put。Let's say 200 by 200 so these values
+    we can change as we move along。 but for now we are going to keep some random values
+    and let's see how they go。Once we have done that， sometimes the edges are very
+    thin。 so what we can do is we can use the dilation function to make them thicker
+    and then we can use the erosion function to make it a little bit thinner again。
+  prefs: []
+  type: TYPE_NORMAL
+- en: so what we can do is we can apply two passes of dilation and one pass off what
+    we call erosion。Now。 this is not compulsory， but it helps， so it is better to
+    do it。Dilation is equals to C2 dot dilates。Tate， yeah， and then we are going to
+    use our image canny。And we are going to define a kernel。And then， the iteration。D。Rations
+    is equals 2。2。So。There is a mistake somewhere。Okay， so kernelel。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Is equals to we are going to define an array of a matrix of。AtOnce， so we need
+    to define here。The port Nmpy has N P。And over here， we are going to say that our
+    kernelel is nuumpy of once。And the size is five by5。Then we are going to erode
+    it。 So image。Eode。Is equals to C 2。Actually。 this is the final result。 So let's
+    call it threshold image。Tre。Is equals to C2 dot ero。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And then we are going to input our image dilation。And then we are going to define
+    our kernel and the iterations as one。So once we process that。We can return our
+    image。It turned。Image。Tial。So we can see here。嗯。Image threshold is equals to。Reprocess
+    of our main image。So we can display the image。And there we go。 So we are getting。
+    So if we wanted to see the what you call the output of each of these steps。
+  prefs: []
+  type: TYPE_NORMAL
+- en: we can simply。What you call commented out and return the one we want to see。
+    For example。 if we want to remove these two， we can comment it out and return
+    the canny instead。So if we look at that。So here you can see our edges are quite
+    1。And sometimes when there is some shadow or some reflections， then it might not
+    detect properly。
+  prefs: []
+  type: TYPE_NORMAL
+- en: That's why we are adding this。Here， as well。So we need to return。The threshold。And
+    there you go。 So the boundaries are much thicker and easier to detect what is
+    happening in the image。 So next。 we are going to move on to our contours。So we
+    need to find the biggest contour in our image。 So this is what we will do now。
+    So in chapter 8。For the contours， we use the function， get contours。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So we are going to copy that。Till our bounding box。And we will make some changes。So
+    here we'll paste it out and now we have the get contour function。So what we can
+    do is we need to find the biggest one that is available to us So here we are first
+    getting our contours and then for each of them we are looping again and again
+    So what we can say is that first of all we need to give a threshold for the area。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I think it's better to add another zero because our area will be quite big。
+    we can remove the print and to draw， we can copy an image here。So we can say。Image，
+    let's say。Contours。Let's write。 contours is equals  to。Image dot copy。Actually。
+    we should do it after the resize， cause all of them are。All of them should be
+    same。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So let's go down and then we'll write the tear and。Then， here will paste。Here
+    we will paste our image contour。Actually， let's use this spelling。 It's better。How没
+    control。So。 we can。Display out what is happening。So then we will remove this parameter
+    and we don't need to see the length。 Do we need to see the length， Yes， we do
+    need to see the length and it should be4。And then。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Do we need the mounting box， Yes， Okay， so what we are going to do is first，
+    we are getting our area。And then we are checking that if it is greater than 5000，
+    if it's good。 then we will move on to the next step， we will draw it。On our image
+    or do we need to draw。 we will see if we need to remove it later。 Now we will
+    get our parameter。
+  prefs: []
+  type: TYPE_NORMAL
+- en: and then we are going to find our approximation of our corner points。 and then
+    we have to say that。If our。Area。Not sorry。 if our length。Of our。Proxiation is
+    equals to 4。In that case。 what we will do is。We will say that the biggest。Is equals
+    to a pro。And but as it loops。We need to find the biggest one。 So we have to put
+    another condition here。
+  prefs: []
+  type: TYPE_NORMAL
+- en: We will say that if our area。Is greater than。The max area。So we'll put an end
+    here。So。 we'll put an hand here。And then here we will see that max area。Is equals
+    to our current area。So what this will do is it will keep looping again and again
+    and whenever it finds a value that is bigger than what it has before。 it will
+    replace the value of the current one。So this will give us the biggest。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Area and the biggest of our approximation， which will be our four points。So
+    do we need this。 not really， so we can remove this with the bounding box。And。Then
+    all we need to do is we need to return our。Approximation， so we will return。Approx。Oh，
+    sorry。 we will return the biggest one。Biggest。 so this will give us our biggest
+    contour。Okay。
+  prefs: []
+  type: TYPE_NORMAL
+- en: so let's run that and see what happens。Now we need to call it here。We are going
+    to say that。Get contours and we will send the image threshold。Okay。 so one thing
+    that we forgot to do is to define。Initially， our variables。 So the first one is
+    a list。 So the biggest。Will be a Ny list， a Ny array， nuy。 array。And。The second
+    one is the max area。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So we will say max。Area is equals20。So if we run that again。And there you go。So
+    now we are getting our contours and hopefully it is returning us the biggest one。
+    which is this blue one。So once we have our biggest contour。 what we need to do
+    next is using its corner points。
+  prefs: []
+  type: TYPE_NORMAL
+- en: we need to warp our image and get the bird's eye view。 So in order to do that，
+    what we will do is。We will， first of all， get our approximation here so we can
+    say that our biggest is equals to get contours image threshold。 And then after
+    that， what we need to do is。We need to send it for word perspective。 so we will
+    write a new function。So， we will say。Get。It worked。And inside。
+  prefs: []
+  type: TYPE_NORMAL
+- en: we are going to send our image。And we are going to send what do we need to send。
+    We need to send our biggest。Contour point。So， here。We can call this function get
+    verp of our original image， and we need based on the biggest points。So actually，
+    we didn't print out。 Let's see if we are getting it properly。So let's just print
+    out。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Once we are getting the biggest one， let's print it out。So there we go。 We are
+    getting four points。 so one。2， three， and four。 so we are getting them properly。So
+    whether they are the correct one or not， we will look into that furthermore。Or。嗯。We
+    can print it out right now。 Should we print out right now。Yeah， actually， we can。
+  prefs: []
+  type: TYPE_NORMAL
+- en: What we can do is instead of printing them all。We can。Copy this。 And we can。Comment
+    this out and。The last one we can do。Is we can print out the biggest one before
+    it sends so we can say here biggest。And there you go，If we look at it。Let me increase
+    that size。 Let's make it 20。So there you go。 So we are getting the correct points
+    of our biggest contour， so the next part will be to verp。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So now we are going to work。Where is that function， so okay。So in the workp。
+    we are going to follow what we have done before in our previous examples that
+    was in chapter for the warping。 so here we have for warping we need two points
+    and then we create a metrics and then we get our work perspective so we will copy
+    all of that。And we will bring it into our current project。So we need to find out
+    these points1 and then these points2。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And then we create the metrics。 And based on that， we have the width and the
+    height。 So this width and height are basically the width and height of our image。
+    So we will say。With the image and。Hight image， again， width image。And height image。And
+    then。What image。And then。 high damage。Okay， we can remove the bass。Okay， so the
+    next step would be to put our points here。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So we are getting our biggest contour。 and all we need to do is we need to inputs。The
+    biggest contours over here， so there are already four points。 so that way we can
+    easily put it directly over here。Now the next thing is fine over here。So what
+    we need to do is we need to look at our image and there is a tricky part here。
+  prefs: []
+  type: TYPE_NORMAL
+- en: and I will explain what that is， but just let's just look at our output image
+    so we can say here。That return。Our image。Outputs。And here。We can call this function。
+    We can say get workb。 and then we can save。That our。Pp。Image worked。没。Worb is
+    equals to that。And let's show that。So there we go。そ。Now we knew that our points
+    are being detected properly， but as you can see here。
+  prefs: []
+  type: TYPE_NORMAL
+- en: the warping is not correct。And if I move it around and it even gives us an error。So
+    the reason why the warping is wrong is because we have an annotation we have a
+    structure at which our point should be。 so the first point in our biggest contour
+    should be00 and then width0 then0 height and then width and height if for example
+    in the biggest contour our width and height is in the first one and the00 in the
+    second one or it's mixed up then it means that our word perspective will not properly
+    work。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So what we need to make sure of is that when we are sending the points to verp。
+    all of our points are aligned like this， so the smallest one should be the first
+    one then the width and height the width and0 then the0 and height and then the
+    width and the height so how can we make sure of that because our values can vary。
+  prefs: []
+  type: TYPE_NORMAL
+- en: It can keep changing。 So what I'm trying to tell is that these values can change
+    based on the angle of the paper and。Based on the contour as well。 So what we have
+    to do is we have to arrange these values。 these biggest points before we send
+    it for warping。 So we have to reorder them。 so we will create a new function。We
+    will say， re order。And inside that， we will need our points。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So my points。We need some points inside， and then we are going to apply some
+    methodology inside here that will allow us to create or reorder our points。 So
+    if we have， for example。Let me make it a little bit simpler if you want this now。Wait。はいた。う。If
+    we add these values up， what we can do is we can add these values up and we can
+    find the smallest and the biggest point。So for example， if we add 00 and we add
+    width and height， width and 0。
+  prefs: []
+  type: TYPE_NORMAL
+- en: 0 and height and width and height， the smallest point will be the00 and the
+    biggest point will be width and height。So this means that whatever points we are
+    given here， if we add all of them up。The smallest one we will get will be our
+    00。And the biggest one we will get will be our width height so this way we can
+    quickly sort out which one is the biggest and which one is the smallest so which
+    one is the origin and which one is the diagonal point of our corner of our rectangle
+    or the last point。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And then to find the width0 and the0 height， we can subtract them and one of
+    them will give us a positive value and one of them will give us a negative value
+    and based on that we can tell which one comes first and which one comes second。So
+    what we need to do is。We need to first， let me show you something before we go
+    ahead。嗯。Here。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So if we look at the shape of our what called array or the matrix。Of biggest。
+    Let's have a look at that。So it is four by one by two。So we have four different
+    points that we understand and for each point we have X and Y that we understand
+    as well。 but that one is redundant， so what we will do is we will remove that
+    one。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So when we are about to reorder， the first thing we will do is we will say my
+    points。Is equals to my points。Dot reshape。And we are going to write， we want to
+    reshape it as4 by2。And then we are going to create a new matrix that we will send
+    outside that we will return from this function and that。Mattrix should be the
+    same as what we are receiving over here， which is 4 by one by2。Okay。
+  prefs: []
+  type: TYPE_NORMAL
+- en: so we will write my points。 nuon is equals to nuier dot zeros。Zeros。 And then
+    we can say。4 by。1 by2。And then we can write its type， so nuy dot。Integer 32。So
+    the first thing we will do is we will add。As we have discussed， we will add all
+    of these values。 So inside， we have four points。Let me print this out。 So it's
+    easier to see。 We will print biggest。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So the first step we are going to do is we are going to add each one of them。
+    So 1，85 plus 55。 then 61 plus 279 and so on。 So in order to do that， we have a
+    easy function。 we can say add is equals to my points。Dot sum。And we are going
+    to use A 1。So this will give us。 let's print it out， and we can say。Our ad。Is。We
+    are not sending it to reorder。
+  prefs: []
+  type: TYPE_NORMAL
+- en: That's why it's not showing up。 So what we can do。Is we can。Right here。Or this
+    should be inside the verp。So we can write here。Re order。And we can send the biggest
+    points。So if we stop that， we can see that over here， 183 plus 55 is 238 and then
+    61 plus 279 is 340 and then so on we are getting。Our values。 So the smallest one
+    here is our first one。 So we are going to say that is our 00。
+  prefs: []
+  type: TYPE_NORMAL
+- en: and the biggest one here is 651。 And we are going to say that is our word and
+    height。 So this one is at the correct position。 It should be at 00。But this one
+    is at the wrong position。 This should be the last one。 So we are going to rearrange
+    our order in our new points。So we will say here that my points。New。At number0，
+    which will be the first one。
+  prefs: []
+  type: TYPE_NORMAL
+- en: is equals to my points。And we are going to get the index。 So we are going to，
+    first of all。 find the smallest one。 So we will say that nuy dots。A RG minimum。And
+    we are going to say that find the smallest one。The index of the smallest of this
+    list。Or of this matrix。 So here we are going to find the smallest value and we
+    are going to get its index。
+  prefs: []
+  type: TYPE_NORMAL
+- en: once we have its index， we are going to put it here。 And from that we are getting
+    the values。 the actual x and y and then we are storing it in our new point。 The
+    same thing we will do it for the biggest one which will be the last one as0，1，2，3。
+    and this time around we will write it as max。So if we run that。Let me print that
+    out。Brent。
+  prefs: []
+  type: TYPE_NORMAL
+- en: New points。And we can write。前にポ。So if we print that。So here we can see that
+    our new points now the smallest one is at the first point and the biggest one
+    is at the last point here。 So now we need to find the ones in the middle。So。Next，
+    we are going to。 we can remove or let。 let's keep them for now。 So next， we are
+    going to find the difference between them。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So we can say the difference is equals to nuy dots。Difference， and we are going
+    to use my points。And again， we are going to define our axis as one。Actually， let
+    me write it。 you can define it like this x's as one。So then based on this， we
+    are going to say that my points。The new ones at number one。Is equal to this should
+    be our width and0。So this one will be my points。
+  prefs: []
+  type: TYPE_NORMAL
+- en: At Nai dots。The minimum argument。Of our differentiation。And the same way。Let
+    me right here。The same weight。The second one will be the maximum of our argument。So
+    let's run that。 Okay。 let me print this out。But。At the bottom。 Okay， if we run
+    that。And we stop it。 So now you can see that our points are rearranged， so we
+    are getting width。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And then0 and then0 and then height by 0， I mean it's a lower value。So。Here
+    our points are rearranged。 You can see our original points are like this。And then
+    our arrange points are like this。So now we have our new point so we can send them
+    back。 So should I delete。 Okay， let me。Put it as a comment。 So if you want to
+    check， you can check it。
+  prefs: []
+  type: TYPE_NORMAL
+- en: and then we can write return。My point， new。So， this will。Give us the biggest
+    points rearranged。 So we will say that biggest is equals to reorder。Biggest。 so
+    if we're run this now。 hopefully it will come up properly。 And there you go。 So
+    our image is showing properly。 and we are getting our word perspective。 the image
+    has worked。 Now。
+  prefs: []
+  type: TYPE_NORMAL
+- en: the problem is that one thing is that the width is too much。 We need to reduce
+    it。Let's make it 360。Okay， the camera cannot be， so 640， my camera has this issue，
+    so it has to be 640 by 40。That we can do there。😔，So。Why is it still， Okay， okay，
+    okay， So this is supposed to be opposite。 So this should be 6，40。And this should
+    be 360。Let's make it 480。いや、間違まる。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So this is what we are getting。 And now the thing is that our original image
+    is 640 by 480。 so don't expect a lot of resolution over here， but I have put an
+    image。In the resources folder。 So if you look at the resources folder， we have
+    a paper。Image and this image is really high resolution。 It is 4000 by 3000。
+  prefs: []
+  type: TYPE_NORMAL
+- en: so if you apply the same method on this one， it will give you a really good
+    scanned image at the end。 but because we are getting it from a live webcam and
+    it is only 640 by 480 that's why the resolution is not that good。But if you can
+    bump up the values， you will get much higher resolution。 So that is good for now。
+    but one thing we can see is that the verp is good， but we can see some lines at
+    the end。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And we don't want that。 we what we can do is we can afford a little bit of a
+    cutout a little bit of a crop around the edges so that we get some better results。
+    So what we can do is we can after warping it， we can reduce some pixels so let's
+    put it in the verp。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So here we can say that our。Let's say。Image。Outputs。Or should we name it different。
+    Let's name it different。So， image。嗯。Croed。Is equal to。We are going to crop our
+    image。 or we are going to say that our original image is IMG output。 and then
+    we are going to remove 20 pixels from each side， so we will say 20。Then， image。Output。
+  prefs: []
+  type: TYPE_NORMAL
+- en: dot shape。Add zero， and then we will minus 20 from here as what。And then we
+    will say 20 again。 and then we will say that our image output。Dot shape， which
+    is。At 1-20。So this is the same concept what we have done before in our cropping
+    example。 so if you don't remember that you can check that chapter again。
+  prefs: []
+  type: TYPE_NORMAL
+- en: so once we have done that we need to resize the image so that it becomes as
+    the same size as before。Because it will be easier to play around with it。So。Cbed
+    is equal to C2 dot resize。 and then our image crop。And then our width。Of our image
+    and then height of our image。And then we can output the crop image instead。So，
+    if we learn that。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now we are getting a much cleaner image， we have removed 20 pixels from each
+    side and now it looks more like a scanned paper。Okay， so next， what we can do
+    is if we want to look at what you call。The workflow。 we can add our joining I
+    code， which is our stacking。If we wanted to do that， so we can go back。We can
+    go to chapter 6。 and here we have the function for stacking。 We can copy this。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And we can paste it in our current project。And just to put all these images
+    together。So which of the images should we put together？So this is just a formality
+    to see what is going on。So and there is another case that I will discuss now and
+    you will see why that is important as well。Let's just stack the images first，
+    so we will say that our image。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Aray is equals to we are going to declare an array。So here we'll put our original
+    image。Then we can put our image contour。And then we can put the。Image。Biggest。Where
+    that image threshold。 So let's put it down so we can put it here。Image threshold。And
+    then， we can put。Image worked。So this should give us a good idea。And then we will
+    just say that。Stack the images。
+  prefs: []
+  type: TYPE_NORMAL
+- en: so we will see it stacked。Images is equals to stack images。And we will define
+    a scale。So let's say 0。6。 and then we are going to define our arrays of image。Oh，
+    sorry， imagery。And then here we will copy this and paste it。Paste it。So there
+    you go so now we can see the workflow。 we have our document， then we are getting
+    our what we call the biggest contours and then actually this should be here。
+  prefs: []
+  type: TYPE_NORMAL
+- en: this should be here the other way around。So。Where is it。So that is better， I
+    guess。 Yeah。 so that is better。 So again， now we are rescaling it。 so that it。Because
+    of that。 it's looking a little bit weird。But if we print it out separately， it
+    should be fine。What is it in each worked？
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/04f37d9e927ad86517b1e6fa084d48b2_4.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: So， here we have our。Final result。Now one thing you will note now， if I remove
+    the document。 it should give us an error。![](img/04f37d9e927ad86517b1e6fa084d48b2_6.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: There you go。Now， this error is because we did not define anything when it does
+    not define the biggest。 it does not find the biggest contour。 So we need to write
+    that down here。So we will say that we are going to find the biggest contour。Let
+    me see up if we want to put it up or here。Okay。So。Yeah， we are sending。The biggest。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I think it's better to put it down here。So what we can do is we can say that
+    if our biggest is not equals to0 or its if it's not empty。 then we need to go
+    forward so we can say。That。If biggest。Dots， sorry， dot size。Is not equals to 0。Then
+    we are going to do this image work， otherwise。And this should be inside， as well。And
+    this can be outside。Otherwise else， we are going to display the images still，
+    but we will。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Not display the contours because we didn't find them， and we will not display
+    the work。 We will just。Replace it with the original image。So let's see if that
+    works。![](img/04f37d9e927ad86517b1e6fa084d48b2_8.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: So if I remove that， yeah， so when I remove it。It doesn't show anything and
+    then when I bring it back。It's now showing me the live image。![](img/04f37d9e927ad86517b1e6fa084d48b2_10.png)
+  prefs: []
+  type: TYPE_NORMAL

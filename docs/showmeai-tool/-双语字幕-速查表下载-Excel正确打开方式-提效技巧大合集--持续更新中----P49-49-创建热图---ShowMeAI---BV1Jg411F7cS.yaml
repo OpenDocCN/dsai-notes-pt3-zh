@@ -1,0 +1,138 @@
+- en: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P49：49）创建热图 - ShowMeAI - BV1Jg411F7cS
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '![](img/5762d0720cf51cda53a9d888ea062c01_0.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: In this video I will show you how to easily and quickly create a beautiful heat
+    map out of your data in Excel。 So here we have a spreadsheet with a list of different
+    foods and some detailed information about those foods。 and I collected this information
+    by using the data tab and the data types group if you want to know how to do that
+    watch my video on the topic but with all of this data in the spreadsheet it's
+    hard to really understand and digest what the data mean。 So to help with that
+    I'd like to use a heat map。 Here are a few examples of other heat maps。
+  prefs: []
+  type: TYPE_NORMAL
+- en: heat maps are often used as a way to show the temperature in a geographic location
+    let's take a look at this example。 So this shows temperatures across the United
+    States but heat maps are also used for other things。 maybe to show where population
+    centers are or where there's higher crime or lower crime in a place and they can
+    also be used completely separate from geography to indicate in this case what's
+    critical what's minor etc。 But one of the best things。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/5762d0720cf51cda53a9d888ea062c01_2.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](img/5762d0720cf51cda53a9d888ea062c01_3.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](img/5762d0720cf51cda53a9d888ea062c01_4.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](img/5762d0720cf51cda53a9d888ea062c01_5.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: A heat map is that it can give the viewer an immediate sense of what the data
+    means and what stands out in that data。 So let's look at how easy it is to set
+    up a heat map kind of effect in my spreadsheet So the first thing we need to do
+    is select the data that we'd like to turn into the heat map and unfortunately
+    you can't just click and drag and get all of it at once let me show you why if
+    I get all of that data that I'd like to turn into a heat map and then I go to
+    the home tab in the styles group I can go to conditional formatting and go to
+    color scales and you can see as I put my mouse over the different options I get
+    basically a heat map effect if I choose this option here the lowest numbers will
+    be in red and the highest numbers will be in green if I switch to this option
+    it will reverse that the highest number will be in red the lowest number in green
+    and there's all of these different options and you can look through those and
+    choose the one that best fits the heat map that you want to create I'm going stick
+    with this at least for now。
+  prefs: []
+  type: TYPE_NORMAL
+- en: But like I said a few seconds ago， this is not the right way to do it for such
+    complex data as what I have in this spreadsheet。 Let's look at why When I selected
+    all of my data and then applied the conditional formatting the lowest numbers
+    no matter where they are in my spreadsheet were colored as red and the highest
+    numbers were colored green that's not exactly what I want I don't care how this
+    number relates to let's say calories or fat or protein I want to know how the
+    amount of vitamin A in carrots relates to the vitamin A in asparagus。
+  prefs: []
+  type: TYPE_NORMAL
+- en: let's say or in he So I'm going to undo by holding control and tapping Z I'll
+    undo the heat map or the color scale that I applied to this data。 I just wanted
+    you to see why it's important at least in this situation to select only the data
+    that you want to be compared so I want to compare the calories of each of these
+    foods to each other with that selected I go back to the home ribbon。
+  prefs: []
+  type: TYPE_NORMAL
+- en: the Sts group。Additional formatting， color scales and that same green to yellow
+    to red color scale。 Now it works beautifully。 I can just glance at this。 and I
+    can see right away that the chicken breast has the most calories out of this list
+    of foods Now。 as you can see some of the serving sizes are a little off。
+  prefs: []
+  type: TYPE_NORMAL
+- en: but I can see also right away that asparagus is very low in calories。 Now I'm
+    going go ahead and do this for each of these columns of data。 I'll just click
+    and drag to select everything that I want to be compared with each other。 go to
+    conditional formatting color scales and I'll select that same option。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Give me a minute to do so and then I'll resume the video。 Okay great。 I've finished
+    applying the color scale to each of the columns。 Now that this is done。 I might
+    want to actually think it through a little bit better。 Maybe I'm trying to highlight
+    what is particularly good or healthy about each of these kinds of foods。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So， for example， in the case of calories。 it might actually be better to have
+    high calories show up as red showing that maybe that something that you need to
+    be。😊。![](img/5762d0720cf51cda53a9d888ea062c01_7.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/5762d0720cf51cda53a9d888ea062c01_8.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Care so I would just highlight the data again， conditional formatting， color
+    scales。 and I can switch it to the opposite option。 So now some of the perhaps
+    healthier options show up in dark green。 and some of the higher calorie items
+    show up in dark red I can do the same thing with the fat column maybe someone's
+    trying to reduce the amount of fat that they eat or carbohydrates or whatever
+    it might be。 I'll just select fat and I'm holding the control key on the keyboard。
+  prefs: []
+  type: TYPE_NORMAL
+- en: and I'm also selecting cholesterol。 let's say we want to limit the amount of
+    cholesterol。 and then vitamin A vitamin C calcium we'd like to keep those high。
+    so the higher numbers could be better。 and so they're in green。 so I'm going to
+    leave those as is。 but I would just like to change fat and cholesterol to match
+    calories so that the higher numbers will be marked with red and the lower numbers
+    with green So with both of those columns selected。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I'm going go to conditional formatting color scales and we' swap the option
+    again so that in these cases the lower numbers show up as green So there isn't。Really
+    one correct way to do this。 It just depends on the data and the information that
+    you're trying to share。
+  prefs: []
+  type: TYPE_NORMAL
+- en: The way I have this set up now， it's meant to show what foods are perhaps healthier
+    with maybe fewer calories a little bit less fat and cholesterol and maybe higher
+    amounts of vitamin A。 vitamin C and calcium。 So I hope you can see some of the
+    power of creating heat maps in Excel using conditional formatting and specifically
+    the color scales。
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you'd like to learn how I pulled in this data about the different foods。
+    please watch my tutorial on that topic。 I hope you enjoyed the video if you did，
+    please like。 follow and subscribe。 And when you do click the bell so you'll be
+    notified when I posted another video。 If you'd like to support my channel， consider
+    clicking the thanks button or supporting me through my Patreon account or by buying
+    channel merch。
+  prefs: []
+  type: TYPE_NORMAL
+- en: and you'll find information about those options in the description below the
+    video。😊。![](img/5762d0720cf51cda53a9d888ea062c01_10.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/5762d0720cf51cda53a9d888ea062c01_11.png)'
+  prefs: []
+  type: TYPE_IMG

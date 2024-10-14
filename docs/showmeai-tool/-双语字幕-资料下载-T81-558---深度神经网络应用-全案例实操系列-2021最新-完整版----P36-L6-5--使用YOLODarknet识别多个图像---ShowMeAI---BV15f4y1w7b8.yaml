@@ -1,0 +1,396 @@
+- en: 【双语字幕+资料下载】T81-558 ｜ 深度神经网络应用-全案例实操系列(2021最新·完整版) - P36：L6.5- 使用YOLODarknet识别多个图像
+    - ShowMeAI - BV15f4y1w7b8
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Hi， this is Jeff Heaton。 Wecome to applications of deep neural networks with
+    Washington University。 In this video， we're going to talk about Darknet and yellow。
+    I don't mean darknet like the Internet。 I mean， darknet， like multiple object
+    detection。 You probably see all these boxes around me as the system is able to
+    detect various things。😊，We will see how we can make use of this technology in
+    Python using Tensorflow for the latest on my AI course and projects。
+  prefs: []
+  type: TYPE_NORMAL
+- en: click subscribe and the bell next to it to be notified of every new video。 All
+    right。 you'll notice I am in Google co layout for this one。 We're going to be
+    making use of the GPU。 So let's go ahead， make sure you have class 6 of mine open
+    and。😊，Google Collaboratory。 It's on Github。 I have a link to the Github repository
+    at the bottom of this video in the description。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And we're going to go to runtime， change runtime type。 And I already have it
+    in there。 But make sure that you have the GPU。 Don't worry about this Python 3，6
+    yellow。 That was from my local environment。 Google does not have that。 So you'll
+    want Python 3。 And we'll save that。 So let's scroll down to part 5 of this。
+  prefs: []
+  type: TYPE_NORMAL
+- en: because this is what we're talking about。 We're going to look at how I was able
+    to shoot that video that you saw leading up to this that has all the squares around
+    that。😊。![](img/e158ad4b49aacee0b95f33252bd7ee13_1.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/e158ad4b49aacee0b95f33252bd7ee13_2.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: But we're going to start， and we're going to look at how we can now recognize
+    multiple images with a convolution neural network。 A single convolution neural
+    network， like we look at a few parts ago， can recognize multiple images。 If it's
+    big enough。 It's able to look at an image and mark these。 So you'll see microwave
+    person。 Hey， I'm a person。 And several bottles sitting on my window。 That is true。
+    This is。
+  prefs: []
+  type: TYPE_NORMAL
+- en: this is my kitchen。 actually， sink starting to make dinner， for for me， not
+    the dog。 but he's there wanting to see what I'm see what I'm doing。 He's always
+    right around whenever we're cooking something。 But this image is trained using
+    exactly the same。😊。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/e158ad4b49aacee0b95f33252bd7ee13_4.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Technology that we saw with the convolution neural networks。 This is something
+    called Yolo。 And I give you a link to the paper。 Yolow stands for you only look
+    once。 and what's so cool about this technology is it is using a single convolution
+    neural network that has a fairly complex output layer。 So it's not a simple classifications。
+    Also regression。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And it literally sends out to you all of these images that are found。 So that's
+    what's really。 really cool about this about convolution neural networks。 you can
+    make those output layers send out just about anything that you want， really。 you
+    can have it send out in this case， multiple bounding rectangles and what it thinks
+    is in each of those。
+  prefs: []
+  type: TYPE_NORMAL
+- en: 😊，In the next module， we'll look at GNs and we'll see that it can even output
+    an image。 The input to aganN won't be an image。 It will actually be a number like
+    a seed。 and the output will be an image。 So a convolution neural network， the
+    input can be images。 The output can be images。 Both the input and the output can
+    be images or one or the other。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So we're going to look at convolution neural networks in quite a few of the
+    modules of this class because they're very multifaceted。 You can use them for
+    natural language processing images。 Now。 you can also run this on a live stream。
+    So this was just a picture that my wife took on on her cell phone。😊。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/e158ad4b49aacee0b95f33252bd7ee13_6.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](img/e158ad4b49aacee0b95f33252bd7ee13_7.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: This is， well， this is also from a cell phone。 This was not using the normal
+    camera that I record this class from。 So when I was on that video talking about
+    this， I wasn't able to speak to some of the things that it was classifying or
+    misclassifying correctly because it was being recorded to a video。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I don't have a strong enough GPU hooked up on one of my local computers here。
+    I normally do GP in the cloud to actually live stream this sort of video。 if you
+    want to live stream this sort of video。 the GPU a Titan V would be great。 about
+    3000 bucks for one of those。 So I presently do not do not own one of those。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I've thought of it， but just have not most of the stuff that I do is not live
+    streaming video。 So I I just do this in the cloud， and I use B100s， which are
+    similar to those。 but it's 4 bucks an hour rather than many thousands of dollars
+    for a onetime investment。 just depends on what you're going to do。 if I was using
+    that thing hours and hours a day。
+  prefs: []
+  type: TYPE_NORMAL
+- en: it would make sense to do the 3。 If you look at this。 This does show some of
+    the limitations。 notice it's going beerk on my bookshelf。 It is classifying every
+    single one of those books。😊。Is fascinating about this up here in the image of
+    my kitchen。 It's not It's classifiedifying as a handful of things Here。 It's classifying
+    hundreds。
+  prefs: []
+  type: TYPE_NORMAL
+- en: The processing time is consistent。 You only look once it's not looking at each
+    of those books。 We'll see how that works in a moment。 But you can see it's classifying
+    the TV monitor and other things。 this yellow thing here is actually a toolbox。
+    but it keeps thinking it's a remote control or or other things。 it is correctly
+    classifying my laptop in the video， it's not always classifying it correctly。
+  prefs: []
+  type: TYPE_NORMAL
+- en: It is classifying me as two people。 My head is one person， the rest of me is
+    another person。 I also stood for this。 stood up because normally， if you've watched
+    a lot of my videos and hopefully have go ahead and subscribe so that you you can
+    when I'm sitting down with the usual pose that I use when I introduce and conclude
+    a video。
+  prefs: []
+  type: TYPE_NORMAL
+- en: It wasn't recognizing me。 It was just recognizing all my books。 And who cares。
+    That's boring。 I wanted to recognize me。 Not that I felt chited or anything by
+    that。 It's also recognizing my chair， which is good。 that's really just one chair。
+    So let's talk about how Yo。😊，right now， this is just about state of the art for
+    multiimage detection。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And you can do some really， really cool things with this。 I mean say I wanted
+    to put a dog door on the back of my house。 and I only wanted the dog to go through。
+    I could just write a very simple program to stream it。 And so long as I saw a
+    dog somewhere it would open the door。 Hopefully。
+  prefs: []
+  type: TYPE_NORMAL
+- en: it would not misclassify a raccoon as a dog。 So how does Yolo work。 This is
+    a convolution neural network just like we've seen。 We create an S by S grid。 There's
+    several standard sizes for this。 Usually it's not too big。 It's in the teens。
+    typicallyyp it basically resizes your image， or it puts a grid over it more so。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And it runs the convolution neural network， and it gets a lot of these squares。
+    these potential bounding boxes are called with predictions。 But most of them are
+    not going to be good enough。 We throw them away。 We set a threshold and only things
+    above that fairly wellestablish threshold。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Are we going to actually display。 So you can tune how sensitive it is in that
+    regard。 Now。 this is a convolution neural network。 So we need to see how this。😊，Is
+    working。 The output layer to this is very interesting。 So previous neural networks
+    that I showed you were either classification or regression。 This is both。 technicalnically，
+    the paper calls it regression。 So I suppose it's regression， but。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I consider this almost a hybrid of classification because here's what's happening。Essential。
+    a whole bunch of bounding boxes are coming back。 What confused me when I first
+    looked at Yolo was you'll see here。 a whole bunch of squares come back here。 Not
+    so many。 neural network output layers are fixed length。 They don't change their
+    length。 unless they're generative neural network。
+  prefs: []
+  type: TYPE_NORMAL
+- en: but we'll get more into that when we get into natural language processing。 But
+    these are not generative in that regard。 They're just giving you one set of fixed
+    output neurons。 And the number of output neurons is fixed。 It's a tensor。 I was
+    wondering at first。 how is it giving me a variable list of。 Well， the answer is。
+  prefs: []
+  type: TYPE_NORMAL
+- en: and it's more evident And this figure from the paper。 This is the overall grids。
+    that's that S by S that you're presenting in。 It returns something like this。
+    It returns a ton of bounding boxes。 The total number of bounding boxes returned
+    is always fixed。 So there is a fixed number of output neurons。 It's just you throw
+    away the weaker ones that it's not as confident in。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And here you can see the darkness of the bounding box。 So really。😊。![](img/e158ad4b49aacee0b95f33252bd7ee13_9.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: That's dark， that's dark。 That's star and that's dark。 So dog by car。 So that
+    is those are the ones that are ultimately above the threshold and considered。
+    So let's look at what that output layer actually looks like because the input
+    layer on up。 that's just a typical convolution neural network。 It's got convolution
+    layers。
+  prefs: []
+  type: TYPE_NORMAL
+- en: maxpoing layers and dense layers。 just like any other that you have What you
+    have， though。 for the output neurons is a bunch of bounding boxes coming back。
+    And each bounding box。 So these are the values that are in your output layer。
+    and it's just these six things repeated over and over and over again。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So you have x coordinate a Y coordinate。 that's the center of one of these bounding
+    boxes。 Well。 they're not boxes， they're rectangles and the width and the height。
+    because these don't have to be the same。 So they're rectangles that are drawn
+    around various things。 And then the labels。 this is where you can get a bunch
+    of these because you might have many thousands of labels。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And here you might have just a handful or 100。 each label represents something
+    like person dog house。 And this is essentially a one hot sort of encoding for
+    these labels。 So what you get here is。![](img/e158ad4b49aacee0b95f33252bd7ee13_11.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/e158ad4b49aacee0b95f33252bd7ee13_12.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: For the labels， whichever one has the highest value that is the label that it
+    actually chose it was。 So person would probably have the highest the highest value
+    in that label。 you could probably also look at the second highest and see if it
+    may be thought that it was what the runner up for that guy there was other than
+    person。 That label alone， though is not the overall confidence that you're looking
+    at。
+  prefs: []
+  type: TYPE_NORMAL
+- en: you're looking at this confidence。 and this confidence is a number that specifies
+    if it thinks that there truly is something there。 So all of these other boxes
+    that you had， you're not going to display those。 you don't even count those。 So
+    that's how you essentially get this variable number of values coming back。 You're
+    always getting the same number of bounding rectangles back。
+  prefs: []
+  type: TYPE_NORMAL
+- en: You're just throwing away most of them。 Now let's look at how many actual neurons
+    that we have。 It's a 3D tensor that comes back。 So it's not just a simple linear
+    set of output neurons。 you can think of it that way。 It's really S by S。 So however
+    many however big that grid was。 say 10 by 10。 It would be 100 times B B is the
+    number of potentially bounding rectangles per grid cell。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/e158ad4b49aacee0b95f33252bd7ee13_14.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: How many of those you're going this equation is basically straight from， from
+    the paper。 The5 comes from 1，2，3，4 for the X， Y， height width， and then the confidence。
+    So that's 5。And then the number of labels that we have。 So that one hot and coating。
+    And C is the number of classes that we have。 So you have to deal with that。
+  prefs: []
+  type: TYPE_NORMAL
+- en: It can only classify for actual known known classes。 And that gives you all
+    your bounding rectangles。 You run that。 And that's really all there is。 is to
+    this。 Now， looking at what that convolution neural network actually looks like。
+    This is your image coming in 4，4，8 by 4，4，8 is the size that the paper was using。
+  prefs: []
+  type: TYPE_NORMAL
+- en: It was a scanning convolution layer 7 by 7 goes into another convolution layer。
+    another convolution layer。 Also with max pooling layers。 just exactly like we've
+    seen before。 There's nothing new about this。 The only difference here is we have
+    the 7 by 7 by 30 tensor that is being output from it。 These are sample images
+    from the paper。 They even show an example of where it's misclassifying here it
+    has problems with the person jumping from that car of that car。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Hey， he's a plane。 Nope， he's not，'s he's acting a lot like an airplane， but
+    he's not an airplane。 They also talk about some of the limitations of this in
+    the paper for yellow。 Like if there was a flock of birds。Up here and they were
+    fairly far off in the distance。 it would not recognize them because it has trouble
+    recognizing very small。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Highly dense groups of things。 It was doing pretty well with the books that
+    we saw earlier wouldn't do so well if they were much。 much smaller。 Now using
+    this in Python。 I give you some links here。 This is to darknet。 Now I use this
+    as well。 This is the C version of it。 I've compiled that and basically can run
+    it from the command line。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I've not used it in a C program yet。 but many people have， it's certainly available
+    for you。 We're going focus more on darkflow。 Darkflow is going to let you use
+    this in Python。 Now we're not going to train a yellow network。 You can。 We're
+    going to go ahead and install darkflow。 Now you've got your choice。
+  prefs: []
+  type: TYPE_NORMAL
+- en: You can do this on Google coabab。 That's what I'm going to demonstrate。 so that
+    we can run it with a GP。 It'll be a little faster。 mostly for recognizing individual
+    images。 You you're fine without a GP。 If you want to actually record live video。
+    then you're really going to want to have some sort of a GP on your actual system。
+  prefs: []
+  type: TYPE_NORMAL
+- en: but using individual images。 You're fine with you're fine with a CPU。 It'll
+    take like 5 to 10 seconds for a single image。 We're going to。Run dark low Yolo
+    from Google Col。 I'm going to take you through the instructions real quick。 It's
+    that hard。 We're going to need some files。 So we're going need the weights because
+    we're not going to train a yolo。
+  prefs: []
+  type: TYPE_NORMAL
+- en: We're going to use the original weights that the author of the paper got for
+    us。 This is kind of leading up to transfer learning， which we're going learn about
+    later where we can make weights that we're actually generated by people who have
+    very high training environments with many。
+  prefs: []
+  type: TYPE_NORMAL
+- en: many GPs and spent potentially many， many weeks training them。 So we'll be able
+    to benefit from those weights and load them in。 This is starting to get there。
+    We're going to do this both in this module in the next module。 we're going to
+    benefit from already trained neural networks。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And we're not sending them off to the cloud。 We've literally got these weights
+    in our computer and can look at them if we so desire。 So you're going to need
+    three files to run this， and you'll need to put them in your Google drive。 You're
+    going to need weights， Yolo do weights。 We're going to need the configuration
+    file。 and we're going to need the labels file。 Now， I have some scripts that you
+    can run here that do this really quite easily for you。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So the first thing we're going to need to do is。😊，one the dark flow and Github。
+    So let's do that。 So we're resetting all runtime。 So I've run this before because
+    I tested it。 ands it still has to re clone it。 Google deletes everything that
+    you put on here except for what you put in Google Drive。 So always remember that。
+    we've made a clone of it。 Now we're going do a special Pip install。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And this will install darkflow into Python。 Now I'm in Google Coab。 I've got
+    to do this every time that I restart my environment。 And notice I'm giving it
+    a directory。 That's that same darkflow directory that we just checked out。 So
+    that's handy。 So I run that and we're now doing a Pip install of darkflow。 And
+    now we have darkflow installed。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now if you're doing this on your local computer， you'll need to basically do
+    these exact same steps。 but you need some prerequisites to be able to run darkflow。
+    You needthon and open C。 So make sure you install those and read up on how to
+    do those。 Def the easier approach for this is to use Google coab here I'm going
+    to mount my drive。
+  prefs: []
+  type: TYPE_NORMAL
+- en: This is how I actually make my G drive available in here。 And I'm running that
+    has to do some security。 I have to pick who I want to be Now am。😊。Blocking this
+    all for security reasons。 and then you copy and paste this little token that it
+    gives me。 come back to Google coab put it into here。 and now I can unblock Now
+    these commands。
+  prefs: []
+  type: TYPE_NORMAL
+- en: these are Unix commands。 this saves you the trouble of having to drag and drop
+    all of those individual files。 I'm going go ahead and run this and all this is
+    doing is creating a directory called projects in my Google Drive then inside of
+    there I have Yolo。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So I typically create a projects directory my Google Drive and all these things
+    that I need coab I just put them in these various location。 So in Yolo， we have
+    a bin and we have a configuration directory hopefully that all worked that should
+    have all so that is all those files have now been downloaded you're going run
+    locally here's a link with instructions from the author site on how to do this
+    Now we're going to run this part。
+  prefs: []
+  type: TYPE_NORMAL
+- en: first of all pick which of these you want to have So we have to change into
+    the directory that we're actually running this from。 So if you downloaded this
+    your local drive you need whatever your path is's where I tend to store things。
+    But here I'm going to change my。Diy to my Google drive to yellow。 and then the
+    options。 If you're running a GPU， then you want this part to be GPU 1。 Otherwise，
+    you don't。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So we're gonna run it with GPU。 We're going to pull an image across the Internet。
+    We're going to use cook JPg， which is me cooking in the kitchen。 You saw that
+    earlier with my dog And let's go ahead and run this。 Now it's going to load the
+    weights in from that pretrained neural network。 See it's building it。
+  prefs: []
+  type: TYPE_NORMAL
+- en: There's all those convolution layers that we saw。 and this is a decently complicated
+    convolution neural network。 but it's just one convolution neural network that
+    learns to recognize all those different image types。 That's what's really， really
+    cool about this。 We run in GPU mode and it finishes very， very quickly。 Now， the
+    GPU that Google gives you is great， and it saves us hours on this。
+  prefs: []
+  type: TYPE_NORMAL
+- en: but it's nothing compared to the next level up， which would be like a Titan
+    V， which。😊。I haven't run it on that high， high end of1。 I could。 I could do that
+    with the enterprise equivalent on of V 100 on Amazon。 But that would do this even
+    quicker。 And that's what you need for real time real time video because you need
+    to be able to do 30 or so a second。
+  prefs: []
+  type: TYPE_NORMAL
+- en: if you truly want to be in the range of real time。 Now， let's run it and we'll
+    see the results。 Now。 instead of getting that image with the bounding boxes and
+    text all around it。 Now I get those output values that we talked about。 So we
+    see person， dog， cat， bottle， microwave。 oven， sink all those various things，
+    the confidence。 And then the coordinates and sizes。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So we see basically the top left in the bottom right。 It's translating the centers
+    and the width and height into into bounding coordinates。 So this is great。 You
+    can do all kinds of things with this in your own programs to detect various things
+    in images。😊。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/e158ad4b49aacee0b95f33252bd7ee13_16.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Thank you for watching this video in the next video we're going to begin to
+    look at GAN neural networks。This content changes often， so subscribe to the channel
+    to stay up to date on this course and other topics in artificial intelligence。
+  prefs: []
+  type: TYPE_NORMAL

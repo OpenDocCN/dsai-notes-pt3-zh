@@ -1,0 +1,900 @@
+- en: 【双语字幕+资料下载】官方教程来啦！5位 Hugging Face 工程师带你了解 Transformers 原理细节及NLP任务应用！＜官方教程系列＞
+    - P37：L6.5- Omar的在线直播讲解 - ShowMeAI - BV1Jm4y1X7UL
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: All right， I think we can get started。So as always， welcome everyone。 if you
+    have any questions you can ask in the chat， Le will be there helping me。So this
+    is the fourth and last chapter of the course。This is a bit different to the previous
+    three。 and this one will show you a bit more how to use the platform and how to
+    leverage all of the Hogan phase features。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So this is the quick agenda for today， first we'll see a bit of the platform。
+    then we'll show you how to use existing pretraining models， then how to push models
+    to the hubub。 both with the push toHub method and the Hogging phase client command
+    light interface。Then we'll talk a bit about model cards and to close we'll show
+    you like some bonus content that is not part of the。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Of the girl of the girls。So yeah， so the Co hub you've already used it a bit
+    on the previous chapters。 it's the central platform that enables anyone to discover。
+    use and contribute new state of the art models and data sets。It host a wide variety
+    of models。 so it had more than 10，000 public available models we can check right
+    now how many it has so right now it has 11。
+  prefs: []
+  type: TYPE_NORMAL
+- en: 000 publicly available models for anyone to use。So theHub has support for both
+    models and data sets in this chapter we focus completely on the model side of
+    the hubub。So the models in the hub are not limited to Hugging F transformers。
+    and it's not even limited to natural language processing。There are models from
+    Flare and then ALP for NLP。For speech。
+  prefs: []
+  type: TYPE_NORMAL
+- en: there is asteroid and P note and there is also the for visionion this is just
+    to name a few。So if you want to see all of the support that models in the hubub，
+    so this is Hoinface。go。 you can go to resources。And here you can go to model hub
+    do。On the the left。 you can look at libraries。And here we have a full list of
+    supported libraries and how well supported they are depending on the different
+    features so there's showing phase transformers。
+  prefs: []
+  type: TYPE_NORMAL
+- en: but there's also adapter transformers， All NLP， asteroid， SPNe， Flare， by note。
+    center transformer transformers， Spacey， Tensorflow TTS， and Team。So each of these
+    models is cost as a Git repository， so if you've used Gitthub before。 this will
+    be very straightforward to you。Asing a model on the hubb means opening it up to
+    all their community。
+  prefs: []
+  type: TYPE_NORMAL
+- en: it makes the model accessible to anyone looking to easily use it。In turn。 it
+    will eliminate or need to turn the model on their own and it will simplify sharing
+    and using the model。Additionally， the hubub also has something called the inference
+    API。 so in the moment you upload a model to theHub， there will be an automatically
+    deployed hosted inference API that allows you or anyone else in the community
+    to try out the model directly on the website so the video will show you a bit
+    more of this but just so you have an idea of what I'm talking about。
+  prefs: []
+  type: TYPE_NORMAL
+- en: 诶。I think we already did a bit of this in the first chapter。But if you open
+    a。Repoitory。Here at the rate， you have a hosted in the friends API。 so you can
+    try this query。 And if you click compute， this is a。Fill mask model。It will predict
+    what words should go there。 So the goal of life is life。 Okay， so that wasn't
+    great， but you get the idea。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And it's not limited to field mask， actually there are like。A lot of other tasks。so
+    okay。 I will show you that。First video of this chapter， but please feel free to
+    ask anything in the chat if you have any questions。![](img/c09cf1ac6e21d36580a79d639f204d72_1.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/c09cf1ac6e21d36580a79d639f204d72_2.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: In this video， we're going to go over the Huging F model H navigation。This is
+    the hugging phase dot co landing page。To access the Model hub。 click on the Model
+    tab in the upper right corner。You should be facing this web interface。 which can
+    be split into several parts。On the left。
+  prefs: []
+  type: TYPE_NORMAL
+- en: you will find categories which you can use to tailor your model search。The first
+    category is the tasks。Ms on the hub may be used for a wide variety of tasks。These
+    include natural language processing tasks， such as question answering or text
+    classification。 but it isn't only limited to an LP。Other tasks from other fields
+    are also available。
+  prefs: []
+  type: TYPE_NORMAL
+- en: such as image classification for computer vision or automatic speech recognition
+    for speech。The second category is the libraries。Mottles on the hub usually share
+    one of three backbones。 pytorch， Tensorflow， or jacks。However， other backbones
+    such as rust or onyx also exist。Finally。 this tab can also be used to specify
+    from which high level framework the models comes。
+  prefs: []
+  type: TYPE_NORMAL
+- en: This includes transformers， but it isn't limited to it。 The model hubbbies is
+    used to host a lot of different frameworks models。 and we are actively looking
+    to host other frameworks models。The third category is the dataset sets tab。Selecting
+    a dataset set from this tab means filtering the models so that they were trained
+    on that specific dataset。
+  prefs: []
+  type: TYPE_NORMAL
+- en: The fourth category is the languages tab。Selecting a language from this tab
+    means filtering the models so that they handle the language selected。Finally，
+    the last category allows to choose the license with which the model is shared。On
+    the right。 you'll find the models available on the Model H。The models are ordered
+    by download， by default。When clicking on a model， you should be facing its model
+    card。
+  prefs: []
+  type: TYPE_NORMAL
+- en: The model card contains information about the model。 itss description intended
+    use。 limitations and biases。It can also show code snippets on how to use the model。
+    as well as any relevant information， training， procedure， data processing。 evaluation
+    results or copyrights。This information is crucial for the model to be used。
+  prefs: []
+  type: TYPE_NORMAL
+- en: The better crafted a model card is the easier it will be for other users to
+    leverage your model and their applications。On the right of the model card is the
+    inference API。This inference API can be used to play with the model directly。Feel
+    free to modify the text and click on Comp to see how would the model behave to
+    your inputs。
+  prefs: []
+  type: TYPE_NORMAL
+- en: At the top of your screen， lies the model tags。These includes the model task
+    as well as any other tag that is relevant to the categories we have just seen。The
+    files and version tab displays the architecture of the repository of that model。Here
+    we can see all the files that define this model。You will see all usual features
+    of a get repository， the branches available。Do you commit history。
+  prefs: []
+  type: TYPE_NORMAL
+- en: As well as the committed diff。Three different buttons are available at the top
+    of the model card。![](img/c09cf1ac6e21d36580a79d639f204d72_4.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: The first one shows how to use the inference API programmatically。The second
+    one shows how to train this model in sage maker。And the last one shows how to
+    load that model within the appropriate library。For Birt。 this is transformers。![](img/c09cf1ac6e21d36580a79d639f204d72_6.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/c09cf1ac6e21d36580a79d639f204d72_7.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Okay， so I think that was quite straightforward。Maybe let me just briefly expand
+    a bit on some points so that you I change a bit。 but if you click now deploy accelerated
+    inference， you get this code snippet so you can make a。Requests in in Python，
+    but this is not limited to Python。 This is like a normal API call so you can just
+    jascript or whatever language you use。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Then here at the right， if you click using transformformers。 you get this called
+    snippet that you can use。But as we discussed before。 this is not limited to transformers。So，
+    if you go to。The mothers page。And at the left。 you can click here the plus 19
+    and here you can see all of the supported libraries。So for example。
+  prefs: []
+  type: TYPE_NORMAL
+- en: if we go to sentence transformers。That will filter out。All of the sentence transformers。And
+    here the code snippet will change so for example here the code snippet is specifically
+    for this library so that makes it very nice like a very nice integration with
+    their libraries and if you click here compute this in this w yet。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Is for sentence similarity， so you get a source sentence。And then destinations
+    or sentences。 and you will get the distance between the source sentence。And each
+    of the others。 So how similar these are。So for this model， the closest thing to
+    that is a happy person is that is a very happy person。 so that makes sense。So
+    there is a question， can we use a keyword based search to search for models for
+    a particular task？
+  prefs: []
+  type: TYPE_NORMAL
+- en: So if you are interested on a particular task。You can go to models， and you
+    can then click。text generation， for example， and then here you can do like additional
+    search so for example GT。 you can also have like additional filters， so for library
+    data sets， languages。 but we are improving the search functionality now so just
+    stay tuned and there will be like nicer features for discoverability of the models。
+  prefs: []
+  type: TYPE_NORMAL
+- en: 네， good question的。O。So this was how to use the how to navigate the hub。 let's
+    quickly discuss something that you will probably be already familiar since you
+    did this in the first and second chapters。So let's say that we're interested in
+    a French based model that can perform mask filling。So yeah。 let me remove this
+    so we said fill mask。And you went to French。So a。
+  prefs: []
+  type: TYPE_NORMAL
+- en: We can use this one comm face normally what you should do is read the description。
+    the model card to understand what this model is about and what's to the purpose
+    and if it has anybody biases any limitations。 we'll talk a bit more about this
+    in few minutes。Okay。 so there are like three different ways of using the model。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So the first one is like we did in the first chapter。 So we use the pipeline。
+    So this like this super high level。Functions， so from transformers import pipeline，
+    just specify。What's the task that we're solving， which is film mask？And we specified
+    the name。 gun member bird base。And as you can see here。We get a prediction。
+  prefs: []
+  type: TYPE_NORMAL
+- en: You can also use the specific model architecture to load the model this is similar
+    to what you did in the second chapter。So this is a commem bird model， it has a
+    commem bird architecture。 so you can import commemered organizeizer and the commem
+    bird for masked language model。アん旅カどです。ALguage showed you in one of the previous
+    sessions if you go to Gitthub Transformers source Transformers models。
+  prefs: []
+  type: TYPE_NORMAL
+- en: you can see all of the architectures that are implemented in the Transformers
+    library and as you can see there are quite a bit。So what is normally suggested
+    is to use the。Oututto to organizer。 and auto model like the auto classes， because
+    these are architectural agnostic。And then you don't need to worry about。Yeah，
+    about what's the specific architecture。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So let me just briefly step back to the pipeline， which I think is something
+    important。 is that you need to make sure that the model you're using。 the checkpoint
+    you're using is for this task， so let's say that you want to use instead text
+    classification。The model was not trained for this， so of course this will not
+    make any sense。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So it will give you an output， but it will complain。 it will say that you probably
+    need to train the model on a downstream task， as you did in chapter 3。And yeah，
+    the prediction is pretty much meaningless here。Okay， so this was nothing new。
+    but I think that what will be more interesting is。The next next section。
+  prefs: []
+  type: TYPE_NORMAL
+- en: which is how to share pretrained models。 So these are like the last two videos
+    of the first part of the course。 So the first one will show you how to manage
+    a repo and how to upload files。With a command line interface and the second video
+    will show you how to use the push to hub methods So there are like three different
+    ways of doing things so one is the web interface。 one is using the transformers
+    or coding F hub a command line interface and the third option is the push to hub
+    API。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So let's jump to the video and remember to ask any questions in the chat。![](img/c09cf1ac6e21d36580a79d639f204d72_9.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/c09cf1ac6e21d36580a79d639f204d72_10.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: In this video， we're going to understand how to manage a model repository on
+    the Huging F model hub。In order to handle a repository， you should first have
+    a hugging face account。 aging to create a new account is available in the description。Once
+    you're logged in。 you can create a new repository by clicking on the new model
+    option。
+  prefs: []
+  type: TYPE_NORMAL
+- en: You should be facing a similar model to the following。In the owner input。 you
+    can put either your own namespace or any of your organization's namespaces。The
+    model name is the model identifier that will then be used to identify your model
+    on the chosen namespace。And final choice is between public and private。Public
+    models are accessible by anyone。
+  prefs: []
+  type: TYPE_NORMAL
+- en: This is the recommended free option as this makes your model easily accessible
+    and shareable。The owners of your namespace are the only ones who can update and
+    change your model。A more advanced option is the private option。In this case。 only
+    the owners of your namespace will have visibility over your model。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Other users won't know it exists and will not be able to use it。Let's create
+    a dummy model to play with。Once your model is created comes the management of
+    that model。Three tabs are available to you。You're facing the first one， which
+    is the model card page。This is the page you used to showcase your model to the
+    world。
+  prefs: []
+  type: TYPE_NORMAL
+- en: We'll see how it can be completed in a bit。The second one is the files and versions。Your
+    model itself is a gate repositor。If you're unaware of what is a get repository。
+    you can think of it as a folder containing files which can be versionrged。If you
+    have never used Gid before， we recommend looking at an introduction like the one
+    provided in this video's description。
+  prefs: []
+  type: TYPE_NORMAL
+- en: The gett repository allows you to see the changes happening over time in this
+    folder。 hence of the term versions。We'll see how to add files and versions in
+    a bit。The final tab is the settingss tab， which allow you to manage your model's
+    visibility and availability。😊，Let's first start by adding files to the repositor。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fileles can be added through the web interface thanks to the add file button。The
+    added files can be of any type， Python， J text， you name it。Alongside your adult
+    file in its content， you should name your change or comment。Generally。 adding
+    files is simpler when using the command line。We showcase how to do this using
+    Git。
+  prefs: []
+  type: TYPE_NORMAL
+- en: In addition to Git， we're using Git L F S， which stands for Git Large file storage
+    in order to manage large model files。First， I make sure that both Git and Git
+    LFS are correctly installed on my system。Links to install Git and GiLFS are provided
+    in the video description。Then we can get to work by cloning the repository locally。We
+    have a repository， with a single file。
+  prefs: []
+  type: TYPE_NORMAL
+- en: The file that we have just added to the repository using the web interface。We
+    can edit it to see the contents of this file and update these。It turns out I have
+    a model handy that can be used for sentiment analysis。I'll send p copy over the
+    contents to this folder。This includes the model weights。
+  prefs: []
+  type: TYPE_NORMAL
+- en: configuration file and tokenizer to the repository。I can then track these files
+    with the gett add command。Then， I commit the changes。And giving this commit the
+    title of add model weights and configuration。😊，Finally。 I can push the new commit
+    to the hugging phase dot co remote。😊。
+  prefs: []
+  type: TYPE_NORMAL
+- en: When going back to the files and version tab on the web interface。 we can now
+    see the newly added commit with the updated files。We have some two ways of adding
+    files to a repository here。 a third way is explored in the video about the pushush
+    to Hub API。
+  prefs: []
+  type: TYPE_NORMAL
+- en: A link to this video is in the description。Unfortunately。 the front page of
+    our model is still very empty。Let's add a read me Markdown file to complete it
+    a little bit。This read me is known as the model card， and it's arguably as important
+    as the model and tokenizer files in a model repository。It is the central definition
+    of the model， ensuring reusibility by fellow community members and reproducibility
+    of results。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And providing a platform on which other members may build their own artifacts。We'll
+    only add a title in a small description here for simplicity's sake。 but we encourage
+    you to add information relevant to how is the model trained。 its intended uses
+    and limitations as well as says identified and potential biases。
+  prefs: []
+  type: TYPE_NORMAL
+- en: evaluation results and code samples on how should your model be used。😊。Great
+    work contributinging a model to the model hub。 This model can now be used in downstream
+    libraries simply by specifying your model identifier。😊。![](img/c09cf1ac6e21d36580a79d639f204d72_12.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/c09cf1ac6e21d36580a79d639f204d72_13.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Okay， feel free to ask any questions in the chat， I am Holmes you ask。 so Do
+    can only come into play if we are working with organizations。I guess you are referring
+    to the authentication token。 so normally when you log in in your computer to Ho
+    interface with a Ho phase command line interface。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Every user has a token that is saved locally and then in the server when you
+    push files。The back end make sure that you have access of a specific files so
+    if you are a member of an organization and you push a model or you create a rapport
+    or the later reportport in an organization。
+  prefs: []
+  type: TYPE_NORMAL
+- en: you will always need to。Your doken will be part of the request。 but this is
+    for any request because we need to know like。Which is the user making the request。Let
+    me know if that wasn't a very clear explanation or if you were referring to another
+    token and not the authentication token。Okay， so let me just show you the last
+    video and then we'll do some coding if that sounds good。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And in the meantime， feel free to ask any questions in the chat。![](img/c09cf1ac6e21d36580a79d639f204d72_15.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/c09cf1ac6e21d36580a79d639f204d72_16.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Let's have a look at the push to everyPI。Just before recording this video。 I
+    mentioned the bad model and to the crew M PC。We won't go over the find engine
+    code here because you can find it in any transformer tutorial or by looking at
+    the videos link below。
+  prefs: []
+  type: TYPE_NORMAL
+- en: What interests us here is what happens when the training is finished and we've
+    got metrics we're happy。This video requires you to one sign up for an account
+    on the Eingfeaz。go website and two have your audio taken into that website store。
+    which can easily be done by typing Eringface CLI login into a terminal or like
+    this in a Coab notebook by using an excion mark。
+  prefs: []
+  type: TYPE_NORMAL
+- en: This command won't work if you are using a regular Jupiter notebook。 so if you
+    are using that and don't have access to a terminal。 you'll need to copy your access
+    token from the Ugingfeest。go website into the training arguments。 I'll show you
+    where exactly in a little bit。With that done。
+  prefs: []
+  type: TYPE_NORMAL
+- en: the push API will arise to a to the Iging face our model， its configuration。
+    and the associated tokenizer。To use it inside the trainer。 you have to make sure
+    to set push to equal tool inside the training argument。We can specify a model
+    I D for repository。Which will defaultote to the name of the output here if we
+    don't say anything。
+  prefs: []
+  type: TYPE_NORMAL
+- en: We can push to an organization as long as we're a member of that organization。
+    and this is where your aging Fe account should be past if you need to。Whateverever
+    if is done。 we can call trainner that pushtub once the training is finished。In
+    future developments。 we'll add the ability to automatically push to the app at
+    the end of each epoC or every given number of steps。
+  prefs: []
+  type: TYPE_NORMAL
+- en: so stay tuned。The command returns a URL。For a specific commit。 which well be
+    able to inspect if we copy it in our browser just before checking that。 not that
+    if you are not using the trainer API， you can directly push your model and your
+    tokener to the by using the push2 have method。By passing the commator in my browser，
+    I can access my repository called Fine Tru Belt M PCC as expected。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And see that of all files have been added。A model card， the configuration of
+    the model。 the model weight， the tons of bond runs， and all the file required
+    as the tokenizer。The trainer drafted a model class follows， which contained the
+    final results on the evaluation set。 the training output parameters， the intermediate
+    training results。
+  prefs: []
+  type: TYPE_NORMAL
+- en: as well other frameworks by was using。If I click editit model card to see the
+    raw content。 I can see the trainer also generated a table of metadata that the
+    Ugingfaceco website is going to use to properly apply fieldt to my model。I can
+    also directly access the tonawboard runss inside the model hub by clicking training
+    metrics here。Now that the model is in Europe， we can use it from anywhere with
+    the from between method。
+  prefs: []
+  type: TYPE_NORMAL
+- en: We just have to use the identifier from the E and we can see that the model
+    configuration and weights are automatically downloaded。We can use this model as
+    we would any transformers model， for instance。 by readinging it in a pipeline。Since
+    the MRPC dataset set is a dataset set of parallel sentences。 where the task is
+    to determine if two sentences are paras of one another or not。
+  prefs: []
+  type: TYPE_NORMAL
+- en: we use it and two sentences separated by step。It's a little bit disappointing
+    to see that it's predicting label zero。That's because I didn't specify any label
+    when I created the model configuration。Fixing this is super easy with a pushure
+    API。First。 we can fix the configuration locally by setting label to  a and8 to
+    label with a proper value。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Then we can push the fixed cong to our reportpo with the push to a method。Once
+    again。 please return the URL of a commit， which we could inspect and see the exact
+    inside the config。And note that the command is going super fat because I'm using
+    the same local folder as before。 which on which my report is already cloneed。Once
+    this is done and we create a new pipeline。
+  prefs: []
+  type: TYPE_NORMAL
+- en: we can see the new configuration is automatically downloaded thanks to the building
+    person system and we get the new label。We can also play with the model directly
+    on its model card。Bypasing the text I was using and clicking Comp。I just have
+    to wait a little bit of time before the model is loaded on the inference API and
+    display the result。When the mod is loaded， we can double check we get the same
+    results as before directly on the Weget。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Try the push to a VPA on your models today。All right。Yeah。 going back to the
+    question from I am Hols about the authentication token now that I saw this example
+    I think that I understood a bit more where your question came from so normally
+    when you do Hoging phase clear logging your authentication token will be stored
+    in the cache and then you wont need to do it ever again。
+  prefs: []
+  type: TYPE_NORMAL
+- en: but for example， if you're working in goL or，Yeah。 I don't know in an environment
+    in which maybe you't want to do log in。Instead you can specify and for a specific
+    authentication token。 and that's the use case of the out token parameter。Okay，
+    so let's do some coding。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So you will need to do your configuration in Git if you were yeah， your normal
+    git configuration。 I already did it login before。哦。If the table here。ho。系音。Sorry，
+    it's who am I。Yeah那回 go。So I already did login before starting the session， so
+    my username is Haarte so I showed you a。Few examples， so the nice thing about
+    the push to have API is that everything in co phase in transformers has this method。
+  prefs: []
+  type: TYPE_NORMAL
+- en: so models tokenrs， yeah you name it。So if you do this first three lane。It will
+    push the model file and it will push the tokenizer file。What is very nice is that
+    if youjos a Tra API。Okay， now I'm getting an neurons， let me just quickly。嗯。Okay，
+    this is new。Okay， let me try one more。诶。In the meantime。
+  prefs: []
+  type: TYPE_NORMAL
+- en: let me show you an example of a rep uploaded with a trainer API if you follow
+    the Piytorch tutorial in chapter3。 you are quite familiar， so just by specifying
+    push to H， you will get a bunch of very nice things。So， you will get a。Description，
+    you will get the loss accuracy of1 or other metrics。You will get placeholder sections
+    that you can later complete。
+  prefs: []
+  type: TYPE_NORMAL
+- en: You will get all of the training hyperparameters that were used during training。You
+    will get this nice table with a results during training for every epoC。And you
+    will also get the。Framework versions。 So this is very useful for repproducibility。On
+    top of this。There is this very nice feature， which is hosted Tensor bird in the
+    hub。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So if you have tensor board traces into repository and it's not limited just
+    to hogen phase transformers。 like it can be like any tensor board traces， you
+    will get automatically a tensor board deployed for you and here you will be able
+    to look at the matrix。
+  prefs: []
+  type: TYPE_NORMAL
+- en: 几。E， it seems like。![](img/c09cf1ac6e21d36580a79d639f204d72_18.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: I still have problems， for some reason。Sorry， so let me still just do it in
+    the terminal。![](img/c09cf1ac6e21d36580a79d639f204d72_20.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: This will be a。え。一。So， let's first。Iport。What we care about。![](img/c09cf1ac6e21d36580a79d639f204d72_22.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: So here we are just initializing a mod learned organizer。![](img/c09cf1ac6e21d36580a79d639f204d72_24.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: As we've done before， some nothingia。![](img/c09cf1ac6e21d36580a79d639f204d72_26.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Okay， it may take a bit。And then they taste to just do model that push to her。And
+    then the name all the。So let me just do it to。Yeah， it takes a few seconds。 this
+    command is uploading a lot the model for you。![](img/c09cf1ac6e21d36580a79d639f204d72_28.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/c09cf1ac6e21d36580a79d639f204d72_29.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: I'm actually not sure why you go to server because I tried it like 10 minutes
+    before。![](img/c09cf1ac6e21d36580a79d639f204d72_31.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: And I was not having decision， repository not found。嗯。Okay， this is stick。I
+    think my computer is having a hard time with the live stream at the same time。Yeah
+    in the meantime。 if you also want to specify an organization， you can do so and
+    as we were discussing before。 you can also specify a Token if you want。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/c09cf1ac6e21d36580a79d639f204d72_33.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](img/c09cf1ac6e21d36580a79d639f204d72_34.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Okay， so another option is using the hookging phase。I don't know。Doganer。Push
+    to her。Okay。 so the report was created automatically because it didn't exist。Let's
+    see if the files they are still being uploaded。诶。Yeah， normally it doesn't take
+    this long。 I am not sure if this is my computer or if there's any connection issue
+    right now with。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Hping the face。![](img/c09cf1ac6e21d36580a79d639f204d72_36.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 嗯。![](img/c09cf1ac6e21d36580a79d639f204d72_38.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Okay， in the meantime， while that runs， let me show you like the second approach。
+    which is using the hook face clay a。![](img/c09cf1ac6e21d36580a79d639f204d72_40.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: So if youre just hugging basically。Reipple grade Doit2。It normally creates a
+    record for you。诶。언디 가？
+  prefs: []
+  type: TYPE_NORMAL
+- en: Yeah， so we ask you， do you want to create repohyite doit2？I say yes。And it
+    it it gives you both a link to look at it on the browser。![](img/c09cf1ac6e21d36580a79d639f204d72_42.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: And it also tells you how to clone it。So this similar to what listen was making
+    the first video。Here you can do。Yeah， like the normal things， for example， you
+    can create a model card。Which is this normal marathon file， so this is a test。You
+    can procure it。And you can go it。And when you commit。Yeah， you get here like this
+    is a test， this is what I wrote in the model card。
+  prefs: []
+  type: TYPE_NORMAL
+- en: You can look at all of the files。You can look at the history of the repository。Yeah。
+    and as you can see here a。Have this commit 14 seconds ago。Which I did this change
+    So this is like very nice because if you are just to GithHub a workflows。 you
+    can use this to create branchess， for example。
+  prefs: []
+  type: TYPE_NORMAL
+- en: you can also revert back changes very easily so it was like very nice personally。え。Yeah，
+    so。Okay。 so going back to the previous one of the tokenizer。In which I just took
+    I saw that push to hub。If you go here to files and versions， you can see here
+    that the files were uploaded now。诶。一。So。 let me just quickly。Check the history。Yeah，
+    so I think that there was some connection error。
+  prefs: []
+  type: TYPE_NORMAL
+- en: as you can see， actually both the model and the tokenr were uploaded， so that's
+    good。诶。So what诶。The ho phase infrastructure normally does for transformers is
+    that it analyzes the conation。The configuration specifies a bit like what's architecture。Yeah
+    this kind of things and based on this it already tells you like this is a film
+    mask model。
+  prefs: []
+  type: TYPE_NORMAL
+- en: it's a kberg model， it's transformers， it's using byytor。 this is all based
+    on the files and the cong and you can already just here。The hosted inference API。
+    you will need to wait especially the first time you need to wait for the model
+    to load on the background。And you can even like if you want to deploy， you can
+    use this in in the accelerated inference API and make as many equal you want。
+  prefs: []
+  type: TYPE_NORMAL
+- en: 예。And play around with a model and you can very easily integrate this to your
+    own products。ok 诶。Yeah。 so that was a push to her。So， okay， so we going back to
+    the command line interface。 which was the me。Do， I think。糯面都咩啲。Yeah。So right now
+    we don't have anything， right。 We don't created the model card。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/c09cf1ac6e21d36580a79d639f204d72_44.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: So， let me know。![](img/c09cf1ac6e21d36580a79d639f204d72_46.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Okay， let's make computer that is very slow。 So what we can do now is。![](img/c09cf1ac6e21d36580a79d639f204d72_48.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Like a normal Github。Workload， you can do get clone。And then the name of the。
+    So now， for example。 I already have。The repo it just download load at the Briy，
+    which is the only file。 the gate attributes is also there， but it's a hidden file
+    so。You won't see it unless you specify also like the hidden files。So as Leandra
+    mentioned in the video。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Apart from Git， we also use Git LFS， that is Git a large file storage。 this
+    is super useful for files that are very large which is very common in machine
+    learning。 so this is for files that are larger than 10 megabytes。![](img/c09cf1ac6e21d36580a79d639f204d72_50.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: And normally what we do is that you can specify which extensions。You want to
+    condo with elephantphis。So yeah， all of this。![](img/c09cf1ac6e21d36580a79d639f204d72_52.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: So normally what you need to do is to do Gi F install just to make sure it's
+    initialized。And掉 let me。![](img/c09cf1ac6e21d36580a79d639f204d72_54.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Show you a nice example。So， let's say that we want to。work with a model locally。
+    maybe train it and then instead of using a push to her we want to save it locally
+    and then push so that's what the safe pretrain method is for so let me just。With
+    the right name， which is to me。Do。![](img/c09cf1ac6e21d36580a79d639f204d72_56.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let me now just copy based。All of these called snippet。![](img/c09cf1ac6e21d36580a79d639f204d72_58.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: So what this is， let me just explain line by line why it runs。Is that it will
+    just same thing。 we load the model， we load the tokenizer， then we save the model
+    in the directory toittu。 which is where we clone the robot and we also save the
+    tokenizer。![](img/c09cf1ac6e21d36580a79d639f204d72_60.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: But as you can see my computer is having a hard time with a icestream， so it's
+    a bit slow。 sorry for that。给给送包。So if you look at now Domit2， you can already
+    see all of the files。 so let's just enter the repository。And if you do gi status，
+    it's normal gi， you will get like， okay。 all of these files are to be added， they
+    are not right you。So if you do Gi。
+  prefs: []
+  type: TYPE_NORMAL
+- en: This will allow all of the files to be tracked。Then you can do get status。And
+    you will get， yeah。Some things， Another thing you can do is ski LFS。スル。This is
+    nice because now you can see which files will be used handled with normal Git
+    and which files will be handled by Git large files storage。 this is just like
+    for additional info it's not something that you need to worry too much about you
+    will need to worry if you have like a file with a new extension that is very large
+    but it's super easy to just add a new extension so for example you can just change
+    the git attributes。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Anyways。Let's commit。My first。我不。So very easy。 And then you just get push。Since
+    these are like very large files， normally takes a bit。So， I just keep moving。A
+    bit for now。 and I show you。![](img/c09cf1ac6e21d36580a79d639f204d72_62.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Okay， so this was pretty much everything for the Sching pretrained models section。Let
+    me just quickly， we already saw how to use the web interface。And this is what
+    we just did。 which way is how to upload a。![](img/c09cf1ac6e21d36580a79d639f204d72_64.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Yeah。So if you can see 80， something megabyte， that's why it's a bit slow even
+    with a relatively fast connection。![](img/c09cf1ac6e21d36580a79d639f204d72_66.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Okay， so the last section is a bit。Different， it's about how to build a model
+    card。So we already saw like few model cards， just as a recap， the model cards
+    is this file。 which is very important。It explains the model， it ensures that it's
+    reucable by the rest of the community。 and it provides a platform on which other
+    members can build their artifacts。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So documenting how the training and the evaluation was done helps others understand
+    what to expect of a model。And it will also provide and providing sufficient information
+    regarding the data that was used and the preprocessing and post processing that
+    were done ensures that the limitations biasSS and context in which the model is
+    not useful。
+  prefs: []
+  type: TYPE_NORMAL
+- en: can be identified and understood so if you upload a model without anything in
+    the model card。 no one will use it because they wont know what the model is for
+    instead if you have like a very nice model card explaining what it does。 how it
+    was trained what's the purpose， what are the limitations which are the biasSS
+    that will be super useful for other people。And additionally， as we'll see in one
+    minute， you can add some special metadata that will make your model a。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Discoverable by the rest of the community。So as we saw， it's just a rhythm。And
+    if you're more interested on this。The model card concept originates from a research
+    direction from Google。 the paper is called Model Cars for Model reportinging，
+    that's by Margaret Mitchell Atel。So there's a lot of very useful information contained
+    in that paper。
+  prefs: []
+  type: TYPE_NORMAL
+- en: so we' recommend you to take a look at it。There are some sections that we recommend。
+    model description， intended uses and limitations， how to use limitations and bias。Training
+    data。 training procedure and evaluation results。So these are not a strict we don't
+    force any specific sections。 so the model card really has a lot of flexibility。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So here there's a paragraph explaining each of these sections。 I think that
+    you can go over it by yourself， but what might be more useful is to just quickly
+    go through。Quickly go through a very nice model card。So this is bird based case。
+    probably you're already a bit bored of this report at the time we've seen this
+    quite a bit。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So it has like few sentences explaining the model where it was introduced。え。Yeah。
+    then it has a description of the model。Expplainending the high level overview
+    of the model。 how it was trained in which objectives。And what is what the model
+    learns， so for example。 the model learns an inner representation of the English
+    language that can then be used to extract features。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Useful for downstream tasks。So it also has this intended uses and limitations
+    section。So yeah。 it tells you that you can use this for mass language modeling
+    or next sentence prediction。 but the intention of this model is to be a fine tune
+    on downstream tasks。You can also get here like a goldat snippet。Although now the
+    how to use section is we using transformers。
+  prefs: []
+  type: TYPE_NORMAL
+- en: You can also just click here using transformers。And load it from here。Yeah。
+    then it shows you how to do it in Pytech and intensorflow。Here actually there's
+    a bug here。 this is for Tensorflow， it should be just bird model and here it should
+    be theF bird model。But theに you getた idea。Then there's a limitations and bias
+    section， which is very useful。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I think it's super important。So let's just read it so even if the training data
+    used for this model could be characterized as fairly neut。 this model can have
+    budget predictions and this is very similar to what we did at the end of the first
+    chapter with the pipelines so the man work as and the predictions are lawyer。
+  prefs: []
+  type: TYPE_NORMAL
+- en: waiter， detective doctor。And as you can see， the woman worked as a nurse waitress
+    mate。So as you can see， the model has some biases， and as it's mentioned here
+    and as we saw before。 this bias will also affect all fine versions of this model。
+    So it's important that if you pick a model。You need to understand the biases because
+    very likely those biases will probably transfer to your own model as well when
+    you do downstream。
+  prefs: []
+  type: TYPE_NORMAL
+- en: sorry when you do fine tuning。It also explains what the training data， how the
+    training was done。 was the preprocessing， pretraining。A table of the evaluation
+    results。 And finally。Yeah。 how to cite it。The model cardss are very flexible。Eh，
+    yes， let me quickly show you。The met datata。So at the top， people can add a useful
+    metadata， so for example you can specify what's the language was。
+  prefs: []
+  type: TYPE_NORMAL
+- en: What's the license。What data sets were used when we need the model。You can also
+    add as many tags as you want so then people can click here expert and they will
+    find all of the models that have this tag。If you would like to learn a bit more
+    about。The metadata， you can go to resources。Mugel hot duck。Then you can search
+    here。 We have a couple of sections。On met data。
+  prefs: []
+  type: TYPE_NORMAL
+- en: But this link in particular has an example of the model card and what's the
+    structure。So which languages you have， the license， which text you want to have。
+    so for example you can use this to specify thirdpart libraries or specific tasks，
+    data sets metrics。 and also like you can add specific metrics which can later
+    on be processed by other pipelines。一诶。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I think that's pretty much it feel free to ask any questions。And if not， I will
+    show you yeah。 so this is the end of the chapter。 there are like two very small
+    things I would like to show you。Which are part of the Hogging F hub。![](img/c09cf1ac6e21d36580a79d639f204d72_68.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 一。So the first one。Let me just。Both of this。![](img/c09cf1ac6e21d36580a79d639f204d72_70.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you have transformers installed， very likely。 we already have the hooking
+    face hub a。![](img/c09cf1ac6e21d36580a79d639f204d72_72.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Inled， this is a client library that gives you to a lot of things。 So this is
+    what allows anyone to。Poish files to De hub， you can do a lot of pretty nice things。And
+    if you would like to integrate this to your own code， it's very straightforward。![](img/c09cf1ac6e21d36580a79d639f204d72_74.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Apart from having like wrappers to upload things or donload things from the
+    hook。![](img/c09cf1ac6e21d36580a79d639f204d72_76.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: You also have access图。Information。Information from from the hub。 So， for example。
+    if you would like to。Get all of the models。That are for a specific library， let
+    me actually。 this will return quite a bit so。So this will return information，
+    not the actual models。Let's say in film mask， I think that will be clearer。So
+    this will make a call to the back end。
+  prefs: []
+  type: TYPE_NORMAL
+- en: This will return all of the information on all of the field mask。Moels and as
+    you can see there are 1000A mask filling models on theHub。So， let me just show
+    you。The first item。So as you can see， the model name is Albert basede V1， it gives
+    you all of the tags。And it tells you what's the task this model this reportport
+    is for。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So there was a person from the community that was doing the course and they
+    decided to actually create a hogging phase data set of all of the models that
+    are on the hub so that's quite nice so if you would like to do model exploration
+    and more of that that's like a phone project that anyone could already with this
+    provided in。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/c09cf1ac6e21d36580a79d639f204d72_78.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: So actually， you would like to learn a bit more about。About this。The repository
+    is。佢件 face hood。And this is like the open source place for everything related
+    to theHub。 so you get a client library to download and publish on the hub。You
+    get the inference API for third party libraries。You get the widgets。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So the widgets are the things at the right of the model in which， the model
+    card in which you could。Try the model directly on the web。![](img/c09cf1ac6e21d36580a79d639f204d72_80.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: And more things。 So that's very nice。This is a very recent feature。E， let me
+    first。![](img/c09cf1ac6e21d36580a79d639f204d72_82.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 诶。Cooking face， clear。![](img/c09cf1ac6e21d36580a79d639f204d72_84.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Great。Nome3。Okay so， I'm first gra a ripa。And I need to specify。Re各一份。Aam Holmes
+    is asking if there is an option to certify the number of stars using the Hoing
+    F API。Yeah。 maybe wait for next week， there will be some announcements on that，
+    so please stay tuned as well。诶。一。So let me test this， so right now I created a
+    ripa。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/c09cf1ac6e21d36580a79d639f204d72_86.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: And let's say this is a context manager， maybe let's first explain the code。So
+    the Hogan phase hook has this class， which is repository。 which allows you to
+    clone a repository in a specific directory。So I just did Do3。If I met wrong。And
+    it will clone yeah， from the me。And this is a context manager。
+  prefs: []
+  type: TYPE_NORMAL
+- en: so you've probably done similar things with files， so you can do with repo。comm
+    my first file。Anything that you do know。Will be committed to the hub so it's like
+    a very nice proper that will probably make your life easier。![](img/c09cf1ac6e21d36580a79d639f204d72_88.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Just let me quickly check that this will work。So wind birdd， yeah。Yeah。 so this
+    initial says the repository， so now you can do with red product commit。![](img/c09cf1ac6e21d36580a79d639f204d72_90.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/c09cf1ac6e21d36580a79d639f204d72_91.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: So。My first phone。With offend。第。嗯。ok。So， this is a。I mean。 this part grid sorry
+    with open file as file bla blah。 this can be anything like this is not limited
+    to text files you can do anything that is great so you're probably very familiar
+    with this The only new thing is this grper with repo dot commit my first file。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/c09cf1ac6e21d36580a79d639f204d72_93.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: And now if we go to theH， so let's go to mine。Profi。Yeah， here we have Domin3。And
+    if we go to fire。![](img/c09cf1ac6e21d36580a79d639f204d72_95.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Will see that the file that I just created here。With this with open file lalalah。It's
+    not actually a done for locally。 It's done to。Commit that to the repository。 So
+    this like a nice way of handling a file。F writing on the hub。![](img/c09cf1ac6e21d36580a79d639f204d72_97.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: And as you can see， the value is already here。Okay。 so those two were like the
+    two bonus things I wanted to show you。 so this is like the last。The the last chapter。But
+    we will have like some different activities going on in the next few weeks。We
+    also have in the forum this shared your project section。
+  prefs: []
+  type: TYPE_NORMAL
+- en: so at this point you already have a lot of the tools to do fine tuning for example。
+    of text classification on a specific task so what you can do now is searching
+    for an interesting data set in the hub so here。In the hub， you can go to datas
+    and you can search there for interesting datas。And you can work on a classification
+    project， text classification project。 And it's quite easy to。
+  prefs: []
+  type: TYPE_NORMAL
+- en: It's quite easy to share this and feel free to comment here like， hey。 I train
+    this with what I learned on the course， that would be awesome。We have one question
+    which is so the advantage of therepo。comit contact manager is that we don't need
+    to do a gi commit every time Yeah so this is like an easy programmatic way of
+    handling everything with a contact manager。
+  prefs: []
+  type: TYPE_NORMAL
+- en: it's mostly like a convenience wrapper。I hope that makes sense。All right。Do
+    we have any other questions？Thanks， thanks for your welcomes。All right。 then them
+    thanks a lot for everyone that was able to ya， yeah and see you in the firm。![](img/c09cf1ac6e21d36580a79d639f204d72_99.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/c09cf1ac6e21d36580a79d639f204d72_100.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 。
+  prefs: []
+  type: TYPE_NORMAL

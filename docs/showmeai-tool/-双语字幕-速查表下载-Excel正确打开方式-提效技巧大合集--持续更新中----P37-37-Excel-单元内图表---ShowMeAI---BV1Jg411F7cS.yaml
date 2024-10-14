@@ -1,0 +1,122 @@
+- en: 【双语字幕+速查表下载】Excel正确打开方式！提效技巧大合集！(持续更新中) - P37：37）Excel 单元内图表 - ShowMeAI - BV1Jg411F7cS
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '![](img/980320ca6d0cd93066fb6467f0a2d31d_0.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: In this Excel video， I want to show you how to create ince charts in Microsoft
+    Excel。 These are amazing， very useful and obviously take up much less space than
+    your typical Excel chart。 There actually are a few different ways to create in
+    cellll charts。 I'll focus on2 if you've watched all my videos， you probably already
+    know about how to use conditional formatting to create some in cell charts charts
+    that can be seen from within a cell instead of floating on top of many cells。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So let's look at how you can do that。 And for this example。 I'm using a spreadsheet
+    that lists the total mileage driven by every employee in a particular company。
+    And you can get a copy of this practice spreadsheet in the description below。
+    So I hope you look at that download it and use it。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So to use conditional formatting to create inc charts。 The first thing I need
+    to do is select the column where I want those in cellll charts to appear In this
+    case column I It selects the entire column and now I can go to the home tab。Home
+    ribbon in the Sts group， I can click on conditional formatting。 and there's an
+    option for data bars。 You can see there's gradient fill options。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And as I put my mouse on the options， you can see previews of what it'll look
+    like in Microsoft Excel。 There's also solid fills。 I'm going go with gradient
+    fill I think that looks good。 and I can just click to apply that。 And now I have
+    basically a bar chart inside of the cells in Excel。 So this is one example of
+    inc charts。 I'm going to undo that by holding control and tapping Z on the keyboard。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I just want to point out that in addition to the options I've already shown。
+    you can also go down here to more rules and make some adjustments。 so I could
+    pick a different color if I want to， and I could change the bar direction。 I could
+    go from right to left instead of left to right。
+  prefs: []
+  type: TYPE_NORMAL
+- en: There's just lots of different options for creating your inll charts this way
+    through conditional formatting。 So that's a wonderful option that we have。 and
+    I love that。OBut in some ways。 this next method of adding insll charts is even
+    better。 Instead of just showing a simple chart that shows the total mileage。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I would really like to see a chart that shows the trend。 What's the trend for
+    Kaina here。 Is she driving more less over time。 staying basically the same。 What
+    are the trends for these employees。 So let's look at how to do that。 I'll click
+    here in cell H3 in this case。 and I'll go to insert here on the insert ribbon。
+  prefs: []
+  type: TYPE_NORMAL
+- en: you should find a spark lines group。 Now， Sp lines are available in some of
+    the newer versions of Microsoft Excel。 So if you're using an older version of
+    it， you may not see that。 but if you do have it。 take a look you can go to line
+    and a dialog box or a popup box appears。 And here I can select the data range
+    that I would like this line chart to track。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I could type the range here， but the easiest way to do this is just to click
+    this arrow。 and then click and drag to select。lect the range that I want to track
+    the trend for。 Now that it's selected， I can click this arrow again。 The range
+    that I selected is here。 and then just click O， and I get a beautiful spark line
+    incell chart。 It looks great。
+  prefs: []
+  type: TYPE_NORMAL
+- en: and I can easily and quickly see the Kaina's use of a personal vehicle is trending
+    down a little bit。 Okay， now I need to gear up for doing those same steps again
+    for epiphonia。 and for everyone else。 that's an employee of the company。 right，
+    Well， actually no。 you don't have to do those steps over and over for each person。
+    instead。
+  prefs: []
+  type: TYPE_NORMAL
+- en: simply click on the first spark line that's been created。 And I can now go to
+    the lower right corner。 you can see。 hopefully the green square that's there。
+    That's the autofill handle or sometimes called the fill handle。 I'll just put
+    my mouse pointer on that little green square。 click and hold the click。
+  prefs: []
+  type: TYPE_NORMAL
+- en: and then pull down all the way down as far as I need to go and then release
+    the mouse button。 and I get that same beautiful spark line。Look showing the trend
+    for each of the employees Now that I've added the spark lines。 you'll notice that
+    I have a new tab and a new ribbon that has appeared at the top of Excel。 As long
+    as I have the spark lines selected。 It'll appear。 It's got all sorts of great
+    options。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I can edit the data In this case。 I don't want to do that。 I have the exact
+    data that I want to track。 I could switch from a line chart to a column chart。
+    it still kind of shows the trend， but it's a little harder to understand， in my
+    opinion。 same with wind loss。 it doesn't really convey the information very well。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So I'll stick with a line chart。 Next， we have some really neat options。 I can
+    have those spark lines show even more information。 I can show the high point and
+    the low point。 So look closely。 and I'll zoom in a little bit so you can see that
+    better。 So now the high point and low point of each spark line is marked by a
+    dot。 and that will help draw attention to it。 I can also choose to show negative
+    point markers of each change where I can identify the last。Point and the first
+    point。 So each of those options can be very powerful to draw attention to key
+    parts of the incell chart。 Next， we can adjust the style of the spark line or
+    ince chart。 So I can make it black and white。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I can change it to blue。 If I click here。 I get all of the different style options
+    that are available。 Some of these are more colorful than others。 It just depends
+    on what you want and how you want to convey the information。 There are even more
+    sparkline color options here and marker options over to the right。 you can switch
+    the access of the chart。 if it makes sense to do so。
+  prefs: []
+  type: TYPE_NORMAL
+- en: You can also clear the spark lines if you want。 I don't want to do that。 And
+    there are some other options as well。 I'm going zoom out so you can get a good
+    look at the two different kinds of inll charts that I've shown you how to make。
+    I think these look great。 Thanks for watching。 I hope you found the tutorial to
+    be helpful。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/980320ca6d0cd93066fb6467f0a2d31d_2.png)'
+  prefs: []
+  type: TYPE_IMG

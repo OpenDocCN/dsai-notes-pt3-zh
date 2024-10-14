@@ -1,0 +1,197 @@
+- en: 【双语字幕+速查表下载】Excel中级教程！(持续更新中) - P62：63）相对与绝对单元格引用 - ShowMeAI - BV1uL411s7bt
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '![](img/9eb64b34fee47627f9376406025aec96_0.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: In this video， I will explain and demonstrate the differences between relative
+    cell references in Excel and absolute cell references in Excel。 And this is a
+    very key important concept to understand when using formulas and functions in
+    Excel。 And you can see the spreadsheet that I'm using for this video is a mileage
+    re sheet。 This tracks each of the employees of a company。 and how many miles they
+    drive in their own personal cars。
+  prefs: []
+  type: TYPE_NORMAL
+- en: but doing company business。 And to be fair to those employees。 the company is
+    going to reimburse their mileage。 you can see it goes from January through June。
+    Okay， first， let's look at relative cell references。 And this really is the most
+    common type of cell references that you'll need。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So let's say the company reimburses mileage twice a year。 So it's halfway through
+    the year。 And now we need to calculate the total mileage for the first half of
+    the year。 to do that for Kaina。Just click on the cell to the right of her monthly
+    mileage totals。 and then just type equals on the keyboard some left parenthesis。
+  prefs: []
+  type: TYPE_NORMAL
+- en: And then I just need to describe or click and drag to show the range that I
+    would like to add up that I would like to sum I'll just click and drag to highlight
+    that range。 I should put in a right parenthesis， but it's not necessary in this
+    case。 and then I'll tap enter on the keyboard。 and there is the total mileage
+    that Kaina has driven in her own personal vehicles for company business。 If you've
+    watched my other Excel videos。 you know that I don't have to recreate that formula
+    again for epiphonia or Brook or any of these other fine people。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Instead， all I have to do is click on my first formula。 Now it looks like I
+    clicked on the number 721 but that's not true。 This cell does not contain the
+    number 721。 It contains a formula。 and you can see that here in the formula bar。
+    and that formula returns the results7。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So clicking on that cell H3 in this case， I'm going go to the lower right corner
+    and click and hold the click on the autofill handle。 or sometimes it's called
+    the fill handle。 It's that little square in the lower right corner of the cell。
+    I click and hold the click and then drag down to copy that formula all the way
+    down。 And there you go。 you can see that it automatically adjusted the formula。
+  prefs: []
+  type: TYPE_NORMAL
+- en: The autofill handle when I dragged it， it was trying to copy the contents of
+    this cell and it succeeded but again。 this cell doesn't have 721 in it。 It has
+    this formula。 upon copying and pasting that formula all the way down in column
+    H。 Look what exc did。 It automatically adjusted the B3 through G3 part of the
+    formula it changed it to B4 through G4 and here B5 through G5 I can also double
+    click to show you that B6 through G6 So again。
+  prefs: []
+  type: TYPE_NORMAL
+- en: It adjusted the cell references。 The original formula said B3 through G3。 but
+    it's adjusting and changing it from B3 through G3 to B8 through G8 or B13 through
+    G13 all the way down to B22 through G22 Now that is the default when you use the
+    autofill handle it will automatically make those adjustments for you when you
+    use the autofill handle Now how is it doing that Well。
+  prefs: []
+  type: TYPE_NORMAL
+- en: it's using relative cell references When I clicked and drag that autofill handle
+    Excel by default said okay this formula is relative The original formula is summing
+    up the six cells to the left of the current cell So 123456 It's adding up all
+    of those to produce the results So when I copied it using the autofill handle
+    because it's a relative cell reference the formula that was pasted in said okay。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I will now sum the six cells to the left of the current cell 1，2，3，4，5，6。 and
+    it added those up and produced a different number from cell H3。 So that's the
+    power and the beauty of relative cell references。 and you don't really have to
+    do anything special to specify that you want relative cell references。
+  prefs: []
+  type: TYPE_NORMAL
+- en: That's the default whenever you use the autofill handle。 So that's exactly what
+    I wanted and it's looking good。 So now let's look at absolute cell references。
+    and how those can be very important。 Let's say we try the same kind of thing but
+    with total amount owed。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So let's say I'm an accountant for this business。 and I need to figure out not
+    just the total mileage that each employee drove but how much the company owes
+    that person and needs to pay them。 So let's first do it the wrong way using relative
+    cell references。
+  prefs: []
+  type: TYPE_NORMAL
+- en: So I'll tap equals to figure out how much the company owes Kaina in this case。
+    I need to multiply7。2 and I'll just click on H3， and then I need to multiply it
+    by the current reimbursement rate for this company。 Let's say they reimburse 58
+    cents for every mile driven。 So I'll put in multiplied by which is just the asterisk
+    symbol and then I'll click here on the reimbursement rate and then tap enter wonderful
+    it calculates the amount owed to Kaina。
+  prefs: []
+  type: TYPE_NORMAL
+- en: She drove $721 miles。 that calculates out to being $418 and18 of mileage reimbursement。
+    Now here comes the catch。 it seems like that went beautifully。 but when I click
+    on the cell that has the formula that I want to copy down to the other employees
+    and I use the autofill handle and I pull that down watch what happens。 I release
+    and I get all sorts of error messages。 Now in addition to the error messages I
+    do get a valid number here。
+  prefs: []
+  type: TYPE_NORMAL
+- en: but I kind of doubt that the company is going to reimburse this person $435000
+    for。Only 1 thousand0 miles。 So what's going on here。 Let's look at the formulas。
+    If I double click on this formula， you can see what happened。 The original formula
+    was multiplying H3 by I1。 and that was correct。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now let me tap escape on the keyboard to go down and show you the second formula。
+    H4 that's correct。 multiplied by I2。 Excel is now trying to multiply by the words
+    totalode。 Well。 that doesn't make any sense。 Why did it drop down from the mileage
+    reimbursement amount down to totalode。 Well， the answer is very simple。 When you
+    use the autofill handle。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Excel by default is using relative cell references。 And so just like in my total
+    mileage example。 Excel is adding1 to the previous formula。 So here the formula
+    had I1 So when I clicked and dragged and used the autofill handle。 it shifted
+    I1 to being I2。 and then I3。 And so let's look at this formula。 This is another
+    good example。H5。 that's this cell。 And that's correct。 That's exactly what I want。
+  prefs: []
+  type: TYPE_NORMAL
+- en: multiplied by I 3。 So I 1，2，3 Yikes。 It's multiplying the mileage that this
+    person drove by the totalode to Kaina。 That doesn't make any sense at all。 It's
+    not even close to being incorrect。 I'll tap escape on the keyboard。 And I'll hold
+    control and tap Z a couple of times to undo that mistake。 and I'll tap it one
+    more time to undo my incorrect formula。 Even though it worked for Kaina。
+  prefs: []
+  type: TYPE_NORMAL
+- en: It was a failure for all the rest of the employees。 So let's look at the proper
+    way to calculate this。 in this formula。 I want the cell reference for total mileage
+    to be relative。 But I want the cell reference for mileage reimbursement rate to
+    be absolute。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I want it to stay there no matter what。 So how would I do that。 click on the
+    cell where I want to put the formula。 So I type equals。 And now I could click
+    here to select H 3。But sometimes it's easier just to type it。 So I'll type H3。
+    multiplied by， which is the asterisk。 And now I'll type I。 And then instead of
+    just typing1。
+  prefs: []
+  type: TYPE_NORMAL
+- en: I'm going to type I dollar sign1。 If I don't put that dollar sign in there。
+    it will treat this cell reference， I1 as being relative。 And then when I use the
+    autofill handle。 it will move away from the mileage reimbursement rate， and I
+    need it to stay there。 And so whenever you need a cell reference to stay put no
+    matter what to make it absolute What you do is you use an asterisk to tie that
+    part of the cell reference down。
+  prefs: []
+  type: TYPE_NORMAL
+- en: You're locking it in place。 So I'm locking in place the reference of one。 let's
+    try it now。 I tap enter on the keyboard， it returns the same results。 But now。
+    when I click and drag using the autofill handle to copy and paste the formula
+    for all the rest of the employees。 Look， it worked。 Let's examine the formulas。If
+    I double click， you can see it here。
+  prefs: []
+  type: TYPE_NORMAL
+- en: you can also see it in the formula bar here toward the top。 So there's my original
+    formula that I typed。 Let's look at the next one。 H4 multiplied by I sign 1。 What
+    about this person。 H5 multiplied by I sign1 So the H is changing H6 H7 H11。 but
+    the cell reference in the i column is staying put It's staying at1。
+  prefs: []
+  type: TYPE_NORMAL
+- en: Why because I locked it down by using a dollar sign。 Now。 another way to do
+    the same thing is to use a dollar sign for both I and1。 So I'm going to click
+    here on in this case， cell I3。 and I'll go up to the formula bar。 I very well
+    could have put a dollar sign in front of both the I and also sign 1 tap enter
+    and if I copy that down now to the rest of the employees。
+  prefs: []
+  type: TYPE_NORMAL
+- en: It doesn't look like it changed anything In reality， it didn't change much。
+    But if you look。At each of these individual formulas， you see that there's a dollar
+    sign in front of both。 So the only difference there is it locked in the cell reference。
+    It locked it in to column I and row number1。 So both are locked in place。
+  prefs: []
+  type: TYPE_NORMAL
+- en: It wasn't necessary to do that because I wasn't dragging this number out of
+    I。 right。 I wasn't dragging it over here to J。 or to H。 So there wasn't a need
+    to use the dollar sign to lock the cell reference into column I。 but it still
+    produces good results。 So the bottom line is with this particular formula that
+    I've written。 The H3， that is a relative cell reference。 It changes as I use the
+    autofill handle and copy paste that formula down。
+  prefs: []
+  type: TYPE_NORMAL
+- en: That H3 changes H5 H 9 etc ce。 But the I1 part of the cell reference。 That is
+    an absolute cell reference。 And in this case。 I've chosen to lock down both the
+    I and the one。 Those are both going to be riveted to。This cell here I The more
+    you use Excel， the more you'll see examples of when it's useful or necessary to
+    use absolute cell references。
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/9eb64b34fee47627f9376406025aec96_2.png)'
+  prefs: []
+  type: TYPE_IMG
