@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P27：L14.2- 知识蒸馏 - ShowMeAI - BV1Dg411F71G
+# P27：L14.2- 知识蒸馏 - ShowMeAI - BV1Dg411F71G
 
 ![](img/f6bd465ecf07fceded86c8273ac3a88e_0.png)
 

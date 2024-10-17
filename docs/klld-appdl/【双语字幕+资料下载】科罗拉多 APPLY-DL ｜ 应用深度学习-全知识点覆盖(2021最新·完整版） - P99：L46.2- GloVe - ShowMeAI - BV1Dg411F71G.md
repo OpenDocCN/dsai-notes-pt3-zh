@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P99：L46.2- GloVe - ShowMeAI - BV1Dg411F71G
+# P99：L46.2- GloVe - ShowMeAI - BV1Dg411F71G
 
 ![](img/369eb9be7244bddab38538212e5254e5_0.png)
 

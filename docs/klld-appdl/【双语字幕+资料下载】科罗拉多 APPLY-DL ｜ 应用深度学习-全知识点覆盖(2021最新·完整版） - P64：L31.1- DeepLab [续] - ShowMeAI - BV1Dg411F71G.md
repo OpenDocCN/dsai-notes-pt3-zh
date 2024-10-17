@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P64：L31.1- DeepLab [续] - ShowMeAI - BV1Dg411F71G
+# P64：L31.1- DeepLab [续] - ShowMeAI - BV1Dg411F71G
 
 last session we started with deep lab，and then，in general we are going to be facing，three challenges。
 

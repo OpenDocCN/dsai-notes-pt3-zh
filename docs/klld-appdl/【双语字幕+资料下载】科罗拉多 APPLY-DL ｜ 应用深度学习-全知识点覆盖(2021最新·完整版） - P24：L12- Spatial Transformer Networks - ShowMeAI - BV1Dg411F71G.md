@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P24：L12- Spatial Transformer Networks - ShowMeAI - BV1Dg411F71G
+# P24：L12- Spatial Transformer Networks - ShowMeAI - BV1Dg411F71G
 
 uh so far what we were learning about，in terms of neural networks was mostly，based on convolutions。
 

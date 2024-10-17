@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P2：L1.2- 梯度下降算法 - ShowMeAI - BV1Dg411F71G
+# P2：L1.2- 梯度下降算法 - ShowMeAI - BV1Dg411F71G
 
 ![](img/a0b313688aaa5693b64432d8cb007a1b_0.png)
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P74：L34.1- 平均精度 (mAP) - ShowMeAI - BV1Dg411F71G
+# P74：L34.1- 平均精度 (mAP) - ShowMeAI - BV1Dg411F71G
 
 let's start with object detection，and uh in particular let's start with，two stage detectors。
 

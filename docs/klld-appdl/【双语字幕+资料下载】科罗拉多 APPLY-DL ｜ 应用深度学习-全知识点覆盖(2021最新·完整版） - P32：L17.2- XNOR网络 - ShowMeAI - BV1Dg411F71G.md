@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P32：L17.2- XNOR网络 - ShowMeAI - BV1Dg411F71G
+# P32：L17.2- XNOR网络 - ShowMeAI - BV1Dg411F71G
 
 ![](img/dcea48a3ac4055614224c1aca4422e5b_0.png)
 

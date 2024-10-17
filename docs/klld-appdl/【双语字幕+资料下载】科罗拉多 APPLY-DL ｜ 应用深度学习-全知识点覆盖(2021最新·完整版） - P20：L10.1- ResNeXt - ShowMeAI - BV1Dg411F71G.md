@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P20：L10.1- ResNeXt - ShowMeAI - BV1Dg411F71G
+# P20：L10.1- ResNeXt - ShowMeAI - BV1Dg411F71G
 
 so what did we do last session we，learned about，resnets we learned how to make them more，efficient。
 

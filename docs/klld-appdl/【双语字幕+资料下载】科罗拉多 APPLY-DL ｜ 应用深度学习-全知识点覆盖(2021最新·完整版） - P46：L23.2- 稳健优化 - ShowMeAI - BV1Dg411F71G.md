@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P46：L23.2- 稳健优化 - ShowMeAI - BV1Dg411F71G
+# P46：L23.2- 稳健优化 - ShowMeAI - BV1Dg411F71G
 
 ![](img/1a2c161f894ff873025f9fd8f18df314_0.png)
 

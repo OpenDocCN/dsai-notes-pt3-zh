@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P96：L43.3- 动态图形卷积网络（DGCNN） - ShowMeAI - BV1Dg411F71G
+# P96：L43.3- 动态图形卷积网络（DGCNN） - ShowMeAI - BV1Dg411F71G
 
 So there is another paper that I want to cover and we have around 10 minutes to do so and that's TGCnN。
 

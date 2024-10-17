@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P65：L31.2- 扩张卷积 - ShowMeAI - BV1Dg411F71G
+# P65：L31.2- 扩张卷积 - ShowMeAI - BV1Dg411F71G
 
 ![](img/d64b567c8f9cc07f6797cd935f54337f_0.png)
 

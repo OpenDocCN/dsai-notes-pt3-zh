@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P79：L36.2- R-FCN - ShowMeAI - BV1Dg411F71G
+# P79：L36.2- R-FCN - ShowMeAI - BV1Dg411F71G
 
 ![](img/da6bb82600ae28d5a3393986b1198c39_0.png)
 

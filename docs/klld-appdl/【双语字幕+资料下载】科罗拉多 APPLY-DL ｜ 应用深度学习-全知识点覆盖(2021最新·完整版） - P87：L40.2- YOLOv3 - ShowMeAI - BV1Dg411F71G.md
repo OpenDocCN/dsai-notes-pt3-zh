@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P87：L40.2- YOLOv3 - ShowMeAI - BV1Dg411F71G
+# P87：L40.2- YOLOv3 - ShowMeAI - BV1Dg411F71G
 
 ![](img/b4f0ba3d39440d8992c42a0e923ba579_0.png)
 

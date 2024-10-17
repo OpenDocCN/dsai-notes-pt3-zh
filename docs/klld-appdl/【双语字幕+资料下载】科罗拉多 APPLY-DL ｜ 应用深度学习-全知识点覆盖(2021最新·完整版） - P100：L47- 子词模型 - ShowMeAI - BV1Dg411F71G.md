@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P100：L47- 子词模型 - ShowMeAI - BV1Dg411F71G
+# P100：L47- 子词模型 - ShowMeAI - BV1Dg411F71G
 
 So what have we done so far we learned about Wordwe through two papers and we learned two methods of doing it one was a Sgram model and the other one was continuous bag of words then we learned about G and we saw that it is sort of related to a Sgram model and the only difference is the distance measure that you're using one of them is using the L2 norm to come up with its distances and the other one is using the crossantropy but other than that it's a weighted list squares and this is a weighted crossantropy loss so there is a relationship between the two methods now the question is so far I was telling you how to deal with words in your vocabulary but what if there is a new word there is a rare word in the vocabulary that you haven't seen during training and it shows up in your test data how are you going to deal with that so there are these languages like German or even English that you combine multiple。
 

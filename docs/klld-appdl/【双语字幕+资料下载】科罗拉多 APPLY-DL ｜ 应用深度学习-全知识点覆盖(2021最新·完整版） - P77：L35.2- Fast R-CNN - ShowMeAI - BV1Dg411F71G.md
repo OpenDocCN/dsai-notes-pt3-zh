@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P77：L35.2- Fast R-CNN - ShowMeAI - BV1Dg411F71G
+# P77：L35.2- Fast R-CNN - ShowMeAI - BV1Dg411F71G
 
 com，computations so that was the idea，that you can actually save a lot of，computations before。
 

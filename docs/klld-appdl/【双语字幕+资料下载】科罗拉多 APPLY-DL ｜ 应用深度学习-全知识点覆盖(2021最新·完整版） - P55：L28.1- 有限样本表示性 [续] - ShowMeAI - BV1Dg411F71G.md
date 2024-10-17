@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P55：L28.1- 有限样本表示性 [续] - ShowMeAI - BV1Dg411F71G
+# P55：L28.1- 有限样本表示性 [续] - ShowMeAI - BV1Dg411F71G
 
 We are still trying to visualize and understand neural networks in particular convolutions and try to visualize and understand them。
 

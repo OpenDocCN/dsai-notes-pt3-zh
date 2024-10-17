@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P13：L6.2- Kaiming参数初始化 - ShowMeAI - BV1Dg411F71G
+# P13：L6.2- Kaiming参数初始化 - ShowMeAI - BV1Dg411F71G
 
 ![](img/2a83c3d6bd56a9e9b9fc12c277006098_0.png)
 

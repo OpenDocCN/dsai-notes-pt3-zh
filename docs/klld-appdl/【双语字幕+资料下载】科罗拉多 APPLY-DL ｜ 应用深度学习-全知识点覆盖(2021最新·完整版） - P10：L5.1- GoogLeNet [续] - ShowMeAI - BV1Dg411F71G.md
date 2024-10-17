@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P10：L5.1- GoogLeNet [续] - ShowMeAI - BV1Dg411F71G
+# P10：L5.1- GoogLeNet [续] - ShowMeAI - BV1Dg411F71G
 
 and we were going through the structure，of inception，inception module，and this is called google net。
 

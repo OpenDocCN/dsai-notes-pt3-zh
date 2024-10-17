@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P16：L8.1- Inception-V3 [续] - ShowMeAI - BV1Dg411F71G
+# P16：L8.1- Inception-V3 [续] - ShowMeAI - BV1Dg411F71G
 
 ![](img/f4b93c38cb2648887cbd799201d326a5_0.png)
 

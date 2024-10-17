@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P73：L33.4- 去噪卷积神经网络 - ShowMeAI - BV1Dg411F71G
+# P73：L33.4- 去噪卷积神经网络 - ShowMeAI - BV1Dg411F71G
 
 let's see another paper for image denoing， so the idea is the same rather than the same as before rather than learning a fully- nonlinear function from one input image to the denois image you can actually learn the residual and the residual image learning this one is much simpler so it's the same idea as before and what is the math behind it。
 

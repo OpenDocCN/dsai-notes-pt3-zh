@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P63：L30.3- DeepLab - ShowMeAI - BV1Dg411F71G
+# P63：L30.3- DeepLab - ShowMeAI - BV1Dg411F71G
 
 ![](img/ca705cddd608659356300fa580b109b6_0.png)
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P54：L27.2- 有限样本表示性 - ShowMeAI - BV1Dg411F71G
+# P54：L27.2- 有限样本表示性 - ShowMeAI - BV1Dg411F71G
 
 ![](img/fea6d362cc658db97c8027ebbe363c85_0.png)
 

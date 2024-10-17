@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P17：L8.2- resnet - ShowMeAI - BV1Dg411F71G
+# P17：L8.2- resnet - ShowMeAI - BV1Dg411F71G
 
 okay let's move on to deep residual，learning，basically resnet i'm sure you have heard，of it but。
 

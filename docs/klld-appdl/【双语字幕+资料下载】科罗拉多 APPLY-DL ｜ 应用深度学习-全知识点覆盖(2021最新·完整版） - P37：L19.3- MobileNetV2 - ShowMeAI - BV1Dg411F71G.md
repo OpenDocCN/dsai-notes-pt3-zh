@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P37：L19.3- MobileNetV2 - ShowMeAI - BV1Dg411F71G
+# P37：L19.3- MobileNetV2 - ShowMeAI - BV1Dg411F71G
 
 ![](img/71c16285620ea7fb65e093b615ad5e63_0.png)
 

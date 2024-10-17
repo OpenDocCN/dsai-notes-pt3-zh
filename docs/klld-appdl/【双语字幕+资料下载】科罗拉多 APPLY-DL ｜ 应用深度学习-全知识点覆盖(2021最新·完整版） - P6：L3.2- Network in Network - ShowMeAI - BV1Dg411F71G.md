@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P6：L3.2- Network in Network - ShowMeAI - BV1Dg411F71G
+# P6：L3.2- Network in Network - ShowMeAI - BV1Dg411F71G
 
 so there is this paper networking，network，which i really like and it started，many of the ideas。
 

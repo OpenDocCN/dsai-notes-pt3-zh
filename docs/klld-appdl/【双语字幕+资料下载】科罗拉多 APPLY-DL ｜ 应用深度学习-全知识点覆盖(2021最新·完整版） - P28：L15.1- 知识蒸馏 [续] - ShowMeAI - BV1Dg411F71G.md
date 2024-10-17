@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P28：L15.1- 知识蒸馏 [续] - ShowMeAI - BV1Dg411F71G
+# P28：L15.1- 知识蒸馏 [续] - ShowMeAI - BV1Dg411F71G
 
 to make the class a little bit more，interactive can，somebody explain to me why we care about。
 

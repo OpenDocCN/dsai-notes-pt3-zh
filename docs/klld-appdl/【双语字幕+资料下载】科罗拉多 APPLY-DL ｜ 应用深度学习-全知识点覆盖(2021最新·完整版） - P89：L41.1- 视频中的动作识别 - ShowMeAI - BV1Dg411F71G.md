@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P89：L41.1- 视频中的动作识别 - ShowMeAI - BV1Dg411F71G
+# P89：L41.1- 视频中的动作识别 - ShowMeAI - BV1Dg411F71G
 
 So last session we started working with data in the form of a video and a video。
 

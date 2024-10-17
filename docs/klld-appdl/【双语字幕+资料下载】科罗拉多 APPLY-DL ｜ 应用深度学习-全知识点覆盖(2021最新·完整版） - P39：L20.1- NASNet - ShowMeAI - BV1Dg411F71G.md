@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P39：L20.1- NASNet - ShowMeAI - BV1Dg411F71G
+# P39：L20.1- NASNet - ShowMeAI - BV1Dg411F71G
 
 let's get started i think by now，you guys should be tired，or at least overwhelmed by the number of。
 

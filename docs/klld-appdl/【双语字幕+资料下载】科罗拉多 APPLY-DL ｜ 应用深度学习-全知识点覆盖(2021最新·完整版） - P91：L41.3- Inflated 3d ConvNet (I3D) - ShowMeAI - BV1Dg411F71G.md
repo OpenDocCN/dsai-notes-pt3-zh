@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P91：L41.3- Inflated 3d ConvNet (I3D) - ShowMeAI - BV1Dg411F71G
+# P91：L41.3- Inflated 3d ConvNet (I3D) - ShowMeAI - BV1Dg411F71G
 
 ![](img/a676b60b0b6a22c17077ed0876900323_0.png)
 

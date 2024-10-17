@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P41：L21.1- EfficientNet - ShowMeAI - BV1Dg411F71G
+# P41：L21.1- EfficientNet - ShowMeAI - BV1Dg411F71G
 
 okay perfect let's get started then now，we are in the realm of automatic machine，learning。
 

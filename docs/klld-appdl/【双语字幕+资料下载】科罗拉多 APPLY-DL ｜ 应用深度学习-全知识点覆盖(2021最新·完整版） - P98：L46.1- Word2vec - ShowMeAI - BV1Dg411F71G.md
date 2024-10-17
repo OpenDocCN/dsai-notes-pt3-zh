@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P98：L46.1- Word2vec - ShowMeAI - BV1Dg411F71G
+# P98：L46.1- Word2vec - ShowMeAI - BV1Dg411F71G
 
 Let's get us started。 So what have we covered so far we wanted to represent each word by a vector。
 

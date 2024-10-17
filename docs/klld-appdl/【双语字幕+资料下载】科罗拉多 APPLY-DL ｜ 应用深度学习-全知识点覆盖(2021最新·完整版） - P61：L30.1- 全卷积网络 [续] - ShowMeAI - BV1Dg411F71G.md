@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P61：L30.1- 全卷积网络 [续] - ShowMeAI - BV1Dg411F71G
+# P61：L30.1- 全卷积网络 [续] - ShowMeAI - BV1Dg411F71G
 
 um do you have any questions about last，session i have a quick question。
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P56：L28.2- Grad-CAM - ShowMeAI - BV1Dg411F71G
+# P56：L28.2- Grad-CAM - ShowMeAI - BV1Dg411F71G
 
 actually before i go to this paper let's，go back here，and here we introduced class activation，maps。
 

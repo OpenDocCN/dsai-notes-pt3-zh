@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P76：L35.1- 空间金字塔池化 - ShowMeAI - BV1Dg411F71G
+# P76：L35.1- 空间金字塔池化 - ShowMeAI - BV1Dg411F71G
 
 So we started object detection， I recently saw a very nice application and thats for recycling compost versus noncomos objects。
 

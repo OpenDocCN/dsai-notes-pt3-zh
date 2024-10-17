@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P92：L42.1- 非局部神经网络 - ShowMeAI - BV1Dg411F71G
+# P92：L42.1- 非局部神经网络 - ShowMeAI - BV1Dg411F71G
 
 Let's get started we have been doing images for a while and then starting last week we are started with different types of data for instance a different type of data could be video which is gonna be a bunch of con frames of images and the task that we are interested in for now at least to begin working with video data set was a classification task a video comes in and we want to class for instance it could be action recognition what is happening in this video or what type of sport is this video about etc but then there are more complex tasks using video like video to video translation segmentation for videos when you want to be consistent in time you can do object detection object tracking and in all of those cases you want to be consistent in time So there is an entire field in front of us when。
 

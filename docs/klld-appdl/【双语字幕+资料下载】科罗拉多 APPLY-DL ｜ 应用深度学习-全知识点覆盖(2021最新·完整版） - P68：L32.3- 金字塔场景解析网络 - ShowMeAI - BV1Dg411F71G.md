@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P68：L32.3- 金字塔场景解析网络 - ShowMeAI - BV1Dg411F71G
+# P68：L32.3- 金字塔场景解析网络 - ShowMeAI - BV1Dg411F71G
 
 ![](img/0fe36ce64326eea289a3012a7b2cca5b_0.png)
 

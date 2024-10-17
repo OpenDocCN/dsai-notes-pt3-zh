@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P88：L40.3- 视频分类 - ShowMeAI - BV1Dg411F71G
+# P88：L40.3- 视频分类 - ShowMeAI - BV1Dg411F71G
 
 ![](img/8c7a2a1e6e9afb74e0ba3083bd91b8ef_0.png)
 

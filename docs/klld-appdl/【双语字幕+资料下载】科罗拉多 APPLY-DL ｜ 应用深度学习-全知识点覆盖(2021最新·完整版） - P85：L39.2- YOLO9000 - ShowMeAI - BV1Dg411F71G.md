@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P85：L39.2- YOLO9000 - ShowMeAI - BV1Dg411F71G
+# P85：L39.2- YOLO9000 - ShowMeAI - BV1Dg411F71G
 
 ![](img/a0f07b058f18c9a979f28bfbe458d7ba_0.png)
 

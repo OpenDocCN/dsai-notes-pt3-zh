@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P59：L29.2- 卷积神经网络特征解析 - ShowMeAI - BV1Dg411F71G
+# P59：L29.2- 卷积神经网络特征解析 - ShowMeAI - BV1Dg411F71G
 
 [Music]，the other one that took this，a little bit further to new domains is，cnn features。
 

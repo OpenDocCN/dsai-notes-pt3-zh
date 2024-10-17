@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P90：L41.2- 三维卷积网络 - ShowMeAI - BV1Dg411F71G
+# P90：L41.2- 三维卷积网络 - ShowMeAI - BV1Dg411F71G
 
 ![](img/2f5c51e98c1be94bb3eb8be576e5288c_0.png)
 

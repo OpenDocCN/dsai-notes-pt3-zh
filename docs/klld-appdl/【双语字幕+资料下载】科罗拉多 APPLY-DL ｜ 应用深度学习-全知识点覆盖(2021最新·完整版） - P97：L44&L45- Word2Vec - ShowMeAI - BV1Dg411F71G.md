@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P97：L44&L45- Word2Vec - ShowMeAI - BV1Dg411F71G
+# P97：L44&L45- Word2Vec - ShowMeAI - BV1Dg411F71G
 
 So let's start with natural language processing And whenever you want to start with natural language。
 

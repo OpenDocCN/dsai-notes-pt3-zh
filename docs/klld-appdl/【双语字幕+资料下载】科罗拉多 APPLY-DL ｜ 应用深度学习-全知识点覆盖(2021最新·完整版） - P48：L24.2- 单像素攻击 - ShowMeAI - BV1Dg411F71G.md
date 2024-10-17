@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P48：L24.2- 单像素攻击 - ShowMeAI - BV1Dg411F71G
+# P48：L24.2- 单像素攻击 - ShowMeAI - BV1Dg411F71G
 
 So this last paper in this robustasness is actually very interesting。 It takes it the extreme。
 

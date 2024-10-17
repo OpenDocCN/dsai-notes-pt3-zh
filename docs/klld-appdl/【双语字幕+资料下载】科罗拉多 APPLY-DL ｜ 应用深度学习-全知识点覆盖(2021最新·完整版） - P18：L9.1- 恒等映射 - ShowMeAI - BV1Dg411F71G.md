@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P18：L9.1- 恒等映射 - ShowMeAI - BV1Dg411F71G
+# P18：L9.1- 恒等映射 - ShowMeAI - BV1Dg411F71G
 
 last session we talked about，resnets and we saw that these shortcut，connections are gonna。
 

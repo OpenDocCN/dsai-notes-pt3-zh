@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P5：L3.1- 随机失活dropout - ShowMeAI - BV1Dg411F71G
+# P5：L3.1- 随机失活dropout - ShowMeAI - BV1Dg411F71G
 
 okay let's get，started last session we talked about，the first paper that started it all，started the。
 

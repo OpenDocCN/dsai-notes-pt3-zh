@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P67：L32.2- SegNet - ShowMeAI - BV1Dg411F71G
+# P67：L32.2- SegNet - ShowMeAI - BV1Dg411F71G
 
 So far， we had to do up sampling and we were doing it using convolutions to the up sampling using deconvolutions。
 

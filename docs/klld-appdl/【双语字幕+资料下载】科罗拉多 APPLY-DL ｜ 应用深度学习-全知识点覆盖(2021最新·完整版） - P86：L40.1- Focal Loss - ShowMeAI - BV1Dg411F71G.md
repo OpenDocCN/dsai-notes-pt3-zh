@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P86：L40.1- Focal Loss - ShowMeAI - BV1Dg411F71G
+# P86：L40.1- Focal Loss - ShowMeAI - BV1Dg411F71G
 
 let's get started then so let's see what，we have been doing，so far uh we started with one stage。
 

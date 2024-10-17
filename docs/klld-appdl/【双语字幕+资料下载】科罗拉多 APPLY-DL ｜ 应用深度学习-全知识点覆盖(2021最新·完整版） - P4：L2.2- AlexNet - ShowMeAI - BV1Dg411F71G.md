@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P4：L2.2- AlexNet - ShowMeAI - BV1Dg411F71G
+# P4：L2.2- AlexNet - ShowMeAI - BV1Dg411F71G
 
 let's start with the paper，that started the modern field，so deep learning throughout the history。
 

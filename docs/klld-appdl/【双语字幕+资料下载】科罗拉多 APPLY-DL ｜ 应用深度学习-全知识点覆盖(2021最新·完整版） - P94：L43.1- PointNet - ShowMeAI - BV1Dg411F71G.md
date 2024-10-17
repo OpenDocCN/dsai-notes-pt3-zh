@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P94：L43.1- PointNet - ShowMeAI - BV1Dg411F71G
+# P94：L43.1- PointNet - ShowMeAI - BV1Dg411F71G
 
 ![](img/1d849f30409116bf76e57eeb29176049_0.png)
 

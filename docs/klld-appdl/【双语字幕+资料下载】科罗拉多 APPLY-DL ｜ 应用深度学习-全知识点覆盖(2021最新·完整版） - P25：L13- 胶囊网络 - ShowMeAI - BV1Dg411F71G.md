@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P25：L13- 胶囊网络 - ShowMeAI - BV1Dg411F71G
+# P25：L13- 胶囊网络 - ShowMeAI - BV1Dg411F71G
 
 The last net that we are gonna cover in this class is gonna look to you a little bit weird because it's gonna be a little bit different from what we have seen so far。
 

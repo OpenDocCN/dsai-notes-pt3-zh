@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P84：L39.1- SSD - ShowMeAI - BV1Dg411F71G
+# P84：L39.1- SSD - ShowMeAI - BV1Dg411F71G
 
 okay any questions about last session i，had a question about uh，this uh yolo paper yes um。
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】科罗拉多 APPLY-DL ｜ 应用深度学习-全知识点覆盖(2021最新·完整版） - P21：L10.2- DenseNet - ShowMeAI - BV1Dg411F71G
+# P21：L10.2- DenseNet - ShowMeAI - BV1Dg411F71G
 
 Let's move on the let's move to dense nets。 these are densely connected convolutional networks How do they work visually speaking we are going to go through the math。
 
