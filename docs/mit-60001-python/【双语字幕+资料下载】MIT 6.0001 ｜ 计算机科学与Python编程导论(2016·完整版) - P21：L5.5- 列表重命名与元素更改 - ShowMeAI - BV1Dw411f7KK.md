@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P21：L5.5- 列表重命名与元素更改 - ShowMeAI - BV1Dw411f7KK
+# P21：L5.5- 列表重命名与元素更改 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/bb764518d4d3a02a8b8edd6a074a3522_0.png)
 

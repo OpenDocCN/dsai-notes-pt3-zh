@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P8：L2.4- 分支 - ShowMeAI - BV1Dw411f7KK
+# P8：L2.4- 分支 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/b09588688a36a09c84205e95dc3a5a08_0.png)
 

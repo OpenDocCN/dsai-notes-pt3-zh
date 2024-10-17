@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P34：L9.2- get与set系列处理 - ShowMeAI - BV1Dw411f7KK
+# P34：L9.2- get与set系列处理 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/e21a19f7c4af82668ba747637127ecab_0.png)
 

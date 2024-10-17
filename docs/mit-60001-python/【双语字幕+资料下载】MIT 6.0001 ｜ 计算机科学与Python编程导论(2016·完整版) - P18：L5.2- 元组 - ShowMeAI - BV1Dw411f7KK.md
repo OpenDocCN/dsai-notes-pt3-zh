@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P18：L5.2- 元组 - ShowMeAI - BV1Dw411f7KK
+# P18：L5.2- 元组 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/74c9de7653097dee5242281f60d9692c_0.png)
 

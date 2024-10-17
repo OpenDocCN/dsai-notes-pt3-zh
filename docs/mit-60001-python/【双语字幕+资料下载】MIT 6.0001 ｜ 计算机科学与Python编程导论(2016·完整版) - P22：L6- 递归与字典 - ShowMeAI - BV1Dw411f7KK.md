@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P22：L6- 递归与字典 - ShowMeAI - BV1Dw411f7KK
+# P22：L6- 递归与字典 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/8dd9cd740b826b82b81dcfaaa7b3934a_0.png)
 

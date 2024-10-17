@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P5：L2.1- 分支与循环 - ShowMeAI - BV1Dw411f7KK
+# P5：L2.1- 分支与循环 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/4964a17e81ae8c50118bdf883d5d6985_0.png)
 

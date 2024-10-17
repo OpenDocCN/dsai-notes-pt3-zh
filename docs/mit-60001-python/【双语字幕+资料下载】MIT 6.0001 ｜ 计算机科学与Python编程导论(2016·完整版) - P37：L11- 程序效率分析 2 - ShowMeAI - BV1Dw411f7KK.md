@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P37：L11- 程序效率分析 2 - ShowMeAI - BV1Dw411f7KK
+# P37：L11- 程序效率分析 2 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/6b3f7f52a93a387f5aea7f58c9646547_0.png)
 

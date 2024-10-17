@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P3：L1.3- Python与数学 - ShowMeAI - BV1Dw411f7KK
+# P3：L1.3- Python与数学 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/dd6fa7b53ecc694951c9254ecc658632_0.png)
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P9：L2.5- while循环 - ShowMeAI - BV1Dw411f7KK
+# P9：L2.5- while循环 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/714d3975cef34dd78ff6f34d0a06d434_0.png)
 

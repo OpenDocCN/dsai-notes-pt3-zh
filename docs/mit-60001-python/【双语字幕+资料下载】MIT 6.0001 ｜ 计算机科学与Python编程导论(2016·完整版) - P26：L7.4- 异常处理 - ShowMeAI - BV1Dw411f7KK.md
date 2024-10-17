@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P26：L7.4- 异常处理 - ShowMeAI - BV1Dw411f7KK
+# P26：L7.4- 异常处理 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/c5feeafac651b357124dc1270cf31c84_0.png)
 

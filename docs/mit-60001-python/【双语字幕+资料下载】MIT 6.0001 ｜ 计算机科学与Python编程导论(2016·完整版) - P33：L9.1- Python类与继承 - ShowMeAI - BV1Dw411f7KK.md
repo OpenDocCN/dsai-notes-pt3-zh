@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P33：L9.1- Python类与继承 - ShowMeAI - BV1Dw411f7KK
+# P33：L9.1- Python类与继承 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/240a848cb170b6031b7dbcf28d6b132b_0.png)
 

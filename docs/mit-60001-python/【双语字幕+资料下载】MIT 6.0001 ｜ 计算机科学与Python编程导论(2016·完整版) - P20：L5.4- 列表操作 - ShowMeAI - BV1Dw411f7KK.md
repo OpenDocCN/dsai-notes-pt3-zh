@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P20：L5.4- 列表操作 - ShowMeAI - BV1Dw411f7KK
+# P20：L5.4- 列表操作 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/27c8a977856846c2d9ebbc01684a22af_0.png)
 

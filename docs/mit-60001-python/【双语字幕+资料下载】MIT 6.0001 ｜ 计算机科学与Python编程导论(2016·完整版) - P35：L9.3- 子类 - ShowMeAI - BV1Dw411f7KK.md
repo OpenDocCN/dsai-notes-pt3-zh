@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P35：L9.3- 子类 - ShowMeAI - BV1Dw411f7KK
+# P35：L9.3- 子类 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/0963f6b29a34871775dcd22e2232a8e4_0.png)
 

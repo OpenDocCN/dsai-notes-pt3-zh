@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P23：L7.1- 测试与调试、异常处理与断言 - ShowMeAI - BV1Dw411f7KK
+# P23：L7.1- 测试与调试、异常处理与断言 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/b5da9e0adfa2d119ba2532092d29ebda_0.png)
 

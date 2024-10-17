@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P28：L8.2- 类的定义 - ShowMeAI - BV1Dw411f7KK
+# P28：L8.2- 类的定义 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/83521ceb2307b432de7095c4586780da_0.png)
 

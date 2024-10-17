@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P16：L4.3- 函数参数 - ShowMeAI - BV1Dw411f7KK
+# P16：L4.3- 函数参数 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/72268da4e46629c100c5470656522af8_0.png)
 

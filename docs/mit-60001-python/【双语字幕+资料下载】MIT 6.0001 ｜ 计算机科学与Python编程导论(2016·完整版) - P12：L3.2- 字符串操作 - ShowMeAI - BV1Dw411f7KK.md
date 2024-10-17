@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P12：L3.2- 字符串操作 - ShowMeAI - BV1Dw411f7KK
+# P12：L3.2- 字符串操作 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/fc0bad3f7a1272a6dadcc49a0d3873ff_0.png)
 

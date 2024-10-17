@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P27：L8.1- 面向对象的编程 - ShowMeAI - BV1Dw411f7KK
+# P27：L8.1- 面向对象的编程 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/c047e8807cc5ce0daca4ea1054f34ab3_0.png)
 

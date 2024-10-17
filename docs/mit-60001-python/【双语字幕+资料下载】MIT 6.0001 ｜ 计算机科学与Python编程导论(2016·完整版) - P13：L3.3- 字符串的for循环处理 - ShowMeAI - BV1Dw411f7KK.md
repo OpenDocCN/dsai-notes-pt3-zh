@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P13：L3.3- 字符串的for循环处理 - ShowMeAI - BV1Dw411f7KK
+# P13：L3.3- 字符串的for循环处理 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/c091ef1b16099d883eb9116cc5e6c1aa_0.png)
 

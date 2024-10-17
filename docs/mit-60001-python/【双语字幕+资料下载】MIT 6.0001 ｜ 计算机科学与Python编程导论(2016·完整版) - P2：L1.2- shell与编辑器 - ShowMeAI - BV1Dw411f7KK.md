@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P2：L1.2- shell与编辑器 - ShowMeAI - BV1Dw411f7KK
+# P2：L1.2- shell与编辑器 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/a992ae449d2244f02c036d83e4ad4fbe_0.png)
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P4：L1.4- 连接(bindings) - ShowMeAI - BV1Dw411f7KK
+# P4：L1.4- 连接(bindings) - ShowMeAI - BV1Dw411f7KK
 
 ![](img/beac0b39c0e1201374ae879f733c9b96_0.png)
 

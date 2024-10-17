@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P15：L4.2- 函数调用 - ShowMeAI - BV1Dw411f7KK
+# P15：L4.2- 函数调用 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/b6b540a0fe762272a6c27090c03ce006_0.png)
 

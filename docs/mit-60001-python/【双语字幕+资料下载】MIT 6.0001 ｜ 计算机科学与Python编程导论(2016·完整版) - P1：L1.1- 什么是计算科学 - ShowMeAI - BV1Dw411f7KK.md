@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P1：L1.1- 什么是计算科学 - ShowMeAI - BV1Dw411f7KK
+# P1：L1.1- 什么是计算科学 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/34316a07bfd8b7c2d11d3388625c3eb9_0.png)
 

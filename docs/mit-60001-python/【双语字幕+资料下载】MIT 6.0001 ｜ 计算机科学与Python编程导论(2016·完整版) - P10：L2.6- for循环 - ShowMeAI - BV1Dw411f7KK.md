@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P10：L2.6- for循环 - ShowMeAI - BV1Dw411f7KK
+# P10：L2.6- for循环 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/ca78a80c14526974e2323d2c991d2634_0.png)
 

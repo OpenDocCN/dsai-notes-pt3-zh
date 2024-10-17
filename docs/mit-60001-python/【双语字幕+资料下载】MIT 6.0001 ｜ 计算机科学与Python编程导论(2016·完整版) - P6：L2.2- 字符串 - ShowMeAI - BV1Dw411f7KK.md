@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P6：L2.2- 字符串 - ShowMeAI - BV1Dw411f7KK
+# P6：L2.2- 字符串 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/21577b8e88eaf5a2afd698d654786659_0.png)
 

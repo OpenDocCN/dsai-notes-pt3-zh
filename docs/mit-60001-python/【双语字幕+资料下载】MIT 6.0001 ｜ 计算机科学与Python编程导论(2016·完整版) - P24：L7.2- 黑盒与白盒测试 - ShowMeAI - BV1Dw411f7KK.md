@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P24：L7.2- 黑盒与白盒测试 - ShowMeAI - BV1Dw411f7KK
+# P24：L7.2- 黑盒与白盒测试 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/d806e20a859769ba7ae90f64e1aa2225_0.png)
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P19：L5.3- 简单列表 - ShowMeAI - BV1Dw411f7KK
+# P19：L5.3- 简单列表 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/4a03d80843981a5c886cb834adcf7631_0.png)
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P29：L8.3- 类的实例 - ShowMeAI - BV1Dw411f7KK
+# P29：L8.3- 类的实例 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/7a775df83858081d82792bc5d64affcb_0.png)
 

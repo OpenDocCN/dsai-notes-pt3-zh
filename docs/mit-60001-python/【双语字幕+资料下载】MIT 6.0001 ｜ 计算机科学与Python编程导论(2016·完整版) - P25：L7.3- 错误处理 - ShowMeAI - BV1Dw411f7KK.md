@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P25：L7.3- 错误处理 - ShowMeAI - BV1Dw411f7KK
+# P25：L7.3- 错误处理 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/2767e739a03882001d4f7812fd17325a_0.png)
 

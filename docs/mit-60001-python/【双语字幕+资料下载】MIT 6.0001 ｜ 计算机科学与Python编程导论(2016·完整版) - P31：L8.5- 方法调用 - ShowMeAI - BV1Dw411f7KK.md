@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.0001 ｜ 计算机科学与Python编程导论(2016·完整版) - P31：L8.5- 方法调用 - ShowMeAI - BV1Dw411f7KK
+# P31：L8.5- 方法调用 - ShowMeAI - BV1Dw411f7KK
 
 ![](img/7e1c243f3dc78b4205f16e4dc8965ddf_0.png)
 
