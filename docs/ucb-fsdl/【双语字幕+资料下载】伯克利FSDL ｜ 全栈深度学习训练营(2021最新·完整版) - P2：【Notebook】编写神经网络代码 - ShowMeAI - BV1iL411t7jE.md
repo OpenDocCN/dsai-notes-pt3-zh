@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】伯克利FSDL ｜ 全栈深度学习训练营(2021最新·完整版) - P2：【Notebook】编写神经网络代码 - ShowMeAI - BV1iL411t7jE
+# P2：【Notebook】编写神经网络代码 - ShowMeAI - BV1iL411t7jE
 
 ![](img/6a44be82f005da3db3e7664e2717af48_0.png)
 

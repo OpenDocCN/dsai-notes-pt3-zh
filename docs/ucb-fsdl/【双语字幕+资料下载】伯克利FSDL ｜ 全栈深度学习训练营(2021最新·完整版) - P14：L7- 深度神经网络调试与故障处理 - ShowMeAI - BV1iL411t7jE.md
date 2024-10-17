@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】伯克利FSDL ｜ 全栈深度学习训练营(2021最新·完整版) - P14：L7- 深度神经网络调试与故障处理 - ShowMeAI - BV1iL411t7jE
+# P14：L7- 深度神经网络调试与故障处理 - ShowMeAI - BV1iL411t7jE
 
 okay welcome back so this week we're，going to talk about troubleshooting。
 

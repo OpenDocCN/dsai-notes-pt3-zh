@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】伯克利FSDL ｜ 全栈深度学习训练营(2021最新·完整版) - P17：【Lab6】数据标记 - ShowMeAI - BV1iL411t7jE
+# P17：【Lab6】数据标记 - ShowMeAI - BV1iL411t7jE
 
 hello in lab 7 we'll be labeling，some of these fsdl handwriting，images we gathered them spring 2019。
 

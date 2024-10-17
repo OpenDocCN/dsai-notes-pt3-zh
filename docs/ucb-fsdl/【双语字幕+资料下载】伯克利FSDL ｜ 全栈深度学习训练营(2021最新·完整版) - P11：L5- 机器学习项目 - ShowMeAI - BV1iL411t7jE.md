@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】伯克利FSDL ｜ 全栈深度学习训练营(2021最新·完整版) - P11：L5- 机器学习项目 - ShowMeAI - BV1iL411t7jE
+# P11：L5- 机器学习项目 - ShowMeAI - BV1iL411t7jE
 
 this week really starts the kind of the，meat of the content of this class。
 

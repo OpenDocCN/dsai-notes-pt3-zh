@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】伯克利FSDL ｜ 全栈深度学习训练营(2021最新·完整版) - P12：L6- 基础设置和工具 - ShowMeAI - BV1iL411t7jE
+# P12：L6- 基础设置和工具 - ShowMeAI - BV1iL411t7jE
 
 so today man let me show the dog again，okay so this is my dog she got shaved。
 

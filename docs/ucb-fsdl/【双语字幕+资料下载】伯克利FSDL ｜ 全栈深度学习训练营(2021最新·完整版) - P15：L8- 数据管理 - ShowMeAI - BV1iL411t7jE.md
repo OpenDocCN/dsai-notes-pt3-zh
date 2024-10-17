@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】伯克利FSDL ｜ 全栈深度学习训练营(2021最新·完整版) - P15：L8- 数据管理 - ShowMeAI - BV1iL411t7jE
+# P15：L8- 数据管理 - ShowMeAI - BV1iL411t7jE
 
 so today we're going to talk about data，and here's some motivational tweets one。
 

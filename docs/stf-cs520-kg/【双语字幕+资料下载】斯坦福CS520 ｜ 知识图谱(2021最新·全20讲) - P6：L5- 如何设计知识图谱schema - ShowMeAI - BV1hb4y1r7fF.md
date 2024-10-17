@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】斯坦福CS520 ｜ 知识图谱(2021最新·全20讲) - P6：L5- 如何设计知识图谱schema - ShowMeAI - BV1hb4y1r7fF
+# P6：L5- 如何设计知识图谱schema - ShowMeAI - BV1hb4y1r7fF
 
 ![](img/576bda86dd4a43d9ef0c1a21b39219f5_0.png)
 

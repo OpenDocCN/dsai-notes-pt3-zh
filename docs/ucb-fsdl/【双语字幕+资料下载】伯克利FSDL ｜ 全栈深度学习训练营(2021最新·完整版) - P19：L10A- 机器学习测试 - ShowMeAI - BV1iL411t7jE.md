@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】伯克利FSDL ｜ 全栈深度学习训练营(2021最新·完整版) - P19：L10A- 机器学习测试 - ShowMeAI - BV1iL411t7jE
+# P19：L10A- 机器学习测试 - ShowMeAI - BV1iL411t7jE
 
 welcome back everyone hope that you all，had a good spring break。
 

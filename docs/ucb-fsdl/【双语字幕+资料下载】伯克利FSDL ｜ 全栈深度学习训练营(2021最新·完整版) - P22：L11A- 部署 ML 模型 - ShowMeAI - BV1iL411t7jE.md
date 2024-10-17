@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】伯克利FSDL ｜ 全栈深度学习训练营(2021最新·完整版) - P22：L11A- 部署 ML 模型 - ShowMeAI - BV1iL411t7jE
+# P22：L11A- 部署 ML 模型 - ShowMeAI - BV1iL411t7jE
 
 this week we're going to talk about，deploying and monitoring models for most。
 

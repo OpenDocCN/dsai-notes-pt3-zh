@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】伯克利FSDL ｜ 全栈深度学习训练营(2021最新·完整版) - P18：【Lab7】段落识别 - ShowMeAI - BV1iL411t7jE
+# P18：【Lab7】段落识别 - ShowMeAI - BV1iL411t7jE
 
 hi everyone today we're doing lab seven，paragraph recognition。
 

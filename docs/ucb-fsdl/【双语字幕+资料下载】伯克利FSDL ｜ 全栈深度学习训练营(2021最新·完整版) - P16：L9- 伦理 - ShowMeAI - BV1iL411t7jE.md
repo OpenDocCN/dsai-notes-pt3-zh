@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】伯克利FSDL ｜ 全栈深度学习训练营(2021最新·完整版) - P16：L9- 伦理 - ShowMeAI - BV1iL411t7jE
+# P16：L9- 伦理 - ShowMeAI - BV1iL411t7jE
 
 this week we're going to talk about，ethics and before we get going。
 

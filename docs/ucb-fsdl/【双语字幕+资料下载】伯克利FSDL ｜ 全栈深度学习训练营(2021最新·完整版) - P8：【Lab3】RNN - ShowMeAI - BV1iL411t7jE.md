@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】伯克利FSDL ｜ 全栈深度学习训练营(2021最新·完整版) - P8：【Lab3】RNN - ShowMeAI - BV1iL411t7jE
+# P8：【Lab3】RNN - ShowMeAI - BV1iL411t7jE
 
 ![](img/db4d111aa29162d767e0e8bbe6c8599b_0.png)
 

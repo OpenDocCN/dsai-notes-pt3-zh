@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】伯克利FSDL ｜ 全栈深度学习训练营(2021最新·完整版) - P27：L13- 机器学习团队 - ShowMeAI - BV1iL411t7jE
+# P27：L13- 机器学习团队 - ShowMeAI - BV1iL411t7jE
 
 this week we're going to talk about，machine learning teams so，why why do we talk about machine。
 

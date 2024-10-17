@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】伯克利FSDL ｜ 全栈深度学习训练营(2021最新·完整版) - P10：【Lab4】Transformers应用 - ShowMeAI - BV1iL411t7jE
+# P10：【Lab4】Transformers应用 - ShowMeAI - BV1iL411t7jE
 
 ![](img/392cf1605a1627f98975b05d76f36c39_0.png)
 

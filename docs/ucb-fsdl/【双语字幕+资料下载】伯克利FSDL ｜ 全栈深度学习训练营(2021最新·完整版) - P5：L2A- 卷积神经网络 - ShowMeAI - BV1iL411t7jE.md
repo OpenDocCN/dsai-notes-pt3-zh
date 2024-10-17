@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】伯克利FSDL ｜ 全栈深度学习训练营(2021最新·完整版) - P5：L2A- 卷积神经网络 - ShowMeAI - BV1iL411t7jE
+# P5：L2A- 卷积神经网络 - ShowMeAI - BV1iL411t7jE
 
 um，um what we're going to cover today is，first we're going to talk about。
 

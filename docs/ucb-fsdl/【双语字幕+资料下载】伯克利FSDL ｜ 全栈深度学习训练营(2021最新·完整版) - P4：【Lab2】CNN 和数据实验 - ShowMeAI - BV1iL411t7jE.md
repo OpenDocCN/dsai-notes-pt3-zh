@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】伯克利FSDL ｜ 全栈深度学习训练营(2021最新·完整版) - P4：【Lab2】CNN 和数据实验 - ShowMeAI - BV1iL411t7jE
+# P4：【Lab2】CNN 和数据实验 - ShowMeAI - BV1iL411t7jE
 
 ![](img/c6447571d36e972507177863ebd07405_0.png)
 

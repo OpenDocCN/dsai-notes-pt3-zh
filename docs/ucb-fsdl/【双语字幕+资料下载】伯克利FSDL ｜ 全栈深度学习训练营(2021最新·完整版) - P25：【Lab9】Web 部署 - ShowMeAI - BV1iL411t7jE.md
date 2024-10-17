@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】伯克利FSDL ｜ 全栈深度学习训练营(2021最新·完整版) - P25：【Lab9】Web 部署 - ShowMeAI - BV1iL411t7jE
+# P25：【Lab9】Web 部署 - ShowMeAI - BV1iL411t7jE
 
 hey everyone time for lab 9 of the full，stack deep learning，labs this one's going to prepare us for。
 

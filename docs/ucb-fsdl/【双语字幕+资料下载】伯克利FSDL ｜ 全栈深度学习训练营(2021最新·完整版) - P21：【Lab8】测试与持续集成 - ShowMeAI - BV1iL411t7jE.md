@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】伯克利FSDL ｜ 全栈深度学习训练营(2021最新·完整版) - P21：【Lab8】测试与持续集成 - ShowMeAI - BV1iL411t7jE
+# P21：【Lab8】测试与持续集成 - ShowMeAI - BV1iL411t7jE
 
 hey everyone we're doing lab 8 today，testing and continuous integration we're，going to add linting。
 

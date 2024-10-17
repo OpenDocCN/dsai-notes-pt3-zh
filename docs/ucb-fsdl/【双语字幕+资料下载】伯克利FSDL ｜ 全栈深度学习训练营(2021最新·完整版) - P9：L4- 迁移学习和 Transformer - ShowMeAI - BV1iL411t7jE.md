@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】伯克利FSDL ｜ 全栈深度学习训练营(2021最新·完整版) - P9：L4- 迁移学习和 Transformer - ShowMeAI - BV1iL411t7jE
+# P9：L4- 迁移学习和 Transformer - ShowMeAI - BV1iL411t7jE
 
 so today we're going to talk about，transfer learning got started in，computer vision。
 

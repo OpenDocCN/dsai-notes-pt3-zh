@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】伯克利FSDL ｜ 全栈深度学习训练营(2021最新·完整版) - P20：L10B- 机器学习可解释性 - ShowMeAI - BV1iL411t7jE
+# P20：L10B- 机器学习可解释性 - ShowMeAI - BV1iL411t7jE
 
 maybe i'll just power through them next，thing i'm going to talk about is。
 

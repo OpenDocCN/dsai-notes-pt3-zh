@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】伯克利FSDL ｜ 全栈深度学习训练营(2021最新·完整版) - P6：L2B- 计算机视觉应用 - ShowMeAI - BV1iL411t7jE
+# P6：L2B- 计算机视觉应用 - ShowMeAI - BV1iL411t7jE
 
 this week we'll be talking about，so just want to follow up to josh's。
 

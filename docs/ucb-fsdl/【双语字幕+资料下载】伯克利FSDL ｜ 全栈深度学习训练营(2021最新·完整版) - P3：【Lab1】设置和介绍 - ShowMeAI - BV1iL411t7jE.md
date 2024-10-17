@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】伯克利FSDL ｜ 全栈深度学习训练营(2021最新·完整版) - P3：【Lab1】设置和介绍 - ShowMeAI - BV1iL411t7jE
+# P3：【Lab1】设置和介绍 - ShowMeAI - BV1iL411t7jE
 
 and the labs that we're going to be，doing are，going to basically we're going to。
 

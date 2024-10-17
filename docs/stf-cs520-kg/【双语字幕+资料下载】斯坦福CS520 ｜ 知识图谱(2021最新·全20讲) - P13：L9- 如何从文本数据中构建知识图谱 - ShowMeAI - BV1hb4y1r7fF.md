@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】斯坦福CS520 ｜ 知识图谱(2021最新·全20讲) - P13：L9- 如何从文本数据中构建知识图谱 - ShowMeAI - BV1hb4y1r7fF
+# P13：L9- 如何从文本数据中构建知识图谱 - ShowMeAI - BV1hb4y1r7fF
 
 ![](img/608d70c57fd7ddd5c8f2f9fd20e9b000_0.png)
 

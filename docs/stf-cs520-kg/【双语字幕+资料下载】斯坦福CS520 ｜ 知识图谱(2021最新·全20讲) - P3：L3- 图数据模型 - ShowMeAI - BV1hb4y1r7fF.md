@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】斯坦福CS520 ｜ 知识图谱(2021最新·全20讲) - P3：L3- 图数据模型 - ShowMeAI - BV1hb4y1r7fF
+# P3：L3- 图数据模型 - ShowMeAI - BV1hb4y1r7fF
 
 Welcome to the knowledge of seminar， we are in big two and our。
 
