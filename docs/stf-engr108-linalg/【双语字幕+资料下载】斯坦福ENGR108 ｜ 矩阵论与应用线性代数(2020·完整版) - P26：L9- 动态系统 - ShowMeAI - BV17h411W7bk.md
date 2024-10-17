@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】斯坦福ENGR108 ｜ 矩阵论与应用线性代数(2020·完整版) - P26：L9- 动态系统 - ShowMeAI - BV17h411W7bk
+# P26：L9- 动态系统 - ShowMeAI - BV17h411W7bk
 
 ![](img/b68b5b3c5ec51888bff85657cce40d83_0.png)
 
