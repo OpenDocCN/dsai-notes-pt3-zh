@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.036 ｜ 机器学习导论(2020·完整版) - P4：L4- 逻辑回归(对数几率回归) - ShowMeAI - BV1y44y187wN
+# P4：L4- 逻辑回归(对数几率回归) - ShowMeAI - BV1y44y187wN
 
 okay，good morning it's uh mit time so let's，go ahead and get started。
 

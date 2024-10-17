@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.036 ｜ 机器学习导论(2020·完整版) - P14：L14- 客座讲座（David Sontag） - ShowMeAI - BV1y44y187wN
+# P14：L14- 客座讲座（David Sontag） - ShowMeAI - BV1y44y187wN
 
 Great okay。So welcome to lecture 14。I am David Sontag。I am one of the faculty instructors for this。
 

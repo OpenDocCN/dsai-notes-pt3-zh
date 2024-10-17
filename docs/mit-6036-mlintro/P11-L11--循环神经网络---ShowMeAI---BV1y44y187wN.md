@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.036 ｜ 机器学习导论(2020·完整版) - P11：L11- 循环神经网络 - ShowMeAI - BV1y44y187wN
+# P11：L11- 循环神经网络 - ShowMeAI - BV1y44y187wN
 
 okay good morning it's about that time，so let's just recall what we've been。
 

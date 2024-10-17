@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.036 ｜ 机器学习导论(2020·完整版) - P6：L6- 神经网络 - ShowMeAI - BV1y44y187wN
+# P6：L6- 神经网络 - ShowMeAI - BV1y44y187wN
 
 ![](img/e3bbdee916775b6931caeacad960048d_0.png)
 

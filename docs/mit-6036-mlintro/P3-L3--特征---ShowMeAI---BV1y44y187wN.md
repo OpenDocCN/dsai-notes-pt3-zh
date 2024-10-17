@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.036 ｜ 机器学习导论(2020·完整版) - P3：L3- 特征 - ShowMeAI - BV1y44y187wN
+# P3：L3- 特征 - ShowMeAI - BV1y44y187wN
 
 three，so just a reminder as usual make sure to，put all of your questions up at uh the。
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.036 ｜ 机器学习导论(2020·完整版) - P2：L2- 感知器 - ShowMeAI - BV1y44y187wN
+# P2：L2- 感知器 - ShowMeAI - BV1y44y187wN
 
 Okay， I think it's MIT time so let's go ahead and，at the top of this slide is basically some。
 

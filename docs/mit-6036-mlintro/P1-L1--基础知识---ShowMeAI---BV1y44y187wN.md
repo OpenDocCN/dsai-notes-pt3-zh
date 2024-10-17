@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.036 ｜ 机器学习导论(2020·完整版) - P1：L1- 基础知识 - ShowMeAI - BV1y44y187wN
+# P1：L1- 基础知识 - ShowMeAI - BV1y44y187wN
 
 Okay it's 9：35 let's go ahead and get started。Learning。 So as you are experiencing right。
 

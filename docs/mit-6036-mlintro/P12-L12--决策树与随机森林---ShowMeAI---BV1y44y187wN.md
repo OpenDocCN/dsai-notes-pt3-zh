@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.036 ｜ 机器学习导论(2020·完整版) - P12：L12- 决策树与随机森林 - ShowMeAI - BV1y44y187wN
+# P12：L12- 决策树与随机森林 - ShowMeAI - BV1y44y187wN
 
 okay it's about that time uh let's go，ahead and get started，um so in the past many lectures now。
 

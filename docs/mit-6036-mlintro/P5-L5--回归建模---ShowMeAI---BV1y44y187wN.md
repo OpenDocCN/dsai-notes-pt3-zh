@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.036 ｜ 机器学习导论(2020·完整版) - P5：L5- 回归建模 - ShowMeAI - BV1y44y187wN
+# P5：L5- 回归建模 - ShowMeAI - BV1y44y187wN
 
 okay，it's mit time so let's go ahead and get，started，um so let's just recall uh previously。
 

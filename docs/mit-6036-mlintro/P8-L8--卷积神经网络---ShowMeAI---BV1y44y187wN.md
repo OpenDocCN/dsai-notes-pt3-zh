@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.036 ｜ 机器学习导论(2020·完整版) - P8：L8- 卷积神经网络 - ShowMeAI - BV1y44y187wN
+# P8：L8- 卷积神经网络 - ShowMeAI - BV1y44y187wN
 
 okay，it's that time so let's go ahead and get，started on，um what we will be calling lecture eight。
 

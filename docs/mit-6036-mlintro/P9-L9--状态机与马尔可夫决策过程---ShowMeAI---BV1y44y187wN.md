@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.036 ｜ 机器学习导论(2020·完整版) - P9：L9- 状态机与马尔可夫决策过程 - ShowMeAI - BV1y44y187wN
+# P9：L9- 状态机与马尔可夫决策过程 - ShowMeAI - BV1y44y187wN
 
 okay it's that time，so before we get started today i just，want to remind everybody。
 

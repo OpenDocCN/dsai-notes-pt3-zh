@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】MIT 6.036 ｜ 机器学习导论(2020·完整版) - P13：L13- 聚类算法 - ShowMeAI - BV1y44y187wN
+# P13：L13- 聚类算法 - ShowMeAI - BV1y44y187wN
 
 okay it's about that time let's go ahead，and get started，um so so far in this class we've spent a。
 
