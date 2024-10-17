@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】马萨诸塞CS685 ｜ 自然语言处理进阶(2020·完整版) - P21：L17- 视觉与语言模型 - ShowMeAI - BV1BL411t7RV
+# P21：L17- 视觉与语言模型 - ShowMeAI - BV1BL411t7RV
 
 。Okay。嗯。Hey everybody。Hopefully today we don't have many internet interruptions。
 

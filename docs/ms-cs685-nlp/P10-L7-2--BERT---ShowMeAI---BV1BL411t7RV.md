@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】马萨诸塞CS685 ｜ 自然语言处理进阶(2020·完整版) - P10：L7.2- BERT - ShowMeAI - BV1BL411t7RV
+# P10：L7.2- BERT - ShowMeAI - BV1BL411t7RV
 
 Okay， hey， everyone， sorry for the delay。 I I thought I was live。
 

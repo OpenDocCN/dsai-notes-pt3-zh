@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】马萨诸塞CS685 ｜ 自然语言处理进阶(2020·完整版) - P20：实现transformer - ShowMeAI - BV1BL411t7RV
+# P20：实现transformer - ShowMeAI - BV1BL411t7RV
 
 是。Okay， hey everybody。 So I know last week there were a bunch of issues with the connection I have。
 

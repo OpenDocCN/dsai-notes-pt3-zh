@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】马萨诸塞CS685 ｜ 自然语言处理进阶(2020·完整版) - P18：L15- 模型蒸馏和抽取 - ShowMeAI - BV1BL411t7RV
+# P18：L15- 模型蒸馏和抽取 - ShowMeAI - BV1BL411t7RV
 
 Okay looks like I am live so great let's get started today we're going to be talking about a couple methods of distilling models and in essence we're interested in first compressing our models so can we get much smaller models that perform similarly or slightly worse than much larger pretrain models like those that we've seen so far and so before we start it might be good to think about why we might want to do this and the main reason is that we care about the latency of our models at inference time so if I have you know some Bt based QA task and I want to deploy that as a service to customers if I'm use。
 

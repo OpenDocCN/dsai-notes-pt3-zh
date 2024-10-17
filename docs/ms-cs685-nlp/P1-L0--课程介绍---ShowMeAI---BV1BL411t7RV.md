@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】马萨诸塞CS685 ｜ 自然语言处理进阶(2020·完整版) - P1：L0- 课程介绍 - ShowMeAI - BV1BL411t7RV
+# P1：L0- 课程介绍 - ShowMeAI - BV1BL411t7RV
 
 All right， hey everyone， so this is the first introductory lecture of CS685 the Advanced NLP class this fall。
 

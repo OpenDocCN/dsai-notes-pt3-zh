@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】马萨诸塞CS685 ｜ 自然语言处理进阶(2020·完整版) - P11：L8- 问答系统 - ShowMeAI - BV1BL411t7RV
+# P11：L8- 问答系统 - ShowMeAI - BV1BL411t7RV
 
 All right， so I think。We are live， and。Yeah， so apologies again， for。
 
