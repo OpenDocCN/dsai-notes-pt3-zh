@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】慕尼黑工大 ADL4CV ｜ 计算机视觉深度学习进阶课 (2020·全10讲) - P9：L9 - 神经网络图像与视频渲染 - ShowMeAI - BV1Tf4y1L7wg
+# P9：L9 - 神经网络图像与视频渲染 - ShowMeAI - BV1Tf4y1L7wg
 
 Hello， welcome everybody to the advancedanced deep learninging Lecture。😊。
 

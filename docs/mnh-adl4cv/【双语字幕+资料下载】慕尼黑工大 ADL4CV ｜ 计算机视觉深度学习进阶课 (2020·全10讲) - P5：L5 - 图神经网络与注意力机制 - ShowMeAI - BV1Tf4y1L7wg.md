@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】慕尼黑工大 ADL4CV ｜ 计算机视觉深度学习进阶课 (2020·全10讲) - P5：L5 - 图神经网络与注意力机制 - ShowMeAI - BV1Tf4y1L7wg
+# P5：L5 - 图神经网络与注意力机制 - ShowMeAI - BV1Tf4y1L7wg
 
 ![](img/8ac7fd1cb246ba3f44ef0a49a9a194ac_0.png)
 

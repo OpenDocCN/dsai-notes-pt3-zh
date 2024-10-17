@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】慕尼黑工大 ADL4CV ｜ 计算机视觉深度学习进阶课 (2020·全10讲) - P2：L2 - 可视化与模型可解释性 - ShowMeAI - BV1Tf4y1L7wg
+# P2：L2 - 可视化与模型可解释性 - ShowMeAI - BV1Tf4y1L7wg
 
 Welcome to the lecture on Visization and interpretability。
 

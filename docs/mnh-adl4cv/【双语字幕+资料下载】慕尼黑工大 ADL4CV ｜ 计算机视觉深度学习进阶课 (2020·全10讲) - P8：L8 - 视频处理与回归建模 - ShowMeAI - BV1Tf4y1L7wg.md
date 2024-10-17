@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】慕尼黑工大 ADL4CV ｜ 计算机视觉深度学习进阶课 (2020·全10讲) - P8：L8 - 视频处理与回归建模 - ShowMeAI - BV1Tf4y1L7wg
+# P8：L8 - 视频处理与回归建模 - ShowMeAI - BV1Tf4y1L7wg
 
 Hello， welcome everyone to the Advanced team Learn Liature。
 

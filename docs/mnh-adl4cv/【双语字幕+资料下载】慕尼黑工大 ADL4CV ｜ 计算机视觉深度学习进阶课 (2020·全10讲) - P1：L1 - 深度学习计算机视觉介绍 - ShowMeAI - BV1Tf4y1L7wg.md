@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】慕尼黑工大 ADL4CV ｜ 计算机视觉深度学习进阶课 (2020·全10讲) - P1：L1 - 深度学习计算机视觉介绍 - ShowMeAI - BV1Tf4y1L7wg
+# P1：L1 - 深度学习计算机视觉介绍 - ShowMeAI - BV1Tf4y1L7wg
 
 ![](img/a2347d4c85f317ca53ca8da032360a6c_0.png)
 

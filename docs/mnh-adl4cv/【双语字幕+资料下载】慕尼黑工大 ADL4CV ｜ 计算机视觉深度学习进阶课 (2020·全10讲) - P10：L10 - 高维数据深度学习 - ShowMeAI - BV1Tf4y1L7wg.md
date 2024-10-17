@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】慕尼黑工大 ADL4CV ｜ 计算机视觉深度学习进阶课 (2020·全10讲) - P10：L10 - 高维数据深度学习 - ShowMeAI - BV1Tf4y1L7wg
+# P10：L10 - 高维数据深度学习 - ShowMeAI - BV1Tf4y1L7wg
 
 Hello everyone to the advanced deep learning lecture in the recent lectures we've talked about generative models and very recently we've talked about neural rendering。
 

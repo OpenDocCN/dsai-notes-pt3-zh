@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】慕尼黑工大 ADL4CV ｜ 计算机视觉深度学习进阶课 (2020·全10讲) - P4：L4 - 自编码器, VAE和视觉风格迁移 - ShowMeAI - BV1Tf4y1L7wg
+# P4：L4 - 自编码器, VAE和视觉风格迁移 - ShowMeAI - BV1Tf4y1L7wg
 
 ![](img/02321e177a9d1e9c68623b20528622f7_0.png)
 

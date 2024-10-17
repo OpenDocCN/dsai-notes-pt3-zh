@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】慕尼黑工大 ADL4CV ｜ 计算机视觉深度学习进阶课 (2020·全10讲) - P3：L3 - 孪生网络与相似度学习 - ShowMeAI - BV1Tf4y1L7wg
+# P3：L3 - 孪生网络与相似度学习 - ShowMeAI - BV1Tf4y1L7wg
 
 ![](img/4b126a9c0436433d6b4aae9ace6be002_0.png)
 

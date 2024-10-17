@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】慕尼黑工大 ADL4CV ｜ 计算机视觉深度学习进阶课 (2020·全10讲) - P6：L6  - 生成对抗网络(上) - ShowMeAI - BV1Tf4y1L7wg
+# P6：L6  - 生成对抗网络(上) - ShowMeAI - BV1Tf4y1L7wg
 
 Hello everyone welcomelcome to the advancedance deep learning for computeruter vision lecture today it's the first time that I will be giving the lecture well by giving I mean I will make the video but I think we have some very interesting content we going to talk about generative neural networks and the first thing I would like to do is I would like to give you a bit of an overview of generative neural networks obviously you have heard a lot of the terms we have also heard in the previous lectures a lot of discriminative networks but now we want to talk about generative networks mostly in the context of computer vision applications meaning that we want to generate for instance image or we want to generate a video however we also want to go over the。
 
