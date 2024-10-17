@@ -1,4 +1,4 @@
-# 140分钟入门 PyTorch，官方教程手把手教你训练第一个深度学习模型！＜官方教程系列＞ - P5：L5- PyTorch TensorBoard 支持 - ShowMeAI - BV19L4y1t7tu
+# 140分钟入门 PyTorch，官方教程手把手教你训练第一个深度学习模型！＜官方教程系列＞ - P5：L5- PyTorch TensorBoard 支持 
 
 如果你还没有这样做，你需要设置一个 Python 环境，安装最新版本的 PyTorch 和 TensorBoard。屏幕上的命令展示了如何在 Conda 和 Pip 中执行此操作，我们还将使用 mapplotlib 操作图像。一旦安装了依赖项，你可以在设置好的环境中运行此视频的配套笔记本。
 

@@ -1,4 +1,4 @@
-# 140分钟入门 PyTorch，官方教程手把手教你训练第一个深度学习模型！＜官方教程系列＞ - P1：L1- PyTorch 简介 - ShowMeAI - BV19L4y1t7tu
+# 140分钟入门 PyTorch，官方教程手把手教你训练第一个深度学习模型！＜官方教程系列＞ - P1：L1- PyTorch 简介 
 
 你好，我的名字是Brad Heinz。我是Facebook Pytorrch团队的合作工程师。在这个视频中，我将向你介绍Pytorrch，它的特性、关键概念和相关工具及库。这个概述假设你是第一次接触Pytorrch进行机器学习。
 

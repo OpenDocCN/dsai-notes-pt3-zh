@@ -1,4 +1,4 @@
-# 140分钟入门PyTorch，官方教程手把手教你训练第一个深度学习模型！＜官方教程系列＞ - P7：L7- 使用Captum进行模型理解 - ShowMeAI - BV19L4y1t7tu
+# 140分钟入门PyTorch，官方教程手把手教你训练第一个深度学习模型！＜官方教程系列＞ - P7：L7- 使用Captum进行模型理解 
 
 ![](img/2fb9bd9df95d3221c8b5a298fc267de0_0.png)
 
