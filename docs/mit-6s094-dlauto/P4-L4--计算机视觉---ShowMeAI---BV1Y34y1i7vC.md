@@ -1,4 +1,4 @@
-# 【英语字幕+资料下载】MIT 6.S094 ｜ 深度学习与自动驾驶(2018·完整版) - P4：L4- 计算机视觉 - ShowMeAI - BV1Y34y1i7vC
+# P4：L4- 计算机视觉 - ShowMeAI - BV1Y34y1i7vC
 
 Today we'll talk about how to make machines see computer vision。And we will present， thank you。
 

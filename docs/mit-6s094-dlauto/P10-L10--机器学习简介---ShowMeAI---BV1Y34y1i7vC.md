@@ -1,4 +1,4 @@
-# 【英语字幕+资料下载】MIT 6.S094 ｜ 深度学习与自动驾驶(2018·完整版) - P10：L10- 机器学习简介 - ShowMeAI - BV1Y34y1i7vC
+# P10：L10- 机器学习简介 - ShowMeAI - BV1Y34y1i7vC
 
 The video you're watching now is in 360 resolution is not great。
 

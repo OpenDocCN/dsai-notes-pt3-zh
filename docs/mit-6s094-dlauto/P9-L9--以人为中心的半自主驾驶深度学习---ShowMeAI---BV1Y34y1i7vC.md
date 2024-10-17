@@ -1,4 +1,4 @@
-# 【英语字幕+资料下载】MIT 6.S094 ｜ 深度学习与自动驾驶(2018·完整版) - P9：L9- 以人为中心的半自主驾驶深度学习 - ShowMeAI - BV1Y34y1i7vC
+# P9：L9- 以人为中心的半自主驾驶深度学习 - ShowMeAI - BV1Y34y1i7vC
 
 All right， so the human side。Of AI。So how do we turn？This camera back in on the human。
 

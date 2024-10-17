@@ -1,4 +1,4 @@
-# 【英语字幕+资料下载】MIT 6.S094 ｜ 深度学习与自动驾驶(2018·完整版) - P3：L3- 深度强化学习 - ShowMeAI - BV1Y34y1i7vC
+# P3：L3- 深度强化学习 - ShowMeAI - BV1Y34y1i7vC
 
 Today， we will talk about deep reinforcement learning。
 

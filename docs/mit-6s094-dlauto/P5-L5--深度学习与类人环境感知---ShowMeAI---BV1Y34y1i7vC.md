@@ -1,4 +1,4 @@
-# 【英语字幕+资料下载】MIT 6.S094 ｜ 深度学习与自动驾驶(2018·完整版) - P5：L5- 深度学习与类人环境感知 - ShowMeAI - BV1Y34y1i7vC
+# P5：L5- 深度学习与类人环境感知 - ShowMeAI - BV1Y34y1i7vC
 
 Today we will talk about how to apply the methods of deep learning to understanding the sense of the human being。
 

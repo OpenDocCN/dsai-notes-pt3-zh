@@ -1,4 +1,4 @@
-# 【英语字幕+资料下载】MIT 6.S094 ｜ 深度学习与自动驾驶(2018·完整版) - P2：L2- 深度学习 - ShowMeAI - BV1Y34y1i7vC
+# P2：L2- 深度学习 - ShowMeAI - BV1Y34y1i7vC
 
 Thank you everyone， for braving the cold and the snow to be here。
 

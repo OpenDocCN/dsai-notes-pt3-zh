@@ -1,4 +1,4 @@
-# 【英语字幕+资料下载】MIT 6.S094 ｜ 深度学习与自动驾驶(2018·完整版) - P8：L8- 循环神经网络与时序驾驶操纵 - ShowMeAI - BV1Y34y1i7vC
+# P8：L8- 循环神经网络与时序驾驶操纵 - ShowMeAI - BV1Y34y1i7vC
 
 All right， so we've talked about。Regular neural networks， fully connected neural networks。
 
