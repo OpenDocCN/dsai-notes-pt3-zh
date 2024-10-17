@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】CS231n进阶课 ｜ 深度学习与计算机视觉(2019·全22讲) - P19：L19- 生成模型(上) - ShowMeAI - BV13P4y1t7gM
+# P19：L19- 生成模型(上) - ShowMeAI - BV13P4y1t7gM
 
 alright let's get started so welcome，alright let's get started so welcome。
 

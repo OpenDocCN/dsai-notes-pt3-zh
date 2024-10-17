@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】CS231n进阶课 ｜ 深度学习与计算机视觉(2019·全22讲) - P7：L7- 卷积神经网络 - ShowMeAI - BV13P4y1t7gM
+# P7：L7- 卷积神经网络 - ShowMeAI - BV13P4y1t7gM
 
 all right welcome back to lecture seven，all right welcome back to lecture seven。
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】CS231n进阶课 ｜ 深度学习与计算机视觉(2019·全22讲) - P8：L8- CNN典型结构 - ShowMeAI - BV13P4y1t7gM
+# P8：L8- CNN典型结构 - ShowMeAI - BV13P4y1t7gM
 
 okay welcome back to lecture eight today，okay welcome back to lecture eight today。
 

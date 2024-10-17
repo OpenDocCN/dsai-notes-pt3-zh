@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】CS231n进阶课 ｜ 深度学习与计算机视觉(2019·全22讲) - P20：L20- 生成模型(下) - ShowMeAI - BV13P4y1t7gM
+# P20：L20- 生成模型(下) - ShowMeAI - BV13P4y1t7gM
 
 and this appears that the microphone is，and this appears that the microphone is。
 

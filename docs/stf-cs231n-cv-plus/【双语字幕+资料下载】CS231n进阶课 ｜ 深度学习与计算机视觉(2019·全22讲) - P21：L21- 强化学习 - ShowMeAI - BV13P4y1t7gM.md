@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】CS231n进阶课 ｜ 深度学习与计算机视觉(2019·全22讲) - P21：L21- 强化学习 - ShowMeAI - BV13P4y1t7gM
+# P21：L21- 强化学习 - ShowMeAI - BV13P4y1t7gM
 
 um so today we're up to lecture 21 this，um so today we're up to lecture 21 this。
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】CS231n进阶课 ｜ 深度学习与计算机视觉(2019·全22讲) - P14：L14- 可视化与模型理解 - ShowMeAI - BV13P4y1t7gM
+# P14：L14- 可视化与模型理解 - ShowMeAI - BV13P4y1t7gM
 
 all right welcome back to lecture 14。 uh，all right welcome back to lecture 14。 uh。
 

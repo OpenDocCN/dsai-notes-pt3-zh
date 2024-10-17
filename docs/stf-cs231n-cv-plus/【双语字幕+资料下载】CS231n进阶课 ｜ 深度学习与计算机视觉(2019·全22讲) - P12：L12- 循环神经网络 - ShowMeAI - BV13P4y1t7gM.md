@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】CS231n进阶课 ｜ 深度学习与计算机视觉(2019·全22讲) - P12：L12- 循环神经网络 - ShowMeAI - BV13P4y1t7gM
+# P12：L12- 循环神经网络 - ShowMeAI - BV13P4y1t7gM
 
 okay welcome back today we are we're on，okay welcome back today we are we're on。
 

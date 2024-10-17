@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】CS231n进阶课 ｜ 深度学习与计算机视觉(2019·全22讲) - P3：L3- 线性分类器 - ShowMeAI - BV13P4y1t7gM
+# P3：L3- 线性分类器 - ShowMeAI - BV13P4y1t7gM
 
 so welcome back to welcome back to，so welcome back to welcome back to。
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】CS231n进阶课 ｜ 深度学习与计算机视觉(2019·全22讲) - P9：L9- 深度学习硬件与软件 - ShowMeAI - BV13P4y1t7gM
+# P9：L9- 深度学习硬件与软件 - ShowMeAI - BV13P4y1t7gM
 
 today we're going to talk about or today，today we're going to talk about or today。
 

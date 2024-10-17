@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】CS231n进阶课 ｜ 深度学习与计算机视觉(2019·全22讲) - P15：L15- 目标检测 - ShowMeAI - BV13P4y1t7gM
+# P15：L15- 目标检测 - ShowMeAI - BV13P4y1t7gM
 
 all right well look welcome back to，all right well look welcome back to，lecture 15。
 

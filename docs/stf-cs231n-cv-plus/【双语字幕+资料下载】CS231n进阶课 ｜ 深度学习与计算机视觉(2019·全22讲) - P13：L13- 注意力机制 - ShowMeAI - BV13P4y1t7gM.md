@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】CS231n进阶课 ｜ 深度学习与计算机视觉(2019·全22讲) - P13：L13- 注意力机制 - ShowMeAI - BV13P4y1t7gM
+# P13：L13- 注意力机制 - ShowMeAI - BV13P4y1t7gM
 
 okay it seems like a microphone is not，okay it seems like a microphone is not。
 

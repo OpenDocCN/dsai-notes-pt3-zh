@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】CS231n进阶课 ｜ 深度学习与计算机视觉(2019·全22讲) - P10：L10- 训练神经网络(上) - ShowMeAI - BV13P4y1t7gM
+# P10：L10- 训练神经网络(上) - ShowMeAI - BV13P4y1t7gM
 
 okay welcome back to lecture 10 we made，okay welcome back to lecture 10 we made。
 
