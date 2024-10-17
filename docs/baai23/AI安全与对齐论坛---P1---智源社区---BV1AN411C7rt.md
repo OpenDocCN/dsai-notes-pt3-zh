@@ -1,4 +1,4 @@
-# 2023北京智源大会-AI安全与对齐论坛 - P1 - 智源社区 - BV1AN411C7rt
+# AI安全与对齐论坛 - P1 - 智源社区 - BV1AN411C7rt
 
 尊敬的各位领导、嘉宾和朋友们大家好。欢迎大家来到今年的智援大会AI安全与对齐论坛。😊，Ladies and gentlemen， good morning。
 

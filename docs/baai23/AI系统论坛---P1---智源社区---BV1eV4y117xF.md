@@ -1,4 +1,4 @@
-# 2023北京智源大会-AI系统论坛 - P1 - 智源社区 - BV1eV4y117xF
+# AI系统论坛 - P1 - 智源社区 - BV1eV4y117xF
 
 OK啊，谢谢大家。😊，Okay， good morning。 Since we have the some invited， very important speaker here。
 
