@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P2：L2- The Velocity Problem _ Part II - Graphically - ShowMeAI - BV1544y1C7pC
+# P2：L2- The Velocity Problem _ Part II - Graphically - ShowMeAI - BV1544y1C7pC
 
 Let's try to translate our velocity problem into a geometric picture。
 

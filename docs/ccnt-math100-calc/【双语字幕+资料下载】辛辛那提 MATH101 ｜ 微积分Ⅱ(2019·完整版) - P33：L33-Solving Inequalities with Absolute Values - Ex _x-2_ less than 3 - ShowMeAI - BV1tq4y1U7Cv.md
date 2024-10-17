@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P33：L33-Solving Inequalities with Absolute Values - Ex _x-2_ less than 3 - ShowMeAI - BV1tq4y1U7Cv
+# P33：L33-Solving Inequalities with Absolute Values - Ex _x-2_ less than 3 - ShowMeAI - BV1tq4y1U7Cv
 
 This video was just a little piece of algebra about inequalities and absolute values and how to deal with it whether they're all matched together。
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P26：L26- The derivative of Trigonometric Functions - ShowMeAI - BV1544y1C7pC
+# P26：L26- The derivative of Trigonometric Functions - ShowMeAI - BV1544y1C7pC
 
 What of both the trigometric terms， here we've go a graph of cosine and a graph of sine。
 

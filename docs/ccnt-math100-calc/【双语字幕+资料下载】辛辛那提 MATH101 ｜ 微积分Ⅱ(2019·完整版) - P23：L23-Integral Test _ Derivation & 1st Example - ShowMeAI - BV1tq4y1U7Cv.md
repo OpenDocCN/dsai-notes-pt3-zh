@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P23：L23-Integral Test _ Derivation & 1st Example - ShowMeAI - BV1tq4y1U7Cv
+# P23：L23-Integral Test _ Derivation & 1st Example - ShowMeAI - BV1tq4y1U7Cv
 
 Consider the graph of a sequence， something like this one， the graph of3 divided by square root M。
 

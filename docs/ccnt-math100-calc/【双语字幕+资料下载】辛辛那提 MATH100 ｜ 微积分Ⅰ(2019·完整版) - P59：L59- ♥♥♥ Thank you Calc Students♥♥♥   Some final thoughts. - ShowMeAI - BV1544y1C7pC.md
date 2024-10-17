@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P59：L59- ♥♥♥ Thank you Calc Students♥♥♥   Some final thoughts. - ShowMeAI - BV1544y1C7pC
+# P59：L59- ♥♥♥ Thank you Calc Students♥♥♥   Some final thoughts. - ShowMeAI - BV1544y1C7pC
 
 I wanted to record a video saying basically two different things。
 

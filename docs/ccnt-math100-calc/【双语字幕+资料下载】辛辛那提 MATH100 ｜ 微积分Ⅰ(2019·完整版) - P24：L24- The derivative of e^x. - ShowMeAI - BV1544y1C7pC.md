@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P24：L24- The derivative of e^x. - ShowMeAI - BV1544y1C7pC
+# P24：L24- The derivative of e^x. - ShowMeAI - BV1544y1C7pC
 
 The function E to the x is a very important very famous function within mathematics and indeed it has this interesting property which is that the derivative of e to the x is just the same function that is if I take a point like how about one here all right so one E to the one is going to have the value just E E to the one is E and so if I f out what the slope is that the height of this which looks like a little bit over2 basically the value of E here is the same thing as the slope of this particular function that they have the same function value and slope and indeed if I taken my slope down here or my slope up here it doesn't really matter it's always going to have the same slope as the function value。
 

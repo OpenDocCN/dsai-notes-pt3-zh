@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P38：L38-Plotting Parametric Curves - ShowMeAI - BV1tq4y1U7Cv
+# P38：L38-Plotting Parametric Curves - ShowMeAI - BV1tq4y1U7Cv
 
 In this video we're going to talk about parametric curves that make all kinds of interesting and beautiful curves like this particular one。
 

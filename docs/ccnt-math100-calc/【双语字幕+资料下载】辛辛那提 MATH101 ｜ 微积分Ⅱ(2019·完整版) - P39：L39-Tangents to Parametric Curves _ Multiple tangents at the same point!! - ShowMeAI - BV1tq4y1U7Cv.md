@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P39：L39-Tangents to Parametric Curves _ Multiple tangents at the same point!! - ShowMeAI - BV1tq4y1U7Cv
+# P39：L39-Tangents to Parametric Curves _ Multiple tangents at the same point!! - ShowMeAI - BV1tq4y1U7Cv
 
 When we've studied calculus in the past， there's many different geometric notions that we're interested in。
 

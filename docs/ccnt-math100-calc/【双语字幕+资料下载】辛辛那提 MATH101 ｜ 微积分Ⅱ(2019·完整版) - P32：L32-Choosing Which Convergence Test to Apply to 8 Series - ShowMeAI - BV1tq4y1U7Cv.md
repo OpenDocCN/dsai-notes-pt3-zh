@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P32：L32-Choosing Which Convergence Test to Apply to 8 Series - ShowMeAI - BV1tq4y1U7Cv
+# P32：L32-Choosing Which Convergence Test to Apply to 8 Series - ShowMeAI - BV1tq4y1U7Cv
 
 One of the hardest things for students when they're first being introduced to series is how do I know which test to use for which kind of series。
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P21：L21-Geometric Series  _ Convergence, Derivation, and Example - ShowMeAI - BV1tq4y1U7Cv
+# P21：L21-Geometric Series  _ Convergence, Derivation, and Example - ShowMeAI - BV1tq4y1U7Cv
 
 AGmetric series in general is a summation。 So a series of some constant a。
 

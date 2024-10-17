@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P3：L3- A Tale of Three Functions _ Intro to Limits Part I - ShowMeAI - BV1544y1C7pC
+# P3：L3- A Tale of Three Functions _ Intro to Limits Part I - ShowMeAI - BV1544y1C7pC
 
 In this video we're going to investigate the idea of a limit and I'm going to introduce it to you by contrasting three different functions。
 

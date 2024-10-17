@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P30：L30-Absolute Convergence vs Conditional Convergence vs Convergence - ShowMeAI - BV1tq4y1U7Cv
+# P30：L30-Absolute Convergence vs Conditional Convergence vs Convergence - ShowMeAI - BV1tq4y1U7Cv
 
 Consider the graphs of two different sequences。 First， I graphed a random A that I made up。
 

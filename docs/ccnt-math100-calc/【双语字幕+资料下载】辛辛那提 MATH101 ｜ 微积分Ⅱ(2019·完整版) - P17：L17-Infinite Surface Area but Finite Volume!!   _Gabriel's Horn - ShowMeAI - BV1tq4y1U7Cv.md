@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P17：L17-Infinite Surface Area but Finite Volume!!   _Gabriel's Horn - ShowMeAI - BV1tq4y1U7Cv
+# P17：L17-Infinite Surface Area but Finite Volume!!   _Gabriel's Horn - ShowMeAI - BV1tq4y1U7Cv
 
 Today， we're going to talk about one of my favorite examples in all of calculus。 Gabriel's horn。 Now。
 

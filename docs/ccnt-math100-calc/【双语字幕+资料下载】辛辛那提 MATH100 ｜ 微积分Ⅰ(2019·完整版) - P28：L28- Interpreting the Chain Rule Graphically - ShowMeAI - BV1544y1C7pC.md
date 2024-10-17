@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P28：L28- Interpreting the Chain Rule Graphically - ShowMeAI - BV1544y1C7pC
+# P28：L28- Interpreting the Chain Rule Graphically - ShowMeAI - BV1544y1C7pC
 
 I want to try to illustrate to you a little bit of how the chain rule works graphically。
 

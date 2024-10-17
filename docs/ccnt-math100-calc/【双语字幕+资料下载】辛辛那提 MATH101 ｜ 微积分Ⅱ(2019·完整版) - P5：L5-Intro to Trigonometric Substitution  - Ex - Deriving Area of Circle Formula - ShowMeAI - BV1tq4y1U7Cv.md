@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P5：L5-Intro to Trigonometric Substitution  - Ex - Deriving Area of Circle Formula - ShowMeAI - BV1tq4y1U7Cv
+# P5：L5-Intro to Trigonometric Substitution  - Ex - Deriving Area of Circle Formula - ShowMeAI - BV1tq4y1U7Cv
 
 Previously， we've seen something we called trigoometric integrals。
 

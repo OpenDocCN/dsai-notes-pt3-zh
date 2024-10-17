@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P45：L45- What's an anti-derivative - ShowMeAI - BV1544y1C7pC
+# P45：L45- What's an anti-derivative - ShowMeAI - BV1544y1C7pC
 
 So as we all know by the power rule， the derivative of x cubed is you bring the three down 3 x squared。
 

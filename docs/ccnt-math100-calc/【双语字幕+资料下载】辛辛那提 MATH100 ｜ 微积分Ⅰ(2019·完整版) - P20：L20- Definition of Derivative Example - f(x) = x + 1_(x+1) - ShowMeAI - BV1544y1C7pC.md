@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P20：L20- Definition of Derivative Example - f(x) = x + 1_(x+1) - ShowMeAI - BV1544y1C7pC
+# P20：L20- Definition of Derivative Example - f(x) = x + 1_(x+1) - ShowMeAI - BV1544y1C7pC
 
 In this example， I'm going to compute the derivative of this function， x plus1 over x plus 1。
 

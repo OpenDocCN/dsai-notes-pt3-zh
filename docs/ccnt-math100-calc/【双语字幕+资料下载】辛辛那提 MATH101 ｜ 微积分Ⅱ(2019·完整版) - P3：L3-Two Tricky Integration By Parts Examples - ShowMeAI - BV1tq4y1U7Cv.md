@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P3：L3-Two Tricky Integration By Parts Examples - ShowMeAI - BV1tq4y1U7Cv
+# P3：L3-Two Tricky Integration By Parts Examples - ShowMeAI - BV1tq4y1U7Cv
 
 In this video， we're going to see two slightly trickier examples of integration by parts。
 

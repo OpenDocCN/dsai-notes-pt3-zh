@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P18：L18-Intro to Sequences - ShowMeAI - BV1tq4y1U7Cv
+# P18：L18-Intro to Sequences - ShowMeAI - BV1tq4y1U7Cv
 
 Consider this list of numbers，1，1， half，1 third，1/ quarter，1， fifth， and so on。
 

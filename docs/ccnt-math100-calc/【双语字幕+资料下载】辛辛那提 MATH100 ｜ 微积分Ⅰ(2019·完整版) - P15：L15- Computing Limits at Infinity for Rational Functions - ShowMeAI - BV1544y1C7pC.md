@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P15：L15- Computing Limits at Infinity for Rational Functions - ShowMeAI - BV1544y1C7pC
+# P15：L15- Computing Limits at Infinity for Rational Functions - ShowMeAI - BV1544y1C7pC
 
 In this video， I wanted to run through the sort of standard methodology to compute limits and infinity when youve got a rational function。
 

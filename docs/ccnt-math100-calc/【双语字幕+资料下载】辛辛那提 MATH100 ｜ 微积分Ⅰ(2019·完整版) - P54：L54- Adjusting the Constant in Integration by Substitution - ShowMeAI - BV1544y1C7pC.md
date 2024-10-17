@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P54：L54- Adjusting the Constant in Integration by Substitution - ShowMeAI - BV1544y1C7pC
+# P54：L54- Adjusting the Constant in Integration by Substitution - ShowMeAI - BV1544y1C7pC
 
 All right， let's do one more example。
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P12：L12-MATH PROF vs TRICKY INTEGRALS - ShowMeAI - BV1tq4y1U7Cv
+# P12：L12-MATH PROF vs TRICKY INTEGRALS - ShowMeAI - BV1tq4y1U7Cv
 
 As a math professor， I always like to make sure that my math superpowers are nice and sharp。
 

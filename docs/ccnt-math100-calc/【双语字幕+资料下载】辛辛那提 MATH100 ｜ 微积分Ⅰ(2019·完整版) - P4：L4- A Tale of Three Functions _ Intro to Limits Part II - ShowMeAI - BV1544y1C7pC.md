@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P4：L4- A Tale of Three Functions _ Intro to Limits Part II - ShowMeAI - BV1544y1C7pC
+# P4：L4- A Tale of Three Functions _ Intro to Limits Part II - ShowMeAI - BV1544y1C7pC
 
 We looked at this graphically， but now I want to study this f of x numerically and we know that one is the interesting spot。
 

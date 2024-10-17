@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P23：L23- How to Find the Equation of a Tangent Line - ShowMeAI - BV1544y1C7pC
+# P23：L23- How to Find the Equation of a Tangent Line - ShowMeAI - BV1544y1C7pC
 
 In this video， we're going to look at equations of lines。 And in the first half of the video。
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P35：L35- Linear Approximations _ Using Tangent Lines to Approximate Functions - ShowMeAI - BV1544y1C7pC
+# P35：L35- Linear Approximations _ Using Tangent Lines to Approximate Functions - ShowMeAI - BV1544y1C7pC
 
 One of the reasons I really like the derivative and the derivative you'll remember gives us the slope of the tangent line is that tangent lines are nearby to a point a pretty good approximation a lot of the time。
 

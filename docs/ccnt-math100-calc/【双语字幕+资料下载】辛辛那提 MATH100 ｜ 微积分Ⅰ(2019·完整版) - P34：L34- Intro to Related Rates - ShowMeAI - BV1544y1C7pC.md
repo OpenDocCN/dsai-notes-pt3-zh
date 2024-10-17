@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P34：L34- Intro to Related Rates - ShowMeAI - BV1544y1C7pC
+# P34：L34- Intro to Related Rates - ShowMeAI - BV1544y1C7pC
 
 In mathematics， an equation of multiple variables is going to give a relationship between two or three or four different variables Now。
 

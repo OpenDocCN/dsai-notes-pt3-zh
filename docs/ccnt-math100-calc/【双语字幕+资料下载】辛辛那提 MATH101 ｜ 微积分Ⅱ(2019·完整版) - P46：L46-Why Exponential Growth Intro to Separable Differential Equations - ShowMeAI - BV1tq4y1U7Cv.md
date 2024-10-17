@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P46：L46-Why Exponential Growth Intro to Separable Differential Equations - ShowMeAI - BV1tq4y1U7Cv
+# P46：L46-Why Exponential Growth Intro to Separable Differential Equations - ShowMeAI - BV1tq4y1U7Cv
 
 What is a differential equation， Where do they come from。
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P30：L30- Implicit Differentiation _  Differentiation when you only have an equation - ShowMeAI - BV1544y1C7pC
+# P30：L30- Implicit Differentiation _  Differentiation when you only have an equation - ShowMeAI - BV1544y1C7pC
 
 So far in Calculus， we've been focusing on what I call explicit functions。
 

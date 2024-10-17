@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P31：L31-Ratio & Root Tests _ Geometric Series Generalized - ShowMeAI - BV1tq4y1U7Cv
+# P31：L31-Ratio & Root Tests _ Geometric Series Generalized - ShowMeAI - BV1tq4y1U7Cv
 
 Today， we're to talk about the final two tests that we're going to use in calculus 2 to analyze whether our series converge or diverge。
 

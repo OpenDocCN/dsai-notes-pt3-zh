@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P14：L14-Comparison Test for Improper Integrals - ShowMeAI - BV1tq4y1U7Cv
+# P14：L14-Comparison Test for Improper Integrals - ShowMeAI - BV1tq4y1U7Cv
 
 Consider the functions F and G and the property of these functions is that F is greater than G and that both of them are positive。
 

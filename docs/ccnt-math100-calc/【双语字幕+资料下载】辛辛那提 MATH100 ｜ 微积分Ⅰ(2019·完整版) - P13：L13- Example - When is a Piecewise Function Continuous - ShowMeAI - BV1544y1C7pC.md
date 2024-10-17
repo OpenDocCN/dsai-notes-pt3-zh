@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P13：L13- Example - When is a Piecewise Function Continuous - ShowMeAI - BV1544y1C7pC
+# P13：L13- Example - When is a Piecewise Function Continuous - ShowMeAI - BV1544y1C7pC
 
 In this video， I want to investigate whether I can make this particular piecewise function continuous everywhere。
 

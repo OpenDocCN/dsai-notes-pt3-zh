@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P50：L50-The Polar Form of COMPLEX NUMBERS  _ Finding the nth roots of -1 - ShowMeAI - BV1tq4y1U7Cv
+# P50：L50-The Polar Form of COMPLEX NUMBERS  _ Finding the nth roots of -1 - ShowMeAI - BV1tq4y1U7Cv
 
 Welcome to my third video in my little series on complex numbers。 Well。
 

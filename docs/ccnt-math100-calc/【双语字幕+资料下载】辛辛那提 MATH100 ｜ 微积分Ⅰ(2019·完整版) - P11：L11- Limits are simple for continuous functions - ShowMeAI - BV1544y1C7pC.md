@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P11：L11- Limits are simple for continuous functions - ShowMeAI - BV1544y1C7pC
+# P11：L11- Limits are simple for continuous functions - ShowMeAI - BV1544y1C7pC
 
 Let's take a walk through a bunch of functions that are familiar to us and the first of these is Sine of X and the point that I want to make right now is let me suppose that I'm taking the limit。
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P34：L34-Power Series & Intervals of Convergence - ShowMeAI - BV1tq4y1U7Cv
+# P34：L34-Power Series & Intervals of Convergence - ShowMeAI - BV1tq4y1U7Cv
 
 I'm going begin this video as I have so many other videos on series with the geometric series that all important geometric series。
 

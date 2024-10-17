@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P7：L7- Building up to computing limits of rational functions - ShowMeAI - BV1544y1C7pC
+# P7：L7- Building up to computing limits of rational functions - ShowMeAI - BV1544y1C7pC
 
 Let me do a really simple example next。 I want to do the limit of a constant as x goes to a value of a。
 

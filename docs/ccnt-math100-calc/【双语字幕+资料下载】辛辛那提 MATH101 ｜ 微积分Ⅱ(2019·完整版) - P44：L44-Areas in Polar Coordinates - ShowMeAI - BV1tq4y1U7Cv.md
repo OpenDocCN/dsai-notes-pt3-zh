@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P44：L44-Areas in Polar Coordinates - ShowMeAI - BV1tq4y1U7Cv
+# P44：L44-Areas in Polar Coordinates - ShowMeAI - BV1tq4y1U7Cv
 
 Determining the area of a region was one of the primary motivating concepts behind calculus。
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P33：L33- Logarithmic Differentiation _  Example - x^sinx - ShowMeAI - BV1544y1C7pC
+# P33：L33- Logarithmic Differentiation _  Example - x^sinx - ShowMeAI - BV1544y1C7pC
 
 We've had a similar goal for quite some time it was compute the derivative of as many functions as possible and we have done a lot。
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P17：L17- How to watch math videos - ShowMeAI - BV1544y1C7pC
+# P17：L17- How to watch math videos - ShowMeAI - BV1544y1C7pC
 
 I make a lot of videos for my different math courses。 And if you're a student of mine。
 

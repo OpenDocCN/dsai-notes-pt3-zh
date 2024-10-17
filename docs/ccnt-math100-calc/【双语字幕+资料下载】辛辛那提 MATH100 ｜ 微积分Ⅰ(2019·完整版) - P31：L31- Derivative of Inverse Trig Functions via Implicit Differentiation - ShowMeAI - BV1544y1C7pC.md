@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P31：L31- Derivative of Inverse Trig Functions via Implicit Differentiation - ShowMeAI - BV1544y1C7pC
+# P31：L31- Derivative of Inverse Trig Functions via Implicit Differentiation - ShowMeAI - BV1544y1C7pC
 
 So we're back with our old friend Arc tangent， which we had seen before that we have the graph of 10 and that arc10 is what happens when we alternate the x and the y。
 

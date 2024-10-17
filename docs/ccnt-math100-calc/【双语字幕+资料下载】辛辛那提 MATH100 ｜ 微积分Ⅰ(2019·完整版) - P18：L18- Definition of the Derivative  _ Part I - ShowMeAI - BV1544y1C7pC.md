@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P18：L18- Definition of the Derivative  _ Part I - ShowMeAI - BV1544y1C7pC
+# P18：L18- Definition of the Derivative  _ Part I - ShowMeAI - BV1544y1C7pC
 
 I am very excited because in this video， we are going to introduce the definition of one of the foundational concepts and also calculus the derivative。
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P49：L49- The Definite Integral Part III - Evaluating From The Definition - ShowMeAI - BV1544y1C7pC
+# P49：L49- The Definite Integral Part III - Evaluating From The Definition - ShowMeAI - BV1544y1C7pC
 
 Let's look once again at this idea of the area underneath function x squared between the values of0 and 1。
 

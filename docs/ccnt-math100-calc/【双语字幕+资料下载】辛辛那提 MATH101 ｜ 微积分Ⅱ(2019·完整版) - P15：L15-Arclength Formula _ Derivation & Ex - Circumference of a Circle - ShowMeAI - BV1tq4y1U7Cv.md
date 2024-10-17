@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P15：L15-Arclength Formula _ Derivation & Ex - Circumference of a Circle - ShowMeAI - BV1tq4y1U7Cv
+# P15：L15-Arclength Formula _ Derivation & Ex - Circumference of a Circle - ShowMeAI - BV1tq4y1U7Cv
 
 If I give you some curve like this one， What is its length。 For example。
 

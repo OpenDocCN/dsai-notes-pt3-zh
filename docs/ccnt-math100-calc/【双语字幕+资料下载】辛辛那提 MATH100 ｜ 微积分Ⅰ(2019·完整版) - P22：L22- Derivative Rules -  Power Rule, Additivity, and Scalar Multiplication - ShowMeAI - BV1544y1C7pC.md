@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P22：L22- Derivative Rules -  Power Rule, Additivity, and Scalar Multiplication - ShowMeAI - BV1544y1C7pC
+# P22：L22- Derivative Rules -  Power Rule, Additivity, and Scalar Multiplication - ShowMeAI - BV1544y1C7pC
 
 Now， we've looked at x squared， but I can also look at the derivative of x to any power n that I might like where n is some real number and it turns out that there's actually a classy a power rule of formulas that if you have the derivative of x to the n。
 

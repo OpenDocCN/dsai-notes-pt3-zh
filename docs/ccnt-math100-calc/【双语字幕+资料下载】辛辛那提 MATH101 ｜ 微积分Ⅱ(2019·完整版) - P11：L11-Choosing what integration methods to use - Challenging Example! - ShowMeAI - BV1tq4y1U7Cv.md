@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P11：L11-Choosing what integration methods to use - Challenging Example! - ShowMeAI - BV1tq4y1U7Cv
+# P11：L11-Choosing what integration methods to use - Challenging Example! - ShowMeAI - BV1tq4y1U7Cv
 
 ![](img/866e478d22ce4fbc405ab0d43b5ea7eb_0.png)
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P36：L36-3 Applications of Taylor Series - Integrals, Limits, & Series - ShowMeAI - BV1tq4y1U7Cv
+# P36：L36-3 Applications of Taylor Series - Integrals, Limits, & Series - ShowMeAI - BV1tq4y1U7Cv
 
 F。In this video， we're going to talk about three different applications of Taylor series。
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P25：L25-Comparison Test for Series - ShowMeAI - BV1tq4y1U7Cv
+# P25：L25-Comparison Test for Series - ShowMeAI - BV1tq4y1U7Cv
 
 Suppose that I have the graph of two different series。 There's an A N， and there's a B N。
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P29：L29-The bizarre world of INFINITE rearrangements  _ Riemann Series Theorem - ShowMeAI - BV1tq4y1U7Cv
+# P29：L29-The bizarre world of INFINITE rearrangements  _ Riemann Series Theorem - ShowMeAI - BV1tq4y1U7Cv
 
 I find infinity to be a bit of a slippery concept。 No matter how well， I think I understand it。
 

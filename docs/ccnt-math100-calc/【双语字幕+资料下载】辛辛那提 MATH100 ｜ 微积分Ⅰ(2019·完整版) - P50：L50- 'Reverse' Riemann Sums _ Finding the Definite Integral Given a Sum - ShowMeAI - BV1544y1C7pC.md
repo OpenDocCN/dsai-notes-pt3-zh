@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P50：L50- 'Reverse' Riemann Sums _ Finding the Definite Integral Given a Sum - ShowMeAI - BV1544y1C7pC
+# P50：L50- 'Reverse' Riemann Sums _ Finding the Definite Integral Given a Sum - ShowMeAI - BV1544y1C7pC
 
 In this video， I want to talk about a particular type of problem involving Rman integration。😡。
 

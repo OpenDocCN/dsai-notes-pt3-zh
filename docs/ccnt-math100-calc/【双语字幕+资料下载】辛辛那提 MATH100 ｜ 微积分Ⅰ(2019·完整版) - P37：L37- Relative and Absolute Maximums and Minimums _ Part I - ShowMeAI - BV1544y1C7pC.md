@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P37：L37- Relative and Absolute Maximums and Minimums _ Part I - ShowMeAI - BV1544y1C7pC
+# P37：L37- Relative and Absolute Maximums and Minimums _ Part I - ShowMeAI - BV1544y1C7pC
 
 One of the standard problems that faces us across all disciplines is how do we optimize。
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P36：L36- The MEAN Value Theorem is Actually Very Nice - ShowMeAI - BV1544y1C7pC
+# P36：L36- The MEAN Value Theorem is Actually Very Nice - ShowMeAI - BV1544y1C7pC
 
 In this video， we're going to talk about a very interesting theorem called the mean value theem。
 

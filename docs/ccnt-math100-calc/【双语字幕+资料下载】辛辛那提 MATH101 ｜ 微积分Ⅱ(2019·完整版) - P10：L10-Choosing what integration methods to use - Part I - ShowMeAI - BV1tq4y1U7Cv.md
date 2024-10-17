@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P10：L10-Choosing what integration methods to use - Part I - ShowMeAI - BV1tq4y1U7Cv
+# P10：L10-Choosing what integration methods to use - Part I - ShowMeAI - BV1tq4y1U7Cv
 
 When faced with an integral， often the hardest part of computing the integral isn't actually going through a particular methodology like integration by parts。
 

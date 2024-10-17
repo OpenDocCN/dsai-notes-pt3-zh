@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P1：L1-Welcome to Calculus II - ShowMeAI - BV1tq4y1U7Cv
+# P1：L1-Welcome to Calculus II - ShowMeAI - BV1tq4y1U7Cv
 
 Calculus 1 is now over。 I'm sad。 I know you're sad。 baby is certainly sad。 Thankfully。
 

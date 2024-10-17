@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P21：L21- The derivative of a constant and of x^2  from the definition - ShowMeAI - BV1544y1C7pC
+# P21：L21- The derivative of a constant and of x^2  from the definition - ShowMeAI - BV1544y1C7pC
 
 Now that we've defined the derivative， our next project is to go around find as many functions as we can and compute the derivatives of all of them。
 

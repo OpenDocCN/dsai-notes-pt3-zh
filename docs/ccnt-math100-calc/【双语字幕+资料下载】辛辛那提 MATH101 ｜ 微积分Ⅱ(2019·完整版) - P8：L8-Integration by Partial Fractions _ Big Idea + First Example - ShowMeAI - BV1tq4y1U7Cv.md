@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P8：L8-Integration by Partial Fractions _ Big Idea + First Example - ShowMeAI - BV1tq4y1U7Cv
+# P8：L8-Integration by Partial Fractions _ Big Idea + First Example - ShowMeAI - BV1tq4y1U7Cv
 
 Today's integration method is called partial fractions。
 

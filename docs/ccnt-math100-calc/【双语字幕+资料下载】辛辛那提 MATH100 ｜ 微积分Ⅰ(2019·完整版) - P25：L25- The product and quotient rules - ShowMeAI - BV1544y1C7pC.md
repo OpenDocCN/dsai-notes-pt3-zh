@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P25：L25- The product and quotient rules - ShowMeAI - BV1544y1C7pC
+# P25：L25- The product and quotient rules - ShowMeAI - BV1544y1C7pC
 
 Our goal remains， as it was before。 Let's find as many different functions as we can that we can take the derivatives of。
 

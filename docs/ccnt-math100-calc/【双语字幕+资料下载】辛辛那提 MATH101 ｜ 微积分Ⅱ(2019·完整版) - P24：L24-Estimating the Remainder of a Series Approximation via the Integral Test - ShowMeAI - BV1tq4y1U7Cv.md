@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P24：L24-Estimating the Remainder of a Series Approximation via the Integral Test - ShowMeAI - BV1tq4y1U7Cv
+# P24：L24-Estimating the Remainder of a Series Approximation via the Integral Test - ShowMeAI - BV1tq4y1U7Cv
 
 Consider this particular series the sum of the AIs。 And I've written it out in a bit of a funny way。
 

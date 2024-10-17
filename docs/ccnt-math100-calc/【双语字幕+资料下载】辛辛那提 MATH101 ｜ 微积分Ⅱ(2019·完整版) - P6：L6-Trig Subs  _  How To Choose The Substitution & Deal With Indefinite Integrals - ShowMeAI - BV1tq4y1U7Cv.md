@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P6：L6-Trig Subs  _  How To Choose The Substitution & Deal With Indefinite Integrals - ShowMeAI - BV1tq4y1U7Cv
+# P6：L6-Trig Subs  _  How To Choose The Substitution & Deal With Indefinite Integrals - ShowMeAI - BV1tq4y1U7Cv
 
 In this video， we're going to see a second example of integration by trigoometric substitution。
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P16：L16- Infinite Limit vs Limits at Infinity of a Composite Function - ShowMeAI - BV1544y1C7pC
+# P16：L16- Infinite Limit vs Limits at Infinity of a Composite Function - ShowMeAI - BV1544y1C7pC
 
 In this video， we're going to look at a particular function。
 

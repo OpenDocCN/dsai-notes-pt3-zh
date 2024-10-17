@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P40：L40- Applying L'Hopital's Rule to Exponential Indeterminate Forms - ShowMeAI - BV1544y1C7pC
+# P40：L40- Applying L'Hopital's Rule to Exponential Indeterminate Forms - ShowMeAI - BV1544y1C7pC
 
 Let's look at a somewhat funky indeterminate form that we're going to have to apply Loyital's rule to。
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P37：L37-Why Taylor Series actually work - The Taylor Inequality - ShowMeAI - BV1tq4y1U7Cv
+# P37：L37-Why Taylor Series actually work - The Taylor Inequality - ShowMeAI - BV1tq4y1U7Cv
 
 If I have a power series or a Taylor series in specific。
 

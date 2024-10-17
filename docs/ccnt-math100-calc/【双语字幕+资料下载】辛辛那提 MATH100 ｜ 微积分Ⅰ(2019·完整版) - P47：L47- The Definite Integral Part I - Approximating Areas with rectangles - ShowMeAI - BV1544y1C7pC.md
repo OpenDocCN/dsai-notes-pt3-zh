@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P47：L47- The Definite Integral Part I - Approximating Areas with rectangles - ShowMeAI - BV1544y1C7pC
+# P47：L47- The Definite Integral Part I - Approximating Areas with rectangles - ShowMeAI - BV1544y1C7pC
 
 I'm excited because we've been stuck with differentiation for quite a long time in this course。
 

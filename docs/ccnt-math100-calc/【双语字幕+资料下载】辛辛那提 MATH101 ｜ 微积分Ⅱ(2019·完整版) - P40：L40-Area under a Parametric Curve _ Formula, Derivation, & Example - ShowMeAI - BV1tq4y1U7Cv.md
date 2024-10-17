@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P40：L40-Area under a Parametric Curve _ Formula, Derivation, & Example - ShowMeAI - BV1tq4y1U7Cv
+# P40：L40-Area under a Parametric Curve _ Formula, Derivation, & Example - ShowMeAI - BV1tq4y1U7Cv
 
 In our second video on how to take things we've done before in cculus and apply them in the context of a parametric curve。
 

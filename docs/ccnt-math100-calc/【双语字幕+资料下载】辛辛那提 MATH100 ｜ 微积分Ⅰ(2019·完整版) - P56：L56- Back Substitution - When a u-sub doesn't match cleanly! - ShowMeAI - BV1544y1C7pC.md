@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P56：L56- Back Substitution - When a u-sub doesn't match cleanly! - ShowMeAI - BV1544y1C7pC
+# P56：L56- Back Substitution - When a u-sub doesn't match cleanly! - ShowMeAI - BV1544y1C7pC
 
 In this video， I want to look at two different integrals that require substitution。
 

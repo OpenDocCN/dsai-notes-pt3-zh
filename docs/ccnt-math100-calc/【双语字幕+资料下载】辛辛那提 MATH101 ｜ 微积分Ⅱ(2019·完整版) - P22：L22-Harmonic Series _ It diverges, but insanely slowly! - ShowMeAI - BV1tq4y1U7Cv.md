@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P22：L22-Harmonic Series _ It diverges, but insanely slowly! - ShowMeAI - BV1tq4y1U7Cv
+# P22：L22-Harmonic Series _ It diverges, but insanely slowly! - ShowMeAI - BV1tq4y1U7Cv
 
 In this video， we're going to talk about the harmonic series。
 

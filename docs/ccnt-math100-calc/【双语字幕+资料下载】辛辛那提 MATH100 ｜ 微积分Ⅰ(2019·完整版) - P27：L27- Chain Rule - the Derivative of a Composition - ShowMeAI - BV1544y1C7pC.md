@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P27：L27- Chain Rule - the Derivative of a Composition - ShowMeAI - BV1544y1C7pC
+# P27：L27- Chain Rule - the Derivative of a Composition - ShowMeAI - BV1544y1C7pC
 
 You can probably guess our goal at this point， it is still to compute the derivative as as many functions as possible and the class that we're looking at this time is compositions that is I'm considering things like this。
 

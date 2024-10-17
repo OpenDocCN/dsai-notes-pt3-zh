@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P16：L16-Area of Surfaces of Revolution _ Derivation & Example - ShowMeAI - BV1tq4y1U7Cv
+# P16：L16-Area of Surfaces of Revolution _ Derivation & Example - ShowMeAI - BV1tq4y1U7Cv
 
 Let's begin with a curve in the two dimensional plane， I've got an x axis， and I've got a y axis。
 

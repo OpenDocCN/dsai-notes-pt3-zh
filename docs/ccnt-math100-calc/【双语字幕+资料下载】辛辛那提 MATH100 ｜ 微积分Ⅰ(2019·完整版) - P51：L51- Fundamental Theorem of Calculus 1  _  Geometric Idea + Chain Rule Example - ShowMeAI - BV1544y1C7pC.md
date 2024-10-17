@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P51：L51- Fundamental Theorem of Calculus 1  _  Geometric Idea + Chain Rule Example - ShowMeAI - BV1544y1C7pC
+# P51：L51- Fundamental Theorem of Calculus 1  _  Geometric Idea + Chain Rule Example - ShowMeAI - BV1544y1C7pC
 
 。So far in calculus， we've seen a bunch of different named theorems。 intermediate value theorem。
 

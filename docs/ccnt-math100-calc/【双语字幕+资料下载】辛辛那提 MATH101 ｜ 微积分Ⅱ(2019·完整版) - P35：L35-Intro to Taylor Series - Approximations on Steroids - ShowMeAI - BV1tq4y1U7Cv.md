@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P35：L35-Intro to Taylor Series - Approximations on Steroids - ShowMeAI - BV1tq4y1U7Cv
+# P35：L35-Intro to Taylor Series - Approximations on Steroids - ShowMeAI - BV1tq4y1U7Cv
 
 Consider the graph of e to the x if I wanted to compute a value like say e to the 0。2。
 

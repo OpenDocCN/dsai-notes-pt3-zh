@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P38：L38- Relative and Absolute Maximums and Minimums _ Part II - ShowMeAI - BV1544y1C7pC
+# P38：L38- Relative and Absolute Maximums and Minimums _ Part II - ShowMeAI - BV1544y1C7pC
 
 Now of course this graph could represent all sorts of different things we've talked about energy and population size and profit and all sorts of different things so now the question is how do I actually find these points I'm given a graph I can sort of approximately guess what these are going to be but how do I actually find out exactly where these extrema occur and what values they get out and that's where calculus is going to be so useful to us Let's go back to that prala that we saw before？
 

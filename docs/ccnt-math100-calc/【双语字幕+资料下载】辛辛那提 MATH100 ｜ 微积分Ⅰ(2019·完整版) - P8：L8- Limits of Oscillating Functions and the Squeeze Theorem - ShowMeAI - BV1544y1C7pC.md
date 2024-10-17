@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P8：L8- Limits of Oscillating Functions and the Squeeze Theorem - ShowMeAI - BV1544y1C7pC
+# P8：L8- Limits of Oscillating Functions and the Squeeze Theorem - ShowMeAI - BV1544y1C7pC
 
 Let's investigate this somewhat funky limit。
 

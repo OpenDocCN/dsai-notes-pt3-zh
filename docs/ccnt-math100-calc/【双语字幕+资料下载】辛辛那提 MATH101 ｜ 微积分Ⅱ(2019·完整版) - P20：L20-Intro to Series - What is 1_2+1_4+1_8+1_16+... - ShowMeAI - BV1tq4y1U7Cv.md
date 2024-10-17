@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P20：L20-Intro to Series - What is 1_2+1_4+1_8+1_16+... - ShowMeAI - BV1tq4y1U7Cv
+# P20：L20-Intro to Series - What is 1_2+1_4+1_8+1_16+... - ShowMeAI - BV1tq4y1U7Cv
 
 。Suppose I want to walk along this particular line。
 

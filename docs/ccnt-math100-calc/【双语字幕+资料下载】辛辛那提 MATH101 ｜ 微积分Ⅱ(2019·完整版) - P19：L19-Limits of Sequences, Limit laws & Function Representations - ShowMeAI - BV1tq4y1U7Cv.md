@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P19：L19-Limits of Sequences, Limit laws & Function Representations - ShowMeAI - BV1tq4y1U7Cv
+# P19：L19-Limits of Sequences, Limit laws & Function Representations - ShowMeAI - BV1tq4y1U7Cv
 
 。In the first video on sequences， we saw two different ways about talking about sequences。
 

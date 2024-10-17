@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P2：L2-Intro to Integration By Parts - Examples - ∫xsinxdx & ∫arctan(x)dx - ShowMeAI - BV1tq4y1U7Cv
+# P2：L2-Intro to Integration By Parts - Examples - ∫xsinxdx & ∫arctan(x)dx - ShowMeAI - BV1tq4y1U7Cv
 
 Yeah。Welcome to the first video for calculus 2。 Every day before class。
 

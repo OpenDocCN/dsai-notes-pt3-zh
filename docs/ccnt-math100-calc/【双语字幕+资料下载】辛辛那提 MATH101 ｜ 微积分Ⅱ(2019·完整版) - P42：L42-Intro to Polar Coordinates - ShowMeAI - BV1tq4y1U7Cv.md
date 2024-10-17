@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P42：L42-Intro to Polar Coordinates - ShowMeAI - BV1tq4y1U7Cv
+# P42：L42-Intro to Polar Coordinates - ShowMeAI - BV1tq4y1U7Cv
 
 。Consider a point like -11。 Now，-11。 Let's think about what those numbers do。
 

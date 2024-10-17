@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P46：L46- Solving for the constant in the general anti-derivative - ShowMeAI - BV1544y1C7pC
+# P46：L46- Solving for the constant in the general anti-derivative - ShowMeAI - BV1544y1C7pC
 
 This problem is a little bit interesting。 I am asking not for an and derivative。
 

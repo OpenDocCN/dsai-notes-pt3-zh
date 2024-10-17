@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P19：L19- Applying the Definition of the Derivative to 1_x - ShowMeAI - BV1544y1C7pC
+# P19：L19- Applying the Definition of the Derivative to 1_x - ShowMeAI - BV1544y1C7pC
 
 I did the derivative at the value of a at one point。
 

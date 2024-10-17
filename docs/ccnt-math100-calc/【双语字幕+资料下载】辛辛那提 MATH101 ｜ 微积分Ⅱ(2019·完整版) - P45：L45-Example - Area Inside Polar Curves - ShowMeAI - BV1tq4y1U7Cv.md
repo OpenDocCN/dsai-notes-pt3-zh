@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P45：L45-Example - Area Inside Polar Curves - ShowMeAI - BV1tq4y1U7Cv
+# P45：L45-Example - Area Inside Polar Curves - ShowMeAI - BV1tq4y1U7Cv
 
 So I want to compute the area of a particular polar curve R is cosine of 2 theta and my first step is almost always going to be to sketch a picture of what this curve actually is。
 

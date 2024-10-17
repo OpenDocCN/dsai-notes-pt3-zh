@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P58：L58- Exam Walkthrough _ Calc 1, Test 3 _ Integration, FTC I_II, Optimization - ShowMeAI - BV1544y1C7pC
+# P58：L58- Exam Walkthrough _ Calc 1, Test 3 _ Integration, FTC I_II, Optimization - ShowMeAI - BV1544y1C7pC
 
 ![](img/4722502e3af87870840998830c3ae32e_0.png)
 

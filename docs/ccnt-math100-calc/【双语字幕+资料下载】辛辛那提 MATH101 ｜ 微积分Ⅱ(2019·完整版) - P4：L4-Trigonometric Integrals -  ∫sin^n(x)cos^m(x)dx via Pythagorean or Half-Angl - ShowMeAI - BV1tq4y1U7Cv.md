@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P4：L4-Trigonometric Integrals -  ∫sin^n(x)cos^m(x)dx via Pythagorean or Half-Angl - ShowMeAI - BV1tq4y1U7Cv
+# P4：L4-Trigonometric Integrals -  ∫sin^n(x)cos^m(x)dx via Pythagorean or Half-Angl - ShowMeAI - BV1tq4y1U7Cv
 
 In this video， we're gonna to be talking about trigoometric integrals。
 

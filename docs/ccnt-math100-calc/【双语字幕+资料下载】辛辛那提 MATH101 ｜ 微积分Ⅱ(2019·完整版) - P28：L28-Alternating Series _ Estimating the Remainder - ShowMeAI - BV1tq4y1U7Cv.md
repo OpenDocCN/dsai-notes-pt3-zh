@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P28：L28-Alternating Series _ Estimating the Remainder - ShowMeAI - BV1tq4y1U7Cv
+# P28：L28-Alternating Series _ Estimating the Remainder - ShowMeAI - BV1tq4y1U7Cv
 
 Suppose I have an alternating series like this one。
 

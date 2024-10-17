@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P7：L7-Deconstructing a messy integral _ Trig subs & u-subs combined - ShowMeAI - BV1tq4y1U7Cv
+# P7：L7-Deconstructing a messy integral _ Trig subs & u-subs combined - ShowMeAI - BV1tq4y1U7Cv
 
 So far in our calculus to exploration of integration strategies， we've seen integration by parts。
 

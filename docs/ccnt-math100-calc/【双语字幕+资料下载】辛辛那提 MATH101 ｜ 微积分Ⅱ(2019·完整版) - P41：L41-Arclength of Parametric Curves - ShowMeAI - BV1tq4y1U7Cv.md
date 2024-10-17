@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P41：L41-Arclength of Parametric Curves - ShowMeAI - BV1tq4y1U7Cv
+# P41：L41-Arclength of Parametric Curves - ShowMeAI - BV1tq4y1U7Cv
 
 In this video， we want to replace one more technique from calculus that we've done before in the context of a parametric curve where x is a function of t and y is a function of t。
 

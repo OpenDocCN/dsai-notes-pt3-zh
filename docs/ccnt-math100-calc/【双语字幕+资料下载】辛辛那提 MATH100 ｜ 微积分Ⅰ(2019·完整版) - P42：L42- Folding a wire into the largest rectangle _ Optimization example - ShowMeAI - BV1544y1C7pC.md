@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P42：L42- Folding a wire into the largest rectangle _ Optimization example - ShowMeAI - BV1544y1C7pC
+# P42：L42- Folding a wire into the largest rectangle _ Optimization example - ShowMeAI - BV1544y1C7pC
 
 In this optimization problem， I want you to imagine a wire， like the one that I've written down here。
 

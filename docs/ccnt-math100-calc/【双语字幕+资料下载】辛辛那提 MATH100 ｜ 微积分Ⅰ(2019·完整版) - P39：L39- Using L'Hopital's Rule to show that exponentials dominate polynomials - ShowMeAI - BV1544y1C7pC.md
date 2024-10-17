@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P39：L39- Using L'Hopital's Rule to show that exponentials dominate polynomials - ShowMeAI - BV1544y1C7pC
+# P39：L39- Using L'Hopital's Rule to show that exponentials dominate polynomials - ShowMeAI - BV1544y1C7pC
 
 Let's recall back to when we were doing limits， but I know I know you thought you we were done with limits。
 

@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P13：L13-Improper Integrals - How to Integrate with Infinities, 2 ways! - ShowMeAI - BV1tq4y1U7Cv
+# P13：L13-Improper Integrals - How to Integrate with Infinities, 2 ways! - ShowMeAI - BV1tq4y1U7Cv
 
 The function1 over x is kind of interesting when you try to consider what is the area under the curve of1 over x。
 

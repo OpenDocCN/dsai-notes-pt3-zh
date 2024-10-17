@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P5：L5- What is an infinite limit - ShowMeAI - BV1544y1C7pC
+# P5：L5- What is an infinite limit - ShowMeAI - BV1544y1C7pC
 
 Here is a slightly different graph， and I want to try to figure out what limits might mean in this case。
 

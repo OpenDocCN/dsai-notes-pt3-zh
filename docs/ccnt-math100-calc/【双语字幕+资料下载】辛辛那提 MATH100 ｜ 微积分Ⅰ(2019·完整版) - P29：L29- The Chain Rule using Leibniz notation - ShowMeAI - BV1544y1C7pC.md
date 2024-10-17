@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P29：L29- The Chain Rule using Leibniz notation - ShowMeAI - BV1544y1C7pC
+# P29：L29- The Chain Rule using Leibniz notation - ShowMeAI - BV1544y1C7pC
 
 Previously， we've seen the chain rule written with Lagoage notation。
 

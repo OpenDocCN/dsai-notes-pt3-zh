@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P1：L1- The Velocity Problem _ Part I - Numerically - ShowMeAI - BV1544y1C7pC
+# P1：L1- The Velocity Problem _ Part I - Numerically - ShowMeAI - BV1544y1C7pC
 
 Let's start our investigation of calculus by looking at something that I call the velocity problem so here's the idea imagine I'm driving down the highway and I say that at 2 o'clock I'm at the 100 mile marker。
 

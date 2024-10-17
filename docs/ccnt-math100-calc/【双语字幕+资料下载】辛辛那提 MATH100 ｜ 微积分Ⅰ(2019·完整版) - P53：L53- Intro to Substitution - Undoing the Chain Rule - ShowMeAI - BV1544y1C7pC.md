@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P53：L53- Intro to Substitution - Undoing the Chain Rule - ShowMeAI - BV1544y1C7pC
+# P53：L53- Intro to Substitution - Undoing the Chain Rule - ShowMeAI - BV1544y1C7pC
 
 When we first defined derivatives， one of our initial tasks was to go through and prove as many differentiation rules as we could。
 

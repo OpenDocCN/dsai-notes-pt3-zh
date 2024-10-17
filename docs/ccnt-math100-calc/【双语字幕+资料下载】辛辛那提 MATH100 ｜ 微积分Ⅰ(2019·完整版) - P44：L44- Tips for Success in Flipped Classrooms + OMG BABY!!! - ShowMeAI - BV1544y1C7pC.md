@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH100 ｜ 微积分Ⅰ(2019·完整版) - P44：L44- Tips for Success in Flipped Classrooms + OMG BABY!!! - ShowMeAI - BV1544y1C7pC
+# P44：L44- Tips for Success in Flipped Classrooms + OMG BABY!!! - ShowMeAI - BV1544y1C7pC
 
 In this video， I wanted to talk through some of my standard advice that I give when students come to my class and they're asking。
 

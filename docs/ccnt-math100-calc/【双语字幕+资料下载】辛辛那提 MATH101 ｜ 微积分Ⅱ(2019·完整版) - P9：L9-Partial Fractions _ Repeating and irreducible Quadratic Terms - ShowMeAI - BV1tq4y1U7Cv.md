@@ -1,4 +1,4 @@
-# 【双语字幕+资料下载】辛辛那提 MATH101 ｜ 微积分Ⅱ(2019·完整版) - P9：L9-Partial Fractions _ Repeating and irreducible Quadratic Terms - ShowMeAI - BV1tq4y1U7Cv
+# P9：L9-Partial Fractions _ Repeating and irreducible Quadratic Terms - ShowMeAI - BV1tq4y1U7Cv
 
 In the first video on integration by partial fractions， we studied rational functions。
 
