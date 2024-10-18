@@ -17,4 +17,5 @@
 +   [斯坦福 CS520 知识图谱课程笔记](docs/stf-cs520-kg/README.md)
 +   [斯坦福 ENGR108 矩阵论与应用线性代数笔记](docs/stf-engr108-linalg/README.md)
 +   [UCB 全栈深度学习课程笔记](docs/ucb-fsdl/README.md)
++   [WAIC 2024 笔记](docs/waic24/README.md)
 +   [威斯康星 STAT453 生成式人工智能笔记](docs/wscx-stat453-genai/README.md)
